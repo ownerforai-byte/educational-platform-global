@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Continuity of a function, types of discontinuity, graphs … (Calculus, Mathematics, class-11-notes) covers Continuity of a function, types of discontinuity, graphs of discontinuous function. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Continuity in the calculus unit is the **three-part test plus the full species atlas**. The test — value, limit, agreement — has three failure modes, but the \"limit does not exist\" branch splits graphically: **removable** (open or detached dot; repair f(a) = L), **jump** (finite unequal sides; vertical gap), **infinite** (±∞ side; vertical asymptote, odd multiplicity splitting, even unifying), and the fourth species…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of a function, types of discontinuity, graphs … — quick idea map\"><title>Continuity of a function, types of discontinuity, graphs … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of a function, types of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">discontinuity, graphs …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Continuity of a function</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Types of discontinuity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lim sin x/x = 1 (x→0, rad)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(1+x)^{1/x} → e as x→0</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of a function, types of discontinuity, graphs … — quick idea map\"><title>Continuity of a function, types of discontinuity, graphs … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of a function, types of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">discontinuity, graphs …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The three-part test has</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">three failure modes, but</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the limit-failure splits…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Three-part test: f(a)</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">exists, limit exists,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">equality; intervals add</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- continuity: f(a) =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lim_{x→a} f(x), both</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">existing - species:</text></svg>",
         "caption": "Continuity of a function, types of discontinuity, graphs … — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "lim sin x/x = 1 (x→0, rad)\n(1+x)^{1/x} → e as x→0"
+      "text": "- continuity: f(a) = lim_{x→a} f(x), both existing - species: removable / jump / infinite / oscillatory - rational triage: shared zeros → holes; survivors → walls"
     },
     {
       "label": "Conditions",
@@ -43,11 +43,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).  ·  Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a."
+      "text": "\"Continuous at a iff f(a) = lim_{x->a} f(x) with both existing; the species are removable, jump, infinite, oscillatory.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The folding graph*** - sin(1/x) near 0 crosses zero infinitely often between any point and the origin: no side limit, no repair, a genuinely wild species."
     },
     {
       "label": "Limitation",
@@ -55,35 +55,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a."
+      "text": "## 1. Topic Introduction — Continuity and Its Graphs The calculus-unit continuity canonical: the three-part test, the **discontinuity taxonomy with graphs**, and the classification workflow — now with the graphical gallery as the centrepiece.  ·  ## 2. Fundamental Concepts ### 2.1 Continuity at a point and on intervals - **Three-part test:** f(a) exists; lim_{x→a} f(x) exists; f(a) = lim. Continuous on an interval ⟺ continuous at every interior point + one-sided at endpoints. - **Closure families:** polynomials (ℝ), rational (q ≠ 0), roots (domain), sin/cos (ℝ), eˣ (ℝ), ln x (x > 0); sums/products/quotients/compositions inherit.…"
     },
     {
       "label": "Shortcut",
-      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.  ·  Every discontinuity of a function falls into one of four categories: removable, jump, infinite, or essential."
+      "text": "Domain, closure, triage, report. Graph features map to test parts: open dot = hole, gap = jump, asymptote = wall, folding = oscillator."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Continuity of a function, types of discontinuity, graphs …\" with one example.  ·  compare \"Continuity of a function\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): What does it mean for a function to be continuous at x = a? Check whether f(x) = x² is continuous at x = 1. (3m)** — **Definition (three-part test):** f is continuous at x = a iff **(1)** f(a) is defined, **(2)** lim_{x→a} f(x) exists, and **(3)** the two are **equal**: f(a) = lim_{x→a} f(x) — the function's…  ·  **NEB-style (3m): Find and classify the discontinuities of f(x) = (x + 1)/(x² − 1), describing the graph at each.** — **Factor:** denominator (x − 1)(x + 1); numerator x + 1 shares the zero at −1. **Cancel:** f(x) = 1/(x − 1) for x ≠ ±1.…"
     },
     {
       "label": "Hints",
-      "text": "A removable discontinuity can be \"fixed\" by redefining the function at one point. Jump and infinite discontinuities cannot be removed this way.  ·  The function $f(x) = \\sin(1/x)$ for $x \\neq 0$ and $f(0) = 0$ has an essential discontinuity at $x = 0$ — no matter how you define $f(0)$, the limit does not exist.",
+      "text": "When sketching, place the dots deliberately - open at holes, closed at the side owning f(a) - dot placement is graded.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of a function, types of discontinuity, graphs … — topic mind map\"><title>Continuity of a function, types of discontinuity, graphs … — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Continuity of a function, types of discontinu…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Continuity of a function</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Types of discontinuity</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Graphs of discontinuous</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">function</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Continuity of a function, types of discontinuity, graphs … — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The three-part test has three failure modes, but the limit-failure splits graphically into jump, wall and oscillator - four species, one test."
+    },
+    {
       "label": "Key points",
-      "text": "• Continuity of a function  ·  • Types of discontinuity  ·  • Graphs of discontinuous function"
+      "text": "Three-part test: f(a) exists, limit exists, equality; intervals add one-sided endpoints. Closure families certify whole intervals. Discontinuity taxonomy: removable (limit exists, value missing/wrong - open or detached dot, repair f(a) = L), jump (finite unequal sides - vertical gap, non-removable), infinite (side…"
     },
     {
       "label": "Universal facts",
-      "text": "Understanding discontinuities is crucial for integration — a function with a finite number of removable or jump discontinuities can still be integrated.  ·  Continuity is essential for the Fundamental Theorem of Calculus, which connects derivatives and integrals."
+      "text": "Circuit diagrams mark breaks like discontinuity graphs: open dots (holes), gaps (switches/jumps), and short-to-ground spikes (walls)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Continuity of a function, types of discontinuity, graphs …\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Sketch and classify g(x) = sin(1/x) for x ≠ 0 with g(0) = 0.** — **Behaviour near 0:** as x → 0⁺ (or 0⁻), 1/x → +∞ (or −∞), and sin(1/x) sweeps the full range [−1, 1] infinitely many times — between any two points near 0 the function crosses 0, 1 and −1 repeatedly.…  ·  **NEB-style (6m): Find the constants a and b so that f is continuous on ℝ, where f(x) = ax + b for x ≤ 1, f(x) = x² + 1 for 1 < x < 3, and f(x) = 3x − a − b for x ≥ 3.** — **Seam 1 (x = 1):** LHL = a(1) + b = a + b; RHL = 1² + 1 = 2; f(1) = a + b. Continuity ⟹ **a + b = 2**.…  ·  **NEB-style (5m): Show that the equation x³ + x − 1 = 0 has exactly one real root, located in (0, 1).** — **Existence (IVT):** f(x) = x³ + x − 1 is a polynomial ⟹ continuous on [0, 1]; f(0) = −1 < 0 and f(1) = 1 > 0 ⟹ by the Intermediate Value Theorem a root exists in (0, 1).…"
     },
     {
       "label": "MCQ drill",
@@ -91,27 +95,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.  ·  **Removable discontinuity (hole):** The limit $\\lim_{x \\to a} f(x)$ exists, but either $f(a)$ is undefined or $f(a) \\neq \\lim_{x \\to a} f(x)$. The graph has a \"hole\" at $x = a$. Example: $f(x) = \\frac{x^2 - 1}{x - 1}$ at $x = 1$.  ·  **Jump discontinuity:** The left-hand and right-hand limits both exist but are not equal: $\\lim_{x \\to a^-} f(x) \\neq \\lim_{x \\to a^+} f(x)$. The graph \"jumps\" at $x = a$. Example: the floor function $f(x) = \\lfloor x \\rfloor$ at every integer."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Graph signature | |---|---|---| | **Removable** | Limit exists, value off | open/detached dot | | **Jump** | Sides finite, unequal | vertical gap | | **Infinite** | Side blow-up | vertical asymptote | | **Oscillatory** | No side limit | infinite folding |  ·  ## 4. Detailed Explanation ### 4.1 Why the taxonomy has four species - The three-part test has exactly three failure modes, but \"limit does not exist\" splits into two graphically distinct ways — finite disagreement (jump) and unboundedness (infinite) — plus the no-limit-at-all case (oscillation). Four species, one test.…  ·  ## 5. Comparison Tables **Species atlas** | Species | Sides | f(a) | Repair | |---|---|---|---| | removable | equal finite | missing/wrong | f(a) := L | | jump | finite ≠ | any | none | | infinite | ±∞ | any | none | | oscillatory | DNE | any | none |"
     },
     {
       "label": "More ideas",
-      "text": "A vertical asymptote always indicates an infinite discontinuity, but not all discontinuities involve vertical asymptotes.  ·  A function can be continuous at a point but not differentiable there (e.g., $f(x) = |x|$ at $x = 0$). Continuity is a weaker condition than differentiability.  ·  A function can have a limit at a point without being continuous there — the function might be undefined at that point, or its value might differ from the limit."
+      "text": "A removable discontinuity can be \"fixed\" by redefining the function at one point. Jump and infinite discontinuities cannot be removed this way.  ·  The function $f(x) = \\sin(1/x)$ for $x \\neq 0$ and $f(0) = 0$ has an essential discontinuity at $x = 0$ — no matter how you define $f(0)$, the limit does not exist.  ·  A vertical asymptote always indicates an infinite discontinuity, but not all discontinuities involve vertical asymptotes."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Continuity of a function, types of discontinuity, graphs …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  Classify the discontinuity of $f(x) = \\frac{x^2 - 4}{x - 2}$ at $x = 2$."
+      "text": "A function can be continuous at a point but not differentiable there (e.g., $f(x) = |x|$ at $x = 0$). Continuity is a weaker condition than differentiability.  ·  A function can have a limit at a point without being continuous there — the function might be undefined at that point, or its value might differ from the limit.  ·  Verified PYQ: NEB 2024 continuity definition + x^2 at x = 1 check - assigned to this row. Other items NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "Sketch the graph of $f(x) = \\begin{cases} x + 1 & x < 0 \\\\ x^2 & x \\geq 0 \\end{cases}$ and classify any discontinuities.  ·  For $f(x) = \\frac{1}{x - 3}$, identify the type of discontinuity at $x = 3$ and describe the behaviour from both sides.  ·  Determine whether $f(x) = \\begin{cases} x^2 & x \\neq 1 \\\\ 3 & x = 1 \\end{cases}$ is continuous at $x = 1$."
+      "text": "**NEB-style (5m): Compare f₁(x) = sin(1/x) (f₁(0) = 0), f₂(x) = x·sin(1/x) (f₂(0) = 0) and f₃(x) = x²·sin(1/x) (f₃(0) = 0) at x = 0.** — **f₁:** sin(1/x) oscillates in [−1, 1] infinitely often near 0 with **no damping** ⟹ no one-sided limit ⟹ **oscillatory discontinuity** at 0.…  ·  **NEB-style (4m): State the Intermediate Value Theorem and use it to show that f(x) = x − cos x has a root between 0 and π/2.** — **Theorem:** if f is continuous on the closed interval [a, b] and u lies between f(a) and f(b), then some c ∈ (a, b) satisfies f(c) = u.…  ·  Define continuity at x = a and check x² at x = 1."
     },
     {
       "label": "More ideas",
-      "text": "Find the value of $k$ that makes $f(x) = \\begin{cases} kx + 1 & x \\leq 2 \\\\ x^2 & x > 2 \\end{cases}$ continuous at $x = 2$.  ·  Use the Intermediate Value Theorem to show that $x^3 - x - 1 = 0$ has a root in $[1, 2]$.  ·  The Intermediate Value Theorem guarantees the existence of solutions to equations but does not tell you how to find them."
+      "text": "Classify the breaks of (x + 1)/(x² − 1) with graph features.  ·  Classify sin(1/x) (g(0) = 0) at 0.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Infinite discontinuity (asymptotic):** At least one of the one-sided limits is $\\pm \\infty$. The graph has a vertical asymptote at $x = a$. Example: $f(x) = 1/x$ at $x = 0$."
+      "text": "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  ## 6. Common Confusions **\"Discontinuous\" ≠ \"the limit DNE\":** a removable break has a perfectly good limit — only the value is wrong.  ·  **One-sided continuity at jumps:** f can be right-continuous at a jump (Heaviside) — discontinuity and one-sided continuity coexist."
     }
   ]
 }

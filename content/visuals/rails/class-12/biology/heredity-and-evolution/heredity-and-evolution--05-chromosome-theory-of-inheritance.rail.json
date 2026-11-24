@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Chromosome theory of inheritance — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: chromosome theory of inheritance · one worked example · one misconception each."
+      "text": "# Chromosome theory of inheritance ## 1. Introduction Opening frame for **Chromosome theory of inheritance** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Mendel's factors were invisible abstractions in 1866. Forty years later, two young researchers — **Walter Sutton** (USA) and **Theodor Boveri** (Germany), working independently in 1902–1903 — pointed out that Mendel's factors behave *exactly* like chromosomes do during meiosis. This is the **chromosome theory of inheritance (Sutton–Boveri theory)**: genes are carried on chromosomes.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Chromosome theory of inheritance\" and verify the answer is plausible.  ·  define + example each sub-idea: chromosome theory of inheritance."
+      "text": "Trick 1: Sutton and Boveri united Mendel with meiosis: genes are on chromosomes; segregation parallels homologue separation in anaphase-I; independent assortment parallels random metaphase alignment.  ·  Trick 2: Two parallels to quote: (1) alleles pair → homologous chromosome pair; (2) allele separation → anaphase-I disjunction."
     },
     {
       "label": "Board question",
@@ -75,12 +75,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Chromosome theory of inheritance\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Chromosome theory of inheritance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
+      "label": "Study notes",
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — how the theory was built (study in this order)** | Step | Event | Year | Contribution | |---|---|---|---| | 1 | Mendel publishes his laws | 1866 | Factors in pairs, segregation, independent assortment | | 2 | Chromosomes described in dividing cells | 1880s (Flemming, Waldeyer) | Mitosis and meiosis worked out cytologically | | 3 | Boveri's sea-urchin…  ·  **The four parallels — Mendel's factors vs chromosome behaviour** | Mendelian factor behaviour | Chromosome behaviour during meiosis | |---|---| | Factors occur in pairs (alleles) | Chromosomes occur in homologous pairs (diploid set) | | One factor per gamete (segregation) | Homologues separate in anaphase I — one per gamete | | Each pair segregates independently of the others…"
+    },
+    {
       "label": "More ideas",
-      "text": "one worked example for \"Chromosome theory of inheritance\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Trick 3: Evidence beyond it: chromosome mapping and sex linkage confirmed genes occupy specific chromosome loci.  ·  define + example each sub-idea: chromosome theory of inheritance.  ·  one worked example for \"Chromosome theory of inheritance\" — check units / edge cases."
+    },
+    {
+      "label": "More ideas",
+      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Evidence classified — what proved genes ride on chromosomes** | Type of evidence | Experiment | What it showed | |---|---|---| | Cytological parallel | Sutton's meiosis drawings | Factor behaviour = chromosome behaviour | | Embryological | Boveri's sea urchins | Every chromosome carries something essential | |…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Diagrams and figures - **D1** — Chromosome theory of inheritance — structure (authored SVG — English labels, viewBox 900×640) - **D2** — Chromosome theory of inheritance — process or life-cycle flow (authored SVG — English labels) - **D3** — Chromosome theory of inheritance — detailed reference plate (curated…  ·  ```svg Segregation at meiosis — homologous chromosomes carry the alleles into gametes <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Meiosis I: alleles…  ·  ## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI)."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Worked example — Bridges' nondisjunction.** In wild-type crosses, a rare white-eyed F₁ female appeared among red-eyed sisters. Bridges found her cells had **XXY** sex chromosomes: the two X's had failed to separate in the mother's meiosis.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.  ·  **Most-asked points (NEB).** (1) State the chromosome theory of inheritance and name Sutton and Boveri. (2) List the four parallels between factor behaviour and chromosome behaviour.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Sutton and Boveri (1902–03) united Mendel's abstract factors with the visible chromosomes; Morgan and Bridges supplied the genetic proof. Every Mendelian ratio is a shadow of chromosome movement in meiosis.…"
     }
   ]
 }

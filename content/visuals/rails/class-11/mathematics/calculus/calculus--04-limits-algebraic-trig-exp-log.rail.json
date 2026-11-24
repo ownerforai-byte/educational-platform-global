@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Three standard limits — the sine, tangent and cosine forms — unlock most of the topic, and all assume radians, which is the trap that changes every numerical answer. Rational functions and compositions of continuous functions settle themselves by direct substitution.…",
+      "text": "Four families, one architecture: algebraic stars from difference-of-powers identities, trigonometric stars from radian geometry, exponential and logarithmic stars from e's self-replication, all composed through u → 0 and steered by manufactured denominators. Same-order contestants leave coefficient ratios; the growth ladder (ln < power < exponential < super-exponential) decides mixed-family races at infinity.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits: Algebraic, Trigonometric, Exponential and Logarithmic — quick idea map\"><title>Limits: Algebraic, Trigonometric, Exponential and Logarithmic — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits: Algebraic, Trigonometric, Exponential</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Logarithmic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three standard</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">trigonometric limits</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">assume radians.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuous functions</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">compose, so most limits</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">need no special technique.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three standard</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">trigonometric limits</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">assume radians.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuous functions</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">compose, so most limits</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">need no special technique.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits: Algebraic, Trigonometric, Exponential and Logarithmic — quick idea map\"><title>Limits: Algebraic, Trigonometric, Exponential and Logarithmic — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits: Algebraic, Trigonometric, Exponential</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Logarithmic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every star is a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">first-order approximation;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">same-order contestants</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Algebraic stars: (x^n -</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a^n)/(x-a) -&gt; n</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a^(n-1); degree rules at</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- sin u/u → 1; tan u/u →</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1; (1 − cos u)/u² → 1/2 (u</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ 0, radians) - (eᵘ −…</text></svg>",
         "caption": "Limits: Algebraic, Trigonometric, Exponential and Logarithmic — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$\n$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$\nDegrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$",
+      "text": "- sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0, radians) - (eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u} → e",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits: Algebraic, Trigonometric, Exponential and Logarithmic — formula board\"><title>Limits: Algebraic, Trigonometric, Exponential and Logarithmic — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Limits: Algebraic, Trigonometric, Exponential and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Logarithmic</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$,</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\lim_{x\\to0}\\frac{\\tan x}{x}=1$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Degrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits: Algebraic, Trigonometric, Exponential and Logarithmic — formula board\"><title>Limits: Algebraic, Trigonometric, Exponential and Logarithmic — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Limits: Algebraic, Trigonometric, Exponential and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Logarithmic</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0,</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">radians) - (eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u}</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">→ e</text></svg>",
         "caption": "Limits: Algebraic, Trigonometric, Exponential and Logarithmic — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "All three standard trigonometric limits assume radians.  ·  Continuous functions compose, so most limits need no special technique."
+      "text": "***Steering in action*** - (sin 5x)/x = 5(sin 5x)/(5x) -> 5: the inserted 5x is the star's demanded denominator, the outside 5 pays for it."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Switch the calculator to radians before evaluating anything in this topic.  ·  If the answer involves $\\frac{\\pi}{180}$, the degrees/radians conversion was missed."
+      "text": "Diagnose the family first; the family names the star; the star names the steering."
     },
     {
       "label": "Board question",
-      "text": "Combining a standard limit with a substitution such as $u=3x$ is a reliable 2–3 mark question."
+      "text": "**NEB-style (5m): Evaluate lim_{x→0} (tan 4x − sin 2x)/(3x).** — **Split legally** (both pieces' limits exist): = lim (tan 4x)/(3x) − lim (sin 2x)/(3x). **First piece (star tan u/u, u = 4x):** (4/3)·(tan 4x)/(4x) → 4/3. **Second piece (star sin u/u, u = 2x):** (2/3)·(sin 2x)/(2x) → 2/3.…  ·  **NEB-style (6m): Evaluate lim_{x→0} (1 − cos 2x)/(x·tan 3x).** — **Order diagnosis:** 1 − cos 2x ~ (2x)²/2 = 2x² (order 2); x·tan 3x ~ 3x² (order 2) ⟹ same order ⟹ ratio of coefficients 2/3. **Rigorous:** [(1 − cos 2x)/(2x)²]·[(2x)²/(x·tan 3x)] = [1/2]·[4x²/(3x²)]·[(tan 3x)/(3x)]^{-1} → (1/2)(4/3)(1) = **2/3** ✓.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Composition of continuous functions settles most limits if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $ lim_{x to a}g(f(x))=g(f(a))$."
+      "text": "Annotating which star and which u is the working - the arithmetic is bookkeeping."
     },
     {
       "label": "Quick concepts",
-      "text": "$1^\\infty$ limits are handled by taking logarithms first."
+      "text": "Every star is a first-order approximation; same-order contestants leave coefficient ratios."
+    },
+    {
+      "label": "Key points",
+      "text": "Algebraic stars: (x^n - a^n)/(x-a) -> n a^(n-1); degree rules at infinity. Trig stars (radians): sin u/u -> 1, tan u/u -> 1, (1-cos u)/u -> 0, (1-cos u)/u^2 -> 1/2. Exp/log stars: (e^u - 1)/u -> 1, ln(1+u)/u -> 1, a^u - 1 ~ u ln a, (1+u)^(1/u) -> e.…"
     },
     {
       "label": "Universal facts",
-      "text": "The limit defining $e$ is exactly the $1^\\infty$ case, which is why $e$ governs continuous compounding rather than discrete interest steps.  ·  In physics, $\\lim_{t\\to0}\\frac{\\sin\\theta}{\\theta}=1$ is why the small-angle approximation $\\sin\\theta\\approx\\theta$ is valid for pendulum and projectile work — and it only holds in radians."
+      "text": "The star table plus the growth ladder resolves every standard limit in the syllabus."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Evaluate lim_{x→∞} (ln(2x + 1))/(e^{3x} − 1)... interpreted as lim_{x→∞} ln(2x+1)/(e^{3x} − 1).** — **Identify the race:** log (bottom rung) vs exponential (top rung) — the ladder says the exponential dominates overwhelmingly.…  ·  **NEB-style (6m): Evaluate lim_{x→0} (2^x − 1)/(√(1 + x) − 1).** — **Form:** (1 − 1)/(1 − 1) = **0/0** ✓. **Numerator (general-base star):** 2ˣ − 1 ~ x·ln 2 ⟹ (2ˣ − 1)/x → **ln 2**.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The standard limits that unlock everything else:** $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$, and $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$. The second follows from the first and the third from the half-angle identity, so only one needs proving.  ·  **All three assume RADIANS.** In degrees each is scaled: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$ and $\\lim\\frac{1-\\cos x}{x^2}=\\frac{\\pi^2}{360}$. A calculator left in degree mode produces exactly the wrong value, which is the most practical trap in the topic.  ·  **Rational functions and polynomials substitute directly:** since polynomials are continuous everywhere and rational functions are continuous away from their zeros, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$ whenever $Q(a)\\ne0$."
+      "text": "## 1. Topic Introduction — The Companion Doorway to the Four Families This canonical is the **short-form doorway** to limits of algebraic, trigonometric, exponential and logarithmic functions: the stars of each family and the steering craft in one page.…  ·  ## 2. Theorem Mirror - **Algebraic stars:** (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; (1 − cos u)/u² → 1/2; degree rules at ∞. - **Trigonometric stars (radians only):** sin u/u → 1; tan u/u → 1; (1 − cos u)/u → 0. - **Exponential/log stars:** (eᵘ − 1)/u → 1; ln(1 + u)/u → 1; aᵘ − 1 ~ u·ln a; (1 + u)^{1/u} → e.…  ·  ## 3. Deep Conceptual — Stars Are First-Order Taylor Approximations - Each star says a complicated function **agrees with a line (or a parabola) near its anchor**: sin u ~ u, eᵘ − 1 ~ u, ln(1+u) ~ u are all \"slope = 1 at the anchor\" statements; 1 − cos u ~ u²/2 is the parabolic correction. The star table is a table of local linearisations.…"
     },
     {
       "label": "More ideas",
-      "text": "Rational: $\\lim_{x\\to a}\\frac{P}{Q}=\\frac{P(a)}{Q(a)}$ for $Q(a)\\ne0$  ·  $\\lim_{x\\to a}e^{f}=e^{f(a)}$, $\\lim_{x\\to a}\\ln f=\\ln f(a)$ for $f(a)>0$  ·  Statement 1: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ for $x$ in radians."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonicals.  ·  Match the star's form exactly, annotate u, verify u approaches its anchor.  ·  Evaluate lim_{x→0} (tan 4x)/(2x)."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$.  ·  Statement 3: For $Q(a)\\ne0$, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$.  ·  Statement 4: $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ requires $f(a)>0$."
+      "text": "Evaluate lim_{x→0} (e^{5x} − 1)/(3x).  ·  Evaluate lim_{x→∞} (1 + 2/x)^{3x}.  ·  ## 4. Deep Conceptual — The Growth Ladder Across Families - At infinity the families race in a fixed order: **ln x < xᵖ < aˣ < xˣ**. Any higher rung dominates: x¹⁰⁰/eˣ → 0, ln(xⁿ)/x → 0, eˣ/xᵏ → ∞ — regardless of coefficients.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: $\\lim_{n\\to\\infty}(1+\\frac1n)^n=e$.  ·  **Exponential and logarithmic limits are continuous functions:** $\\lim_{x\\to a}e^{f(x)}=e^{f(a)}$ and $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ for $f(a)>0$. The domain condition on the logarithm is what excludes $f(a)\\le0$.  ·  **The $1^\\infty$ family via logarithms:** for $y=(1+\\frac{1}{x})^x$, take logs to get $\\lim x\\ln(1+\\frac1x)$, a $0/0$ form, and L'Hôpital then gives $\\lim\\frac{\\frac{1}{x}cdot rac{1}{1+1/x}}{1}=1$, so the limit is $e$."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Composition of continuous functions settles most limits:** if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $\\lim_{x\\to a}g(f(x))=g(f(a))$. This is why almost no work is needed for expressions built from polynomials, roots, exponentials and logarithms with well-behaved arguments."
+      "text": "## 5. Worked Example Types - **Type A — steer to sin u/u:** (sin 5x)/x = 5·(sin 5x)/(5x) → 5. - **Type B — second-order matching:** (1 − cos 4x)/x² = 16·(1 − cos 4x)/(4x)² → 16·(1/2) = 8. - **Type C — mixed exp/log:** (e^{3x} − 1)/ln(1 + 2x) → 3/2 by coefficient ratio.…  ·  ## 6. Common Confusions **Degrees in the sine star:** sin u/u → 1 fails in degrees — convert first. **\"∞ − ∞ = 0\":** the form is indeterminate; merge fractions or rationalise before any verdict."
     }
   ]
 }

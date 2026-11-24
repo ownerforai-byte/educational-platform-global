@@ -22,52 +22,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Quantity of Heat covers essential principles and applications.",
+      "text": "Quantity of heat is the energy transferred due to temperature difference. Specific heat capacity, heat capacity, latent heat, and calorimetry principle govern heat transfer calculations. Q = mcΔT for temperature change and Q = mL for phase change.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantity of Heat — quick idea map\"><title>Quantity of Heat — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quantity of Heat</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantity of Heat — quick idea map\"><title>Quantity of Heat — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quantity of Heat</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Heat flows from higher</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature to lower</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Specific heat capacity c =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q/(mΔT) is a</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">characteristic property of</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Heat transfer: Q = mcΔT</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Heat capacity: C = Q/ΔT</text></svg>",
         "caption": "Quantity of Heat — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Heat Capacity Definition:** Heat capacity $C = \\Delta Q/\\Delta T$ is the heat required to raise temperature by 1 K. Specific heat capacity $c = C/m$ is per unit mass (J/kg·K).…\n**Phase Change Latent Heat:** During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: $Q = mL$.…"
-    },
-    {
-      "label": "Conditions",
-      "text": "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
-    },
-    {
-      "label": "Special cases",
-      "text": "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
-    },
-    {
-      "label": "Solved",
-      "text": "Quantity of Heat covers essential principles and applications."
-    },
-    {
-      "label": "Limitation",
-      "text": "**Heat Capacity Definition:** Heat capacity $C = \\Delta Q/\\Delta T$ is the heat required to raise temperature by 1 K. Specific heat capacity $c = C/m$ is per unit mass (J/kg·K). Molar heat capacity $C_m = C/n$ is per mole (J/mol·K)."
-    },
-    {
-      "label": "Derivation",
-      "text": "**Phase Change Latent Heat:** During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: $Q = mL$. Latent heat of fusion $L_f$ (solid↔liquid) and vaporization $L_v$ (liquid↔gas) are material properties."
-    },
-    {
-      "label": "Shortcut",
-      "text": "**Calorimetry Principle:** In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating $m_1 c_1 (T_f - T_1) = m_2 c_2 (T_2 - T_f)$."
-    },
-    {
-      "label": "Board question",
-      "text": "Quantity of Heat covers essential principles and applications.",
+      "text": "Heat transfer: Q = mcΔT\nHeat capacity: C = Q/ΔT\nSpecific heat capacity: c = Q/(mΔT)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantity of Heat — exam flow\"><title>Quantity of Heat — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Quantity of Heat</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Quantity of Heat covers essential principles</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">and applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">**Heat Capacity Definition:** Heat capacity</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">$C = \\Delta Q/\\Delta T$ is the heat required</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">to raise temperature by 1 K.…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">**Calorimetry Principle:** In an isolated</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">system, heat lost by hot bodies = heat</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">gained by cold bodies.…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Quantity of Heat covers essential principles</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">and applications.</text></svg>",
-        "caption": "Quantity of Heat — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantity of Heat — formula board\"><title>Quantity of Heat — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Quantity of Heat</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Heat transfer: Q = mcΔT</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Heat capacity: C = Q/ΔT</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Specific heat capacity: c = Q/(mΔT)</text></svg>",
+        "caption": "Quantity of Heat — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "Heat Capacity Definition: Heat capacity C = ΔQ/ΔT is the heat required to raise temperature by 1 K. Specific heat capacity c = C/m is per unit mass (J/kg·K). Molar heat capacity Cₘ = C/n is per mole (J/mol·K).  ·  Phase Change Latent Heat: During phase change (melting, boiling), temperature is constant while heat is absorbed/released as latent heat: Q = mL. Latent heat of fusion L_f (solid↔liquid) and vaporization L_v (liquid↔gas) are material properties."
+    },
+    {
+      "label": "Special cases",
+      "text": "Statement 1: Heat is energy transferred due to temperature difference; SI unit is joule.  ·  Statement 2: Specific heat capacity c = Q/(mΔT) is the heat per unit mass per degree temperature rise."
+    },
+    {
+      "label": "Solved",
+      "text": "Heat needed to raise 2 kg water from 20°C to 80°C: Q = mcΔT = 2 × 4186 × 60 = 502,320 J ≈ 502 kJ.  ·  Heat to melt 0.5 kg ice at 0°C: Q = mL_f = 0.5 × 3.34 × 10⁵ = 167,000 J = 167 kJ."
+    },
+    {
+      "label": "Limitation",
+      "text": "Confusing heat capacity (for whole body) with specific heat capacity (per unit mass).  ·  Thinking temperature rises during phase change: Temperature stays constant during melting/boiling."
+    },
+    {
+      "label": "Derivation",
+      "text": "Heat: Energy transferred between bodies due to temperature difference. SI unit: joule (J). Heat flows from higher temperature to lower temperature.  ·  Heat Capacity: C = Q/ΔT is the heat required to raise the temperature of a body by 1 K (or 1°C). Unit: J/K. Depends on mass and material of the body."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Q = mcΔT — use for temperature change (no phase change).  ·  Q = mL — use for phase change (constant temperature)."
+    },
+    {
+      "label": "Board question",
+      "text": "Q1. Define specific heat capacity and give its SI unit.  ·  Q2. Calculate heat required to raise 3 kg of water from 25°C to 75°C."
+    },
+    {
       "label": "Hints",
-      "text": "**Heat Capacity Definition:** Heat capacity $C = \\Delta Q/\\Delta T$ is the heat required to raise temperature by 1 K. Specific heat capacity $c = C/m$ is per unit mass (J/kg·K). Molar heat capacity $C_m = C/n$ is per mole (J/mol·K)."
+      "text": "NEB frequently asks calorimetry numericals: mixing hot and cold bodies to find equilibrium temperature.  ·  Specific heat determination by method of mixtures is a standard experiment."
+    },
+    {
+      "label": "Key points",
+      "text": "Heat flows from higher temperature to lower temperature.  ·  Specific heat capacity c = Q/(mΔT) is a characteristic property of material.  ·  Water has high specific heat (4186 J/kg·K) — moderates climate.  ·  During phase change, temperature remains constant despite heat absorption."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Water has one of the highest specific heat capacities among common substances (4186 J/kg·K).  ·  James Prescott Joule established the mechanical equivalent of heat: 1 cal = 4.186 J."
+    },
+    {
+      "label": "More practice",
+      "text": "Q3. State the principle of calorimetry and its assumptions.  ·  Q4. What is latent heat of fusion? How does it differ from latent heat of vaporization?  ·  Q5. A 500 g metal block at 100°C is placed in 200 g water at 20°C. Find equilibrium temperature."
+    },
+    {
+      "label": "More hints",
+      "text": "Latent heat numericals: ice-steam mixtures with phase changes are common.  ·  Distinguish between specific heat (per unit mass) and heat capacity (for the whole body)."
+    },
+    {
+      "label": "Extra solved",
+      "text": "200 g copper (c = 385 J/kg·K) at 100°C mixed with 300 g water at 20°C: equilibrium T found by m_cu c_cu (100-T) = m_w c_w (T-20).  ·  Heat to vaporize 0.1 kg water at 100°C: Q = mL_v = 0.1 × 2.26 × 10⁶ = 226,000 J = 226 kJ."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "Specific heat capacity is heat required per: → A  ·  During melting of ice at 0°C: → C"
+    },
+    {
+      "label": "Study notes",
+      "text": "Specific Heat Capacity: c = C/m = Q/(mΔT) is the heat required to raise unit mass of a substance by 1 K. Unit: J/(kg·K). Characteristic property of the material.  ·  Molar Heat Capacity: Cₘ = C/n = Q/(nΔT) is heat per mole. Unit: J/(mol·K). Used in thermodynamics and kinetic theory.  ·  Calorimetry Principle: In an isolated system, heat lost by hot bodies equals heat gained by cold bodies. Assumes no heat loss to surroundings."
+    },
+    {
+      "label": "More ideas",
+      "text": "Molar heat capacity: Cₘ = Q/(nΔT)  ·  Latent heat: Q = mL  ·  Specific latent heat: L = Q/m"
+    },
+    {
+      "label": "More ideas",
+      "text": "Calorimetry: m₁c₁(T_f - T₁) = m₂c₂(T₂ - T_f) (heat lost = heat gained)  ·  Calorimetry Principle: In an isolated system, heat lost by hot bodies = heat gained by cold bodies. This assumes no heat loss to surroundings and no phase changes unless accounted for. The final equilibrium temperature is found by equating m₁c₁(T_f - T₁) = m₂c₂(T₂ - T_f).  ·  Calorimetry: heat lost = heat gained in an isolated system."
+    },
+    {
+      "label": "More ideas",
+      "text": "Latent heat of fusion L_f for melting; latent heat of vaporization L_v for boiling.  ·  Believing heat and temperature are the same: Heat is energy; temperature is degree of hotness.  ·  Forgetting to convert units: mass to kg, temperature to K or °C (ΔT same in both), energy to J."
+    },
+    {
+      "label": "More ideas",
+      "text": "Assuming calorimetry works without insulation: Heat loss to surroundings causes error.  ·  Specific heat capacity is independent of mass — it depends only on the material.  ·  Heat capacity C depends on both mass and material of the body."
+    },
+    {
+      "label": "More ideas",
+      "text": "During melting or boiling, temperature stays constant while heat is being absorbed.  ·  Latent heat of vaporization is much larger than latent heat of fusion for most substances.  ·  Calorimetry assumes perfect insulation — no heat exchange with surroundings."
     }
   ]
 }

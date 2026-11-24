@@ -1,0 +1,171 @@
+<!doctype html><html><head><meta charset="utf-8"><title>calculus--01-limits-definition-standard-limits-evalua-v2lv9j.rail</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
+  @page { size: A4; }
+  * { box-sizing: border-box; }
+  html { background: #fff; }
+  body {
+    margin: 0; color: #14161a; background: #fff; color-scheme: light;
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 10.5pt; line-height: 1.55;
+  }
+  .sheet { padding: 0 2mm; }
+  header.masthead { border-bottom: 2.5pt double #14161a; padding-bottom: 6pt; margin-bottom: 12pt; }
+  .kicker {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; letter-spacing: .14em;
+    text-transform: uppercase; color: #6b7280; margin-bottom: 3pt;
+  }
+  h1.doc { font-size: 20pt; line-height: 1.2; margin: 3pt 0 5pt; font-weight: 700; }
+  .meta {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.4pt; color: #4b5563;
+    display: flex; flex-wrap: wrap; gap: 4pt 10pt;
+  }
+  .meta span::before { content: "·"; margin-right: 6pt; color: #c3c7cf; }
+  .meta span:first-child::before { content: none; margin: 0; }
+  h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 12.4pt; margin: 15pt 0 6pt;
+    padding-bottom: 3pt; border-bottom: .6pt solid #d6d9de; break-after: avoid;
+  }
+  h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10.8pt; margin: 11pt 0 4pt; break-after: avoid; }
+  h4 { font-family: "Segoe UI", Arial, sans-serif; font-size: 10pt; margin: 9pt 0 3pt; break-after: avoid; }
+  p { margin: 0 0 6pt; }
+  strong { font-weight: 700; }
+  em { font-style: italic; }
+  a { color: #1d4ed8; text-decoration: none; }
+  code {
+    font-family: "Consolas", monospace; font-size: 8.8pt; background: #f3f4f6;
+    padding: .5pt 2.5pt; border-radius: 2pt;
+  }
+  pre {
+    background: #f7f8fa; border-left: 2pt solid #cbd0d8; padding: 6pt 8pt;
+    font-family: "Consolas", monospace; font-size: 8.4pt; line-height: 1.45;
+    white-space: pre-wrap; break-inside: avoid; margin: 6pt 0 8pt;
+  }
+  pre code { background: none; padding: 0; }
+  ul, ol { margin: 0 0 7pt; padding-left: 15pt; }
+  li { margin-bottom: 2.5pt; }
+  table { width: 100%; border-collapse: collapse; margin: 7pt 0 9pt; font-size: 9.2pt; break-inside: avoid; }
+  th, td { border: .5pt solid #cfd4dc; padding: 3.5pt 5pt; text-align: left; vertical-align: top; }
+  th { background: #eef1f5; font-family: "Segoe UI", Arial, sans-serif; font-size: 8.8pt; }
+  blockquote {
+    margin: 7pt 0; padding: 6pt 9pt; background: #f6f8fb; border-left: 2.5pt solid #9aa7bd;
+    font-size: 9.8pt;
+  }
+  blockquote p:last-child { margin-bottom: 0; }
+  hr { border: 0; border-top: .5pt solid #d6d9de; margin: 10pt 0; }
+  figure { margin: 8pt 0 10pt; break-inside: avoid; text-align: center; }
+  figure img { max-width: 100%; max-height: 78mm; }
+  figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
+  .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
+  section.block { break-inside: auto; }
+  .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
+  .q .n {
+    position: absolute; left: 0; top: 0; font-family: "Segoe UI", Arial, sans-serif;
+    font-size: 9pt; font-weight: 700; color: #111827;
+  }
+  .q .stem { margin-bottom: 4pt; }
+  .q .sol {
+    border-left: 1.6pt solid #b9c2d0; padding: 1pt 0 1pt 8pt; color: #1f2430;
+  }
+  .q .sol .lbl, .lbl {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 7.6pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; display: block; margin-bottom: 2pt;
+  }
+  .tags { font-family: "Segoe UI", Arial, sans-serif; font-size: 7.8pt; color: #6b7280; margin-top: 3pt; }
+  .note {
+    background: #f7f9fc; border: .5pt solid #dde3ec; border-radius: 2pt;
+    padding: 5pt 7pt; margin-top: 4pt; font-size: 9.4pt;
+  }
+  .mcq { break-inside: avoid; margin-bottom: 9pt; }
+  .mcq .opts { margin: 3pt 0 0; padding-left: 14pt; }
+  .mcq .opts li { margin-bottom: 1.5pt; }
+  .mcq .ans { font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; font-weight: 700; color: #14532d; margin-top: 2pt; }
+  .toc-note { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 10pt; }
+
+  @page { size: auto; margin: 0; }
+  html, body { background: #e9ebef; }
+  body { margin: 0; font-size: 11.5pt; }
+  .sheet {
+    max-width: 900px; margin: 0 auto; padding: 30px 54px 52px; background: #fff;
+    border: 1px solid #e1e5eb; box-shadow: 0 2px 14px rgba(17, 24, 39, .06);
+  }
+  header.masthead {
+    position: sticky; top: 0; z-index: 3; background: #fff; padding-top: 6px;
+  }
+  h2 { break-after: auto; }
+  .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
+  .q:hover .n { color: #1d4ed8; }
+  .pager {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    margin-top: 34px; padding-top: 12px; border-top: .5pt solid #d6d9de;
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #4b5563;
+  }
+  .pager a {
+    max-width: 42%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .pager a:hover { text-decoration: underline; }
+  .pager .mid { flex: 0 0 auto; color: #6b7280; letter-spacing: .04em; }
+  @media (max-width: 760px) {
+    .sheet { padding: 20px 18px 36px; border: 0; }
+    .pager { font-size: 8.4pt; }
+  }
+  /* literal JSON view: one section per key, compact label/value pairs */
+  section.field { margin: 30px 0 0; }
+  section.field > h2 {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 10.5pt; letter-spacing: .1em;
+    text-transform: uppercase; color: #6b7280; margin: 0 0 8px;
+    border-bottom: .5pt solid #e5e7eb; padding-bottom: 5px;
+  }
+  dl.obj { margin: 0; }
+  dl.obj > div.kv { margin: 10px 0 0; }
+  dl.obj > div.kv > dt, .kv > .k {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; letter-spacing: .08em;
+    text-transform: uppercase; color: #8b93a1; margin: 0 0 3px;
+  }
+  dd { margin: 0; }
+  .item { display: flex; gap: 9px; margin: 8px 0; }
+  .item > .idx { color: #9aa1ac; font-size: 9pt; min-width: 1.4em; padding-top: 2px; }
+  .item > .body { flex: 1 1 auto; min-width: 0; }
+  section.field ul { margin: 6px 0; padding-left: 20px; }
+  section.field ul li { margin: 4px 0; }
+  p.empty { color: #b6bcc6; margin: 4px 0; }
+  /* labelled diagrams embedded from the record */
+  figure.diagram {
+    margin: 14px 0; padding: 12px; border: .5pt solid #dfe3e8; background: #fbfcfd;
+    break-inside: avoid;
+  }
+  figure.diagram svg, figure.diagram img {
+    display: block; margin: 0 auto; max-width: 100%; height: auto;
+  }
+  figure.diagram figcaption {
+    font-family: "Segoe UI", Arial, sans-serif; font-size: 8.6pt; color: #5b6472;
+    margin-top: 8px; text-align: center;
+  }
+  /* KaTeX sizing inside prose */
+  .katex { font-size: 1.02em; }
+  .katex-display { margin: 12px 0; overflow-x: auto; overflow-y: hidden; }
+</style></head>
+<body><div class="sheet">
+  <header class="masthead">
+    <div class="kicker">Class 11  /  Mathematics  /  Calculus</div>
+    <h1 class="doc">calculus--01-limits-definition-standard-limits-evalua-v2lv9j.rail</h1>
+    <div class="meta"><span>Class 11</span><span>Mathematics</span><span>Calculus</span></div>
+  </header>
+  <section class="field"><h2>Schema</h2><p>home-rail/v1</p></section>
+<section class="field"><h2>Draft</h2><p><code>false</code></p></section>
+<section class="field"><h2>Class SLUG</h2><p>class-11-notes</p></section>
+<section class="field"><h2>Subject SLUG</h2><p>mathematics</p></section>
+<section class="field"><h2>Unit SLUG</h2><p>calculus</p></section>
+<section class="field"><h2>Unit Title</h2><p>Calculus</p></section>
+<section class="field"><h2>Syllabus Topics</h2><ul><li>Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions</li><li>Continuity of a function, types of discontinuity, graphs of discontinuous function</li><li>Derivatives: derivative of a function, derivatives of algebraic, trigonometric, inverse trigonometric, exponential and logarithmic functions by definition (simple forms)</li><li>Rules of differentiation; derivatives of parametric and implicit functions; higher order derivatives</li><li>Geometric interpretation of derivative; monotonicity of a function, interval of monotonicity, extreme values of a function, concavity, points of inflection</li><li>Anti-derivatives: integration using basic integrals, integration by substitution and by parts methods</li><li>The definite integral; the definite integral as an area under the given curve; area between two curves</li></ul></section>
+<section class="field"><h2>Source</h2><p>platform</p></section>
+<section class="field"><h2>Agent Notes</h2><p>Generated by frontend/scripts/content/topic-rails.ts from concepts/01-lhopital-rule.json (verbatim slices of that topic's concept record; idea-map diagram generated from its own headline ideas).</p></section>
+<section class="field"><h2>Card</h2><dl class="obj"><div class="kv"><dt>Tag</dt><dd><p>L'Hôpital's Rule — limits of…</p></dd></div><div class="kv"><dt>Title</dt><dd><p>L'Hôpital's Rule — limits of indeterminate forms</p></dd></div><div class="kv"><dt>Href</dt><dd><p>/class-11-notes/mathematics/calculus</p></dd></div><div class="kv"><dt>Icon</dt><dd><p>Sigma</p></dd></div><div class="kv"><dt>Stat Key</dt><dd><p>pyq:mathematics</p></dd></div></dl></section>
+<section class="field"><h2>Rows</h2><div class="item"><span class="idx">1.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Concept</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>L'Hôpital's rule</strong> mechanises the rate race: for a genuine <strong>0/0 or ∞/∞</strong>, lim f/g = <strong>lim f′/g′</strong> — the ratio of the <em>separate</em> derivatives (never the quotient rule), justified by <strong>Cauchy's MVT</strong> (f/g = f′(c)/g′(c) for an intermediate c). Discipline is everything: check the form before <strong>every</strong> pass, differentiate separately, stop when the form resolves ((e^{2x}−1)/sin 3x → 2e^{2x}/3cos 3x → 2/3).…</p></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;L'Hôpital's Rule — limits of indeterminate forms — quick idea map&quot;&gt;&lt;title&gt;L'Hôpital's Rule — limits of indeterminate forms — quick idea map&lt;/title&gt;&lt;rect x=&quot;180&quot; y=&quot;24&quot; width=&quot;540&quot; height=&quot;86&quot; rx=&quot;10&quot; fill=&quot;#e0f2fe&quot; stroke=&quot;#0369a1&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#0c4a6e&quot;&gt;L'Hôpital's Rule — limits of indeterminate&lt;/text&gt;&lt;text x=&quot;450&quot; y=&quot;88&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#0c4a6e&quot;&gt;forms&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,172 247,172 240,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;L'Hopital mechanises&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;rate-comparison: when two&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;quantities race to zero&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;660&quot; y2=&quot;182&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;653,172 667,172 660,186&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;490&quot; y=&quot;190&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;660&quot; y=&quot;228&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;L'Hopital's rule: for 0/0&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;260&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;or inf/inf with the&lt;/text&gt;&lt;text x=&quot;660&quot; y=&quot;292&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;derived limit existing,&lt;/text&gt;&lt;line x1=&quot;450&quot; y1=&quot;110&quot; x2=&quot;240&quot; y2=&quot;392&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot; stroke-linecap=&quot;round&quot;/&gt;&lt;polygon points=&quot;233,382 247,382 240,396&quot; fill=&quot;#0284c7&quot;/&gt;&lt;rect x=&quot;70&quot; y=&quot;400&quot; width=&quot;340&quot; height=&quot;140&quot; rx=&quot;10&quot; fill=&quot;#f0f9ff&quot; stroke=&quot;#0284c7&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;240&quot; y=&quot;438&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;- lim_{x→a} f/g =&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;470&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;lim_{x→a} f′/g′ (0/0 or&lt;/text&gt;&lt;text x=&quot;240&quot; y=&quot;502&quot; text-anchor=&quot;middle&quot; font-size=&quot;21&quot; fill=&quot;#0c4a6e&quot;&gt;∞/∞, derived limit&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>L'Hôpital's Rule — limits of indeterminate forms — quick idea map of this topic's headline ideas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">2.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Formula</p></dd></div><div class="kv"><dt>Kind</dt><dd><p>formula</p></dd></div><div class="kv"><dt>Text</dt><dd><ul>
+<li>lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived limit existing) - x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x → 0⁺) - lim f^g = e^{lim g·ln f}</li>
+</ul></dd></div><div class="kv"><dt>Figure</dt><dd><dl class="obj"><div class="kv"><dt>Svg</dt><dd><p>&lt;svg viewBox=&quot;0 0 900 640&quot; role=&quot;img&quot; aria-label=&quot;L'Hôpital's Rule — limits of indeterminate forms — formula board&quot;&gt;&lt;title&gt;L'Hôpital's Rule — limits of indeterminate forms — formula board&lt;/title&gt;&lt;rect x=&quot;150&quot; y=&quot;24&quot; width=&quot;600&quot; height=&quot;80&quot; rx=&quot;10&quot; fill=&quot;#ecfdf5&quot; stroke=&quot;#047857&quot; stroke-width=&quot;3&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;58&quot; text-anchor=&quot;middle&quot; font-size=&quot;23&quot; font-weight=&quot;bold&quot; fill=&quot;#064e3b&quot;&gt;L'Hôpital's Rule — limits of indeterminate forms&lt;/text&gt;&lt;rect x=&quot;60&quot; y=&quot;150&quot; width=&quot;780&quot; height=&quot;150&quot; rx=&quot;10&quot; fill=&quot;#f0fdfa&quot; stroke=&quot;#0d9488&quot; stroke-width=&quot;2.5&quot;/&gt;&lt;text x=&quot;450&quot; y=&quot;196&quot; text-anchor=&quot;middle&quot; font-size=&quot;22&quot; fill=&quot;#134e4a&quot;&gt;- lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived&lt;/text&gt;&lt;text x=&quot;450&quot; y=&quot;230&quot; text-anchor=&quot;middle&quot; font-size=&quot;22&quot; fill=&quot;#134e4a&quot;&gt;limit existing) - x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x →&lt;/text&gt;&lt;text x=&quot;450&quot; y=&quot;264&quot; text-anchor=&quot;middle&quot; font-size=&quot;22&quot; fill=&quot;#134e4a&quot;&gt;0⁺) - lim f^g = e^{lim g·ln f}&lt;/text&gt;&lt;/svg&gt;</p></dd></div><div class="kv"><dt>Caption</dt><dd><p>L'Hôpital's Rule — limits of indeterminate forms — formula board of this topic's own formulas</p></dd></div></dl></dd></div></dl></div></div><div class="item"><span class="idx">3.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Conditions</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Note 1: Pay attention to the conditions under which Limits: definition, standard limits, evaluation of limits applies  ·  Note 2: Limits: definition, standard limits, evaluation of limits connects to multiple other topics in Science</p></dd></div></dl></div></div><div class="item"><span class="idx">4.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Special cases</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Note 3: Practice numerical problems regularly for mastery of Limits: definition, standard limits, evaluation of limits  ·  Note 4: Remember the units and dimensions involved in Limits: definition, standard limits, evaluation of limits</p></dd></div></dl></div></div><div class="item"><span class="idx">5.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Solved</p></dd></div><div class="kv"><dt>Text</dt><dd><p><em><strong>The failing case</strong></em> - (x + sin x)/x converges to 1 while its derivative ratio 1 + cos x oscillates: L'Hopital is a one-way licence, not an equivalence.</p></dd></div></dl></div></div><div class="item"><span class="idx">6.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Limitation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</p></dd></div></dl></div></div><div class="item"><span class="idx">7.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Derivation</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Task 1: Solve 10 numerical problems on Limits: definition, standard limits, evaluation of limits  ·  Task 2: Derive the main formula for Limits: definition, standard limits, evaluation of limits</p></dd></div></dl></div></div><div class="item"><span class="idx">8.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Shortcut</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Check the form, differentiate separately, repeat. 0*inf: flip one factor. inf - inf: common denominator. Powers: log bridge. Fallback: stars and squeeze.</p></dd></div></dl></div></div><div class="item"><span class="idx">9.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Board question</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x using L'Hôpital's rule.</strong> — <strong>Form check:</strong> substitution gives (1 − 1)/0 = <strong>0/0</strong> — the rule's hypothesis holds. <strong>Differentiate separately</strong> (the ratio of derivatives, not the quotient rule): numerator d/dx(e^{2x} − 1) = <strong>2e^{2x}</strong> (chain rule); denominator d/dx(sin 3x) = <strong>3cos…  ·  </strong>NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.<strong> — </strong>Form check:<strong> ∞/∞ ✓. </strong>Differentiate separately:<strong> numerator d/dx(ln x) = 1/x; denominator d/dx(x) = 1. </strong>New ratio:<strong> (1/x)/1 = 1/x → </strong>0<strong> as x → ∞. </strong>Conclusion:** logarithms grow strictly slower than any positive power — here the first power suffices.…</p></dd></div></dl></div></div><div class="item"><span class="idx">10.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Hints</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Write the form check (0/0) before each differentiation - unannotated differentiation passes lose the hypothesis marks.</p></dd></div></dl></div></div><div class="item"><span class="idx">11.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Quick concepts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>L'Hopital mechanises rate-comparison: when two quantities race to zero or infinity, their ratio's fate is decided by the ratio of their instantaneous rates.</p></dd></div></dl></div></div><div class="item"><span class="idx">12.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Key points</p></dd></div><div class="kv"><dt>Text</dt><dd><p>L'Hopital's rule: for 0/0 or inf/inf with the derived limit existing, lim f/g = lim f'/g' (ratio of separate derivatives, NOT the quotient rule). Hypotheses: genuine form, differentiability near a, g' != 0, derived limit exists; re-check the form after every pass.…</p></dd></div></dl></div></div><div class="item"><span class="idx">13.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Universal facts</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Two sprinters' photo finish is decided by instantaneous speeds at the line, not average speeds - L'Hopital is the mathematics of the photo finish.</p></dd></div></dl></div></div><div class="item"><span class="idx">14.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More practice</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>NEB-style (3m): Evaluate lim_{x→0⁺} x·ln x.</strong> — <strong>Form check:</strong> 0·(−∞) — the <strong>0·∞ species</strong>, not directly covered ⟹ <strong>convert</strong>. Flip one factor: x·ln x = ln x/(1/x) — now <strong>∞/∞</strong> (ln x → ∞, 1/x → ∞ as x → 0⁺) ✓. <strong>Differentiate separately:</strong> numerator 1/x; denominator d/dx(1/x) = −1/x².…  ·  <strong>NEB-style (6m): Evaluate lim_{x→0} (x − sin x)/x³ using L'Hôpital's rule, applying it repeatedly until the form resolves.</strong> — <strong>Pass 0 (form check):</strong> (0 − 0)/0 = <strong>0/0</strong> ✓. <strong>Pass 1:</strong> differentiate separately: numerator 1 − cos x; denominator 3x².…  ·  <strong>NEB-style (6m): Using L'Hôpital's rule and the exponential bridge, show that lim_{x→0⁺} xˣ = 1.</strong> — <strong>Form check:</strong> xˣ has base → 0⁺ and exponent → 0 ⟹ the <strong>0⁰ indeterminate form</strong> — not 1, not 0.…</p></dd></div></dl></div></div><div class="item"><span class="idx">15.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>MCQ drill</p></dd></div><div class="kv"><dt>Text</dt><dd><p>The primary application of Limits: definition, standard limits, evaluation of limits is in: → A  ·  For Limits: definition, standard limits, evaluation of limits, which condition is necessary? → A</p></dd></div></dl></div></div><div class="item"><span class="idx">16.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>Study notes</p></dd></div><div class="kv"><dt>Text</dt><dd><h3>1. Topic Introduction — L'Hôpital's Rule <strong>L'Hôpital's rule</strong>: the derivative-based resolver for 0/0 and ∞/∞ — one theorem that mechanises the whole limits unit's transformation art.  ·  ## 2. Fundamental Concepts ### 2.1 The theorem - <strong>L'Hôpital's rule:</strong> if f(a) = g(a) = 0 (or both → ∞), and lim f′/g′ exists (finite or ±∞), then <strong>lim_{x→a} f/g = lim_{x→a} f′/g′</strong>. - <strong>Hypotheses (all mandatory):</strong> the form is genuinely 0/0 or ∞/∞; f, g differentiable near a (g′ ≠ 0 near a); the derived limit exists.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | <strong>L'Hôpital's rule</strong> | lim f/g = lim f′/g′ | 0/0, ∞/∞ | | <strong>Cauchy MVT</strong> | f′(c)/g′(c) intermediate | the proof engine | | <strong>Form conversion</strong> | 0·∞, ∞−∞ → quotient forms | algebra first | | <strong>Log bridge</strong> | f^g = e^{g ln f} | power forms |</h3></dd></div></dl></div></div><div class="item"><span class="idx">17.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Note 5: Limits: definition, standard limits, evaluation of limits frequently appears in examination questions  ·  &quot;If f/g is 0/0 or inf/inf and lim f'/g' exists, then lim f/g = lim f'/g'; convert 0*inf and inf-inf to quotient forms first.&quot;  ·  <strong>NEB-style (5m): Evaluate lim_{x→π/2} (sec x − tan x).</strong> — <strong>Form check:</strong> sec x − tan x = (1/cos x) − (sin x/cos x) → ∞ − ∞ — the <strong>∞ − ∞ species</strong> ⟹ combine into a single fraction first. <strong>Combine:</strong> sec x − tan x = (1 − sin x)/cos x. <strong>Form:</strong> (1 − 1)/0 = <strong>0/0</strong> ✓.…</p></dd></div></dl></div></div><div class="item"><span class="idx">18.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p><strong>NEB-style (6m): Evaluate lim_{x→∞} ((x² + 1)/(x² − 1))^{x²}.</strong> — <strong>Form check:</strong> base = (x²+1)/(x²−1) = 1 + 2/(x²−1) → 1; exponent x² → ∞ ⟹ <strong>1^∞</strong>. <strong>Log bridge:</strong> the limit is e^L with L = lim x²·ln[(x²+1)/(x²−1)] = lim x²·ln(1 + 2/(x²−1)).…  ·  Evaluate (e^{2x} − 1)/sin 3x by L'Hôpital.  ·  Evaluate lim_{x→∞} (ln x)/x.</p></dd></div></dl></div></div><div class="item"><span class="idx">19.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Evaluate lim_{x→0⁺} x·ln x.  ·  Task 3: Create a concept map for Limits: definition, standard limits, evaluation of limits  ·  Task 4: Practice previous year exam questions on Limits: definition, standard limits, evaluation of limits</p></dd></div></dl></div></div><div class="item"><span class="idx">20.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><p>Task 5: Explain Limits: definition, standard limits, evaluation of limits to a peer or study group  ·  ## 4. Detailed Explanation ### 4.1 Differentiate the ratio, not the quotient - f′/g′ is the ratio of the separate derivatives — <strong>not</strong> the derivative of the quotient (that would be the quotient rule). The rule compares <em>rates</em>, not slopes of the combined function.…  ·  ## 5. Comparison Tables <strong>Form conversion table</strong> | Form | Conversion | Then | |---|---|---| | 0/0, ∞/∞ | direct | differentiate ratio | | 0·∞ | f/(1/g) | 0/0 or ∞/∞ | | ∞ − ∞ | common denominator | 0/0 | | 1^∞, 0⁰, ∞⁰ | f^g = e^{g ln f} | 0·∞ inside |</p></dd></div></dl></div></div><div class="item"><span class="idx">21.</span><div class="body"><dl class="obj"><div class="kv"><dt>Label</dt><dd><p>More ideas</p></dd></div><div class="kv"><dt>Text</dt><dd><h3>6. Common Confusions <strong>Differentiating the whole quotient:</strong> (f/g)′ ≠ f′/g′ — L'Hôpital needs the ratio of derivatives, each differentiated separately. <strong>Skipping the form check:</strong> every pass needs a fresh 0/0 or ∞/∞ verdict.…  ·  ## 7. Exam Application <strong>NEB-style (3m): Evaluate lim_{x→0} (e^{2x} − 1)/sin 3x by L'Hôpital's rule.</strong> — <strong>Form:</strong> 0/0 ✓. <strong>Differentiate separately:</strong> numerator 2e^{2x}; denominator 3cos 3x. <strong>Ratio:</strong> 2e^{2x}/(3cos 3x) → 2/(3·1) = <strong>2/3</strong>. (Cross-check by stars: (e^{2x}−1)/x → 2, sin 3x/x → 3 ⟹ 2/3 ✓.)  ·  <strong>NEB-style (3m): Evaluate lim_{x→∞} (ln x)/x.</strong> — <strong>Form:</strong> ∞/∞ ✓. <strong>Differentiate:</strong> (1/x)/1 = 1/x → <strong>0</strong>. The growth ladder's first rung re-derived: logarithms lose to linear powers — and iterating gives ln x/xᵃ → 0 for every a &gt; 0.</h3></dd></div></dl></div></div></section>
+  <nav class="pager"><a href="calculus--01-limits-and-continuity-limits-of-a-functi-udmz2y.rail.html" title="calculus--01-limits-and-continuity-limits-of-a-functi-udmz2y.rail">‹ calculus--01-limits-and-continuity-limits-of-…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="calculus--01-limits-of-function.rail.html" title="calculus--01-limits-of-function.rail">calculus--01-limits-of-function.rail ›</a></nav>
+</div></body></html>

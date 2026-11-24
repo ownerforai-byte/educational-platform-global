@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Magnetic field and magnetic force on moving charges (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Magnetic field, magnetic force on moving charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A moving charge feels q v B sinθ, perpendicular to its velocity, so the speed stays constant. Perpendicular motion is a circle of radius m v /(q B). Motion along the field feels no magnetic force, and a general velocity makes a helix.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Magnetic field and magnetic force on moving charges — quick idea map\"><title>Magnetic field and magnetic force on moving charges — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Magnetic field and magnetic force on moving</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">charges</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Magnetic field</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Magnetic force on moving</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">charges</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Magnetic field and magnetic force on moving charges — quick idea map\"><title>Magnetic field and magnetic force on moving charges — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Magnetic field and magnetic force on moving</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">charges</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Magnetic force</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">No work</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">No force if the charge is</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at rest.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The force is perpendicular</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to v.</text></svg>",
         "caption": "Magnetic field and magnetic force on moving charges — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Magnetic field\" as one blob → ✅ split into: magnetic field, magnetic force on moving charges.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
+      "text": "The proton mass is 1.67 × 10^−27 kg.  ·  e = 1.6 × 10^−19 C."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A charge moving in a magnetic field feels a force q v B sinθ. θ is the angle between the velocity and the field. The force is zero if the charge is at rest or if it moves parallel to the field.  ·  The force is perpendicular to both the velocity and the field. A positive charge follows the right-hand rule. A negative charge is pushed the opposite way."
     },
     {
       "label": "Limitation",
@@ -54,51 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Magnetic field and magnetic force on moving charges — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).  ·  **Tested.** define it · list: magnetic field, magnetic force on moving charges · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Parallel to B: no force.  ·  Radius = m v / (q B)."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Magnetic field and magnetic force on moving charges\" with one example.  ·  compare \"Magnetic field\" with the related idea from a neighbouring unit."
+      "text": "When is the magnetic force zero?  ·  Write the radius of the circle."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Magnetic field and magnetic force on moving charges — topic mind map\"><title>Magnetic field and magnetic force on moving charges — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Magnetic field and magnetic force on moving c…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Magnetic field</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Magnetic force on moving</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">charges</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Magnetic field and magnetic force on moving charges — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Magnetic force  ·  No work  ·  Cyclotron radius  ·  Helix"
+    },
+    {
       "label": "Key points",
-      "text": "• Magnetic field  ·  • Magnetic force on moving charges"
+      "text": "No force if the charge is at rest.  ·  The force is perpendicular to v.  ·  Speed does not change.  ·  Perpendicular motion is a circle."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Magnetic field and magnetic force on moving charges\" and verify the answer is plausible."
+      "text": "Why is the kinetic energy constant?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A proton moves at 2.0 × 10^6 m/s perpendicular to a 0.10 T field. Take q = 1.6 × 10^−19 C and m = 1.67 × 10^−27 kg. Find the force and the radius."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Magnetic field and magnetic force on moving charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "A charge at rest in a magnetic field feels → B  ·  The magnetic force changes → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Because the force is always perpendicular to the velocity, it does no work. The speed stays constant. Only the direction changes.  ·  If the velocity is perpendicular to a uniform field, the path is a circle. The radius is m v / (q B). A faster charge, or a heavier one, makes a larger circle. A stronger field makes a tighter circle.  ·  If the velocity has a component along the field, that component is not changed and the path is a helix. The pitch is set by the parallel speed and the time to go once around."
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  define + example each sub-idea: magnetic field, magnetic force on moving charges.  ·  one worked example for \"Magnetic field and magnetic force on moving charges\" — check units / edge cases."
+      "text": "L = NΦ/I  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..  ·  A stationary charge feels no magnetic force."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+      "text": "The magnetic force does not increase the speed.  ·  sinθ is 1 only for perpendicular motion.  ·  Negative charges curve the other way."
     },
     {
       "label": "More ideas",
-      "text": "**Magnetic force on moving charges.** one-line definition + one-line exam use."
+      "text": "Use the perpendicular component of velocity.  ·  State the sign of the charge before the direction of the curve.  ·  Write F = q v B sinθ and say what each symbol means."
+    },
+    {
+      "label": "More ideas",
+      "text": "Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one.  ·  Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ.  ·  The tesla is the field in which a charge of 1 C moving at 1 m/s perpendicular to the field feels a force of 1 N. Laboratory fields of a fraction of a tesla already bend electron beams."
     }
   ]
 }

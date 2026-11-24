@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Optical instruments — microscope and telescope (Ray Optics, Physics, class-12-notes) covers Optical instruments — microscope, telescope. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A microscope uses a short-focus objective on a near object, and its magnification is about (L/f_o)(D/f_e). A telescope uses a long-focus objective on a distant object, and for a relaxed eye its power is f_o/f_e with tube length f_o + f_e.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Optical instruments — microscope and telescope — quick idea map\"><title>Optical instruments — microscope and telescope — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Optical instruments — microscope and telescope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Optical instruments —</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">microscope</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Telescope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Optical instruments</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">— microscope and</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Optical instruments — microscope and telescope — quick idea map\"><title>Optical instruments — microscope and telescope — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Optical instruments — microscope and telescope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Compound microscope</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Astronomical telescope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A microscope magnifies a</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">near, tiny object.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A telescope magnifies a</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">distant, large object.</text></svg>",
         "caption": "Optical instruments — microscope and telescope — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Optical instruments — microscope and telescope\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Optical instruments — microscope and telescope\" — state with units, then use in one numerical.\nMicroscope m ≈ (L/f_o)(D/f_e)\nTelescope m = f_o / f_e for the relaxed eye"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Optical instruments — microscope\" as one blob → ✅ split into: optical instruments — microscope, telescope.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Optical instruments — microscope and telescope\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "D = 25 cm unless the question says otherwise.  ·  The final image at infinity means the eye is relaxed."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A compound microscope has two convex lenses. The objective has a short focal length and makes a real, enlarged image of a nearby object. The eyepiece is used as a magnifier on that image.  ·  When the final image is at the near point D, about 25 cm, the magnification is approximately (L/f_o)(D/f_e), where L is the tube length between the two lenses. A shorter objective focal length gives a larger magnification."
     },
     {
       "label": "Limitation",
@@ -54,43 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Optical instruments — microscope and telescope — Ray Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: optical instruments — microscope, telescope · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Optical instruments — microscope  ·  • Telescope"
+      "text": "Microscope: short objective. Telescope: long objective.  ·  Telescope m = f_o/f_e."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Optical instruments — microscope and telescope\" with one example.  ·  compare \"Optical instruments — microscope\" with the related idea from a neighbouring unit."
+      "text": "Which focal length is short in a microscope?  ·  Write the relaxed-eye telescope power."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Optical instruments — microscope and telescope — topic mind map\"><title>Optical instruments — microscope and telescope — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Optical instruments — microscope and telescope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Optical instruments —</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">microscope</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Telescope</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Optical instruments — microscope and telescope — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Compound microscope  ·  Astronomical telescope  ·  Magnifying power  ·  Relaxed eye"
+    },
+    {
+      "label": "Key points",
+      "text": "A microscope magnifies a near, tiny object.  ·  A telescope magnifies a distant, large object.  ·  Both use an objective and an eyepiece.  ·  The final image is at infinity for the relaxed eye."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Optical instruments — microscope and telescope\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Optical instruments — microscope and telescope\" and verify the answer is plausible."
+      "text": "What is the telescope tube length in that setting?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A microscope has f_o = 1.0 cm, f_e = 5.0 cm and L = 20 cm. Take D = 25 cm. Estimate the magnification with m = (L/f_o)(D/f_e)."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Optical instruments — microscope and telescope\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "A microscope objective has → B  ·  Relaxed-eye telescope power is → B"
     },
     {
       "label": "Study notes",
-      "text": "**Telescope.** one-line definition + one-line exam use."
+      "text": "An astronomical telescope looks at a distant object, so the rays arrive nearly parallel. The objective makes a real image in its focal plane. A long objective focal length gathers a large image.  ·  For the relaxed eye the final image is at infinity, and the magnifying power is f_o / f_e. A long objective and a short eyepiece give a large power. The tube length is then about f_o + f_e.  ·  The microscope wants a short, strong objective. The telescope wants a long objective. Swapping those choices is the usual mix-up."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: optical instruments — microscope, telescope.  ·  one worked example for \"Optical instruments — microscope and telescope\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "The microscope objective is short, not long.  ·  Telescope power is f_o/f_e, not f_e/f_o.  ·  The relaxed-eye tube length is f_o + f_e, not the microscope's L."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "D is 25 cm, the near point, not the focal length.  ·  Name the instrument before the formula.  ·  f_o and f_e must be in the same unit."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Microscope m ≈ (L/f_o)(D/f_e) and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  A larger objective also collects more light. Magnification without light still gives a dim image, which is why telescope objectives are wide as well as long in focal length.  ·  # Optical instruments — microscope and telescope ## 1. Introduction Physical picture of **Optical instruments — microscope and telescope** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Ray-diagram cases** | Case | Ray picture | Image nature | Magnification note | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol meanings, SI units and…  ·  ## 5. Diagrams and figures - **D1** — Optical instruments — microscope and telescope — ray-diagram case gallery, ≥ 3 principal rays each (authored SVG) - **D2** — Optical instruments — microscope and telescope — graph or second construction (authored SVG — axes, units and labels) - **D3** — Optical instruments —…"
     }
   ]
 }

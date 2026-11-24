@@ -27,60 +27,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Resonance and isomerism in benzene (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Resonance, isomerism in benzene. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Resonance replaces Kekulé's alternation with a single stabilised hybrid: two equal Kekulé contributors, bond order 1.5 everywhere, and 152 kJ/mol of measured resonance energy — the stabilisation that redirects benzene's chemistry from addition to substitution. Contributors differ only in electron placement; the hybrid never oscillates.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Resonance and isomerism in benzene — quick idea map\"><title>Resonance and isomerism in benzene — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Resonance and isomerism in benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Resonance</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Isomerism in benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Isomers: same molecular</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula, different</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">structure/arrangement</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Resonance and isomerism in benzene — quick idea map\"><title>Resonance and isomerism in benzene — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Resonance and isomerism in benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Equal-energy contributors</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">maximise stabilisation -</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">benzene's two identical…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Resonance: one real hybrid</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">superposed from valid</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">contributing structures -…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Resonance energy =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E(best contributor) −</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E(hybrid) ≈ 150 kJ/mol</text></svg>",
         "caption": "Resonance and isomerism in benzene — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Isomers: same molecular formula, different structure/arrangement"
+      "text": "- Resonance energy = E(best contributor) − E(hybrid) ≈ 150 kJ/mol (benzene) - Bond order of each C–C in benzene ≈ 1.5"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Resonance\" as one blob → ✅ split into: resonance, isomerism in benzene.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "Structural: chain, position, functional, metamerism, tautomerism. Same formula, different connectivity.  ·  Geometrical (cis/trans or E/Z): restricted rotation (double bond / ring) + two different groups on each end."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: resonance, isomerism in benzene (within Aromatic Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "The isomerism lives in the sigma skeleton - delocalisation changed the bonds, not the positions."
+    },
+    {
+      "label": "Solved",
+      "text": "***The circle icon*** - the honest picture of the hybrid; the two Kekule forms are its algebra, drawn whenever a mechanism needs electron bookkeeping."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Resonance and isomerism in benzene — Aromatic Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: resonance, isomerism in benzene · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Resonance: The Real Structure of Benzene Resonance is the theory that replaced Kekulé's alternating bonds: **benzene is a single hybrid structure — a superposition of several contributing forms — that is lower in energy than any one of them.** The resonance energy (≈ 150 kJ/mol) is the hybrid's stabilisation over its best contributor, and the o/m/p isomerism of disubstituted benzenes is…  ·  ## 2. Theorem Mirror - **Resonance defined:** when a single Lewis structure cannot represent a molecule, the real structure is a hybrid of several valid contributing structures; the hybrid is *one* compound, not an oscillation. - **Benzene's contributors:** the two equal Kekulé forms (major), plus charge-separated forms (minor); all C–C bonds bond order ≈ 1.5.…"
     },
     {
       "label": "Shortcut",
-      "text": "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
+      "text": "For resonance-energy numbers, anchor on 360 - 208 = 152 kJ/mol - one subtraction carries the whole argument."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Resonance and isomerism in benzene\" with one example.  ·  compare \"Resonance\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2021 (3m): What is resonance? Explain resonance in benzene by writing its contributing structures and state any related fact.** — **Definition:** when a single Lewis structure cannot account for a molecule's properties, the actual structure is a resonance hybrid — a weighted superposition of several valid contributing structures…  ·  **NEB-style (6m): Cyclohexene hydrogenates at 120 kJ/mol and benzene at 208 kJ/mol. A student claims benzene's resonance energy is 208 - 120 = 88 kJ/mol. Correct the reasoning and compute properly.** — **The error:** resonance energy compares benzene with the *hypothetical cyclohexatriene having three isolated double bonds*, not with…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity..",
+      "text": "Draw both Kekule forms AND the hybrid (circle) - the three-picture answer is the complete one.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Resonance and isomerism in benzene — topic mind map\"><title>Resonance and isomerism in benzene — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Resonance and isomerism in benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Resonance</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Isomerism in benzene</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Resonance and isomerism in benzene — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Equal-energy contributors maximise stabilisation - benzene's two identical Kekule forms are why its resonance energy is so large."
+    },
+    {
       "label": "Key points",
-      "text": "• Resonance  ·  • Isomerism in benzene"
+      "text": "Resonance: one real hybrid superposed from valid contributing structures - not oscillation. Benzene: two equal Kekule forms (major) + charge-separated minor forms; all C-C bonds bond order ~1.5. Resonance energy ~150 kJ/mol = hydrogenation deficit 360 - 208.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Resonance always stabilises: the hybrid's energy is below that of every contributing structure."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Resonance and isomerism in benzene\" and verify the answer is plausible."
+      "text": "**NEB-style (5m): How many disubstituted products exist for benzene with two different substituents X and Y? Name and draw their arrangement.** — **Three:** **ortho (1,2)** — X and Y on adjacent carbons; **meta (1,3)** — one carbon between them; **para (1,4)** — directly opposite.…  ·  **NEB-style (6m): State the rules that decide whether a proposed contributing structure is valid, and apply them to reject two incorrect \"resonance structures\" of benzene.** — **Rules:** (1) atomic positions — including hydrogens — are identical in all contributors; only π electrons and lone pairs…"
     },
     {
       "label": "MCQ drill",
@@ -88,98 +96,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Structural: chain, position, functional, metamerism, tautomerism. Same formula, different connectivity.  ·  **Fact.** Geometrical (cis/trans or E/Z): restricted rotation (double bond / ring) + two different groups on each end.  ·  **Fact.** Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
+      "text": "## 3. Deep Conceptual — Resonance Is Bookkeeping, Not Flickering - The molecule does not jump between Kekulé forms; it *is* the hybrid, all the time. Contributing structures are human bookkeeping — ways of placing electron pairs on a page — and the real structure is their weighted superposition.…  ·  ## 4. Deep Conceptual — Isomerism as the Hybrid's Geometric Shadow - The delocalised ring has no fixed double bonds, but it *does* have fixed positions: 1 through 6 around a hexagon. Substitution is positional, not bond-selective — hence exactly three disubstitution patterns regardless of where the \"double bonds\" are drawn.…  ·  ## 5. Worked Example Types - **Type A — define and illustrate:** resonance with benzene's contributing structures and the hybrid icon. - **Type B — resonance energy calculation:** from hydrogenation heats, the 360 − 208 arithmetic. - **Type C — isomer counting:** enumerate o/m/p products for a given disubstitution.…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: resonance, isomerism in benzene.  ·  one worked example for \"Resonance and isomerism in benzene\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQ recorded here: NEB 2021 (3m) What is resonance; explain resonance in benzene by writing its contributing structures and state any related fact.  ·  Define resonance and draw benzene's contributing structures.  ·  Compute benzene's resonance energy from hydrogenation data."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity.  ·  **Isomerism in benzene.** one-line definition + one-line exam use."
+      "text": "List the disubstitution isomers of C₆H₄XY and explain why there are exactly three.  ·  ## 6. Common Confusions **\"Benzene is sometimes one Kekulé form and sometimes the other\":** it is always the hybrid — the forms are descriptions, not states. **\"Resonance means the molecule is unstable\":** the opposite — resonance *stabilises*; the energy of the hybrid is below every contributor."
     }
-  ],
-  "keyPoints": [
-    "04 Resonance And Isomerism In Benzene is a core concept in aromatic hydrocarbons.",
-    "Understanding 04 resonance and isomerism in benzene requires knowing its definition, conditions, and limitations.",
-    "04 Resonance And Isomerism In Benzene has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 resonance and isomerism in benzene must be memorized precisely.",
-    "04 Resonance And Isomerism In Benzene connects to neighbouring topics within aromatic hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 resonance and isomerism in benzene.",
-    "Practical examples solidify understanding of 04 Resonance And Isomerism In Benzene and its real-world relevance.",
-    "Misconceptions about 04 resonance and isomerism in benzene often arise from confusing it with similar concepts.",
-    "04 Resonance And Isomerism In Benzene follows systematic rules that can be applied step-by-step.",
-    "Review of 04 resonance and isomerism in benzene should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Resonance And Isomerism In Benzene is defined by its specific characteristics within aromatic hydrocarbons.",
-    "The conditions under which 04 resonance and isomerism in benzene applies are as important as the concept itself.",
-    "04 Resonance And Isomerism In Benzene can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 resonance and isomerism in benzene through application-based and comparison questions.",
-    "A clear grasp of 04 Resonance And Isomerism In Benzene builds the foundation for advanced topics in aromatic hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 04 resonance and isomerism in benzene, always note the exceptions alongside the general rule.",
-    "04 Resonance And Isomerism In Benzene should be reviewed with at least one worked example per sub-point.",
-    "Link 04 resonance and isomerism in benzene back to prior knowledge in aromatic hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 04 Resonance And Isomerism In Benzene to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Resonance And Isomerism In Benzene: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 resonance and isomerism in benzene with a related concept from aromatic hydrocarbons.",
-    "Exam-style problem: solve a question involving 04 Resonance And Isomerism In Benzene under time pressure.",
-    "Real-world connection: show how 04 Resonance And Isomerism In Benzene appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Resonance And Isomerism In Benzene and state two conditions required for it to occur.",
-    "Differentiate 04 Resonance And Isomerism In Benzene from the most commonly confused concept in aromatic hydrocarbons.",
-    "Solve a numerical or structural problem involving 04 Resonance And Isomerism In Benzene.",
-    "List three applications of 04 Resonance And Isomerism In Benzene in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Resonance And Isomerism In Benzene without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Resonance And Isomerism In Benzene.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Resonance And Isomerism In Benzene."
-  ],
-  "universalFacts": [
-    "04 Resonance And Isomerism In Benzene is part of the NEB Class 11 aromatic hydrocarbons syllabus.",
-    "Every concept in aromatic hydrocarbons builds upon definitions established earlier in the chapter.",
-    "04 Resonance And Isomerism In Benzene is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Resonance And Isomerism In Benzene improves performance across the entire aromatic hydrocarbons unit.",
-    "Revision of 04 Resonance And Isomerism In Benzene should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Resonance And Isomerism In Benzene with closely related concepts in aromatic hydrocarbons — focus on distinguishing features.",
-    "The scope of 04 Resonance And Isomerism In Benzene is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Resonance And Isomerism In Benzene outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Resonance And Isomerism In Benzene and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Resonance And Isomerism In Benzene? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Resonance And Isomerism In Benzene is primarily studied under which branch of aromatic hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Resonance And Isomerism In Benzene is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to aromatic hydrocarbons — Answer: B",
-    "Which example correctly illustrates 04 Resonance And Isomerism In Benzene? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Resonance And Isomerism In Benzene differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Resonance And Isomerism In Benzene.",
-    "Step-by-step animated derivation of the key relationship in 04 Resonance And Isomerism In Benzene.",
-    "Interactive toggle between correct and incorrect representations of 04 Resonance And Isomerism In Benzene."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Resonance And Isomerism In Benzene.",
-    "Side-by-side comparison animation of 04 Resonance And Isomerism In Benzene vs commonly confused concept.",
-    "Timelapse build-up of 04 Resonance And Isomerism In Benzene from prerequisite knowledge in aromatic hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Resonance And Isomerism In Benzene",
-    "Comparison table: 04 Resonance And Isomerism In Benzene vs related concepts in aromatic hydrocarbons",
-    "Step-by-step worked example layout for 04 Resonance And Isomerism In Benzene"
-  ],
-  "summary": [
-    "04 Resonance And Isomerism In Benzene is a fundamental concept in aromatic hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Resonance And Isomerism In Benzene involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Resonance And Isomerism In Benzene alongside related concepts in aromatic hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

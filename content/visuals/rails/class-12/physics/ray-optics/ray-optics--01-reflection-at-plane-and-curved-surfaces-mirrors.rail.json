@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Reflection at plane and curved surfaces — mirrors (Ray Optics, Physics, class-12-notes) covers Reflection at plane, curved surfaces — mirrors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Reflection equates the angles from the normal. A plane mirror gives a virtual image as far behind as the object is in front. A concave mirror uses 1/v + 1/u = 1/f with negative f, and an object at the centre is imaged at the centre, real and inverted.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Reflection at plane and curved surfaces — mirrors — quick idea map\"><title>Reflection at plane and curved surfaces — mirrors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Reflection at plane and curved surfaces —</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">mirrors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Reflection at plane</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Curved surfaces —</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mirrors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1/f = (μ−1)(1/R₁ − 1/R₂)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P = 1/f</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Reflection at plane and curved surfaces — mirrors — quick idea map\"><title>Reflection at plane and curved surfaces — mirrors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Reflection at plane and curved surfaces —</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">mirrors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Law of reflection</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Plane mirror</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Angle of incidence equals</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">angle of reflection.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A plane-mirror image is</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">virtual.</text></svg>",
         "caption": "Reflection at plane and curved surfaces — mirrors — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Reflection at plane\" as one blob → ✅ split into: reflection at plane, curved surfaces — mirrors.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
+      "text": "f = R/2.  ·  A convex mirror's image is always virtual for a real object."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The law of reflection says the incident ray, the reflected ray and the normal lie in one plane, and the angle of incidence equals the angle of reflection. Both angles are measured from the normal.  ·  A plane mirror forms an image as far behind the mirror as the object is in front. The image is virtual, upright and the same size. Left and right appear swapped because the image faces the object."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Reflection at plane and curved surfaces — mirrors — Ray Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: reflection at plane, curved surfaces — mirrors · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "Plane: distance behind equals distance in front.  ·  At the centre: image at the centre, same size, inverted."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Reflection at plane and curved surfaces — mirrors\" with one example.  ·  compare \"Reflection at plane\" with the related idea from a neighbouring unit."
+      "text": "State the law of reflection.  ·  Where is a plane-mirror image?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Reflection at plane and curved surfaces — mirrors — topic mind map\"><title>Reflection at plane and curved surfaces — mirrors — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Reflection at plane and curved surfaces — mir…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Reflection at plane</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Curved surfaces —</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">mirrors</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Reflection at plane and curved surfaces — mirrors — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Law of reflection  ·  Plane mirror  ·  Concave mirror  ·  Sign convention"
+    },
+    {
       "label": "Key points",
-      "text": "• Reflection at plane  ·  • Curved surfaces — mirrors"
+      "text": "Angle of incidence equals angle of reflection.  ·  A plane-mirror image is virtual.  ·  A concave mirror can form a real image.  ·  Cartesian u is negative for a real object."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Reflection at plane and curved surfaces — mirrors\" and verify the answer is plausible."
+      "text": "What image does an object at the centre of a concave mirror give?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A concave mirror has f = −10 cm. An object is at u = −20 cm. Find v."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Reflection at plane and curved surfaces — mirrors\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Angles of incidence and reflection are measured from → B  ·  A plane-mirror image is → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  **Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).  ·  **Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "A concave mirror converges parallel rays to a real focus. Its focal length is half the radius. In the Cartesian convention a real object has negative u, and a concave mirror has negative f.  ·  The mirror formula in that convention is 1/v + 1/u = 1/f. A negative v means a real image in front of the mirror. Magnification is −v/u, and a negative value means the image is inverted.  ·  A convex mirror has a positive f in this convention and always gives a virtual, diminished, upright image for a real object. It is used as a driving mirror because the field of view is wide."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: reflection at plane, curved surfaces — mirrors.  ·  one worked example for \"Reflection at plane and curved surfaces — mirrors\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..  ·  Angles are from the normal, not from the mirror.  ·  A plane-mirror image is behind the mirror and virtual."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  **Curved surfaces — mirrors.** one-line definition + one-line exam use."
+      "text": "Concave f is negative in the Cartesian convention.  ·  Magnification for a mirror is −v/u, not v/u.  ·  State the sign convention."
+    },
+    {
+      "label": "More ideas",
+      "text": "Negative mirror magnification means inverted.  ·  Write Plane mirror: image distance = object distance and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe).  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  An object at the centre of a concave mirror, u = 2f, produces a real inverted image at the centre, the same size. That is a quick check of the formula.  ·  # Reflection at plane and curved surfaces — mirrors ## 1. Introduction Physical picture of **Reflection at plane and curved surfaces — mirrors** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

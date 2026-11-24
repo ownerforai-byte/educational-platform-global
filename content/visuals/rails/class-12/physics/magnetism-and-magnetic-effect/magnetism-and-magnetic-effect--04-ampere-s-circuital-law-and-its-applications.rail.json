@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Ampere's circuital law and its applications (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Ampere's circuital law, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Ampere's law is applied by a path that matches the symmetry. Inside a uniform wire only the inner share of the current counts and B grows with r. A toroid's field is μ0 N I over the circular circumference, and an ideal toroid has no field on a path that encloses nothing.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ampere's circuital law and its applications — quick idea map\"><title>Ampere's circuital law and its applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ampere's circuital law and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Ampere's circuital law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Ampere's circuital</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">law and its</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ampere's circuital law and its applications — quick idea map\"><title>Ampere's circuital law and its applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ampere's circuital law and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Field inside a wire</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Toroid</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Same law, applied.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The path is chosen, not</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">measured.</text></svg>",
         "caption": "Ampere's circuital law and its applications — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Ampere's circuital law and its applications\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Ampere's circuital law and its applications\" — state with units, then use in one numerical.\nWire: B × 2πr = μ0 I\nToroid: B = μ0 N I /(2π r)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Ampere's circuital law\" as one blob → ✅ split into: ampere's circuital law, its applications.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Ampere's circuital law and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "At the surface both wire formulas give μ0 I /(2π R).  ·  A tightly wound toroid has little field outside."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The applications are the reason the law is taught. You invent an Amperian path that follows the suspected field, write B times the length if B is constant, and set that equal to μ0 I_enclosed.  ·  Outside a long straight wire the path is a circle and the whole current is enclosed. Inside a uniform cylindrical wire, at radius r smaller than the wire, only the current in the inner cross-section is enclosed, so I_enc = I (r^2/R^2)."
     },
     {
       "label": "Limitation",
@@ -54,43 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Ampere's circuital law and its applications — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).  ·  **Tested.** define it · list: ampere's circuital law, its applications · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Ampere's circuital law  ·  • Its applications"
+      "text": "Inside a uniform wire, B ∝ r.  ·  Toroid: μ0 N I over the circumference."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Ampere's circuital law and its applications\" with one example.  ·  compare \"Ampere's circuital law\" with the related idea from a neighbouring unit."
+      "text": "What current is enclosed inside a uniform wire?  ·  Write the toroid field."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ampere's circuital law and its applications — topic mind map\"><title>Ampere's circuital law and its applications — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Ampere's circuital law and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ampere's circuital law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its applications</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Ampere's circuital law and its applications — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Field inside a wire  ·  Toroid  ·  Amperian path  ·  Matching at the surface"
+    },
+    {
+      "label": "Key points",
+      "text": "Same law, applied.  ·  The path is chosen, not measured.  ·  A thick wire needs the current inside radius r only.  ·  The toroid is the curved solenoid."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Ampere's circuital law and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Ampere's circuital law and its applications\" and verify the answer is plausible."
+      "text": "Where do the inside and outside wire formulas agree?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A uniform long wire of radius 2.0 mm carries 8.0 A. Find B at 1.0 mm from the axis. Use μ0 / 2π = 2.0 × 10^−7."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Ampere's circuital law and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Inside a uniform long wire, B is proportional to → B  ·  A toroid's inner field is → A"
     },
     {
       "label": "Study notes",
-      "text": "**Its applications.** one-line definition + one-line exam use."
+      "text": "That inner result makes B proportional to r inside the wire and proportional to 1/r outside. The two formulas meet at the surface.  ·  A toroid uses a circular path inside the doughnut. The enclosed current is N I if the path threads all N turns. The circumference 2π r then gives B = μ0 N I /(2π r).  ·  A path that threads no current, such as a circle outside a toroid, gives zero line integral. With the symmetry, B itself is zero there in the ideal case."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: ampere's circuital law, its applications.  ·  one worked example for \"Ampere's circuital law and its applications\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Inside a thick wire the enclosed current is not the total current.  ·  The toroid uses total turns N, and the solenoid card used n per metre.  ·  A path with zero enclosed current is not automatically a zero field unless symmetry helps."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "r inside the wire is not the same formula as r outside.  ·  State inside or outside before choosing I_enc.  ·  Use N for the toroid and n for the solenoid."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Wire: B × 2πr = μ0 I and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  This is a different use from the solenoid card: here the worked case is the inside of a thick wire, not the solenoid interior.  ·  # Ampere's circuital law and its applications ## 1. Introduction Physical picture of **Ampere's circuital law and its applications** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — Ampere's circuital law and its applications — circuit diagram with standard symbols (authored SVG) - **D2** — Ampere's circuital law and its applications — graph or second construction (authored SVG — axes, units and labels) - **D3** — Ampere's circuital law and its applications —…"
     }
   ]
 }

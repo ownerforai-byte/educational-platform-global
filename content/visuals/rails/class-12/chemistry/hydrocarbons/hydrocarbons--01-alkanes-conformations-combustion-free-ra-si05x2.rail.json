@@ -56,7 +56,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Combustion  ·  • Free radical halogenation"
+      "text": "Trick 1: Conformation order for ethane: staggered (dihedral 60°, minimum energy) > skew > eclipsed (maximum, 12.5 kJ/mol barrier) — draw Newman projections along the C–C axis.  ·  Trick 2: Butane anti conformer is most stable (methyl groups farthest); gauche next — quote 'anti > gauche > eclipsed'."
     },
     {
       "label": "Board question",
@@ -69,6 +69,10 @@
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Alkanes: conformations, combustion, free radical halogena… — topic mind map\"><title>Alkanes: conformations, combustion, free radical halogena… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Alkanes</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkanes</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Conformations</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Combustion</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Free radical</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">halogenation</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Alkanes: conformations, combustion, free radical halogena… — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Key points",
+      "text": "• Combustion  ·  • Free radical halogenation"
     },
     {
       "label": "More practice",
@@ -84,11 +88,19 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: alkanes, conformations, combustion, free radical halogenation.  ·  one worked example for \"Alkanes: conformations, combustion, free radical halogena…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Combustion: CnH2n+2 + (3n+1)/2 O2 → n CO2 + (n+1) H2O; incomplete combustion gives CO/soot — the general equation earns the mark.  ·  Trick 4: Halogenation selectivity: 3° > 2° > 1° H (radical stability) — explains major product prediction.  ·  define + example each sub-idea: alkanes, conformations, combustion, free radical halogenation."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Alkanes: conformations, combustion, free radical halogena…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Alkanes: conformations, combustion, free radical halogenation ## 1. Introduction Chemical picture of **Alkanes** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I).…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Reaction and reagent sheet** | Transformation | Reagent + conditions | Product | Note or trap | | --- | --- | --- | --- |  ·  ## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Diagrams and figures - **D1** — Alkanes — mechanism with curved arrows, step by step (authored SVG) - **D2** — Alkanes — second structure, flow or plot (authored SVG — English labels) - **D3** — Alkanes — detailed reference plate (curated external — English labels; source, author and license recorded at fill) -…  ·  ## 6. Worked problems ≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone and self-check Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.…"
     }
   ]
 }

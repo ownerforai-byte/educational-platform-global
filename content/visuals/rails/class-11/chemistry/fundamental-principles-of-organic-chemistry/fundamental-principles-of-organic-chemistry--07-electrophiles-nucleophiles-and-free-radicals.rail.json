@@ -28,52 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Electrophiles, nucleophiles and free-radicals (Fundamental Principles of Organic Chemistry, Chemistry, class-11-notes) covers Electrophiles, nucleophiles, free-radicals. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Organic reagents come in three classes. **Electrophiles** are **electron-deficient** — charged (H⁺, NO₂⁺, CH₃⁺) or neutral (BF₃, AlCl₃, SO₃ with incomplete octets) — and attack **electron-rich** sites: π bonds and lone pairs. **Nucleophiles** are **electron-rich** — charged (OH⁻, CN⁻, Cl⁻) or neutral (H₂O, NH₃, ROH via lone pairs) — and donate a pair to **electron-poor** centres; electrophile and nucleophile are…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrophiles, nucleophiles and free-radicals — quick idea map\"><title>Electrophiles, nucleophiles and free-radicals — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electrophiles, nucleophiles and free-radicals</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Electrophiles</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nucleophiles</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrophiles, nucleophiles and free-radicals — quick idea map\"><title>Electrophiles, nucleophiles and free-radicals — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electrophiles, nucleophiles and free-radicals</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Match attacker to target:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrophiles find π bonds</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and lone pairs,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Electrophile:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electron-deficient,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">accepts pair, attacks</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Electrophiles: H⁺, NO₂⁺,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CH₃⁺, Br⁺, BF₃, AlCl₃, SO₃</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Nucleophiles: OH⁻,…</text></svg>",
         "caption": "Electrophiles, nucleophiles and free-radicals — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Electrophiles\n• Nucleophiles"
+      "text": "- Electrophiles: H⁺, NO₂⁺, CH₃⁺, Br⁺, BF₃, AlCl₃, SO₃ - Nucleophiles: OH⁻, CN⁻, Cl⁻, CH₃O⁻, H₂O, NH₃, ROH - Radical chain: Cl₂ → 2Cl·; Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·; Cl· + Cl· → Cl₂"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Electrophiles\" as one blob → ✅ split into: electrophiles, nucleophiles, free-radicals.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Electrophiles, nucleophiles and free-radicals\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: electrophiles, nucleophiles, free-radicals (within Fundamental Principles of Organic Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Electrophiles are electron-deficient species attacking electron-rich centres; nucleophiles are electron-rich species donating a pair to electron-deficient centres; free radicals are neutral species with unpaired electrons.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The neutral electrophile*** — BF3 has no charge but an empty p orbital; it grabs electron pairs as eagerly as any cation — deficiency, not charge, defines the family."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Electrophiles, nucleophiles and free-radicals — Fundamental Principles of Organic Chemistry, Chemistry (class-11-notes).  ·  **Tested.** define it · list: electrophiles, nucleophiles, free-radicals · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Three Attackers Once fission has made an electron-hungry or electron-rich species, reactions are a matter of matching attacker to target. **Electrophiles** love electrons and attack electron-rich sites; **nucleophiles** love nuclei (positive centres) and donate electron pairs; **free radicals** carry unpaired electrons and strip atoms from bonds.…  ·  ## 2. Fundamental Concepts ### 2.1 Electrophiles (E⁺) - **Definition:** electron-loving species — **electron-deficient**, accept an electron pair; attack **electron-rich** sites (double bonds, lone pairs). - **Charged:** H⁺, NO₂⁺ (nitronium), CH₃⁺ (carbocation), Br⁺, Cl⁺. - **Neutral:** BF₃, AlCl₃, SO₃ — incomplete octets or polarised atoms make them acceptors.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Free-radicals  ·  solve / apply for \"Electrophiles, nucleophiles and free-radicals\" and verify the answer is plausible."
+      "text": "E+ attacks electron-rich (π, lone pairs); Nu− donates to δ+ C; radical = neutral 7e from homolysis. Charged + neutral examples for each: H+/BF3; OH−/NH3; Cl·. Chain steps: initiation, propagation, termination."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Electrophiles, nucleophiles and free-radicals\" with one example.  ·  compare \"Electrophiles\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (2m): Define electrophile with two examples.** — An **electrophile** (\"electron-loving\") is an **electron-deficient species that accepts a pair of electrons** and therefore attacks the **electron-rich** parts of molecules — π bonds and lone pairs.…  ·  **NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** (\"nucleus-loving\") is an **electron-rich species that donates an electron pair** to an electron-deficient centre (a δ+ carbon or cation).…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Give one charged AND one neutral example per class — listing only ions loses the neutrality mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrophiles, nucleophiles and free-radicals — topic mind map\"><title>Electrophiles, nucleophiles and free-radicals — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Electrophiles, nucleophiles and free-radicals</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electrophiles</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nucleophiles</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Free-radicals</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Electrophiles, nucleophiles and free-radicals — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Match attacker to target: electrophiles find π bonds and lone pairs, nucleophiles find δ+ carbons, radicals strip hydrogens — identify the reagent class and the reaction predicts itself."
+    },
+    {
+      "label": "Key points",
+      "text": "Electrophile: electron-deficient, accepts pair, attacks electron-rich sites; charged H+, NO2+, CH3+, Br+; neutral BF3, AlCl3, SO3 (incomplete octet). Nucleophile: electron-rich, donates pair, attacks electron-deficient centres; charged OH-, CN-, Cl-, CH3O-; neutral H2O, NH3, ROH (lone pairs).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Radical chain reactions run the world's plastics: ethene polymerises by radical initiation, each propagation step adding another monomer to the growing chain."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species possessing an unpaired electron** (written X·), produced by **homolytic fission** of a covalent bond under **heat or ultraviolet light**; they are…"
     },
     {
       "label": "MCQ drill",
@@ -81,98 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Nucleophiles.** one-line definition + one-line exam use.  ·  **Free-radicals.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Electrophile** | Electron-pair acceptor attacking electron-rich sites | H⁺, NO₂⁺, BF₃ | | **Nucleophile** | Electron-pair donor attacking electron-poor centres | OH⁻, CN⁻, NH₃ | | **Free radical** | Neutral species with an unpaired electron | Cl·, CH₃· | | **Chain reaction** |…  ·  ## 4. Detailed Explanation ### 4.1 The matching rule - Electrophiles seek **π bonds and lone pairs**; nucleophiles seek **δ+ atoms** (carbonyl carbon, alkyl halide carbon); radicals seek **any bond they can split into two radicals**. Predicting an organic reaction starts by identifying which of the three is present.…  ·  ## 5. Comparison Tables **The three reagent classes** | Basis | Electrophile | Nucleophile | Free radical | |---|---|---|---| | electron count | deficient (accepts pair) | rich (donates pair) | unpaired electron | | charge | + or neutral | − or neutral | always neutral | | attacks | electron-rich (π, lone pairs) | electron-poor (δ+ C) | σ bonds (abstraction) | | origin |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: electrophiles, nucleophiles, free-radicals.  ·  one worked example for \"Electrophiles, nucleophiles and free-radicals\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Define electrophile and nucleophile with charged and neutral examples of each.  ·  Define free radicals and write the three stages of methane chlorination."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Classify: BF3, OH-, Cl., NO2+, NH3, CH3+ into the three reagent classes.  ·  ## 6. Common Confusions **Neutral ≠ inactive:** BF₃ and AlCl₃ are neutral electrophiles; H₂O and NH₃ are neutral nucleophiles — judge by electrons, not charge.  ·  **Radicals are not anions:** Cl· has no charge; it differs from Cl⁻ by one electron, and that electron changes everything."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Electrophile/nucleophile are roles, not fixed species:** H₂O can be a nucleophile (attacking a carbocation) or a weak electrophile-source (donating H⁺) — context assigns the role.  ·  ## 7. Exam Application **NEB-style (2m): Define electrophile with two examples.** — An **electrophile** is an **electron-deficient species that accepts an electron pair** and attacks **electron-rich** centres (π bonds, lone pairs) in organic reactions.…  ·  **NEB-style (2m): Define nucleophile with two examples.** — A **nucleophile** is an **electron-rich species that donates an electron pair** to an **electron-deficient** centre (a \"nucleus-loving\" reagent).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (3m): What are free radicals? Describe the chain mechanism of chlorination of methane.** — **Free radicals** are **neutral species with an unpaired electron**, formed by **homolytic fission** of a covalent bond under heat or light; they are paramagnetic and highly reactive.…"
     }
-  ],
-  "keyPoints": [
-    "07 Electrophiles Nucleophiles And Free Radicals is a core concept in fundamental principles of organic chemistry.",
-    "Understanding 07 electrophiles nucleophiles and free radicals requires knowing its definition, conditions, and limitations.",
-    "07 Electrophiles Nucleophiles And Free Radicals has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 07 electrophiles nucleophiles and free radicals must be memorized precisely.",
-    "07 Electrophiles Nucleophiles And Free Radicals connects to neighbouring topics within fundamental principles of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 07 electrophiles nucleophiles and free radicals.",
-    "Practical examples solidify understanding of 07 Electrophiles Nucleophiles And Free Radicals and its real-world relevance.",
-    "Misconceptions about 07 electrophiles nucleophiles and free radicals often arise from confusing it with similar concepts.",
-    "07 Electrophiles Nucleophiles And Free Radicals follows systematic rules that can be applied step-by-step.",
-    "Review of 07 electrophiles nucleophiles and free radicals should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "07 Electrophiles Nucleophiles And Free Radicals is defined by its specific characteristics within fundamental principles of organic chemistry.",
-    "The conditions under which 07 electrophiles nucleophiles and free radicals applies are as important as the concept itself.",
-    "07 Electrophiles Nucleophiles And Free Radicals can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 07 electrophiles nucleophiles and free radicals through application-based and comparison questions.",
-    "A clear grasp of 07 Electrophiles Nucleophiles And Free Radicals builds the foundation for advanced topics in fundamental principles of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 07 electrophiles nucleophiles and free radicals, always note the exceptions alongside the general rule.",
-    "07 Electrophiles Nucleophiles And Free Radicals should be reviewed with at least one worked example per sub-point.",
-    "Link 07 electrophiles nucleophiles and free radicals back to prior knowledge in fundamental principles of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 07 Electrophiles Nucleophiles And Free Radicals to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 07 Electrophiles Nucleophiles And Free Radicals: apply the standard definition to a simple case.",
-    "Intermediate example: combine 07 electrophiles nucleophiles and free radicals with a related concept from fundamental principles of organic chemistry.",
-    "Exam-style problem: solve a question involving 07 Electrophiles Nucleophiles And Free Radicals under time pressure.",
-    "Real-world connection: show how 07 Electrophiles Nucleophiles And Free Radicals appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 07 Electrophiles Nucleophiles And Free Radicals and state two conditions required for it to occur.",
-    "Differentiate 07 Electrophiles Nucleophiles And Free Radicals from the most commonly confused concept in fundamental principles of organic chemistry.",
-    "Solve a numerical or structural problem involving 07 Electrophiles Nucleophiles And Free Radicals.",
-    "List three applications of 07 Electrophiles Nucleophiles And Free Radicals in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 07 Electrophiles Nucleophiles And Free Radicals without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 07 Electrophiles Nucleophiles And Free Radicals.",
-    "Create three flashcards covering definition, formula, and limitation of 07 Electrophiles Nucleophiles And Free Radicals."
-  ],
-  "universalFacts": [
-    "07 Electrophiles Nucleophiles And Free Radicals is part of the NEB Class 11 fundamental principles of organic chemistry syllabus.",
-    "Every concept in fundamental principles of organic chemistry builds upon definitions established earlier in the chapter.",
-    "07 Electrophiles Nucleophiles And Free Radicals is assessed through both short-answer and long-answer board questions.",
-    "Understanding 07 Electrophiles Nucleophiles And Free Radicals improves performance across the entire fundamental principles of organic chemistry unit.",
-    "Revision of 07 Electrophiles Nucleophiles And Free Radicals should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 07 Electrophiles Nucleophiles And Free Radicals with closely related concepts in fundamental principles of organic chemistry — focus on distinguishing features.",
-    "The scope of 07 Electrophiles Nucleophiles And Free Radicals is sometimes overstated; remember its precise boundaries.",
-    "Applying 07 Electrophiles Nucleophiles And Free Radicals outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 07 Electrophiles Nucleophiles And Free Radicals and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 07 Electrophiles Nucleophiles And Free Radicals? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "07 Electrophiles Nucleophiles And Free Radicals is primarily studied under which branch of fundamental principles of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 07 Electrophiles Nucleophiles And Free Radicals is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to fundamental principles of organic chemistry — Answer: B",
-    "Which example correctly illustrates 07 Electrophiles Nucleophiles And Free Radicals? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "07 Electrophiles Nucleophiles And Free Radicals differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 07 Electrophiles Nucleophiles And Free Radicals.",
-    "Step-by-step animated derivation of the key relationship in 07 Electrophiles Nucleophiles And Free Radicals.",
-    "Interactive toggle between correct and incorrect representations of 07 Electrophiles Nucleophiles And Free Radicals."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 07 Electrophiles Nucleophiles And Free Radicals.",
-    "Side-by-side comparison animation of 07 Electrophiles Nucleophiles And Free Radicals vs commonly confused concept.",
-    "Timelapse build-up of 07 Electrophiles Nucleophiles And Free Radicals from prerequisite knowledge in fundamental principles of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 07 Electrophiles Nucleophiles And Free Radicals",
-    "Comparison table: 07 Electrophiles Nucleophiles And Free Radicals vs related concepts in fundamental principles of organic chemistry",
-    "Step-by-step worked example layout for 07 Electrophiles Nucleophiles And Free Radicals"
-  ],
-  "summary": [
-    "07 Electrophiles Nucleophiles And Free Radicals is a fundamental concept in fundamental principles of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 07 Electrophiles Nucleophiles And Free Radicals involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 07 Electrophiles Nucleophiles And Free Radicals alongside related concepts in fundamental principles of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

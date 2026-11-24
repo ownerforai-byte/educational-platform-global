@@ -25,16 +25,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Motion in a vertical circle involves varying speed due to gravity. For a string, the minimum speed at the top is √(gr) and at the bottom is √(5gr). A rigid rod allows v_top = 0, giving v_bottom(min) = √(2gr). Tension is maximum at the bottom (T = mg + mv²/r) and minimum at the top. Energy conservation links speeds at different heights.",
+      "text": "In a vertical circle gravity's radial pull changes with position, so tension varies: $T_{bottom} = mv_B^2/r + mg$ (maximum) and $T_{top} = mv_T^2/r - mg$ (minimum). A string can only pull, so the loop completes only if $T_{top} \\ge 0$, giving the minimum top speed $v_T = \\sqrt{gr}$ — for r = 1 m that is 3.13 m/s (NEB 2024).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion in a Vertical Circle — quick idea map\"><title>Motion in a Vertical Circle — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion in a Vertical Circle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Minimum speed at top</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(string): v = √(gr) — the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">string goes slack below</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Minimum speed at bottom</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(string): v = √(5gr) —</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derived from energy…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The minimum speed at the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">top (string) is √(gr),</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">independent of mass.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The minimum speed at the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">bottom (string) is √(5gr)</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">— the most tested result.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion in a Vertical Circle — quick idea map\"><title>Motion in a Vertical Circle — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion in a Vertical Circle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The taut-string</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition:** the loop</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">survives only if $T_{top}</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$T_{top} = mv_T^2/r - mg$;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$T_{bottom} = mv_B^2/r +</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mg$.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_{T,min} = \\sqrt{gr}$;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_{B,min} = \\sqrt{5gr}$;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$T_{bottom,max} = 6mg$ at…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- T_top = mv_T²/r − mg;</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">T_bottom = mv_B²/r + mg -</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">v_T,min = √(gr); v_B,min</text></svg>",
         "caption": "Motion in a Vertical Circle — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Minimum speed at top (string): v_top = √(gr)\nMinimum speed at bottom (string): v_bottom = √(5gr)\nMinimum speed at bottom (rod): v_bottom = √(2gr)"
+      "text": "- T_top = mv_T²/r − mg; T_bottom = mv_B²/r + mg - v_T,min = √(gr); v_B,min = √(5gr) - Energy: ½mv_B² = ½mv_T² + 2mgr"
     },
     {
       "label": "Conditions",
@@ -46,11 +46,11 @@
     },
     {
       "label": "Solved",
-      "text": "String case: A 0.3 kg bob on a 2 m string. v_top(min) = √(9.8 × 2) = 4.43 m/s. v_bottom(min) = √(5 × 9.8 × 2) = 9.90 m/s. T_bottom = 6 × 0.3 × 9.8 = 17.6 N.  ·  Rod case: Same bob and length. v_top(min) = 0. v_bottom(min) = √(2 × 9.8 × 2) = 6.26 m/s. The rod can push, so the bob can reach the top with zero speed."
+      "text": "***NEB 2024*** — r = 1 m: v_top,min = √9.8 = 3.13 m/s."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'The speed is constant in vertical circular motion.' ✅ The speed VARIES — gravity speeds up the body on the way down and slows it on the way up. Only energy is conserved.  ·  ❌ 'The minimum speed at the top is zero.' ✅ For a STRING, the minimum speed at the top is √(gr). For a ROD, it is indeed zero."
+      "text": "**Top vs bottom minimum speeds:** top needs √(gr); bottom needs √(5gr) — five times the energy scale.  ·  **String vs rod:** a string can only pull (v_top ≥ √gr); a rod can push (v_top ≥ 0)."
     },
     {
       "label": "Derivation",
@@ -58,15 +58,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Top minimum: v_top = √(gr) — just take √(g × r).  ·  Bottom minimum (string): v_bottom = √(5gr) — remember the factor 5."
+      "text": "\"Top: √(gr). Bottom: √(5gr). Tension at bottom limit: 6mg.\""
     },
     {
       "label": "Board question",
-      "text": "A 0.4 kg bob on a 1.2 m string rotates in a vertical circle. Find the minimum speeds at the top and bottom, and the tension at the bottom.  ·  A 0.5 kg ball is whirled in a vertical circle of radius 0.8 m. If the tension at the bottom is 3 times the weight, find the speed at the bottom."
+      "text": "**Numerical (4m): A 0.2 kg bob completes a vertical loop of radius 0.5 m with the minimum possible top speed. Find v_top, v_bottom and the maximum tension.** — v_top = √(9.8×0.5) = 2.21 m/s; v_bottom = √5 × 2.21 = 4.95 m/s; T_max = mv_B²/r + mg = 0.2×49/0.5 + 1.96 = 19.6 + 1.96 = 21.6 N (= 6mg ✓ since 6×1.96 = 11.8...…"
     },
     {
       "label": "Hints",
-      "text": "√(5gr) is tested almost every year — memorize this result.  ·  String vs rod distinction is a classic conceptual question.",
+      "text": "The 2024 question is the direct one-liner √(gr) — but know the full tension analysis for 5m variants.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion in a Vertical Circle — topic mind map\"><title>Motion in a Vertical Circle — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Motion in a vertical circle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Motion in a vertical</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">circle</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Motion in a Vertical Circle — topic mind map of this topic's own sub-topics"
@@ -74,27 +74,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Minimum speed at top (string): v = √(gr) — the string goes slack below this.  ·  Minimum speed at bottom (string): v = √(5gr) — derived from energy conservation.  ·  Rigid rod case: v_bottom(min) = √(2gr) — rod can push, so v_top can be zero.  ·  Tension at bottom: T = mg + mv²/r — weight and centripetal force add."
+      "text": "**The taut-string condition:** the loop survives only if $T_{top} \\ge 0$, i.e. gravity alone can bend the path at the top."
     },
     {
       "label": "Key points",
-      "text": "The minimum speed at the top (string) is √(gr), independent of mass.  ·  The minimum speed at the bottom (string) is √(5gr) — the most tested result.  ·  For a rigid rod, v_bottom(min) = √(2gr) — the rod can push, not just pull.  ·  Tension at the bottom is always maximum; at the top it is minimum."
+      "text": "$T_{top} = mv_T^2/r - mg$; $T_{bottom} = mv_B^2/r + mg$.  ·  $v_{T,min} = \\sqrt{gr}$; $v_{B,min} = \\sqrt{5gr}$; $T_{bottom,max} = 6mg$ at the limit."
     },
     {
       "label": "Universal facts",
-      "text": "The minimum speed at the top of a vertical circle (string) is √(gr) — independent of mass.  ·  The minimum speed at the bottom (string) is √(5gr) — the factor 5 is a key NEB result."
-    },
-    {
-      "label": "More practice",
-      "text": "A rigid rod of length 1.5 m has a 0.3 kg bob at its end. What is the minimum speed at the bottom to complete the vertical circle?  ·  A stone tied to a 2 m string is whirled vertically. If the tension at the top is equal to the weight of the stone, find its speed at the top.  ·  A 1 kg mass is rotated in a vertical circle of radius 1 m. Find the difference in tension between the bottom and top positions when the speed at the bottom is 10 m/s."
-    },
-    {
-      "label": "More hints",
-      "text": "Tension at top and bottom problems are standard numerical questions.  ·  Energy conservation between two points is the primary solution method."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Tension at top: A 0.4 kg bob on a 1.5 m string moving at 5 m/s at the top. T = mv²/r − mg = 0.4 × 25/1.5 − 3.92 = 6.67 − 3.92 = 2.75 N.  ·  Energy conservation: A bob has speed 8 m/s at the bottom. Speed at the top: ½v_top² = ½ × 64 − 9.8 × 3 = 32 − 29.4 = 2.6 → v_top = 2.28 m/s."
+      "text": "Water stays in a bucket swung overhead for the same reason: at √(gr) the water presses on the bucket bottom, not the other way."
     },
     {
       "label": "MCQ drill",
@@ -102,27 +90,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Motion in a vertical circle:** a body of mass m attached to a string moves in a vertical plane under gravity. Unlike horizontal circular motion, the speed varies with height — fastest at the bottom, slowest at the top.  ·  **Why speed varies:** gravity does work on the body as it moves vertically. Kinetic energy is converted to gravitational PE on the way up, and back to KE on the way down. Total mechanical energy is conserved (ignoring air resistance).  ·  **Critical distinction — string vs rigid rod:** a string can only pull (tension ≥ 0), so the body must have enough speed at the top to keep the string taut. A rigid rod can push or pull, so the body can reach the top with zero speed."
+      "text": "## 1. Topic Introduction — The Circle That Fights Gravity Whirl a bucket of water overhead and nothing spills — provided you spin fast enough. Motion in a vertical circle differs from every previous case because gravity's pull along the radius changes constantly: strongest at the bottom, weakest at the top.…  ·  ## 2. Fundamental Concepts ### 2.1 The changing tension A bob of mass $m$ on a string of length $r$ moves in a vertical circle with speed $v$. Tension must supply centripetal force together with (or against) gravity's radial component: - **At the lowest point:** tension and gravity oppose radially: $T_{bottom} - mg = \\dfrac{mv_B^2}{r} \\Rightarrow T_{bottom} = \\dfrac{mv_B^2}{r}…  ·  ## 3. Conceptual Relationships - **To Topic 24:** $F_c$ here is supplied by tension plus gravity's radial component — the general principle applied. - **To Conservation of energy (Topic 19):** speed differences between top and bottom come purely from the 2r height change.…"
     },
     {
       "label": "More ideas",
-      "text": "Energy conservation: ½mv_b² = ½mv_t² + mg(2r) — links speeds at top and bottom.  ·  Tension at bottom: T_bottom = mg + mv²/r  ·  Tension at top: T_top = mv²/r − mg"
+      "text": "**Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($ heta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut.  ·  If the string goes slack, the body becomes a projectile — follow parabolic path.  ·  T_bottom = 6mg only when v_bottom = √(5gr) — this is the minimum case."
     },
     {
       "label": "More ideas",
-      "text": "Energy conservation: ½mv_b² = ½mv_t² + mg(2r)  ·  **Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($ heta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut.  ·  At the minimum case (string), T_bottom = 6mg — six times the weight."
+      "text": "NEB frequently asks: 'Find the minimum speed at the bottom to complete the vertical circle'.  ·  Verified PYQ: minimum top velocity (2024, 3m).  ·  \"At the highest point, gravity itself acts as the centripetal force in the limiting case.\""
     },
     {
       "label": "More ideas",
-      "text": "❌ 'The tension is the same at all points.' ✅ The tension varies — maximum at the bottom (T = mg + mv²/r) and minimum at the top (T = mv²/r − mg).  ·  ❌ 'The minimum speed at the bottom is √(2gr).' ✅ That is for a ROD. For a STRING, it is √(5gr) — the body must have enough energy to reach the top with speed √(gr).  ·  ❌ 'If the string goes slack, the body stops.' ✅ If the string goes slack, the body becomes a projectile — it follows a parabolic path under gravity."
+      "text": "Why is tension greatest at the bottom of the swing?  ·  Solve 5 problems finding tension at the top and bottom.  ·  Compare string and rod cases — show different minimum speeds."
     },
     {
       "label": "More ideas",
-      "text": "❌ 'The centripetal force is constant.' ✅ The centripetal force (mv²/r) varies because v varies. At the bottom, it is maximum; at the top, it is minimum.  ·  String goes slack: A bob on a 2 m string has speed 4 m/s at the bottom. At the top: ½v_top² = ½ × 16 − 9.8 × 4 = 8 − 39.2 < 0 → impossible. The bob never reaches the top.  ·  If the string goes slack, the body becomes a projectile — follow parabolic path."
-    },
-    {
-      "label": "More ideas",
-      "text": "T_bottom = 6mg only when v_bottom = √(5gr) — this is the minimum case.  ·  NEB frequently asks: 'Find the minimum speed at the bottom to complete the vertical circle'.  ·  The minimum speed at the bottom (string) is √(5gr), not √(2gr) — that is for a rod."
+      "text": "Solve 2 problems where the string goes slack before reaching the top.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Mechanics | Circular motion | A stone is whirled in a vertical circle of radius 1 m.…"
     }
   ]
 }

@@ -26,60 +26,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Classification of organic compounds (Basic Concept of Organic Chemistry, Chemistry, class-11-notes) covers Classification of organic compounds. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Classification gives every organic compound an address on one tree. **Open-chain (aliphatic):** saturated **alkanes** (single bonds), unsaturated **alkenes** (C=C) and **alkynes** (C≡C). **Closed-chain (cyclic):** **homocyclic** rings of pure carbon — **alicyclic** (cyclopropane, cyclohexane; ordinary aliphatic behaviour) and **aromatic** (benzene, toluene, naphthalene; delocalised π stability, substitution over…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Classification of organic compounds — quick idea map\"><title>Classification of organic compounds — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Classification of organic compounds</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Classification of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">organic compounds</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parent-chain + locant(s) +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sub-prefix + suffix =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">IUPAC name</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Classification of organic compounds — quick idea map\"><title>Classification of organic compounds — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Classification of organic compounds</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Aromatic is a stability</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">statement: the benzene</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ring's delocalised pi…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Classification: open-chain</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(acyclic/aliphatic) —</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">saturated alkanes (CH4,…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Alkanes CₙH₂ₙ₊₂; alkenes</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CₙH₂ₙ; alkynes CₙH₂ₙ₋₂ -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Benzene C₆H₆; cyclohexane…</text></svg>",
         "caption": "Classification of organic compounds — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+      "text": "- Alkanes CₙH₂ₙ₊₂; alkenes CₙH₂ₙ; alkynes CₙH₂ₙ₋₂ - Benzene C₆H₆; cyclohexane C₆H₁₂ - Pyridine C₅H₅N; furan C₄H₄O; pyrrole C₄H₅N"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Classification of organic compounds\" as one blob → ✅ split into: classification of organic compounds.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).  ·  Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: classification of organic compounds (within Basic Concept of Organic Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Organic compounds are classified into open-chain (aliphatic) and closed-chain (cyclic) compounds; cyclic compounds are homocyclic (alicyclic and aromatic) or heterocyclic.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Cyclohexane vs benzene, ring vs ring*** — both are six-membered carbon rings, but one adds hydrogen readily while the other refuses and substitutes instead: the difference is delocalised pi electrons, i.e. aromaticity."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
+    },
+    {
       "label": "Derivation",
-      "text": "**Open-chain compounds.** Aliphatic compounds have open carbon chains — straight-chain (n-butane) or branched-chain (isobutane) — and may be saturated or unsaturated.  ·  **Cyclic compounds.** Closed-ring compounds divide into carbocycles (alicyclic like cyclohexane; aromatic like benzene) and heterocycles (furan, pyridine) that contain non-carbon atoms in the ring."
+      "text": "## 1. Topic Introduction — A Family Tree for Millions With tens of millions of organic compounds, chemistry would be impossible without classification. The tree has two great branches — **open-chain (acyclic/aliphatic)** and **closed-chain (cyclic)** — and the cyclic branch splits into **homocyclic** (alicyclic + aromatic) and **heterocyclic**. Learn the tree once and every new compound has an address.  ·  ## 2. Fundamental Concepts ### 2.1 Open-chain (acyclic / aliphatic) compounds - Chains of carbon atoms, straight or branched, **no ring**. - **Saturated (alkanes):** only single bonds — CH₄, C₂H₆, C₃H₈. - **Unsaturated:** at least one multiple bond — **alkenes** (C=C, ethene CH₂=CH₂), **alkynes** (C≡C, ethyne HC≡CH). ### 2.2 Closed-chain (cyclic) compounds - **Homocyclic:** ring made only of carbon atoms.…"
     },
     {
       "label": "Shortcut",
-      "text": "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+      "text": "Tree: open (alkane/alkene/alkyne) vs closed; closed -> homocyclic (alicyclic vs aromatic) + heterocyclic (N/O/S in ring). Aromatic = benzene-ring pi stability. Heterocyclic examples: pyridine, furan, pyrrole."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Classification of organic compounds\" with one example.  ·  compare \"Classification of organic compounds\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds fall into **open-chain (acyclic or aliphatic)** and **closed-chain (cyclic)** families. **Open-chain** compounds have no ring: **saturated** compounds with only single bonds — the alkanes (methane CH₄, ethane, propane) — and **unsaturated**…  ·  **NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** have a ring built only of carbon atoms but behave like ordinary aliphatic compounds: no special π stability, they undergo addition reactions (example: **cyclohexane**, also cyclopropane).…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)..",
+      "text": "The classification answer needs the full tree with one example per leaf — a partial tree (only aliphatic/aromatic) loses the heterocyclic marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Classification of organic compounds — topic mind map\"><title>Classification of organic compounds — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Classification of organic compounds</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Classification of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">organic compounds</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Classification of organic compounds — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Aromatic is a stability statement: the benzene ring's delocalised pi electrons make substitution preferred over addition — that reactivity signature, not any smell, defines the aromatic branch."
+    },
+    {
       "label": "Key points",
-      "text": "• Classification of organic compounds"
+      "text": "Classification: open-chain (acyclic/aliphatic) — saturated alkanes (CH4, C2H6), unsaturated alkenes (C=C, ethene CH2=CH2) and alkynes (C=C triple, ethyne); closed-chain (cyclic) — homocyclic (all-carbon ring): alicyclic (cyclopropane, cyclohexane) and aromatic (benzene C6H6, toluene, naphthalene — delocalised pi…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Most drugs and natural products are heterocyclic — pyridine appears in the vitamin niacin, pyrrole rings in chlorophyll and haem, furan in the furanose form of sugars."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Classification of organic compounds\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): What are heterocyclic compounds? Give two examples with the hetero atom named.** — **Heterocyclic compounds** are cyclic compounds in which the ring contains, in addition to carbon, **at least one atom of another element** — typically nitrogen, oxygen or sulphur.…"
     },
     {
       "label": "MCQ drill",
@@ -87,98 +95,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Functional group classes.** Compounds are grouped by their functional group: halides (—X), alcohols (—OH), aldehydes (—CHO), ketones (>C=O), carboxylic acids (—COOH) and amines (—NH₂).  ·  **Saturated vs unsaturated.** Compounds with only single C—C bonds are saturated; those with double or triple bonds are unsaturated and decolourise bromine water.  ·  **Why classification matters.** Members of one class show similar chemical properties, so classifying a compound immediately predicts its reactions and its name."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Aliphatic** | Open-chain (or non-aromatic) organic compound | hexane, ethene | | **Alicyclic** | Carbon ring with aliphatic (non-aromatic) character | cyclohexane | | **Aromatic** | Compound based on a benzene ring with delocalised π stability | benzene, naphthalene | | **Heterocyclic** |…  ·  ## 4. Detailed Explanation ### 4.1 The tree in one diagram-logic - Organic compounds → **open chain** (saturated alkanes; unsaturated alkenes/alkynes) and **closed chain** → homocyclic (**alicyclic**; **aromatic** — benzenoid) and **heterocyclic** (with N/O/S in the ring). Every named compound drops into exactly one leaf.…  ·  ## 5. Comparison Tables **The classification tree** | Branch | Sub-branch | Defining feature | Example | |---|---|---|---| | Open chain | alkanes | single bonds only | propane | | Open chain | alkenes | one C=C | ethene | | Open chain | alkynes | one C≡C | ethyne | | Closed chain | alicyclic | carbon ring, aliphatic behaviour | cyclohexane | | Closed chain | aromatic |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: classification of organic compounds.  ·  one worked example for \"Classification of organic compounds\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Draw the complete classification tree of organic compounds with one example at each leaf.  ·  Distinguish alicyclic from aromatic and homocyclic from heterocyclic with examples."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
+      "text": "Assign each of cyclohexane, pyridine, ethyne and naphthalene to its correct class.  ·  ## 6. Common Confusions **Alicyclic ≠ aromatic:** cyclohexane's ring is just a chain bent shut — no delocalised π stability. Only the benzene-type ring is aromatic.  ·  **Heterocyclic means the ring atom, not a substituent:** ethanol has an O but it is not in a ring and is not heterocyclic; pyridine's N is in the ring — that is the criterion."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Saturated refers to bonds, not to fat:** saturated = no multiple bonds (maximum hydrogen per carbon); unsaturated = at least one C=C or C≡C.  ·  ## 7. Exam Application **NEB-style (3m): Classify organic compounds with suitable examples.** — Organic compounds divide into **open-chain (acyclic, aliphatic)** and **closed-chain (cyclic)**.…  ·  **NEB-style (2m): Distinguish between alicyclic and aromatic compounds with one example each.** — **Alicyclic compounds** contain a ring of carbon atoms but show ordinary aliphatic (non-aromatic) behaviour — addition reactions, no special π stabilisation; example: **cyclohexane**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): What are heterocyclic compounds? Give two examples.** — **Heterocyclic compounds** are cyclic compounds whose ring contains, besides carbon, **at least one atom of another element** — usually nitrogen, oxygen or sulphur.…"
     }
-  ],
-  "keyPoints": [
-    "04 Classification Of Organic Compounds is a core concept in basic concept of organic chemistry.",
-    "Understanding 04 classification of organic compounds requires knowing its definition, conditions, and limitations.",
-    "04 Classification Of Organic Compounds has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 classification of organic compounds must be memorized precisely.",
-    "04 Classification Of Organic Compounds connects to neighbouring topics within basic concept of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 classification of organic compounds.",
-    "Practical examples solidify understanding of 04 Classification Of Organic Compounds and its real-world relevance.",
-    "Misconceptions about 04 classification of organic compounds often arise from confusing it with similar concepts.",
-    "04 Classification Of Organic Compounds follows systematic rules that can be applied step-by-step.",
-    "Review of 04 classification of organic compounds should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Classification Of Organic Compounds is defined by its specific characteristics within basic concept of organic chemistry.",
-    "The conditions under which 04 classification of organic compounds applies are as important as the concept itself.",
-    "04 Classification Of Organic Compounds can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 classification of organic compounds through application-based and comparison questions.",
-    "A clear grasp of 04 Classification Of Organic Compounds builds the foundation for advanced topics in basic concept of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 04 classification of organic compounds, always note the exceptions alongside the general rule.",
-    "04 Classification Of Organic Compounds should be reviewed with at least one worked example per sub-point.",
-    "Link 04 classification of organic compounds back to prior knowledge in basic concept of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 04 Classification Of Organic Compounds to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Classification Of Organic Compounds: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 classification of organic compounds with a related concept from basic concept of organic chemistry.",
-    "Exam-style problem: solve a question involving 04 Classification Of Organic Compounds under time pressure.",
-    "Real-world connection: show how 04 Classification Of Organic Compounds appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Classification Of Organic Compounds and state two conditions required for it to occur.",
-    "Differentiate 04 Classification Of Organic Compounds from the most commonly confused concept in basic concept of organic chemistry.",
-    "Solve a numerical or structural problem involving 04 Classification Of Organic Compounds.",
-    "List three applications of 04 Classification Of Organic Compounds in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Classification Of Organic Compounds without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Classification Of Organic Compounds.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Classification Of Organic Compounds."
-  ],
-  "universalFacts": [
-    "04 Classification Of Organic Compounds is part of the NEB Class 11 basic concept of organic chemistry syllabus.",
-    "Every concept in basic concept of organic chemistry builds upon definitions established earlier in the chapter.",
-    "04 Classification Of Organic Compounds is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Classification Of Organic Compounds improves performance across the entire basic concept of organic chemistry unit.",
-    "Revision of 04 Classification Of Organic Compounds should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Classification Of Organic Compounds with closely related concepts in basic concept of organic chemistry — focus on distinguishing features.",
-    "The scope of 04 Classification Of Organic Compounds is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Classification Of Organic Compounds outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Classification Of Organic Compounds and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Classification Of Organic Compounds? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Classification Of Organic Compounds is primarily studied under which branch of basic concept of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Classification Of Organic Compounds is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to basic concept of organic chemistry — Answer: B",
-    "Which example correctly illustrates 04 Classification Of Organic Compounds? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Classification Of Organic Compounds differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Classification Of Organic Compounds.",
-    "Step-by-step animated derivation of the key relationship in 04 Classification Of Organic Compounds.",
-    "Interactive toggle between correct and incorrect representations of 04 Classification Of Organic Compounds."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Classification Of Organic Compounds.",
-    "Side-by-side comparison animation of 04 Classification Of Organic Compounds vs commonly confused concept.",
-    "Timelapse build-up of 04 Classification Of Organic Compounds from prerequisite knowledge in basic concept of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Classification Of Organic Compounds",
-    "Comparison table: 04 Classification Of Organic Compounds vs related concepts in basic concept of organic chemistry",
-    "Step-by-step worked example layout for 04 Classification Of Organic Compounds"
-  ],
-  "summary": [
-    "04 Classification Of Organic Compounds is a fundamental concept in basic concept of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Classification Of Organic Compounds involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Classification Of Organic Compounds alongside related concepts in basic concept of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

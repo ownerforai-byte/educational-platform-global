@@ -23,7 +23,7 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Mendelian inheritance: traits follow predictable patterns",
+      "text": "Mendelian inheritance tracks alleles. They segregate, one to each gamete, giving 1:2:1 genotypes and 3:1 phenotypes under complete dominance. Unlinked genes assort independently and give 9:3:3:1. A test cross uncovers a hidden recessive allele.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Genetics and Inheritance — quick idea map\"><title>Genetics and Inheritance — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Genetics and Inheritance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mendelian inheritance:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">traits follow predictable</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">patterns</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dominant and recessive</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">alleles</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mendelian ratios: 3:1 for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dominant/recessive in</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">monohybrid crosses.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Punnett squares are</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">essential for predicting</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">offspring genotypes and…</text></svg>",
         "caption": "Genetics and Inheritance — quick idea map of this topic's headline ideas"
@@ -32,27 +32,27 @@
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "In a monohybrid cross (Aa × Aa), the genotypic ratio is 1:2:1 (AA:Aa:aa) and the phenotypic ratio is 3:1 (dominant:recessive).\nDominant alleles mask recessive alleles in heterozygous individuals."
+      "text": "A gene can exist as alleles. A diploid individual carries two alleles of each gene.\nDominance means that in a heterozygote, one allele's phenotype hides the other allele's phenotype."
     },
     {
       "label": "Conditions",
-      "text": "Mendel worked with pea plants but his laws apply to all sexually reproducing organisms.  ·  The concept of incomplete dominance (e.g., flower color in snapdragons) deviates from classical Mendelian ratios."
+      "text": "3:1 is phenotype. 1:2:1 is genotype under complete dominance.  ·  Assortment is for different genes. Segregation is for the two alleles of one gene."
     },
     {
       "label": "Special cases",
-      "text": "Sex-linked inheritance (X-linked traits) follows a different pattern due to sex chromosomes."
+      "text": "Mendel worked with pea plants but his laws apply to all sexually reproducing organisms.  ·  The concept of incomplete dominance (e.g., flower color in snapdragons) deviates from classical Mendelian ratios."
     },
     {
       "label": "Solved",
-      "text": "In a cross between Aa and aa, what are the expected genotypes and phenotypes?"
+      "text": "Segregation: those two alleles separate when gametes form, so each gamete gets one."
     },
     {
       "label": "Limitation",
-      "text": "Dominant and recessive alleles  ·  Heterozygous (Aa) and homozygous (AA, aa) genotypes"
+      "text": "Stay inside this class 11 topic.  ·  Do not add an unsupported count."
     },
     {
       "label": "Derivation",
-      "text": "### 1. Mendel's Experiments  ·  - Gregor Mendel studied pea plants (Pisum sativum) in the 1860s"
+      "text": "Write the table.  ·  Add one trap."
     },
     {
       "label": "Shortcut",
@@ -60,9 +60,9 @@
     },
     {
       "label": "Board question",
-      "text": "Draw a Punnett square for a monohybrid cross (Aa × Aa).  ·  Explain why a heterozygous individual (Aa) shows the dominant phenotype.",
+      "text": "In a cross between Aa and aa, what are the expected genotypes and phenotypes?  ·  Draw a Punnett square for a monohybrid cross (Aa × Aa).",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Genetics and Inheritance — exam flow\"><title>Genetics and Inheritance — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Genetics and Inheritance</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Mendelian inheritance: traits follow</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">predictable patterns</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">In a monohybrid cross (Aa × Aa), the</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">genotypic ratio is 1:2:1 (AA:Aa:aa) and the</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">phenotypic ratio is 3:1…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">3:1 ratio in monohybrid cross =</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">dominant:recessive phenotype. · Punnett</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">square predicts 25% AA, 50% Aa, 25% aa in Aa</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Draw a Punnett square for a monohybrid cross</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">(Aa × Aa). · Explain why a heterozygous</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">individual (Aa) shows the dominant…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Genetics and Inheritance — exam flow\"><title>Genetics and Inheritance — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Genetics and Inheritance</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Mendelian inheritance tracks alleles. They</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">segregate, one to each gamete, giving 1:2:1</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">genotypes and 3:1 phenotypes…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">A gene can exist as alleles. A diploid</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">individual carries two alleles of each</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">gene.…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">3:1 ratio in monohybrid cross =</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">dominant:recessive phenotype. · Punnett</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">square predicts 25% AA, 50% Aa, 25% aa in Aa</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">In a cross between Aa and aa, what are the</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">expected genotypes and phenotypes? · Draw a</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">Punnett square for a monohybrid…</text></svg>",
         "caption": "Genetics and Inheritance — exam flow: concept → formula → shortcut → board question"
       }
     },
@@ -72,7 +72,7 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Phenotype vs genotype  ·  Punnett square: a method for predicting offspring genotypes"
+      "text": "Mendelian inheritance: traits follow predictable patterns  ·  Dominant and recessive alleles  ·  Heterozygous (Aa) and homozygous (AA, aa) genotypes  ·  Phenotype vs genotype"
     },
     {
       "label": "Key points",
@@ -80,7 +80,7 @@
     },
     {
       "label": "More practice",
-      "text": "What is incomplete dominance and give an example?"
+      "text": "Explain why a heterozygous individual (Aa) shows the dominant phenotype.  ·  What is incomplete dominance and give an example?"
     },
     {
       "label": "More hints",
@@ -88,15 +88,31 @@
     },
     {
       "label": "MCQ drill",
-      "text": "In a monohybrid cross (Aa × Aa), what is the phenotypic ratio? → B  ·  What is a Punnett square? → A"
+      "text": "Segregation refers to → A  ·  Phenotype ratio of a monohybrid heterozygote cross is → A"
     },
     {
       "label": "Study notes",
-      "text": "- He identified seven traits he could study  ·  - His experiments established the foundation of modern genetics"
+      "text": "A cross of two heterozygotes therefore gives a genotype ratio of 1:2:1 and, if dominance is complete, a phenotype ratio of 3:1.  ·  Independent assortment: alleles of different, unlinked genes are sorted independently. Two such genes in a double heterozygote cross give 9:3:3:1.  ·  A test cross with the homozygous recessive reveals whether a dominant phenotype hides a recessive allele. Linked genes are the exception this note only flags: they do not assort independently."
     },
     {
       "label": "More ideas",
-      "text": "Mendel's law of segregation states that alleles separate during gamete formation.  ·  Dominant allele masks recessive allele in heterozygotes (Aa looks like AA)."
+      "text": "Punnett square: a method for predicting offspring genotypes  ·  A test cross is not a cross of two unknowns.  ·  Linked genes break the 9:3:3:1 expectation."
+    },
+    {
+      "label": "More ideas",
+      "text": "Sex-linked inheritance (X-linked traits) follows a different pattern due to sex chromosomes.  ·  Order in a sequence is part of the answer.  ·  Do not call a timberline a snowline."
+    },
+    {
+      "label": "More ideas",
+      "text": "In a monohybrid cross (Aa × Aa), the genotypic ratio is 1:2:1 (AA:Aa:aa) and the phenotypic ratio is 3:1 (dominant:recessive).  ·  Dominant alleles mask recessive alleles in heterozygous individuals.  ·  Mendel's law of segregation states that alleles separate during gamete formation."
+    },
+    {
+      "label": "More ideas",
+      "text": "Dominant allele masks recessive allele in heterozygotes (Aa looks like AA).  ·  Give the character and one example.  ·  State the contrast."
+    },
+    {
+      "label": "More ideas",
+      "text": "Name a use or a limit."
     }
   ]
 }

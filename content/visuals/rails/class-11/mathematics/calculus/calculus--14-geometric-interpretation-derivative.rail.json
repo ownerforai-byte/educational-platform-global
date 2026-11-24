@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Geometrically the derivative is the slope of the tangent, obtained as the limiting position of secants. The tangent is a first-order approximation, so it matches the curve to first order and may lie above or below it. A zero derivative gives a horizontal tangent, which is a candidate extremum but not a certainty, and the angle of inclination is $\\tan^{-1}$ of the slope rather than the slope itself.",
+      "text": "The derivative's geometric meaning is dynamic: the tangent is the limiting secant, its slope f′(a), the normal its perpendicular partner, and a vertical tangent is the derivative's finite failure. The sign of f′ is a local fact that the Mean Value Theorem promotes to global monotonicity, and the same number reads as a physical rate with units.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric Interpretation of the Derivative — quick idea map\"><title>Geometric Interpretation of the Derivative — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Geometric Interpretation of the Derivative</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The derivative is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent slope, obtained as</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a limit of chord slopes.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A horizontal tangent marks</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a candidate extremum, not</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a guaranteed one.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The derivative is the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent slope, obtained as</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a limit of chord slopes.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A horizontal tangent marks</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a candidate extremum, not</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a guaranteed one.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric Interpretation of the Derivative — quick idea map\"><title>Geometric Interpretation of the Derivative — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Geometric Interpretation of the Derivative</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The tangent is defined</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dynamically - the limiting</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">secant - not by a</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Tangent slope = f'(a) =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limit of secant slopes;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent line y - f(a) =…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Tangent: y − f(a) =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f′(a)(x − a); Normal: y −</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(a) = −(1/f′(a))(x − a) -</text></svg>",
         "caption": "Geometric Interpretation of the Derivative — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Tangent at $a$: $y - f(a) = f'(a)(x-a)$\nAngle of inclination: $\\tan\\theta = f'(a)$\nStationary point: $f'(a)=0$",
+      "text": "- Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) = −(1/f′(a))(x − a) - f′ > 0 on (a, b) ⟹ f strictly increasing on (a, b)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric Interpretation of the Derivative — formula board\"><title>Geometric Interpretation of the Derivative — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Geometric Interpretation of the Derivative</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Tangent at $a$: $y - f(a) = f'(a)(x-a)$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Angle of inclination: $\\tan\\theta = f'(a)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Stationary point: $f'(a)=0$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric Interpretation of the Derivative — formula board\"><title>Geometric Interpretation of the Derivative — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Geometric Interpretation of the Derivative</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">−(1/f′(a))(x − a) - f′ &gt; 0 on (a, b) ⟹ f strictly</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">increasing on (a, b)</text></svg>",
         "caption": "Geometric Interpretation of the Derivative — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "The derivative is the tangent slope, obtained as a limit of chord slopes.  ·  A horizontal tangent marks a candidate extremum, not a guaranteed one."
+      "text": "***The touching test fails*** - y = x^3 at 0 touches the x-axis and crosses it; the limit-of-secants definition survives where the folk definition dies."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "If the question says 'angle of inclination', finish with $\\tan^{-1}$ — reporting the raw slope loses the mark.  ·  Sketch the curve and mark the tangent; a picture settles sign and quadrant questions faster than algebra."
+      "text": "Tangent and normal in one breath: slope m, then -1/m, both through the same point."
     },
     {
       "label": "Board question",
-      "text": "Finding the equation of a tangent or normal at a point is a standard 3-mark question."
+      "text": "**NEB-style (5m): Find the tangent line to y = x² at (2, 4) and the normal line there.** — **Slope:** y′ = 2x ⟹ at x = 2: m = **4**. **Tangent:** y − 4 = 4(x − 2) ⟹ **y = 4x − 4**. **Normal:** slope −1/4 ⟹ y − 4 = −(1/4)(x − 2) ⟹ **x + 4y = 18**.…  ·  **NEB-style (6m): Find the tangent and normal to y = x³ − 2x at x = 1, and determine where the tangent crosses the x-axis.** — **Point:** f(1) = 1 − 2 = −1 ⟹ (1, −1). **Slope:** f′ = 3x² − 2 ⟹ f′(1) = **1**. **Tangent:** y + 1 = 1(x − 1) ⟹ **y = x − 2**; it crosses the x-axis at x = 2.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Normal lines are perpendicular to the tangent, so their slope is $- frac1{f'(a)}$, undefined when $f'(a)=0$ — precisely the case that gives a horizontal tangent and hence a VERTICAL normal."
+      "text": "Quote the units when interpreting a derivative as a rate - the mark is for the reading, not the number."
     },
     {
       "label": "Quick concepts",
-      "text": "Report an ANGLE, not a slope, when the question asks for the angle of inclination."
+      "text": "The tangent is defined dynamically - the limiting secant - not by a touching count."
+    },
+    {
+      "label": "Key points",
+      "text": "Tangent slope = f'(a) = limit of secant slopes; tangent line y - f(a) = f'(a)(x - a); normal slope -1/f'(a); vertical tangent when f' -> +-inf. Corners have two half-tangents. f' > 0 on an interval implies increasing (MVT converts local signs to global monotonicity). f' = 0 means stationary, not necessarily extreme.…"
     },
     {
       "label": "Universal facts",
-      "text": "The tangent to a curve is the local linear model: an error of order $h^2$ in $x$ gives an error of order $h^2$ in the approximation, which is why linearising motion equations is the first step of most numerical simulation.  ·  Refraction can be derived by demanding the path length be stationary, which is Fermat's condition and a direct application of the horizontal-tangent principle."
+      "text": "The MVT is the bridge from local derivative signs to global monotonicity."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): For f(x) = |x|, describe the tangent geometry at x = 0 and connect it to the derivative's failure.** — **Right side:** slope +1 ⟹ half-tangent y = x for x ≥ 0. **Left side:** slope −1 ⟹ half-tangent y = −x for x ≤ 0.…  ·  **NEB-style (6m): A body's position is s(t) = t³ − 6t² + 9t (metres, seconds). Find the velocity at t = 2 and interpret its sign; find when the body momentarily stops.** — **Velocity:** v(t) = s′(t) = 3t² − 12t + 9 = 3(t − 1)(t − 3).…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The derivative is the tangent slope.** $f'(a)$ is the slope of the tangent to $y=f(x)$ at $x=a$, obtained as the limit of chord slopes, so the tangent is the limiting position of secants as the second point approaches $a$.  ·  **The tangent touches but does not cross.** Since $f(a+h)=f(a)+f'(a)h+o(h)$, the curve and its tangent agree to first order and differ only at second order. This is why the tangent line is a first-order approximation and why it may lie above or below the curve.  ·  **A horizontal tangent means a stationary point,** $f'(a)=0$, where the graph neither rises nor falls. This is the condition for a maximum or a minimum, but not a guarantee of one — $y=x^3$ has a horizontal tangent at the origin with no extremum."
+      "text": "## 1. Topic Introduction — The Companion Doorway to the Derivative's Geometric Meaning This canonical is the **short-form doorway** to the derivative's geometric interpretation: tangent slope, increasing/decreasing, and the rate reading in one page.…  ·  ## 2. Theorem Mirror - **Tangent slope:** f′(a) = slope of the tangent at (a, f(a)) — the limiting position of secants through (a, f(a)) and (a+h, f(a+h)). - **Tangent line:** y − f(a) = f′(a)(x − a); **normal line:** slope −1/f′(a) (f′(a) ≠ 0); vertical tangent when f′ → ±∞.…  ·  ## 3. Deep Conceptual — Slope as the Limit of Secants - The tangent is **not** \"the line touching at one point\" — circles aside, that folk definition fails (cubics touch and cross). The precise definition is dynamic: the secant through two nearby points, with the second point sliding in. The limit of chords is the tangent; the limit of their slopes is f′(a).…"
     },
     {
       "label": "More ideas",
-      "text": "Normal slope: $-\\frac{1}{f'(a)}$ for $f'(a)\\ne0$  ·  Expansion: $f(a+h)=f(a)+f'(a)h+o(h)$  ·  Statement 1: $f'(a)$ is the slope of the tangent to the curve at $x=a$."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  A vertical tangent is the derivative's failure to be finite - and that failure is information.  ·  Find the tangent to y = x² at (2, 4)."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: $f'(a)=0$ indicates a horizontal tangent.  ·  Statement 3: The angle of inclination satisfies $\\tan\\theta=f'(a)$.  ·  Statement 4: A horizontal tangent makes the normal vertical, so the normal has no finite slope."
+      "text": "Find the tangent and normal to y = x³ − 2x at x = 1.  ·  Interpret f′(3) = −5 for f(t) measuring temperature in °C at time t in minutes.  ·  ## 4. Deep Conceptual — The Sign of f′ Is a Global Statement - **Local sign, global consequence:** if f′ > 0 at *every* point of an interval, the function is strictly increasing on the whole interval — the Mean Value Theorem converts the local derivative data into a global monotonicity statement.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: The tangent line agrees with the curve to first order near the point of contact.  ·  **The angle of inclination satisfies $\\tan\\theta = f'(a)$**, so a negative derivative corresponds to an obtuse angle when measured counterclockwise from the positive $x$-axis. Questions often ask for the angle, requiring this extra step.  ·  **Parallel curves have equal derivatives at equal $x$:** if $f'(a)=g'(a)$ the tangents are parallel, and the vertical gap between the curves is stationary there. This is used to compare solutions of competing processes."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Normal lines are perpendicular to the tangent,** so their slope is $-\\frac1{f'(a)}$, undefined when $f'(a)=0$ — precisely the case that gives a horizontal tangent and hence a VERTICAL normal."
+      "text": "## 5. Worked Example Types - **Type A — tangent/normal at a point:** evaluate f and f′, write both lines. - **Type B — corner geometry:** one-sided slopes, two half-tangents, no tangent. - **Type C — sign table sketching:** f′ signs ⟹ increasing/decreasing intervals.…  ·  ## 6. Common Confusions **\"Tangent touches at exactly one point\":** the folk definition — the limit-of-secants definition is the real one. **\"f′ = 0 means a max or min\":** it means stationary; classification needs the second derivative or a sign study."
     }
   ]
 }

@@ -30,20 +30,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental. Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.…",
+      "text": "When a low-ionisation-energy metal meets a high-electron-affinity non-metal, electrons transfer completely: Na gives its 3s electron to Cl, and the Na⁺/Cl⁻ pair assembles into a **three-dimensional lattice** whose electrostatic attraction is the ionic bond.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ionic Bond and Its Properties — quick idea map\"><title>Ionic Bond and Its Properties — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ionic Bond and Its Properties</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 02 ionic</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">bond and its properties.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 02 ionic</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">bond and its properties.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F = m \\cdot a$ (relevant</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula for 02 ionic bond</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and its properties)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ionic Bond and Its Properties — quick idea map\"><title>Ionic Bond and Its Properties — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ionic Bond and Its Properties</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every ionic bond has some</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">covalent character</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(Fajan's polarisation);</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ionic bond = electrostatic</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">attraction between ions</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formed by electron…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Polarising power ∝</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">charge² / radius (ionic</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">potential φ = z/r) -</text></svg>",
         "caption": "Ionic Bond and Its Properties — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$F = m \\cdot a$ (relevant formula for 02 ionic bond and its properties)"
+      "text": "- Polarising power ∝ charge² / radius (ionic potential φ = z/r) - Coulomb energy ∝ |q₁q₂| / r (lattice attraction basis) - Li⁺ 76 pm < Na⁺ 102 pm < K⁺ 138 pm (polarising ladder)"
     },
     {
       "label": "Conditions",
-      "text": "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.  ·  ❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons."
+      "text": "**Formula unit ≠ molecule:** NaCl is a formula unit of an infinite lattice, not a discrete molecule — \"molecule of NaCl\" is a mark-losing phrase.  ·  **Polarisation direction:** the cation polarises (distorts) the anion — small/high-charge cation pulls, large anion is pulled."
     },
     {
       "label": "Special cases",
@@ -51,11 +51,11 @@
     },
     {
       "label": "Solved",
-      "text": "H₂O: sp³, 2BP+2LP → bent  ·  CO₂: sp, 2BP+0LP → linear"
+      "text": "***LiCl dissolves in ethanol and acetone where NaCl barely does*** — the observable fingerprint of Li⁺'s stronger polarisation of Cl⁻."
     },
     {
       "label": "Limitation",
-      "text": "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).  ·  ❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments."
+      "text": "Verified PYQs: NEB 2024 — ionic vs covalent distinction and Fajan's rules (LiCl vs NaCl), both solved above. Other items are NEB-style practice."
     },
     {
       "label": "Derivation",
@@ -63,15 +63,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Ionic Bond and Its Properties."
+      "text": "Fajan: \"small cation, big anion, big charges, 18-e⁻ cation → covalent.\" Conductivity: \"solid no, molten yes.\" Lattice ladder: MgO > CaO > NaCl > KCl in mp."
     },
     {
       "label": "Board question",
-      "text": "Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
+      "text": "**NEB 2024 (2m): Distinguish between ionic and covalent bonds with one example of each.** — **Ionic bond:** formed by complete transfer of electrons from a metal to a non-metal; the resulting oppositely charged ions attract electrostatically in all directions, building a crystal lattice — example NaCl (Na gives its 3s¹ electron to Cl).…  ·  **NEB 2024 (3m): State Fajan's rules and use them to compare the covalent character of LiCl and NaCl.** — **Rules:** (i) smaller cation → more polarising; (ii) larger anion → more easily polarised; (iii) higher charges on either ion → more polarisation; (iv) cations with 18-electron (pseudo-noble-gas) configurations polarise more than…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 02 ionic bond and its properties.",
+      "text": "For Fajan's rules, always attach the observable consequence (organic-solvent solubility, depressed melting point) — rules alone score half.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ionic Bond and Its Properties — topic mind map\"><title>Ionic Bond and Its Properties — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Ionic bond and its properties</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ionic bond</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its properties</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Ionic Bond and Its Properties — topic mind map of this topic's own sub-topics"
@@ -79,130 +79,43 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 02 ionic bond and its properties."
+      "text": "Every ionic bond has some covalent character (Fajan's polarisation); every covalent bond has some ionic character (polarity). The 100% pure bond is a limiting idealisation — the ionic–covalent picture is a continuum."
     },
     {
       "label": "Key points",
-      "text": "Core point for 02 ionic bond and its properties."
+      "text": "Ionic bond = electrostatic attraction between ions formed by electron transfer (metal low IE + non-metal high EA + high lattice energy). Properties: hard brittle crystals, high mp/bp, conduct only when molten/aqueous, soluble in polar solvents, fast ionic reactions.…"
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 02 ionic bond and its properties."
+      "text": "Magnesium oxide's melting point (2852 °C) is so high that MgO lines furnaces — doubly charged, small ions build the strongest common lattice."
     },
     {
       "label": "More practice",
-      "text": "Practice identifying limiting reagents in stoichiometric calculations.  ·  Practice calculating percent yield from experimental data.  ·  Practice converting between molarity and molality."
+      "text": "**NEB-style (3m): Explain the following properties of NaCl on the basis of its bonding: (a) high melting point, (b) conduction in molten state only, (c) brittleness.** — **(a)** Strong, non-directional electrostatic attraction runs throughout the 3D lattice; melting requires disrupting the entire…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 02 ionic bond and its properties? → A"
+      "text": "Question about 02 ionic bond and its properties? → A  ·  An ionic bond forms by: → B"
     },
     {
       "label": "Study notes",
-      "text": "VSEPR theory predicts molecular geometry from electron pairs.  ·  sp³: 4 pairs → tetrahedral (109.5°).  ·  sp²: 3 pairs → trigonal planar (120°)."
+      "text": "## 1. Topic Introduction — The Bond of Full Transfer When the electronegativity gap is a canyon — metal meets non-metal — electrons are not shared but **surrendered**. Sodium hands its 3s electron to chlorine; the resulting Na⁺ and Cl⁻ lock into a three-dimensional lattice by sheer electrostatic attraction. That attraction **is** the ionic (electrovalent) bond.…  ·  ## 2. Fundamental Concepts ### 2.1 Formation mechanism - **Electron transfer:** metal atoms (low IE) lose electrons → cations; non-metal atoms (high EA) gain them → anions. - Na (2,8,1) → Na⁺ (2,8) + e⁻; Cl (2,8,7) + e⁻ → Cl⁻ (2,8,8). Both reach noble-gas configurations.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Value to quote | |---|---|---| | **Ionic (electrovalent) bond** | Electrostatic attraction between oppositely charged ions formed by electron transfer | Na⁺Cl⁻ | | **Lattice energy** | Energy released when gaseous ions pack into one mole of crystal | NaCl ≈ −788 kJ mol⁻¹ | | **Polarisation** | Distortion of an anion's…"
     },
     {
       "label": "More ideas",
-      "text": "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.  ·  ❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.  ·  ❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field)."
+      "text": "\"An ionic bond is the electrostatic force of attraction between oppositely charged ions produced by the complete transfer of one or more electrons.\"  ·  Why does molten NaCl conduct electricity but solid NaCl does not?  ·  Arrange NaCl, MgCl₂, AlCl₃ in increasing covalent character and justify via Fajan's rules."
     },
     {
       "label": "More ideas",
-      "text": "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.  ·  ❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...  ·  ❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins."
+      "text": "Why are ionic crystals hard yet brittle?  ·  ## 4. Detailed Explanation ### 4.1 Verified PYQ (NEB 2024): ionic vs covalent — the distinction | Basis | Ionic bond | Covalent bond | |---|---|---| | Mechanism | Complete electron transfer | Sharing of electron pairs | | Particles formed | Ions (Na⁺, Cl⁻) | Molecules (H₂O, CH₄) | | Directionality | Non-directional…  ·  ## 5. Comparison Tables **Polarising power and polarizability (Fajan's levers)** | Lever | Increases covalent character | Example | |---|---|---| | Cation size ↓ | Li⁺ > Na⁺ > K⁺ > Rb⁺ | LiCl > NaCl in covalency | | Anion size ↑ | I⁻ > Br⁻ > Cl⁻ > F⁻ | LiI most covalent LiX | | Charge ↑ | Al³⁺ ≫ Na⁺ | AlCl₃ largely…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.  ·  ❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.  ·  ❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units."
+      "text": "## 6. Common Confusions **Ionic bond is not directional:** an Na⁺ attracts every neighbouring Cl⁻ equally — the \"bond\" is the whole lattice's attraction, not a pair-specific link. That is why formula units (NaCl) are not molecules.  ·  **Covalent character in ionic bonds is normal, not anomalous:** Fajan's rules mean every \"ionic\" compound has some electron distortion; 100% ionic exists only as an idealisation.  ·  **Solid ionic compounds do not conduct:** conduction requires mobile charge carriers; in the solid the ions are locked in place — the common exam trap."
     },
     {
       "label": "More ideas",
-      "text": "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).  ·  ❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.  ·  ❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent)."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.  ·  ❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).  ·  ❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K."
+      "text": "## 7. Exam Application **Verified PYQ (NEB 2024, 2m): Distinguish between ionic and covalent bonds with one example of each.** — Ionic bond: complete transfer of electrons from a metal to a non-metal, giving oppositely charged ions held by electrostatic attraction (NaCl).…  ·  **Verified PYQ (NEB 2024, 3m): State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?** — Covalent character increases with small cation size, large anion size, high ionic charges and cations of 18-electron configuration.…  ·  **NEB-style (2m): Why is MgO's melting point (2852 °C) far higher than NaCl's (801 °C)?** — Mg²⁺ and O²⁻ carry double the charge of Na⁺/Cl⁻ and are smaller, so the electrostatic attraction (and lattice energy, ≈ −3795 kJ mol⁻¹) is far greater — more energy is needed to disrupt the lattice."
     }
-  ],
-  "keyPoints": [
-    "02 Ionic Bond And Its Properties is a core concept in chemical bonding and shapes of molecules.",
-    "Understanding 02 ionic bond and its properties requires knowing its definition, conditions, and limitations.",
-    "02 Ionic Bond And Its Properties has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 ionic bond and its properties must be memorized precisely.",
-    "02 Ionic Bond And Its Properties connects to neighbouring topics within chemical bonding and shapes of molecules and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 ionic bond and its properties.",
-    "Practical examples solidify understanding of 02 Ionic Bond And Its Properties and its real-world relevance.",
-    "Misconceptions about 02 ionic bond and its properties often arise from confusing it with similar concepts.",
-    "02 Ionic Bond And Its Properties follows systematic rules that can be applied step-by-step.",
-    "Review of 02 ionic bond and its properties should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Ionic Bond And Its Properties is defined by its specific characteristics within chemical bonding and shapes of molecules.",
-    "The conditions under which 02 ionic bond and its properties applies are as important as the concept itself.",
-    "02 Ionic Bond And Its Properties can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 ionic bond and its properties through application-based and comparison questions.",
-    "A clear grasp of 02 Ionic Bond And Its Properties builds the foundation for advanced topics in chemical bonding and shapes of molecules."
-  ],
-  "importantNotes": [
-    "When studying 02 ionic bond and its properties, always note the exceptions alongside the general rule.",
-    "02 Ionic Bond And Its Properties should be reviewed with at least one worked example per sub-point.",
-    "Link 02 ionic bond and its properties back to prior knowledge in chemical bonding and shapes of molecules for deeper retention.",
-    "Practice past NEB board questions on 02 Ionic Bond And Its Properties to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Ionic Bond And Its Properties: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 ionic bond and its properties with a related concept from chemical bonding and shapes of molecules.",
-    "Exam-style problem: solve a question involving 02 Ionic Bond And Its Properties under time pressure.",
-    "Real-world connection: show how 02 Ionic Bond And Its Properties appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Ionic Bond And Its Properties and state two conditions required for it to occur.",
-    "Differentiate 02 Ionic Bond And Its Properties from the most commonly confused concept in chemical bonding and shapes of molecules.",
-    "Solve a numerical or structural problem involving 02 Ionic Bond And Its Properties.",
-    "List three applications of 02 Ionic Bond And Its Properties in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Ionic Bond And Its Properties without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Ionic Bond And Its Properties.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Ionic Bond And Its Properties."
-  ],
-  "universalFacts": [
-    "02 Ionic Bond And Its Properties is part of the NEB Class 11 chemical bonding and shapes of molecules syllabus.",
-    "Every concept in chemical bonding and shapes of molecules builds upon definitions established earlier in the chapter.",
-    "02 Ionic Bond And Its Properties is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Ionic Bond And Its Properties improves performance across the entire chemical bonding and shapes of molecules unit.",
-    "Revision of 02 Ionic Bond And Its Properties should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Ionic Bond And Its Properties with closely related concepts in chemical bonding and shapes of molecules — focus on distinguishing features.",
-    "The scope of 02 Ionic Bond And Its Properties is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Ionic Bond And Its Properties outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Ionic Bond And Its Properties and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Ionic Bond And Its Properties? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Ionic Bond And Its Properties is primarily studied under which branch of chemical bonding and shapes of molecules? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Ionic Bond And Its Properties is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical bonding and shapes of molecules — Answer: B",
-    "Which example correctly illustrates 02 Ionic Bond And Its Properties? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Ionic Bond And Its Properties differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Ionic Bond And Its Properties.",
-    "Step-by-step animated derivation of the key relationship in 02 Ionic Bond And Its Properties.",
-    "Interactive toggle between correct and incorrect representations of 02 Ionic Bond And Its Properties."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Ionic Bond And Its Properties.",
-    "Side-by-side comparison animation of 02 Ionic Bond And Its Properties vs commonly confused concept.",
-    "Timelapse build-up of 02 Ionic Bond And Its Properties from prerequisite knowledge in chemical bonding and shapes of molecules."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Ionic Bond And Its Properties",
-    "Comparison table: 02 Ionic Bond And Its Properties vs related concepts in chemical bonding and shapes of molecules",
-    "Step-by-step worked example layout for 02 Ionic Bond And Its Properties"
-  ],
-  "summary": [
-    "02 Ionic Bond And Its Properties is a fundamental concept in chemical bonding and shapes of molecules that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Ionic Bond And Its Properties involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Ionic Bond And Its Properties alongside related concepts in chemical bonding and shapes of molecules ensures strong conceptual clarity and exam readiness."
   ]
 }

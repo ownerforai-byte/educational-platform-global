@@ -28,171 +28,88 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "### 1. Meaning",
+      "text": "Every electron in an atom carries a four-number address: **n** (principal — shell, size, energy, 2n² capacity), **l** (azimuthal — subshell shape, 0 to n−1: s, p, d, f), **mₗ** (magnetic — orientation, −l to +l, 2l + 1 orbitals per subshell) and **mₛ** (spin — ±1/2, the basis of Pauli's exclusion principle).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantum Numbers — quick idea map\"><title>Quantum Numbers — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quantum Numbers</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$l=0,1,2,\\dots,(n-1);\\qquad</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m=-l,\\dots,0,\\dots,+l;\\qquad…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\text{orbitals in a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">subshell}=2l+1;\\qquad</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\text{electrons}=2(2l+1)$$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantum Numbers — quick idea map\"><title>Quantum Numbers — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quantum Numbers</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Validity checking</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">order:** l against n−1 →</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mₗ against ±l → mₛ against</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n = shell (1, 2, 3…; 2n²</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrons); l = subshell</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shape (0 to n−1: s, p, d,…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- l = 0, 1, 2, …, (n − 1)</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- mₗ = −l, …, 0, …, +l →</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">orbitals per subshell =</text></svg>",
         "caption": "Quantum Numbers — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$l=0,1,2,\\dots,(n-1);\\qquad m=-l,\\dots,0,\\dots,+l;\\qquad m_{s}=\\pm\\tfrac{1}{2}$$\n$$\\text{orbitals in a subshell}=2l+1;\\qquad \\text{electrons}=2(2l+1)$$\n$$\\text{orbitals in a shell}=n^{2};\\qquad \\text{electrons}=2n^{2}$$"
+      "text": "- l = 0, 1, 2, …, (n − 1) - mₗ = −l, …, 0, …, +l → orbitals per subshell = 2l + 1 - Max electrons: shell 2n²; subshell 2(2l + 1); orbital 2 - Angular momentum = √(l(l+1))·h/2π"
     },
     {
       "label": "Conditions",
-      "text": "❌ n determines shape and l determines size. ✅ n → size/energy (shell); l → shape (subshell).  ·  ❌ l can equal n. ✅ l = 0 to n − 1, so 1s has l = 0 and 2p has l = 1."
+      "text": "**l ≤ n − 1, always:** \"3f\" (n = 3, l = 3) and \"2d\" (n = 2, l = 2) are impossible — the shape cannot outrun its shell.  ·  **mₗ range depends on l, not n:** mₗ = ±2 is legal only when l ≥ 2 (d or f), whatever n is."
     },
     {
       "label": "Special cases",
-      "text": "s, p, d, f stand for sharp, principal, diffuse, fundamental — the old spectroscopic series names.  ·  Shell capacities: K 2, L 8, M 18, N 32 (2n²); subshell capacities: s 2, p 6, d 10, f 14."
+      "text": "\"No two electrons in an atom can have the same set of all four quantum numbers.\" — Pauli's exclusion principle."
     },
     {
       "label": "Solved",
-      "text": "**Problem:** Maximum number of electrons with n = 4 and l = 2? **Solution:** 4d subshell: 2(2l + 1) = 2(5) = 10 electrons.  ·  **Problem:** How many electrons in an atom can have n = 3, m = 0? **Solution:** For n = 3: 3s (m = 0 only), 3p (m = 0 available), 3d (m = 0 available) → 1 + 2 + 2 = 6 electrons."
+      "text": "***Fe's last electron: 3, 2, −2, +1/2*** — a 3d electron (n = 3, l = 2); filling starts at mₗ = −2 with spin-up, per Hund's rule and the conventional mₗ ordering."
     },
     {
       "label": "Limitation",
-      "text": "❌ mₗ is the spin quantum number. ✅ mₗ gives orientation; spin is mₛ = ±1/2.  ·  ❌ A p subshell holds 3 electrons. ✅ It has 2l + 1 = 3 *orbitals*, so it holds up to 6 electrons."
+      "text": "Verified PYQs: NEB 2024 3m — four quantum numbers of Na's valence electron (solved above); NEB 2023 2m — identify the impossible set (answer b: mₗ = +2 with l = 1). Others are NEB-style practice."
     },
     {
       "label": "Derivation",
-      "text": "Solving the Schrödinger equation for the hydrogen atom yields a set of numbers that completely describe the state of an electron. These are the **quantum numbers** — effectively the 'address' of an electron in an atom. Four numbers are needed: principal (n), azimuthal or angular-momentum (l), magnetic (m or mₗ) and spin (s or mₛ).  ·  ### 2. Principal quantum number (n)"
+      "text": "## 1. Topic Introduction — The Four-Number Address of Every Electron The quantum mechanical model replaced orbits with orbitals; **quantum numbers** are the postal address system that labels each electron inside them. Four numbers — **n, l, mₗ, mₛ** — fix an electron's shell, subshell, orientation and spin. NEB examines them two ways every cycle: *define and give values* (3m) and *test which sets are possible* (2m).…  ·  ## 2. Fundamental Concepts — The Four Quantum Numbers ### 2.1 Principal quantum number (n) - **Meaning:** main energy shell; size and energy of the orbital. - **Values:** n = 1, 2, 3, 4, … (K, L, M, N). - **Consequences:** max electrons in a shell = **2n²**; energy rises with n; distance from nucleus rises with n.…"
     },
     {
       "label": "Shortcut",
-      "text": "Spin was proposed in 1925 (Uhlenbeck and Goudsmit) after the Stern–Gerlach experiment (1922).  ·  The 4f subshell (l = 3) holds 14 electrons — the width of the lanthanide series."
+      "text": "\"n owns the shell, l owns the shape, mₗ owns the direction, mₛ owns the spin.\" Values chant: \"0 to n−1, minus-l to plus-l, plus or minus a half.\""
     },
     {
       "label": "Board question",
-      "text": "The number of orbitals in the M shell (n = 3) is: → C"
+      "text": "**NEB 2024 (3m): Write the four quantum numbers for the valence electron of sodium (Z = 11).** — Na = 1s² 2s² 2p⁶ 3s¹; the valence electron sits in 3s: **n = 3, l = 0, mₗ = 0, mₛ = +1/2**.  ·  **NEB 2023 (2m): Which set of quantum numbers is not possible: (a) 3, 1, +1, +1/2 (b) 3, 1, +2, −1/2 (c) 3, 1, −1, −1/2 (d) 3, 0, 0, +1/2?** — **(b)**: with l = 1, mₗ may only be −1, 0 or +1; mₗ = +2 violates |mₗ| ≤ l. Sets (a), (c) are legal 3p electrons and (d) is a legal 3s electron."
     },
     {
       "label": "Hints",
-      "text": "Remember the two counting rules: 2l + 1 orbitals per subshell and 2n² electrons per shell.  ·  Check validity sets in the order n ≥ 1, l ≤ n − 1, |m| ≤ l, mₛ = ±1/2 — a favourite one-mark question.",
+      "text": "For \"write the quantum numbers\" questions, first write the electron configuration — the address follows mechanically. For \"which is impossible\", test l against n−1 before anything else; that catches most traps instantly.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quantum Numbers — topic mind map\"><title>Quantum Numbers — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Quantum numbers</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Quantum numbers</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Quantum Numbers — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Universal facts",
-      "text": "Stern–Gerlach (1922) split a silver atomic beam into two — the first spin evidence.  ·  Degeneracy of the n = 2 level in hydrogen: 4 orbitals (2s + three 2p)."
+      "label": "Quick concepts",
+      "text": "**Validity checking order:** l against n−1 → mₗ against ±l → mₛ against ±1/2. Run the checks in this order and every \"which set is impossible\" question resolves mechanically."
     },
     {
-      "label": "Extra solved",
-      "text": "**Problem:** Count orbitals with n = 4, l = 3 and the electrons they hold. **Solution:** 2l + 1 = 7 orbitals (4f), holding 14 electrons; nodes: radial 0, angular 3.  ·  **Problem:** Give the designation of an electron with (n, l, m, mₛ) = (4, 2, −1, +½). **Solution:** n = 4, l = 2 → 4d; m = −1 selects one of the five d orbitals; mₛ = +½ — an up-spin electron in a 4d orbital."
+      "label": "Key points",
+      "text": "n = shell (1, 2, 3…; 2n² electrons); l = subshell shape (0 to n−1: s, p, d, f); mₗ = orientation (−l to +l, 2l+1 orbitals); mₛ = spin (±1/2). Na valence electron (NEB 2024): n = 3, l = 0, mₗ = 0, mₛ = +1/2. Impossible-set test (NEB 2023): check l ≤ n−1 first, then |mₗ| ≤ l, then mₛ = ±1/2."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Quantum numbers emerged from spectroscopy: Zeeman splitting (mₛ/mₗ) and fine structure could not be explained until each electron needed four coordinates instead of one orbit."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (3m): Define the four quantum numbers and state the values each can take.** — **n (principal):** shell, size, energy; 1, 2, 3, … (capacity 2n²). **l (azimuthal):** subshell shape; 0 to n−1, named s, p, d, f. **mₗ (magnetic):** orientation; −l to +l, giving 2l + 1 orbitals.…  ·  **NEB-style (2m): An electron has n = 3, l = 2. Give the subshell, the number of orbitals, and all possible mₗ values.** — Subshell **3d**; orbitals = 2l + 1 = **5**; mₗ = **−2, −1, 0, +1, +2**; the subshell holds 10 electrons."
     },
     {
       "label": "MCQ drill",
-      "text": "The spin-only magnetic moment of Cu²⁺ (3d⁹) is about: → B  ·  For a 3d electron, l and the number of m values are: → A"
+      "text": "The principal quantum number determines: → B  ·  For n = 3, the possible values of l are: → C"
     },
     {
       "label": "Study notes",
-      "text": "Determines the **shell** (energy level) and, in effect, the size: r ∝ n². Values n = 1, 2, 3, … ∞; the shell letters are K, L, M, N …; maximum capacity of a shell = 2n² electrons (n = 1 → 2, n = 2 → 8, n = 3 → 18, n = 4 → 32). It corresponds to Bohr's orbit number but is now a quantum label, not a path.  ·  ### 3. Azimuthal quantum number (l)  ·  Determines the **subshell** and the *shape* of the orbital. Values l = 0, 1, 2, 3 … (n − 1), i.e. (n − 1) subshells per shell; the letters are s (l = 0), p (1), d (2), f (3). Orbital angular momentum = $\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$. Within a shell the energies follow the order s < p < d < f, and a subshell holds 2(2l + 1) electrons (s 2, p 6, d 10, f 14)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Shell** | All orbitals with the same n | n = 3 is the M shell | | **Subshell** | All orbitals with the same n and l | 3p (n = 3, l = 1) | | **Orbital** | One (n, l, mₗ) state — a probability region | 3p with mₗ = +1 | | **Electron address** | Full set (n, l, mₗ, mₛ) | 3, 1, +1, +1/2 | |…  ·  ## 4. Detailed Explanation ### 4.1 Worked example — NEB 2024 (3m, verified PYQ) **Q: Write the four quantum numbers for the valence electron of sodium (Z = 11).** Configuration: Na = 1s² 2s² 2p⁶ **3s¹** — the valence electron is in 3s.…  ·  ## 5. Comparison Tables **The four quantum numbers at a glance** | Symbol | Name | Determines | Allowed values | Number of values | |---|---|---|---|---| | **n** | Principal | Shell, size, energy | 1, 2, 3, … | Infinite | | **l** | Azimuthal | Subshell, shape | 0 to n−1 (s, p, d, f) | n per shell | | **mₗ** | Magnetic | Orientation | −l … 0 … +l | 2l + 1 per subshell | |…"
     },
     {
       "label": "More ideas",
-      "text": "$$L=\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$$  ·  $$\\text{orbitals: shell }n^{2},\\ \\text{subshell }2l+1;\\qquad \\text{electrons: }2n^{2},\\ 2(2l+1)$$  ·  $$\\text{radial nodes}=n-l-1,\\quad \\text{angular nodes}=l,\\quad \\text{total}=n-1$$"
+      "text": "Why can no subshell hold more than 2(2l + 1) electrons?  ·  Write all four quantum numbers for every electron of helium.  ·  Why does mₗ have no effect on the energy of an orbital in the absence of a magnetic field?"
     },
     {
       "label": "More ideas",
-      "text": "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM},\\qquad s=\\tfrac{1}{2},\\ |s|=\\sqrt{s(s+1)}\\,\\hbar=\\tfrac{\\sqrt{3}}{2}\\hbar$$  ·  $$l=0,1,\\dots,n-1;\\quad m=-l,\\dots,+l;\\quad m_{s}=\\pm\\tfrac{1}{2};\\quad L=\\sqrt{l(l+1)}\\,h/2\\pi$$  ·  ❌ Orbital angular momentum is l(h/2π). ✅ It is √(l(l+1))h/2π."
+      "text": "## 6. Common Confusions **l range vs mₗ range:** l runs **0 to n − 1**; mₗ runs **−l to +l**. For n = 3, l = 2 is legal (3d) but mₗ = 2 with l = 1 is not — the two ranges are different rules.  ·  **\"n = 3, l = 3\" trap:** l can never equal n; the highest l in shell n is n − 1 (3f does not exist).  ·  **mₛ values:** only ±1/2 — never ±1. Spin \"up/down\" is shorthand for the two signs, not a literal direction."
     },
     {
       "label": "More ideas",
-      "text": "❌ mₛ comes from solving the Schrödinger equation. ✅ Only n, l, m do; spin needs the Dirac equation.  ·  ❌ 2n² counts orbitals. ✅ It counts electrons; orbitals in a shell number n².  ·  ❌ All subshells of a shell have equal energy in every atom. ✅ True only for hydrogen; multi-electron atoms order them by penetration."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ Spin means the electron literally spins on its axis. ✅ Spin is an intrinsic quantum property; the classical picture is only an analogy.  ·  ❌ The five d orbitals have five different energies in a free atom. ✅ They are degenerate; ligand or magnetic fields split them.  ·  ❌ A full designation needs only n and l. ✅ A complete state needs all four numbers (n, l, m, mₛ)."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ mₛ determines the orbital orientation. ✅ mₗ gives orientation; mₛ gives spin.  ·  ❌ l can take the value n. ✅ l runs 0 to n − 1.  ·  ❌ Two 2p electrons of carbon must have opposite spins. ✅ Hund's rule: parallel spins in different degenerate orbitals first."
+      "text": "## 7. Exam Application **NEB-style (2m): How many orbitals and electrons can the M shell hold?** — Orbitals = n² = 9 (one 3s, three 3p, five 3d); electrons = 2n² = **18**.  ·  **NEB-style (2m): Write the quantum numbers of the last electron of nitrogen (Z = 7).** — Configuration 1s² 2s² 2p³; last electron: n = 2, l = 1, mₗ = −1, mₛ = +1/2 (Hund's rule: the three p electrons occupy the three p orbitals singly with parallel spins).  ·  **NEB-style (3m): State the significance of each quantum number.** — n: shell, size and energy (2n² capacity); l: subshell shape (s, p, d, f); mₗ: spatial orientation, 2l + 1 orbitals; mₛ: spin direction, ±1/2, basis of Pauli's exclusion principle."
     }
-  ],
-  "keyPoints": [
-    "07 Quantum Numbers is a core concept in atomic structure.",
-    "Understanding 07 quantum numbers requires knowing its definition, conditions, and limitations.",
-    "07 Quantum Numbers has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 07 quantum numbers must be memorized precisely.",
-    "07 Quantum Numbers connects to neighbouring topics within atomic structure and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 07 quantum numbers.",
-    "Practical examples solidify understanding of 07 Quantum Numbers and its real-world relevance.",
-    "Misconceptions about 07 quantum numbers often arise from confusing it with similar concepts.",
-    "07 Quantum Numbers follows systematic rules that can be applied step-by-step.",
-    "Review of 07 quantum numbers should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "07 Quantum Numbers is defined by its specific characteristics within atomic structure.",
-    "The conditions under which 07 quantum numbers applies are as important as the concept itself.",
-    "07 Quantum Numbers can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 07 quantum numbers through application-based and comparison questions.",
-    "A clear grasp of 07 Quantum Numbers builds the foundation for advanced topics in atomic structure."
-  ],
-  "importantNotes": [
-    "When studying 07 quantum numbers, always note the exceptions alongside the general rule.",
-    "07 Quantum Numbers should be reviewed with at least one worked example per sub-point.",
-    "Link 07 quantum numbers back to prior knowledge in atomic structure for deeper retention.",
-    "Practice past NEB board questions on 07 Quantum Numbers to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 07 Quantum Numbers: apply the standard definition to a simple case.",
-    "Intermediate example: combine 07 quantum numbers with a related concept from atomic structure.",
-    "Exam-style problem: solve a question involving 07 Quantum Numbers under time pressure.",
-    "Real-world connection: show how 07 Quantum Numbers appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 07 Quantum Numbers and state two conditions required for it to occur.",
-    "Differentiate 07 Quantum Numbers from the most commonly confused concept in atomic structure.",
-    "Solve a numerical or structural problem involving 07 Quantum Numbers.",
-    "List three applications of 07 Quantum Numbers in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 07 Quantum Numbers without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 07 Quantum Numbers.",
-    "Create three flashcards covering definition, formula, and limitation of 07 Quantum Numbers."
-  ],
-  "universalFacts": [
-    "07 Quantum Numbers is part of the NEB Class 11 atomic structure syllabus.",
-    "Every concept in atomic structure builds upon definitions established earlier in the chapter.",
-    "07 Quantum Numbers is assessed through both short-answer and long-answer board questions.",
-    "Understanding 07 Quantum Numbers improves performance across the entire atomic structure unit.",
-    "Revision of 07 Quantum Numbers should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 07 Quantum Numbers with closely related concepts in atomic structure — focus on distinguishing features.",
-    "The scope of 07 Quantum Numbers is sometimes overstated; remember its precise boundaries.",
-    "Applying 07 Quantum Numbers outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 07 Quantum Numbers and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 07 Quantum Numbers? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "07 Quantum Numbers is primarily studied under which branch of atomic structure? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 07 Quantum Numbers is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to atomic structure — Answer: B",
-    "Which example correctly illustrates 07 Quantum Numbers? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "07 Quantum Numbers differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 07 Quantum Numbers.",
-    "Step-by-step animated derivation of the key relationship in 07 Quantum Numbers.",
-    "Interactive toggle between correct and incorrect representations of 07 Quantum Numbers."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 07 Quantum Numbers.",
-    "Side-by-side comparison animation of 07 Quantum Numbers vs commonly confused concept.",
-    "Timelapse build-up of 07 Quantum Numbers from prerequisite knowledge in atomic structure."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 07 Quantum Numbers",
-    "Comparison table: 07 Quantum Numbers vs related concepts in atomic structure",
-    "Step-by-step worked example layout for 07 Quantum Numbers"
-  ],
-  "summary": [
-    "07 Quantum Numbers is a fundamental concept in atomic structure that describes specific chemical behaviour under defined conditions.",
-    "Mastering 07 Quantum Numbers involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 07 Quantum Numbers alongside related concepts in atomic structure ensures strong conceptual clarity and exam readiness."
   ]
 }

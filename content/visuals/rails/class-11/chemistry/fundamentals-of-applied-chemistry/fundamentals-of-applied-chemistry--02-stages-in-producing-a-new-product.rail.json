@@ -25,16 +25,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Key concept 1 for 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact.",
+      "text": "A new chemical product climbs a fixed ladder — idea, research, feasibility, development, pilot plant, full production, marketing — with feedback closing the loop. The ladder's economics is option-buying: each stage costs ~10× the last, and the feasibility study exists to kill weak projects while they are still cheap.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stages in producing a new product — quick idea map\"><title>Stages in producing a new product — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stages in producing a new product</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 02</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">stages in producing a new</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">product economics of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Stages in producing a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">new product</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F = m \\cdot a$ (relevant</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula for 02 stages in</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">producing a new product…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stages in producing a new product — quick idea map\"><title>Stages in producing a new product — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stages in producing a new product</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The pilot plant buys the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">full-scale plant's</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">surprises at pilot-plant</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Stages: idea -&gt;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">research (grams) -&gt;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">feasibility (technical x</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Volume ∝ L³; surface ∝</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">L² ⟹ heat</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">generation/removal ratio</text></svg>",
         "caption": "Stages in producing a new product — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$F = m \\cdot a$ (relevant formula for 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact)"
+      "text": "- Volume ∝ L³; surface ∝ L² ⟹ heat generation/removal ratio grows ∝ L on scale-up - Cost ladder: idea < research < development < pilot plant < full plant (each ~10×)"
     },
     {
       "label": "Conditions",
@@ -46,7 +46,7 @@
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  Urea: NH₂CONH₂ (fertilizer)"
+      "text": "***The L^3/L^2 trap*** - a doubling of linear size gives 8x the heat generation but only 4x the cooling surface - the reason flask-safe reactions can run away in plant vessels."
     },
     {
       "label": "Limitation",
@@ -58,35 +58,35 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Chemical Plant Design and Environmental Impact."
+      "text": "Name the six stages in order first, then elaborate - the ordered list is the skeleton of the full answer."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Stages in producing a new product\" with one example.  ·  compare \"Stages in producing a new product\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (6m): Describe the stages involved in producing a new chemical product, from idea to market.** — **1. Idea:** a market need or laboratory observation is identified. **2. Research (lab scale):** the chemistry is proven at gram scale — reaction route, yield, purity; patents filed. **3.…  ·  **NEB-style (6m): A reaction that proceeds safely in a 1-litre laboratory flask shows a runaway risk in a 10,000-litre plant reactor. Explain why using scaling arguments.** — **The geometric mismatch:** linear dimensions scale by factor k; **volume (and hence heat-generating reactant mass) grows as k³** while **vessel surface area (the…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 02 stages in producing a new product economics of production running a chemical plant continuous and batch processing environmental impact.",
+      "text": "Include the feedback loop in the diagram - a straight-line answer misses the iteration mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stages in producing a new product — topic mind map\"><title>Stages in producing a new product — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Stages in producing a new product</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Stages in producing a</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">new product</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Stages in producing a new product — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The pilot plant buys the full-scale plant's surprises at pilot-plant prices."
+    },
+    {
       "label": "Key points",
-      "text": "• Stages in producing a new product"
+      "text": "Stages: idea -> research (grams) -> feasibility (technical x economic) -> development/process design -> pilot plant -> full production -> marketing + feedback loop. Each stage costs ~10x the previous - the sequence is option-buying, and feasibility exists to kill bad projects cheaply.…"
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Stages in producing a new product\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Feedback from customers re-opens research - the stage sequence is a loop, not a line."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Stages in producing a new product\" and verify the answer is plausible.  ·  Practice identifying organelles and their functions in electron micrographs.  ·  Practice distinguishing prokaryotic from eukaryotic cells."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Aspirin: C₉H₈O₄ (pharmaceutical)"
+      "text": "**NEB-style (5m): What is a pilot plant? Explain why it is built even though it produces too little product to be profitable.** — **Definition:** a small-scale version of the proposed production plant — typically producing kilograms to a few tonnes — built after process development and before the…  ·  **NEB-style (6m): Arrange the stages of new-product production in order of increasing cost, and explain why the feasibility study is placed where it is.** — **Cost order:** idea (nearly free) → laboratory research (thousands — glassware, chemists' time) → feasibility study (thousands to tens of…"
     },
     {
       "label": "MCQ drill",
@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "Chemical industry: fertilizers, pharmaceuticals, dyes.  ·  Fuel chemistry: combustion, engines.  ·  Water treatment: purification, desalination."
+      "text": "## 1. Topic Introduction — From Idea to Product: The Stages of a New Chemical Product A new chemical product reaches the market through a fixed sequence: **idea → research (laboratory) → feasibility study → development (process design) → pilot plant → full-scale production → marketing and feedback.** Each stage answers a different question and costs an order of magnitude more…  ·  ## 2. Theorem Mirror - **1. Idea/need identification:** a market need or a laboratory observation; the cheapest stage and the most uncertain. - **2. Research (lab scale, grams):** proves the chemistry works — reaction, yield, purity; generates the patent basis. - **3.…  ·  ## 3. Deep Conceptual — Why the Pilot Plant Exists: Scale-Up Is Not Arithmetic - Doubling a beaker is arithmetic; doubling a reactor is not. On scale-up, **volume grows as L³ while surface area grows as L²** — heat generation outpaces heat removal, so a reaction safe in a flask can run away in a plant vessel.…"
     },
     {
       "label": "More ideas",
@@ -116,88 +116,5 @@
       "label": "More ideas",
       "text": "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.  ·  ❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).  ·  ❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism."
     }
-  ],
-  "keyPoints": [
-    "02 Stages In Producing A New Product is a core concept in fundamentals of applied chemistry.",
-    "Understanding 02 stages in producing a new product requires knowing its definition, conditions, and limitations.",
-    "02 Stages In Producing A New Product has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 stages in producing a new product must be memorized precisely.",
-    "02 Stages In Producing A New Product connects to neighbouring topics within fundamentals of applied chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 stages in producing a new product.",
-    "Practical examples solidify understanding of 02 Stages In Producing A New Product and its real-world relevance.",
-    "Misconceptions about 02 stages in producing a new product often arise from confusing it with similar concepts.",
-    "02 Stages In Producing A New Product follows systematic rules that can be applied step-by-step.",
-    "Review of 02 stages in producing a new product should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Stages In Producing A New Product is defined by its specific characteristics within fundamentals of applied chemistry.",
-    "The conditions under which 02 stages in producing a new product applies are as important as the concept itself.",
-    "02 Stages In Producing A New Product can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 stages in producing a new product through application-based and comparison questions.",
-    "A clear grasp of 02 Stages In Producing A New Product builds the foundation for advanced topics in fundamentals of applied chemistry."
-  ],
-  "importantNotes": [
-    "When studying 02 stages in producing a new product, always note the exceptions alongside the general rule.",
-    "02 Stages In Producing A New Product should be reviewed with at least one worked example per sub-point.",
-    "Link 02 stages in producing a new product back to prior knowledge in fundamentals of applied chemistry for deeper retention.",
-    "Practice past NEB board questions on 02 Stages In Producing A New Product to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Stages In Producing A New Product: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 stages in producing a new product with a related concept from fundamentals of applied chemistry.",
-    "Exam-style problem: solve a question involving 02 Stages In Producing A New Product under time pressure.",
-    "Real-world connection: show how 02 Stages In Producing A New Product appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Stages In Producing A New Product and state two conditions required for it to occur.",
-    "Differentiate 02 Stages In Producing A New Product from the most commonly confused concept in fundamentals of applied chemistry.",
-    "Solve a numerical or structural problem involving 02 Stages In Producing A New Product.",
-    "List three applications of 02 Stages In Producing A New Product in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Stages In Producing A New Product without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Stages In Producing A New Product.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Stages In Producing A New Product."
-  ],
-  "universalFacts": [
-    "02 Stages In Producing A New Product is part of the NEB Class 11 fundamentals of applied chemistry syllabus.",
-    "Every concept in fundamentals of applied chemistry builds upon definitions established earlier in the chapter.",
-    "02 Stages In Producing A New Product is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Stages In Producing A New Product improves performance across the entire fundamentals of applied chemistry unit.",
-    "Revision of 02 Stages In Producing A New Product should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Stages In Producing A New Product with closely related concepts in fundamentals of applied chemistry — focus on distinguishing features.",
-    "The scope of 02 Stages In Producing A New Product is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Stages In Producing A New Product outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Stages In Producing A New Product and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Stages In Producing A New Product? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Stages In Producing A New Product is primarily studied under which branch of fundamentals of applied chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Stages In Producing A New Product is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to fundamentals of applied chemistry — Answer: B",
-    "Which example correctly illustrates 02 Stages In Producing A New Product? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Stages In Producing A New Product differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Stages In Producing A New Product.",
-    "Step-by-step animated derivation of the key relationship in 02 Stages In Producing A New Product.",
-    "Interactive toggle between correct and incorrect representations of 02 Stages In Producing A New Product."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Stages In Producing A New Product.",
-    "Side-by-side comparison animation of 02 Stages In Producing A New Product vs commonly confused concept.",
-    "Timelapse build-up of 02 Stages In Producing A New Product from prerequisite knowledge in fundamentals of applied chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Stages In Producing A New Product",
-    "Comparison table: 02 Stages In Producing A New Product vs related concepts in fundamentals of applied chemistry",
-    "Step-by-step worked example layout for 02 Stages In Producing A New Product"
-  ],
-  "summary": [
-    "02 Stages In Producing A New Product is a fundamental concept in fundamentals of applied chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Stages In Producing A New Product involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Stages In Producing A New Product alongside related concepts in fundamentals of applied chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

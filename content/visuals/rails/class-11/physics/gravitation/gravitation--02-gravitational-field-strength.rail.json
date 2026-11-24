@@ -29,16 +29,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Gravitational potential $V = -\\frac{GM}{r}$ is the work per unit mass to bring a test mass from infinity; potential energy $U = -\\frac{GMm}{r}$ is the negative binding energy of two masses. Near the surface $U \\approx mgh$. The field relates to the potential by $g = -\\frac{dV}{dr}$, and circular orbits have total energy $E = -\\frac{GMm}{2r}$, confirming their bound nature.",
+      "text": "A **gravitational field** fills the space around a mass; its strength $\\vec g = \\vec F/m$ (N/kg ≡ m/s²) is the force on a unit test mass, directed toward the source. For a point (or spherical) mass $g = GM/r^2$ — at Earth's surface this evaluates to 9.8 m/s², so the familiar g is just Earth's field strength.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Gravitational Field Strength — quick idea map\"><title>Gravitational Field Strength — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Gravitational Field Strength</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Gravitational potential $V</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= -\\frac{GM}{r}$ is scalar</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">work per unit mass.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Gravitational potential</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">energy $U =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">-\\frac{GMm}{r}$ equals the</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$V = -\\frac{GM}{r}$ is</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">negative, approaching zero</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at infinity.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$U = -\\frac{GMm}{r}$ is</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the energy of the (bound)</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">system, negative for…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Gravitational Field Strength — quick idea map\"><title>Gravitational Field Strength — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Gravitational Field Strength</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**g is force per unit</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mass** — the field concept</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">makes gravity local:…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\vec g = \\vec F/m$</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(N/kg); $g = GM/r^2$</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">toward M.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fields superpose as</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vectors; shell theorem:</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">zero field inside a</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- g = F/m; g = GM/r² -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">g_surface = GM/R² ≈ 9.8</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m/s² - g = −dV/dr (field</text></svg>",
         "caption": "Gravitational Field Strength — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Gravitational potential: $V = -\\frac{GM}{r}$ (J/kg)\nGravitational potential energy: $U = mV = -\\frac{GMm}{r}$ (J)\nNear the surface: $U = mgh$ ($h \\ll R$)"
+      "text": "- g = F/m; g = GM/r² - g_surface = GM/R² ≈ 9.8 m/s² - g = −dV/dr (field as potential gradient)"
     },
     {
       "label": "Conditions",
@@ -50,11 +50,11 @@
     },
     {
       "label": "Solved",
-      "text": "V at Earth's surface: $V = -\\frac{GM}{R} = -6.25\\times 10^{7} \\text{ J/kg}$.  ·  U of 1000 kg satellite at $r = 6.8\\times 10^{6} \\text{ m}$: $U = -\\frac{GMm}{r} = -5.9\\times 10^{10} \\text{ J}$."
+      "text": "***Altitude numerical*** — h = 1600 km: r = 8×10⁶ m → g = 6.25 m/s²."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Potential and potential energy are the same.' ✅ Potential V is work per unit mass (J/kg); potential energy $U = mV$ (J). V belongs to a point in the field; U belongs to the mass–field system.  ·  ❌ 'Negative energy is unphysical.' ✅ Negative potential energy simply means the system is BOUND — energy must be added to separate it. It is a matter of the reference at infinity."
+      "text": "**N/kg = m/s²:** field strength per unit mass and free-fall acceleration are numerically the same thing.  ·  **Field exists whether or not a test mass is present** — it is a property of space around M."
     },
     {
       "label": "Derivation",
@@ -62,15 +62,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Escape-energy shortcut: energy to infinity = $GMm/R = mgR$ (since $g = \\frac{GM}{R^2}$).  ·  Orbital energy memory: $E = -\\frac{GMm}{2r} = U/2$ means $K = -U/2$."
+      "text": "\"g = GM/(R+h)² — add the altitude before squaring.\""
     },
     {
       "label": "Board question",
-      "text": "Calculate the gravitational potential at a point $3\\times 10^{7} \\text{ m}$ from the centre of Earth ($M = 6\\times 10^{24} \\text{ kg}$).  ·  Find the gravitational potential energy of a 1500 kg satellite at an altitude of 2000 km above Earth."
+      "text": "**Numerical (3m): Find g at the surface of Mars (M = 6.4×10²³ kg, R = 3.4×10⁶ m).** — g = GM/R² = 6.67×10⁻¹¹ × 6.4×10²³ / (3.4×10⁶)² = 4.27×10¹³/1.156×10¹³ = 3.7 m/s²."
     },
     {
       "label": "Hints",
-      "text": "Derivation of $U = -\\frac{GMm}{r}$ from integrating $F = \\frac{GMm}{r^2}$ is a standard question.  ·  Numericals on satellite total energy and escape energy are frequently asked.",
+      "text": "Expect definition + formula questions; the altitude numerical mirrors Topic 31.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Gravitational Field Strength — topic mind map\"><title>Gravitational Field Strength — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Gravitational field strength</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Gravitational field</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">strength</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Gravitational Field Strength — topic mind map of this topic's own sub-topics"
@@ -78,27 +78,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Gravitational potential $V = -\\frac{GM}{r}$ is scalar work per unit mass.  ·  Gravitational potential energy $U = -\\frac{GMm}{r}$ equals the negative binding energy.  ·  Near the surface $U = mgh$; far away use $-\\frac{GMm}{r}$.  ·  $g = -\\frac{dV}{dr}$ links the vector field to the scalar potential."
+      "text": "**g is force per unit mass** — the field concept makes gravity local: evaluate GM/r² at the point."
     },
     {
       "label": "Key points",
-      "text": "$V = -\\frac{GM}{r}$ is negative, approaching zero at infinity.  ·  $U = -\\frac{GMm}{r}$ is the energy of the (bound) system, negative for attraction.  ·  Near Earth's surface $U = mgh$ is the appropriate approximation.  ·  Potential and field connect: $g = -\\frac{dV}{dr}$."
+      "text": "$\\vec g = \\vec F/m$ (N/kg); $g = GM/r^2$ toward M.  ·  Fields superpose as vectors; shell theorem: zero field inside a uniform shell."
     },
     {
       "label": "Universal facts",
-      "text": "Gravitational potential energy is exactly the 'missing' energy that binds systems — this is why the binding energy of Earth + satellite equals $|U|$.  ·  The concept of potential is useful because it is scalar: complex many-body problems reduce to addition rather than vector resolution."
-    },
-    {
-      "label": "More practice",
-      "text": "How much energy is required to move a 3000 kg spacecraft from Earth's surface to infinity?  ·  A 700 kg probe is moved from $r = 8\\times 10^{6} \\text{ m}$ to $r = 5\\times 10^{6} \\text{ m}$. Find the change in its potential energy.  ·  Derive that for a circular orbit $v^2 = \\frac{GM}{r}$ and hence $E = -\\frac{GMm}{2r}$."
-    },
-    {
-      "label": "More hints",
-      "text": "Conceptual MCQ: why is potential energy negative? → because zero is at infinity and gravity is attractive.  ·  Linking $g = -\\frac{dV}{dr}$ to a $V$–$r$ graph slope appears in higher-level questions."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Escape energy per kg: $GM/R = 6.25\\times 10^{7} \\text{ J} \\approx 17 \\text{ kWh}$ per kg.  ·  Near surface: a 2 kg mass lifted 10 m gains $U = mgh = 196 \\text{ J}$."
+      "text": "At Earth's surface GM/R² evaluates to ≈ 9.8 m/s² — the familiar g is a field strength."
     },
     {
       "label": "MCQ drill",
@@ -106,27 +94,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Gravitational potential V:** the work done per unit mass in bringing a test mass from infinity to a point, without acceleration. For a point mass M: $V = -\\frac{GM}{r}$. At infinity $V = 0$, and everywhere else V is negative because gravity does positive work as the mass approaches — the field does the work, so potential decreases.  ·  **Gravitational potential energy U:** the work done against gravity in assembling a system; for two masses separated by r: $U = -\\frac{GMm}{r}$. It is the energy of the whole system, not of one mass alone. U is negative because the system is bound — you must supply $GMm/r$ of energy to separate the masses to infinity.  ·  **Why the minus sign matters:** potential energy is defined with zero at infinity. Since the force is attractive, energy is released (and PE decreases) as masses come together. A satellite in orbit at radius r has $U = -\\frac{GMm}{r}$ — its total mechanical energy is $E = K + U = -\\frac{GMm}{2r}$, which is negative, confirming a bound orbit."
+      "text": "## 1. Topic Introduction — Gravity as a Field Instead of asking \"what force acts between two masses?\", field theory asks \"what force would act on a unit mass at this point in space?\" The answer — the gravitational field strength — turns gravity into a property of space itself, ready to act on whatever mass arrives.  ·  ## 2. Fundamental Concepts ### 2.1 Definitions **Gravitational field:** the region of space around a mass in which another mass experiences a gravitational force. **Gravitational field strength ($\\vec g$):** the gravitational force per unit mass at a point: $$\\vec g = \\frac{\\vec F}{m} \\quad \\text{(N/kg, numerically equal to m/s²)}$$ For a point mass $M$, at distance $r$: $$g =…  ·  ## 3. Conceptual Relationships - **To Topic 28:** field strength is the law of gravitation rewritten per unit mass. - **To Topic 31:** $g$ at height/depth is this formula evaluated at different $r$. - **To electric fields:** $g = F/m$ mirrors $\\vec E = \\vec F/q$ — same field concept, different source property (mass vs charge).…"
     },
     {
       "label": "More ideas",
-      "text": "Circular orbits are bound: $E_{\\text{total}} = -\\frac{GMm}{2r} = U/2$.  ·  Field from potential: $g = -\\frac{dV}{dr}$  ·  Total orbital energy: $E = -\\frac{GMm}{2r} = U/2$"
+      "text": "**Superposition Advantage:** Potentials add as scalars ($V_{total} = \\sum V_i$), which is simpler than adding field vectors. This makes potential calculations easier for multiple mass distributions, especially when symmetry is broken.  ·  Potential is a scalar — use scalar addition with multiple masses.  ·  The escape energy equals $|U|$ at the surface: $GMm/R$."
     },
     {
       "label": "More ideas",
-      "text": "**Superposition Advantage:** Potentials add as scalars ($V_{total} = \\sum V_i$), which is simpler than adding field vectors. This makes potential calculations easier for multiple mass distributions, especially when symmetry is broken.  ·  Total energy of a circular orbit is negative: $E = -\\frac{GMm}{2r}$.  ·  ❌ '$U = mgh$ and $U = -\\frac{GMm}{r}$ disagree.' ✅ They agree for small heights: $mgh$ is the CHANGE in $-\\frac{GMm}{r}$ near the surface. Use the right one for the régime."
+      "text": "NEB may ask 'derive $U = -\\frac{GMm}{r}$ starting from $F = \\frac{GMm}{r^2}$' — know the integration step.  ·  No verified PYQ; treat as NEB-style practice (definition 2m, derivation 3m, numerical 3m patterns).  ·  \"Gravitational field strength is the force experienced by a unit mass placed at that point.\""
     },
     {
       "label": "More ideas",
-      "text": "❌ 'Potential is maximum at Earth's surface.' ✅ Potential is most negative at the surface ($-\\frac{GM}{R}$) and rises toward zero with altitude — at infinity it reaches the (higher) value 0.  ·  ❌ 'Doubling the distance doubles the potential energy.' ✅ $U = -\\frac{GMm}{r}$ — doubling r halves the magnitude, so U becomes $-\\frac{GMm}{2r}$ (less negative).  ·  ❌ 'A satellite far away has lots of potential energy.' ✅ A far-away satellite has potential energy near ZERO (least negative, but $U \\approx 0$). It needs enormous kinetic energy (orbital speed) that comes from the launch energy."
+      "text": "Why is the field zero at the centre of a spherical shell?  ·  Compute the escape energy for Earth, Moon, and Mars.  ·  Show $K = -U/2$ for a circular orbit."
     },
     {
       "label": "More ideas",
-      "text": "Total energy of circular orbit: $E = -\\frac{GMm}{2r}$ — negative, so the orbit is bound.  ·  Potential is a scalar — use scalar addition with multiple masses.  ·  The escape energy equals $|U|$ at the surface: $GMm/R$."
-    },
-    {
-      "label": "More ideas",
-      "text": "NEB may ask 'derive $U = -\\frac{GMm}{r}$ starting from $F = \\frac{GMm}{r^2}$' — know the integration step.  ·  $V = -\\frac{GM}{r}$ (potential) and $U = -\\frac{GMm}{r}$ (potential energy) both take zero at infinity — hence negative for attracted masses.  ·  Near Earth's surface use $U = mgh$; for space-scale distances use the inverse-r form."
+      "text": "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank — the related questions (variation of g, 2021) belong to Topic 31. Practise the definition and the $GM/r^2$ evaluation as **NEB-style practice**.…"
     }
   ]
 }

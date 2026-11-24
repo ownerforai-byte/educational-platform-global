@@ -55,11 +55,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Water pollution — causes, effects, and control — Environmental Issues, Biology (class-12-notes).  ·  **Tested.** define it · list: water pollution — causes, effects, control · one worked example · one misconception each."
+      "text": "# Water pollution — causes, effects, and control ## 1. Introduction Opening frame for **Water pollution — causes** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Environmental Issues fill pass. ## 2.…  ·  Water pollution is any change in water quality that harms life or usefulness. The big concepts: **BOD** (biochemical oxygen demand — the oxygen microbes need to decompose the waste; high BOD = dirty water), **eutrophication** (nutrient enrichment → algal bloom → oxygen crash), and **biomagnification** (toxics like DDT and mercury climbing the food chain).…"
     },
     {
       "label": "Shortcut",
-      "text": "• Control  ·  solve / apply for \"Water pollution — causes, effects, and control\" and verify the answer is plausible."
+      "text": "Trick 1: Eutrophication chain: nutrient (N, P) enrichment → algal bloom → O2 depletion → fish death → anaerobic decay (foul smell) — the five-step causal chain is the answer.  ·  Trick 2: BOD: oxygen needed by microbes to decompose organic matter — higher BOD = more pollution; clean water BOD < 5 ppm; sewage treatment uses BOD reduction as its goal."
     },
     {
       "label": "Board question",
@@ -74,20 +74,40 @@
       }
     },
     {
+      "label": "Key points",
+      "text": "• Control"
+    },
+    {
+      "label": "More practice",
+      "text": "solve / apply for \"Water pollution — causes, effects, and control\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "Which of the following is a distinct sub-topic under \"Water pollution — causes, effects, and control\"? → A  ·  A common examiner point on \"Water pollution — causes, effects, and control\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Effects.** one-line definition + one-line exam use.  ·  **Control.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from discharge to damage (study in this order)** | Step | Concept | Key detail | |---|---|---| | 1 | Sources | Sewage, industrial effluent, farm runoff (N, P), thermal discharge | | 2 | Point vs non-point sources | Pipe outlet vs field runoff across a whole watershed | | 3 | BOD as the measuring stick | More organic waste → more microbial oxygen demand → lower…  ·  **Water pollutants and their signature effects** | Pollutant | Source | Signature effect | |---|---|---| | Organic sewage | Homes, food industry | High BOD, oxygen depletion, foul smell | | Nitrates and phosphates | Fertiliser runoff, detergents | Eutrophication and algal blooms | | Mercury | Industry (Minamata) | Biomagnified nerve poison in fish and humans | | DDT and…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: water pollution — causes, effects, control.  ·  one worked example for \"Water pollution — causes, effects, and control\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Biomagnification: DDT 0.003 ppb water → 25 ppm fish-eating birds (10 million×) — the classic magnification numerical; also mercury (Minamata).  ·  Trick 4: Sewage treatment: primary (physical, settling) → secondary (biological, activated sludge) → tertiary (chemical); Flocs = masses of bacteria in aeration tanks.  ·  define + example each sub-idea: water pollution — causes, effects, control."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Water pollution — causes, effects, and control\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Sewage treatment — the three stages** | Stage | What it removes | How | |---|---|---| | Primary | Large solids and grit | Screening, grit chamber, sedimentation | | Secondary (biological) | Dissolved organic matter — the BOD | Aeration tank with microbial floc (activated sludge) or trickling filter; floc settles as…  ·  ## 4. Diagrams and figures - **D1** — Growth curves / cause–effect–control diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Water pollution — causes — process or life-cycle flow (authored SVG — English labels) - **D3** — Water pollution — causes — detailed reference plate (curated external —…  ·  ```svg Biomagnification — DDT climbs the food chain <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Biomagnification of DDT (ppm)</text><rect x=\"80\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — reading a BOD test.** Sample A: BOD 5 mg/L, dissolved oxygen 8 mg/L. Sample B: BOD 300 mg/L, dissolved oxygen 2 mg/L. Sample B carries heavy organic pollution — microbes will strip the remaining oxygen, fish will suffocate, and anaerobic decay will produce foul H2S. Sample A is healthy water.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Define BOD and explain what a high BOD means. (2) Trace the eutrophication sequence step by step. (3) Explain biomagnification with the DDT-in-bird example. (4) Name the three sewage-treatment stages and what each removes. (5) Why does warm water pollute?  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Water pollution is measured by BOD, amplified by eutrophication and biomagnification, and controlled by staged sewage treatment plus watershed care. **Self-check:** can you order the eutrophication steps and state what happens to DDT concentration at each trophic level?"
     }
   ]
 }

@@ -56,7 +56,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Reaction: with HNO₂ — 1° aliphatic (N₂⁺ → alcohol), aromatic (diazonium, diazo-chemistry)."
+      "text": "Trick 1: Gas phase: 3° > 2° > 1° > NH3 (pure +I); aqueous: 2° > 1° > 3° > NH3 for methyl series — the inversion in water (solvation of the cation) is the standard explanation.  ·  Trick 2: Aromatic vs aliphatic: aniline << alkylamines — the lone pair delocalises into the ring (resonance), so it is less available; −NH2 ortho/para donation is the same fact from the ring's view."
     },
     {
       "label": "Board question",
@@ -75,6 +75,10 @@
       "text": "• Basic character of amines"
     },
     {
+      "label": "Universal facts",
+      "text": "Reaction: with HNO₂ — 1° aliphatic (N₂⁺ → alcohol), aromatic (diazonium, diazo-chemistry)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Basic character of amines\" and verify the answer is plausible."
     },
@@ -88,11 +92,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: basic character of amines.  ·  one worked example for \"Basic character of amines\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Substituent effects on aniline: p-nitroaniline much weaker (−R, −I); p-methoxyaniline stronger (+R) — quote one each.  ·  Trick 4: Solvation argument in full: 1°/2° ammonium ions H-bond strongly with water, stabilising them; 3° lacks N–H, so its cation is poorly solvated — why 3° falls last in water.  ·  define + example each sub-idea: basic character of amines."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: amines: rnh₂ (1°), r₂nh (2°), r₃n (3°), r₄n⁺ (quaternary). basicity: lone pair on n; resonance + ewg lower it."
+      "text": "one worked example for \"Basic character of amines\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: amines: rnh₂ (1°), r₂nh (2°), r₃n (3°), r₄n⁺ (quaternary). basicity: lone pair on n; resonance + ewg lower it.  ·  # Basic character of amines ## 1. Introduction Chemical picture of **Basic character of amines** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I).…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Reaction and reagent sheet** | Transformation | Reagent + conditions | Product | Note or trap | | --- | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…  ·  ## 5. Diagrams and figures - **D1** — Basic character of amines — structure or apparatus plate (authored SVG — English labels, viewBox 900×640) - **D2** — Basic character of amines — second structure, flow or plot (authored SVG — English labels) - **D3** — Basic character of amines — detailed reference plate (curated…  ·  ## 6. Worked problems ≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass. ## 7.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 8. Exam Zone and self-check Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.…"
     }
   ]
 }

@@ -22,48 +22,48 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Pure Spectrum and Dispersive Power covers essential principles and applications.",
+      "text": "**Dispersion** splits white light into VIBGYOR because a medium's refractive index depends on wavelength ($n = a + b/\\lambda^2$): violet (largest n) deviates most, red least (NEB 2022, 2024). Deviation — bending of one ray — happens even for monochromatic light; dispersion needs mixed wavelengths (NEB 2020). A **pure spectrum** (sharp, non-overlapping colours) comes from slit + collimator + prism + telescope.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Pure Spectrum and Dispersive Power — quick idea map\"><title>Pure Spectrum and Dispersive Power — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Pure Spectrum and Dispersive Power</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Pure</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Spectrum and Dispersive</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Pure</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Spectrum and Dispersive</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Pure</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Spectrum and Dispersive</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power to other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Pure Spectrum and Dispersive Power — quick idea map\"><title>Pure Spectrum and Dispersive Power — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Pure Spectrum and Dispersive Power</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Dispersive power is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">spread per unit mean</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deviation** — a material…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ω = (δv − δr)/δ_y = (n_v −</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n_r)/(n_y − 1).</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cause: n varies with</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">wavelength (violet</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">largest, red smallest).</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ω = (δv − δr)/δ_y = (n_v</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">− n_r)/(n_y − 1) - δ_v −</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">δ_r = (n_v − n_r)A (thin…</text></svg>",
         "caption": "Pure Spectrum and Dispersive Power — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).\n**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$.…"
+      "text": "- ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1) - δ_v − δ_r = (n_v − n_r)A (thin prism) - Cauchy: n = a + b/λ²"
     },
     {
       "label": "Conditions",
-      "text": "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+      "text": "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).  ·  **Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger)."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Pure spectrum and dispersive power  ·  Statement 2: Theorem related to Pure spectrum and dispersive power"
+      "text": "Do not equate a broad rainbow with a pure spectrum; slit width affects purity.  ·  The thin-prism ratio assumes small deviations."
     },
     {
       "label": "Solved",
-      "text": "Application of Pure Spectrum and Dispersive Power"
+      "text": "***NEB 2024*** — n_v = 1.53, n_r = 1.51, n_y = 1.52 → ω ≈ 0.0385."
     },
     {
       "label": "Limitation",
-      "text": "Pure Spectrum and Dispersive Power is based on fundamental principles."
+      "text": "**Deviation ≠ dispersion:** a monochromatic ray deviates without dispersing; white light does both.  ·  **ω divides by (n_y − 1)**, not by n_y — the mean deviation needs the (−1)."
     },
     {
       "label": "Derivation",
-      "text": "Connection of Pure Spectrum and Dispersive Power to other topics"
+      "text": "A prism gives δy=2.4° and angular spread 0.12°. Find ω.  ·  Name two adjustments that improve spectral purity."
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Pure Spectrum and Dispersive Power."
+      "text": "\"ω = 0.02/0.52 type arithmetic — keep three decimals.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Pure Spectrum and Dispersive Power.  ·  Q3. Problem on Pure Spectrum and Dispersive Power."
+      "text": "**Reasoning (3m): Explain the formation of the primary rainbow.** — Sunlight refracts into a raindrop, disperses (violet bends most), reflects once by TIR inside, and refracts out; each colour emerges at its own angle near 42°, violet innermost and red outermost — a circular spectrum centred on the antisolar point (NEB 2024)."
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Pure spectrum and dispersive power to be valid  ·  Statement 4: Principle governing Pure spectrum and dispersive power",
+      "text": "The rainbow answer: refraction + one TIR + refraction in a raindrop, 42° cone, violet inner, red outer.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Pure Spectrum and Dispersive Power — topic mind map\"><title>Pure Spectrum and Dispersive Power — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Pure spectrum and dispersive power</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Pure spectrum</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Dispersive power</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Pure Spectrum and Dispersive Power — topic mind map of this topic's own sub-topics"
@@ -71,11 +71,31 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Pure Spectrum and Dispersive Power."
+      "text": "**Dispersive power is the spread per unit mean deviation** — a material property, a pure number."
+    },
+    {
+      "label": "Key points",
+      "text": "ω = (δv − δr)/δ_y = (n_v − n_r)/(n_y − 1).  ·  Cause: n varies with wavelength (violet largest, red smallest)."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Flint glass (ω ≈ 0.02) disperses twice as strongly as crown glass (ω ≈ 0.01) — the pairing behind achromatic lenses."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "A pure spectrum has → B  ·  The collimator makes the light → B"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 1. Topic Introduction — Unweaving the Rainbow A prism fans white light into a rainbow of colours because glass slows each wavelength differently. Measuring that spread — the **dispersive power** — is how optical glass is graded, and it explains why prisms make spectra and lenses make chromatic mistakes.  ·  ## 2. Fundamental Concepts (NEB 2020, 2021, 2022, 2024) ### 2.1 Dispersion and its cause (NEB 2022, 2024) **Dispersion:** the splitting of white light into its constituent colours (VIBGYOR) as it passes through a dispersive medium such as a prism. **Cause (NEB 2024, 3m):** the refractive index of glass depends on wavelength (Cauchy's relation $n = a + b/\\lambda^2$).…  ·  ## 3. Conceptual Relationships - **To Topic 76:** the thin-prism formula δ = (n−1)A is the engine of the dispersive-power derivation. - **To Topic 81:** chromatic aberration in lenses is dispersion's defect; the rainbow is dispersion's spectacle. - **To spectroscopy:** the pure spectrum is the principle of the spectroscope and atomic physics."
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Pure spectrum and dispersive power"
+      "text": "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry.  ·  Verified PYQs: dispersion + reason 2022 3m and 2024 3m; deviation vs dispersion 2020 3m; dispersive power derivation 2021 4m; definitions 2024 3m; ω numerical 2024 3m; rainbow 2024 3m; red/violet reasoning 2024 2m.  ·  \"Dispersion is the splitting of white light into its constituent colours; its cause is the dependence of refractive index on wavelength.\""
+    },
+    {
+      "label": "More ideas",
+      "text": "Why is a pure spectrum preferred in spectroscopy?  ·  Why does a wide entrance slit reduce spectral purity?  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2076/2020 | Optics | Dispersion | Differentiate between deviation of light and dispersion of light.…"
     }
   ]
 }

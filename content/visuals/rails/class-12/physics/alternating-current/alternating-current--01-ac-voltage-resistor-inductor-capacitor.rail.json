@@ -52,7 +52,7 @@
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Resonance occurs when resistance is maximum' ✅ Resonance occurs when inductive reactance equals capacitive reactance (X_L = X_C), which minimizes impedance in a series circuit."
+      "text": "❌ 'Resonance occurs when resistance is maximum' ✅ Resonance occurs when inductive reactance equals capacitive reactance (X_L = X_C), which minimizes impedance in a series circuit.  ·  Voltage does not lead the current in a resistor."
     },
     {
       "label": "Derivation",
@@ -108,7 +108,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Frequency dependence of reactances  ·  Analyzing the effect of frequency on capacitive reactance  ·  Note 3: Practice numerical problems focusing on Z, φ, and resonance frequency."
+      "text": "Frequency dependence of reactances  ·  X_L rises with frequency. X_C falls.  ·  A pure inductor does not consume average power."
+    },
+    {
+      "label": "More ideas",
+      "text": "Peak and rms differ by √2. Do not mix them in one formula.  ·  Analyzing the effect of frequency on capacitive reactance  ·  Note 3: Practice numerical problems focusing on Z, φ, and resonance frequency."
     },
     {
       "label": "More ideas",
@@ -117,10 +121,6 @@
     {
       "label": "More ideas",
       "text": "Note 2: Remember that X_L and X_C are 180° out of phase.  ·  Note 3: Phasor diagrams are invaluable for solving LCR problems.  ·  Note 4: Understand the impact of frequency on the circuit's behavior (inductive vs capacitive)."
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 5: Resonance is a frequency-selective property.  ·  Statement 1: Voltage leads current in an inductor.  ·  Statement 2: Current leads voltage in a capacitor."
     }
   ]
 }

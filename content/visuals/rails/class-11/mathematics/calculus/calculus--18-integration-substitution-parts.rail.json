@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Substitution reverses the chain rule and by parts reverses the product rule, so together they handle everything an elementary course expects. The choice of $u$ by LIATE is what makes by parts terminate, and the boundary-value treatment differs crucially between indefinite and definite integrals. A handful of functions, notably the Gaussian, resist both methods and are integrable only numerically.",
+      "text": "The two workhorse methods are the chain rule and the product rule read backwards: substitution re-describes a composite in variables where the anti-derivative shows, with the Jacobian as the price; by parts trades an integral for uv plus an easier one, with LIATE choosing the factor that simplifies under differentiation. Cyclic pairs close through their own reflection and are solved as equations.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Integration: Substitution and By Parts — quick idea map\"><title>Integration: Substitution and By Parts — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Integration: Substitution and By Parts</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Substitution must account</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for the inner derivative</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">or leave a constant</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Choose $u$ by LIATE so</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">by-parts integrals get</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">simpler, and stop before…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Substitution must account</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for the inner derivative</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">or leave a constant</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Choose $u$ by LIATE so</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">by-parts integrals get</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">simpler, and stop before…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Integration: Substitution and By Parts — quick idea map\"><title>Integration: Substitution and By Parts — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Integration: Substitution and By Parts</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The two methods are the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">chain rule and the product</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rule read backwards -…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Substitution = chain rule</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reversed: u = inner</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function, du = g'dx, the…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ∫f(g(x))g′(x)dx =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">∫f(u)du, u = g(x) - ∫u dv</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= uv − ∫v du</text></svg>",
         "caption": "Integration: Substitution and By Parts — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Substitution: $\\int f'(g(x))g'(x)dx=f(g(x))+C$\nBy parts: $\\int u\\,dv=uv-\\int v\\,du$\nLIATE order for choosing $u$",
+      "text": "- ∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x) - ∫u dv = uv − ∫v du",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Integration: Substitution and By Parts — formula board\"><title>Integration: Substitution and By Parts — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Integration: Substitution and By Parts</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Substitution: $\\int f'(g(x))g'(x)dx=f(g(x))+C$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">By parts: $\\int u\\,dv=uv-\\int v\\,du$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">LIATE order for choosing $u$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Integration: Substitution and By Parts — formula board\"><title>Integration: Substitution and By Parts — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Integration: Substitution and By Parts</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- ∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x) - ∫u dv = uv − ∫v</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">du</text></svg>",
         "caption": "Integration: Substitution and By Parts — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Substitution must account for the inner derivative or leave a constant factor.  ·  Choose $u$ by LIATE so by-parts integrals get simpler, and stop before reaching 0."
+      "text": "***The cyclic close*** - I = integral e^x sin x dx returns after two parts passes; solve for I algebraically - some integrals close through their own reflection."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Write $du$ under the integral, then check the whole integrand has been consumed before integrating.  ·  For by-parts, apply LIATE to pick $u$ and stop the moment a term reaches 0."
+      "text": "Try substitution before parts - the cheaper method wins."
     },
     {
       "label": "Board question",
-      "text": "A substitution followed by a definite integral is a standard 4-mark question; the limits handling is where marks are lost."
+      "text": "**NEB-style (5m): Evaluate ∫(3x + 2)⁴dx.** — **Substitution:** u = 3x + 2 ⟹ du = 3dx ⟹ dx = du/3. **Transform:** ∫u⁴·(du/3) = (1/3)·u⁵/5 = u⁵/15. **Back-substitute:** **(3x + 2)⁵/15 + C**. **Verification:** d/dx[(3x+2)⁵/15] = 5(3x+2)⁴·3/15 = (3x+2)⁴ ✓ — the chain rule's 3 cancelled the Jacobian's 3, as it must.…  ·  **NEB-style (6m): Evaluate ∫x·e^{3x}dx.** — **Method triage:** the product x·e^{3x} has no visible inner derivative of a composite (e^{3x}'s inner 3 is constant) ⟹ **parts**. **LIATE:** u = x (algebraic), dv = e^{3x}dx ⟹ v = e^{3x}/3, du = dx.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Both methods fail on the same hard cases."
+      "text": "In definite substitution, write the new limits explicitly - the u-integral must be self-contained."
     },
     {
       "label": "Quick concepts",
-      "text": "In a definite integral, change the limits or back-substitute — never mix the two."
+      "text": "The two methods are the chain rule and the product rule read backwards - nothing new, only reversed."
+    },
+    {
+      "label": "Key points",
+      "text": "Substitution = chain rule reversed: u = inner function, du = g'dx, the Jacobian is the price. Spot u as the composite's inner with its derivative visible (up to constant). Definite version: change the limits, never substitute back.…"
     },
     {
       "label": "Universal facts",
-      "text": "The error-function identity $\\int_0^\\infty e^{-x^2}dx=\\frac{\\sqrt\\pi}{2}$ is the standard link between the Gaussian curve and statistics, and it has no elementary antiderivative to fall back on.  ·  The probability of a continuous random variable is an area under its density curve, so the entire cumulative distribution concept rests on definite integration of a positive function."
+      "text": "LIATE ranks factors by how much they simplify under differentiation - logs vanish first."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Evaluate ∫ln x dx for x > 0.** — **The surprise:** ln x has no standard entry — but parts with **u = ln x** (LIATE: log first), dv = dx ⟹ v = x, du = dx/x. **Parts:** ∫ln x dx = x·ln x − ∫x·(dx/x) = x ln x − ∫dx = **x ln x − x + C**.…  ·  **NEB-style (6m): Evaluate ∫eˣ·sin x dx using cyclic parts, and verify.** — **Parts pass 1:** u = sin x, dv = eˣdx ⟹ I = eˣ sin x − ∫eˣ cos x dx. **Parts pass 2 (on the new integral):** u = cos x, dv = eˣdx ⟹ ∫eˣcos x dx = eˣcos x + ∫eˣ sin x dx = eˣcos x + I.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Substitution reverses the chain rule.** Look for an inner expression whose derivative appears as a factor: $\\int 2x\\cos(x^2)\\,dx$ with $u=x^2$, $du=2x\\,dx$, gives $\\sin(x^2)+C$. Every inner derivative must be accounted for, or a constant factor is left behind.  ·  **By parts reverses the product rule:** $\\int u\\,dv=uv-\\int v\\,du$. Choose $u$ by LIATE — Logarithmic, Inverse trig, Algebraic, Trigonometric, Exponential — so the two remaining integrals get progressively simpler. Choosing $u=x$ and $dv=e^x dx$ in $\\int xe^x dx$ makes things worse rather than better.  ·  **Repeated integration by parts terminates** when a term eventually becomes $0$: for $\\int x^2e^x dx$ the three applications give $e^x(x^2-2x+2)+C$, and the constant of integration is added once at the end."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Substitution and By Parts This canonical is the **short-form doorway** to the two workhorse integration methods: substitution (the chain rule reversed) and integration by parts (the product rule reversed).…  ·  ## 2. Theorem Mirror - **Substitution:** ∫f(g(x))g′(x)dx = ∫f(u)du with u = g(x) — the chain rule read backwards; du = g′(x)dx. - **By parts:** ∫u dv = uv − ∫v du — the product rule integrated; choose u by the **LIATE** priority (Log, Inverse trig, Algebraic, Trig, Exponential).…  ·  ## 3. Deep Conceptual — Substitution Is a Change of Variables, Not a Trick - Substitution re-describes the same integral in variables where the anti-derivative is visible: the composite f(g(x)) becomes the plain f(u), and the Jacobian factor g′(x)dx becomes du. The chain rule's structure (outer′ × inner′) is exactly what makes the rewrite legal.…"
     },
     {
       "label": "More ideas",
-      "text": "Definite: $\\int_a^b f(x)dx=F(b)-F(a)$ (no $+C$)  ·  Back-substitution for bounds: $\\int_a^b f(g(x))g'(x)dx=\\int_{g(a)}^{g(b)} f(u)du$  ·  Statement 1: Substitution sets $u=g(x)$ and replaces $g'(x)dx$ by $du$."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  A product whose inner derivative is visible is a substitution problem, not a parts problem.  ·  Evaluate ∫(3x + 2)⁴dx."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: By parts gives $\\int u\\,dv=uv-\\int v\\,du$.  ·  Statement 3: In a definite integral the constant of integration cancels and is omitted.  ·  Statement 4: With changed limits, $\\int_a^b f(g(x))g'(x)dx=\\int_{g(a)}^{g(b)}f(u)du$."
+      "text": "Evaluate ∫x·e^{3x}dx.  ·  Evaluate ∫ln x dx.  ·  ## 4. Deep Conceptual — By Parts Trades One Integral for Another - ∫u dv = uv − ∫v du is a **bargain**: surrender the original integral, accept uv plus a new one. The choice of u makes the bargain good — LIATE picks the factor that *simplifies* when differentiated (logs and inverse trig vanish into algebra), leaving a…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: $e^{-x^2}$ and $\\frac{\\sin x}{x}$ have no elementary antiderivative.  ·  **Definite integrals after substitution need care.** Either change the LIMITS as well, or keep the original limits and back-substitute. Mixing the two — new limits with an un-substituted integrand — is the commonest error in the topic.  ·  **The definite integral is a number, not a function,** so it has no constant of integration: the two boundary values cancel it. $\\int_1^2 x\\,dx = \\left[\\frac{x^2}{2} ight]_1^2 = 2 - \\frac12 = \\frac32$."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Both methods fail on the same hard cases.** $\\int e^{-x^2}\\,dx$ and $\\int\\frac{\\sin x}{x}\\,dx$ are integrable numerically but not by elementary substitution or parts; recognising them saves time that would otherwise be lost to a doomed algebraic search."
+      "text": "## 5. Worked Example Types - **Type A — linear substitution:** ∫(ax + b)ⁿ — u = ax + b, the Jacobian 1/a. - **Type B — inner derivative visible:** ∫2x·e^{x²}dx — u = x², du = 2x dx. - **Type C — LIATE parts:** ∫x·eˣdx, ∫ln x dx, ∫x ln x dx. - **Type D — cyclic parts:** ∫eˣsin x dx solved as an equation.  ·  ## 6. Common Confusions **\"Substitute anything\":** u must be the composite's inner function with its derivative present. **\"Parts is for all products\":** only when substitution fails — ∫2x·e^{x²}dx is a substitution problem wearing a product's clothes."
     }
   ]
 }

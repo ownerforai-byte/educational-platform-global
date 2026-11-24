@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Potential Divider is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "A **potential divider** — two series resistors across a source — delivers an output fraction of the input: $V_{out} = V\\frac{R_2}{R_1+R_2}$; a potentiometer makes the fraction continuously adjustable (volume controls, dimmers). As an instrument, the **potentiometer** exploits a uniform wire's constant drop per unit length: balancing each cell against the wire at null deflection compares emfs by lengths, $E_1/E_2 =…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potential Divider — quick idea map\"><title>Potential Divider — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Potential Divider</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Potential Divider</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Potential</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Divider</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Potential</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Potential Divider</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potential Divider — quick idea map\"><title>Potential Divider — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Potential Divider</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**A divider taps a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fraction; a potentiometer</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">taps any fraction</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">V_out = V × R₂/(R₁+R₂);</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">potentiometer: E ∝</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">balancing length.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- V_out = V R₂/(R₁+R₂) -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Potentiometer: E₁/E₂ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">l₁/l₂ - Drop per length k</text></svg>",
         "caption": "Potential Divider — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Potential Divider\nKey Formula 3: Application formula for Potential Divider\nKey Formula 4: Derivation result for Potential Divider"
+      "text": "- V_out = V R₂/(R₁+R₂) - Potentiometer: E₁/E₂ = l₁/l₂ - Drop per length k = IR_uniform"
     },
     {
       "label": "Conditions",
@@ -47,11 +47,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Potential Divider  ·  Practical demonstration of Potential Divider concepts"
+      "text": "***Volume knob*** — a slider sweeping the divider fraction 0→1."
     },
     {
       "label": "Limitation",
-      "text": "Carefully distinguish between similar-looking concepts in potential divider.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "**V_out sits across R₂** — the fraction uses the *output* resistor in the numerator.  ·  **The potentiometer's null method** reads the true emf — no current, no internal drop."
     },
     {
       "label": "Derivation",
@@ -59,15 +59,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Potential Divider formula  ·  Trick 2: Elimination technique for Potential Divider MCQs"
+      "text": "\"E₁/E₂ = l₁/l₂ — lengths replace emfs.\""
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Potential Divider.  ·  Q3. Differentiate between various aspects of Potential Divider."
+      "text": "**Numerical (2m): 10 V across 3 kΩ and 2 kΩ in series. Find the voltage across the 2 kΩ.** — V = 10 × 2/5 = 4 V."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Potential Divider  ·  Practice previous year questions on Potential Divider",
+      "text": "Mention 'null deflection' and 'no current drawn' — the reason for accuracy.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potential Divider — topic mind map\"><title>Potential Divider — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Potential divider</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Potential divider</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Potential Divider — topic mind map of this topic's own sub-topics"
@@ -75,27 +75,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Potential Divider  ·  Concept 2: Key theorem or principle in Potential Divider  ·  Concept 3: Important application area of Potential Divider  ·  Concept 4: Fundamental relationship in Potential Divider"
+      "text": "**A divider taps a fraction; a potentiometer taps any fraction continuously.**"
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Potential Divider  ·  Key Point 3: Important condition or constraint for Potential Divider  ·  Key Point 4: Common applications of Potential Divider  ·  Key Point 5: Connection to other topics in Science"
+      "text": "V_out = V × R₂/(R₁+R₂); potentiometer: E ∝ balancing length."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding potential divider builds the foundation for more advanced topics in mathematics."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Potential Divider.  ·  Q5. What are the applications of Potential Divider?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Potential Divider thoroughly  ·  Review common mistakes related to Potential Divider"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Potential Divider  ·  Application in daily life involving Potential Divider"
+      "text": "Sensor readouts (LDR, thermistor dividers) are the interface between physics and microcontrollers."
     },
     {
       "label": "MCQ drill",
@@ -103,27 +91,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Potential Divider:** This topic covers the fundamental concepts of potential divider in the physics curriculum.  ·  Understanding potential divider is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to potential divider should be memorized and practiced regularly."
+      "text": "## 1. Topic Introduction — Tapping a Fraction of a Voltage Two resistors in series across a battery form a voltage tap: the junction sits at a fixed fraction of the supply. Slide the tap (a rheostat) and you have a volume control, a dimmer, a sensor readout — the potential divider is electronics' most humble workhorse.  ·  ## 2. Fundamental Concepts ### 2.1 The divider formula Two resistors R₁ and R₂ in series across a source V. The same current I = V/(R₁+R₂) flows through both; the voltage across R₂ is: $$V_{out} = V \\times \\frac{R_2}{R_1 + R_2}$$ — the output is a fixed *fraction* of the input, set purely by the resistance ratio.…  ·  ## 3. Conceptual Relationships - **To Topic 101:** the divider is a series pair; the current is common. - **To Topic 103:** the potentiometer beats a voltmeter because it draws no current — no internal-resistance error. - **To sensors:** LDRs and thermistors in a divider convert light and heat into voltage."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Potential Divider and other topics  ·  Key Formula 5: Important relation in Potential Divider  ·  **Design Trade-off:** To minimize loading effects, the divider resistance ($R_1 + R_2$) should be much smaller than $R_L$. However, this increases power dissipation ($P = V_{in}^2/(R_1 + R_2)$). The designer must balance voltage stability against power efficiency."
+      "text": "**Design Trade-off:** To minimize loading effects, the divider resistance ($R_1 + R_2$) should be much smaller than $R_L$. However, this increases power dissipation ($P = V_{in}^2/(R_1 + R_2)$). The designer must balance voltage stability against power efficiency.  ·  Note 3: Practice numerical problems regularly for mastery of Potential Divider  ·  Note 4: Remember the units and dimensions involved in Potential Divider"
     },
     {
       "label": "More ideas",
-      "text": "Practice with multiple examples to solidify your understanding.  ·  The output voltage of a potential divider changes when a load is connected. The simple formula $V_{out} = V_{in} \\\\\\\\cdot R_2/(R_1 + R_2)$ is only valid for the unloaded case.  ·  A potential divider should not be used as a voltage source for high-current loads because the output voltage drops significantly. Use a voltage regulator or op-amp buffer instead."
+      "text": "Note 5: Potential Divider frequently appears in examination questions  ·  Verified PYQ: potentiometer principle + emf comparison (2024, 3m).  ·  \"For a uniform potentiometer wire carrying steady current, the potential drop per unit length is constant.\""
     },
     {
       "label": "More ideas",
-      "text": "The potential divider formula does not depend on the total voltage - only the ratio of resistances matters. Doubling all resistor values keeps the same output voltage but halves the current draw.  ·  When using a potentiometer as a voltage divider, connecting the output to a load reduces the voltage because the load is in parallel with the lower portion of the potentiometer.  ·  The power rating of the resistors in a potential divider matters. If $R_1 = R_2 = 1\\\\\\\\,\\ ext{k}\\\\\\\\Omega$ across 12 V, each dissipates $P = V^2/R = 144/1000 = 0.144$ W. Standard 0.25 W resistors are adequate."
+      "text": "Why does a divider's output sag when a load is connected?  ·  Task 3: Create a concept map for Potential Divider  ·  Task 4: Practice previous year exam questions on Potential Divider"
     },
     {
       "label": "More ideas",
-      "text": "Note 3: Practice numerical problems regularly for mastery of Potential Divider  ·  Note 4: Remember the units and dimensions involved in Potential Divider  ·  Note 5: Potential Divider frequently appears in examination questions"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 2: Remember the distinction between different types in Potential Divider  ·  Note 3: Potential Divider has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Potential Divider"
+      "text": "Task 5: Explain Potential Divider to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Electricity | DC circuits | State the principle of a potentiometer.…"
     }
   ]
 }

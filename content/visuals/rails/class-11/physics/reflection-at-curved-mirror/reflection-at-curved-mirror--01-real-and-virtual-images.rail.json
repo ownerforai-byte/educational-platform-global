@@ -21,52 +21,80 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Real and Virtual Images covers essential principles and applications.",
+      "text": "Spherical mirrors form images by reflection. A **real image** is where reflected rays truly intersect — it can be thrown on a screen and is inverted; a **virtual image** is where rays only *appear* to meet — erect, behind the mirror, never on a screen.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real and Virtual Images — quick idea map\"><title>Real and Virtual Images — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Real and Virtual Images</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Real and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Virtual Images.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Real and</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Virtual Images</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Real and</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Virtual Images to other</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real and Virtual Images — quick idea map\"><title>Real and Virtual Images — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Real and Virtual Images</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Object at F of a concave</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mirror → image at</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">infinity** (reflected</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Real image: rays actually</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">meet, can be caught on</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">screen, inverted.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Virtual image: rays appear</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to meet behind the mirror,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">erect, not on a screen.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- m = −v/u (Cartesian);</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|m| &gt; 1 enlarged, |m|</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&lt; 1 diminished - Object</text></svg>",
         "caption": "Real and Virtual Images — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Real and virtual images\nStatement 2: Theorem related to Real and virtual images"
+      "text": "- m = −v/u (Cartesian); |m| > 1 enlarged, |m| < 1 diminished - Object at F: image at infinity; object at C: m = −1"
     },
     {
       "label": "Conditions",
-      "text": "Real and Virtual Images is based on fundamental principles."
+      "text": "**Virtual ≠ fake:** a virtual image has a definite position and can be photographed — the rays just don't really meet there.  ·  **Concave mirrors can give both kinds of image; convex mirrors give only virtual, erect, diminished ones.**"
     },
     {
       "label": "Special cases",
-      "text": "Statement 3: Condition for Real and virtual images to be valid  ·  Statement 4: Principle governing Real and virtual images"
+      "text": "Virtual describes ray geometry, not image brightness.  ·  State the equation’s sign convention when giving image distances."
     },
     {
       "label": "Solved",
-      "text": "Application of Real and Virtual Images"
+      "text": "***NEB 2024 headlight*** — bulb at focus → reflected beam parallel to axis."
     },
     {
       "label": "Limitation",
-      "text": "Definition and significance of Real and Virtual Images."
+      "text": "Verified PYQs: image at infinity + object positions 2023 3m; concave vs convex 2020 3m; uses 2024 2m; headlight 2024 2m."
     },
     {
       "label": "Derivation",
-      "text": "Connection of Real and Virtual Images to other topics"
+      "text": "Compare real and virtual images by ray convergence and screen projection.  ·  Where is the image for an object between P and F of a concave mirror?"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Real and Virtual Images."
+      "text": "\"Object position ladder: beyond C → small; at C → same; inside C → big; at F → infinity; inside F → virtual erect magnified.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Real and Virtual Images.  ·  Q3. Problem on Real and Virtual Images."
+      "text": "**Reasoning (2m): A dentist's mirror gives an erect, magnified image. Where must the tooth be relative to the mirror?** — Within the focal length (between pole and focus), where a concave mirror forms a virtual, erect, magnified image."
     },
     {
       "label": "Hints",
-      "text": "Statement 5: Corollary or consequence of Real and virtual images",
+      "text": "Answer the 2023-style question with all three positions (F, C, between C and F).",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real and Virtual Images — topic mind map\"><title>Real and Virtual Images — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Real and virtual images</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Real</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Virtual images</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Real and Virtual Images — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "**Object at F of a concave mirror → image at infinity** (reflected rays parallel) — the searchlight principle."
+    },
+    {
+      "label": "Key points",
+      "text": "Real image: rays actually meet, can be caught on screen, inverted.  ·  Virtual image: rays appear to meet behind the mirror, erect, not on a screen."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Convex mirrors are chosen for vehicles not because they form \"better\" images but because their diminished erect images fit a wide field of view into a small mirror."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "A real image → A  ·  A virtual image is where → B"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 1. Topic Introduction — Where Images Come From Bring an object up to a spoon and its face appears; move it out and the image flips. Spherical mirrors — concave and convex — build images by redirecting light rays, and where those rays actually (or apparently) meet decides whether the image is real or virtual.  ·  ## 2. Fundamental Concepts (NEB 2020, 2023, 2024) ### 2.1 Real vs virtual images - **Real image:** reflected rays **actually intersect**; can be caught on a screen; always **inverted** (for a mirror acting alone). Formed **in front of** a concave mirror.…  ·  ## 3. Conceptual Relationships - **To ray optics of plane mirrors (Class X base):** a plane mirror is the limiting case m = +1, always virtual. - **To Topic 69:** the mirror formula turns these qualitative cases into numbers. - **To reversibility of light:** the \"focus → parallel beam\" property is just the reverse of \"parallel rays → focus\"."
+    },
+    {
+      "label": "More ideas",
+      "text": "\"A real image is formed by the actual intersection of reflected rays; a virtual image by their apparent intersection.\"  ·  Why does a dentist use a small concave mirror rather than a plane mirror?  ·  Can a convex mirror form a real image of a real object?"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Optics | Mirror | Explain why an object placed at the focus of a concave mirror produces an image at infinity, and state…"
     }
   ]
 }

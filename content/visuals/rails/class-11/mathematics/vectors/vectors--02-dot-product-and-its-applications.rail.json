@@ -21,52 +21,80 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Dot Product and Its Applications covers essential principles and applications.",
+      "text": "The **dot product** a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃ turns two vectors into one number — an **agreement meter**: +|a||b| when aligned, 0 when perpendicular, negative when opposed. Its algebra is commutative and distributive but has **no cancellation**; its geometry gives the theorems: **a ⊥ b ⟺ a·b = 0**, **cos θ = a·b/(|a||b|)**, and the **projection** family — scalar projection a·b/|b| (signed shadow) and…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Dot Product and Its Applications — quick idea map\"><title>Dot Product and Its Applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Dot Product and Its Applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Dot</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Product and Its</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Dot Product</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Its Applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Dot Product</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Its Applications to</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Dot Product and Its Applications — quick idea map\"><title>Dot Product and Its Applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Dot Product and Its Applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The dot product is an</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">agreement meter: cos th</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rewards alignment,</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dot product: a.b = |a||b|</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cos th = a1b1 + a2b2 +</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a3b3. a.a = |a|^2.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- a·b = |a||b|cos θ = a₁b₁</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ a₂b₂ + a₃b₃; |a| =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">√(a·a) - a ⊥ b ⟺ a·b = 0;</text></svg>",
         "caption": "Dot Product and Its Applications — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Dot product (scalar product) and its applications\nStatement 2: Theorem related to Dot product (scalar product) and its applications"
-    },
-    {
-      "label": "Conditions",
-      "text": "Dot Product and Its Applications is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Dot product (scalar product) and its applications to be valid  ·  Statement 4: Principle governing Dot product (scalar product) and its applications"
-    },
-    {
-      "label": "Solved",
-      "text": "Application of Dot Product and Its Applications"
-    },
-    {
-      "label": "Limitation",
-      "text": "Definition and significance of Dot Product and Its Applications."
-    },
-    {
-      "label": "Derivation",
-      "text": "Connection of Dot Product and Its Applications to other topics"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Dot Product and Its Applications."
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define Dot Product and Its Applications.  ·  Q3. Problem on Dot Product and Its Applications.",
+      "text": "- a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a) - a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|) - scalar projection of a on b: a·b/|b|; vector projection: (a·b/|b|²)b",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Dot Product and Its Applications — exam flow\"><title>Dot Product and Its Applications — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Dot Product and Its Applications</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Dot Product and Its Applications covers</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">essential principles and applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Dot product</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">(scalar product) and its applications</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">Statement 2: Theorem related to Dot…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Dot Product and Its</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Applications.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define Dot Product and Its Applications.</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">· Q3. Problem on Dot Product and Its</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">Applications.</text></svg>",
-        "caption": "Dot Product and Its Applications — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Dot Product and Its Applications — formula board\"><title>Dot Product and Its Applications — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Dot Product and Its Applications</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a) -</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|) - scalar</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">projection of a on b: a·b/|b|; vector projection:</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(a·b/|b|²)b</text></svg>",
+        "caption": "Dot Product and Its Applications — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "Verified PYQs: NEB 2024 (a.b = -3; scalar projection 4/sqrt5; angle 60 degrees), NEB 2023 (MCQ -8/3) — assigned to this row."
+    },
+    {
+      "label": "Special cases",
+      "text": "\"a perp b iff a.b = 0 (non-zero vectors); cos th = a.b/(|a||b|); scalar projection of a on b = a.b/|b|.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The signed shadow*** — scalar projection is a's shadow on b's line, and shadows can fall backwards: negative projection means the angle is obtuse."
+    },
+    {
+      "label": "Limitation",
+      "text": "The dot product is an agreement meter: cos th rewards alignment, punishes opposition, and stays silent at right angles.  ·  Dot product: a.b = |a||b| cos th = a1b1 + a2b2 + a3b3. a.a = |a|^2. Laws: commutative, distributive, scalar associative; NO cancellation. Perpendicularity theorem: a perp b (non-zero) iff a.b = 0. Angle theorem: cos th = a.b/(|a||b|). Scalar projection of a on b: a.b/|b| (signed); vector projection: (a.b/|b|^2) b. i, j, k orthonormal: self products 1, cross products 0.…"
+    },
+    {
+      "label": "Derivation",
+      "text": "## 1. Topic Introduction — The Projection Machine The **dot (scalar) product** a·b = |a||b|cos θ multiplies two vectors into a scalar. Its theorems: commutativity, distributivity over addition, perpendicularity criterion a·b = 0, and the **projection** interpretation — the dot product is \"how much of a lies along b\".  ·  ## 2. Fundamental Concepts ### 2.1 Definition and component form - **a·b = |a||b| cos θ**, 0 ≤ θ ≤ π. - **Component form:** a·b = a₁b₁ + a₂b₂ + a₃a₃... i.e. a₁b₁ + a₂b₂ + a₃b₃ (from î·î = ĵ·ĵ = k̂·k̂ = 1 and mixed products 0). - **a·a = |a|²** — magnitude from the dot product: |a| = √(a·a). ### 2.2 Algebraic laws - **Commutative:** a·b = b·a (cos θ is even). - **Distributive:** a·(b + c) = a·b + a·c.…"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Component multiply-and-add. |a| = sqrt(a.a). Perpendicular iff dot = 0. Projection: dot divided by |b|. Angle: dot over product of magnitudes, then compare with standard cosines."
+    },
+    {
+      "label": "Board question",
+      "text": "**NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (3m with |a×b|)** — **Component form:** a·b = a₁b₁ + a₂b₂ + a₃b₃ = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = **−3**. **Interpretation:** the negative dot product means cos θ < 0 — the angle between the vectors is **obtuse** (between 90° and 180°).…  ·  **NEB 2023 (verified PYQ): The scalar projection of the vector a = (2, −1, 4) on the vector b = (1, 2, −2) is: (1m)** — **Dot product:** a·b = (2)(1) + (−1)(2) + (4)(−2) = 2 − 2 − 8 = −8. **Magnitude of b:** |b| = √(1² + 2² + (−2)²) = √9 = 3. **Scalar projection:** a·b/|b| = **−8/3 — option (a)**.…"
+    },
+    {
       "label": "Hints",
-      "text": "Statement 5: Corollary or consequence of Dot product (scalar product) and its applications"
+      "text": "For angle questions, finish with the degree/radian value — cos th = 1/2 alone is half the answer."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Work = F.d is the dot product's day job: only the force component along the motion earns energy."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — **Dot product:** a·b = (1)(0) + (1)(1) + (0)(1) = 1. **Magnitudes:** |a| = √(1 + 1) = √2; |b| = √(1 + 1) = √2. **Angle theorem:** cos θ = a·b/(|a||b|) = 1/(√2·√2) = 1/2.…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Dot product** | |a||b|cos θ — a scalar | î·ĵ = 0 | | **Scalar projection** | Component of a along b: a·b/|b| | can be negative (obtuse θ) | | **Orthonormal basis** | Mutually perpendicular unit vectors | î, ĵ, k̂ | | **Work (preview)** | F·d — force dotted with displacement | the physical…  ·  ## 4. Detailed Explanation ### 4.1 Why cos θ - The dot product measures agreement of directions: aligned (θ = 0) gives the full product of magnitudes, perpendicular gives zero, opposed gives negative. cos θ is the agreement meter.…  ·  ## 5. Comparison Tables **Dot product sign atlas** | θ | cos θ | a·b | geometry | |---|---|---|---| | 0° | 1 | +|a||b| | parallel, same way | | 90° | 0 | 0 | perpendicular | | 180° | −1 | −|a||b| | antiparallel |"
+    },
+    {
+      "label": "More ideas",
+      "text": "Compute a·b for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂ and interpret the sign.  ·  Find the scalar projection of a = (2, −1, 4) on b = (1, 2, −2).  ·  Prove the perpendicularity criterion and use it to find the angle between î + ĵ and ĵ + k̂."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **a·b = 0 needs non-zero vectors:** the zero vector is perpendicular to everything by convention — state the non-zero hypothesis in proofs.  ·  **Projection divides by |b|, not |b|²:** scalar projection a·b/|b|; the vector projection is the one carrying |b|².  ·  **No cancellation law:** from a·b = a·c conclude a·(b − c) = 0 (b − c ⊥ a), never b = c."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find a·b. (part of 3m)** — **a·b = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = −3.** The negative sign says the angle between the vectors is obtuse (cos θ < 0).  ·  **NEB 2024 (verified PYQ): Find the scalar projection of a = 2î + ĵ on b = î + 2ĵ. (3m)** — **a·b** = (2)(1) + (1)(2) = 4; **|b|** = √(1 + 4) = √5. **Scalar projection = a·b/|b| = 4/√5** = 4√5/5 ≈ 1.79. (Positive ⟹ the projection points along b.)  ·  **NEB 2023 (verified PYQ): The scalar projection of a = (2, −1, 4) on b = (1, 2, −2) is: (1m MCQ)** — a·b = 2 − 2 − 8 = −8; |b| = √(1 + 4 + 4) = 3; projection = **−8/3 → option (a)**. The negative value flags an obtuse angle between the vectors."
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — a·b = (1)(0) + (1)(1) + (0)(1) = 1; |a| = √2, |b| = √2. cos θ = 1/(√2·√2) = 1/2 ⟹ **θ = 60° (π/3)**."
     }
   ]
 }

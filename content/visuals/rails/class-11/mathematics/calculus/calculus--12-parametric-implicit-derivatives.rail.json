@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Parametric and implicit differentiation both exist because a curve need not be expressible as $y=f(x)$. In the parametric case the parameter cancels, leaving a ratio of parameter derivatives, and a vanishing $\\frac{dx}{dt}$ marks a vertical tangent. In the implicit case one differentiates an equation solved for neither variable, treating $y$ as a function of $x$ throughout, then isolates $\\frac{dy}{dx}$.",
+      "text": "Parametric differentiation divides the rates — dy/dx = (dy/dt)/(dx/dt) — and its second derivative is a two-step recipe: differentiate dy/dx in t, then divide by dx/dt, never a quotient of second derivatives. Implicit differentiation is the chain rule wearing y(x): differentiate every y-term with the inner derivative y′, then solve one linear equation, obtaining a slope field that serves every branch at once.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parametric and Implicit Derivatives — quick idea map\"><title>Parametric and Implicit Derivatives — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Parametric and Implicit Derivatives</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parametric derivatives are</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a ratio of parameter</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivatives, not a</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\frac{dx}{dt}=0$</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">corresponds to a vertical</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parametric derivatives are</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a ratio of parameter</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivatives, not a</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\frac{dx}{dt}=0$</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">corresponds to a vertical</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parametric and Implicit Derivatives — quick idea map\"><title>Parametric and Implicit Derivatives — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Parametric and Implicit Derivatives</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dy/dx is a function of t</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">first; the second</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivative needs its own…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parametric: dy/dx =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(dy/dt)/(dx/dt), dx/dt !=</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">0.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- dy/dx = (dy/dt)/(dx/dt);</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">d²y/dx² =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[d(dy/dx)/dt]/(dx/dt) -</text></svg>",
         "caption": "Parametric and Implicit Derivatives — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Parametric: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for $dx/dt\\ne0$\nImplicit: differentiate $F(x,y)=0$ w.r.t. $x$ and solve for $y'$\nParametric 2nd: $\\frac{d^2y}{dx^2}=\\frac{d}{dt}(\\frac{dy}{dx})\\div\\frac{dx}{dt}$",
+      "text": "- dy/dx = (dy/dt)/(dx/dt); d²y/dx² = [d(dy/dx)/dt]/(dx/dt) - d/dx(yⁿ) = n·yⁿ⁻¹·y′",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parametric and Implicit Derivatives — formula board\"><title>Parametric and Implicit Derivatives — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Parametric and Implicit Derivatives</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Parametric: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$dx/dt\\ne0$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Implicit: differentiate $F(x,y)=0$ w.r.t. $x$ and solve</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">for $y'$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Parametric 2nd:</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\frac{d^2y}{dx^2}=\\frac{d}{dt}(\\frac{dy}{dx})\\div\\frac{dx}{dt}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parametric and Implicit Derivatives — formula board\"><title>Parametric and Implicit Derivatives — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Parametric and Implicit Derivatives</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- dy/dx = (dy/dt)/(dx/dt); d²y/dx² =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">[d(dy/dx)/dt]/(dx/dt) - d/dx(yⁿ) = n·yⁿ⁻¹·y′</text></svg>",
         "caption": "Parametric and Implicit Derivatives — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Parametric derivatives are a ratio of parameter derivatives, not a product.  ·  $\\frac{dx}{dt}=0$ corresponds to a vertical tangent."
+      "text": "***The cycloid cusp*** - d2y/dx2 = 1/(4a) at t = 2pi: concave up beside a vertical tangent - the naive quotient of second derivatives gives a different (wrong) story."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "For the circle, always convert $y$ to $\\pm\\sqrt{r^2-x^2}$ before computing a second derivative — implicit is faster but needs the substitution step.  ·  Draw the parametric curve for a few values of $t$ if the shape is unclear; the vertical tangent becomes obvious."
+      "text": "Parametric second derivative: differentiate dy/dx in t, divide by dx/dt - write the two-step recipe before computing."
     },
     {
       "label": "Board question",
-      "text": "Slope of a parametric curve and slope of a circle by implicit differentiation are both standard 3-mark questions."
+      "text": "**NEB-style (5m): For x = t², y = 2t, find dy/dx and describe the curve.** — **Rates:** dy/dt = 2; dx/dt = 2t ⟹ dy/dx = 2/(2t) = **1/t**. **Eliminate t:** t = y/2 ⟹ x = y²/4 ⟹ y² = 4x — a right-opening parabola. **Slope behaviour:** at t = 1 (point (1, 2)) the slope is 1; as t → 0⁺ the slope → ∞ (vertical tangent at the vertex).…  ·  **NEB-style (6m): For the cycloid x = a(t − sin t), y = a(1 − cos t), find d²y/dx² and evaluate it at t = 2π.** — **First derivative:** dy/dt = a sin t; dx/dt = a(1 − cos t) ⟹ dy/dx = sin t/(1 − cos t).…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Higher-order implicit derivatives substitute back the expression obtained for $ frac{dy}{dx}$ before differentiating again, so for a circle $ frac{d^2y}{dx^2}=- frac{r^2}{y^3}$ once $x^2+y^2=r^2$ is used."
+      "text": "For implicit answers, leave y' in terms of x and y - that IS the slope field."
     },
     {
       "label": "Quick concepts",
-      "text": "Implicit differentiation presumes $y$ is a differentiable function of $x$."
+      "text": "dy/dx is a function of t first; the second derivative needs its own chain-rule pass."
+    },
+    {
+      "label": "Key points",
+      "text": "Parametric: dy/dx = (dy/dt)/(dx/dt), dx/dt != 0. Second derivative: d(dy/dx)/dt divided by dx/dt - NOT the quotient of second derivatives (the cycloid trap). Implicit: chain rule on every y-term (d/dx y^2 = 2y y'), then solve linearly for y'. The implicit answer is a slope field - a function of position (x, y)."
     },
     {
       "label": "Universal facts",
-      "text": "Projectile motion is the standard parametric curve: eliminating $t$ is clumsy, while $\\frac{dy}{dx}=\\frac{v_y}{v_x}$ gives the trajectory angle instantly.  ·  A cycloid, the curve traced by a point on a rolling wheel, has no single-valued $y(x)$ over a full arch, which is precisely why parametric differentiation is needed for it."
+      "text": "Implicit differentiation is the chain rule applied consistently plus one linear solve."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find dy/dx for x² + y² = 25 at (3, 4) and write the tangent and normal lines.** — **Implicit differentiation:** 2x + 2y·y′ = 0 ⟹ y′ = **−x/y** — the slope field of every circle centred at the origin. **At (3, 4):** y′ = −3/4. **Tangent:** y − 4 = (−3/4)(x − 3) ⟹ 3x + 4y = 25.…  ·  **NEB-style (6m): Find dy/dx for the curve x³ + y³ = 3xy (the folium) at the point where x = y (first quadrant).** — **Find the point:** x = y ⟹ 2x³ = 3x² ⟹ x = 3/2 ⟹ point (3/2, 3/2).…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Parametric rule:** if $x=x(t)$ and $y=y(t)$ then $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$, provided $\\frac{dx}{dt}\\ne0$. The parameter cancels, which is what allows a curve with no closed-form $y=f(x)$ to be differentiated at all.  ·  **Why $\\frac{dx}{dt}=0$ is special:** it means $\\frac{dy}{dx}$ is infinite, i.e. a vertical tangent. A circle $x=\\cos t$, $y=\\sin t$ gives $\\frac{dy}{dx}=\\frac{\\cos t}{-\\sin t}$ and a vertical tangent at $t=0$, matching the geometry.  ·  **Implicit differentiation:** differentiate $F(x,y)=0$ with respect to $x$, treating $y$ as a function of $x$ throughout, then collect the $\\frac{dy}{dx}$ terms. For $x^2+y^2=25$ one gets $2x+2y\\frac{dy}{dx}=0$, hence $\\frac{dy}{dx}=-\\frac{x}{y}$."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Parametric and Implicit Derivatives This canonical is the **short-form doorway** to parametric and implicit differentiation: dy/dx = (dy/dt)/(dx/dt) and the y′-carrying chain rule in one page.…  ·  ## 2. Theorem Mirror - **Parametric:** for x = f(t), y = g(t): **dy/dx = (dy/dt)/(dx/dt)**, provided dx/dt ≠ 0 — the chain rule with dt cancelled. - **Parametric second derivative:** d²y/dx² = [d(dy/dx)/dt]/(dx/dt) — differentiate the *first* derivative with respect to t, then divide again.…  ·  ## 3. Deep Conceptual — The Parametric Trap - **d²y/dx² ≠ (d²y/dt²)/(d²x/dt²):** the second derivative is a *rate of change of the rate* — it needs d(dy/dx)/dt divided by dx/dt. The trap is treating it as a fraction of fractions; the cure is remembering that dy/dx is a function of t first.…"
     },
     {
       "label": "More ideas",
-      "text": "Circle: $\\frac{dy}{dx}=-\\frac{x}{y}$, $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}$  ·  Statement 1: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for parametric equations when $dx/dt\\ne0$.  ·  Statement 2: $\\frac{dx}{dt}=0$ indicates a vertical tangent."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  The parametric second derivative differentiates the first derivative, then divides by dx/dt - never the other fractions.  ·  For x = t², y = 2t, find dy/dx."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Implicit differentiation requires $y$ to be a differentiable function of $x$.  ·  Statement 4: For $x^2+y^2=r^2$, $\\frac{dy}{dx}=-\\frac{x}{y}$.  ·  Statement 5: A parametric second derivative divides by $\\frac{dx}{dt}$ a second time."
+      "text": "For x = a(t − sin t), y = a(1 − cos t), find d²y/dx².  ·  Find dy/dx for x² + y² = 25 at (3, 4).  ·  ## 4. Deep Conceptual — Implicit Differentiation Is the Chain Rule Wearing y(x) - Every y in an implicit equation is a composite: d/dx(y²) = 2y·y′, d/dx(sin y) = cos y·y′. The chain rule's inner derivative is y′ itself — implicit differentiation is nothing but the chain rule applied consistently plus one linear solve.…"
     },
     {
       "label": "More ideas",
-      "text": "**Always state the assumption $y=y(x)$** when differentiating implicitly; without it the method is a guess, and the resulting formula is only valid where $\\frac{\\partial F}{\\partial y}\\ne0$.  ·  **Second derivatives from parametric form are found by differentiating $\\frac{dy}{dx}$ with respect to $t$ and dividing by $\\frac{dx}{dt}$ again:** $\\frac{d^2y}{dx^2}=\\frac{d}{dt}\\left(\\frac{dy/dt}{dx/dt}\\right)\\div\\frac{dx}{dt}$.  ·  **Higher-order implicit derivatives substitute back** the expression obtained for $\\frac{dy}{dx}$ before differentiating again, so for a circle $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}$ once $x^2+y^2=r^2$ is used."
+      "text": "## 5. Worked Example Types - **Type A — parametric first derivative:** divide the rates; simplify with identities. - **Type B — parametric second derivative:** differentiate dy/dx in t, divide by dx/dt. - **Type C — implicit first derivative:** chain rule on y-terms, linear solve for y′.…  ·  ## 6. Common Confusions **\"Second derivative = quotient of second derivatives\":** the classic parametric error. **\"Implicit means solve for y first\":** usually impossible — differentiate directly."
     }
   ]
 }

@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Rules of differentiation; derivatives of parametric and i… (Calculus, Mathematics, class-11-notes) covers Rules of differentiation, derivatives of parametric, implicit functions. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The **differentiation toolkit** turns the table into universal machinery. **Product rule** (fg)′ = f′g + fg′ (sin x·cos x → cos²x − sin²x = cos 2x, NEB 2023) and **quotient rule** (f′g − fg′)/g² are the workhorses; the **chain rule** dy/dx = dy/du·du/dx is the master — outer table, inner derivative, multiply.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Rules of differentiation; derivatives of parametric and i… — quick idea map\"><title>Rules of differentiation; derivatives of parametric and i… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Rules of differentiation; derivatives of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">parametric and i…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Rules of differentiation</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Derivatives of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">parametric</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f'(x) = lim</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[f(x+h)−f(x)]/h</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(fg)' = f'g + fg'</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Rules of differentiation; derivatives of parametric and i… — quick idea map\"><title>Rules of differentiation; derivatives of parametric and i… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Rules of differentiation; derivatives of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">parametric and i…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The chain rule is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">master rule: outer table</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivative times inner…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Product rule: (fg)' = f'g</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ fg'. Quotient rule:</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(f/g)' = (f'g - fg')/g^2.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (fg)′ = f′g + fg′;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(f/g)′ = (f′g − fg′)/g² -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">chain: dy/dx =</text></svg>",
         "caption": "Rules of differentiation; derivatives of parametric and i… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "f'(x) = lim [f(x+h)−f(x)]/h\n(fg)' = f'g + fg'\nd/dx xⁿ = nx^{n−1}"
+      "text": "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g² - chain: dy/dx = (dy/du)(du/dx) - parametric: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = (d/dt(dy/dx))/(dx/dt) - log-diff: y = u^v ⟹ y′ = y(v′ ln u + vu′/u)"
     },
     {
       "label": "Conditions",
@@ -43,11 +43,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x."
+      "text": "\"(fg)' = f'g + fg'; (f/g)' = (f'g - fg')/g^2; dy/dx = dy/du du/dx; y = u^v => y' = y(v' ln u + vu'/u).\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The x^x litmus test*** - neither power nor exponential rule applies when both base and exponent vary: ln y = x ln x is the universal escape hatch."
     },
     {
       "label": "Limitation",
@@ -55,31 +55,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Rules of differentiation; derivatives of parametric and i… — Calculus, Mathematics (class-11-notes).  ·  **Tested.** define it · list: rules of differentiation, derivatives of parametric, implicit functions, higher order derivatives · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Differentiation Toolkit **Rules of differentiation** — product, quotient, chain — plus **parametric, implicit and higher-order derivatives**: the machinery that makes every function differentiable in practice.  ·  ## 2. Fundamental Concepts ### 2.1 Product and quotient rules - **Product:** (fg)′ = f′g + fg′ (proved by adding and subtracting f(x+h)g(x)). **Quotient:** (f/g)′ = (f′g − fg′)/g² (g ≠ 0). - **Memory:** product keeps order symmetry; quotient is \"low d-high minus high d-low over low squared\".…"
     },
     {
       "label": "Shortcut",
-      "text": "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+      "text": "u^v both variable: ln y first. Parametric: dy/dt over dx/dt; second derivative divides by dx/dt again. Implicit: differentiate through, solve linearly for y'."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Rules of differentiation; derivatives of parametric and i…\" with one example.  ·  compare \"Rules of differentiation\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = **cos x·cos x + sin x·(−sin x)** = cos²x − sin²x. **Simplify:** by the double-angle identity, cos²x − sin²x = **cos 2x**.…  ·  **NEB 2022 (verified PYQ): Differentiate with respect to x: (i) y = xˣ, (ii) y = sin²x · eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic differentiation** (both base and exponent variable — neither single rule applies): ln y = x ln x ⟹ y′/y = 1·ln x + x·(1/x) = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain..",
+      "text": "For \"show that\" derivative questions, keep y in the final answer when the target form does - substituting it out loses the match.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Rules of differentiation; derivatives of parametric and i… — topic mind map\"><title>Rules of differentiation; derivatives of parametric and i… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Rules of differentiation; derivatives of para…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Rules of differentiation</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Derivatives of</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">parametric</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Implicit functions</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Higher order derivatives</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Rules of differentiation; derivatives of parametric and i… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The chain rule is the master rule: outer table derivative times inner derivative - product, quotient and every composite reduce to it."
+    },
+    {
       "label": "Key points",
-      "text": "• Rules of differentiation  ·  • Derivatives of parametric  ·  • Implicit functions  ·  • Higher order derivatives"
+      "text": "Product rule: (fg)' = f'g + fg'. Quotient rule: (f/g)' = (f'g - fg')/g^2. Chain rule: (f o g)' = f'(g(x)) g'(x), i.e. dy/dx = dy/du du/dx - the master rule. Parametric: x = x(t), y = y(t) => dy/dx = (dy/dt)/(dx/dt); d^2y/dx^2 = [d/dt(dy/dx)]/(dx/dt) - divide by dx/dt again.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Gear trains multiply rates like the chain rule: output speed = gear ratio (outer) times input speed (inner) - differentiation's mechanics is mechanics."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Rules of differentiation; derivatives of parametric and i…\" and verify the answer is plausible."
+      "text": "**NEB 2023 (verified PYQ): If y = (sin x)^{cos x}, show that dy/dx = y(cos x · cot x − sin x · log_e(sin x)). (3m)** — **Step 1 — take logs** (u^v with both parts variable): ln y = cos x · ln(sin x).…  ·  **NEB-style (6m): For the cycloid x = a(θ − sin θ), y = a(1 − cos θ), find dy/dx and d²y/dx².** — **First derivative (parametric rule):** dx/dθ = a(1 − cos θ); dy/dθ = a sin θ ⟹ dy/dx = a sin θ/[a(1 − cos θ)] = sin θ/(1 − cos θ).…  ·  **NEB-style (5m): If x² + xy + y² = 7, find dy/dx by implicit differentiation and the equation of the tangent at (1, 2).** — **Differentiate through in x** (y is y(x); the product term needs the product rule): 2x + [y + x·y′] + 2y·y′ = 0.…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  **Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.  ·  **Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Product rule** | (fg)′ = f′g + fg′ | sin x·cos x | | **Chain rule** | (f∘g)′ = f′(g)·g′ | ln(sin x) | | **Parametric dy/dx** | (dy/dt)/(dx/dt) | ellipse tangents | | **Logarithmic diff** | ln y first, then solve | xˣ |  ·  ## 4. Detailed Explanation ### 4.1 Why the chain rule is the master rule - Product and quotient rules are special cases of treating expressions as composites; every \"hard\" derivative is a chain rule in disguise. Master dy/du · du/dx and the table becomes universal.…  ·  ## 5. Comparison Tables **Rule selector** | Situation | Rule | |---|---| | product of functions | (fg)′ = f′g + fg′ | | quotient | (f′g − fg′)/g² | | composite | f′(g)·g′ | | x = x(t), y = y(t) | (dy/dt)/(dx/dt) | | equation in x, y | implicit + solve | | u^v both variable | logarithmic diff |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: rules of differentiation, derivatives of parametric, implicit functions, higher order derivatives.  ·  one worked example for \"Rules of differentiation; derivatives of parametric and i…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain..  ·  Verified PYQs: NEB 2023 product rule sin x cos x; NEB 2022 x^x, sin^2 x e^x, (1+x)^(1/x); NEB 2023 (sin x)^cos x - assigned to this row. Other items NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  **Derivatives of parametric.** one-line definition + one-line exam use."
+      "text": "**NEB-style (5m): If y = A cos(mx) + B sin(mx), show that d²y/dx² + m²y = 0.** — **First derivative (linearity + chain):** y′ = A(−m sin mx) + B(m cos mx) = **−Am sin mx + Bm cos mx**. **Second derivative:** y′′ = −Am(m cos mx) + Bm(−m sin mx) = **−m²(A cos mx + B sin mx) = −m²y**. **Rearrange: y′′ + m²y = 0** ∎.…  ·  **NEB-style (6m): If y = (sin x)^{cos x}, show that dy/dx = y(cos x·cot x − sin x·log_e(sin x)), and find dy/dx at x = π/4.** — **Logarithmic differentiation:** ln y = cos x·ln(sin x).…  ·  Differentiate sin x·cos x by the product rule."
     },
     {
       "label": "More ideas",
-      "text": "**Implicit functions.** one-line definition + one-line exam use.  ·  **Higher order derivatives.** one-line definition + one-line exam use."
+      "text": "Differentiate xˣ, sin²x·eˣ, (1+x)^{1/x}.  ·  Show dy/dx for y = (sin x)^{cos x}.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  ## 6. Common Confusions **Chain rule amnesia:** ln(sin x) is cot x only because the inner derivative cos x survives — dropping u′ is the classic error.  ·  **Parametric second derivative:** divide by dx/dt again after differentiating dy/dx in t — not the ratio of second t-derivatives."
+    },
+    {
+      "label": "More ideas",
+      "text": "**x^x is not x·x^{x−1}:** the power rule needs constant exponent; xˣ demands logarithmic differentiation.  ·  ## 7. Exam Application **NEB 2023 (verified PYQ): Find the derivative of y = sin x · cos x using the product rule. (3m)** — **Product rule:** y′ = (sin x)′·cos x + sin x·(cos x)′ = cos x·cos x + sin x·(−sin x) = cos²x − sin²x = **cos 2x**. (Cross-check: y = ½ sin 2x ⟹ y′ = ½·2cos 2x = cos 2x ✓.)  ·  **NEB 2022 (verified PYQ): Differentiate (i) y = xˣ, (ii) y = sin²x·eˣ, (iii) y = (1+x)^{1/x}. (3m)** — **(i) Logarithmic:** ln y = x ln x ⟹ y′/y = ln x + 1 ⟹ **y′ = xˣ(ln x + 1)**. **(ii) Product + chain:** y′ = (2 sin x cos x)·eˣ + sin²x·eˣ = **eˣ(sin 2x + sin²x)**.…"
     }
   ]
 }

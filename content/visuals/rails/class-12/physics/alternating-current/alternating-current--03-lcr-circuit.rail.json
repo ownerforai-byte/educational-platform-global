@@ -52,7 +52,7 @@
     },
     {
       "label": "Limitation",
-      "text": "❌ Assuming voltage across L and C is zero at resonance ✅ While the net voltage across the L-C combination is zero (because they are 180° out of phase), individual voltages across L and C can be non-zero and large."
+      "text": "❌ Assuming voltage across L and C is zero at resonance ✅ While the net voltage across the L-C combination is zero (because they are 180° out of phase), individual voltages across L and C can be non-zero and large.  ·  Z is not R + X_L + X_C."
     },
     {
       "label": "Derivation",
@@ -108,7 +108,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Sharpness of resonance (Q-factor)  ·  Determining bandwidth and Q-factor  ·  Note 3: Impedance is minimum and equal to R at resonance."
+      "text": "Sharpness of resonance (Q-factor)  ·  Resonance is not maximum resistance.  ·  A lagging current means the circuit is inductive, not capacitive."
+    },
+    {
+      "label": "More ideas",
+      "text": "The large voltages on L and C are not added arithmetically to get the supply.  ·  Determining bandwidth and Q-factor  ·  Note 3: Impedance is minimum and equal to R at resonance."
     },
     {
       "label": "More ideas",
@@ -117,10 +121,6 @@
     {
       "label": "More ideas",
       "text": "Note 2: Understand the phase relationship at frequencies below and above resonance.  ·  Note 3: Resonance is used for selectivity in communication systems.  ·  Note 4: Practice calculations for impedance at frequencies other than resonance."
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 5: Pay close attention to the formula for Q-factor.  ·  Statement 1: At resonance, impedance Z is minimum.  ·  Statement 2: The circuit is purely resistive at resonance."
     }
   ]
 }

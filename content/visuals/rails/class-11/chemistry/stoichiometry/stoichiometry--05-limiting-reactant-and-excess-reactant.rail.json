@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Limiting reactant and excess reactant (Stoichiometry, Chemistry, class-11-notes) covers Limiting reactant, excess reactant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The **limiting reactant** — identified by dividing each reactant's moles by its equation coefficient and taking the smallest quotient — is completely consumed and caps the product yield; the excess reactant is partly left over. 4.8 g Mg + 6.4 g O₂: Mg limiting → 8.0 g MgO (NEB 2023). 10 g H₂ + 64 g O₂: O₂ limiting → 72 g H₂O with 2 g H₂ left (NEB 2024).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limiting Reactant and Excess Reactant — quick idea map\"><title>Limiting Reactant and Excess Reactant — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limiting Reactant and Excess Reactant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Limiting reactant</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Excess reactant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\text{Limiting</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reactant}:\\</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\text{smallest…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limiting Reactant and Excess Reactant — quick idea map\"><title>Limiting Reactant and Excess Reactant — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limiting Reactant and Excess Reactant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**mol ÷ coefficient** —</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the only valid comparison;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">raw mole counts mislead.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Identification: mol ÷</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">coefficient, smallest</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">wins.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Quotient = n(reactant) ÷</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">coefficient - Product</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">moles = limiting moles ×…</text></svg>",
         "caption": "Limiting Reactant and Excess Reactant — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$\\text{Limiting reactant}:\\ \\text{smallest }\\frac{n_{\\text{reactant}}}{\\nu_{\\text{reactant}}}\\ (\\nu=\\text{stoichiometric coefficient})$$\n$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$\nlim sin x/x = 1 (x→0, rad)"
+      "text": "- Quotient = n(reactant) ÷ coefficient - Product moles = limiting moles × (product coefficient ÷ limiting coefficient) - Excess left = n(initial) − n(consumed)"
     },
     {
       "label": "Conditions",
-      "text": "❌ The reactant present in the smallest mass is limiting. ✅ The limiting reactant is found in *moles* divided by the stoichiometric coefficient, not by mass.  ·  ❌ The limiting reactant is the one that runs out last. ✅ It is used up first and stops the reaction; the other reactant is in excess."
+      "text": "**Limiting vs excess:** limiting = runs out first, controls yield; excess = left over, irrelevant to yield.  ·  **\"Smallest quotient\" vs \"smallest moles\":** 0.2 mol with coefficient 1 beats 0.2 mol with coefficient 2 — always divide by the coefficient first."
     },
     {
       "label": "Special cases",
-      "text": "In the Haber process the industrial ratio N₂ : H₂ is chosen with a slight excess of nitrogen because hydrogen is costlier and excess hydrogen lowers equilibrium conversion.  ·  Burning methane with 10% excess air ensures complete combustion of carbon but increases NOₓ and heat loss — the classical trade-off."
+      "text": "\"The limiting reactant is completely consumed and determines the maximum amount of product.\""
     },
     {
       "label": "Solved",
-      "text": "**Problem:** 3 mol N₂ and 6 mol H₂ with N₂ + 3H₂ → 2NH₃. **Solution:** quotients 3/1 = 3 (N₂) and 6/3 = 2 (H₂) → H₂ limiting. NH₃ = (2/3) × 6 = 4 mol = 68 g; N₂ consumed = 2 mol, so 1 mol N₂ (28 g) remains excess.  ·  **Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms."
+      "text": "***10 g H₂ + 64 g O₂*** — O₂ limiting (quotient 2 vs 2.5): 72 g water maximum, 2 g H₂ unreacted (NEB 2024)."
     },
     {
       "label": "Limitation",
@@ -56,150 +56,51 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning  ·  The **limiting reactant (limiting reagent)** is the reactant completely consumed in a reaction, and it therefore determines the maximum amount of product that can form (the theoretical yield). The other reactant, part of which is left over when the reaction stops, is the **excess reactant**. The idea is needed whenever the reactants are not mixed in exactly the stoichiometric ratio of the balanced equation."
+      "text": "## 1. Topic Introduction — The Reactant That Runs Out First Real reactions mix measured amounts of two reactants, and they almost never match the stoichiometric ratio. The reactant consumed completely first — the **limiting reactant** — decides how far the reaction goes and how much product forms. Everything left over is the **excess reactant**.  ·  ## 2. Fundamental Concepts ### 2.1 Identification algorithm 1. Balance the equation. 2. Convert each reactant's amount to **moles**. 3. Divide each by its **coefficient** (mol ÷ coefficient). 4. The **smallest quotient** marks the limiting reactant; all product yields follow from it. ### 2.2 Worked numericals **Q (NEB 2023, 3m):** 4.8 g of magnesium is burnt in 6.4 g of oxygen.…"
     },
     {
       "label": "Shortcut",
-      "text": "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it.  ·  Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable)."
+      "text": "\"Divide each mole by its coefficient — smallest quotient = limiting.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Limiting reactant and excess reactant\" with one example.  ·  compare \"Limiting reactant\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (3m): 4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of MgO formed. (Mg = 24, O = 16)** — 2Mg + O₂ → 2MgO. n(Mg) = 0.20 mol (quotient 0.10); n(O₂) = 0.20 mol (quotient 0.20). **Mg is limiting.** n(MgO) = 0.20 mol → m = 0.20 × 40 = **8.0 g MgO**; O₂ left = 0.10 mol = 3.2 g."
     },
     {
       "label": "Hints",
-      "text": "Convert every quantity to moles before comparing coefficients — the commonest source of error.  ·  Always state which reactant limits *and* how much excess remains; that is where most marks are given.",
+      "text": "NEB gives method marks for the mole table — always show n, coefficient, quotient columns.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limiting Reactant and Excess Reactant — topic mind map\"><title>Limiting Reactant and Excess Reactant — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Limiting reactant and excess reactant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Limiting reactant</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Excess reactant</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Limiting Reactant and Excess Reactant — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**mol ÷ coefficient** — the only valid comparison; raw mole counts mislead."
+    },
+    {
       "label": "Key points",
-      "text": "• Limiting reactant  ·  • Excess reactant"
+      "text": "Identification: mol ÷ coefficient, smallest wins. Yield follows the limiting reactant. Mg/O₂ (2023): Mg limiting, 8 g MgO. H₂/O₂ (2024): O₂ limiting, 72 g H₂O."
     },
     {
       "label": "Universal facts",
-      "text": "Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.  ·  Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
-    },
-    {
-      "label": "More practice",
-      "text": "solve / apply for \"Limiting reactant and excess reactant\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "In industrial ammonia synthesis, H₂ is usually fed slightly in excess because N₂ from air is cheaper."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Limiting reactant and excess reactant\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The limiting reactant is the one that: → B  ·  Compare reactants by: → C"
     },
     {
       "label": "Study notes",
-      "text": "### 2. How to identify the limiting reactant  ·  Method 1 (standard): convert the given masses/volumes of all reactants into moles, divide each by its stoichiometric coefficient, and the smallest quotient identifies the limiting reactant. Method 2: compare the moles *required* (from the mole ratio) with the moles *available*; the reactant for which the requirement exceeds the supply is limiting.  ·  ### 3. Worked example — ammonia synthesis"
+      "text": "## 3. Conceptual Relationships - **To mole calculations (Topic 5):** the identification algorithm is two mole hops plus a comparison. - **To yield (Topic 7):** theoretical yield is computed from the limiting reactant. - **To equilibrium (Unit 8):** limiting vs excess sets initial concentrations.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2023 | Stoichiometry | Limiting reactant | 4.8 g Mg burnt in 6.4 g O₂ — limiting reactant and mass of MgO.…"
     },
     {
       "label": "More ideas",
-      "text": "(1+x)^{1/x} → e as x→0  ·  ❌ Excess reactant also becomes product. ✅ Only the consumed part reacts; the remainder is unreacted excess.  ·  ❌ Every reaction has a limiting reactant. ✅ Only when the reactants are not in the exact stoichiometric mole ratio."
+      "text": "Verified PYQs: 2023 (3m) Mg/O₂ → 8 g MgO; 2024 (3m) H₂/O₂ → 72 g H₂O.  ·  In 2H₂ + O₂ → 2H₂O with 3 mol H₂ and 1 mol O₂, which is limiting and how much H₂ remains?  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent.  ·  ❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)..  ·  Note explicitly that the theoretical yield is computed from the limiting reactant alone."
-    },
-    {
-      "label": "More ideas",
-      "text": "Explain how the limiting reactant is identified from mole ratios.  ·  N₂ + 3H₂ → 2NH₃: 3 mol N₂ and 6 mol H₂ are mixed. Find the limiting reactant, the mass of NH₃ formed and the excess left.  ·  Calculate the mass of water formed when 4 g H₂ reacts with 32 g O₂ and identify the excess reactant."
-    },
-    {
-      "label": "More ideas",
-      "text": "Why is excess air supplied in combustion, and what are the disadvantages of too much excess air?  ·  State the limitations of the limiting-reactant concept.  ·  one worked example for \"Limiting reactant and excess reactant\" — check units / edge cases."
-    },
-    {
-      "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
+      "text": "Limit to remember: Limiting reactant concept applies only to irreversible reactions with fixed stoichiometry; equilibrium reactions require K_eq analysis."
     }
-  ],
-  "keyPoints": [
-    "05 Limiting Reactant And Excess Reactant is a core concept in stoichiometry.",
-    "Understanding 05 limiting reactant and excess reactant requires knowing its definition, conditions, and limitations.",
-    "05 Limiting Reactant And Excess Reactant has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 05 limiting reactant and excess reactant must be memorized precisely.",
-    "05 Limiting Reactant And Excess Reactant connects to neighbouring topics within stoichiometry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 05 limiting reactant and excess reactant.",
-    "Practical examples solidify understanding of 05 Limiting Reactant And Excess Reactant and its real-world relevance.",
-    "Misconceptions about 05 limiting reactant and excess reactant often arise from confusing it with similar concepts.",
-    "05 Limiting Reactant And Excess Reactant follows systematic rules that can be applied step-by-step.",
-    "Review of 05 limiting reactant and excess reactant should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "05 Limiting Reactant And Excess Reactant is defined by its specific characteristics within stoichiometry.",
-    "The conditions under which 05 limiting reactant and excess reactant applies are as important as the concept itself.",
-    "05 Limiting Reactant And Excess Reactant can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 05 limiting reactant and excess reactant through application-based and comparison questions.",
-    "A clear grasp of 05 Limiting Reactant And Excess Reactant builds the foundation for advanced topics in stoichiometry."
-  ],
-  "importantNotes": [
-    "When studying 05 limiting reactant and excess reactant, always note the exceptions alongside the general rule.",
-    "05 Limiting Reactant And Excess Reactant should be reviewed with at least one worked example per sub-point.",
-    "Link 05 limiting reactant and excess reactant back to prior knowledge in stoichiometry for deeper retention.",
-    "Practice past NEB board questions on 05 Limiting Reactant And Excess Reactant to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 05 Limiting Reactant And Excess Reactant: apply the standard definition to a simple case.",
-    "Intermediate example: combine 05 limiting reactant and excess reactant with a related concept from stoichiometry.",
-    "Exam-style problem: solve a question involving 05 Limiting Reactant And Excess Reactant under time pressure.",
-    "Real-world connection: show how 05 Limiting Reactant And Excess Reactant appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 05 Limiting Reactant And Excess Reactant and state two conditions required for it to occur.",
-    "Differentiate 05 Limiting Reactant And Excess Reactant from the most commonly confused concept in stoichiometry.",
-    "Solve a numerical or structural problem involving 05 Limiting Reactant And Excess Reactant.",
-    "List three applications of 05 Limiting Reactant And Excess Reactant in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 05 Limiting Reactant And Excess Reactant without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 05 Limiting Reactant And Excess Reactant.",
-    "Create three flashcards covering definition, formula, and limitation of 05 Limiting Reactant And Excess Reactant."
-  ],
-  "universalFacts": [
-    "05 Limiting Reactant And Excess Reactant is part of the NEB Class 11 stoichiometry syllabus.",
-    "Every concept in stoichiometry builds upon definitions established earlier in the chapter.",
-    "05 Limiting Reactant And Excess Reactant is assessed through both short-answer and long-answer board questions.",
-    "Understanding 05 Limiting Reactant And Excess Reactant improves performance across the entire stoichiometry unit.",
-    "Revision of 05 Limiting Reactant And Excess Reactant should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 05 Limiting Reactant And Excess Reactant with closely related concepts in stoichiometry — focus on distinguishing features.",
-    "The scope of 05 Limiting Reactant And Excess Reactant is sometimes overstated; remember its precise boundaries.",
-    "Applying 05 Limiting Reactant And Excess Reactant outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 05 Limiting Reactant And Excess Reactant and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 05 Limiting Reactant And Excess Reactant? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "05 Limiting Reactant And Excess Reactant is primarily studied under which branch of stoichiometry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 05 Limiting Reactant And Excess Reactant is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to stoichiometry — Answer: B",
-    "Which example correctly illustrates 05 Limiting Reactant And Excess Reactant? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "05 Limiting Reactant And Excess Reactant differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 05 Limiting Reactant And Excess Reactant.",
-    "Step-by-step animated derivation of the key relationship in 05 Limiting Reactant And Excess Reactant.",
-    "Interactive toggle between correct and incorrect representations of 05 Limiting Reactant And Excess Reactant."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 05 Limiting Reactant And Excess Reactant.",
-    "Side-by-side comparison animation of 05 Limiting Reactant And Excess Reactant vs commonly confused concept.",
-    "Timelapse build-up of 05 Limiting Reactant And Excess Reactant from prerequisite knowledge in stoichiometry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 05 Limiting Reactant And Excess Reactant",
-    "Comparison table: 05 Limiting Reactant And Excess Reactant vs related concepts in stoichiometry",
-    "Step-by-step worked example layout for 05 Limiting Reactant And Excess Reactant"
-  ],
-  "summary": [
-    "05 Limiting Reactant And Excess Reactant is a fundamental concept in stoichiometry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 05 Limiting Reactant And Excess Reactant involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 05 Limiting Reactant And Excess Reactant alongside related concepts in stoichiometry ensures strong conceptual clarity and exam readiness."
   ]
 }

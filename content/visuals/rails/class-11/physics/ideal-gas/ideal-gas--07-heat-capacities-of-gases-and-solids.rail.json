@@ -26,20 +26,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Heat capacities of gases and solids is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "The **equipartition theorem** states that in equilibrium a molecule's energy divides equally among all its degrees of freedom, $\\frac{1}{2}k_BT$ each (NEB 2021, 2024, 2m) — a monatomic molecule has **3** translational DOF. Counting f gives $C_V = \\frac{f}{2}R$ directly; heating at constant pressure must additionally supply expansion work $R\\,dT$, giving **Cp − Cv = R** and $\\gamma = 1 + 2/f$: monatomic (f = 3) γ =…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases and Solids — quick idea map\"><title>Heat Capacities of Gases and Solids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Heat Capacities of Gases and Solids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Heat capacities of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">gases and solids</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Heat</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">capacities of gases and</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application formula for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Heat capacities of gases</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and solids</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Derivation result for Heat</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">capacities of gases and</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">solids</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases and Solids — quick idea map\"><title>Heat Capacities of Gases and Solids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Heat Capacities of Gases and Solids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Count degrees of freedom</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ read off Cv, Cp, γ** —</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the equipartition machine.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Equipartition: (1/2)k_BT</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">per degree of freedom.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cp − Cv = R; γ = 1 + 2/f.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- U = (f/2)k_BT; C_V =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(f/2)R - C_P − C_V = R; γ</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= C_P/C_V = 1 + 2/f -…</text></svg>",
         "caption": "Heat Capacities of Gases and Solids — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Application formula for Heat capacities of gases and solids\nDerivation result for Heat capacities of gases and solids"
+      "text": "- U = (f/2)k_BT; C_V = (f/2)R - C_P − C_V = R; γ = C_P/C_V = 1 + 2/f - Dulong–Petit: C_solid = 3R ≈ 25 J/mol·K"
     },
     {
       "label": "Conditions",
-      "text": "The ratio $\\\\\\\\gamma = C_P/C_V$ is NOT always 5/3 or 7/5. It depends on temperature and molecular structure. At very high temperatures, vibrational modes activate, changing $\\\\\\\\gamma$.  ·  The formula $C_V = \\ rac{3}{2}R$ applies ONLY to monatomic ideal gases. For diatomic or polyatomic gases, rotational (and sometimes vibrational) modes contribute."
+      "text": "**Diatomic at room temperature:** 5 DOF (vibration frozen) — γ = 1.4, not 1.3.  ·  **Two capacities for gases, one for solids** — expansion work is the difference."
     },
     {
       "label": "Special cases",
@@ -47,11 +47,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Heat capacities of gases and solids  ·  Practical demonstration of Heat capacities of gases and solids concepts"
+      "text": "***Monatomic*** — f = 3: Cv = 12.5, Cp = 20.8, γ = 1.67 J/mol·K."
     },
     {
       "label": "Limitation",
-      "text": "Dulong's law ($C \\\\\\\\approx 3R$) for solids works well at room temperature but fails at very low temperatures (quantum effects freeze out degrees of freedom). Einstein and Debye developed low-temperature models.  ·  The Boltzmann constant $k_B$ is NOT the same as the gas constant R. $k_B = 1.38 \\ imes 10^{-23}$ J/K per molecule. R = 8.314 J/(mol·K) per mole. $R = N_A k_B$."
+      "text": "Verified PYQs: equipartition + monatomic DOF (2021, 2024 — 2m each)."
     },
     {
       "label": "Derivation",
@@ -59,15 +59,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Heat capacities of gases and solids formula  ·  Trick 2: Elimination technique for Heat capacities of gases and solids MCQs"
+      "text": "\"f = 3 → γ = 5/3; f = 5 → γ = 7/5; f = 6 → γ = 4/3.\""
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Heat capacities of gases and solids.  ·  Q3. Differentiate between various aspects of Heat capacities of gases and solids."
+      "text": "**Numerical (3m): A monatomic ideal gas has Cv = 12.47 J/mol·K. Find Cp and γ.** — Cp = Cv + R = 20.78 J/mol·K; γ = 20.78/12.47 = 1.67."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Heat capacities of gases and solids  ·  Practice previous year questions on Heat capacities of gases and solids",
+      "text": "The 2m equipartition question repeats — statement + \"3 DOF\".",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases and Solids — topic mind map\"><title>Heat Capacities of Gases and Solids — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Heat capacities of gases and solids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Heat capacities of gases</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Solids</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Heat Capacities of Gases and Solids — topic mind map of this topic's own sub-topics"
@@ -75,23 +75,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Heat capacities of gases and solids  ·  Concept 2: Key theorem or principle in Heat capacities of gases and solids  ·  Concept 3: Important application area of Heat capacities of gases and solids  ·  Concept 4: Fundamental relationship in Heat capacities of gases and solids"
+      "text": "**Count degrees of freedom → read off Cv, Cp, γ** — the equipartition machine."
+    },
+    {
+      "label": "Key points",
+      "text": "Equipartition: (1/2)k_BT per degree of freedom.  ·  Cp − Cv = R; γ = 1 + 2/f."
     },
     {
       "label": "Universal facts",
-      "text": "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 and later generalized by Ludwig Boltzmann. It describes the distribution of speeds in an ideal gas and is one of the most important results of kinetic theory.  ·  At 300 K, the three speed measures for nitrogen (M=28 g/mol) are: most probable $v_p \\\\\\\\approx 422$ m/s, mean speed $v_{mean} \\\\\\\\approx 477$ m/s, and rms speed $v_{rms} \\\\\\\\approx 517$ m/s. The ratios are always $v_p : v_{mean} : v_{rms} = \\\\\\\\sqrt{2} : \\\\\\\\sqrt{8/\\\\\\\\pi} : \\\\\\\\sqrt{3} \\\\\\\\approx 1.414 : 1.596 : 1.732$."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Heat capacities of gases and solids.  ·  Q5. What are the applications of Heat capacities of gases and solids?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Heat capacities of gases and solids thoroughly  ·  Review common mistakes related to Heat capacities of gases and solids"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Heat capacities of gases and solids  ·  Application in daily life involving Heat capacities of gases and solids"
+      "text": "Dulong–Petit: nearly every solid element has molar heat capacity ≈ 25 J/mol·K at room temperature."
     },
     {
       "label": "MCQ drill",
@@ -99,27 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\ imes 10^{-23}$ J/K. It connects microscopic and macroscopic thermodynamics. Named after Ludwig Boltzmann (1844-1906).  ·  **RMS speed:** $v_{rms} = \\\\\\\\sqrt{3RT/M}$, where $M$ is molar mass in kg/mol. At STP (273 K), $v_{rms}$ for air is about 479 m/s. At 300 K, about 484 m/s. Lighter gases move faster on average.  ·  **Most probable speed:** $v_p = \\\\\\\\sqrt{2RT/M}$. This is the speed at which the Maxwell-Boltzmann distribution peaks. At 300 K for air: $v_p \\\\\\\\approx 364$ m/s. At 300 K for H₂: $v_p \\\\\\\\approx 1650$ m/s."
+      "text": "## 1. Topic Introduction — Why Gases Have Two Heat Capacities Heat a gas at constant pressure and it expands, doing work — so it needs more heat per kelvin than when heated at fixed volume. That single difference splits Cp from Cv, gives Cp − Cv = R, and the equipartition theorem predicts each value from counting degrees of freedom.  ·  ## 2. Fundamental Concepts (NEB 2021, 2024) ### 2.1 Equipartition of energy (NEB 2021, 2024) **Statement:** in thermal equilibrium, the total energy of a molecule is **equally distributed among all its degrees of freedom**, each receiving $\\frac{1}{2}k_BT$ on average. **Degrees of freedom (DOF):** independent modes of energy storage.…  ·  ## 3. Conceptual Relationships - **To Topic 65:** equipartition generalises (3/2)k_BT to f degrees of freedom. - **To first law (Unit 5):** Cp − Cv = R is the first law applied to isobaric expansion. - **To adiabatic processes:** γ controls PV^γ = const (used in Physics XII thermodynamics)."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Heat capacities of gases and solids and other topics  ·  Most probable speed is NOT the average speed. For the Maxwell-Boltzmann distribution: $v_p \\\\\\\\cdot \\\\\\\\sqrt{2} < v_{mean} < v_{rms}$. The order is always $v_p < v_{mean} < v_{rms}$ at the same temperature.  ·  Heat capacity is NOT the same as specific heat. Heat capacity $C$ is for the whole object; specific heat $c$ is per unit mass. Molar heat capacity $C_m$ is per mole. They are related: $C = mc$ for uniform objects."
+      "text": "Note 3: Practice numerical problems regularly for mastery of Heat capacities of gases and solids  ·  Note 4: Remember the units and dimensions involved in Heat capacities of gases and solids  ·  Note 5: Heat capacities of gases and solids frequently appears in examination questions"
     },
     {
       "label": "More ideas",
-      "text": "$C_P \\neq C_V$. Many students think the heat capacity is the same regardless of conditions. At constant pressure, the gas expands and does work, requiring more heat input to achieve the same temperature rise. $C_P > C_V$ always.  ·  The Dulong-Petit law ($C \\approx 3R$) works only at sufficiently high temperatures (well above Debye temperature). Below that, quantum effects dominate and heat capacity drops. For diamond, this 'high temperature' is over 2000 K!  ·  Degrees of freedom 'freeze out' at different temperatures. At room temperature: translational (always active), rotational (active for most molecules), vibrational (usually frozen). The textbook $C_V$ values assume rotational but not vibrational modes are active."
+      "text": "\"In thermal equilibrium the energy of a molecule is equally divided among its degrees of freedom, each getting (1/2)k_BT.\"  ·  Why is γ always greater than 1?  ·  Task 3: Create a concept map for Heat capacities of gases and solids"
     },
     {
       "label": "More ideas",
-      "text": "Heat capacity depends on temperature for real substances. The values $C_V = \\frac{5}{2}R$ for diatomic gases are approximate room-temperature values. Over a wide temperature range, $C_V$ can change significantly.  ·  Note 3: Practice numerical problems regularly for mastery of Heat capacities of gases and solids  ·  Note 4: Remember the units and dimensions involved in Heat capacities of gases and solids"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 5: Heat capacities of gases and solids frequently appears in examination questions  ·  Note 2: Remember the distinction between different types in Heat capacities of gases and solids  ·  Note 3: Heat capacities of gases and solids has both theoretical and practical significance"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: Study the derivations step by step for Heat capacities of gases and solids  ·  Note 5: Cross-check your answers using alternative methods for Heat capacities of gases and solids  ·  Trick 3: Dimensional analysis shortcut for Heat capacities of gases and solids"
+      "text": "Task 4: Practice previous year exam questions on Heat capacities of gases and solids  ·  Task 5: Explain Heat capacities of gases and solids to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2077/2021 | Heat | Ideal gas | What is the law of equipartition of energy? How many degrees of freedom does a monoatomic gas molecule…"
     }
   ]
 }

@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Geometric interpretation of derivative; monotonicity of a… (Calculus, Mathematics, class-11-notes) covers Geometric interpretation of derivative, monotonicity of a function, interval of monotonicity. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The derivative becomes an **analytical instrument**: f′(c) is the tangent's slope — positive rising, negative falling, zero stationary — and f′′ reads concavity (up/down, with sign changes marking inflections). The **monotonicity theorem** (f′ > 0 ⟹ strictly increasing, via the MVT) powers the **sign-chart procedure**: solve f′ = 0 or undefined, test between, read intervals.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric interpretation of derivative; monotonicity of a… — quick idea map\"><title>Geometric interpretation of derivative; monotonicity of a… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Geometric interpretation of derivative;</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">monotonicity of a…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Geometric interpretation</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of derivative</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Monotonicity of a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f'(x) = lim</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[f(x+h)−f(x)]/h</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(fg)' = f'g + fg'</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric interpretation of derivative; monotonicity of a… — quick idea map\"><title>Geometric interpretation of derivative; monotonicity of a… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Geometric interpretation of derivative;</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">monotonicity of a…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The sign of f' is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function's direction and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the sign change across a…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Geometric reading: f'(c) =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent slope; f' &gt; 0</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rising, f' &lt; 0 falling,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- MVT: f(b) − f(a) =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f′(c)(b − a) - 1st-deriv</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">test: sign change at c</text></svg>",
         "caption": "Geometric interpretation of derivative; monotonicity of a… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "f'(x) = lim [f(x+h)−f(x)]/h\n(fg)' = f'g + fg'\nd/dx xⁿ = nx^{n−1}"
+      "text": "- MVT: f(b) − f(a) = f′(c)(b − a) - 1st-deriv test: sign change at c decides the extremum - 2nd-deriv test: f′(c) = 0, f′′(c) > 0 ⟹ min; < 0 ⟹ max"
     },
     {
       "label": "Conditions",
@@ -43,11 +43,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x."
+      "text": "\"f' > 0 => increasing; f'(c) = 0 with sign change => local extremum; absolute extrema compare critical points and endpoints.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The cubic case study*** - x^3 - 6x^2 + 9x - 2: two critical points, second-derivative verdicts, a clean four-part NEB answer - the machinery in miniature."
     },
     {
       "label": "Limitation",
@@ -55,31 +55,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Geometric interpretation of derivative; monotonicity of a… — Calculus, Mathematics (class-11-notes).  ·  **Tested.** define it · list: geometric interpretation of derivative, monotonicity of a function, interval of monotonicity, extreme values of a function · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Reading Slopes, Finding Peaks **Geometric interpretation of the derivative**, **monotonicity intervals**, and **extreme values** — the derivative as an analyst's instrument on graphs.  ·  ## 2. Fundamental Concepts ### 2.1 Geometric interpretation - **f′(c) = slope of the tangent** to y = f(x) at x = c. **f′ > 0:** rising; **f′ < 0:** falling; **f′ = 0:** horizontal tangent (stationary). **f′′ > 0:** concave up (holds water); **f′′ < 0:** concave down; **f′′ = 0 candidates:** inflection points (concavity change).…"
     },
     {
       "label": "Shortcut",
-      "text": "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+      "text": "Differentiate, factor, sign chart. f'' for quick classification. Endpoints for absolute extrema. Isolated f' zeros do not break monotonicity."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Geometric interpretation of derivative; monotonicity of a…\" with one example.  ·  compare \"Geometric interpretation of derivative\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): For y = x³ − 6x² + 9x − 2, find (i) the stationary points, (ii) classify each, (iii) the intervals of increase and decrease. (4m)** — **(i) Stationary points:** dy/dx = 3x² − 12x + 9 = **3(x − 1)(x − 3)**; setting zero: **x = 1 and x = 3**.…  ·  **NEB-style (2m): Show that f(x) = x³ is increasing on all of ℝ even though f′(0) = 0.** — **Derivative:** f′(x) = 3x² ≥ 0 everywhere, with equality **only at the isolated point** x = 0. On (−∞, 0) and (0, ∞), f′ > 0 ⟹ strictly increasing on each side.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain..",
+      "text": "Present the sign chart as a numbered line with test values - the visible chart is the analysis the marker checks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Geometric interpretation of derivative; monotonicity of a… — topic mind map\"><title>Geometric interpretation of derivative; monotonicity of a… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Geometric interpretation of derivative; monot…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Geometric interpretation</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">of derivative</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Monotonicity of a</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">function</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Interval of monotonicity</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Extreme values of a</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">function</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Geometric interpretation of derivative; monotonicity of a… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The sign of f' is the function's direction and the sign change across a critical point - not the zero itself - is the extremum verdict."
+    },
+    {
       "label": "Key points",
-      "text": "• Geometric interpretation of derivative  ·  • Monotonicity of a function  ·  • Interval of monotonicity  ·  • Extreme values of a function"
+      "text": "Geometric reading: f'(c) = tangent slope; f' > 0 rising, f' < 0 falling, f' = 0 stationary; f'' > 0 concave up, f'' < 0 concave down, f'' sign change = inflection. Monotonicity theorem: f' > 0 on interval => strictly increasing (MVT proof); procedure: solve f' = 0/undefined, sign chart, read intervals.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Rollercoaster design is this topic: track rising where slope positive, peaks and valleys at sign changes, loops where concavity flips."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Geometric interpretation of derivative; monotonicity of a…\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): Find the absolute maximum and minimum values of f(x) = x³ − 3x on the closed interval [−2, 2].** — **Critical points:** f′(x) = 3x² − 3 = 3(x−1)(x+1) = 0 ⟹ x = ±1 (both interior).…  ·  **NEB-style (6m): Fully analyse y = 2x³ − 9x² + 12x − 3: stationary points, their classification, intervals of increase/decrease, and concavity.** — **First derivative:** y′ = 6x² − 18x + 12 = **6(x − 1)(x − 2)** ⟹ stationary points at x = 1, 2.…  ·  **NEB-style (5m): Prove that eˣ > 1 + x for all x ≠ 0.** — **Construct the gap function:** h(x) = eˣ − 1 − x; the claim is h(x) > 0 for x ≠ 0. **Anchor:** h(0) = e⁰ − 1 − 0 = **0** — equality exactly at the origin. **Monotonicity:** h′(x) = eˣ − 1.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  **Fact.** d/dx xⁿ = nx^{n−1}; d/dx sin x = cos x; d/dx e^x = e^x; d/dx ln x = 1/x.  ·  **Fact.** Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Tangent slope** | f′(c) | the geometric reading | | **Monotonic interval** | Sign of f′ there | f′ > 0 ⟹ rising | | **Critical point** | f′ = 0 or undefined | stationary candidates | | **Inflection** | Concavity change | x³ at 0 |  ·  ## 4. Detailed Explanation ### 4.1 Why the sign of f′ governs rise and fall - The MVT converts a pointwise sign into an intervalwise statement: every secant slope equals some tangent slope, so positive tangents force positive secants — increasing. The derivative's sign is the function's direction.…  ·  ## 5. Comparison Tables **Derivative readings** | Signal | Meaning | Test | |---|---|---| | f′ > 0 | increasing | sign chart | | f′ = 0 (sign + → −) | local max | 1st-deriv test | | f′ = 0 (sign − → +) | local min | 1st-deriv test | | f′′ > 0 | concave up | cup holds water | | f′′ sign change | inflection | concavity flip |"
     },
     {
       "label": "More ideas",
-      "text": "• Concavity  ·  • Points of inflection  ·  define + example each sub-idea: geometric interpretation of derivative, monotonicity of a function, interval of monotonicity, extreme values of a function."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain..  ·  Verified PYQ: NEB 2024 cubic stationary points/classification/monotonicity - assigned to this row. Other items NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Geometric interpretation of derivative; monotonicity of a…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "**NEB-style (5m): Prove that sin x < x for all x > 0.** — **Construct:** h(x) = x − sin x; the claim is h(x) > 0 for x > 0. **Anchor:** h(0) = 0 − 0 = 0. **Derivative:** h′(x) = 1 − cos x.…  ·  **NEB-style (6m): Find the absolute maximum and minimum of f(x) = x⁴ − 4x² + 2 on [−2, 3].** — **Critical points:** f′(x) = 4x³ − 8x = **4x(x² − 2)** = 0 ⟹ x = 0, ±√2 (all interior to [−2, 3]). **Candidate list (closed-interval method):** x = −2, −√2, 0, √2, 3.…  ·  Fully analyse y = x³ − 6x² + 9x − 2."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  **Monotonicity of a function.** one-line definition + one-line exam use.  ·  **Interval of monotonicity.** one-line definition + one-line exam use."
+      "text": "Show x³ is increasing on ℝ despite f′(0) = 0.  ·  Find absolute extrema of x³ − 3x on [−2, 2].  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Extreme values of a function.** one-line definition + one-line exam use.  ·  **Concavity.** one-line definition + one-line exam use.  ·  **Points of inflection.** one-line definition + one-line exam use."
+      "text": "Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  ## 6. Common Confusions **Critical ≠ extremum:** x³ at 0 — f′ = 0 but the sign does not change; no extremum, only an inflection.  ·  **Endpoints are candidates:** local-extremum tests ignore endpoints; absolute extrema on [a, b] must include them."
+    },
+    {
+      "label": "More ideas",
+      "text": "**f′′ = 0 is not an inflection verdict:** the *sign change* of f′′ decides, not the zero.  ·  ## 7. Exam Application **NEB 2024 (verified PYQ): The curve y = x³ − 6x² + 9x − 2 is given. Find (i) its stationary points, (ii) classify each, (iii) the intervals of increase and decrease.…  ·  **NEB-style (2m): Show that f(x) = x³ is increasing on all of ℝ despite f′(0) = 0.** — f′ = 3x² ≥ 0 with equality only at the single point 0 ⟹ f′ > 0 on (−∞, 0) and (0, ∞) ⟹ increasing on each; and f(b) > f(a) for a < b across 0 as well (x³ is strictly increasing — check directly: b³ − a³ = (b−a)(b²+ab+a²) > 0 since…"
     }
   ]
 }

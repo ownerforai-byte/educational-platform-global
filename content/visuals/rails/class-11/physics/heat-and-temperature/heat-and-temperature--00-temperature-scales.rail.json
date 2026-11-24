@@ -22,72 +22,96 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "**Definition:** A temperature scale is created by identifying two easily reproducible fixed points (usually the freezing and boiling points of water at standard atmospheric pressure), then dividing the interval between them into equal divisions.",
+      "text": "Temperature vs heat distinction",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Temperature Scales — quick idea map\"><title>Temperature Scales — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Temperature Scales</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Temperature Scales — quick idea map\"><title>Temperature Scales — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Temperature Scales</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Temperature vs heat</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">distinction</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Characteristics of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Celsius, Fahrenheit, and</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kelvin scales</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Temperature scales provide</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a system for measuring</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature based on</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The Celsius scale has</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">freezing point at 0°C and</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">boiling point at 100°C at…</text></svg>",
         "caption": "Temperature Scales — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Temperature vs Heat Distinction:** Temperature is an *intensive* property (average kinetic energy per particle, measured in K). Heat is *extensive* energy transferred due to temperature difference (measured in J).…\n**Absolute Temperature Requirement:** In kinetic theory and gas laws ($PV = nRT$, $\\langle KE angle = rac{3}{2}kT$), temperature must be in Kelvin (absolute scale).…"
-    },
-    {
-      "label": "Conditions",
-      "text": "**Triple Point Defines Kelvin:** Since 2019, the Kelvin is defined by fixing Boltzmann's constant $k = 1.380649 imes 10^{-23}$ J/K exactly. The triple point of water (273.16 K) is a reproducible reference, not the definition."
-    },
-    {
-      "label": "Special cases",
-      "text": "Temperature is a measure of the average kinetic energy of particles: $\\langle KE \\rangle = (3/2)kT$, where $k = 1.38 \\times 10^{-23} J/K$ is Boltzmann's constant. This is why temperature must be in Kelvin - kinetic energy cannot be negative.  ·  There is no upper limit to temperature - particle speeds can increase without bound. The Planck temperature ($1.417 \\times 10^{32} K$) is a theoretical limit where quantum gravity effects become important, not a physical maximum."
-    },
-    {
-      "label": "Solved",
-      "text": "Convert 300 K to Celsius and Fahrenheit. Solution: $T(^{\\circ}C) = 300 - 273.15 = 26.85^{\\circ}C$. $T(^{\\circ}F) = (9/5)(26.85) + 32 = 80.33^{\\circ}F$.  ·  At what temperature do Celsius and Fahrenheit scales read the same? Solution: Set $C = F$ in the conversion $F = (9/5)C + 32$. $C = (9/5)C + 32 \\rightarrow C - (9/5)C = 32 \\rightarrow -(4/5)C = 32 \\rightarrow C = -40$. Both read âˆ’40Â° at âˆ’40Â° (the same temperature!)."
-    },
-    {
-      "label": "Limitation",
-      "text": "Temperature and heat are NOT the same. Temperature is an intensive property (per unit mass); heat is energy transferred (extensive). A bathtub of 30Â°C water has more heat than a cup of 80Â°C water, but lower temperature.  ·  A temperature difference of 1Â°C is NOT the same as 1Â°F. $\\Delta T(^{\\circ}C) = (5/9)\\Delta T(^{\\circ}F)$. A 10Â°C change equals an 18Â°F change, so 5Â°C â‰ 5Â°F."
-    },
-    {
-      "label": "Derivation",
-      "text": "**Celsius scale (Â°C):** Introduced by Anders Celsius in 1742. Freezing point of water = 0Â°C, boiling point = 100Â°C at 1 atm. Has 100 equal divisions between the fixed points. The SI unit for temperature intervals is the degree Celsius.  ·  **Fahrenheit scale (Â°F):** Introduced by Daniel Gabriel Fahrenheit in 1720. Freezing point = 32Â°F, boiling point = 212Â°F at 1 atm. Has 180 equal divisions. Widely used in the United States."
-    },
-    {
-      "label": "Shortcut",
-      "text": "The Kelvin scale was originally defined by the triple point of water (273.16 K) and absolute zero (0 K). Since 2019, it is defined by fixing the Boltzmann constant $k$ to exactly $1.380649 \\times 10^{-23} J/K$.  ·  Different thermometric substances give slightly different scales because their expansion is not perfectly linear with temperature. Gas thermometers are most accurate because ideal gases have perfectly linear behavior in the limit of zero pressure."
-    },
-    {
-      "label": "Board question",
-      "text": "A faulty thermometer reads the freezing point of water as 5Â° (on its scale) and the boiling point as 95Â°. The temperature difference between these on the real Celsius scale is 100Â°C, and on the faulty scale is 90Â°.…  ·  An ideal gas at 0Â°C is heated at constant pressure until its volume doubles. Find the new temperature in Â°C and K. Solution: Charles's law: $V_1/T_1 = V_2/T_2$. $T_1 = 273.15 K$. $V_2/V_1 = 2 \\rightarrow T_2 = 2T_1 = 546.3 K$. In Â°C: $546.3 - 273.15 = 273.15^{\\circ}C$.",
+      "text": "Conversion formulas:\nK = °C + 273.15\n°F = (9/5)°C + 32",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Temperature Scales — exam flow\"><title>Temperature Scales — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Temperature Scales</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">**Definition:** A temperature scale is</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">created by identifying two easily</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">reproducible fixed points (usually the…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">**Temperature vs Heat Distinction:**</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">Temperature is an *intensive* property</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">(average kinetic energy per particle,…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">The Kelvin scale was originally defined by</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">the triple point of water (273.16 K) and</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">absolute zero (0 K).…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">A faulty thermometer reads the freezing</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">point of water as 5Â° (on its scale) and the</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">boiling point as 95Â°.…</text></svg>",
-        "caption": "Temperature Scales — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Temperature Scales — formula board\"><title>Temperature Scales — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Temperature Scales</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">K = °C + 273.15</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">°F = (9/5)°C + 32</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">°C = (°F - 32) × 5/9</text></svg>",
+        "caption": "Temperature Scales — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "**Temperature vs Heat Distinction:** Temperature is an intensive property (average kinetic energy per particle, measured in K). Heat is extensive energy transferred due to temperature difference (measured in J).  ·  **Absolute Temperature Requirement:** In kinetic theory and gas laws (PV = nRT, <KE> = (3/2)kT), temperature must be in Kelvin (absolute scale)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Temperature is a measure of the average kinetic energy of particles: <KE> = (3/2)kT, where k is Boltzmann's constant.  ·  The Kelvin scale is the SI base unit of thermodynamic temperature and is an absolute scale."
+    },
+    {
+      "label": "Solved",
+      "text": "Convert 300 K to Celsius and Fahrenheit: T(°C) = 300 - 273.15 = 26.85°C, T(°F) = (9/5)(26.85) + 32 = 80.33°F.  ·  Determine the temperature at which Celsius and Fahrenheit scales read the same: Set C = F in the conversion formula, solving for C = -40."
+    },
+    {
+      "label": "Limitation",
+      "text": "Distinguish between temperature and heat. Temperature is an intensive property, while heat is energy transferred due to a temperature difference.  ·  Understand that a temperature difference of 1°C is not the same as 1°F. ΔT(°C) = (5/9)ΔT(°F)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Convert temperatures between Celsius, Fahrenheit, and Kelvin scales.  ·  Solve problems involving temperature scale conversions."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Use K = °C + 273.15 to convert between Celsius and Kelvin scales.  ·  Use °F = (9/5)°C + 32 to convert between Celsius and Fahrenheit scales."
+    },
+    {
+      "label": "Board question",
+      "text": "Focus on understanding the characteristics and conversion formulas for different temperature scales.  ·  Practice problems involving temperature scale conversions."
+    },
+    {
       "label": "Hints",
-      "text": "Kelvin is NOT written as 'Â°K' - it is simply 'K' (e.g., 300 K, not 300Â°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.  ·  Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states."
+      "text": "Understand the significance of absolute zero and the triple point of water in defining temperature scales.  ·  Apply the Kelvin scale to scientific calculations, especially in gas laws."
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Characteristics of Celsius, Fahrenheit, and Kelvin scales  ·  Conversion formulas between temperature scales  ·  Absolute zero and its significance  ·  Triple point of water and its role in defining the Kelvin scale"
+    },
+    {
+      "label": "Key points",
+      "text": "Temperature scales provide a system for measuring temperature based on fixed reference points and equal divisions.  ·  The Celsius scale has freezing point at 0°C and boiling point at 100°C at standard atmospheric pressure.  ·  The Fahrenheit scale has freezing point at 32°F and boiling point at 212°F at standard atmospheric pressure.  ·  The Kelvin scale is an absolute scale with zero at absolute zero (0 K = -273.15°C)."
     },
     {
       "label": "Universal facts",
-      "text": "The Rankine scale (Â°R) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale. NASA uses Rankine in some engineering calculations alongside SI."
+      "text": "There is no upper limit to temperature - particle speeds can increase without bound.  ·  The Kelvin scale was originally defined by the triple point of water (273.16 K) and absolute zero (0 K). Since 2019, it is defined by fixing Boltzmann's constant k to exactly 1.380649 × 10⁻²³ J/K."
+    },
+    {
+      "label": "More hints",
+      "text": "Be able to explain the importance of using the Kelvin scale in thermodynamic calculations.  ·  Understand the relationship between temperature and kinetic energy of particles."
+    },
+    {
+      "label": "Extra solved",
+      "text": "A faulty thermometer reads the freezing point of water as 5° and the boiling point as 95°. Convert a reading of 59° to the true Celsius temperature: Each faulty degree = 100/90 = 1.111°C. Offset from freezing = 54 faulty degrees. True temperature = 54 × (100/90) + 0 = 60°C.  ·  An ideal gas at 0°C is heated at constant pressure until its volume doubles. Find the new temperature in °C and K: T₂ = 2T₁ = 546.3 K, which is 273.15°C."
     },
     {
       "label": "Study notes",
-      "text": "**Kelvin scale (K):** The SI base unit of thermodynamic temperature, named after Lord Kelvin. It is an absolute scale with zero at absolute zero (0 K = âˆ’273.15Â°C). Freezing point of water = 273.15 K, boiling point = 373.15 K. The Kelvin has the same magnitude as the Celsius degree, so $\\Delta T(K) = \\Delta T(^{\\circ}C)$.  ·  **Conversion formulas:** $K = ^{\\circ}C + 273.15$; $^{\\circ}F = (9/5)^{\\circ}C + 32$; $^{\\circ}C = (^{\\circ}F - 32) \\times 5/9$; $K = (^{\\circ}F + 459.67) \\times 5/9$.  ·  **Absolute zero:** 0 K = âˆ’273.15Â°C = âˆ’459.67Â°F. The theoretical temperature at which all molecular motion ceases (classical picture). It is unreachable in practice due to quantum zero-point energy. Modern definition: 0 K is the temperature at which the triple point of water occurs at exactly 273.16 K."
+      "text": "A temperature scale is a system for measuring temperature based on fixed reference points and equal divisions between them.  ·  The three most commonly used temperature scales are Celsius (°C), Fahrenheit (°F), and Kelvin (K).  ·  The Celsius scale was introduced by Anders Celsius in 1742, with the freezing point of water at 0°C and the boiling point at 100°C at standard atmospheric pressure."
     },
     {
       "label": "More ideas",
-      "text": "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology.  ·  The Sun's core temperature is about $1.5 \\times 10^7 K$. Express this in (a) Â°C, (b) Â°F. Solution: (a) $T(^{\\circ}C) = 1.5\\times10^7 - 273.15 \\approx 1.497\\times10^7^{\\circ}C$. (b) $T(^{\\circ}F) = (9/5)(1.497\\times10^7) + 32 \\approx 2.695\\times10^7^{\\circ}F$.  ·  **Triple point of water:** The unique temperature and pressure at which solid, liquid, and vapor phases of water coexist in equilibrium: 273.16 K (0.01Â°C) at 611.657 Pa. This is the defining fixed point of the Kelvin scale."
+      "text": "Applications of temperature scales in scientific and engineering contexts  ·  Gas thermometers and platinum resistance thermometers  ·  Importance of the Kelvin scale in thermodynamic calculations"
     },
     {
       "label": "More ideas",
-      "text": "**Reaumur scale (Â°R or Â°RÃ©):** Freezing point = 0Â°RÃ©, boiling point = 80Â°RÃ©. Rarely used today, except historically in some European countries.  ·  **Rankine scale (Â°Ra):** The absolute version of Fahrenheit. 0Â°Ra = 0 K = âˆ’459.67Â°F. Freezing point of water = 491.67Â°Ra, boiling point = 671.67Â°Ra.  ·  **Why use Kelvin?** In gas laws ($PV = nRT$), temperature must be in Kelvin because the relationship $P \\propto T$ is linear only with absolute temperature. At 0 K, the extrapolated volume of an ideal gas would be zero, making physical sense.…"
+      "text": "°C = (°F - 32) × 5/9  ·  K = (°F + 459.67) × 5/9  ·  Temperature difference: ΔT(K) = ΔT(°C)"
     },
     {
       "label": "More ideas",
-      "text": "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law $PV = nRT$ allows extrapolation to zero pressure for perfect accuracy.  ·  **Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. $R = R_0(1 + \\alpha T)$, where $\\alpha$ is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior."
+      "text": "Ideal gas law: PV = nRT  ·  Kinetic energy: <KE> = (3/2)kT  ·  Resistance-temperature relation: R = R₀(1 + αT)"
+    },
+    {
+      "label": "More ideas",
+      "text": "Triple point of water: 273.16 K (0.01°C) at 611.657 Pa  ·  Absolute zero: 0 K = -273.15°C = -459.67°F  ·  **Triple Point Defines Kelvin:** Since 2019, the Kelvin is defined by fixing Boltzmann's constant k = 1.380649 × 10⁻²³ J/K exactly. The triple point of water (273.16 K) is a reproducible reference."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Conversion Formulas:** K = °C + 273.15, °F = (9/5)°C + 32, °C = (°F - 32) × 5/9, K = (°F + 459.67) × 5/9  ·  **Absolute Zero:** 0 K = -273.15°C = -459.67°F. The theoretical temperature at which classical thermal motion ceases.  ·  **Gas Thermometer:** Uses a constant-volume gas thermometer to measure pressure of a fixed volume of gas, proportional to absolute temperature. Ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy."
     }
   ]
 }

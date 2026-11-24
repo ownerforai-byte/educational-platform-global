@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Chemical properties of alkanes: substitution reactions (h… (Hydrocarbons, Chemistry, class-11-notes) covers Chemical properties of alkanes: substitution reactions, halogenation, nitration. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Alkanes answer only to radicals and brute conditions. **Halogenation** is free-radical substitution under UV: initiation (**Cl₂ → 2Cl·**), propagation (**Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·**), termination (radical combination) — the NEB 2020 mechanism, whose product mixture arises because CH₃Cl keeps reacting on to CH₂Cl₂, CHCl₃ and CCl₄.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkanes: substitution reactions (h… — quick idea map\"><title>Chemical properties of alkanes: substitution reactions (h… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Chemical properties of alkanes: substitution</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reactions (h…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Chemical properties of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">alkanes: substitution</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reactions</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Halogenation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkanes: substitution reactions (h… — quick idea map\"><title>Chemical properties of alkanes: substitution reactions (h… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Chemical properties of alkanes: substitution</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reactions (h…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">No π bond means no ionic</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">foothold: every alkane</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reaction is radical…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkanes: only radical</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">substitution +</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">harsh-condition</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Cl₂ → 2Cl· (hν); Cl· +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CH₄ → CH₃· + HCl; CH₃· +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cl₂ → CH₃Cl + Cl· - CH₄ +…</text></svg>",
         "caption": "Chemical properties of alkanes: substitution reactions (h… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "F = qvB sinθ\nε = −N dΦ/dt\nF = BIL"
+      "text": "- Cl₂ → 2Cl· (hν); Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl· - CH₄ + HNO₃ → CH₃NO₂ + H₂O (~400 °C) - C₆H₁₄ + H₂SO₄ → C₆H₁₃SO₃H + H₂O - CH₄ + 2O₂ → CO₂ + 2H₂O; CH₃CH₃ + O₂ → CH₃CHO + H₂O"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Chemical properties of alkanes: substitution reactions\" as one blob → ✅ split into: chemical properties of alkanes: substitution reactions, halogenation, nitration.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: chemical properties of alkanes: substitution reactions, halogenation, nitration, sulphonation only (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Alkane halogenation is a free-radical chain substitution initiated by light; nitration and sulphonation require harsh vapour-phase or fuming-acid conditions.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***One photon, many products*** — a single UV photon splits one Cl2, yet thousands of CH3Cl molecules form: each propagation step regenerates the radical that drives the next."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Chemical properties of alkanes: substitution reactions (h… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: chemical properties of alkanes: substitution reactions, halogenation, nitration, sulphonation only · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Quiet Family Speaks Alkanes have only strong, non-polar C–C and C–H σ bonds, so they ignore ionic reagents and burn or substitute instead. Their chemistry is **free-radical substitution** (halogenation), plus harsh-condition **nitration**, **sulphonation**, and **combustion/oxidation** — with ethane's controlled oxidation as the set example.  ·  ## 2. Fundamental Concepts ### 2.1 Halogenation (free-radical substitution) - **CH₄ + Cl₂ → CH₃Cl + HCl** (diffused sunlight/UV); continues: CH₂Cl₂ → CHCl₃ → CCl₄. - Mechanism: **initiation** (Cl₂ → 2Cl·), **propagation** (Cl· + CH₄ → CH₃· + HCl; CH₃· + Cl₂ → CH₃Cl + Cl·), **termination** (radical combination). - Reactivity of halogens: **F₂ > Cl₂ > Br₂ > I₂** (fluorine explodes; iodine is reversible).…"
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Chain: initiation (hν), propagation (×2), termination. Product ladder CH3Cl→CCl4. F>Cl>Br>I. Nitration 400 °C vapour. Sulphonation long-chain only. Ethane controlled oxidation → CH3CHO."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Chemical properties of alkanes: substitution reactions (h…\" with one example.  ·  compare \"Chemical properties of alkanes: substitution reactions\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** ultraviolet light supplies the energy to split the Cl–Cl bond homolytically: **Cl₂ → 2Cl·**.…  ·  **NEB-style (2m): How does ethane undergo controlled oxidation?** — Under **controlled oxidation** (limited oxygen, heated catalyst such as Cu at about 200 °C, or controlled air oxidation at high pressure), ethane is only **partially oxidised** to an oxygenated product: **CH₃CH₃ + O₂ → CH₃CHO + H₂O** (acetaldehyde); under further mild…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "The NEB 2020 answer needs all three chain stages with equations AND the over-chlorination explanation (CH₃Cl continues reacting) — the mixture account carries a full mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkanes: substitution reactions (h… — topic mind map\"><title>Chemical properties of alkanes: substitution reactions (h… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Chemical properties of alkanes</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Chemical properties of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">alkanes: substitution…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Halogenation</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nitration</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Sulphonation only</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Chemical properties of alkanes: substitution reactions (h… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "No π bond means no ionic foothold: every alkane reaction is radical substitution or oxidation — conditions (UV, 400 °C vapour, fuming acid) supply the energy the σ bonds demand."
+    },
+    {
       "label": "Key points",
-      "text": "• Chemical properties of alkanes: substitution reactions  ·  • Halogenation  ·  • Nitration  ·  • Sulphonation only"
+      "text": "Alkanes: only radical substitution + harsh-condition reactions. Halogenation: CH4 + Cl2 -> CH3Cl + HCl (UV); chain continues to CH2Cl2, CHCl3, CCl4 (mixture); mechanism initiation Cl2 -> 2Cl., propagation Cl. + CH4 -> CH3. + HCl then CH3.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Bromine's selectivity (3° > 2° > 1° H) makes it the diagnostic halogen — chlorine is fast but careless, bromine is slow but choosy."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Chemical properties of alkanes: substitution reactions (h…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Arrange F₂, Cl₂, Br₂ and I₂ in order of reactivity toward alkane halogenation, with reason.** — The order is **F₂ > Cl₂ > Br₂ > I₂**. Reactivity follows the ease of H-abstraction and the strength of the H–X bond formed: **fluorine** reacts explosively (the C–F and H–F bonds are…"
     },
     {
       "label": "MCQ drill",
@@ -89,106 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Halogenation** | Free-radical substitution of H by X under UV/heat | CH₄ + Cl₂ → CH₃Cl | | **Nitration** | Vapour-phase substitution of H by –NO₂ | CH₃NO₂ from CH₄ | | **Sulphonation** | Substitution of H by –SO₃H (long alkanes, fuming H₂SO₄) | C₆H₁₃SO₃H | | **Controlled oxidation** |…  ·  ## 4. Detailed Explanation ### 4.1 Why substitution, not addition - With no π bond to attack, ionic reagents find no foothold; radicals (which need only one electron) can abstract H from strong C–H bonds when heat or light supplies the activation energy.…  ·  ## 5. Comparison Tables **Halogen reactivity and selectivity** | Halogen | Reactivity | Notes | |---|---|---| | F₂ | explosive | uncontrolled | | Cl₂ | fast, UV | mixture of products | | Br₂ | slower, selective | prefers weaker C–H | | I₂ | reversible, slow | needs oxidising agent | **Reaction conditions compared** | Reaction | Reagent | Conditions | Product |…"
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  • Oxidation of ethane  ·  define + example each sub-idea: chemical properties of alkanes: substitution reactions, halogenation, nitration, sulphonation only."
+      "text": "Verified PYQ: NEB 2020 — mechanism of free-radical chlorination of methane with product mixture (assigned to this row).  ·  Write the full mechanism of methane chlorination and explain the product mixture.  ·  State the reactivity order of halogens toward alkanes with reasons."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Chemical properties of alkanes: substitution reactions (h…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Give equations for nitration of methane and controlled oxidation of ethane.  ·  ## 6. Common Confusions **Substitution, not addition:** alkanes have nothing to add to; every halogenation replaces an H.  ·  **Nitration needs vapour phase:** aqueous HNO₃ does nothing to methane — the ~400 °C vapour reaction is the exam answer."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ.  ·  **Halogenation.** one-line definition + one-line exam use.  ·  **Nitration.** one-line definition + one-line exam use."
+      "text": "**Iodination runs backwards:** HI reduces the alkyl iodide back, so I₂ halogenation needs HNO₃ or HIO₃ to remove HI.  ·  ## 7. Exam Application **NEB 2020 (verified PYQ): Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed. (3m)** — **Initiation:** UV light splits chlorine homolytically: **Cl₂ → 2Cl·**.…  ·  **NEB-style (2m): How does ethane undergo controlled oxidation?** — Ethane heated with a **limited supply of O₂ over a heated catalyst (e.g. Cu at ~200 °C, or controlled air oxidation)** gives **acetaldehyde**: **CH₃CH₃ + O₂ → CH₃CHO + H₂O**; further mild oxidation gives **acetic acid (CH₃COOH)**.…"
     },
     {
       "label": "More ideas",
-      "text": "**Sulphonation only.** one-line definition + one-line exam use.  ·  **Oxidation of ethane.** one-line definition + one-line exam use."
+      "text": "**NEB-style (2m): Arrange F₂, Cl₂, Br₂, I₂ in order of alkane halogenation reactivity with reason.** — **F₂ > Cl₂ > Br₂ > I₂.** Reactivity tracks how easily the halogen radical abstracts hydrogen and how strong the new H–X bond formed is: fluorine's F–H bond is enormously strong (violently exothermic, explosive),…"
     }
-  ],
-  "keyPoints": [
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is a core concept in hydrocarbons.",
-    "Understanding 02 chemical properties of alkanes substitut 1k3axg requires knowing its definition, conditions, and limitations.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 chemical properties of alkanes substitut 1k3axg must be memorized precisely.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 chemical properties of alkanes substitut 1k3axg.",
-    "Practical examples solidify understanding of 02 Chemical Properties Of Alkanes Substitut 1k3axg and its real-world relevance.",
-    "Misconceptions about 02 chemical properties of alkanes substitut 1k3axg often arise from confusing it with similar concepts.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg follows systematic rules that can be applied step-by-step.",
-    "Review of 02 chemical properties of alkanes substitut 1k3axg should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 02 chemical properties of alkanes substitut 1k3axg applies are as important as the concept itself.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 chemical properties of alkanes substitut 1k3axg through application-based and comparison questions.",
-    "A clear grasp of 02 Chemical Properties Of Alkanes Substitut 1k3axg builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 02 chemical properties of alkanes substitut 1k3axg, always note the exceptions alongside the general rule.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg should be reviewed with at least one worked example per sub-point.",
-    "Link 02 chemical properties of alkanes substitut 1k3axg back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 02 Chemical Properties Of Alkanes Substitut 1k3axg to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Chemical Properties Of Alkanes Substitut 1k3axg: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 chemical properties of alkanes substitut 1k3axg with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 02 Chemical Properties Of Alkanes Substitut 1k3axg under time pressure.",
-    "Real-world connection: show how 02 Chemical Properties Of Alkanes Substitut 1k3axg appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Chemical Properties Of Alkanes Substitut 1k3axg and state two conditions required for it to occur.",
-    "Differentiate 02 Chemical Properties Of Alkanes Substitut 1k3axg from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 02 Chemical Properties Of Alkanes Substitut 1k3axg.",
-    "List three applications of 02 Chemical Properties Of Alkanes Substitut 1k3axg in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Chemical Properties Of Alkanes Substitut 1k3axg without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Chemical Properties Of Alkanes Substitut 1k3axg.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Chemical Properties Of Alkanes Substitut 1k3axg."
-  ],
-  "universalFacts": [
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Chemical Properties Of Alkanes Substitut 1k3axg improves performance across the entire hydrocarbons unit.",
-    "Revision of 02 Chemical Properties Of Alkanes Substitut 1k3axg should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Chemical Properties Of Alkanes Substitut 1k3axg with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 02 Chemical Properties Of Alkanes Substitut 1k3axg is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Chemical Properties Of Alkanes Substitut 1k3axg outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Chemical Properties Of Alkanes Substitut 1k3axg and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Chemical Properties Of Alkanes Substitut 1k3axg? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Chemical Properties Of Alkanes Substitut 1k3axg is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 02 Chemical Properties Of Alkanes Substitut 1k3axg? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Chemical Properties Of Alkanes Substitut 1k3axg.",
-    "Step-by-step animated derivation of the key relationship in 02 Chemical Properties Of Alkanes Substitut 1k3axg.",
-    "Interactive toggle between correct and incorrect representations of 02 Chemical Properties Of Alkanes Substitut 1k3axg."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Chemical Properties Of Alkanes Substitut 1k3axg.",
-    "Side-by-side comparison animation of 02 Chemical Properties Of Alkanes Substitut 1k3axg vs commonly confused concept.",
-    "Timelapse build-up of 02 Chemical Properties Of Alkanes Substitut 1k3axg from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Chemical Properties Of Alkanes Substitut 1k3axg",
-    "Comparison table: 02 Chemical Properties Of Alkanes Substitut 1k3axg vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 02 Chemical Properties Of Alkanes Substitut 1k3axg"
-  ],
-  "summary": [
-    "02 Chemical Properties Of Alkanes Substitut 1k3axg is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Chemical Properties Of Alkanes Substitut 1k3axg involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Chemical Properties Of Alkanes Substitut 1k3axg alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

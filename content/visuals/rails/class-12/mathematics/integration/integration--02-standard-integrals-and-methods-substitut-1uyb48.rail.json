@@ -57,7 +57,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Standard integrals  ·  • Methods: substitution"
+      "text": "Trick 1: Method picker — rational with factorable denominator → partial fractions; product of unlike types → by parts; composite f(g(x))g′(x) → substitution; roots of quadratics → complete the square.  ·  Trick 2: By parts ILATE: pick u = the factor that simplifies on differentiation (log, inverse trig first); ∫u dv = uv − ∫v du."
     },
     {
       "label": "Board question",
@@ -73,7 +73,7 @@
     },
     {
       "label": "Key points",
-      "text": "• Parts  ·  • Partial fractions"
+      "text": "• Standard integrals  ·  • Methods: substitution  ·  • Parts  ·  • Partial fractions"
     },
     {
       "label": "More practice",
@@ -89,11 +89,19 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: standard integrals, methods: substitution, parts, partial fractions.  ·  one worked example for \"Standard integrals and methods: substitution, parts, part…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Partial fraction forms: (px+q)/((x−a)(x−b)) = A/(x−a) + B/(x−b); repeated factor adds B/(x−a)²; irreducible quadratic adds (Cx+D)/(x²+px+q).  ·  Trick 4: Standard definite-integral properties save work: ∫0^a f(x)dx = ∫0^a f(a−x)dx — apply to sin/cos symmetric integrands.  ·  define + example each sub-idea: standard integrals, methods: substitution, parts, partial fractions."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Standard integrals and methods: substitution, parts, part…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Standard integrals and methods: substitution, parts, partial fractions ## 1. Introduction and motivation What the tool **Standard integrals and methods** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Integration fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Standard forms and rules** | Form | Rule | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Figures and graphs - **F1** — Standard integrals and methods — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Standard integrals and methods — second figure: construction, region or comparison (authored SVG — English labels) - **F3** —…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

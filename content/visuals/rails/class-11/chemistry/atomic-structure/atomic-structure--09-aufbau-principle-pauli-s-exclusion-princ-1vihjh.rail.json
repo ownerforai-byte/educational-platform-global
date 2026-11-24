@@ -28,28 +28,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Aufbau principle, Pauli's exclusion principle, Hund's rul… (Atomic Structure, Chemistry, class-11-notes) covers Aufbau principle, Pauli's exclusion principle, Hund's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Three rules build every ground-state configuration: **Aufbau** fills the lowest-energy orbital first (order 1s 2s 2p 3s 3p 4s 3d 4p…, predicted by the (n + l) rule — hence K = [Ar] 4s¹, NEB 2023's example); **Pauli** caps each orbital at two opposite-spin electrons by forbidding any shared set of four quantum numbers; **Hund** fills degenerate orbitals singly with parallel spins before pairing (N: 2p ↑ ↑ ↑).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — quick idea map\"><title>Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Aufbau Principle, Pauli's Exclusion Principle,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Hund's Rule and Electronic Configurations…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Aufbau principle</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Pauli's exclusion</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\text{Aufbau: smaller</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">}(n+l)\\text{ first; tie}</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\rightarrow \\text{smaller…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\text{subshell</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">capacity}=2(2l+1),\\qquad</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\text{shell</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — quick idea map\"><title>Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Aufbau Principle, Pauli's Exclusion Principle,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Hund's Rule and Electronic Configurations…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**(n + l) rule** — the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">quick ordering tool: sum n</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and l; lower sum fills…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Aufbau: fill lowest energy</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">first — order 1s 2s 2p 3s</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">3p 4s 3d 4p 5s…,…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (n + l) rule: lower (n +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">l) fills first; tie →</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lower n - Capacity:</text></svg>",
         "caption": "Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — quick idea map of this topic's headline…"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$\\text{Aufbau: smaller }(n+l)\\text{ first; tie} \\rightarrow \\text{smaller }n$$\n$$\\text{subshell capacity}=2(2l+1),\\qquad \\text{shell capacity}=2n^{2}$$\n$$\\mu=\\sqrt{n(n+2)}\\ \\text{BM},\\quad n=\\text{unpaired electrons}$$"
+      "text": "- (n + l) rule: lower (n + l) fills first; tie → lower n - Capacity: orbital 2; subshell 2(2l + 1); shell 2n² - Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰ - Fe³⁺: [Ar] 3d⁵ (from Fe [Ar] 4s² 3d⁶)"
     },
     {
       "label": "Conditions",
-      "text": "❌ 4s is always lower in energy than 3d. ✅ It fills first in neutral atoms, but in ions the 4s electrons are removed first (Fe²⁺ = 3d⁶).  ·  ❌ Pauli's principle forbids two electrons in one orbital. ✅ They may share an orbital if their spins are opposite (different mₛ)."
+      "text": "**4s before 3d — but also 4s out first:** filling order and removal order are different questions. Ions strip the highest-n shell first.  ·  **Pairing needs a partner orbital, not the same orbital:** Hund's rule forbids pairing while a degenerate orbital is still empty — O (2p⁴) pairs only because all three p orbitals already hold one electron."
     },
     {
       "label": "Special cases",
-      "text": "Cr (24) = [Ar]3d⁵4s¹ and Cu (29) = [Ar]3d¹⁰4s¹ are the only anomalies within Z ≤ 30.  ·  Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired)."
+      "text": "\"No two electrons in an atom can have identical values of all four quantum numbers.\" — Pauli; the reason matter occupies space at all."
     },
     {
       "label": "Solved",
-      "text": "**Problem:** Configuration and magnetic behaviour of Cu²⁺. **Solution:** Cu = [Ar]3d¹⁰4s¹ → Cu²⁺ = [Ar]3d⁹ → one unpaired electron → paramagnetic, μ ≈ 1.73 BM.  ·  **Problem:** How many Zn electrons have l = 2? **Solution:** Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons."
+      "text": "***K (Z = 19) = [Ar] 4s¹*** — the (n + l) rule at work: 4s (4+0 = 4) beats 3d (3+2 = 5), so the 19th electron of potassium enters 4s, not 3d — the single clearest demonstration of Aufbau."
     },
     {
       "label": "Limitation",
@@ -57,146 +57,63 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning  ·  These three rules distribute electrons among the orbitals of an atom in its ground state: Aufbau fixes the *order* of filling, Pauli fixes the *capacity* of an orbital, and Hund fixes *how degenerate orbitals are filled*."
+      "text": "## 1. Topic Introduction — The Filling Rules That Build the Periodic Table Quantum numbers give every electron an address; three rules decide the **order of occupation**: the **Aufbau principle** (fill lowest energy first), **Pauli's exclusion principle** (two electrons maximum per orbital, opposite spins) and **Hund's rule** (degenerate orbitals fill singly with parallel spins first).…  ·  ## 2. Fundamental Concepts ### 2.1 Aufbau principle (building-up) Electrons occupy the **lowest-energy orbital available** before entering higher ones. Energy order (the diagonal rule): **1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p …** - The **(n + l) rule** predicts the order: lower (n + l) fills first; on a tie, lower n fills first. - 4s: n + l = 4 + 0 = 4 — fills **before** 3d: n + l = 3 + 2 = 5.…"
     },
     {
       "label": "Shortcut",
-      "text": "answer pattern for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Diagonal chant: \"1s 2s 2p 3s 3p 4s 3d 4p 5s 4d 5p.\" (n + l) check for any disputed pair. Ions: \"last in, first out\" — strip the highest shell."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" with one example.  ·  compare \"Aufbau principle\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (3m): Explain Aufbau's principle with an example.** — Electrons fill orbitals in order of increasing energy, lowest first; the order follows the (n + l) rule (lower n + l first; tie → lower n): 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p.…  ·  **NEB-style (2m): State Pauli's exclusion principle and one consequence.** — No two electrons in an atom can have the same set of all four quantum numbers. Consequence: an orbital holds at most two electrons with opposite spins (↑↓); shell capacity is 2n²."
     },
     {
       "label": "Hints",
-      "text": "For ions always remove electrons from the highest-n shell first (4s before 3d) — a standard exam trap.  ·  Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions.",
+      "text": "Write configurations in full for Z ≤ 18; core notation [Ar] is fine beyond. For ions, show the neutral configuration first, then strike out — the marking scheme follows the steps.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — topic mind map\"><title>Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Aufbau principle, Pauli's exclusion principle…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Aufbau principle</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Pauli's exclusion</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">principle</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Hund's rule</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electronic</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">configurations of atoms</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30) — topic mind map of this topic's own…"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**(n + l) rule** — the quick ordering tool: sum n and l; lower sum fills first; equal sums → lower n first. It reproduces the whole diagonal order without memorising it."
+    },
+    {
       "label": "Key points",
-      "text": "• Aufbau principle  ·  • Pauli's exclusion principle  ·  • Hund's rule  ·  • Electronic configurations of atoms"
+      "text": "Aufbau: fill lowest energy first — order 1s 2s 2p 3s 3p 4s 3d 4p 5s…, predicted by (n + l), tie → lower n. Pauli: no two electrons share all four quantum numbers → orbital max 2, ↑↓. Hund: degenerate orbitals fill singly with parallel spins before pairing.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "The periodic table's block structure is the Aufbau order made visible: s-block (groups 1–2), p-block (13–18), d-block (3–12), f-block — the filling sequence *is* the table's shape."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "**NEB-style (2m): State Hund's rule and write the orbital diagram of nitrogen.** — Degenerate orbitals fill singly with parallel spins before pairing begins. N (1s² 2s² 2p³): 1s ↑↓, 2s ↑↓, 2p ↑ ↑ ↑ — three singly-occupied p orbitals.  ·  **NEB-style (3m): Write the ground-state configurations of Cr (Z = 24) and Cu (Z = 29) and account for the anomalies.** — Cr: [Ar] 4s¹ 3d⁵; Cu: [Ar] 4s¹ 3d¹⁰. Half-filled (d⁵) and fully-filled (d¹⁰) subshells have maximum exchange energy and symmetrical charge distribution; shifting one 4s electron…"
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\"? → A  ·  A common examiner point on \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Which orbital fills first according to the Aufbau principle? → B  ·  Pauli's exclusion principle limits an orbital to: → B"
     },
     {
       "label": "Study notes",
-      "text": "### 2. Aufbau principle and the (n + l) rule  ·  Electrons fill the available orbital of lowest energy first. Order is given by the **Madelung (n + l) rule**: smaller (n + l) first; for equal (n + l), smaller n first. Thus 4s (n + l = 4) fills before 3d (n + l = 5), giving 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p < 6s < 4f < 5d < 6p < 7s < 5f < 6d < 7p.  ·  ### 3. Pauli's exclusion principle"
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Aufbau principle** | Electrons fill the lowest-energy orbitals first | 4s fills before 3d | | **Pauli exclusion principle** | No two electrons share all four quantum numbers | Orbital capacity = 2 | | **Hund's rule** | Degenerate orbitals fill singly with parallel spins before pairing | N:…  ·  ## 4. Detailed Explanation ### 4.1 NEB 2023 (3m, verified PYQ) — Explain Aufbau's principle with an example **Statement:** electrons enter the orbital of lowest energy first; higher orbitals are occupied only after all lower ones are filled. The energy order follows the (n + l) rule — lower (n + l) first, and on a tie the lower n first.…  ·  ## 5. Comparison Tables **The three rules side by side** | Rule | Statement | Governs | Visible effect | |---|---|---|---| | **Aufbau** | Lowest energy orbital fills first | Order of subshells | 4s before 3d; K = [Ar] 4s¹ | | **Pauli** | All four quantum numbers cannot repeat | Capacity | Orbital = 2 electrons, ↑↓ | | **Hund** | Singly + parallel first, then pair | Degenerate…"
     },
     {
       "label": "More ideas",
-      "text": "• Ions  ·  • Up to atomic no. 30  ·  ❌ Hund's rule says electrons pair as soon as possible. ✅ Pairing begins only after every degenerate orbital holds one electron."
+      "text": "Verified PYQs: NEB 2023 3m — explain Aufbau with an example (solved above); NEB 2024 3m — quantum numbers of Na's valence electron (topic 19). Configurations up to Z = 30 are standing NEB currency.  ·  Why is a half-filled d⁵ subshell more stable than d⁴ 4s² would predict?  ·  Write the configurations of Mn²⁺ and Ni²⁺ and state the d-count of each."
     },
     {
       "label": "More ideas",
-      "text": "❌ Cr is [Ar]3d⁴4s². ✅ It is [Ar]3d⁵4s¹ because the half-filled d subshell wins on exchange energy.  ·  State Aufbau's principle, Pauli's exclusion principle and Hund's rule with one example each.  ·  Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling."
+      "text": "Why does the first ionisation energy of oxygen fall below nitrogen's despite higher nuclear charge?  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 6. Common Confusions **Ionisation order vs filling order:** electrons are **removed from the outermost shell** — Fe²⁺ is [Ar] 3d⁶, not [Ar] 4s² 3d⁴. 4s fills first but also empties first."
     },
     {
       "label": "More ideas",
-      "text": "Give the configurations of Z = 24, 26 and 29 and explain the anomalies.  ·  Write Fe, Fe²⁺ and Fe³⁺ configurations and explain why Fe³⁺ is extra stable.  ·  How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each."
+      "text": "**Hund's rule scope:** it applies **only within a degenerate set** (p³, d⁵…); it never overrides Aufbau's energy ordering across different subshells.  ·  **Exceptions are ground-state facts:** Cr and Cu configurations apply to the neutral ground-state atoms; their ions follow the normal removal order (Cu⁺ = 3d¹⁰).  ·  ## 7. Exam Application **NEB-style (2m): Write the configuration of Fe (Z = 26) and of Fe³⁺; why is Fe³⁺ more stable than Fe²⁺?** — Fe: [Ar] 4s² 3d⁶; Fe³⁺: [Ar] 3d⁵ (4s² removed first, then one 3d). Fe³⁺ has an exactly **half-filled 3d⁵** — maximum exchange energy and spherical symmetry — so it is extra stable."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
-    },
-    {
-      "label": "More ideas",
-      "text": "No two electrons in an atom can have all four quantum numbers identical; equivalently an orbital holds at most two electrons with opposite spins (↑↓). Consequences: subshell capacities 2, 6, 10, 14; shell capacity 2n².  ·  ### 4. Hund's rule of maximum multiplicity  ·  Electrons enter degenerate orbitals (same n and l, e.g. the three 2p) singly with parallel spins before pairing; pairing starts only after every degenerate orbital has one electron. Reason: pairing costs Coulomb repulsion energy while parallel spins gain exchange energy.…"
+      "text": "**NEB-style (2m): State Hund's rule and illustrate with nitrogen.** — Degenerate orbitals are occupied singly with parallel spins before any pairing. N (Z = 7): 1s² 2s² 2p³ → the three 2p electrons sit in three separate p orbitals as ↑ ↑ ↑.  ·  **NEB-style (2m): Predict the ground-state configuration of Cr (Z = 24) and explain the anomaly.** — [Ar] 4s¹ 3d⁵ instead of [Ar] 4s² 3d⁴: the half-filled 3d⁵ gains maximum exchange energy, and promoting one 4s electron to 3d costs little because 4s and 3d are nearly degenerate."
     }
-  ],
-  "keyPoints": [
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is a core concept in atomic structure.",
-    "Understanding 09 aufbau principle pauli s exclusion princ 1vihjh requires knowing its definition, conditions, and limitations.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 09 aufbau principle pauli s exclusion princ 1vihjh must be memorized precisely.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh connects to neighbouring topics within atomic structure and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 09 aufbau principle pauli s exclusion princ 1vihjh.",
-    "Practical examples solidify understanding of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh and its real-world relevance.",
-    "Misconceptions about 09 aufbau principle pauli s exclusion princ 1vihjh often arise from confusing it with similar concepts.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh follows systematic rules that can be applied step-by-step.",
-    "Review of 09 aufbau principle pauli s exclusion princ 1vihjh should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is defined by its specific characteristics within atomic structure.",
-    "The conditions under which 09 aufbau principle pauli s exclusion princ 1vihjh applies are as important as the concept itself.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 09 aufbau principle pauli s exclusion princ 1vihjh through application-based and comparison questions.",
-    "A clear grasp of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh builds the foundation for advanced topics in atomic structure."
-  ],
-  "importantNotes": [
-    "When studying 09 aufbau principle pauli s exclusion princ 1vihjh, always note the exceptions alongside the general rule.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh should be reviewed with at least one worked example per sub-point.",
-    "Link 09 aufbau principle pauli s exclusion princ 1vihjh back to prior knowledge in atomic structure for deeper retention.",
-    "Practice past NEB board questions on 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh: apply the standard definition to a simple case.",
-    "Intermediate example: combine 09 aufbau principle pauli s exclusion princ 1vihjh with a related concept from atomic structure.",
-    "Exam-style problem: solve a question involving 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh under time pressure.",
-    "Real-world connection: show how 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh and state two conditions required for it to occur.",
-    "Differentiate 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh from the most commonly confused concept in atomic structure.",
-    "Solve a numerical or structural problem involving 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh.",
-    "List three applications of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh.",
-    "Create three flashcards covering definition, formula, and limitation of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh."
-  ],
-  "universalFacts": [
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is part of the NEB Class 11 atomic structure syllabus.",
-    "Every concept in atomic structure builds upon definitions established earlier in the chapter.",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is assessed through both short-answer and long-answer board questions.",
-    "Understanding 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh improves performance across the entire atomic structure unit.",
-    "Revision of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh with closely related concepts in atomic structure — focus on distinguishing features.",
-    "The scope of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is sometimes overstated; remember its precise boundaries.",
-    "Applying 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is primarily studied under which branch of atomic structure? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to atomic structure — Answer: B",
-    "Which example correctly illustrates 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh.",
-    "Step-by-step animated derivation of the key relationship in 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh.",
-    "Interactive toggle between correct and incorrect representations of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh.",
-    "Side-by-side comparison animation of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh vs commonly confused concept.",
-    "Timelapse build-up of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh from prerequisite knowledge in atomic structure."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh",
-    "Comparison table: 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh vs related concepts in atomic structure",
-    "Step-by-step worked example layout for 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh"
-  ],
-  "summary": [
-    "09 Aufbau Principle Pauli S Exclusion Princ 1vihjh is a fundamental concept in atomic structure that describes specific chemical behaviour under defined conditions.",
-    "Mastering 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 09 Aufbau Principle Pauli S Exclusion Princ 1vihjh alongside related concepts in atomic structure ensures strong conceptual clarity and exam readiness."
   ]
 }

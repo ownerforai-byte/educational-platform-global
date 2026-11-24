@@ -24,20 +24,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Stefan-Boltzmann Law is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "**Stefan–Boltzmann's law**: a black body radiates $E = \\sigma T^4$ per unit area, with $\\sigma = 5.67 \\times 10^{-8}$ W m⁻²K⁻⁴; real bodies emit $e\\sigma T^4$ with emissivity e. In surroundings at T_s the net loss is $e\\sigma A(T^4 - T_s^4)$ — the difference of fourth powers, with T always absolute.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stefan-Boltzmann Law — quick idea map\"><title>Stefan-Boltzmann Law — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stefan-Boltzmann Law</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Stefan-Boltzmann Law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Stefan-Boltzmann Law</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Stefan-Boltzmann Law</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stefan-Boltzmann Law — quick idea map\"><title>Stefan-Boltzmann Law — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stefan-Boltzmann Law</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The fourth power is why</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">small temperature changes</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">have huge radiative…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E = σT⁴; σ = 5.67×10⁻⁸ W</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m⁻²K⁻⁴; net: eσA(T⁴ −</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">T_s⁴).</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">T → 2T multiplies power by</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">16.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- E = σT⁴; dQ/dt = eσAT⁴ -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Net: dQ/dt = eσA(T⁴ −</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">T_s⁴) - σ = 5.67×10⁻⁸ W…</text></svg>",
         "caption": "Stefan-Boltzmann Law — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Stefan-Boltzmann Law\nKey Formula 3: Application formula for Stefan-Boltzmann Law\nKey Formula 4: Derivation result for Stefan-Boltzmann Law"
+      "text": "- E = σT⁴; dQ/dt = eσAT⁴ - Net: dQ/dt = eσA(T⁴ − T_s⁴) - σ = 5.67×10⁻⁸ W m⁻²K⁻⁴"
     },
     {
       "label": "Conditions",
-      "text": "Carefully distinguish between similar-looking concepts in stefan-boltzmann law.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "**Absolute temperature only** — Celsius values must be converted before raising to the fourth power.  ·  **Net exchange uses T⁴ − T_s⁴**, not (T − T_s)⁴."
     },
     {
       "label": "Special cases",
@@ -45,11 +45,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Stefan-Boltzmann Law  ·  Practical demonstration of Stefan-Boltzmann Law concepts"
+      "text": "***NEB 2024*** — doubling T: power ×16."
     },
     {
       "label": "Limitation",
-      "text": "Practice with multiple examples to solidify your understanding.  ·  ❌ The Stefan-Boltzmann law gives the power per unit wavelength. ✅ It gives the TOTAL power integrated over ALL wavelengths. The power in a narrow wavelength band is given by the spectral radiance (Planck's law), not by $E = \\sigma T^4$."
+      "text": "Verified PYQ: Stefan's law + doubling factor (2024, 3m)."
     },
     {
       "label": "Derivation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Stefan-Boltzmann Law formula  ·  Trick 2: Elimination technique for Stefan-Boltzmann Law MCQs"
+      "text": "\"Factor = (ratio of T)⁴ — 2× → 16, 3× → 81.\""
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Stefan-Boltzmann Law.  ·  Q3. Differentiate between various aspects of Stefan-Boltzmann Law."
+      "text": "**Numerical (3m): A black body at 1727 °C radiates how much per m²?** — T = 2000 K; E = σT⁴ = 5.67×10⁻⁸ × 1.6×10¹³ = 9.07×10⁵ W/m²."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Stefan-Boltzmann Law  ·  Practice previous year questions on Stefan-Boltzmann Law",
+      "text": "The 2024 question is statement + factor — quote σ's value for full marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stefan-Boltzmann Law — topic mind map\"><title>Stefan-Boltzmann Law — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Stefan-Boltzmann law</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Stefan-Boltzmann law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Stefan-Boltzmann Law — topic mind map of this topic's own sub-topics"
@@ -73,27 +73,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Stefan-Boltzmann Law  ·  Concept 2: Key theorem or principle in Stefan-Boltzmann Law  ·  Concept 3: Important application area of Stefan-Boltzmann Law  ·  Concept 4: Fundamental relationship in Stefan-Boltzmann Law"
+      "text": "**The fourth power is why small temperature changes have huge radiative consequences.**"
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Stefan-Boltzmann Law  ·  Key Point 3: Important condition or constraint for Stefan-Boltzmann Law  ·  Key Point 4: Common applications of Stefan-Boltzmann Law  ·  Key Point 5: Connection to other topics in Science"
+      "text": "E = σT⁴; σ = 5.67×10⁻⁸ W m⁻²K⁻⁴; net: eσA(T⁴ − T_s⁴).  ·  T → 2T multiplies power by 16."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding stefan-boltzmann law builds the foundation for more advanced topics in mathematics."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Stefan-Boltzmann Law.  ·  Q5. What are the applications of Stefan-Boltzmann Law?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Stefan-Boltzmann Law thoroughly  ·  Review common mistakes related to Stefan-Boltzmann Law"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Stefan-Boltzmann Law  ·  Application in daily life involving Stefan-Boltzmann Law"
+      "text": "Earth's equilibrium: absorbing ~239 W/m² of averaged sunlight ⇒ radiating at T ≈ 255 K — the greenhouse effect raises the surface to ~288 K."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Stefan-Boltzmann Law:** This topic covers the fundamental concepts of stefan-boltzmann law in the physics curriculum.  ·  Understanding stefan-boltzmann law is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to stefan-boltzmann law should be memorized and practiced regularly."
+      "text": "## 1. Topic Introduction — The T⁴ Rule Double a body's absolute temperature and its radiated power multiplies by sixteen. That brutal fourth-power dependence — Stefan–Boltzmann's law — sets the energy budget of planets, stars and furnaces, and explains why a few degrees of global warming matters so much.  ·  ## 2. Fundamental Concepts (NEB 2024) ### 2.1 Statement **The total energy radiated per second per unit surface area of a perfect black body is directly proportional to the fourth power of its absolute temperature:** $$E = \\sigma T^4$$ with $\\sigma = 5.67 \\times 10^{-8}$ W m⁻²K⁻⁴ (Stefan's constant).…  ·  ## 3. Conceptual Relationships - **To Topic 59:** Stefan's law is the integrated black-body spectrum. - **To Newton's cooling (Topic 50):** for small (T − T_s), $T^4 - T_s^4 \\approx 4T_s^3(T - T_s)$ — Newton's law emerges as the small-excess limit.…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Stefan-Boltzmann Law and other topics  ·  Key Formula 5: Important relation in Stefan-Boltzmann Law  ·  ❌ Doubling the temperature doubles the radiated power. ✅ Because of the $T^4$ dependence, doubling the temperature increases the power by a factor of $2^4 = 16$, not 2. This dramatic sensitivity is a hallmark of the Stefan-Boltzmann law."
+      "text": "Note 3: Practice numerical problems regularly for mastery of Stefan-Boltzmann Law  ·  Note 4: Remember the units and dimensions involved in Stefan-Boltzmann Law  ·  Note 5: Stefan-Boltzmann Law frequently appears in examination questions"
     },
     {
       "label": "More ideas",
-      "text": "❌ The $T$ in the Stefan-Boltzmann law can be in Celsius. ✅ The temperature MUST be in Kelvin. At 0°C (273 K), the radiated power is NOT zero — it is $\\sigma(273)^4 \\approx 449$ W/m². Using 0°C would incorrectly give zero.  ·  ❌ The Stefan-Boltzmann law applies only to black bodies. ✅ It applies to ALL bodies, with the modification $E = e\\sigma T^4$ where $e$ is the emissivity. Real objects with $e < 1$ emit less than a black body at the same temperature.  ·  ❌ A body at thermal equilibrium radiates no energy. ✅ A body at thermal equilibrium radiates energy continuously, but it also ABSORBS exactly the same amount of energy from its surroundings. The NET radiation is zero — not the radiation itself."
+      "text": "\"The total radiant energy emitted per second per unit area of a black body is proportional to the fourth power of its absolute temperature.\"  ·  Why does a thermos flask's silvering beat radiation so effectively?  ·  Task 3: Create a concept map for Stefan-Boltzmann Law"
     },
     {
       "label": "More ideas",
-      "text": "❌ The Stefan-Boltzmann law was discovered by Boltzmann alone. ✅ Josef Stefan proposed it empirically in 1879. Ludwig Boltzmann derived it theoretically in 1884. Both are credited for the law.  ·  ❌ The Stefan-Boltzmann law applies only to radiation — it has no analog in conduction or convection. ✅ The concept of thermal radiation power ($P = e\\sigma A T^4$) has NO analog in conduction or convection because those mechanisms depend on temperature DIFFERENCE ($\\Delta T$), not absolute $T^4$.  ·  Note 3: Practice numerical problems regularly for mastery of Stefan-Boltzmann Law"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: Remember the units and dimensions involved in Stefan-Boltzmann Law  ·  Note 5: Stefan-Boltzmann Law frequently appears in examination questions  ·  Note 2: Remember the distinction between different types in Stefan-Boltzmann Law"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 3: Stefan-Boltzmann Law has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Stefan-Boltzmann Law  ·  Note 5: Cross-check your answers using alternative methods for Stefan-Boltzmann Law"
+      "text": "Task 4: Practice previous year exam questions on Stefan-Boltzmann Law  ·  Task 5: Explain Stefan-Boltzmann Law to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Heat | Heat flow | State Stefan's law of black-body radiation.…"
     }
   ]
 }

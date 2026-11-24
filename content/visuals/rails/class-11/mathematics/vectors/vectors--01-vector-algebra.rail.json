@@ -21,52 +21,92 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Vector Algebra — Types, Addition and Scalar Multiplication covers essential principles and applications.",
+      "text": "A vector is magnitude **with** direction; its length is √(a₁² + a₂² + a₃²) and its direction is captured by the unit vector **â = a/|a|** (NEB 2024: (2î − 3ĵ + 6k̂)/7). **Addition** obeys the triangle law — head-to-tail — equivalently the parallelogram diagonal, and inherits commutativity, associativity, and inverses from it. **Scalar multiplication** scales by |λ| and reverses for negative λ.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vector Algebra — Types, Addition and Scalar Multiplication — quick idea map\"><title>Vector Algebra — Types, Addition and Scalar Multiplication — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Vector Algebra — Types, Addition and Scalar</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Multiplication</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Vector</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Algebra — Types, Addition</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Vector</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Algebra — Types, Addition</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Scalar Multiplication</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Vector</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Algebra — Types, Addition</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Scalar Multiplication</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vector Algebra — Types, Addition and Scalar Multiplication — quick idea map\"><title>Vector Algebra — Types, Addition and Scalar Multiplication — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Vector Algebra — Types, Addition and Scalar</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Multiplication</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Vectors add like</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">displacements:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">head-to-tail bookkeeping</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Vector: magnitude +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">direction; |a| =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sqrt(a1^2+a2^2+a3^2); unit</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- |a| = √(a₁² + a₂² +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a₃²); â = a/|a|; |λa| =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|λ||a| - a + b: triangle</text></svg>",
         "caption": "Vector Algebra — Types, Addition and Scalar Multiplication — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors\nStatement 2: Theorem related to Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors"
-    },
-    {
-      "label": "Conditions",
-      "text": "Vector Algebra — Types, Addition and Scalar Multiplication is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors to be valid  ·  Statement 4: Principle governing Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors"
-    },
-    {
-      "label": "Solved",
-      "text": "Application of Vector Algebra — Types, Addition and Scalar Multiplication"
-    },
-    {
-      "label": "Limitation",
-      "text": "Definition and significance of Vector Algebra — Types, Addition and Scalar Multiplication."
-    },
-    {
-      "label": "Derivation",
-      "text": "Connection of Vector Algebra — Types, Addition and Scalar Multiplication to other topics"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Vector Algebra — Types, Addition and Scalar Multiplication."
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define Vector Algebra — Types, Addition and Scalar Multiplication.  ·  Q3. Problem on Vector Algebra — Types, Addition and Scalar Multiplication.",
+      "text": "- |a| = √(a₁² + a₂² + a₃²); â = a/|a|; |λa| = |λ||a| - a + b: triangle law (head-to-tail); parallelogram diagonal from common tail - AB = b − a; internal division m:n: (n a + m b)/(m+n); external: (m b − n a)/(m−n);…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vector Algebra — Types, Addition and Scalar Multiplication — exam flow\"><title>Vector Algebra — Types, Addition and Scalar Multiplication — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Vector Algebra — Types, Addition and Scalar</text><text x=\"450\" y=\"84\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Multiplication</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Vector Algebra — Types, Addition and Scalar</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">Multiplication covers essential principles</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">and applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Scalar and vector</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">quantities, types of vectors; addition,</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">subtraction and scalar…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Vector Algebra —</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Types, Addition and Scalar Multiplication.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define Vector Algebra — Types, Addition</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">and Scalar Multiplication. · Q3.…</text></svg>",
-        "caption": "Vector Algebra — Types, Addition and Scalar Multiplication — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vector Algebra — Types, Addition and Scalar Multiplication — formula board\"><title>Vector Algebra — Types, Addition and Scalar Multiplication — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Vector Algebra — Types, Addition and Scalar</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Multiplication</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- |a| = √(a₁² + a₂² + a₃²); â = a/|a|; |λa| = |λ||a| - a</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">+ b: triangle law (head-to-tail); parallelogram diagonal</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">from common tail - AB = b − a; internal division m:n: (n</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a + m b)/(m+n); external: (m b − n a)/(m−n);…</text></svg>",
+        "caption": "Vector Algebra — Types, Addition and Scalar Multiplication — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "Writing |a + b| = |a| + |b|; this holds only when a and b are parallel and point the same way.  ·  Treating a zero component as an undefined direction ratio; it simply means the direction cosine in that axis is zero."
+    },
+    {
+      "label": "Special cases",
+      "text": "Position vectors are measured from the origin; displacement vectors are differences of position vectors.  ·  A negative scalar multiple reverses direction, which is why braking is a negative acceleration vector."
+    },
+    {
+      "label": "Solved",
+      "text": "***The crossed weights*** — internal division 2:3 gives (3a + 2b)/5: the ratio member multiplies the opposite endpoint, and the midpoint case m = n collapses the formula to (a+b)/2."
+    },
+    {
+      "label": "Limitation",
+      "text": "Verified PYQs: NEB 2024 (unit vector of 2i - 3j + 6k), NEB 2022 (internal division 2:3) — assigned to this row. Other items are NEB-style practice."
+    },
+    {
+      "label": "Derivation",
+      "text": "Compute five vector sums and scalar products  ·  Find unit vectors for three given vectors"
+    },
+    {
+      "label": "Shortcut",
+      "text": "|a| from Pythagoras in 3D; divide by it for the unit vector. AB = b - a. Internal m:n: cross the weights. External division: same crossing with a minus."
+    },
+    {
+      "label": "Board question",
+      "text": "**NEB 2024 (verified PYQ): Find the unit vector in the direction of a = 2î − 3ĵ + 6k̂. (3m)** — **Step 1 — magnitude:** |a| = √(2² + (−3)² + 6²) = √(4 + 9 + 36) = **√49 = 7**. **Step 2 — unit vector:** â = a/|a| = **(2î − 3ĵ + 6k̂)/7**, i.e. (2/7)î − (3/7)ĵ + (6/7)k̂.…  ·  **NEB 2022 (verified PYQ): The position vectors of A and B are a = 2î + ĵ − k̂ and b = î − 3ĵ + 2k̂. Find the position vector of the point which divides AB internally in the ratio 2:3. (3m)** — **Section formula (internal, m:n = 2:3):** p = **(n a + m b)/(m + n)** = (3a + 2b)/5 — note the crossed weights.…"
+    },
+    {
       "label": "Hints",
-      "text": "Statement 5: Corollary or consequence of Scalar and vector quantities, types of vectors; addition, subtraction and scalar multiplication of vectors"
+      "text": "For section-formula answers, state the formula before substituting — the crossed-weights step carries the method mark."
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Vectors add like displacements: head-to-tail bookkeeping is the triangle law, and every algebraic property of addition is a consequence of it."
+    },
+    {
+      "label": "Key points",
+      "text": "Vector: magnitude + direction; |a| = sqrt(a1^2+a2^2+a3^2); unit vector a-hat = a/|a|; zero vector has no direction. Triangle law: a + b runs from a's tail to b's head; parallelogram law: diagonal from common tail. Addition is commutative and associative; a + (-a) = 0.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "The section formula is coordinate geometry in disguise: the same crossed-weights rule works for plain coordinates (x, y, z) because position vectors are coordinates wearing arrows."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Show that vector addition is commutative using the parallelogram law.** — Draw vectors **a** and **b** from a common tail O. The **parallelogram law** says a + b is the diagonal from O of the parallelogram with sides a and b.…"
+    },
+    {
+      "label": "MCQ drill",
+      "text": "If a = (1, 2, −2), then |a| is → B  ·  For any vectors a and b, |a + b| is always → B"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 1. Topic Introduction — Quantities With Direction A **vector** carries magnitude *and* direction; a **scalar** carries only magnitude. The theorems of this topic: the **triangle law** of addition, the **parallelogram law**, and the **section formula** for position vectors — the grammar that every later vector result builds on.  ·  ## 2. Fundamental Concepts ### 2.1 Representation and magnitude - Vector **AB** = position of B minus position of A; written **a** or **AB** with arrow. - **Magnitude (modulus):** |a| = √(a₁² + a₂² + a₃²) for a = a₁î + a₂ĵ + a₃k̂. - **Unit vector:** â = a/|a| — same direction, length 1. **Zero vector 0** has magnitude 0 and no defined direction.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Position vector** | Vector from the origin to the point | P(2, −1, 3) ↔ 2î − ĵ + 3k̂ | | **Unit vector** | Vector of magnitude 1 giving pure direction | â = a/|a| | | **Section formula** | Position vector of a point dividing a segment in a ratio | internal m:n: (n a + m b)/(m+n) | | **Free…"
+    },
+    {
+      "label": "More ideas",
+      "text": "\"The point dividing AB internally in ratio m:n has position vector (n a + m b)/(m+n); externally (m b - n a)/(m-n).\"  ·  Find the unit vector in the direction of a = 2î − 3ĵ + 6k̂.  ·  Find the position vector of the point dividing AB in ratio 2:3 internally, with a = 2î + ĵ − k̂, b = î − 3ĵ + 2k̂."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the triangle and parallelogram laws and prove commutativity of vector addition.  ·  ## 4. Detailed Explanation ### 4.1 Why vectors add head-to-tail - Displacements compose: walking a then b lands you at a + b. The triangle law is bookkeeping for displacements; the parallelogram law is the same fact seen from a shared tail.…  ·  ## 5. Comparison Tables **Scalars vs vectors** | Basis | Scalar | Vector | |---|---|---| | carries | magnitude only | magnitude + direction | | examples | mass, speed, work | force, velocity, displacement | | addition | ordinary | triangle/parallelogram law | | multiplication by scalar | — | stretches/reverses |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **AB = b − a, not a − b:** the head minus the tail — reversing the order flips the vector.  ·  **λa reverses only for negative λ:** magnitude scales by |λ|, direction by sign.  ·  **Section formula weights:** internal m:n gives (n a + m b)/(m+n) — the weights are crossed, not parallel."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB 2024 (verified PYQ): Find the unit vector in the direction of a = 2î − 3ĵ + 6k̂. (3m)** — **Magnitude:** |a| = √(2² + (−3)² + 6²) = √(4 + 9 + 36) = √49 = **7**. **Unit vector:** â = a/|a| = **(2î − 3ĵ + 6k̂)/7**.…  ·  **NEB 2022 (verified PYQ): The position vectors of A and B are a = 2î + ĵ − k̂ and b = î − 3ĵ + 2k̂. Find the position vector of the point dividing AB internally in the ratio 2:3.…"
     }
   ]
 }

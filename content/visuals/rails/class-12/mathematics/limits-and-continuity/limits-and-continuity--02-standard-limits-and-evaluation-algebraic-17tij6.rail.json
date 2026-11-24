@@ -57,7 +57,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+      "text": "Trick 1: Bank of standards — sin x/x → 1; tan x/x → 1; (1 − cos x)/x² → 1/2; (e^x − 1)/x → 1; ln(1+x)/x → 1; (1+x)^(1/x) → e; (a^x − b^x)/x → ln(a/b).  ·  Trick 2: Force the standard form: whatever the argument (3x, 5x²), rewrite so the inner expression matches the standard's variable — e.g. sin 5x/5x → 1, then rescale."
     },
     {
       "label": "Board question",
@@ -76,6 +76,10 @@
       "text": "• Standard limits  ·  • Evaluation  ·  • Algebraic  ·  • Trigonometric"
     },
     {
+      "label": "Universal facts",
+      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Standard limits and evaluation (algebraic, trigonometric,…\" and verify the answer is plausible."
     },
@@ -89,19 +93,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Exponential  ·  • Logarithmic  ·  define + example each sub-idea: standard limits, evaluation, algebraic, trigonometric."
+      "text": "• Exponential  ·  • Logarithmic  ·  Trick 3: ∞ forms: divide numerator and denominator by the highest power of x; the leading coefficients give the answer."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Standard limits and evaluation (algebraic, trigonometric,…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Trick 4: 1^∞ forms: take log — lim f^g = e^(lim g(f − 1)) when f → 1.  ·  define + example each sub-idea: standard limits, evaluation, algebraic, trigonometric.  ·  one worked example for \"Standard limits and evaluation (algebraic, trigonometric,…\" — check units / edge cases."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Evaluation.** one-line definition + one-line exam use.  ·  **Algebraic.** one-line definition + one-line exam use."
+      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
     },
     {
       "label": "More ideas",
-      "text": "**Trigonometric.** one-line definition + one-line exam use.  ·  **Exponential.** one-line definition + one-line exam use.  ·  **Logarithmic.** one-line definition + one-line exam use."
+      "text": "**Evaluation.** one-line definition + one-line exam use.  ·  **Algebraic.** one-line definition + one-line exam use.  ·  **Trigonometric.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Exponential.** one-line definition + one-line exam use.  ·  **Logarithmic.** one-line definition + one-line exam use.  ·  # Standard limits and evaluation (algebraic, trigonometric, exponential, logarithmic) ## 1. Introduction and motivation What the tool **Standard limits and evaluation (algebraic** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I).…"
     }
   ]
 }

@@ -57,7 +57,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Arrhenius: k = Ae^(−Ea/RT); Ea = 2.303R (t₂/t₁)·ln(k₂/k₁)·(T₁T₂)/(T₂−T₁)."
+      "text": "Trick 1: k = Ae^(−Ea/RT); log(k2/k1) = Ea(T2−T1)/(2.303R·T1T2) — the two-temperature form is the numerical workhorse; R = 8.314 J.  ·  Trick 2: Graph marks: ln k vs 1/T is a straight line with slope −Ea/R and intercept ln A — draw and label axes."
     },
     {
       "label": "Board question",
@@ -76,6 +76,10 @@
       "text": "• Arrhenius equation  ·  • Activation energy"
     },
     {
+      "label": "Universal facts",
+      "text": "Arrhenius: k = Ae^(−Ea/RT); Ea = 2.303R (t₂/t₁)·ln(k₂/k₁)·(T₁T₂)/(T₂−T₁)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Arrhenius equation and activation energy\" and verify the answer is plausible."
     },
@@ -89,11 +93,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: arrhenius equation, activation energy.  ·  one worked example for \"Arrhenius equation and activation energy\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Threshold statement: reaction occurs only when colliding molecules possess energy ≥ Ea; the fraction e^(−Ea/RT) is the Boltzmann factor.  ·  Trick 4: A catalyst lowers Ea, so k rises by e^(ΔEa/RT) — quote for the catalysis-kinetics link.  ·  define + example each sub-idea: arrhenius equation, activation energy."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: rate law: rate = k[a]ᵐ[b]ⁿ (order from experiment, not formula). zero/first/second order have distinct integrated forms.  ·  **Activation energy.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Arrhenius equation and activation energy\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: rate law: rate = k[a]ᵐ[b]ⁿ (order from experiment, not formula). zero/first/second order have distinct integrated forms.  ·  **Activation energy.** one-line definition + one-line exam use.  ·  # Arrhenius equation and activation energy ## 1. Introduction Chemical picture of **Arrhenius equation and activation energy** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Reaction and preparation sheet** | Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark | | --- | --- |…  ·  ## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…  ·  ## 5. Diagrams and figures - **D1** — Arrhenius equation and activation energy — structure or apparatus plate (authored SVG — English labels, viewBox 900×640) - **D2** — Arrhenius equation and activation energy — second structure, flow or plot (authored SVG — English labels) - **D3** — Arrhenius equation and…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Worked problems ≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone and self-check Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.…"
     }
   ]
 }

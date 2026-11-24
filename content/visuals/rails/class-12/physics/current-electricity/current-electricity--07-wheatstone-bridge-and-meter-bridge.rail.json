@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Wheatstone bridge and meter bridge (Current Electricity, Physics, class-12-notes) covers Wheatstone bridge, meter bridge. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The bridge balances when P/Q = R/S and the galvanometer current is zero. On a metre wire the ratio is a length ratio, and a balance near the middle is the accurate one. Close the battery key before the galvanometer key.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Wheatstone bridge and meter bridge — quick idea map\"><title>Wheatstone bridge and meter bridge — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Wheatstone bridge and meter bridge</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Wheatstone bridge</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Meter bridge</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Wheatstone bridge</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and meter bridge&quot; —</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Wheatstone bridge and meter bridge — quick idea map\"><title>Wheatstone bridge and meter bridge — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Wheatstone bridge and meter bridge</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ratio arms</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Central balance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Same balance idea.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The metre wire replaces</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">two arms.</text></svg>",
         "caption": "Wheatstone bridge and meter bridge — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Wheatstone bridge and meter bridge\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Wheatstone bridge and meter bridge\" — state with units, then use in one numerical.\nP/Q = R/S\nX = R (100 − l)/l for the usual right-hand unknown"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Wheatstone bridge\" as one blob → ✅ split into: wheatstone bridge, meter bridge.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Wheatstone bridge and meter bridge\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "A ratio box of 1, 10, 100 extends the range.  ·  The galvanometer null does not depend on the battery voltage, but a larger voltage makes the null sharper until heating matters."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "This is the same bridge with the classroom names written out. P and Q may be the ratio arms of a box, while R is known and S is the unknown. Balance is still P/Q = R/S.  ·  When the ratio arms are the wire, P is proportional to the left length and Q to the right length. A jockey at the centre means the two gaps are equal if the wire is uniform."
     },
     {
       "label": "Limitation",
@@ -56,43 +56,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Wheatstone bridge and meter bridge — Current Electricity, Physics (class-12-notes).  ·  **Tested.** define it · list: wheatstone bridge, meter bridge · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Wheatstone bridge  ·  • Meter bridge"
+      "text": "Near 50 cm is the accurate region.  ·  Battery key first, galvanometer key second."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Wheatstone bridge and meter bridge\" with one example.  ·  compare \"Wheatstone bridge\" with the related idea from a neighbouring unit."
+      "text": "Write P/Q = R/S.  ·  Why is a central balance better?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Wheatstone bridge and meter bridge — topic mind map\"><title>Wheatstone bridge and meter bridge — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Wheatstone bridge and meter bridge</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Wheatstone bridge</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Meter bridge</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Wheatstone bridge and meter bridge — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Ratio arms  ·  Central balance  ·  Key order  ·  Unknown in one gap"
+    },
+    {
+      "label": "Key points",
+      "text": "Same balance idea.  ·  The metre wire replaces two arms.  ·  A centre balance is preferred.  ·  The unknown is calculated from the known and the two lengths."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Wheatstone bridge and meter bridge\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Wheatstone bridge and meter bridge\" and verify the answer is plausible."
+      "text": "Which key is closed first?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Ratio arms are P = 10 Ω and Q = 30 Ω. The known R is 5.0 Ω and balance is obtained. Find the unknown S."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Wheatstone bridge and meter bridge\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The balance condition is → B  ·  The more precise balance is → B"
     },
     {
       "label": "Study notes",
-      "text": "**Meter bridge.** one-line definition + one-line exam use."
+      "text": "If the balance point is far toward one end, the percentage uncertainty in the short length is large. Changing the known resistor to bring the balance near 50 cm is good practice.  ·  The battery key is closed before the galvanometer key, and opened in the reverse order, so that a self-induced kick does not throw the galvanometer.  ·  The unknown can be a coil whose resistance changes with temperature. The bridge then measures that temperature effect, provided the wire itself stays cool."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: wheatstone bridge, meter bridge.  ·  one worked example for \"Wheatstone bridge and meter bridge\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "P/Q = R/S only at balance.  ·  The short length is the less trustworthy one.  ·  Closing the galvanometer first is the worse order."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "The wire is not the unknown.  ·  Assign P, Q, R and S on the sketch.  ·  Report X in ohms."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write P/Q = R/S and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  A small series resistor added to one gap shifts the balance in a predictable direction. That shift is a check that the lengths have been assigned the right way.  ·  # Wheatstone bridge and meter bridge ## 1. Introduction Physical picture of **Wheatstone bridge and meter bridge** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — Wheatstone bridge and meter bridge — circuit diagram with standard symbols (authored SVG) - **D2** — Wheatstone bridge and meter bridge — graph or second construction (authored SVG — axes, units and labels) - **D3** — Wheatstone bridge and meter bridge — detailed reference plate…"
     }
   ]
 }

@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Nucleus — binding energy, nuclear fission and fusion (Modern Physics, Physics, class-12-notes) covers Nucleus — binding energy, nuclear fission, fusion. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A nucleus is lighter than its free nucleons by the mass defect, and that mass is the binding energy, with 1 u equal to 931 MeV. Stability follows the binding energy per nucleon, which peaks near iron. Fission of heavy nuclei and fusion of light nuclei both move toward that peak and release energy.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Nucleus — binding energy, nuclear fission and fusion — quick idea map\"><title>Nucleus — binding energy, nuclear fission and fusion — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Nucleus — binding energy, nuclear fission and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">fusion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nucleus — binding energy</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nuclear fission</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">BE = Δm c²</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">N = N₀ e^(−λt)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Nucleus — binding energy, nuclear fission and fusion — quick idea map\"><title>Nucleus — binding energy, nuclear fission and fusion — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Nucleus — binding energy, nuclear fission and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">fusion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mass defect</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Binding energy per nucleon</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The nucleus is lighter</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">than its free nucleons.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The missing mass is the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">binding energy.</text></svg>",
         "caption": "Nucleus — binding energy, nuclear fission and fusion — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Nucleus — binding energy\" as one blob → ✅ split into: nucleus — binding energy, nuclear fission, fusion.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).  ·  Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN."
+      "text": "Iron is near the top of the curve.  ·  Use measured masses, not the integer A, as the nuclear mass."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The mass of a nucleus is less than the mass of its separated protons and neutrons. The difference is the mass defect. It is not a mistake in the weighing. It is the mass equivalent of the binding energy.  ·  Binding energy = Δm c^2. In nuclear units, 1 u corresponds to 931 MeV. The binding energy is the energy you would have to supply to pull the nucleus apart into free nucleons."
     },
     {
       "label": "Limitation",
@@ -54,51 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Nucleus — binding energy, nuclear fission and fusion — Modern Physics, Physics (class-12-notes).  ·  **Tested.** define it · list: nucleus — binding energy, nuclear fission, fusion · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+      "text": "MeV = 931 × defect in u.  ·  Divide by A for the value per nucleon."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Nucleus — binding energy, nuclear fission and fusion\" with one example.  ·  compare \"Nucleus — binding energy\" with the related idea from a neighbouring unit."
+      "text": "Define the mass defect.  ·  Where does the binding-energy curve peak?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Nucleus — binding energy, nuclear fission and fusion — topic mind map\"><title>Nucleus — binding energy, nuclear fission and fusion — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Nucleus — binding energy, nuclear fission and…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nucleus — binding energy</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nuclear fission</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Fusion</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Nucleus — binding energy, nuclear fission and fusion — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Mass defect  ·  Binding energy per nucleon  ·  Fission  ·  Fusion"
+    },
+    {
       "label": "Key points",
-      "text": "• Nucleus — binding energy  ·  • Nuclear fission  ·  • Fusion"
+      "text": "The nucleus is lighter than its free nucleons.  ·  The missing mass is the binding energy.  ·  Per nucleon, the curve peaks near iron.  ·  Fission and fusion both move toward that peak."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).  ·  Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Nucleus — binding energy, nuclear fission and fusion\" and verify the answer is plausible."
+      "text": "Why do both fission and fusion release energy?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A nucleus of mass number 56 has a mass defect of 0.500 u. Find the binding energy and the binding energy per nucleon. Use 931 MeV per u."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Nucleus — binding energy, nuclear fission and fusion\"? → A  ·  A common examiner point on \"Nucleus — binding energy, nuclear fission and fusion\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The mass defect is → B  ·  1 u corresponds to → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).  ·  **Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.  ·  **Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+      "text": "The useful comparison between nuclei is the binding energy per nucleon, the total divided by the mass number A. It is low for the very light nuclei, highest near iron, and a little lower again for the heavy nuclei.  ·  Fission splits a very heavy nucleus into two medium ones. Those pieces sit higher on the curve, so energy is released. A chain reaction needs neutrons from one fission to cause the next.  ·  Fusion joins very light nuclei into a heavier one that is higher on the curve. That also releases energy. It is the energy source of the Sun. The nuclei must be brought close enough for the strong force to act, which means a very high temperature."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: nucleus — binding energy, nuclear fission, fusion.  ·  one worked example for \"Nucleus — binding energy, nuclear fission and fusion\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)..  ·  A larger mass defect means more tightly bound, not heavier.  ·  Per nucleon is the stability comparison."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).  ·  **Nuclear fission.** one-line definition + one-line exam use."
+      "text": "Fusion is for light nuclei and fission is for heavy nuclei.  ·  1 u is 931 MeV, not 931 J.  ·  Say per nucleon when you mean the curve."
     },
     {
       "label": "More ideas",
-      "text": "**Fusion.** one-line definition + one-line exam use."
+      "text": "Name fission or fusion before the mass numbers.  ·  Write Binding energy = Δm × 931 MeV when Δm is in u and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).  ·  Both processes release energy for the same reason: the products have a larger binding energy per nucleon, so the products are lighter, and the missing mass has left as energy.  ·  # Nucleus — binding energy, nuclear fission and fusion ## 1. Introduction Physical picture of **Nucleus — binding energy** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

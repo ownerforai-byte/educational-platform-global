@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "The rule table is built from the power, product and quotient rules, with trigonometric derivatives following the 'derivative over itself squared' pattern. The order of the two terms in the quotient rule, and the minus sign on the cosine derivative, are the two details that most often cost marks.…",
+      "text": "The algebraic and trigonometric derivative table is three facts and closure: the power rule for all real exponents, two first-principles trig proofs, and the quotient rule generating the remaining four entries — with the co-derivative pattern explaining every minus sign. Radians are the native unit, the domain statement travels with the answer, and linearity makes polynomials term-by-term.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Algebraic and Trigonometric Functions — quick idea map\"><title>Derivatives: Algebraic and Trigonometric Functions — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Derivatives: Algebraic and Trigonometric</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Functions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Product rule ADDS;</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">quotient rule subtracts</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">with the order $u'v -</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The cosine derivative</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">carries a minus sign, and</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">so does csc.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Product rule ADDS;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">quotient rule subtracts</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">with the order $u'v -</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The cosine derivative</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">carries a minus sign, and</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">so does csc.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Algebraic and Trigonometric Functions — quick idea map\"><title>Derivatives: Algebraic and Trigonometric Functions — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Derivatives: Algebraic and Trigonometric</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Functions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The table is three facts</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and closure: two</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">first-principles</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power rule (x^n)' = n</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">x^(n-1) for all real n;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">linearity.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= cos x; (cos x)′ = −sin x</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (tan x)′ = sec²x;…</text></svg>",
         "caption": "Derivatives: Algebraic and Trigonometric Functions — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Power: $\\frac{d}{dx}x^n = nx^{n-1}$\nProduct: $\\frac{d}{dx}uv = u'v + uv'$\nQuotient: $\\frac{d}{dx}\\frac{u}{v} = \\frac{u'v - uv'}{v^2}$",
+      "text": "- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x - (tan x)′ = sec²x; (sec x)′ = sec x·tan x",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Algebraic and Trigonometric Functions — formula board\"><title>Derivatives: Algebraic and Trigonometric Functions — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Derivatives: Algebraic and Trigonometric Functions</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Power: $\\frac{d}{dx}x^n = nx^{n-1}$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Product: $\\frac{d}{dx}uv = u'v + uv'$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Quotient: $\\frac{d}{dx}\\frac{u}{v} = \\frac{u'v -</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">uv'}{v^2}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Algebraic and Trigonometric Functions — formula board\"><title>Derivatives: Algebraic and Trigonometric Functions — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Derivatives: Algebraic and Trigonometric Functions</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x -</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(tan x)′ = sec²x; (sec x)′ = sec x·tan x</text></svg>",
         "caption": "Derivatives: Algebraic and Trigonometric Functions — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Product rule ADDS; quotient rule subtracts with the order $u'v - uv'$.  ·  The cosine derivative carries a minus sign, and so does csc."
+      "text": "***The co-derivative pattern*** - cos x = sin(pi/2 - x): the chain rule's inner derivative -1 explains every minus sign in the co-function column."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Check the quotient rule with the reciprocal case: differentiate $1/u$ and it should give $-u'/u^2$.  ·  Write $\\sin^2x$ as $(\\sin x)^2$ on paper — it removes the argument/value confusion instantly."
+      "text": "Co-function? Flip the sign. Fractional power? The power rule still applies."
     },
     {
       "label": "Board question",
-      "text": "Differentiating a product, quotient or nested trigonometric form is the most common 3-mark derivative question."
+      "text": "**NEB-style (5m): Differentiate y = 3x⁴ − 2x² + 7 and evaluate y′ at x = 1.** — **Linearity + power rule:** y′ = 3·4x³ − 2·2x + 0 = **12x³ − 4x**. **At x = 1:** 12 − 4 = **8**. **Deep point:** the constant's derivative is 0 because constants do not change — the power rule at n = 0; linearity lets each term ride its own coefficient, which…  ·  **NEB-style (5m): Differentiate y = √x + 1/x² and state where each term's rule applies.** — **Rewrite in powers:** y = x^{1/2} + x^{−2}. **Power rule (real exponents):** y′ = (1/2)x^{−1/2} + (−2)x^{−3} = **1/(2√x) − 2/x³**. **Domains:** the first term needs x > 0 (the root's domain), the second x ≠ 0 ⟹ y′ valid for x > 0.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Derivatives of nested forms need the chain rule $ frac{d}{dx} sin^2x = 2 sin x cos x = sin 2x$ and $ frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$."
+      "text": "Write angles in radians throughout; convert any degree data first."
     },
     {
       "label": "Quick concepts",
-      "text": "All standard derivatives assume x in radians."
+      "text": "The table is three facts and closure: two first-principles computations, the quotient rule, and the co-derivative sign pattern."
+    },
+    {
+      "label": "Key points",
+      "text": "Power rule (x^n)' = n x^(n-1) for all real n; linearity. Trig table (radians): sin->cos, cos->-sin, tan->sec^2, cot->-cosec^2, sec->sec tan, cosec->-cosec cot. Two first-principles proofs plus the quotient rule generate the whole table; co-functions carry minus signs.…"
     },
     {
       "label": "Universal facts",
-      "text": "The derivatives of sine and cosine are only these simple values in radians; in degrees a factor of $\\frac{\\pi}{180}$ is required, which is why physics and calculus always work in radians.  ·  The quotient rule is genuinely the derivative of a reciprocal: $\\frac{d}{dx}\\frac1{u}=-\\frac{u'}{u^2}$ follows by setting $v=1$, a check worth using to verify signs."
+      "text": "The power rule's star holds for all real n - sqrt x and 1/x are the same theorem as x^5."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Derive (cot x)′ = −cosec²x using the quotient rule, and explain the minus sign.** — **Quotient rule:** cot x = cos x/sin x ⟹ (cot)′ = [(cos)′·sin − cos·(sin)′]/sin²x = [(−sin x)·sin x − cos x·cos x]/sin²x = [−sin²x − cos²x]/sin²x = **−(sin²x + cos²x)/sin²x = −1/sin²x = −cosec²x**…  ·  **NEB-style (6m): Using first principles, prove that d/dx (sin x) = cos x, and state where each standard limit is used.** — **Quotient:** [sin(x+h) − sin x]/h. **Angle addition:** sin(x+h) = sin x cos h + cos x sin h ⟹ numerator = sin x(cos h − 1) + cos x·sin h ⟹ quotient = sin x·[(cos h − 1)/h] +…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The algebraic core:** constant ($\\frac{d}{dx}c=0$), sum/difference, product $\\frac{d}{dx}uv = u'v+uv'$, quotient $\\frac{d}{dx}\\frac{u}{v}=\\frac{u'v-uv'}{v^2}$, and power $\\frac{d}{dx}x^n = nx^{n-1}$.  ·  **The power rule generalises to any real exponent** for $x>0$: $\\frac{d}{dx}x^a = ax^{a-1}$, so $x^{-1/2}$ gives $-\\frac12x^{-3/2}$ and $x^{1/3}$ gives $\\frac13x^{-2/3}$. The domain restriction $x>0$ is what makes negative bases illegal in general.  ·  **The quotient rule's order is the whole difficulty:** the denominator's own derivative multiplies the second term with a MINUS sign, $\\frac{u'v - uv'}{v^2}$. A mnemonic that works is 'low d-high minus high d-low, over low squared'."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Algebraic and Trig Derivatives This canonical is the **short-form doorway** to derivatives of algebraic and trigonometric functions: the power rule, the trig table, and the first-principles engines behind them.…  ·  ## 2. Theorem Mirror - **Power rule:** (xⁿ)′ = n·xⁿ⁻¹ for all real n (via the star naⁿ⁻¹); linearity: (af + bg)′ = af′ + bg′. - **Trig table (radians):** (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x; (cot x)′ = −cosec²x; (sec x)′ = sec x tan x; (cosec x)′ = −cosec x cot x.…  ·  ## 3. Deep Conceptual — The Table Is Three Facts and Closure - The entire trig table follows from **two first-principles computations** ((sin)′ = cos, (cos)′ = −sin) plus the quotient rule: tan = sin/cos, cot = cos/sin, sec = 1/cos, cosec = 1/sin. Memorise two proofs, derive six entries.…"
     },
     {
       "label": "More ideas",
-      "text": "Reciprocal check: $\\frac{d}{dx}\\frac1u = -\\frac{u'}{u^2}$  ·  Trig: $(\\sin x)'=\\cos x$, $(\\cos x)'=-\\sin x$, $(\\tan x)'=\\sec^2x$, $(\\cot x)'=-\\csc^2x$  ·  Chain cases: $(\\sin^2x)'=2\\sin x\\cos x$, $((3x+1)^5)'=15(3x+1)^4$"
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  The memorised trig table is a radian table; degrees carry pi/180 through every entry.  ·  Differentiate y = 3x⁴ − 2x² + 7."
     },
     {
       "label": "More ideas",
-      "text": "Statement 1: $\\frac{d}{dx}x^n = nx^{n-1}$ for $x>0$.  ·  Statement 2: The quotient rule gives $\\frac{u'v - uv'}{v^2}$.  ·  Statement 3: $\\frac{d}{dx}\\cos x = -\\sin x$."
+      "text": "Differentiate y = √x + 1/x².  ·  Derive (cot x)′ = −cosec²x from the quotient rule.  ·  ## 4. Deep Conceptual — Radians Are the Derivative's Native Unit - (sin x)′(0) = 1 **only in radians**: the star sin h/h → 1 measures the sine's slope at 0 as 1 when angle equals arc. In degrees every trig derivative carries a π/180 factor — the table as memorised is a radian table.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 4: $\\frac{d}{dx}\\tan x = \\sec^2x$.  ·  Statement 5: These derivatives are valid for arguments measured in radians.  ·  **Trigonometric derivatives are ratios of the next function:** $\\frac{d}{dx}\\sin x = \\cos x$, $\\frac{d}{dx}\\cos x = -\\sin x$, $\\frac{d}{dx}\\tan x = \\sec^2x$, and the cotangent and secant forms follow the same 'derivative over itself squared' pattern. All assume $x$ in RADIANS."
-    },
-    {
-      "label": "More ideas",
-      "text": "**The sine and cosine derivatives swap and change sign,** and every other trigonometric derivative is built from them: $\\frac{d}{dx}\\sec x = \\sec x\\tan x$ and $\\frac{d}{dx}\\csc x = -\\csc x\\cot x$. Forgetting the minus on cosine is the single most common slip in this table.  ·  **Derivatives of nested forms need the chain rule:** $\\frac{d}{dx}\\sin^2x = 2\\sin x\\cos x = \\sin 2x$ and $\\frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$. Treating $\\sin^2x$ as $\\sin(x^2)$ is a misreading, since the exponent applies to the VALUE."
+      "text": "## 5. Worked Example Types - **Type A — linearity + power:** differentiate term by term; negative and fractional powers included. - **Type B — trig table direct:** single entries and simple sums. - **Type C — quotient-derived entries:** tan, cot, sec, cosec via the quotient rule.…  ·  ## 6. Common Confusions **\"(sin x)′ = cos x in degrees\":** no — radians only. **\"−sin x's minus is arbitrary\":** it encodes cosine decreasing at 0; the first-principles proof and the graph agree."
     }
   ]
 }

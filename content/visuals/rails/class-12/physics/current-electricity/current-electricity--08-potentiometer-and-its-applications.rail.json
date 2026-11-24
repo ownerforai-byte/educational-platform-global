@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Potentiometer and its applications (Current Electricity, Physics, class-12-notes) covers Potentiometer, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The potentiometer compares emfs, finds internal resistance from two balance lengths, and can be standardised with a standard cell. A smaller potential gradient makes the null more sensitive. Polarity must oppose the wire drop or there is no balance.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potentiometer and its applications — quick idea map\"><title>Potentiometer and its applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Potentiometer and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Potentiometer</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Potentiometer and</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">its applications&quot; —</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potentiometer and its applications — quick idea map\"><title>Potentiometer and its applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Potentiometer and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Internal resistance</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Standard cell</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Compare emfs.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Measure internal</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">resistance.</text></svg>",
         "caption": "Potentiometer and its applications — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Potentiometer and its applications\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Potentiometer and its applications\" — state with units, then use in one numerical.\nr = R (l1 − l2)/l2\nA small series calibration resistor can standardise k"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Potentiometer\" as one blob → ✅ split into: potentiometer, its applications.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Potentiometer and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "A thermocouple needs a small k.  ·  Do not draw current from a standard cell except at the brief test."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The applications all use the same null. Comparing two cells uses E1/E2 = l1/l2. Measuring a thermocouple's small emf uses a small potential gradient so that the balance length is long enough to read.  ·  Internal resistance uses two balance lengths. l1 is with the cell alone. l2 is with a known resistance R across the cell, so the cell now sends current and its terminal voltage is smaller. Then r = R (l1/l2 − 1)."
     },
     {
       "label": "Limitation",
@@ -56,43 +56,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Potentiometer and its applications — Current Electricity, Physics (class-12-notes).  ·  **Tested.** define it · list: potentiometer, its applications · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Potentiometer  ·  • Its applications"
+      "text": "Open-circuit length is the longer one.  ·  r = R (l1 − l2)/l2."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Potentiometer and its applications\" with one example.  ·  compare \"Potentiometer\" with the related idea from a neighbouring unit."
+      "text": "Write the internal-resistance formula.  ·  How is k standardised?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Potentiometer and its applications — topic mind map\"><title>Potentiometer and its applications — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Potentiometer and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Potentiometer</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its applications</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Potentiometer and its applications — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Internal resistance  ·  Standard cell  ·  Potential gradient  ·  Sensitivity"
+    },
+    {
+      "label": "Key points",
+      "text": "Compare emfs.  ·  Measure internal resistance.  ·  Measure a small voltage with a standard cell.  ·  Sensitivity is a small k."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Potentiometer and its applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Potentiometer and its applications\" and verify the answer is plausible."
+      "text": "What does a smaller k do to sensitivity?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A cell balances at 80.0 cm on open circuit and at 60.0 cm when a 4.0 Ω resistor is connected across it. Find the internal resistance."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Potentiometer and its applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The open-circuit balance length is → B  ·  r equals → A"
     },
     {
       "label": "Study notes",
-      "text": "**Its applications.** one-line definition + one-line exam use."
+      "text": "A standard cell of known emf can set k. If that cell balances at l_s, then k = E_s / l_s, and an unknown balanced at l has E = k l. The standard cell must not be left on load.  ·  Sensitivity improves when k is small, because a small change in emf moves the jockey a long way. That means a long wire or a small driving current, until the galvanometer can no longer see the unbalance.  ·  The wire must stay uniform and at one temperature. A jockey scraped along a hot wire both damages the wire and shifts k."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: potentiometer, its applications.  ·  one worked example for \"Potentiometer and its applications\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "l1 is the open-circuit length, the longer one.  ·  The standard cell is not the driving cell.  ·  A smaller k is more sensitive, not less, until detection fails."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "r = R (l1 − l2)/l2, not the reciprocal.  ·  Identify which length is open circuit.  ·  Polarity must oppose."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write r = R (l1 − l2)/l2 and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  The positive terminal of the test cell goes toward the high-potential end of the wire. Reversed terminals give no balance point.  ·  # Potentiometer and its applications ## 1. Introduction Physical picture of **Potentiometer and its applications** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — Potentiometer and its applications — circuit diagram with standard symbols (authored SVG) - **D2** — Potentiometer and its applications — graph or second construction (authored SVG — axes, units and labels) - **D3** — Potentiometer and its applications — detailed reference plate…"
     }
   ]
 }

@@ -26,20 +26,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Electric currents; drift velocity and its relation with current is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "**Electric current** is the rate of charge flow, I = Q/t, measured in amperes (C/s), flowing (by convention) as positive charge would — opposite to electron motion. The electrons themselves drift: random thermal motion at ~10⁶ m/s acquires a tiny average **drift velocity** v_d (~10⁻⁴ m/s) along the wire.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electric Currents, Drift Velocity and Current — quick idea map\"><title>Electric Currents, Drift Velocity and Current — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electric Currents, Drift Velocity and Current</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Electric currents;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">drift velocity and its…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Electric</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">currents; drift velocity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Electric</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Electric currents;</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electric Currents, Drift Velocity and Current — quick idea map\"><title>Electric Currents, Drift Velocity and Current — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electric Currents, Drift Velocity and Current</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Charge per second, not</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">speed** — the ampere</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">counts electrons passing</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">I = Q/t (ampere); I =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">neAv_d; drift speed ~10⁻⁴</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m/s.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- I = Q/t; 1 A = 1 C/s - I</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= neAv_d - J = I/A = nev_d</text></svg>",
         "caption": "Electric Currents, Drift Velocity and Current — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Electric currents; drift velocity and its relation with current\nKey Formula 3: Application formula for Electric currents; drift velocity and its relation with current\nKey Formula 4: Derivation result for Electric currents; drift velocity and its relation with current"
+      "text": "- I = Q/t; 1 A = 1 C/s - I = neAv_d - J = I/A = nev_d"
     },
     {
       "label": "Conditions",
-      "text": "Drift velocity is very slow ($10^{-4}$ m/s) but the signal (electric field) travels at nearly the speed of light. These are two entirely different things — electrons don't race from switch to bulb; the field establishes itself instantly.  ·  The magnitude of current $I$ is the same everywhere in a series circuit. Current is not consumed — electrons drift at the same average speed everywhere, just as water flows at the same rate through a pipe of uniform cross-section."
+      "text": "**Drift speed ≠ signal speed:** electrons crawl at ~0.1 mm/s, but the field (and the lamp) responds at near light speed.  ·  **Current is a scalar** with a direction convention — not a true vector like force."
     },
     {
       "label": "Special cases",
@@ -47,11 +47,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Electric currents; drift velocity and its relation with current  ·  Example 2: Practical demonstration of Electric currents; drift velocity and its relation with current concepts"
+      "text": "***Copper wire 1 mm² at 2 A*** — v_d ≈ 0.15 mm/s."
     },
     {
       "label": "Limitation",
-      "text": "A larger cross-sectional area means more charge carriers can flow simultaneously, so for the same current, the drift velocity decreases: $v_d = I/(nAe)$. A thick wire carries current with slower drift velocity than a thin wire of the same material.  ·  The thermal speed of electrons ($\\sim 10^5$ m/s) is about $10^9$ times the drift velocity ($\\sim 10^{-4}$ m/s). The thermal motion is random and contributes no net current; only the drift component does."
+      "text": "Verified PYQ: drift velocity definition + I = neAv_d derivation (2024, 3m)."
     },
     {
       "label": "Derivation",
@@ -59,15 +59,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Electric currents; drift velocity and its relation with current formula  ·  Trick 2: Elimination technique for Electric currents; drift velocity and its relation with current MCQs"
+      "text": "\"v_d = I/neA — quote all four quantities with units.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define and explain Electric currents; drift velocity and its relation with current with suitable example.  ·  Q2. Solve problems related to Electric currents; drift velocity and its relation with current."
+      "text": "**Numerical (3m): Find v_d for 5 A in a 2 mm² wire with n = 8×10²⁸ /m³.** — v_d = I/neA = 5/(8×10²⁸ × 1.6×10⁻¹⁹ × 2×10⁻⁶) ≈ 1.95×10⁻⁴ m/s ≈ 0.2 mm/s."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: Focus on numerical problems from Electric currents; drift velocity and its relation with current  ·  Exam Tip 2: Practice previous year questions on Electric currents; drift velocity and its relation with current",
+      "text": "State the derivation in three lines: N = nAv_dt → Q = Ne → I = Q/t.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electric Currents, Drift Velocity and Current — topic mind map\"><title>Electric Currents, Drift Velocity and Current — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Electric currents; drift velocity and its rel…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electric currents</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Drift velocity</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its relation with</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">current</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Electric Currents, Drift Velocity and Current — topic mind map of this topic's own sub-topics"
@@ -75,27 +75,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Electric currents; drift velocity and its relation with current  ·  Concept 2: Key theorem or principle in Electric currents; drift velocity and its relation with current  ·  Concept 3: Important application area of Electric currents; drift velocity and its relation with current  ·  Concept 4: Fundamental relationship in Electric currents; drift velocity and its relation with current"
+      "text": "**Charge per second, not speed** — the ampere counts electrons passing a point."
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Electric currents; drift velocity and its relation with current  ·  Key Point 3: Important condition or constraint for Electric currents; drift velocity and its relation with current  ·  Key Point 4: Common applications of Electric currents; drift velocity and its relation with current  ·  Key Point 5: Connection to other topics in Science"
+      "text": "I = Q/t (ampere); I = neAv_d; drift speed ~10⁻⁴ m/s."
     },
     {
       "label": "Universal facts",
-      "text": "Drift velocity in a typical copper wire is only about $0.1$ mm/s — a snail is millions of times faster than the electrons carrying current.  ·  Despite the slow drift of electrons, the electric field propagates at a significant fraction of the speed of light ($\\sim 2 \\times 10^8$ m/s in typical wires), which is why lights turn on instantly."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. Differentiate between various aspects of Electric currents; drift velocity and its relation with current.  ·  Q4. Derive the key formula related to Electric currents; drift velocity and its relation with current.  ·  Q5. What are the applications of Electric currents; drift velocity and its relation with current?"
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 4: Learn the derivations for Electric currents; drift velocity and its relation with current thoroughly  ·  Exam Tip 5: Review common mistakes related to Electric currents; drift velocity and its relation with current"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Electric currents; drift velocity and its relation with current  ·  Example 5: Application in daily life involving Electric currents; drift velocity and its relation with current"
+      "text": "The random thermal speed of electrons (~10⁶ m/s) is a trillion times the drift speed — the drift is a tiny bias on chaos."
     },
     {
       "label": "MCQ drill",
@@ -103,11 +91,7 @@
     },
     {
       "label": "Study notes",
-      "text": "**Current $I$:** rate of flow of charge. $I = Q/t$. Units: ampere (A).  ·  **Conventional current:** flows from positive to negative. Electron flow is opposite, from negative to positive.  ·  **Drift velocity $v_d$:** the average velocity of free electrons in a conductor under an electric field. It is very slow, about $10^{-4}\\,\\text{m/s}$."
-    },
-    {
-      "label": "More ideas",
-      "text": "Concept 5: Connection between Electric currents; drift velocity and its relation with current and other topics  ·  Key Formula 5: Important relation in Electric currents; drift velocity and its relation with current  ·  Current is a scalar, not a vector. It has magnitude but the 'direction' is just a convention for analysis. The actual charge carriers (electrons in metals) move opposite to the defined current direction."
+      "text": "## 1. Topic Introduction — The Surprisingly Slow Electron March Flip a switch and the lamp lights instantly — yet the electrons themselves drift at less than a millimetre per second. Current is not speed but *charge per second*: I = neAv_d links the micro-world of drifting electrons to the amperes of a circuit.  ·  ## 2. Fundamental Concepts (NEB 2024) ### 2.1 Electric current **Current** is the rate of flow of electric charge: $$I = \\frac{Q}{t} \\qquad \\text{SI unit: ampere (A) = C/s}$$ - Conventional current flows in the direction positive charges would move (opposite to electron motion). - Current is a **scalar** with direction convention — it adds algebraically at junctions.…  ·  ## 3. Conceptual Relationships - **To Topic 99:** the drift motion meets lattice resistance — Ohm's law's microscopic origin. - **To current density:** J = I/A = nev_d, a vector version. - **To fields:** the driving field E inside the wire relates to v_d via mobility: v_d = μE."
     },
     {
       "label": "More ideas",
@@ -115,15 +99,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 1: Electric currents; drift velocity and its relation with current is based on fundamental principles  ·  Note 2: Remember the distinction between different types in Electric currents; drift velocity and its relation with current  ·  Note 3: Electric currents; drift velocity and its relation with current has both theoretical and practical significance"
+      "text": "\"The electric current equals the product of carrier density, charge, area and drift velocity.\"  ·  Why does a lamp light immediately if electrons drift so slowly?  ·  Task 3: Create a concept map for Electric currents; drift velocity and its relation with current"
     },
     {
       "label": "More ideas",
-      "text": "Note 4: Study the derivations step by step for Electric currents; drift velocity and its relation with current  ·  Note 5: Cross-check your answers using alternative methods for Electric currents; drift velocity and its relation with current  ·  Statement 1: Definition of Electric currents; drift velocity and its relation with current"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 2: Theorem related to Electric currents; drift velocity and its relation with current  ·  Statement 3: Condition for Electric currents; drift velocity and its relation with current to be valid  ·  Statement 4: Principle governing Electric currents; drift velocity and its relation with current"
+      "text": "Task 4: Practice previous year exam questions on Electric currents; drift velocity and its relation with current  ·  Task 5: Explain Electric currents; drift velocity and its relation with current to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Electricity | DC circuits | Define drift velocity and derive the relation I = neAv_d.…"
     }
   ]
 }

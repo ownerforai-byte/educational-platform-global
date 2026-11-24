@@ -23,9 +23,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "A detailed examination of the eukaryotic cell shows how each membrane-bound organelle specialises a metabolic function. The fluid-mosaic plasma membrane controls transport; mitochondria and chloroplasts convert energy (and carry their own DNA, evidence of endosymbiosis); RER makes protein while SER makes lipid; the Golgi modifies and packages; lysosomes digest; the nucleus and nucleolus control heredity; and the…",
+      "text": "The eukaryotic cell is a city of membrane-bounded departments. The cellulose cell wall (with middle lamella, primary and secondary layers) gives shape but is fully permeable; the fluid-mosaic plasma membrane (Singer & Nicolson, 1972) is the selective gatekeeper.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Detail structure of eukaryotic cells: cell wall, cell mem… — quick idea map\"><title>Detail structure of eukaryotic cells: cell wall, cell mem… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Detail structure of eukaryotic cells: cell</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">wall, cell mem…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fluid-mosaic model</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">RER vs SER</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Detail structure of</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">eukaryotic cells: cell</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">wall</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Cell membrane</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Detail structure of eukaryotic cells: cell wall, cell mem… — quick idea map\"><title>Detail structure of eukaryotic cells: cell wall, cell mem… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Detail structure of eukaryotic cells: cell</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">wall, cell mem…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Endomembrane system</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">flow:** nucleus → RER →</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Golgi (cis→trans) →</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Compartmentalisation</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">again:** lysosome pH ~5 vs</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cytosol pH ~7.2 is why…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cell wall: cellulose</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(plants), chitin (fungi),</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">peptidoglycan (bacteria);…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Membrane: fluid-mosaic</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">model (Singer &amp;</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Nicolson 1972) —</text></svg>",
         "caption": "Detail structure of eukaryotic cells: cell wall, cell mem… — quick idea map of this topic's headline ideas"
       }
     },
@@ -36,15 +36,15 @@
     },
     {
       "label": "Conditions",
-      "text": "RER makes PROTEIN; SER makes LIPID. A cell secreting lots of protein has abundant RER + Golgi (e.g., pancreatic acinar cell).  ·  The Golgi does NOT synthesise proteins; it MODIFIES, SORTS, and PACKAGES what the RER made."
+      "text": "**Cell wall vs cell membrane:** the wall is outside, rigid, fully permeable, non-living; the membrane is living, selective, and the true gatekeeper of the cell.  ·  **Cristae vs thylakoids:** cristae are folds of the mitochondrial *inner membrane*; thylakoids are separate flattened discs *inside* the chloroplast stroma, stacked into grana."
     },
     {
       "label": "Special cases",
-      "text": "NEB written answers expect a labelled organelle diagram + a one-line function per organelle.  ·  The endosymbiotic theory (4 evidence lines: own DNA, 70S ribosomes, double membrane, binary fission) is a favourite 4-mark question."
+      "text": "The organelle-discovery table (Hooke → Brown → Golgi → Benda → Porter → Palade → de Duve → Singer & Nicolson) is a reliable 2–3 mark source in very-short-answer sections."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  Secretory protein pathway: ribosome (free) → RER → Golgi → transport vesicle → plasma membrane (exocytosis)."
+      "text": "**Pancreatic acinar cell** — RER-rich; exports digestive enzymes.  ·  **Liver cell (hepatocyte)** — SER-rich; detoxifies drugs and alcohol."
     },
     {
       "label": "Limitation",
@@ -56,15 +56,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "RER = rough = protein; SER = smooth = lipid.  ·  Mito + Chloro = own DNA + 70S ribosomes = endosymbiosis."
+      "text": "\"Double-DNA, Single-vesicle, None-ribosome\" — membrane count classes.  ·  \"Cis = in (receives), Trans = out (ships)\" for Golgi polarity."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Detail structure of eukaryotic cells: cell wall, cell mem…\" with one example.  ·  compare \"Detail structure of eukaryotic cells: cell wall\" with the related idea from a neighbouring unit."
+      "text": "**Short answer (2m):** Why is the mitochondrion called the powerhouse of the cell? **Answer.** Because it runs **aerobic respiration**: the **Krebs cycle** in the matrix oxidises food derivatives, and the **electron transport chain + ATP synthase on the cristae** convert that energy into most of the cell's **ATP** — the universal energy…  ·  **Short answer (2m):** Distinguish RER and SER (two points). **Answer.** 1. **Ribosomes:** RER bears **ribosomes** on flattened **cisternae**; SER **lacks ribosomes** and forms **tubules**. 2.…"
     },
     {
       "label": "Hints",
-      "text": "Draw a fully labelled plant cell (all organelles + wall).  ·  Differentiate RER and SER.",
+      "text": "Most-tested: mitochondria (powerhouse), chloroplast structure, lysosome suicide-bag logic, fluid-mosaic model, RER vs SER, nucleus/chromosome terms.  ·  Diagram-worthy: mitochondrion (cristae + oxysomes), chloroplast (grana + stroma), fluid-mosaic membrane, 9+2 cilium cross-section, nucleus with pores and nucleolus.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Detail structure of eukaryotic cells: cell wall, cell mem… — topic mind map\"><title>Detail structure of eukaryotic cells: cell wall, cell mem… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Detail structure of eukaryotic cells</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Detail structure of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">eukaryotic cells: cell</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Cell membrane</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Mitochondria</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Plastids</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Detail structure of eukaryotic cells: cell wall, cell mem… — topic mind map of this topic's own sub-topics"
@@ -72,55 +72,51 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Fluid-mosaic model  ·  RER vs SER  ·  Protein-secretion pathway  ·  Endosymbiotic theory"
+      "text": "**Endomembrane system flow:** nucleus → RER → Golgi (cis→trans) → vesicles → membrane/lysosome/secretion — the cell's production line.  ·  **Compartmentalisation again:** lysosome pH ~5 vs cytosol pH ~7.2 is why suicide bags stay harmless until they rupture.  ·  **Semi-autonomous organelles:** mitochondria and chloroplasts carry circular DNA + 70S ribosomes and divide by fission — the endosymbiotic signature."
     },
     {
       "label": "Key points",
-      "text": "• Detail structure of eukaryotic cells: cell wall  ·  • Cell membrane  ·  • Mitochondria  ·  • Plastids"
+      "text": "Cell wall: cellulose (plants), chitin (fungi), peptidoglycan (bacteria); middle lamella → primary → secondary; fully permeable.  ·  Membrane: fluid-mosaic model (Singer & Nicolson 1972) — phospholipid bilayer + integral/peripheral proteins + cholesterol + glycocalyx; selective permeability, transport, signalling.  ·  Mitochondria: double membrane, cristae with oxysomes, matrix with Krebs enzymes + circular DNA + 70S ribosomes; aerobic respiration → ATP (\"powerhouse\").  ·  Plastids: chloroplast (photosynthesis), chromoplast (colour), leucoplast (storage: amylo/elai/aleuroplast); grana = thylakoid stacks in stroma."
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Detail structure of eukaryotic cells: cell wall, cell mem…\": define → method → result. Structure earns the marks on 6–10 mark questions.  ·  The liver cell contains over a million ribosomes."
+      "text": "Membrane thickness ≈ 7–8 nm; mitochondrion ≈ 0.5–1 µm; ribosome ≈ 15–20 nm.  ·  About 50 acid hydrolases are packed in lysosomes."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Detail structure of eukaryotic cells: cell wall, cell mem…\" and verify the answer is plausible.  ·  Why are mitochondria and chloroplasts called semi-autonomous organelles?  ·  Differentiate RER and SER (4 points)."
-    },
-    {
-      "label": "More hints",
-      "text": "Explain the endosymbiotic theory with 4 evidence lines.  ·  Trace the protein-secretion pathway."
+      "text": "**Short answer (2m):** What are cell inclusions? Give two examples. **Answer.** **Non-living, non-membrane-bound cytoplasmic deposits** of stored food or waste material — not organelles, just stored material.…  ·  **Short answer (2m):** State the fluid-mosaic model in one sentence and name its proposer. **Answer.** The membrane is a **fluid phospholipid bilayer** carrying a **mosaic of embedded integral and peripheral proteins** (plus cholesterol and surface glycocalyx) that can move laterally — proposed by…  ·  **Long answer (5m):** Describe the structure of a chloroplast with a labelled diagram. **Answer.** **Structure:** 1. **Double envelope** — outer permeable membrane + inner selective membrane, with a narrow intermembrane space. 2.…"
     },
     {
       "label": "Extra solved",
-      "text": "Mitochondrial respiration: glucose → pyruvate (cytoplasm) → Krebs (matrix) → ETS (cristae) → ATP.  ·  Chloroplast photosynthesis: light reactions in grana → ATP + NADPH; Calvin cycle in stroma → glucose."
+      "text": "**Muscle cell** — sarcoplasmic reticulum stores Ca²⁺ for contraction; mitochondria dense between myofibrils.  ·  **Potato tuber amyloplast** — leucoplast storing starch."
     },
     {
       "label": "MCQ drill",
-      "text": "Which organelle is the site of the Krebs cycle? → B  ·  The endosymbiotic theory is supported by the fact that mitochondria and chloroplasts have: → B"
+      "text": "Which organelle is bounded by a double membrane and contains cristae? → B  ·  The fluid-mosaic model was proposed by: → B"
     },
     {
       "label": "Study notes",
-      "text": "DETAILED ORGANELLE ANALYSIS (plant + animal cell).  ·  Plasma membrane: phospholipid bilayer (heads out, tails in) + integral proteins (channels, pumps, receptors) + peripheral proteins + cholesterol + glycocalyx (cell recognition). Fluid-mosaic model (Singer & Nicolson, 1972).  ·  Mitochondrion: double membrane; outer smooth, inner folded into cristae; matrix with Krebs enzymes; own DNA + 70S ribosomes (endosymbiosis); aerobic respiration: glycolysis (cytoplasm) → Krebs (matrix) → ETS (cristae) → ~34 ATP."
+      "text": "## 1. Topic Introduction — Inside the Eukaryotic Cell Topic 2 established *that* eukaryotic cells have membrane-bound organelles; this topic opens every compartment and explains *how each one is built and what it does*.…  ·  ## 2. Cell Wall — The Outer Armor of Plant Cells **Definition:** the rigid, non-living outer layer **outside the plasma membrane**, found in plants, fungi, bacteria and algae (absent in animals). | Feature | Detail | |---|---| | Chemistry | Plants: **cellulose** (microfibrils in a matrix of hemicellulose and pectin). Fungi: chitin.…  ·  ## 3. Cell Membrane (Plasma Membrane) — The Selective Barrier ### 3.1 Structure — the fluid-mosaic model (Singer and Nicolson, 1972) - A **phospholipid bilayer** ~7–8 nm thick: hydrophilic heads face the aqueous inside and outside; hydrophobic tails form the interior.…"
     },
     {
       "label": "More ideas",
-      "text": "Mitochondrial respiration  ·  Chloroplast photosynthesis  ·  Golgi functions"
+      "text": "9+2 axoneme (cilia/flagella); 9+0 centriole  ·  RER: ribosome-studded cisternae — protein synthesis for export; SER: tubules — lipids, steroids, detox, Ca²⁺ (sarcoplasmic reticulum).  ·  Golgi (Golgi 1898): cis face receives from ER, modifies (glycosylation), trans face ships — vesicles, lysosomes, cell plate."
     },
     {
       "label": "More ideas",
-      "text": "Lysosome autophagy  ·  Cytoskeleton  ·  Plant vs animal cell"
+      "text": "Lysosomes (de Duve): acid hydrolases at pH ~5; digestion, autophagy, autolysis — \"suicide bags\".  ·  Ribosomes (Palade 1953): rRNA + protein, no membrane; 80S = 60S+40S (eukaryote), 70S = 50S+30S (prokaryote/organelles); polysomes; translation.  ·  Nucleus (Brown 1831): double envelope + pores, nucleolus (rRNA factory), chromatin (eu- vs heterochromatin) → chromosomes with centromere; metacentric/submetacentric/acrocentric/telocentric."
     },
     {
       "label": "More ideas",
-      "text": "9+2 axoneme (cilia/flagella); 9+0 centriole  ·  • Endoplasmic reticulum  ·  • Golgi bodies"
+      "text": "Cilia/flagella: 9+2 microtubule axoneme from basal bodies; cilia short/numerous/oar-like, flagella long/few/undulating.  ·  Inclusions: starch, glycogen, fat droplets, protein crystals, pigments, crystals — non-living stores; plant central vacuole maintains turgor.  ·  **Lysosome vs vacuole:** lysosomes are single-membraned enzyme sacs for digestion; the plant central vacuole is mainly storage/turgor, though it also contains hydrolases."
     },
     {
       "label": "More ideas",
-      "text": "Each organelle has a distinct, examinable function (mitochondrion→ATP, chloroplast→photosynthesis, RER→protein, SER→lipid, Golgi→packaging, lysosome→digestion, nucleus→inheritance).  ·  RER = rough = ribosomes = protein; SER = smooth = no ribosomes = lipid.  ·  Mitochondria + chloroplast: own DNA, 70S ribosomes, double membrane, binary fission (endosymbiosis)."
+      "text": "**RER vs SER:** ribosomes on the surface define RER and protein synthesis; smooth tubules without ribosomes make lipids and detoxify.  ·  **Cilia vs flagella:** same 9+2 axoneme, but cilia are short, numerous and beat like oars; flagella are long, few and undulate.  ·  **Nucleolus vs nucleus:** the nucleolus is a membraneless sub-region of the nucleus that makes rRNA/ribosomes — not a separate organelle."
     },
     {
       "label": "More ideas",
-      "text": "Protein-secretion pathway: ribosome → RER → Golgi → vesicle → membrane.  ·  Plant cell: wall + chloroplast + large central vacuole; animal cell: centrioles + lysosomes + small vacuoles.  ·  Cytoskeleton: microfilaments, intermediate filaments, microtubules."
+      "text": "**Inclusions vs organelles:** inclusions (starch, fat, crystals) are non-living, non-membrane-bound deposits; organelles are living, organised functional structures.  ·  **Tomato chromoplast** — carotenoid pigments colour the ripe fruit.  ·  **Tracheal ciliated epithelium** — cilia sweep mucus; destroyed by smoking."
     }
   ]
 }

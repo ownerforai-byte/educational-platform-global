@@ -23,20 +23,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Total Internal Reflection is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "When light in a denser medium meets a rarer boundary, the refracted ray bends away; at the **critical angle** C it grazes the surface ($\\sin C = 1/n$), and beyond C the light is **totally internally reflected** — returned completely into the denser medium. Two conditions: travel **denser → rarer** and **i > C** (NEB 2022, 2024, 2m).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Total Internal Reflection — quick idea map\"><title>Total Internal Reflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Total Internal Reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Total Internal</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Reflection</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Total</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Internal Reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Total Internal…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Total Internal</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Total Internal Reflection — quick idea map\"><title>Total Internal Reflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Total Internal Reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The critical angle is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">where refraction dies** —</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sin C = 1/n comes</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Conditions: denser→rarer;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">i &gt; C. sin C = 1/n.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">TIR is lossless — better</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">than any silvered mirror.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- sin C = 1/n = n₂/n₁ -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Glass-air: C ≈ 41.8°;</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">diamond: C ≈ 24.4°</text></svg>",
         "caption": "Total Internal Reflection — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Total Internal Reflection\nKey Formula 3: Application formula for Total Internal Reflection\nKey Formula 4: Derivation result for Total Internal Reflection"
+      "text": "- sin C = 1/n = n₂/n₁ - Glass-air: C ≈ 41.8°; diamond: C ≈ 24.4°"
     },
     {
       "label": "Conditions",
-      "text": "Carefully distinguish between similar-looking concepts in total internal reflection.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "**Denser → rarer only:** light going from air into glass can never totally internally reflect.  ·  **sin C = 1/n** — the critical angle shrinks as the refractive index grows."
     },
     {
       "label": "Special cases",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Total Internal Reflection  ·  Practical demonstration of Total Internal Reflection concepts"
+      "text": "***Diamond*** — C = 24.4° traps light, creating brilliance."
     },
     {
       "label": "Limitation",
-      "text": "Practice with multiple examples to solidify your understanding.  ·  ❌ TIR can occur when light goes from rarer to denser medium. ✅ TIR ONLY occurs when light travels from DENSER to RARER medium ($n_1 > n_2$). From rarer to denser, the ray always bends toward the normal and always enters the second medium."
+      "text": "Verified PYQs: TIR + conditions 2022 2m and 2024 2m; critical angle 1.5 2024 2m; critical angle 42° → n 2021 2m; reflecting prisms 2024 3m."
     },
     {
       "label": "Derivation",
@@ -56,15 +56,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Total Internal Reflection formula  ·  Trick 2: Elimination technique for Total Internal Reflection MCQs"
+      "text": "\"n = 1/sin C and C = sin⁻¹(1/n) — both directions asked.\""
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Total Internal Reflection.  ·  Q3. Differentiate between various aspects of Total Internal Reflection."
+      "text": "**Numerical (2m): The critical angle of a medium is 30°. Find its refractive index.** — n = 1/sin 30° = 1/0.5 = 2.0."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Total Internal Reflection  ·  Practice previous year questions on Total Internal Reflection",
+      "text": "The 2024 paper asked TIR twice (2m + 3m prisms) — a heavily weighted topic.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Total Internal Reflection — topic mind map\"><title>Total Internal Reflection — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Total internal reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Total internal</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">reflection</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Total Internal Reflection — topic mind map of this topic's own sub-topics"
@@ -72,27 +72,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Total Internal Reflection  ·  Concept 2: Key theorem or principle in Total Internal Reflection  ·  Concept 3: Important application area of Total Internal Reflection  ·  Concept 4: Fundamental relationship in Total Internal Reflection"
+      "text": "**The critical angle is where refraction dies** — sin C = 1/n comes straight from Snell's law with r = 90°."
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Total Internal Reflection  ·  Key Point 3: Important condition or constraint for Total Internal Reflection  ·  Key Point 4: Common applications of Total Internal Reflection  ·  Key Point 5: Connection to other topics in Science"
+      "text": "Conditions: denser→rarer; i > C. sin C = 1/n.  ·  TIR is lossless — better than any silvered mirror."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding total internal reflection builds the foundation for more advanced topics in mathematics."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Total Internal Reflection.  ·  Q5. What are the applications of Total Internal Reflection?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Total Internal Reflection thoroughly  ·  Review common mistakes related to Total Internal Reflection"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Total Internal Reflection  ·  Application in daily life involving Total Internal Reflection"
+      "text": "Fibre-optic cables carry internet traffic by total internal reflection across thousands of kilometres of glass."
     },
     {
       "label": "MCQ drill",
@@ -100,27 +88,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Total Internal Reflection:** This topic covers the fundamental concepts of total internal reflection in the physics curriculum.  ·  Understanding total internal reflection is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to total internal reflection should be memorized and practiced regularly."
+      "text": "## 1. Topic Introduction — Light Trapped Inside Past a certain angle, light hitting the inside of a glass–air boundary doesn't escape at all — it reflects perfectly, better than any mirror. Total internal reflection powers optical fibres, the glitter of diamonds and the prisms in binoculars.  ·  ## 2. Fundamental Concepts (NEB 2021, 2022, 2024) ### 2.1 From refraction to total reflection As the angle of incidence i (in the denser medium) grows, the angle of refraction r grows faster. At the **critical angle** C, the refracted ray grazes along the surface (r = 90°). Beyond C there is no refracted ray — the light is completely returned: **total internal reflection**.…  ·  ## 3. Conceptual Relationships - **To Topic 70/71:** the critical angle is Snell's law with r = 90°. - **To Topic 72:** a slab beyond C becomes a mirror — the basis of light guides. - **To modern physics:** fibre-optic TIR carries the internet across oceans."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Total Internal Reflection and other topics  ·  Key Formula 5: Important relation in Total Internal Reflection  ·  ❌ The critical angle exists for any pair of media. ✅ The critical angle only exists when $n_1 > n_2$. If light goes from air to glass ($n_1 < n_2$), there is no critical angle — refraction always occurs."
+      "text": "Note 3: Practice numerical problems regularly for mastery of Total Internal Reflection  ·  Note 4: Remember the units and dimensions involved in Total Internal Reflection  ·  Note 5: Total Internal Reflection frequently appears in examination questions"
     },
     {
       "label": "More ideas",
-      "text": "❌ At the critical angle, all light is reflected. ✅ At the critical angle ($i = \\theta_c$), the refracted ray travels ALONG the boundary ($r = 90°$). TIR begins only when $i > \\theta_c$, not at $i = \\theta_c$.  ·  ❌ TIR produces a dimmer reflection than a mirror. ✅ TIR reflects 100% of the light — it is BRIGHTER than any metallic mirror, which typically absorbs 5–15% of incident light.  ·  ❌ Optical fibres work because light is \"trapped\" by the cladding. ✅ Optical fibres work because of TIR at the core-cladding interface. The cladding has a LOWER refractive index than the core, creating the condition for TIR."
+      "text": "\"When light travels from a denser to a rarer medium at an angle greater than the critical angle, it is totally reflected back into the denser medium.\"  ·  Why do optical fibres keep light inside even when bent?  ·  Task 3: Create a concept map for Total Internal Reflection"
     },
     {
       "label": "More ideas",
-      "text": "❌ The critical angle for diamond is about 42°. ✅ Diamond's critical angle is about 24.4° (much smaller than glass's 42°). This small critical angle is what makes diamonds so brilliant — light undergoes multiple TIR events before exiting.  ·  ❌ TIR can occur at any interface, including solid-solid interfaces. ✅ TIR requires a boundary between two media with DIFFERENT refractive indices. It can occur at any such boundary (glass-air, water-glass, fibre core-cladding) as long as light travels from the higher-index to the lower-index medium.  ·  Note 3: Practice numerical problems regularly for mastery of Total Internal Reflection"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: Remember the units and dimensions involved in Total Internal Reflection  ·  Note 5: Total Internal Reflection frequently appears in examination questions  ·  Note 2: Remember the distinction between different types in Total Internal Reflection"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 3: Total Internal Reflection has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Total Internal Reflection  ·  Note 5: Cross-check your answers using alternative methods for Total Internal Reflection"
+      "text": "Task 4: Practice previous year exam questions on Total Internal Reflection  ·  Task 5: Explain Total Internal Reflection to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2077/2021 | Optics | Refraction | The critical angle of glass is 42°. Find the refractive index of glass.…"
     }
   ]
 }

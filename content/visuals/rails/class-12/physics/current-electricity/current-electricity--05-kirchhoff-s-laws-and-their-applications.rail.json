@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Kirchhoff's laws and their applications (Current Electricity, Physics, class-12-notes) covers Kirchhoff's laws, their applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Label branch currents so each junction is already balanced, then write one loop equation per independent loop. The shared resistor carries the net current. A negative answer reverses an arrow, and a final junction check catches sign mistakes.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kirchhoff's laws and their applications — quick idea map\"><title>Kirchhoff's laws and their applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Kirchhoff's laws and their applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Kirchhoff's laws</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Their applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Kirchhoff's laws and</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">their applications&quot; —</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kirchhoff's laws and their applications — quick idea map\"><title>Kirchhoff's laws and their applications — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Kirchhoff's laws and their applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Branch labelling</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Shared resistor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Label every branch</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">current.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Use the shared resistor</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">once, with the net</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">current.</text></svg>",
         "caption": "Kirchhoff's laws and their applications — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Kirchhoff's laws and their applications\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Kirchhoff's laws and their applications\" — state with units, then use in one numerical.\nJunction: I1 + I2 = I3\nLoop: Σ E = Σ IR"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Kirchhoff's laws\" as one blob → ✅ split into: kirchhoff's laws, their applications.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Kirchhoff's laws and their applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Two cells in one loop oppose or add according to their arrows.  ·  A zero-current branch can be removed when you only want the remaining currents."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "An application starts with a circuit diagram and one arrow on every branch. At each junction write one current as the sum of the others so that the junction law is already built in.  ·  For two loops, walk each loop and write Σ E = Σ IR, or the equivalent sum of rises and drops equal to zero. The shared resistor carries the difference or the sum of the loop currents, matching the arrows."
     },
     {
       "label": "Limitation",
@@ -56,43 +56,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Kirchhoff's laws and their applications — Current Electricity, Physics (class-12-notes).  ·  **Tested.** define it · list: kirchhoff's laws, their applications · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Kirchhoff's laws  ·  • Their applications"
+      "text": "Build the junction law into the labels.  ·  Check in = out at the end."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Kirchhoff's laws and their applications\" with one example.  ·  compare \"Kirchhoff's laws\" with the related idea from a neighbouring unit."
+      "text": "How do you reduce the number of unknowns?  ·  What is the current in a balanced galvanometer?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kirchhoff's laws and their applications — topic mind map\"><title>Kirchhoff's laws and their applications — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Kirchhoff's laws and their applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Kirchhoff's laws</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Their applications</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Kirchhoff's laws and their applications — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Branch labelling  ·  Shared resistor  ·  Balanced bridge  ·  Power check"
+    },
+    {
+      "label": "Key points",
+      "text": "Label every branch current.  ·  Use the shared resistor once, with the net current.  ·  Solve the linear equations.  ·  Check the junction after the numbers."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Kirchhoff's laws and their applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Kirchhoff's laws and their applications\" and verify the answer is plausible."
+      "text": "What is the power check?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Two loops share a 2.0 Ω resistor. Loop currents of 1.0 A and 0.50 A are drawn in opposite directions through it. Find the current in the shared resistor and the voltage across it."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Kirchhoff's laws and their applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "A balanced galvanometer carries → B  ·  A shared resistor carries → B"
     },
     {
       "label": "Study notes",
-      "text": "**Their applications.** one-line definition + one-line exam use."
+      "text": "The two equations are linear. Eliminate one current by substitution. A negative result flips that arrow and is then used as a positive magnitude in later arithmetic.  ·  A Wheatstone bridge is an application. If the bridge is balanced, the galvanometer branch has zero current, and the loop equations collapse to the ratio condition P/Q = R/S.  ·  A potentiometer is another application: the working battery drives a long wire, and the balance length is the point where the loop containing the test cell has zero current."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: kirchhoff's laws, their applications.  ·  one worked example for \"Kirchhoff's laws and their applications\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Do not invent a new current for a branch you already expressed as a sum.  ·  The shared resistor does not carry each loop current separately at the same time.  ·  Balance means zero galvanometer current, not zero battery current."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "A negative current is kept, with its direction reversed.  ·  Write the shared current explicitly.  ·  State the direction with the answer."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Junction: I1 + I2 = I3 and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  After the numbers, check that every junction still satisfies in equals out, and that the power from the cells equals the sum of I^2 R. A failed check means a sign error.  ·  # Kirchhoff's laws and their applications ## 1. Introduction Physical picture of **Kirchhoff's laws and their applications** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — Kirchhoff's laws and their applications — circuit diagram with standard symbols (authored SVG) - **D2** — Kirchhoff's laws and their applications — graph or second construction (authored SVG — axes, units and labels) - **D3** — Kirchhoff's laws and their applications — detailed…"
     }
   ]
 }

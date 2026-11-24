@@ -31,60 +31,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Sodium: extraction from Down's process, properties (actio… (Chemistry of Metals, Chemistry, class-11-notes) covers Sodium, extraction from Down's process, properties. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Sodium cannot be reduced chemically, so the **Downs cell** electrolyses **molten NaCl + CaCl₂ (42:58)** — the eutectic melts at ~600 °C, 200 degrees below sodium's boiling point — between a graphite anode (2Cl⁻ → Cl₂ + 2e⁻) and steel cathodes (Na⁺ + e⁻ → Na), with a **steel-gauze diaphragm** keeping the products apart; the floating sodium is siphoned from a bell and Ca²⁺ stays in the melt.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sodium: extraction from Down's process, properties (actio… — quick idea map\"><title>Sodium: extraction from Down's process, properties (actio… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sodium: extraction from Down's process,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">properties (actio…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Sodium</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Extraction from Down's</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">process</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sodium: extraction from Down's process, properties (actio… — quick idea map\"><title>Sodium: extraction from Down's process, properties (actio… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sodium: extraction from Down's process,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">properties (actio…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The Downs cell is a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature problem solved</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">with a composition trick:</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Downs cell: fused NaCl +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CaCl2 42:58, mp 801 -&gt;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">~600 C (CaCl2 lowers mp +…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Cathode: Na⁺ + e⁻ → Na;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Anode: 2Cl⁻ → Cl₂ + 2e⁻ -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">4Na + O₂ → 2Na₂O; 2Na +…</text></svg>",
         "caption": "Sodium: extraction from Down's process, properties (actio… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Sodium\n• Extraction from Down's process"
+      "text": "- Cathode: Na⁺ + e⁻ → Na; Anode: 2Cl⁻ → Cl₂ + 2e⁻ - 4Na + O₂ → 2Na₂O; 2Na + O₂ → Na₂O₂ - 2Na + 2H₂O → 2NaOH + H₂↑ - 2Na + H₂ → 2NaH - Na + NH₃(l) → NaNH₂ + ½H₂ (Fe catalyst) - Na₂O₂ + CO₂ → Na₂CO₃ + ½O₂"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Sodium\" as one blob → ✅ split into: sodium, extraction from down's process, properties.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Sodium: extraction from Down's process, properties (actio…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: sodium, extraction from down's process, properties, action with oxygen (within Chemistry of Metals).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"In the Downs cell, calcium chloride is added to lower the melting point of sodium chloride and a steel gauze diaphragm separates the sodium from the chlorine.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Sodium skating on water*** — a pea-sized lump skates on a trough of water, melting from reaction heat and pushed by hydrogen jets, trailing yellow flame: 2Na + 2H₂O → 2NaOH + H₂ performed live in first-year chemistry."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Sodium: extraction from Down's process, properties (actio… — Chemistry of Metals, Chemistry (class-11-notes).  ·  **Tested.** define it · list: sodium, extraction from down's process, properties, action with oxygen · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Sodium, the Industry Metal Sodium is the cheapest strong reducer and the cheapest strong base source, and it cannot be won from its compounds by chemistry — only by electricity. The **Downs cell** (verified PYQs NEB 2023 and NEB 2024) is the classic answer, and its product feeds the reactions with oxygen, water, acids, non-metals and ammonia that fill this topic.  ·  ## 2. Fundamental Concepts ### 2.1 The Downs cell - Electrolyte: **molten NaCl + CaCl₂ (≈ 42 : 58)** — the CaCl₂ lowers the melting point from 801 °C to about **600 °C** and raises conductivity. - **Cathode (steel):** Na⁺ + e⁻ → Na; molten sodium floats (ρ 0.97 < melt) and is collected in a bell and siphoned.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Properties  ·  • Action with oxygen"
+      "text": "Downs numbers: 42:58, 600 C, diaphragm, Na floats. O2 ladder: limited Na2O, excess Na2O2. NH3: liquid + Fe -> NaNH2; gas cold -> nothing. Uses: lamp 589 nm, reactor coolant."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Sodium: extraction from Down's process, properties (actio…\" with one example.  ·  compare \"Sodium\" with the related idea from a neighbouring unit."
+      "text": "**Verified PYQ NEB 2024 (3m): Explain Down's process for the extraction of sodium.** — Sodium is obtained by the **electrolysis of fused sodium chloride mixed with calcium chloride** in the Downs cell.…  ·  **Verified PYQ NEB 2023 (3m): Compare the extraction of sodium by the Downs cell with the extraction of magnesium by the electrolysis of fused magnesium chloride, giving the electrode reactions.** — **Similarities:** both electrolyse a **molten chloride** (water would hydrogen-evolve first), both use **graphite anodes** where 2Cl⁻ → Cl₂…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "In the Downs answer the three marks are: why CaCl2 (mp), the diaphragm's purpose, and where each product collects — a diagram with labels earns them fastest.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sodium: extraction from Down's process, properties (actio… — topic mind map\"><title>Sodium: extraction from Down's process, properties (actio… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Sodium</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Sodium</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Extraction from Down's</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">process</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Properties</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Action with oxygen</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Sodium: extraction from Down's process, properties (actio… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The Downs cell is a temperature problem solved with a composition trick: the eutectic drops the melt 200 degrees below sodium's boiling point, buying the 200-degree safety margin the pure salt never had."
+    },
+    {
       "label": "Key points",
-      "text": "• Water  ·  • Acids"
+      "text": "Downs cell: fused NaCl + CaCl2 42:58, mp 801 -> ~600 C (CaCl2 lowers mp + conductivity); graphite anode (2Cl- -> Cl2 + 2e), steel cathode (Na+ + e -> Na), steel gauze diaphragm keeps Na/Cl2 apart; Na floats, collected in bell; Ca2+ not discharged at 600 C. Overall 2NaCl(l) -> 2Na + Cl2.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Liquid sodium's thermal conductivity is ~80 W/m·K at 400 °C — better than many steels — which is why fast-breeder reactors pump molten sodium as coolant through the core."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Sodium: extraction from Down's process, properties (actio…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): How does sodium react with (i) water, (ii) liquid ammonia, (iii) hydrogen? Write the equations.** — **(i) Water — violently:** sodium melts from the reaction heat and skates on the surface, igniting the hydrogen: 2Na + 2H₂O → 2NaOH + H₂↑; the product is the strong base sodium…"
     },
     {
       "label": "MCQ drill",
@@ -92,102 +100,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Extraction from Down's process.** one-line definition + one-line exam use.  ·  **Properties.** one-line definition + one-line exam use.  ·  **Action with oxygen.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Downs cell** | Electrolytic cell for molten NaCl–CaCl₂ producing Na and Cl₂ | 2NaCl → 2Na + Cl₂ | | **Diaphragm** | Steel gauze separating anode and cathode products | keeps Na and Cl₂ apart | | **Peroxide** | Compound with O₂²⁻ | Na₂O₂ | | **Sodamide** | Sodium amide NaNH₂ | from Na + NH₃ |…  ·  ## 4. Detailed Explanation ### 4.1 Why the Downs cell adds CaCl₂ - Pure NaCl melts at 801 °C — sodium boils at 883 °C, so a pure-salt cell runs within 80 degrees of the metal's boiling point: the sodium vapourises, contaminates the chlorine, and the cell corrodes. The 42:58 NaCl:CaCl₂ eutectic melts at ~600 °C, comfortably below both, and the mixture conducts better.…  ·  ## 5. Comparison Tables **Downs cell vs fused MgCl₂ electrolysis (NEB 2023 comparison)** | Basis | Downs cell (Na) | Mg cell | |---|---|---| | Electrolyte | NaCl + CaCl₂ (600 °C) | fused MgCl₂ (+ NaCl, CaCl₂) ~700 °C | | Cathode product | Na, floats on melt | Mg, floats | | Anode | graphite, Cl₂ | graphite, Cl₂ | | Separator | steel gauze diaphragm | steel diaphragm | | Cell…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: sodium, extraction from down's process, properties, action with oxygen.  ·  one worked example for \"Sodium: extraction from Down's process, properties (actio…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQs answered above: NEB 2023 and NEB 2024 Down's process, NEB 2023 comparison with magnesium electrolysis. Remaining reaction items are NEB-style practice.  ·  Draw the Downs cell and label the electrolyte composition, electrode materials, diaphragm and product collection.  ·  Write equations for sodium with limited and excess oxygen, water, hydrochloric acid and hydrogen."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Water.** one-line definition + one-line exam use.  ·  **Acids.** one-line definition + one-line exam use."
+      "text": "Explain what happens when sodium is dissolved in liquid ammonia, with and without catalyst.  ·  ## 6. Common Confusions **The diaphragm is essential, not decorative:** without it the cell would short-circuit chemically — sodium would reduce chlorine back to NaCl, and heat + mixing could cause a violent local reaction.  ·  **CaCl₂ is not reduced:** its job is melting point and conductivity; Ca²⁺ remains in the melt — quoting \"Ca is also deposited\" is a classic wrong answer."
     },
     {
       "label": "More ideas",
-      "text": "**Nonmetals.** one-line definition + one-line exam use.  ·  **Ammonia.** one-line definition + one-line exam use.  ·  **Uses.** one-line definition + one-line exam use."
+      "text": "**Na₂O₂ is the excess-oxygen product:** limited air gives Na₂O; excess gives Na₂O₂ — the exam expects both equations.  ·  ## 7. Exam Application **Verified PYQ NEB 2024 / NEB 2023 (3m): Explain Down's process for the extraction of sodium.** — Sodium is extracted by the electrolysis of **fused sodium chloride** in the **Downs cell**.…  ·  **Verified PYQ NEB 2023 (3m): Compare the extraction of sodium by the Downs cell with the extraction of magnesium by the electrolysis of fused magnesium chloride. Give the electrode reactions.** — Both are molten-salt electrolyses with graphite anodes liberating chlorine and steel cathodes, and both need CaCl₂/NaCl…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): What happens when sodium is heated (i) in limited air, (ii) in excess air/oxygen?** — **(i) Limited air:** sodium forms the normal oxide, 4Na + O₂ → 2Na₂O (white solid).…"
     }
-  ],
-  "keyPoints": [
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is a core concept in chemistry of metals.",
-    "Understanding 06 sodium extraction from down s process pr 1vtpr2 requires knowing its definition, conditions, and limitations.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 06 sodium extraction from down s process pr 1vtpr2 must be memorized precisely.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 connects to neighbouring topics within chemistry of metals and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 06 sodium extraction from down s process pr 1vtpr2.",
-    "Practical examples solidify understanding of 06 Sodium Extraction From Down S Process Pr 1vtpr2 and its real-world relevance.",
-    "Misconceptions about 06 sodium extraction from down s process pr 1vtpr2 often arise from confusing it with similar concepts.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 follows systematic rules that can be applied step-by-step.",
-    "Review of 06 sodium extraction from down s process pr 1vtpr2 should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is defined by its specific characteristics within chemistry of metals.",
-    "The conditions under which 06 sodium extraction from down s process pr 1vtpr2 applies are as important as the concept itself.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 06 sodium extraction from down s process pr 1vtpr2 through application-based and comparison questions.",
-    "A clear grasp of 06 Sodium Extraction From Down S Process Pr 1vtpr2 builds the foundation for advanced topics in chemistry of metals."
-  ],
-  "importantNotes": [
-    "When studying 06 sodium extraction from down s process pr 1vtpr2, always note the exceptions alongside the general rule.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 should be reviewed with at least one worked example per sub-point.",
-    "Link 06 sodium extraction from down s process pr 1vtpr2 back to prior knowledge in chemistry of metals for deeper retention.",
-    "Practice past NEB board questions on 06 Sodium Extraction From Down S Process Pr 1vtpr2 to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 06 Sodium Extraction From Down S Process Pr 1vtpr2: apply the standard definition to a simple case.",
-    "Intermediate example: combine 06 sodium extraction from down s process pr 1vtpr2 with a related concept from chemistry of metals.",
-    "Exam-style problem: solve a question involving 06 Sodium Extraction From Down S Process Pr 1vtpr2 under time pressure.",
-    "Real-world connection: show how 06 Sodium Extraction From Down S Process Pr 1vtpr2 appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 06 Sodium Extraction From Down S Process Pr 1vtpr2 and state two conditions required for it to occur.",
-    "Differentiate 06 Sodium Extraction From Down S Process Pr 1vtpr2 from the most commonly confused concept in chemistry of metals.",
-    "Solve a numerical or structural problem involving 06 Sodium Extraction From Down S Process Pr 1vtpr2.",
-    "List three applications of 06 Sodium Extraction From Down S Process Pr 1vtpr2 in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 06 Sodium Extraction From Down S Process Pr 1vtpr2 without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 06 Sodium Extraction From Down S Process Pr 1vtpr2.",
-    "Create three flashcards covering definition, formula, and limitation of 06 Sodium Extraction From Down S Process Pr 1vtpr2."
-  ],
-  "universalFacts": [
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is part of the NEB Class 11 chemistry of metals syllabus.",
-    "Every concept in chemistry of metals builds upon definitions established earlier in the chapter.",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is assessed through both short-answer and long-answer board questions.",
-    "Understanding 06 Sodium Extraction From Down S Process Pr 1vtpr2 improves performance across the entire chemistry of metals unit.",
-    "Revision of 06 Sodium Extraction From Down S Process Pr 1vtpr2 should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 06 Sodium Extraction From Down S Process Pr 1vtpr2 with closely related concepts in chemistry of metals — focus on distinguishing features.",
-    "The scope of 06 Sodium Extraction From Down S Process Pr 1vtpr2 is sometimes overstated; remember its precise boundaries.",
-    "Applying 06 Sodium Extraction From Down S Process Pr 1vtpr2 outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 06 Sodium Extraction From Down S Process Pr 1vtpr2 and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 06 Sodium Extraction From Down S Process Pr 1vtpr2? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is primarily studied under which branch of chemistry of metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 06 Sodium Extraction From Down S Process Pr 1vtpr2 is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of metals — Answer: B",
-    "Which example correctly illustrates 06 Sodium Extraction From Down S Process Pr 1vtpr2? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 06 Sodium Extraction From Down S Process Pr 1vtpr2.",
-    "Step-by-step animated derivation of the key relationship in 06 Sodium Extraction From Down S Process Pr 1vtpr2.",
-    "Interactive toggle between correct and incorrect representations of 06 Sodium Extraction From Down S Process Pr 1vtpr2."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 06 Sodium Extraction From Down S Process Pr 1vtpr2.",
-    "Side-by-side comparison animation of 06 Sodium Extraction From Down S Process Pr 1vtpr2 vs commonly confused concept.",
-    "Timelapse build-up of 06 Sodium Extraction From Down S Process Pr 1vtpr2 from prerequisite knowledge in chemistry of metals."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 06 Sodium Extraction From Down S Process Pr 1vtpr2",
-    "Comparison table: 06 Sodium Extraction From Down S Process Pr 1vtpr2 vs related concepts in chemistry of metals",
-    "Step-by-step worked example layout for 06 Sodium Extraction From Down S Process Pr 1vtpr2"
-  ],
-  "summary": [
-    "06 Sodium Extraction From Down S Process Pr 1vtpr2 is a fundamental concept in chemistry of metals that describes specific chemical behaviour under defined conditions.",
-    "Mastering 06 Sodium Extraction From Down S Process Pr 1vtpr2 involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 06 Sodium Extraction From Down S Process Pr 1vtpr2 alongside related concepts in chemistry of metals ensures strong conceptual clarity and exam readiness."
   ]
 }

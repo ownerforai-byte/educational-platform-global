@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Complex number: imaginary unit, algebra of complex number… (Algebra, Mathematics, class-11-notes) covers Complex number, imaginary unit, algebra of complex numbers. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The **imaginary unit** i² = −1 extends ℝ to ℂ = {x + iy}, making every quadratic solvable (D < 0 ⟹ roots (−b ± i√|D|)/2a — x² + x + 1 = 0 yields the cube roots of unity). **Algebra:** multiplication expands with i² → −1, division multiplies by the conjugate over |z₂|², and powers of i cycle mod 4.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Complex number: imaginary unit, algebra of complex number… — quick idea map\"><title>Complex number: imaginary unit, algebra of complex number… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Complex number: imaginary unit, algebra of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">complex number…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Complex number</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Imaginary unit</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Y = FL/(A ΔL)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">K = −P/(ΔV/V)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Complex number: imaginary unit, algebra of complex number… — quick idea map\"><title>Complex number: imaginary unit, algebra of complex number… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Complex number: imaginary unit, algebra of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">complex number…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The conjugate is complex</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">arithmetic's workhorse: it</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">realises denominators,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">i^2 = -1; z = x + iy with</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Re z = x, Im z = y;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">equality is</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (x + iy)(u + iv) = (xu −</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">yv) + i(xv + yu); z₁/z₂ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">z₁z̄₂/|z₂|² - z·z̄ =…</text></svg>",
         "caption": "Complex number: imaginary unit, algebra of complex number… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Y = FL/(A ΔL)\nK = −P/(ΔV/V)\nU = ½kx²"
+      "text": "- (x + iy)(u + iv) = (xu − yv) + i(xv + yu); z₁/z₂ = z₁z̄₂/|z₂|² - z·z̄ = |z|² = x² + y²; |z| = √(x² + y²); iⁿ = i^(n mod 4) - |z₁z₂| = |z₁||z₂|; |z₁+z₂| ≤ |z₁|+|z₂|; D < 0 ⟹ x = (−b ± i√|D|)/2a"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.  ·  Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L)."
+      "text": "\"i^2 = -1; z z-bar = |z|^2; |z| = sqrt(x^2 + y^2); division by z uses the conjugate z-bar/|z|^2.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Ninety degrees on command*** - multiplying by i rotates any point a quarter turn: 1 -> i -> -1 -> -i -> 1, the cycle that defines i geometrically."
     },
     {
       "label": "Limitation",
@@ -56,31 +56,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Complex number: imaginary unit, algebra of complex number… — Algebra, Mathematics (class-11-notes).  ·  **Tested.** define it · list: complex number, imaginary unit, algebra of complex numbers, geometric representation · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — √(−1) Becomes Legitimate The **imaginary unit i** with i² = −1 extends ℝ to ℂ, making every quadratic solvable. The theorems: algebra of complex numbers, **conjugate properties**, **modulus** |z| = √(x² + y²), and the geometric (Argand) representation where multiplication becomes rotation-and-scaling.  ·  ## 2. Fundamental Concepts ### 2.1 The imaginary unit and standard form - **i² = −1**; every complex number is **z = x + iy** (x = real part Re z, y = imaginary part Im z). - Equality: x + iy = u + vi ⟺ x = u and y = v — real and imaginary parts match separately. - **Theorem (quadratic solvability):** ax² + bx + c = 0 with negative discriminant has roots (−b ± i√|D|)/2a — ℂ is algebraically closed for quadratics.…"
     },
     {
       "label": "Shortcut",
-      "text": "Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals."
+      "text": "i^n: reduce exponent mod 4. Divide: conjugate of the denominator. |z| via sqrt(z z-bar). z^2 + z-bar^2 = 2 Re(z^2) is always real."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Complex number: imaginary unit, algebra of complex number…\" with one example.  ·  compare \"Complex number\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2·1 + 2·(−2i) + 3i·1 + 3i·(−2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i** (i² = −1 flips the sign of the last term).…  ·  **NEB-style (2m): Find the modulus and the conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/[(3 − 4i)(3 + 4i)] = (3 + 4i + 6i + 8i²)/(9 + 16) = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √((−1/5)² + (2/5)²) = √5/5 = **1/√5**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain..",
+      "text": "State answers strictly in x + iy form; a half-simplified quotient loses the final mark even when the algebra is right.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Complex number: imaginary unit, algebra of complex number… — topic mind map\"><title>Complex number: imaginary unit, algebra of complex number… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Complex number</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Complex number</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Imaginary unit</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Algebra of complex</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">numbers</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Geometric representation</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Complex number: imaginary unit, algebra of complex number… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The conjugate is complex arithmetic's workhorse: it realises denominators, detects reality (z = z-bar), and reflects the Argand plane."
+    },
+    {
       "label": "Key points",
-      "text": "• Complex number  ·  • Imaginary unit  ·  • Algebra of complex numbers  ·  • Geometric representation"
+      "text": "i^2 = -1; z = x + iy with Re z = x, Im z = y; equality is componentwise. Multiplication: (x + iy)(u + iv) = (xu - yv) + i(xv + yu). Division: multiply by the conjugate over |z2|^2. Powers of i cycle mod 4: i, -1, -i, 1.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "AC circuit analysis uses complex impedance: inductors add +i omega L, capacitors -i/(omega C) - the imaginary axis is physical phase."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Complex number: imaginary unit, algebra of complex number…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Solve the equation x² + x + 1 = 0 over the complex numbers.** — **Discriminant:** D = b² − 4ac = 1 − 4 = **−3 < 0** — no real roots, but ℂ supplies them. **Quadratic formula with i:** x = (−1 ± √(−3))/2 = (−1 ± i√3)/2.…"
     },
     {
       "label": "MCQ drill",
@@ -88,27 +96,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.  ·  **Fact.** Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L).  ·  **Fact.** Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Imaginary unit** | i² = −1 | √(−9) = 3i | | **Conjugate** | z̄ = x − iy — mirror in real axis | (2 + 3i)‾ = 2 − 3i | | **Modulus** | |z| = √(x² + y²) — distance from 0 | |3 + 4i| = 5 | | **Argand diagram** | Complex plane: (x, y) ↔ x + iy | geometry of ℂ |  ·  ## 4. Detailed Explanation ### 4.1 Why ℂ is closed - ℝ failed √(−1); ℂ fixes it, and the price is small: order is lost (no \"z₁ < z₂\" for complex numbers). Gain: every quadratic equation now has two roots. ### 4.2 Conjugates as the division tool - Dividing by z multiplies by z̄/|z|²: the conjugate realises the denominator, and the modulus² normalises it.…  ·  ## 5. Comparison Tables **Real vs complex arithmetic** | Operation | ℝ | ℂ | |---|---|---| | √ of negative | undefined | defined via i | | order | yes | **no** | | conjugate | trivial (x̄ = x) | non-trivial, essential | | algebraically closed | no | yes |"
     },
     {
       "label": "More ideas",
-      "text": "• Absolute  ·  • Modulus  ·  define + example each sub-idea: complex number, imaginary unit, algebra of complex numbers, geometric representation."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain..  ·  No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Complex number: imaginary unit, algebra of complex number…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.  ·  Find the modulus and conjugate of (1 + 2i)/(3 − 4i).  ·  Solve x² + x + 1 = 0 over ℂ."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain.  ·  **Imaginary unit.** one-line definition + one-line exam use.  ·  **Algebra of complex numbers.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain.  ·  ## 6. Common Confusions **√(−a) = i√a, not ±:** the principal root carries the i; the ± appears when solving equations, not when evaluating the radical."
     },
     {
       "label": "More ideas",
-      "text": "**Geometric representation.** one-line definition + one-line exam use.  ·  **Absolute.** one-line definition + one-line exam use.  ·  **Modulus.** one-line definition + one-line exam use."
+      "text": "**|z| is not z's \"absolute value\" algebraically:** it is √(z·z̄) — the distance — and obeys |z₁z₂| = |z₁||z₂| but not |z₁ + z₂| = |z₁| + |z₂|.  ·  **iⁿ cycles mod 4:** i⁴⁰⁰ = 1, i⁴⁰¹ = i — reduce the exponent modulo 4 before anything else.  ·  ## 7. Exam Application **NEB-style (3m): Express (2 + 3i)(1 − 2i) + (3 − i)/(1 + i) in the form x + iy.** — **Product:** (2 + 3i)(1 − 2i) = 2 − 4i + 3i − 6i² = 2 − i + 6 = **8 − i**. **Quotient:** multiply by the conjugate: (3 − i)(1 − i)/(1 + i)(1 − i) = (3 − 3i − i + i²)/2 = (2 − 4i)/2 = **1 − 2i**.…"
     },
     {
       "label": "More ideas",
-      "text": "**Value.** one-line definition + one-line exam use.  ·  **Conjugate of complex numbers.** one-line definition + one-line exam use.  ·  **Their properties.** one-line definition + one-line exam use."
+      "text": "**NEB-style (2m): Find the modulus and conjugate of z = (1 + 2i)/(3 − 4i).** — **Rationalise:** z = (1 + 2i)(3 + 4i)/(9 + 16) = (3 + 4i + 6i + 8i²)/25 = (3 − 8 + 10i)/25 = (−5 + 10i)/25 = **(−1 + 2i)/5**. **Modulus:** |z| = √(1 + 4)/5 = √5/5 = **1/√5** (equivalently |1+2i|/|3−4i| = √5/5 ✓ — moduli divide).…  ·  **NEB-style (2m): If z = 2 + i, express z² + z̄² in the form x + iy and deduce that it is real.** — z² = (2 + i)² = 4 + 4i + i² = **3 + 4i**; z̄² = (2 − i)² = 3 − 4i. Sum: **6 + 0i — purely real**. Deduction: z² + z̄² = 2Re(z²) = 2(3) = 6 — the general theorem z² + z̄² = 2Re(z²) ∈ ℝ at work.  ·  **NEB-style (2m): Solve x² + x + 1 = 0 over ℂ.** — D = 1 − 4 = −3 < 0 ⟹ complex roots: x = (−1 ± i√3)/2 — the **cube roots of unity** (excluding 1). The quadratic formula extends verbatim to negative discriminants once i is admitted."
     }
   ]
 }

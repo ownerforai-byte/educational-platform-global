@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+      "text": "Gas equilibria speak two dialects — concentrations and partial pressures — and **Kp = Kc(RT)^Δn** is the dictionary. The derivation is one ideal-gas line: p = [i]RT turns every pressure into a concentration, and collecting the leftover RT factors leaves (RT) raised to Δn, the change in **gaseous** moles between products and reactants.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relationship Between Kp and Kc — quick idea map\"><title>Relationship Between Kp and Kc — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Relationship Between Kp and Kc</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 04</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">relationship between kp</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and kc.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 04</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">relationship between kp</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and kc.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kc =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[Products]/[Reactants]</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kp = Kc(RT)^Δn</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relationship Between Kp and Kc — quick idea map\"><title>Relationship Between Kp and Kc — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Relationship Between Kp and Kc</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One sign decides</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">everything: Δn. Zero means</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the two constants are</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Partial pressure = CRT</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(ideal gas) - pressures</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">are concentrations in…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- p_i = [i]RT - Kp =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(pC)^c(pD)^d /</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(pA)^a(pB)^b - Kp =</text></svg>",
         "caption": "Relationship Between Kp and Kc — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Kc = [Products]/[Reactants]\nKp = Kc(RT)^Δn\npH = -log[H⁺]"
+      "text": "- p_i = [i]RT - Kp = (pC)^c(pD)^d / (pA)^a(pB)^b - Kp = Kc(RT)^Δn; Kc = Kp/(RT)^Δn - Δn = Σ gas moles (products) − Σ gas moles (reactants) - Worked: Kc = 0.16, T = 300 K, Δn = +1 → Kp = 3.94"
     },
     {
       "label": "Conditions",
@@ -45,7 +45,7 @@
     },
     {
       "label": "Solved",
-      "text": "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+      "text": "***The ammonia check*** — Kc = 0.061 at 500 K for N₂ + 3H₂ ⇌ 2NH₃: dividing by (0.0821 × 500)² ≈ 1681 gives Kp ≈ 3.6 × 10⁻⁵ — four orders smaller, because four gas moles collapse into two."
     },
     {
       "label": "Limitation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Relationship Between Kp and Kc."
+      "text": "Count gas moles first: Δn = 0 → answer \"Kp = Kc\" instantly. Bridge ladder: +1 → ×RT; −1 → ÷RT; −2 → ÷(RT)². Kelvin conversion: °C + 273."
     },
     {
       "label": "Board question",
-      "text": "Practice identifying organelles and their functions in electron micrographs.  ·  Practice distinguishing prokaryotic from eukaryotic cells."
+      "text": "**NEB-style (3m): Derive the relationship between Kp and Kc for a gaseous reaction.** — Consider aA(g) + bB(g) ⇌ cC(g) + dD(g). By the ideal gas law, the partial pressure of any gaseous component is p_i = n_iRT/V = [i]RT, where [i] is its molar concentration. The pressure-based equilibrium constant is Kp = (pC)^c(pD)^d / (pA)^a(pB)^b.…  ·  **NEB-style (2m): For which reaction is Kp = Kc: (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g), (b) H₂(g) + I₂(g) ⇌ 2HI(g), (c) N₂O₄(g) ⇌ 2NO₂(g)? Compute Δn for each.** — **(a)** Δn = (2) − (1 + 3) = −2; Kp = Kc(RT)⁻² = Kc/(RT)², so Kp < Kc.…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 04 relationship between kp and kc.",
+      "text": "In derivations, state p = [i]RT explicitly — that single ideal-gas line is where the (RT)^Δn factor comes from, and examiners look for it.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relationship Between Kp and Kc — topic mind map\"><title>Relationship Between Kp and Kc — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Relationship between Kp and Kc</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Relationship between Kp</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">and Kc</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Relationship Between Kp and Kc — topic mind map of this topic's own sub-topics"
@@ -73,130 +73,47 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 04 relationship between kp and kc."
+      "text": "One sign decides everything: Δn. Zero means the two constants are twins; positive makes Kp larger; negative makes Kc larger — read the balanced equation before touching the calculator."
     },
     {
       "label": "Key points",
-      "text": "Core point for 04 relationship between kp and kc."
+      "text": "Partial pressure = CRT (ideal gas) - pressures are concentrations in disguise. Kp = (pC)^c(pD)^d/(pA)^a(pB)^b. Bridge: Kp = Kc(RT)^dn, dn = gas moles products - reactants; T in kelvin; R matches pressure unit. dn = 0: Kp = Kc (HI). dn = +1: Kp = Kc(RT) (N2O4, PCl5). dn = -2: Kp = Kc/(RT)2 (NH3). Units atm^dn.…"
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 04 relationship between kp and kc."
+      "text": "High-altitude physiology and pressure cookers both live on p = CRT: the same relation that turns concentrations into partial pressures governs how thin air and sealed steam behave."
     },
     {
       "label": "More practice",
-      "text": "Practice drawing and labeling the fluid mosaic model of the cell membrane.  ·  Practice explaining the steps of mitosis with diagrams.  ·  Practice explaining the stages of meiosis and comparing with mitosis."
+      "text": "**NEB-style (2m numerical): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 0.16 at 300 K. Calculate Kp (R = 0.0821 L atm mol⁻¹ K⁻¹).** — Δn = 2 − 1 = +1, so Kp = Kc(RT)^1 = 0.16 × 0.0821 × 300. Multiplying: 0.0821 × 300 = 24.63; 0.16 × 24.63 ≈ **3.94**. Since Δn = +1, Kp carries the units of pressure (atm¹).…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 04 relationship between kp and kc? → A  ·  What happens to K when temperature increases for an exothermic reaction? → B"
+      "text": "Question about 04 relationship between kp and kc? → A  ·  Partial pressure relates to concentration by: → B"
     },
     {
       "label": "Study notes",
-      "text": "Dynamic equilibrium: forward rate = backward rate.  ·  Kc = [products]/[reactants].  ·  Le Chatelier's principle."
+      "text": "## 1. Topic Introduction — Two Constants, One Reaction, One Bridge Gas-phase equilibria can be written in concentrations (Kc) or in partial pressures (Kp). The two are not rivals but conversions of the same fact, and **Kp = Kc(RT)^Δn** is the bridge — where Δn is the change in gas moles and T is absolute temperature.…  ·  ## 2. Fundamental Concepts ### 2.1 Kp — the pressure-side constant - For gas reactions, the active mass of each gas is proportional to its **partial pressure** (from the ideal gas law: pV = nRT → p = (n/V)RT = CRT). - For aA(g) + bB(g) ⇌ cC(g) + dD(g): **Kp = (pC)^c(pD)^d / (pA)^a(pB)^b** — partial pressures replacing concentrations.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Partial pressure** | Pressure a gas would exert alone in the mixture volume | p(N₂) in air ≈ 0.78 atm | | **Kp** | Equilibrium constant in partial pressures | (pNH₃)²/(pN₂·pH₂³) | | **Δn** | Gas moles products − gas moles reactants | +1 for N₂O₄ ⇌ 2NO₂ | | **Bridge equation** | Kp =…"
     },
     {
       "label": "More ideas",
-      "text": "Ka × Kb = Kw  ·  ❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.  ·  ❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity."
+      "text": "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.  ·  ❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.  ·  ❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways."
     },
     {
       "label": "More ideas",
-      "text": "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.  ·  ❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).  ·  ❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions."
+      "text": "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).  ·  ❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.  ·  ❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis."
     },
     {
       "label": "More ideas",
-      "text": "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.  ·  ❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.  ·  ❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat."
+      "text": "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.  ·  ❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.  ·  ❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels."
     },
     {
       "label": "More ideas",
-      "text": "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.  ·  ❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.  ·  ❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen."
+      "text": "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.  ·  ❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.  ·  ❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin)."
     },
     {
       "label": "More ideas",
-      "text": "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).  ·  ❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.  ·  ❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition)."
+      "text": "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.  ·  ❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).  ·  ❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane."
     }
-  ],
-  "keyPoints": [
-    "04 Relationship Between Kp And Kc is a core concept in chemical equilibrium.",
-    "Understanding 04 relationship between kp and kc requires knowing its definition, conditions, and limitations.",
-    "04 Relationship Between Kp And Kc has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 relationship between kp and kc must be memorized precisely.",
-    "04 Relationship Between Kp And Kc connects to neighbouring topics within chemical equilibrium and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 relationship between kp and kc.",
-    "Practical examples solidify understanding of 04 Relationship Between Kp And Kc and its real-world relevance.",
-    "Misconceptions about 04 relationship between kp and kc often arise from confusing it with similar concepts.",
-    "04 Relationship Between Kp And Kc follows systematic rules that can be applied step-by-step.",
-    "Review of 04 relationship between kp and kc should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Relationship Between Kp And Kc is defined by its specific characteristics within chemical equilibrium.",
-    "The conditions under which 04 relationship between kp and kc applies are as important as the concept itself.",
-    "04 Relationship Between Kp And Kc can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 relationship between kp and kc through application-based and comparison questions.",
-    "A clear grasp of 04 Relationship Between Kp And Kc builds the foundation for advanced topics in chemical equilibrium."
-  ],
-  "importantNotes": [
-    "When studying 04 relationship between kp and kc, always note the exceptions alongside the general rule.",
-    "04 Relationship Between Kp And Kc should be reviewed with at least one worked example per sub-point.",
-    "Link 04 relationship between kp and kc back to prior knowledge in chemical equilibrium for deeper retention.",
-    "Practice past NEB board questions on 04 Relationship Between Kp And Kc to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Relationship Between Kp And Kc: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 relationship between kp and kc with a related concept from chemical equilibrium.",
-    "Exam-style problem: solve a question involving 04 Relationship Between Kp And Kc under time pressure.",
-    "Real-world connection: show how 04 Relationship Between Kp And Kc appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Relationship Between Kp And Kc and state two conditions required for it to occur.",
-    "Differentiate 04 Relationship Between Kp And Kc from the most commonly confused concept in chemical equilibrium.",
-    "Solve a numerical or structural problem involving 04 Relationship Between Kp And Kc.",
-    "List three applications of 04 Relationship Between Kp And Kc in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Relationship Between Kp And Kc without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Relationship Between Kp And Kc.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Relationship Between Kp And Kc."
-  ],
-  "universalFacts": [
-    "04 Relationship Between Kp And Kc is part of the NEB Class 11 chemical equilibrium syllabus.",
-    "Every concept in chemical equilibrium builds upon definitions established earlier in the chapter.",
-    "04 Relationship Between Kp And Kc is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Relationship Between Kp And Kc improves performance across the entire chemical equilibrium unit.",
-    "Revision of 04 Relationship Between Kp And Kc should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Relationship Between Kp And Kc with closely related concepts in chemical equilibrium — focus on distinguishing features.",
-    "The scope of 04 Relationship Between Kp And Kc is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Relationship Between Kp And Kc outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Relationship Between Kp And Kc and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Relationship Between Kp And Kc? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Relationship Between Kp And Kc is primarily studied under which branch of chemical equilibrium? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Relationship Between Kp And Kc is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical equilibrium — Answer: B",
-    "Which example correctly illustrates 04 Relationship Between Kp And Kc? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Relationship Between Kp And Kc differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Relationship Between Kp And Kc.",
-    "Step-by-step animated derivation of the key relationship in 04 Relationship Between Kp And Kc.",
-    "Interactive toggle between correct and incorrect representations of 04 Relationship Between Kp And Kc."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Relationship Between Kp And Kc.",
-    "Side-by-side comparison animation of 04 Relationship Between Kp And Kc vs commonly confused concept.",
-    "Timelapse build-up of 04 Relationship Between Kp And Kc from prerequisite knowledge in chemical equilibrium."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Relationship Between Kp And Kc",
-    "Comparison table: 04 Relationship Between Kp And Kc vs related concepts in chemical equilibrium",
-    "Step-by-step worked example layout for 04 Relationship Between Kp And Kc"
-  ],
-  "summary": [
-    "04 Relationship Between Kp And Kc is a fundamental concept in chemical equilibrium that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Relationship Between Kp And Kc involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Relationship Between Kp And Kc alongside related concepts in chemical equilibrium ensures strong conceptual clarity and exam readiness."
   ]
 }

@@ -55,11 +55,11 @@
     },
     {
       "label": "Shortcut",
-      "text": "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+      "text": "Trick 1: ax² + 2hxy + by² = 0 through the origin → factorise by treating as quadratic in (y/x); slopes m1m2 = a/b, m1 + m2 = −2h/b.  ·  Trick 2: General second-degree represents a pair of lines when abc + 2fgh − af² − bg² − ch² = 0 — memorise as 'abc + 2fgh − af² − bg² − ch²'."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Pair of straight lines: general equation of second degree…\" with one example.  ·  compare \"Pair of straight lines: general equation of second degree in x\" with the related idea from a neighbouring unit."
+      "text": "Q1. **NEB-style (5m):** Show that 2x$^2$ + 5xy + 3y$^2$ = 0 represents a pair of real straight lines and find them. **Solution.** Condition: $h^2-ab=\\frac{25}{4}-6=\\frac14>0$ ✓ real pair. Factor: $2x^2+5xy+3y^2=(2x+3y)(x+y)$ ⟹ lines $2x+3y=0$ and $x+y=0$, both through the origin. Check by expansion: $2x^2+2xy+3xy+3y^2$ ✓.…  ·  Q2. **NEB-style (5m):** For which values of k does x$^2$ - kxy + 9y$^2$ = 0 represent a pair of real lines? **Solution.** Here $a=1$, $h=-\\frac{k}{2}$, $b=9$; condition $h^2\\ge ab$: $\\frac{k^2}{4}\\ge9$ ⟹ $|k|\\ge6$, i.e. $k\\le-6$ or $k\\ge6$. Boundary: $k=\\pm6$ gives $h^2=ab$ - coincident lines (a perfect square: $(x\\mp3y)^2$).…"
     },
     {
       "label": "Hints",
@@ -74,8 +74,12 @@
       "text": "• Pair of straight lines: general equation of second degree in x  ·  • Condition for representing a pair of lines  ·  • Homogenous second-degree equation in x  ·  • Angle between pair of lines"
     },
     {
+      "label": "Universal facts",
+      "text": "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Pair of straight lines: general equation of second degree…\" and verify the answer is plausible."
+      "text": "Q3. **NEB-style (6m):** Find the angle between the pair of lines 3x$^2$ - 8xy - 3y$^2$ = 0. **Solution.** $a=3$, $h=-4$, $b=-3$: $h^2-ab=16+9=25$, $\\sqrt{h^2-ab}=5$. $\\tan\\theta=\\frac{2\\sqrt{h^2-ab}}{|a+b|}=\\frac{10}{|0|}$ ⟹ denominator zero ⟹ $\\theta=90°$ - the lines are perpendicular.…  ·  Q4. **NEB-style (5m):** Factor 6x$^2$ - xy - y$^2$ = 0 into its pair of lines and state their slopes. **Solution.** $6x^2-xy-y^2=(3x+y)(2x-y)$ ⟹ lines $3x+y=0$ (slope $-3$) and $2x-y=0$ (slope 2).…  ·  Q5. **NEB-style (6m):** Find the equations of the bisectors of the angles between the pair 2x$^2$ + 5xy + 3y$^2$ = 0. **Solution.** The pair's lines: $2x+3y=0$, $x+y=0$; standardise: $-2x-3y=0$ and $-x-y=0$ (constants 0 - homogeneous lines need no constant fix).…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +91,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Bisectors of the angles between pair of lines  ·  define + example each sub-idea: pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x, angle between pair of lines.  ·  one worked example for \"Pair of straight lines: general equation of second degree…\" — check units / edge cases."
+      "text": "• Bisectors of the angles between pair of lines  ·  Trick 3: Angle between the lines: tan θ = 2√(h² − ab)/(a + b); perpendicular when a + b = 0; parallel when h² = ab.  ·  Trick 4: For ax² + 2hxy + by² = 0: perpendicular ⇔ a + b = 0 — the fastest 1-mark test."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
+      "text": "Q6. **NEB-style (5m):** Determine whether the point (2, 2) lies on either line of the pair x$^2$ - 3xy + 2y$^2$ = 0. **Solution.** Factor: $(x-y)(x-2y)=0$ ⟹ lines $x-y=0$ and $x-2y=0$. At (2, 2): $x-y=0$ ✓ - the point lies on the first line (and on the second? $2-4=-2\\ne0$, no).…  ·  Q7. **NEB-style (6m):** The equation 6x$^2$ + 5xy + y$^2$ + 7x + ... represents a pair of lines. Explain the role of the condition $h^2-ab$ versus the full determinant condition abc + 2fgh - af$^2$ - bg$^2$ - ch$^2$ = 0.…  ·  define + example each sub-idea: pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x, angle between pair of lines."
     },
     {
       "label": "More ideas",
-      "text": "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).  ·  **Condition for representing a pair of lines.** one-line definition + one-line exam use.  ·  **Homogenous second-degree equation in x.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Pair of straight lines: general equation of second degree…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Angle between pair of lines.** one-line definition + one-line exam use.  ·  **Bisectors of the angles between pair of lines.** one-line definition + one-line exam use."
+      "text": "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).  ·  **Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).  ·  **Condition for representing a pair of lines.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Homogenous second-degree equation in x.** one-line definition + one-line exam use.  ·  **Angle between pair of lines.** one-line definition + one-line exam use.  ·  **Bisectors of the angles between pair of lines.** one-line definition + one-line exam use."
     }
   ]
 }

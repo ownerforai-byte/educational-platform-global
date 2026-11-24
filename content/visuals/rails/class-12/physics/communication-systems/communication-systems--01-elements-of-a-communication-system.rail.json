@@ -22,28 +22,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Elements of a communication system (Communication Systems, Physics, class-12-notes) covers Elements of a communication system. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The elements are an input transducer, a transmitter that modulates, a medium, and a receiver with an output transducer. The message and the modulated carrier are different signals. The medium is where attenuation and noise appear.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elements of a communication system — quick idea map\"><title>Elements of a communication system — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Elements of a communication system</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Elements of a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">communication system</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Elements of a</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">communication system&quot;</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elements of a communication system — quick idea map\"><title>Elements of a communication system — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Elements of a communication system</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Transducer</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Modulated wave</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A transducer starts the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrical chain.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The transmitter modulates</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and amplifies.</text></svg>",
         "caption": "Elements of a communication system — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Elements of a communication system\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Elements of a communication system\" — state with units, then use in one numerical.\nAn input transducer turns the message into an electrical signal.\nBandwidth is the frequency range the channel must pass."
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Elements of a communication system\" as one blob → ✅ split into: elements of a communication system.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Elements of a communication system\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Amplitude modulation and frequency modulation are two ways to load the carrier.  ·  Fibre uses light as the carrier."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The elements can be named as transducer, modulator and transmitter, medium, and receiver plus output transducer. This is the same chain as source, transmitter, channel and receiver, with the transducers made explicit.  ·  A microphone is an input transducer: sound pressure becomes a voltage. A loudspeaker is an output transducer: the recovered voltage becomes sound again."
     },
     {
       "label": "Limitation",
@@ -51,35 +51,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Elements of a communication system — Communication Systems, Physics (class-12-notes).  ·  **Tested.** define it · list: elements of a communication system · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Elements of a communication system  ·  solve / apply for \"Elements of a communication system\" and verify the answer is plausible."
+      "text": "Microphone in, loudspeaker out.  ·  Select the carrier, then demodulate."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Elements of a communication system\" with one example.  ·  compare \"Elements of a communication system\" with the related idea from a neighbouring unit."
+      "text": "What does an input transducer do?  ·  What is the medium?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elements of a communication system — topic mind map\"><title>Elements of a communication system — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Elements of a communication system</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Elements of a</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">communication system</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Elements of a communication system — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Transducer  ·  Modulated wave  ·  Medium  ·  Demodulator"
+    },
+    {
+      "label": "Key points",
+      "text": "A transducer starts the electrical chain.  ·  The transmitter modulates and amplifies.  ·  The medium may be cable or space.  ·  The destination is the user."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Elements of a communication system\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
+      "label": "More practice",
+      "text": "What does the demodulator remove?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Identify the input transducer, the medium and the output transducer for a telephone call on a copper line."
+    },
+    {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Elements of a communication system\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "A microphone is → B  ·  The modulated wave is → B"
+    },
+    {
+      "label": "Study notes",
+      "text": "The message signal is often low frequency. Multiplying it with a carrier, or varying the carrier's amplitude or frequency, produces the modulated wave that the antenna launches.  ·  The medium decides the loss. A copper pair, a fibre and a radio path have different attenuation and different noise. The link budget is the comparison of transmitted power with the power the receiver needs.  ·  At the receiver a tuner selects the carrier, a demodulator strips it, and an amplifier raises the message to a useful level. Selecting the wrong carrier selects a different message."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: elements of a communication system.  ·  one worked example for \"Elements of a communication system\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "The loudspeaker is not the channel.  ·  The message signal and the modulated wave are different.  ·  Amplifying after noise has been added amplifies the noise too."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "A transducer is not the same device as the modulator.  ·  Name the transducer at each end.  ·  The medium is physical. The message is not."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write An input transducer turns the message into an electrical signal. and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Two-way radio uses the same elements in both directions. Each station is sometimes the source and sometimes the destination.  ·  # Elements of a communication system ## 1. Introduction Physical picture of **Elements of a communication system** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Quantities and graph reading** | Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with…  ·  ## 5. Diagrams and figures - **D1** — Elements of a communication system — free-body and field picture (authored SVG — English labels, viewBox 900×640) - **D2** — Elements of a communication system — graph or second construction (authored SVG — axes, units and labels) - **D3** — Elements of a communication system —…"
     }
   ]
 }

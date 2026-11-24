@@ -48,11 +48,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Ohm's Law  ·  Example 2: Practical demonstration of Ohm's Law concepts"
+      "text": "Example 2: Practical demonstration of Ohm's Law concepts  ·  Example 4: Diagram-based question on Ohm's Law"
     },
     {
       "label": "Limitation",
-      "text": "❌ 'V is always proportional to I.' ✅ This holds true only when *temperature and other physical conditions* are kept constant."
+      "text": "❌ 'V is always proportional to I.' ✅ This holds true only when *temperature and other physical conditions* are kept constant.  ·  Ohm's law is not true for every device."
     },
     {
       "label": "Derivation",
@@ -96,7 +96,7 @@
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Ohm's Law  ·  Example 5: Application in daily life involving Ohm's Law"
+      "text": "Example 5: Application in daily life involving Ohm's Law"
     },
     {
       "label": "MCQ drill",
@@ -104,11 +104,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Ohm's Law:** This topic covers the fundamental concepts of ohm's law in the physics curriculum.  ·  Understanding ohm's law is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to ohm's law should be memorized and practiced regularly."
+      "text": "Ohm's law says that the current through a metallic conductor is proportional to the potential difference across it, provided the temperature and other physical conditions stay constant. The constant of proportionality is 1/R.  ·  The working form is V = IR. R is the resistance. A steeper I–V line means a smaller resistance if I is plotted vertically, because the slope is 1/R.  ·  The law is empirical for ohmic materials. A filament lamp's resistance rises as it heats, so its I–V graph curves. A semiconductor diode conducts very differently in the two directions and is non-ohmic."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Ohm's Law and other topics  ·  Key Formula 5: Important relation in Ohm's Law  ·  Note 3: Practice numerical problems regularly for mastery of Ohm's Law"
+      "text": "Concept 5: Connection between Ohm's Law and other topics  ·  Key Formula 5: Important relation in Ohm's Law  ·  The temperature condition is part of the statement."
+    },
+    {
+      "label": "More ideas",
+      "text": "Slope of I against V is 1/R, not R, in that plotting choice.  ·  Resistivity and resistance are different.  ·  Note 3: Practice numerical problems regularly for mastery of Ohm's Law"
     },
     {
       "label": "More ideas",
@@ -120,11 +124,7 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Cross-check your answers using alternative methods for Ohm's Law  ·  Statement 1: Definition of Ohm's Law  ·  Statement 2: Theorem related to Ohm's Law"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 3: Condition for Ohm's Law to be valid  ·  Statement 4: Principle governing Ohm's Law  ·  Statement 5: Corollary or consequence of Ohm's Law"
+      "text": "Note 5: Cross-check your answers using alternative methods for Ohm's Law  ·  Trick 3: Dimensional analysis shortcut for Ohm's Law  ·  Trick 4: Memory aid for Ohm's Law formulas"
     }
   ]
 }

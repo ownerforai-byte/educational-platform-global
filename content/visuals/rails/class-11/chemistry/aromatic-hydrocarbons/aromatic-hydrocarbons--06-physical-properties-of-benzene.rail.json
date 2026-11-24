@@ -27,143 +27,84 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Physical properties of benzene (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Physical properties of benzene. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Benzene's physical profile — colourless liquid, bp 80.5 °C, mp 5.5 °C, density 0.879, water-immiscible, non-polar solvent, sooty flame — is one structure read by five instruments: flat symmetric disks pack (high mp), present broad faces (bp), refuse the water network (immiscibility), dissolve the non-polar (solvent list), and burn carbon-rich (flame).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Physical properties of benzene — quick idea map\"><title>Physical properties of benzene — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Physical properties of benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Physical properties of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">benzene</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Physical properties of benzene — quick idea map\"><title>Physical properties of benzene — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Physical properties of benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The property table is five</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">instruments reading one</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">structure - every</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Colourless liquid,</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">characteristic odour; bp</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">80.5 C, mp 5.5 C, density</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- bp 80.5 °C; mp 5.5 °C;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">density 0.879 g/cm³; C% =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">92.3 - 2C₆H₆ + 15O₂ →…</text></svg>",
         "caption": "Physical properties of benzene — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Physical properties of benzene"
+      "text": "- bp 80.5 °C; mp 5.5 °C; density 0.879 g/cm³; C% = 92.3 - 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O (sooty flame)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Physical properties of benzene\" as one blob → ✅ split into: physical properties of benzene.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Physical properties of benzene\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: physical properties of benzene (within Aromatic Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "Miscibility with water is refused by the ring's lack of hydrogen-bonding sites - the hydrophobic effect in one test tube."
+    },
+    {
+      "label": "Solved",
+      "text": "***The hexane comparison*** - n-hexane (86 g/mol) melts at -95 C while benzene (78 g/mol) melts at +5.5 C: shape, not mass, decides crystal packing."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Physical properties of benzene — Aromatic Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: physical properties of benzene · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Benzene's Physical Profile Benzene is a **colourless, mobile liquid** with a characteristic odour: bp 80.5 °C (80.1 °C in some texts), mp 5.5 °C, density 0.879 g/cm³ (lighter than water), immiscible with water, and an excellent solvent for non-polar and moderately polar solutes. Every one of these numbers has a structural reason.  ·  ## 2. Theorem Mirror - **State and appearance:** colourless liquid; characteristic (aromatic) odour; volatile. - **Boiling point 80.5 °C:** higher than cyclohexane (81 °C is close) but the comparison that matters — vs expected for its molar mass, benzene's planar disk shape gives strong instantaneous dipole dispersion contact.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Physical properties of benzene\" and verify the answer is plausible.  ·  define + example each sub-idea: physical properties of benzene."
+      "text": "Anchor the numbers: bp 80.5, mp 5.5, density 0.879 - three figures carry most property questions."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Physical properties of benzene\" with one example.  ·  compare \"Physical properties of benzene\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (5m): List the important physical properties of benzene, giving a structural reason for each.** — **Appearance:** colourless, mobile, volatile liquid with a characteristic odour. **Boiling point 80.5 °C:** the flat disk presents large faces for dispersion (and π–π) contact — strong intermolecular attraction for its mass.…  ·  **NEB-style (6m): Benzene (78 g/mol) melts at 5.5 C while n-hexane (86 g/mol) melts at -95 C. Explain the contrast and state what it proves.** — **Mass is not the decider:** hexane is heavier yet melts 100 °C lower.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Give the reason with the number - \"mp 5.5 C due to efficient packing of flat symmetric molecules\" is the full-mark form.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Physical properties of benzene — topic mind map\"><title>Physical properties of benzene — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Physical properties of benzene</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Physical properties of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">benzene</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Physical properties of benzene — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The property table is five instruments reading one structure - every constant cross-checks a structural claim."
+    },
+    {
+      "label": "Key points",
+      "text": "Colourless liquid, characteristic odour; bp 80.5 C, mp 5.5 C, density 0.879 g/cm3 (floats on water), immiscible with water, excellent non-polar solvent, burns with sooty flame. mp argument: flat symmetric disks pack efficiently (vs n-hexane mp -95 C at similar mass) - packing is the proof of planarity.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Benzene dissolves iodine and sulphur - the classic non-polar solvent demonstrations."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): A mixture of benzene and water is shaken and allowed to stand. Describe what is observed and explain at the molecular level.** — **Observation:** two layers form — benzene on top (density 0.879 < 1.00), water below; a sharp meniscus, no mixing even on standing.…  ·  **NEB-style (6m): Iodine is shaken with (a) water and (b) benzene. Describe and explain the distribution of iodine between the two solvents.** — **Observation:** iodine is barely soluble in water (pale yellow-brown, ~0.3 g/L) but dissolves readily in benzene, giving the characteristic violet…"
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Physical properties of benzene\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
+      "label": "Study notes",
+      "text": "## 3. Deep Conceptual — Symmetry Packs, Shape Boils - **Melting point is a packing story:** 5.5 °C is high for a 78 g/mol molecule (cyclohexane, 84 g/mol, melts at 6.5 °C — similar, but n-hexane, 86 g/mol, melts at −95 °C!). The difference is shape: flat, rigid, symmetric disks stack into efficient crystals; floppy chains waste contact area in the solid.…  ·  ## 4. Deep Conceptual — Reading a Property Table as Evidence - Each physical constant cross-checks a structural claim: mp 5.5 °C (planarity/packing), bp 80.5 °C (contact area), density < 1 (no strong interaction with water), immiscibility (no H-bonding), sooty combustion (92.3% C).…  ·  ## 5. Worked Example Types - **Type A — recite with reasons:** state each property with its structural cause. - **Type B — compare:** benzene vs cyclohexane vs hexane on mp/bp — the shape argument. - **Type C — miscibility prediction:** which of two solvents mixes with benzene, why. - **Type D — density arithmetic:** mass of benzene delivered by a measured volume."
+    },
+    {
       "label": "More ideas",
-      "text": "one worked example for \"Physical properties of benzene\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127.  ·  State benzene's bp, mp, density and miscibility with water, each with a reason.  ·  Compare the melting points of benzene, cyclohexane and n-hexane and explain the ordering."
+    },
+    {
+      "label": "More ideas",
+      "text": "Predict whether iodine dissolves better in benzene or in water, with reasoning.  ·  ## 6. Common Confusions **\"Benzene is denser than water because it is aromatic\":** 0.879 < 1 — it floats; aromaticity does not imply density. **\"High mp means strong hydrogen bonding\":** benzene has none — its mp is pure packing efficiency."
     }
-  ],
-  "keyPoints": [
-    "06 Physical Properties Of Benzene is a core concept in aromatic hydrocarbons.",
-    "Understanding 06 physical properties of benzene requires knowing its definition, conditions, and limitations.",
-    "06 Physical Properties Of Benzene has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 06 physical properties of benzene must be memorized precisely.",
-    "06 Physical Properties Of Benzene connects to neighbouring topics within aromatic hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 06 physical properties of benzene.",
-    "Practical examples solidify understanding of 06 Physical Properties Of Benzene and its real-world relevance.",
-    "Misconceptions about 06 physical properties of benzene often arise from confusing it with similar concepts.",
-    "06 Physical Properties Of Benzene follows systematic rules that can be applied step-by-step.",
-    "Review of 06 physical properties of benzene should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "06 Physical Properties Of Benzene is defined by its specific characteristics within aromatic hydrocarbons.",
-    "The conditions under which 06 physical properties of benzene applies are as important as the concept itself.",
-    "06 Physical Properties Of Benzene can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 06 physical properties of benzene through application-based and comparison questions.",
-    "A clear grasp of 06 Physical Properties Of Benzene builds the foundation for advanced topics in aromatic hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 06 physical properties of benzene, always note the exceptions alongside the general rule.",
-    "06 Physical Properties Of Benzene should be reviewed with at least one worked example per sub-point.",
-    "Link 06 physical properties of benzene back to prior knowledge in aromatic hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 06 Physical Properties Of Benzene to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 06 Physical Properties Of Benzene: apply the standard definition to a simple case.",
-    "Intermediate example: combine 06 physical properties of benzene with a related concept from aromatic hydrocarbons.",
-    "Exam-style problem: solve a question involving 06 Physical Properties Of Benzene under time pressure.",
-    "Real-world connection: show how 06 Physical Properties Of Benzene appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 06 Physical Properties Of Benzene and state two conditions required for it to occur.",
-    "Differentiate 06 Physical Properties Of Benzene from the most commonly confused concept in aromatic hydrocarbons.",
-    "Solve a numerical or structural problem involving 06 Physical Properties Of Benzene.",
-    "List three applications of 06 Physical Properties Of Benzene in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 06 Physical Properties Of Benzene without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 06 Physical Properties Of Benzene.",
-    "Create three flashcards covering definition, formula, and limitation of 06 Physical Properties Of Benzene."
-  ],
-  "universalFacts": [
-    "06 Physical Properties Of Benzene is part of the NEB Class 11 aromatic hydrocarbons syllabus.",
-    "Every concept in aromatic hydrocarbons builds upon definitions established earlier in the chapter.",
-    "06 Physical Properties Of Benzene is assessed through both short-answer and long-answer board questions.",
-    "Understanding 06 Physical Properties Of Benzene improves performance across the entire aromatic hydrocarbons unit.",
-    "Revision of 06 Physical Properties Of Benzene should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 06 Physical Properties Of Benzene with closely related concepts in aromatic hydrocarbons — focus on distinguishing features.",
-    "The scope of 06 Physical Properties Of Benzene is sometimes overstated; remember its precise boundaries.",
-    "Applying 06 Physical Properties Of Benzene outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 06 Physical Properties Of Benzene and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 06 Physical Properties Of Benzene? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "06 Physical Properties Of Benzene is primarily studied under which branch of aromatic hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 06 Physical Properties Of Benzene is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to aromatic hydrocarbons — Answer: B",
-    "Which example correctly illustrates 06 Physical Properties Of Benzene? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "06 Physical Properties Of Benzene differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 06 Physical Properties Of Benzene.",
-    "Step-by-step animated derivation of the key relationship in 06 Physical Properties Of Benzene.",
-    "Interactive toggle between correct and incorrect representations of 06 Physical Properties Of Benzene."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 06 Physical Properties Of Benzene.",
-    "Side-by-side comparison animation of 06 Physical Properties Of Benzene vs commonly confused concept.",
-    "Timelapse build-up of 06 Physical Properties Of Benzene from prerequisite knowledge in aromatic hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 06 Physical Properties Of Benzene",
-    "Comparison table: 06 Physical Properties Of Benzene vs related concepts in aromatic hydrocarbons",
-    "Step-by-step worked example layout for 06 Physical Properties Of Benzene"
-  ],
-  "summary": [
-    "06 Physical Properties Of Benzene is a fundamental concept in aromatic hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 06 Physical Properties Of Benzene involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 06 Physical Properties Of Benzene alongside related concepts in aromatic hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

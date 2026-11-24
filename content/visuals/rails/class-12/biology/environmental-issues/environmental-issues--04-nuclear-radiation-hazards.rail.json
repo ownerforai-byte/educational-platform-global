@@ -55,11 +55,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Nuclear radiation hazards — Environmental Issues, Biology (class-12-notes).  ·  **Tested.** define it · list: nuclear radiation hazards · one worked example · one misconception each."
+      "text": "# Nuclear radiation hazards ## 1. Introduction Opening frame for **Nuclear radiation hazards** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Environmental Issues fill pass. ## 2.…  ·  Ionising radiation — alpha, beta, gamma, X-rays — strips electrons from atoms, breaking DNA and killing or mutating cells. Sources are natural (cosmic rays, radon, rocks) and man-made (reactors, weapons, medical use, waste). Hazard depends on dose, duration and penetration; protection rests on **time, distance and shielding**."
     },
     {
       "label": "Shortcut",
-      "text": "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+      "text": "Trick 1: Radiation types: alpha (stopped by skin/paper), beta (penetrates skin), gamma (deep penetration, most dangerous) — the penetration ladder.  ·  Trick 2: Effects: somatic (cancer, burns, leukaemia in the exposed person) vs genetic (mutations in offspring) — the two-class division."
     },
     {
       "label": "Board question",
@@ -78,6 +78,10 @@
       "text": "• Nuclear radiation hazards"
     },
     {
+      "label": "Universal facts",
+      "text": "Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Nuclear radiation hazards\" and verify the answer is plausible."
     },
@@ -87,15 +91,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).  ·  **Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.  ·  **Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from source to safety rule (study in this order)** | Step | Concept | Key fact | |---|---|---| | 1 | Natural background | Cosmic rays, radon gas from rock, K-40 in food — always present | | 2 | Man-made sources | Medical X-rays (largest artificial dose), reactors, weapons testing, radioisotopes | | 3 | Biological damage | Ionisation breaks DNA: cell death,…  ·  **Alpha, beta, gamma — the three radiations compared** | Property | Alpha (α) | Beta (β) | Gamma (γ) | |---|---|---|---| | Nature | Helium nucleus (2p + 2n) | Fast electron | High-energy electromagnetic wave | | Penetration | Stopped by paper or skin | Stopped by a few mm of aluminium | Needs thick lead or concrete | | Internal hazard | Most dangerous if INHALED/ingested |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: nuclear radiation hazards.  ·  one worked example for \"Nuclear radiation hazards\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Case studies: Chernobyl (1986), Fukushima (2011), Hiroshima/Nagasaki — quote one with its lesson.  ·  Trick 4: Radioactive waste disposal: shielded storage, deep burial, vitrification — the three strategies; half-life governs storage time.  ·  define + example each sub-idea: nuclear radiation hazards."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
+      "text": "one worked example for \"Nuclear radiation hazards\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).  ·  **Radiation effects classified by dose and timing** | Exposure | Effect | Example | |---|---|---| | Acute, whole body, very high | Radiation sickness: nausea, hair loss, marrow failure, death | Reactor accidents (Chernobyl firefighters) | | Chronic, low level | Raised cancer risk over years; mutations in gametes |…  ·  ## 4. Diagrams and figures - **D1** — Nuclear radiation hazards — structure (authored SVG — English labels, viewBox 900×640) - **D2** — Nuclear radiation hazards — process or life-cycle flow (authored SVG — English labels) - **D3** — Nuclear radiation hazards — detailed reference plate (curated external — English…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Penetration of alpha, beta, gamma — the shielding rule <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Three radiations, three…  ·  ## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — choosing the shield.** A lab stores three sources: an alpha emitter (Am-241), a beta emitter (Sr-90) and a gamma emitter (Co-60). The alpha source needs only a sealed container — its danger is inhalation, not penetration. The beta source needs a few millimetres of aluminium.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.  ·  **Most-asked points (NEB).** (1) Compare alpha, beta and gamma in penetration and ionising power. (2) Why is alpha most dangerous inside the body but least outside? (3) State the time–distance–shielding triad. (4) Give two natural and two man-made radiation sources. (5) Why is nuclear waste storage a long-term problem?  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
     }
   ]
 }

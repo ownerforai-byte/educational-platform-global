@@ -57,7 +57,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+      "text": "Trick 1: One-sided limits first: lim x→a⁻ and lim x→a⁺ must be EQUAL for the limit to exist — check both before answering any piecewise or |x| question.  ·  Trick 2: Geometric meaning: the curve approaches the height L from both sides of x = a (holes allowed); physical: instantaneous behaviour as t → t0."
     },
     {
       "label": "Board question",
@@ -76,6 +76,10 @@
       "text": "• Limit — geometric  ·  • Physical interpretation"
     },
     {
+      "label": "Universal facts",
+      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Concept of limit — geometric and physical interpretation\" and verify the answer is plausible."
     },
@@ -89,11 +93,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: limit — geometric, physical interpretation.  ·  one worked example for \"Concept of limit — geometric and physical interpretation\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: lim f(x) exists but f(a) undefined/unequal → removable discontinuity (a hole) — naming the type earns the mark.  ·  define + example each sub-idea: limit — geometric, physical interpretation.  ·  one worked example for \"Concept of limit — geometric and physical interpretation\" — check units / edge cases."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Physical interpretation.** one-line definition + one-line exam use."
+      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Physical interpretation.** one-line definition + one-line exam use.  ·  # Concept of limit — geometric and physical interpretation ## 1. Introduction and motivation What the tool **Concept of limit — geometric and physical interpretation** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Limits and Continuity fill pass.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1)."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Methods and standard forms **Table 2 — Standard forms and rules** | Form | Rule | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Concept of limit — geometric and physical interpretation — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Concept of limit — geometric and physical interpretation — second figure: construction, region or…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

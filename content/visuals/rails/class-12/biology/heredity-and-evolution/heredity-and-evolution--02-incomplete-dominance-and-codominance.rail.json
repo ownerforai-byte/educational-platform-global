@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Incomplete dominance and codominance — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: incomplete dominance, codominance · one worked example · one misconception each."
+      "text": "# Incomplete dominance and codominance ## 1. Introduction Opening frame for **Incomplete dominance and codominance** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Mendel's peas showed **complete dominance**: the heterozygote looks exactly like the dominant parent. Most genes are not that polite. When the heterozygote is intermediate, the inheritance is **incomplete dominance**; when both alleles are fully and separately visible, it is **codominance**. Neither pattern breaks the Law of Segregation — in both, the F₂ genotypic ratio is still 1:2:1.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Incomplete dominance and codominance\" and verify the answer is plausible.  ·  define + example each sub-idea: incomplete dominance, codominance."
+      "text": "Trick 1: Incomplete dominance: heterozygote is INTERMEDIATE (red × white snapdragon → pink); F2 = 1:2:1 both genotypic and phenotypic — the ratio change from 3:1 is the mark.  ·  Trick 2: Codominance: BOTH alleles express fully (AB blood group: IA and IB codominant; i is recessive) — no blending, both products appear."
     },
     {
       "label": "Board question",
@@ -75,16 +75,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Incomplete dominance and codominance\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Incomplete dominance and codominance\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Codominance.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from Mendel to the exceptions (study in this order)** | Step | Concept | Classic example | Key observation | |---|---|---|---| | 1 | Complete dominance (the Mendelian baseline) | Tall vs dwarf pea | Tt looks like TT — recessive hidden | | 2 | Incomplete dominance | Snapdragon / 4-o'clock flower colour | Red × white → pink F₁; F₂ = 1 red : 2 pink : 1 white | |…  ·  **Complete dominance vs incomplete dominance vs codominance** | Feature | Complete dominance | Incomplete dominance | Codominance | |---|---|---|---| | Heterozygote phenotype | Looks like the dominant parent | Intermediate blend of both | Shows BOTH characters side by side | | F₂ phenotypic ratio | 3 : 1 | 1 : 2 : 1 | 1 : 2 : 1 | | F₂ genotypic ratio | 1 : 2 : 1 | 1 : 2 : 1 |…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Blood group genotypes: A = IAIA or IAi; B = IBIB or IBi; AB = IAIB; O = ii — the table for the 2-mark question.  ·  Trick 4: Distinguish in one phrase: incomplete = blended phenotype; codominance = both phenotypes side by side.  ·  define + example each sub-idea: incomplete dominance, codominance."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Incomplete dominance and codominance\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**ABO blood groups — the codominance + multiple-allele classic** | Blood group | Genotypes | Antigen on RBC | Antibody in plasma | Can donate to | |---|---|---|---|---| | A | IAIA, IAi | A | anti-B | A, AB | | B | IBIB, IBi | B | anti-A | B, AB | | AB | IAIB | A and B (both expressed — codominance) | none — universal…  ·  ## 4. Diagrams and figures - **D1** — Incomplete dominance and codominance — structure (authored SVG — English labels, viewBox 900×640) - **D2** — Incomplete dominance and codominance — process or life-cycle flow (authored SVG — English labels) - **D3** — Incomplete dominance and codominance — detailed reference plate…  ·  ```svg Incomplete dominance — snapdragon colour through two generations <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Snapdragon: Red (RR) &#215;…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example.** In 4-o'clock plants, red (RR) × white (rr) gives all pink Rr. Selfing the pink F₁ gives 1 RR red : 2 Rr pink : 1 rr white. A pink plant crossed with a red plant gives 1 red : 1 pink — a 1:1 ratio that proves the pink plant was the heterozygote.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Distinguish incomplete dominance from codominance with one example each. (2) Why is the F₂ phenotypic ratio 1:2:1 instead of 3:1? (3) ABO blood group genotypes and transfusion compatibility.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Dominance is a matter of degree. Incomplete dominance dilutes the heterozygote (pink snapdragon), codominance displays both alleles at once (AB blood). Both keep the 1:2:1 genotypic ratio and both make genotype readable from phenotype.…"
     }
   ]
 }

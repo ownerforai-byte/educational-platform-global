@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Measurement of specific latent heat of fusion and vaporiz… (Quantity of Heat, Physics, class-11-notes) covers Measurement of specific latent heat of fusion, vaporization. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Specific latent heat** L is the heat to convert 1 kg across a phase change at constant temperature: $Q = mL$ — for water $L_f = 3.34\\times10^5$ J/kg (fusion) and $L_v = 2.26\\times10^6$ J/kg (vaporization). Both are measured by calorimetry. **Ice method:** $mL_f + mc_wT = (m_wc_w + m_cc_c)(T_2 - T)$.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific latent heat of fusion and vaporiz… — quick idea map\"><title>Measurement of specific latent heat of fusion and vaporiz… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measurement of specific latent heat of fusion</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and vaporiz…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Measurement of specific</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">latent heat of fusion</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mcΔT</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mL</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific latent heat of fusion and vaporiz… — quick idea map\"><title>Measurement of specific latent heat of fusion and vaporiz… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measurement of specific latent heat of fusion</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and vaporiz…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The 5m steam numerical</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(NEB 2021)** is the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">canonical…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mL; L_f = 3.34×10⁵;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">L_v = 2.26×10⁶ J/kg</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(standard values).</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Steam method: mL_v +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mc(100−T) = gained; Ice</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">method: mL_f + mcT =</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Q = mL; L_f = 3.34×10⁵</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">J/kg; L_v = 2.26×10⁶ J/kg</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Steam: mL_v +…</text></svg>",
         "caption": "Measurement of specific latent heat of fusion and vaporiz… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Q = mcΔT\nQ = mL\ncp = 1.5×cv + R (Mayer, for ideal gas)"
+      "text": "- Q = mL; L_f = 3.34×10⁵ J/kg; L_v = 2.26×10⁶ J/kg - Steam: mL_v + mc_w(100−T) = (m_wc_w + m_cc_c)(T−T₂) - Ice: mL_f + mc_wT = (m_wc_w + m_cc_c)(T₂−T)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Measurement of specific latent heat of fusion\" as one blob → ✅ split into: measurement of specific latent heat of fusion, vaporization.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**Steam's two-step release:** L_v on condensing at 100 °C, then mcΔT cooling to the final temperature — both sides of the balance.  ·  **Dry ice matters:** surface water on ice adds hidden mc terms."
     },
     {
       "label": "Special cases",
-      "text": "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained."
+      "text": "A sieve or trap keeps water droplets out of the steam.  ·  Crush the ice so it finishes melting before the room undoes the experiment."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***NEB 2021*** — 5 g steam into 50 g water (30→50 °C): L_v = 6.3×10⁵ J/kg from the given data."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,51 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Measurement of specific latent heat of fusion and vaporiz… — Quantity of Heat, Physics (class-11-notes).  ·  **Tested.** define it · list: measurement of specific latent heat of fusion, vaporization · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "\"Two heat terms per phase change: mL + mcΔT.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Measurement of specific latent heat of fusion and vaporiz…\" with one example.  ·  compare \"Measurement of specific latent heat of fusion\" with the related idea from a neighbouring unit."
+      "text": "**Numerical (4m): 30 g of ice at 0 °C is added to 150 g of water at 25 °C. Final temperature 10 °C (neglect calorimeter). Find L_f.** — Gained: 0.03L_f + 0.03×4200×10 = 0.03L_f + 1260. Lost: 0.15×4200×15 = 9450. → 0.03L_f = 8190 → L_f = 2.73×10⁵ J/kg."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+      "text": "Practise the 5m balance twice: once steam-side, once ice-side.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific latent heat of fusion and vaporiz… — topic mind map\"><title>Measurement of specific latent heat of fusion and vaporiz… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Measurement of specific latent heat of fusion…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Measurement of specific</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">latent heat of fusion</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Vaporization</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Measurement of specific latent heat of fusion and vaporiz… — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Key points",
-      "text": "• Measurement of specific latent heat of fusion  ·  • Vaporization"
+      "label": "Quick concepts",
+      "text": "**The 5m steam numerical (NEB 2021)** is the canonical calorimetry-with-phase-change problem."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Measurement of specific latent heat of fusion and vaporiz…\" and verify the answer is plausible."
+      "label": "Key points",
+      "text": "Q = mL; L_f = 3.34×10⁵; L_v = 2.26×10⁶ J/kg (standard values).  ·  Steam method: mL_v + mc(100−T) = gained; Ice method: mL_f + mcT = gained."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Refrigerators exploit L_f: freezing water absorbs 3.34×10⁵ J/kg inside the freezer box."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Measurement of specific latent heat of fusion and vaporiz…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Melting ice dropped into warm water absorbs → B  ·  Wet ice makes the calculated L_f → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  **Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.  ·  **Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "## 1. Topic Introduction — Measuring the Hidden Heat Latent heat cannot be read on a thermometer; it must be *weighed out* in energy balances. Drop melting ice into warm water, or pass steam through it, and calorimetry converts temperature changes into L_f and L_v — the numbers behind refrigeration, steam engines and weather.  ·  ## 2. Fundamental Concepts (NEB 2021) ### 2.1 Specific latent heat of fusion and vaporization - **Specific latent heat of fusion ($L_f$):** heat required to convert 1 kg of a solid to liquid at its melting point, with no temperature change. Water: $3.34 \\times 10^5$ J/kg.…  ·  ## 3. Conceptual Relationships - **To Topic 52:** these measurements quantify the latent heats defined there. - **To Topic 51:** the same calorimetric balance with an added mL term. - **To engineering:** L_v powers steam engines and refrigeration cycles (compression/condensation)."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: measurement of specific latent heat of fusion, vaporization.  ·  one worked example for \"Measurement of specific latent heat of fusion and vaporiz…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQ: steam-condensation numerical (2021, 5m).  ·  \"Specific latent heat of vaporization is the heat required to convert unit mass of liquid into vapour at its boiling point without change of temperature.\"  ·  Why is the value from the 2021 numerical lower than the standard 2.26×10⁶ J/kg?"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  **Vaporization.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2077/2021 | Heat | Latent heat | A mass of steam at 100 °C is passed into water at 30 °C.…"
     }
   ]
 }

@@ -21,52 +21,52 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Cross Product of Two Vectors covers essential principles and applications.",
+      "text": "The cross product a×b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cross Product of Two Vectors — quick idea map\"><title>Cross Product of Two Vectors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Cross Product of Two Vectors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Cross</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Product of Two Vectors.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area of a triangle on two</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vectors is ½|a×b| — the</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">parallelogram area with</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$|\\vec{a}\\times\\vec{b}| =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ab\\sin\\theta$, directed by</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the right-hand rule; it…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\vec{a}\\times\\vec{b} =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\begin{vmatrix} \\hat{i}</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&amp; \\hat{j} &amp;</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cross Product of Two Vectors — quick idea map\"><title>Cross Product of Two Vectors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Cross Product of Two Vectors</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
         "caption": "Cross Product of Two Vectors — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$|\\vec{a}\\times\\vec{b}| = ab\\sin\\theta$, directed by the right-hand rule; it is the area of the parallelogram on $\\vec{a}$ and $\\vec{b}$.\n$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$, and $\\vec{a}\\times\\vec{b} = \\vec{0} \\iff$ they are parallel.",
-      "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cross Product of Two Vectors — formula board\"><title>Cross Product of Two Vectors — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Cross Product of Two Vectors</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$|\\vec{a}\\times\\vec{b}| = ab\\sin\\theta$, directed by the</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">right-hand rule; it is the area of the parallelogram on</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\vec{a}$ and $\\vec{b}$.</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} &amp;</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\hat{j} &amp; \\hat{k} \\\\ a_1 &amp; a_2 &amp; a_3 \\\\ b_1</text><text x=\"450\" y=\"434\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">&amp; b_2 &amp; b_3 \\end{vmatrix}$, and</text><text x=\"450\" y=\"468\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\vec{a}\\times\\vec{b} = \\vec{0} \\iff$ they are parallel.</text></svg>",
-        "caption": "Cross Product of Two Vectors — formula board of this topic's own formulas"
-      }
+      "text": "**Definition.** a × b = |a||b| sin θ n̂, with n̂ given by the right-hand rule; in components a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).\n**Determinant form.** Expand the formal 3 × 3 determinant whose first row is i, j, k; the middle component carries a minus sign."
     },
     {
       "label": "Conditions",
-      "text": "Cross Product of Two Vectors is based on fundamental principles."
+      "text": "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (12 − 15, 12 − 6, 5 − 8) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0.  ·  **Exam caution.** Dot the result with both a and b as a one-line check; a sign error in the j component is the most common mistake."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Cross Product of Two Vectors  ·  Statement 2: Theorem related to Cross Product of Two Vectors"
+      "text": "**Anti-commutative.** b × a = −(a × b), and a × a = 0; parallel non-zero vectors have a zero cross product."
     },
     {
       "label": "Solved",
-      "text": "Application of Cross Product of Two Vectors"
+      "text": "**Area.** |a × b| is the area of the parallelogram with adjacent sides a and b, so the area of triangle ABC is ½|AB × AC|."
     },
     {
       "label": "Limitation",
-      "text": "Definition and significance of Cross Product of Two Vectors.  ·  Statement 5: Corollary or consequence of Cross Product of Two Vectors"
+      "text": "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (12 − 15, 12 − 6, 5 − 8) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0."
     },
     {
       "label": "Derivation",
-      "text": "Area of a triangle on two vectors is ½|a×b| — the parallelogram area with the half that students forget."
+      "text": "**Anti-commutative.** b × a = −(a × b), and a × a = 0; parallel non-zero vectors have a zero cross product.  ·  **Area.** |a × b| is the area of the parallelogram with adjacent sides a and b, so the area of triangle ABC is ½|AB × AC|."
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Cross Product of Two Vectors."
+      "text": "The cross product a×b is a vector perpendicular to both a and b with magnitude |a||b| sin θ, equal to the area of the parallelogram they span."
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Cross Product of Two Vectors.  ·  Q3. Problem on Cross Product of Two Vectors."
+      "text": "**Definition.** a × b = |a||b| sin θ n̂, with n̂ given by the right-hand rule; in components a × b = (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁).",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cross Product of Two Vectors — exam flow\"><title>Cross Product of Two Vectors — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Cross Product of Two Vectors</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">The cross product a×b is a vector</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">perpendicular to both a and b with magnitude</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">|a||b| sin θ, equal to the area of the…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">**Definition.** a × b = |a||b| sin θ n̂,</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">with n̂ given by the right-hand rule; in</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">components a × b = (a₂b₃ − a₃b₂, a₃b₁…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">The cross product a×b is a vector</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">perpendicular to both a and b with magnitude</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">|a||b| sin θ, equal to the area of the…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">**Definition.** a × b = |a||b| sin θ n̂,</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">with n̂ given by the right-hand rule; in</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">components a × b = (a₂b₃ − a₃b₂, a₃b₁…</text></svg>",
+        "caption": "Cross Product of Two Vectors — exam flow: concept → formula → shortcut → board question"
+      }
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Cross Product of Two Vectors to be valid  ·  Statement 4: Principle governing Cross Product of Two Vectors"
+      "text": "**Determinant form.** Expand the formal 3 × 3 determinant whose first row is i, j, k; the middle component carries a minus sign."
     }
   ]
 }

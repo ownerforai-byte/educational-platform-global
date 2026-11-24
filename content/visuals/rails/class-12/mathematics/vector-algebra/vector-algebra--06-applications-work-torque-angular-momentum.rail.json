@@ -58,7 +58,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Applications  ·  • Work"
+      "text": "Trick 1: Work as a dot product: W = F·d = Fd cos θ — zero work when force ⊥ displacement; quote the condition.  ·  Trick 2: Torque as a cross product: τ = r × F, magnitude rF sin θ, direction by the right-hand rule — state both magnitude and direction for full marks."
     },
     {
       "label": "Board question",
@@ -74,7 +74,7 @@
     },
     {
       "label": "Key points",
-      "text": "• Torque  ·  • Angular momentum"
+      "text": "• Applications  ·  • Work  ·  • Torque  ·  • Angular momentum"
     },
     {
       "label": "More practice",
@@ -90,11 +90,19 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: applications, work, torque, angular momentum.  ·  one worked example for \"Applications: work, torque, angular momentum\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Angular momentum L = r × p = r × mv; conservation when τ = 0 — the link line earns the concept mark.  ·  Trick 4: Numericals are one substitution each — keep vectors in component form and use the 3×3 determinant for cross products.  ·  define + example each sub-idea: applications, work, torque, angular momentum."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Applications: work, torque, angular momentum\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Applications: work, torque, angular momentum ## 1. Introduction and motivation What the tool **Applications** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Vector Algebra fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Figures and graphs - **F1** — Applications — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Applications — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Applications — curated reference…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

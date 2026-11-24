@@ -23,28 +23,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Polarization — Brewster's law and polaroids (Wave Optics, Physics, class-12-notes) covers Polarization — Brewster's law, polaroids. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Brewster's angle, where n = tan i_p, fully polarises the reflected light, and the reflected and refracted rays are perpendicular. A Polaroid selects one transverse direction, and Malus' law gives I_0 cos^2 θ for a second Polaroid. Crossed axes pass nothing.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Polarization — Brewster's law and polaroids — quick idea map\"><title>Polarization — Brewster's law and polaroids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Polarization — Brewster's law and polaroids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Polarization —</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Brewster's law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Polaroids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Polarization —</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Brewster's law and</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Polarization — Brewster's law and polaroids — quick idea map\"><title>Polarization — Brewster's law and polaroids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Polarization — Brewster's law and polaroids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Plane polarisation</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Brewster angle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Polarisation is a</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">transverse-wave fact.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Brewster's angle gives</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">full polarisation of the</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reflected ray.</text></svg>",
         "caption": "Polarization — Brewster's law and polaroids — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Polarization — Brewster's law and polaroids\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Polarization — Brewster's law and polaroids\" — state with units, then use in one numerical.\nn = tan i_p\nMalus: I = I_0 cos^2 θ"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Polarization — Brewster's law\" as one blob → ✅ split into: polarization — brewster's law, polaroids.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Polarization — Brewster's law and polaroids\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Unpolarised through one Polaroid: intensity about half.  ·  i_p is often near 57° for glass."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Light is a transverse electromagnetic wave. Its electric field can point in any direction in the plane perpendicular to the ray. Polarised light has that field along one line.  ·  At Brewster's angle of incidence, the reflected light is completely plane polarised. The refractive index and that angle are related by n = tan i_p."
     },
     {
       "label": "Limitation",
@@ -52,43 +52,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Polarization — Brewster's law and polaroids — Wave Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: polarization — brewster's law, polaroids · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Polarization — Brewster's law  ·  • Polaroids"
+      "text": "n = tan i_p.  ·  Crossed means dark."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Polarization — Brewster's law and polaroids\" with one example.  ·  compare \"Polarization — Brewster's law\" with the related idea from a neighbouring unit."
+      "text": "Write Brewster's law.  ·  What is the angle between the reflected and refracted rays at i_p?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Polarization — Brewster's law and polaroids — topic mind map\"><title>Polarization — Brewster's law and polaroids — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Polarization — Brewster's law and polaroids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Polarization —</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Brewster's law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Polaroids</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Polarization — Brewster's law and polaroids — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Plane polarisation  ·  Brewster angle  ·  Malus  ·  Polaroid"
+    },
+    {
+      "label": "Key points",
+      "text": "Polarisation is a transverse-wave fact.  ·  Brewster's angle gives full polarisation of the reflected ray.  ·  At that angle the reflected and refracted rays are perpendicular.  ·  A Polaroid passes one direction."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Polarization — Brewster's law and polaroids\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Polarization — Brewster's law and polaroids\" and verify the answer is plausible."
+      "text": "What does Malus' law say at 90°?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Glass has n = 1.50. Find Brewster's angle, then the intensity fraction through a second Polaroid at 60° to the first if the light reaching it is polarised. Use tan 56° ≈ 1.48."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Polarization — Brewster's law and polaroids\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Brewster's law is → B  ·  At Brewster's angle the reflected and refracted rays are → B"
     },
     {
       "label": "Study notes",
-      "text": "**Polaroids.** one-line definition + one-line exam use."
+      "text": "At the same angle the reflected ray and the refracted ray are at 90° to each other. That geometry is why the reflected electric field has only one direction left.  ·  A Polaroid has long molecules that absorb one component and pass the perpendicular component. Two Polaroids with their axes at angle θ pass intensity I_0 cos^2 θ if the incident light is already polarised. That is Malus' law.  ·  Crossed Polaroids, θ = 90°, pass no light. Parallel Polaroids pass the full polarised intensity. Unpolarised light through one Polaroid loses half its intensity, because half the components are absorbed."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: polarization — brewster's law, polaroids.  ·  one worked example for \"Polarization — Brewster's law and polaroids\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Brewster's law is n = tan i_p, not sin i_p.  ·  Malus uses the square of the cosine.  ·  Crossed Polaroids transmit nothing."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "One Polaroid on unpolarised light transmits about half, not all.  ·  Use tan, not sin.  ·  Square the cosine in Malus."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write n = tan i_p and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Polarisation does not happen for a longitudinal wave. The effect is evidence that light is transverse.  ·  # Polarization — Brewster's law and polaroids ## 1. Introduction Physical picture of **Polarization — Brewster's law and polaroids** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Quantities and graph reading** | Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with…  ·  ## 5. Diagrams and figures - **D1** — Polarization — Brewster's law and polaroids — free-body and field picture (authored SVG — English labels, viewBox 900×640) - **D2** — Polarization — Brewster's law and polaroids — graph or second construction (authored SVG — axes, units and labels) - **D3** — Polarization —…"
     }
   ]
 }

@@ -30,151 +30,88 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "**Bond length:** The equilibrium internuclear distance at which the potential energy of a bond is minimized. It depends on: (1) atomic size — larger atoms form longer bonds (C–C: 154 pm, Si–Si: 235 pm), (2) bond order — higher order means shorter bonds (C–C: 154 pm, C=C: 134 pm, C≡C: 120 pm), (3) hybridization — more s-character shortens bonds (sp³ C–H: 109 pm, sp² C–H: 108 pm, sp C–H: 106 pm), (4) resonance —…",
+      "text": "Bond parameters turn bonding into measurement. **Bond length** — the equilibrium internuclear distance, the sum of covalent radii — shrinks as bond order rises (C–C 154 → C≡C 120 pm) and grows as atoms enlarge (H–F 92 → H–I 160 pm), moving inversely with bond strength.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bond Characteristics — Length, Ionic Character and Dipole Moment — quick idea map\"><title>Bond Characteristics — Length, Ionic Character and Dipole Moment — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bond Characteristics — Length, Ionic Character</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Dipole Moment</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bond Characteristics — Length, Ionic Character and Dipole Moment — quick idea map\"><title>Bond Characteristics — Length, Ionic Character and Dipole Moment — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bond Characteristics — Length, Ionic Character</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Dipole Moment</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dipole moments were how</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">chemists *measured*</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">molecular shape before…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bond length: order↑ →</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">length↓ (154/134/120 pm</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C–C family); size↑ →</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- μ = q × d; 1 D = 3.33564</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">× 10⁻³⁰ C·m - % ionic</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">character =…</text></svg>",
         "caption": "Bond Characteristics — Length, Ionic Character and Dipole Moment — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Dipole moment direction: The dipole moment vector points from positive to negative charge (by IUPAC convention in physics), but chemists often draw the arrow with the plus end at the less electronegative atom and a…\nZero dipole does not mean non-polar bonds: CO₂ and CCl₄ have zero net dipole moments, but their individual bonds are polar. The zero result comes from symmetrical geometry causing vector cancellation.…"
+      "text": "- μ = q × d; 1 D = 3.33564 × 10⁻³⁰ C·m - % ionic character = μ(observed)/μ(100% ionic) × 100 - Hannay–Smyth: % ionic = 16(ΔEN) + 3.5(ΔEN)² - Covalent radius = ½ internuclear distance (homonuclear)"
     },
     {
       "label": "Conditions",
-      "text": "Bond energy vs. bond length are inversely related but not perfectly: While generally shorter bonds are stronger, there are exceptions. For example, the F–F bond (159 pm, 159 kJ/mol) is anomalously weak compared to Cl–Cl (199 pm, 243 kJ/mol) due to lone pair–lone pair repulsion between the small fluorine atoms. Never assume bond energy monotonically decreases with bond length.  ·  Ionic character percentage is approximate: Pauling's equation gives an estimate, not an exact value. The actual ionic character depends on the crystal environment, solvation, and other factors. For instance, gaseous NaCl has ~71% ionic character, but in the solid lattice, the ionic contribution is even more pronounced due to the collective electrostatic environment."
+      "text": "**Zero dipole ≠ nonpolar bonds:** CO₂'s bonds are highly polar; the *molecule* is nonpolar. State both facts when answering.  ·  **NF₃ vs NH₃:** same shape, opposite dipole logic — in NF₃ the bond dipoles oppose the lone pair's contribution (0.24 D); in NH₃ they reinforce it (1.47 D)."
     },
     {
       "label": "Special cases",
-      "text": "The N≡N triple bond in molecular nitrogen (945 kJ/mol) is one of the strongest bonds in chemistry. This extraordinary bond strength is why N₂ is so inert at room temperature and why nitrogen fixation (breaking N≡N) requires extreme conditions or biological enzymes (nitrogenase).  ·  The bond length of H₂ (74 pm) is the shortest known covalent bond because hydrogen has the smallest atomic radius. The H–H bond energy (436 kJ/mol) is also remarkably high for such a short bond, reflecting the excellent 1s–1s overlap."
+      "text": "\"Dipole moment is the product of the magnitude of charge at one end and the distance between the opposite charges; it measures the polarity of a bond or molecule.\""
     },
     {
       "label": "Solved",
-      "text": "Calculate the percent ionic character of the H–F bond given: observed dipole moment = 1.86 D, bond length = 92 pm. (Expected answer: calculated $\\mu = \\frac{1.602 \\times 10^{-19} \\times 92 \\times 10^{-12}}{3.336 \\times 10^{-30}} \\approx 4.41$ D; % ionic = $\\frac{1.86}{4.41} \\times 100 \\approx 42.2%$.)  ·  Arrange the following in order of increasing bond length: C≡C, C=C, C–C, benzene C–C. Explain your ordering using bond order and resonance concepts. (Answer: C≡C 120 pm < C=C 134 pm < benzene 139 pm < C–C 154 pm.)"
+      "text": "***Cis/trans discrimination*** — cis-1,2-dichloroethene 1.90 D vs trans 0 D: identical formula, identical bonds, geometry alone separates them on the dipole meter."
     },
     {
       "label": "Limitation",
-      "text": "Bond order is not always an integer: In resonance structures and molecular orbital theory, bond orders can be fractional (1.5 for benzene C–C, 1.33 for carbonate, 2 for O₂ in MO theory). Fractional bond orders correspond to intermediate bond lengths and energies between the nearest integer values."
+      "text": "Verified PYQ context: NEB 2024 (bank 02) asked hydrogen bonding/water bp — its polarity foundation sits in this topic. The CO₂/SO₂ dipole contrast and HF calculation above are NEB-style practice; no standalone dipole-moment PYQ exists in the bank yet."
     },
     {
       "label": "Derivation",
-      "text": "**Bond energy (bond enthalpy):** The energy required to break one mole of a particular bond in the gas phase, producing gaseous atoms. Typical values: H–H 436 kJ/mol, C–H 413 kJ/mol, C–C 347 kJ/mol, C=C 614 kJ/mol, C≡C 839 kJ/mol, O=O 498 kJ/mol, N≡N 945 kJ/mol. Bond energy increases with bond order and decreases with increasing atomic size.…  ·  **Bond order:** The number of chemical bonds between a pair of atoms. In Lewis terms, bond order = (number of bonding electrons − number of antibonding electrons)/2 in MO theory. Higher bond order → shorter bond length and greater bond energy. For resonance structures, bond order is the average (e.g., O₃ has bond order 1.5, benzene C–C has bond order 1.5)."
+      "text": "## 1. Topic Introduction — Measuring the Unevenness of Bonds A bond between unlike atoms is rarely purely ionic or purely covalent — it sits somewhere between, and three measurable quantities locate its position: **bond length** (how close the nuclei sit), **ionic character** (how far charge has shifted), and **dipole moment** (the electrical signature of that shift).…  ·  ## 2. Fundamental Concepts ### 2.1 Bond length - **Definition:** the equilibrium internuclear distance between the centres of two bonded atoms. - Measured by X-ray/electron diffraction or spectroscopy; equals the **sum of covalent radii** of the two atoms (covalent radius = half the internuclear distance in a homonuclear bond).…"
     },
     {
       "label": "Shortcut",
-      "text": "The dipole moment of water (1.85 D) is responsible for its extraordinary solvent properties. No other common liquid has a combination of high dipole moment, small size, and hydrogen bonding capability, making water the 'universal solvent' for biological and chemical systems.  ·  Bond energy values are average values derived from many compounds. The C–H bond energy of 413 kJ/mol is an average across methane, ethane, propane, etc. The actual C–H bond energy in CH₄ (427 kJ/mol for the first bond) differs from the average because each successive bond removal requires different energy."
+      "text": "μ = 0 club: CO₂, BF₃, CH₄, CCl₄, PCl₅, SF₆, trans-isomers, para-isomers. Ionic % ladder: HF 43 > HCl 17 > HBr 11 > HI 5. Length ladder: C–C 154 > C=C 134 > C≡C 120."
     },
     {
       "label": "Board question",
-      "text": "Predict which molecule has the larger dipole moment: NF₃ or NH₃. Explain using vector addition of bond dipoles and the contribution of the lone pair. (Answer: NH₃ has $\\mu = 1.47$ D > NF₃'s $\\mu = 0.23$ D.…  ·  Using bond energies, estimate the enthalpy change for the reaction: N₂(g) + 3H₂(g) → 2NH₃(g). Given: N≡N = 945 kJ/mol, H–H = 436 kJ/mol, N–H = 391 kJ/mol. (Answer: $\\Delta H = [945 + 3(436)] - [6(391)] = 2253 - 2346 = -93$ kJ/mol. Experimental: −92 kJ/mol — excellent agreement!)"
+      "text": "**NEB-style (3m): Explain why CO₂ has zero dipole moment while SO₂ has a significant one.** — **CO₂:** the molecule is linear (O=C=O, 180°). Each C=O bond is strongly polar, but the two bond dipoles are equal in magnitude and exactly opposite in direction along the same axis; their vector sum is zero, so μ(CO₂) = 0 D.…  ·  **NEB-style (3m): Calculate the percentage ionic character in HF (μ = 1.91 D, bond length = 92 pm).** — For a 100% ionic H–F bond the dipole would be one full electron charge separated by the bond length: μ(ionic) = q × d = (1.602 × 10⁻¹⁹ C) × (92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m. Converting: 1.47 × 10⁻²⁹ / 3.33564 × 10⁻³⁰ = **4.42 D**.…"
     },
     {
       "label": "Hints",
-      "text": "The relationship between electronegativity difference and ionic character is not linear. Going from $\\Delta\\chi = 0.5$ to $1.0$ roughly doubles the ionic character, but going from $2.0$ to $2.5$ adds much less. This is because the exponential function $e^{-0.25\\Delta\\chi^2}$ decays rapidly at first then levels off.",
+      "text": "For calculations, show the unit conversion: 1 D = 3.33564 × 10⁻³⁰ C·m, and quote μ(100% ionic) before dividing — the marker looks for q·d setup, not just the final 43%.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bond Characteristics — Length, Ionic Character and Dipole Moment — topic mind map\"><title>Bond Characteristics — Length, Ionic Character and Dipole Moment — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Bond characteristics</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Bond characteristics</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Bond length</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ionic character</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Dipole moment</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Bond Characteristics — Length, Ionic Character and Dipole Moment — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Dipole moments were how chemists *measured* molecular shape before diffraction: zero moment → symmetric geometry (CO₂ linear, para-dichlorobenzene), nonzero → bent/pyramidal. One measurement, two topics of payoff."
+    },
+    {
+      "label": "Key points",
+      "text": "Bond length: order↑ → length↓ (154/134/120 pm C–C family); size↑ → length↓ the reverse. Dipole moment μ = q·d, unit debye (1 D = 3.33564 × 10⁻³⁰ C·m), vector sum over all bonds. Symmetric molecules (CO₂, BF₃, CH₄, CCl₄, trans-isomers) → μ = 0 despite polar bonds.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Water's 1.85 D moment is why microwave ovens work — the rotating dipole absorbs 2.45 GHz radiation; a symmetric molecule like CO₂ would be transparent."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Arrange HF, HCl, HBr and HI in order of (a) increasing bond length and (b) decreasing bond strength, giving reasons.** — (a) **H–F (92 pm) < H–Cl (127 pm) < H–Br (141 pm) < H–I (160 pm):** the halogen's covalent radius grows down the group (F → I), so the internuclear distance…"
+    },
+    {
+      "label": "MCQ drill",
+      "text": "The dipole moment of a molecule is zero when: → B  ·  1 debye equals: → A"
+    },
+    {
       "label": "Study notes",
-      "text": "**Ionic character percentage:** No bond is 100% ionic (except in idealized models). The percent ionic character can be estimated using Pauling's equation: % ionic character = $\\left[1 - e^{-0.25(\\chi_A - \\chi_B)^2} ight] \\times 100$, where $\\chi$ represents electronegativity. For H–F ($\\chi_F - \\chi_H = 3.98 - 2.20 = 1.78$): % ionic ≈ 1 − e^(−0.25×3.17) ≈ 1 − 0.456 ≈ 54.4%.…  ·  **Dipole moment ($\\mu$):** A vector quantity measuring the separation of positive and negative charges in a molecule. $\\mu = q \\times d$, where $q$ is the magnitude of charge separation and $d$ is the distance between the charges. Unit: Debye (D), where 1 D = 3.336 × 10⁻³⁰ C·m.…  ·  **Percentage ionic character from dipole moment:** % ionic character = $\\frac{\\mu_{observed}}{\\mu_{calculated\\ (100\\%\\ ionic)}} \\times 100$. For HCl: $\\mu_{obs} = 1.08$ D, $\\mu_{calc} = 4.8$ D (for 100 pm bond), so % ionic = $\\frac{1.08}{4.8} \\times 100 \\approx 22.5%$. This confirms HCl is predominantly covalent with partial ionic character."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Value to quote | |---|---|---| | **Bond length** | Equilibrium internuclear distance | C–C 154, C=C 134, C≡C 120 pm | | **Covalent radius** | Half the internuclear distance of a homonuclear bond | H 37 pm | | **Dipole moment** | μ = q × d; vector from δ⁺ to δ⁻ | 1 D = 3.33564 × 10⁻³⁰ C·m | | **Ionic character** |…  ·  ## 4. Detailed Explanation ### 4.1 The HF ionic-character calculation (worked) - Observed μ(HF) = 1.91 D; H–F bond length = 92 pm. - Hypothetical 100% ionic dipole: μ = q·d = (1.602 × 10⁻¹⁹ C)(92 × 10⁻¹² m) = 1.47 × 10⁻²⁹ C·m = 4.42 D. - **% ionic character = 1.91/4.42 × 100 ≈ 43%** — matching the Hannay–Smyth estimate.…  ·  ## 5. Comparison Tables **Bond lengths and energies (selected)** | Bond | Length (pm) | Energy (kJ mol⁻¹) | |---|---|---| | H–H | 74 | 436 | | C–C | 154 | 348 | | C=C | 134 | 614 | | C≡C | 120 | 839 | | H–F | 92 | 565 | | H–Cl | 127 | 431 | | H–I | 160 | 297 | **Dipole moments: polar bonds vs polar molecules** | Molecule | Bond dipoles | Shape | Net μ (D) | |---|---|---|---| |…"
     },
     {
       "label": "More ideas",
-      "text": ")  ·  **Net dipole moment in polyatomic molecules:** The molecular dipole moment is the vector sum of individual bond dipoles. In CO₂ (linear, O=C=O), the two C=O dipoles are equal and opposite → net $\\mu = 0$. In H₂O (bent, 104.5°), the two O–H dipoles add vectorially → $\\mu = 1.85$ D.…  ·  **Factors affecting dipole moment:** (1) Electronegativity difference — greater difference → larger bond dipole, (2) Molecular geometry — symmetrical molecules may have zero net dipole despite polar bonds, (3) Lone pairs — contribute significantly to dipole moment (NH₃ > NF₃ despite F being more electronegative,…"
+      "text": "Why does NF₃ have a much smaller dipole moment than NH₃ despite the same pyramidal shape?  ·  A bond has length 127 pm and observed dipole 1.03 D. Calculate its percentage ionic character and identify the bond.  ·  Explain why para-dichlorobenzene has zero dipole moment while the ortho isomer does not."
     },
     {
       "label": "More ideas",
-      "text": "**Bond length trends in halides:** For a given halogen, bond length increases down the group: HF (92 pm) < HCl (127 pm) < HBr (141 pm) < HI (161 pm). This correlates with decreasing bond energy: HF (567) > HCl (431) > HBr (366) > HI (299) kJ/mol.…  ·  **Fajans' rules and covalent character in ionic compounds:** Small cations with high charge (e.g., Al³⁺, Be²⁺) and large anions (e.g., I⁻, S²⁻) polarize each other, introducing covalent character into supposedly ionic bonds.…  ·  **Bond length and resonance:** In nitrate ion NO₃⁻, all three N–O bonds are equivalent with bond length 124 pm, intermediate between N–O (140 pm) and N=O (115 pm). The bond order is 1.33, confirmed by X-ray diffraction.…"
+      "text": "## 6. Common Confusions **Polar bonds ≠ polar molecule:** CO₂ and CCl₄ have polar bonds but zero net moment — symmetry cancels. Polarity of a molecule is a vector question, not a bond question.  ·  **Dipole direction convention:** the chemists' arrow points from positive to negative (crossed tail at δ⁺); physics defines the vector the opposite way. Quote μ magnitudes, not directions, unless the convention is stated.  ·  **Ionic character is not all-or-nothing:** HF is 43% ionic and 57% covalent simultaneously — real bonds are mixtures, which is why Fajan's rules (topic 28) modulate ionic compounds toward covalency."
     },
     {
       "label": "More ideas",
-      "text": "**Dipole moment and molecular polarity:** A molecule is polar if it has a permanent dipole moment ($\\mu eq 0$). Polarity affects boiling point (polar molecules have higher BP due to dipole-dipole interactions), solubility ('like dissolves like' — polar solutes dissolve in polar solvents), and intermolecular forces.…  ·  **Bond energy and thermodynamic cycles:** Bond energies can be used to estimate reaction enthalpies using Hess's Law: $\\Delta H_{rxn} \\approx \\sum BE_{reactants} - \\sum BE_{products}$.…  ·  **Ionic character and solubility:** The percent ionic character predicts solubility behavior. NaCl (71% ionic) dissolves readily in water (dielectric constant 80) but not in hexane. AgCl (less ionic due to polarization by Ag⁺) is nearly insoluble in water.…"
+      "text": "## 7. Exam Application **Verified PYQ (NEB 2024/02, adapted to this topic): Explain why CO₂ has zero dipole moment while SO₂ does not.** — CO₂ is linear (180°): its two equal C=O bond dipoles point in exactly opposite directions and cancel, giving μ = 0.…  ·  **NEB-style (3m): Calculate the percentage ionic character of HF.** — μ(observed) = 1.91 D; bond length 92 pm; μ(100% ionic) = q·d = 1.602 × 10⁻¹⁹ × 92 × 10⁻¹² = 1.47 × 10⁻²⁹ C·m = 4.42 D; % ionic = 1.91/4.42 × 100 ≈ 43%. Cross-check with Hannay–Smyth: ΔEN = 1.9 → 16(1.9) + 3.5(1.9)² ≈ 43%.  ·  **NEB-style (2m): Arrange HF, HCl, HBr, HI by bond length and bond strength, with reasons.** — Length: H–F 92 < H–Cl 127 < H–Br 141 < H–I 160 pm (halogen size grows down the group).…"
     }
-  ],
-  "keyPoints": [
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is a core concept in chemical bonding and shapes of molecules.",
-    "Understanding 09 bond characteristics bond length ionic c jfwsg5 requires knowing its definition, conditions, and limitations.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 09 bond characteristics bond length ionic c jfwsg5 must be memorized precisely.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 connects to neighbouring topics within chemical bonding and shapes of molecules and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 09 bond characteristics bond length ionic c jfwsg5.",
-    "Practical examples solidify understanding of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 and its real-world relevance.",
-    "Misconceptions about 09 bond characteristics bond length ionic c jfwsg5 often arise from confusing it with similar concepts.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 follows systematic rules that can be applied step-by-step.",
-    "Review of 09 bond characteristics bond length ionic c jfwsg5 should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is defined by its specific characteristics within chemical bonding and shapes of molecules.",
-    "The conditions under which 09 bond characteristics bond length ionic c jfwsg5 applies are as important as the concept itself.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 09 bond characteristics bond length ionic c jfwsg5 through application-based and comparison questions.",
-    "A clear grasp of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 builds the foundation for advanced topics in chemical bonding and shapes of molecules."
-  ],
-  "importantNotes": [
-    "When studying 09 bond characteristics bond length ionic c jfwsg5, always note the exceptions alongside the general rule.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 should be reviewed with at least one worked example per sub-point.",
-    "Link 09 bond characteristics bond length ionic c jfwsg5 back to prior knowledge in chemical bonding and shapes of molecules for deeper retention.",
-    "Practice past NEB board questions on 09 Bond Characteristics Bond Length Ionic C Jfwsg5 to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 09 Bond Characteristics Bond Length Ionic C Jfwsg5: apply the standard definition to a simple case.",
-    "Intermediate example: combine 09 bond characteristics bond length ionic c jfwsg5 with a related concept from chemical bonding and shapes of molecules.",
-    "Exam-style problem: solve a question involving 09 Bond Characteristics Bond Length Ionic C Jfwsg5 under time pressure.",
-    "Real-world connection: show how 09 Bond Characteristics Bond Length Ionic C Jfwsg5 appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 09 Bond Characteristics Bond Length Ionic C Jfwsg5 and state two conditions required for it to occur.",
-    "Differentiate 09 Bond Characteristics Bond Length Ionic C Jfwsg5 from the most commonly confused concept in chemical bonding and shapes of molecules.",
-    "Solve a numerical or structural problem involving 09 Bond Characteristics Bond Length Ionic C Jfwsg5.",
-    "List three applications of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 09 Bond Characteristics Bond Length Ionic C Jfwsg5.",
-    "Create three flashcards covering definition, formula, and limitation of 09 Bond Characteristics Bond Length Ionic C Jfwsg5."
-  ],
-  "universalFacts": [
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is part of the NEB Class 11 chemical bonding and shapes of molecules syllabus.",
-    "Every concept in chemical bonding and shapes of molecules builds upon definitions established earlier in the chapter.",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is assessed through both short-answer and long-answer board questions.",
-    "Understanding 09 Bond Characteristics Bond Length Ionic C Jfwsg5 improves performance across the entire chemical bonding and shapes of molecules unit.",
-    "Revision of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 09 Bond Characteristics Bond Length Ionic C Jfwsg5 with closely related concepts in chemical bonding and shapes of molecules — focus on distinguishing features.",
-    "The scope of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 is sometimes overstated; remember its precise boundaries.",
-    "Applying 09 Bond Characteristics Bond Length Ionic C Jfwsg5 outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 09 Bond Characteristics Bond Length Ionic C Jfwsg5 and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 09 Bond Characteristics Bond Length Ionic C Jfwsg5? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is primarily studied under which branch of chemical bonding and shapes of molecules? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 09 Bond Characteristics Bond Length Ionic C Jfwsg5 is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical bonding and shapes of molecules — Answer: B",
-    "Which example correctly illustrates 09 Bond Characteristics Bond Length Ionic C Jfwsg5? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 09 Bond Characteristics Bond Length Ionic C Jfwsg5.",
-    "Step-by-step animated derivation of the key relationship in 09 Bond Characteristics Bond Length Ionic C Jfwsg5.",
-    "Interactive toggle between correct and incorrect representations of 09 Bond Characteristics Bond Length Ionic C Jfwsg5."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 09 Bond Characteristics Bond Length Ionic C Jfwsg5.",
-    "Side-by-side comparison animation of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 vs commonly confused concept.",
-    "Timelapse build-up of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 from prerequisite knowledge in chemical bonding and shapes of molecules."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 09 Bond Characteristics Bond Length Ionic C Jfwsg5",
-    "Comparison table: 09 Bond Characteristics Bond Length Ionic C Jfwsg5 vs related concepts in chemical bonding and shapes of molecules",
-    "Step-by-step worked example layout for 09 Bond Characteristics Bond Length Ionic C Jfwsg5"
-  ],
-  "summary": [
-    "09 Bond Characteristics Bond Length Ionic C Jfwsg5 is a fundamental concept in chemical bonding and shapes of molecules that describes specific chemical behaviour under defined conditions.",
-    "Mastering 09 Bond Characteristics Bond Length Ionic C Jfwsg5 involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 09 Bond Characteristics Bond Length Ionic C Jfwsg5 alongside related concepts in chemical bonding and shapes of molecules ensures strong conceptual clarity and exam readiness."
   ]
 }

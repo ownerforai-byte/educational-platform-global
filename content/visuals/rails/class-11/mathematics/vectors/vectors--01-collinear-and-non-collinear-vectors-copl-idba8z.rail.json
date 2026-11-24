@@ -21,16 +21,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Collinear and non-collinear vectors, coplanar and non-cop… (Vectors, Mathematics, class-11-notes) covers Collinear, non-collinear vectors, coplanar. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Collinear** vectors share a line: b = λa, tested by **a × b = 0** (sin θ = 0) or equal component ratios. **Coplanar** vectors share a plane: tested by **[a b c] = a·(b × c) = 0** (zero volume) or the combination form c = λa + μb. The two conditions are dependence in geometric dress — two-vector dependence is parallelism, three-vector dependence is coplanarity — and two vectors are *always* coplanar, which is why…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and non-collinear vectors, coplanar and non-cop… — quick idea map\"><title>Collinear and non-collinear vectors, coplanar and non-cop… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Collinear and non-collinear vectors, coplanar</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and non-cop…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Collinear</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Non-collinear vectors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a·b = a₁b₁+a₂b₂+a₃b₃</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|a×b| = |a||b|sinθ</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and non-collinear vectors, coplanar and non-cop… — quick idea map\"><title>Collinear and non-collinear vectors, coplanar and non-cop… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Collinear and non-collinear vectors, coplanar</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and non-cop…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The tests are geometry in</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">algebra: cross product</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">zero kills sin th (line…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Collinear vectors:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">parallel to one line; b =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">la for scalar l; test a x</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Collinear: b = λa ⟺ a ×</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">b = 0 ⟺ a₁/b₁ = a₂/b₂ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a₃/b₃ - Coplanar: [a b c]</text></svg>",
         "caption": "Collinear and non-collinear vectors, coplanar and non-cop… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "a·b = a₁b₁+a₂b₂+a₃b₃\n|a×b| = |a||b|sinθ\n|a| = √(a²+b²+c²)"
+      "text": "- Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃ - Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb - Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0"
     },
     {
       "label": "Conditions",
@@ -38,11 +38,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|)."
+      "text": "\"a, b, c are coplanar iff a.(b x c) = 0; a, b are collinear iff a x b = 0.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The connecting-vector rule*** — for points, subtract first: AB = b - a and AC = c - a; only their parallelism says the points share a line."
     },
     {
       "label": "Limitation",
@@ -50,31 +50,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Collinear and non-collinear vectors, coplanar and non-cop… — Vectors, Mathematics (class-11-notes).  ·  **Tested.** define it · list: collinear, non-collinear vectors, coplanar, non-coplanar vectors · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Sharing a Line or a Plane **Collinear** vectors lie along one line; **coplanar** vectors lie in one plane. The theorems give algebraic tests: a cross-product zero test for collinearity, a scalar-triple-product zero test for coplanarity, and the linear-combination characterisations that tie this topic to dependence.  ·  ## 2. Fundamental Concepts ### 2.1 Collinear vectors - **Definition:** vectors a, b are collinear if they are parallel to the same line — equivalently **b = λa** for some scalar λ (non-zero vectors). - **Theorem (cross test):** a, b are collinear ⟺ **a × b = 0** (since |a × b| = |a||b|sin θ and sin θ = 0 exactly when parallel).…"
     },
     {
       "label": "Shortcut",
-      "text": "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "Two vectors: equal component ratios (watch zeros). Three vectors: 3x3 determinant = 0. Points: form AB, AC first, then test."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Collinear and non-collinear vectors, coplanar and non-cop…\" with one example.  ·  compare \"Collinear\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (2m): Show that a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.** — **Ratio test:** a₁/b₁ = 1/2, a₂/b₂ = 1/2, a₃/b₃ = 1/2 — all three ratios are equal, so **b = 2a**: one vector is a scalar multiple of the other, which is exactly collinearity.…  ·  **NEB-style (3m): Show that the vectors a = î − ĵ + k̂, b = 2î + ĵ − k̂, c = î − 3ĵ + 3k̂ are coplanar.** — **Triple product test:** three vectors are coplanar iff [a b c] = a·(b × c) = 0, computed as the determinant of components: det |1 −1 1; 2 1 −1; 1 −3 3| = 1[(1)(3) − (−1)(−3)] − (−1)[(2)(3) − (−1)(1)] + 1[(2)(−3) − (1)(1)] = 1(3 −…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..",
+      "text": "State which test you are using and why it applies — the marker looks for the geometric reason, not just the arithmetic.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and non-collinear vectors, coplanar and non-cop… — topic mind map\"><title>Collinear and non-collinear vectors, coplanar and non-cop… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Collinear and non-collinear vectors, coplanar…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Collinear</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Non-collinear vectors</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Coplanar</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Non-coplanar vectors</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Collinear and non-collinear vectors, coplanar and non-cop… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The tests are geometry in algebra: cross product zero kills sin th (line sharing), triple product zero kills volume (plane sharing)."
+    },
+    {
       "label": "Key points",
-      "text": "• Collinear  ·  • Non-collinear vectors  ·  • Coplanar  ·  • Non-coplanar vectors"
+      "text": "Collinear vectors: parallel to one line; b = la for scalar l; test a x b = 0; component ratios a1/b1 = a2/b2 = a3/b3 (non-zero components). Coplanar vectors: parallel to one plane; test [a b c] = a.(b x c) = 0; equivalently c = la + mb. Points A, B, C collinear iff AB || AC i.e. (b-a) x (c-a) = 0.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Collinearity and coplanarity are dependence wearing geometry: b = la is two-vector dependence, c = la + mb is three-vector dependence."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Collinear and non-collinear vectors, coplanar and non-cop…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): State and prove the condition for three points A, B, C to be collinear.** — **Condition:** A, B, C are collinear ⟺ **AB × AC = 0**, i.e. (b − a) × (c − a) = 0 in position vectors.…"
     },
     {
       "label": "MCQ drill",
@@ -82,19 +90,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).  ·  **Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Collinear vectors** | Parallel to one common line | a and 3a | | **Coplanar vectors** | Parallel to one common plane | î, ĵ, î + 2ĵ | | **Cross test** | a × b = 0 detects collinearity | sin θ = 0 | | **Triple product test** | [a b c] = 0 detects coplanarity | flattened parallelepiped |  ·  ## 4. Detailed Explanation ### 4.1 Why the tests work - Collinearity kills sin θ (cross product magnitude); coplanarity kills the volume (scalar triple product). Both tests are geometric facts wearing algebra. ### 4.2 Free vectors vs points - Vectors are free (translatable); points are not.…  ·  ## 5. Comparison Tables **Collinearity vs coplanarity** | Basis | Collinear | Coplanar | |---|---|---| | applies to | two vectors (line) | three vectors (plane) | | algebraic test | a × b = 0 | [a b c] = 0 | | combination form | b = λa | c = λa + μb | | geometric image | flattened to a line | flattened to a plane |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: collinear, non-collinear vectors, coplanar, non-coplanar vectors.  ·  one worked example for \"Collinear and non-collinear vectors, coplanar and non-cop…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..  ·  No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Non-collinear vectors.** one-line definition + one-line exam use."
+      "text": "Show a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.  ·  Test three given vectors for coplanarity via the scalar triple product.  ·  State the condition for points A, B, C to be collinear in vector form."
     },
     {
       "label": "More ideas",
-      "text": "**Coplanar.** one-line definition + one-line exam use.  ·  **Non-coplanar vectors.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  ## 6. Common Confusions **Two vectors are always coplanar:** any two directions define a plane — coplanarity is a *three-vector* condition."
+    },
+    {
+      "label": "More ideas",
+      "text": "**a × b = 0 also when a or b is 0:** the zero vector is trivially collinear with everything; the test still holds.  ·  **Point collinearity needs connecting vectors:** check AB ∥ AC, not the position vectors a, b, c themselves.  ·  ## 7. Exam Application **NEB-style (3m): Show that the points with position vectors a = 2î − ĵ + k̂, b = 3î − 2ĵ + 2k̂, c = î − ĵ... are collinear (template).** — Form **AB = b − a** and **AC = c − a**; check whether AB = λAC by comparing components (or verify AB × AC = 0).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Prove that î − ĵ + k̂, 2î + ĵ and −î + 3ĵ − k̂... coplanarity via triple product.** — Compute **[a b c]** as the 3×3 determinant of components; expansion gives a number. Zero ⟹ coplanar (one vector is a combination of the other two); non-zero ⟹ they span space.  ·  **NEB-style (2m): Show that a = î + ĵ + k̂, b = 2î + 2ĵ + 2k̂ are collinear.** — Component ratios: 1/2 = 1/2 = 1/2 ✓ — equal ratios, so **b = 2a** and the vectors are collinear. Equivalently a × b = 0: every component of the cross product vanishes because each pair of components is proportional."
     }
   ]
 }

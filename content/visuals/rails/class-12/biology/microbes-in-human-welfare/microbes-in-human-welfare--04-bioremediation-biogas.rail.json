@@ -52,11 +52,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Bioremediation, biogas — Microbes in Human Welfare, Biology (class-12-notes).  ·  **Tested.** define it · list: bioremediation, biogas · one worked example · one misconception each."
+      "text": "# Bioremediation, biogas ## 1. Introduction Opening frame for **Bioremediation** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Microbes in Human Welfare fill pass. ## 2.…  ·  Microbes can be put to work on our waste. **Bioremediation** uses microorganisms to break pollutants down into harmless substances — oil-eating bacteria (*Pseudomonas*) after spills, microbes cleaning sewage in treatment plants. **Biogas** is the fuel side of the same idea: anaerobic methanogen bacteria digest animal dung and plant waste and release methane-rich gas for cooking and lighting."
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Bioremediation, biogas\" and verify the answer is plausible.  ·  define + example each sub-idea: bioremediation, biogas."
+      "text": "Trick 1: Bioremediation: microbes degrade pollutants — Pseudomonas putida (oil spills, 'superbugs'), bacteria clean sewage in secondary treatment; the definition + example pair.  ·  Trick 2: Biogas: anaerobic digestion — methanogens (Methanobacterium) in cow dung produce CH4 (~55–60%), CO2, H2S; gobar gas plant: mixing tank → digester → gas holder."
     },
     {
       "label": "Board question",
@@ -71,16 +71,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Bioremediation, biogas\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Bioremediation, biogas\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Biogas.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — waste in, energy and clean water out (study in this order)** | Step | Concept | Key organism / part | |---|---|---| | 1 | Sewage treatment — aerobic stage | Floc of bacteria and fungi in the aeration tank eats organic matter | | 2 | Sewage treatment — anaerobic stage | Sludge digested by anaerobic bacteria; methane released | | 3 | Bioremediation of oil spills…  ·  **Bioremediation and biogas — classified summary** | Application | Microbe | Input | Output | |---|---|---|---| | Sewage treatment (aerobic) | Mixed bacterial-fungal floc | Waste water organic matter | Cleaner water + microbial floc | | Sludge digestion (anaerobic) | Anaerobic bacteria + methanogens | Settled sludge | Methane + stabilised sludge | | Oil-spill cleanup |…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Methanogens are ANAEROBES — that is why the digester is sealed; cow dung inoculates the culture — the two conditions.  ·  Trick 4: Uses of biogas: cooking, lighting; sludge residue = fertiliser — the dual product line.  ·  define + example each sub-idea: bioremediation, biogas."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Bioremediation, biogas\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Parts of a floating-dome biogas plant and their jobs** | Part | Job | |---|---| | Mixing tank / inlet | Dung + water slurry enters here | | Digester (well) | Sealed underground tank where anaerobic digestion happens | | Floating gas holder dome | Rises as gas collects; keeps constant pressure | | Gas outlet pipe |…  ·  ## 4. Diagrams and figures - **D1** — Bioremediation — structure (authored SVG — English labels, viewBox 900×640) - **D2** — Bioremediation — process or life-cycle flow (authored SVG — English labels) - **D3** — Bioremediation — detailed reference plate (curated external — English labels; source, author and license…  ·  ```svg Floating-dome biogas plant — labelled cross-section <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Gobar gas plant (floating dome…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — why the digester must be airtight.** Methanogens are **obligate anaerobes**: oxygen poisons them. A cracked dome lets air in, the methane producers stop, acid-formers take over, and gas output collapses while the slurry turns sour.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Define bioremediation with one example (oil-eating Pseudomonas). (2) Name the methanogen and state why anaerobic conditions are essential. (3) Give the composition of biogas and its two products (gas + slurry fertiliser). (4) Draw and label the floating-dome plant.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Microbes convert waste to value: aerobic flocs clean sewage, Pseudomonas eats oil spills, and sealed digesters of methanogens turn dung into methane plus fertiliser. The binding condition is anaerobiosis. **Self-check:** can you label the six parts of the biogas plant and explain why the dome floats?"
     }
   ]
 }

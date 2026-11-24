@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Function: domain and range of a function, inverse functio… (Algebra, Mathematics, class-11-notes) covers Function, domain, range of a function. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The algebraic-function zoo sorts by rule. **Linear** f = mx + c: slope m is the constant rate (f(b)−f(a))/(b−a); perpendicular slopes multiply to −1. **Quadratic** ax² + bx + c: completing the square yields a(x − h)² + k with **vertex (h, k), h = −b/2a** — minimum for a > 0, maximum for a < 0 (2x² − 8x + 5 → vertex (2, −3), minimum −3).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse functio… — quick idea map\"><title>Function: domain and range of a function, inverse functio… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Function: domain and range of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">inverse functio…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Function</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Domain</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Standard result for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Function: domain and</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">range of a function,</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse functio… — quick idea map\"><title>Function: domain and range of a function, inverse functio… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Function: domain and range of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">inverse functio…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Completing the square is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the quadratic's X-ray: one</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rewrite exposes vertex,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Linear f(x) = mx + c:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">slope = rate of change =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(f(b)-f(a))/(b-a),</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- slope m = (f(b) −</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(a))/(b − a); m⊥ = −1/m -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ax² + bx + c = a(x −</text></svg>",
         "caption": "Function: domain and range of a function, inverse functio… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Standard result for \"Function: domain and range of a function, inverse functio…\" — state it and verify by substituting a simple case."
+      "text": "- slope m = (f(b) − f(a))/(b − a); m⊥ = −1/m - ax² + bx + c = a(x − b/2a)² + (c − b²/4a); vertex (−b/2a, c − b²/4a) - rational asymptotes: deg p < deg q ⟹ y = 0; equal ⟹ y = aₚ/b_q; deg p = deg q + 1 ⟹ slant"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Function: domain and range of a function, inverse functio…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "\"Vertex at (-b/2a, f(-b/2a)); minimum for a > 0, maximum for a < 0; vertical asymptotes at zeros of the denominator.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The squaring trap*** — 2sqrt(x+1) = x - 3 demands x >= 3 before squaring; the negative candidate 5 - 2sqrt5 is extraneous, caught only by the sign filter."
     },
     {
       "label": "Limitation",
@@ -56,31 +56,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Function: domain and range of a function, inverse functio… — Algebra, Mathematics (class-11-notes).  ·  **Tested.** define it · list: function, domain, range of a function, inverse function · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Function Zoo, Classified This topic catalogues the algebraic functions — **linear, quadratic, polynomial, rational, composite** — and the graph-reading theorems attached to each: slope as rate, vertex as extremum, asymptotes as forbidden lines.  ·  ## 2. Fundamental Concepts ### 2.1 Linear functions - **f(x) = mx + c**: graph a line; **m = slope = rate of change** = (f(b) − f(a))/(b − a) — constant for lines. m > 0 rising, m < 0 falling, m = 0 constant. - **Two-point theorem:** a line is determined by two points; parallel lines share slope, perpendicular lines multiply slopes to **−1**.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Function  ·  • Domain"
+      "text": "Vertex: -b/2a then substitute. Factor quadratics: two numbers with product c and sum b. Rational asymptotes: compare degrees. Radical equations: square then filter by sign."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Function: domain and range of a function, inverse functio…\" with one example.  ·  compare \"Function\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)** — **Factoring route:** seek two numbers with product 6 and sum −5: they are −2 and −3, so x² − 5x + 6 = **(x − 2)(x − 3)**. A product is zero iff a factor is zero: x − 2 = 0 or x − 3 = 0 ⟹ **x = 2 or x = 3**. **Verification:** x = 2: 4 − 10 + 6 = 0 ✓; x = 3: 9 − 15 + 6 = 0 ✓.…  ·  **NEB 2023 (verified PYQ): Solve for x: 2√(x + 1) = x − 3. (3m)** — **Step 1 — sign condition:** the left side 2√(x+1) is non-negative, so any solution must satisfy **x − 3 ≥ 0, i.e. x ≥ 3** — stated *before* squaring. **Step 2 — square:** 4(x + 1) = (x − 3)² = x² − 6x + 9 ⟹ x² − 10x + 5 = 0.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.",
+      "text": "For radical equations, state the sign condition before squaring and test both candidates after - the filter is where the marks live.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse functio… — topic mind map\"><title>Function: domain and range of a function, inverse functio… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Function</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Domain</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Range of a function</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Inverse function</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Function: domain and range of a function, inverse functio… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Completing the square is the quadratic's X-ray: one rewrite exposes vertex, axis, and extremum simultaneously."
+    },
+    {
       "label": "Key points",
-      "text": "• Range of a function  ·  • Inverse function  ·  • Composite function  ·  • Algebraic"
+      "text": "Linear f(x) = mx + c: slope = rate of change = (f(b)-f(a))/(b-a), constant; parallel = equal slopes; perpendicular slopes multiply to -1. Quadratic f(x) = ax^2 + bx + c: complete the square a(x - h)^2 + k with h = -b/2a; vertex (h, k); minimum if a > 0, maximum if a < 0; axis x = h.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Projectile height is a quadratic in time: the vertex is the peak of the trajectory - the extremum theorem in the open air."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Function: domain and range of a function, inverse functio…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Find the vertex, axis of symmetry and extreme value of f(x) = 2x² − 8x + 5.** — **Vertex x-coordinate:** h = −b/2a = −(−8)/(2·2) = **2**. **Vertex y-coordinate:** k = f(2) = 2(4) − 16 + 5 = **−3**.…"
     },
     {
       "label": "MCQ drill",
@@ -88,27 +96,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Domain.** one-line definition + one-line exam use.  ·  **Range of a function.** one-line definition + one-line exam use.  ·  **Inverse function.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Slope** | Rate of change (f(b)−f(a))/(b−a) | constant for lines | | **Vertex** | Parabola's extremum at h = −b/2a | minimum if a > 0 | | **Vertical asymptote** | Line x = a where q(a) = 0 | x = 2 for 1/(x−2) | | **Slant asymptote** | Oblique line for deg p = deg q + 1 | x + 1 for (x²+1)/x |  ·  ## 4. Detailed Explanation ### 4.1 Slope as the universal rate - For any function the difference quotient (f(b) − f(a))/(b − a) measures average rate; for lines it is constant — that constancy *is* linearity, and calculus will generalise it.…  ·  ## 5. Comparison Tables **Rational-function asymptote rules** | Degree relation | Horizontal behaviour | |---|---| | deg p < deg q | y = 0 | | deg p = deg q | y = (leading coefficients ratio) | | deg p = deg q + 1 | slant asymptote (by division) | | deg p > deg q + 1 | no straight asymptote |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: function, domain, range of a function, inverse function.  ·  one worked example for \"Function: domain and range of a function, inverse functio…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  Verified PYQs: NEB 2024 (x^2 - 5x + 6 = 0), NEB 2023 (2sqrt(x+1) = x - 3 with squaring trap) - assigned to this row.  ·  Solve x² − 5x + 6 = 0 by factoring."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Composite function.** one-line definition + one-line exam use.  ·  **Algebraic.** one-line definition + one-line exam use."
+      "text": "Solve 2√(x + 1) = x − 3, rejecting extraneous roots.  ·  Find the vertex and extremum of 2x² − 8x + 5.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Linear.** one-line definition + one-line exam use.  ·  **Quadratic.** one-line definition + one-line exam use.  ·  **Cubic.** one-line definition + one-line exam use."
+      "text": "## 6. Common Confusions **Vertex x-coordinate is −b/2a:** not b/2a — the minus sign survives from completing the square.  ·  **Holes vs asymptotes:** a common factor (x − 2)/(x − 2) leaves a **hole** at x = 2; an unfactorable zero of q gives an asymptote.  ·  **Perpendicular slopes multiply to −1:** not \"reciprocal\" — the reciprocal alone gives parallel-looking errors."
     },
     {
       "label": "More ideas",
-      "text": "**Transcendental.** one-line definition + one-line exam use.  ·  **Trigonometric.** one-line definition + one-line exam use.  ·  **Exponential.** one-line definition + one-line exam use."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Logarithmic.** one-line definition + one-line exam use."
+      "text": "## 7. Exam Application **NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)** — **Factor:** x² − 5x + 6 = (x − 2)(x − 3) — two numbers multiplying to 6 and adding to −5 are −2, −3.…  ·  **NEB 2023 (verified PYQ): Solve 2√(x + 1) = x − 3. (3m)** — **Isolate and square:** 2√(x+1) = x − 3 requires x − 3 ≥ 0 (the right side must be non-negative since the left is). Squaring: 4(x + 1) = x² − 6x + 9 ⟹ x² − 10x + 5 = 0 ⟹ x = (10 ± √(100 − 20))/2 = 5 ± 2√5.…  ·  **NEB-style (2m): Find the vertex and extremum of f(x) = 2x² − 8x + 5.** — h = −b/2a = 8/4 = **2**; k = f(2) = 8 − 16 + 5 = **−3**. Vertex **(2, −3)**; since a = 2 > 0 the parabola opens up and **−3 is the minimum value**, attained at x = 2. Axis of symmetry x = 2."
     }
   ]
 }

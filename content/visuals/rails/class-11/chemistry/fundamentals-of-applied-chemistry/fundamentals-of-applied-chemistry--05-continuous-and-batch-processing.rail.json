@@ -25,52 +25,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Continuous and batch processing (Fundamentals of Applied Chemistry, Chemistry, class-11-notes) covers Continuous, batch processing. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Batch and continuous are the two architectures of chemical production: a recipe followed in time versus an equilibrium held in space. Batch wins flexibility, low capital, and validation-friendly lots (pharma, food, dyes); continuous wins scale economics, consistency and low labour (ammonia, acids, petrochemicals) — because high fixed costs demand unbroken tonnage.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuous and batch processing — quick idea map\"><title>Continuous and batch processing — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuous and batch processing</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Continuous</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Batch processing</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuous and batch processing — quick idea map\"><title>Continuous and batch processing — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuous and batch processing</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Batch control is a recipe;</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">continuous control is an</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">equilibrium - the…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Batch: charge -&gt;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">process -&gt; discharge</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">-&gt; clean -&gt; repeat;</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Batch: output per year =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lot size × lots per year</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(limited by…</text></svg>",
         "caption": "Continuous and batch processing — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Continuous\n• Batch processing"
+      "text": "- Batch: output per year = lot size × lots per year (limited by cleaning/changeover time) - Continuous: output per year = rate × 8760 h × availability factor"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Continuous\" as one blob → ✅ split into: continuous, batch processing.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Continuous and batch processing\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: continuous, batch processing (within Fundamentals of Applied Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "Process choice is an economic variable - the volume and the customer, not the reaction, pick the architecture."
+    },
+    {
+      "label": "Solved",
+      "text": "***The same reaction, two architectures*** - esterification at kilo scale in a flavour house (batch) and at tonne scale in biodiesel (continuous) - chemistry identical, economics decides."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Continuous and batch processing — Fundamentals of Applied Chemistry, Chemistry (class-11-notes).  ·  **Tested.** define it · list: continuous, batch processing · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Batch versus Continuous Processing Every chemical plant answers one architectural question first: **make the product in discrete batches, or run the process continuously without stopping?** Batch processing makes a defined quantity, cleans, and repeats; continuous processing feeds raw material and draws product in unbroken streams at steady state.…  ·  ## 2. Theorem Mirror - **Batch processing:** charge the reactor → process for a set time → discharge → clean → repeat. Output is in lots; composition varies during the batch. Suited to: small volumes, multiple products in one vessel, pharma, food, dyes, specialty chemicals.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Continuous and batch processing\" and verify the answer is plausible.  ·  define + example each sub-idea: continuous, batch processing."
+      "text": "Assign industry first, then justify with volume + flexibility - the assignment earns the framing mark."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Continuous and batch processing\" with one example.  ·  compare \"Continuous\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (6m): Distinguish batch and continuous processing, and state the type of industry each suits with two examples each.** — **Batch:** the vessel is charged with reactants, processed for a set time under a written recipe, discharged, cleaned, and reused for the next lot; composition changes with time during each batch.…  ·  **NEB-style (6m): Why does a continuous plant need hundreds of instruments while a batch plant relies largely on its written recipe? Relate your answer to the nature of steady state.** — **Batch:** the control variable is **time** — the recipe prescribes the path (charge, heat to 80 °C, hold 2 h, cool, discharge); each batch replays the…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Draw the comparison as a table (capital, labour, flexibility, consistency, scale) - the table is the complete answer.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuous and batch processing — topic mind map\"><title>Continuous and batch processing — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Continuous and batch processing</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Continuous</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Batch processing</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Continuous and batch processing — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Batch control is a recipe; continuous control is an equilibrium - the knowledge lives in documents vs instruments."
+    },
+    {
+      "label": "Key points",
+      "text": "Batch: charge -> process -> discharge -> clean -> repeat; recipe-controlled; flexible, labour-heavy, low capital; pharma/food/dyes/specialty. Continuous: unbroken feed and product at steady state; instrument-loop-controlled; capital-heavy, labour-light, consistent, scale-economical; petrochemicals/ammonia/acids.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Ammonia plants run 350+ days a year - every idle day is fixed-cost spread lost."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): A pharmaceutical company manufactures five different products in the same building, each in lots of 200 kg with strict cleaning validation between lots.…  ·  **NEB-style (6m): An exothermic nitration is unsafe when all reagents are charged at once. Explain how semi-batch operation solves the problem, and state one additional benefit.** — **Semi-batch operation:** charge the less reactive component (e.g.…"
     },
     {
       "label": "MCQ drill",
@@ -78,94 +94,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Batch processing.** one-line definition + one-line exam use."
+      "text": "## 3. Deep Conceptual — Steady State Changes the Whole Control Problem - In a batch reactor the operator's variable is *time* — the recipe says hold at 80 °C for 2 hours; every batch travels the same composition path from start to finish.…  ·  ## 4. Deep Conceptual — The Choice Is the Economics Wearing a Flowsheet - The fixed/variable cost structure decides: high fixed costs and enormous demand ⟹ continuous (ammonia runs 350+ days a year; every idle day is lost fixed-cost spread); low volumes, frequent changeover, validation demands ⟹ batch (a pharma vessel makes antibiotic today, ointment tomorrow, with documented…  ·  ## 5. Worked Example Types - **Type A — define and contrast:** the two modes with the standard comparison table. - **Type B — assign the industry:** decide batch or continuous for a given product and justify. - **Type C — steady-state reasoning:** explain why continuous composition is position-dependent and time-independent.…"
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Continuous and batch processing\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the manufactures rows (135-140).  ·  Compare batch and continuous processing in a five-row table.  ·  Assign batch or continuous processing to pharmaceuticals and ammonia, with reasons."
+    },
+    {
+      "label": "More ideas",
+      "text": "Explain why slow addition of one reagent (semi-batch) controls an exotherm.  ·  ## 6. Common Confusions **\"Continuous is always more modern\":** it is more *economic at scale* — for pharma, batch remains the right answer for validation and flexibility reasons. **\"Batch plants have no instrumentation\":** they have plenty — but their control variable is time, not steady-state position."
     }
-  ],
-  "keyPoints": [
-    "05 Continuous And Batch Processing is a core concept in fundamentals of applied chemistry.",
-    "Understanding 05 continuous and batch processing requires knowing its definition, conditions, and limitations.",
-    "05 Continuous And Batch Processing has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 05 continuous and batch processing must be memorized precisely.",
-    "05 Continuous And Batch Processing connects to neighbouring topics within fundamentals of applied chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 05 continuous and batch processing.",
-    "Practical examples solidify understanding of 05 Continuous And Batch Processing and its real-world relevance.",
-    "Misconceptions about 05 continuous and batch processing often arise from confusing it with similar concepts.",
-    "05 Continuous And Batch Processing follows systematic rules that can be applied step-by-step.",
-    "Review of 05 continuous and batch processing should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "05 Continuous And Batch Processing is defined by its specific characteristics within fundamentals of applied chemistry.",
-    "The conditions under which 05 continuous and batch processing applies are as important as the concept itself.",
-    "05 Continuous And Batch Processing can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 05 continuous and batch processing through application-based and comparison questions.",
-    "A clear grasp of 05 Continuous And Batch Processing builds the foundation for advanced topics in fundamentals of applied chemistry."
-  ],
-  "importantNotes": [
-    "When studying 05 continuous and batch processing, always note the exceptions alongside the general rule.",
-    "05 Continuous And Batch Processing should be reviewed with at least one worked example per sub-point.",
-    "Link 05 continuous and batch processing back to prior knowledge in fundamentals of applied chemistry for deeper retention.",
-    "Practice past NEB board questions on 05 Continuous And Batch Processing to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 05 Continuous And Batch Processing: apply the standard definition to a simple case.",
-    "Intermediate example: combine 05 continuous and batch processing with a related concept from fundamentals of applied chemistry.",
-    "Exam-style problem: solve a question involving 05 Continuous And Batch Processing under time pressure.",
-    "Real-world connection: show how 05 Continuous And Batch Processing appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 05 Continuous And Batch Processing and state two conditions required for it to occur.",
-    "Differentiate 05 Continuous And Batch Processing from the most commonly confused concept in fundamentals of applied chemistry.",
-    "Solve a numerical or structural problem involving 05 Continuous And Batch Processing.",
-    "List three applications of 05 Continuous And Batch Processing in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 05 Continuous And Batch Processing without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 05 Continuous And Batch Processing.",
-    "Create three flashcards covering definition, formula, and limitation of 05 Continuous And Batch Processing."
-  ],
-  "universalFacts": [
-    "05 Continuous And Batch Processing is part of the NEB Class 11 fundamentals of applied chemistry syllabus.",
-    "Every concept in fundamentals of applied chemistry builds upon definitions established earlier in the chapter.",
-    "05 Continuous And Batch Processing is assessed through both short-answer and long-answer board questions.",
-    "Understanding 05 Continuous And Batch Processing improves performance across the entire fundamentals of applied chemistry unit.",
-    "Revision of 05 Continuous And Batch Processing should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 05 Continuous And Batch Processing with closely related concepts in fundamentals of applied chemistry — focus on distinguishing features.",
-    "The scope of 05 Continuous And Batch Processing is sometimes overstated; remember its precise boundaries.",
-    "Applying 05 Continuous And Batch Processing outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 05 Continuous And Batch Processing and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 05 Continuous And Batch Processing? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "05 Continuous And Batch Processing is primarily studied under which branch of fundamentals of applied chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 05 Continuous And Batch Processing is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to fundamentals of applied chemistry — Answer: B",
-    "Which example correctly illustrates 05 Continuous And Batch Processing? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "05 Continuous And Batch Processing differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 05 Continuous And Batch Processing.",
-    "Step-by-step animated derivation of the key relationship in 05 Continuous And Batch Processing.",
-    "Interactive toggle between correct and incorrect representations of 05 Continuous And Batch Processing."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 05 Continuous And Batch Processing.",
-    "Side-by-side comparison animation of 05 Continuous And Batch Processing vs commonly confused concept.",
-    "Timelapse build-up of 05 Continuous And Batch Processing from prerequisite knowledge in fundamentals of applied chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 05 Continuous And Batch Processing",
-    "Comparison table: 05 Continuous And Batch Processing vs related concepts in fundamentals of applied chemistry",
-    "Step-by-step worked example layout for 05 Continuous And Batch Processing"
-  ],
-  "summary": [
-    "05 Continuous And Batch Processing is a fundamental concept in fundamentals of applied chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 05 Continuous And Batch Processing involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 05 Continuous And Batch Processing alongside related concepts in fundamentals of applied chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

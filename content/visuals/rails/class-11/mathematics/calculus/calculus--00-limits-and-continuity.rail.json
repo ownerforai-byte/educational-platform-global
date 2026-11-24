@@ -87,7 +87,7 @@
     },
     {
       "label": "More practice",
-      "text": "Q3. Find the horizontal and vertical asymptotes of $y=\\frac{2x+1}{x^2-4}$."
+      "text": "Q3. Find the horizontal and vertical asymptotes of $y=\\frac{2x+1}{x^2-4}$.  ·  Q4. **NEB-style (5m):** Evaluate $\\lim_{x\\to5}\\frac{x^2-25}{x-5}$ with the four-line rhythm (form, transform, licence, value). **Solution.** Form: $(25-25)/0=0/0$, indeterminate. Transform: $x^2-25=(x-5)(x+5)$, so the expression equals $x+5$ for $x\\ne5$.…  ·  Q5. **NEB-style (6m):** Evaluate the one-sided limits of $f(x)=\\frac{x+2}{x-1}$ at $x=1$ and classify the discontinuity. **Solution.** Numerator at 1 is $3\\ne0$, so a genuine wall. RHL ($x\\to1^+$): denominator small positive, numerator positive, so $f\\to+\\infty$.…"
     },
     {
       "label": "More hints",

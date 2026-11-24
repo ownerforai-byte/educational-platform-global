@@ -53,11 +53,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Antigens and antibodies, immune response — Human Health and Diseases, Biology (class-12-notes).  ·  **Tested.** define it · list: antigens, antibodies, immune response · one worked example · one misconception each."
+      "text": "# Antigens and antibodies, immune response ## 1. Introduction Opening frame for **Antigens and antibodies** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Human Health and Diseases fill pass. ## 2.…  ·  An **antigen** is any substance that the immune system recognises as foreign and reacts against (toxin, protein on a pathogen surface, pollen). An **antibody (immunoglobulin)** is the Y-shaped protein a plasma B cell secretes to bind that antigen specifically. Antibodies never kill directly — they tag: neutralise toxins, coat pathogens for phagocytes (opsonisation), clump them (agglutination), or trigger complement."
     },
     {
       "label": "Shortcut",
-      "text": "• Immune response  ·  solve / apply for \"Antigens and antibodies, immune response\" and verify the answer is plausible."
+      "text": "Trick 1: Antigen = foreign molecule binding antibody/MHC; antibody = Y-shaped Ig (2 heavy + 2 light chains, disulphide bonds) with variable antigen-binding sites — draw the Y.  ·  Trick 2: Ig classes: IgG (most abundant, crosses placenta), IgA (secretions), IgM (first response, pentamer), IgE (allergy), IgD — the five classes with one role each."
     },
     {
       "label": "Board question",
@@ -72,20 +72,40 @@
       }
     },
     {
+      "label": "Key points",
+      "text": "• Immune response"
+    },
+    {
+      "label": "More practice",
+      "text": "solve / apply for \"Antigens and antibodies, immune response\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "Which of the following is a distinct sub-topic under \"Antigens and antibodies, immune response\"? → Antigens  ·  A common examiner point on \"Antigens and antibodies, immune response\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Antibodies.** one-line definition + one-line exam use.  ·  **Immune response.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from antigen encounter to immune memory (study in this order)** | Step | Event | Key cell / molecule | |---|---|---| | 1 | Antigen enters and is captured | Macrophage / dendritic cell presents it | | 2 | Helper T cell activates the right clone | CD4 helper T + interleukins | | 3 | B cells divide into plasma cells | Clonal selection and expansion | | 4 |…  ·  **The five antibody classes — classified by structure and role** | Class | Structure | Where found | Main role | |---|---|---|---| | IgG | Monomer | Blood, tissue fluid, crosses placenta | Main defender of secondary response; gives newborn passive immunity | | IgM | Pentamer (5 Y units) | Blood — first on the scene | First antibody of the primary response; powerful…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: antigens, antibodies, immune response.  ·  one worked example for \"Antigens and antibodies, immune response\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Primary vs secondary response: secondary is faster, stronger (memory cells) — the graph sketch earns marks.  ·  Trick 4: Antibody actions: neutralisation, opsonisation, agglutination, complement lysis — four verbs, four marks.  ·  define + example each sub-idea: antigens, antibodies, immune response."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Antigens and antibodies, immune response\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Primary vs secondary immune response; active vs passive immunity** | Feature | Primary response | Secondary response | |---|---|---| | Trigger | First meeting with the antigen | Re-exposure to the same antigen | | Lag period | 5–7 days or more | 1–2 days | | Main antibody | IgM, then some IgG | Massive IgG | |…  ·  ## 4. Diagrams and figures - **D1** — Immune-system tree, antibody structure and pathogen plates (authored SVG — English labels, viewBox 900×640) - **D2** — Antigens and antibodies — process or life-cycle flow (authored SVG — English labels) - **D3** — Antigens and antibodies — detailed reference plate (curated…  ·  ```svg Antibody structure — the Y-shaped immunoglobulin, labelled <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Antibody (IgG) — two heavy + two light…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — reading an antibody titre.** A patient's blood shows high IgM against a virus but almost no IgG: the infection is **new** (primary response). A second sample two weeks later shows IgM falling and IgG rising steeply: the patient is clearing the infection and has gained memory.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Draw and label the Y-shaped antibody (heavy, light, variable, constant). (2) Match the five immunoglobulin classes to their locations and roles. (3) Compare primary and secondary response (lag, magnitude, antibody class). (4) Active vs passive immunity with one example each.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Antigens trigger clonal selection; antibodies are specific Y-shaped tags with five classes (GAMED) each suited to a compartment and a job. The primary response is slow IgM; the secondary is fast massive IgG from memory cells. **Self-check:** can you sketch the antibody and name which class responds first?"
     }
   ]
 }

@@ -21,16 +21,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Linear combination of vectors, linearly dependent and ind… (Vectors, Mathematics, class-11-notes) covers Linear combination of vectors, linearly dependent, independent vectors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A **linear combination** rebuilds vectors from chosen directions: v = c₁a₁ + ⋯ + cₙaₙ, with the standard basis î, ĵ, k̂ returning the components themselves. Vectors are **linearly dependent** when a non-trivial combination vanishes — for two vectors that means parallelism (one is a multiple of the other), for three it means **coplanarity**, and any set containing **0** is dependent outright.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear combination of vectors, linearly dependent and ind… — quick idea map\"><title>Linear combination of vectors, linearly dependent and ind… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Linear combination of vectors, linearly</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">dependent and ind…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Linear combination of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vectors</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Linearly dependent</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a·b = a₁b₁+a₂b₂+a₃b₃</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|a×b| = |a||b|sinθ</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear combination of vectors, linearly dependent and ind… — quick idea map\"><title>Linear combination of vectors, linearly dependent and ind… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Linear combination of vectors, linearly</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">dependent and ind…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dependence is redundancy:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a dependent vector adds no</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">new direction, and the…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Linear combination: v = c1</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a1 + ... + cn an.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- v = c₁a₁ + c₂a₂ + ⋯ +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cₙaₙ - a, b dependent ⟺ b</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= λa; a, b, c dependent ⟺…</text></svg>",
         "caption": "Linear combination of vectors, linearly dependent and ind… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "a·b = a₁b₁+a₂b₂+a₃b₃\n|a×b| = |a||b|sinθ\n|a| = √(a²+b²+c²)"
+      "text": "- v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ - a, b dependent ⟺ b = λa; a, b, c dependent ⟺ [a b c] = 0 - Independence ⟺ det(a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃) ≠ 0"
     },
     {
       "label": "Conditions",
@@ -38,11 +38,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|)."
+      "text": "\"Vectors are linearly dependent iff a non-trivial combination equals the zero vector; for three space vectors this is equivalent to coplanarity.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The flattened box*** — three vectors span a parallelepiped of volume |[a b c]|; dependence (det = 0) is exactly the box collapsing into a plane."
     },
     {
       "label": "Limitation",
@@ -50,31 +50,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Linear combination of vectors, linearly dependent and ind… — Vectors, Mathematics (class-11-notes).  ·  **Tested.** define it · list: linear combination of vectors, linearly dependent, independent vectors · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Building Vectors From a Basis Any vector in a plane can be rebuilt from **two** independent directions; in space, from **three**. The theorems: **linear combination**, and the tests for **linear dependence and independence** — the algebra that decides when a set of vectors genuinely spans a space.  ·  ## 2. Fundamental Concepts ### 2.1 Linear combination - **Definition:** v is a linear combination of a₁, a₂, …, aₙ if **v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ** for scalars cᵢ. - The standard basis î, ĵ, k̂ rebuilds any vector: a = a₁î + a₂ĵ + a₃k̂ — the coefficients *are* the components.…"
     },
     {
       "label": "Shortcut",
-      "text": "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "Two vectors: check one = multiple of the other. Three: compute the component determinant. Zero vector in the set: dependent, done. Parameter questions: set det = 0 and solve."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Linear combination of vectors, linearly dependent and ind…\" with one example.  ·  compare \"Linear combination of vectors\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Show whether the vectors a = 2î + ĵ − k̂, b = î − 3ĵ + 2k̂, c = 7î − ĵ − k̂ are linearly dependent or independent.** — **Test:** three space vectors are independent iff the determinant of their components is non-zero.…  ·  **NEB-style (2m): Prove that any set of vectors containing the zero vector is linearly dependent.** — Let the set contain **0** together with any other vectors a₁, …, aₙ. Form the combination with coefficient **1 on the zero vector and 0 on every other vector**: 1·0 + 0·a₁ + ⋯ + 0·aₙ = **0**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..",
+      "text": "Show the determinant expansion line by line — the sign errors live in the cofactor signs, and the method mark needs the working.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear combination of vectors, linearly dependent and ind… — topic mind map\"><title>Linear combination of vectors, linearly dependent and ind… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Linear combination of vectors, linearly depen…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Linear combination of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">vectors</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Linearly dependent</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Independent vectors</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Linear combination of vectors, linearly dependent and ind… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Dependence is redundancy: a dependent vector adds no new direction, and the determinant/volume test detects the flattening geometrically."
+    },
+    {
       "label": "Key points",
-      "text": "• Linear combination of vectors  ·  • Linearly dependent  ·  • Independent vectors"
+      "text": "Linear combination: v = c1 a1 + ... + cn an. Dependent: some non-trivial combination equals 0; independent: only the trivial one. Two vectors dependent <=> parallel (one is a scalar multiple). Three vectors dependent <=> coplanar. Any set containing the zero vector is dependent.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "In 3D no set of four vectors can be independent — the fourth is always a combination of an independent trio; that is the meaning of dimension three."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Linear combination of vectors, linearly dependent and ind…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Show that the vectors î + ĵ, ĵ + k̂ and k̂ + î are linearly independent.** — Determinant of components: det = |1 1 0; 0 1 1; 1 0 1| = 1[(1)(1) − (1)(0)] − 1[(0)(1) − (1)(1)] + 0[(0)(0) − (1)(1)] = 1(1) − 1(−1) + 0 = **2 ≠ 0**. Non-zero determinant ⟹ **linearly independent**.…"
     },
     {
       "label": "MCQ drill",
@@ -82,19 +90,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).  ·  **Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Linear combination** | c₁a₁ + ⋯ + cₙaₙ with scalars cᵢ | 3î + ĵ from î, ĵ | | **Linearly dependent** | A non-trivial combination equals 0 | a and 2a | | **Linearly independent** | Only the trivial combination gives 0 | î, ĵ, k̂ | | **Basis** | An independent set that spans the space | {î, ĵ,…  ·  ## 4. Detailed Explanation ### 4.1 Dependence = redundancy - A dependent vector adds no new direction: it already lives in the span of the others. Independence is the precise statement of \"every vector pulls its own weight\". ### 4.2 Counting directions - In 2D, at most 2 independent vectors; in 3D, at most 3.…  ·  ## 5. Comparison Tables **Dependence tests** | Vectors | Test | Dependent when | |---|---|---| | two, a and b | b = λa? | parallel | | three, a b c | [a b c] = 0? | coplanar | | any set | contains 0? | always |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: linear combination of vectors, linearly dependent, independent vectors.  ·  one worked example for \"Linear combination of vectors, linearly dependent and ind…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..  ·  No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Linearly dependent.** one-line definition + one-line exam use."
+      "text": "Test {2î+ĵ−k̂, î−3ĵ+2k̂, 7î−ĵ−k̂} for independence.  ·  Prove that any set containing the zero vector is dependent.  ·  Explain why three coplanar vectors cannot span space."
     },
     {
       "label": "More ideas",
-      "text": "**Independent vectors.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  ## 6. Common Confusions **Dependence needs a non-trivial combination:** c₁ = c₂ = 0 always works — the definition demands some cᵢ ≠ 0."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Parallel ≠ dependent for two vectors? No — they are the same thing:** parallel (non-zero) vectors are exactly the dependent pairs.  ·  **Coplanar is dependence for three, not for two:** two vectors are always coplanar (any two directions define a plane); dependence for pairs is parallelism.  ·  ## 7. Exam Application **NEB-style (3m): Show that the vectors 2î + ĵ − k̂, î − 3ĵ + 2k̂ and 7î − ĵ − k̂ are linearly dependent or independent.** — Compute the determinant of components: | 2 1 −1; 1 −3 2; 7 −1 −1 | = 2[(−3)(−1) − (2)(−1)] − 1[(1)(−1) − (2)(7)] + (−1)[(1)(−1) − (−3)(7)] = 2[3 + 2] − 1[−1 − 14] − 1[−1 +…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): For what value of k are the vectors î + ĵ + k̂, 2î + ĵ + 3k̂ and î + k̂ + k k̂...** — generic determinant-equals-zero exercise: set the component determinant to zero and solve for the parameter; the resulting k makes the third vector a combination of the first two (coplanar family).  ·  **NEB-style (2m): Prove that any three vectors including the zero vector are linearly dependent.** — Let the set be {0, b, c}. Choose coefficients c₁ = 1 (on 0), c₂ = 0, c₃ = 0: the combination **1·0 + 0·b + 0·c = 0** is non-trivial (c₁ ≠ 0), so dependence is witnessed immediately — no geometry needed."
     }
   ]
 }

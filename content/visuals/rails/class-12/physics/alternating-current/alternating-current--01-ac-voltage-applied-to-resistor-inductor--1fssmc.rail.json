@@ -23,9 +23,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "AC voltage applied to resistor, inductor, and capacitor (Alternating Current, Physics, class-12-notes) covers AC voltage applied to resistor, inductor, capacitor. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A resistor takes an in-phase current and dissipates I_rms squared R. An inductor has reactance 2πfL and makes the voltage lead. A capacitor has reactance 1/(2πfC) and makes the current lead. Pure L and C exchange energy with the source and take no average power.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"AC voltage applied to resistor, inductor, and capacitor — quick idea map\"><title>AC voltage applied to resistor, inductor, and capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">AC voltage applied to resistor, inductor, and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• AC voltage applied to</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">resistor</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Inductor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = Q/V</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = ε₀A/d</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"AC voltage applied to resistor, inductor, and capacitor — quick idea map\"><title>AC voltage applied to resistor, inductor, and capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">AC voltage applied to resistor, inductor, and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Resistive AC</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inductive reactance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Resistor: current and</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">voltage in phase.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inductor: current lags by</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">90°.</text></svg>",
         "caption": "AC voltage applied to resistor, inductor, and capacitor — quick idea map of this topic's headline ideas"
       }
     },
@@ -36,15 +36,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"AC voltage applied to resistor\" as one blob → ✅ split into: ac voltage applied to resistor, inductor, capacitor.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).  ·  Energy stored U = ½CV² = Q²/2C."
+      "text": "Take π = 3.14 when a decimal reactance is required.  ·  A lamp in series with a coil is dimmer on AC than the resistance alone would suggest."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "When a sinusoidal voltage is applied to a pure resistor, the current follows the voltage with no delay. The rms current is the rms voltage divided by R, and the average power is the heating I_rms squared times R.  ·  A pure inductor opposes a changing current. Its reactance is X_L = 2πfL, so a higher frequency or a larger inductance means a smaller current. The voltage leads the current by a quarter of a cycle, and the average power is zero."
     },
     {
       "label": "Limitation",
@@ -52,51 +52,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** AC voltage applied to resistor, inductor, and capacitor — Alternating Current, Physics (class-12-notes).  ·  **Tested.** define it · list: ac voltage applied to resistor, inductor, capacitor · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+      "text": "ELI: voltage leads current in L. ICE: current leads voltage in C.  ·  Pure L or C: average power zero."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"AC voltage applied to resistor, inductor, and capacitor\" with one example.  ·  compare \"AC voltage applied to resistor\" with the related idea from a neighbouring unit."
+      "text": "What is the phase in a pure resistor?  ·  How does capacitive reactance depend on frequency?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"AC voltage applied to resistor, inductor, and capacitor — topic mind map\"><title>AC voltage applied to resistor, inductor, and capacitor — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">AC voltage applied to resistor, inductor, and…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">AC voltage applied to</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">resistor</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Inductor</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Capacitor</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "AC voltage applied to resistor, inductor, and capacitor — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Resistive AC  ·  Inductive reactance  ·  Capacitive reactance  ·  rms values"
+    },
+    {
       "label": "Key points",
-      "text": "• AC voltage applied to resistor  ·  • Inductor  ·  • Capacitor"
+      "text": "Resistor: current and voltage in phase.  ·  Inductor: current lags by 90°.  ·  Capacitor: current leads by 90°.  ·  Use rms with rms."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).  ·  Energy stored U = ½CV² = Q²/2C."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"AC voltage applied to resistor, inductor, and capacitor\" and verify the answer is plausible."
+      "text": "Why is the average power zero in a pure inductor?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A 50 Hz supply of 10 V rms is connected to a 0.20 H pure inductor. Find X_L. Take π = 3.14."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"AC voltage applied to resistor, inductor, and capacitor\"? → A  ·  A common examiner point on \"AC voltage applied to resistor, inductor, and capacitor\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "In a pure resistor the phase difference is → B  ·  X_L increases when → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).  ·  **Fact.** Energy stored U = ½CV² = Q²/2C.  ·  **Fact.** Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+      "text": "A pure capacitor opposes a change of voltage. Its reactance is X_C = 1/(2πfC), which is large at low frequency and small at high frequency. The current leads the voltage by a quarter cycle, and again the average power is zero.  ·  The three elements are drawn as phasors. The resistor voltage lies along the current. The inductor voltage is drawn 90° ahead of the current. The capacitor voltage is drawn 90° behind the current.  ·  Household meters read rms values. A peak of 10√2 volts has an rms value of 10 V. Mixing a peak voltage with an rms current gives a wrong power."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: ac voltage applied to resistor, inductor, capacitor.  ·  one worked example for \"AC voltage applied to resistor, inductor, and capacitor\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..  ·  The resistor does not shift the phase.  ·  X_L rises with frequency and X_C falls."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d).  ·  **Inductor.** one-line definition + one-line exam use."
+      "text": "Average power in a pure L or C is zero.  ·  rms is the peak divided by √2, not by 2.  ·  Name the element before the phase."
     },
     {
       "label": "More ideas",
-      "text": "**Capacitor.** one-line definition + one-line exam use."
+      "text": "Keep peak and rms in separate lines of the working.  ·  Write I_rms = V_rms / R and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V).  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d).  ·  A real coil is an inductor with resistance in series. The pure cases on this page are the pieces used later to build the impedance of an LCR circuit.  ·  # AC voltage applied to resistor, inductor, and capacitor ## 1. Introduction Physical picture of **AC voltage applied to resistor** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

@@ -59,7 +59,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Karl Pearson skewness = (mean − mode)/SD (3rd). Range and IQR as rough dispersion measures."
+      "text": "Trick 1: Poisson models RARE events over fixed time/space: P(X = r) = e^{−m} m^r/r! — mean = variance = m (the defining property).  ·  Trick 2: When n is large and p small with np = m moderate (n ≥ 50, p ≤ 0.1), binomial ≈ Poisson(m = np) — state the approximation condition for the concept mark."
     },
     {
       "label": "Board question",
@@ -78,6 +78,10 @@
       "text": "• Poisson distribution — definition  ·  • Mean  ·  • Variance"
     },
     {
+      "label": "Universal facts",
+      "text": "Karl Pearson skewness = (mean − mode)/SD (3rd). Range and IQR as rough dispersion measures."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Poisson distribution — definition, mean, variance\" and verify the answer is plausible."
     },
@@ -91,15 +95,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: poisson distribution — definition, mean, variance.  ·  one worked example for \"Poisson distribution — definition, mean, variance\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Examples bank: calls per minute, typing errors per page, road accidents per day — quote one to justify the model choice.  ·  Trick 4: P(X = 0) = e^{−m} — the 'no event' probability, and the base for 'at least one' = 1 − e^{−m}.  ·  define + example each sub-idea: poisson distribution — definition, mean, variance."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: variance = σ(f·x − x̄)²/n (population) or /(n−1) (sample). sd = √variance.  ·  **Mean.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Poisson distribution — definition, mean, variance\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Variance.** one-line definition + one-line exam use."
+      "text": "Limit to remember: variance = σ(f·x − x̄)²/n (population) or /(n−1) (sample). sd = √variance.  ·  **Mean.** one-line definition + one-line exam use.  ·  **Variance.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Poisson distribution — definition, mean, variance ## 1. Introduction and motivation What the tool **Poisson distribution — definition** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Probability fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Counts and distributions** | Case | Rule or formula | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Figures and graphs - **F1** — Poisson distribution — definition — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Poisson distribution — definition — second figure: construction, region or comparison (authored SVG — English labels) -…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

@@ -26,20 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Concavity records how the slope itself changes, and is read from the sign of $f''$ over an interval rather than at a point. Concave up places the tangent below the curve and concave down places it above, which is the quickest way to fix the direction.…",
+      "text": "Concavity is the slope's own story: f″ > 0 cups upward with increasing slopes, f″ < 0 domes downward, and inflection points are where the bend switches — the slope's own extrema, marked by crossing tangents. The candidate/verdict split rules both tables: f′ = 0 and f″ = 0 are candidate lists, sign changes are verdicts, and x⁴'s flattening cup is the permanent warning.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concavity and Points of Inflection — quick idea map\"><title>Concavity and Points of Inflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Concavity and Points of Inflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concavity is an interval</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">property, described by the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sign of $f''$.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An inflection requires a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">SIGN CHANGE in $f''$, not</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">merely $f''=0$.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concavity is an interval</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">property, described by the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sign of $f''$.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An inflection requires a</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">SIGN CHANGE in $f''$, not</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">merely $f''=0$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concavity and Points of Inflection — quick idea map\"><title>Concavity and Points of Inflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Concavity and Points of Inflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concavity is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">monotonicity of the slope:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the second derivative</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f'' &gt; 0 =&gt; concave</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">up (slopes increasing);</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f'' &lt; 0 =&gt; concave</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- f″ &gt; 0 ⟹ concave up;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f″ &lt; 0 ⟹ concave down -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inflection at c ⟺ f″</text></svg>",
         "caption": "Concavity and Points of Inflection — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Concave up: $f''(x)>0$; concave down: $f''(x)<0$\nInflection: $f''$ changes sign at $x$\n2nd-derivative test: $f''(a)>0$ min, $f''(a)<0$ max, $=0$ inconclusive",
-      "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concavity and Points of Inflection — formula board\"><title>Concavity and Points of Inflection — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Concavity and Points of Inflection</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Concave up: $f''(x)&gt;0$; concave down: $f''(x)&lt;0$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Inflection: $f''$ changes sign at $x$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">2nd-derivative test: $f''(a)&gt;0$ min, $f''(a)&lt;0$</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">max, $=0$ inconclusive</text></svg>",
-        "caption": "Concavity and Points of Inflection — formula board of this topic's own formulas"
-      }
+      "text": "- f″ > 0 ⟹ concave up; f″ < 0 ⟹ concave down - Inflection at c ⟺ f″ changes sign at c"
     },
     {
       "label": "Conditions",
@@ -51,7 +47,7 @@
     },
     {
       "label": "Solved",
-      "text": "Concavity is an interval property, described by the sign of $f''$.  ·  An inflection requires a SIGN CHANGE in $f''$, not merely $f''=0$."
+      "text": "***The flattening cup*** - x^4 at 0: f'' = 12x^2 = 0 but no sign change - the cup flattens without switching bend, so no inflection."
     },
     {
       "label": "Limitation",
@@ -63,23 +59,35 @@
     },
     {
       "label": "Shortcut",
-      "text": "Write the sign of $f''$ on a number line and look only for a CHANGE of sign, not a zero.  ·  When classifying a stationary point with $f''=0$, go straight to the first-derivative sign chart rather than the third derivative."
+      "text": "Parallel habit: f' = 0 candidates need sign changes for extrema; f'' = 0 candidates need sign changes for inflections."
     },
     {
       "label": "Board question",
-      "text": "Finding points of inflection and classifying stationary points is a standard 4-mark question."
+      "text": "**NEB-style (6m): Find the intervals of concavity and the inflection points of y = x³ − 6x² + 9x.** — **Second derivative:** y″ = 6x − 12 = 6(x − 2); zero at x = 2. **Sign table:** y″ < 0 on (−∞, 2) (test 0: −12) ⟹ concave down; y″ > 0 on (2, ∞) (test 3: 6) ⟹ concave up.…  ·  **NEB-style (5m): Show that y = x⁴ has no inflection point even though y″(0) = 0.** — **Second derivative:** y″ = 12x²; zero at x = 0. **Sign study:** 12x² ≥ 0 for **all** x — the second derivative never changes sign ⟹ concave up on (−∞, 0) and (0, ∞) alike ⟹ **no inflection at 0**.…",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concavity and Points of Inflection — exam flow\"><title>Concavity and Points of Inflection — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Concavity and Points of Inflection</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Concavity is the slope's own story: f″ &gt;</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">0 cups upward with increasing slopes, f″</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">&lt; 0 domes downward, and inflection…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">- f″ &gt; 0 ⟹ concave up; f″ &lt; 0 ⟹</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">concave down - Inflection at c ⟺ f″ changes</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">sign at c</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Parallel habit: f' = 0 candidates need sign</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">changes for extrema; f'' = 0 candidates need</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">sign changes for inflections.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">**NEB-style (6m): Find the intervals of</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">concavity and the inflection points of y =</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">x³ − 6x² + 9x.** — **Second…</text></svg>",
+        "caption": "Concavity and Points of Inflection — exam flow: concept → formula → shortcut → board question"
+      }
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Use the second-derivative test to classify stationary points, not the first-derivative test's sign chart $f''(a)>0$ local minimum, $f''(a)<0$ local maximum, and $f''(a)=0$ inconclusive, requiring a return to the first-d"
+      "text": "In sketch questions, present the f'' table separately from the f' table - two tables, two marks."
     },
     {
       "label": "Quick concepts",
-      "text": "An inflection point need not be a stationary point, and $f''$ may be undefined there."
+      "text": "Concavity is the monotonicity of the slope: the second derivative tells the first derivative's story."
+    },
+    {
+      "label": "Key points",
+      "text": "f'' > 0 => concave up (slopes increasing); f'' < 0 => concave down. Point of inflection: concavity CHANGES - f'' = 0 is only a candidate; x^4 at 0 is the counterexample. Inflection candidates include f'' failures. At an inflection, f' has its own extremum - the growth rate peaks there.…"
     },
     {
       "label": "Universal facts",
-      "text": "Sensors are designed to work near the linear region of a calibration curve, where the second derivative vanishes and the response is least sensitive to drift.  ·  Inverted pendulums rely on the change of concavity: a pendulum is stable only while the potential is concave up, and a vertical rod is stable because the concavity reverses there."
+      "text": "At an inflection point the tangent crosses the curve - the geometric signature of a bend switch."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find all inflection points of y = x⁴ − 6x² and describe the curve's bend story.** — **Second derivative:** y″ = 12x² − 12 = 12(x − 1)(x + 1); candidates x = ±1.…  ·  **NEB-style (6m): For y = x³ − 3x, find the local extrema and the inflection point, then assemble the sketch protocol's summary.** — **f′ = 3x² − 3 = 3(x−1)(x+1):** local max at (−1, 2), local min at (1, −2) (sign changes + → − and − → +).…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Concavity is a property of an INTERVAL, not a point.** $f''>0$ on an interval means concave up, $f''<0$ concave down. Saying 'the curve is concave up at $x=2$' is loose; the correct statement is about a neighbourhood of 2.  ·  **Concave up means the tangent lies BELOW the curve, and concave down means it lies above.** This tangent-versus-curve picture is the most reliable way to fix the direction in memory, and it is what the inequality $f(a+h)=f(a)+f'(a)h+\\tfrac12f''(a)h^2$ encodes.  ·  **An inflection point needs a SIGN CHANGE in $f''$.** Vanishing at a point is not enough: $f=x^4$ has $f''(0)=0$ with no sign change and therefore no inflection, while $y=x^3$ at 0 is a genuine inflection with $f''$ also zero."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Concavity and Points of Inflection This canonical is the **short-form doorway** to concavity and points of inflection: the second derivative's sign, inflection detection, and the curve's bending story in one page.…  ·  ## 2. Theorem Mirror - **Concavity:** f″ > 0 on an interval ⟹ concave up (cup holds water; tangents below the curve); f″ < 0 ⟹ concave down (tangents above). - **Point of inflection:** a point where **concavity changes** — f″ changes sign. If f″ is continuous and f″(c) = 0, that is necessary but not sufficient; the sign change is the definition.…  ·  ## 3. Deep Conceptual — Concavity Is the Slope's Story - f″ measures **how f′ changes**: concave up means slopes are increasing (the curve steepens or flattens upward); concave down means slopes are falling. The second derivative is the first derivative's derivative — concavity is the monotonicity of the slope function.…"
     },
     {
       "label": "More ideas",
-      "text": "Taylor leading term: $f(a+h)=f(a)+f'(a)h+\\tfrac12f''(a)h^2+o(h^2)$  ·  Statement 1: $f''>0$ on an interval means the curve is concave up there.  ·  Statement 2: An inflection point requires $f''$ to change sign."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  The definition of inflection is the sign change of f''; zeros are candidates, not verdicts.  ·  Find the intervals of concavity and inflection points of y = x³ − 6x² + 9x."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: $f''(a)=0$ makes the second-derivative test inconclusive.  ·  Statement 4: An inflection point need not be a stationary point.  ·  Statement 5: A point where $f''$ is undefined may still be an inflection."
+      "text": "Show that y = x⁴ has no inflection point despite y″(0) = 0.  ·  Find the inflection points of y = x⁴ − 6x².  ·  ## 4. Deep Conceptual — The Full Sketching Protocol - **Five-layer sketch:** domain ⟹ symmetry/intercepts ⟹ f′ table (monotonicity, critical points) ⟹ f″ table (concavity, inflections) ⟹ asymptotes/end behaviour ⟹ assemble. Each layer uses one derivative; the picture is the derivative data made visible.…"
     },
     {
       "label": "More ideas",
-      "text": "**An inflection point does not have to be a stationary point.** $y=x^3$ is increasing straight through 0 yet concave down before and concave up after, so 0 is an inflection with no extremum at all.  ·  **An inflection can occur where $f''$ does not exist.** A cusp such as $y=x^{1/3}$ has infinite second derivative at 0 and an inflection there. So 'find where $f''=0$' is incomplete — also test where $f''$ is undefined.  ·  **Use the second-derivative test to classify stationary points, not the first-derivative test's sign chart:** $f''(a)>0$ local minimum, $f''(a)<0$ local maximum, and $f''(a)=0$ inconclusive, requiring a return to the first-derivative test or a higher derivative."
+      "text": "## 5. Worked Example Types - **Type A — concavity map:** f″ sign table with inflection verdicts. - **Type B — inflection with derivative failure:** f″ undefined cases included. - **Type C — full sketch protocol:** all five layers for one cubic or quartic.…  ·  ## 6. Common Confusions **\"f″ = 0 ⟹ inflection\":** x⁴ at 0 forever — the sign change is the definition. **\"Concave up means increasing\":** concavity is about the slope's trend, not the function's direction; a decreasing function can be concave up."
     }
   ]
 }

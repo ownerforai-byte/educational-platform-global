@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "The algebraic limit laws cover sums, products, quotients, powers and composition, and each requires only that the individual limits exist — never that the functions be defined at the point. The quotient law fails precisely when the denominator tends to 0, which is why $0/0$ is indeterminate. When neither substitution nor the laws apply, the squeeze theorem settles a vanishing factor times an oscillating one.",
+      "text": "Assembly drills train the limit laws' hypotheses: existing pieces for sums and products, a nonzero denominator for quotients, a converged base for powers and roots, outer continuity for compositions. When a decomposition stalls, regroup or squeeze — and when the amplitude of an oscillation does not vanish, the honest verdict is non-existence, certified by subsequences.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Algebraic Properties of Limits — quick idea map\"><title>Algebraic Properties of Limits — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Algebraic Properties of Limits</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The laws need only the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">LIMITS to exist, not the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function to be defined at</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The quotient law is void</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">when the denominator's</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limit is 0 — the root of…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The laws need only the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">LIMITS to exist, not the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function to be defined at</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The quotient law is void</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">when the denominator's</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limit is 0 — the root of…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Algebraic Properties of Limits — quick idea map\"><title>Algebraic Properties of Limits — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Algebraic Properties of Limits</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The laws are implications;</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the working is the proof</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">that each implication's…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Assembly kit:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sum/product/constant</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">multiple need existing</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- lim f/g = lim f / lim g,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">provided lim g ≠ 0 - lim</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(g(x)) = f(lim g(x)) if…</text></svg>",
         "caption": "Algebraic Properties of Limits — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Sum/difference: $\\lim(f\\pm g)=L\\pm M$\nProduct: $\\lim(fg)=LM$\nQuotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
+      "text": "- lim f/g = lim f / lim g, provided lim g ≠ 0 - lim f(g(x)) = f(lim g(x)) if f continuous at lim g(x)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Algebraic Properties of Limits — formula board\"><title>Algebraic Properties of Limits — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Algebraic Properties of Limits</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Sum/difference: $\\lim(f\\pm g)=L\\pm M$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Product: $\\lim(fg)=LM$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Algebraic Properties of Limits — formula board\"><title>Algebraic Properties of Limits — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Algebraic Properties of Limits</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- lim f/g = lim f / lim g, provided lim g ≠ 0 - lim</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">f(g(x)) = f(lim g(x)) if f continuous at lim g(x)</text></svg>",
         "caption": "Algebraic Properties of Limits — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "The laws need only the LIMITS to exist, not the function to be defined at the point.  ·  The quotient law is void when the denominator's limit is 0 — the root of $0/0$."
+      "text": "***The licensed push*** - lim sqrt((x^2+8)) at x=1: inner limit 9, sqrt continuous at 9, answer 3 - two licence checks, one substitution."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.  ·  Small factor times a trigonometric or oscillating term means squeeze, immediately."
+      "text": "Check the denominator's limit before dividing - one line, one mark, one avoided error."
     },
     {
       "label": "Board question",
-      "text": "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question."
+      "text": "**NEB-style (5m): Evaluate lim_{x→2} (x³ − 1)/(x² + 2), naming each law.** — **Numerator (power + difference laws):** 8 − 1 = **7**. **Denominator (sum of power and constant):** 4 + 2 = **6 ≠ 0** — quotient hypothesis ✓.…  ·  **NEB-style (5m): Evaluate lim_{x→4} √x·(x² − 3), citing each licence.** — **First factor:** lim √x = **2** — root law with inner limit 4 ≥ 0 ✓ (continuity of √t at 4). **Second factor (power + difference):** 16 − 3 = **13**. **Product law:** 2 × 13 = **26**.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Why the laws survive discontinuity none of these need $f$ defined at $a$, only the limits to exist."
+      "text": "Name the theorem at each assembly step; unlabelled steps read as guesswork."
     },
     {
       "label": "Quick concepts",
-      "text": "Squeeze is the only general method for a vanishing factor times an oscillating term."
+      "text": "The laws are implications; the working is the proof that each implication's hypothesis holds."
+    },
+    {
+      "label": "Key points",
+      "text": "Assembly kit: sum/product/constant multiple need existing limits; quotient needs nonzero denominator; power/root need converged base (even roots: nonnegative); composition needs outer continuity at the inner limit. Polynomials: substitution = all laws at once.…"
     },
     {
       "label": "Universal facts",
-      "text": "The squeeze theorem is the bridge used to prove almost every standard limit, including $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$.  ·  Audio codecs rely on a jump discontinuity: the mapping from continuous voltage to a discrete level is a jump, and the discontinuity is audible as a click."
+      "text": "Continuity is the closure property that lets whole assemblies collapse into one substitution."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Evaluate lim_{x→0} (x² + 1)·cos(1/x), and justify the verdict rigorously.** — **The obstruction:** lim_{x→0} cos(1/x) does not exist, so the product law cannot assemble from the obvious decomposition.…  ·  **NEB-style (6m): Evaluate lim_{x→3} (2x + 1)² + √(x + 6), assembling by the laws with licences named.** — **Inner piece (sum + constant multiple):** lim (2x + 1) = 7. **Power law:** 7² = **49** — the square is continuous everywhere, licence trivial.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with addition because they preserve the arithmetic structure of the reals.  ·  **Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition $M\\ne0$ is the whole reason $0/0$ is indeterminate — the product law guarantees $0$ while the quotient law is unavailable.  ·  **Constant multiple and power:** $\\lim(cf)=cL$ and $\\lim f^n=L^n$. An even root additionally needs a non-negative limit, while an odd root does not, so sign information about $L$ decides whether $\\lim\\sqrt[n]{f}$ exists."
+      "text": "## 1. Topic Introduction — Drill Gallery: Assembling Limits by the Laws This canonical is the **first limits drill gallery**: problems whose limits assemble directly from the limit laws — sums, products, quotients, compositions — with the hypotheses named. It mirrors the algebraic-properties parent; the drill's discipline is legal assembly.  ·  ## 2. Theorem Mirror — The Assembly Kit - **Sum, product, constant multiple:** combine freely once every piece's limit exists. - **Quotient:** denominator's limit must be nonzero — check before dividing. - **Power/root:** apply to a converged base; even roots need a nonnegative limit. - **Composition:** outer function continuous at the inner limit ⟹ push the limit through.…  ·  ## 3. Deep Conceptual — Naming Hypotheses Is the Drill - Each assembly step consumes a hypothesis: \"both limits exist,\" \"denominator ≠ 0,\" \"outer continuous at 9.\" The drill's discipline is naming each one — the laws are implications, and the working is the proof that the implications apply.…"
     },
     {
       "label": "More ideas",
-      "text": "Power: $\\lim f^n=L^n$  ·  Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$  ·  Squeeze: $g\\le f\\le h$ and $\\lim g=\\lim h=L \\Rightarrow \\lim f=L$"
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Regroup before you split: every piece must converge.  ·  Evaluate lim_{x→2} (x³ − 1)/(x² + 2) by the laws."
     },
     {
       "label": "More ideas",
-      "text": "Statement 1: $\\lim(f\\pm g)=L\\pm M$ whenever both limits exist.  ·  Statement 2: $\\lim\\frac{f}{g}=\\frac{L}{M}$ is valid only when $M\\ne0$.  ·  Statement 3: $\\lim f^n=L^n$ holds for positive integers; an even root also needs a non-negative limit."
+      "text": "Evaluate lim_{x→4} √(x)·(x² − 3) citing each licence.  ·  Evaluate lim_{x→0} (x² + 1)·cos(1/x) — carefully.  ·  ## 4. Deep Conceptual — Substitution as the Assembly Shortcut - For continuous integrands, the whole assembly collapses to one substitution — because continuity means every law applies at once.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 4: $\\lim g(f(x))=g(L)$ requires $g$ continuous at $L$.  ·  Statement 5: If $g\\le f\\le h$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$.  ·  **Composition:** if $\\lim f=L$ and $g$ is continuous at $L$ then $\\lim g(f(x))=g(L)$. This licenses substituting into a continuous outer function, and it is why a discontinuous $g$ such as $\\tan$ at $\\pi/2$ breaks the rule."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Squeeze (sandwich) theorem:** if $g(x)\\le f(x)\\le h(x)$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$. This is the only reliable tool for a vanishing factor times an oscillating one, and it proves $\\lim_{x\\to0}x\\sin\\frac1x=0$ from $-|x|\\le x\\sin\\frac1x\\le|x|$.  ·  **Why the laws survive discontinuity:** none of these need $f$ defined at $a$, only the limits to exist. That is exactly why a removable discontinuity does not spoil a limit, while a jump does — unequal one-sided limits mean the laws cannot be applied at all."
+      "text": "## 5. Worked Example Types - **Type A — quotient with the check:** evaluate numerator and denominator, verify ≠ 0, divide. - **Type B — composition push:** inner limit, outer continuity, apply. - **Type C — regroup the illegal split:** identify the nonexistent piece, squeeze or damp it.…  ·  ## 6. Common Confusions **\"Substitute always\":** only where continuity is certified — the suspects list is exactly where it is not. **\"The laws are obvious\":** each is a theorem with a hypothesis; the drill grades the hypotheses."
     }
   ]
 }

@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Real Numbers covers essential principles and applications.",
+      "text": "Real numbers complete the line — no gaps, unlike ℚ — and **intervals** name its pieces: open (a, b) excludes endpoints, closed [a, b] includes them, and intersections of intervals remain intervals. **Absolute value is distance**: |x| from 0, |x − a| between x and a.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real numbers: geometric representation of real numbers, i… — quick idea map\"><title>Real numbers: geometric representation of real numbers, i… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Real numbers: geometric representation of real</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">numbers, i…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Real</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Numbers.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Real numbers</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Geometric representation</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of real numbers</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real numbers: geometric representation of real numbers, i… — quick idea map\"><title>Real numbers: geometric representation of real numbers, i… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Real numbers: geometric representation of real</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">numbers, i…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Absolute value is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">distance, deaf to</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">direction: every |·|</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">R = rationals +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">irrationals; the line is</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">complete (no gaps);</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- |x| = {x, x ≥ 0; −x, x</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&lt; 0}; √(x²) = |x| -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|xy| = |x||y|; |x+y| ≤</text></svg>",
         "caption": "Real numbers: geometric representation of real numbers, i… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Real Numbers\nStatement 2: Theorem related to Real Numbers"
+      "text": "- |x| = {x, x ≥ 0; −x, x < 0}; √(x²) = |x| - |xy| = |x||y|; |x+y| ≤ |x|+|y| (equality iff xy ≥ 0); |x−y| ≥ ||x|−|y|| - |x| < a ⟺ −a < x < a; |x| > a ⟺ x < −a ∪ x > a; |x−a| < δ ⟺ a−δ < x < a+δ"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Statement 3: Condition for Real Numbers to be valid  ·  Statement 4: Principle governing Real Numbers"
+      "text": "\"|x + y| <= |x| + |y|, equality iff xy >= 0; |x| < a <=> -a < x < a; |x| > a <=> x < -a or x > a.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The delta-window*** — |x - a| < delta is \"within delta of a\": the same picture that defines limits later, met here first as an inequality drill."
     },
     {
       "label": "Limitation",
@@ -56,19 +56,19 @@
     },
     {
       "label": "Derivation",
-      "text": "• Real numbers  ·  • Geometric representation of real numbers"
+      "text": "## 1. Topic Introduction — The Number Line and Its Distances Real numbers fill the line without gaps; **intervals** name its pieces; **absolute value** measures distance, deaf to direction. The theorems: interval unions/intersections, the triangle inequality, and the |x − a| < δ \"distance window\" that later powers limits.  ·  ## 2. Fundamental Concepts ### 2.1 Real numbers and the line - ℝ = rationals ∪ irrationals; **every point of the line is a real number and every real number is a point** — completeness is the property that leaves no gaps (unlike ℚ, which misses √2). - **Decimal character:** rationals terminate or repeat; irrationals do neither. ### 2.2 Intervals - **Open** (a, b): a < x < b — endpoints excluded.…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Real Numbers."
+      "text": "|u| < a: sandwich -a < u < a. |u| > a: two rays. |u| = |v|: u = +-v. Isolate, split by cases, check against the original."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Real numbers: geometric representation of real numbers, i…\" with one example.  ·  compare \"Real numbers\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Solve |2x − 3| < 5 and express the solution set as an interval.** — **Rule:** |u| < a ⟺ −a < u < a (a > 0). Apply with u = 2x − 3: −5 < 2x − 3 < 5. **Add 3 throughout:** −2 < 2x < 8. **Divide by 2:** −1 < x < 4, so **x ∈ (−1, 4)** — an open interval.…  ·  **NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Rule:** |u| = |v| ⟺ u² = v² ⟺ u = ±v (squaring is safe here because both sides are non-negative). **Case 1 (u = v):** x + 1 = 2x − 1 ⟹ x = **2**. **Case 2 (u = −v):** x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = **0**. **Verification:** x = 2: |3| = |3| ✓; x = 0: |1| = |−1| ✓.…"
     },
     {
       "label": "Hints",
-      "text": "Real Numbers is based on fundamental principles.",
+      "text": "State the equivalence rule you are using before solving - the rule name is the method mark; always test candidate roots in the original equation.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Real numbers: geometric representation of real numbers, i… — topic mind map\"><title>Real numbers: geometric representation of real numbers, i… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Real numbers</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Real numbers</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Geometric representation</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">of real numbers</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Interval</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Absolute value</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Real numbers: geometric representation of real numbers, i… — topic mind map of this topic's own sub-topics"
@@ -76,31 +76,43 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Real Numbers."
+      "text": "Absolute value is distance, deaf to direction: every |·| equation or inequality is a geometry statement about windows on the line."
     },
     {
       "label": "Key points",
-      "text": "• Interval  ·  • Absolute value  ·  Connection of Real Numbers to other topics"
+      "text": "R = rationals + irrationals; the line is complete (no gaps); rationals terminate or repeat, irrationals do not. Intervals: open (a,b), closed [a,b], half-open, unbounded; intersection of intervals is an interval. |x| = distance from 0; |x - a| = distance between x and a.…"
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Real numbers: geometric representation of real numbers, i…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "The triangle inequality is GPS logic: any detour (via an intermediate point) is at least as long as the direct route."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Real numbers: geometric representation of real numbers, i…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y| for real numbers, and state when equality holds.** — **Proof:** both sides are non-negative, so it suffices to compare squares. |x + y|² = (x + y)² = x² + 2xy + y².…"
     },
     {
       "label": "MCQ drill",
       "text": "Which of the following is a distinct sub-topic under \"Real numbers: geometric representation of real numbers, i…\"? → A  ·  A common examiner point on \"Real numbers: geometric representation of real numbers, i…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
-      "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Real Numbers  ·  one worked example for \"Real numbers: geometric representation of real numbers, i…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Open interval** | Endpoints excluded | (0, 1): 0 < x < 1 | | **Absolute value** | Distance from 0, never negative | |−3| = 3 | | **Triangle inequality** | |x+y| ≤ |x|+|y| | detour ≥ direct path | | **Completeness** | No gaps in the line | √2 lives in ℝ |  ·  ## 4. Detailed Explanation ### 4.1 Why |x| is distance - |x − a| answers \"how far from a\" with no direction. Every absolute-value equation/inequality is a distance statement: |x − 2| < 3 means \"within 3 of 2\", i.e. −1 < x < 5.…  ·  ## 5. Comparison Tables **Absolute value rules** | Statement | Equivalent | Caution | |---|---|---| | \\|x\\| = a | x = ±a | needs a ≥ 0 | | \\|x\\| < a | −a < x < a | a > 0 | | \\|x\\| > a | x < −a or x > a | union, not intersection | | \\|x − a\\| < δ | a − δ < x < a + δ | the δ-window |"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Solve |2x − 3| < 5 and write the answer as an interval.  ·  Solve |x + 1| = |2x − 1|."
+    },
+    {
+      "label": "More ideas",
+      "text": "Prove the triangle inequality and state the equality case.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 6. Common Confusions **|x| > a splits into a union:** \"farther than a\" is two rays, not one interval — the classic sign error."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Squaring both sides needs checking:** |x − 1| = −2 has no solution; |x|=|y| allows x = ±y, not just x = y.  ·  **√(x²) = |x|:** not x — the square root returns the non-negative root, so the absolute value is mandatory.  ·  ## 7. Exam Application **NEB-style (3m): Solve |2x − 3| < 5 and express the solution as an interval.** — **Window form:** |u| < a ⟺ −a < u < a: −5 < 2x − 3 < 5 ⟹ add 3: −2 < 2x < 8 ⟹ divide by 2: **−1 < x < 4**, i.e. x ∈ (−1, 4).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Solve |x + 1| = |2x − 1|.** — **Squaring route:** |u| = |v| ⟺ u² = v² ⟺ u = ±v. Case 1: x + 1 = 2x − 1 ⟹ x = 2. Case 2: x + 1 = −(2x − 1) ⟹ x + 1 = −2x + 1 ⟹ 3x = 0 ⟹ x = 0. **Solutions: x = 0, 2.** Check: x = 0: |1| = |−1| ✓; x = 2: |3| = |3| ✓.  ·  **NEB-style (2m): Prove the triangle inequality |x + y| ≤ |x| + |y|.** — Both sides are non-negative, so square: |x+y|² = (x+y)² = x² + 2xy + y² ≤ x² + 2|xy| + y² = (|x| + |y|)², since **2xy ≤ 2|xy|** always. Taking square roots (both sides non-negative) gives |x + y| ≤ |x| + |y|.…"
     }
   ]
 }

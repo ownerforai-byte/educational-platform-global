@@ -56,7 +56,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
+      "text": "Trick 1: Geometrical isomerism requires EACH double-bond carbon to carry two DIFFERENT groups — check this condition before assigning cis/trans (1,1-dichloroethene has none).  ·  Trick 2: CIP/E-Z shortcut: higher-priority groups on the same side = Z; opposite = E — use when cis/trans naming fails."
     },
     {
       "label": "Board question",
@@ -75,6 +75,10 @@
       "text": "• Alkenes  ·  • Preparation  ·  • Geometrical isomerism  ·  • Electrophilic addition"
     },
     {
+      "label": "Universal facts",
+      "text": "Optical: chiral centre (4 different groups); d/l (+/− enantiomers; meso = optically inactive despite chiral centres)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Alkenes: preparation, geometrical isomerism, electrophili…\" and verify the answer is plausible."
     },
@@ -88,23 +92,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Markovnikov  ·  • Anti-Markovnikov  ·  define + example each sub-idea: alkenes, preparation, geometrical isomerism, electrophilic addition."
+      "text": "• Markovnikov  ·  • Anti-Markovnikov  ·  Trick 3: Electrophilic addition mechanism: π bond attacks E+ → more stable carbocation → Nu− attacks — the carbocation choice IS Markovnikov's rule."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Alkenes: preparation, geometrical isomerism, electrophili…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Trick 4: Heat of hydrogenation measures stability: more substituted alkene → lower heat → more stable (tetra > tri > di > mono).  ·  define + example each sub-idea: alkenes, preparation, geometrical isomerism, electrophilic addition.  ·  one worked example for \"Alkenes: preparation, geometrical isomerism, electrophili…\" — check units / edge cases."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity.  ·  **Preparation.** one-line definition + one-line exam use.  ·  **Geometrical isomerism.** one-line definition + one-line exam use."
+      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: structural: chain, position, functional, metamerism, tautomerism. same formula, different connectivity."
     },
     {
       "label": "More ideas",
-      "text": "**Electrophilic addition.** one-line definition + one-line exam use.  ·  **Markovnikov.** one-line definition + one-line exam use.  ·  **Anti-Markovnikov.** one-line definition + one-line exam use."
+      "text": "**Preparation.** one-line definition + one-line exam use.  ·  **Geometrical isomerism.** one-line definition + one-line exam use.  ·  **Electrophilic addition.** one-line definition + one-line exam use."
     },
     {
       "label": "More ideas",
-      "text": "**Ozonolysis.** one-line definition + one-line exam use.  ·  **Polymerisation.** one-line definition + one-line exam use."
+      "text": "**Markovnikov.** one-line definition + one-line exam use.  ·  **Anti-Markovnikov.** one-line definition + one-line exam use.  ·  **Ozonolysis.** one-line definition + one-line exam use."
     }
   ]
 }

@@ -55,11 +55,11 @@
     },
     {
       "label": "Shortcut",
-      "text": "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+      "text": "Trick 1: Distance formula: d = |ax1 + by1 + c|/√(a² + b²) — memorise the denominator once and every distance problem is a substitution.  ·  Trick 2: Bisectors: (a1x + b1y + c1)/√(a1²+b1²) = ±(a2x + b2y + c2)/√(a2²+b2²); choose the sign by substituting a test point (origin) — the sign that gives the bisector of the angle containing the origin is the one with equal signs."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Straight line: length of perpendicular from a given point…\" with one example.  ·  compare \"Straight line\" with the related idea from a neighbouring unit."
+      "text": "Q1. **NEB-style (5m):** Find the perpendicular distance from the point (3, 4) to the line 3x + 4y - 5 = 0. **Solution.** $d=\\frac{|3(3)+4(4)-5|}{\\sqrt{3^2+4^2}}=\\frac{|9+16-5|}{5}=\\frac{20}{5}=4$ units.…  ·  Q2. **NEB-style (6m):** Find the equations of the bisectors of the angles between x + 2y - 5 = 0 and 4x + 2y + 9 = 0, labelling the acute one. **Solution.** Standardise: L$_1$ as $-x-2y+5=0$; L$_2$ has $c=9>0$. Normalisers $\\sqrt5$ and $2\\sqrt5$; multiply by $2\\sqrt5$: $2(-x-2y+5)=\\pm(4x+2y+9)$. (+): $6x+6y-1=0$; (-): $2x-2y+19=0$.…"
     },
     {
       "label": "Hints",
@@ -74,8 +74,12 @@
       "text": "• Straight line  ·  • Length of perpendicular from a given point to a given line  ·  • Bisectors of the angles between two straight lines"
     },
     {
+      "label": "Universal facts",
+      "text": "Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Straight line: length of perpendicular from a given point…\" and verify the answer is plausible."
+      "text": "Q3. **NEB-style (5m):** Find all values of k for which the point (2, k) lies at distance 3 from the line 4x - 3y + 1 = 0. **Solution.** $\\frac{|8-3k+1|}{5}=3$ ⟹ $|9-3k|=15$ ⟹ $9-3k=\\pm15$ ⟹ $k=-2$ or $k=8$.…  ·  Q4. **NEB-style (6m):** Find the direction cosines of the line joining P(1, 2, 3) and Q(4, 6, 15), and verify the fundamental identity. **Solution.** Direction ratios (3, 4, 12); magnitude $\\sqrt{9+16+144}=13$.…  ·  Q5. **NEB-style (6m):** Find the foot of the perpendicular from P(2, 3) to the line x + 2y - 4 = 0. **Solution.** Signed distance numerator: $D=2+6-4=4$; $a^2+b^2=5$. Foot: $\\left(2-\\frac{1\\cdot4}{5},\\ 3-\\frac{2\\cdot4}{5}\\right)=\\left(\\frac65,\\frac75\\right)$.…"
     },
     {
       "label": "MCQ drill",
@@ -87,6 +91,10 @@
     },
     {
       "label": "More ideas",
+      "text": "Trick 3: Foot of perpendicular: use d along the normal direction (a, b) — foot = (x1 − a·t, y1 − b·t) with t = (ax1+by1+c)/(a²+b²).  ·  Q6. **NEB-style (5m):** Find the distance between the parallel lines 3x + 4y + 5 = 0 and 3x + 4y - 10 = 0. **Solution.** Shortcut: $\\frac{|c_1-c_2|}{\\sqrt{a^2+b^2}}=\\frac{|5-(-10)|}{5}=\\frac{15}{5}=3$ units - valid because the two equations share identical (a, b), hence the same normaliser and orientation.…  ·  Q7. **NEB-style (6m):** Find the bisector of the angle between x - 2y + 1 = 0 and 2x + y - 3 = 0 that bisects the angle containing the origin. **Solution.** Standardise: L$_1$ has $c=1>0$; L$_2$ has $c=-3<0$ ⟹ rewrite as $-2x-y+3=0$. Normalisers both $\\sqrt5$. (+) bisector: $x-2y+1=-2x-y+3$ ⟹ $3x-y-2=0$.…"
+    },
+    {
+      "label": "More ideas",
       "text": "define + example each sub-idea: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines.  ·  one worked example for \"Straight line: length of perpendicular from a given point…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
@@ -95,7 +103,11 @@
     },
     {
       "label": "More ideas",
-      "text": "**Length of perpendicular from a given point to a given line.** one-line definition + one-line exam use.  ·  **Bisectors of the angles between two straight lines.** one-line definition + one-line exam use."
+      "text": "**Length of perpendicular from a given point to a given line.** one-line definition + one-line exam use.  ·  **Bisectors of the angles between two straight lines.** one-line definition + one-line exam use.  ·  # Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines ## 1. Introduction and motivation What the tool **Straight line** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Forms and constructions** | Form | Equation | Key points | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Straight line — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Straight line — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Straight line — curated reference…"
     }
   ]
 }

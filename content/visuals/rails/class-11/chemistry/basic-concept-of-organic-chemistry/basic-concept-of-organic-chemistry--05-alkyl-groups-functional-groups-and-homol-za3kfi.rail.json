@@ -26,52 +26,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Alkyl groups, functional groups and homologous series (Basic Concept of Organic Chemistry, Chemistry, class-11-notes) covers Alkyl groups, functional groups, homologous series. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Three words organise the families. An **alkyl group** (R–, CₙH₂ₙ₊₁) is an alkane minus one hydrogen — methyl, ethyl, propyl — the monovalent skeleton piece. A **functional group** (–OH, –CHO, >C=O, –COOH, –COOR, –X, –NH₂) is the reactive patch that decides the family's chemistry, since the C–C/C–H skeleton is inert.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Alkyl groups, functional groups and homologous series — quick idea map\"><title>Alkyl groups, functional groups and homologous series — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Alkyl groups, functional groups and homologous</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">series</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Alkyl groups</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Functional groups</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Alkyl groups, functional groups and homologous series — quick idea map\"><title>Alkyl groups, functional groups and homologous series — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Alkyl groups, functional groups and homologous</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">series</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One functional group = one</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">family = one set of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reactions: the carbon</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkyl group: monovalent</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CnH2n+1 (R-) from alkane</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">minus one H — methyl</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Alkyl: CₙH₂ₙ₊₁ (R–) -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkanols: CₙH₂ₙ₊₁OH —</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CH₃OH (65 °C), C₂H₅OH (78</text></svg>",
         "caption": "Alkyl groups, functional groups and homologous series — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Alkyl groups\n• Functional groups"
+      "text": "- Alkyl: CₙH₂ₙ₊₁ (R–) - Alkanols: CₙH₂ₙ₊₁OH — CH₃OH (65 °C), C₂H₅OH (78 °C), C₃H₇OH (97 °C) - Alkanes CₙH₂ₙ₊₂; alkanoic acids CₙH₂ₙ₊₁COOH"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Alkyl groups\" as one blob → ✅ split into: alkyl groups, functional groups, homologous series.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Alkyl groups, functional groups and homologous series\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: alkyl groups, functional groups, homologous series (within Basic Concept of Organic Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"A homologous series is a family of compounds with the same functional group and general formula, whose successive members differ by a CH2 unit.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The alkanol ladder*** — methanol, ethanol, propan-1-ol differ only by CH2 steps: boiling points climb 65 -> 78 -> 97 C while every member burns, oxidises and esterifies like an alcohol — gradation in physics, uniformity in chemistry."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Alkyl groups.** An alkyl group is an alkane minus one hydrogen — methyl (CH₃—), ethyl (C₂H₅—), propyl (C₃H₇—) — with the general formula CₙH₂ₙ₊₁.  ·  **Functional group.** An atom or group that determines a compound's characteristic reactions, such as —OH (alcohol), —CHO (aldehyde), —COOH (carboxylic acid) and —NH₂ (amine)."
+      "text": "## 1. Topic Introduction — R–, the Reactive Patch, and the Family Ladder Three vocabulary words organise every organic family: the **alkyl group** (R–, the carbon skeleton minus one H), the **functional group** (the reactive patch that decides the chemistry), and the **homologous series** (the family ladder whose rungs differ by one CH₂).…  ·  ## 2. Fundamental Concepts ### 2.1 Alkyl groups - An **alkyl group** is a monovalent group obtained by removing one hydrogen from an alkane: general formula **CₙH₂ₙ₊₁**, written **R–**. - **Methyl** CH₃– (from methane), **ethyl** C₂H₅– (from ethane), **propyl** CH₃CH₂CH₂–, **isopropyl** (CH₃)₂CH–. - Alkyl groups are not independent molecules — they exist attached to something (in compounds, or as intermediates).…"
     },
     {
       "label": "Shortcut",
-      "text": "• Homologous series  ·  solve / apply for \"Alkyl groups, functional groups and homologous series\" and verify the answer is plausible."
+      "text": "Three characteristics to quote: same general formula; CH2 (14 u) increment; gradation of physical properties (also: similar chemical properties, similar preparation). Alkanol = CnH2n+1OH, examples ethanol + propan-1-ol."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Alkyl groups, functional groups and homologous series\" with one example.  ·  compare \"Alkyl groups\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2022 (verified PYQ): Define a functional group and a homologous series. State any three characteristics of a homologous series, and write the general formula of the alkanol series with two examples.** — A **functional group** is the atom or group of atoms in an organic molecule that is responsible for its **characteristic chemical…  ·  **NEB-style (2m): What is an alkyl group? Write its general formula and name two alkyl groups with their structures.** — An **alkyl group** is a **monovalent group obtained by removing one hydrogen atom from an alkane molecule**; its general formula is **CₙH₂ₙ₊₁**, written **R–**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "NEB 2022 asked this exactly: definition pair + three characteristics + alkanol formula with two examples. Do not forget the examples.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Alkyl groups, functional groups and homologous series — topic mind map\"><title>Alkyl groups, functional groups and homologous series — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Alkyl groups, functional groups and homologou…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkyl groups</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Functional groups</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Homologous series</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Alkyl groups, functional groups and homologous series — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "One functional group = one family = one set of reactions: the carbon skeleton is inert C-C/C-H filler, so ethanol and propan-1-ol behave identically wherever their -OH is concerned."
+    },
+    {
+      "label": "Key points",
+      "text": "Alkyl group: monovalent CnH2n+1 (R-) from alkane minus one H — methyl -CH3, ethyl -C2H5, propyl, isopropyl; not free molecules. Functional group: reactive atom/group deciding family chemistry — -OH alcohol, -CHO aldehyde, >C=O ketone, -COOH acid, -COOR ester, -X halide, -NH2 amine.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Adjacent homologues differ by 14 u — the mass of one CH2 — which is why homologous series were first noticed as arithmetic progressions in molecular mass."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Why do the boiling points of the members of a homologous series rise steadily?** — Each successive member adds one **–CH₂– unit (14 u)**: molecular mass and electron count grow, so the **van der Waals (London dispersion) forces** between molecules become stronger along the series.…"
     },
     {
       "label": "MCQ drill",
@@ -79,98 +95,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Homologous series.** A series whose members share a general formula, differ by a CH₂ (14 u) unit, show similar chemical properties and a gradual trend in physical properties.  ·  **IUPAC naming.** Names combine a prefix (substituents), a word root (carbon count: meth-, eth-, prop-) and a suffix (-ane, -ene, -yne, -ol, -al, -oic acid).  ·  **Example.** The alkanes methane through pentane form one homologous series; boiling point rises with chain length and branching lowers it at the same carbon count."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Alkyl group** | Monovalent CₙH₂ₙ₊₁ group from an alkane minus one H | –CH₃ methyl, –C₂H₅ ethyl | | **Functional group** | Reactive atom/group deciding the family's chemistry | –OH, –COOH, –CHO | | **Homologous series** | Family with same functional group, successive members differ by CH₂ |…  ·  ## 4. Detailed Explanation ### 4.1 The CH₂ increment and its consequences - Each CH₂ adds **14 u** to molecular mass — so melting/boiling points **rise steadily** along the series (graduation of physical properties), while the functional group keeps **chemical properties uniform**.…  ·  ## 5. Comparison Tables **Common functional groups** | Group | Family | Example | |---|---|---| | –OH | alcohol | ethanol C₂H₅OH | | –CHO | aldehyde | ethanal CH₃CHO | | >C=O | ketone | propanone CH₃COCH₃ | | –COOH | carboxylic acid | acetic acid CH₃COOH | | –COOR | ester | ethyl acetate CH₃COOC₂H₅ | | –X (F, Cl, Br, I) | halide | chloroethane C₂H₅Cl | | –NH₂ | amine |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: alkyl groups, functional groups, homologous series.  ·  one worked example for \"Alkyl groups, functional groups and homologous series\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQ: NEB 2022 — define functional group and homologous series, three characteristics, alkanol general formula with two examples (assigned to this row).  ·  Define alkyl group, functional group and homologous series with examples of each.  ·  List five characteristics of a homologous series and illustrate the gradation with alkanol boiling points."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Write the general formula and two members each of the alkane, alkanol and alkanoic acid series.  ·  ## 6. Common Confusions **R– is not a free molecule:** methyl \"CH₃\" alone is a reactive fragment; in compounds it is a group with one open valency.  ·  **Same series ≠ same molecular formula:** homologues differ by CH₂; isomers share a formula but may sit in different series (ethanol and dimethyl ether are both C₂H₆O but not homologues)."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Gradation is in physical properties only:** chemical properties are *similar* along the series (same group), not graded — the gradation word belongs to m.p./b.p./density/solubility.  ·  ## 7. Exam Application **NEB 2022 (verified PYQ): Define a functional group and a homologous series. State any three characteristics of a homologous series, and write the general formula of the alkanol series with two examples.** — A **functional group** is the atom or group of atoms in a molecule that is responsible…  ·  **NEB-style (2m): What is an alkyl group? Write its general formula and name two alkyl groups with their structures.** — An **alkyl group** is a **monovalent group obtained by removing one hydrogen atom from an alkane**; its general formula is **CₙH₂ₙ₊₁**, written **R–**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why do the boiling points of the members of a homologous series rise steadily?** — Successive members differ by one **–CH₂– (14 u)**: molecular mass and the number of electrons increase, so **van der Waals (London) forces** between molecules strengthen along the series, and more energy is needed to…"
     }
-  ],
-  "keyPoints": [
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is a core concept in basic concept of organic chemistry.",
-    "Understanding 05 alkyl groups functional groups and homol za3kfi requires knowing its definition, conditions, and limitations.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 05 alkyl groups functional groups and homol za3kfi must be memorized precisely.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi connects to neighbouring topics within basic concept of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 05 alkyl groups functional groups and homol za3kfi.",
-    "Practical examples solidify understanding of 05 Alkyl Groups Functional Groups And Homol Za3kfi and its real-world relevance.",
-    "Misconceptions about 05 alkyl groups functional groups and homol za3kfi often arise from confusing it with similar concepts.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi follows systematic rules that can be applied step-by-step.",
-    "Review of 05 alkyl groups functional groups and homol za3kfi should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is defined by its specific characteristics within basic concept of organic chemistry.",
-    "The conditions under which 05 alkyl groups functional groups and homol za3kfi applies are as important as the concept itself.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 05 alkyl groups functional groups and homol za3kfi through application-based and comparison questions.",
-    "A clear grasp of 05 Alkyl Groups Functional Groups And Homol Za3kfi builds the foundation for advanced topics in basic concept of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 05 alkyl groups functional groups and homol za3kfi, always note the exceptions alongside the general rule.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi should be reviewed with at least one worked example per sub-point.",
-    "Link 05 alkyl groups functional groups and homol za3kfi back to prior knowledge in basic concept of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 05 Alkyl Groups Functional Groups And Homol Za3kfi to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 05 Alkyl Groups Functional Groups And Homol Za3kfi: apply the standard definition to a simple case.",
-    "Intermediate example: combine 05 alkyl groups functional groups and homol za3kfi with a related concept from basic concept of organic chemistry.",
-    "Exam-style problem: solve a question involving 05 Alkyl Groups Functional Groups And Homol Za3kfi under time pressure.",
-    "Real-world connection: show how 05 Alkyl Groups Functional Groups And Homol Za3kfi appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 05 Alkyl Groups Functional Groups And Homol Za3kfi and state two conditions required for it to occur.",
-    "Differentiate 05 Alkyl Groups Functional Groups And Homol Za3kfi from the most commonly confused concept in basic concept of organic chemistry.",
-    "Solve a numerical or structural problem involving 05 Alkyl Groups Functional Groups And Homol Za3kfi.",
-    "List three applications of 05 Alkyl Groups Functional Groups And Homol Za3kfi in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 05 Alkyl Groups Functional Groups And Homol Za3kfi without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 05 Alkyl Groups Functional Groups And Homol Za3kfi.",
-    "Create three flashcards covering definition, formula, and limitation of 05 Alkyl Groups Functional Groups And Homol Za3kfi."
-  ],
-  "universalFacts": [
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is part of the NEB Class 11 basic concept of organic chemistry syllabus.",
-    "Every concept in basic concept of organic chemistry builds upon definitions established earlier in the chapter.",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is assessed through both short-answer and long-answer board questions.",
-    "Understanding 05 Alkyl Groups Functional Groups And Homol Za3kfi improves performance across the entire basic concept of organic chemistry unit.",
-    "Revision of 05 Alkyl Groups Functional Groups And Homol Za3kfi should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 05 Alkyl Groups Functional Groups And Homol Za3kfi with closely related concepts in basic concept of organic chemistry — focus on distinguishing features.",
-    "The scope of 05 Alkyl Groups Functional Groups And Homol Za3kfi is sometimes overstated; remember its precise boundaries.",
-    "Applying 05 Alkyl Groups Functional Groups And Homol Za3kfi outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 05 Alkyl Groups Functional Groups And Homol Za3kfi and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 05 Alkyl Groups Functional Groups And Homol Za3kfi? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is primarily studied under which branch of basic concept of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 05 Alkyl Groups Functional Groups And Homol Za3kfi is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to basic concept of organic chemistry — Answer: B",
-    "Which example correctly illustrates 05 Alkyl Groups Functional Groups And Homol Za3kfi? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 05 Alkyl Groups Functional Groups And Homol Za3kfi.",
-    "Step-by-step animated derivation of the key relationship in 05 Alkyl Groups Functional Groups And Homol Za3kfi.",
-    "Interactive toggle between correct and incorrect representations of 05 Alkyl Groups Functional Groups And Homol Za3kfi."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 05 Alkyl Groups Functional Groups And Homol Za3kfi.",
-    "Side-by-side comparison animation of 05 Alkyl Groups Functional Groups And Homol Za3kfi vs commonly confused concept.",
-    "Timelapse build-up of 05 Alkyl Groups Functional Groups And Homol Za3kfi from prerequisite knowledge in basic concept of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 05 Alkyl Groups Functional Groups And Homol Za3kfi",
-    "Comparison table: 05 Alkyl Groups Functional Groups And Homol Za3kfi vs related concepts in basic concept of organic chemistry",
-    "Step-by-step worked example layout for 05 Alkyl Groups Functional Groups And Homol Za3kfi"
-  ],
-  "summary": [
-    "05 Alkyl Groups Functional Groups And Homol Za3kfi is a fundamental concept in basic concept of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 05 Alkyl Groups Functional Groups And Homol Za3kfi involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 05 Alkyl Groups Functional Groups And Homol Za3kfi alongside related concepts in basic concept of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

@@ -27,18 +27,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "A function f: A -> B assigns to every element of A exactly one element of B, where A is the domain and B the codomain, while the range is the set of outputs actually attained. Injective (one-to-one), surjective (onto) and bijective describe how far the outputs avoid collisions and cover the codomain, and only a bijective function has an inverse f^-1, satisfying f^-1(f(x)) = x and f(f^-1(y)) = y, whose graph is the…",
+      "text": "A **function** assigns exactly one output to each input — the vertical-line test — with a **domain** fixed by the bans: denominator ≠ 0, even-root radicand ≥ 0, log argument > 0, combined by intersection (√(x−2)/(x²−9) lives on [2, 3) ∪ (3, ∞)). The **range** is fastest found by inversion: solve y = f(x) for x and keep feasible y.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse function — quick idea map\"><title>Function: domain and range of a function, inverse function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Function: domain and range of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">inverse function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Domain: the set of all</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">inputs x for which f is</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">defined; range: the set of</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The codomain is the</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">declared target B, while</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the range is only the</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f^-1 denotes the inverse</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function, never the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reciprocal 1/f(x).</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Domain and range are</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">generally different sets;</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the range of f is the</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse function — quick idea map\"><title>Function: domain and range of a function, inverse function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Function: domain and range of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">inverse function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inverses need uniqueness</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">backwards: one-to-one is</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the exact condition that…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Function: exactly one</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">output per input</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(vertical-line test).…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (f∘g)(x) = f(g(x));</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">D_{f∘g} = {x : x ∈ D_g,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">g(x) ∈ D_f} - f invertible</text></svg>",
         "caption": "Function: domain and range of a function, inverse function — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "f^-1(f(x)) = x and f(f^-1(x)) = x\n(f o g)(x) = f(g(x))",
+      "text": "- (f∘g)(x) = f(g(x)); D_{f∘g} = {x : x ∈ D_g, g(x) ∈ D_f} - f invertible ⟺ one-to-one; f⁻¹(f(x)) = x, f(f⁻¹(y)) = y - graph of f⁻¹ = reflection of f in y = x; domain/range swap",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse function — formula board\"><title>Function: domain and range of a function, inverse function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Function: domain and range of a function, inverse</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">f^-1(f(x)) = x and f(f^-1(x)) = x</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(f o g)(x) = f(g(x))</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Function: domain and range of a function, inverse function — formula board\"><title>Function: domain and range of a function, inverse function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Function: domain and range of a function, inverse</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- (f∘g)(x) = f(g(x)); D_{f∘g} = {x : x ∈ D_g, g(x) ∈</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">D_f} - f invertible ⟺ one-to-one; f⁻¹(f(x)) = x,</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">f(f⁻¹(y)) = y - graph of f⁻¹ = reflection of f in y = x;</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">domain/range swap</text></svg>",
         "caption": "Function: domain and range of a function, inverse function — formula board of this topic's own formulas"
       }
     },
@@ -52,7 +52,7 @@
     },
     {
       "label": "Solved",
-      "text": "Find the domain and range of f(x) = 1/(x-3).  ·  If f(x) = 2x + 5, find f^-1(x)."
+      "text": "***The mirror line*** — swapping x and y in the solved equation reflects the graph across y = x: inputs and outputs trade places."
     },
     {
       "label": "Limitation",
@@ -64,31 +64,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "If any horizontal line cuts the graph twice, f is not one-to-one and f^-1 does not exist, so stop immediately.  ·  To sketch the inverse, swap the coordinates of a few known points instead of redoing the algebra from scratch."
+      "text": "Domain: list the bans (denominator, radicand, log) and intersect. Inverse: y = f(x), solve, swap. Range via inversion. f o g: inner function first."
     },
     {
       "label": "Board question",
-      "text": "Find the domain and the range of f(x) = 1/(x - 3).  ·  If f(x) = 2x + 5, find f^-1(x) and state its domain and range."
+      "text": "**NEB-style (3m): Find the inverse of f(x) = (2x + 3)/(x − 1), x ≠ 1, and state the domain of f⁻¹.** — **Construction:** write y = (2x + 3)/(x − 1) and solve for x: y(x − 1) = 2x + 3 ⟹ yx − y = 2x + 3 ⟹ yx − 2x = y + 3 ⟹ x(y − 2) = y + 3 ⟹ **x = (y + 3)/(y − 2)**. Swapping names: **f⁻¹(x) = (x + 3)/(x − 2)**, defined for x ≠ 2.…  ·  **NEB-style (2m): If f(x) = 2x + 1 and g(x) = x², find (f∘g)(x) and (g∘f)(x) and deduce that composition is not commutative.** — **(f∘g)(x) = f(g(x))** — apply g first: f(x²) = 2x² + 1. **(g∘f)(x) = g(f(x))** — apply f first: g(2x + 1) = (2x + 1)² = 4x² + 4x + 1.…"
     },
     {
       "label": "Hints",
-      "text": "Usually a 2-mark question with one mark for the domain and one for the range, and the restriction on x must be written as an explicit inequality.  ·  Inverse computation is typically a 5-mark question, and sketching a function together with its inverse is a standard 5-mark graph question."
+      "text": "For inverse questions, verify by composing: f(f^-1(x)) = x - one line, full marks for confirmation."
     },
     {
       "label": "Quick concepts",
-      "text": "Domain: the set of all inputs x for which f is defined; range: the set of all output values f actually produces.  ·  The codomain is the declared target B, while the range is only the subset of B that is actually hit by f.  ·  Injective (one-to-one): different inputs give different outputs, tested by the horizontal line test on the graph.  ·  Surjective (onto): every element of the codomain is the image of at least one input."
+      "text": "Inverses need uniqueness backwards: one-to-one is the exact condition that lets every output be traced back to a single input."
     },
     {
       "label": "Key points",
-      "text": "f^-1 denotes the inverse function, never the reciprocal 1/f(x).  ·  Domain and range are generally different sets; the range of f is the domain of f^-1.  ·  An inverse exists only for a bijective function, so a restriction is often needed first, as with x^2 on x >= 0.  ·  Composition does not commute, since f o g and g o f are different functions in general."
+      "text": "Function: exactly one output per input (vertical-line test). Domain rules: polynomials all R; rational denominator != 0; even roots radicand >= 0; log argument > 0; combinations intersect the conditions. Range = set of outputs; fastest route: solve y = f(x) for x and keep feasible y.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Encryption is a function with a public forward direction and a secret inverse: one-to-one is what makes decryption unambiguous."
     },
     {
       "label": "More practice",
-      "text": "Show that f(x) = x^3 is one-to-one on R and find f^-1(x).  ·  If f(x) = (x + 1)/(x - 1), evaluate f o f and deduce whether f^-1 = f.  ·  Find the domain of the composite function f o g for f(x) = sqrt(2 - x) and g(x) = x^2 - 1."
-    },
-    {
-      "label": "More hints",
-      "text": "MCQs repeatedly test the distinction between f^-1(x) and 1/f(x), and the false claim that every function has an inverse.  ·  Composite function questions in 5 and 10-mark sets often ask for the domain of f o g, which needs g to be defined and the range of g to lie inside the domain of f."
+      "text": "**NEB-style (2m): Find the domain of f(x) = √(x − 2)/(x² − 9).** — **Condition 1 (even root):** x − 2 ≥ 0 ⟹ x ≥ 2. **Condition 2 (denominator):** x² − 9 ≠ 0 ⟹ x ≠ 3 and x ≠ −3.…"
     },
     {
       "label": "MCQ drill",
@@ -96,11 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "### 1. Function Definition  ·  A function f from set A to set B is a rule that assigns to each element of A exactly one element of B. Written as f: A -> B, where A is the domain and B is the codomain.  ·  ### 2. Domain and Range"
-    },
-    {
-      "label": "More ideas",
-      "text": "Bijective = injective + surjective; only a bijective function has an inverse f^-1: B -> A.  ·  Composite function (f o g)(x) = f(g(x)); composition is associative but not commutative.  ·  Solving f(x) = k for x is the same work as finding f^-1(k), so the two skills are really one skill."
+      "text": "## 1. Topic Introduction — Machines With Rules A **function** is a machine assigning exactly one output to each input. The theorems: **domain conventions** (denominators, even roots, logarithms), **composition** f∘g, and the **inverse theorem** — f⁻¹ exists exactly when f is one-to-one, and y = f(x) ⟺ x = f⁻¹(y).  ·  ## 2. Fundamental Concepts ### 2.1 Definition and testing - **Function f: A → B:** every a ∈ A has **exactly one** image f(a) ∈ B. Vertical-line test: any vertical line cuts the graph at most once. - **Domain** = allowed inputs; **range** = actual outputs {f(x) : x ∈ D}. ### 2.2 Domain theorems - **Polynomials:** all of ℝ. **Rational:** denominator ≠ 0.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Function** | Exactly one output per input | f(x) = x² | | **Composite** | f(g(x)) — chain of machines | √(1 − x²) | | **One-to-one** | Distinct inputs, distinct outputs | eˣ, ln x | | **Inverse** | Undoing machine: f⁻¹(f(x)) = x | f⁻¹ of eˣ is ln x |"
     },
     {
       "label": "More ideas",
@@ -108,15 +104,19 @@
     },
     {
       "label": "More ideas",
-      "text": "A function f from set A to set B assigns to each element of A exactly one element of B, and is written f: A -> B with domain A and codomain B.  ·  For f(x) = sqrt(x-2) the domain is x >= 2 and the range is y >= 0, because a square root is never negative.  ·  If f: A -> B is bijective then f^-1 exists with f^-1(f(x)) = x and f(f^-1(y)) = y, so (f o f^-1)(x) = (f^-1 o f)(x) = x."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  \"f has an inverse iff f is one-to-one; (f o g)(x) = f(g(x)); the graph of f^-1 is f's graph reflected in y = x.\"  ·  Find the inverse of f(x) = (2x + 3)/(x − 1) and its domain."
     },
     {
       "label": "More ideas",
-      "text": "The graph of f^-1 is the reflection of the graph of f in the line y = x, so the point (a, b) on f becomes (b, a) on f^-1.  ·  For f(x) = ax + b with a != 0 the inverse is f^-1(x) = (x - b)/a, and the branch f(x) = x^2 restricted to x >= 0 has inverse f^-1(x) = sqrt(x).  ·  Replace x by y, solve for x, then swap back: the three-step recipe works for every invertible function."
+      "text": "Compute f∘g and g∘f for f(x) = 2x + 1, g(x) = x².  ·  Find the domain of √(x − 2)/(x² − 9).  ·  Use the horizontal line test to decide whether a function is one-to-one, and hence whether an inverse can exist on the given domain."
     },
     {
       "label": "More ideas",
-      "text": "Verify the answer with f^-1(f(x)) = x; the result must come out to exactly x, never to a constant.  ·  If the solved expression for x is the original formula with x and y exchanged, then f = f^-1.  ·  Determine the range of f(x) = (x - 1)^2 + 3 restricted to x >= 0."
+      "text": "Evaluate composite functions such as f o g and f o f, and test which of the two compositions returns the identity function.  ·  Sketch a function and its inverse on the same axes, drawing the line y = x as the mirror line and labelling matched points.  ·  ## 4. Detailed Explanation ### 4.1 Why inverses need one-to-one - An inverse must send each output back to a **unique** input. If f(a) = f(b) with a ≠ b, the inverse cannot decide where to send the common value — ambiguity kills invertibility.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Comparison Tables **Function vs relation** | Basis | Function | General relation | |---|---|---| | outputs per input | exactly one | any number | | vertical-line test | passes | may fail | | inverse | needs one-to-one | always a relation |  ·  ## 6. Common Confusions **f⁻¹ means inverse, not reciprocal:** 1/f is a new function; f⁻¹ undoes f — different objects entirely.  ·  **Composition order:** (f∘g)(x) = f(g(x)) — g acts **first**; reading left-to-right as \"f then g\" is the classic error."
     }
   ]
 }

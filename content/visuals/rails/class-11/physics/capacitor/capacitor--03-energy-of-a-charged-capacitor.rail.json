@@ -53,7 +53,7 @@
     },
     {
       "label": "Limitation",
-      "text": "Believing energy resides in the metal plates: Electrostatic potential energy is stored in the electric field throughout the space (dielectric volume) between plates, not inside the conducting metal itself."
+      "text": "Believing energy resides in the metal plates: Electrostatic potential energy is stored in the electric field throughout the space (dielectric volume) between plates, not inside the conducting metal itself.  ·  A symbol is not a number until the unit is named."
     },
     {
       "label": "Derivation",
@@ -69,11 +69,11 @@
     },
     {
       "label": "Hints",
-      "text": "Derivation of $U = \\frac{1}{2}CV^2$ by integration and subsequent derivation of energy density $u = \\frac{1}{2}\\varepsilon_0 E^2$ is an essential 3 to 4-mark question in NEB exams."
+      "text": "Derivation of $U = \\frac{1}{2}CV^2$ by integration and subsequent derivation of energy density $u = \\frac{1}{2}\\varepsilon_0 E^2$ is an essential 3 to 4-mark question in NEB exams.  ·  Definition, then formula, then substitution."
     },
     {
       "label": "Quick concepts",
-      "text": "Integration derivation of electrostatic potential energy U = Q² / (2C) = ½ CV².  ·  Partition of battery work: 50% stored, 50% dissipated as heat.  ·  Derivation of electrostatic energy density u = ½ ε₀ E²."
+      "text": "Integration derivation of electrostatic potential energy U = Q² / (2C) = ½ CV².  ·  Partition of battery work: 50% stored, 50% dissipated as heat.  ·  Derivation of electrostatic energy density u = ½ ε₀ E².  ·  Definition"
     },
     {
       "label": "Key points",
@@ -88,12 +88,16 @@
       "text": "Q3. A capacitor is charged by a battery of potential V. Prove that the energy stored in the capacitor is only half the work done by the battery.  ·  Q4. If the plate separation of an isolated charged capacitor is doubled, what happens to its stored energy, and where does this change in energy come from?"
     },
     {
+      "label": "More hints",
+      "text": "A vector answer is incomplete without its direction."
+    },
+    {
       "label": "Extra solved",
       "text": "Pulsed laser fusion: High-energy glass lasers use room-sized capacitor banks storing hundreds of megajoules to trigger fusion target implosions."
     },
     {
       "label": "MCQ drill",
-      "text": "The energy stored in a capacitor of capacitance C charged to potential V is given by: → B  ·  When a capacitor is charged directly by a battery of EMF V, what fraction of energy supplied by the battery is lost as heat? → C"
+      "text": "For an isolated capacitor, stored energy is best written → B  ·  Separating the plates of an isolated capacitor → B"
     },
     {
       "label": "Study notes",
@@ -101,23 +105,23 @@
     },
     {
       "label": "More ideas",
-      "text": "Electrostatic energy density: $u = \\frac{1}{2}\\varepsilon_0 E^2$ (in vacuum) or $u = \\frac{1}{2}\\varepsilon E^2$ (in medium)  ·  Always identify if Q or V is constant when evaluating work and energy changes: use U = Q²/(2C) when isolated (Q constant); use U = ½ CV² when connected (V constant).  ·  Statement 1: The electrostatic potential energy of a capacitor is stored in the electric field existing between its conducting plates."
+      "text": "Formula  ·  Unit  ·  Worked case"
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: The total work done in charging a capacitor to charge Q at potential V is U = ½ QV.  ·  Statement 3: Regardless of the resistance in the charging circuit, exactly half of the energy delivered by the charging source is dissipated as heat.  ·  Statement 4: The electrostatic energy density in vacuum is proportional to the square of the electric field intensity (u = ½ ε₀ E²)."
+      "text": "Electrostatic energy density: $u = \\frac{1}{2}\\varepsilon_0 E^2$ (in vacuum) or $u = \\frac{1}{2}\\varepsilon E^2$ (in medium)  ·  A proportional relation is not an equality until the constant is included.  ·  A vector answer needs a direction as well as a magnitude."
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: For an isolated capacitor, external mechanical work performed against plate attraction increases stored electrostatic energy.  ·  Energy density is quadratic with field: doubling $E$ quadruples energy density $u$.  ·  A $12\\,\\mu\\text{F}$ capacitor is connected across a $50\\text{ V}$ battery. Calculate (a) charge stored, (b) electrostatic energy stored, and (c) energy supplied by the battery. Solution: (a) $Q = CV = (12 \\times 10^{-6})(50) = 600\\,\\mu\\text{C} = 0.6\\text{ mC}$.…"
+      "text": "A special case, such as a right angle or a steady temperature, has to be stated before it is used.  ·  Always identify if Q or V is constant when evaluating work and energy changes: use U = Q²/(2C) when isolated (Q constant); use U = ½ CV² when connected (V constant).  ·  Do not skip the unit conversion."
     },
     {
       "label": "More ideas",
-      "text": "Calculate the energy density in an electric field of strength $3 \\times 10^6\\text{ V/m}$ (dielectric breakdown field of air). Solution: $u = \\frac{1}{2}\\varepsilon_0 E^2 = 0.5 \\times (8.854 \\times 10^{-12}) \\times (3 \\times 10^6)^2 = 0.5 \\times 8.854 \\times 10^{-12} \\times 9 \\times 10^{12} = 39.84\\text{ J/m}^3$.  ·  Calculate energy changes and work done when plate separation is altered under connected vs isolated conditions.  ·  **Energy Dissipated During Charging by Battery:** A battery of EMF $V$ supplies a total charge $Q$ to fully charge the capacitor. The total work done by the battery is $W_{battery} = Q V = C V^2$. However, the energy stored in the capacitor is only $U = \\frac{1}{2} C V^2$.…"
+      "text": "Match the formula to the situation drawn, not to a neighbouring topic.  ·  Pulling the plates of an isolated charged capacitor farther apart lowers the capacitance while the charge stays fixed, so the stored energy Q squared over 2C rises. That extra energy is the work you do against the attraction of the plates.  ·  The working relations are U = (1/2) C V^2 and Battery work = C V^2. Name each symbol, convert the data into SI units, and only then substitute."
     },
     {
       "label": "More ideas",
-      "text": "**Electrostatic Energy Density:** Energy is localized throughout the dielectric medium of volume $\\mathcal{V} = A d$ between the plates. Substituting $C = \\frac{\\varepsilon_0 A}{d}$ and $V = E d$ into $U = \\frac{1}{2} C V^2$: $U = \\frac{1}{2}\\left(\\frac{\\varepsilon_0 A}{d}\\right)(E d)^2 = \\frac{1}{2}\\varepsilon_0 E^2…"
+      "text": "An isolated 2.0 μF capacitor holds 20 μC. The plates are moved so that C becomes 1.0 μF. Find the change in stored energy. Q stays 20 μC because the capacitor is isolated. U1 = Q^2/(2C) = (4.0 × 10^−10) / (4.0 × 10^−6) = 0.10 J.  ·  Energy density is quadratic with field: doubling $E$ quadruples energy density $u$.  ·  A $12\\,\\mu\\text{F}$ capacitor is connected across a $50\\text{ V}$ battery. Calculate (a) charge stored, (b) electrostatic energy stored, and (c) energy supplied by the battery. Solution: (a) $Q = CV = (12 \\times 10^{-6})(50) = 600\\,\\mu\\text{C} = 0.6\\text{ mC}$.…"
     }
   ]
 }

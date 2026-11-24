@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Matrices and determinants: transpose of a matrix and its … (Algebra, Mathematics, class-11-notes) covers Matrices, determinants: transpose of a matrix, its properties. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Determinants have anatomy. The **minor** Mᵢⱼ deletes row i and column j; the **cofactor** Cᵢⱼ = (−1)^(i+j)Mᵢⱼ stamps the checkerboard sign (+−+/−+−/++- pattern starting + at (1,1)); and the **Laplace expansion** |A| = Σ aᵢⱼCᵢⱼ works along any row or column — all choices agree (the 3×3 with cofactors 2, 2, −3, … expands to −3 along row 1 and column 1 alike).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Matrices and determinants: transpose of a matrix and its … — quick idea map\"><title>Matrices and determinants: transpose of a matrix and its … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Matrices and determinants: transpose of a</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">matrix and its …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Matrices</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Determinants: transpose</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of a matrix</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">det([[a,b],[c,d]]) = ad −</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">bc</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A⁻¹ = adj(A)/det(A)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Matrices and determinants: transpose of a matrix and its … — quick idea map\"><title>Matrices and determinants: transpose of a matrix and its … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Matrices and determinants: transpose of a</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">matrix and its …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The adjoint identity A adj</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A = |A| I is the keystone:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">it is the inverse…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Minor M_ij: determinant</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">after deleting row i,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">column j.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A|</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= Σⱼ aᵢⱼCᵢⱼ (any</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">row/column) - adj A = Cᵀ;</text></svg>",
         "caption": "Matrices and determinants: transpose of a matrix and its … — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "det([[a,b],[c,d]]) = ad − bc\nA⁻¹ = adj(A)/det(A)\ndet(AB) = det A·det B"
+      "text": "- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A| = Σⱼ aᵢⱼCᵢⱼ (any row/column) - adj A = Cᵀ; A·adj A = |A|·I; A⁻¹ = adj A/|A| - |AB| = |A||B|; |kA| = kⁿ|A|; Cramer: xᵢ = |Aᵢ|/|A|"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).  ·  Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n."
+      "text": "\"C_ij = (-1)^(i+j) M_ij; |A| = sum a_ij C_ij along any row or column; A adj A = |A| I; A^-1 = adj A/|A|.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The zero-rich row*** - create zeros with row additions (which leave |A| unchanged), then expand along that row: the 3x3 slog collapses to one 2x2 determinant."
     },
     {
       "label": "Limitation",
@@ -56,31 +56,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Matrices and determinants: transpose of a matrix and its … — Algebra, Mathematics (class-11-notes).  ·  **Tested.** define it · list: matrices, determinants: transpose of a matrix, its properties, minors · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Determinant's Inner Machinery **Minors, cofactors and the adjoint** are the moving parts inside every determinant: the expansion theorem, the product rule |AB| = |A||B|, and the inverse formula A⁻¹ = adj A/|A|. This topic builds them carefully for 3×3 and beyond.  ·  ## 2. Fundamental Concepts ### 2.1 Minors and cofactors - **Minor Mᵢⱼ:** the determinant of the submatrix left after deleting row i and column j. - **Cofactor:** **Cᵢⱼ = (−1)^(i+j) Mᵢⱼ** — the checkerboard sign pattern (+ − + / − + − / + − +). - **Theorem (Laplace expansion):** |A| = Σⱼ aᵢⱼCᵢⱼ along **any** row or column — all choices give the same value; pick the row with the most zeros.…"
     },
     {
       "label": "Shortcut",
-      "text": "Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
+      "text": "Sign checkerboard from + at (1,1). Expand along zeros. adj = transpose of cofactors. |kA| = k^n |A|. Cramer: replace one column at a time."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Matrices and determinants: transpose of a matrix and its …\" with one example.  ·  compare \"Matrices\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Find all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and evaluate |A| by expansion.** — **Cofactors (sign × minor):** C₁₁ = +(5·10 − 6·8) = +2; C₁₂ = −(4·10 − 6·7) = −(−2) = +2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = +4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = +6; C₃₁ = +(2·6 − 3·5) = −3; C₃₂ =…  ·  **NEB-style (3m): Verify the adjoint identity A·adj A = |A|·I for A = [[2, 1], [3, 4]].** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −1, C₂₂ = +2 ⟹ cofactor matrix [[4, −3], [−1, 2]] ⟹ **adj A = transpose = [[4, −1], [−3, 2]]**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc))..",
+      "text": "In cofactor questions, write the sign and the minor separately before multiplying - merging them is where sign errors breed.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Matrices and determinants: transpose of a matrix and its … — topic mind map\"><title>Matrices and determinants: transpose of a matrix and its … — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Matrices and determinants</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Matrices</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Determinants: transpose</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">of a matrix</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its properties</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Minors</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Matrices and determinants: transpose of a matrix and its … — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The adjoint identity A adj A = |A| I is the keystone: it is the inverse formula, the singularity obstruction, and a free check on adj computations all at once."
+    },
+    {
       "label": "Key points",
-      "text": "• Matrices  ·  • Determinants: transpose of a matrix  ·  • Its properties  ·  • Minors"
+      "text": "Minor M_ij: determinant after deleting row i, column j. Cofactor C_ij = (-1)^(i+j) M_ij (checkerboard + - + / - + - / + - +). Laplace expansion: |A| = sum a_ij C_ij along any row or column - all agree; choose the zero-rich row. Adjoint: transpose of the cofactor matrix, (adj A)_ij = C_ji.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Cramer's rule is why determinants predate matrices historically: each unknown is a ratio of two volumes."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Matrices and determinants: transpose of a matrix and its …\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): Solve the system 2x + 3y = 8, x − y = −1 using Cramer's rule.** — **Coefficient determinant:** |A| = |2 3; 1 −1| = (2)(−1) − (3)(1) = −5 ≠ 0 ⟹ Cramer applies.…"
     },
     {
       "label": "MCQ drill",
@@ -88,27 +96,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).  ·  **Fact.** Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n.  ·  **Fact.** Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Minor** | Determinant of the delete-row/delete-column submatrix | M₁₁ of a 3×3 | | **Cofactor** | Signed minor: (−1)^(i+j)Mᵢⱼ | checkerboard signs | | **Adjoint** | Transpose of the cofactor matrix | A·adj A = |A|I | | **Cramer's rule** | xᵢ = |Aᵢ|/|A| | determinant ratios |  ·  ## 4. Detailed Explanation ### 4.1 Why the checkerboard sign - The sign (−1)^(i+j) compensates for the row/column swaps hidden in the submatrix; without it, expansions along different rows would disagree. ### 4.2 The adjoint identity as the keystone - A·adj A = |A|I is simultaneously: the inverse formula (divide by |A|), the reason singular matrices have no inverse (division…  ·  ## 5. Comparison Tables **Cofactor bookkeeping for 3×3** | Position | Sign | Role | |---|---|---| | (1,1), (1,3), (2,2), (3,1), (3,3) | + | M as is | | (1,2), (2,1), (2,3), (3,2) | − | negate the minor | | adj A | transpose | (adj A)ᵢⱼ = Cⱼᵢ |"
     },
     {
       "label": "More ideas",
-      "text": "• Cofactors  ·  • Adjoint  ·  define + example each sub-idea: matrices, determinants: transpose of a matrix, its properties, minors."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc))..  ·  No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Matrices and determinants: transpose of a matrix and its …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Compute all cofactors of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.  ·  Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].  ·  Solve 2x + 3y = 8, x − y = −1 by Cramer's rule."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc)).  ·  **Determinants: transpose of a matrix.** one-line definition + one-line exam use.  ·  **Its properties.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc)).  ·  ## 6. Common Confusions **Sign pattern starts with + at (1,1):** (−1)^(1+1) = +1; the alternating pattern is + − + / − + − / + − +."
     },
     {
       "label": "More ideas",
-      "text": "**Minors.** one-line definition + one-line exam use.  ·  **Cofactors.** one-line definition + one-line exam use.  ·  **Adjoint.** one-line definition + one-line exam use."
+      "text": "**adj A transposes the cofactor matrix:** using cofactors untransposed poisons every inverse computation.  ·  **|kA| = kⁿ|A|:** the scalar crosses each of n rows — for 3×3, |2A| = 8|A|, not 2|A|.  ·  ## 7. Exam Application **NEB-style (3m): Find the cofactors of all entries of A = [[1, 2, 3], [4, 5, 6], [7, 8, 10]] and hence |A|.** — C₁₁ = +(5·10 − 6·8) = 2; C₁₂ = −(4·10 − 6·7) = −(40−42) = 2; C₁₃ = +(4·8 − 5·7) = −3; C₂₁ = −(2·10 − 3·8) = −(20−24) = 4; C₂₂ = +(1·10 − 3·7) = −11; C₂₃ = −(1·8 − 2·7) = 6; C₃₁ =…"
     },
     {
       "label": "More ideas",
-      "text": "**Inverse matrix.** one-line definition + one-line exam use.  ·  **Determinant.** one-line definition + one-line exam use.  ·  **Properties of determinants.** one-line definition + one-line exam use."
+      "text": "**NEB-style (3m): Verify A·adj A = |A|I for A = [[2, 1], [3, 4]].** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −1, C₂₂ = 2 ⟹ adj A = [[4, −1], [−3, 2]]. A·adj A = [[2·4 + 1·(−3), 2·(−1) + 1·2], [3·4 + 4·(−3), 3·(−1) + 4·2]] = [[5, 0], [0, 5]] = **5I = |A|I** ✓ — the master identity, and the reason A⁻¹ = adj A/|A| works.  ·  **NEB-style (3m): Solve by Cramer's rule: 2x + 3y = 8, x − y = −1.** — |A| = 2(−1) − 3(1) = −5. |A₁| (replace column 1 by B) = 8(−1) − 3(−1) = −5 ⟹ x = −5/−5 = **1**. |A₂| = 2(−1) − 8(1) = −10 ⟹ y = −10/−5 = **2**. Check: 2 + 6 = 8 ✓, 1 − 2 = −1 ✓."
     }
   ]
 }

@@ -23,7 +23,7 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells.…",
+      "text": "The cell cycle runs G1–S–G2–M (≈90% interphase) under G1/S, G2/M and spindle checkpoints guarded by p53. Amitosis pinches directly without a spindle (rare; never cite liver cells). Mitosis walks PMAT with furrow (animals) or cell-plate (plants) cytokinesis: 2n → two identical 2n for growth, repair and cloning.…",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cell division: Concept of cell cycle, types of cell divis… — quick idea map\"><title>Cell division: Concept of cell cycle, types of cell divis… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Cell division: Concept of cell cycle, types of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">cell divis…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cell cycle (G1, S, G2, M)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Checkpoints</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Cell division</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Cell cycle</text></svg>",
         "caption": "Cell division: Concept of cell cycle, types of cell divis… — quick idea map of this topic's headline ideas"
@@ -60,7 +60,7 @@
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Cell division: Concept of cell cycle, types of cell divis…\" with one example.  ·  compare \"Cell division\" with the related idea from a neighbouring unit."
+      "text": "**Q.** State and explain the main idea of \"Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances\" with one example. **Answer.** **Main idea:** the cell cycle (G1 → S → G2 → M) is a controlled production line; division comes in three types that serve different jobs — **amitosis**…  ·  **Q.** Compare \"Cell division\" with the related idea from a neighbouring unit. **Answer.** **Cell division (this topic)** is the **mechanics** — how the cycle's checkpoints copy and separate chromosomes, and how mitosis and meiosis differ in divisions, outcomes and sources of variation.…"
     },
     {
       "label": "Hints",
@@ -84,7 +84,7 @@
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Cell division: Concept of cell cycle, types of cell divis…\" and verify the answer is plausible.  ·  How is Anaphase I of meiosis different from Anaphase of mitosis?  ·  Explain why meiosis produces genetic variation (two mechanisms)."
+      "text": "**Q.** Solve / apply for \"Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances\" and verify the answer is plausible. **Answer.** **Task:** a cell (2n = 4) undergoes meiosis.…  ·  **Q.** How is Anaphase I of meiosis different from Anaphase of mitosis? **Answer.** **Anaphase I (meiosis):** **homologous chromosomes separate** — whole chromosomes (each still of two sister chromatids) move to opposite poles; the centromeres do **not** split; chromosome number halves (2n → n).…  ·  **Q.** Explain why meiosis produces genetic variation (two mechanisms). **Answer.** 1. **Crossing over (Prophase I):** non-sister chromatids of a bivalent exchange segments at chiasmata, recombining maternal and paternal alleles onto single chromosomes — new gene combinations never present in…"
     },
     {
       "label": "More hints",
@@ -92,7 +92,7 @@
     },
     {
       "label": "Extra solved",
-      "text": "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.  ·  Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 ovum (n) + 3 polar bodies."
+      "text": "Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm.  ·  Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 functional ovum (n) + usually 2–3 polar bodies (meiosis II completes only if fertilization occurs)."
     },
     {
       "label": "MCQ drill",

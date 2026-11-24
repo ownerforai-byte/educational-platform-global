@@ -25,72 +25,84 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Concept of ecosystem, structural and functional aspects o… (Ecology, Biology, class-11-notes) covers ecosystem, structural, functional aspects of pond. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "An ecosystem (Tansley, 1935) is nature's self-sustaining unit: a biotic community running on its abiotic environment through one-way energy flow and cyclic nutrients. Its structure has three layers — abiotic components (inorganic nutrients, organic detritus, climate), biotic components (producers, consumers, decomposers) and functional links (energy flow, nutrient cycling, homeostasis).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concept of ecosystem, structural and functional aspects o… — quick idea map\"><title>Concept of ecosystem, structural and functional aspects o… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Concept of ecosystem, structural and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">functional aspects o…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Ecosystem</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Structural</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concept of ecosystem, structural and functional aspects o… — quick idea map\"><title>Concept of ecosystem, structural and functional aspects o… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Concept of ecosystem, structural and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">functional aspects o…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Self-sustaining test:**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a real ecosystem needs</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">only sunlight —</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ecosystem (Tansley, 1935):</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">self-sustaining unit =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">biotic community +</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Structure: abiotic</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(inorganic, organic,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">climate) + biotic</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E(n+1) ≈ 0.1 × E(n)</text></svg>",
         "caption": "Concept of ecosystem, structural and functional aspects o… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Ecosystem\n• Structural"
+      "text": "E(n+1) ≈ 0.1 × E(n)\nNet primary productivity = gross primary productivity − respiration of the producers."
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"ecosystem\" as one blob → ✅ split into: ecosystem, structural, functional aspects of pond.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**Littoral vs limnetic:** littoral = shallow near-shore zone with rooted plants; limnetic = open, well-lit water of plankton and fish.  ·  **Ecosystem vs community:** community = only the living populations; ecosystem = community + abiotic environment + their interactions."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Concept of ecosystem, structural and functional aspects o…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Name a Nepali forest type if you can, then still give the universal strata. The strata are what the mark scheme wants.  ·  Trophic level and zone are different. Limnetic is a place. Producer is a feeding role."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Pond*** — the classic diagram ecosystem: phytoplankton → zooplankton → fish with benthic decomposers.  ·  ***Forest*** — high-biomass ecosystem where the detritus chain outweighs the grazing chain."
     },
     {
       "label": "Limitation",
-      "text": "Covers only: ecosystem, structural, functional aspects of pond, forest ecosystem (within Ecology).  ·  Out of scope here: topics of neighbouring units in Biology — don't mix them."
+      "text": "The ecosystem-structure question is the highest-marked repeated question (5m, 2023 + 2024) — memorise the three-component skeleton and practise the pond diagram."
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Concept of ecosystem, structural and functional aspects o… — Ecology, Biology (class-11-notes).  ·  **Tested.** define it · list: ecosystem, structural, functional aspects of pond, forest ecosystem · one worked example · one misconception each."
+      "text": "Compare pond and forest in two columns: producers, consumers, decomposers, main abiotic medium.  ·  Calculate the energy at each trophic level from a given producer input."
     },
     {
       "label": "Shortcut",
-      "text": "• Functional aspects of pond  ·  • Forest ecosystem"
+      "text": "\"I-O-C / P-C-D: Inorganic, Organic, Climate / Producers, Consumers, Decomposers.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Concept of ecosystem, structural and functional aspects o…\" with one example.  ·  compare \"ecosystem\" with the related idea from a neighbouring unit."
+      "text": "**Short answer (2m):** Name the zones of a pond ecosystem. **Answer.** **Littoral** — shallow edges, rooted plants, snails, insect larvae, frogs. **Limnetic** — open water down to light depth, phytoplankton, zooplankton, fish. **Profundal/benthic** — deep, dark bottom, decomposers and anaerobic bacteria."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Most-tested: definition + structure + diagram (2023, 2024). Diagram-worthy: pond cross-section with zones, arrows for energy and nutrients.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Concept of ecosystem, structural and functional aspects o… — topic mind map\"><title>Concept of ecosystem, structural and functional aspects o… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Concept of ecosystem, structural and function…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ecosystem</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Structural</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Functional aspects of</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">pond</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Forest ecosystem</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Concept of ecosystem, structural and functional aspects o… — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Concept of ecosystem, structural and functional aspects o…\" and verify the answer is plausible."
+      "label": "Quick concepts",
+      "text": "**Self-sustaining test:** a real ecosystem needs only sunlight — everything else (matter) is internally recycled; artificial ecosystems (aquarium) need constant human input."
+    },
+    {
+      "label": "Key points",
+      "text": "Ecosystem (Tansley, 1935): self-sustaining unit = biotic community + abiotic environment + energy flow + nutrient cycling.  ·  Structure: abiotic (inorganic, organic, climate) + biotic (producers, consumers, decomposers) + functional (energy flow, cycling, homeostasis).  ·  Pond zones: littoral, limnetic, profundal/benthic. Forest layers: canopy, understorey, floor (detritus chain dominates).  ·  5m PYQ repeated 2023 and 2024 — definition + structure + diagram."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Ecosystems need no matter imports — a sealed terrarium with light can run for years on recycled water, CO₂ and nutrients."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Concept of ecosystem, structural and functional aspects o…\"? → Ecosystem  ·  A common examiner point on \"Concept of ecosystem, structural and functional aspects o…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The profundal zone of a pond is → B  ·  Under the ten percent law, 10,000 kJ in producers leaves about how much at the tertiary consumer? → D"
     },
     {
       "label": "Study notes",
-      "text": "**Structural.** one-line definition + one-line exam use.  ·  **Functional aspects of pond.** one-line definition + one-line exam use.  ·  **Forest ecosystem.** one-line definition + one-line exam use."
+      "text": "## 1. Topic Introduction — Ecosystem as a Working Machine An ecosystem is the functional unit of nature: a **community of organisms interacting with each other and with their physical environment**, with energy flowing one way and matter cycling.…  ·  ## 2. Definition and Structure of an Ecosystem **Definition:** an ecosystem is a self-sustaining unit of nature comprising all the organisms (biotic community) of an area interacting with their physical environment (abiotic components) through energy flow and nutrient cycling (Tansley, 1935). ### 2.1 Structural components (the answer skeleton for the 5m question) **A.…  ·  **Pond vs forest ecosystem — structure classified** | Component | Pond ecosystem | Forest ecosystem | |---|---|---| | Producers | Phytoplankton, floating and submerged plants | Trees, shrubs, herbs | | Consumers | Zooplankton, fish, amphibians | Insects, birds, mammals | | Decomposers | Bacteria, fungi in bottom mud | Soil fungi, bacteria, earthworms | | Abiotic substrate |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: ecosystem, structural, functional aspects of pond, forest ecosystem.  ·  one worked example for \"Concept of ecosystem, structural and functional aspects o…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "\"An ecosystem is a community with a metabolism.\"  ·  Why does an aquarium need frequent cleaning while a pond does not? **Answer.** A pond is a **complete, self-sustaining ecosystem**: enough producers, consumers and — crucially — decomposers to cycle nutrients and keep oxygen balanced (ecosystem homeostasis).…  ·  ## 3. Functional Aspects — How the Machine Runs 1. **Energy flow:** solar radiation → ~1% fixed by producers → NPP = GPP − R feeds consumers → heat lost at every transfer (unidirectional, no recycling of energy). 2.…"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "```svg Ecosystem functions — energy in, nutrients cycle <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">How an ecosystem runs</text><circle cx=\"110\"…  ·  ## 4. Conceptual Relationships - **Topic 21–22 → here:** components and energy flow assemble into the whole unit. - **Here → Topic 24:** the nutrient cycling mentioned here is expanded into carbon and nitrogen cycles.…  ·  **Deep dive — why energy flow is one-way but nutrients cycle.** Every transfer loses about 90% of the energy as heat (the second law of thermodynamics); heat cannot be recycled by plants, so energy must be resupplied by the sun forever.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Exam Orientation and Previous Year Questions (NEB) ### 5.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Ecology | Ecosystem | Define ecosystem. Describe the structure of an ecosystem with a diagram.…"
     }
   ]
 }

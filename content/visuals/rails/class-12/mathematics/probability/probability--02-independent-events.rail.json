@@ -59,7 +59,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Independent events  ·  solve / apply for \"Independent events\" and verify the answer is plausible."
+      "text": "Trick 1: Definition test: A, B independent ⇔ P(A∩B) = P(A)P(B); equivalently P(B|A) = P(B) — verify with numbers, never assume from the story.  ·  Trick 2: 'At least one' trick: P(at least one) = 1 − P(none) — converts messy unions into one multiplication."
     },
     {
       "label": "Board question",
@@ -74,16 +74,32 @@
       }
     },
     {
+      "label": "Key points",
+      "text": "• Independent events"
+    },
+    {
+      "label": "More practice",
+      "text": "solve / apply for \"Independent events\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Independent events\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
-      "label": "More ideas",
-      "text": "define + example each sub-idea: independent events.  ·  one worked example for \"Independent events\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "label": "Study notes",
+      "text": "# Independent events ## 1. Introduction and motivation What the tool **Independent events** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Probability fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Trick 3: Mutually exclusive ≠ independent: exclusive events with positive probability are ALWAYS dependent (P(A∩B) = 0 ≠ P(A)P(B)) — the classic distinction 2-marker.  ·  define + example each sub-idea: independent events.  ·  one worked example for \"Independent events\" — check units / edge cases."
+    },
+    {
+      "label": "More ideas",
+      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 5. Figures and graphs - **F1** — Independent events — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Independent events — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Independent events —…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

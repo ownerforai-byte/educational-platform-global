@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Continuity at $a$ requires three things at once: $f(a)$ defined, the two-sided limit existing, and the two being equal. Polynomials and elementary functions are continuous on their domains and composite functions inherit continuity from their parts. Continuity is strictly weaker than differentiability, which is why $|x|$ is continuous but not differentiable at 0.",
+      "text": "Continuity is a three-fact contract at each point — limit exists, value exists, they match — and the failure pattern classifies the discontinuity: removable (repairable by re-anchoring), jump (sides disagree), infinite (the approach itself fails), oscillatory. Repair is possible exactly when the limit exists, which is why the audit's order is the diagnosis.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — quick idea map\"><title>Continuity of Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three conditions must</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hold; the failing one</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">names the type of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuity does not imply</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">differentiability — $|x|$</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at 0 proves it.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three conditions must</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hold; the failing one</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">names the type of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuity does not imply</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">differentiability — $|x|$</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at 0 proves it.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — quick idea map\"><title>Continuity of Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The audit's three</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">questions are independent;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the failure pattern is</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuity at a: lim =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(a) - three independent</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">facts (limit exists,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- f continuous at a ⟺</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lim_{x→a}f(x) = f(a) -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Repair: define f(a) =…</text></svg>",
         "caption": "Continuity of Function — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$\nOne-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$\nComposite: $g\\circ f$ continuous if $f$ is and $g$ is continuous at $f(x)$",
+      "text": "- f continuous at a ⟺ lim_{x→a}f(x) = f(a) - Repair: define f(a) = lim_{x→a}f(x)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — formula board\"><title>Continuity of Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Continuity of Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a}f(x)=L$, and $f(a)=L$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a^+}f(x)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Composite: $g\\circ f$ continuous if $f$ is and $g$ is</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">continuous at $f(x)$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — formula board\"><title>Continuity of Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Continuity of Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- f continuous at a ⟺ lim_{x→a}f(x) = f(a) - Repair:</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">define f(a) = lim_{x→a}f(x)</text></svg>",
         "caption": "Continuity of Function — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "All three conditions must hold; the failing one names the type of discontinuity.  ·  Continuity does not imply differentiability — $|x|$ at 0 proves it."
+      "text": "***The weld equation*** - f = x+k for x<=2, 3x-1 for x>2: continuity demands 2+k = 5, so k = 3 - the audit becomes algebra for the parameter."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "When asked 'is it continuous at $a$?', name which of the three conditions fails rather than answering only 'no'.  ·  A hole with a well-defined limit is removable — always check for that case first."
+      "text": "Audit in order: limit (both sides), value, match - the first failure names the class."
     },
     {
       "label": "Board question",
-      "text": "Testing continuity of a piece-wise function at a join point is a standard 2–3 mark question."
+      "text": "**NEB-style (6m): Audit f(x) = (x² − 4)/(x − 2) at x = 2 and repair if possible.** — **Limit:** 0/0 ⟹ factor: (x−2)(x+2)/(x−2) = x + 2 for x ≠ 2 ⟹ lim = **4** (both sides agree). **Value:** f(2) is undefined (0/0 was evaluated literally) ⟹ the value fails. **Classification:** **removable** — the limit exists, the anchor is missing.…  ·  **NEB-style (5m): Classify the discontinuity of f(x) = 1/(x + 3) at x = −3 and describe the graph's behaviour there.** — **Numerator at −3:** 1 ≠ 0 ⟹ a genuine wall. **Sides:** as x → −3⁺, denominator → 0⁺ ⟹ f → **+∞**; as x → −3⁻, → **−∞**.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Composite and inverse $g circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $ sqrt{ tan x}$ is cont"
+      "text": "For parameter welds, write the matching equation explicitly before solving."
     },
     {
       "label": "Quick concepts",
-      "text": "Polynomials are continuous everywhere; rational functions except where the denominator vanishes."
+      "text": "The audit's three questions are independent; the failure pattern is the classification."
+    },
+    {
+      "label": "Key points",
+      "text": "Continuity at a: lim = f(a) - three independent facts (limit exists, value exists, they match). Catalogue: removable (repairable by re-anchoring), jump (sides disagree), infinite (wall), oscillatory. Repair is possible exactly when the limit exists.…"
     },
     {
       "label": "Universal facts",
-      "text": "The intermediate value theorem — a continuous function on $[a,b]$ takes every value between $f(a)$ and $f(b)$ — is why a graph with a hole can skip a root but a graph with a jump cannot.  ·  Physical laws are modelled as continuous because the world is, to measurement precision, free of instantaneous jumps; discontinuities in models are usually deliberate idealisations."
+      "text": "Continuity is local: every standard function is continuous everywhere except its named suspects."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find k so that f is continuous everywhere: f(x) = x + k for x ≤ 2, f(x) = 3x − 1 for x > 2.** — **The suspect:** the joint x = 2 (both formulas are polynomials — continuous on their own patches). **LHL (x → 2⁻):** 2 + k. **RHL (x → 2⁺):** 3(2) − 1 = 5.…  ·  **NEB-style (6m): For f(x) = (x³ − 8)/(x − 2) for x ≠ 2 and f(2) = 9, run the full audit at x = 2 and classify.** — **Limit:** 0/0 ⟹ x³ − 8 = (x − 2)(x² + 2x + 4) ⟹ simplified form x² + 2x + 4 ⟹ lim = 4 + 4 + 4 = **12** (both sides agree — the simplified form is continuous).…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The three conditions:** $f$ is continuous at $x=a$ if (i) $f(a)$ is DEFINED, (ii) $\\lim_{x \\to a} f(x)$ EXISTS, and (iii) the two are EQUAL. All three are required, and naming which one fails is exactly how discontinuity is classified.  ·  **Intuitively:** the graph has no hole, no jump and no break at $a$ — it can be drawn without lifting the pencil. Since this is a limit statement, a function can be continuous everywhere yet fail to be differentiable at a corner (the case $|x|$ at 0).  ·  **Elementary functions:** polynomials are continuous everywhere, so $\\lim_{x\\to a}P(x)=P(a)$ by direct substitution. $\\frac1x$, $\\tan x$, roots and logarithms are continuous only where defined."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Continuity Overall This canonical is the **catch-all continuity companion**: the definition, the three-point audit, the discontinuity catalogue, and the repair programme in one page. It mirrors the parent continuity canonicals and exists so learners entering through this door meet the same theorems.  ·  ## 2. Theorem Mirror - **Definition:** f is continuous at a ⟺ lim_{x→a}f(x) = f(a) — three facts: the limit exists (both sides agree), the value exists, and they match. - **The audit:** limit? value? match? — each question's failure names the discontinuity.…  ·  ## 3. Deep Conceptual — Continuity Is a Contract Between Limit and Value - The definition welds two independent objects — the *approach behaviour* (limit) and the *anchored behaviour* (value) — into one demand. The audit's three questions are independent: each can fail alone, and the failure pattern is the classification.…"
     },
     {
       "label": "More ideas",
-      "text": "Polynomial: $\\lim_{x\\to a}P(x)=P(a)$  ·  Statement 1: $f$ is continuous at $a$ only if $f(a)$ is defined, the limit exists, and they are equal.  ·  Statement 2: Every polynomial is continuous everywhere on the real line."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  A discontinuity is repairable exactly when the limit exists.  ·  Audit f(x) = (x² − 4)/(x − 2) at x = 2."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Continuity does not imply differentiability.  ·  Statement 4: A continuous function on $[a,b]$ attains every value between $f(a)$ and $f(b)$.  ·  Statement 5: $g\\circ f$ is continuous wherever both factors are continuous."
+      "text": "Classify the discontinuity of f(x) = 1/(x + 3) at x = −3.  ·  Find k making f continuous: f = x + k for x ≤ 2, 3x − 1 for x > 2.  ·  ## 4. Deep Conceptual — The Repair Programme and the Extension Idea - **Removable repair:** define f(a) = lim_{x→a}f — one value re-anchors the function; the graph's hole is filled. This is the simplest instance of *extension*: enlarging a function's domain to make it continuous.…"
     },
     {
       "label": "More ideas",
-      "text": "**Continuity of a piece:** the test is $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$. For piece-wise functions this value-matches-both-sides check is almost always what a question intends.  ·  **Removable discontinuity:** the limit exists but $f(a)$ is undefined or differs from it. Assigning the missing value equal to the limit repairs the function — a strong hint the break is removable.  ·  **Composite and inverse:** $g\\circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $\\sqrt{\\tan x}$ is continuous exactly where both parts are."
+      "text": "## 5. Worked Example Types - **Type A — three-question audit:** limit, value, match at a named point. - **Type B — classification:** name the discontinuity from the failure pattern. - **Type C — repair:** re-anchor a removable discontinuity.…  ·  ## 6. Common Confusions **\"Continuous means you can draw it without lifting the pen\":** the folk picture — the definition is the three-point match, and it is local. **\"A hole breaks continuity forever\":** removable means one re-definition repairs it."
     }
   ]
 }

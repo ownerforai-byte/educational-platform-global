@@ -27,52 +27,76 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Sequence and Series covers essential principles and applications.",
+      "text": "Three companion canonicals — `function-domain-range`, `sequence-series`, `minors-cofactors-determinants` — mirror their parent topics through a narrower door, and this session gives them the same theorem-grade fields. **Function:** the domain bans (denominator ≠ 0, even-root radicand ≥ 0, log > 0) intersect — 1/√(4−x²) lives on the open (−2, 2) because the denominator kills the endpoints the root allows; the inverse…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and Series — quick idea map\"><title>Sequence and Series — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sequence and Series</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Sequence</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Series.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Check the common</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">difference/ratio first: a</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">'series' question is an AP</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">AP: $t_n = a + (n-1)d$ and</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$S_n = \\frac{n}{2}\\left[2a</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ (n-1)d\\right] =…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">GP: $t_n = ar^{n-1}$, $S_n</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= \\frac{a(r^n - 1)}{r -</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1}$ for $r \\neq 1$, and…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and Series — quick idea map\"><title>Sequence and Series — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sequence and Series</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Companion notes are the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">same theorems through a</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">narrower door: consistent…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Companion canonicals</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mirror their parents.</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Function: domain bans…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- domain bans: denominator</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">≠ 0, radicand ≥ 0, log</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&gt; 0 (intersected) -</text></svg>",
         "caption": "Sequence and Series — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "AP: $t_n = a + (n-1)d$ and $S_n = \\frac{n}{2}\\left[2a + (n-1)d\\right] = \\frac{n}{2}(a + l)$.\nGP: $t_n = ar^{n-1}$, $S_n = \\frac{a(r^n - 1)}{r - 1}$ for $r \\neq 1$, and $S_\\infty = \\frac{a}{1-r}$ for $|r| < 1$.\nFor positive numbers $AM \\geq GM \\geq HM$, with equality only when the numbers are equal.",
+      "text": "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected) - AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]² - Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and Series — formula board\"><title>Sequence and Series — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Sequence and Series</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">AP: $t_n = a + (n-1)d$ and $S_n = \\frac{n}{2}\\left[2a +</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(n-1)d\\right] = \\frac{n}{2}(a + l)$.</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">GP: $t_n = ar^{n-1}$, $S_n = \\frac{a(r^n - 1)}{r - 1}$</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">for $r \\neq 1$, and $S_\\infty = \\frac{a}{1-r}$ for $|r|</text><text x=\"450\" y=\"434\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">&lt; 1$.</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">For positive numbers $AM \\geq GM \\geq HM$, with equality</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">only when the numbers are equal.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and Series — formula board\"><title>Sequence and Series — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Sequence and Series</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- domain bans: denominator ≠ 0, radicand ≥ 0, log &gt; 0</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(intersected) - AP/GP sums as in rows 18–19; Σi³ =</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">[n(n+1)/2]² - Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ =</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">adj A/|A|</text></svg>",
         "caption": "Sequence and Series — formula board of this topic's own formulas"
       }
     },
     {
       "label": "Conditions",
-      "text": "Sequence and Series is based on fundamental principles."
+      "text": "No verified PYQ on these rows exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Sequence and Series  ·  Statement 2: Theorem related to Sequence and Series"
+      "text": "\"A adj A = |A| I; S_inf = a/(1 - r) iff |r| < 1; the inverse exists iff the function is one-to-one.\""
     },
     {
       "label": "Solved",
-      "text": "Application of Sequence and Series"
+      "text": "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."
     },
     {
       "label": "Limitation",
-      "text": "Definition and significance of Sequence and Series.  ·  Statement 5: Corollary or consequence of Sequence and Series"
+      "text": "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready.  ·  Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2.…"
     },
     {
       "label": "Derivation",
-      "text": "Check the common difference/ratio first: a 'series' question is an AP or a GP question in disguise, and the two have different sum formulas."
+      "text": "## 1. Topic Introduction — The Three Extra Canonicals Rows 25–26 and 22 are the **duplicate-slug canonicals**: shorter companion notes (`function-domain-range`, `sequence-series`, `minors-cofactors-determinants`) that mirror the main topics. This session upgrades them with the same theorem-grade fields so no canonical file stays thin.  ·  ## 2. Fundamental Concepts ### 2.1 Function: domain and range (companion) - **Domain bans:** denominator ≠ 0, even-root radicand ≥ 0, log argument > 0; combinations intersect. - **Range by inversion:** solve y = f(x) for x; the feasible y's are the range. - **Inverse theorem:** f⁻¹ exists ⟺ one-to-one; construct y = f(x) → solve → swap; graph reflects in y = x.…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Sequence and Series."
+      "text": "Domain: intersect the bans. GP count: set S_n and solve for 2^n. Inverse 2x2: swap, negate, divide by |A|."
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Sequence and Series.  ·  Q3. Problem on Sequence and Series."
+      "text": "**NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — **Ban 1 (even root):** the radicand must be non-negative: 4 − x² ≥ 0 ⟹ x² ≤ 4 ⟹ −2 ≤ x ≤ 2. **Ban 2 (denominator):** 1/√(4 − x²) requires √(4 − x²) ≠ 0 ⟹ x ≠ ±2 — the endpoints are **forbidden**, not merely allowed. **Intersection of the bans:** **−2 < x < 2**, i.e.…  ·  **NEB-style (2m): How many terms of the geometric progression 3 + 6 + 12 + ⋯ must be added to give a sum of 765?** — **Setup:** a = 3, r = 6/3 = 2, Sₙ = a(rⁿ − 1)/(r − 1) = 3(2ⁿ − 1). **Equation:** 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 = 2⁸ ⟹ **n = 8 terms**.…"
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Sequence and Series to be valid  ·  Statement 4: Principle governing Sequence and Series"
+      "text": "Companion answers must match the parent's formulas exactly - a mismatched S_inf licence or adjoint transpose is an internal inconsistency."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Summing a GP to 765 terms is the compound-interest question in school clothes: n = 8 doublings from 3."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0.…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Domain** | Legal inputs under the bans | [2, 3) ∪ (3, ∞) example | | **S∞** | GP limit, |r| < 1 | a/(1−r) | | **Cofactor** | Signed minor | checkerboard signs | | **Adjoint identity** | A·adj A = \\|A\\|·I | keystone of inversion |  ·  ## 4. Detailed Explanation ### 4.1 Why companions exist - The manifest carries both a long canonical note and a short companion per duplicate slug; learners meet different entry pages. Consistent enrichment prevents a thin back door.…  ·  ## 5. Comparison Tables **Companion vs parent coverage** | Companion | Parent topic | Shared theorems | |---|---|---| | function-domain-range | row 15/16 | domain bans, inverse theorem | | sequence-series | rows 18/19 | AP/GP sums, means | | minors-cofactors-determinants | rows 21/22 | cofactors, adjoint, inverse |"
+    },
+    {
+      "label": "More ideas",
+      "text": "Find the domain of 1/√(4 − x²).  ·  How many terms of 3 + 6 + 12 + ⋯ sum to 765?  ·  Find adj A and A⁻¹ for A = [[1, 2], [3, 4]]."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **Same slug, two files:** the first manifest entry is canonical; companions must not contradict the parent's formulas.  ·  **S∞ needs its licence:** every companion GP numerical must show |r| < 1 before a/(1−r).  ·  **adj A transposes:** the companion repeats the rule because it is the single most-failed step."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB-style (2m): Find the domain of f(x) = 1/√(4 − x²).** — Two bans: radicand 4 − x² ≥ 0 ⟹ −2 ≤ x ≤ 2; **denominator ≠ 0** ⟹ √(4 − x²) ≠ 0 ⟹ x ≠ ±2. Intersection: **−2 < x < 2**, the open interval (−2, 2) — the endpoints die not by the root rule but by the denominator rule.  ·  **NEB-style (2m): How many terms of the GP 3 + 6 + 12 + ⋯ give a sum of 765?** — Sₙ = 3(2ⁿ − 1)/(2 − 1) = 3(2ⁿ − 1) = 765 ⟹ 2ⁿ − 1 = 255 ⟹ 2ⁿ = 256 ⟹ **n = 8**. Check: 3(1 + 2 + ⋯ + 128) = 3·255 = 765 ✓.  ·  **NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹.** — Cofactors: C₁₁ = 4, C₁₂ = −3, C₂₁ = −2, C₂₂ = 1 ⟹ **adj A = [[4, −2], [−3, 1]]**; |A| = 4 − 6 = −2. **A⁻¹ = (1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]].** Check AA⁻¹ = I ✓."
     }
   ]
 }

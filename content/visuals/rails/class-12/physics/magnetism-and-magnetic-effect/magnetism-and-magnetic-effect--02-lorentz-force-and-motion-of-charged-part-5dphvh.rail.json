@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Lorentz force and motion of charged particles in magnetic… (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Lorentz force, motion of charged particles in magnetic fields. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The Lorentz force is the electric force plus the magnetic force. In crossed fields the forces cancel at v = E/B, which is the speed a velocity selector passes. A later magnetic field bends that beam into a circle whose radius gives m/q.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lorentz force and motion of charged particles in magnetic… — quick idea map\"><title>Lorentz force and motion of charged particles in magnetic… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Lorentz force and motion of charged particles</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">in magnetic…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Lorentz force</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Motion of charged</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">particles in magnetic</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fields</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lorentz force and motion of charged particles in magnetic… — quick idea map\"><title>Lorentz force and motion of charged particles in magnetic… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Lorentz force and motion of charged particles</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">in magnetic…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Lorentz force</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Velocity selector</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Motion of charged</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">particles in magnetic</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fields</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Electric force is q E.</text></svg>",
         "caption": "Lorentz force and motion of charged particles in magnetic… — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Lorentz force\" as one blob → ✅ split into: lorentz force, motion of charged particles in magnetic fields.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
+      "text": "Crossed fields mean E, B and v are mutually perpendicular.  ·  The cyclotron frequency is q B /(2 π m)."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The Lorentz force is the total electromagnetic force on a charge, q E plus the magnetic force q v B. The electric part can speed the charge up. The magnetic part only turns it.  ·  If E and B are perpendicular to each other and to the velocity, the two forces can point in opposite directions. They cancel when q E = q v B, so v = E/B."
     },
     {
       "label": "Limitation",
@@ -54,51 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Lorentz force and motion of charged particles in magnetic… — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).  ·  **Tested.** define it · list: lorentz force, motion of charged particles in magnetic fields · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "v = E/B.  ·  Straight through means the two forces match."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Lorentz force and motion of charged particles in magnetic…\" with one example.  ·  compare \"Lorentz force\" with the related idea from a neighbouring unit."
+      "text": "Write the balance for a velocity selector.  ·  What does the radius tell you after the speed is known?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lorentz force and motion of charged particles in magnetic… — topic mind map\"><title>Lorentz force and motion of charged particles in magnetic… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Lorentz force and motion of charged particles…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Lorentz force</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Motion of charged</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">particles in magnetic</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Lorentz force and motion of charged particles in magnetic… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Lorentz force  ·  Velocity selector  ·  Mass spectrometer  ·  Cyclotron frequency"
+    },
+    {
       "label": "Key points",
-      "text": "• Lorentz force  ·  • Motion of charged particles in magnetic fields"
+      "text": "• Motion of charged particles in magnetic fields  ·  Electric force is q E.  ·  Magnetic force is q v B.  ·  They can be set opposite."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Lorentz force and motion of charged particles in magnetic…\" and verify the answer is plausible."
+      "text": "What is the cyclotron frequency?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A velocity selector has E = 2.0 × 10^4 V/m and B = 0.20 T, crossed so the forces oppose. Find the speed that goes straight through."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Lorentz force and motion of charged particles in magnetic…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The Lorentz force includes → B  ·  In a velocity selector, v equals → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "A velocity selector is a pair of crossed fields. Charges of the chosen speed go straight through. Faster charges are bent one way and slower charges the other way. The charge and the mass cancel, so the selected speed does not depend on them.  ·  After the selector, a magnetic field alone bends the beam into a circle whose radius is m v / (q B). Measuring that radius at the known speed gives the mass-to-charge ratio.  ·  A cyclotron uses the magnetic circle and an electric kick twice per revolution to increase the speed. The frequency of the orbit for a non-relativistic particle is q B / (2 π m), independent of the speed."
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  define + example each sub-idea: lorentz force, motion of charged particles in magnetic fields.  ·  one worked example for \"Lorentz force and motion of charged particles in magnetic…\" — check units / edge cases."
+      "text": "L = NΦ/I  ·  The selected speed is E/B.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ.."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+      "text": "The selector condition is v = E/B, not E B.  ·  The magnetic force still does no work.  ·  The selected speed does not depend on q or m."
     },
     {
       "label": "More ideas",
-      "text": "**Motion of charged particles in magnetic fields.** one-line definition + one-line exam use."
+      "text": "The cyclotron frequency does depend on q, m and B.  ·  Set the forces opposite before equating them.  ·  Do not use the selector formula when E and B are parallel."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write F = q E + q v B and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
     }
   ]
 }

@@ -28,52 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Comparative studies of physical properties of alkane, alk… (Hydrocarbons, Chemistry, class-11-notes) covers Comparative studies of physical properties of alkane, alkene, alkyne. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "One table settles the three families. **Formulas** CₙH₂ₙ₊₂ / CₙH₂ₙ / CₙH₂ₙ₋₂; **states** gas (C₁–C₄), liquid (C₅–C₁₇), solid (C₁₈+). **Boiling/melting** climb with chain length as dispersion forces accumulate; at equal carbon (C₃+) the polarisable π clouds lift the order to **alkyne > alkene > alkane**, while **branching drops** it (n-butane −0.5 °C vs isobutane −11.7 °C; C₂ shows the famous anomaly).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Comparative studies of physical properties of alkane, alk… — quick idea map\"><title>Comparative studies of physical properties of alkane, alk… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Comparative studies of physical properties of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">alkane, alk…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Comparative studies of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">physical properties of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">alkane</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Alkene</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Comparative studies of physical properties of alkane, alk… — quick idea map\"><title>Comparative studies of physical properties of alkane, alk… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Comparative studies of physical properties of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">alkane, alk…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Physical properties are</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">contact accounting: more</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">surface and more</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C1-C4 gases, C5-C17</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">liquids, C18+ solids; all</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">odourless when pure.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Alkane CₙH₂ₙ₊₂ · alkene</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CₙH₂ₙ · alkyne CₙH₂ₙ₋₂ -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">B.p.…</text></svg>",
         "caption": "Comparative studies of physical properties of alkane, alk… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Comparative studies of physical properties of alkane\n• Alkene"
+      "text": "- Alkane CₙH₂ₙ₊₂ · alkene CₙH₂ₙ · alkyne CₙH₂ₙ₋₂ - B.p. (same n, C₃+): alkyne > alkene > alkane - n-butane −0.5 °C > isobutane −11.7 °C (branching) - All densities < 1 g/cm³; water-insoluble"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Comparative studies of physical properties of alkane\" as one blob → ✅ split into: comparative studies of physical properties of alkane, alkene, alkyne.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Comparative studies of physical properties of alkane, alk…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: comparative studies of physical properties of alkane, alkene, alkyne (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Alkanes, alkenes and alkynes are non-polar, water-insoluble, less dense than water; boiling points rise with chain length and, at equal carbon number, with unsaturation.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Two butanes, two boiling points*** — same formula C4H10, five kelvin apart in boiling: the branched isomer simply offers less skin for its neighbours to grip."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Comparative studies of physical properties of alkane, alk… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: comparative studies of physical properties of alkane, alkene, alkyne · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Three Families, One Table Alkanes, alkenes and alkynes differ by π-bond count — and every physical property follows: **boiling points, melting points, densities, solubilities** rise with molar mass and with unsaturation's extra intermolecular contact, while all three stay **non-polar and water-insoluble**.  ·  ## 2. Fundamental Concepts ### 2.1 State and odour - **C₁–C₄** gases (all three families), **C₅–C₁₇** liquids, **C₁₈+** waxy solids. - Pure alkanes/alkenes/alkynes are odourless; commercial fuels smell from additives/impurities (ethyne's garlic smell is phosphine impurity). ### 2.2 Boiling and melting points - Rise with carbon number (more surface → stronger van der Waals).…"
     },
     {
       "label": "Shortcut",
-      "text": "• Alkyne  ·  solve / apply for \"Comparative studies of physical properties of alkane, alk…\" and verify the answer is plausible."
+      "text": "Gases C1-4, liquids C5-17, solids C18+. B.p. ladder at same n: alkyne > alkene > alkane (C3+). Branching lowers b.p. Float on water; dissolve in benzene/ether. Smoky flame = high C% = alkyne."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Comparative studies of physical properties of alkane, alk…\" with one example.  ·  compare \"Comparative studies of physical properties of alkane\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For equal carbon numbers (reliably from C₃ upward) the order is **alkyne > alkene > alkane**.…  ·  **NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar**: their only intermolecular glue is weak dispersion force. **Water** is polar and extensively hydrogen-bonded; dissolving a hydrocarbon would force water molecules to break H-bonds to make room, with **no…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Quote at least one number (ethane −89 °C vs ethene −104 °C, or the two butanes) — concrete values earn the comparison mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Comparative studies of physical properties of alkane, alk… — topic mind map\"><title>Comparative studies of physical properties of alkane, alk… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Comparative studies of physical properties of…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Comparative studies of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">physical properties of…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkene</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkyne</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Comparative studies of physical properties of alkane, alk… — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Physical properties are contact accounting: more surface and more polarisable electrons mean stronger dispersion forces — chain length raises them, branching and small size lower them."
+    },
+    {
+      "label": "Key points",
+      "text": "C1-C4 gases, C5-C17 liquids, C18+ solids; all odourless when pure. B.p./m.p. rise with carbon number; at same n (C3+): alkyne > alkene > alkane (pi polarisability); branching lowers b.p. (n-butane -0.5C > isobutane -11.7C); C2 anomaly: ethene -104C < ethane -89C.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Oil floats on water for the same reason hydrocarbons refuse to dissolve in it: density below 1 g/cm3 and no polar handle for water's hydrogen bonds to grab."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne's carbon percentage is the **highest of the three families** (C₂H₂ is ≈92% carbon by mass). In a normal luminous flame the local oxygen supply cannot fully oxidise so much carbon at once, so **free carbon particles** are…"
     },
     {
       "label": "MCQ drill",
@@ -81,98 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Alkene.** one-line definition + one-line exam use.  ·  **Alkyne.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **van der Waals forces** | Intermolecular attraction scaling with surface area and polarisability | b.p. rises C₁→C₁₇ | | **Branching effect** | Branched isomers pack worse → lower b.p.…  ·  ## 4. Detailed Explanation ### 4.1 Reading the periodic trend across the table - Within a family, properties change **gradually with n** — gases to liquids to solids. Across families at fixed n, unsaturation nudges b.p./density **up** because π clouds are more polarisable than σ frameworks.…  ·  ## 5. Comparison Tables **Physical properties at a glance (same carbon number n)** | Property | Alkane | Alkene | Alkyne | |---|---|---|---| | general formula | CₙH₂ₙ₊₂ | CₙH₂ₙ | CₙH₂ₙ₋₂ | | polarity | non-polar | weak (π) | weak (π) | | b.p.…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: comparative studies of physical properties of alkane, alkene, alkyne.  ·  one worked example for \"Comparative studies of physical properties of alkane, alk…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Compare b.p., density and solubility of the three hydrocarbon families.  ·  Explain the branching effect on boiling point with the butane example."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Account for the smoky flame of ethyne.  ·  ## 6. Common Confusions **The C₂ anomaly:** ethene boils below ethane (−104 vs −89 °C) despite more unsaturation — small-molecule packing quirks; the alkyne ≥ alkene > alkane ladder is reliable from C₃ upward.  ·  **Branching beats unsaturation:** a branched alkane can boil lower than a straight alkene of the same formula — surface area matters as much as π."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Insoluble ≠ unreactive with water:** calcium carbide reacts with water; alkanes/alkenes/alkynes themselves do not dissolve in it.  ·  ## 7. Exam Application **NEB-style (3m): Compare the boiling points of alkanes, alkenes and alkynes of the same carbon number with reasons.** — For the same carbon number (from C₃ upward), **alkynes boil highest, alkenes next, alkanes lowest**.…  ·  **NEB-style (2m): Why are hydrocarbons insoluble in water but soluble in organic solvents?** — Hydrocarbons are **non-polar** molecules held to each other only by weak dispersion forces.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why does ethyne burn with a smoky flame?** — Ethyne has the **highest carbon percentage** of the three families (C₂H₂ ≈ 92% carbon). In a luminous flame the oxygen supply at the flame front cannot fully oxidise so much carbon, so **free carbon particles** form and glow incandescently — the **smoky,…"
     }
-  ],
-  "keyPoints": [
-    "08 Comparative Studies Of Physical Properti 1vfd0z is a core concept in hydrocarbons.",
-    "Understanding 08 comparative studies of physical properti 1vfd0z requires knowing its definition, conditions, and limitations.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 08 comparative studies of physical properti 1vfd0z must be memorized precisely.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 08 comparative studies of physical properti 1vfd0z.",
-    "Practical examples solidify understanding of 08 Comparative Studies Of Physical Properti 1vfd0z and its real-world relevance.",
-    "Misconceptions about 08 comparative studies of physical properti 1vfd0z often arise from confusing it with similar concepts.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z follows systematic rules that can be applied step-by-step.",
-    "Review of 08 comparative studies of physical properti 1vfd0z should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "08 Comparative Studies Of Physical Properti 1vfd0z is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 08 comparative studies of physical properti 1vfd0z applies are as important as the concept itself.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 08 comparative studies of physical properti 1vfd0z through application-based and comparison questions.",
-    "A clear grasp of 08 Comparative Studies Of Physical Properti 1vfd0z builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 08 comparative studies of physical properti 1vfd0z, always note the exceptions alongside the general rule.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z should be reviewed with at least one worked example per sub-point.",
-    "Link 08 comparative studies of physical properti 1vfd0z back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 08 Comparative Studies Of Physical Properti 1vfd0z to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 08 Comparative Studies Of Physical Properti 1vfd0z: apply the standard definition to a simple case.",
-    "Intermediate example: combine 08 comparative studies of physical properti 1vfd0z with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 08 Comparative Studies Of Physical Properti 1vfd0z under time pressure.",
-    "Real-world connection: show how 08 Comparative Studies Of Physical Properti 1vfd0z appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 08 Comparative Studies Of Physical Properti 1vfd0z and state two conditions required for it to occur.",
-    "Differentiate 08 Comparative Studies Of Physical Properti 1vfd0z from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 08 Comparative Studies Of Physical Properti 1vfd0z.",
-    "List three applications of 08 Comparative Studies Of Physical Properti 1vfd0z in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 08 Comparative Studies Of Physical Properti 1vfd0z without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 08 Comparative Studies Of Physical Properti 1vfd0z.",
-    "Create three flashcards covering definition, formula, and limitation of 08 Comparative Studies Of Physical Properti 1vfd0z."
-  ],
-  "universalFacts": [
-    "08 Comparative Studies Of Physical Properti 1vfd0z is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "08 Comparative Studies Of Physical Properti 1vfd0z is assessed through both short-answer and long-answer board questions.",
-    "Understanding 08 Comparative Studies Of Physical Properti 1vfd0z improves performance across the entire hydrocarbons unit.",
-    "Revision of 08 Comparative Studies Of Physical Properti 1vfd0z should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 08 Comparative Studies Of Physical Properti 1vfd0z with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 08 Comparative Studies Of Physical Properti 1vfd0z is sometimes overstated; remember its precise boundaries.",
-    "Applying 08 Comparative Studies Of Physical Properti 1vfd0z outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 08 Comparative Studies Of Physical Properti 1vfd0z and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 08 Comparative Studies Of Physical Properti 1vfd0z? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "08 Comparative Studies Of Physical Properti 1vfd0z is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 08 Comparative Studies Of Physical Properti 1vfd0z is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 08 Comparative Studies Of Physical Properti 1vfd0z? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "08 Comparative Studies Of Physical Properti 1vfd0z differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 08 Comparative Studies Of Physical Properti 1vfd0z.",
-    "Step-by-step animated derivation of the key relationship in 08 Comparative Studies Of Physical Properti 1vfd0z.",
-    "Interactive toggle between correct and incorrect representations of 08 Comparative Studies Of Physical Properti 1vfd0z."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 08 Comparative Studies Of Physical Properti 1vfd0z.",
-    "Side-by-side comparison animation of 08 Comparative Studies Of Physical Properti 1vfd0z vs commonly confused concept.",
-    "Timelapse build-up of 08 Comparative Studies Of Physical Properti 1vfd0z from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 08 Comparative Studies Of Physical Properti 1vfd0z",
-    "Comparison table: 08 Comparative Studies Of Physical Properti 1vfd0z vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 08 Comparative Studies Of Physical Properti 1vfd0z"
-  ],
-  "summary": [
-    "08 Comparative Studies Of Physical Properti 1vfd0z is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 08 Comparative Studies Of Physical Properti 1vfd0z involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 08 Comparative Studies Of Physical Properti 1vfd0z alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

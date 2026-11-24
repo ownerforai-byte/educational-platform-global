@@ -28,28 +28,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Defects of Bohr's theory (Atomic Structure, Chemistry, class-11-notes) covers Defects of Bohr's theory. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Bohr's model is a classical–quantum hybrid, and its defects are the seams: it works only for one-electron species because it ignores electron–electron repulsion and shielding; it cannot explain fine structure (no l or s), the Zeeman and Stark line splittings (no mₗ), or line intensities; and its exact orbits violate the uncertainty principle, which replaces the electron track with a probability orbital.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Defects (Limitations) of Bohr's Theory — quick idea map\"><title>Defects (Limitations) of Bohr's Theory — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Defects (Limitations) of Bohr's Theory</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Defects of Bohr's theory</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\Delta x\\,\\Delta</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">p\\ge\\frac{h}{4\\pi}$$</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(forbids definite orbits)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$Z_{\\text{eff}}=Z-S$$</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(screening, ignored by</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bohr's model — cause of</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Defects (Limitations) of Bohr's Theory — quick idea map\"><title>Defects (Limitations) of Bohr's Theory — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Defects (Limitations) of Bohr's Theory</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Each defect points to a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">missing quantum number:**</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fine structure → l;…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Defects: fails for</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">multi-electron atoms; no</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fine structure; no Zeeman…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Bohr (works only for 1</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electron): Eₙ = −13.6</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Z²/n² eV - Uncertainty</text></svg>",
         "caption": "Defects (Limitations) of Bohr's Theory — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$$ (forbids definite orbits)\n$$Z_{\\text{eff}}=Z-S$$ (screening, ignored by Bohr's model — cause of failure for multi-electron atoms)\nEn(H) = −13.6 Z²/n² eV"
+      "text": "- Bohr (works only for 1 electron): Eₙ = −13.6 Z²/n² eV - Uncertainty limit: Δx·Δp ≥ h/4π - Photon rule kept: hν = E₂ − E₁"
     },
     {
       "label": "Conditions",
-      "text": "❌ Bohr's theory is completely wrong and useless. ✅ It is quantitatively excellent for one-electron species (H, He⁺) and is still used there; the defects appear beyond that scope.  ·  ❌ Fine structure arises because of many electrons. ✅ It arises from relativistic effects and electron spin even in a one-electron atom."
+      "text": "**Field pairings:** Zeeman → magnetic field; Stark → electric field. Mixing them loses the 2m mark.  ·  **Fine structure is field-free:** it is intrinsic (spin + relativistic) splitting, not a Zeeman effect."
     },
     {
       "label": "Special cases",
-      "text": "Sommerfeld (1916) added elliptical orbits and the azimuthal quantum number to explain fine structure.  ·  Schrödinger's wave equation (1926) replaced orbits with orbitals and remains the working theory of the atom."
+      "text": "\"Bohr's model is a hybrid of classical mechanics and quantum conditions: it quantises the orbits but keeps the classical electron track.\""
     },
     {
       "label": "Solved",
-      "text": "**Problem:** Why is the ground-state radius of He⁺ half that of hydrogen? **Solution:** r₁ = 0.529 n²/Z Å = 0.529/2 = 0.2645 Å — the formula works because He⁺ has one electron, and fails for neutral helium.  ·  **Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory."
+      "text": "***Hα doublet*** — under a high-resolution spectrograph the single Balmer Hα line (656.3 nm) resolves into a close pair: fine structure, invisible to Bohr's model."
     },
     {
       "label": "Limitation",
@@ -57,150 +57,63 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning  ·  Bohr's model is **semi-classical**: it keeps classical circular orbits and Coulomb mechanics but bolts on an unexplained quantum condition (mvr = nh/2π). Its defects are exactly where classical thinking and the single-electron assumption break down."
+      "text": "## 1. Topic Introduction — Where the Quantum Model Still Breaks Bohr's model rescued the hydrogen atom from Rutherford's collapse problem and predicted the hydrogen spectrum brilliantly. But it was a **hybrid**: classical circular orbits bolted onto quantum conditions. As soon as the model faced finer spectrographs, multi-electron atoms, or the Zeeman effect, cracks appeared.…  ·  ## 2. Fundamental Concepts — The Defects (state any five for 3m) 1. **Fails for multi-electron atoms.** The model works only for one-electron species (H, He⁺, Li²⁺). With two or more electrons, electron–electron repulsion breaks the simple Coulomb-plus-quantisation picture — the energy depends on more than n. 2. **No explanation of fine structure.** High-resolution spectrographs show each Balmer line (e.g.…"
     },
     {
       "label": "Shortcut",
-      "text": "Sodium D lines (589.0 and 589.6 nm) are the standard example of fine structure unexplained by Bohr's model.  ·  Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1)."
+      "text": "\"M-Z-S-U-D: Multi-electron, Zeeman, Stark, Uncertainty, Dual nature — the five stock defects; Zeeman = Magnetic, Stark = Electric.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Defects of Bohr's theory\" with one example.  ·  compare \"Defects of Bohr's theory\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): State any three defects of Bohr's atomic model.** — (1) Works only for one-electron species; multi-electron atoms' spectra (repulsion + shielding) are not predicted. (2) Cannot explain the fine structure of spectral lines (no l, s quantum numbers).…  ·  **NEB-style (2m): What is the Zeeman effect and why can Bohr's model not explain it?** — Splitting of spectral lines in a **magnetic field**. Bohr's circular orbits carry no magnetic quantum number, so the model offers no sub-levels for the lines to split into."
     },
     {
       "label": "Hints",
-      "text": "Answer in this order: one-electron only → fine structure → Zeeman/Stark → intensities → uncertainty principle → wave–particle duality → ad hoc postulates.  ·  Do not mix 'defects of Bohr's theory' with 'limitations of Rutherford's model' — marks are lost by quoting the wrong list.",
+      "text": "State defects as a numbered list with one clause of reason each — NEB awards per-point, not for prose. Always add one \"what Bohr got right\" line if space allows: it shows balance and earns presentation marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Defects (Limitations) of Bohr's Theory — topic mind map\"><title>Defects (Limitations) of Bohr's Theory — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Defects of Bohr's theory</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Defects of Bohr's theory</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Defects (Limitations) of Bohr's Theory — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**Each defect points to a missing quantum number:** fine structure → l; Zeeman/Stark → mₗ; spin splitting → mₛ; multi-electron failure → shielding. The quantum model adds exactly these."
+    },
+    {
       "label": "Key points",
-      "text": "• Defects of Bohr's theory"
+      "text": "Defects: fails for multi-electron atoms; no fine structure; no Zeeman (magnetic) or Stark (electric) splitting; orbits violate the uncertainty principle; cannot explain dual nature; no line-intensity rule; circular orbits only. Bohr's surviving truths: quantised levels, hν = ΔE, 13.6 eV ionisation, Rydberg constant."
     },
     {
       "label": "Universal facts",
-      "text": "Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.  ·  Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell)."
+      "text": "Sommerfeld (1915) extended Bohr with elliptical orbits to partially explain fine structure — the first patch on the model's circular-orbit defect."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Defects of Bohr's theory\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  **Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling."
+      "text": "**NEB-style (2m): \"Bohr's orbit contradicts the uncertainty principle.\" Explain.** — A Bohr orbit assigns the electron an exact radius (position) and exact velocity (momentum) at once.…  ·  **NEB-style (3m): Contrast the Bohr model with the quantum mechanical model on four points.** — Orbit (fixed path) vs orbital (probability); one quantum number vs four; fails for multi-electron atoms vs works; quantisation postulated vs derived from the wave equation.…"
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Defects of Bohr's theory\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True  ·  According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is: → B"
+      "text": "Bohr's model successfully explains the spectrum of: → B  ·  Splitting of spectral lines in a magnetic field is the: → B"
     },
     {
       "label": "Study notes",
-      "text": "### 2. Works only for one-electron species  ·  It succeeds for H, He⁺, Li²⁺, Be³⁺ but fails for He, Li and every multi-electron atom: electron–electron repulsion and the screening (shielding) of nuclear charge by inner electrons are ignored, so calculated energies do not match experiment.  ·  ### 3. Cannot explain fine structure (line splitting)"
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Relevance | |---|---|---| | **Fine structure** | Splitting of a single spectral line into closely spaced components | Needs l and s quantum numbers | | **Zeeman effect** | Splitting of spectral lines in a magnetic field | Needs mₗ | | **Stark effect** | Splitting of spectral lines in an electric field | Needs mₗ | |…  ·  ## 4. Detailed Explanation ### 4.1 Why multi-electron atoms break the model Bohr's energy Eₙ = −13.6 Z²/n² assumes the electron feels **only the nucleus**. With two electrons, each also feels the **repulsion of the other**, and the electrons **screen** each other from the nuclear charge.…  ·  ## 5. Comparison Table **Bohr model vs quantum mechanical model** | Basis | Bohr model | Quantum mechanical model | |---|---|---| | Electron path | Fixed circular **orbit** | **Orbital** — probability distribution | | Certainty | Exact position and momentum | Uncertainty principle obeyed | | Quantum numbers | One (n) | Four (n, l, mₗ, mₛ) | | Multi-electron atoms | Fails |…"
     },
     {
       "label": "More ideas",
-      "text": "hν = ΔE  ·  λ = h/(mv) (de Broglie)  ·  $$\\text{shell capacity}=2n^{2}:\\ K\\ 2,\\ L\\ 8,\\ M\\ 18,\\ N\\ 32;\\qquad \\text{valence shell}\\le 8$$"
+      "text": "No verified PYQ located for this topic; all items are NEB-style practice (defects 3m; Zeeman 2m; uncertainty conflict 2m).  ·  Why does electron–electron repulsion break Bohr's energy formula?  ·  How does de Broglie's hypothesis turn Bohr's arbitrary quantisation into a natural result?"
     },
     {
       "label": "More ideas",
-      "text": "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}\\ (\\text{forbids definite orbits});\\qquad Z_{\\text{eff}}=Z-S\\ (\\text{screening, absent from Bohr})$$  ·  $$n\\lambda=2\\pi r\\ \\text{with }\\lambda=\\frac{h}{mv}\\ \\Rightarrow\\ mvr=\\frac{nh}{2\\pi}$$  ·  $$\\lambda=\\frac{h}{mv}=\\frac{3.32\\times10^{-10}\\ \\text{m for }n=1\\ (\\text{H})}{}$$"
+      "text": "Which defect of Bohr's model does the spin quantum number (mₛ) repair?  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
     },
     {
       "label": "More ideas",
-      "text": "❌ The uncertainty principle reflects imperfect instruments. ✅ It is a fundamental limit of nature, not a measurement limitation.  ·  ❌ Bohr failed because orbits are not circular. ✅ The fatal objection is that a definite orbit (simultaneous r and p) cannot exist; probability orbitals replace them.  ·  ❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model."
+      "text": "## 6. Common Confusions **Zeeman vs Stark:** Zeeman = **magnetic** field splitting; Stark = **electric** field splitting. Both are line splittings, both unexplained by Bohr — but the fields differ.  ·  **Fine structure vs Zeeman:** fine structure appears **without any field** (spin/relativistic splitting); Zeeman needs an external magnetic field.  ·  **\"Bohr failed completely\" — no.** It succeeded for one-electron species and introduced quantised levels; its defects are specific and each maps to a missing quantum number."
     },
     {
       "label": "More ideas",
-      "text": "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)..  ·  ❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.  ·  ❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy.  ·  ❌ Bohr's theory failed completely. ✅ It is exact for one-electron species (H, He⁺) — defects appear only beyond that scope.  ·  ❌ Fine structure needs many electrons. ✅ It comes from spin and relativity even in hydrogen."
+      "text": "## 7. Exam Application **NEB-style (3m): \"Bohr's model could not explain the line spectrum of an atom containing more than one electron.\" Justify.** — The model's energy formula assumes each electron feels only the nuclear Coulomb pull.…  ·  **NEB-style (2m): What is the Zeeman effect?** — The splitting of a spectral line into several components when the emitting atoms are placed in a magnetic field; Bohr's model cannot explain it because its orbits carry no magnetic quantum number.  ·  **NEB-style (2m): Why is Bohr's orbit incompatible with the uncertainty principle?** — A definite orbit means exact position *and* exact momentum simultaneously; Δx·Δp ≥ h/4π forbids this, so the electron must be described as a probability orbital instead."
     }
-  ],
-  "keyPoints": [
-    "04 Defects Of Bohr S Theory is a core concept in atomic structure.",
-    "Understanding 04 defects of bohr s theory requires knowing its definition, conditions, and limitations.",
-    "04 Defects Of Bohr S Theory has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 defects of bohr s theory must be memorized precisely.",
-    "04 Defects Of Bohr S Theory connects to neighbouring topics within atomic structure and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 defects of bohr s theory.",
-    "Practical examples solidify understanding of 04 Defects Of Bohr S Theory and its real-world relevance.",
-    "Misconceptions about 04 defects of bohr s theory often arise from confusing it with similar concepts.",
-    "04 Defects Of Bohr S Theory follows systematic rules that can be applied step-by-step.",
-    "Review of 04 defects of bohr s theory should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Defects Of Bohr S Theory is defined by its specific characteristics within atomic structure.",
-    "The conditions under which 04 defects of bohr s theory applies are as important as the concept itself.",
-    "04 Defects Of Bohr S Theory can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 defects of bohr s theory through application-based and comparison questions.",
-    "A clear grasp of 04 Defects Of Bohr S Theory builds the foundation for advanced topics in atomic structure."
-  ],
-  "importantNotes": [
-    "When studying 04 defects of bohr s theory, always note the exceptions alongside the general rule.",
-    "04 Defects Of Bohr S Theory should be reviewed with at least one worked example per sub-point.",
-    "Link 04 defects of bohr s theory back to prior knowledge in atomic structure for deeper retention.",
-    "Practice past NEB board questions on 04 Defects Of Bohr S Theory to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Defects Of Bohr S Theory: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 defects of bohr s theory with a related concept from atomic structure.",
-    "Exam-style problem: solve a question involving 04 Defects Of Bohr S Theory under time pressure.",
-    "Real-world connection: show how 04 Defects Of Bohr S Theory appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Defects Of Bohr S Theory and state two conditions required for it to occur.",
-    "Differentiate 04 Defects Of Bohr S Theory from the most commonly confused concept in atomic structure.",
-    "Solve a numerical or structural problem involving 04 Defects Of Bohr S Theory.",
-    "List three applications of 04 Defects Of Bohr S Theory in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Defects Of Bohr S Theory without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Defects Of Bohr S Theory.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Defects Of Bohr S Theory."
-  ],
-  "universalFacts": [
-    "04 Defects Of Bohr S Theory is part of the NEB Class 11 atomic structure syllabus.",
-    "Every concept in atomic structure builds upon definitions established earlier in the chapter.",
-    "04 Defects Of Bohr S Theory is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Defects Of Bohr S Theory improves performance across the entire atomic structure unit.",
-    "Revision of 04 Defects Of Bohr S Theory should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Defects Of Bohr S Theory with closely related concepts in atomic structure — focus on distinguishing features.",
-    "The scope of 04 Defects Of Bohr S Theory is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Defects Of Bohr S Theory outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Defects Of Bohr S Theory and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Defects Of Bohr S Theory? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Defects Of Bohr S Theory is primarily studied under which branch of atomic structure? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Defects Of Bohr S Theory is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to atomic structure — Answer: B",
-    "Which example correctly illustrates 04 Defects Of Bohr S Theory? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Defects Of Bohr S Theory differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Defects Of Bohr S Theory.",
-    "Step-by-step animated derivation of the key relationship in 04 Defects Of Bohr S Theory.",
-    "Interactive toggle between correct and incorrect representations of 04 Defects Of Bohr S Theory."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Defects Of Bohr S Theory.",
-    "Side-by-side comparison animation of 04 Defects Of Bohr S Theory vs commonly confused concept.",
-    "Timelapse build-up of 04 Defects Of Bohr S Theory from prerequisite knowledge in atomic structure."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Defects Of Bohr S Theory",
-    "Comparison table: 04 Defects Of Bohr S Theory vs related concepts in atomic structure",
-    "Step-by-step worked example layout for 04 Defects Of Bohr S Theory"
-  ],
-  "summary": [
-    "04 Defects Of Bohr S Theory is a fundamental concept in atomic structure that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Defects Of Bohr S Theory involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Defects Of Bohr S Theory alongside related concepts in atomic structure ensures strong conceptual clarity and exam readiness."
   ]
 }

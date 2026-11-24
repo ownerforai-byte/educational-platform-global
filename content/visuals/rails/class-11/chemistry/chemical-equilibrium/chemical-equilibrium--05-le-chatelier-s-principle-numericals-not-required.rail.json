@@ -24,147 +24,92 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Le Chatelier's Principle (numericals not required) (Chemical Equilibrium, Chemistry, class-11-notes) covers Le Chatelier's Principle, numericals not required. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Le Chatelier's principle is chemistry's thermostat: disturb an equilibrium and it moves to **oppose** you. **Concentration** changes shift toward consuming what you added (or restoring what you removed) — the arithmetic behind Qc falling below or rising above Kc.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Le Chatelier's Principle (numericals not required) — quick idea map\"><title>Le Chatelier's Principle (numericals not required) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Le Chatelier's Principle (numericals not</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">required)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Le Chatelier's Principle</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Numericals not required</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Le Chatelier's Principle (numericals not required) — quick idea map\"><title>Le Chatelier's Principle (numericals not required) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Le Chatelier's Principle (numericals not</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">required)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Heat is a participant:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">write it on the exothermic</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">product side (N₂ + 3H₂ ⇌…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Principle: equilibrium</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shifts to OPPOSE the</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">imposed change…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- N₂(g) + 3H₂(g) ⇌</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2NH₃(g), ΔH &lt; 0:</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">pressure ↑ → forward (4 →</text></svg>",
         "caption": "Le Chatelier's Principle (numericals not required) — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Le Chatelier's Principle\n• Numericals not required"
+      "text": "- N₂(g) + 3H₂(g) ⇌ 2NH₃(g), ΔH < 0: pressure ↑ → forward (4 → 2 gas moles) - N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ/mol: T ↑ → forward; P ↑ → backward - 2SO₂ + O₂ ⇌ 2SO₃, ΔH < 0: low T, excess O₂ favour SO₃ - Qc vs Kc logic…"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Le Chatelier's Principle\" as one blob → ✅ split into: le chatelier's principle, numericals not required.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Le Chatelier's Principle (numericals not required)\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: le chatelier's principle, numericals not required (within Chemical Equilibrium).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"When a system at equilibrium is subjected to a change in concentration, temperature or pressure, the system shifts its equilibrium position to counteract the effect of the change.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The two NEB answers*** — 2024's pressure question: count 4 gas moles left, 2 right, shift forward. 2022's temperature question: ΔH positive means heat sits on the reactant side, so added heat drives forward and the brown deepens. Two questions, one principle, opposite directions."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Le Chatelier's Principle (numericals not required) — Chemical Equilibrium, Chemistry (class-11-notes).  ·  **Tested.** define it · list: le chatelier's principle, numericals not required · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The Rule That Runs the Chemical Industry Le Chatelier's principle (1888) predicts which way an equilibrium moves when conditions change: the system shifts to **oppose** the change. One sentence decides the Haber process's pressure, the contact process's temperature, and the marks on every equilibrium question — including two verified NEB sets (2024 and 2022) solved below.  ·  ## 2. Fundamental Concepts ### 2.1 The principle - **Statement:** when a system at equilibrium is subjected to a change in concentration, pressure (volume), or temperature, the equilibrium shifts in the direction that tends to **reduce (oppose) the effect** of that change. - It is qualitative — it predicts direction, never the new Kc (which only temperature alters).…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Le Chatelier's Principle (numericals not required)\" and verify the answer is plausible.  ·  define + example each sub-idea: le chatelier's principle, numericals not required."
+      "text": "Mole count first: fewer gas moles wins under pressure. Heat on the reactant side = endothermic = heating drives forward. \"Only T changes Kc\" - write it in every answer. Colour cue: NO2 brown, N2O4 colourless."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Le Chatelier's Principle (numericals not required)\" with one example.  ·  compare \"Le Chatelier's Principle\" with the related idea from a neighbouring unit."
+      "text": "**Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on the equilibrium N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a change is imposed on a system at equilibrium (change in concentration, pressure or temperature), the equilibrium shifts in the direction that tends to oppose or nullify…  ·  **Verified NEB 2022 (2m): For the equilibrium N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹. State and explain the effect of increasing temperature on this equilibrium.** — Since ΔH is positive, the forward reaction (N₂O₄ → 2NO₂) is **endothermic** and the reverse is exothermic.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "For full marks pair the shift with its reason (\"fewer moles opposes the compression\") and state the observable (more NH3 / deeper brown) — prediction plus explanation is the NEB pattern.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Le Chatelier's Principle (numericals not required) — topic mind map\"><title>Le Chatelier's Principle (numericals not required) — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Le Chatelier's Principle (numericals not requ…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Le Chatelier's Principle</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Numericals not required</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Le Chatelier's Principle (numericals not required) — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Heat is a participant: write it on the exothermic product side (N₂ + 3H₂ ⇌ 2NH₃ + heat) or the endothermic reactant side (N₂O₄ + heat ⇌ 2NO₂) and every temperature question becomes reading the equation."
+    },
+    {
+      "label": "Key points",
+      "text": "Principle: equilibrium shifts to OPPOSE the imposed change (concentration/pressure/temperature). Concentration: add reactant/remove product -> forward; reverse -> backward. Pressure: toward fewer gas moles (dn = 0: no effect; inert gas at constant V: no effect).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Haemoglobin's oxygen loading is Le Chatelier in the bloodstream: at high altitude, lower O₂ partial pressure shifts the equilibrium toward release — the body compensates with more haemoglobin (concentration shift, the mountaineers' polycythaemia)."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): In the Haber process, ammonia is continuously removed by liquefaction. Explain, using Le Chatelier's principle, why this increases the yield.** — Removing the product NH₃ decreases its concentration, so the reaction quotient Qc = [NH₃]²/([N₂][H₂]³) falls below Kc.…"
+    },
+    {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Le Chatelier's Principle (numericals not required)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Le Chatelier's principle predicts the shift that: → B  ·  Increasing pressure on N2 + 3H2 = 2NH3 shifts: → B"
     },
     {
       "label": "Study notes",
-      "text": "**Numericals not required.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Le Chatelier's principle** | Equilibrium shifts to oppose an imposed change | Pressure ↑ on NH₃ synthesis → forward | | **Endothermic shift** | Heating drives the heat-consuming direction | N₂O₄ → 2NO₂ on heating | | **Exothermic shift** | Cooling drives the heat-releasing direction | 2SO₂ +…  ·  ## 4. Detailed Explanation ### 4.1 Verified NEB 2024 — pressure on ammonia synthesis - **Problem:** State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g). - **Principle:** when a system at equilibrium is subjected to a change (concentration, pressure, temperature), it shifts in the direction that opposes the change.…  ·  ## 5. Comparison Tables **The three levers at a glance** | Change | Shift direction | Why | |---|---|---| | Add reactant | Forward | Consume the addition | | Add product | Backward | Consume the addition | | Increase pressure | Fewer gas moles | Oppose compression | | Decrease pressure | More gas moles | Oppose expansion | | Heat | Endothermic side | Consume the added heat | |…"
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Le Chatelier's Principle (numericals not required)\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Verified PYQs: NEB 2024 (Le Chatelier statement + pressure effect on ammonia synthesis) and NEB 2022 (temperature effect on N₂O₄ ⇌ 2NO₂, ΔH = +57 kJ/mol) — both solved above; remaining items are NEB-style practice.  ·  Predict the shift for 2SO₂ + O₂ ⇌ 2SO₃ (ΔH < 0) when: pressure increases, temperature increases, O₂ is added, SO₃ is removed.  ·  For H₂ + I₂ ⇌ 2HI, does compressing the vessel change the equilibrium composition?"
+    },
+    {
+      "label": "More ideas",
+      "text": "Why is the contact process run at ~450 °C rather than at 25 °C despite the exothermic ΔH?  ·  ## 6. Common Confusions **Pressure acts on gas moles, not molecules' weight:** count moles of gas only — solids and liquids (CaCO₃ ⇌ CaO + CO₂: Δn = +1 from gases alone) are invisible to pressure.  ·  **Heating helps endothermic, not \"everything\":** students shift every reaction forward on heating; the direction is decided by which side absorbs the heat."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Temperature is special:** concentration and pressure changes move the position but leave Kc untouched; only temperature writes a new Kc — mixing this up loses both reasoning marks.  ·  ## 7. Exam Application **Verified NEB 2024 (3m): State Le Chatelier's principle. Predict the effect of increasing pressure on N₂(g) + 3H₂(g) ⇌ 2NH₃(g).** — **Principle:** when a system at equilibrium is subjected to a change in concentration, pressure or temperature, the equilibrium shifts in the direction that tends…  ·  **Verified NEB 2022 (2m): For N₂O₄(g) ⇌ 2NO₂(g), ΔH = +57 kJ mol⁻¹, state and explain the effect of increasing temperature on the equilibrium.** — The forward reaction is endothermic (ΔH positive).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why does continuous removal of ammonia increase its yield in the Haber process?** — Removing the product NH₃ lowers its concentration, so the reaction quotient Qc falls below Kc. By Le Chatelier's principle the equilibrium shifts **forward** to replace the removed ammonia, converting more N₂ and H₂.…"
     }
-  ],
-  "keyPoints": [
-    "05 Le Chatelier S Principle Numericals Not Required is a core concept in chemical equilibrium.",
-    "Understanding 05 le chatelier s principle numericals not required requires knowing its definition, conditions, and limitations.",
-    "05 Le Chatelier S Principle Numericals Not Required has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 05 le chatelier s principle numericals not required must be memorized precisely.",
-    "05 Le Chatelier S Principle Numericals Not Required connects to neighbouring topics within chemical equilibrium and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 05 le chatelier s principle numericals not required.",
-    "Practical examples solidify understanding of 05 Le Chatelier S Principle Numericals Not Required and its real-world relevance.",
-    "Misconceptions about 05 le chatelier s principle numericals not required often arise from confusing it with similar concepts.",
-    "05 Le Chatelier S Principle Numericals Not Required follows systematic rules that can be applied step-by-step.",
-    "Review of 05 le chatelier s principle numericals not required should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "05 Le Chatelier S Principle Numericals Not Required is defined by its specific characteristics within chemical equilibrium.",
-    "The conditions under which 05 le chatelier s principle numericals not required applies are as important as the concept itself.",
-    "05 Le Chatelier S Principle Numericals Not Required can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 05 le chatelier s principle numericals not required through application-based and comparison questions.",
-    "A clear grasp of 05 Le Chatelier S Principle Numericals Not Required builds the foundation for advanced topics in chemical equilibrium."
-  ],
-  "importantNotes": [
-    "When studying 05 le chatelier s principle numericals not required, always note the exceptions alongside the general rule.",
-    "05 Le Chatelier S Principle Numericals Not Required should be reviewed with at least one worked example per sub-point.",
-    "Link 05 le chatelier s principle numericals not required back to prior knowledge in chemical equilibrium for deeper retention.",
-    "Practice past NEB board questions on 05 Le Chatelier S Principle Numericals Not Required to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 05 Le Chatelier S Principle Numericals Not Required: apply the standard definition to a simple case.",
-    "Intermediate example: combine 05 le chatelier s principle numericals not required with a related concept from chemical equilibrium.",
-    "Exam-style problem: solve a question involving 05 Le Chatelier S Principle Numericals Not Required under time pressure.",
-    "Real-world connection: show how 05 Le Chatelier S Principle Numericals Not Required appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 05 Le Chatelier S Principle Numericals Not Required and state two conditions required for it to occur.",
-    "Differentiate 05 Le Chatelier S Principle Numericals Not Required from the most commonly confused concept in chemical equilibrium.",
-    "Solve a numerical or structural problem involving 05 Le Chatelier S Principle Numericals Not Required.",
-    "List three applications of 05 Le Chatelier S Principle Numericals Not Required in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 05 Le Chatelier S Principle Numericals Not Required without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 05 Le Chatelier S Principle Numericals Not Required.",
-    "Create three flashcards covering definition, formula, and limitation of 05 Le Chatelier S Principle Numericals Not Required."
-  ],
-  "universalFacts": [
-    "05 Le Chatelier S Principle Numericals Not Required is part of the NEB Class 11 chemical equilibrium syllabus.",
-    "Every concept in chemical equilibrium builds upon definitions established earlier in the chapter.",
-    "05 Le Chatelier S Principle Numericals Not Required is assessed through both short-answer and long-answer board questions.",
-    "Understanding 05 Le Chatelier S Principle Numericals Not Required improves performance across the entire chemical equilibrium unit.",
-    "Revision of 05 Le Chatelier S Principle Numericals Not Required should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 05 Le Chatelier S Principle Numericals Not Required with closely related concepts in chemical equilibrium — focus on distinguishing features.",
-    "The scope of 05 Le Chatelier S Principle Numericals Not Required is sometimes overstated; remember its precise boundaries.",
-    "Applying 05 Le Chatelier S Principle Numericals Not Required outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 05 Le Chatelier S Principle Numericals Not Required and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 05 Le Chatelier S Principle Numericals Not Required? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "05 Le Chatelier S Principle Numericals Not Required is primarily studied under which branch of chemical equilibrium? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 05 Le Chatelier S Principle Numericals Not Required is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical equilibrium — Answer: B",
-    "Which example correctly illustrates 05 Le Chatelier S Principle Numericals Not Required? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "05 Le Chatelier S Principle Numericals Not Required differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 05 Le Chatelier S Principle Numericals Not Required.",
-    "Step-by-step animated derivation of the key relationship in 05 Le Chatelier S Principle Numericals Not Required.",
-    "Interactive toggle between correct and incorrect representations of 05 Le Chatelier S Principle Numericals Not Required."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 05 Le Chatelier S Principle Numericals Not Required.",
-    "Side-by-side comparison animation of 05 Le Chatelier S Principle Numericals Not Required vs commonly confused concept.",
-    "Timelapse build-up of 05 Le Chatelier S Principle Numericals Not Required from prerequisite knowledge in chemical equilibrium."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 05 Le Chatelier S Principle Numericals Not Required",
-    "Comparison table: 05 Le Chatelier S Principle Numericals Not Required vs related concepts in chemical equilibrium",
-    "Step-by-step worked example layout for 05 Le Chatelier S Principle Numericals Not Required"
-  ],
-  "summary": [
-    "05 Le Chatelier S Principle Numericals Not Required is a fundamental concept in chemical equilibrium that describes specific chemical behaviour under defined conditions.",
-    "Mastering 05 Le Chatelier S Principle Numericals Not Required involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 05 Le Chatelier S Principle Numericals Not Required alongside related concepts in chemical equilibrium ensures strong conceptual clarity and exam readiness."
   ]
 }

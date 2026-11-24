@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Mendel's laws of inheritance — monohybrid and dihybrid cross — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: mendel's laws of inheritance — monohybrid, dihybrid cross · one worked example · one misconception each."
+      "text": "# Mendel's laws of inheritance — monohybrid and dihybrid cross ## 1. Introduction Opening frame for **Mendel's laws of inheritance — monohybrid and dihybrid cross** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Gregor Mendel (1822–1884), a monk in Brno, bred garden peas (*Pisum sativum*) from 1856–1863 and published in 1866. Peas were the right organism: true-breeding varieties, seven clearly contrasting traits, short life cycle, large numbers of offspring, and easy self- plus cross-pollination. He counted thousands of offspring and used mathematics — the first quantitative study of heredity.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Mendel's laws of inheritance — monohybrid and dihybrid cross\" and verify the answer is plausible.  ·  define + example each sub-idea: mendel's laws of inheritance — monohybrid, dihybrid cross."
+      "text": "Trick 1: Monohybrid cross scaffold: TT × tt → all Tt (F1) → F2 3:1 (phenotype), 1:2:1 (genotype) — draw the Punnett square; the ratios ARE the marks.  ·  Trick 2: Dihybrid: TtYy × TtYy → 9:3:3:1 — quote the law of independent assortment for the ratio; test cross with a double recessive gives 1:1:1:1."
     },
     {
       "label": "Board question",
@@ -75,16 +75,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Mendel's laws of inheritance — monohybrid and dihybrid cross\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Mendel's laws of inheritance — monohybrid and dihybrid cross\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Dihybrid cross.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — how Mendel built the two laws (study in this order)** | Step | What Mendel did | Result | What it proved | |---|---|---|---| | 1 | Grew true-breeding (pure) lines for 7 traits for 2 years | Every line bred true | A clean starting material | | 2 | Crossed pure tall (TT) × pure dwarf (tt) — the P generation | All F₁ plants tall (Tt) | One trait can mask the…  ·  **Monohybrid vs dihybrid cross — classified side by side** | Feature | Monohybrid cross | Dihybrid cross | |---|---|---| | Traits tracked | One pair of contrasting traits (height) | Two pairs (seed shape + seed colour) | | Pure parents | TT × tt | RRYY × rryy | | F₁ genotype | Tt | RrYy | | F₁ gametes | T and t (2 types) | RY, Ry, rY, ry (4 types) | | F₂ genotypic ratio | 1 TT…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Three laws in one line each: dominance (one allele masks), segregation (alleles separate in gametes), independent assortment (genes on different chromosomes assort freely).  ·  Trick 4: Test cross identifies an unknown genotype: with a homozygous recessive, all-dominant offspring → parent homozygous; 1:1 → heterozygous.  ·  define + example each sub-idea: mendel's laws of inheritance — monohybrid, dihybrid cross."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Mendel's laws of inheritance — monohybrid and dihybrid cross\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Ratios cheat sheet — what each number tells you** | Ratio | Seen in | Meaning | |---|---|---| | 3 : 1 | Monohybrid F₂ phenotype | Complete dominance of one allele | | 1 : 2 : 1 | Monohybrid F₂ genotype (or phenotype in incomplete dominance / codominance) | Heterozygote is a distinct class | | 1 : 1 | Test cross of a…  ·  ## 4. Diagrams and figures - **D1** — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Mendel's laws of inheritance — monohybrid and dihybrid cross — process or life-cycle flow (authored SVG — English labels) - **D3** — Mendel's laws of inheritance — monohybrid and…  ·  ```svg Monohybrid cross — Punnett square of Tt × Tt <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"17\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#14161a\">Tt (F1 tall) &#215; Tt (F1 tall)</text><text x=\"150\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Dihybrid cross — four gamete types give the 9:3:3:1 grid <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">RrYy &#215; RrYy &#8212; 16 offspring…  ·  ## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example.** A tall pea plant of unknown genotype is test-crossed with a dwarf plant (tt). The offspring are 58 tall and 54 dwarf. Because dwarf offspring (tt) can only receive a **t** from each parent, the unknown parent must have supplied **t** gametes — so it was **Tt** (heterozygous), not TT.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.  ·  **Most-asked points (NEB).** (1) State the three laws and give the ratio each is based on. (2) Why did Mendel succeed where others failed — pure lines, discrete traits, large numbers, counting, mathematics. (3) Define test cross and back cross and give the expected ratios.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
     }
   ]
 }

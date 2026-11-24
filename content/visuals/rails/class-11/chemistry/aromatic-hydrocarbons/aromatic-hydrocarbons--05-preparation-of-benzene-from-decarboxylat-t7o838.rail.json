@@ -27,52 +27,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Preparation of benzene from decarboxylation of sodium ben… (Aromatic Hydrocarbons, Chemistry, class-11-notes) covers Preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Benzene's three laboratory routes span three logics: soda-lime decarboxylation deletes a carboxylate (C₆H₅COONa + NaOH/CaO → C₆H₆ + Na₂CO₃), zinc-dust reduction deletes an oxygen (C₆H₅OH + Zn → C₆H₆ + ZnO), and Berthelot's red-hot trimerisation builds the ring from three ethynes (3C₂H₂, Fe tube, 873 K).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preparation of benzene from decarboxylation of sodium ben… — quick idea map\"><title>Preparation of benzene from decarboxylation of sodium ben… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Preparation of benzene from decarboxylation of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">sodium ben…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Preparation of benzene</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">from decarboxylation of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sodium benzoate</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Phenol</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preparation of benzene from decarboxylation of sodium ben… — quick idea map\"><title>Preparation of benzene from decarboxylation of sodium ben… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Preparation of benzene from decarboxylation of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">sodium ben…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An equation without its</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition is half an</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">answer - the condition is</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Three routes: (1)</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C6H5COONa + NaOH(CaO,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">heat) -&gt; C6H6 + Na2CO3</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- C₆H₅COONa + NaOH --(CaO,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Δ)--&gt; C₆H₆ + Na₂CO₃ -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C₆H₅OH + Zn --(Δ)--&gt;</text></svg>",
         "caption": "Preparation of benzene from decarboxylation of sodium ben… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Preparation of benzene from decarboxylation of sodium benzoate\n• Phenol"
+      "text": "- C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃ - C₆H₅OH + Zn --(Δ)--> C₆H₆ + ZnO - 3C₂H₂ --(red-hot Fe tube, 873 K)--> C₆H₆"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Preparation of benzene from decarboxylation of sodium benzoate\" as one blob → ✅ split into: preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Preparation of benzene from decarboxylation of sodium ben…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only (within Aromatic Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "Phenol to benzene and benzene to phenol are the same C-O bond viewed from opposite directions."
+    },
+    {
+      "label": "Solved",
+      "text": "***Berthelot's synthesis*** - three ethyne molecules cyclise into the aromatic sextet; the stored triple-bond energy and the aromatic stabilisation both push the reaction downhill."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Preparation of benzene from decarboxylation of sodium ben… — Aromatic Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Making Benzene: Three Named Routes The syllabus names three laboratory preparations of benzene: **decarboxylation of sodium benzoate with soda lime**, **distillation of phenol with zinc dust**, and **trimerisation of ethyne through a red-hot iron tube**. Each is a one-line equation with one non-negotiable condition — the conditions are the marks.  ·  ## 2. Theorem Mirror - **Decarboxylation:** C₆H₅COONa + NaOH(CaO, heat) → C₆H₆ + Na₂CO₃ — soda lime (NaOH + CaO) decarboxylates the salt; the ring carbon keeps its hydrogen. - **From phenol:** C₆H₅OH + Zn (heat) → C₆H₆ + ZnO — zinc dust reduces the C–O bond; distillation drives the benzene over. - **From ethyne:** 3C₂H₂ →(red-hot Fe tube, ~873 K) C₆H₆ — three alkynes cyclise; the reaction is Berthelot's synthesis.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Ethyne only  ·  solve / apply for \"Preparation of benzene from decarboxylation of sodium ben…\" and verify the answer is plausible."
+      "text": "Write the condition over the arrow, always - heat, soda lime, Zn, red-hot Fe tube are arrow labels, not afterthoughts."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Preparation of benzene from decarboxylation of sodium ben…\" with one example.  ·  compare \"Preparation of benzene from decarboxylation of sodium benzoate\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (6m): Prepare benzene in the laboratory from (a) sodium benzoate and (b) phenol, writing balanced equations with conditions.** — **(a) Soda-lime decarboxylation:** heat sodium benzoate strongly with soda lime (NaOH + CaO): C₆H₅COONa + NaOH --(CaO, Δ)--> C₆H₆ + Na₂CO₃.…  ·  **NEB-style (5m): Describe the preparation of benzene from ethyne, giving the equation and conditions, and explain the thermodynamic driving force.** — **Reaction:** pass ethyne through a red-hot iron tube at about 873 K: **3C₂H₂ --(red-hot Fe, 873 K)--> C₆H₆** (Berthelot's synthesis).…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Balance the decarboxylation equation fully (Na2CO3 by-product) - unbalanced equations forfeit the method mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preparation of benzene from decarboxylation of sodium ben… — topic mind map\"><title>Preparation of benzene from decarboxylation of sodium ben… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Preparation of benzene from decarboxylation o…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Preparation of benzene</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">from decarboxylation of…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Phenol</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ethyne only</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Preparation of benzene from decarboxylation of sodium ben… — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "An equation without its condition is half an answer - the condition is where the mark lives."
+    },
+    {
+      "label": "Key points",
+      "text": "Three routes: (1) C6H5COONa + NaOH(CaO, heat) -> C6H6 + Na2CO3 - soda-lime decarboxylation; (2) C6H5OH + Zn(heat) -> C6H6 + ZnO - zinc-dust reduction; (3) 3C2H2 -> (red-hot Fe tube, ~873 K) C6H6 - trimerisation.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Decarboxylation generalises: any sodium benzoate derivative gives the corresponding substituted benzene."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): Why is soda lime (a mixture of NaOH and CaO) used for decarboxylation instead of sodium hydroxide alone? Give the equation.** — **NaOH's job:** provides the OH⁻ that converts the acid–carboxylate chemistry and accepts the sodium of the carboxylate into the carbonate by-product.…  ·  **NEB-style (6m): Sodium p-methylbenzoate is subjected to soda-lime decarboxylation. Predict the product, write the equation, and explain the generalisation.** — **Product:** the carboxylate carbon is replaced by hydrogen; the para-methyl substituent rides through untouched ⟹ **toluene…"
     },
     {
       "label": "MCQ drill",
@@ -80,98 +96,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Phenol.** one-line definition + one-line exam use.  ·  **Ethyne only.** one-line definition + one-line exam use."
+      "text": "## 3. Deep Conceptual — What Each Route Teaches About the Ring - **Decarboxylation is a proton-for-carboxylate swap:** soda lime's NaOH abstracts the carboxyl proton machinery and the CO₂ leaves as carbonate; the aryl carbon receives H.…  ·  ## 4. Deep Conceptual — Conditions Are Part of the Equation - Each route's condition is *diagnostic*, not decorative: soda lime (not NaOH alone — CaO raises the fusion temperature and absorbs water); zinc dust (not Zn granules — surface area); red-hot iron tube ~873 K (not a flame — the temperature *is* the reagent).…  ·  ## 5. Worked Example Types - **Type A — write the preparation:** equation + condition, for each of the three routes. - **Type B — condition justification:** why soda lime, why zinc dust, why red heat. - **Type C — route selection:** given a starting material, choose and justify the route. - **Type D — generalisation:** apply decarboxylation to substituted benzoates."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: preparation of benzene from decarboxylation of sodium benzoate, phenol, ethyne only.  ·  one worked example for \"Preparation of benzene from decarboxylation of sodium ben…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "NEB-style practice beyond the verified PYQs recorded on rows 122, 124 and 127.  ·  Write all three laboratory preparations of benzene with conditions.  ·  Explain why soda lime rather than pure NaOH is used in decarboxylation."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Starting from sodium p-methylbenzoate, predict the product of soda-lime decarboxylation.  ·  ## 6. Common Confusions **\"NaOH alone decarboxylates\":** the soda-lime mixture (NaOH + CaO) is required — CaO's role is fusion-temperature and water absorption. **\"Ethyne trimerisation needs a catalyst like Ni\":** the syllabus condition is the red-hot iron tube (~873 K); quoting organometallic catalysts imports…"
     }
-  ],
-  "keyPoints": [
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is a core concept in aromatic hydrocarbons.",
-    "Understanding 05 preparation of benzene from decarboxylat t7o838 requires knowing its definition, conditions, and limitations.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 05 preparation of benzene from decarboxylat t7o838 must be memorized precisely.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 connects to neighbouring topics within aromatic hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 05 preparation of benzene from decarboxylat t7o838.",
-    "Practical examples solidify understanding of 05 Preparation Of Benzene From Decarboxylat T7o838 and its real-world relevance.",
-    "Misconceptions about 05 preparation of benzene from decarboxylat t7o838 often arise from confusing it with similar concepts.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 follows systematic rules that can be applied step-by-step.",
-    "Review of 05 preparation of benzene from decarboxylat t7o838 should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is defined by its specific characteristics within aromatic hydrocarbons.",
-    "The conditions under which 05 preparation of benzene from decarboxylat t7o838 applies are as important as the concept itself.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 05 preparation of benzene from decarboxylat t7o838 through application-based and comparison questions.",
-    "A clear grasp of 05 Preparation Of Benzene From Decarboxylat T7o838 builds the foundation for advanced topics in aromatic hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 05 preparation of benzene from decarboxylat t7o838, always note the exceptions alongside the general rule.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 should be reviewed with at least one worked example per sub-point.",
-    "Link 05 preparation of benzene from decarboxylat t7o838 back to prior knowledge in aromatic hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 05 Preparation Of Benzene From Decarboxylat T7o838 to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 05 Preparation Of Benzene From Decarboxylat T7o838: apply the standard definition to a simple case.",
-    "Intermediate example: combine 05 preparation of benzene from decarboxylat t7o838 with a related concept from aromatic hydrocarbons.",
-    "Exam-style problem: solve a question involving 05 Preparation Of Benzene From Decarboxylat T7o838 under time pressure.",
-    "Real-world connection: show how 05 Preparation Of Benzene From Decarboxylat T7o838 appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 05 Preparation Of Benzene From Decarboxylat T7o838 and state two conditions required for it to occur.",
-    "Differentiate 05 Preparation Of Benzene From Decarboxylat T7o838 from the most commonly confused concept in aromatic hydrocarbons.",
-    "Solve a numerical or structural problem involving 05 Preparation Of Benzene From Decarboxylat T7o838.",
-    "List three applications of 05 Preparation Of Benzene From Decarboxylat T7o838 in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 05 Preparation Of Benzene From Decarboxylat T7o838 without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 05 Preparation Of Benzene From Decarboxylat T7o838.",
-    "Create three flashcards covering definition, formula, and limitation of 05 Preparation Of Benzene From Decarboxylat T7o838."
-  ],
-  "universalFacts": [
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is part of the NEB Class 11 aromatic hydrocarbons syllabus.",
-    "Every concept in aromatic hydrocarbons builds upon definitions established earlier in the chapter.",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is assessed through both short-answer and long-answer board questions.",
-    "Understanding 05 Preparation Of Benzene From Decarboxylat T7o838 improves performance across the entire aromatic hydrocarbons unit.",
-    "Revision of 05 Preparation Of Benzene From Decarboxylat T7o838 should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 05 Preparation Of Benzene From Decarboxylat T7o838 with closely related concepts in aromatic hydrocarbons — focus on distinguishing features.",
-    "The scope of 05 Preparation Of Benzene From Decarboxylat T7o838 is sometimes overstated; remember its precise boundaries.",
-    "Applying 05 Preparation Of Benzene From Decarboxylat T7o838 outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 05 Preparation Of Benzene From Decarboxylat T7o838 and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 05 Preparation Of Benzene From Decarboxylat T7o838? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is primarily studied under which branch of aromatic hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 05 Preparation Of Benzene From Decarboxylat T7o838 is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to aromatic hydrocarbons — Answer: B",
-    "Which example correctly illustrates 05 Preparation Of Benzene From Decarboxylat T7o838? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "05 Preparation Of Benzene From Decarboxylat T7o838 differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 05 Preparation Of Benzene From Decarboxylat T7o838.",
-    "Step-by-step animated derivation of the key relationship in 05 Preparation Of Benzene From Decarboxylat T7o838.",
-    "Interactive toggle between correct and incorrect representations of 05 Preparation Of Benzene From Decarboxylat T7o838."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 05 Preparation Of Benzene From Decarboxylat T7o838.",
-    "Side-by-side comparison animation of 05 Preparation Of Benzene From Decarboxylat T7o838 vs commonly confused concept.",
-    "Timelapse build-up of 05 Preparation Of Benzene From Decarboxylat T7o838 from prerequisite knowledge in aromatic hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 05 Preparation Of Benzene From Decarboxylat T7o838",
-    "Comparison table: 05 Preparation Of Benzene From Decarboxylat T7o838 vs related concepts in aromatic hydrocarbons",
-    "Step-by-step worked example layout for 05 Preparation Of Benzene From Decarboxylat T7o838"
-  ],
-  "summary": [
-    "05 Preparation Of Benzene From Decarboxylat T7o838 is a fundamental concept in aromatic hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 05 Preparation Of Benzene From Decarboxylat T7o838 involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 05 Preparation Of Benzene From Decarboxylat T7o838 alongside related concepts in aromatic hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

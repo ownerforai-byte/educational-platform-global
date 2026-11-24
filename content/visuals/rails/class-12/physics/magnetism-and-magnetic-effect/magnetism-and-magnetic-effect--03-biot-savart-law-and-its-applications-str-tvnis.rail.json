@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Biot-Savart law and its applications (straight wire, circ… (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Biot-Savart law, its applications, straight wire. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Biot–Savart builds magnetic field from current elements. A long wire gives μ0 I /(2π r) in circles, a coil gives μ0 N I /(2R) at its centre, and a long solenoid gives μ0 n I inside. The right-hand grip fixes the direction.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biot-Savart law and its applications (straight wire, circ… — quick idea map\"><title>Biot-Savart law and its applications (straight wire, circ… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Biot-Savart law and its applications (straight</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">wire, circ…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Biot-Savart law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Biot-Savart law and</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">its applications (straight</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biot-Savart law and its applications (straight wire, circ… — quick idea map\"><title>Biot-Savart law and its applications (straight wire, circ… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Biot-Savart law and its applications (straight</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">wire, circ…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Biot–Savart</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Straight wire</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Each current element</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">contributes.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A long wire gives circles</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of field.</text></svg>",
         "caption": "Biot-Savart law and its applications (straight wire, circ… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Biot-Savart law and its applications (straight wire, circ…\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Biot-Savart law and its applications (straight wire, circ…\" — state with units, then use in one numerical.\nLong wire: B = μ0 I /(2π r)\nLoop centre: B = μ0 N I /(2 R)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Biot-Savart law\" as one blob → ✅ split into: biot-savart law, its applications, straight wire.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Biot-Savart law and its applications (straight wire, circ…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "μ0 / 2π = 2 × 10^−7.  ·  On the axis of a loop, off centre, the field is weaker and still along the axis."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The Biot–Savart law gives the small field of a current element: it is proportional to I dl sinθ / r^2, and the direction is perpendicular to the element and to the line drawn to the point.  ·  Integrating around a long straight wire gives B = μ0 I /(2π r). The field lines are circles around the wire, given by the right-hand grip. The field falls as 1/r."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Biot-Savart law and its applications (straight wire, circ… — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).  ·  **Tested.** define it · list: biot-savart law, its applications, straight wire, circular loop · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Biot-Savart law  ·  • Its applications"
+      "text": "Wire: μ0 I over 2π r. Loop: μ0 N I over 2 R.  ·  Grip the wire: fingers curl with B."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Biot-Savart law and its applications (straight wire, circ…\" with one example.  ·  compare \"Biot-Savart law\" with the related idea from a neighbouring unit."
+      "text": "Write B beside a long wire.  ·  Write B at the centre of a coil of N turns."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biot-Savart law and its applications (straight wire, circ… — topic mind map\"><title>Biot-Savart law and its applications (straight wire, circ… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Biot-Savart law and its applications (straigh…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Biot-Savart law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its applications</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Straight wire</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Circular loop</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Biot-Savart law and its applications (straight wire, circ… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Biot–Savart  ·  Straight wire  ·  Coil centre  ·  Solenoid"
+    },
+    {
       "label": "Key points",
-      "text": "• Straight wire  ·  • Circular loop  ·  • Solenoid"
+      "text": "Each current element contributes.  ·  A long wire gives circles of field.  ·  A loop's centre field is along the axis.  ·  A solenoid is the stack of loops."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Biot-Savart law and its applications (straight wire, circ…\": define → method → result. Structure earns the marks on 6–10 mark questions."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Biot-Savart law and its applications (straight wire, circ…\" and verify the answer is plausible."
+      "text": "What is B inside a long solenoid?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A coil of 50 turns and radius 5.0 cm carries 2.0 A. Find B at the centre. Use μ0 = 4π × 10^−7."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Biot-Savart law and its applications (straight wire, circ…\"? → A  ·  A common examiner point on \"Biot-Savart law and its applications (straight wire, circ…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Beside a long wire, B is → A  ·  At the centre of N tight turns, B is → A"
     },
     {
       "label": "Study notes",
-      "text": "**Its applications.** one-line definition + one-line exam use.  ·  **Straight wire.** one-line definition + one-line exam use.  ·  **Circular loop.** one-line definition + one-line exam use."
+      "text": "At the centre of a circular loop of one turn, B = μ0 I /(2 R), along the axis. N turns wound together multiply the field by N.  ·  A long solenoid is many circular turns in a row. Inside, the field is μ0 n I, nearly uniform, with n turns per metre. Outside an ideal long solenoid the field is negligible.  ·  μ0 is 4π × 10^−7. The combination μ0 / 2π, used for the straight wire, is 2 × 10^−7. Using μ0 where the formula already contains 2π, or the other way round, is the usual slip."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: biot-savart law, its applications, straight wire, circular loop.  ·  one worked example for \"Biot-Savart law and its applications (straight wire, circ…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "The wire formula is not the loop formula.  ·  n is turns per metre in the solenoid.  ·  The wire field circles the wire. It is not along it."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Solenoid.** one-line definition + one-line exam use."
+      "text": "Outside an ideal solenoid the field is not μ0 n I.  ·  Match the formula to the shape.  ·  State circles or along the axis."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Long wire: B = μ0 I /(2π r) and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Ampere's law reaches the wire and the solenoid faster when the symmetry is obvious. Biot–Savart is the law you start from when you have to build the field from elements.  ·  # Biot-Savart law and its applications (straight wire, circular loop, solenoid) ## 1. Introduction Physical picture of **Biot-Savart law and its applications (straight wire** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3,…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Cases and comparisons** | Case | Condition | Governing equation | Worked angle | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol meanings, SI units and…  ·  ## 5. Diagrams and figures - **D1** — Biot-Savart law and its applications (straight wire — geometry and force diagram (authored SVG) - **D2** — Biot-Savart law and its applications (straight wire — graph or second construction (authored SVG — axes, units and labels) - **D3** — Biot-Savart law and its applications…"
     }
   ]
 }

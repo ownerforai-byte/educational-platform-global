@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Avogadro's law and some deductions: molecular mass and va… (Stoichiometry, Chemistry, class-11-notes) covers Avogadro's law, some deductions: molecular mass, vapour density. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Avogadro's law (1811)** — equal volumes of gases at the same T and P contain equal numbers of molecules — explains Gay-Lussac's combining volumes and yields three deductions: M = 2 × VD, the 22.4 L molar volume at STP, and the diatomic nature of H₂, O₂ and N₂. Vapour density doubles to molecular mass (VD 22 → CO₂, 44); gas volumes convert through 22.4 L per mole.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — quick idea map\"><title>Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Avogadro's Law and its Deductions (Molecular</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Mass, Vapour Density, Volume and Number of…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Avogadro's law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Some deductions:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">molecular mass</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$V\\propto n\\ \\text{at</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant }T,P;\\qquad…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$M=2\\times VD\\</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(\\text{H}_{2}\\</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\text{reference});\\qquad</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — quick idea map\"><title>Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Avogadro's Law and its Deductions (Molecular</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Mass, Vapour Density, Volume and Number of…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**M = 2 × VD** — the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">single most-used</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deduction; vapour density</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Avogadro (1811): equal</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">volumes, equal molecules</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(same T, P).…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- M = 2 × VD (vapour</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">density relative to H₂) -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">V = n × 22.4 L (gas at</text></svg>",
         "caption": "Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$V\\propto n\\ \\text{at constant }T,P;\\qquad \\frac{V_{1}}{n_{1}}=\\frac{V_{2}}{n_{2}}$$\n$$M=2\\times VD\\ (\\text{H}_{2}\\ \\text{reference});\\qquad M=28.94\\times VD\\ (\\text{air reference})$$\n$$n=\\frac{V\\ (\\text{STP})}{22.4\\ \\text{L}},\\qquad n=\\frac{N}{N_{A}},\\qquad V_{\\text{molar}}=22.4\\ \\text{L at STP}$$"
+      "text": "- M = 2 × VD (vapour density relative to H₂) - V = n × 22.4 L (gas at STP) - n = V/22.4 (gas at STP)"
     },
     {
       "label": "Conditions",
-      "text": "❌ Equal volumes of any two gases have equal masses. ✅ They have equal *numbers of molecules*; masses differ because molecular masses differ.  ·  ❌ Vapour density is the same as density. ✅ Vapour density is a *relative* quantity measured with respect to hydrogen (or air); density is an absolute mass per unit volume."
+      "text": "**Vapour density vs density:** VD is a ratio relative to hydrogen (unitless); density is mass per volume (g/L). M = 2 × VD only because H₂ has M = 2.  ·  **STP vs NTP:** STP = 0 °C, 1 atm (22.4 L/mol); NTP = 20 °C, 1 atm (24.0 L/mol) — do not mix them."
     },
     {
       "label": "Special cases",
-      "text": "Avogadro number N_A = 6.022 × 10²³ mol⁻¹ (exactly 6.02214076 × 10²³ since the 2019 SI revision).  ·  Molar volume: 22.4 L at STP (0 °C, 1 atm) and 24.0 L at RTP (25 °C, 1 bar)."
+      "text": "\"Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules.\""
     },
     {
       "label": "Solved",
-      "text": "**Problem:** VD of a gas is 22; find its molar mass and the mass of 5.6 L at STP. **Solution:** M = 2 × 22 = 44 g mol⁻¹; n = 5.6/22.4 = 0.25 mol → mass = 0.25 × 44 = 11 g.  ·  **Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴."
+      "text": "***VD of CO₂ = 22*** — molecular mass 44: the fastest molecular-mass determination in chemistry."
     },
     {
       "label": "Limitation",
@@ -56,150 +56,51 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning and statement  ·  Avogadro's law (Amedeo Avogadro, 1811, published as a hypothesis) states: equal volumes of all gases, under the same conditions of temperature and pressure, contain equal numbers of molecules. Hence for a gas $V\\propto n$ at constant T and P, and volume ratio = mole ratio.…"
+      "text": "## 1. Topic Introduction — Counting Without Weighing Avogadro's hypothesis (1811) — *equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules* — resolved the Dalton–Gay-Lussac conflict and gave chemists three deductions that turn gas volumes into molecular masses. It is the bridge between the gas laws and the mole.  ·  ## 2. Fundamental Concepts ### 2.1 Statement and meaning Equal volumes of all gases at the same temperature and pressure contain equal numbers of molecules. The law is strictly true for ideal gases and approximately true for real gases at low pressure.…"
     },
     {
       "label": "Shortcut",
-      "text": "Avogadro's hypothesis (1811) was accepted only after Cannizzaro (1858) explained it, and one mole of water is just 18 mL of liquid — yet it contains 6.022 × 10²³ molecules.  ·  1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses)."
+      "text": "\"VD × 2 = M; 22.4 L at STP = 1 mol — the two numbers to carry everywhere.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Avogadro's law and some deductions: molecular mass and va…\" with one example.  ·  compare \"Avogadro's law\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (2m): The vapour density of a gas is 22. Calculate its molecular mass and identify the gas.** — M = 2 × VD = 2 × 22 = **44 g/mol**. The gas of molecular mass 44 is **CO₂** (C = 12, O = 16 × 2 = 32; 12 + 32 = 44)."
     },
     {
       "label": "Hints",
-      "text": "Quote both numbers with the law: N_A = 6.022 × 10²³ mol⁻¹ and molar volume = 22.4 L at STP.  ·  Say 'equal number of molecules', never 'equal masses' — the distinction is the whole content of the law.",
+      "text": "In gas-volume problems, always write the balanced equation first; coefficients are volume ratios for gases.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — topic mind map\"><title>Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Avogadro's law and some deductions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Avogadro's law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Some deductions:</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">molecular mass</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Vapour density</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Molecular mass</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles) — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**M = 2 × VD** — the single most-used deduction; vapour density is relative to hydrogen."
+    },
+    {
       "label": "Key points",
-      "text": "• Avogadro's law  ·  • Some deductions: molecular mass  ·  • Vapour density  ·  • Molecular mass"
+      "text": "Avogadro (1811): equal volumes, equal molecules (same T, P). Deductions: M = 2 × VD; 1 mol = 22.4 L at STP; diatomic nature of common gases."
     },
     {
       "label": "Universal facts",
-      "text": "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.  ·  Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
-    },
-    {
-      "label": "More practice",
-      "text": "solve / apply for \"Avogadro's law and some deductions: molecular mass and va…\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Avogadro's hypothesis was ignored for 50 years (Cannizzaro revived it in 1860) — one of chemistry's greatest delayed recognitions."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Avogadro's law and some deductions: molecular mass and va…\"? → A  ·  A common examiner point on \"Avogadro's law and some deductions: molecular mass and va…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Avogadro proposed his hypothesis in: → C  ·  Equal volumes of gases at same T and P contain equal: → C"
     },
     {
       "label": "Study notes",
-      "text": "### 2. Deduction 1 — molecular mass and vapour density  ·  **Vapour density (VD)** of a gas is the ratio of the mass of a certain volume of the gas to the mass of the same volume of hydrogen under identical conditions. Because equal volumes contain equal numbers of molecules, masses are in the ratio of molecular masses, and with hydrogen as the standard (M = 2): $VD=\\frac{M}{2}$, so **molecular mass = 2 × vapour density**.…  ·  ### 3. Deduction 2 — molecular mass and volume of gas"
+      "text": "## 3. Conceptual Relationships - **To Gay-Lussac (Topic 2):** Avogadro explains Gay-Lussac's volume ratios. - **To the mole (Topic 4):** 22.4 L at STP is the gas face of the mole. - **To ideal gas laws (Unit 7):** PV = nRT generalises 22.4 L to any T and P.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the deductions and applications as **NEB-style practice**. ### 4.2 Likely question forms 1. State Avogadro's law and give two deductions (3m). 2. Vapour density numerical (2m). 3. Gas volume stoichiometry (2–3m).…"
     },
     {
       "label": "More ideas",
-      "text": "n = m / M  ·  n = V / 22.4 (g at STP)  ·  % yield = (actual / theoretical) × 100"
+      "text": "No verified PYQ; NEB-style practice (statement + deductions 3m, VD numerical 2m).  ·  A gas has VD 16. What is its molecular mass, and which gas is it?  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "• Volume of gas  ·  ❌ 1 mole of every gas occupies 22.4 L under all conditions. ✅ Only at STP (273.15 K, 1 atm); at other conditions use PV = nRT.  ·  ❌ Molecular mass equals vapour density. ✅ Molecular mass = 2 × vapour density (for the hydrogen reference)."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results.  ·  ❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)..  ·  Remember the abnormal vapour density correction for dissociating gases such as PCl₅ and N₂O₄."
-    },
-    {
-      "label": "More ideas",
-      "text": "State Avogadro's law and deduce the relation between molecular mass and vapour density.  ·  Show that the mass of 22.4 L of any gas at STP equals its molar mass in grams.  ·  Calculate the molecular mass of a gas whose vapour density is 30."
-    },
-    {
-      "label": "More ideas",
-      "text": "The vapour density of an oxide of nitrogen is 46; find its molecular formula if it contains 30.4% nitrogen.  ·  Explain how Avogadro's law established that hydrogen and oxygen are diatomic.  ·  State the limitations of Avogadro's law."
+      "text": "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
     }
-  ],
-  "keyPoints": [
-    "03 Avogadro S Law And Some Deductions Molec 154goc is a core concept in stoichiometry.",
-    "Understanding 03 avogadro s law and some deductions molec 154goc requires knowing its definition, conditions, and limitations.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 avogadro s law and some deductions molec 154goc must be memorized precisely.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc connects to neighbouring topics within stoichiometry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 avogadro s law and some deductions molec 154goc.",
-    "Practical examples solidify understanding of 03 Avogadro S Law And Some Deductions Molec 154goc and its real-world relevance.",
-    "Misconceptions about 03 avogadro s law and some deductions molec 154goc often arise from confusing it with similar concepts.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc follows systematic rules that can be applied step-by-step.",
-    "Review of 03 avogadro s law and some deductions molec 154goc should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Avogadro S Law And Some Deductions Molec 154goc is defined by its specific characteristics within stoichiometry.",
-    "The conditions under which 03 avogadro s law and some deductions molec 154goc applies are as important as the concept itself.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 avogadro s law and some deductions molec 154goc through application-based and comparison questions.",
-    "A clear grasp of 03 Avogadro S Law And Some Deductions Molec 154goc builds the foundation for advanced topics in stoichiometry."
-  ],
-  "importantNotes": [
-    "When studying 03 avogadro s law and some deductions molec 154goc, always note the exceptions alongside the general rule.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc should be reviewed with at least one worked example per sub-point.",
-    "Link 03 avogadro s law and some deductions molec 154goc back to prior knowledge in stoichiometry for deeper retention.",
-    "Practice past NEB board questions on 03 Avogadro S Law And Some Deductions Molec 154goc to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Avogadro S Law And Some Deductions Molec 154goc: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 avogadro s law and some deductions molec 154goc with a related concept from stoichiometry.",
-    "Exam-style problem: solve a question involving 03 Avogadro S Law And Some Deductions Molec 154goc under time pressure.",
-    "Real-world connection: show how 03 Avogadro S Law And Some Deductions Molec 154goc appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Avogadro S Law And Some Deductions Molec 154goc and state two conditions required for it to occur.",
-    "Differentiate 03 Avogadro S Law And Some Deductions Molec 154goc from the most commonly confused concept in stoichiometry.",
-    "Solve a numerical or structural problem involving 03 Avogadro S Law And Some Deductions Molec 154goc.",
-    "List three applications of 03 Avogadro S Law And Some Deductions Molec 154goc in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Avogadro S Law And Some Deductions Molec 154goc without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Avogadro S Law And Some Deductions Molec 154goc.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Avogadro S Law And Some Deductions Molec 154goc."
-  ],
-  "universalFacts": [
-    "03 Avogadro S Law And Some Deductions Molec 154goc is part of the NEB Class 11 stoichiometry syllabus.",
-    "Every concept in stoichiometry builds upon definitions established earlier in the chapter.",
-    "03 Avogadro S Law And Some Deductions Molec 154goc is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Avogadro S Law And Some Deductions Molec 154goc improves performance across the entire stoichiometry unit.",
-    "Revision of 03 Avogadro S Law And Some Deductions Molec 154goc should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Avogadro S Law And Some Deductions Molec 154goc with closely related concepts in stoichiometry — focus on distinguishing features.",
-    "The scope of 03 Avogadro S Law And Some Deductions Molec 154goc is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Avogadro S Law And Some Deductions Molec 154goc outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Avogadro S Law And Some Deductions Molec 154goc and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Avogadro S Law And Some Deductions Molec 154goc? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Avogadro S Law And Some Deductions Molec 154goc is primarily studied under which branch of stoichiometry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Avogadro S Law And Some Deductions Molec 154goc is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to stoichiometry — Answer: B",
-    "Which example correctly illustrates 03 Avogadro S Law And Some Deductions Molec 154goc? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Avogadro S Law And Some Deductions Molec 154goc differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Avogadro S Law And Some Deductions Molec 154goc.",
-    "Step-by-step animated derivation of the key relationship in 03 Avogadro S Law And Some Deductions Molec 154goc.",
-    "Interactive toggle between correct and incorrect representations of 03 Avogadro S Law And Some Deductions Molec 154goc."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Avogadro S Law And Some Deductions Molec 154goc.",
-    "Side-by-side comparison animation of 03 Avogadro S Law And Some Deductions Molec 154goc vs commonly confused concept.",
-    "Timelapse build-up of 03 Avogadro S Law And Some Deductions Molec 154goc from prerequisite knowledge in stoichiometry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Avogadro S Law And Some Deductions Molec 154goc",
-    "Comparison table: 03 Avogadro S Law And Some Deductions Molec 154goc vs related concepts in stoichiometry",
-    "Step-by-step worked example layout for 03 Avogadro S Law And Some Deductions Molec 154goc"
-  ],
-  "summary": [
-    "03 Avogadro S Law And Some Deductions Molec 154goc is a fundamental concept in stoichiometry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Avogadro S Law And Some Deductions Molec 154goc involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Avogadro S Law And Some Deductions Molec 154goc alongside related concepts in stoichiometry ensures strong conceptual clarity and exam readiness."
   ]
 }

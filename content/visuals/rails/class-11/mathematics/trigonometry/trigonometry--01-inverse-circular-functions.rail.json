@@ -21,52 +21,76 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Inverse Circular Functions covers essential principles and applications.",
+      "text": "Inverse circular functions exist only because the trig functions are **restricted to principal branches**: sin⁻¹ on [−1,1] → **[−π/2, π/2]**, cos⁻¹ on [−1,1] → **[0, π]**, tan⁻¹ on ℝ → **(−π/2, π/2)**. Inside the branch, f⁻¹(f(θ)) = θ; outside it, the answer is the branch-representative (sin⁻¹(sin 2π/3) = π/3).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Inverse Circular Functions — quick idea map\"><title>Inverse Circular Functions — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Inverse Circular Functions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Inverse</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Circular Functions.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The principal-value range</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of each inverse decides</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the sign of the answer —…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\sin^{-1}x + \\cos^{-1}x =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{\\pi}{2}$ and</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\tan^{-1}x + \\cot^{-1}x</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\tan^{-1}x + \\tan^{-1}y =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\tan^{-1}\\frac{x+y}{1-xy}$</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">when $xy &lt; 1$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Inverse Circular Functions — quick idea map\"><title>Inverse Circular Functions — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Inverse Circular Functions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The branch is a choice</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">that buys uniqueness:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">restrict the periodic</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Principal branches: sin^-1</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">on [-1,1] -&gt; [-pi/2,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">pi/2]; cos^-1 on [-1,1]</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- sin⁻¹x + cos⁻¹x = π/2;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tan⁻¹x + cot⁻¹x = π/2;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sec⁻¹x + cosec⁻¹x = π/2 -…</text></svg>",
         "caption": "Inverse Circular Functions — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$\\sin^{-1}x + \\cos^{-1}x = \\frac{\\pi}{2}$ and $\\tan^{-1}x + \\cot^{-1}x = \\frac{\\pi}{2}$ for $x$ in the domain.\n$\\tan^{-1}x + \\tan^{-1}y = \\tan^{-1}\\frac{x+y}{1-xy}$ when $xy < 1$.\nPrincipal value ranges: $\\sin^{-1} \\in \\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$, $\\cos^{-1} \\in [0, \\pi]$, $\\tan^{-1} \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$."
+      "text": "- sin⁻¹x + cos⁻¹x = π/2; tan⁻¹x + cot⁻¹x = π/2; sec⁻¹x + cosec⁻¹x = π/2 - tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)) (xy < 1) - 2tan⁻¹x = tan⁻¹(2x/(1−x²)) (|x| < 1) - sin⁻¹(−x) = −sin⁻¹x; cos⁻¹(−x) = π − cos⁻¹x; tan⁻¹(−x) =…"
     },
     {
       "label": "Conditions",
-      "text": "Inverse Circular Functions is based on fundamental principles."
+      "text": "Verified PYQs: NEB 2024 (principal value of sin^-1(-1/2)), NEB 2023 (cos^-1(sqrt3/2) + sin^-1(1/2)) — assigned to this row. Other items are NEB-style practice."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Inverse circular functions  ·  Statement 2: Theorem related to Inverse circular functions"
+      "text": "\"sin^-1 x + cos^-1 x = pi/2 for all x in [-1, 1]: the two inverses measure complementary arcs of the same triangle.\""
     },
     {
       "label": "Solved",
-      "text": "Application of Inverse Circular Functions"
+      "text": "***The triangle shortcut*** — for any inverse expression, draw the right triangle with the given ratio, read the third side from Pythagoras, and every addition formula becomes visible geometry."
     },
     {
       "label": "Limitation",
-      "text": "Definition and significance of Inverse Circular Functions.  ·  Statement 5: Corollary or consequence of Inverse circular functions"
+      "text": "The branch is a choice that buys uniqueness: restrict the periodic function until it is one-to-one, and only then does the inverse exist.  ·  Principal branches: sin^-1 on [-1,1] -> [-pi/2, pi/2]; cos^-1 on [-1,1] -> [0, pi]; tan^-1 on R -> (-pi/2, pi/2); cot^-1 -> (0, pi); sec^-1, cosec^-1 on R minus (-1,1). Compositions: sin(sin^-1 x) = x on [-1,1]; sin^-1(sin th) = th only inside the branch (sin^-1(sin 2pi/3) = pi/3). Complement theorems: sin^-1 x + cos^-1 x = pi/2; tan^-1 x + cot^-1 x = pi/2; sec^-1 x + cosec^-1 x = pi/2.…"
     },
     {
       "label": "Derivation",
-      "text": "The principal-value range of each inverse decides the sign of the answer — substituting a positive ratio into cos⁻¹ gives an angle in [0, π], never a negative one."
+      "text": "## 1. Topic Introduction — Undoing Periodic Functions sin, cos, tan are many-to-one; their **inverse circular functions** pick the **principal branch** — a restricted domain where each function is one-to-one — so the inverse is a genuine function. The theorems: principal value branches, inverse compositions, and the addition formulas for sin⁻¹ ± cos⁻¹/tan⁻¹.  ·  ## 2. Fundamental Concepts ### 2.1 Principal value branches (the core theorem) - **sin⁻¹:** domain [−1, 1], range **[−π/2, π/2]**. - **cos⁻¹:** domain [−1, 1], range **[0, π]**. - **tan⁻¹:** domain ℝ, range **(−π/2, π/2)**. - Proof idea: on these intervals each function is **bijective** (strictly monotone), so the inverse exists; the branch is *chosen* to make it so.…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Inverse Circular Functions."
+      "text": "Negative inputs: sine/tangent inverses are odd (keep the minus), cosine inverse gives pi - value. tan^-1 sums: check xy < 1 before the formula; correct by +- pi otherwise. sin^-1(sin th): reduce th into [-pi/2, pi/2] first."
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Inverse Circular Functions.  ·  Q3. Problem on Inverse Circular Functions."
+      "text": "**NEB 2024 (verified PYQ): Find the principal value of sin⁻¹(−1/2). (2m)** — Let **θ = sin⁻¹(−1/2)**. By definition sin θ = −1/2 **and θ must lie in the principal branch [−π/2, π/2]**. The reference angle whose sine is 1/2 is π/6; the negative sign places θ in the fourth quadrant of the branch, so **θ = −π/6**.…  ·  **NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — **First term:** cos⁻¹(√3/2) asks for the angle in the **cosine branch [0, π]** with cosine √3/2 — that is **π/6**. **Second term:** sin⁻¹(1/2) asks for the angle in the **sine branch [−π/2, π/2]** with sine 1/2 — that is **π/6**.…"
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Inverse circular functions to be valid  ·  Statement 4: Principle governing Inverse circular functions",
+      "text": "Always state the branch when quoting a principal value — \"pi/6, since it lies in [0, pi]\" is a mark-bearing sentence.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Inverse Circular Functions — topic mind map\"><title>Inverse Circular Functions — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Inverse circular functions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Inverse circular</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">functions</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Inverse Circular Functions — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Universal facts",
+      "text": "Calculators return principal values only — that is why sin(150 degrees) needs you, not the machine, to say 30 degrees when the branch demands it."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (3m): Prove that tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.** — **Check the condition:** xy = (1/2)(1/3) = 1/6 < 1, so the addition theorem applies without quadrant correction: tan⁻¹x + tan⁻¹y = tan⁻¹((x+y)/(1−xy)).…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Principal value** | The unique value of the inverse in the standard branch | sin⁻¹(1/2) = π/6, not 5π/6 | | **Principal branch** | Domain interval where the trig function is one-to-one | [−π/2, π/2] for sine | | **Inverse composition** | f(f⁻¹(x)) = x only inside the branch | sin⁻¹(sin 2π/3)…  ·  ## 4. Detailed Explanation ### 4.1 Why branches are necessary - sin θ = 1/2 holds for π/6, 5π/6, 13π/6, … — a function must return **one** value, so the inverse is defined only on a branch where the original is injective. The branch is a convention, but a universal one.…  ·  ## 5. Comparison Tables **Principal branches** | Function | Domain | Range (branch) | |---|---|---| | sin⁻¹ | [−1, 1] | [−π/2, π/2] | | cos⁻¹ | [−1, 1] | [0, π] | | tan⁻¹ | ℝ | (−π/2, π/2) | | cot⁻¹ | ℝ | (0, π) | | sec⁻¹ | ℝ∖(−1,1) | [0, π] − {π/2} | | cosec⁻¹ | ℝ∖(−1,1) | [−π/2, π/2] − {0} |"
+    },
+    {
+      "label": "More ideas",
+      "text": "Find the principal value of sin⁻¹(−1/2) and cos⁻¹(√3/2) + sin⁻¹(1/2).  ·  Prove tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.  ·  Evaluate sin⁻¹(sin 2π/3) and explain why it is not 2π/3."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **sin⁻¹(sin θ) ≠ θ in general:** only inside the branch; sin⁻¹(sin 120°) = 60°, not 120°.  ·  **sin⁻¹x is not 1/sin x:** the −1 is inverse-function notation, never a reciprocal — cosecant is the reciprocal.  ·  **cos⁻¹(−x) = π − cos⁻¹x:** negative inputs in cosine's branch reflect about π/2; the value stays in [0, π]."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB 2024 (verified PYQ): Find the principal value of sin⁻¹(−1/2). (2m)** — Let θ = sin⁻¹(−1/2), so sin θ = −1/2 with **θ ∈ [−π/2, π/2]** (the principal branch). The reference angle with sine 1/2 is π/6; the negative sign puts θ in the **fourth quadrant** of the branch: **θ = −π/6**.…  ·  **NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — **cos⁻¹(√3/2)**: cosine's branch is [0, π]; the angle with cosine √3/2 there is **π/6**. **sin⁻¹(1/2)**: sine's branch is [−π/2, π/2]; the angle is **π/6**. Sum: **π/6 + π/6 = π/3**.…  ·  **NEB-style (3m): Prove that tan⁻¹(1/2) + tan⁻¹(1/3) = π/4.** — Since xy = (1/2)(1/3) = 1/6 < 1, the addition theorem applies directly: tan⁻¹(1/2) + tan⁻¹(1/3) = tan⁻¹((1/2 + 1/3)/(1 − 1/6)) = tan⁻¹((5/6)/(5/6)) = **tan⁻¹(1) = π/4** (principal value in (−π/2, π/2)).…"
     }
   ]
 }

@@ -25,18 +25,18 @@
       "label": "Concept",
       "text": "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the coefficient of linear expansion, $\\alpha$.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear Expansion and Its Measurement — quick idea map\"><title>Linear Expansion and Its Measurement — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Linear Expansion and Its Measurement</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear Expansion and Its Measurement — quick idea map\"><title>Linear Expansion and Its Measurement — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Linear Expansion and Its Measurement</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Linear expansion: Δl = l0</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">α ΔT, α = coefficient of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">linear expansion.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area expansion: ΔA = 2α A0</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ΔT; volume: ΔV = 3α V0 ΔT</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(β = 3α).</text></svg>",
         "caption": "Linear Expansion and Its Measurement — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "❌ $\\Delta L = L_0 \\alpha \\Delta T$ works for any temperature range. ✅ It is valid only for moderate $\\Delta T$ where $\\alpha$ is approximately constant.…\n❌ All solids expand at the same rate. ✅ Different materials have very different $\\alpha$ values. Invar ($\\alpha \\approx 1.2 \\times 10^{-6}$) expands 24 times less than aluminum ($\\alpha \\approx 24 \\times 10^{-6}$)."
+      "text": "Linear expansion: Δl = l0 α ΔT, α = coefficient of linear expansion.\nArea expansion: ΔA = 2α A0 ΔT; volume: ΔV = 3α V0 ΔT (β = 3α)."
     },
     {
       "label": "Conditions",
-      "text": "❌ The coefficient $\\alpha$ has units of temperature. ✅ $\\alpha$ has units of K⁻¹ (or °C⁻¹). It is a fractional change per degree, not an absolute change.  ·  ❌ A hole in a metal plate shrinks when heated. ✅ The hole EXPANDS — the material around it expands outward, making the hole larger. This is equivalent to a disk of the same material expanding."
+      "text": "❌ $\\Delta L = L_0 \\alpha \\Delta T$ works for any temperature range. ✅ It is valid only for moderate $\\Delta T$ where $\\alpha$ is approximately constant. For very large temperature ranges, $\\alpha$ varies and the formula becomes approximate.  ·  ❌ All solids expand at the same rate. ✅ Different materials have very different $\\alpha$ values. Invar ($\\alpha \\approx 1.2 \\times 10^{-6}$) expands 24 times less than aluminum ($\\alpha \\approx 24 \\times 10^{-6}$)."
     },
     {
       "label": "Special cases",
@@ -48,7 +48,7 @@
     },
     {
       "label": "Limitation",
-      "text": "❌ Linear expansion applies to liquids. ✅ Liquids do not have a fixed shape, so linear expansion is meaningless for them. Only cubical (volume) expansion is defined for liquids.  ·  ❌ The expansion gap for railway tracks should be as large as possible. ✅ The gap must be just large enough to prevent buckling. Too large a gap causes excessive noise and wear at the joints."
+      "text": "❌ The coefficient $\\alpha$ has units of temperature. ✅ $\\alpha$ has units of K⁻¹ (or °C⁻¹). It is a fractional change per degree, not an absolute change.  ·  ❌ A hole in a metal plate shrinks when heated. ✅ The hole EXPANDS — the material around it expands outward, making the hole larger. This is equivalent to a disk of the same material expanding."
     },
     {
       "label": "Derivation",
@@ -56,23 +56,27 @@
     },
     {
       "label": "Shortcut",
-      "text": "Invar (Fe-36%Ni) was invented by Charles Édouard Guillaume in 1896 specifically for its near-zero expansion. He won the Nobel Prize in Physics in 1920 for this discovery.  ·  Thermal expansion is exploited in \"shrink fitting\" — a metal ring is heated, placed over a shaft, and as it cools it contracts to form an extremely tight interference fit. This is used in bearing installation."
+      "text": "Trick 1: One formula family: l = l0(1 + αΔT); Δl = l0αΔT. Given any three of l, l0, α, ΔT, substitute directly — always keep temperatures in the SAME scale (difference is same in °C and K).  ·  Trick 2: α of the material decides the gap problem: a rod expands Δl = lαΔT; if a gap is smaller than Δl the rod buckles — classic 2-mark reasoning."
     },
     {
       "label": "Board question",
-      "text": "A brass pendulum clock keeps correct time at 20°C. How much does it lose per day at 40°C? $\\alpha_{brass} = 19 \\times 10^{-6}$ K⁻¹. Fractional period change: $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T = \\frac{1}{2} \\times 19 \\times 10^{-6} \\times 20 = 1.9 \\times 10^{-4}$. Loss per day: $1.9 \\times 10^{-4} \\times 86400 = 16.4$ seconds.  ·  A steel rod of length 1 m is rigidly fixed at both ends. If temperature rises by 50°C, find the thermal stress. $\\sigma = Y\\alpha\\Delta T = 200 \\times 10^9 \\times 12 \\times 10^{-6} \\times 50 = 120 \\times 10^6$ Pa = 120 MPa."
+      "text": "Q. A steel rod is 1 m at 0 °C; α = 1.2 × 10^-5 K^-1. Find its length at 40 °C. (2 marks) — l = 1(1 + 1.2e-5 × 40) = 1.00048 m.  ·  Q. Why are small gaps left between railway rails? (1 mark) — to allow thermal expansion in summer without buckling."
     },
     {
       "label": "Hints",
-      "text": "❌ Thermal stress depends only on $\\alpha$ and $\\Delta T$. ✅ Thermal stress is $\\sigma = Y\\alpha\\Delta T$ — it also depends on Young's modulus $Y$. A stiffer material develops more stress for the same constraint.",
+      "text": "❌ Linear expansion applies to liquids. ✅ Liquids do not have a fixed shape, so linear expansion is meaningless for them. Only cubical (volume) expansion is defined for liquids.  ·  ❌ The expansion gap for railway tracks should be as large as possible. ✅ The gap must be just large enough to prevent buckling. Too large a gap causes excessive noise and wear at the joints.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Linear Expansion and Its Measurement — topic mind map\"><title>Linear Expansion and Its Measurement — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Linear expansion and its measurement</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Linear expansion</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its measurement</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Linear Expansion and Its Measurement — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Key points",
+      "text": "Applications: bimetallic strips, expansion gaps in rails and bridges."
+    },
+    {
       "label": "Universal facts",
-      "text": "The Earth's crust experiences thermal expansion and contraction daily, contributing to weathering and rock fracturing. This is one of the most important physical weathering processes in geology."
+      "text": "Invar (Fe-36%Ni) was invented by Charles Édouard Guillaume in 1896 specifically for its near-zero expansion. He won the Nobel Prize in Physics in 1920 for this discovery.  ·  Thermal expansion is exploited in \"shrink fitting\" — a metal ring is heated, placed over a shaft, and as it cools it contracts to form an extremely tight interference fit. This is used in bearing installation."
     },
     {
       "label": "Study notes",
@@ -80,19 +84,23 @@
     },
     {
       "label": "More ideas",
-      "text": "A bimetallic strip is made of brass ($\\alpha = 19 \\times 10^{-6}$) and iron ($\\alpha = 12 \\times 10^{-6}$). When heated, which metal is on the outer side of the curve? Brass expands more, so it is on the OUTER side of the curve (the convex side). The strip curves with brass on the outside.  ·  A metal rod expands by 0.12% when heated from 0°C to 100°C. Find $\\alpha$. $\\frac{\\Delta L}{L_0} = 0.0012 = \\alpha \\times 100$. $\\alpha = 12 \\times 10^{-6}$ K⁻¹. This is typical of steel.  ·  **Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators."
+      "text": "❌ Thermal stress depends only on $\\alpha$ and $\\Delta T$. ✅ Thermal stress is $\\sigma = Y\\alpha\\Delta T$ — it also depends on Young's modulus $Y$. A stiffer material develops more stress for the same constraint.  ·  Trick 3: For a pendulum, length increase slows the clock: T ∝ √l; quote 'pendulum clocks lose time in summer' as the application.  ·  A brass pendulum clock keeps correct time at 20°C. How much does it lose per day at 40°C? $\\alpha_{brass} = 19 \\times 10^{-6}$ K⁻¹. Fractional period change: $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T = \\frac{1}{2} \\times 19 \\times 10^{-6} \\times 20 = 1.9 \\times 10^{-4}$.…"
     },
     {
       "label": "More ideas",
-      "text": "**Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs.  ·  **Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.  ·  **Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method."
+      "text": "A steel rod of length 1 m is rigidly fixed at both ends. If temperature rises by 50°C, find the thermal stress. $\\sigma = Y\\alpha\\Delta T = 200 \\times 10^9 \\times 12 \\times 10^{-6} \\times 50 = 120 \\times 10^6$ Pa = 120 MPa.  ·  A bimetallic strip is made of brass ($\\alpha = 19 \\times 10^{-6}$) and iron ($\\alpha = 12 \\times 10^{-6}$). When heated, which metal is on the outer side of the curve? Brass expands more, so it is on the OUTER side of the curve (the convex side). The strip curves with brass on the outside.  ·  A metal rod expands by 0.12% when heated from 0°C to 100°C. Find $\\alpha$. $\\frac{\\Delta L}{L_0} = 0.0012 = \\alpha \\times 100$. $\\alpha = 12 \\times 10^{-6}$ K⁻¹. This is typical of steel."
     },
     {
       "label": "More ideas",
-      "text": "**NEB exam focus:** State the formula $\\Delta L = L_0 \\alpha \\Delta T$. Explain the bimetallic strip principle. Describe Searle's apparatus for measuring $\\alpha$. Solve numerical problems involving expansion of rods, bridges, and railways.  ·  **Effect on precision instruments:** Clock pendulums expand with temperature, increasing their period and causing the clock to run slow. $T = 2\\pi\\sqrt{L/g}$, so $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T$. For steel ($\\alpha = 12 \\times 10^{-6}$), a 10°C rise causes the clock to lose about 5 seconds per day.  ·  **Composite rod problem:** Two rods of different materials joined end-to-end: total expansion $\\Delta L = L_{01}\\alpha_1\\Delta T + L_{02}\\alpha_2\\Delta T$. The junction shifts by the expansion of the first rod."
+      "text": "The Earth's crust experiences thermal expansion and contraction daily, contributing to weathering and rock fracturing. This is one of the most important physical weathering processes in geology.  ·  **Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators.  ·  **Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs."
     },
     {
       "label": "More ideas",
-      "text": "**Thermal stress:** If a rod is constrained from expanding, thermal stress develops: $\\sigma = Y\\alpha\\Delta T$, where $Y$ is Young's modulus. For steel ($Y = 200$ GPa, $\\alpha = 12 \\times 10^{-6}$), a 50°C constraint gives $\\sigma = 120$ MPa — significant structural stress.  ·  **Practical consequence:** Bridges have expansion joints. Glass bottles crack when hot water is poured in because the inner surface expands faster than the outer. Telephone wires sag more in summer than in winter."
+      "text": "**Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.  ·  **Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method.  ·  **NEB exam focus:** State the formula $\\Delta L = L_0 \\alpha \\Delta T$. Explain the bimetallic strip principle. Describe Searle's apparatus for measuring $\\alpha$. Solve numerical problems involving expansion of rods, bridges, and railways."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Effect on precision instruments:** Clock pendulums expand with temperature, increasing their period and causing the clock to run slow. $T = 2\\pi\\sqrt{L/g}$, so $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T$. For steel ($\\alpha = 12 \\times 10^{-6}$), a 10°C rise causes the clock to lose about 5 seconds per day.  ·  **Composite rod problem:** Two rods of different materials joined end-to-end: total expansion $\\Delta L = L_{01}\\alpha_1\\Delta T + L_{02}\\alpha_2\\Delta T$. The junction shifts by the expansion of the first rod.  ·  **Thermal stress:** If a rod is constrained from expanding, thermal stress develops: $\\sigma = Y\\alpha\\Delta T$, where $Y$ is Young's modulus. For steel ($Y = 200$ GPa, $\\alpha = 12 \\times 10^{-6}$), a 50°C constraint gives $\\sigma = 120$ MPa — significant structural stress."
     }
   ]
 }

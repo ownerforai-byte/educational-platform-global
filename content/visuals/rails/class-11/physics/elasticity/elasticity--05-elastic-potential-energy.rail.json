@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Elastic potential energy is stored in deformed bodies. For a spring, $U = \\frac{1}{2}kx^2$. For a material under stress, energy density $u = \\frac{1}{2} \\sigma \\epsilon$. Hysteresis loops represent energy dissipation, while the area under the stress-strain curve represents toughness.",
+      "text": "Stretching an elastic body stores **elastic potential energy** equal to the work done against the growing restoring force: $U = \\int_0^x kx'\\,dx' = \\frac{1}{2}kx^2 = \\frac{1}{2}Fx$ — the area under the F–x graph, a triangle because the force builds linearly from zero (NEB 2024: 50 N over 2 mm stores 0.05 J).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elastic Potential Energy — quick idea map\"><title>Elastic Potential Energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Elastic Potential Energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Added new rich content for</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">important Concepts.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Elastic potential energy</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is the work done against</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">restoring forces.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">For a spring, $U =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{1}{2}kx^2$.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Spring energy: $U =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{1}{2}kx^2 =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{1}{2}Fx$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elastic Potential Energy — quick idea map\"><title>Elastic Potential Energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Elastic Potential Energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Area under the F–x</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">graph** is the stored</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">energy — a triangle for…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$U = \\frac{1}{2}kx^2 =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{1}{2}Fx$; energy</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">density $u =</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- U = ½kx² = ½Fx - u =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">U/(AL) = ½σε = σ²/2Y</text></svg>",
         "caption": "Elastic Potential Energy — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Spring energy: $U = \\frac{1}{2}kx^2 = \\frac{1}{2}Fx$\nEnergy density: $u = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$\nWork done: $W = \\Delta U = \\frac{1}{2}k(x_2^2 - x_1^2)$"
+      "text": "- U = ½kx² = ½Fx - u = U/(AL) = ½σε = σ²/2Y"
     },
     {
       "label": "Conditions",
@@ -45,27 +45,27 @@
     },
     {
       "label": "Solved",
-      "text": "Spring: k = 400 N/m, x = 0.05 m → $U = 0.5 \\times 400 \\times (0.05)^2 = 0.5$ J.  ·  Wire: $\\sigma = 10^8$ Pa, $\\epsilon = 5 \\times 10^{-4} \\rightarrow u = 0.5 \\times 10^8 \\times 5 \\times 10^{-4} = 2.5 \\times 10^4$ J/m³."
+      "text": "***NEB 2024*** — 50 N over 2 mm: U = ½ × 50 × 0.002 = 0.05 J."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Energy stored is $kx^2$.' ✅ It is $\\frac{1}{2}kx^2$ — the factor of 1/2 comes from the average force $\\bar{F} = (0+kx)/2 = kx/2$.  ·  ❌ 'Energy density is $\\sigma \\epsilon$.' ✅ It is $\\frac{1}{2} \\sigma \\epsilon$ — again, the 1/2 factor from the triangular area under the stress-strain curve."
+      "text": "**Why the ½:** the force grows from 0 to F during stretching; only its average (F/2) acts over the extension.  ·  **U = ½kx² = ½Fx = σ²V/2Y** — three equivalent forms for wire problems."
     },
     {
       "label": "Derivation",
-      "text": "Added new rich content for important Tasks."
+      "text": "Added new rich content for important Tasks.  ·  Copy the worked example and hide the result until the last step."
     },
     {
       "label": "Shortcut",
-      "text": "Energy shortcut: $U = \\frac{1}{2}Fx$ — if you know force and extension, no need for k.  ·  Energy density: $u = \\frac{1}{2} \\sigma^2 / E$ — useful if you know stress and Young's modulus."
+      "text": "\"U = ½Fx — halve before multiplying.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Derive the expression for the elastic potential energy of a stretched spring.  ·  Q2. Define energy density and show that $u = \\frac{1}{2} \\sigma \\epsilon$."
+      "text": "**Numerical (3m): A wire with Y = 2×10¹¹ Pa is stressed to 2×10⁸ Pa. Find the energy density.** — u = σ²/2Y = (2×10⁸)²/(4×10¹¹) = 4×10¹⁶/4×10¹¹ = 10⁵ J/m³."
     },
     {
       "label": "Hints",
-      "text": "Be prepared to derive $U = \\frac{1}{2}kx^2$ using integration.  ·  Understand the difference between energy stored (elastic) and energy dissipated (hysteresis).",
+      "text": "The 2024 question chains from the k = 2.5×10⁴ N/m result — quote U = 0.05 J.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Elastic Potential Energy — topic mind map\"><title>Elastic Potential Energy — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Elastic potential energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Elastic potential energy</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Elastic Potential Energy — topic mind map of this topic's own sub-topics"
@@ -73,47 +73,35 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Added new rich content for important Concepts."
+      "text": "**Area under the F–x graph** is the stored energy — a triangle for Hooke's-law materials."
     },
     {
       "label": "Key points",
-      "text": "Elastic potential energy is the work done against restoring forces.  ·  For a spring, $U = \\frac{1}{2}kx^2$.  ·  Energy density $u = \\frac{1}{2} \\sigma \\epsilon$.  ·  Hysteresis loop area = energy dissipated per unit volume per cycle."
+      "text": "$U = \\frac{1}{2}kx^2 = \\frac{1}{2}Fx$; energy density $u = \\sigma\\epsilon/2 = \\sigma^2/2Y$."
     },
     {
       "label": "Universal facts",
-      "text": "The $\\frac{1}{2}kx^2$ formula is a specific case of the general potential energy $U = \\int F dx$.  ·  Hysteresis is the reason rubber bands heat up when stretched and released rapidly."
+      "text": "A car bumper crumple zone is designed to absorb KE by storing then dissipating elastic-plastic energy."
     },
     {
-      "label": "More practice",
-      "text": "Q3. A spring (k = 200 N/m) is stretched by 5 cm. Find the energy stored.  ·  Q4. A wire of length 2 m and area 1 mm² is stretched by 2 mm. Find the energy stored (E = 2×10¹¹ Pa).  ·  Q5. Explain the significance of the area of a hysteresis loop."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Work: Stretching from 0.1 m to 0.2 m (k=100) → $W = 0.5 \\times 100 \\times (0.2^2 - 0.1^2) = 1.5$ J."
+      "label": "MCQ drill",
+      "text": "Elastic energy is → B  ·  The one half comes from → A"
     },
     {
       "label": "Study notes",
-      "text": "**Elastic Potential Energy (U):** The energy stored in a deformed elastic body (like a spring or stretched wire) due to the work done against internal restoring forces. For a spring, $U = \\frac{1}{2}kx^2$.  ·  **Energy Density (u):** The elastic potential energy stored per unit volume. For a wire under tension, $u = \\frac{1}{2} \\times \\text{stress} \\times \\text{strain} = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$.  ·  **Work Done:** The work done to stretch a spring by $x$ is the area under the $F-x$ graph: $W = \\int_0^x F dx = \\int_0^x kx dx = \\frac{1}{2}kx^2$."
+      "text": "## 1. Topic Introduction — Energy in a Stretched Wire Stretch a spring and it stores energy — recoverable, mechanical, ready. The work done against the restoring force accumulates as **elastic potential energy**, the quantity that powers bows, catapults, clock springs and the recoil of every impact.  ·  ## 2. Fundamental Concepts (NEB 2024) ### 2.1 Derivation The restoring force grows linearly with extension (Hooke's law): at extension $x$, force $= kx$. Work done to stretch from 0 to $x$: $$U = \\int_0^x kx'\\,dx' = \\frac{1}{2}kx^2$$ Equivalently, the area under the F–x graph is a triangle: $U = \\frac{1}{2} \\times F \\times x = \\frac{1}{2}Fx$ (since F = kx).…  ·  ## 3. Conceptual Relationships - **To Topic 38:** U = ½kx² is the integral of Hooke's law. - **To Work-energy theorem (Topic 18):** the stored energy converts to kinetic energy on release. - **To collisions (Topic 21):** during impact, KE temporarily stores as elastic deformation energy. - **To spring PE in gravity problems:** bungee and catapult energy chains."
     },
     {
       "label": "More ideas",
-      "text": "**Hysteresis = Energy Dissipation:** The area of a hysteresis loop represents energy *dissipated* (lost as heat) per cycle, not energy stored. For conservative elastic materials (ideal springs, metals below yield), loading and unloading paths coincide, and the loop area is zero.  ·  Toughness = area under the stress-strain curve up to fracture.  ·  ❌ 'Hysteresis loop area is energy stored.' ✅ It is energy DISSIPATED (lost as heat) per cycle."
+      "text": "**Hysteresis = Energy Dissipation:** The area of a hysteresis loop represents energy *dissipated* (lost as heat) per cycle, not energy stored. For conservative elastic materials (ideal springs, metals below yield), loading and unloading paths coincide, and the loop area is zero.  ·  Hysteresis is important for materials subjected to cyclic loading (e.g., tires, engine mounts).  ·  NEB often asks for the derivation of $U = \\frac{1}{2}kx^2$ or the energy density formula."
     },
     {
       "label": "More ideas",
-      "text": "❌ 'Elastic potential energy is only for springs.' ✅ It applies to any elastic deformation (wires, beams, bulk compression) where work is done against restoring forces.  ·  Hysteresis is important for materials subjected to cyclic loading (e.g., tires, engine mounts).  ·  NEB often asks for the derivation of $U = \\frac{1}{2}kx^2$ or the energy density formula."
+      "text": "Verified PYQ: energy stored (2024, 3m).  ·  \"The work done in stretching a wire is stored as elastic potential energy.\"  ·  Where does the energy go when a stretched wire is released slowly?"
     },
     {
       "label": "More ideas",
-      "text": "Energy density $u = \\frac{1}{2} \\sigma \\epsilon$ is valid only within the elastic limit.  ·  Hysteresis is a characteristic of non-linear, dissipative elastic materials.  ·  Toughness is the total energy a material can absorb before fracture."
-    },
-    {
-      "label": "More ideas",
-      "text": "Elastic potential energy is the work done to deform an elastic body.  ·  Energy density is the energy stored per unit volume.  ·  Hysteresis loop area represents energy dissipated as heat."
-    },
-    {
-      "label": "More ideas",
-      "text": "Hysteresis: loop area = energy lost — larger loop means more damping.  ·  A spring (k = 500 N/m) is stretched by 10 cm. Find the stored energy.  ·  A steel wire (L = 2 m, A = 1 mm², E = 2×10¹¹ Pa) is stretched by 1 mm. Find the stored energy and energy density."
+      "text": "Name the unit of every term in the formula.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Mechanics | Elasticity | How much energy is stored in the wire of the previous question when stretched by the 50 N load? |…"
     }
   ]
 }

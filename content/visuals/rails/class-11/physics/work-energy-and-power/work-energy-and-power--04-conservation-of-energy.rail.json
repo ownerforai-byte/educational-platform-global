@@ -25,20 +25,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Energy cannot be created or destroyed — only transformed. When only conservative forces act, mechanical energy (K + U) is conserved. Non-conservative forces (friction) convert mechanical energy to heat, but total energy is always conserved. The work-energy theorem (W_net = ΔK) is the key tool for solving problems.",
+      "text": "Energy is never created or destroyed — it only changes form. The freely falling body proves it: dropped from height h, a body carries PE = mgh at the top, mgh/2 + mgh/2 halfway down, and KE = ½m(2gh) = mgh just before landing — the total stays mgh at every instant (NEB 2020, 2024). Gravity is the bookkeeper: PE drains into KE at exactly the rate height falls, so $v = \\sqrt{2gh}$ is conservation solved for speed.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Conservation of Energy — quick idea map\"><title>Conservation of Energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Conservation of Energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Energy cannot be created</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">or destroyed — only</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">transformed from one form</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mechanical energy (K + U)</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is conserved when only</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">conservative forces do</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mechanical energy (K + U)</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is conserved ONLY when all</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">forces are conservative.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Friction and air</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">resistance are</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">non-conservative — they</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Conservation of Energy — quick idea map\"><title>Conservation of Energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Conservation of Energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**PE loss prices KE gain</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">exactly:** v² = 2gh is</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">energy conservation</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Law: energy changes form;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">total of an isolated</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">system is constant.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Free-fall verification:</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">top PE = mgh; mid PE+KE =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mgh; ground KE = mgh —…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- KE + PE = constant</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(conservative forces) -</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mgh = ½mv² → v = √(2gh) -</text></svg>",
         "caption": "Conservation of Energy — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Mechanical energy conservation: K_i + U_i = K_f + U_f (only conservative forces)\nWork-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²\nWork by non-conservative forces: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)"
+      "text": "- KE + PE = constant (conservative forces) - mgh = ½mv² → v = √(2gh) - With friction: KE₁ + PE₁ = KE₂ + PE₂ + heat"
     },
     {
       "label": "Conditions",
-      "text": "Energy is NOT created or destroyed — it only transforms. When a pendulum stops swinging due to friction, the energy doesn't 'disappear'; it becomes thermal energy in the air and the pivot. The FIRST law of thermodynamics says energy is conserved in all processes.  ·  Conservation of mechanical energy (K + U = constant) ONLY holds when ALL forces are conservative. If there is ANY friction, air resistance, or non-conservative force, mechanical energy is NOT conserved. You must include W_nc or track thermal energy."
+      "text": "**Mechanical vs total energy conservation:** mechanical (KE+PE) survives only conservative forces; total energy (including heat) always survives.  ·  **Energy vs momentum conservation:** both hold for isolated systems, but energy is a scalar ledger and momentum a vector one — collisions use them differently."
     },
     {
       "label": "Special cases",
@@ -46,11 +46,11 @@
     },
     {
       "label": "Solved",
-      "text": "Pendulum: A 2 kg bob is released from 0.5 m above the lowest point. Speed at bottom: mgh = ½mv² → v = √(2×9.8×0.5) = 3.13 m/s.  ·  Spring-mass: A 0.5 kg mass on a spring (k = 200 N/m) compressed 0.1 m. Max speed: ½kA² = ½mv² → v = √(200×0.01/0.5) = 2 m/s."
+      "text": "***Falling body table*** — mgh at top = mgh/2 + mgh/2 midway = mgh at the ground."
     },
     {
       "label": "Limitation",
-      "text": "Potential energy is NOT absolute — it is defined relative to an arbitrary zero point. A ball on a table has U = mgh relative to the floor, but U = mg(h+H) relative to the basement. Only PE differences matter physically.  ·  In a collision, momentum is ALWAYS conserved (if no external forces). Kinetic energy is ONLY conserved in perfectly ELASTIC collisions. Many students think KE is always conserved in collisions — it is NOT. Real collisions are usually somewhat inelastic."
+      "text": "Verified PYQs: mechanical energy of a falling body (2024, 3m); law + verification (2020, 3m)."
     },
     {
       "label": "Derivation",
@@ -58,15 +58,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Smooth surface shortcut: mgh = ½mv² — mass cancels, so v = √(2gh) independent of mass.  ·  Spring shortcut: ½kA² = ½mv² — max speed v = A√(k/m)."
+      "text": "\"Top mgh, mid mgh, ground mgh — the table is the proof.\""
     },
     {
       "label": "Board question",
-      "text": "A 0.2 kg ball is dropped from 15 m. Find its speed just before hitting the ground.  ·  A 1.5 kg mass on a spring (k = 300 N/m) is stretched 0.2 m and released. Find the maximum speed."
+      "text": "**Numerical (3m): A 0.5 kg ball is dropped from 20 m. Find its KE and speed 5 m above the ground (g = 10).** — PE lost = mgΔh = 0.5 × 10 × 15 = 75 J = KE; v = √(2×75/0.5) = √300 = 17.3 m/s."
     },
     {
       "label": "Hints",
-      "text": "Mechanical energy conservation (K_i + U_i = K_f + U_f) is the most common problem type.  ·  Work-energy theorem (W_net = ΔK) is more general — use it when friction is present.",
+      "text": "Most-tested: the free-fall verification (2020, 2024). Show all three positions for full marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Conservation of Energy — topic mind map\"><title>Conservation of Energy — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Conservation of energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Conservation of energy</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Conservation of Energy — topic mind map of this topic's own sub-topics"
@@ -74,27 +74,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Energy cannot be created or destroyed — only transformed from one form to another.  ·  Mechanical energy (K + U) is conserved when only conservative forces do work.  ·  The work-energy theorem (W_net = ΔK) holds for all forces, conservative or not.  ·  Non-conservative forces convert mechanical energy into thermal energy."
+      "text": "**PE loss prices KE gain exactly:** v² = 2gh is energy conservation solved for speed."
     },
     {
       "label": "Key points",
-      "text": "Mechanical energy (K + U) is conserved ONLY when all forces are conservative.  ·  Friction and air resistance are non-conservative — they convert mechanical energy to heat.  ·  The work-energy theorem (W_net = ΔK) holds for ALL forces, conservative or not.  ·  Total energy (including thermal) is always conserved — this is the first law of thermodynamics."
+      "text": "Law: energy changes form; total of an isolated system is constant.  ·  Free-fall verification: top PE = mgh; mid PE+KE = mgh; ground KE = mgh — total constant throughout.  ·  Friction degrades mechanical energy to heat, but total energy still balances."
     },
     {
       "label": "Universal facts",
-      "text": "The law of conservation of energy is the first law of thermodynamics and applies to ALL physical processes — mechanics, electromagnetism, thermodynamics, quantum mechanics, general relativity. It is the most fundamental and universal law in physics.  ·  Emmy Noether proved (1918) that conservation of energy is a consequence of time translation symmetry: the laws of physics are the same at all times. This is Noether's theorem — every continuous symmetry implies a conserved quantity."
-    },
-    {
-      "label": "More practice",
-      "text": "A 600 kg roller coaster car starts at 25 m height. Find its speed at the bottom and at 10 m height.  ·  A 0.5 kg pendulum bob is pulled to 30° from vertical (length 1.2 m). Find its speed at the lowest point.  ·  A 2 kg block slides down a rough 40° slope (μ_k = 0.2) of length 8 m. Find the speed at the bottom."
-    },
-    {
-      "label": "More hints",
-      "text": "Pendulum and spring problems are standard — know the energy oscillation formulas.  ·  Roller coaster and free-fall problems use mgh = ½mv² (smooth surface)."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Roller coaster: A 500 kg car starts at 20 m height. Speed at bottom: v = √(2×9.8×20) = 19.8 m/s.  ·  Free fall: A 1 kg stone dropped from 45 m. Speed at ground: v = √(2×9.8×45) = 29.7 m/s."
+      "text": "Nepal's hydropower converts falling water's potential energy to electricity — the same conservation law at national scale."
     },
     {
       "label": "MCQ drill",
@@ -102,15 +90,7 @@
     },
     {
       "label": "Study notes",
-      "text": "**Law of conservation of energy:** Energy can neither be created nor destroyed; it can only be transformed from one form to another or transferred between systems. The total energy of an isolated system remains constant over time.  ·  **Mechanical energy conservation:** When only conservative forces (gravity, spring force, electrostatic force) act on a system, mechanical energy E = K + U is conserved: ΔK + ΔU = 0, or K_i + U_i = K_f + U_f.  ·  **Potential energy types:** Gravitational PE near Earth: U_g = mgh (h = height above reference). Elastic PE of a spring: U_s = ½kx² (x = compression/extension from natural length). For a universal gravitational field: U = -GMm/r."
-    },
-    {
-      "label": "More ideas",
-      "text": "Total energy (mechanical + thermal + other) is always conserved in an isolated system.  ·  Gravitational PE: U_g = mgh (near Earth); U = −GMm/r (universal)  ·  Elastic PE: U_s = ½kx²; total spring energy: ½mv² + ½kx² = ½kA²"
-    },
-    {
-      "label": "More ideas",
-      "text": "Choose the reference level for PE at the lowest point to simplify calculations.  ·  The work-energy theorem (W_net = ΔK) and energy conservation (ΔK + ΔU = -W_nc) are DIFFERENT. The first is about NET work changing kinetic energy. The second is about total mechanical energy. With conservative forces, W_net = -ΔU, so W_net + ΔU = ΔK, which is the work-energy theorem.  ·  Inclined plane: A 3 kg block slides down a smooth 30° slope of length 10 m. Speed at bottom: v = √(2×9.8×5) = 9.9 m/s (h = 10 sin 30° = 5 m)."
+      "text": "## 1. Topic Introduction — The Ledger That Never Fails Energy changes form — kinetic, potential, heat, sound, light, chemical — but the total of an isolated system never changes. The freely falling body is the standard proof: mgh drains into ½mv² at exactly the rate height is lost (NEB 2020, 2024).  ·  ## 2. Fundamental Concepts **Law of conservation of energy:** energy can neither be created nor destroyed; it only changes from one form to another — the total energy of an isolated system is constant. ### 2.1 Verification for a freely falling body (NEB 2020, 2024 — 3m) Take a body of mass m dropped from height h (air resistance neglected, ground as the zero of PE): | Position…  ·  ## 3. Worked Numericals **Q1:** A 2 kg ball is dropped from 45 m. Find its KE and speed at 20 m above the ground (g = 10). PE lost = mgΔh = 2 × 10 × 25 = 500 J = KE gained. $v = \\sqrt{2KE/m} = \\sqrt{500} = 22.4$ m/s. **Q2:** A pendulum bob swings; at the lowest point its speed is 3 m/s. Find the height it rises to (g = 10).…"
     },
     {
       "label": "More ideas",
@@ -118,11 +98,15 @@
     },
     {
       "label": "More ideas",
-      "text": "The work-energy theorem (W_net = ΔK) works for ALL forces — it is more general than energy conservation.  ·  The reference level for gravitational PE is arbitrary — choose it at the lowest point to simplify.  ·  In a spring-mass system, energy oscillates: ½mv² + ½kx² = ½kA² = constant."
+      "text": "\"Energy is never lost — only change.  ·  Where does a bouncing ball's energy go after it stops?  ·  Solve 5 spring-mass problems finding maximum speed."
     },
     {
       "label": "More ideas",
-      "text": "The law of conservation of energy: energy cannot be created or destroyed, only transformed.  ·  The work-energy theorem states that the net work on a body equals its change in kinetic energy.  ·  Non-conservative forces (friction) convert mechanical energy into thermal energy."
+      "text": "Solve 5 roller coaster problems finding speed at different heights.  ·  Solve 5 rough-slope problems using the work-energy theorem with friction.  ·  ## 4. Conceptual Relationships - **To Topic 18:** conservation is the WET with conservative forces only — work done by gravity reappears as PE loss. - **To Topic 20:** conservative forces permit PE bookkeeping; friction breaks mechanical conservation but not total-energy conservation.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Exam Orientation and Previous Year Questions (NEB) ### 5.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Work & Energy | Conservation | Show that the total mechanical energy of a freely falling body is conserved (neglect air…"
     }
   ]
 }

@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Thin lenses — lens maker's formula and power of lens (Ray Optics, Physics, class-12-notes) covers Thin lenses — lens maker's formula, power of lens. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The lens-maker formula builds 1/f from the index and the two radii. A symmetric convex lens of index 1.50 and radii 20 cm has f = 20 cm. Power is 1/f in metres, so that lens is 5.0 D. The imaging equation is 1/v − 1/u = 1/f.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Thin lenses — lens maker's formula and power of lens — quick idea map\"><title>Thin lenses — lens maker's formula and power of lens — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Thin lenses — lens maker's formula and power</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">of lens</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Thin lenses — lens</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">maker's formula</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Power of lens</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1/f = (μ−1)(1/R₁ − 1/R₂)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P = 1/f</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Thin lenses — lens maker's formula and power of lens — quick idea map\"><title>Thin lenses — lens maker's formula and power of lens — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Thin lenses — lens maker's formula and power</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">of lens</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Lens maker</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dioptre</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A convex lens has positive</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">power.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The lens-maker formula</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">uses both radii.</text></svg>",
         "caption": "Thin lenses — lens maker's formula and power of lens — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Thin lenses — lens maker's formula\" as one blob → ✅ split into: thin lenses — lens maker's formula, power of lens.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
+      "text": "A 2 D lens has f = 0.50 m.  ·  μ is the index of the glass relative to the surrounding medium."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A thin convex lens is thicker in the middle and converges parallel rays to a real focus. A concave lens is thinner in the middle and diverges them. In the Cartesian convention a convex lens in air has positive f.  ·  The lens-maker formula is 1/f = (μ − 1) (1/R1 − 1/R2). The signs of the radii follow the same convention: a surface whose centre is to the right of the surface has a positive radius when light travels to the right."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Thin lenses — lens maker's formula and power of lens — Ray Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: thin lenses — lens maker's formula, power of lens · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "P = 1/f in metres.  ·  Symmetric convex: the two radii add in the bracket."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Thin lenses — lens maker's formula and power of lens\" with one example.  ·  compare \"Thin lenses — lens maker's formula\" with the related idea from a neighbouring unit."
+      "text": "Write the lens-maker formula.  ·  What is the unit of power?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Thin lenses — lens maker's formula and power of lens — topic mind map\"><title>Thin lenses — lens maker's formula and power of lens — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Thin lenses — lens maker's formula and power …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Thin lenses — lens</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">maker's formula</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Power of lens</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Thin lenses — lens maker's formula and power of lens — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Lens maker  ·  Dioptre  ·  Convex and concave  ·  Thin-lens equation"
+    },
+    {
       "label": "Key points",
-      "text": "• Thin lenses — lens maker's formula  ·  • Power of lens"
+      "text": "A convex lens has positive power.  ·  The lens-maker formula uses both radii.  ·  Power in dioptres needs f in metres.  ·  A shorter focal length is a stronger lens."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Thin lenses — lens maker's formula and power of lens\" and verify the answer is plausible."
+      "text": "What is the sign of f for a convex lens in air?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A symmetric double-convex lens has μ = 1.50 and both radii of magnitude 20 cm. Find f and the power."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Thin lenses — lens maker's formula and power of lens\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The lens-maker formula is → A  ·  Power in dioptres uses f in → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  **Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).  ·  **Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "For a symmetric double-convex lens, R1 is positive and R2 is negative, so the two terms add. A higher index or a tighter curve means a shorter focal length.  ·  The power is P = 1/f with f in metres. The unit is the dioptre. A lens of f = 0.25 m has power 4 D. Two thin lenses in contact have powers that add.  ·  The thin-lens equation is 1/v − 1/u = 1/f. A real object has negative u. A real image on the far side has positive v."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: thin lenses — lens maker's formula, power of lens.  ·  one worked example for \"Thin lenses — lens maker's formula and power of lens\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..  ·  Power uses metres, not centimetres.  ·  R2 for the second convex surface is negative in this convention."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  **Power of lens.** one-line definition + one-line exam use."
+      "text": "A concave lens has negative power.  ·  The lens formula is 1/v − 1/u, not the mirror's plus sign.  ·  Convert f to metres before calling the result dioptres."
+    },
+    {
+      "label": "More ideas",
+      "text": "Draw the sign of each radius.  ·  Write 1/f = (μ − 1) (1/R1 − 1/R2) and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe).  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  The formula assumes a thin lens and paraxial rays. A thick lens or a ray far from the axis needs a more careful treatment, and the simple power is then only a start.  ·  # Thin lenses — lens maker's formula and power of lens ## 1. Introduction Physical picture of **Thin lenses — lens maker's formula and power of lens** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

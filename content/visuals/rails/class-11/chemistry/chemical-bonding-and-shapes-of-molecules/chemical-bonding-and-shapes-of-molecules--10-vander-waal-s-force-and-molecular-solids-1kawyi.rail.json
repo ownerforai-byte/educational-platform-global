@@ -30,20 +30,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental. Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.…",
+      "text": "Between molecules, the forces are a ladder: **London dispersion** (universal, growing with electron count — the reason I₂ is solid and Cl₂ gaseous), **Debye** and **Keesom** dipole terms, and above them the **hydrogen bond** — X–H ⋯ Y where X and Y are small, electronegative F, O or N, worth 5–40 kJ mol⁻¹.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vander Waals Forces, Molecular Solids and Hydrogen Bonding — quick idea map\"><title>Vander Waals Forces, Molecular Solids and Hydrogen Bonding — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Vander Waals Forces, Molecular Solids and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Hydrogen Bonding</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 10</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vander waal s force and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">molecular solids hydrogen…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 10 vander</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">waal s force and molecular</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">solids hydrogen bonding…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F = m \\cdot a$ (relevant</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula for 10 vander waal</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">s force and molecular…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vander Waals Forces, Molecular Solids and Hydrogen Bonding — quick idea map\"><title>Vander Waals Forces, Molecular Solids and Hydrogen Bonding — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Vander Waals Forces, Molecular Solids and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Hydrogen Bonding</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Two anomalous-property</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">generators: (1) H-bond</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">count per molecule —</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Intermolecular ladder:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">London dispersion</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(universal, ∝</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- H-bond energy: 5–40 kJ</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mol⁻¹ (vs O–H covalent</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">463) - Boiling points:</text></svg>",
         "caption": "Vander Waals Forces, Molecular Solids and Hydrogen Bonding — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$F = m \\cdot a$ (relevant formula for 10 vander waal s force and molecular solids hydrogen bonding and its application)"
+      "text": "- H-bond energy: 5–40 kJ mol⁻¹ (vs O–H covalent 463) - Boiling points: H₂O 100, H₂S −60, HF 19.5, HCl −85, NH₃ −33, PH₃ −87.7 °C - Ice density 0.92 g cm⁻³ < water 1.00 - Halogen bp: F₂ −188, Cl₂ −34, Br₂ 59, I₂ 184 °C"
     },
     {
       "label": "Conditions",
-      "text": "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.  ·  ❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons."
+      "text": "**H-bond strength vs covalent strength:** an H-bond is ~10× weaker than the O–H covalent bond (5–40 vs 463 kJ mol⁻¹) — boiling breaks H-bonds, not covalent bonds; water does not decompose at 100 °C.  ·  **\"van der Waals\" as umbrella:** the term covers dispersion + Debye + Keesom; the hydrogen bond is usually treated separately because it is far stronger and directional."
     },
     {
       "label": "Special cases",
@@ -51,11 +51,11 @@
     },
     {
       "label": "Solved",
-      "text": "H₂O: sp³, 2BP+2LP → bent  ·  CO₂: sp, 2BP+0LP → linear"
+      "text": "***DNA's zipper*** — A=T held by 2 H-bonds, G≡C by 3: weak individually, but thousands in sequence give a stable double helix that still unzips for replication — hydrogen bonding doing information storage."
     },
     {
       "label": "Limitation",
-      "text": "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).  ·  ❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments."
+      "text": "Verified PYQs: NEB 2024 (bank 02) — hydrogen bonding definition + water's high bp (solved above); NEB 2024 (bank 04) — NH₃ vs PH₃ boiling points (solved above; the shape aspect was used in topic 32). Other items are NEB-style practice."
     },
     {
       "label": "Derivation",
@@ -63,15 +63,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Vander Waals Forces, Molecular Solids and Hydrogen Bonding."
+      "text": "H-bond recipe: \"small + electronegative (F, O, N) + lone pair\". bp anomalies: H₂O 100, HF 19.5, NH₃ −33 — each far above its group neighbours. Ice density 0.92; o-nitrophenol steam-volatile."
     },
     {
       "label": "Board question",
-      "text": "Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
+      "text": "**NEB 2024 (3m): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — **Definition:** a hydrogen bond is the electrostatic attraction between a hydrogen atom covalently bonded to a small, highly electronegative atom (F, O or N) and a lone pair on another electronegative atom — written X–H ⋯ Y.…  ·  **NEB 2024 (2m): Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.** — Both molecules are pyramidal with a lone pair, but the bonding differs: in **NH₃** nitrogen is small and highly electronegative (3.0), the N–H bonds are strongly polar, and neighbouring molecules link through…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 10 vander waal s force and molecular solids hydrogen bonding and its application.",
+      "text": "For the water question, draw one central H₂O with four dashed H-bonds (2 donated, 2 accepted) — the diagram earns the \"network\" marks even before the comparison with H₂S.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Vander Waals Forces, Molecular Solids and Hydrogen Bonding — topic mind map\"><title>Vander Waals Forces, Molecular Solids and Hydrogen Bonding — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Vander Waal's force and molecular solids; hyd…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Vander Waal's force</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Molecular solids</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Hydrogen bonding</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its application</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Vander Waals Forces, Molecular Solids and Hydrogen Bonding — topic mind map of this topic's own sub-topics"
@@ -79,130 +79,43 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 10 vander waal s force and molecular solids hydrogen bonding and its application."
+      "text": "Two anomalous-property generators: (1) H-bond count per molecule — water's four-connectivity beats HF's chains and NH₃'s lower donor capacity, which is why water's bp rise is the largest of the trio; (2) intramolecular H-bonds subtract from intermolecular association."
     },
     {
       "label": "Key points",
-      "text": "Core point for 10 vander waal s force and molecular solids hydrogen bonding and its application."
+      "text": "Intermolecular ladder: London dispersion (universal, ∝ polarisability/size) < Debye < Keesom < hydrogen bond (5–40 kJ mol⁻¹, X–H ⋯ Y with F/O/N). Molecular solids: soft, low mp, insulators (I₂, dry ice, naphthalene).…"
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 10 vander waal s force and molecular solids hydrogen bonding and its application."
+      "text": "Gecko feet and the surface tension of water both trace to intermolecular attractions; capillary rise in soil and xylem is cohesion (H-bonds) plus adhesion."
     },
     {
       "label": "More practice",
-      "text": "Practice identifying limiting reagents in stoichiometric calculations.  ·  Practice calculating percent yield from experimental data.  ·  Practice converting between molarity and molality."
+      "text": "**NEB-style (2m): Why is ice less dense than liquid water, and what follows for aquatic life?** — In ice, every oxygen atom is tetrahedrally hydrogen-bonded to four neighbouring oxygens, producing an **open hexagonal lattice** with about 11% empty space; density ≈ **0.92 g cm⁻³**.…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 10 vander waal s force and molecular solids hydrogen bonding and its application? → A"
+      "text": "Question about 10 vander waal s force and molecular solids hydrogen bonding and its application? → A  ·  The strongest intermolecular force listed here is: → D"
     },
     {
       "label": "Study notes",
-      "text": "VSEPR theory predicts molecular geometry from electron pairs.  ·  sp³: 4 pairs → tetrahedral (109.5°).  ·  sp²: 3 pairs → trigonal planar (120°)."
+      "text": "## 1. Topic Introduction — The Weak Forces That Hold Matter Together Covalent bonds build molecules; **intermolecular forces** decide whether those molecules are gas, liquid or solid. Weakest to strongest: London dispersion → Debye (dipole-induced) → Keesom (dipole-dipole) → hydrogen bond.…  ·  ## 2. Fundamental Concepts ### 2.1 van der Waals forces — the three tiers - **London dispersion forces (instantaneous dipole–induced dipole):** electron clouds flicker; a momentary dipole induces one in the neighbour. Present in **all** molecules; the *only* force in nonpolar ones (N₂, noble gases).…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Value to quote | |---|---|---| | **London dispersion** | Instantaneous dipole induces dipole in neighbour | Universal; ∝ polarisability | | **Keesom / Debye** | Dipole–dipole / dipole–induced-dipole | Permanent-dipole involvement | | **Hydrogen bond** | X–H ⋯ Y attraction, X/Y = F, O, N | 5–40 kJ mol⁻¹ | | **Molecular…"
     },
     {
       "label": "More ideas",
-      "text": "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.  ·  ❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.  ·  ❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field)."
+      "text": "\"Hydrogen bonding is the electrostatic attraction between a hydrogen atom bonded to a highly electronegative atom (F, O, N) and a lone pair of another electronegative atom.\"  ·  Why is the boiling point of ethanol (78 °C) far above that of its isomer dimethyl ether (−24 °C)?  ·  Account for the boiling-point climb F₂ → I₂ using dispersion-force reasoning."
     },
     {
       "label": "More ideas",
-      "text": "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.  ·  ❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...  ·  ❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins."
+      "text": "Explain why o-nitrophenol is steam-volatile but p-nitrophenol is not.  ·  ## 4. Detailed Explanation ### 4.1 Verified PYQ (NEB 2024/02): what is hydrogen bonding? Why does water boil so high? - **Definition** (section 2.3) with the X–H ⋯ Y sketch and the F/O/N restriction.…  ·  ## 5. Comparison Tables **Intermolecular forces ranked** | Force | Between | Relative strength | Example | |---|---|---|---| | London dispersion | All molecules | Weakest (grows with size) | I₂ solid, N₂ liquid at 77 K | | Debye | Permanent + nonpolar | Weak | HCl ⋯ Ar | | Keesom | Two permanent dipoles | Weak | HCl ⋯…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.  ·  ❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.  ·  ❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units."
+      "text": "## 6. Common Confusions **Hydrogen bonding needs F, O, N — not just any H:** C–H hydrogens are barely positive (C EN 2.5); CH₄ cannot hydrogen-bond. Chlorine, though EN 3.0, is too large for the close approach — HCl's \"H-bond\" is negligible.  ·  **Intramolecular H-bonds lower, not raise, boiling points:** the bond is spent inside the molecule, leaving less for intermolecular association (o- vs p-nitrophenol).  ·  **Dispersion forces are not \"nothing\":** they exist in every molecule, including water — they are simply dwarfed by the H-bond network there."
     },
     {
       "label": "More ideas",
-      "text": "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).  ·  ❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.  ·  ❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent)."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.  ·  ❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).  ·  ❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K."
+      "text": "## 7. Exam Application **Verified PYQ (NEB 2024/02): What is hydrogen bonding? Explain why water has an unusually high boiling point.** — Hydrogen bonding is the electrostatic attraction between a hydrogen atom covalently bonded to a highly electronegative small atom (F, O or N) and a lone pair on another…  ·  **Verified PYQ (NEB 2024/04): Ammonia has a higher boiling point than phosphine. Explain.** — NH₃: N is small and electronegative (3.0); N–H bonds are strongly polar; ammonia molecules link through N–H ⋯ N hydrogen bonds, so extra energy is needed to separate them — bp −33 °C.…  ·  **NEB-style (2m): Why is ice less dense than liquid water?** — In ice, every oxygen is tetrahedrally hydrogen-bonded to four neighbours, producing an open hexagonal lattice with ≈11% unoccupied space (density 0.92 g cm⁻³).…"
     }
-  ],
-  "keyPoints": [
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is a core concept in chemical bonding and shapes of molecules.",
-    "Understanding 10 vander waal s force and molecular solids 1kawyi requires knowing its definition, conditions, and limitations.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 10 vander waal s force and molecular solids 1kawyi must be memorized precisely.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi connects to neighbouring topics within chemical bonding and shapes of molecules and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 10 vander waal s force and molecular solids 1kawyi.",
-    "Practical examples solidify understanding of 10 Vander Waal S Force And Molecular Solids 1kawyi and its real-world relevance.",
-    "Misconceptions about 10 vander waal s force and molecular solids 1kawyi often arise from confusing it with similar concepts.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi follows systematic rules that can be applied step-by-step.",
-    "Review of 10 vander waal s force and molecular solids 1kawyi should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is defined by its specific characteristics within chemical bonding and shapes of molecules.",
-    "The conditions under which 10 vander waal s force and molecular solids 1kawyi applies are as important as the concept itself.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 10 vander waal s force and molecular solids 1kawyi through application-based and comparison questions.",
-    "A clear grasp of 10 Vander Waal S Force And Molecular Solids 1kawyi builds the foundation for advanced topics in chemical bonding and shapes of molecules."
-  ],
-  "importantNotes": [
-    "When studying 10 vander waal s force and molecular solids 1kawyi, always note the exceptions alongside the general rule.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi should be reviewed with at least one worked example per sub-point.",
-    "Link 10 vander waal s force and molecular solids 1kawyi back to prior knowledge in chemical bonding and shapes of molecules for deeper retention.",
-    "Practice past NEB board questions on 10 Vander Waal S Force And Molecular Solids 1kawyi to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 10 Vander Waal S Force And Molecular Solids 1kawyi: apply the standard definition to a simple case.",
-    "Intermediate example: combine 10 vander waal s force and molecular solids 1kawyi with a related concept from chemical bonding and shapes of molecules.",
-    "Exam-style problem: solve a question involving 10 Vander Waal S Force And Molecular Solids 1kawyi under time pressure.",
-    "Real-world connection: show how 10 Vander Waal S Force And Molecular Solids 1kawyi appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 10 Vander Waal S Force And Molecular Solids 1kawyi and state two conditions required for it to occur.",
-    "Differentiate 10 Vander Waal S Force And Molecular Solids 1kawyi from the most commonly confused concept in chemical bonding and shapes of molecules.",
-    "Solve a numerical or structural problem involving 10 Vander Waal S Force And Molecular Solids 1kawyi.",
-    "List three applications of 10 Vander Waal S Force And Molecular Solids 1kawyi in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 10 Vander Waal S Force And Molecular Solids 1kawyi without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 10 Vander Waal S Force And Molecular Solids 1kawyi.",
-    "Create three flashcards covering definition, formula, and limitation of 10 Vander Waal S Force And Molecular Solids 1kawyi."
-  ],
-  "universalFacts": [
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is part of the NEB Class 11 chemical bonding and shapes of molecules syllabus.",
-    "Every concept in chemical bonding and shapes of molecules builds upon definitions established earlier in the chapter.",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is assessed through both short-answer and long-answer board questions.",
-    "Understanding 10 Vander Waal S Force And Molecular Solids 1kawyi improves performance across the entire chemical bonding and shapes of molecules unit.",
-    "Revision of 10 Vander Waal S Force And Molecular Solids 1kawyi should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 10 Vander Waal S Force And Molecular Solids 1kawyi with closely related concepts in chemical bonding and shapes of molecules — focus on distinguishing features.",
-    "The scope of 10 Vander Waal S Force And Molecular Solids 1kawyi is sometimes overstated; remember its precise boundaries.",
-    "Applying 10 Vander Waal S Force And Molecular Solids 1kawyi outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 10 Vander Waal S Force And Molecular Solids 1kawyi and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 10 Vander Waal S Force And Molecular Solids 1kawyi? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is primarily studied under which branch of chemical bonding and shapes of molecules? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 10 Vander Waal S Force And Molecular Solids 1kawyi is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical bonding and shapes of molecules — Answer: B",
-    "Which example correctly illustrates 10 Vander Waal S Force And Molecular Solids 1kawyi? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "10 Vander Waal S Force And Molecular Solids 1kawyi differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 10 Vander Waal S Force And Molecular Solids 1kawyi.",
-    "Step-by-step animated derivation of the key relationship in 10 Vander Waal S Force And Molecular Solids 1kawyi.",
-    "Interactive toggle between correct and incorrect representations of 10 Vander Waal S Force And Molecular Solids 1kawyi."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 10 Vander Waal S Force And Molecular Solids 1kawyi.",
-    "Side-by-side comparison animation of 10 Vander Waal S Force And Molecular Solids 1kawyi vs commonly confused concept.",
-    "Timelapse build-up of 10 Vander Waal S Force And Molecular Solids 1kawyi from prerequisite knowledge in chemical bonding and shapes of molecules."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 10 Vander Waal S Force And Molecular Solids 1kawyi",
-    "Comparison table: 10 Vander Waal S Force And Molecular Solids 1kawyi vs related concepts in chemical bonding and shapes of molecules",
-    "Step-by-step worked example layout for 10 Vander Waal S Force And Molecular Solids 1kawyi"
-  ],
-  "summary": [
-    "10 Vander Waal S Force And Molecular Solids 1kawyi is a fundamental concept in chemical bonding and shapes of molecules that describes specific chemical behaviour under defined conditions.",
-    "Mastering 10 Vander Waal S Force And Molecular Solids 1kawyi involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 10 Vander Waal S Force And Molecular Solids 1kawyi alongside related concepts in chemical bonding and shapes of molecules ensures strong conceptual clarity and exam readiness."
   ]
 }

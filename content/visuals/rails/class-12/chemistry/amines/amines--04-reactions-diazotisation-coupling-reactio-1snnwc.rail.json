@@ -56,7 +56,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Coupling reactions  ·  • Hinsberg test"
+      "text": "Trick 1: Diazotisation: ArNH2 + NaNO2/HCl at 0–5 °C → ArN2+Cl− — keep it COLD; above 5 °C the diazonium salt decomposes.  ·  Trick 2: Sandmeyer (Cu2Cl2/Cu2Br2/CuCN) replaces N2+ by Cl/Br/CN; warm water gives phenol; H3PO2 gives benzene — the N2 group is the best leaving group, hence the whole synthetic toolbox."
     },
     {
       "label": "Board question",
@@ -69,6 +69,10 @@
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Reactions: diazotisation, coupling reactions, Hinsberg test — topic mind map\"><title>Reactions: diazotisation, coupling reactions, Hinsberg test — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Reactions</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Reactions</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Diazotisation</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Coupling reactions</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Hinsberg test</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Reactions: diazotisation, coupling reactions, Hinsberg test — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Key points",
+      "text": "• Coupling reactions  ·  • Hinsberg test"
     },
     {
       "label": "More practice",
@@ -84,11 +88,19 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: reactions, diazotisation, coupling reactions, hinsberg test.  ·  one worked example for \"Reactions: diazotisation, coupling reactions, Hinsberg test\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Coupling: diazonium + phenol (alkaline, para) or + aniline → azo dyes (–N=N–) — the azo linkage is the colour source.  ·  Trick 4: Hinsberg: benzenesulphonyl chloride — 1° gives N-substituted sulphonamide soluble in alkali; 2° gives insoluble sulphonamide; 3° no reaction — the solubility difference separates the three.  ·  define + example each sub-idea: reactions, diazotisation, coupling reactions, hinsberg test."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Reactions: diazotisation, coupling reactions, Hinsberg test\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Reactions: diazotisation, coupling reactions, Hinsberg test ## 1. Introduction Chemical picture of **Reactions** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I).…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Reaction and preparation sheet** | Reaction | Reactants | Conditions (T, P, catalyst) | Products + observation | Remark | | --- | --- |…  ·  ## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Diagrams and figures - **D1** — Reactions — structure or apparatus plate (authored SVG — English labels, viewBox 900×640) - **D2** — Reactions — second structure, flow or plot (authored SVG — English labels) - **D3** — Reactions — detailed reference plate (curated external — English labels; source, author and…  ·  ## 6. Worked problems ≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone and self-check Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.…"
     }
   ]
 }

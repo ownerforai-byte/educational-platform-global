@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Continuity at $a$ requires three things at once: $f(a)$ defined, the two-sided limit existing, and the two being equal. Polynomials and elementary functions are continuous on their domains and composite functions inherit continuity from their parts. Continuity is strictly weaker than differentiability, which is why $|x|$ is continuous but not differentiable at 0.",
+      "text": "Discontinuity graphs speak the decision tree's language: holes and detached dots for the removable pair, branch-end gaps for jumps, arrowed vertical walls for infinities, dense folding for oscillation. Dots record assignments, branch endpoints record approaches — reading them separately is the whole skill.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — quick idea map\"><title>Continuity of Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three conditions must</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hold; the failing one</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">names the type of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuity does not imply</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">differentiability — $|x|$</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at 0 proves it.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three conditions must</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hold; the failing one</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">names the type of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Continuity does not imply</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">differentiability — $|x|$</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at 0 proves it.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — quick idea map\"><title>Continuity of Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Continuity of Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every graph feature maps</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to one line of the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">classification tree; the</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Visual vocabulary: hole =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">open dot on meeting</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">branches (removable,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Hole at (a, L): lim = L,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(a) undefined ⟹ open dot</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at (a, L) - Jump at a:…</text></svg>",
         "caption": "Continuity of Function — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$\nOne-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$\nComposite: $g\\circ f$ continuous if $f$ is and $g$ is continuous at $f(x)$",
+      "text": "- Hole at (a, L): lim = L, f(a) undefined ⟹ open dot at (a, L) - Jump at a: branch ends at (a, LHL) and (a, RHL), LHL ≠ RHL",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — formula board\"><title>Continuity of Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Continuity of Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a}f(x)=L$, and $f(a)=L$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a^+}f(x)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Composite: $g\\circ f$ continuous if $f$ is and $g$ is</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">continuous at $f(x)$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Continuity of Function — formula board\"><title>Continuity of Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Continuity of Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- Hole at (a, L): lim = L, f(a) undefined ⟹ open dot at</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(a, L) - Jump at a: branch ends at (a, LHL) and (a,</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">RHL), LHL ≠ RHL</text></svg>",
         "caption": "Continuity of Function — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "All three conditions must hold; the failing one names the type of discontinuity.  ·  Continuity does not imply differentiability — $|x|$ at 0 proves it."
+      "text": "***The misleading meeting*** - branches can meet at x = a while the dot sits elsewhere: the approaches agree, the assignment does not - removable, not continuous."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "When asked 'is it continuous at $a$?', name which of the three conditions fails rather than answering only 'no'.  ·  A hole with a well-defined limit is removable — always check for that case first."
+      "text": "Skeleton first, suspects last; arrows on every wall; dots on every seam."
     },
     {
       "label": "Board question",
-      "text": "Testing continuity of a piece-wise function at a join point is a standard 2–3 mark question."
+      "text": "**NEB-style (5m): Describe the graph of f(x) = (x² − 4)/(x − 2) near x = 2, including the feature's type and coordinates.** — **Simplify:** f(x) = x + 2 for x ≠ 2 ⟹ the graph is the **line y = x + 2 with a hole at (2, 4)**.…  ·  **NEB-style (6m): Describe the graph of f(x) = 1/(x − 3)² near x = 3, and contrast with 1/(x − 3).** — **For 1/(x−3)²:** the denominator is a square ⟹ positive from **both** sides ⟹ both branches rise along the vertical line x = 3 toward **+∞** — a **unifying wall** (arrows both up).…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Composite and inverse $g circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $ sqrt{ tan x}$ is cont"
+      "text": "In sketch questions, label the coordinates of holes, dots and walls - unlabelled features earn half marks."
     },
     {
       "label": "Quick concepts",
-      "text": "Polynomials are continuous everywhere; rational functions except where the denominator vanishes."
+      "text": "Every graph feature maps to one line of the classification tree; the graph is evidence, not decoration."
+    },
+    {
+      "label": "Key points",
+      "text": "Visual vocabulary: hole = open dot on meeting branches (removable, value missing); detached dot = open dot + filled dot at different heights (removable, mismatch); jump = branch ends at different heights, dot on the owning side; wall = hugging vertical line with side arrows (odd splits, even unifies); oscillatory =…"
     },
     {
       "label": "Universal facts",
-      "text": "The intermediate value theorem — a continuous function on $[a,b]$ takes every value between $f(a)$ and $f(b)$ — is why a graph with a hole can skip a root but a graph with a jump cannot.  ·  Physical laws are modelled as continuous because the world is, to measurement precision, free of instantaneous jumps; discontinuities in models are usually deliberate idealisations."
+      "text": "Zooming into any neighbourhood of any discontinuity shows exactly one of the standard types."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): For f(x) = x + 1 for x < 1, f(x) = 5 − x for x ≥ 1: sketch-reason the seam at x = 1 and give the continuity verdict.** — **Left branch:** y = x + 1 on (−∞, 1), approaching height **2** at x = 1⁻ (open end — the branch's condition excludes 1).…  ·  **NEB-style (5m): A graph shows a curve with an open dot at (1, 3), a filled dot at (1, 5), and continuous branches meeting at the open dot. Classify and give the repair.** — **Reading the features:** branches meeting at height 3 ⟹ LHL = RHL = **3** (limit exists); filled dot at (1, 5) ⟹ f(1) = 5.…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The three conditions:** $f$ is continuous at $x=a$ if (i) $f(a)$ is DEFINED, (ii) $\\lim_{x \\to a} f(x)$ EXISTS, and (iii) the two are EQUAL. All three are required, and naming which one fails is exactly how discontinuity is classified.  ·  **Intuitively:** the graph has no hole, no jump and no break at $a$ — it can be drawn without lifting the pencil. Since this is a limit statement, a function can be continuous everywhere yet fail to be differentiable at a corner (the case $|x|$ at 0).  ·  **Elementary functions:** polynomials are continuous everywhere, so $\\lim_{x\\to a}P(x)=P(a)$ by direct substitution. $\\frac1x$, $\\tan x$, roots and logarithms are continuous only where defined."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Discontinuity Graphs This canonical is the **short-form doorway** to graphs of discontinuous functions: how each break type looks on paper and how to read a graph back into a classification.…  ·  ## 2. Theorem Mirror — The Visual Vocabulary - **Hole (removable, value missing):** open dot on an otherwise continuous curve — the branches meet where the point should be. - **Detached dot (removable, mismatch):** open dot at the limit's height plus a filled dot elsewhere at x = a — the value was assigned away from the approach.…  ·  ## 3. Deep Conceptual — Reading Graphs as Evidence, Not Decoration - A graph is a **witness**: every classification claim should be checkable against it. The hole says \"limit exists, value missing\"; the detached dot says \"limit exists, value moved\"; the gap says \"sides disagree\"; the wall says \"a side is unbounded.\" Each visual feature maps to exactly one line of the decision…"
     },
     {
       "label": "More ideas",
-      "text": "Polynomial: $\\lim_{x\\to a}P(x)=P(a)$  ·  Statement 1: $f$ is continuous at $a$ only if $f(a)$ is defined, the limit exists, and they are equal.  ·  Statement 2: Every polynomial is continuous everywhere on the real line."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Walls are unfinished without their side arrows.  ·  Sketch-reason f(x) = (x² − 4)/(x − 2) and mark the feature at x = 2."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Continuity does not imply differentiability.  ·  Statement 4: A continuous function on $[a,b]$ attains every value between $f(a)$ and $f(b)$.  ·  Statement 5: $g\\circ f$ is continuous wherever both factors are continuous."
+      "text": "Describe the graph of f(x) = 1/(x − 3)² near x = 3.  ·  For f(x) = ⌊x⌋, describe the graph's behaviour at each integer.  ·  ## 4. Deep Conceptual — Sketching Strategy: Skeleton First, Suspects Last - **Draw the continuous skeleton first** (the formula's curve on its domain intervals), then decorate the suspects: holes, dots, gaps, walls. This ordering prevents the classic error of drawing the exception and forgetting the rule.…"
     },
     {
       "label": "More ideas",
-      "text": "**Continuity of a piece:** the test is $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$. For piece-wise functions this value-matches-both-sides check is almost always what a question intends.  ·  **Removable discontinuity:** the limit exists but $f(a)$ is undefined or differs from it. Assigning the missing value equal to the limit repairs the function — a strong hint the break is removable.  ·  **Composite and inverse:** $g\\circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $\\sqrt{\\tan x}$ is continuous exactly where both parts are."
+      "text": "## 5. Worked Example Types - **Type A — sketch from formula:** rational function ⟹ skeleton + holes at cancelled roots + walls at surviving roots with side arrows. - **Type B — read from graph:** given the picture, name each feature's type and the side continuity of each dot.…  ·  ## 6. Common Confusions **\"Open dot means discontinuous\":** yes at that point — but the *type* depends on whether the branches meet (removable) or not (jump). **\"The curve touching the wall means the limit exists\":** hugging a vertical line is blow-up, not approach to a value."
     }
   ]
 }

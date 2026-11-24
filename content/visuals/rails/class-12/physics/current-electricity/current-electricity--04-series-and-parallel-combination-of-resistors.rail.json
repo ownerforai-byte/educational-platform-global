@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Series and parallel combination of resistors (Current Electricity, Physics, class-12-notes) covers Series, parallel combination of resistors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Reduce series groups and parallel groups in the order the drawing allows, then find the source current from the final equivalent. Branch currents come from working backward, and the sum of I^2 R should match the source power.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Series and parallel combination of resistors — quick idea map\"><title>Series and parallel combination of resistors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Series and parallel combination of resistors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Series</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Parallel combination of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">resistors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Series and parallel</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">combination of</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Series and parallel combination of resistors — quick idea map\"><title>Series and parallel combination of resistors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Series and parallel combination of resistors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Network reduction</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Branch current</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Draw the current splits.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Series first if they share</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a wire with no branch.</text></svg>",
         "caption": "Series and parallel combination of resistors — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Series and parallel combination of resistors\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Series and parallel combination of resistors\" — state with units, then use in one numerical.\nR_series = Σ R\n1/R_parallel = Σ (1/R)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Series\" as one blob → ✅ split into: series, parallel combination of resistors.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Series and parallel combination of resistors\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Equal resistors in parallel divide the current equally.  ·  A wire has nearly zero resistance in these problems."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A combination problem begins with a sketch of which resistors share a current and which share a node. Two resistors with no branch between them are in series even if the drawing is bent.  ·  Replace each obvious series pair by one resistor, and each obvious parallel pair by one resistor, and redraw. The equivalent of the whole network is the last remaining resistor."
     },
     {
       "label": "Limitation",
@@ -56,43 +56,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Series and parallel combination of resistors — Current Electricity, Physics (class-12-notes).  ·  **Tested.** define it · list: series, parallel combination of resistors · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Series  ·  • Parallel combination of resistors"
+      "text": "Redraw after every replacement.  ·  Source power equals the sum of I^2 R."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Series and parallel combination of resistors\" with one example.  ·  compare \"Series\" with the related idea from a neighbouring unit."
+      "text": "How do you decide series versus parallel?  ·  How do you recover a branch current?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Series and parallel combination of resistors — topic mind map\"><title>Series and parallel combination of resistors — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Series and parallel combination of resistors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Series</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Parallel combination of</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">resistors</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Series and parallel combination of resistors — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Network reduction  ·  Branch current  ·  Power sum  ·  Short and open"
+    },
+    {
+      "label": "Key points",
+      "text": "Draw the current splits.  ·  Series first if they share a wire with no branch.  ·  Then parallel.  ·  Power adds once the currents are known."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Series and parallel combination of resistors\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Series and parallel combination of resistors\" and verify the answer is plausible."
+      "text": "What is the power check?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A 6.0 Ω resistor is in series with a parallel pair of 6.0 Ω and 3.0 Ω. The source is 12 V. Find the source current."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Series and parallel combination of resistors\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Two resistors with no junction between them are → B  ·  After finding the equivalent, the source current is → B"
     },
     {
       "label": "Study notes",
-      "text": "**Parallel combination of resistors.** one-line definition + one-line exam use."
+      "text": "The source current is the source voltage divided by that equivalent. Then work backward. A series resistor carries the current of its string. A parallel branch takes V/R of that branch.  ·  Power in each resistor is I^2 R using the current that actually flows through it. The powers add to the power leaving the source, V I, if the resistors are the only loads.  ·  Three equal resistors can be all in series, all in parallel, or two in parallel with the third in series. Those three arrangements give 3R, R/3 and (3/2)R or a similar result depending on the drawing. The drawing decides."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: series, parallel combination of resistors.  ·  one worked example for \"Series and parallel combination of resistors\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "A bent wire does not stop two resistors from being in series.  ·  Do not use the parallel formula on a series pair.  ·  Power is not V^2/R using the source voltage on a resistor that does not have the full source voltage."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "A shorted resistor is not a zero-ohm addition in series. It is bypassed.  ·  Name the group you are reducing.  ·  A parallel answer smaller than the branches is a sanity check."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write R_series = Σ R and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  A resistor that is shorted by a wire has zero voltage and carries no current. It is not part of the equivalent. A resistor in an open branch carries no current either.  ·  # Series and parallel combination of resistors ## 1. Introduction Physical picture of **Series and parallel combination of resistors** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Quantities and graph reading** | Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with…  ·  ## 5. Diagrams and figures - **D1** — Series and parallel combination of resistors — free-body and field picture (authored SVG — English labels, viewBox 900×640) - **D2** — Series and parallel combination of resistors — graph or second construction (authored SVG — axes, units and labels) - **D3** — Series and parallel…"
     }
   ]
 }

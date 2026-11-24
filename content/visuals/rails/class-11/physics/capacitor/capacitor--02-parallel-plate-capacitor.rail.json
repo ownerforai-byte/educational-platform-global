@@ -24,20 +24,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "A parallel plate capacitor consists of two planar conductors of area A separated by distance d. Gauss's Law determines the uniform internal electric field E = σ/ε₀ = Q/(ε₀A), yielding capacitance C₀ = ε₀A/d. Introducing a dielectric slab of thickness t weakens the field across t via polarization, giving C = ε₀A / [d - t(1 - 1/κ)]. The electrostatic attraction between the plates is F = Q²/(2ε₀A).",
+      "text": "A **parallel plate capacitor** (area A, gap d, charge ±Q) derives its capacitance in three steps: Gauss's law gives the uniform field $E = \\sigma/\\varepsilon_0 = Q/A\\varepsilon_0$; the potential difference is $V = Ed = Qd/A\\varepsilon_0$; and $C = Q/V$ collapses to $\\boxed{C = \\varepsilon_0 A/d}$ — multiplied by εᵣ when a dielectric fills the gap (NEB 2023, 2024, 5m each).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parallel Plate Capacitor — quick idea map\"><title>Parallel Plate Capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Parallel Plate Capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Uniform field between</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">infinite charged planes: E</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= σ/ε₀.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Derivation of C₀ = ε₀A/d</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">using V = Ed.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Capacitance of a parallel</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">plate capacitor is</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">directly proportional to</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inserting a dielectric</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">increases capacitance by</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">factor κ by reducing net…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parallel Plate Capacitor — quick idea map\"><title>Parallel Plate Capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Parallel Plate Capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Three-step derivation: E</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ V → C** — memorise the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">chain, not just the…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = ε₀A/d; with dielectric</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = εᵣε₀A/d.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- E = σ/ε₀ = Q/Aε₀ - V =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ed = Qd/Aε₀ - C = ε₀A/d; C</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= εᵣε₀A/d</text></svg>",
         "caption": "Parallel Plate Capacitor — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Capacitance with vacuum/air: $C_0 = \\frac{\\varepsilon_0 A}{d}$\nCapacitance fully filled with dielectric: $C = \\frac{\\kappa \\varepsilon_0 A}{d} = \\kappa C_0$\nCapacitance with partially filled slab: $C = \\frac{\\varepsilon_0 A}{d - t(1 - 1/\\kappa)}$"
+      "text": "- E = σ/ε₀ = Q/Aε₀ - V = Ed = Qd/Aε₀ - C = ε₀A/d; C = εᵣε₀A/d"
     },
     {
       "label": "Conditions",
-      "text": "Using $E = \\sigma/\\varepsilon_0$ for force calculation: The electric field acting ON the charge $+Q$ of plate 1 is NOT the total field $E = \\sigma/\\varepsilon_0$, but only the field generated by plate 2 ($E_2 = \\sigma/2\\varepsilon_0$). Using total field leads to an erroneous factor of 2: $F = \\frac{Q^2}{2\\varepsilon_0 A}$, not $\\frac{Q^2}{\\varepsilon_0 A}$.  ·  Confusing effect of dielectric under connected vs disconnected states: If connected to a battery, voltage $V$ is fixed, so $Q = \\kappa Q_0$ and stored energy $U = \\kappa U_0$. If disconnected prior to insertion, charge $Q$ is trapped and fixed, so voltage drops to $V = V_0/\\kappa$ and energy drops to $U = U_0/\\kappa$ (the rest does mechanical work pulling the slab in)."
+      "text": "**Between two plates E = σ/ε₀** — the fields of the two sheets add; a lone sheet gives half that.  ·  **Thinner gap = bigger C** — d sits in the denominator."
     },
     {
       "label": "Special cases",
@@ -45,11 +45,11 @@
     },
     {
       "label": "Solved",
-      "text": "Capacitive touch screen: An array of micro parallel-plate capacitors senses fingertip proximity; conductive finger tissue alters local electric field and capacitance, registering touch coordinates.  ·  Condenser microphone: A flexible conductive diaphragm acts as one plate of a capacitor; sound waves deflect the diaphragm, modulating plate separation d and generating an audio voltage signal."
+      "text": "***NEB 2024*** — A = 0.04 m², d = 2 mm: C ≈ 177 pF."
     },
     {
       "label": "Limitation",
-      "text": "Misinterpreting plate thickness: Capacitance depends strictly on separation $d$ between facing surfaces, not the metallic thickness of the plates."
+      "text": "Verified PYQs: definition + derivation (2023, 2024 — 5m each); numerical 2024 3m."
     },
     {
       "label": "Derivation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Dielectric slab formula trick: effective air distance becomes d_eff = d - t + t/κ.  ·  Conducting slab trick: effective distance becomes d_eff = d - t."
+      "text": "\"C = 8.85×10⁻¹² × A/d — keep ε₀'s exponent straight.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Derive the expression for the capacitance of a parallel plate capacitor filled with air.  ·  Q2. Deduce an expression for the capacitance of a parallel plate capacitor when a dielectric slab of thickness t (t < d) is inserted between its plates."
+      "text": "**Numerical (3m): A 200 pF air capacitor has plates 1 mm apart. Find the area.** — A = Cd/ε₀ = 200×10⁻¹² × 10⁻³/8.85×10⁻¹² ≈ 0.0226 m² ≈ 226 cm²."
     },
     {
       "label": "Hints",
-      "text": "Derivation of C = ε₀A / [d - t(1 - 1/κ)] is one of the most frequently asked long questions in the NEB Class 11 Physics board exam (4 marks).",
+      "text": "Write all four derivation steps; state the dielectric extension for full marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Parallel Plate Capacitor — topic mind map\"><title>Parallel Plate Capacitor — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Parallel plate capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Parallel plate capacitor</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Parallel Plate Capacitor — topic mind map of this topic's own sub-topics"
@@ -73,23 +73,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Uniform field between infinite charged planes: E = σ/ε₀.  ·  Derivation of C₀ = ε₀A/d using V = Ed.  ·  Capacitance with partially filled dielectric slab: C = ε₀A / [d - t(1 - 1/κ)].  ·  Origin of the factor of 1/2 in electrostatic plate attraction force F = Q²/(2ε₀A)."
+      "text": "**Three-step derivation: E → V → C** — memorise the chain, not just the result."
     },
     {
       "label": "Key points",
-      "text": "Capacitance of a parallel plate capacitor is directly proportional to plate area A and inversely proportional to separation distance d.  ·  Inserting a dielectric increases capacitance by factor κ by reducing net internal electric field for a given charge.  ·  A conducting slab of thickness t increases capacitance equivalent to reducing effective separation to (d - t).  ·  Force between plates is attractive and equals F = Q² / (2ε₀A); it is independent of d for constant charge Q."
+      "text": "C = ε₀A/d; with dielectric C = εᵣε₀A/d."
     },
     {
       "label": "Universal facts",
-      "text": "The attractive force between two charged parallel plates $F = \\frac{Q^2}{2\\varepsilon_0 A}$ is completely independent of the separation distance $d$ as long as fringing fields are negligible.  ·  Inserting a dielectric slab into an isolated charged capacitor creates an attractive inward fringing force that automatically pulls the dielectric into the gap."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. Show that the force between the plates of a parallel plate capacitor is F = Q² / (2ε₀A). Why is there a factor of 1/2?  ·  Q4. A capacitor is charged to a potential V and then disconnected from the battery. What happens to its capacitance, charge, potential difference, and stored energy when a dielectric slab is inserted?"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Variable gang capacitor: Interleaved metal plates rotate into each other to alter overlapping plate area A, smoothly tuning receiver resonant frequencies."
+      "text": "Electrolytic capacitors reach thousands of μF using an ultra-thin oxide dielectric — d tiny beats A huge."
     },
     {
       "label": "MCQ drill",
@@ -97,27 +89,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Construction & Geometry:** A parallel plate capacitor consists of two identical, parallel metallic plates of cross-sectional area $A$, held parallel at a uniform separation distance $d$, where plate dimensions are much larger than separation ($d \\ll \\sqrt{A}$). The region between the plates is filled with vacuum, air, or a dielectric material.  ·  **Uniform Electric Field Between Plates:** When plate 1 carries $+Q$ and plate 2 carries $-Q$, the surface charge density is $\\sigma = \\frac{Q}{A}$. By Gauss's Law, the electric field due to each infinite conducting sheet is $E = \\frac{\\sigma}{2\\varepsilon_0}$.…  ·  **Derivation of Capacitance (Air/Vacuum):** The electric potential difference $V$ across plates separated by distance $d$ in a uniform field $E$ is $V = \\int_0^d E\\,dr = E d = \\frac{Q d}{\\varepsilon_0 A}$. Using $C = \\frac{Q}{V}$, we obtain: $C_0 = \\frac{\\varepsilon_0 A}{d}$."
+      "text": "## 1. Topic Introduction — Building Capacitance from First Principles Two parallel plates, area A, gap d: Gauss's law gives the field, V = Ed gives the voltage, and dividing Q by V delivers C = ε₀A/d. NEB 2023 and 2024 both asked this as a 5-mark derivation — the most repeated derivation in the electricity section.  ·  ## 2. Fundamental Concepts (NEB 2023, 2024) ### 2.1 Definition of capacitance (5m, part 1) **Capacitance** C = Q/V is the charge stored per unit potential difference; SI unit **farad (F)** = coulomb per volt. ### 2.2 Derivation of C = ε₀A/d (5m, part 2) Two parallel plates, area A, separation d, carrying ±Q: 1.…  ·  ## 3. Conceptual Relationships - **To Topic 88/89:** E = σ/ε₀ comes straight from Gauss's law. - **To Topic 93:** the derivation gives meaning to C = Q/V. - **To Topic 97:** inserting a dielectric multiplies C by εᵣ via polarisation."
     },
     {
       "label": "More ideas",
-      "text": "Capacitance with conducting slab ($t < d$): $C = \\frac{\\varepsilon_0 A}{d - t}$  ·  Electrostatic force between plates: $F = \\frac{Q^2}{2\\varepsilon_0 A} = \\frac{1}{2} \\frac{\\varepsilon_0 A V^2}{d^2}$  ·  Remember the fundamental difference between inserting a dielectric with battery connected (V constant, C↑, Q↑, U↑) versus disconnected (Q constant, C↑, V↓, U↓)."
+      "text": "\"The capacitance of a parallel plate capacitor is ε₀A/d, increased εᵣ-fold by a dielectric filling.\"  ·  Why are capacitor plates made large and thin?  ·  Calculate changes in Q, V, E, and U when a dielectric is inserted with battery connected vs disconnected."
     },
     {
       "label": "More ideas",
-      "text": "Statement 1: The electric field between two infinite oppositely charged parallel plates is uniform and equal to σ/ε₀.  ·  Statement 2: The capacitance of a parallel plate capacitor with air is given by C = ε₀A/d.  ·  Statement 3: Inserting a dielectric slab of thickness t increases capacitance by reducing the effective plate separation by t(1 - 1/κ)."
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 4: For an isolated charged capacitor, the attractive force between plates does not change when plate separation is altered.  ·  Statement 5: Fringing fields at plate edges lead to a slightly higher actual capacitance than predicted by C = ε₀A/d.  ·  Attractive force: F = ½ Q E_total = ½ Q (V/d)."
-    },
-    {
-      "label": "More ideas",
-      "text": "A parallel plate capacitor has circular plates of radius $8\\text{ cm}$ separated by an air gap of $1.5\\text{ mm}$. Calculate its capacitance. Solution: Area $A = \\pi r^2 = \\pi (0.08)^2 = 0.0201\\text{ m}^2$.…  ·  A parallel plate capacitor with air has $C = 20\\text{ pF}$. A dielectric slab of thickness $t = 2\\text{ mm}$ and $\\kappa = 4$ is introduced between plates separated by $d = 5\\text{ mm}$. Find new capacitance.…  ·  Calculate the attractive force between plates of a $100\\,\\mu\\text{F}$ capacitor charged to $500\\text{ V}$ with plate separation $1\\text{ mm}$. Solution: $F = \\frac{1}{2}\\frac{C V^2}{d} = \\frac{0.5 \\times (10^{-4}) \\times (2.5 \\times 10^5)}{10^{-3}} = \\frac{12.5}{10^{-3}} = 12500\\text{ N} = 12.5\\text{ kN}$."
-    },
-    {
-      "label": "More ideas",
-      "text": "Calculate changes in Q, V, E, and U when a dielectric is inserted with battery connected vs disconnected.  ·  Commercial ceramic capacitors achieve ultra-compact high capacitance by using barium titanate ($BaTiO_3$) dielectrics with dielectric constants $\\kappa > 1200$.  ·  **Effect of Dielectric Slab:** If a dielectric slab of dielectric constant $\\kappa$ and thickness $t < d$ is inserted, the electric field inside the slab reduces to $E_d = \\frac{E_0}{\\kappa}$, while the field in remaining air $(d-t)$ remains $E_0$.…"
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Electricity | Capacitor | Define capacitance. Derive the capacitance of a parallel plate capacitor.…"
     }
   ]
 }

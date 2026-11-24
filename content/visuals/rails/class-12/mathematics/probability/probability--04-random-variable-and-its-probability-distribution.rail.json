@@ -59,7 +59,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+      "text": "Trick 1: A random variable maps outcomes to numbers; the distribution lists X = xi with P(X = xi) — check ΣP = 1 as the first line of every table problem.  ·  Trick 2: To build a distribution (e.g. number of heads in 2 tosses), enumerate outcomes, count each value, then divide by the total — systematic listing earns method marks."
     },
     {
       "label": "Board question",
@@ -78,6 +78,10 @@
       "text": "• Random variable  ·  • Its probability distribution"
     },
     {
+      "label": "Universal facts",
+      "text": "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Random variable and its probability distribution\" and verify the answer is plausible."
     },
@@ -91,11 +95,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: random variable, its probability distribution.  ·  one worked example for \"Random variable and its probability distribution\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Missing-probability questions: set ΣP = 1 and solve for k — instant 1-marker.  ·  Trick 4: P(X ≥ a) = sum the tail; P(a < X < b) = sum the interior — read the inequality direction carefully (≥ vs >).  ·  define + example each sub-idea: random variable, its probability distribution."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).  ·  **Its probability distribution.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Random variable and its probability distribution\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).  ·  **Its probability distribution.** one-line definition + one-line exam use.  ·  # Random variable and its probability distribution ## 1. Introduction and motivation What the tool **Random variable and its probability distribution** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Probability fill pass. ## 2.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Counts and distributions** | Case | Rule or formula | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Random variable and its probability distribution — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Random variable and its probability distribution — second figure: construction, region or comparison…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

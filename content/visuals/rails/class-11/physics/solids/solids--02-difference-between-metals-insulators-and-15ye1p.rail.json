@@ -22,20 +22,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Difference between metals, insulators and semiconductors using band theory is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "Band theory sorts solids into three classes. **Metals** (Cu, Ag): overlapping or partly-filled bands — abundant free electrons, ρ ~ 10⁻⁸ Ω·m. **Insulators** (diamond, E_g ≈ 6 eV): full valence band, empty conduction band, gap > 3 eV — no carriers, ρ up to 10²⁰ Ω·m.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Metals, Insulators and Semiconductors – Band Theory — quick idea map\"><title>Metals, Insulators and Semiconductors – Band Theory — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Metals, Insulators and Semiconductors – Band</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Theory</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Difference between</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">metals, insulators and…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Difference</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">between metals,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Difference</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Difference between</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Metals, Insulators and Semiconductors – Band Theory — quick idea map\"><title>Metals, Insulators and Semiconductors – Band Theory — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Metals, Insulators and Semiconductors – Band</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Theory</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Opposite temperature</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">signatures** —</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">semiconductor conductivity</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Metals: overlap/partly</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">filled. Insulators: E_g</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&gt; 3 eV.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ρ_metal ~ 10⁻⁸ Ω·m;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ρ_semiconductor ~ 10⁻⁵–10²</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ω·m; ρ_insulator ~</text></svg>",
         "caption": "Metals, Insulators and Semiconductors – Band Theory — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Difference between metals, insulators and semiconductors using band theory\nKey Formula 3: Application formula for Difference between metals, insulators and semiconductors using band theory\nKey Formula 4: Derivation result for Difference between metals, insulators and semiconductors using band theory"
+      "text": "- ρ_metal ~ 10⁻⁸ Ω·m; ρ_semiconductor ~ 10⁻⁵–10² Ω·m; ρ_insulator ~ 10¹²–10²⁰ Ω·m - E_g: Si 1.1 eV, Ge 0.7 eV, diamond ~6 eV"
     },
     {
       "label": "Conditions",
-      "text": "Confusion: Students often think insulators and semiconductors are fundamentally different materials — they are the SAME band structure, just with different $E_g$ values. Diamond ($5.5\\,\\text{eV}$) is an insulator, silicon ($1.12\\,\\text{eV}$) is a semiconductor; both have the diamond crystal structure.  ·  Confusion: Metals do NOT have a band gap. The Fermi level lies inside a band. There is no \"forbidden gap\" separating valence from conduction band — they are the same band or overlapping bands."
+      "text": "**Semiconductors are insulators at 0 K** — all their carriers come from thermal excitation or doping.  ·  **A full band cannot conduct** — no empty states to move into."
     },
     {
       "label": "Special cases",
@@ -43,11 +43,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Difference between metals, insulators and semiconductors using band theory  ·  Example 2: Practical demonstration of Difference between metals, insulators and semiconductors using band theory concepts"
+      "text": "***Cu, Ag*** metals; ***diamond*** insulator; ***Si, Ge*** semiconductors."
     },
     {
       "label": "Limitation",
-      "text": "Confusion: In metals, conductivity decreases with temperature because more phonons scatter electrons. In semiconductors, conductivity increases because more carriers are generated. Students mix up the direction of temperature dependence.  ·  Confusion: The Fermi level in an intrinsic semiconductor lies near the MIDDLE of the band gap, not at the bottom of the conduction band. $E_F \\approx E_g/2 + (k_B T/2) \\ln(N_v/N_c)$. This is crucial for understanding doping effects."
+      "text": "Verified PYQs: band-theory differentiation (2023, 2024 — 5m); conductivity vs temperature (2024, 2m)."
     },
     {
       "label": "Derivation",
@@ -55,15 +55,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Difference between metals, insulators and semiconductors using band theory formula  ·  Trick 2: Elimination technique for Difference between metals, insulators and semiconductors using band theory MCQs"
+      "text": "\"Table: class | band picture | E_g | example | ρ.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define and explain Difference between metals, insulators and semiconductors using band theory with suitable example.  ·  Q2. Solve problems related to Difference between metals, insulators and semiconductors using band theory."
+      "text": "**Reasoning (2m): Why does a pure semiconductor conduct better at 50 °C than at 0 °C?** — Higher temperature breaks more covalent bonds, creating more electron–hole pairs; carrier density rises, so conductivity rises (opposite to metals)."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: Focus on numerical problems from Difference between metals, insulators and semiconductors using band theory  ·  Exam Tip 2: Practice previous year questions on Difference between metals, insulators and semiconductors using band theory",
+      "text": "Mention the 0 K case — it shows conceptual depth.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Metals, Insulators and Semiconductors – Band Theory — topic mind map\"><title>Metals, Insulators and Semiconductors – Band Theory — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Difference between metals, insulators and sem…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Difference between</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">metals</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Insulators</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Semiconductors using</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">band theory</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Metals, Insulators and Semiconductors – Band Theory — topic mind map of this topic's own sub-topics"
@@ -71,27 +71,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Difference between metals, insulators and semiconductors using band theory  ·  Concept 2: Key theorem or principle in Difference between metals, insulators and semiconductors using band theory  ·  Concept 3: Important application area of Difference between metals, insulators and semiconductors using band theory  ·  Concept 4: Fundamental relationship in Difference between metals, insulators and semiconductors using band theory"
+      "text": "**Opposite temperature signatures** — semiconductor conductivity rises with T, metal's falls."
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Difference between metals, insulators and semiconductors using band theory  ·  Key Point 3: Important condition or constraint for Difference between metals, insulators and semiconductors using band theory  ·  Key Point 4: Common applications of Difference between metals, insulators and semiconductors using band theory  ·  Key Point 5: Connection to other topics in Science"
+      "text": "Metals: overlap/partly filled. Insulators: E_g > 3 eV. Semiconductors: ~1 eV, pairs at room T."
     },
     {
       "label": "Universal facts",
-      "text": "Fact (Historical): The band theory explanation of metals, insulators, and semiconductors was developed by Felix Bloch (1928), Alan Wilson (1931), and Rudolf Peierls. It unified the electrical properties of solids under a single quantum-mechanical framework.  ·  Fact (Application): The temperature dependence of semiconductor resistance is used in thermistors (temperature sensors). NTC (negative temperature coefficient) thermistors use semiconductors; PTC (positive) thermistors use metals or special ceramics."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. Differentiate between various aspects of Difference between metals, insulators and semiconductors using band theory.  ·  Q4. Derive the key formula related to Difference between metals, insulators and semiconductors using band theory.  ·  Q5. What are the applications of Difference between metals, insulators and semiconductors using band theory?"
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 4: Learn the derivations for Difference between metals, insulators and semiconductors using band theory thoroughly  ·  Exam Tip 5: Review common mistakes related to Difference between metals, insulators and semiconductors using band theory"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Difference between metals, insulators and semiconductors using band theory  ·  Example 5: Application in daily life involving Difference between metals, insulators and semiconductors using band theory"
+      "text": "Resistivity spans ~10⁻⁸ to 10²⁰ Ω·m across the three classes — 28 orders of magnitude."
     },
     {
       "label": "MCQ drill",
@@ -99,15 +87,7 @@
     },
     {
       "label": "Study notes",
-      "text": "**Metals – band overlap or partial filling:** In metals, the valence band is either partially filled (alkali metals like Na, K have one electron per atom in an s-band) OR it overlaps with the conduction band (alkaline earth metals like Mg). In both cases, the Fermi level $E_F$ lies within a band, so electrons have empty states immediately available at $E_F$.…  ·  **Insulators – wide band gap:** In insulators (diamond, SiO$_2$, NaCl), the valence band is completely filled and the conduction band is completely empty at 0 K. The band gap $E_g > 3\\,\\text{eV}$ (typically 5–10 eV). At room temperature, $k_B T \\approx 0.026\\,\\text{eV} \\ll E_g$, so thermal excitation across the gap is negligible. No carriers $\\rightarrow$ no conduction.  ·  **Semiconductors – small band gap:** In semiconductors (Si, Ge, GaAs), the band gap is small ($E_g \\approx 0.5\\text{--}3\\,\\text{eV}$). At room temperature, a small but significant number of electrons are thermally excited from the valence band to the conduction band, leaving holes in the valence band.…"
-    },
-    {
-      "label": "More ideas",
-      "text": "Concept 5: Connection between Difference between metals, insulators and semiconductors using band theory and other topics  ·  Key Formula 5: Important relation in Difference between metals, insulators and semiconductors using band theory  ·  Confusion: Holes are NOT real particles. They are quasiparticles representing collective motion of electrons in a nearly-full band. They have positive charge, but they are not positrons (antimatter)."
-    },
-    {
-      "label": "More ideas",
-      "text": "Confusion: A partially filled valence band and a completely filled valence band with overlap to a conduction band are both metallic. The distinction is subtle — in the first case, there is one band partially filled; in the second, two bands overlap, so electrons can move freely into the higher band.  ·  Confusion: Germanium has higher intrinsic carrier concentration than silicon at room temperature because its band gap is smaller ($0.67\\,\\text{eV}$ vs $1.12\\,\\text{eV}$), so thermal excitation is more probable. But Si is more widely used because it forms a stable native oxide (SiO$_2$).  ·  Confusion: The band gap of a semiconductor is temperature dependent. $E_g$ decreases as temperature increases (lattice expansion, electron-phonon coupling). This means the temperature coefficient of resistance has contributions from both carrier generation and gap narrowing."
+      "text": "## 1. Topic Introduction — Three Classes, One Diagram Whether a material conducts copper-like, blocks diamond-like or sits between like silicon is decided entirely by its band picture: overlap, wide gap or narrow gap. This topic turns that classification into a comparison table you can reproduce under exam pressure.  ·  ## 2. Fundamental Concepts (NEB 2023, 2024) ### 2.1 The three classes by band structure - **Metals (conductors):** valence and conduction bands overlap, or the conduction band is partially filled. Electrons find empty states immediately above and drift freely under tiny fields. Examples: Cu, Ag, Al. Resistivity ~10⁻⁸ Ω·m.…  ·  ## 3. Conceptual Relationships - **To Topic 112:** this is the classification that the band picture makes possible. - **To Topic 114:** semiconductors' usefulness comes from controlling their carrier population. - **To resistance (Topic 99):** resistivity spans ~28 orders of magnitude across the classes."
     },
     {
       "label": "More ideas",
@@ -115,11 +95,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 1: Difference between metals, insulators and semiconductors using band theory is based on fundamental principles  ·  Note 2: Remember the distinction between different types in Difference between metals, insulators and semiconductors using band theory  ·  Note 3: Difference between metals, insulators and semiconductors using band theory has both theoretical and practical significance"
+      "text": "\"Band structure — overlap, wide gap or narrow gap — decides whether a solid conducts.\"  ·  Why are semiconductors the materials of electronics rather than metals?  ·  Task 3: Create a concept map for Difference between metals, insulators and semiconductors using band theory"
     },
     {
       "label": "More ideas",
-      "text": "Note 4: Study the derivations step by step for Difference between metals, insulators and semiconductors using band theory  ·  Note 5: Cross-check your answers using alternative methods for Difference between metals, insulators and semiconductors using band theory  ·  Statement 1: Definition of Difference between metals, insulators and semiconductors using band theory"
+      "text": "Task 4: Practice previous year exam questions on Difference between metals, insulators and semiconductors using band theory  ·  Task 5: Explain Difference between metals, insulators and semiconductors using band theory to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Modern physics | Solids | Explain the energy band theory of solids.…"
     }
   ]
 }

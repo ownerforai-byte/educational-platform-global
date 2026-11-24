@@ -26,60 +26,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Preliminary idea of cracking and reforming, quality of ga… (Basic Concept of Organic Chemistry, Chemistry, class-11-notes) covers Preliminary idea of cracking, reforming, quality of gasoline. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Refining chemistry reshapes molecules to suit engines. **Cracking** breaks large hydrocarbons into smaller useful ones — thermally (~500–700 °C) or catalytically (zeolite, ~450–500 °C), e.g. **C₁₀H₂₂ → C₈H₁₈ + C₂H₄** — supplying petrol-range alkanes and alkene feedstock. **Reforming** (Pt, ~500 °C) keeps the size and changes the shape: straight chains become branched alkanes and aromatics (n-hexane → benzene).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preliminary idea of cracking and reforming, quality of ga… — quick idea map\"><title>Preliminary idea of cracking and reforming, quality of ga… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Preliminary idea of cracking and reforming,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">quality of ga…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Preliminary idea of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cracking</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Reforming</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preliminary idea of cracking and reforming, quality of ga… — quick idea map\"><title>Preliminary idea of cracking and reforming, quality of ga… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Preliminary idea of cracking and reforming,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">quality of ga…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">All three petrol</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">technologies are the same</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">idea in different clothes:</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cracking: large</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hydrocarbons -&gt; smaller</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">useful ones by heat</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Cracking: C₁₀H₂₂ → C₈H₁₈</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ C₂H₄ - Reforming: C₆H₁₄</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(n-hexane) → C₆H₆…</text></svg>",
         "caption": "Preliminary idea of cracking and reforming, quality of ga… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Preliminary idea of cracking\n• Reforming"
+      "text": "- Cracking: C₁₀H₂₂ → C₈H₁₈ + C₂H₄ - Reforming: C₆H₁₄ (n-hexane) → C₆H₆ (benzene) + 4H₂ - TEL: Pb(C₂H₅)₄ - Octane scale: iso-octane (2,2,4-trimethylpentane) = 100; n-heptane = 0 - Cetane scale: n-cetane (C₁₆H₃₄) = 100;…"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Preliminary idea of cracking\" as one blob → ✅ split into: preliminary idea of cracking, reforming, quality of gasoline.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Preliminary idea of cracking and reforming, quality of ga…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: preliminary idea of cracking, reforming, quality of gasoline, octane number (within Basic Concept of Organic Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Octane number measures the knock resistance of petrol on a scale of iso-octane = 100 to n-heptane = 0; cetane number measures the ignition quality of diesel on a scale of n-cetane = 100 to α-methylnaphthalene = 0.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***One molecule, two ratings*** — n-heptane is the zero of the octane scale but its straight-chain brother n-cetane is the 100 of the diesel scale: the same molecular shape that ruins petrol makes perfect diesel."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Cracking.** Breaking long-chain hydrocarbons into smaller, more useful ones (petrol-range alkanes plus alkenes) thermally or with a zeolite catalyst; it raises petrol yield from crude oil.  ·  **Reforming.** Converting straight-chain alkanes into branched-chain or aromatic hydrocarbons over a platinum catalyst (platforming), which improves fuel quality."
+      "text": "## 1. Topic Introduction — Making Petrol Behave Crude oil gives long-chain hydrocarbons; engines want branched ones. **Cracking** breaks big molecules into useful small ones, **reforming** reshapes straight chains into branched/aromatic ones, and the **octane number** measures the result. For diesel the logic reverses — the **cetane number** rewards straight chains.…  ·  ## 2. Fundamental Concepts ### 2.1 Cracking - **Cracking:** decomposition of **large hydrocarbon molecules into smaller, more useful ones** by heat, with or without a catalyst. - **Thermal cracking:** high temperature (~500–700 °C) and pressure.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Quality of gasoline  ·  • Octane number"
+      "text": "Cracking = size down (C10H22 -> C8H18 + C2H4); reforming = shape change (Pt, 500 C). Octane: iso-octane 100 / n-heptane 0; cetane: n-cetane 100 / alpha-methylnaphthalene 0. Branched = octane up, cetane down."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Preliminary idea of cracking and reforming, quality of ga…\" with one example.  ·  compare \"Preliminary idea of cracking\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): What is cracking? Describe catalytic cracking with an example and state its importance.** — **Cracking** is the decomposition of **large hydrocarbon molecules into smaller, more useful ones** under the action of heat, with or without a catalyst.…  ·  **NEB-style (3m): Define octane number. Why is iso-octane rated 100 and n-heptane 0?** — The **octane number** of a petrol is a measure of its resistance to **knocking** — premature, explosive auto-ignition in the engine.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Quote both standards of each scale by name — \"iso-octane = 100, n-heptane = 0\" and \"n-cetane = 100, α-methylnaphthalene = 0\" are the mark-bearing phrases.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Preliminary idea of cracking and reforming, quality of ga… — topic mind map\"><title>Preliminary idea of cracking and reforming, quality of ga… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Preliminary idea of cracking and reforming, q…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Preliminary idea of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">cracking</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Reforming</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Quality of gasoline</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Octane number</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Preliminary idea of cracking and reforming, quality of ga… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "All three petrol technologies are the same idea in different clothes: create or preserve branching, because branched molecules burn smoothly and straight molecules knock."
+    },
+    {
       "label": "Key points",
-      "text": "• Cetane number  ·  • Gasoline additive"
+      "text": "Cracking: large hydrocarbons -> smaller useful ones by heat (~500-700 C thermal) or catalyst (catalytic: zeolite, ~450-500 C); C10H22 -> C8H18 + C2H4; gives petrol-range alkanes + alkenes feedstock. Reforming: straight-chain -> branched/aromatic same carbon number (Pt, ~500 C, platforming); n-hexane -> benzene + H2.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Modern pump petrol is typically 87–95 octane; the lead additive TEL that once supplied cheap octane is now banned everywhere because leaded exhaust poisoned a generation of children."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Preliminary idea of cracking and reforming, quality of ga…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): What is reforming? Why does it improve petrol quality?** — **Reforming** is the conversion of **straight-chain alkanes into branched-chain alkanes and aromatic hydrocarbons** of the same carbon number, using a **platinum catalyst at about 500 °C** (catalytic reforming or…  ·  **NEB-style (2m): Distinguish between octane number and cetane number.** — The **octane number** measures the **knock resistance of petrol**: the scale runs from **iso-octane (2,2,4-trimethylpentane) = 100** to **n-heptane = 0**, and **branched/aromatic** molecules score high.…"
     },
     {
       "label": "MCQ drill",
@@ -87,98 +95,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Octane number.** The antiknock rating of petrol: pure iso-octane is 100 and n-heptane 0; a higher value means smoother combustion in spark-ignition engines.  ·  **Cetane number.** The ignition-quality rating of diesel: cetane (n-hexadecane) is 100 and α-methylnaphthalene 0; a higher value means a shorter ignition delay.  ·  **Gasoline quality.** Good petrol needs the right volatility, high octane rating and clean burning; additives and blending adjust these properties."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Cracking** | Breaking large hydrocarbons into smaller ones by heat/catalyst | C₁₀H₂₂ → C₈H₁₈ + C₂H₄ | | **Reforming** | Restructuring straight chains into branched/aromatics | n-hexane → benzene | | **Knocking** | Premature auto-ignition of fuel causing engine judder | reduced by branched…  ·  ## 4. Detailed Explanation ### 4.1 Why branched fuels resist knocking - In a straight-chain alkane, compression and heat ignite the end gases **before the spark** — a pressure spike = knock. Branched molecules burn more slowly and uniformly, waiting for the flame front — high octane.…  ·  ## 5. Comparison Tables **Cracking vs reforming** | Basis | Cracking | Reforming | |---|---|---| | change | big molecules → small | shape change at same size | | products | petrol-range alkanes + alkenes | branched alkanes, aromatics | | conditions | ~500–700 °C (thermal) or ~450–500 °C + zeolite | ~500 °C + Pt | | purpose | size + feedstock alkenes | raise octane number |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: preliminary idea of cracking, reforming, quality of gasoline, octane number.  ·  one worked example for \"Preliminary idea of cracking and reforming, quality of ga…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Define cracking and reforming, with one equation and the catalyst of each.  ·  Define octane number and cetane number, name both standards of each scale, and explain the structural preference behind each."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Explain why TEL was phased out and what replaced it.  ·  ## 6. Common Confusions **Octane number is not the % of octane in the fuel:** it is the % of iso-octane in the *comparison mixture* that matches the fuel's knocking — a fuel's own octane content is irrelevant to the rating.  ·  **Cracking and reforming are not synonyms:** cracking cuts molecules apart; reforming rearranges them. Different chemistry, different catalysts, different products."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Higher cetane = easier ignition = good diesel; higher octane = harder ignition = good petrol:** the two scales reward opposite behaviour — never mix them up.  ·  ## 7. Exam Application **NEB-style (3m): What is cracking? Describe catalytic cracking with an example and state its importance.** — **Cracking** is the decomposition of **large hydrocarbon molecules into smaller, more useful ones** by the action of heat, with or without a catalyst.…  ·  **NEB-style (3m): Define octane number. Why is iso-octane rated 100 and n-heptane 0?** — The **octane number** of a petrol measures its resistance to **knocking** (premature auto-ignition), defined as the percentage of **iso-octane (2,2,4-trimethylpentane)** in a mixture with **n-heptane** that knocks at the same…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): What is reforming? Why does it improve petrol quality?** — **Reforming** is the conversion of **straight-chain alkanes into branched-chain alkanes and aromatic hydrocarbons** of the same carbon number, catalysed by **platinum at about 500 °C** (platforming), e.g. n-hexane → benzene + H₂.…  ·  **NEB-style (2m): Distinguish between octane number and cetane number.** — The **octane number** rates **petrol's knock resistance**: iso-octane = 100, n-heptane = 0; **branched/aromatic** fuels score high.…"
     }
-  ],
-  "keyPoints": [
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is a core concept in basic concept of organic chemistry.",
-    "Understanding 07 preliminary idea of cracking and reformi t54fgk requires knowing its definition, conditions, and limitations.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 07 preliminary idea of cracking and reformi t54fgk must be memorized precisely.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk connects to neighbouring topics within basic concept of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 07 preliminary idea of cracking and reformi t54fgk.",
-    "Practical examples solidify understanding of 07 Preliminary Idea Of Cracking And Reformi T54fgk and its real-world relevance.",
-    "Misconceptions about 07 preliminary idea of cracking and reformi t54fgk often arise from confusing it with similar concepts.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk follows systematic rules that can be applied step-by-step.",
-    "Review of 07 preliminary idea of cracking and reformi t54fgk should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is defined by its specific characteristics within basic concept of organic chemistry.",
-    "The conditions under which 07 preliminary idea of cracking and reformi t54fgk applies are as important as the concept itself.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 07 preliminary idea of cracking and reformi t54fgk through application-based and comparison questions.",
-    "A clear grasp of 07 Preliminary Idea Of Cracking And Reformi T54fgk builds the foundation for advanced topics in basic concept of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 07 preliminary idea of cracking and reformi t54fgk, always note the exceptions alongside the general rule.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk should be reviewed with at least one worked example per sub-point.",
-    "Link 07 preliminary idea of cracking and reformi t54fgk back to prior knowledge in basic concept of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 07 Preliminary Idea Of Cracking And Reformi T54fgk to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 07 Preliminary Idea Of Cracking And Reformi T54fgk: apply the standard definition to a simple case.",
-    "Intermediate example: combine 07 preliminary idea of cracking and reformi t54fgk with a related concept from basic concept of organic chemistry.",
-    "Exam-style problem: solve a question involving 07 Preliminary Idea Of Cracking And Reformi T54fgk under time pressure.",
-    "Real-world connection: show how 07 Preliminary Idea Of Cracking And Reformi T54fgk appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 07 Preliminary Idea Of Cracking And Reformi T54fgk and state two conditions required for it to occur.",
-    "Differentiate 07 Preliminary Idea Of Cracking And Reformi T54fgk from the most commonly confused concept in basic concept of organic chemistry.",
-    "Solve a numerical or structural problem involving 07 Preliminary Idea Of Cracking And Reformi T54fgk.",
-    "List three applications of 07 Preliminary Idea Of Cracking And Reformi T54fgk in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 07 Preliminary Idea Of Cracking And Reformi T54fgk without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 07 Preliminary Idea Of Cracking And Reformi T54fgk.",
-    "Create three flashcards covering definition, formula, and limitation of 07 Preliminary Idea Of Cracking And Reformi T54fgk."
-  ],
-  "universalFacts": [
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is part of the NEB Class 11 basic concept of organic chemistry syllabus.",
-    "Every concept in basic concept of organic chemistry builds upon definitions established earlier in the chapter.",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is assessed through both short-answer and long-answer board questions.",
-    "Understanding 07 Preliminary Idea Of Cracking And Reformi T54fgk improves performance across the entire basic concept of organic chemistry unit.",
-    "Revision of 07 Preliminary Idea Of Cracking And Reformi T54fgk should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 07 Preliminary Idea Of Cracking And Reformi T54fgk with closely related concepts in basic concept of organic chemistry — focus on distinguishing features.",
-    "The scope of 07 Preliminary Idea Of Cracking And Reformi T54fgk is sometimes overstated; remember its precise boundaries.",
-    "Applying 07 Preliminary Idea Of Cracking And Reformi T54fgk outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 07 Preliminary Idea Of Cracking And Reformi T54fgk and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 07 Preliminary Idea Of Cracking And Reformi T54fgk? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is primarily studied under which branch of basic concept of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 07 Preliminary Idea Of Cracking And Reformi T54fgk is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to basic concept of organic chemistry — Answer: B",
-    "Which example correctly illustrates 07 Preliminary Idea Of Cracking And Reformi T54fgk? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 07 Preliminary Idea Of Cracking And Reformi T54fgk.",
-    "Step-by-step animated derivation of the key relationship in 07 Preliminary Idea Of Cracking And Reformi T54fgk.",
-    "Interactive toggle between correct and incorrect representations of 07 Preliminary Idea Of Cracking And Reformi T54fgk."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 07 Preliminary Idea Of Cracking And Reformi T54fgk.",
-    "Side-by-side comparison animation of 07 Preliminary Idea Of Cracking And Reformi T54fgk vs commonly confused concept.",
-    "Timelapse build-up of 07 Preliminary Idea Of Cracking And Reformi T54fgk from prerequisite knowledge in basic concept of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 07 Preliminary Idea Of Cracking And Reformi T54fgk",
-    "Comparison table: 07 Preliminary Idea Of Cracking And Reformi T54fgk vs related concepts in basic concept of organic chemistry",
-    "Step-by-step worked example layout for 07 Preliminary Idea Of Cracking And Reformi T54fgk"
-  ],
-  "summary": [
-    "07 Preliminary Idea Of Cracking And Reformi T54fgk is a fundamental concept in basic concept of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 07 Preliminary Idea Of Cracking And Reformi T54fgk involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 07 Preliminary Idea Of Cracking And Reformi T54fgk alongside related concepts in basic concept of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

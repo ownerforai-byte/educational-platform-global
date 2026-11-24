@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Saturated hydrocarbons (Alkanes): preparation from haloal… (Hydrocarbons, Chemistry, class-11-notes) covers Saturated hydrocarbons, Alkanes, : preparation from haloalkanes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Alkanes (**CₙH₂ₙ₊₂**) are made four ways. **Reduction** swaps halogen for hydrogen: RX + 2[H] → RH (Zn/HCl or LiAlH₄). The **Wurtz reaction** couples two haloalkane molecules with sodium in **dry ether** — **2RX + 2Na → R–R + 2NaX** — a carbon-doubling machine ideal for symmetrical even-carbon alkanes (2CH₃Br + 2Na → CH₃CH₃ + 2NaBr, the NEB 2024 answer) but useless for unsymmetrical targets, where three products…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Saturated hydrocarbons (Alkanes): preparation from haloal… — quick idea map\"><title>Saturated hydrocarbons (Alkanes): preparation from haloal… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Saturated hydrocarbons (Alkanes): preparation</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">from haloal…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Saturated hydrocarbons</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Alkanes</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Saturated hydrocarbons (Alkanes): preparation from haloal… — quick idea map\"><title>Saturated hydrocarbons (Alkanes): preparation from haloal… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Saturated hydrocarbons (Alkanes): preparation</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">from haloal…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Route selection is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">exam skill: Wurtz for</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">symmetrical even-carbon</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkanes CnH2n+2, saturated</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sp3. Preparation: (1)</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reduction of haloalkane RX</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Reduction: RX + 2[H] →</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">RH + HX - Wurtz: 2RX + 2Na</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ R–R + 2NaX (dry ether)…</text></svg>",
         "caption": "Saturated hydrocarbons (Alkanes): preparation from haloal… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Saturated hydrocarbons\n• Alkanes"
+      "text": "- Reduction: RX + 2[H] → RH + HX - Wurtz: 2RX + 2Na → R–R + 2NaX (dry ether) - Decarboxylation: RCOONa + NaOH → RH + Na₂CO₃ (CaO, Δ) - Hydrogenation: CₙH₂ₙ + H₂ → CₙH₂ₙ₊₂; CₙH₂ₙ₋₂ + 2H₂ → CₙH₂ₙ₊₂"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Saturated hydrocarbons\" as one blob → ✅ split into: saturated hydrocarbons, alkanes, : preparation from haloalkanes.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Saturated hydrocarbons (Alkanes): preparation from haloal…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: saturated hydrocarbons, alkanes, : preparation from haloalkanes, reduction (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Alkanes are prepared by reduction of haloalkanes, Wurtz coupling with sodium in dry ether, decarboxylation of sodium carboxylates with soda-lime, and catalytic hydrogenation of alkenes and alkynes.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The Wurtz ledger*** — two methyls make ethane (2 carbons), two ethyls make butane (4): the reaction is a carbon-doubling machine, which is exactly why odd-carbon alkanes resist it."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Saturated hydrocarbons (Alkanes): preparation from haloal… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: saturated hydrocarbons, alkanes, : preparation from haloalkanes, reduction · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Building the Simplest Skeletons Alkanes are the **saturated** hydrocarbons: every C–C bond is a single σ bond, every carbon is sp³, and the formula family is **CₙH₂ₙ₊₂**. Since they are chemically quiet, the interesting chemistry is **how to make them**: from haloalkanes by reduction, by the **Wurtz reaction**, by **decarboxylation** of sodium salts, and by **catalytic hydrogenation** of…  ·  ## 2. Fundamental Concepts ### 2.1 From haloalkanes — reduction - **RX + 2[H] → RH + HX** — the halogen is stripped and replaced by hydrogen. - Reagents: **Zn + HCl** (nascent hydrogen), **LiAlH₄** (dry ether), or **H₂/Ni**. - Example: **CH₃Cl + 2[H] → CH₄ + HCl**. ### 2.2 Wurtz reaction - **2RX + 2Na → R–R + 2NaX** — dry ether medium; two alkyl radicals couple.…"
     },
     {
       "label": "Shortcut",
-      "text": "• : preparation from haloalkanes  ·  • Reduction"
+      "text": "Wurtz = 2RX + 2Na, dry ether, even/symmetrical. Decarboxylation = soda-lime, C(n) acid → C(n−1) alkane. Reduction = Zn/HCl or LiAlH4. Hydrogenation = H2/Ni; alkyne takes 2H2."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Saturated hydrocarbons (Alkanes): preparation from haloal…\" with one example.  ·  compare \"Saturated hydrocarbons\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an alkyl halide is heated with **sodium metal in dry ether**; two alkyl groups couple to give a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**.…  ·  **NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — **Decarboxylation** drives CO₂ out of a carboxylate. Sodium acetate is **heated with soda-lime (a fused mixture of NaOH and CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "In the NEB 2024 answer, write the full equation with NaBr as the by-product and state \"dry ether\" — both carry marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Saturated hydrocarbons (Alkanes): preparation from haloal… — topic mind map\"><title>Saturated hydrocarbons (Alkanes): preparation from haloal… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Saturated hydrocarbons (Alkanes)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Saturated hydrocarbons</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkanes</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">: preparation from</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">haloalkanes</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Reduction</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Saturated hydrocarbons (Alkanes): preparation from haloal… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Route selection is the exam skill: Wurtz for symmetrical even-carbon alkanes, decarboxylation for methane (one carbon less than the acid), hydrogenation for any specific alkane."
+    },
+    {
       "label": "Key points",
-      "text": "• Wurtz reaction  ·  • Decarboxylation"
+      "text": "Alkanes CnH2n+2, saturated sp3. Preparation: (1) reduction of haloalkane RX + 2[H] -> RH + HX (Zn/HCl, LiAlH4, H2/Ni). (2) Wurtz: 2RX + 2Na -> R-R + 2NaX, dry ether; symmetrical even-carbon alkanes; 2CH3Br + 2Na -> CH3CH3 + 2NaBr; mixed RX/R'X gives three products (limitation).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Hydrogenation on nickel happens on the metal surface: both H atoms add to the same face (syn addition), which is why alkene hydrogenation is stereospecific."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Saturated hydrocarbons (Alkanes): preparation from haloal…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — When **two different haloalkanes** are used together (RX and R′X), the coupling is unselective: three products — **R–R, R–R′ and R′–R′** — form in an unpredictable mixture, so unsymmetrical alkanes cannot be made cleanly.…"
     },
     {
       "label": "MCQ drill",
@@ -89,102 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Alkanes.** one-line definition + one-line exam use.  ·  **: preparation from haloalkanes.** one-line definition + one-line exam use.  ·  **Reduction.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Wurtz reaction** | Na-coupling of two haloalkane molecules in dry ether | 2CH₃Br + 2Na → C₂H₆ | | **Decarboxylation** | Loss of CO₂ (as carbonate) from a carboxylate on soda-lime heating | CH₃COONa → CH₄ | | **Catalytic hydrogenation** | Addition of H₂ across multiple bonds over Ni/Pt/Pd |…  ·  ## 4. Detailed Explanation ### 4.1 Choosing the right route - Need a **specific unsymmetrical alkane**? Hydrogenation of the matching alkene/alkyne is cleanest. Need a **symmetrical even-carbon alkane**? Wurtz. Need **methane itself**? Decarboxylation of sodium acetate is the textbook answer. ### 4.2 Wurtz arithmetic - Alkane carbons = sum of the two R groups.…  ·  ## 5. Comparison Tables **Four preparation routes** | Route | Reagents | Product carbon count | Best for | |---|---|---|---| | Reduction of RX | Zn/HCl, LiAlH₄ | same as RX | any alkane | | Wurtz | 2RX + 2Na, dry ether | R+R (even, symmetrical) | symmetrical alkanes | | Decarboxylation | RCOONa + NaOH/CaO, Δ | one less than acid | methane | | Hydrogenation | H₂ + Ni/Pt/Pd |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: saturated hydrocarbons, alkanes, : preparation from haloalkanes, reduction.  ·  one worked example for \"Saturated hydrocarbons (Alkanes): preparation from haloal…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQ: NEB 2024 — ethane by the Wurtz reaction with equation (assigned to this row).  ·  Describe the preparation of ethane by the Wurtz reaction with equation and medium.  ·  Explain decarboxylation of sodium acetate with equation and state the carbon-count rule."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Wurtz reaction.** one-line definition + one-line exam use.  ·  **Decarboxylation.** one-line definition + one-line exam use."
+      "text": "Compare the four alkane preparation routes with one best-use case each.  ·  ## 6. Common Confusions **Wurtz is in dry ether:** water would quench the sodium; \"dry ether\" is part of the answer.  ·  **Decarboxylation loses a carbon:** acetate (C₂) gives methane (C₁) — students often write ethane."
     },
     {
       "label": "More ideas",
-      "text": "**Catalytic hydrogenation of alkene.** one-line definition + one-line exam use.  ·  **Alkyne.** one-line definition + one-line exam use."
+      "text": "**Alkyne needs 2H₂:** each π bond takes one H₂; an alkyne has two.  ·  ## 7. Exam Application **NEB 2024 (verified PYQ): How is ethane prepared by the Wurtz reaction? Write the chemical equation. (2m)** — In the **Wurtz reaction**, an **alkyl halide is treated with sodium metal in dry ether**, where two alkyl groups couple to form a symmetrical alkane: **2RX + 2Na → R–R + 2NaX**.…  ·  **NEB-style (3m): Explain the preparation of methane by decarboxylation with equation.** — Sodium acetate is heated with **soda-lime (NaOH + CaO)**: **CH₃COONa + NaOH → CH₄ + Na₂CO₃**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Give one limitation of the Wurtz reaction.** — With a **mixture of two different haloalkanes** (RX + R′X), three coupling products form — **R–R, R–R′ and R′–R′** — in unpredictable ratios, so the Wurtz reaction gives poor yields of any **unsymmetrical alkane**; it is reliable only for symmetrical…"
     }
-  ],
-  "keyPoints": [
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is a core concept in hydrocarbons.",
-    "Understanding 01 saturated hydrocarbons alkanes preparati 1iu981 requires knowing its definition, conditions, and limitations.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 01 saturated hydrocarbons alkanes preparati 1iu981 must be memorized precisely.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 01 saturated hydrocarbons alkanes preparati 1iu981.",
-    "Practical examples solidify understanding of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 and its real-world relevance.",
-    "Misconceptions about 01 saturated hydrocarbons alkanes preparati 1iu981 often arise from confusing it with similar concepts.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 follows systematic rules that can be applied step-by-step.",
-    "Review of 01 saturated hydrocarbons alkanes preparati 1iu981 should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 01 saturated hydrocarbons alkanes preparati 1iu981 applies are as important as the concept itself.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 01 saturated hydrocarbons alkanes preparati 1iu981 through application-based and comparison questions.",
-    "A clear grasp of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 01 saturated hydrocarbons alkanes preparati 1iu981, always note the exceptions alongside the general rule.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 should be reviewed with at least one worked example per sub-point.",
-    "Link 01 saturated hydrocarbons alkanes preparati 1iu981 back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981: apply the standard definition to a simple case.",
-    "Intermediate example: combine 01 saturated hydrocarbons alkanes preparati 1iu981 with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 under time pressure.",
-    "Real-world connection: show how 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 and state two conditions required for it to occur.",
-    "Differentiate 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 01 Saturated Hydrocarbons Alkanes Preparati 1iu981.",
-    "List three applications of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 01 Saturated Hydrocarbons Alkanes Preparati 1iu981.",
-    "Create three flashcards covering definition, formula, and limitation of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981."
-  ],
-  "universalFacts": [
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is assessed through both short-answer and long-answer board questions.",
-    "Understanding 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 improves performance across the entire hydrocarbons unit.",
-    "Revision of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is sometimes overstated; remember its precise boundaries.",
-    "Applying 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 01 Saturated Hydrocarbons Alkanes Preparati 1iu981? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 01 Saturated Hydrocarbons Alkanes Preparati 1iu981? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 01 Saturated Hydrocarbons Alkanes Preparati 1iu981.",
-    "Step-by-step animated derivation of the key relationship in 01 Saturated Hydrocarbons Alkanes Preparati 1iu981.",
-    "Interactive toggle between correct and incorrect representations of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 01 Saturated Hydrocarbons Alkanes Preparati 1iu981.",
-    "Side-by-side comparison animation of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 vs commonly confused concept.",
-    "Timelapse build-up of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 01 Saturated Hydrocarbons Alkanes Preparati 1iu981",
-    "Comparison table: 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 01 Saturated Hydrocarbons Alkanes Preparati 1iu981"
-  ],
-  "summary": [
-    "01 Saturated Hydrocarbons Alkanes Preparati 1iu981 is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 01 Saturated Hydrocarbons Alkanes Preparati 1iu981 alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

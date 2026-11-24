@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Molecular basis of inheritance: DNA structure, replicatio… — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: molecular basis of inheritance: dna structure, replication, transcription, translation · one worked example · one misconception each."
+      "text": "# Molecular basis of inheritance: DNA structure, replication, transcription, translation, gene regulation ## 1. Introduction Opening frame for **Molecular basis of inheritance** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Heredity is chemistry. DNA was found in 1869 (Miescher), shown to be the transforming principle in 1944 (Avery), confirmed by the Hershey–Chase blender experiment in 1952, and its double helix solved by **Watson and Crick in 1953** using Chargaff's base rules and Franklin's X-ray photo.…"
     },
     {
       "label": "Shortcut",
-      "text": "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+      "text": "Trick 1: DNA structure in numbers: double helix, antiparallel, 2 nm wide, 3.4 nm per turn, 10 bp/turn; A=T, G≡C (Chargaff) — the numbers are the marks.  ·  Trick 2: Replication: semi-conservative (Meselson–Stahl), 5'→3' synthesis, leading continuous/lagging Okazaki fragments, DNA polymerase + helicase + ligase — one line each."
     },
     {
       "label": "Board question",
@@ -79,6 +79,10 @@
       "text": "• Molecular basis of inheritance: DNA structure  ·  • Replication  ·  • Transcription  ·  • Translation"
     },
     {
+      "label": "Universal facts",
+      "text": "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Molecular basis of inheritance: DNA structure, replicatio…\" and verify the answer is plausible."
     },
@@ -88,23 +92,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).  ·  **Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.  ·  **Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+      "text": "## 3. Classified tables **Table 1 — Characteristics** | Part | Structure | Function | Exam note | | --- | --- | --- | --- | **Table 2 — Process steps** | Step | What happens | Where | Key enzyme or number | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables carry examples in every…  ·  **Concept flow — the experiments that made DNA the genetic material (study in this order)** | Step | Experiment | Year | What it proved | |---|---|---|---| | 1 | Miescher isolates 'nuclein' from pus cells | 1869 | DNA exists as a distinct chemical | | 2 | Griffith's transformation in pneumococcus | 1928 | A 'transforming principle' passes heritable traits between bacteria | |…  ·  **DNA vs RNA — classified comparison** | Feature | DNA | RNA | |---|---|---| | Sugar | Deoxyribose (no 2'-OH) | Ribose | | Bases | A, G, C, T | A, G, C, U | | Strands | Double helix (two antiparallel strands) | Usually single-stranded | | Stability | Very stable — archival store | Less stable — working copy | | Location (eukaryote) | Nucleus, mitochondria, chloroplasts |…"
     },
     {
       "label": "More ideas",
-      "text": "• Gene regulation  ·  define + example each sub-idea: molecular basis of inheritance: dna structure, replication, transcription, translation.  ·  one worked example for \"Molecular basis of inheritance: DNA structure, replicatio…\" — check units / edge cases."
+      "text": "• Gene regulation  ·  Trick 3: Central dogma: DNA →(transcription, RNA polymerase)→ mRNA →(translation, ribosome + tRNA)→ protein; genetic code: triplet, degenerate, universal, non-overlapping.  ·  Trick 4: tRNA cloverleaf carries the anticodon; Wobble pairs; start codon AUG, stops UAA/UAG/UGA — the code table essentials."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
+      "text": "define + example each sub-idea: molecular basis of inheritance: dna structure, replication, transcription, translation.  ·  one worked example for \"Molecular basis of inheritance: DNA structure, replicatio…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
       "label": "More ideas",
-      "text": "**Replication.** one-line definition + one-line exam use.  ·  **Transcription.** one-line definition + one-line exam use.  ·  **Translation.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).  ·  **Replication vs transcription vs translation — the three engines of the central dogma** | Feature | Replication | Transcription | Translation | |---|---|---|---| | Template | Both DNA strands | One DNA strand (the template strand) | mRNA | | Enzyme | DNA polymerase (+ helicase, primase, ligase) | RNA polymerase |…"
     },
     {
       "label": "More ideas",
-      "text": "**Gene regulation.** one-line definition + one-line exam use."
+      "text": "## 4. Diagrams and figures - **D1** — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Molecular basis of inheritance — process or life-cycle flow (authored SVG — English labels) - **D3** — Molecular basis of inheritance — detailed reference plate (curated external —…  ·  ```svg DNA double helix — antiparallel strands with complementary base pairing <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Watson&#8211;Crick double…  ·  ```svg Central dogma — DNA to RNA to protein <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Central dogma of molecular biology</text><rect x=\"60\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — reading the code.** A template DNA strand reads 3'-TAC GGA TTA-5'. The mRNA is 5'-AUG CCU AAU-3' (U replaces T; transcription starts at the promoter, not at AUG by chance). Reading in frame: AUG = methionine (start), CCU = proline, AAU = asparagine — peptide Met-Pro-Asn.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
     }
   ]
 }

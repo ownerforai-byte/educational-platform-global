@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Linkage and crossing over — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: linkage, crossing over · one worked example · one misconception each."
+      "text": "# Linkage and crossing over ## 1. Introduction Opening frame for **Linkage and crossing over** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Mendel's second law assumes genes assort independently — but genes live on chromosomes, and a chromosome carries hundreds of them. Genes on the **same chromosome** tend to be inherited together: this is **linkage**, and it was proved by T. H. Morgan's work on *Drosophila* (1910–1915).…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Linkage and crossing over\" and verify the answer is plausible.  ·  define + example each sub-idea: linkage, crossing over."
+      "text": "Trick 1: Linkage: genes on the SAME chromosome tend to inherit together, violating independent assortment; coupling phase (AB/ab) vs repulsion (Ab/aB).  ·  Trick 2: Crossing over in pachytene of prophase-I produces recombinants; recombination frequency ∝ distance between genes (1 map unit = 1% recombination)."
     },
     {
       "label": "Board question",
@@ -75,16 +75,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Linkage and crossing over\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Linkage and crossing over\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Crossing over.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from Mendel's exception to the genetic map (study in this order)** | Step | Concept | Who / when | Key result | |---|---|---|---| | 1 | Chromosomes carry Mendel's factors | Sutton & Boveri, 1902–03 | Gene behaviour parallels chromosome behaviour | | 2 | Two genes on one chromosome stay together | Bateson & Punnett (sweet pea) | Deviations from 9:3:3:1 toward…  ·  **Complete vs incomplete linkage — classified comparison** | Feature | Complete linkage | Incomplete linkage | |---|---|---| | Crossing over | Does not occur between the genes | Occurs between them at a chiasma | | Gamete types | Only 2 parental types (AB, ab) | All 4: parental (AB, ab) + recombinant (Ab, aB) | | Recombinant frequency | 0% | Between 0% and 50% | | F₂ ratio |…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Strongly linked genes (close together) show FEWER recombinants; a test cross ratio near 1:1:1:1 means unlinked genes — read the data this way.  ·  Trick 4: Significance: crossing over creates variation for evolution; linkage preserves favourable gene combinations.  ·  define + example each sub-idea: linkage, crossing over."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Linkage and crossing over\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Coupling vs repulsion phase — how the alleles sit on the chromosomes** | Feature | Coupling (cis) | Repulsion (trans) | |---|---|---| | Arrangement | Dominant alleles on one homologue: AB / ab | Dominant alleles on different homologues: Ab / aB | | Parental gametes | AB and ab | Ab and aB | | Recombinant gametes |…  ·  ## 4. Diagrams and figures - **D1** — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Linkage and crossing over — process or life-cycle flow (authored SVG — English labels) - **D3** — Linkage and crossing over — detailed reference plate (curated external — English…  ·  ```svg Crossing over — one chiasma between loci A and B makes recombinant gametes <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Prophase I: single…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example.** A test cross of a female *Drosophila* heterozygous for b (black body) and vg (vestigial wings) gives: b+vg+ 860, b vg 880, b+ vg 45, b vg+ 40. The two large classes are the parentals; the two small classes are recombinants.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Define linkage and crossing over and state where and when crossing over happens (pachytene of prophase I, at chiasmata). (2) Why does linkage violate the 9:3:3:1 ratio? (3) Calculate map distance from test-cross data. (4) Distinguish coupling from repulsion phase.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Genes on the same chromosome are linked; crossing over in prophase I breaks the linkage in proportion to distance, and the recombination percentage is the map distance in centimorgans.…"
     }
   ]
 }

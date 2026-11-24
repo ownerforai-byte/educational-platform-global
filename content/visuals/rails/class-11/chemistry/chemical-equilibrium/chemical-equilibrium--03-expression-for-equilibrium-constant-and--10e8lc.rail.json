@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+      "text": "Kc is a number that speaks. **Big Kc** (10⁵ and up) declares the reaction practically complete; **small Kc** (10⁻⁵ and down) declares it stillborn; **Kc near 1** declares a true contest. The same fraction evaluated off-equilibrium is the **reaction quotient Qc** — Qc < Kc drives forward, Qc > Kc drives back, Qc = Kc is the resting state — making the constant a compass as well as a scoreboard.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Equilibrium Constant Expression and Its Importance — quick idea map\"><title>Equilibrium Constant Expression and Its Importance — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Equilibrium Constant Expression and Its</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Importance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 03</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">expression for equilibrium</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant and its</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 03</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">expression for equilibrium</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant and its</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kc =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[Products]/[Reactants]</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kp = Kc(RT)^Δn</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Equilibrium Constant Expression and Its Importance — quick idea map\"><title>Equilibrium Constant Expression and Its Importance — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Equilibrium Constant Expression and Its</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Importance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The single most reused NEB</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">skill: substitute</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">equilibrium concentrations</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kc ≫ 1: products dominate;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kc ≪ 1: reactants</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dominate; Kc ≈ 1: both…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Kc = [C]^c[D]^d /</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[A]^a[B]^b - Qc = same</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">expression,</text></svg>",
         "caption": "Equilibrium Constant Expression and Its Importance — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Kc = [Products]/[Reactants]\nKp = Kc(RT)^Δn\npH = -log[H⁺]"
+      "text": "- Kc = [C]^c[D]^d / [A]^a[B]^b - Qc = same expression, non-equilibrium concentrations - ΔG° = −RT ln K - N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³); NEB 2024: [NH₃] = 0.25 M"
     },
     {
       "label": "Conditions",
@@ -45,7 +45,7 @@
     },
     {
       "label": "Solved",
-      "text": "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+      "text": "***The 0.25 M answer*** — the exact numerical NEB 2024 demanded: square the hydrogen concentration (0.125), multiply by Kc (0.0625), take the root (0.25 M). Four lines, full marks."
     },
     {
       "label": "Limitation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Equilibrium Constant Expression and Its Importance."
+      "text": "Numerical recipe: expression → substitute → isolate square → root. (0.5)³ = 0.125 by heart. Qc<Kc → forward. Big Kc = product-rich."
     },
     {
       "label": "Board question",
-      "text": "Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
+      "text": "**Verified NEB 2024 (2m): For the reaction N₂(g) + 3H₂(g) ⇌ 2NH₃(g), Kc = 0.5 at a certain temperature. If [N₂] = 1.0 M and [H₂] = 0.5 M at equilibrium, calculate the equilibrium concentration of ammonia.** — The equilibrium constant expression is Kc = [NH₃]²/([N₂][H₂]³).…  ·  **NEB-style (2m): State two uses of the equilibrium constant.** — **(1) Predicting the extent of reaction:** the magnitude of Kc tells how far the reaction proceeds before equilibrium — a very large Kc means the products overwhelmingly dominate the equilibrium mixture (the reaction is virtually complete), a very small Kc means the…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 03 expression for equilibrium constant and its importance.",
+      "text": "Always write the Kc expression before substituting — the substitution without the expression forfeits a method mark even if the arithmetic is right.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Equilibrium Constant Expression and Its Importance — topic mind map\"><title>Equilibrium Constant Expression and Its Importance — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Expression for equilibrium constant and its i…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Expression for</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">equilibrium constant</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its importance</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Equilibrium Constant Expression and Its Importance — topic mind map of this topic's own sub-topics"
@@ -73,130 +73,47 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 03 expression for equilibrium constant and its importance."
+      "text": "The single most reused NEB skill: substitute equilibrium concentrations into the mass-action fraction and solve for the unknown — every power is an exponent, every solid is silent."
     },
     {
       "label": "Key points",
-      "text": "Core point for 03 expression for equilibrium constant and its importance."
+      "text": "Kc ≫ 1: products dominate; Kc ≪ 1: reactants dominate; Kc ≈ 1: both appreciable. Qc (same expression, any moment): Qc<Kc forward, Qc>Kc reverse, Qc=Kc equilibrium. Kc depends only on T. Importance: extent, direction, ΔG° = −RT ln K, industrial design. Worked NEB 2024: Kc = 0.5 = [NH3]2/(1.0 × 0.125) → [NH3] = 0.25 M."
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 03 expression for equilibrium constant and its importance."
+      "text": "Atmospheric nitrogen and oxygen coexist because Kc for NO formation is ~10⁻³¹ at 25 °C — the same reaction runs furiously inside engines at 2500 K, where Kc leaps and smog is born."
     },
     {
       "label": "More practice",
-      "text": "Practice identifying limiting reagents in stoichiometric calculations.  ·  Practice calculating percent yield from experimental data.  ·  Practice converting between molarity and molality."
+      "text": "**NEB-style (2m): For N₂O₄(g) ⇌ 2NO₂(g), Kc = 4.0 at temperature T. A vessel contains [N₂O₄] = 0.5 M and [NO₂] = 1.0 M. Predict the direction of the net reaction.** — Compute the reaction quotient with the same expression as Kc: Qc = [NO₂]²/[N₂O₄] = (1.0)²/(0.5) = 2.0.…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 03 expression for equilibrium constant and its importance? → A  ·  What happens to K when temperature increases for an exothermic reaction? → B"
+      "text": "Question about 03 expression for equilibrium constant and its importance? → A  ·  A very large Kc indicates: → B"
     },
     {
       "label": "Study notes",
-      "text": "Dynamic equilibrium: forward rate = backward rate.  ·  Kc = [products]/[reactants].  ·  Le Chatelier's principle."
+      "text": "## 1. Topic Introduction — Reading the Constant, Computing the Concentration Kc is more than a fraction: its **size** grades how far a reaction proceeds, its **units** encode the stoichiometry, and its algebra solves the classic NEB numerical — \"given some equilibrium concentrations, find the missing one.\" This topic turns the law of mass action into a working calculator.  ·  ## 2. Fundamental Concepts ### 2.1 What the size of Kc means - **Kc very large (≫1):** products dominate at equilibrium — reaction nearly complete (e.g. Kc ~ 10²⁵ for H₂ + ½O₂ → H₂O at 25 °C). - **Kc very small (≪1):** reactants dominate — hardly any conversion (e.g. N₂ + O₂ ⇌ 2NO, Kc ~ 10⁻³¹ at 25 °C). - **Kc ≈ 1:** appreciable amounts of both — a genuine balance.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Equilibrium constant Kc** | Ratio of product to reactant active masses at equilibrium, fixed T | [NH₃]²/([N₂][H₂]³) | | **Reaction quotient Qc** | Same ratio with arbitrary concentrations | Direction indicator | | **Extent of reaction** | Degree of conversion at equilibrium, graded by Kc…"
     },
     {
       "label": "More ideas",
-      "text": "Ka × Kb = Kw  ·  ❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.  ·  ❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1."
+      "text": "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.  ·  ❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.  ·  ❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field)."
     },
     {
       "label": "More ideas",
-      "text": "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).  ·  ❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.  ·  ❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→..."
+      "text": "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.  ·  ❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...  ·  ❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins."
     },
     {
       "label": "More ideas",
-      "text": "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.  ·  ❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.  ·  ❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales."
+      "text": "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.  ·  ❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.  ·  ❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units."
     },
     {
       "label": "More ideas",
-      "text": "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.  ·  ❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).  ·  ❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying."
+      "text": "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).  ·  ❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.  ·  ❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent)."
     },
     {
       "label": "More ideas",
-      "text": "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).  ·  ❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.  ·  ❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3)."
+      "text": "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.  ·  ❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).  ·  ❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K."
     }
-  ],
-  "keyPoints": [
-    "03 Expression For Equilibrium Constant And is a core concept in chemical equilibrium.",
-    "Understanding 03 expression for equilibrium constant and requires knowing its definition, conditions, and limitations.",
-    "03 Expression For Equilibrium Constant And has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 expression for equilibrium constant and must be memorized precisely.",
-    "03 Expression For Equilibrium Constant And connects to neighbouring topics within chemical equilibrium and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 expression for equilibrium constant and.",
-    "Practical examples solidify understanding of 03 Expression For Equilibrium Constant And and its real-world relevance.",
-    "Misconceptions about 03 expression for equilibrium constant and often arise from confusing it with similar concepts.",
-    "03 Expression For Equilibrium Constant And follows systematic rules that can be applied step-by-step.",
-    "Review of 03 expression for equilibrium constant and should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Expression For Equilibrium Constant And is defined by its specific characteristics within chemical equilibrium.",
-    "The conditions under which 03 expression for equilibrium constant and applies are as important as the concept itself.",
-    "03 Expression For Equilibrium Constant And can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 expression for equilibrium constant and through application-based and comparison questions.",
-    "A clear grasp of 03 Expression For Equilibrium Constant And builds the foundation for advanced topics in chemical equilibrium."
-  ],
-  "importantNotes": [
-    "When studying 03 expression for equilibrium constant and, always note the exceptions alongside the general rule.",
-    "03 Expression For Equilibrium Constant And should be reviewed with at least one worked example per sub-point.",
-    "Link 03 expression for equilibrium constant and back to prior knowledge in chemical equilibrium for deeper retention.",
-    "Practice past NEB board questions on 03 Expression For Equilibrium Constant And to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Expression For Equilibrium Constant And: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 expression for equilibrium constant and with a related concept from chemical equilibrium.",
-    "Exam-style problem: solve a question involving 03 Expression For Equilibrium Constant And under time pressure.",
-    "Real-world connection: show how 03 Expression For Equilibrium Constant And appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Expression For Equilibrium Constant And and state two conditions required for it to occur.",
-    "Differentiate 03 Expression For Equilibrium Constant And from the most commonly confused concept in chemical equilibrium.",
-    "Solve a numerical or structural problem involving 03 Expression For Equilibrium Constant And.",
-    "List three applications of 03 Expression For Equilibrium Constant And in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Expression For Equilibrium Constant And without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Expression For Equilibrium Constant And.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Expression For Equilibrium Constant And."
-  ],
-  "universalFacts": [
-    "03 Expression For Equilibrium Constant And is part of the NEB Class 11 chemical equilibrium syllabus.",
-    "Every concept in chemical equilibrium builds upon definitions established earlier in the chapter.",
-    "03 Expression For Equilibrium Constant And is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Expression For Equilibrium Constant And improves performance across the entire chemical equilibrium unit.",
-    "Revision of 03 Expression For Equilibrium Constant And should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Expression For Equilibrium Constant And with closely related concepts in chemical equilibrium — focus on distinguishing features.",
-    "The scope of 03 Expression For Equilibrium Constant And is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Expression For Equilibrium Constant And outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Expression For Equilibrium Constant And and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Expression For Equilibrium Constant And? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Expression For Equilibrium Constant And is primarily studied under which branch of chemical equilibrium? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Expression For Equilibrium Constant And is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical equilibrium — Answer: B",
-    "Which example correctly illustrates 03 Expression For Equilibrium Constant And? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Expression For Equilibrium Constant And differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Expression For Equilibrium Constant And.",
-    "Step-by-step animated derivation of the key relationship in 03 Expression For Equilibrium Constant And.",
-    "Interactive toggle between correct and incorrect representations of 03 Expression For Equilibrium Constant And."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Expression For Equilibrium Constant And.",
-    "Side-by-side comparison animation of 03 Expression For Equilibrium Constant And vs commonly confused concept.",
-    "Timelapse build-up of 03 Expression For Equilibrium Constant And from prerequisite knowledge in chemical equilibrium."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Expression For Equilibrium Constant And",
-    "Comparison table: 03 Expression For Equilibrium Constant And vs related concepts in chemical equilibrium",
-    "Step-by-step worked example layout for 03 Expression For Equilibrium Constant And"
-  ],
-  "summary": [
-    "03 Expression For Equilibrium Constant And is a fundamental concept in chemical equilibrium that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Expression For Equilibrium Constant And involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Expression For Equilibrium Constant And alongside related concepts in chemical equilibrium ensures strong conceptual clarity and exam readiness."
   ]
 }

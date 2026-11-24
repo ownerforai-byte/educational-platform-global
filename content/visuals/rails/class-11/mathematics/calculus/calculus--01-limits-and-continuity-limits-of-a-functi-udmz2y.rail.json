@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Limits and continuity: limits of a function, indeterminat… (Calculus, Mathematics, class-11-notes) covers Limits, continuity: limits of a function, indeterminate forms. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Limits form a **system**. The **definition** is neighbourhoodal — x approaches, never arrives — which is exactly why 0/0 limits can exist. The **seven indeterminate forms** (0/0, ∞/∞, 0·∞, ∞ − ∞, 1^∞, 0⁰, ∞⁰) are flags for transformation, provably value-free: four 0/0 examples at x = 2 land on 4, 12, 0, ∞.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits and continuity: limits of a function, indeterminat… — quick idea map\"><title>Limits and continuity: limits of a function, indeterminat… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits and continuity: limits of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">indeterminat…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Limits</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Continuity: limits of a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lim sin x/x = 1 (x→0, rad)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(1+x)^{1/x} → e as x→0</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits and continuity: limits of a function, indeterminat… — quick idea map\"><title>Limits and continuity: limits of a function, indeterminat… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits and continuity: limits of a function,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">indeterminat…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The limit theorems are a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">licence system: every</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">algebraic step on limits…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Limit definition:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">neighbourhood approach,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">point excluded.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- lim(f ± g) = L ± M; lim</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fg = LM; lim f/g = L/M (M</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">≠ 0); lim cf = cL; lim fⁿ…</text></svg>",
         "caption": "Limits and continuity: limits of a function, indeterminat… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "lim sin x/x = 1 (x→0, rad)\n(1+x)^{1/x} → e as x→0"
+      "text": "- lim(f ± g) = L ± M; lim fg = LM; lim f/g = L/M (M ≠ 0); lim cf = cL; lim fⁿ = Lⁿ - squeeze: g ≤ f ≤ h, lim g = lim h = L ⟹ lim f = L - forms: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0⁰, ∞⁰"
     },
     {
       "label": "Conditions",
@@ -43,11 +43,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).  ·  Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a."
+      "text": "\"If lim f = L and lim g = M then lim(f+g) = L+M, lim(fg) = LM, lim(f/g) = L/M (M != 0); squeeze: bounded between equals shares their limit.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The no-fixed-value demo*** - four different 0/0 limits at x = 2 converge to 4, 12, 0, inf: the form flags the investigation, the functions decide the answer."
     },
     {
       "label": "Limitation",
@@ -55,31 +55,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Limits and continuity: limits of a function, indeterminat… — Calculus, Mathematics (class-11-notes).  ·  **Tested.** define it · list: limits, continuity: limits of a function, indeterminate forms, algebraic properties of limits · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Limits as a System This canonical consolidates the **limit of a function**, the **indeterminate forms**, and the **algebraic properties of limits** — the operating system every later technique runs on.  ·  ## 2. Fundamental Concepts ### 2.1 The definition, restated - **lim_{x→a} f(x) = L** ⟺ f(x) can be made arbitrarily close to L by taking x sufficiently close to a (x ≠ a). The limit is about the **neighbourhood**, not the point. ### 2.2 The indeterminate forms - **0/0, ∞/∞, 0·∞, ∞ − ∞, 1^∞, 0⁰, ∞⁰** — seven forms where substitution fails and transformation is mandatory.…"
     },
     {
       "label": "Shortcut",
-      "text": "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+      "text": "Substitute first, classify the form, then act. 0/0: factor or conjugate. inf/inf: degrees. Cite the property you use. Squeeze for oscillation."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Limits and continuity: limits of a function, indeterminat…\" with one example.  ·  compare \"Limits\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (verified PYQ): Find lim_{x→2} (x² − 4)/(x − 2). (2m)** — **Substitute:** (2² − 4)/(2 − 2) = 0/0 — **indeterminate** ⟹ transform. **Factor:** x² − 4 = (x − 2)(x + 2) (difference of squares), so (x² − 4)/(x − 2) = **x + 2 for x ≠ 2** — the cancellation is licensed on the punctured neighbourhood. **Substitute:** 2 + 2 = **4**.…  ·  **NEB-style (2m): State the seven indeterminate forms and demonstrate that the 0/0 form has no fixed value.** — **The seven forms:** 0/0, ∞/∞, 0·∞, ∞ − ∞, 1^∞, 0⁰, ∞⁰ — each names a *shape* of failure, not a value.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)..",
+      "text": "Name the indeterminate form explicitly before transforming - the classification is the recognition mark the marker seeks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits and continuity: limits of a function, indeterminat… — topic mind map\"><title>Limits and continuity: limits of a function, indeterminat… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Limits and continuity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Limits</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Continuity: limits of a</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">function</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Indeterminate forms</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Algebraic properties of</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">limits</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Limits and continuity: limits of a function, indeterminat… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The limit theorems are a licence system: every algebraic step on limits (splitting, steering, quoting) must cite a theorem whose hypotheses actually hold."
+    },
+    {
       "label": "Key points",
-      "text": "• Limits  ·  • Continuity: limits of a function  ·  • Indeterminate forms  ·  • Algebraic properties of limits"
+      "text": "Limit definition: neighbourhood approach, point excluded. Seven indeterminate forms: 0/0, inf/inf, 0*inf, inf - inf, 1^inf, 0^0, inf^0 - shapes needing transformation, not values. Determinate: c/0 => +-inf (sign by side), 0/inf => 0, inf/c => inf.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Speedometer needles settle as wheels spin faster - the reading approaches a limit the needle never holds at any instant: neighbourhood, not point."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Limits and continuity: limits of a function, indeterminat…\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): Prove the product rule: if lim_{x→a} f(x) = L and lim_{x→a} g(x) = M (both finite), then lim_{x→a} f(x)g(x) = LM.** — **Decomposition:** write f = L + α and g = M + β, where α = f − L → 0 and β = g − M → 0 as x → a — this is precisely what the two limits assert.…  ·  **NEB-style (5m): Using the ε–δ definition, prove that lim_{x→3} (2x − 5) = 1.** — **Setup:** given ε > 0, we must find δ > 0 such that 0 < |x − 3| < δ ⟹ |(2x − 5) − 1| < ε. **Simplify the target:** |(2x − 5) − 1| = |2x − 6| = **2|x − 3|** — the error is exactly twice the input distance.…  ·  **NEB-style (5m): Using the ε–δ definition, prove that lim_{x→2} x² = 4.** — **Setup:** given ε > 0, find δ > 0 with |x − 2| < δ ⟹ |x² − 4| < ε. **Factor:** |x² − 4| = |x + 2|·|x − 2| — the unwanted factor |x + 2| must be tamed. **Preliminary window:** restrict |x − 2| < 1, i.e.…"
     },
     {
       "label": "MCQ drill",
@@ -87,27 +95,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.  ·  **Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Limit** | Neighbourhood approach value | x → 2 behaviour | | **Indeterminate form** | Shape needing transformation | 0/0 | | **Limit theorems** | Sum/product/quotient rules | split and multiply | | **Squeeze theorem** | Bounded between convergent pair | sin x/x proof |  ·  ## 4. Detailed Explanation ### 4.1 Why indeterminate ≠ undefined - 0/0 is *undetermined*, not *nonexistent*: the neighbourhood values may conspire toward any number, ∞, or nothing. The form is a flag to investigate, not a verdict.…  ·  ## 5. Comparison Tables **Forms triage** | Form | Meaning | First tool | |---|---|---| | 0/0 | shared zero | factor/conjugate | | ∞/∞ | race of growths | degree comparison | | ∞ − ∞ | difference of giants | conjugate/combine | | 1^∞ | power tug | bridge e^{lim uv} | | c/0 | determinate | ±∞ by sign |"
     },
     {
       "label": "More ideas",
-      "text": "• Without proof  ·  • Basic theorems on limits of algebraic  ·  define + example each sub-idea: limits, continuity: limits of a function, indeterminate forms, algebraic properties of limits."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)..  ·  Verified PYQ: NEB 2023 lim (x^2-4)/(x-2) = 4 - assigned to this row. Other items NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Limits and continuity: limits of a function, indeterminat…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "**NEB-style (6m): For f(x) = x + 1 (x < 2), f(2) = 5, f(x) = 8 − x (x > 2): find LHL, RHL, decide whether lim_{x→2} f(x) exists, and discuss continuity.** — **Left-hand limit** (left branch): lim_{x→2⁻} (x + 1) = **3**. **Right-hand limit** (right branch): lim_{x→2⁺} (8 − x) = **6**.…  ·  **NEB-style (5m): Use the squeeze theorem to evaluate lim_{x→0} x² cos(1/x²), and explain why no algebraic method can resolve it.** — **The obstacle:** cos(1/x²) oscillates infinitely fast near 0 (its argument → ∞), so it has no limit and no standard-limit steering applies — algebra is powerless.…  ·  Find lim_{x→2} (x² − 4)/(x − 2)."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  **Continuity: limits of a function.** one-line definition + one-line exam use.  ·  **Indeterminate forms.** one-line definition + one-line exam use."
+      "text": "List the seven indeterminate forms and show 0/0 has no fixed value.  ·  Prove the product rule for limits.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Algebraic properties of limits.** one-line definition + one-line exam use.  ·  **Without proof.** one-line definition + one-line exam use.  ·  **Basic theorems on limits of algebraic.** one-line definition + one-line exam use."
+      "text": "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).  ·  ## 6. Common Confusions **lim f = L does not need f(a) = L:** the point is excluded — that is why 0/0 limits exist at all.  ·  **Splitting without existence:** the product theorem fails if a factor's limit DNE — regroup before splitting."
     },
     {
       "label": "More ideas",
-      "text": "**Trigonometric.** one-line definition + one-line exam use.  ·  **Exponential.** one-line definition + one-line exam use.  ·  **Logarithmic functions.** one-line definition + one-line exam use."
+      "text": "**c/0 is not indeterminate:** it is determinately infinite (with sign from the side); only 0/0 needs work.  ·  ## 7. Exam Application **NEB 2023 (verified PYQ): Find lim_{x→2} (x² − 4)/(x − 2). (2m)** — **Substitute:** (4 − 4)/0 = **0/0** ⟹ transform. **Factor:** x² − 4 = (x − 2)(x + 2); cancel (x ≠ 2 licensed): x + 2. **Substitute:** 2 + 2 = **4**. (Cross-check via the star (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹: 2·2 = 4 ✓.)  ·  **NEB-style (2m): State the seven indeterminate forms and show that 0/0 has no fixed value.** — The forms: **0/0, ∞/∞, 0·∞, ∞ − ∞, 1^∞, 0⁰, ∞⁰**. **No fixed value:** (x² − 4)/(x − 2) → 4; (x³ − 8)/(x − 2) → 12; (x − 2)²/(x − 2) → 0; (x − 2)/(x − 2)² → ∞ — all are 0/0 at x = 2 yet converge differently ⟹ the form alone…"
     }
   ]
 }

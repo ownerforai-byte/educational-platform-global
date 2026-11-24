@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases.…",
+      "text": "Free fall strips motion to its essence: constant acceleration g ≈ 9.8 m/s² downward, independent of mass. With one sign convention held throughout, the equations of motion specialise: a dropped body falls $h = \\frac{1}{2}gt^2$ and hits at $v = \\sqrt{2gh}$ — a stone from 200 m takes 6.32 s and lands at 63.2 m/s (NEB 2023, g = 10).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a Freely Falling Body — quick idea map\"><title>Motion of a Freely Falling Body — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion of a Freely Falling Body</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Universality of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">free fall — $g$ is the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">same for all masses…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Sign-convention</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">discipline — one axis, one</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">consistent $g$ sign per…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Free fall acceleration $g$</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is independent of mass,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">size and material.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">At every instant of the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">flight, $a = g$ downward —</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">including the top ($v =…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a Freely Falling Body — quick idea map\"><title>Motion of a Freely Falling Body — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion of a Freely Falling Body</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Mass never appears:** in</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vacuum a feather and a</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hammer fall identically —…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Free fall: a = g ≈ 9.8 (or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">10) m/s² downward,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">independent of mass.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dropped: h = ½gt², v =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">√(2gh). Thrown up: t_up =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">u/g, h_max = u²/2g, T =</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Dropped: h = ½gt²; v =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">√(2gh) - Thrown up: t_up =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">u/g; h_max = u²/2g; T =…</text></svg>",
         "caption": "Motion of a Freely Falling Body — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Dropped from rest: $v = gt$, $h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$\nThrown up (up positive): $v = u - gt$, $h = ut - \\tfrac{1}{2}gt^2$, $v^2 = u^2 - 2gh$\nMaximum height: $h_{max} = \\dfrac{u^2}{2g}$ (at $v = 0$)"
+      "text": "- Dropped: h = ½gt²; v = √(2gh) - Thrown up: t_up = u/g; h_max = u²/2g; T = 2u/g - Sign convention: up positive → a = −g"
     },
     {
       "label": "Conditions",
@@ -45,11 +45,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1 (dropped): a mango falls from a 20 m tree — $t = \\sqrt{2h/g} = \\sqrt{4} = 2$ s; strikes at $v = \\sqrt{2(10)(20)} = 20$ m/s.  ·  Example 2 (thrown up): a ball goes up at 15 m/s — top after 1.5 s, $h_{max} = 11.25$ m, back in hand after 3 s at 15 m/s (symmetry)."
+      "text": "***Stone dropped from 200 m*** — t = 6.32 s, v = 63.2 m/s (NEB 2023, g = 10)."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Heavier bodies fall faster.' ✅ In free fall ALL bodies have the same acceleration $g$; observed differences come from air resistance — demonstrated by the Apollo 15 hammer–feather drop on the Moon.  ·  ❌ 'At the top of the flight, acceleration is zero because the body stops.' ✅ $v = 0$ but $a = g$ downward at ALL points of the flight. If $a$ were zero at the top, the body would stay there!"
+      "text": "**Dropped vs thrown down:** dropped means u = 0; thrown down means u ≠ 0 downward — different v and t.  ·  **Time to top vs time of flight:** t_up = u/g; total flight T = 2u/g — double, by symmetry."
     },
     {
       "label": "Derivation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: 'Maximum height' ⇒ remember $u^2/2g$; 'time to top' ⇒ $u/g$; both come from $v = 0$ in the first and third equations.  ·  Trick 2: Total flight time of a return throw: $T = 2u/g$ — read the word 'returns' and write it instantly."
+      "text": "\"v = √(2gh) — the two-line answer for dropped bodies.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Prove that the time of ascent equals the time of descent for a body projected vertically upward (neglect air resistance).  ·  Q2. A stone dropped from a bridge strikes the water in 3 s. Find the bridge height and the striking velocity ($g = 10$)."
+      "text": "**Numerical (3m): A ball is thrown upward at 29.4 m/s. Find the maximum height and total time of flight (g = 9.8 m/s²).** — h_max = u²/2g = 29.4²/19.6 = 44.1 m; T = 2u/g = 58.8/9.8 = 6 s."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: NEB loves the ascent = descent proof — quote $v = u - gt$ at top and bottom points and use symmetry.  ·  Exam Tip 2: In 'velocity on reaching ground' questions, prefer $v^2 = u^2 + 2gh$; finding $t$ first wastes a step and invites rounding error.",
+      "text": "Most-tested: drop numericals (2023). Also expect thrown-up questions (h_max, T) and the energy verification (2020).",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a Freely Falling Body — topic mind map\"><title>Motion of a Freely Falling Body — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Motion of a freely falling body</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Motion of a freely</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">falling body</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Motion of a Freely Falling Body — topic mind map of this topic's own sub-topics"
@@ -73,27 +73,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Universality of free fall — $g$ is the same for all masses (Galileo).  ·  Concept 2: Sign-convention discipline — one axis, one consistent $g$ sign per problem.  ·  Concept 3: Top-of-flight state — $v = 0$, $a = g$: zero velocity is not zero acceleration.  ·  Concept 4: Up–down symmetry — equal times and speeds at equal heights."
+      "text": "**Mass never appears:** in vacuum a feather and a hammer fall identically — Apollo 15 proved it on the Moon."
     },
     {
       "label": "Key points",
-      "text": "Free fall acceleration $g$ is independent of mass, size and material.  ·  At every instant of the flight, $a = g$ downward — including the top ($v = 0$, $a \\ne 0$).  ·  Up–down symmetry: equal speeds at equal heights, equal times up and down.  ·  Use ONE sign convention throughout a problem; put $g$'s sign in consistently."
+      "text": "Free fall: a = g ≈ 9.8 (or 10) m/s² downward, independent of mass.  ·  Dropped: h = ½gt², v = √(2gh). Thrown up: t_up = u/g, h_max = u²/2g, T = 2u/g.  ·  Fix one sign convention and keep it through the whole problem."
     },
     {
       "label": "Universal facts",
-      "text": "Apollo 15 commander David Scott dropped a hammer and falcon feather on the Moon (1971): both hit the dust together — the most-watched verification that $g$ is mass-independent.  ·  Vacuum-tube 'Guinea and feather' demonstrations in classrooms reproduce the same result; air resistance, not gravity, distinguishes everyday falls."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. A ball is thrown upward and rises 45 m. Find its initial speed and total time of flight.  ·  Q4. Show that a body thrown up returns to the starting point with the same speed, using $v^2 = u^2 - 2gh$.  ·  Q5. A coin is dropped from a lift moving up at constant velocity 6 m/s. Find its acceleration relative to (a) the lift, (b) the ground."
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 3: Always sketch the motion (up, top, down) and mark $v = 0$ at the top — diagrams earn marks and prevent sign slips.  ·  Exam Tip 4: State 'neglecting air resistance' in theory answers — it defines the free-fall model."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 3 (through a window): a ball dropped past a 2 m window takes 0.1 s — speed at window top $\\approx \\frac{2}{0.1} - \\tfrac{1}{2}(10)(0.1) \\approx 19.5$ m/s, hence fall height $\\approx 19$ m.  ·  Example 4 (two balls): one dropped and one thrown down at 10 m/s from the same tower stay $10t$ apart — both gain speed at $g$; the throw only adds a constant offset."
+      "text": "Galileo's Leaning Tower demonstration (probably apocryphal but conceptually right): two different masses hit the ground together."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Type 2 — alternate treatment:** this version works free fall entirely through the equations of motion with sign conventions and the up-and-down symmetry argument — the pattern NEB numericals follow.  ·  **Definition:** a freely falling body moves under gravity ALONE — no air resistance, no push after release. All bodies fall with the same acceleration $g \\approx 9.8$ m/s² (take 10 m/s² in numericals) independent of mass — Galileo's famous result.  ·  **Sign convention method:** choose upward positive. Then for a body projected up at $u$: $v = u - gt$, $h = ut - \\tfrac{1}{2}gt^2$, $v^2 = u^2 - 2gh$. The SAME equations with $u = 0$ describe a dropped body; with the throw downward, $u$ enters negative."
+      "text": "## 1. Topic Introduction — The Cleanest Laboratory in Physics Drop anything near Earth's surface and, ignoring air resistance, it falls with the same constant acceleration g ≈ 9.8 m/s² — regardless of mass. Free fall is the equations of motion with a fixed a, and its sign bookkeeping (up positive or down positive) is the examinable skill.  ·  ## 2. Fundamental Concepts - **Free fall:** motion under gravity alone (no air resistance, no thrust). - **g ≈ 9.8 m/s²** (often taken as 10 m/s² in NEB numericals) directed **downward** everywhere near the surface; independent of mass, size, material (Galileo's result). - **Sign convention:** choose one positive direction and keep it.…  ·  ## 3. Conceptual Relationships - **To Topic 8:** free fall is $s = ut + \\frac{1}{2}at^2$ with a = g — the same three equations. - **To Topic 10:** projectile motion is free fall superposed on uniform horizontal motion. - **To Energy (Unit 5):** conservation of energy verified for a freely falling body — mgh converts to ½mv² (NEB 2020 asks exactly this).…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Odd-number/1:4:9 patterns for falls from rest — quick checks on fall distances.  ·  Times: $t_{up} = t_{down} = \\dfrac{u}{g}$, total flight $T = \\dfrac{2u}{g}$  ·  $n$-th second fall distance: $s_n = \\tfrac{g}{2}(2n - 1)$ — ratio $1:3:5:7\\ldots$"
+      "text": "**Up-Down Symmetry (No Air Resistance):** Time up = time down = $u/g$. Velocity at equal heights going up and down are equal in magnitude, opposite in direction. At the top, $v=0$ but $a=g$ downward — zero velocity does NOT mean zero acceleration.  ·  Note 3: Impact-speed questions: $v = \\sqrt{2gh}$ works even when $t$ is unknown — fastest route.  ·  Note 4: Two-body fall problems: write $y_1(t)$ and $y_2(t)$ with one origin; separation is their difference — accelerations add no relative change if both are $g$."
     },
     {
       "label": "More ideas",
-      "text": "**Up-Down Symmetry (No Air Resistance):** Time up = time down = $u/g$. Velocity at equal heights going up and down are equal in magnitude, opposite in direction. At the top, $v=0$ but $a=g$ downward — zero velocity does NOT mean zero acceleration.  ·  'Dropped' = $u = 0$; 'thrown' = $u \\ne 0$ — the equations differ by the $ut$ term.  ·  Air resistance is neglected in free fall; it is what produces terminal velocity in reality."
+      "text": "Verified PYQ: dropped stone numerical (2023, 3m). The 2020 energy-verification question uses the same motion.  ·  \"Free fall forgets the mass — only g remains.\"  ·  Why does a crumpled paper fall slower than a flat sheet?"
     },
     {
       "label": "More ideas",
-      "text": "❌ Using $g = -10$ m/s² AND taking $h$ positive upward in $h = \\tfrac{1}{2}gt^2$. ✅ Put the sign in ONCE: either $g$ negative with up positive, or down positive with $g$ positive — never both conventions mixed.  ·  ❌ 'A body thrown up takes longer to rise than to fall.' ✅ Without air resistance the times are EXACTLY equal ($u/g$ each way); with air resistance the fall takes LONGER, not the rise.  ·  ❌ 'Velocity on returning to the thrower is less than the launch speed.' ✅ Equal in magnitude (symmetry). Only air resistance or bounce changes it."
+      "text": "Task 3: Solve a mixed case: thrown DOWN from a height with initial speed (find $t$ and $v$ at ground).  ·  Task 4: Solve a lift problem (coin dropped in an ascending/descending lift) in both frames.  ·  Task 5: Derive $h = \\tfrac{1}{2}gt^2$ from the $v$–$t$ area for a dropped body and verify the 1:3:5 pattern for $n = 1, 2, 3$."
     },
     {
       "label": "More ideas",
-      "text": "❌ Treating 'dropped' and 'thrown down' identically. ✅ Dropped means $u = 0$; thrown down means $u \\ne 0$ downward — the equations differ by that initial term.  ·  Example 5 (lift): a lift falls freely — objects inside float relative to the cabin because both cabin and objects have $a = g$ (weightlessness in free fall).  ·  Note 3: Impact-speed questions: $v = \\sqrt{2gh}$ works even when $t$ is unknown — fastest route."
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: Two-body fall problems: write $y_1(t)$ and $y_2(t)$ with one origin; separation is their difference — accelerations add no relative change if both are $g$.  ·  Note 1: Fix one positive direction per problem; the sign of $g$ follows from it (up positive ⇒ $a = -g$).  ·  Note 2: $v = \\sqrt{2gh}$ gives impact speed without needing time — quickest route for drop problems."
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Kinematics | Free fall | A stone is dropped from a height of 200 m.…"
     }
   ]
 }

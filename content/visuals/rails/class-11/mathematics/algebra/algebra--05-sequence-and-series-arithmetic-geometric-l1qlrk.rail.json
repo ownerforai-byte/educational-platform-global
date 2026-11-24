@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Sequence and series: arithmetic, geometric, harmonic sequ… (Algebra, Mathematics, class-11-notes) covers Sequence, series: arithmetic, geometric. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Structured series yield to three tools. The **special sums**: Σi = n(n+1)/2 by Gauss pairing, Σi² = n(n+1)(2n+1)/6 and **Σi³ = [n(n+1)/2]²** by telescoping (k+1)³ − k³ = 3k² + 3k + 1 — the cube sum literally squares the triangular sum.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and series: arithmetic, geometric, harmonic sequ… — quick idea map\"><title>Sequence and series: arithmetic, geometric, harmonic sequ… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sequence and series: arithmetic, geometric,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">harmonic sequ…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Sequence</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Series: arithmetic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">AP: Sₙ = n/2[2a+(n−1)d]</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">GP infinite: S = a/(1−r),</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|r|&lt;1</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and series: arithmetic, geometric, harmonic sequ… — quick idea map\"><title>Sequence and series: arithmetic, geometric, harmonic sequ… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Sequence and series: arithmetic, geometric,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">harmonic sequ…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Telescoping is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cancellation engineering:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">partial fractions build</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Special sums: sum i =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n(n+1)/2 (Gauss pairing);</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sum i^2 = n(n+1)(2n+1)/6</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Σi = n(n+1)/2; Σi² =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n(n+1)(2n+1)/6; Σi³ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[n(n+1)/2]² - Σₖ₌₁ⁿ (bₖ −</text></svg>",
         "caption": "Sequence and series: arithmetic, geometric, harmonic sequ… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "AP: Sₙ = n/2[2a+(n−1)d]\nGP infinite: S = a/(1−r), |r|<1\nAM ≥ GM ≥ HM"
+      "text": "- Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]² - Σₖ₌₁ⁿ (bₖ − bₖ₊₁) = b₁ − bₙ₊₁; sum to ∞: b₁ − lim bₙ - Σₖ₌₁ⁿ kxᵏ⁻¹ = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x) → 1/(1−x)² for |x| < 1"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "AP: aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d]. GP: aₙ = ar^{n−1}; Sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): S = a/(1−r).  ·  AM ≤ GM ≤ HM: AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b)."
+      "text": "\"sum i^3 = [n(n+1)/2]^2; telescoping sum = b_1 - lim b_{n+1}; sum n x^(n-1) -> 1/(1-x)^2 for |x| < 1.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The collapsing spyglass*** - in sum 1/k - 1/(k+1) every interior term cancels its neighbour; only 1 and 1/(n+1) survive, and the limit finishes the job."
     },
     {
       "label": "Limitation",
@@ -56,31 +56,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Sequence and series: arithmetic, geometric, harmonic sequ… — Algebra, Mathematics (class-11-notes).  ·  **Tested.** define it · list: sequence, series: arithmetic, geometric, harmonic sequences · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Series With Structure Beyond AP/GP lie the **special sums** (Σi, Σi², Σi³), **telescoping series**, and **arithmetico-geometric series**. Each carries a theorem-grade derivation — induction, telescoping collapse, or the shift trick — and each is a standard NEB computation.  ·  ## 2. Fundamental Concepts ### 2.1 The special sums (theorems with proofs) - **Σᵢ₌₁ⁿ i = n(n+1)/2** — Gauss pairing: S forwards + S backwards = n columns of (n+1). - **Σi² = n(n+1)(2n+1)/6** — telescoping via (k+1)³ − k³ = 3k² + 3k + 1 summed over k. - **Σi³ = [n(n+1)/2]²** — same telescoping with (k² − (k−1)²)² or induction; the cube sum is the **square of the triangular sum**.…"
     },
     {
       "label": "Shortcut",
-      "text": "Convergence of a series needs term → 0 (necessary, not sufficient)."
+      "text": "n(n+1) sums: split into k^2 + k. 1/(k(k+1)): partial fractions then telescope. n x^(n-1): shift trick. Always end telescoping answers with the limit."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Sequence and series: arithmetic, geometric, harmonic sequ…\" with one example.  ·  compare \"Sequence\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Find the sum of the series 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — **Split by linearity:** k(k+1) = k² + k, so Sₙ = Σk² + Σk. **Apply the special sums:** Σk² = n(n+1)(2n+1)/6 and Σk = n(n+1)/2. **Combine:** Sₙ = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**.…  ·  **NEB-style (3m): Find the sum to infinity of the series 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Step 1 — partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1) (check: (k+1) − k = 1 over k(k+1) ✓). **Step 2 — telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + (⅓ − ¼) + ⋯ + (1/n − 1/(n+1)).…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r)..",
+      "text": "State the telescoping collapse explicitly (show 2-3 cancelling terms) before writing the closed form - the visible cancellation is the proof.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Sequence and series: arithmetic, geometric, harmonic sequ… — topic mind map\"><title>Sequence and series: arithmetic, geometric, harmonic sequ… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Sequence and series</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Sequence</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Series: arithmetic</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Geometric</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Harmonic sequences</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Sequence and series: arithmetic, geometric, harmonic sequ… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Telescoping is cancellation engineering: partial fractions build the collapse, and the limit of the surviving tail decides convergence."
+    },
+    {
       "label": "Key points",
-      "text": "• Sequence  ·  • Series: arithmetic  ·  • Geometric  ·  • Harmonic sequences"
+      "text": "Special sums: sum i = n(n+1)/2 (Gauss pairing); sum i^2 = n(n+1)(2n+1)/6 and sum i^3 = [n(n+1)/2]^2 (telescoping via (k+1)^3 - k^3 = 3k^2 + 3k + 1, or induction). Telescoping: sum (b_k - b_{k+1}) = b_1 - lim b_{n+1}; converges iff the tail converges; partial fractions manufacture telescopes (1/(k(k+1)) = 1/k -…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Compound-interest schedules and depreciation tables are arithmetico-geometric sums - the shift trick is their accountant."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Sequence and series: arithmetic, geometric, harmonic sequ…\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): Sum the series S = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ (x ≠ 1) and find its limit for |x| < 1.** — **Shift trick:** form xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. **Subtract aligned:** S − xS = 1 + (2−1)x + (3−2)x² + ⋯ + (n−(n−1))xⁿ⁻¹ − nxⁿ = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ.…"
     },
     {
       "label": "MCQ drill",
@@ -88,27 +96,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** AP: aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d]. GP: aₙ = ar^{n−1}; Sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): S = a/(1−r).  ·  **Fact.** AM ≤ GM ≤ HM: AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).  ·  **Fact.** Convergence of a series needs term → 0 (necessary, not sufficient)."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Telescoping sum** | Partial sums collapse to ends | Σ1/k(k+1) = 1 − 1/(n+1) | | **Shift trick** | Multiply by r, subtract to collapse | sum of n·2ⁿ⁻¹ type | | **Special sums** | Closed forms for Σi, Σi², Σi³ | Σi³ = [n(n+1)/2]² | | **Linearity** | Sums distribute over addition and scalars |…  ·  ## 4. Detailed Explanation ### 4.1 Telescoping as cancellation engineering - Each term cancels its neighbour's counterpart, leaving only the first and last — the series \"telescopes\" like a collapsing spyglass. Partial fractions are the standard factory for telescopes. ### 4.2 The shift trick's algebra - For S = Σₖ₌₁ⁿ k·2ᵏ⁻¹: 2S = Σ k·2ᵏ.…  ·  ## 5. Comparison Tables **Series types and tools** | Type | Signature | Tool | |---|---|---| | special sums | i, i², i³ | pairing / telescoping / induction | | telescoping | bₖ − bₖ₊₁ | partial fractions | | arithmetico-geometric | n·rⁿ | shift trick | | GP | rⁿ | a(rⁿ−1)/(r−1) |"
     },
     {
       "label": "More ideas",
-      "text": "• Series  ·  • Their properties  ·  define + example each sub-idea: sequence, series: arithmetic, geometric, harmonic sequences."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r)..  ·  No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Sequence and series: arithmetic, geometric, harmonic sequ…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Find the sum 1·2 + 2·3 + ⋯ + n(n+1).  ·  Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯  ·  Derive Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ by the shift trick."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r).  ·  **Series: arithmetic.** one-line definition + one-line exam use.  ·  **Geometric.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r).  ·  ## 6. Common Confusions **Telescoping needs the limit:** the sum is b₁ − **lim** bₙ₊₁, not b₁ − bₙ₊₁ — forgetting the limit leaves a variable in the \"answer\"."
     },
     {
       "label": "More ideas",
-      "text": "**Harmonic sequences.** one-line definition + one-line exam use.  ·  **Series.** one-line definition + one-line exam use.  ·  **Their properties.** one-line definition + one-line exam use."
+      "text": "**Shift-trick alignment:** subtract S from rS with indices aligned (rS = Σₖ₌₂ⁿ⁺¹ (k−1)2ᵏ⁻¹) — misalignment produces nonsense.  ·  **Σi³ vs (Σi)²:** they are equal — that is a theorem, not a definition; students who \"simplify\" it away lose the identity.  ·  ## 7. Exam Application **NEB-style (3m): Find the sum of 1·2 + 2·3 + 3·4 + ⋯ + n(n+1).** — k(k+1) = k² + k, so S = Σk² + Σk = n(n+1)(2n+1)/6 + n(n+1)/2 = n(n+1)[(2n+1) + 3]/6 = **n(n+1)(n+2)/3**. Check n = 3: 2 + 6 + 12 = 20 and 3·4·5/3 = 20 ✓."
     },
     {
       "label": "More ideas",
-      "text": "**Their relations.** one-line definition + one-line exam use.  ·  **Sum of infinite geometric series.** one-line definition + one-line exam use."
+      "text": "**NEB-style (3m): Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1). **Telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + ⋯ + (1/n − 1/(n+1)) = **1 − 1/(n+1)** — every middle term cancels. **Limit:** S = lim Sₙ = 1 − 0 = **1**.…  ·  **NEB-style (3m): Find the sum Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ for x ≠ 1.** — **Shift trick:** xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. Subtract: S − xS = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ = (1 − xⁿ)/(1 − x) − nxⁿ. Hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**.…"
     }
   ]
 }

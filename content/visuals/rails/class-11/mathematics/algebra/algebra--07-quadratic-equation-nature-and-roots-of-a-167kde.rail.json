@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Quadratic equation: nature and roots of a quadratic equat… (Algebra, Mathematics, class-11-notes) covers Quadratic equation, nature, roots of a quadratic equation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The **discriminant** D = b² − 4ac is the complete root classifier: **D > 0** two distinct real roots (rational when D is a perfect square — NEB 2024's x² − 5x + 6 = 0 has D = 1, roots 2 and 3), **D = 0** a repeated root at −b/2a (tangency — k² − 36 = 0 gives k = ±6), **D < 0** conjugate complex roots.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quadratic equation: nature and roots of a quadratic equat… — quick idea map\"><title>Quadratic equation: nature and roots of a quadratic equat… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quadratic equation: nature and roots of a</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">quadratic equat…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Quadratic equation</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nature</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">x = (−b ± √D)/(2a)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">α + β = −b/a</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quadratic equation: nature and roots of a quadratic equat… — quick idea map\"><title>Quadratic equation: nature and roots of a quadratic equat… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Quadratic equation: nature and roots of a</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">quadratic equat…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Viete is a translation</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">device: symmetric</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">expressions in the roots</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Quadratic formula x = (-b</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+- sqrt(D))/2a with D =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">b^2 - 4ac.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- x = (−b ± √D)/2a; D = b²</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">− 4ac - α + β = −b/a; αβ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">c/a; α² + β² = (α+β)² −…</text></svg>",
         "caption": "Quadratic equation: nature and roots of a quadratic equat… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "x = (−b ± √D)/(2a)\nα + β = −b/a\nαβ = c/a"
+      "text": "- x = (−b ± √D)/2a; D = b² − 4ac - α + β = −b/a; αβ = c/a; α² + β² = (α+β)² − 2αβ; |α − β| = √D/|a| - reconstruction: x² − (α+β)x + αβ = 0"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "ax² + bx + c = 0; discriminant D = b² − 4ac: D>0 two distinct real, D=0 equal, D<0 complex conjugate.  ·  Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving."
+      "text": "\"D > 0: two real roots; D = 0: repeated; D < 0: complex conjugates. alpha + beta = -b/a; alpha beta = c/a.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Tangency as D = 0*** - a repeated root means the parabola just touches the x-axis: the discriminant's zero case is a geometry statement."
     },
     {
       "label": "Limitation",
@@ -56,31 +56,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Quadratic equation: nature and roots of a quadratic equat… — Algebra, Mathematics (class-11-notes).  ·  **Tested.** define it · list: quadratic equation, nature, roots of a quadratic equation, relation between roots · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Quadratics Fully Decoded The discriminant b² − 4ac governs everything: **nature of roots**, and the **Viète relations** sum = −b/a, product = c/a — the pair that converts root information into coefficient equations and back.  ·  ## 2. Fundamental Concepts ### 2.1 The quadratic formula and discriminant - **x = (−b ± √D)/2a**, D = b² − 4ac. - **Nature theorem:** D > 0 ⟹ two distinct real roots; **D = 0** ⟹ one repeated real root (−b/2a); **D < 0** ⟹ two conjugate complex roots (−b ± i√|D|)/2a. - **Perfect-square sub-case:** D > 0 and a perfect square ⟹ rational roots (factorable over ℚ).…"
     },
     {
       "label": "Shortcut",
-      "text": "For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant."
+      "text": "Nature of roots: compute D first. Symmetric root expressions: Viete, never solve. Equal roots: set D = 0. New roots: new sum, new product, rebuild x^2 - Sx + P."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Quadratic equation: nature and roots of a quadratic equat…\" with one example.  ·  compare \"Quadratic equation\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)** — **Factoring:** two numbers with product 6 and sum −5 are −2 and −3: x² − 5x + 6 = (x − 2)(x − 3) = 0 ⟹ **x = 2 or x = 3**. **Viète verification:** the roots' sum is 2 + 3 = 5, matching −b/a = −(−5)/1 = 5 ✓; their product is 6, matching c/a = 6/1 ✓ — the root–coefficient relations…  ·  **NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β without solving the equation.** — **Viète relations:** α + β = −b/a = 5/2 and αβ = c/a = 3/2. **Sum of squares:** α² + β² = (α + β)² − 2αβ = (5/2)² − 2(3/2) = 25/4 − 3 = **13/4**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate..",
+      "text": "For \"find k\" questions, state the condition (D = 0, or a Viete relation) as a separate line - the condition is the theorem being tested.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Quadratic equation: nature and roots of a quadratic equat… — topic mind map\"><title>Quadratic equation: nature and roots of a quadratic equat… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Quadratic equation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Quadratic equation</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nature</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Roots of a quadratic</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">equation</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Relation between roots</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Quadratic equation: nature and roots of a quadratic equat… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Viete is a translation device: symmetric expressions in the roots convert to coefficients without ever solving the equation."
+    },
+    {
       "label": "Key points",
-      "text": "• Quadratic equation  ·  • Nature  ·  • Roots of a quadratic equation  ·  • Relation between roots"
+      "text": "Quadratic formula x = (-b +- sqrt(D))/2a with D = b^2 - 4ac. Nature theorem: D > 0 two distinct real roots (rational if D is a perfect square); D = 0 repeated root -b/2a (tangency); D < 0 conjugate complex roots.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Projectile range maximisation hides a D = 0 condition: the peak of a parabola is its repeated-root geometry in physics clothing."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Quadratic equation: nature and roots of a quadratic equat…\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): For what values of k does the equation x² + kx + 9 = 0 have (i) equal roots, (ii) real roots?** — **(i) Equal roots ⟺ D = 0:** D = k² − 4(1)(9) = k² − 36 = 0 ⟹ **k = ±6**.…"
     },
     {
       "label": "MCQ drill",
@@ -88,27 +96,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** ax² + bx + c = 0; discriminant D = b² − 4ac: D>0 two distinct real, D=0 equal, D<0 complex conjugate.  ·  **Fact.** Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.  ·  **Fact.** For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Discriminant** | D = b² − 4ac — root classifier | D = 0: double root | | **Viète relations** | α+β = −b/a, αβ = c/a | sum/product from coefficients | | **Conjugate roots** | D < 0 gives z and z̄ | 1 ± i√3 | | **Repeated root** | D = 0: both roots −b/2a | (x−3)² = 0 |  ·  ## 4. Detailed Explanation ### 4.1 Why the discriminant decides - √D must be real (D ≥ 0) or imaginary (D < 0); the formula's structure makes D the complete classifier — one number, three regimes. ### 4.2 Viète as a translation device - Many questions never ask for the roots — only for symmetric combinations (sums of squares, reciprocals).…  ·  ## 5. Comparison Tables **Discriminant regimes** | D | Roots | Graph | |---|---|---| | > 0 | two distinct real | cuts x-axis twice | | = 0 | repeated real | tangent to x-axis | | < 0 | conjugate complex | misses x-axis |"
     },
     {
       "label": "More ideas",
-      "text": "• Coefficient  ·  • Formation of a quadratic equation  ·  define + example each sub-idea: quadratic equation, nature, roots of a quadratic equation, relation between roots."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate..  ·  Verified PYQ: NEB 2024 (x^2 - 5x + 6 = 0, also cross-checked via Viete) - assigned to this row. Other items are NEB-style practice."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Quadratic equation: nature and roots of a quadratic equat…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Solve x² − 5x + 6 = 0 and verify with Viète's relations.  ·  For α, β roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.  ·  Find k so that x² + kx + 9 = 0 has equal roots."
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate.  ·  **Nature.** one-line definition + one-line exam use.  ·  **Roots of a quadratic equation.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate.  ·  ## 6. Common Confusions **Sum carries the minus:** α + β = −b/a — dropping the sign is the most common Viète error."
     },
     {
       "label": "More ideas",
-      "text": "**Relation between roots.** one-line definition + one-line exam use.  ·  **Coefficient.** one-line definition + one-line exam use.  ·  **Formation of a quadratic equation.** one-line definition + one-line exam use."
+      "text": "**Complex roots come in conjugate pairs** only when coefficients are real — state the hypothesis.  ·  **|α − β| = √D/|a|:** the |a| in the denominator is forgotten when a is negative.  ·  ## 7. Exam Application **NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)** — Factor: (x − 2)(x − 3) = 0 ⟹ **x = 2, 3**. Viète check: sum 5 = −(−5)/1 ✓, product 6 = 6/1 ✓ — the root–coefficient relations confirm the factorisation."
     },
     {
       "label": "More ideas",
-      "text": "**Symmetric roots.** one-line definition + one-line exam use.  ·  **One or both roots common.** one-line definition + one-line exam use."
+      "text": "**NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.** — Viète: α+β = 5/2, αβ = 3/2. **α² + β²** = (α+β)² − 2αβ = 25/4 − 3 = **13/4**. **1/α + 1/β** = (α+β)/αβ = (5/2)/(3/2) = **5/3**. No root was ever computed — Viète did all the work.  ·  **NEB-style (3m): For what value of k does x² + kx + 9 = 0 have equal roots?** — Equal roots ⟺ **D = 0**: k² − 36 = 0 ⟹ **k = ±6**. For k = 6 the double root is −3; for k = −6 it is +3 — the sign of k only moves the root's position, not the tangency.  ·  **NEB-style (2m): Form the quadratic equation whose roots are 2 + √3 and 2 − √3.** — Sum = 4; product = 4 − 3 = 1. **Equation: x² − 4x + 1 = 0.** (The roots are conjugate surds, so the coefficients are rational — as guaranteed for quadratics with rational coefficients.)"
     }
   ]
 }

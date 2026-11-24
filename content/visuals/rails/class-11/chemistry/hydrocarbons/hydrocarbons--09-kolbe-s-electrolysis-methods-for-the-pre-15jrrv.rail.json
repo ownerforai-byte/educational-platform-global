@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Kolbe's electrolysis methods for the preparation of alkan… (Hydrocarbons, Chemistry, class-11-notes) covers Kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Kolbe's electrolysis forges C–C bonds with electricity. In **sodium acetate solution (Pt electrodes)** the **anode** oxidises acetate — **CH₃COO⁻ → CH₃· + CO₂ + e⁻** — and methyl radicals couple to **ethane**, while the **cathode** makes H₂ and NaOH: **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kolbe's electrolysis methods for the preparation of alkan… — quick idea map\"><title>Kolbe's electrolysis methods for the preparation of alkan… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Kolbe's electrolysis methods for the</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">preparation of alkan…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Kolbe's electrolysis</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">methods for the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">preparation of alkanes</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Alkenes</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ΔG = −nFE</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E = E° − (0.0592/n)log Q</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(25°C)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kolbe's electrolysis methods for the preparation of alkan… — quick idea map\"><title>Kolbe's electrolysis methods for the preparation of alkan… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Kolbe's electrolysis methods for the</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">preparation of alkan…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Electrolysis as a bond</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">forge: the anode strips</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrons and CO2 from…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kolbe electrolysis: anodic</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">decarboxylative coupling.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Anode: CH₃COO⁻ → CH₃· +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CO₂ + e⁻; 2CH₃· → C₂H₆ -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cathode: 2H₂O + 2e⁻ → H₂</text></svg>",
         "caption": "Kolbe's electrolysis methods for the preparation of alkan… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "ΔG = −nFE\nE = E° − (0.0592/n)log Q (25°C)\nm = (M/F)Q"
+      "text": "- Anode: CH₃COO⁻ → CH₃· + CO₂ + e⁻; 2CH₃· → C₂H₆ - Cathode: 2H₂O + 2e⁻ → H₂ + 2OH⁻ - Overall: 2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH - Succinate: KOOC–CH₂–CH₂–COOK → HC≡CH (+ 2K₂CO₃ + 2H₂)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Kolbe's electrolysis methods for the preparation of alkanes\" as one blob → ✅ split into: kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.  ·  Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Kolbe electrolysis converts carboxylates to hydrocarbons at the anode by decarboxylative radical coupling; dicarboxylates yield alkenes and alkynes.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Succinate's self-coupling*** — one molecule, two anodic exits, one triple bond: the dicarboxylate needs no partner because its two ends were already married."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Kolbe's electrolysis methods for the preparation of alkan… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Electricity Builds Hydrocarbons Kolbe's electrolysis passes current through a **carboxylate solution**: at the anode, carboxylate ions surrender electrons, lose CO₂, and **couple into hydrocarbons**. Sodium acetate gives **ethane**; succinic acid gives **ethyne**; a suitable salt can even deliver **ethene** — electrolysis as a C–C bond factory.  ·  ## 2. Fundamental Concepts ### 2.1 Kolbe electrolysis of sodium acetate → alkane - Electrolyte: **concentrated sodium acetate solution**; electrodes: platinum; product at **anode**. - **CH₃COO⁻ → CH₃· + CO₂ + e⁻** (anodic oxidation); **2CH₃· → CH₃–CH₃** (ethane). - Cathode: **2H₂O + 2e⁻ → H₂ + 2OH⁻** (hydrogen evolves); solution turns alkaline. - Overall: **2CH₃COONa + 2H₂O → C₂H₆ + 2CO₂ + H₂ + 2NaOH**.…"
     },
     {
       "label": "Shortcut",
-      "text": "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+      "text": "Anode = product (radical coupling); cathode = H2 + NaOH. Acetate → ethane; propionate → butane (2×R carbons); succinate → ethyne. CO2 is the carboxyl carbon's exit."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Kolbe's electrolysis methods for the preparation of alkan…\" with one example.  ·  compare \"Kolbe's electrolysis methods for the preparation of alkanes\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — A **concentrated solution of sodium acetate** is electrolysed using **platinum electrodes**.…  ·  **NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate** carries **two carboxylate groups** on a –CH₂–CH₂– skeleton: **KOOC–CH₂–CH₂–COOK**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm..",
+      "text": "Write the half-reactions at both electrodes plus the overall equation — the cathode half is worth a mark on its own.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Kolbe's electrolysis methods for the preparation of alkan… — topic mind map\"><title>Kolbe's electrolysis methods for the preparation of alkan… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Kolbe's electrolysis methods for the preparat…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Kolbe's electrolysis</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">methods for the…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkenes</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkynes</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Kolbe's electrolysis methods for the preparation of alkan… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Electrolysis as a bond forge: the anode strips electrons and CO2 from carboxylates, and the freed radicals couple — the current literally welds carbons together."
+    },
+    {
       "label": "Key points",
-      "text": "• Kolbe's electrolysis methods for the preparation of alkanes  ·  • Alkenes  ·  • Alkynes"
+      "text": "Kolbe electrolysis: anodic decarboxylative coupling. Sodium acetate (conc, Pt electrodes): anode CH3COO- -> CH3. + CO2 + e-; 2CH3. -> C2H6; cathode 2H2O + 2e- -> H2 + 2OH-; overall 2CH3COONa + 2H2O -> C2H6 + 2CO2 + H2 + 2NaOH (solution becomes NaOH). Rule: product carbons = 2 x (R carbons); propionate -> n-butane.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Kolbe's 1845 synthesis was the first total synthesis of an organic compound from elements — acetic acid from C, H, O — the ancestor of all synthetic organic chemistry."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Kolbe's electrolysis methods for the preparation of alkan…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate is **CH₃CH₂COONa**. At the anode each propionate ion decarboxylates: **CH₃CH₂COO⁻ → C₂H₅· + CO₂ + e⁻**, and two **ethyl radicals couple**: **2C₂H₅· → CH₃CH₂CH₂CH₃** — **n-butane**.…"
     },
     {
       "label": "MCQ drill",
@@ -89,102 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.  ·  **Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.  ·  **Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Kolbe electrolysis** | Anodic decarboxylative coupling of carboxylates to hydrocarbons | acetate → ethane | | **Anodic oxidation** | Loss of electron(s) at the anode: RCOO⁻ → R· + CO₂ | the coupling engine | | **Dicarboxylate electrolysis** | Both ends decarboxylate; intramolecular coupling…  ·  ## 4. Detailed Explanation ### 4.1 The anode is the workshop - Every carbon–carbon bond of the product is forged **at the anode**: RCOO⁻ surrenders its electron, CO₂ departs, the naked R· radicals meet and couple. The cathode merely makes hydrogen and base. ### 4.2 Counting carbons - Two acetates (C₂ each) − two carboxyl carbons → **C₂ ethane**.…  ·  ## 5. Comparison Tables **Kolbe products by electrolyte** | Electrolyte | Product | Family | |---|---|---| | sodium acetate | ethane | alkane | | sodium propionate | butane (n-) | alkane | | potassium succinate | ethyne | alkyne | | suitable dicarboxylate (modified) | ethene | alkene |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: kolbe's electrolysis methods for the preparation of alkanes, alkenes, alkynes.  ·  one worked example for \"Kolbe's electrolysis methods for the preparation of alkan…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Describe Kolbe electrolysis of sodium acetate with electrode half-reactions.  ·  Predict the Kolbe products of propionate and succinate."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm.  ·  **Alkenes.** one-line definition + one-line exam use."
+      "text": "State where the product forms and why, and what the cathode produces.  ·  ## 6. Common Confusions **The product appears at the anode:** oxidation happens there; students who put ethane at the cathode lose the logic (and the marks).  ·  **Carboxyl carbons vanish as CO₂:** acetate (C₂) gives ethane (C₂) because both carboxyl carbons leave — count R groups, not the whole salt."
     },
     {
       "label": "More ideas",
-      "text": "**Alkynes.** one-line definition + one-line exam use."
+      "text": "**Cathode chemistry still happens:** H₂ evolves and NaOH forms — the full equation includes them.  ·  ## 7. Exam Application **NEB-style (3m): Describe the Kolbe electrolysis of sodium acetate with the overall equation.** — Concentrated **sodium acetate solution** is electrolysed with **platinum electrodes**.…  ·  **NEB-style (2m): How does the electrolysis of potassium succinate give ethyne?** — **Potassium succinate, KOOC–CH₂–CH₂–COOK**, is electrolysed: **both carboxylate groups are oxidised at the anode**, each losing CO₂ and an electron, leaving the two central carbons as joined radicals — **·CH₂–CH₂·** — which shed **two…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Predict the Kolbe product of sodium propionate.** — Sodium propionate, **CH₃CH₂COONa**: anodic oxidation gives **ethyl radicals (C₂H₅·)** which couple: **2C₂H₅· → C₄H₁₀ (n-butane)**. Overall **2CH₃CH₂COONa + 2H₂O → C₄H₁₀ + 2CO₂ + H₂ + 2NaOH**.…"
     }
-  ],
-  "keyPoints": [
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is a core concept in hydrocarbons.",
-    "Understanding 09 kolbe s electrolysis methods for the pre 15jrrv requires knowing its definition, conditions, and limitations.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 09 kolbe s electrolysis methods for the pre 15jrrv must be memorized precisely.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 09 kolbe s electrolysis methods for the pre 15jrrv.",
-    "Practical examples solidify understanding of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv and its real-world relevance.",
-    "Misconceptions about 09 kolbe s electrolysis methods for the pre 15jrrv often arise from confusing it with similar concepts.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv follows systematic rules that can be applied step-by-step.",
-    "Review of 09 kolbe s electrolysis methods for the pre 15jrrv should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 09 kolbe s electrolysis methods for the pre 15jrrv applies are as important as the concept itself.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 09 kolbe s electrolysis methods for the pre 15jrrv through application-based and comparison questions.",
-    "A clear grasp of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 09 kolbe s electrolysis methods for the pre 15jrrv, always note the exceptions alongside the general rule.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv should be reviewed with at least one worked example per sub-point.",
-    "Link 09 kolbe s electrolysis methods for the pre 15jrrv back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 09 Kolbe S Electrolysis Methods For The Pre 15jrrv to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv: apply the standard definition to a simple case.",
-    "Intermediate example: combine 09 kolbe s electrolysis methods for the pre 15jrrv with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 09 Kolbe S Electrolysis Methods For The Pre 15jrrv under time pressure.",
-    "Real-world connection: show how 09 Kolbe S Electrolysis Methods For The Pre 15jrrv appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 09 Kolbe S Electrolysis Methods For The Pre 15jrrv and state two conditions required for it to occur.",
-    "Differentiate 09 Kolbe S Electrolysis Methods For The Pre 15jrrv from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 09 Kolbe S Electrolysis Methods For The Pre 15jrrv.",
-    "List three applications of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 09 Kolbe S Electrolysis Methods For The Pre 15jrrv.",
-    "Create three flashcards covering definition, formula, and limitation of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv."
-  ],
-  "universalFacts": [
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is assessed through both short-answer and long-answer board questions.",
-    "Understanding 09 Kolbe S Electrolysis Methods For The Pre 15jrrv improves performance across the entire hydrocarbons unit.",
-    "Revision of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 09 Kolbe S Electrolysis Methods For The Pre 15jrrv with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv is sometimes overstated; remember its precise boundaries.",
-    "Applying 09 Kolbe S Electrolysis Methods For The Pre 15jrrv outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 09 Kolbe S Electrolysis Methods For The Pre 15jrrv and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 09 Kolbe S Electrolysis Methods For The Pre 15jrrv? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 09 Kolbe S Electrolysis Methods For The Pre 15jrrv is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 09 Kolbe S Electrolysis Methods For The Pre 15jrrv? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 09 Kolbe S Electrolysis Methods For The Pre 15jrrv.",
-    "Step-by-step animated derivation of the key relationship in 09 Kolbe S Electrolysis Methods For The Pre 15jrrv.",
-    "Interactive toggle between correct and incorrect representations of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 09 Kolbe S Electrolysis Methods For The Pre 15jrrv.",
-    "Side-by-side comparison animation of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv vs commonly confused concept.",
-    "Timelapse build-up of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 09 Kolbe S Electrolysis Methods For The Pre 15jrrv",
-    "Comparison table: 09 Kolbe S Electrolysis Methods For The Pre 15jrrv vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 09 Kolbe S Electrolysis Methods For The Pre 15jrrv"
-  ],
-  "summary": [
-    "09 Kolbe S Electrolysis Methods For The Pre 15jrrv is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 09 Kolbe S Electrolysis Methods For The Pre 15jrrv involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 09 Kolbe S Electrolysis Methods For The Pre 15jrrv alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

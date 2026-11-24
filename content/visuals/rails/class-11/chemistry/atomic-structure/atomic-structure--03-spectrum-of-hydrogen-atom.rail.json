@@ -28,28 +28,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Spectrum of hydrogen atom (Atomic Structure, Chemistry, class-11-notes) covers Spectrum of hydrogen atom. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Bohr explained the hydrogen line spectrum: electrons occupy quantised orbits Eₙ = −13.6 eV/n², and light is emitted only in downward jumps, each photon carrying exactly the gap (hν = E₂ − E₁). The Rydberg equation 1/λ = R(1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹, predicts five series named for their lower level: Lyman (n₁ = 1, UV), Balmer (n₁ = 2, the only visible series — Hα 656.3 nm, Hβ 486.1 nm), Paschen, Brackett and…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Spectrum of the Hydrogen Atom — quick idea map\"><title>Spectrum of the Hydrogen Atom — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Spectrum of the Hydrogen Atom</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Spectrum of hydrogen</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">atom</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$h\\nu=\\Delta</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E=E_{2}-E_{1},\\qquad</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\lambda(\\text{nm})=\\frac{1240}{\\Delta…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Spectrum of the Hydrogen Atom — quick idea map\"><title>Spectrum of the Hydrogen Atom — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Spectrum of the Hydrogen Atom</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Quantisation → line</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">spectrum:** fixed level</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">gaps give fixed photon…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Eₙ = −13.6 eV/n²; photon</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rule hν = E₂ − E₁; Rydberg</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1/λ = R(1/n₁² − 1/n₂²), R…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Eₙ = −2.18 × 10⁻¹⁸ J /</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n² = −13.6 eV / n² - hν =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E₂ − E₁ = 2.18 × 10⁻¹⁸…</text></svg>",
         "caption": "Spectrum of the Hydrogen Atom — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\quad R=1.097\\times10^{7}\\ \\text{m}^{-1}$$\n$$h\\nu=\\Delta E=E_{2}-E_{1},\\qquad \\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$\n$$\\text{number of lines from level } n=\\frac{n(n-1)}{2}$$"
+      "text": "- Eₙ = −2.18 × 10⁻¹⁸ J / n² = −13.6 eV / n² - hν = E₂ − E₁ = 2.18 × 10⁻¹⁸ (1/n₁² − 1/n₂²) J - 1/λ = R (1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹ - λ = hc/ΔE; series limit λ = n₁²/R - Hydrogen-like ions: Eₙ = −13.6 Z²/n² eV"
     },
     {
       "label": "Conditions",
-      "text": "❌ The Balmer series lies in the ultraviolet. ✅ Balmer (n₁ = 2) is visible; Lyman (n₁ = 1) is UV and Paschen onward are IR.  ·  ❌ A ground-state hydrogen atom can emit a line. ✅ Emission needs excitation first; the ground state can only absorb."
+      "text": "**Orbit vs jump:** energy is *possessed* in an orbit but *radiated only during a jump* between orbits — the orbit itself emits nothing.  ·  **n₁ vs n₂:** in the Rydberg equation n₁ is the **lower (final)** level and n₂ the **upper (initial)** level; reversing them gives a negative result."
     },
     {
       "label": "Special cases",
-      "text": "Hα = 656.3 nm (red) is the first Balmer line; Lyman limit = 91.2 nm; Balmer limit = 364.6 nm.  ·  R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen."
+      "text": "\"Each line of the hydrogen spectrum corresponds to one definite electronic jump between two quantised orbits.\""
     },
     {
       "label": "Solved",
-      "text": "**Problem:** Wavelength of the first Balmer line (n = 3 → 2). **Solution:** 1/λ = 1.097×10⁷(1/4 − 1/9) = 1.524×10⁶ m⁻¹ → λ = 656 nm (Hα).  ·  **Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ)."
+      "text": "***Hα = 656.3 nm*** — the 3 → 2 Balmer jump; the same ΔE (3.03 × 10⁻¹⁹ J) computed from Eₙ = −2.18 × 10⁻¹⁸/n² J lands on exactly this wavelength."
     },
     {
       "label": "Limitation",
@@ -57,150 +57,63 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning of 'spectrum'  ·  A spectrum is the ordered display of the wavelengths in a beam of radiation after dispersion by a prism or grating. An **emission** spectrum is bright lines on a dark background (excited atoms emitting); an **absorption** spectrum is dark lines on a continuous background (cool atoms removing their own characteristic wavelengths).…"
+      "text": "## 1. Topic Introduction — The Fingerprint That Saved Bohr Rutherford's model could not explain why atomic hydrogen emits **discrete coloured lines** instead of a continuous glow. Bohr (1913) turned that failure into a triumph: if electrons occupy only **quantised orbits**, an electron dropping from a higher orbit to a lower one emits a photon carrying exactly the energy gap — hν = E₂ − E₁.…  ·  ## 2. Fundamental Concepts ### 2.1 Energy of the nth orbit - Eₙ = −2.18 × 10⁻¹⁸ J / n² = **−13.6 eV / n²** (n = 1, 2, 3, …). - The **negative sign** means the electron is bound; E₁ = −13.6 eV is the **ground state**, E∞ = 0 is **ionisation**. - Energy gaps shrink as n grows — levels crowd together near the ionisation limit.…"
     },
     {
       "label": "Shortcut",
-      "text": "The Balmer series was discovered first (1885) because it alone lies in the visible region.  ·  answer pattern for \"Spectrum of hydrogen atom\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "\"1-2-3-4-5 → Lyman-Balmer-Paschen-Brackett-Pfund; UV-Visible-IR-IR-IR.\" Series limit = 1/(R·n₁²)."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Spectrum of hydrogen atom\" with one example.  ·  compare \"Spectrum of hydrogen atom\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2022 (3m): Using Eₙ = −2.18 × 10⁻¹⁸/n² J, calculate the energy of the electron in the second orbit of a hydrogen atom and the wavelength of the photon emitted when the electron falls from the third to the second orbit (in nm).** — E₂ = −2.18 × 10⁻¹⁸/4 = **−5.45 × 10⁻¹⁹ J**.…  ·  **NEB-style (3m): Name the five spectral series of hydrogen with their lower levels and regions.** — Lyman (n₁ = 1, ultraviolet), Balmer (n₁ = 2, visible), Paschen (n₁ = 3, infrared), Brackett (n₁ = 4, infrared), Pfund (n₁ = 5, far infrared). Only Balmer lies in the visible region."
     },
     {
       "label": "Hints",
-      "text": "Remember the series-to-region mapping: Lyman UV, Balmer visible, Paschen/Brackett/Pfund IR — a standard one-mark question.  ·  Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here.",
+      "text": "Always compute ΔE first, then λ = hc/ΔE; quote λ in nm for NEB (656 nm, not 6.56 × 10⁻⁷ m alone). Keep 3 significant figures.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Spectrum of the Hydrogen Atom — topic mind map\"><title>Spectrum of the Hydrogen Atom — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Spectrum of hydrogen atom</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Spectrum of hydrogen</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">atom</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Spectrum of the Hydrogen Atom — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**Quantisation → line spectrum:** fixed level gaps give fixed photon energies; each line is one transition, which is why spectra are element fingerprints."
+    },
+    {
       "label": "Key points",
-      "text": "• Spectrum of hydrogen atom"
+      "text": "Eₙ = −13.6 eV/n²; photon rule hν = E₂ − E₁; Rydberg 1/λ = R(1/n₁² − 1/n₂²), R = 1.097 × 10⁷ m⁻¹. Five series: Lyman (n₁ = 1, UV, limit 91.2 nm), Balmer (n₁ = 2, visible, limit 364.6 nm), Paschen (n₁ = 3), Brackett (n₁ = 4), Pfund (n₁ = 5) — all infrared.…"
     },
     {
       "label": "Universal facts",
-      "text": "Balmer (1885) found the visible series before the electron was discovered — a purely empirical formula at first.  ·  The Lyman limit 91.2 nm marks the ionisation threshold of ground-state hydrogen."
+      "text": "Hydrogen is the most abundant element in the universe (~75% by mass), so its Balmer lines dominate visible stellar spectra — Hα is how astronomers map nebulae and solar chromosphere."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Spectrum of hydrogen atom\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  **Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett."
+      "text": "**NEB-style (2m): What is the ionisation energy of hydrogen in eV and joule?** — Ionisation takes the electron from n = 1 to n = ∞: ΔE = 0 − (−13.6 eV) = **13.6 eV = 2.18 × 10⁻¹⁸ J** (the magnitude of E₁).  ·  **NEB-style (3m): Distinguish emission and absorption spectra with one example each.** — Emission: excited atoms emit photons on downward jumps — bright lines on dark background (hydrogen discharge tube).…"
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Spectrum of hydrogen atom\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True  ·  The first line of the Balmer series is produced by the transition: → B"
+      "text": "The energy of an electron in the second orbit of hydrogen is: → C  ·  The Balmer series lies in the: → B"
     },
     {
       "label": "Study notes",
-      "text": "### 2. Origin of the hydrogen spectrum  ·  Each line is one electron transition: the electron falls from n₂ to n₁ and emits one photon, hν = E₂ − E₁ = 13.6(1/n₁² − 1/n₂²) eV for hydrogen. Since the levels are discrete, only discrete wavelengths appear — hence a line spectrum rather than a continuous one.  ·  ### 3. The spectral series of hydrogen"
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Why it matters | |---|---|---| | **Line spectrum** | Discrete wavelengths emitted by excited atoms, each from one defined transition | Evidence of quantised energy levels | | **Ground state** | Lowest orbit n = 1, E = −13.6 eV | Normal state of hydrogen | | **Excited state** | Any orbit n > 1 | Reached by absorbing…  ·  ## 4. Detailed Explanation ### 4.1 Why lines, not a rainbow Classical physics: an orbiting electron radiates continuously, spirals inward, and the spectrum should be continuous. Bohr: orbits are **stationary** — no radiation while the electron stays put.…  ·  ## 5. Comparison Tables **Emission vs absorption spectrum** | Basis | Emission spectrum | Absorption spectrum | |---|---|---| | Source | Excited atoms releasing energy | Cool gas removing energy from white light | | Appearance | Bright lines on dark background | Dark lines on continuous background | | Electron jump | Downward (n₂ → n₁) | Upward (n₁ → n₂) | | Example | Hydrogen…"
     },
     {
       "label": "More ideas",
-      "text": "$$\\bar{\\nu}=R\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad \\bar{\\nu}_{limit}=\\frac{R}{n_{1}^{2}}$$  ·  $$\\text{lines from level }n=\\frac{n(n-1)}{2}$$  ·  $$R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}=109677\\ \\text{cm}^{-1}$$"
+      "text": "Verified PYQ: NEB 2022 3m — Eₙ = −2.18 × 10⁻¹⁸/n² J, E₂ and λ(3→2) in nm (solved above). Other items are NEB-style practice.  ·  Why is the Balmer series the only one in the visible region?  ·  A hydrogen atom absorbs a photon and reaches n = 4. List every possible emission line it can subsequently produce."
     },
     {
       "label": "More ideas",
-      "text": "$$\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right);\\qquad \\lambda(\\text{nm})=\\frac{10^{7}}{\\bar{\\nu}(\\text{cm}^{-1})}$$  ·  ❌ Within a series the lines get farther apart. ✅ They crowd together and converge at the series limit.  ·  ❌ Absorption lines mean the atom lost energy. ✅ The atom absorbs exactly the photons matching its level gaps, so those wavelengths are missing from the transmitted beam."
+      "text": "Why do the spectral lines of a series come closer together as n₂ increases?  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 6. Common Confusions **Series limit vs first line:** the limit (n₂ → ∞) is the *shortest* wavelength; the first line (smallest gap, e.g. 3 → 2) is the *longest* — students swap them."
     },
     {
       "label": "More ideas",
-      "text": "❌ Every line requires n₂ − n₁ = 1. ✅ Any n₂ > n₁ gives a line; the number of lines from level n is n(n − 1)/2.  ·  ❌ The Balmer series starts from n = 1. ✅ Balmer lines end at n₁ = 2; the lower level defines the series, not the upper one.  ·  ❌ The number of lines from level n is n − 1. ✅ That counts one series only; the total is n(n − 1)/2."
+      "text": "**Balmer vs Lyman direction:** Lyman needs jumps **down to n = 1** (from any higher level); Balmer needs jumps **down to n = 2**. A 3 → 2 jump is Balmer even though it starts at n = 3.  ·  **Rydberg sign convention:** 1/λ = R(1/n₁² − 1/n₂²) with n₁ the **lower** level; writing the terms the other way gives a negative 1/λ — physically meaningless.  ·  ## 7. Exam Application **NEB-style (2m): Why does hydrogen produce a line spectrum rather than a continuous spectrum?** Because Bohr orbits are quantised and stationary: radiation is emitted only in jumps between fixed levels, so each photon has one definite energy — discrete lines, not a continuum."
     },
     {
       "label": "More ideas",
-      "text": "❌ The series limit is the strongest line. ✅ It is the *convergence* point where lines merge into the ionisation continuum.  ·  ❌ R is an empirical fitted constant with no origin. ✅ Bohr derived it from m, e, h and c — a theoretical prediction confirmed by experiment.  ·  ❌ ν̄ is the frequency. ✅ It is the wave number (1/λ); frequency ν = c·ν̄."
-    },
-    {
-      "label": "More ideas",
-      "text": "❌ The same R applies unchanged to He⁺. ✅ Multiply by Z² (and apply the reduced-mass correction for precision).  ·  **Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm.  ·  **Problem:** λ of the Hβ line (4 → 2). **Solution:** ν̄ = 1.097×10⁷(1/4 − 1/16) = 1.097×10⁷ × 0.1875 = 2.057×10⁶ m⁻¹ → λ = 486 nm."
+      "text": "**NEB-style (3m): Calculate the wavelength of the Hα line (3 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/9) = 1.097 × 10⁷ × 5/36 = 1.524 × 10⁶ m⁻¹ → λ = 6.56 × 10⁻⁷ m = **656.3 nm**.  ·  **NEB-style (3m): The second line of the Balmer series (4 → 2).** 1/λ = 1.097 × 10⁷ (1/4 − 1/16) = 1.097 × 10⁷ × 3/16 → λ = **486.1 nm** (Hβ, blue-green)."
     }
-  ],
-  "keyPoints": [
-    "03 Spectrum Of Hydrogen Atom is a core concept in atomic structure.",
-    "Understanding 03 spectrum of hydrogen atom requires knowing its definition, conditions, and limitations.",
-    "03 Spectrum Of Hydrogen Atom has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 spectrum of hydrogen atom must be memorized precisely.",
-    "03 Spectrum Of Hydrogen Atom connects to neighbouring topics within atomic structure and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 spectrum of hydrogen atom.",
-    "Practical examples solidify understanding of 03 Spectrum Of Hydrogen Atom and its real-world relevance.",
-    "Misconceptions about 03 spectrum of hydrogen atom often arise from confusing it with similar concepts.",
-    "03 Spectrum Of Hydrogen Atom follows systematic rules that can be applied step-by-step.",
-    "Review of 03 spectrum of hydrogen atom should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Spectrum Of Hydrogen Atom is defined by its specific characteristics within atomic structure.",
-    "The conditions under which 03 spectrum of hydrogen atom applies are as important as the concept itself.",
-    "03 Spectrum Of Hydrogen Atom can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 spectrum of hydrogen atom through application-based and comparison questions.",
-    "A clear grasp of 03 Spectrum Of Hydrogen Atom builds the foundation for advanced topics in atomic structure."
-  ],
-  "importantNotes": [
-    "When studying 03 spectrum of hydrogen atom, always note the exceptions alongside the general rule.",
-    "03 Spectrum Of Hydrogen Atom should be reviewed with at least one worked example per sub-point.",
-    "Link 03 spectrum of hydrogen atom back to prior knowledge in atomic structure for deeper retention.",
-    "Practice past NEB board questions on 03 Spectrum Of Hydrogen Atom to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Spectrum Of Hydrogen Atom: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 spectrum of hydrogen atom with a related concept from atomic structure.",
-    "Exam-style problem: solve a question involving 03 Spectrum Of Hydrogen Atom under time pressure.",
-    "Real-world connection: show how 03 Spectrum Of Hydrogen Atom appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Spectrum Of Hydrogen Atom and state two conditions required for it to occur.",
-    "Differentiate 03 Spectrum Of Hydrogen Atom from the most commonly confused concept in atomic structure.",
-    "Solve a numerical or structural problem involving 03 Spectrum Of Hydrogen Atom.",
-    "List three applications of 03 Spectrum Of Hydrogen Atom in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Spectrum Of Hydrogen Atom without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Spectrum Of Hydrogen Atom.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Spectrum Of Hydrogen Atom."
-  ],
-  "universalFacts": [
-    "03 Spectrum Of Hydrogen Atom is part of the NEB Class 11 atomic structure syllabus.",
-    "Every concept in atomic structure builds upon definitions established earlier in the chapter.",
-    "03 Spectrum Of Hydrogen Atom is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Spectrum Of Hydrogen Atom improves performance across the entire atomic structure unit.",
-    "Revision of 03 Spectrum Of Hydrogen Atom should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Spectrum Of Hydrogen Atom with closely related concepts in atomic structure — focus on distinguishing features.",
-    "The scope of 03 Spectrum Of Hydrogen Atom is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Spectrum Of Hydrogen Atom outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Spectrum Of Hydrogen Atom and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Spectrum Of Hydrogen Atom? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Spectrum Of Hydrogen Atom is primarily studied under which branch of atomic structure? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Spectrum Of Hydrogen Atom is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to atomic structure — Answer: B",
-    "Which example correctly illustrates 03 Spectrum Of Hydrogen Atom? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Spectrum Of Hydrogen Atom differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Spectrum Of Hydrogen Atom.",
-    "Step-by-step animated derivation of the key relationship in 03 Spectrum Of Hydrogen Atom.",
-    "Interactive toggle between correct and incorrect representations of 03 Spectrum Of Hydrogen Atom."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Spectrum Of Hydrogen Atom.",
-    "Side-by-side comparison animation of 03 Spectrum Of Hydrogen Atom vs commonly confused concept.",
-    "Timelapse build-up of 03 Spectrum Of Hydrogen Atom from prerequisite knowledge in atomic structure."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Spectrum Of Hydrogen Atom",
-    "Comparison table: 03 Spectrum Of Hydrogen Atom vs related concepts in atomic structure",
-    "Step-by-step worked example layout for 03 Spectrum Of Hydrogen Atom"
-  ],
-  "summary": [
-    "03 Spectrum Of Hydrogen Atom is a fundamental concept in atomic structure that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Spectrum Of Hydrogen Atom involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Spectrum Of Hydrogen Atom alongside related concepts in atomic structure ensures strong conceptual clarity and exam readiness."
   ]
 }

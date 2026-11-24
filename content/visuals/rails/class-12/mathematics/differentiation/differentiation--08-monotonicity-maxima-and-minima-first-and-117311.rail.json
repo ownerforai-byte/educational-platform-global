@@ -61,7 +61,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+      "text": "Trick 1: Monotonicity: solve f′ > 0 (increasing) and f′ < 0 (decreasing) as INEQUALITIES on the domain — answer with intervals.  ·  Trick 2: Second-derivative test: at f′ = 0 point, f″ > 0 → minimum; f″ < 0 → maximum; f″ = 0 → inconclusive, use a sign chart."
     },
     {
       "label": "Board question",
@@ -80,6 +80,10 @@
       "text": "• Monotonicity  ·  • Maxima  ·  • Minima  ·  • First"
     },
     {
+      "label": "Universal facts",
+      "text": "Higher-order derivatives: y'' (concavity), y''' etc. Critical points f' = 0 → possible extrema (2nd-derivative test)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Monotonicity, maxima and minima (first and second derivat…\" and verify the answer is plausible."
     },
@@ -93,19 +97,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Second derivative tests  ·  define + example each sub-idea: monotonicity, maxima, minima, first.  ·  one worked example for \"Monotonicity, maxima and minima (first and second derivat…\" — check units / edge cases."
+      "text": "• Second derivative tests  ·  Trick 3: Word-problem protocol: model the quantity in one variable → domain → differentiate → critical points → verify type → answer with units and a sentence.  ·  Trick 4: Absolute vs local: compare f at all critical points AND the endpoints for a closed interval — forgetting endpoints is the classic lost mark."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain."
+      "text": "define + example each sub-idea: monotonicity, maxima, minima, first.  ·  one worked example for \"Monotonicity, maxima and minima (first and second derivat…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
       "label": "More ideas",
-      "text": "**Maxima.** one-line definition + one-line exam use.  ·  **Minima.** one-line definition + one-line exam use.  ·  **First.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: derivative f'(x) = lim_{h→0} [f(x+h) − f(x)]/h = tangent slope; rules: sum, product, quotient, chain.  ·  **Maxima.** one-line definition + one-line exam use."
     },
     {
       "label": "More ideas",
-      "text": "**Second derivative tests.** one-line definition + one-line exam use."
+      "text": "**Minima.** one-line definition + one-line exam use.  ·  **First.** one-line definition + one-line exam use.  ·  **Second derivative tests.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Monotonicity, maxima and minima (first and second derivative tests) ## 1. Introduction and motivation What the tool **Monotonicity** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differentiation fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Standard forms and rules** | Form | Rule | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
     }
   ]
 }

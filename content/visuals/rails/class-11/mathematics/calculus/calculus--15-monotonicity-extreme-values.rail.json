@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Monotonicity is read from the sign of the derivative across an interval, and extreme values come from where that sign changes. Solving $f'=0$ alone yields only candidates, as $x^3$ demonstrates. On a closed interval the endpoints are also candidates, and omitting them is the most common loss of marks in this topic.",
+      "text": "Monotonicity and extrema run on one machine: the MVT promotes local derivative signs to global increase/decrease, the critical-point list (f′ = 0 or f′ fails) supplies the candidates, and the sign change — with the second-derivative test as a quick shortcut — classifies them.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Monotonicity and Extreme Values — quick idea map\"><title>Monotonicity and Extreme Values — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Monotonicity and Extreme Values</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$f'=0$ gives candidates</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">only; the SIGN CHANGE</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">decides the extremum.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Endpoints must be included</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">when hunting absolute</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">extrema on a closed</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$f'=0$ gives candidates</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">only; the SIGN CHANGE</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">decides the extremum.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Endpoints must be included</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">when hunting absolute</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">extrema on a closed</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Monotonicity and Extreme Values — quick idea map\"><title>Monotonicity and Extreme Values — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Monotonicity and Extreme Values</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fermat: f' = 0 is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">necessary for smooth</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">interior extrema; the sign</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f' &gt; 0 =&gt;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">increasing; f' &lt; 0</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">=&gt; decreasing (MVT</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- f′(c) = 0, f′ changes +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ − ⟹ local max; − → + ⟹</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">local min - f′(c) = 0 and…</text></svg>",
         "caption": "Monotonicity and Extreme Values — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Increasing: $f'(x)>0$; decreasing: $f'(x)<0$\nStationary: $f'(c)=0$\nFirst-derivative test: $+\\to-$ maximum, $-\\to+$ minimum",
+      "text": "- f′(c) = 0, f′ changes + → − ⟹ local max; − → + ⟹ local min - f′(c) = 0 and f″(c) > 0 ⟹ local min",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Monotonicity and Extreme Values — formula board\"><title>Monotonicity and Extreme Values — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Monotonicity and Extreme Values</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Increasing: $f'(x)&gt;0$; decreasing: $f'(x)&lt;0$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Stationary: $f'(c)=0$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">First-derivative test: $+\\to-$ maximum, $-\\to+$ minimum</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Monotonicity and Extreme Values — formula board\"><title>Monotonicity and Extreme Values — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Monotonicity and Extreme Values</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- f′(c) = 0, f′ changes + → − ⟹ local max; − → + ⟹ local</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">min - f′(c) = 0 and f″(c) &gt; 0 ⟹ local min</text></svg>",
         "caption": "Monotonicity and Extreme Values — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "$f'=0$ gives candidates only; the SIGN CHANGE decides the extremum.  ·  Endpoints must be included when hunting absolute extrema on a closed interval."
+      "text": "***The terrace point*** - x^3 at 0: stationary, sign of f' unchanged, no extremum - the zero alone never classifies."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Build a sign chart for $f'$ across the critical points — the arrows give every classification at once.  ·  Write the endpoint values down explicitly before concluding on a closed interval."
+      "text": "Build the sign table before classifying - the intervals, not the zeros, carry the verdicts."
     },
     {
       "label": "Board question",
-      "text": "Absolute extrema of a continuous function on a stated closed interval is a very frequent 4-mark question."
+      "text": "**NEB-style (6m): Find the intervals of increase/decrease and classify the critical points of f(x) = x³ − 3x.** — **Derivative:** f′ = 3x² − 3 = 3(x − 1)(x + 1); zeros at x = ±1; f′ exists everywhere ⟹ candidates {−1, 1}.…  ·  **NEB-style (6m): Classify the critical points of f(x) = x⁴ − 4x³ using the second-derivative test, noting any inconclusive cases.** — **Derivative:** f′ = 4x³ − 12x² = 4x²(x − 3); candidates x = 0 and x = 3. **Second derivative:** f″ = 12x² − 24x = 12x(x − 2). **At x = 3:** f″(3) = 36 > 0 ⟹ **local min** at (3, −27).…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Sign-change signature increasing then decreasing gives a maximum, decreasing then increasing gives a minimum."
+      "text": "In optimisation, close with a context sentence: units, the answer's meaning, and why it is the max/min."
     },
     {
       "label": "Quick concepts",
-      "text": "Local and absolute extrema are different questions and both may be asked."
+      "text": "Fermat: f' = 0 is necessary for smooth interior extrema; the sign change is what is sufficient."
+    },
+    {
+      "label": "Key points",
+      "text": "f' > 0 => increasing; f' < 0 => decreasing (MVT promotes local signs to global). Critical points: f' = 0 OR f' fails - corners and cusps are candidates too. First-derivative test: the SIGN CHANGE classifies (+ to - max, - to + min, no change terrace). Second-derivative test: f''(c) > 0 min, < 0 max, = 0 inconclusive.…"
     },
     {
       "label": "Universal facts",
-      "text": "Fermat's principle of least time — light bending at an interface — follows directly from the stationary condition on travel time, tying this topic to optics.  ·  Any closed loop over hilly ground must have both a highest and a lowest point, which is the stationary-point condition in ordinary clothes."
+      "text": "|x| has its minimum at a point where the derivative does not exist - the candidate list must include derivative failures."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find the absolute maximum and minimum of f(x) = x³ − 3x on [−2, 2].** — **Candidates:** critical points from the previous analysis: x = −1, 1; **plus endpoints** x = −2, 2 (the EVT guarantees absolute extrema exist on the closed interval, and they may sit at the ends).…  ·  **NEB-style (6m): A rectangle has perimeter 40 cm. Find the dimensions that maximise its area, justifying the maximum.** — **Translate:** sides x and y with 2x + 2y = 40 ⟹ y = 20 − x, 0 < x < 20. **Objective:** A(x) = x(20 − x) = 20x − x². **Critical point:** A′ = 20 − 2x = 0 ⟹ **x = 10**.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Sign of $f'$ decides direction:** $f'>0$ means strictly increasing and $f'<0$ strictly decreasing over an INTERVAL. One negative value inside an increasing interval changes nothing, so the sign must be tested across the whole interval.  ·  **Stationary points are only candidates:** they are where $f'=0$, and a turning point is the subset where $f'$ actually CHANGES SIGN. $y=x^3$ has a stationary point at 0 with no extremum, because the sign of $3x^2$ is positive both sides — declaring a maximum straight from $f'=0$ is the commonest error here.  ·  **Fermat's theorem:** if $f$ is differentiable at an interior point $c$ and $f'(c)=0$, then $f(c)$ is a local extreme. The contrapositive is equally useful — an interior local extremum of a differentiable function must have vanishing derivative."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Monotonicity and Extreme Values This canonical is the **short-form doorway** to monotonicity and extreme values: sign tables, critical points, and the two tests in one page. The parent canonical carries the full treatment; this companion mirrors the theorems, adds the deep readings, and drills four heavy-mark problems.  ·  ## 2. Theorem Mirror - **Monotonicity:** f′ > 0 on an interval ⟹ strictly increasing; f′ < 0 ⟹ strictly decreasing (MVT converts local signs to global behaviour). - **Critical points:** interior points where f′ = 0 or f′ fails to exist — the only candidates for local extrema.…  ·  ## 3. Deep Conceptual — The Sign Table Is the Theorem Made Mechanical - The first-derivative test is the **MVT wearing a table**: f′ > 0 on (a, c) means f climbs on that whole stretch; the sign change at c means the climb stops and a descent begins — a summit. The table's columns are intervals, its entries are the MVT's verdicts.…"
     },
     {
       "label": "More ideas",
-      "text": "Absolute extrema on $[a,b]$: compare critical values with $f(a)$ and $f(b)$  ·  Fermat: $f'(c)=0$ at an interior local extremum, if differentiable  ·  Statement 1: $f$ is strictly increasing on an interval where $f'>0$ throughout."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  On a closed interval, endpoints are first-class candidates for absolute extrema.  ·  Find the intervals of increase and decrease for f(x) = x³ − 3x."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: $f'(c)=0$ is necessary but not sufficient for a local extremum.  ·  Statement 3: A sign change in $f'$ is required to classify a stationary point.  ·  Statement 4: A continuous function on $[a,b]$ attains an absolute maximum and minimum."
+      "text": "Classify the critical points of f(x) = x⁴ − 4x³ using the second-derivative test.  ·  Find the absolute maximum and minimum of f(x) = x³ − 3x on [−2, 2].  ·  ## 4. Deep Conceptual — Absolute vs Local, Closed vs Open - **Local** is a neighbourhood verdict (the highest nearby); **absolute** is a global verdict (the highest everywhere). On a closed interval, continuity guarantees both exist (Extreme Value Theorem) and the candidate list is critical points **plus endpoints** —…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: Fermat's theorem applies only to interior points of the domain.  ·  **Absolute extrema on a closed interval:** a continuous function on $[a,b]$ attains both. Check interior critical points FIRST, then the two ENDPOINTS — endpoints are frequently the true answer and are the most commonly forgotten candidates.  ·  **Local versus absolute:** a local maximum only beats its immediate neighbours, so a point can be a local minimum yet lie far above the absolute maximum elsewhere. Reading 'maximum' as 'absolute maximum' without a global check is a frequent conceptual slip."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Sign-change signature:** increasing then decreasing gives a maximum, decreasing then increasing gives a minimum. This is the first-derivative test, and it is why the sign chart rather than the equation $f'=0$ decides the answer."
+      "text": "## 5. Worked Example Types - **Type A — sign table + classification:** full monotonicity map with max/min verdicts. - **Type B — second-derivative test:** quick classification where f″ is easy. - **Type C — absolute extrema on [a, b]:** candidates + endpoints compared.…  ·  ## 6. Common Confusions **\"f′ = 0 ⟹ extremum\":** x³ forever. **\"Endpoints can't be extrema\":** on closed intervals they are first-class candidates."
     }
   ]
 }

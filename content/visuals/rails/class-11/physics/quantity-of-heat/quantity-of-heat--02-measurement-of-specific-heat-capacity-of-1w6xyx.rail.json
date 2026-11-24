@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Measurement of specific heat capacity of solids and liquids (Quantity of Heat, Physics, class-11-notes) covers Measurement of specific heat capacity of solids, liquids. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Specific heat capacity** c is the heat per kilogram needed to raise temperature by one kelvin: $Q = mc\\Delta T$ (J kg⁻¹K⁻¹); the whole-body version is heat capacity $C = mc$. Water's 4186 J kg⁻¹K⁻¹ is exceptionally high, making it nature's coolant.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific heat capacity of solids and liquids — quick idea map\"><title>Measurement of specific heat capacity of solids and liquids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measurement of specific heat capacity of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">solids and liquids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Measurement of specific</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">heat capacity of solids</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Liquids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mcΔT</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mL</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific heat capacity of solids and liquids — quick idea map\"><title>Measurement of specific heat capacity of solids and liquids — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measurement of specific heat capacity of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">solids and liquids</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The method of mixtures**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">turns the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">conservation-of-energy</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mcΔT; c in J kg⁻¹K⁻¹;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">water 4186.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Calorimetry: heat lost =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">heat gained (include the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">calorimeter!).</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Q = mcΔT; C = mc -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m₁c₁(T₁−T) = (m_w c_w +</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m_c c_c)(T−T₂) - c_water =</text></svg>",
         "caption": "Measurement of specific heat capacity of solids and liquids — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Q = mcΔT\nQ = mL\ncp = 1.5×cv + R (Mayer, for ideal gas)"
+      "text": "- Q = mcΔT; C = mc - m₁c₁(T₁−T) = (m_w c_w + m_c c_c)(T−T₂) - c_water = 4186 J kg⁻¹K⁻¹"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Measurement of specific heat capacity of solids\" as one blob → ✅ split into: measurement of specific heat capacity of solids, liquids.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**c vs C:** specific heat c (J kg⁻¹K⁻¹) is per kilogram; heat capacity C = mc (J/K) is for the whole body.  ·  **Water's huge c** makes it both a coolant and a climate stabiliser."
     },
     {
       "label": "Special cases",
-      "text": "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained."
+      "text": "Dry the solid before weighing if it was in a boiling bath.  ·  A thermometer's heat capacity is usually neglected."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***NEB 2024*** — 200 g Al over 80 °C: Q = 14.4 kJ."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,51 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Measurement of specific heat capacity of solids and liquids — Quantity of Heat, Physics (class-11-notes).  ·  **Tested.** define it · list: measurement of specific heat capacity of solids, liquids · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "\"Balance: m₁c₁ΔT₁ = m₂c₂ΔT₂ — include the calorimeter term.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Measurement of specific heat capacity of solids and liquids\" with one example.  ·  compare \"Measurement of specific heat capacity of solids\" with the related idea from a neighbouring unit."
+      "text": "**Numerical (3m): A 0.2 kg iron block (c = 460) at 150 °C is dropped into 0.3 kg water at 20 °C. Find the final temperature (neglect calorimeter).** — 0.2×460×(150−T) = 0.3×4186×(T−20) → 92(150−T) = 1255.8(T−20) → 13800−92T = 1255.8T−25116 → T = 38916/1347.8 = 28.9 °C."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+      "text": "Definition + one numerical is the standard 3m package (2023, 2024).",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measurement of specific heat capacity of solids and liquids — topic mind map\"><title>Measurement of specific heat capacity of solids and liquids — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Measurement of specific heat capacity of soli…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Measurement of specific</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">heat capacity of solids</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Liquids</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Measurement of specific heat capacity of solids and liquids — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Key points",
-      "text": "• Measurement of specific heat capacity of solids  ·  • Liquids"
+      "label": "Quick concepts",
+      "text": "**The method of mixtures** turns the conservation-of-energy statement into a measurement instrument."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Measurement of specific heat capacity of solids and liquids\" and verify the answer is plausible."
+      "label": "Key points",
+      "text": "Q = mcΔT; c in J kg⁻¹K⁻¹; water 4186.  ·  Calorimetry: heat lost = heat gained (include the calorimeter!)."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Water's specific heat (4186) is the highest of common substances — coastal climates stay mild."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Measurement of specific heat capacity of solids and liquids\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "In the method of mixtures → A  ·  The hot solid cools from → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  **Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.  ·  **Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "## 1. Topic Introduction — How Much Heat for One Degree? Water needs 4186 J to raise one kilogram by one kelvin; copper needs barely a tenth of that. Specific heat capacity quantifies this appetite for heat — and the principle of calorimetry (heat lost = heat gained) turns mixtures into measurement instruments.  ·  ## 2. Fundamental Concepts (NEB 2020, 2023, 2024) ### 2.1 Definitions **Quantity of heat:** the energy transferred because of temperature difference; measured in joules. **Specific heat capacity (c):** the heat required to raise the temperature of **1 kg** of a substance by **1 K**: $$Q = mc\\Delta T \\qquad c \\text{ in J kg}^{-1}\\text{K}^{-1}$$ **Thermal (heat) capacity:** heat…  ·  ## 3. Conceptual Relationships - **To Topic 50:** cooling corrections refine the final temperature reading. - **To Topic 52/53:** latent-heat terms enter the calorimetry equation during phase changes. - **To first law:** at constant volume (solids/liquids), heat = change in internal energy."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: measurement of specific heat capacity of solids, liquids.  ·  one worked example for \"Measurement of specific heat capacity of solids and liquids\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQs: water numerical 2020 3m; definitions 2023 3m; Al numerical 2024 3m.  ·  \"Specific heat capacity is the quantity of heat required to raise the temperature of unit mass of a substance through one degree.\"  ·  Why does sand burn your feet while sea water feels cool at the same temperature?"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  **Liquids.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2076/2020 | Heat | Quantity of heat | Calculate the heat required to raise the temperature of 500 g of water from 20 °C to 60 °C.…"
     }
   ]
 }

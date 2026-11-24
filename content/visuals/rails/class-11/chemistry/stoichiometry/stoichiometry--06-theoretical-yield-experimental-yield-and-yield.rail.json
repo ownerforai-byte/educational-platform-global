@@ -27,28 +27,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Theoretical yield, experimental yield and % yield (Stoichiometry, Chemistry, class-11-notes) covers Theoretical yield, experimental yield, % yield. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The **theoretical yield** (maximum from the limiting reactant), **actual yield** (mass really isolated) and **percentage yield** (actual ÷ theoretical × 100) form chemistry's efficiency triangle: 40 g from a 50 g theoretical yield is 80% (NEB 2024). Actual yield falls short through side reactions, incomplete (equilibrium-limited) conversion, mechanical losses and impure reactants.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Theoretical Yield, Experimental Yield and Percentage Yield — quick idea map\"><title>Theoretical Yield, Experimental Yield and Percentage Yield — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Theoretical Yield, Experimental Yield and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Percentage Yield</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Theoretical yield</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Experimental yield</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\%\\text{yield}=\\frac{\\text{experimental</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(actual)</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">yield}}{\\text{theoretical…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$$\\text{theoretical yield…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Theoretical Yield, Experimental Yield and Percentage Yield — quick idea map\"><title>Theoretical Yield, Experimental Yield and Percentage Yield — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Theoretical Yield, Experimental Yield and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Percentage Yield</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Theoretical yield comes</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">from the limiting</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reactant** — never from</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">% yield = (actual ÷</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theoretical) × 100. NEB</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2024: 40/50 × 100 = 80%.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- % yield = (actual ÷</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theoretical) × 100 -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">actual = (% ÷ 100) ×</text></svg>",
         "caption": "Theoretical Yield, Experimental Yield and Percentage Yield — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$$\\%\\text{yield}=\\frac{\\text{experimental (actual) yield}}{\\text{theoretical yield}}\\times100$$\n$$\\text{theoretical yield }(g)=n_{\\text{limiting}}\\times\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times M_{\\text{product}}$$\n$$\\text{atom economy}=\\frac{M_{\\text{desired product}}}{\\sum M_{\\text{all reactants}}}\\times100,\\qquad \\%\\text{purity}=\\frac{\\text{mass of pure substance}}{\\text{total mass of sample}}\\times100$$"
+      "text": "- % yield = (actual ÷ theoretical) × 100 - actual = (% ÷ 100) × theoretical - atom economy = (mass of desired product ÷ total mass of products) × 100"
     },
     {
       "label": "Conditions",
-      "text": "❌ A 100% yield means a pure product. ✅ Purity is a separate property; yields above 100% are the usual sign of an impure or wet product.  ·  ❌ Percentage yield is calculated from the reactant taken in excess. ✅ It is calculated from the limiting reactant, which fixes the theoretical yield."
+      "text": "**Yield vs atom economy:** yield = actual/theoretical (experiment); atom economy = desired/total product mass (equation design).  ·  **Theoretical vs actual:** theoretical is calculated (paper maximum); actual is weighed (laboratory reality) — always actual ≤ theoretical."
     },
     {
       "label": "Special cases",
-      "text": "Haber process: about 15% conversion per pass with recycling; the overall yield is raised by recycling unreacted N₂ and H₂.  ·  Typical undergraduate yields: aspirin 70–85%, soap 80–90%, esterification (equilibrium-limited) 60–70%."
+      "text": "\"Percentage yield = (actual yield / theoretical yield) × 100.\""
     },
     {
       "label": "Solved",
-      "text": "**Problem:** 100 g CaCO₃ gives 47.6 g CaO. Find the % yield. **Solution:** n(CaCO₃) = 1 mol → theoretical CaO = 56 g; % yield = 47.6/56 × 100 = 85%.  ·  **Problem:** 7.0 g of ethene (0.25 mol) is hydrated to give 9.2 g ethanol. Find the % yield. **Solution:** theoretical ethanol = 0.25 × 46 = 11.5 g; % yield = 9.2/11.5 × 100 = 80%."
+      "text": "***50 g theoretical, 40 g actual*** — 80% yield (NEB 2024): the standard two-mark numerical."
     },
     {
       "label": "Limitation",
@@ -56,146 +56,47 @@
     },
     {
       "label": "Derivation",
-      "text": "### 1. Meaning of the three quantities  ·  **Theoretical yield** is the maximum amount of product calculated from the balanced equation using the limiting reactant (assuming complete reaction and no losses). **Experimental (actual) yield** is the amount of pure product actually isolated in the experiment. **Percentage yield** compares them: $\\%\\text{yield}=\\frac{\\text{actual yield}}{\\text{theoretical yield}}\\times100$.…"
+      "text": "## 1. Topic Introduction — Theory vs Reality Stoichiometry predicts the **theoretical yield** — the maximum product from complete conversion of the limiting reactant. Real experiments deliver less: the **actual yield**. Their ratio, as a percentage, is the **percentage yield** — chemistry's honest scoreboard.  ·  ## 2. Fundamental Concepts ### 2.1 The three quantities | Quantity | Meaning | How obtained | |---|---|---| | **Theoretical yield** | Maximum product if the limiting reactant converts completely | Stoichiometric calculation | | **Actual yield** | Mass actually isolated in the lab/experiment | Weighed experimentally | | **Percentage yield** | (Actual ÷ theoretical) × 100 | The efficiency measure | $$\\%\\text{ yield} =…"
     },
     {
       "label": "Shortcut",
-      "text": "Atom economy of addition reactions is 100%, whereas substitution reactions lose part of the reactant mass as by-product.  ·  answer pattern for \"Theoretical yield, experimental yield and % yield\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "\"Actual on top, theoretical below, ×100 — and the answer can never exceed 100%.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Theoretical yield, experimental yield and % yield\" with one example.  ·  compare \"Theoretical yield\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (2m): In an experiment, the theoretical yield is 50 g but only 40 g of product is obtained. Calculate the percentage yield.** — % yield = (actual/theoretical) × 100 = (40/50) × 100 = **80%**."
     },
     {
       "label": "Hints",
-      "text": "Always quote the limiting reactant when explaining the theoretical yield — it is the only reactant that fixes it.  ·  Mention purity separately: yield ≠ purity, and >100% means an impure or wet sample.",
+      "text": "If asked \"why is the actual yield lower?\", list side reactions + incomplete conversion + handling losses — three reasons, three marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Theoretical Yield, Experimental Yield and Percentage Yield — topic mind map\"><title>Theoretical Yield, Experimental Yield and Percentage Yield — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Theoretical yield, experimental yield and % y…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Theoretical yield</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Experimental yield</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">% yield</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Theoretical Yield, Experimental Yield and Percentage Yield — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**Theoretical yield comes from the limiting reactant** — never from the excess."
+    },
+    {
       "label": "Key points",
-      "text": "• Theoretical yield  ·  • Experimental yield  ·  • % yield"
+      "text": "% yield = (actual ÷ theoretical) × 100. NEB 2024: 40/50 × 100 = 80%. Reasons for loss: side reactions, incomplete reaction, mechanical losses, impurities."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Theoretical yield, experimental yield and % yield\" and verify the answer is plausible."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "label": "Universal facts",
+      "text": "Industrial processes run 90–99% yield; multi-step syntheses multiply losses — ten 90% steps give only ~35% overall."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Theoretical yield, experimental yield and % yield\"? → A  ·  A common examiner point on \"Theoretical yield, experimental yield and % yield\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Percentage yield = : → B  ·  40 g actual from 50 g theoretical gives: → C"
     },
     {
       "label": "Study notes",
-      "text": "### 2. Why the actual yield is lower than the theoretical yield  ·  • The reaction is **incomplete** — the limiting reactant is not fully consumed in the time allowed.  ·  • The reaction is **reversible**, so it stops at an equilibrium position (this is exactly the case in the Haber process)."
+      "text": "## 3. Conceptual Relationships - **To limiting reactant (Topic 6):** theoretical yield is always computed from the limiting reactant. - **To mole calculations (Topic 5):** the theoretical yield is a mass–mass hop. - **To green chemistry (applied):** atom economy is a design principle of sustainable synthesis.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Stoichiometry | Percentage yield | Theoretical yield 50 g, actual 40 g — calculate the percentage yield. | 2 | Numerical | ### 4.2 Likely additional forms (NEB-style) 1.…"
     },
     {
       "label": "More ideas",
-      "text": "❌ The theoretical yield is what you actually get. ✅ It is the maximum possible amount; the actual yield is always lower for practical reasons.  ·  ❌ Yield and atom economy measure the same thing. ✅ Yield is about recovery of product; atom economy is about how much of the reactant mass ends up in the desired product.  ·  ❌ Yield can be predicted by stoichiometry alone. ✅ Stoichiometry gives only the theoretical maximum; the actual yield depends on kinetics, equilibrium and technique."
-    },
-    {
-      "label": "More ideas",
-      "text": "For reversible processes (Haber, esterification) state that equilibrium limits the yield and recycling is used to improve the overall figure.  ·  List six reasons why the actual yield of a reaction is less than the theoretical yield.  ·  100 g of CaCO₃ on heating gives 47.6 g of CaO. Calculate the percentage yield."
-    },
-    {
-      "label": "More ideas",
-      "text": "0.25 mol of ethene is hydrated to ethanol but only 9.2 g is obtained. Calculate the percentage yield. (M(C₂H₅OH) = 46 g mol⁻¹)  ·  Explain why a student may report a yield greater than 100% and how the error can be corrected.  ·  Distinguish between percentage yield and atom economy and state the limitations of each."
-    },
-    {
-      "label": "More ideas",
-      "text": "one worked example for \"Theoretical yield, experimental yield and % yield\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
-    },
-    {
-      "label": "More ideas",
-      "text": "• **Side reactions** produce by-products (organic syntheses especially).  ·  • **Mechanical losses** during filtration, decantation, transfer, crystallisation, evaporation and drying, plus product remaining dissolved in the mother liquor (solubility loss).  ·  • Product may be **volatile, thermally unstable or hygroscopic**, and impurities may interfere with the reaction."
+      "text": "Verified PYQ 2024 (2m): 40/50 × 100 = 80%.  ·  A synthesis gives 6.4 g of product; the theoretical yield is 8 g. What is the percentage yield?  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     }
-  ],
-  "keyPoints": [
-    "06 Theoretical Yield Experimental Yield And Yield is a core concept in stoichiometry.",
-    "Understanding 06 theoretical yield experimental yield and yield requires knowing its definition, conditions, and limitations.",
-    "06 Theoretical Yield Experimental Yield And Yield has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 06 theoretical yield experimental yield and yield must be memorized precisely.",
-    "06 Theoretical Yield Experimental Yield And Yield connects to neighbouring topics within stoichiometry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 06 theoretical yield experimental yield and yield.",
-    "Practical examples solidify understanding of 06 Theoretical Yield Experimental Yield And Yield and its real-world relevance.",
-    "Misconceptions about 06 theoretical yield experimental yield and yield often arise from confusing it with similar concepts.",
-    "06 Theoretical Yield Experimental Yield And Yield follows systematic rules that can be applied step-by-step.",
-    "Review of 06 theoretical yield experimental yield and yield should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "06 Theoretical Yield Experimental Yield And Yield is defined by its specific characteristics within stoichiometry.",
-    "The conditions under which 06 theoretical yield experimental yield and yield applies are as important as the concept itself.",
-    "06 Theoretical Yield Experimental Yield And Yield can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 06 theoretical yield experimental yield and yield through application-based and comparison questions.",
-    "A clear grasp of 06 Theoretical Yield Experimental Yield And Yield builds the foundation for advanced topics in stoichiometry."
-  ],
-  "importantNotes": [
-    "When studying 06 theoretical yield experimental yield and yield, always note the exceptions alongside the general rule.",
-    "06 Theoretical Yield Experimental Yield And Yield should be reviewed with at least one worked example per sub-point.",
-    "Link 06 theoretical yield experimental yield and yield back to prior knowledge in stoichiometry for deeper retention.",
-    "Practice past NEB board questions on 06 Theoretical Yield Experimental Yield And Yield to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 06 Theoretical Yield Experimental Yield And Yield: apply the standard definition to a simple case.",
-    "Intermediate example: combine 06 theoretical yield experimental yield and yield with a related concept from stoichiometry.",
-    "Exam-style problem: solve a question involving 06 Theoretical Yield Experimental Yield And Yield under time pressure.",
-    "Real-world connection: show how 06 Theoretical Yield Experimental Yield And Yield appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 06 Theoretical Yield Experimental Yield And Yield and state two conditions required for it to occur.",
-    "Differentiate 06 Theoretical Yield Experimental Yield And Yield from the most commonly confused concept in stoichiometry.",
-    "Solve a numerical or structural problem involving 06 Theoretical Yield Experimental Yield And Yield.",
-    "List three applications of 06 Theoretical Yield Experimental Yield And Yield in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 06 Theoretical Yield Experimental Yield And Yield without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 06 Theoretical Yield Experimental Yield And Yield.",
-    "Create three flashcards covering definition, formula, and limitation of 06 Theoretical Yield Experimental Yield And Yield."
-  ],
-  "universalFacts": [
-    "06 Theoretical Yield Experimental Yield And Yield is part of the NEB Class 11 stoichiometry syllabus.",
-    "Every concept in stoichiometry builds upon definitions established earlier in the chapter.",
-    "06 Theoretical Yield Experimental Yield And Yield is assessed through both short-answer and long-answer board questions.",
-    "Understanding 06 Theoretical Yield Experimental Yield And Yield improves performance across the entire stoichiometry unit.",
-    "Revision of 06 Theoretical Yield Experimental Yield And Yield should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 06 Theoretical Yield Experimental Yield And Yield with closely related concepts in stoichiometry — focus on distinguishing features.",
-    "The scope of 06 Theoretical Yield Experimental Yield And Yield is sometimes overstated; remember its precise boundaries.",
-    "Applying 06 Theoretical Yield Experimental Yield And Yield outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 06 Theoretical Yield Experimental Yield And Yield and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 06 Theoretical Yield Experimental Yield And Yield? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "06 Theoretical Yield Experimental Yield And Yield is primarily studied under which branch of stoichiometry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 06 Theoretical Yield Experimental Yield And Yield is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to stoichiometry — Answer: B",
-    "Which example correctly illustrates 06 Theoretical Yield Experimental Yield And Yield? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "06 Theoretical Yield Experimental Yield And Yield differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 06 Theoretical Yield Experimental Yield And Yield.",
-    "Step-by-step animated derivation of the key relationship in 06 Theoretical Yield Experimental Yield And Yield.",
-    "Interactive toggle between correct and incorrect representations of 06 Theoretical Yield Experimental Yield And Yield."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 06 Theoretical Yield Experimental Yield And Yield.",
-    "Side-by-side comparison animation of 06 Theoretical Yield Experimental Yield And Yield vs commonly confused concept.",
-    "Timelapse build-up of 06 Theoretical Yield Experimental Yield And Yield from prerequisite knowledge in stoichiometry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 06 Theoretical Yield Experimental Yield And Yield",
-    "Comparison table: 06 Theoretical Yield Experimental Yield And Yield vs related concepts in stoichiometry",
-    "Step-by-step worked example layout for 06 Theoretical Yield Experimental Yield And Yield"
-  ],
-  "summary": [
-    "06 Theoretical Yield Experimental Yield And Yield is a fundamental concept in stoichiometry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 06 Theoretical Yield Experimental Yield And Yield involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 06 Theoretical Yield Experimental Yield And Yield alongside related concepts in stoichiometry ensures strong conceptual clarity and exam readiness."
   ]
 }

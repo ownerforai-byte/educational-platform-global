@@ -26,48 +26,48 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Ideal Gas Equation covers essential principles and applications.",
+      "text": "Three empirical laws anchor gas behaviour: **Boyle** ($PV$ = const at fixed T), **Charles** ($V/T$ = const at fixed P) and the **pressure law** ($P/T$ = const at fixed V). Combined for a fixed amount of gas they give $P_1V_1/T_1 = P_2V_2/T_2$, and with amount included the **ideal gas equation** $PV = nRT$ (R = 8.31 J mol⁻¹K⁻¹) or, per molecule, $PV = Nk_BT$.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ideal Gas Equation — quick idea map\"><title>Ideal Gas Equation — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ideal Gas Equation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Ideal Gas</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Equation.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Ideal Gas</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Equation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Ideal Gas</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Equation to other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ideal Gas Equation — quick idea map\"><title>Ideal Gas Equation — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ideal Gas Equation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The combined-gas</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shortcut:** P₁V₁/T₁ =</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P₂V₂/T₂ solves most</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">PV = nRT; R = 8.31 J</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mol⁻¹K⁻¹; PV = Nk_BT.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Boyle (T): PV const;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Charles (P): V/T const;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">pressure law (V): P/T</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- PV = nRT; PV = Nk_BT -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P₁V₁/T₁ = P₂V₂/T₂ - R =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">8.31 J mol⁻¹K⁻¹; k_B =</text></svg>",
         "caption": "Ideal Gas Equation — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Ideal Gas Assumptions:** The equation $PV = nRT$ assumes (1) molecules are point particles with zero volume, (2) no intermolecular forces except during elastic collisions, (3) motion is random and obeys Newton's laws.…\n**Universal Gas Constant:** $R = 8.314 ext{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$.…"
+      "text": "- PV = nRT; PV = Nk_BT - P₁V₁/T₁ = P₂V₂/T₂ - R = 8.31 J mol⁻¹K⁻¹; k_B = R/N_A = 1.38×10⁻²³ J/K"
     },
     {
       "label": "Conditions",
-      "text": "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ ext{C} eq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature."
+      "text": "**Ideal Gas Assumptions:** The equation $PV = nRT$ assumes (1) molecules are point particles with zero volume, (2) no intermolecular forces except during elastic collisions, (3) motion is random and obeys Newton's laws. These hold best at high temperature and low pressure; real gases deviate near condensation.  ·  **Universal Gas Constant:** $R = 8.314 ext{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$. The value depends on units: $R = 0.0821 ext{ L·atm/mol·K}$ in common chemistry units."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Ideal gas equation  ·  Statement 2: Theorem related to Ideal gas equation"
+      "text": "Never substitute Celsius into PV=nRT.  ·  Gauge pressure is not absolute pressure."
     },
     {
       "label": "Solved",
-      "text": "Application of Ideal Gas Equation"
+      "text": "***NEB 2022*** — 0.5 m³ at 27 °C → 100 °C (P const): V₂ = 0.62 m³."
     },
     {
       "label": "Limitation",
-      "text": "Ideal Gas Equation is based on fundamental principles."
+      "text": "**Kelvin, always:** gas laws die at 0 °C input — convert T + 273 first.  ·  **n vs N:** n = moles (use R); N = molecules (use k_B)."
     },
     {
       "label": "Derivation",
-      "text": "Connection of Ideal Gas Equation to other topics"
+      "text": "A 2 mol gas occupies 0.050 m³ at 300 K. Find absolute pressure.  ·  A gas at 100 kPa and 300 K is heated to 360 K at fixed volume. Find final pressure."
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Ideal Gas Equation."
+      "text": "\"P₁V₁/T₁ = P₂V₂/T₂ — cancel what stays constant.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Ideal Gas Equation.  ·  Q3. Problem on Ideal Gas Equation."
+      "text": "**Numerical (3m): A tyre is inflated to 2 atm at 17 °C. What is its pressure at 47 °C (volume constant)?** — P₂ = P₁T₂/T₁ = 2 × 320/290 = 2.21 atm."
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Ideal gas equation to be valid  ·  Statement 4: Principle governing Ideal gas equation",
+      "text": "The 2024 3m asks for all three laws plus the combination — write each formula first.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ideal Gas Equation — topic mind map\"><title>Ideal Gas Equation — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Ideal gas equation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ideal gas equation</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Ideal Gas Equation — topic mind map of this topic's own sub-topics"
@@ -75,11 +75,31 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Ideal Gas Equation."
+      "text": "**The combined-gas shortcut:** P₁V₁/T₁ = P₂V₂/T₂ solves most numericals without finding n."
+    },
+    {
+      "label": "Key points",
+      "text": "PV = nRT; R = 8.31 J mol⁻¹K⁻¹; PV = Nk_BT.  ·  Boyle (T): PV const; Charles (P): V/T const; pressure law (V): P/T const."
+    },
+    {
+      "label": "Universal facts",
+      "text": "At STP one mole of any ideal gas occupies 22.4 L — Avogadro's hypothesis in numbers."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "In P V = n R T, T is → B  ·  Boyle's law, at fixed T and n, says → A"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 1. Topic Introduction — The Gas Laws Combined Boyle, Charles and Gay-Lussac each froze one variable and watched two others. Combine their three laws and out falls PV = nRT — one equation that predicts the pressure, volume or temperature of any (ideal) gas from the other two plus the amount of gas.  ·  ## 2. Fundamental Concepts (NEB 2022, 2024) ### 2.1 The three empirical laws | Law | Statement | Formula (constant) | |---|---|---| | **Boyle's law** | At constant T, pressure ∝ 1/volume | $PV = $ const (T, n fixed) | | **Charles's law** | At constant P, volume ∝ absolute temperature | $V/T = $ const (P, n fixed) | | **Pressure (Gay-Lussac) law** | At constant V, pressure ∝…  ·  ## 3. Conceptual Relationships - **To Topic 63/64:** kinetic theory derives PV = ⅓Nmv̄² and matches it to PV = NkT — the microscopic origin of the gas laws. - **To real gases:** the equation holds only at low pressure and high temperature; real gases need van der Waals corrections. - **To Avogadro:** equal volumes of gases at same T, P contain equal numbers of molecules."
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Ideal gas equation"
+      "text": "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ ext{C} eq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature.  ·  Verified PYQs: laws + combination 2024 3m; P = nRT/V 2024 2m; Charles numerical 2022 4m.  ·  \"The ideal gas equation combines Boyle's, Charles's and the pressure law: PV = nRT.\""
+    },
+    {
+      "label": "More ideas",
+      "text": "Why does a sealed bottle left in the sun bulge?  ·  Why do real gases deviate near condensation?  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2078/2022 | Heat | Ideal gas | A gas at 27 °C and pressure 1.0×10⁵ Pa occupies a volume of 0.5 m³.…"
     }
   ]
 }

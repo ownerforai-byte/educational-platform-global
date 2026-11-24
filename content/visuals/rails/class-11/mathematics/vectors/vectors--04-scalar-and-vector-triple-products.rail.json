@@ -21,52 +21,76 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Scalar and Vector Triple Products covers essential principles and applications.",
+      "text": "The **scalar triple product** [a b c] = a·(b × c) — the component determinant — measures **signed volume**: |[a b c]| is the parallelepiped's volume (NEB 2024's definition-and-significance answer), ⅙ of it the tetrahedron's, and **zero exactly for coplanar** vectors. It is **cyclically invariant** ([a b c] = [b c a] = [c a b]) and **sign-flipping** under any single swap.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Scalar and Vector Triple Products — quick idea map\"><title>Scalar and Vector Triple Products — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Scalar and Vector Triple Products</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Scalar and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Vector Triple Products.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Coplanarity test in one</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">line: the volume [a b c]</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is 0 — use it instead of…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scalar triple product</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$[\\vec{a}\\ \\vec{b}\\</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\vec{c}] =…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Vector triple product:</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\vec{a}\\times(\\vec{b}\\times\\vec{c})</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">=…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Scalar and Vector Triple Products — quick idea map\"><title>Scalar and Vector Triple Products — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Scalar and Vector Triple Products</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The scalar triple product</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is base-times-height in</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">one symbol: cross for the…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scalar triple product: [a</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">b c] = a.(b x c) =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">determinant of components</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- [a b c] = a·(b × c) =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">|a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">c₃| = (a × b)·c - |[a b…</text></svg>",
         "caption": "Scalar and Vector Triple Products — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Scalar triple product $[\\vec{a}\\ \\vec{b}\\ \\vec{c}] = \\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ is the volume of the parallelepiped; it is zero for coplanar vectors.\nVector triple product: $\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b} - (\\vec{a}\\cdot\\vec{b})\\vec{c}$.",
+      "text": "- [a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| = (a × b)·c - |[a b c]| = parallelepiped volume; tetrahedron Ⅵ... ⅙|[a b c]| - [a b c] = [b c a] = [c a b]; [b a c] = −[a b c] - a × (b × c) = (a·c)b − (a·b)c",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Scalar and Vector Triple Products — formula board\"><title>Scalar and Vector Triple Products — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Scalar and Vector Triple Products</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Scalar triple product $[\\vec{a}\\ \\vec{b}\\ \\vec{c}] =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ is the volume of the</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">parallelepiped; it is zero for coplanar vectors.</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Vector triple product:</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\vec{a}\\times(\\vec{b}\\times\\vec{c}) =</text><text x=\"450\" y=\"434\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(\\vec{a}\\cdot\\vec{c})\\vec{b} -</text><text x=\"450\" y=\"468\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(\\vec{a}\\cdot\\vec{b})\\vec{c}$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Scalar and Vector Triple Products — formula board\"><title>Scalar and Vector Triple Products — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Scalar and Vector Triple Products</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- [a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(a × b)·c - |[a b c]| = parallelepiped volume;</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">tetrahedron Ⅵ... ⅙|[a b c]| - [a b c] = [b c a] = [c a</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">b]; [b a c] = −[a b c] - a × (b × c) = (a·c)b − (a·b)c</text></svg>",
         "caption": "Scalar and Vector Triple Products — formula board of this topic's own formulas"
       }
     },
     {
       "label": "Conditions",
-      "text": "Scalar and Vector Triple Products is based on fundamental principles."
+      "text": "Verified PYQ: NEB 2024 (scalar triple product definition and geometric significance) — assigned to this row. Other items are NEB-style practice."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Scalar and Vector Triple Products  ·  Statement 2: Theorem related to Scalar and Vector Triple Products"
+      "text": "\"[a b c] = a.(b x c); |[a b c]| is the parallelepiped volume; a x (b x c) = (a.c)b - (a.b)c.\""
     },
     {
       "label": "Solved",
-      "text": "Application of Scalar and Vector Triple Products"
+      "text": "***BAC-CAB in the plane*** — a x (b x c) always lands in the plane of b and c: the identity's right side contains only b and c, no a."
     },
     {
       "label": "Limitation",
-      "text": "Definition and significance of Scalar and Vector Triple Products.  ·  Statement 5: Corollary or consequence of Scalar and Vector Triple Products"
+      "text": "The scalar triple product is base-times-height in one symbol: cross for the base area, dot for the height - volume with a sign.  ·  Scalar triple product: [a b c] = a.(b x c) = determinant of components = (a x b).c. Volume theorem: |[a b c]| = parallelepiped volume; tetrahedron = (1/6)|[a b c]|. Coplanarity: [a b c] = 0. Cyclic invariance: [a b c] = [b c a] = [c a b]; any swap flips sign. Dot and cross interchangeable: a.(b x c) = (a x b).c.…"
     },
     {
       "label": "Derivation",
-      "text": "Coplanarity test in one line: the volume [a b c] is 0 — use it instead of solving three planes for a common point."
+      "text": "## 1. Topic Introduction — Volume in One Number The **scalar triple product** [a b c] = a·(b × c) turns three vectors into a signed volume; the **vector triple product** a × (b × c) stays a vector and obeys the **BAC–CAB rule**. Their theorems: the determinant form, the coplanarity criterion, the volume theorem, and the two expansion rules.  ·  ## 2. Fundamental Concepts ### 2.1 Scalar triple product - **Definition:** [a b c] = a·(b × c) — a scalar. - **Determinant form:** [a b c] = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|. - **Theorem (volume):** |[a b c]| = volume of the **parallelepiped** with coterminous edges a, b, c; **one-sixth** of it is the tetrahedron's volume. - **Theorem (coplanarity):** a, b, c are coplanar ⟺ **[a b c] = 0**.…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Scalar and Vector Triple Products."
+      "text": "Coplanarity: determinant = 0. Volume: |determinant|; tetrahedron: divide by 6. Swaps flip sign; rotations keep it. BAC-CAB: (a.c)b - (a.b)c - c pairs with b."
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Scalar and Vector Triple Products.  ·  Q3. Problem on Scalar and Vector Triple Products."
+      "text": "**NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)** — **Definition:** for three vectors a, b, c the **scalar triple product** is **[a b c] = a·(b × c)** — the scalar obtained by dotting one vector with the cross product of the other two.…  ·  **NEB-style (3m): Prove the cyclic invariance [a b c] = [b c a] = [c a b] and that interchanging two vectors reverses the sign.** — **Determinant route:** [a b c] is the determinant of the matrix with rows a, b, c. **Cyclic rotation** of the rows (a,b,c → b,c,a) is achieved by **two** row interchanges: (a,b,c) → (b,a,c) → (b,c,a).…"
     },
     {
       "label": "Hints",
-      "text": "Statement 3: Condition for Scalar and Vector Triple Products to be valid  ·  Statement 4: Principle governing Scalar and Vector Triple Products"
+      "text": "For the definition question, give the formula AND the volume interpretation - the significance sentence is a full mark."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Determinant sign conventions in linear algebra (row swaps flip sign) are the triple product's cyclic law generalised."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Verify the BAC–CAB rule for a = î, b = ĵ, c = k̂.** — **Left side:** b × c = ĵ × k̂ = î, so a × (b × c) = î × î = **0**. **Right side:** (a·c)b − (a·b)c = (î·k̂)ĵ − (î·ĵ)k̂ = (0)ĵ − (0)k̂ = **0**. Both sides agree ✓.…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Scalar triple product** | a·(b × c) — signed volume | [î ĵ k̂] = 1 | | **Cyclic invariance** | Rotating the triple keeps the value | [a b c] = [b c a] | | **Vector triple product** | a × (b × c) — obeys BAC–CAB | not associative | | **Parallelepiped** | Box with edges a, b, c | volume |[a b…  ·  ## 4. Detailed Explanation ### 4.1 Why volume - b × c is the base parallelogram's area vector; dotting a onto it multiplies by the height — base × height = volume. The sign records orientation (right- vs left-handed triples). ### 4.2 Reading BAC–CAB - a × (b × c) lands in the plane of b and c (it is perpendicular to a × (b × c)'s own axis...…  ·  ## 5. Comparison Tables **Triple products side by side** | Basis | Scalar triple [a b c] | Vector triple a × (b × c) | |---|---|---| | result | scalar | vector | | geometric meaning | signed volume | in-plane vector | | zero when | coplanar | a ⊥ (b × c) plane cases | | key law | cyclic invariance | BAC–CAB |"
+    },
+    {
+      "label": "More ideas",
+      "text": "Define the scalar triple product and state its geometric significance.  ·  Prove the cyclic invariance of [a b c].  ·  State and verify the BAC–CAB rule with a = î, b = ĵ, c = k̂."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **Cyclic, not any permutation:** [b a c] = −[a b c] — only rotations keep the sign.  ·  **BAC–CAB order:** a × (b × c) = (a·c)b − (a·b)c — the dot product with **c** multiplies **b**; reversing pairs is the classic slip.  ·  **Tetrahedron factor:** ⅙ of the parallelepiped volume, not ½ (that is the triangle's share of the parallelogram)."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)** — For vectors a, b, c the **scalar triple product** is **[a b c] = a·(b × c)** — the dot product of one vector with the cross product of the other two; in components it is the determinant |a₁…  ·  **NEB-style (3m): Show that the vectors a = î + ĵ + k̂, b = 2î + 3ĵ − k̂... coplanarity via [a b c] = 0 (template).** — Assemble the component determinant and expand; zero ⟹ coplanar (one vector is a combination of the other two), non-zero ⟹ they span space with volume |[a b c]|.  ·  **NEB-style (2m): Verify BAC–CAB for a = î, b = ĵ, c = ĵ.** — Left: a × (b × c) = î × (ĵ × ĵ) = î × 0 = **0**. Right: (a·c)b − (a·b)c = (î·ĵ)ĵ − (î·ĵ)ĵ = 0 − 0 = **0** ✓. Both sides agree; the identity holds even in degenerate cases."
     }
   ]
 }

@@ -48,11 +48,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Kirchhoff's Laws  ·  Example 2: Practical demonstration of Kirchhoff's Laws concepts"
+      "text": "Example 2: Practical demonstration of Kirchhoff's Laws concepts  ·  Example 4: Diagram-based question on Kirchhoff's Laws"
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Sign conventions for KVL don't matter as long as you're consistent.' ✅ While consistency is key, wrong sign conventions will flip *all* your results; the standard rule is: voltage rise = +, voltage drop = − when traversing the loop."
+      "text": "❌ 'Sign conventions for KVL don't matter as long as you're consistent.' ✅ While consistency is key, wrong sign conventions will flip *all* your results; the standard rule is: voltage rise = +, voltage drop = − when traversing the loop.  ·  The junction law is not about voltages."
     },
     {
       "label": "Derivation",
@@ -96,7 +96,7 @@
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Kirchhoff's Laws  ·  Example 5: Application in daily life involving Kirchhoff's Laws"
+      "text": "Example 5: Application in daily life involving Kirchhoff's Laws"
     },
     {
       "label": "MCQ drill",
@@ -104,11 +104,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Kirchhoff's Laws:** This topic covers the fundamental concepts of kirchhoff's laws in the physics curriculum.  ·  Understanding kirchhoff's laws is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to kirchhoff's laws should be memorized and practiced regularly."
+      "text": "Kirchhoff's first law, the junction rule, says that the sum of currents entering a junction equals the sum leaving it. Charge does not pile up at a steady junction, so Σ I = 0 if currents in are positive and currents out are negative.  ·  Kirchhoff's second law, the loop rule, says that the algebraic sum of potential changes around a closed loop is zero. A walk that returns to the start cannot have gained energy.  ·  A resistor drop is −IR when you walk with the current and +IR when you walk against it. A battery rise is +E when you walk from the negative plate to the positive plate inside the cell."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Kirchhoff's Laws and other topics  ·  Key Formula 5: Important relation in Kirchhoff's Laws  ·  Note 3: Practice numerical problems regularly for mastery of Kirchhoff's Laws"
+      "text": "Concept 5: Connection between Kirchhoff's Laws and other topics  ·  Key Formula 5: Important relation in Kirchhoff's Laws  ·  The loop law is not about currents adding to zero."
+    },
+    {
+      "label": "More ideas",
+      "text": "A negative current is a direction, not a mistake.  ·  Walking against the current flips the IR sign.  ·  Note 3: Practice numerical problems regularly for mastery of Kirchhoff's Laws"
     },
     {
       "label": "More ideas",
@@ -120,11 +124,7 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Cross-check your answers using alternative methods for Kirchhoff's Laws  ·  Statement 1: Definition of Kirchhoff's Laws  ·  Statement 2: Theorem related to Kirchhoff's Laws"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 3: Condition for Kirchhoff's Laws to be valid  ·  Statement 4: Principle governing Kirchhoff's Laws  ·  Statement 5: Corollary or consequence of Kirchhoff's Laws"
+      "text": "Note 5: Cross-check your answers using alternative methods for Kirchhoff's Laws  ·  Trick 3: Dimensional analysis shortcut for Kirchhoff's Laws  ·  Trick 4: Memory aid for Kirchhoff's Laws formulas"
     }
   ]
 }

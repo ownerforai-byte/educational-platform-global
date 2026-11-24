@@ -31,56 +31,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Solubility of hydroxides, carbonates and sulphates of alk… (Chemistry of Metals, Chemistry, class-11-notes) covers Solubility of hydroxides, carbonates, sulphates of alkaline earth metals. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Three solubility ladders, one thermodynamic engine. Dissolution spends **lattice energy** and earns **hydration energy**; down Group IIA the growing M²⁺ loses hydration enthalpy fast (Be²⁺ −2494 → Ba²⁺ −1305 kJ/mol). With the **small OH⁻** anion, lattice energy collapses even faster, so the hydroxides **rise in solubility** — Be(OH)₂ insoluble and amphoteric, Mg(OH)₂ sparingly, Ca(OH)₂ lime water, Ba(OH)₂ a usable…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solubility of hydroxides, carbonates and sulphates of alk… — quick idea map\"><title>Solubility of hydroxides, carbonates and sulphates of alk… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Solubility of hydroxides, carbonates and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">sulphates of alk…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Solubility of hydroxides</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Carbonates</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solubility of hydroxides, carbonates and sulphates of alk… — quick idea map\"><title>Solubility of hydroxides, carbonates and sulphates of alk… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Solubility of hydroxides, carbonates and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">sulphates of alk…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One competition, three</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ladders: hydration energy</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is the engine that falls</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Dissolution = lattice</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">energy (endothermic) vs</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">hydration energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ΔH(hydration): Be²⁺ ≈</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">−2494 → Ba²⁺ ≈ −1305</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">kJ/mol - Ksp(BaSO₄) ≈</text></svg>",
         "caption": "Solubility of hydroxides, carbonates and sulphates of alk… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Solubility of hydroxides\n• Carbonates"
+      "text": "- ΔH(hydration): Be²⁺ ≈ −2494 → Ba²⁺ ≈ −1305 kJ/mol - Ksp(BaSO₄) ≈ 1×10⁻¹⁰; solubility 2.4 mg/L - Ba²⁺ + SO₄²⁻ → BaSO₄↓ - Ca(OH)₂ ≈ 1.7 g/L; Ba(OH)₂ ≈ 56 g/L (20 °C) - Be(OH)₂ + 2NaOH → Na₂BeO₂ + 2H₂O (amphoteric)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Solubility of hydroxides\" as one blob → ✅ split into: solubility of hydroxides, carbonates, sulphates of alkaline earth metals.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Solubility of hydroxides, carbonates and sulphates of alk…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: solubility of hydroxides, carbonates, sulphates of alkaline earth metals, general trend with explanation (within Chemistry of Metals).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"The solubilities of the hydroxides of the alkaline earth metals increase, while those of their carbonates and sulphates decrease, with increasing atomic number of the metal.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Lime water vs baryta water*** — Ca(OH)₂ gives only ~1.7 g/L in water (hence the faint cloudiness of limewater with CO₂), while Ba(OH)₂ dissolves ~56 g/L — the same hydroxide chemistry, three rungs apart on the ladder, one test-tube apart in the lab."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Solubility of hydroxides, carbonates and sulphates of alk… — Chemistry of Metals, Chemistry (class-11-notes).  ·  **Tested.** define it · list: solubility of hydroxides, carbonates, sulphates of alkaline earth metals, general trend with explanation · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Three Ladders, One Explanation The alkaline earth metals carry three solubility ladders that all point different ways: **hydroxides** get *more* soluble down the group, **carbonates** get *less* soluble, and **sulphates** collapse to near-insoluble barium sulphate. One thermodynamic argument — lattice energy vs hydration energy — explains all three, and NEB asks for it nearly every year.  ·  ## 2. Fundamental Concepts ### 2.1 The two competing energies - Dissolution pays two bills: breaking the crystal lattice (**lattice energy, ΔL**, always endothermic) and rewarding the ions with water (**hydration energy, ΔH, always exothermic**). Solubility follows the balance: hydration wins → soluble; lattice wins → insoluble.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Sulphates of alkaline earth metals  ·  • General trend with explanation"
+      "text": "Anion-size rule: OH- small -> solubility up; CO3^2-/SO4^2- big -> down. Endpoints: Ba(OH)2 soluble vs BaSO4 2.4 mg/L. Hydration numbers: Be2+ -2494, Ba2+ -1305. Be(OH)2 amphoteric."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Solubility of hydroxides, carbonates and sulphates of alk…\" with one example.  ·  compare \"Solubility of hydroxides\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): State and explain the general trends in the solubility of the hydroxides, carbonates and sulphates of the alkaline earth metals.** — **Hydroxides, M(OH)₂:** solubility **increases down the group** — Be(OH)₂ insoluble, Mg(OH)₂ sparingly soluble, Ca(OH)₂ sparingly (lime water), Sr(OH)₂ and Ba(OH)₂ appreciably soluble.…  ·  **NEB-style (2m): Why is MgSO₄ soluble in water but BaSO₄ practically insoluble?** — Dissolution must be paid for by the lattice energy and funded by hydration energy. **MgSO₄:** the small Mg²⁺ ion is very strongly hydrated (hydration enthalpy ≈ −1922 kJ/mol); this large exothermic hydration more than compensates the lattice energy, so…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "The explanation must name both energies and say which falls faster for which anion — \"hydration decreases\" alone is half an answer.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solubility of hydroxides, carbonates and sulphates of alk… — topic mind map\"><title>Solubility of hydroxides, carbonates and sulphates of alk… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Solubility of hydroxides, carbonates and sulp…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Solubility of hydroxides</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Carbonates</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Sulphates of alkaline</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">earth metals</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">General trend with</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">explanation</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Solubility of hydroxides, carbonates and sulphates of alk… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "One competition, three ladders: hydration energy is the engine that falls at a fixed rate down the group, and the anion's size decides whether lattice energy falls faster (hydroxides rise) or slower (carbonates and sulphates sink)."
+    },
+    {
+      "label": "Key points",
+      "text": "Dissolution = lattice energy (endothermic) vs hydration energy (exothermic); down IIA hydration of M2+ falls fast (Be2+ -2494 -> Ba2+ -1305 kJ/mol). Hydroxides (small OH-): lattice falls faster -> solubility increases: Be(OH)2 insoluble < Mg(OH)2 < Ca(OH)2 (lime water) < Ba(OH)2 soluble; basicity same order, Be(OH)2…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "BaSO₄'s Ksp of about 10⁻¹⁰ is so small that a single drop of BaCl₂ in a litre of sulphate solution precipitates essentially every sulphate ion — quantitative gravimetric analysis rests on this ladder's bottom rung."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Solubility of hydroxides, carbonates and sulphates of alk…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Arrange the hydroxides of Be, Mg, Ca and Ba in order of increasing solubility and increasing basic character, and account for both orders.** — **Solubility:** Be(OH)₂ < Mg(OH)₂ < Ca(OH)₂ < Ba(OH)₂.…"
     },
     {
       "label": "MCQ drill",
@@ -88,98 +100,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Carbonates.** one-line definition + one-line exam use.  ·  **Sulphates of alkaline earth metals.** one-line definition + one-line exam use.  ·  **General trend with explanation.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Lattice energy** | Energy to separate 1 mol of ionic solid to gaseous ions | ΔL of BaSO₄ large | | **Hydration energy** | Energy released when gaseous ions are hydrated | Be²⁺ ≈ −2494 kJ/mol | | **Solubility product (Ksp)** | Equilibrium constant of dissolution | Ksp(BaSO₄) ≈ 1×10⁻¹⁰ | |…  ·  ## 4. Detailed Explanation ### 4.1 Why the hydroxide ladder rises - OH⁻ is small (radius ~140 pm effective). In Be(OH)₂ the tiny Be²⁺ packs against the small OH⁻ → very high lattice energy. As M²⁺ grows, the lattice loosens rapidly (big cation, small anion = weak packing), while the cation's hydration loss is more gradual in relative terms — net: dissolution becomes easier.…  ·  ## 5. Comparison Tables **Ladder summary** | Group | Anion size | Lattice energy fall vs hydration fall | Solubility trend | |---|---|---|---| | M(OH)₂ | small | lattice falls faster | increases down | | MCO₃ | large | hydration falls faster | decreases down | | MSO₄ | large | hydration falls faster | decreases (sharply) down |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: solubility of hydroxides, carbonates, sulphates of alkaline earth metals, general trend with explanation.  ·  one worked example for \"Solubility of hydroxides, carbonates and sulphates of alk…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on solubility trends exists in the bank; all items here are NEB-style practice.  ·  Explain with lattice and hydration energies why the hydroxide ladder rises while the sulphate ladder falls.  ·  Write the solubility order of the carbonates of Be, Mg, Ca, Ba and give one consequence of each end."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Use Ksp to explain why one drop of BaCl2 quantitatively precipitates sulphate.  ·  ## 6. Common Confusions **\"Small anion → increasing solubility\" is the rule, not \"hydroxides are soluble\":** Be(OH)₂ and Mg(OH)₂ are insoluble; only Ca(OH)₂ onward are usable in water — the ladder matters, not the label.  ·  **BaSO₄ insolubility is not \"covalency\":** it is the lattice/hydration balance; quoting \"covalent character\" misses the thermodynamic argument NEB wants."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Carbonates vs hydroxides directions are opposite:** memorise by anion size — small OH⁻ rises, big CO₃²⁻/SO₄²⁻ fall.  ·  ## 7. Exam Application **NEB-style (3m): State and explain the general trend in the solubility of the hydroxides, carbonates and sulphates of the alkaline earth metals.** — **Hydroxides:** solubility **increases** down the group — Be(OH)₂ is insoluble, Mg(OH)₂ sparingly, Ca(OH)₂ sparingly (lime water), Sr(OH)₂ more,…  ·  **NEB-style (2m): Why is barium chloride solution used to test for sulphate ions, and why is MgSO₄ soluble while BaSO₄ is not?** — Ba²⁺ + SO₄²⁻ → BaSO₄↓ gives a dense white precipitate insoluble in acids — the definitive sulphate test.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Arrange the hydroxides of Be, Mg, Ca, Ba in order of increasing solubility and basicity.** — **Solubility:** Be(OH)₂ < Mg(OH)₂ < Ca(OH)₂ < Ba(OH)₂. **Basicity:** the same order — Be(OH)₂ is amphoteric (dissolves in acids *and* NaOH), Mg(OH)₂ is a weak base, Ca(OH)₂ a strong base (sparingly soluble),…"
     }
-  ],
-  "keyPoints": [
-    "11 Solubility Of Hydroxides Carbonates And is a core concept in chemistry of metals.",
-    "Understanding 11 solubility of hydroxides carbonates and requires knowing its definition, conditions, and limitations.",
-    "11 Solubility Of Hydroxides Carbonates And has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 11 solubility of hydroxides carbonates and must be memorized precisely.",
-    "11 Solubility Of Hydroxides Carbonates And connects to neighbouring topics within chemistry of metals and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 11 solubility of hydroxides carbonates and.",
-    "Practical examples solidify understanding of 11 Solubility Of Hydroxides Carbonates And and its real-world relevance.",
-    "Misconceptions about 11 solubility of hydroxides carbonates and often arise from confusing it with similar concepts.",
-    "11 Solubility Of Hydroxides Carbonates And follows systematic rules that can be applied step-by-step.",
-    "Review of 11 solubility of hydroxides carbonates and should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "11 Solubility Of Hydroxides Carbonates And is defined by its specific characteristics within chemistry of metals.",
-    "The conditions under which 11 solubility of hydroxides carbonates and applies are as important as the concept itself.",
-    "11 Solubility Of Hydroxides Carbonates And can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 11 solubility of hydroxides carbonates and through application-based and comparison questions.",
-    "A clear grasp of 11 Solubility Of Hydroxides Carbonates And builds the foundation for advanced topics in chemistry of metals."
-  ],
-  "importantNotes": [
-    "When studying 11 solubility of hydroxides carbonates and, always note the exceptions alongside the general rule.",
-    "11 Solubility Of Hydroxides Carbonates And should be reviewed with at least one worked example per sub-point.",
-    "Link 11 solubility of hydroxides carbonates and back to prior knowledge in chemistry of metals for deeper retention.",
-    "Practice past NEB board questions on 11 Solubility Of Hydroxides Carbonates And to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 11 Solubility Of Hydroxides Carbonates And: apply the standard definition to a simple case.",
-    "Intermediate example: combine 11 solubility of hydroxides carbonates and with a related concept from chemistry of metals.",
-    "Exam-style problem: solve a question involving 11 Solubility Of Hydroxides Carbonates And under time pressure.",
-    "Real-world connection: show how 11 Solubility Of Hydroxides Carbonates And appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 11 Solubility Of Hydroxides Carbonates And and state two conditions required for it to occur.",
-    "Differentiate 11 Solubility Of Hydroxides Carbonates And from the most commonly confused concept in chemistry of metals.",
-    "Solve a numerical or structural problem involving 11 Solubility Of Hydroxides Carbonates And.",
-    "List three applications of 11 Solubility Of Hydroxides Carbonates And in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 11 Solubility Of Hydroxides Carbonates And without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 11 Solubility Of Hydroxides Carbonates And.",
-    "Create three flashcards covering definition, formula, and limitation of 11 Solubility Of Hydroxides Carbonates And."
-  ],
-  "universalFacts": [
-    "11 Solubility Of Hydroxides Carbonates And is part of the NEB Class 11 chemistry of metals syllabus.",
-    "Every concept in chemistry of metals builds upon definitions established earlier in the chapter.",
-    "11 Solubility Of Hydroxides Carbonates And is assessed through both short-answer and long-answer board questions.",
-    "Understanding 11 Solubility Of Hydroxides Carbonates And improves performance across the entire chemistry of metals unit.",
-    "Revision of 11 Solubility Of Hydroxides Carbonates And should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 11 Solubility Of Hydroxides Carbonates And with closely related concepts in chemistry of metals — focus on distinguishing features.",
-    "The scope of 11 Solubility Of Hydroxides Carbonates And is sometimes overstated; remember its precise boundaries.",
-    "Applying 11 Solubility Of Hydroxides Carbonates And outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 11 Solubility Of Hydroxides Carbonates And and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 11 Solubility Of Hydroxides Carbonates And? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "11 Solubility Of Hydroxides Carbonates And is primarily studied under which branch of chemistry of metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 11 Solubility Of Hydroxides Carbonates And is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of metals — Answer: B",
-    "Which example correctly illustrates 11 Solubility Of Hydroxides Carbonates And? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "11 Solubility Of Hydroxides Carbonates And differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 11 Solubility Of Hydroxides Carbonates And.",
-    "Step-by-step animated derivation of the key relationship in 11 Solubility Of Hydroxides Carbonates And.",
-    "Interactive toggle between correct and incorrect representations of 11 Solubility Of Hydroxides Carbonates And."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 11 Solubility Of Hydroxides Carbonates And.",
-    "Side-by-side comparison animation of 11 Solubility Of Hydroxides Carbonates And vs commonly confused concept.",
-    "Timelapse build-up of 11 Solubility Of Hydroxides Carbonates And from prerequisite knowledge in chemistry of metals."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 11 Solubility Of Hydroxides Carbonates And",
-    "Comparison table: 11 Solubility Of Hydroxides Carbonates And vs related concepts in chemistry of metals",
-    "Step-by-step worked example layout for 11 Solubility Of Hydroxides Carbonates And"
-  ],
-  "summary": [
-    "11 Solubility Of Hydroxides Carbonates And is a fundamental concept in chemistry of metals that describes specific chemical behaviour under defined conditions.",
-    "Mastering 11 Solubility Of Hydroxides Carbonates And involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 11 Solubility Of Hydroxides Carbonates And alongside related concepts in chemistry of metals ensures strong conceptual clarity and exam readiness."
   ]
 }

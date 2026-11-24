@@ -53,11 +53,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Vaccination and immunization — Human Health and Diseases, Biology (class-12-notes).  ·  **Tested.** define it · list: vaccination, immunization · one worked example · one misconception each."
+      "text": "# Vaccination and immunization ## 1. Introduction Opening frame for **Vaccination and immunization** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Human Health and Diseases fill pass. ## 2.…  ·  A **vaccine** is a preparation of antigen — killed, weakened, fragmented or synthesized — that trains the immune system without causing disease. Immunization is the process of becoming protected. The principle is Edward Jenner's (cowpox → smallpox, 1796): a mild first encounter produces memory cells, so the real pathogen meets a fast, massive secondary response."
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Vaccination and immunization\" and verify the answer is plausible.  ·  define + example each sub-idea: vaccination, immunization."
+      "text": "Trick 1: Principle: harmless antigen → primary response → memory cells → rapid secondary response on real infection — the memory mechanism IS the answer.  ·  Trick 2: Vaccine types: killed/inactivated (polio Salk), live attenuated (BCG, oral polio Sabin), toxoid (tetanus), subunit/recombinant (Hepatitis B) — one example each."
     },
     {
       "label": "Board question",
@@ -72,16 +72,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Vaccination and immunization\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Vaccination and immunization\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Immunization.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — how a vaccine becomes protection (study in this order)** | Step | Event | Result | |---|---|---| | 1 | Vaccine antigen delivered (injection / oral) | Antigen reaches lymphoid tissue | | 2 | B and T cells with matching receptors activate | Clonal expansion | | 3 | Antibodies produced; antigen cleared | Mild or no symptoms | | 4 | Memory B and T cells form |…  ·  **Types of vaccines — classified with examples** | Type | What it contains | Example | Notes | |---|---|---|---| | Live attenuated | Weakened living pathogen | BCG (TB), MMR, oral polio (OPV) | Strong, long-lasting immunity; caution in immune-suppressed people | | Killed / inactivated | Pathogen killed by heat or chemicals | Injectable polio (IPV), rabies, whole-cell pertussis…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Passive immunisation: antivenom, immunoglobulin shots — immediate protection without memory.  ·  Trick 4: National programmes: Pulse Polio, BCG at birth, DPT schedule — quote one for the applied mark.  ·  define + example each sub-idea: vaccination, immunization."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Vaccination and immunization\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Active vs passive immunization — the two ways to protect** | Feature | Active immunization (vaccination) | Passive immunization | |---|---|---| | What is given | Antigen | Ready-made antibodies | | Example | Polio drops, BCG, tetanus toxoid | Antivenom for snake bite, antitetanus serum, colostrum IgA | | Onset of…  ·  ## 4. Diagrams and figures - **D1** — Immune-system tree, antibody structure and pathogen plates (authored SVG — English labels, viewBox 900×640) - **D2** — Vaccination and immunization — process or life-cycle flow (authored SVG — English labels) - **D3** — Vaccination and immunization — detailed reference plate…  ·  ```svg Antibody titre — primary vs secondary response after vaccination <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Why boosters work: antibody…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example.** A child receives DPT at 6, 10 and 14 weeks. The first dose is the primary response — antibodies appear after about a week and fade. The second and third doses act as boosters: each triggers a bigger, faster IgG response and a larger memory pool.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Define vaccine and immunization. (2) Classify vaccine types with one example each. (3) Distinguish active from passive immunization in four points.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Vaccines present antigen safely; the immune system responds, then remembers. Killed and subunit vaccines need boosters; live attenuated ones usually do not; passive immunization is borrowed protection for emergencies. **Self-check:** can you draw the two-curve antibody graph and label primary vs secondary?"
     }
   ]
 }

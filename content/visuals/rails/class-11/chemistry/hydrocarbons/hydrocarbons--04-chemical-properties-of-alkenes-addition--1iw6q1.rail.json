@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Chemical properties of alkenes: addition reaction with HX… (Hydrocarbons, Chemistry, class-11-notes) covers Chemical properties of alkenes: addition reaction with HX, Markovnikov's addition, peroxide effect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The alkene π bond invites electrophiles. **HX adds by Markovnikov's rule** — the negative part lands on the carbon with **fewer hydrogens**, because H⁺ first creates the **more stable carbocation** (propene + HBr → **2-bromopropane**).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkenes: addition reaction with HX… — quick idea map\"><title>Chemical properties of alkenes: addition reaction with HX… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Chemical properties of alkenes: addition</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reaction with HX…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Chemical properties of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">alkenes: addition reaction</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">with HX</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Markovnikov's addition</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkenes: addition reaction with HX… — quick idea map\"><title>Chemical properties of alkenes: addition reaction with HX… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Chemical properties of alkenes: addition</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reaction with HX…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Whoever forms the stabler</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">intermediate wins:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Markovnikov is</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkene chemistry =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrophilic addition.</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">HX: Markovnikov's rule —</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- CH₃–CH=CH₂ + HBr →</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CH₃–CHBr–CH₃ (Markovnikov)</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- CH₃–CH=CH₂ + HBr (ROOR)</text></svg>",
         "caption": "Chemical properties of alkenes: addition reaction with HX… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "F = qvB sinθ\nε = −N dΦ/dt\nF = BIL"
+      "text": "- CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃ (Markovnikov) - CH₃–CH=CH₂ + HBr (ROOR) → CH₃–CH₂–CH₂Br - CH₂=CH₂ + H₂O (H₂SO₄) → CH₃CH₂OH - CH₂=CH₂ + O₃ → ozonide → 2 HCHO (Zn/H₂O); CH₃CH=CHCH₃ → 2 CH₃CHO"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Chemical properties of alkenes: addition reaction with HX\" as one blob → ✅ split into: chemical properties of alkenes: addition reaction with hx, markovnikov's addition, peroxide effect.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: chemical properties of alkenes: addition reaction with hx, markovnikov's addition, peroxide effect, h2so4 only (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Markovnikov's rule: the negative part of the addendum attaches to the alkene carbon bearing fewer hydrogens; peroxides reverse this for HBr via a radical mechanism.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***HBr's private quirk*** — of the four hydrogen halides only HBr flips in peroxides: Cl· adds too fast to be selective, I· too weak to sustain the chain — bond energetics police the exception."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Chemical properties of alkenes: addition reaction with HX… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: chemical properties of alkenes: addition reaction with hx, markovnikov's addition, peroxide effect, h2so4 only · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — The π Bond Under Attack A π bond is an exposed electron cloud — every electrophile wants it. Alkene chemistry is **electrophilic addition**: HX, H₂O, H₂SO₄ and O₃ all add across the double bond, with **Markovnikov's rule** and the **peroxide effect** deciding which carbon gets which fragment.  ·  ## 2. Fundamental Concepts ### 2.1 Addition of HX and Markovnikov's rule - **CH₃–CH=CH₂ + HBr → CH₃–CHBr–CH₃** (2-bromopropane, major). - **Markovnikov's rule:** the **negative part** of the addendum attaches to the carbon with **fewer hydrogens**; equivalently H⁺ goes to the carbon already holding more H. - Reason: the more stable **carbocation** (3° > 2° > 1°) forms on the more substituted carbon.…"
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Markovnikov: X to H-poor C (2-bromopropane). Peroxide + HBr: reverse (1-bromopropane). Ozonolysis: terminal C → HCHO; symmetrical internal → 2 same carbonyls. Hydration: H2SO4 then water → alcohol."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Chemical properties of alkenes: addition reaction with HX…\" with one example.  ·  compare \"Chemical properties of alkenes: addition reaction with HX\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent such as HX adds to an unsymmetrical alkene, the **negative part of the reagent attaches to the doubly-bonded carbon that carries fewer hydrogen atoms** (and H⁺ to the carbon…  ·  **NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene first adds **ozone** across the double bond at low temperature (**~195 K**) to form a cyclic **ozonide**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "For Markovnikov questions, state the rule in the \"negative part\" form AND justify via the 2° carbocation — both sentences carry marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Chemical properties of alkenes: addition reaction with HX… — topic mind map\"><title>Chemical properties of alkenes: addition reaction with HX… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Chemical properties of alkenes</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Chemical properties of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">alkenes: addition…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Markovnikov's addition</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Peroxide effect</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">H2SO4 only</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Chemical properties of alkenes: addition reaction with HX… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Whoever forms the stabler intermediate wins: Markovnikov is carbocation stability in disguise, and the peroxide effect is radical stability pulling the other way."
+    },
+    {
       "label": "Key points",
-      "text": "• Chemical properties of alkenes: addition reaction with HX  ·  • Markovnikov's addition  ·  • Peroxide effect  ·  • H2SO4 only"
+      "text": "Alkene chemistry = electrophilic addition. HX: Markovnikov's rule — negative part (X-) goes to the carbon with FEWER H; via the more stable carbocation; CH3CH=CH2 + HBr -> CH3CHBrCH3 (2-bromopropane).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Ozonolysis is molecular archaeology: cleave the alkene, read the carbonyl fragments, and the position of the original double bond is reconstructed exactly."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Chemical properties of alkenes: addition reaction with HX…\" and verify the answer is plausible."
+      "text": "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation:** but-2-ene adds ozone at low temperature (~195 K) to give **but-2-ene ozonide**, a five-membered…"
     },
     {
       "label": "MCQ drill",
@@ -89,102 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Markovnikov's rule** | Negative addendum goes to the C with fewer H (via the stabler carbocation) | propene + HBr → 2-bromopropane | | **Peroxide effect** | Radical anti-Markovnikov addition, HBr only | propene + HBr/ROOR → 1-bromopropane | | **Ozonolysis** | O₃ addition then Zn/H₂O cleavage…  ·  ## 4. Detailed Explanation ### 4.1 The carbocation is the hinge - H⁺ adds first (electrophilic), creating a carbocation; the more substituted cation forms preferentially, and the anion then attacks it. Every Markovnikov question is a carbocation-stability question.…  ·  ## 5. Comparison Tables **Markovnikov vs peroxide (Kharasch) addition** | Basis | Markovnikov | Peroxide effect | |---|---|---| | mechanism | ionic (carbocation) | free-radical | | condition | normal | peroxides, HBr only | | H goes to | C with more H | C with fewer H | | Br goes to | C with fewer H | C with more H | | propene + HBr | 2-bromopropane | 1-bromopropane |"
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  define + example each sub-idea: chemical properties of alkenes: addition reaction with hx, markovnikov's addition, peroxide effect, h2so4 only.  ·  one worked example for \"Chemical properties of alkenes: addition reaction with HX…\" — check units / edge cases."
+      "text": "Verified PYQs: NEB 2024 (Markovnikov applied to propene; ozonolysis of ethene), NEB 2022 (ozonolysis of but-2-ene) — assigned to this row.  ·  State Markovnikov's rule and apply it to HBr + propene.  ·  Explain the peroxide effect and why it is limited to HBr."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+      "text": "Write the ozonolysis products of ethene, but-2-ene and propene.  ·  ## 6. Common Confusions **The rule speaks of the negative part:** it is Br⁻ that goes to the H-poor carbon — students misplace the H instead.  ·  **Peroxide effect is HBr-only:** writing it for HCl or HI is a classic error — bond energetics forbid the chain."
     },
     {
       "label": "More ideas",
-      "text": "**Markovnikov's addition.** one-line definition + one-line exam use.  ·  **Peroxide effect.** one-line definition + one-line exam use.  ·  **H2SO4 only.** one-line definition + one-line exam use."
+      "text": "**Ozonolysis reductive workup:** Zn/H₂O stops at aldehydes/ketones; oxidative workup would push to acids — quote Zn.  ·  ## 7. Exam Application **NEB 2024 (verified PYQ): State Markovnikov's rule and apply it to the addition of HBr to propene. (3m)** — **Markovnikov's rule:** when an unsymmetrical reagent (HX) adds to an unsymmetrical alkene, the **negative part of the reagent (X⁻) attaches to the carbon of the double bond bearing fewer…  ·  **NEB 2024 (verified PYQ): What happens when ethene undergoes ozonolysis? Write the products. (3m)** — Ethene adds ozone at low temperature (~195 K) to form an **ozonide**, which on **reductive cleavage with Zn/H₂O** splits the C=C completely: **CH₂=CH₂ + O₃ → ozonide → 2 HCHO**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB 2022 (verified PYQ): What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products. (3m)** — **Step 1 — ozonide formation (at ~195 K):** CH₃–CH=CH–CH₃ + O₃ → **but-2-ene ozonide** (a cyclic peroxide across the double bond).…"
     }
-  ],
-  "keyPoints": [
-    "04 Chemical Properties Of Alkenes Addition is a core concept in hydrocarbons.",
-    "Understanding 04 chemical properties of alkenes addition requires knowing its definition, conditions, and limitations.",
-    "04 Chemical Properties Of Alkenes Addition has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 chemical properties of alkenes addition must be memorized precisely.",
-    "04 Chemical Properties Of Alkenes Addition connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 chemical properties of alkenes addition.",
-    "Practical examples solidify understanding of 04 Chemical Properties Of Alkenes Addition and its real-world relevance.",
-    "Misconceptions about 04 chemical properties of alkenes addition often arise from confusing it with similar concepts.",
-    "04 Chemical Properties Of Alkenes Addition follows systematic rules that can be applied step-by-step.",
-    "Review of 04 chemical properties of alkenes addition should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Chemical Properties Of Alkenes Addition is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 04 chemical properties of alkenes addition applies are as important as the concept itself.",
-    "04 Chemical Properties Of Alkenes Addition can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 chemical properties of alkenes addition through application-based and comparison questions.",
-    "A clear grasp of 04 Chemical Properties Of Alkenes Addition builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 04 chemical properties of alkenes addition, always note the exceptions alongside the general rule.",
-    "04 Chemical Properties Of Alkenes Addition should be reviewed with at least one worked example per sub-point.",
-    "Link 04 chemical properties of alkenes addition back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 04 Chemical Properties Of Alkenes Addition to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Chemical Properties Of Alkenes Addition: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 chemical properties of alkenes addition with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 04 Chemical Properties Of Alkenes Addition under time pressure.",
-    "Real-world connection: show how 04 Chemical Properties Of Alkenes Addition appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Chemical Properties Of Alkenes Addition and state two conditions required for it to occur.",
-    "Differentiate 04 Chemical Properties Of Alkenes Addition from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 04 Chemical Properties Of Alkenes Addition.",
-    "List three applications of 04 Chemical Properties Of Alkenes Addition in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Chemical Properties Of Alkenes Addition without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Chemical Properties Of Alkenes Addition.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Chemical Properties Of Alkenes Addition."
-  ],
-  "universalFacts": [
-    "04 Chemical Properties Of Alkenes Addition is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "04 Chemical Properties Of Alkenes Addition is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Chemical Properties Of Alkenes Addition improves performance across the entire hydrocarbons unit.",
-    "Revision of 04 Chemical Properties Of Alkenes Addition should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Chemical Properties Of Alkenes Addition with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 04 Chemical Properties Of Alkenes Addition is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Chemical Properties Of Alkenes Addition outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Chemical Properties Of Alkenes Addition and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Chemical Properties Of Alkenes Addition? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Chemical Properties Of Alkenes Addition is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Chemical Properties Of Alkenes Addition is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 04 Chemical Properties Of Alkenes Addition? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Chemical Properties Of Alkenes Addition differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Chemical Properties Of Alkenes Addition.",
-    "Step-by-step animated derivation of the key relationship in 04 Chemical Properties Of Alkenes Addition.",
-    "Interactive toggle between correct and incorrect representations of 04 Chemical Properties Of Alkenes Addition."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Chemical Properties Of Alkenes Addition.",
-    "Side-by-side comparison animation of 04 Chemical Properties Of Alkenes Addition vs commonly confused concept.",
-    "Timelapse build-up of 04 Chemical Properties Of Alkenes Addition from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Chemical Properties Of Alkenes Addition",
-    "Comparison table: 04 Chemical Properties Of Alkenes Addition vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 04 Chemical Properties Of Alkenes Addition"
-  ],
-  "summary": [
-    "04 Chemical Properties Of Alkenes Addition is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Chemical Properties Of Alkenes Addition involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Chemical Properties Of Alkenes Addition alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

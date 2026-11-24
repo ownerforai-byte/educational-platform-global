@@ -21,64 +21,76 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Applications of Vectors â€” Work, Torque and Angular Momentum covers essential principles and applications. Applications of Vectors — Work, Torque, Angular Momentum covers essential principles and applications.",
+      "text": "Vectors run mechanics. **Work** is the dot product **W = F·d = Fd cos θ** — a signed scalar, zero for perpendicular force, measured in joules (10 N at 60° over 5 m gives 25 J). **Torque** is the cross product **τ = r × F**, magnitude **rF sin θ** = moment arm × force, an axial vector in N·m, zero when the force's line passes through the pivot (the hinge principle); computed from components as a determinant (3î+4ĵ N…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Applications of Vectors â€” Work, Torque and Angular Momentum — quick idea map\"><title>Applications of Vectors â€” Work, Torque and Angular Momentum — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Applications of Vectors â€” Work, Torque and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Angular Momentum</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Applications of Vectors</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Applications of Vectors —</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Applications</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Vectors â€” Work,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Torque and Angular</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Applications</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Vectors — Work, Torque,</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Angular Momentum to…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Applications of Vectors â€” Work, Torque and Angular Momentum — quick idea map\"><title>Applications of Vectors â€” Work, Torque and Angular Momentum — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Applications of Vectors â€” Work, Torque and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Angular Momentum</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The two products split</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mechanics: projections</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(dot) earn energy,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Work: W = F.d = F d cos</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">th; scalar, unit joule;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">zero when F perp d;</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- W = F·d = Fd cos θ (J) -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">τ = r × F, |τ| = rF sin θ</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(N·m); L = r × p; τ_net…</text></svg>",
         "caption": "Applications of Vectors â€” Work, Torque and Angular Momentum — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Applications: work, torque, angular momentum\nStatement 2: Theorem related to Applications: work, torque, angular momentum"
-    },
-    {
-      "label": "Conditions",
-      "text": "Applications of Vectors â€” Work, Torque and Angular Momentum is based on fundamental principles.  ·  Applications of Vectors — Work, Torque, Angular Momentum is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Applications: work, torque, angular momentum to be valid  ·  Statement 4: Principle governing Applications: work, torque, angular momentum"
-    },
-    {
-      "label": "Solved",
-      "text": "Application of Applications of Vectors — Work, Torque, Angular Momentum"
-    },
-    {
-      "label": "Limitation",
-      "text": "Definition and significance of Applications of Vectors â€” Work, Torque and Angular Momentum.  ·  Definition and significance of Applications of Vectors — Work, Torque, Angular Momentum."
-    },
-    {
-      "label": "Derivation",
-      "text": "**Work.** Work done by a constant force is the dot product W = F·s = Fs cosθ; it is maximum when force and displacement are parallel and zero when they are perpendicular.  ·  **Torque.** The moment of a force about a point is τ = r × F, with magnitude rF sinθ and direction given by the right-hand rule; torque measures the turning effect."
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Applications of Vectors â€” Work, Torque and Angular Momentum.  ·  Recall the formula for Applications of Vectors — Work, Torque, Angular Momentum."
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define Applications of Vectors — Work, Torque, Angular Momentum.  ·  Q3. Problem on Applications of Vectors — Work, Torque, Angular Momentum.",
+      "text": "- W = F·d = Fd cos θ (J) - τ = r × F, |τ| = rF sin θ (N·m); L = r × p; τ_net = 0 ⟹ L conserved - Resultant of two forces: √(F₁² + F₂² + 2F₁F₂cos α)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Applications of Vectors â€” Work, Torque and Angular Momentum — exam flow\"><title>Applications of Vectors â€” Work, Torque and Angular Momentum — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Applications of Vectors â€” Work, Torque and</text><text x=\"450\" y=\"84\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Angular Momentum</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Applications of Vectors â€” Work, Torque and</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">Angular Momentum covers essential principles</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">and applications.…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Applications:</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">work, torque, angular momentum Statement 2:</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">Theorem related to Applications:…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Applications of</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Vectors â€” Work, Torque and Angular</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">Momentum.…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define Applications of Vectors — Work,</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">Torque, Angular Momentum. · Q3.…</text></svg>",
-        "caption": "Applications of Vectors â€” Work, Torque and Angular Momentum — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Applications of Vectors â€” Work, Torque and Angular Momentum — formula board\"><title>Applications of Vectors â€” Work, Torque and Angular Momentum — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Applications of Vectors â€” Work, Torque and Angular</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Momentum</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- W = F·d = Fd cos θ (J) - τ = r × F, |τ| = rF sin θ</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(N·m); L = r × p; τ_net = 0 ⟹ L conserved - Resultant of</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">two forces: √(F₁² + F₂² + 2F₁F₂cos α)</text></svg>",
+        "caption": "Applications of Vectors â€” Work, Torque and Angular Momentum — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice."
+    },
+    {
+      "label": "Special cases",
+      "text": "\"W = F.d; tau = r x F with magnitude = moment arm x force; L = r x p is conserved when net torque vanishes.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The hinge theorem*** — a door's handle is far from the hinge because torque scales with r: same push, more turn."
+    },
+    {
+      "label": "Limitation",
+      "text": "The two products split mechanics: projections (dot) earn energy, perpendiculars (cross) turn things - cos th and sin th are the physics.  ·  Work: W = F.d = F d cos th; scalar, unit joule; zero when F perp d; negative when opposing. Torque: tau = r x F; magnitude r F sin th = moment arm x force; axial vector by right-hand rule; unit N.m; zero when force line passes through the pivot. Angular momentum: L = r x p; conserved when net torque is zero (tau = dL/dt). Parallelogram law of forces: resultant magnitude sqrt(F1^2 + F2^2 + 2F1F2 cos alpha).…"
+    },
+    {
+      "label": "Derivation",
+      "text": "## 1. Topic Introduction — Vectors at Work (Literally) Physics runs on the vector products: **work** W = F·d (dot), **torque** τ = r × F (cross), **angular momentum** L = r × p (cross). Each formula is a theorem about components — and each has a syllabus-standard numerical type.  ·  ## 2. Fundamental Concepts ### 2.1 Work — the dot product - **Theorem:** W = **F·d** = |F||d|cos θ = F d cos θ, where θ is the angle between force and displacement. - Only the force component **along** the displacement earns work: W = (F cos θ)d. Perpendicular force does **zero** work (θ = 90°). - SI unit: joule (J = N·m). Sign: positive (assisting), zero (perpendicular), negative (opposing — friction).…"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Work: F d cos th. Torque magnitude: r F sin th. Component torque: determinant, keep the k-hat for planar forces. Zero cases: perpendicular force (work), force through pivot (torque)."
+    },
+    {
+      "label": "Board question",
+      "text": "**NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — **Formula:** W = **F·d** = F d cos θ, the dot product of force and displacement. **Substitute:** W = 10 × 5 × cos 60° = 50 × ½ = **25 J**.…  ·  **NEB-style (3m): A force F = 3î + 4ĵ N acts at a point with position vector r = 2î + ĵ m from the pivot. Find the torque about the pivot.** — **Formula:** τ = **r × F**. **Determinant:** |î ĵ k̂; 2 1 0; 3 4 0| = î[(1)(0) − (0)(4)] − ĵ[(2)(0) − (0)(3)] + k̂[(2)(4) − (1)(3)] = 0î − 0ĵ + **5k̂**.…"
+    },
+    {
       "label": "Hints",
-      "text": "Connection of Applications of Vectors â€” Work, Torque and Angular Momentum to other topics  ·  Connection of Applications of Vectors — Work, Torque, Angular Momentum to other topics"
+      "text": "Quote units: joules for work, N·m for torque - mixing them is a real mark loss."
+    },
+    {
+      "label": "Universal facts",
+      "text": "A planet keeps orbiting because the Sun's force points along r: zero torque, conserved angular momentum - Kepler's second law in one line."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Explain why a force directed along the line joining the pivot to its point of application produces no torque.** — Torque is **τ = r × F** with magnitude rF sin θ, where θ is the angle between the position vector r and the force F.…"
     },
     {
       "label": "Study notes",
-      "text": "**Angular momentum.** The angular momentum of a particle is L = r × p = r × mv, and for a rigid body rotating about a fixed axis L = Iω.  ·  **Newton's law for rotation.** The net external torque equals the rate of change of angular momentum, τ = dL/dt, in exact analogy with F = dp/dt.  ·  **Conservation.** If the net external torque on a system is zero, its angular momentum stays constant — a spinning skater speeds up when pulling in their arms."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Work** | F·d — energy transferred by a force along a displacement | 1 J = 1 N through 1 m | | **Torque** | r × F — turning effect about an axis | moment arm × force | | **Moment arm** | Perpendicular distance from pivot to force's line | r sin θ | | **Angular momentum** | r × p — rotational…  ·  ## 4. Detailed Explanation ### 4.1 Why dot for work, cross for torque - Work asks \"how much force along the motion\" — a projection (cos θ, dot). Torque asks \"how much force across the lever\" — a perpendicular measure (sin θ, cross). The two products split physics between them.…  ·  ## 5. Comparison Tables **The three applications** | Quantity | Formula | Product | Zero when | |---|---|---|---| | Work | F·d | dot | F ⊥ d | | Torque | r × F | cross | F along r | | Angular momentum | r × p | cross | p along r |"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Applications: work, torque, angular momentum  ·  Statement 1: Definition of Applications of Vectors — Work, Torque, Angular Momentum  ·  Statement 2: Theorem related to Applications of Vectors — Work, Torque, Angular Momentum"
+      "text": "Compute the work done by 10 N at 60° over 5 m.  ·  Find the torque of F = 3î + 4ĵ N acting at r = 2î + ĵ m.  ·  Explain why centripetal force does no work in circular motion."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Condition for Applications of Vectors — Work, Torque, Angular Momentum to be valid  ·  Statement 4: Principle governing Applications of Vectors — Work, Torque, Angular Momentum  ·  Statement 5: Corollary or consequence of Applications of Vectors — Work, Torque, Angular Momentum"
+      "text": "## 6. Common Confusions **N·m for torque is not a joule:** same dimensions, different quantity — torque is a vector about an axis, energy a scalar.  ·  **Moment arm is perpendicular distance:** r sin θ, not r — the full radius only works at θ = 90°.  ·  **Negative work is real:** friction doing negative work removes kinetic energy; the sign is information."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB-style (3m): A force of 10 N acts at 60° to a displacement of 5 m. Find the work done.** — W = F d cos θ = 10 × 5 × cos 60° = 10 × 5 × ½ = **25 J**. Only the component F cos θ = 5 N along the displacement contributes; the perpendicular 5√3 N component does nothing.  ·  **NEB-style (3m): A force F = 3î + 4ĵ N acts at the point r = 2î + ĵ m relative to a pivot. Find the torque about the pivot.** — τ = r × F = |î ĵ k̂; 2 1 0; 3 4 0| = k̂[(2)(4) − (1)(3)] = **5k̂ N·m** — magnitude 5 N·m, direction out of the plane (right-hand rule).…  ·  **NEB-style (2m): Why does a door open easiest when pushed at the edge farthest from the hinge?** — Torque τ = r F sin θ: for a fixed force applied perpendicular to the door (sin θ = 1), τ is proportional to **r**, the distance from the hinge.…"
     }
   ]
 }

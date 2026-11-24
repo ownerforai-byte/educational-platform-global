@@ -23,64 +23,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Biotechnological applications in agriculture: Bt cotton, … (Biotechnology and Its Applications, Biology, class-12-notes) covers Biotechnological applications in agriculture: Bt cotton, nematode-resistant tobacco. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Bt cotton makes Cry protein from bacterial cry genes, especially cryIAc and cryIIAb. The protein kills susceptible bollworms only after their alkaline gut activates it, and a non-Bt refuge slows resistance. Nematode-resistant tobacco instead uses RNA interference so Meloidogyne incognita silences one of its own essential genes when it feeds.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biotechnological applications in agriculture: Bt cotton, … — quick idea map\"><title>Biotechnological applications in agriculture: Bt cotton, … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Biotechnological applications in agriculture:</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bt cotton, …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Biotechnological</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">applications in</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">agriculture: Bt cotton</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nematode-resistant</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tobacco</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biotechnological applications in agriculture: Bt cotton, … — quick idea map\"><title>Biotechnological applications in agriculture: Bt cotton, … — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Biotechnological applications in agriculture:</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bt cotton, …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cryIAc and cryIIAb</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkaline-gut activation</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Source of cry: Bacillus</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">thuringiensis.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Activation: alkaline</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">insect gut → pores in the</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">midgut.</text></svg>",
         "caption": "Biotechnological applications in agriculture: Bt cotton, … — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Biotechnological applications in agriculture: Bt cotton\n• Nematode-resistant tobacco"
+      "text": "Bt path: cry gene in the plant → Cry crystal protein → alkaline gut → active toxin → midgut pores.\nRNAi path: plant dsRNA matching a nematode gene → nematode eats it → nematode mRNA silenced."
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Biotechnological applications in agriculture: Bt cotton\" as one blob → ✅ split into: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "Bt cotton is not protected only by spraying the live bacterium on the leaves. The cry gene is inside the plant.  ·  Cry protein does not kill every insect that visits the field. Activation needs a susceptible gut."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Biotechnological applications in agriculture: Bt cotton, …\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Spell Bacillus thuringiensis once, then Bt is enough.  ·  cryIAc and cryIIAb are the cotton pair. Do not replace them with a random cry name."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A bollworm larva eating Bt cotton ingests Cry protein and dies after its midgut is damaged.  ·  A honeybee collecting nectar, and not chewing the bollworm's leaf tissue, is not the organism the cry gene was built to kill."
     },
     {
       "label": "Limitation",
-      "text": "Covers only: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco (within Biotechnology and Its Applications).  ·  Out of scope here: topics of neighbouring units in Biology — don't mix them."
+      "text": "The tobacco method does not put a Cry toxin into the nematode. It silences a nematode gene with RNA.  ·  A refuge is not wasted land. It is the part of the plan that slows resistance."
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Biotechnological applications in agriculture: Bt cotton, … — Biotechnology and Its Applications, Biology (class-12-notes).  ·  **Tested.** define it · list: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco · one worked example · one misconception each."
+      "text": "Compare Bt cotton and RNAi tobacco in a two-column answer.  ·  Explain resistance and the refuge in three sentences."
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Biotechnological applications in agriculture: Bt cotton, …\" and verify the answer is plausible.  ·  define + example each sub-idea: biotechnological applications in agriculture: bt cotton, nematode-resistant tobacco."
+      "text": "Bt = protein. Tobacco nematode = RNAi.  ·  Inactive crystal in the bacterium. Active toxin only in the larva."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Biotechnological applications in agriculture: Bt cotton, …\" with one example.  ·  compare \"Biotechnological applications in agriculture: Bt cotton\" with the related idea from a neighbouring unit."
+      "text": "Why is the Cry protein harmless as a crystal inside the bacterium?  ·  Which nematode is the tobacco example aimed at, and how does the plant stop it?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Name Bacillus thuringiensis and the alkaline gut. Both are required for a full Bt answer.  ·  For the tobacco question, write Meloidogyne incognita and RNA interference. Do not answer it with Cry protein.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Biotechnological applications in agriculture: Bt cotton, … — topic mind map\"><title>Biotechnological applications in agriculture: Bt cotton, … — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Biotechnological applications in agriculture</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Biotechnological</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">applications in</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nematode-resistant</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">tobacco</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Biotechnological applications in agriculture: Bt cotton, … — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "cryIAc and cryIIAb  ·  Alkaline-gut activation  ·  Refuge strategy  ·  Meloidogyne incognita"
+    },
+    {
+      "label": "Key points",
+      "text": "Source of cry: Bacillus thuringiensis.  ·  Activation: alkaline insect gut → pores in the midgut.  ·  Cotton genes named in the course: cryIAc and cryIIAb.  ·  Refuge of non-Bt plants slows resistance."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Bacillus thuringiensis produces insecticidal crystal proteins during sporulation.  ·  RNA interference destroys or blocks an mRNA that matches the introduced double-stranded RNA."
+    },
+    {
+      "label": "More practice",
+      "text": "Why would planting only Bt cotton for many years weaken the method?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A root-knot nematode on the modified tobacco fails to establish because a gene it needs has been silenced."
+    },
+    {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Biotechnological applications in agriculture: Bt cotton, …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The cry genes in Bt cotton come from → B  ·  Cry protein becomes an active toxin in → B"
     },
     {
       "label": "Study notes",
-      "text": "**Nematode-resistant tobacco.** one-line definition + one-line exam use."
+      "text": "Bt cotton carries cry genes from the bacterium Bacillus thuringiensis. The plant makes the Cry protein in its own tissues. Bollworm larvae that eat the leaf or the boll take the protein in with the meal.  ·  Inside the bacterium the Cry protein is an inactive crystal. In the alkaline gut of a susceptible larva it dissolves and is cut into an active toxin. The toxin forms pores in the midgut lining and the larva dies. cryIAc and cryIIAb are the genes used against cotton bollworms.  ·  The toxin is not a general insect killer. It needs that alkaline gut. Pollinators that do not eat the tissue, and insects whose guts do not activate the crystal, are not the target. The human stomach is acidic, and people do not have the insect midgut receptor the toxin uses."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Biotechnological applications in agriculture: Bt cotton, …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "RNA interference versus Cry protein  ·  Tobacco RNAi targets Meloidogyne incognita, a root-knot nematode.  ·  The refuge figure used in teaching is at least about 20 percent non-Bt plants."
+    },
+    {
+      "label": "More ideas",
+      "text": "Agrobacterium is the delivery tool for the RNAi construct, not the pest.  ·  The crystal protein is inactive until the insect gut processes it.  ·  Bt is a protein toxin. The nematode defence is RNA silencing."
+    },
+    {
+      "label": "More ideas",
+      "text": "Continuous exposure without a refuge favours resistant insects.  ·  Write the Bt path from gene to dead larva in four steps.  ·  Explain what a non-Bt refuge is for."
+    },
+    {
+      "label": "More ideas",
+      "text": "Contrast the molecule that protects Bt cotton with the molecule that protects the tobacco.  ·  A field of only Bt plants selects for larvae that survive the toxin. A refuge of non-Bt cotton, about a fifth of the area, lets susceptible insects survive and mate with resistant survivors. That mating dilutes resistance.  ·  Nematode-resistant tobacco uses RNA interference against the root-knot nematode Meloidogyne incognita. Agrobacterium is used to put into the plant a DNA sequence that produces double-stranded RNA matching a gene the nematode needs."
+    },
+    {
+      "label": "More ideas",
+      "text": "When the nematode feeds on the root it takes up that RNA. The matching mRNA in the worm is silenced, so the nematode cannot develop properly in the root. The protection is gene silencing, not a protein crystal. Bt and this RNAi crop solve pest problems by different molecules.  ·  # Biotechnological applications in agriculture: Bt cotton, nematode-resistant tobacco ## 1. Introduction Opening frame for **Biotechnological applications in agriculture** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md…  ·  Agricultural biotechnology puts new genes into crop plants. Two NEB exemplars: **Bt cotton**, which carries toxin genes (cry) from the soil bacterium *Bacillus thuringiensis* and kills bollworm caterpillars from within; and **nematode-resistant tobacco**, which uses **RNA interference (RNAi)** — feeding the plant…"
     }
   ]
 }

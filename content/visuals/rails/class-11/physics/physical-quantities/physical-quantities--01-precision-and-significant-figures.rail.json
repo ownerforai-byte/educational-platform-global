@@ -21,16 +21,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Precision and significant figures control how many digits a measurement may honestly claim. Accuracy is closeness to the true value; precision is repeatability. Rules govern counting significant figures, rounding (round-half-to-even), combining quantities (fewest s.f. for ×/÷, fewest d.p. for +/−) and propagating uncertainties (relative errors add; powers multiply them).…",
+      "text": "Measurement is the foundation of physics: seven SI base units (m, kg, s, A, K, mol, cd) generate every derived unit. **Accuracy** is closeness to the true value; **precision** is agreement among repeats — an instrument can be precise yet inaccurate.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Precision and Significant Figures — quick idea map\"><title>Precision and Significant Figures — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Precision and Significant Figures</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Accuracy =</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">closeness to true value;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">precision = closeness of…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Least count =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">smallest interval an</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">instrument can measure;</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Significant figures</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">express the precision of a</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">MEASUREMENT, not of a</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Multiplication/division →</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fewest significant</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">figures;</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Precision and Significant Figures — quick idea map\"><title>Precision and Significant Figures — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Precision and Significant Figures</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Every measurement</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">carries an uncertainty:**</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">stating 25.0 ± 0.1 cm is</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Seven SI base units: m,</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">kg, s, A, K, mol, cd;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derived units built from</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Significant figures:</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">leading zeros never</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significant; trailing</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Percentage error =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(absolute error / mean</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value) × 100% -</text></svg>",
         "caption": "Precision and Significant Figures — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Percentage uncertainty: $\\%\\,\\text{uncertainty} = \\frac{\\Delta x}{x} \\times 100\\%$\nSum/difference: $\\Delta Z = \\Delta A + \\Delta B$ (absolute errors add)\nProduct/quotient: $\\frac{\\Delta Z}{Z} = \\frac{\\Delta A}{A} + \\frac{\\Delta B}{B}$ (relative errors add)"
+      "text": "- Percentage error = (absolute error / mean value) × 100% - Product/quotient: ΔZ/Z = ΔA/A + ΔB/B - Power: Z = Aⁿ → ΔZ/Z = n·ΔA/A - Sum/difference: ΔZ = ΔA + ΔB"
     },
     {
       "label": "Conditions",
@@ -42,11 +42,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: A measured current is 0.0450 A — this has 3 s.f.; the trailing zero after 5 is significant because it is after a decimal point, telling us the ammeter resolved to 0.0001 A.  ·  Example 2: Mass of a coin measured 5 times: 5.42 g, 5.40 g, 5.41 g, 5.42 g, 5.40 g — highly precise (spread only 0.02 g); if the true mass is 5.00 g the readings are precise but inaccurate (zero error)."
+      "text": "***0.00320 m*** — 3 significant figures; the leading zeros locate the decimal point only."
     },
     {
       "label": "Limitation",
-      "text": "❌ '0.00250 has 6 significant figures because it has 6 digits.' ✅ Leading zeros only locate the decimal point — 0.00250 has **3** s.f. (the 2, the 5, and the trailing zero after the decimal point).  ·  ❌ '500 has 3 significant figures.' ✅ Without a decimal point, trailing zeros are ambiguous — 500 could be 1, 2 or 3 s.f. Write $5.00 \\times 10^2$ if you mean 3 s.f."
+      "text": "**Accuracy vs precision:** accuracy compares with the true value; precision compares repeated measurements with each other — a precise instrument can be inaccurate if mis-calibrated.  ·  **Least count vs error:** the least count is the smallest step the instrument can read; the least-count error is half of it."
     },
     {
       "label": "Derivation",
@@ -54,15 +54,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Underline the significant figures of EVERY given value before starting a numerical — the smallest count sets your answer's s.f.  ·  Trick 2: For 'which reading is more precise' MCQs, compare least counts, not decimal places: 0.01 cm (vernier) beats 0.1 cm (rule)."
+      "text": "\"Leading zeros lie, trailing zeros after a decimal tell the truth.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Distinguish between accuracy and precision with one example of each combination (accurate-not-precise, precise-not-accurate).  ·  Q2. State the number of significant figures in: 0.00650, 123.40, 5000, $6.02 \\times 10^{23}$, 0.0300."
+      "text": "**Numerical (2m): A wire's diameter is measured as 0.52 mm with least count 0.01 mm. Express the result with its percentage error.** — Diameter = 0.52 ± 0.01 mm; percentage error = (0.01/0.52) × 100% ≈ 1.9%.…"
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: NEB frequently asks 1-mark questions on counting significant figures and 2-3 mark questions on percentage error propagation.  ·  Exam Tip 2: In practical exams, quoting a result beyond the instrument's least count loses marks — always match digits to the instrument.",
+      "text": "Most-tested: accuracy vs precision (2024); significant-figure counting (2014); small time-conversion numericals (2022). Always round numerical answers to the correct s.f.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Precision and Significant Figures — topic mind map\"><title>Precision and Significant Figures — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Precision and significant figures</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Precision</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Significant figures</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Precision and Significant Figures — topic mind map of this topic's own sub-topics"
@@ -70,27 +70,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Accuracy = closeness to true value; precision = closeness of repeated readings to each other.  ·  Concept 2: Least count = smallest interval an instrument can measure; it fixes the last significant figure of any reading.  ·  Concept 3: Absolute error (Δx), relative error (Δx/x) and percentage error (Δx/x × 100%) are three views of the same uncertainty.  ·  Concept 4: Error propagation rules: absolute errors add for sums/differences, relative errors add for products/quotients and powers."
+      "text": "**Every measurement carries an uncertainty:** stating 25.0 ± 0.1 cm is more honest and more examinable than 25 cm alone."
     },
     {
       "label": "Key points",
-      "text": "Significant figures express the precision of a MEASUREMENT, not of a pure number — a counted quantity like '12 students' is exact.  ·  Multiplication/division → fewest significant figures; addition/subtraction → fewest decimal places.  ·  Leading zeros never count; captive zeros always count; trailing zeros count only after a decimal point.  ·  Uncertainty of a reading is normally ± half the least count of the instrument."
+      "text": "Seven SI base units: m, kg, s, A, K, mol, cd; derived units built from them.  ·  Significant figures: leading zeros never significant; trailing zeros after a decimal point are; 0.00320 m → 3 s.f. (NEB 2014).  ·  Arithmetic rules: ×/÷ keeps fewest s.f.; +/− keeps fewest decimal places.  ·  Errors: absolute, relative, percentage; systematic vs random; propagation — powers multiply the relative error by n."
     },
     {
       "label": "Universal facts",
-      "text": "The SI has seven base quantities: length (metre), mass (kilogram), time (second), electric current (ampere), temperature (kelvin), luminous intensity (candela) and amount of substance (mole). Since 2019 every base unit is defined by fixing a fundamental constant.  ·  'Significant' means reliable/meaningful, not mathematically important — instrument precision, not the calculator display, decides how many digits you may report."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. A screw gauge with least count 0.001 cm reads 0.532 cm. Write the reading with its absolute and percentage uncertainty.  ·  Q4. Compute $\\frac{9.12 \\times 0.20}{3.0}$ and express the result with the correct number of significant figures.  ·  Q5. The period of a pendulum is measured 5 times as 2.03 s, 2.04 s, 2.02 s, 2.04 s, 2.03 s. Find the mean, the mean absolute error and express T as T ± ΔT."
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 3: When a question gives data like (2.0 ± 0.1) and (3.45 ± 0.02), compute the value first, then add relative errors for products.  ·  Exam Tip 4: Show the unrounded working and the rounded final answer separately — method marks are awarded for the guard digits."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 3: Area of a plate with sides 12.5 cm and 4.0 cm: $A = 50.0$ cm² full value, but 4.0 has 2 s.f. → report $A = 50$ cm² (2 s.f.).  ·  Example 4: Time for 10 oscillations of a pendulum measured as 20.2 s with a stopwatch of least count 0.1 s → $T = 2.02$ s; quoting T = 2.020 s would falsely claim precision beyond the stopwatch."
+      "text": "The kilogram was the last SI base unit defined by a physical object (the platinum-iridium cylinder in Paris) until 2019, when it was redefined via Planck's constant."
     },
     {
       "label": "MCQ drill",
@@ -98,27 +86,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Accuracy vs Precision:** **Accuracy** is how close a measurement is to the true value; **precision** is how close repeated measurements are to each other. A watch running 5 minutes fast can still be precise (consistent) but inaccurate. In physics we must report BOTH.  ·  **Significant figures** are the digits that carry meaning about precision. Rules: (1) All non-zero digits are significant — 24.7 has **3** s.f. (2) Zeros between non-zero digits are significant — 2005 has **4** s.f. (3) Leading zeros are NOT significant — 0.0052 has **2** s.f. (4) Trailing zeros AFTER a decimal point ARE significant — 2.300 has **4** s.f.…  ·  **Why significant figures matter:** every measurement has an uncertainty limited by the instrument's least count. Reporting $T = 2.034567$ s measured with a stopwatch (least count 0.01 s) falsely claims precision. Round only to figures the instrument can justify."
+      "text": "## 1. Topic Introduction — Measurement Is Where Physics Begins Physics is a quantitative science: every law is a statement about measured quantities. This topic fixes the vocabulary of measurement — SI base units, accuracy vs precision, significant figures, scientific notation, and the errors that limit every measurement.…  ·  ## 2. Fundamental Concepts | Term | Definition | |---|---| | **Physical quantity** | A property that can be measured, expressed as a number times a unit | | **Fundamental (base) quantities** | Seven independent quantities: length (m), mass (kg), time (s), electric current (A), thermodynamic temperature (K), amount of substance (mol), luminous intensity (cd) | | **Derived…  ·  ## 3. Significant Figures — The Rules Significant figures are the digits in a number that carry meaning — all certain digits plus one uncertain digit. | Rule | Example | |---|---| | All non-zero digits are significant | 247.5 → 4 s.f. | | Zeros between non-zero digits are significant | 2004 → 4 s.f. | | Leading zeros are **not** significant | 0.00320 → 3 s.f.…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Scientific notation encodes both magnitude and precision simultaneously — the standard form for final answers.  ·  Power rule: $Z = A^n \\Rightarrow \\frac{\\Delta Z}{Z} = n\\,\\frac{\\Delta A}{A}$  ·  Pendulum example: $g = \\frac{4\\pi^2 L}{T^2} \\Rightarrow \\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} + 2\\frac{\\Delta T}{T}$"
+      "text": "**Parallax Error:** For analog measurements (metre rules, thermometers), ensure the line of sight is perpendicular to the scale; this is a necessary physical condition that must be met before determining the significant figure precision of the measurement.  ·  Note 3: Angular measure in radians is dimensionless but its precision still limits results in formulas like $s = r\\theta$.  ·  Note 4: Instruments: vernier callipers (0.01 cm) and screw gauge (0.001 cm) reduce least count — the practical way to gain significant figures."
     },
     {
       "label": "More ideas",
-      "text": "**Parallax Error:** For analog measurements (metre rules, thermometers), ensure the line of sight is perpendicular to the scale; this is a necessary physical condition that must be met before determining the significant figure precision of the measurement.  ·  Relative errors add in products and are multiplied by the power for $A^n$ — highest-power quantities dominate error.  ·  Scientific notation ($a \\times 10^n$, $1 \\le a < 10$) removes ambiguity about trailing zeros."
+      "text": "Verified PYQs: accuracy vs precision (2024, 2m); significant figures in 0.00320 m (2014, 2m); leap-year seconds (2022, 1m).  ·  \"A measurement without an uncertainty is an opinion with a decimal point.\"  ·  Why do we repeat measurements and average them?"
     },
     {
       "label": "More ideas",
-      "text": "❌ Rounding 2.45 to 2.5 'because 5 always rounds up'. ✅ For an exact 5 with nothing after, round to the nearest EVEN digit: 2.45 → 2.4 (but 2.4501 → 2.5).  ·  ❌ 'A precise measurement is always accurate.' ✅ Precision (repeatability) says nothing about correctness — a wrongly calibrated balance gives precise but systematically wrong (inaccurate) masses.  ·  ❌ Keeping decimal places in multiplication: $2.0 \\times 3.00 = 6.00$. ✅ In multiplication count significant figures (2 s.f. here) → 6.0; decimal-place counting applies only to addition/subtraction."
+      "text": "Task 3: Convert the following to 3 significant figures in scientific notation: 0.004560, 123,456, 7,500.  ·  Task 4: Solve the past-year NEB question: 'The percentage errors in mass and velocity are 2% and 3%. Find the maximum percentage error in kinetic energy.' (Answer: 2% + 2×3% = 8%.)  ·  Task 5: Write a one-page summary comparing accuracy, precision, least count and resolution with one instrument example for each."
     },
     {
       "label": "More ideas",
-      "text": "❌ Reporting $12.11 + 1.2$ as 13.31. ✅ The term 1.2 has only 1 decimal place → 13.3; the hundredths digit is already meaningless.  ·  Example 5: Density from $\\rho = m/V$ with $m = (7.58 \\pm 0.01)$ g and $V = (2.7 \\pm 0.1)$ cm³: $\\rho = 2.81$ g/cm³, $\\frac{\\Delta\\rho}{\\rho} = \\frac{0.01}{7.58} + \\frac{0.1}{2.7} \\approx 3.8\\%$ → $\\rho \\approx (2.8 \\pm 0.1)$ g/cm³.  ·  Note 3: Angular measure in radians is dimensionless but its precision still limits results in formulas like $s = r\\theta$."
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: Instruments: vernier callipers (0.01 cm) and screw gauge (0.001 cm) reduce least count — the practical way to gain significant figures.  ·  Note 1: Counted quantities and defined constants (π, 2, 100 cm = 1 m) are exact — they never limit significant figures.  ·  Note 2: The uncertainty of a single reading is conventionally ± half the least count of the instrument."
+      "text": "## 4. Errors of Measurement | Error type | Definition | Expression | |---|---|---| | **Absolute error** | Difference between a measurement and the mean (or true) value | $\\Delta a = \\lvert a_i - \\bar a\\rvert$ | | **Relative error** | Absolute error divided by the mean value | $\\Delta a / \\bar a$ | | **Percentage…  ·  ## 5. Conceptual Relationships - **To Topic 2 (dimensions):** units and dimensions are the bookkeeping of measurement — dimensional analysis checks the equations that relate measured quantities. - **To Kinematics:** every motion numerical ends with a properly rounded, properly united answer.…  ·  ## 6. Exam Orientation and Previous Year Questions (NEB) ### 6.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Physical Quantities | Precision | What is the difference between accuracy and precision? Illustrate with an example.…"
     }
   ]
 }

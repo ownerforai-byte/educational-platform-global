@@ -24,28 +24,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Electrolysis: qualitative aspect (Oxidation and Reduction, Chemistry, class-11-notes) covers Electrolysis, qualitative aspect. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Electrolysis is redox driven backwards: a battery forces electrons into the **cathode (negative)**, where cations are reduced, and pulls them from the **anode (positive)**, where anions — or the anode itself — are oxidised; same AN OX/RED CAT chemistry as a galvanic cell, opposite polarity.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrolysis: qualitative aspect — quick idea map\"><title>Electrolysis: qualitative aspect — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electrolysis: qualitative aspect</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Electrolysis</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Qualitative aspect</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ΔG = −nFE</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E = E° − (0.0592/n)log Q</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(25°C)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrolysis: qualitative aspect — quick idea map\"><title>Electrolysis: qualitative aspect — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Electrolysis: qualitative aspect</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Same half-reaction</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vocabulary as topic 40 —</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">MnO₄⁻ reduction then,</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Electrolysis: current</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">decomposes molten/aqueous</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electrolyte; electrical →…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Cathode: Na⁺ + e⁻ → Na;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cu²⁺ + 2e⁻ → Cu; 2H⁺ + 2e⁻</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ H₂ - Anode: 2Cl⁻ → Cl₂…</text></svg>",
         "caption": "Electrolysis: qualitative aspect — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "ΔG = −nFE\nE = E° − (0.0592/n)log Q (25°C)\nm = (M/F)Q"
+      "text": "- Cathode: Na⁺ + e⁻ → Na; Cu²⁺ + 2e⁻ → Cu; 2H⁺ + 2e⁻ → H₂ - Anode: 2Cl⁻ → Cl₂ + 2e⁻; 4OH⁻ → O₂ + 2H₂O + 4e⁻; Cu → Cu²⁺ + 2e⁻ - Overall (molten NaCl): 2NaCl → 2Na + Cl₂ - Water electrolysis: 2H₂O → 2H₂ + O₂ (2 : 1 by…"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Electrolysis\" as one blob → ✅ split into: electrolysis, qualitative aspect.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**Anions do not always reach the anode's oxidation:** SO₄²⁻, NO₃⁻ and F⁻ resist discharge — water's OH⁻ is oxidised instead, so oxygen, not the anion's element, appears.  ·  **Concentration bends the rules:** in concentrated brine Cl⁻ out-competes OH⁻ at the anode even though OH⁻ is nominally easier to discharge — the textbook order assumes comparable concentrations."
     },
     {
       "label": "Special cases",
-      "text": "Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.  ·  Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q."
+      "text": "\"Electrolysis is the process of chemical decomposition of an electrolyte by the passage of electricity: reduction occurs at the cathode and oxidation at the anode.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Electrorefining copper*** — an impure anode dissolves, 99.99% copper plates the cathode, silver and gold collect as \"anode mud\" worth more than the copper itself."
     },
     {
       "label": "Limitation",
@@ -53,130 +53,63 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Electrolysis: qualitative aspect — Oxidation and Reduction, Chemistry (class-11-notes).  ·  **Tested.** define it · list: electrolysis, qualitative aspect · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Forcing Reactions Backwards with Electricity Spontaneous redox runs a galvanic cell; electricity can also **drive non-spontaneous redox** — that is electrolysis. Pass a current through molten NaCl and sodium metal appears at one electrode, chlorine gas at the other; pass it through CuSO₄ solution and copper plates out.…  ·  ## 2. Fundamental Concepts ### 2.1 The electrolytic cell - **Electrolysis:** chemical decomposition by passage of direct current through an electrolyte (molten or aqueous). - **Cathode:** the **negative** electrode in electrolysis — **reduction** happens here (cations migrate to it, gain electrons). - **Anode:** the **positive** electrode — **oxidation** happens here (anions migrate, lose electrons).…"
     },
     {
       "label": "Shortcut",
-      "text": "Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+      "text": "Polarity: \"electrolysis cathode = minus\". Discharge ladder: \"Cu H Pb Fe Zn Na K\" at the cathode; \"OH I Br Cl SO4 F\" at the anode. Classic products table: molten NaCl → Na/Cl₂; CuSO₄/Pt → Cu/O₂; CuSO₄/Cu → Cu/Cu²⁺; H₂SO₄ → 2:1."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Electrolysis: qualitative aspect\" with one example.  ·  compare \"Electrolysis\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Describe the electrolysis of molten sodium chloride using inert electrodes, with electrode reactions.** — Molten NaCl is an ionic liquid containing mobile Na⁺ and Cl⁻ ions.…  ·  **NEB-style (3m): Compare the electrolysis of aqueous copper sulphate using platinum electrodes with that using copper electrodes.** — **Platinum (inert) electrodes:** at the cathode Cu²⁺ is preferentially discharged — Cu²⁺ + 2e⁻ → Cu (pink-brown deposit).…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm..",
+      "text": "For each electrolysis answer, give three things: migrating ions, both half-equations, and the observed product at each electrode — one missing half-equation costs the bulk of the marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Electrolysis: qualitative aspect — topic mind map\"><title>Electrolysis: qualitative aspect — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Electrolysis</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electrolysis</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Qualitative aspect</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Electrolysis: qualitative aspect — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Same half-reaction vocabulary as topic 40 — MnO₄⁻ reduction then, Cu²⁺ reduction now. The electrochemical series (topic 38) reappears as the discharge-order table: one ranking, three applications (displacement, EMF, electrolysis products)."
+    },
+    {
       "label": "Key points",
-      "text": "• Electrolysis  ·  • Qualitative aspect"
+      "text": "Electrolysis: current decomposes molten/aqueous electrolyte; electrical → chemical. Cathode − (reduction, cations); anode + (oxidation, anions); AN OX/RED CAT with polarity opposite to galvanic. Preferential discharge: cathode order Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > K⁺; anode OH⁻ > I⁻ > Br⁻ > Cl⁻ > SO₄²⁻/F⁻.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Aluminium exists in aircraft only because electrolysis (Hall–Héroult, molten Al₂O₃ in cryolite) can force the reverse of thermite's favourite reaction — electricity beating the series."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Electrolysis: qualitative aspect\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): State the preferential discharge order of cations at the cathode and explain one practical consequence.** — The ease of discharge at the cathode follows the electrochemical series from bottom (most easily reduced) upward: **Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺** — ions…"
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Electrolysis: qualitative aspect\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "In electrolysis, reduction occurs at the: → B  ·  Electrolysis converts: → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Electrochemical cell E = E_cathode − E_anode; ΔG = −nFE. Standard: 25 °C, 1 M, 1 atm.  ·  **Fact.** Nernst: E = E° − (RT/nF) ln Q; at 25 °C E = E° − (0.0592/n) log Q.  ·  **Fact.** Faraday: m = (M/F)·Q (1 F = 96500 C mol⁻¹); 1 F deposits 1/valency mole of an ion."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Polarity in electrolysis | |---|---|---| | **Electrolysis** | Decomposition by direct current | — | | **Cathode** | Electrode where reduction occurs | Negative | | **Anode** | Electrode where oxidation occurs | Positive | | **Preferential discharge** | Ion needing least energy deposits first | — | | **Inert electrode**…  ·  ## 4. Detailed Explanation ### 4.1 Why polarity flips between cell types - In a galvanic cell the anode (oxidation) is negative because the spontaneous chemistry pushes electrons out; in electrolysis the external battery *imposes* the flow — the electrode connected to the battery's negative terminal pulls cations and forces reduction, so it is the cathode.…  ·  ## 5. Comparison Tables **Electrolytic vs galvanic cell** | Basis | Electrolytic | Galvanic | |---|---|---| | Energy | Electrical → chemical | Chemical → electrical | | Spontaneity | Non-spontaneous, driven | Spontaneous | | Cathode polarity | Negative | Positive | | Anode polarity | Positive | Negative | | Example | Molten NaCl electrolysis | Daniell cell | **Cathode and…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: electrolysis, qualitative aspect.  ·  one worked example for \"Electrolysis: qualitative aspect\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on electrolysis exists in the current bank (the 2024 set covers redox concepts, ON rules, balancing, the series, H₂O₂ and fluorine); all items above are NEB-style practice.  ·  Predict the products of electrolysis of aqueous AgNO₃ with (a) platinum and (b) silver electrodes.  ·  Explain why the solution in the Pt-electrode electrolysis of CuSO₄ becomes acidic while the Cu-electrode version does not."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm.  ·  **Qualitative aspect.** one-line definition + one-line exam use."
+      "text": "Why must aluminium be extracted electrolytically rather than by carbon reduction?  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: electrochemical cell e = e_cathode − e_anode; δg = −nfe. standard: 25 °c, 1 m, 1 atm."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **Cathode is negative — but only in electrolysis:** in a galvanic cell the cathode is positive. The process (reduction at cathode) never changes; the sign does. Always state the cell type.  ·  **Na⁺ rarely discharges from water:** in aqueous NaCl the hydrogen comes from water/H⁺, not sodium — molten salt is required to win sodium metal.  ·  **Anode is where oxidation happens even if the anode itself is the victim:** a copper anode oxidises *into solution* — still oxidation, still the anode."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Application **NEB-style (3m): Describe the electrolysis of molten NaCl with inert electrodes, giving the electrode reactions.** — Molten NaCl contains free Na⁺ and Cl⁻. On passing current, Na⁺ migrates to the **cathode (negative)** and is reduced: Na⁺ + e⁻ → Na (molten silvery sodium collects).…  ·  **NEB-style (3m): Compare the electrolysis of aqueous CuSO₄ using platinum electrodes versus copper electrodes.** — **With Pt:** cathode reduces Cu²⁺ → Cu (deposit); anode oxidises OH⁻ (from water) rather than SO₄²⁻: 4OH⁻ → O₂ + 2H₂O + 4e⁻.…  ·  **NEB-style (2m): State the preferential discharge order at the cathode and give one consequence.** — Discharge ease at the cathode rises down the electrochemical series: Cu²⁺ > H⁺ > Pb²⁺ > Fe²⁺ > Zn²⁺ > Na⁺ > Ca²⁺ > K⁺.…"
     }
-  ],
-  "keyPoints": [
-    "04 Electrolysis Qualitative Aspect is a core concept in oxidation and reduction.",
-    "Understanding 04 electrolysis qualitative aspect requires knowing its definition, conditions, and limitations.",
-    "04 Electrolysis Qualitative Aspect has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 04 electrolysis qualitative aspect must be memorized precisely.",
-    "04 Electrolysis Qualitative Aspect connects to neighbouring topics within oxidation and reduction and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 04 electrolysis qualitative aspect.",
-    "Practical examples solidify understanding of 04 Electrolysis Qualitative Aspect and its real-world relevance.",
-    "Misconceptions about 04 electrolysis qualitative aspect often arise from confusing it with similar concepts.",
-    "04 Electrolysis Qualitative Aspect follows systematic rules that can be applied step-by-step.",
-    "Review of 04 electrolysis qualitative aspect should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "04 Electrolysis Qualitative Aspect is defined by its specific characteristics within oxidation and reduction.",
-    "The conditions under which 04 electrolysis qualitative aspect applies are as important as the concept itself.",
-    "04 Electrolysis Qualitative Aspect can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 04 electrolysis qualitative aspect through application-based and comparison questions.",
-    "A clear grasp of 04 Electrolysis Qualitative Aspect builds the foundation for advanced topics in oxidation and reduction."
-  ],
-  "importantNotes": [
-    "When studying 04 electrolysis qualitative aspect, always note the exceptions alongside the general rule.",
-    "04 Electrolysis Qualitative Aspect should be reviewed with at least one worked example per sub-point.",
-    "Link 04 electrolysis qualitative aspect back to prior knowledge in oxidation and reduction for deeper retention.",
-    "Practice past NEB board questions on 04 Electrolysis Qualitative Aspect to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 04 Electrolysis Qualitative Aspect: apply the standard definition to a simple case.",
-    "Intermediate example: combine 04 electrolysis qualitative aspect with a related concept from oxidation and reduction.",
-    "Exam-style problem: solve a question involving 04 Electrolysis Qualitative Aspect under time pressure.",
-    "Real-world connection: show how 04 Electrolysis Qualitative Aspect appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 04 Electrolysis Qualitative Aspect and state two conditions required for it to occur.",
-    "Differentiate 04 Electrolysis Qualitative Aspect from the most commonly confused concept in oxidation and reduction.",
-    "Solve a numerical or structural problem involving 04 Electrolysis Qualitative Aspect.",
-    "List three applications of 04 Electrolysis Qualitative Aspect in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 04 Electrolysis Qualitative Aspect without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 04 Electrolysis Qualitative Aspect.",
-    "Create three flashcards covering definition, formula, and limitation of 04 Electrolysis Qualitative Aspect."
-  ],
-  "universalFacts": [
-    "04 Electrolysis Qualitative Aspect is part of the NEB Class 11 oxidation and reduction syllabus.",
-    "Every concept in oxidation and reduction builds upon definitions established earlier in the chapter.",
-    "04 Electrolysis Qualitative Aspect is assessed through both short-answer and long-answer board questions.",
-    "Understanding 04 Electrolysis Qualitative Aspect improves performance across the entire oxidation and reduction unit.",
-    "Revision of 04 Electrolysis Qualitative Aspect should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 04 Electrolysis Qualitative Aspect with closely related concepts in oxidation and reduction — focus on distinguishing features.",
-    "The scope of 04 Electrolysis Qualitative Aspect is sometimes overstated; remember its precise boundaries.",
-    "Applying 04 Electrolysis Qualitative Aspect outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 04 Electrolysis Qualitative Aspect and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 04 Electrolysis Qualitative Aspect? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "04 Electrolysis Qualitative Aspect is primarily studied under which branch of oxidation and reduction? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 04 Electrolysis Qualitative Aspect is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to oxidation and reduction — Answer: B",
-    "Which example correctly illustrates 04 Electrolysis Qualitative Aspect? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "04 Electrolysis Qualitative Aspect differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 04 Electrolysis Qualitative Aspect.",
-    "Step-by-step animated derivation of the key relationship in 04 Electrolysis Qualitative Aspect.",
-    "Interactive toggle between correct and incorrect representations of 04 Electrolysis Qualitative Aspect."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 04 Electrolysis Qualitative Aspect.",
-    "Side-by-side comparison animation of 04 Electrolysis Qualitative Aspect vs commonly confused concept.",
-    "Timelapse build-up of 04 Electrolysis Qualitative Aspect from prerequisite knowledge in oxidation and reduction."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 04 Electrolysis Qualitative Aspect",
-    "Comparison table: 04 Electrolysis Qualitative Aspect vs related concepts in oxidation and reduction",
-    "Step-by-step worked example layout for 04 Electrolysis Qualitative Aspect"
-  ],
-  "summary": [
-    "04 Electrolysis Qualitative Aspect is a fundamental concept in oxidation and reduction that describes specific chemical behaviour under defined conditions.",
-    "Mastering 04 Electrolysis Qualitative Aspect involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 04 Electrolysis Qualitative Aspect alongside related concepts in oxidation and reduction ensures strong conceptual clarity and exam readiness."
   ]
 }

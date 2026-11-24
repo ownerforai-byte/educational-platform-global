@@ -31,60 +31,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "General principles of extraction of metals: concentration… (Chemistry of Metals, Chemistry, class-11-notes) covers General principles of extraction of metals: concentration, calcination, roasting. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The extraction chain runs: **concentrate** (gravity, magnets, or froth flotation for sulphides — oil-wetted grains ride air bubbles while wetted gangue sinks), then **calcination** (carbonates → oxide, no air: ZnCO₃ → ZnO + CO₂) or **roasting** (sulphides → oxide, excess air: 2ZnS + 3O₂ → 2ZnO + 2SO₂), then **reduction**: carbon reduction in the smelter where CO made in situ (CO₂ + C → 2CO) strips the oxygen (Fe₂O₃…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General principles of extraction of metals: concentration… — quick idea map\"><title>General principles of extraction of metals: concentration… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">General principles of extraction of metals:</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">concentration…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• General principles of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">extraction of metals:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">concentration</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Calcination</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General principles of extraction of metals: concentration… — quick idea map\"><title>General principles of extraction of metals: concentration… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">General principles of extraction of metals:</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">concentration…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every step of the chain —</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">float, roast, reduce —</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">exists to deliver one</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concentration: gravity</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">washing, magnetic</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">separation (Fe3O4), froth</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ZnCO₃ → ZnO + CO₂</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(calcination) - 2ZnS + 3O₂</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ 2ZnO + 2SO₂ (roasting)</text></svg>",
         "caption": "General principles of extraction of metals: concentration… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "F = qvB sinθ\nε = −N dΦ/dt\nF = BIL"
+      "text": "- ZnCO₃ → ZnO + CO₂ (calcination) - 2ZnS + 3O₂ → 2ZnO + 2SO₂ (roasting) - Fe₂O₃ + 3CO → 2Fe + 3CO₂; CO₂ + C → 2CO - 2Al + Fe₂O₃ → Al₂O₃ + 2Fe (thermite) - 2Al₂O₃ —cryolite, electrolysis→ 4Al + 3O₂"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"General principles of extraction of metals: concentration\" as one blob → ✅ split into: general principles of extraction of metals: concentration, calcination, roasting.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: general principles of extraction of metals: concentration, calcination, roasting, smelting (within Chemistry of Metals).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Roasting is the heating of the sulphide ore in excess air below its melting point; calcination is heating without air.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Rail welding in a trench*** — a graphite crucible of thermite is ignited with a magnesium fuse; the molten iron it pours into the rail gap is the same reaction as the textbook equation, self-heated to 2000 °C by its own ΔH."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** General principles of extraction of metals: concentration… — Chemistry of Metals, Chemistry (class-11-notes).  ·  **Tested.** define it · list: general principles of extraction of metals: concentration, calcination, roasting, smelting · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — From Rock to Metal This topic is the engine room of the unit: how a concentrated ore becomes a metal. Four verbs carry it — **calcination** (heat the carbonate), **roasting** (heat the sulphide in air), **smelting with carbon reduction** (coke does the chemistry), and **electrochemical reduction** (electrons do what coke cannot).…  ·  ## 2. Fundamental Concepts ### 2.1 Concentration (dressing) of the ore - **Gravity/washing** — lighter gangue washes away (oxide ores, gold). - **Magnetic separation** — magnetite (Fe₃O₄) pulled from silica by a magnet belt. - **Froth flotation** — for sulphides: powdered ore + water + pine oil + air; sulphide particles are wetted by oil and ride the froth, silicate gangue is wetted by water and sinks.…"
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Calcination = carbonate + no air; roasting = sulphide + air. Thermite = Al + Fe2O3, not an extraction of Al. Hall-Heroult numbers: cryolite, ~950 C, carbon anodes burn. CO in furnace: CO2 + C -> 2CO."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"General principles of extraction of metals: concentration…\" with one example.  ·  compare \"General principles of extraction of metals: concentration\" with the related idea from a neighbouring unit."
+      "text": "**Verified PYQ NEB 2024 (2m): Distinguish between calcination and roasting with one example of each.** — **Calcination** is heating the concentrated ore in the absence or limited supply of air below its melting point; it is applied to carbonate and hydrated ores and simply decomposes them: ZnCO₃ → ZnO + CO₂ (zinc carbonate → zinc oxide),…  ·  **Verified PYQ NEB 2024 (2m): What is froth flotation? For which ores is it used?** — **Froth flotation** is the standard concentration method for finely powdered **sulphide** ores. The powdered ore is suspended in water with pine oil (and a collector such as a xanthate); when air is blown through the suspension, the sulphide particles —…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "In the Hall-Heroult description the marks sit on: cryolite's role (melting point + conductivity), cathode = carbon lining, anodes consumed — write all three.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General principles of extraction of metals: concentration… — topic mind map\"><title>General principles of extraction of metals: concentration… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">General principles of extraction of metals</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">General principles of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">extraction of metals:…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Calcination</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Roasting</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Smelting</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "General principles of extraction of metals: concentration… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Every step of the chain — float, roast, reduce — exists to deliver one thing to the furnace: a porous oxide. Sulphides and carbonates are merely the oxide's temporary disguises."
+    },
+    {
       "label": "Key points",
-      "text": "• General principles of extraction of metals: concentration  ·  • Calcination  ·  • Roasting  ·  • Smelting"
+      "text": "Concentration: gravity washing, magnetic separation (Fe3O4), froth flotation (sulphides; pine oil + air, sulphide floats, gangue sinks). Calcination: no/limited air, carbonates/hydrates -> oxide (ZnCO3 -> ZnO + CO2; Al2O3.2H2O -> Al2O3).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "A single Hall–Héroult pot carries ~200 kA and makes about 1.5 t of aluminium a day; the electricity for one kilogram is roughly 13–15 kWh — the reason smelters sit next to hydroelectric dams."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"General principles of extraction of metals: concentration…\" and verify the answer is plausible."
+      "text": "**Verified PYQ NEB 2024 (3m): Describe the Hall-Heroult process for the extraction of aluminium.** — Purified alumina (Al₂O₃) is mixed into **molten cryolite** (Na₃AlF₆) with a little calcium fluoride: the cryolite dissolves the alumina and lowers the working temperature from 2050 °C to about…"
     },
     {
       "label": "MCQ drill",
@@ -92,110 +100,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Calcination** | Heating the ore without/with little air to decompose carbonates | CaCO₃ → CaO + CO₂ | | **Roasting** | Heating the sulphide ore in excess air below the melting point | 2PbS + 3O₂ → 2PbO + 2SO₂ | | **Smelting** | Melting the roasted ore with flux and reductant to yield metal +…  ·  ## 4. Detailed Explanation ### 4.1 Froth flotation — surface chemistry doing the sorting - Sulphide surfaces are hydrophobic once pine oil adsorbs; blown air attaches bubbles to the sulphide grains and floats them as a mineralised froth, while water-wetted silica sinks.…  ·  ## 5. Comparison Tables **Reduction methods by metal** | Metal | Oxide | Reductant | Why | |---|---|---|---| | Fe, Zn, Pb, Cu | Fe₂O₃, ZnO, PbO | C / CO | oxide reducible at furnace T | | Cr, Mn | Cr₂O₃, MnO₂ | Al (thermite) | C gives carbides; Al stronger | | Na, Mg, Ca | NaCl, MgCl₂, CaCl₂ | electrolysis | ΔG too negative for C | | Al | Al₂O₃ | electrolysis (cryolite) | 2000…"
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  • Carbon reduction  ·  • Thermite"
+      "text": "Verified PYQs answered above: NEB 2024 (froth flotation; calcination vs roasting; Hall-Heroult) and NEB 2022 (aluminium not by carbon reduction). Remaining items are NEB-style practice.  ·  Write the equations of calcination of zinc carbonate and roasting of zinc blende and state the air difference.  ·  Explain the in-situ formation of CO in the blast furnace and its role as reductant."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: general principles of extraction of metals: concentration, calcination, roasting, smelting.  ·  one worked example for \"General principles of extraction of metals: concentration…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Describe the electrode reactions and the role of cryolite in the Hall-Heroult cell.  ·  ## 6. Common Confusions **Calcination is not \"heating in air\":** the defining difference from roasting is the **absence of excess air** — calcination decomposes, roasting oxidises.  ·  **Thermite does not extract aluminium:** it *consumes* aluminium to make iron; aluminium itself must be electrolysed first. The exam question \"why is Al not extracted by carbon reduction\" is answered with temperature + carbide, not with thermite."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ.  ·  **Calcination.** one-line definition + one-line exam use."
+      "text": "**Smelting vs roasting:** roasting is a solid-gas oxidation below melting point; smelting melts the charge and separates metal from slag.  ·  ## 7. Exam Application **Verified PYQ NEB 2024 (2m): Distinguish between calcination and roasting with one example of each.** — **Calcination** is heating the ore in the absence or limited supply of air below its melting point, used for carbonate and hydrated ores: zinc carbonate decomposes to the oxide, ZnCO₃ → ZnO +…  ·  **Verified PYQ NEB 2024 (2m): What is froth flotation? For which ores is it used?** — **Froth flotation** is a concentration process for finely powdered **sulphide** ores: the ore is agitated with water, pine oil and a collector; air is blown through, and sulphide particles, preferentially wetted by the oil, attach to…"
     },
     {
       "label": "More ideas",
-      "text": "**Roasting.** one-line definition + one-line exam use.  ·  **Smelting.** one-line definition + one-line exam use.  ·  **Carbon reduction.** one-line definition + one-line exam use."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Thermite.** one-line definition + one-line exam use.  ·  **Electrochemical reduction.** one-line definition + one-line exam use."
+      "text": "**Verified PYQ NEB 2024 (3m): Describe the Hall-Heroult process for the extraction of aluminium.** — Purified bauxite (Al₂O₃) is dissolved at ~2–5 % in **molten cryolite** (Na₃AlF₆) with some CaF₂, which lowers the working temperature to about 950–980 °C (pure Al₂O₃ would melt at 2050 °C).…  ·  **Verified PYQ NEB 2022 (2m): Explain why aluminium cannot be extracted by carbon reduction of its oxide but is obtained by the electrolysis of a solution of alumina in molten cryolite.** — Aluminium has a very large affinity for oxygen: Al₂O₃ has an extremely negative free energy of formation, so carbon reduction…"
     }
-  ],
-  "keyPoints": [
-    "03 General Principles Of Extraction Of Meta 1uhcyg is a core concept in chemistry of metals.",
-    "Understanding 03 general principles of extraction of meta 1uhcyg requires knowing its definition, conditions, and limitations.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 general principles of extraction of meta 1uhcyg must be memorized precisely.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg connects to neighbouring topics within chemistry of metals and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 general principles of extraction of meta 1uhcyg.",
-    "Practical examples solidify understanding of 03 General Principles Of Extraction Of Meta 1uhcyg and its real-world relevance.",
-    "Misconceptions about 03 general principles of extraction of meta 1uhcyg often arise from confusing it with similar concepts.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg follows systematic rules that can be applied step-by-step.",
-    "Review of 03 general principles of extraction of meta 1uhcyg should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 General Principles Of Extraction Of Meta 1uhcyg is defined by its specific characteristics within chemistry of metals.",
-    "The conditions under which 03 general principles of extraction of meta 1uhcyg applies are as important as the concept itself.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 general principles of extraction of meta 1uhcyg through application-based and comparison questions.",
-    "A clear grasp of 03 General Principles Of Extraction Of Meta 1uhcyg builds the foundation for advanced topics in chemistry of metals."
-  ],
-  "importantNotes": [
-    "When studying 03 general principles of extraction of meta 1uhcyg, always note the exceptions alongside the general rule.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg should be reviewed with at least one worked example per sub-point.",
-    "Link 03 general principles of extraction of meta 1uhcyg back to prior knowledge in chemistry of metals for deeper retention.",
-    "Practice past NEB board questions on 03 General Principles Of Extraction Of Meta 1uhcyg to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 General Principles Of Extraction Of Meta 1uhcyg: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 general principles of extraction of meta 1uhcyg with a related concept from chemistry of metals.",
-    "Exam-style problem: solve a question involving 03 General Principles Of Extraction Of Meta 1uhcyg under time pressure.",
-    "Real-world connection: show how 03 General Principles Of Extraction Of Meta 1uhcyg appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 General Principles Of Extraction Of Meta 1uhcyg and state two conditions required for it to occur.",
-    "Differentiate 03 General Principles Of Extraction Of Meta 1uhcyg from the most commonly confused concept in chemistry of metals.",
-    "Solve a numerical or structural problem involving 03 General Principles Of Extraction Of Meta 1uhcyg.",
-    "List three applications of 03 General Principles Of Extraction Of Meta 1uhcyg in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 General Principles Of Extraction Of Meta 1uhcyg without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 General Principles Of Extraction Of Meta 1uhcyg.",
-    "Create three flashcards covering definition, formula, and limitation of 03 General Principles Of Extraction Of Meta 1uhcyg."
-  ],
-  "universalFacts": [
-    "03 General Principles Of Extraction Of Meta 1uhcyg is part of the NEB Class 11 chemistry of metals syllabus.",
-    "Every concept in chemistry of metals builds upon definitions established earlier in the chapter.",
-    "03 General Principles Of Extraction Of Meta 1uhcyg is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 General Principles Of Extraction Of Meta 1uhcyg improves performance across the entire chemistry of metals unit.",
-    "Revision of 03 General Principles Of Extraction Of Meta 1uhcyg should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 General Principles Of Extraction Of Meta 1uhcyg with closely related concepts in chemistry of metals — focus on distinguishing features.",
-    "The scope of 03 General Principles Of Extraction Of Meta 1uhcyg is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 General Principles Of Extraction Of Meta 1uhcyg outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 General Principles Of Extraction Of Meta 1uhcyg and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 General Principles Of Extraction Of Meta 1uhcyg? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 General Principles Of Extraction Of Meta 1uhcyg is primarily studied under which branch of chemistry of metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 General Principles Of Extraction Of Meta 1uhcyg is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of metals — Answer: B",
-    "Which example correctly illustrates 03 General Principles Of Extraction Of Meta 1uhcyg? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 General Principles Of Extraction Of Meta 1uhcyg differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 General Principles Of Extraction Of Meta 1uhcyg.",
-    "Step-by-step animated derivation of the key relationship in 03 General Principles Of Extraction Of Meta 1uhcyg.",
-    "Interactive toggle between correct and incorrect representations of 03 General Principles Of Extraction Of Meta 1uhcyg."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 General Principles Of Extraction Of Meta 1uhcyg.",
-    "Side-by-side comparison animation of 03 General Principles Of Extraction Of Meta 1uhcyg vs commonly confused concept.",
-    "Timelapse build-up of 03 General Principles Of Extraction Of Meta 1uhcyg from prerequisite knowledge in chemistry of metals."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 General Principles Of Extraction Of Meta 1uhcyg",
-    "Comparison table: 03 General Principles Of Extraction Of Meta 1uhcyg vs related concepts in chemistry of metals",
-    "Step-by-step worked example layout for 03 General Principles Of Extraction Of Meta 1uhcyg"
-  ],
-  "summary": [
-    "03 General Principles Of Extraction Of Meta 1uhcyg is a fundamental concept in chemistry of metals that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 General Principles Of Extraction Of Meta 1uhcyg involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 General Principles Of Extraction Of Meta 1uhcyg alongside related concepts in chemistry of metals ensures strong conceptual clarity and exam readiness."
   ]
 }

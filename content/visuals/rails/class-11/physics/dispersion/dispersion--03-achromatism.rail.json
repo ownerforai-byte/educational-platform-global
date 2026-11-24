@@ -22,18 +22,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Achromatism and its applications is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "An achromatic doublet balances wavelength dispersion with signed lens powers: ω1/f1+ω2/f2=0. It reduces but does not eliminate every colour error.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Achromatism — quick idea map\"><title>Achromatism — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Achromatism</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Achromatism and its</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">applications</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Achromatism</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and its applications</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Achromatism needs one</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">converging and one</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">diverging lens of</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Achromatic doublet</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition:</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\frac{\\omega_1}{f_1} +</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Achromatism — quick idea map\"><title>Achromatism — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Achromatism</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Opposite-signed powers let</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dispersion cancel while</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">net power remains nonzero.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Keep focal-length signs in</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the achromatism equation.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Opposite-signed powers let</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dispersion cancel while</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">net power remains nonzero.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Keep focal-length signs in</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the achromatism equation.</text></svg>",
         "caption": "Achromatism — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Achromatic doublet condition: $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$, i.e. $\\omega_1 f_2 + \\omega_2 f_1 = 0$.",
+      "text": "Contact thin doublet: ω1/f1+ω2/f2=0.\nNet power: 1/F=1/f1+1/f2.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Achromatism — formula board\"><title>Achromatism — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Achromatism</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Achromatic doublet condition: $\\frac{\\omega_1}{f_1} +</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\frac{\\omega_2}{f_2} = 0$, i.e. $\\omega_1 f_2 + \\omega_2</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">f_1 = 0$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Achromatism — formula board\"><title>Achromatism — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Achromatism</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Contact thin doublet: ω1/f1+ω2/f2=0.</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Net power: 1/F=1/f1+1/f2.</text></svg>",
         "caption": "Achromatism — formula board of this topic's own formulas"
       }
     },
@@ -43,83 +43,63 @@
     },
     {
       "label": "Special cases",
-      "text": "Note 1: Pay attention to the conditions under which Achromatism and its applications applies  ·  Note 2: Achromatism and its applications connects to multiple other topics in Science"
+      "text": "Do not omit the negative focal length of the diverging lens.  ·  The simple condition assumes thin lenses in contact."
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Achromatism and its applications  ·  Practical demonstration of Achromatism and its applications concepts"
+      "text": "f1=+20 cm, ω1=0.02 and ω2=0.04 require f2=−40 cm.  ·  A pair with powers +5 D and −2 D has net +3 D and F≈+0.333 m."
     },
     {
       "label": "Limitation",
-      "text": "An achromatic doublet brings two wavelengths to the same focus, not all wavelengths — there is still residual (secondary) spectrum for intermediate colours.  ·  The condition $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$ requires that one lens is converging and the other diverging — you cannot make an achromatic doublet from two converging lenses."
+      "text": "A symbol is not a number until the unit is named.  ·  A proportional relation is not an equality until the constant is included."
     },
     {
       "label": "Derivation",
-      "text": "Task 1: Solve 10 numerical problems on Achromatism and its applications  ·  Task 2: Derive the main formula for Achromatism and its applications"
+      "text": "Find f2 for f1=+30 cm, ω1=0.02, ω2=0.05.  ·  Why can an achromatic doublet still converge?"
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Achromatism and its applications formula  ·  Trick 2: Elimination technique for Achromatism and its applications MCQs"
+      "text": "Does primary achromatism correct every visible wavelength?"
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Achromatism and its applications.  ·  Q3. Differentiate between various aspects of Achromatism and its applications."
+      "text": "Lenses in contact use → A"
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Achromatism and its applications  ·  Practice previous year questions on Achromatism and its applications"
+      "text": "Opposite-signed powers let dispersion cancel while net power remains nonzero.  ·  Keep focal-length signs in the achromatism equation."
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Achromatism and its applications  ·  Concept 2: Key theorem or principle in Achromatism and its applications  ·  Concept 3: Important application area of Achromatism and its applications  ·  Concept 4: Fundamental relationship in Achromatism and its applications"
+      "text": "Two-colour correction can leave secondary spectrum.  ·  Definition  ·  Formula  ·  Unit"
     },
     {
       "label": "Key points",
-      "text": "Achromatism needs one converging and one diverging lens of different dispersive powers — same-glass pairs cannot cancel their colour spread."
-    },
-    {
-      "label": "Universal facts",
-      "text": "The achromatic doublet was invented by Chester Moor Hall around 1733 and independently by John Dollond in 1758, who patented the design.  ·  An achromatic doublet reduces but does not eliminate chromatic aberration — residual colour errors (secondary spectrum) remain because the dispersion curves of crown and flint glass are not perfectly linear."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Achromatism and its applications.  ·  Q5. What are the applications of Achromatism and its applications?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Achromatism and its applications thoroughly  ·  Review common mistakes related to Achromatism and its applications"
+      "text": "Separated lenses: ω1 f1 + ω2 f2 = 0 is not the contact rule  ·  Contact rule: ω1/f1 + ω2/f2 = 0  ·  Convert units before substituting.  ·  Quote the unit with the result."
     },
     {
       "label": "Extra solved",
-      "text": "Diagram-based question on Achromatism and its applications  ·  Application in daily life involving Achromatism and its applications"
+      "text": "The contact condition uses powers, so the dispersive powers are divided by the focal lengths. If the two lenses are separated by a distance, the condition changes and a Huygens eyepiece uses that separated arrangement. Quoting the contact rule for a separated pair gives the wrong flint lens.  ·  The working relations are Separated lenses: ω1 f1 + ω2 f2 = 0 is not the contact rule and Contact rule: ω1/f1 + ω2/f2 = 0. Name each symbol, convert the data into SI units, and only then substitute."
     },
     {
       "label": "MCQ drill",
-      "text": "The primary application of Achromatism and its applications is in: → A  ·  For Achromatism and its applications, which condition is necessary? → A"
+      "text": "The second lens in this pair is → B  ·  A separated pair → B"
     },
     {
       "label": "Study notes",
-      "text": "**Achromatic doublet:** a convex crown-glass lens paired with a concave flint-glass lens. The crown lens converges all colours; the flint lens diverges more for violet than for red, cancelling the chromatic spread.  ·  **Condition for achromatism (thin lenses in contact):** $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} = 0$. Since $\\omega_1$ and $\\omega_2$ are both positive, $f_1$ and $f_2$ must have opposite signs: one converging, one diverging.  ·  **Result:** two colours (usually red and blue) are brought to the same focus. Intermediate colours fall close enough that the image appears colour-free to the eye."
+      "text": "An optical pair is achromatic for two chosen colours when their wavelength-dependent deviations cancel and both colours share a final focus. The lenses remain dispersive individually; their effects compensate.  ·  For two thin lenses in contact with signed focal lengths f1,f2 and dispersive powers ω1,ω2, primary achromatism requires ω1/f1+ω2/f2=0. A crown converging lens is commonly paired with a more dispersive flint diverging lens.  ·  Worked design: f1=+20 cm, ω1=0.02 and ω2=0.04 require 0.02/20+0.04/f2=0, giving f2=−40 cm. The negative sign identifies a diverging flint element."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Achromatism and its applications and other topics  ·  **Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry.  ·  Achromatism eliminates chromatic aberration but NOT spherical aberration — a real achromatic objective must also correct for spherical aberration separately."
+      "text": "Worked case  ·  **Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry.  ·  A vector answer needs a direction as well as a magnitude."
     },
     {
       "label": "More ideas",
-      "text": "The combination must still have net converging power to be useful as a telescope or camera objective — this requires the flint glass to have the larger dispersive power ($\\omega_f > \\omega_c$).  ·  For separated lenses (not in contact), the achromatism condition is $\\frac{\\omega_1}{f_1} + \\frac{\\omega_2}{f_2} - \\frac{d(\\omega_1 + \\omega_2)}{f_1 f_2} = 0$, where $d$ is the separation. This gives an additional degree of freedom.  ·  Note 3: Practice numerical problems regularly for mastery of Achromatism and its applications"
+      "text": "A special case, such as a right angle or a steady temperature, has to be stated before it is used.  ·  Two lenses in contact have ω1 = 0.030, f1 = +15 cm and ω2 = 0.045. Find the flint focal length that cancels the colour.  ·  The net power is 1/F=1/f1+1/f2, so the doublet can remain converging while cancelling colour spread. Camera, telescope and microscope objectives use achromatic groups to reduce coloured fringes."
     },
     {
       "label": "More ideas",
-      "text": "Note 4: Remember the units and dimensions involved in Achromatism and its applications  ·  Note 5: Achromatism and its applications frequently appears in examination questions  ·  Note 2: Remember the distinction between different types in Achromatism and its applications"
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 3: Achromatism and its applications has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Achromatism and its applications  ·  Note 5: Cross-check your answers using alternative methods for Achromatism and its applications"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 1: Definition of Achromatism and its applications  ·  Statement 2: Theorem related to Achromatism and its applications  ·  Statement 3: Condition for Achromatism and its applications to be valid"
+      "text": "Primary achromatism corrects two selected wavelengths; other colours may still form a secondary spectrum. More elaborate apochromatic systems correct additional wavelengths."
     }
   ]
 }

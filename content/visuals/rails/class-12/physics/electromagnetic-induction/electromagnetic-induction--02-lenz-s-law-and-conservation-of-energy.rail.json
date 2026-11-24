@@ -24,9 +24,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Lenz's law and conservation of energy (Electromagnetic Induction, Physics, class-12-notes) covers Lenz's law, conservation of energy. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Lenz's law chooses the induced current so that it opposes the change in flux. An approaching south pole is met by a south face. The agent must do work against that opposition, and that work is the energy of the induced current. A stationary magnet induces nothing.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lenz's law and conservation of energy — quick idea map\"><title>Lenz's law and conservation of energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Lenz's law and conservation of energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Lenz's law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Conservation of energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">W = F s cosθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">KE = ½mv²</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lenz's law and conservation of energy — quick idea map\"><title>Lenz's law and conservation of energy — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Lenz's law and conservation of energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Oppose the change</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">South-pole approach</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Direction, not magnitude.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Oppose the change, not the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">field.</text></svg>",
         "caption": "Lenz's law and conservation of energy — quick idea map of this topic's headline ideas"
       }
     },
@@ -37,15 +37,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Lenz's law\" as one blob → ✅ split into: lenz's law, conservation of energy.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Work W = F·s·cosθ (J); power P = W/t = F·v.  ·  Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²)."
+      "text": "Eddy-current brakes use this opposition.  ·  The right-hand grip turns the opposing pole into a current direction."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Lenz's law says the induced current takes the direction that opposes the change in flux which caused it. It is the reason for the minus sign in Faraday's law.  ·  If the south pole of a magnet approaches a coil, the flux of that pole is increasing. The near face of the coil becomes a south pole so that it repels the approaching south pole."
     },
     {
       "label": "Limitation",
@@ -53,51 +53,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Lenz's law and conservation of energy — Electromagnetic Induction, Physics (class-12-notes).  ·  **Tested.** define it · list: lenz's law, conservation of energy · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh."
+      "text": "Approach south, face becomes south.  ·  The push does the work."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Lenz's law and conservation of energy\" with one example.  ·  compare \"Lenz's law\" with the related idea from a neighbouring unit."
+      "text": "State Lenz's law.  ·  What face meets an approaching south pole?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ work w = f·s·cosθ (j); power p = w/t = f·v..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Lenz's law and conservation of energy — topic mind map\"><title>Lenz's law and conservation of energy — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Lenz's law and conservation of energy</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Lenz's law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Conservation of energy</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Lenz's law and conservation of energy — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Oppose the change  ·  South-pole approach  ·  Work done by the agent  ·  Eddy-current brake"
+    },
+    {
       "label": "Key points",
-      "text": "• Lenz's law  ·  • Conservation of energy"
+      "text": "Direction, not magnitude.  ·  Oppose the change, not the field.  ·  The agent must do work.  ·  That work becomes electrical energy."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Work W = F·s·cosθ (J); power P = W/t = F·v.  ·  Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Lenz's law and conservation of energy\" and verify the answer is plausible."
+      "text": "Where does the electrical energy come from?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "The south pole of a magnet is pushed toward a coil. Name the pole on the near face and say where the energy of the induced current comes from."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Lenz's law and conservation of energy\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Lenz's law fixes → B  ·  An approaching south pole induces a near face that is → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Work W = F·s·cosθ (J); power P = W/t = F·v.  ·  **Fact.** Work-energy theorem: net work = ΔKE = ½m(v₂² − v₁²).  ·  **Fact.** Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh."
+      "text": "If that south pole is pulled away, the flux decreases and the near face becomes a north pole, attracting the magnet and opposing the removal.  ·  The opposition is to the change. A stationary magnet produces no change and no induced current, so there is no force from an induced current.  ·  Pushing the magnet in against the repulsion takes mechanical work. That work is the energy which appears as the induced current's heating in the coil. If the induced current had attracted the magnet, the motion would accelerate and energy would appear from nowhere."
     },
     {
       "label": "More ideas",
-      "text": "P = Fv  ·  define + example each sub-idea: lenz's law, conservation of energy.  ·  one worked example for \"Lenz's law and conservation of energy\" — check units / edge cases."
+      "text": "P = Fv  ·  ❌ skip the key fact → ✅ work w = f·s·cosθ (j); power p = w/t = f·v..  ·  Lenz opposes the change, not the field itself."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: work w = f·s·cosθ (j); power p = w/t = f·v."
+      "text": "An approaching south pole induces a south face, not a north face.  ·  The law does not give the number of volts.  ·  A stationary magnet induces no opposing force."
     },
     {
       "label": "More ideas",
-      "text": "**Conservation of energy.** one-line definition + one-line exam use."
+      "text": "Say whether the flux is increasing or decreasing before naming the face.  ·  Connect the force to the energy, not only to the pole.  ·  Write The induced current opposes the change in flux. and say what each symbol means."
+    },
+    {
+      "label": "More ideas",
+      "text": "Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one.  ·  Mechanical energy conserved when only conservative forces act: KE + PE = const; PE(mg) = mgh."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: work w = f·s·cosθ (j); power p = w/t = f·v.  ·  Eddy currents in a copper plate near a moving magnet oppose the motion and dissipate energy as heat. That is Lenz's law used as a brake."
     }
   ]
 }

@@ -23,9 +23,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "The cell cycle (G1, S, G2, M) is controlled by checkpoints. Mitosis (PMAT) produces two genetically identical diploid cells for growth, repair, and asexual reproduction; cytokinesis differs between animal (cleavage furrow) and plant (cell plate) cells.…",
+      "text": "The cell cycle runs through interphase — G₁ growth, S DNA replication, G₂ preparation — into the M phase. Amitosis is a rare, imprecise direct splitting. Mitosis (prophase → metaphase → anaphase → telophase, then cytokinesis by cell plate in plants or cleavage furrow in animals) produces two genetically identical diploid cells for growth, repair and asexual reproduction.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cell Division — Cycle, Mitosis and Meiosis — quick idea map\"><title>Cell Division — Cycle, Mitosis and Meiosis — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Cell Division — Cycle, Mitosis and Meiosis</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cell cycle (G1, S, G2, M)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Checkpoints</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cell cycle: G1, S, G2</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(interphase) + M;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">checkpoints prevent</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">PMAT = Prophase,</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Metaphase, Anaphase,</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Telophase of mitosis.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Cell Division — Cycle, Mitosis and Meiosis — quick idea map\"><title>Cell Division — Cycle, Mitosis and Meiosis — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Cell Division — Cycle, Mitosis and Meiosis</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Reduction then</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">equation:** meiosis I</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">halves the number</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Variation machinery:**</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">crossing over (pachytene)</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ independent assortment…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cell cycle = interphase</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(G₁ growth, S DNA</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">synthesis, G₂ preparation)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Interphase is the most</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">active phase — DNA</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">replication and growth</text></svg>",
         "caption": "Cell Division — Cycle, Mitosis and Meiosis — quick idea map of this topic's headline ideas"
       }
     },
@@ -40,19 +40,19 @@
     },
     {
       "label": "Conditions",
-      "text": "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).  ·  Crossing over and independent assortment occur in MEIOSIS only, not mitosis."
+      "text": "**Chromatid vs chromosome:** after S phase, each chromosome consists of two sister chromatids joined at one centromere — it is still ONE chromosome. The count changes only when centromeres split (anaphase).  ·  **Mitosis vs meiosis II:** both split centromeres and separate sister chromatids, but meiosis II starts from haploid, recombined cells and follows meiosis I without new DNA replication."
     },
     {
       "label": "Special cases",
-      "text": "NEB expects labelled mitosis diagrams plus a full meiosis diagram with crossing over marked.  ·  The mitosis vs meiosis comparison table (6 points) is a very common question."
+      "text": "No verified cell-division PYQ exists in the current solved-paper bank for class 11 biology; all questions in this note are NEB-style practice and labelled as such."
     },
     {
       "label": "Solved",
-      "text": "Onion root tip: classic mitotic figures (prophase, metaphase, anaphase, telophase).  ·  Spermatogenesis: 1 primary (2n) → 2 secondary (n) → 4 spermatids (n) → 4 sperm."
+      "text": "**Bone marrow** — mitotic factory replacing blood cells (~200 billion RBCs/day).  ·  **Healing skin wound** — mitosis fills the gap from the wound edge."
     },
     {
       "label": "Limitation",
-      "text": "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of meiosis, SISTER CHROMATIDs separate.  ·  DNA replication happens ONLY in the S phase; meiosis has one S phase then two divisions."
+      "text": "**Crossing over vs independent assortment:** crossing over = physical exchange between non-sister chromatids (pachytene); independent assortment = random orientation of bivalents at metaphase I. Both create variation, by different mechanisms.  ·  **Interkinesis vs interphase:** interkinesis between meiosis I and II has NO DNA replication; interphase of the cell cycle always includes S phase."
     },
     {
       "label": "Derivation",
@@ -60,67 +60,63 @@
     },
     {
       "label": "Shortcut",
-      "text": "PMAT = Prophase, Metaphase, Anaphase, Telophase.  ·  MITO = 2 identical (2n); MEI = 4 different (n)."
+      "text": "Prophase I order: \"**L**eap **Z**ebra **P**igs **D**ance **D**aily\" — Leptotene, Zygotene, Pachytene, Diplotene, Diakinesis.  ·  \"Mitosis = Multiplication (identical); Meiosis = Me-half\" — number halved."
     },
     {
       "label": "Board question",
-      "text": "How is Anaphase I of meiosis different from Anaphase of mitosis?  ·  Explain why meiosis produces genetic variation (two mechanisms)."
+      "text": "**Short answer (2m): Define cell cycle.** — The sequence of events by which a cell grows, replicates its DNA and divides into two daughter cells; it comprises interphase (G₁, S, G₂) and the M phase with cytokinesis.  ·  **Short answer (2m): What is crossing over?** — The exchange of corresponding segments between non-sister chromatids of homologous chromosomes during pachytene of prophase I, producing recombined chromosomes and genetic variation."
     },
     {
       "label": "Hints",
-      "text": "Draw and label all four mitotic phases.  ·  Draw a full meiosis diagram (mark crossing over + independent assortment)."
+      "text": "Most-tested: mitosis stages, prophase I substages, mitosis vs meiosis table, significance lists.  ·  Diagram-worthy: all four mitosis stages, metaphase I (two rows) vs metaphase II (one row), crossing over with chiasma, cell plate vs cleavage furrow."
     },
     {
       "label": "Quick concepts",
-      "text": "Cell cycle (G1, S, G2, M)  ·  Checkpoints  ·  PMAT phases  ·  Meiosis I & II"
+      "text": "**Reduction then equation:** meiosis I halves the number (homologs separate); meiosis II halves the chromatid count (centromeres split) — together they convert one 2n cell into four n cells.  ·  **Variation machinery:** crossing over (pachytene) + independent assortment (metaphase I) are the two engines of genetic diversity.  ·  **Cancer = cell-cycle control failure:** checkpoints lost → endless mitosis; the clinical shadow of this topic."
     },
     {
       "label": "Key points",
-      "text": "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.  ·  PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.  ·  Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.  ·  Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids."
+      "text": "Cell cycle = interphase (G₁ growth, S DNA synthesis, G₂ preparation) + M phase (mitosis) + cytokinesis; checkpoints guard the transitions; G₀ = quiescent exit.  ·  Interphase is the most active phase — DNA replication and growth happen there.  ·  Amitosis: direct splitting, no spindle, imprecise (Remak, 1841).  ·  Mitosis (Flemming, 1882): prophase → metaphase → anaphase → telophase; centromeres split in anaphase; 2 identical 2n daughters; growth, repair, asexual reproduction."
     },
     {
       "label": "Universal facts",
-      "text": "Interphase occupies ~90% of the cell cycle; mitosis is brief.  ·  A human cell with 46 chromosomes yields two 46-chromosome cells after mitosis and four 23-chromosome cells after meiosis."
+      "text": "Typical human cell cycle ≈ 24 h: G₁ 11 h, S 8 h, G₂ 4 h, M 1 h.  ·  Flemming observed and named mitosis (1882); term \"meiosis\" — Farmer and Moore (1905)."
     },
     {
       "label": "More practice",
-      "text": "What would happen if the S phase did not occur?  ·  Describe the G1/S, G2/M, and M checkpoints and their role in preventing cancer.  ·  Define non-disjunction and give a human disease example."
-    },
-    {
-      "label": "More hints",
-      "text": "Tabulate mitosis vs meiosis (6 points).  ·  Explain how meiosis creates variation (two mechanisms)."
+      "text": "**Short answer (2m): What is a bivalent?** — The pair of homologous chromosomes (four chromatids, hence \"tetrad\") formed by synapsis during zygotene of prophase I.  ·  **Short answer (2m): What is the G₀ phase?** — A quiescent state outside the active cycle into which cells withdraw after mitosis (e.g. mature neurons); they remain metabolically active but do not divide, though some can re-enter the cycle on stimulus.  ·  **Long answer (5m): Describe the stages of mitosis with labelled diagrams and state its significance.** — Prophase (condensation, spindle, envelope loss) → metaphase (equatorial plate, spindle attachment) → anaphase (centromere split, chromatids to poles) → telophase (re-formation of nuclei) →…"
     },
     {
       "label": "Extra solved",
-      "text": "Oogenesis: 1 primary (2n) → 1 secondary (n) + 1 polar body → 1 ovum (n) + 3 polar bodies.  ·  Down syndrome: trisomy 21 from meiotic non-disjunction."
+      "text": "**Human spermatogenesis** — meiosis I + II convert one spermatogonium into 4 haploid spermatids.  ·  **Lily anther sporocytes** — classic meiosis-I slide material; pollen grains are the haploid products."
     },
     {
       "label": "MCQ drill",
-      "text": "In Anaphase I of meiosis, what separates? → B  ·  Cytokinesis in animal cells occurs by: → B"
+      "text": "DNA replication occurs during which phase of the cell cycle? → B  ·  Chromosomes align on the equatorial plate during: → B"
     },
     {
       "label": "Study notes",
-      "text": "DETAILED CELL DIVISION: the full cell cycle and every mitotic/meiotic phase.  ·  Interphase (90% of the cycle): G1 (growth, organelle duplication, protein synthesis), S (DNA replication — each chromosome now has 2 sister chromatids), G2 (preparation for mitosis, checkpoint).  ·  Checkpoints: G1/S (DNA damage, nutrients), G2/M (replication complete), M (spindle attachment) — failures cause cancer."
+      "text": "## 1. Topic Introduction — How Life Copies Itself at the Cellular Level A cell's life is a cycle of growth, DNA copying and division. Every scar that heals, every root that grows, every sperm and egg that carries your genes to the next generation is the result of **cell division**.…  ·  ## 2. The Cell Cycle — The Cell's Life Story ### 2.1 Definition and the grand division The **cell cycle** (Howard and Pelc, 1953) is the sequence of events from the formation of a cell to its own division into two daughter cells.…  ·  ## 3. Amitosis — Direct Division **Definition:** direct, simple splitting of the nucleus (and then cytoplasm) **without spindle formation, without chromosome condensation** — described by Remak (1841). | Feature | Detail | |---|---| | Where | Prokaryotes, some yeast, degenerating/old cells, foetal membranes, cartilage cells | | Mechanism | Nucleus elongates, constricts in the…"
     },
     {
       "label": "More ideas",
-      "text": "Crossing over  ·  Independent assortment  ·  Cytokinesis (furrow vs cell plate)"
+      "text": "Chromosome count: after S each chromosome = 2 chromatids  ·  Cytokinesis: cell plate (plants, centripetal from Golgi vesicles) vs cleavage furrow (animals, actin–myosin).  ·  Meiosis (Farmer & Moore, 1905): one replication + two divisions → 4 haploid varied cells; only in germ cells."
     },
     {
       "label": "More ideas",
-      "text": "Non-disjunction  ·  Cancer  ·  Amitosis"
+      "text": "Prophase I: leptotene → zygotene (synapsis) → pachytene (crossing over, chiasmata) → diplotene → diakinesis.  ·  Anaphase I separates whole homologs (centromere intact); anaphase II splits centromeres.  ·  Meiosis significance: chromosome-number constancy + genetic variation + gamete/spore formation."
     },
     {
       "label": "More ideas",
-      "text": "Chromosome count: after S each chromosome = 2 chromatids  ·  Cytokinesis: animal (cleavage furrow) vs plant (cell plate).  ·  Mitotic errors → cancer; meiotic errors → aneuploidy (Down syndrome)."
+      "text": "**Amitosis vs binary fission:** related but not identical — amitosis is the imprecise direct nuclear division seen in some eukaryotic cells; bacterial binary fission is precise DNA replication followed by septation.  ·  For \"describe mitosis\" (5m): one labelled diagram + four stages in order with 2–3 events each + cytokinesis sentence. For \"describe prophase I\": name all five substages in order with one event each — the order itself carries marks.  ·  \"Mitosis preserves the individual; meiosis preserves the species — and gives it room to evolve.\""
     },
     {
       "label": "More ideas",
-      "text": "Significance: mitosis = growth/repair; meiosis = gametes + diversity.  ·  G2 is not a \"resting\" phase; DNA has already doubled in S and the cell is preparing for M.  ·  Non-disjunction = a homologous pair (or chromatid pair) fails to separate → one cell gets both, the other gets none."
+      "text": "\"Interphase is the working phase; mitosis is the distributing phase.\"  ·  \"Centromere splits in A-II, not A-I\" — the single most-dropped mark in meiosis answers.  ·  **Long answer (5m): Describe meiosis I with diagrams and state how it reduces the chromosome number.** — Prophase I with five substages (synapsis, crossing over), metaphase I (bivalents in two rows), anaphase I (whole homologs separate — centromere intact), telophase I (haploid nuclei).…"
     },
     {
       "label": "More ideas",
-      "text": "Amitosis: liver-cell regeneration; some regenerating tissues.  ·  Explain the two sources of meiotic variation (crossing over + independent assortment).  ·  Relate checkpoint failure to cancer and non-disjunction to Down syndrome."
+      "text": "**Conceptual (3m): Why does meiosis create variation while mitosis does not?** — Mitosis copies an existing genome exactly (no pairing, no exchange). Meiosis adds two sources of novelty: crossing over recombines maternal and paternal alleles within chromosomes (pachytene), and independent assortment randomises which…  ·  **Conceptual (3m): \"Cancer is a disease of the cell cycle.\" Explain.** — Normal division is stopped at checkpoints by control genes (proto-oncogenes, tumour suppressors such as p53).…  ·  **Application (2m): Why do antibiotics/chemotherapy drugs that block spindle formation stop tumour growth?** — Drugs like colchicine and vinblastine prevent microtubule assembly, so the mitotic spindle cannot form; cells arrest in metaphase and cannot complete division. Rapidly dividing tumour cells are hit hardest."
     }
   ]
 }

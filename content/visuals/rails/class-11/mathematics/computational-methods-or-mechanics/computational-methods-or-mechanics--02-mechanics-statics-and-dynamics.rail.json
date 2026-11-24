@@ -23,52 +23,72 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Mechanics â€” Statics and Dynamics covers essential principles and applications.",
+      "text": "Mechanics' two halves share one law: statics is ΣF = ma with a = 0, dynamics is the full equation. Newton's three laws supply the frame (inertia), the engine (F = ma), and the bookkeeping rule (pairs on different bodies — never cancelling within one body's ledger).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Mechanics â€” Statics and Dynamics — quick idea map\"><title>Mechanics â€” Statics and Dynamics — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Mechanics â€” Statics and Dynamics</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Mechanics</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">â€” Statics and Dynamics.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Mechanics</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">â€” Statics and Dynamics</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Mechanics</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">â€” Statics and Dynamics</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Mechanics â€” Statics and Dynamics — quick idea map\"><title>Mechanics â€” Statics and Dynamics — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Mechanics â€” Statics and Dynamics</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Statics is dynamics with a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= 0 - one law, two</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">subjects.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Statics: equilibrium, sum</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = 0. Dynamics:</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">acceleration, sum F = ma -</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ΣF = 0 (equilibrium); ΣF</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= ma (dynamics) - v = u +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">at; s = ut + ½at²; v² =…</text></svg>",
         "caption": "Mechanics â€” Statics and Dynamics — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€”…\nStatement 2: Theorem related to Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics…"
-    },
-    {
-      "label": "Conditions",
-      "text": "Mechanics â€” Statics and Dynamics is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane to be valid  ·  Statement 4: Principle governing Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane"
-    },
-    {
-      "label": "Solved",
-      "text": "Application of Mechanics â€” Statics and Dynamics"
-    },
-    {
-      "label": "Limitation",
-      "text": "Definition and significance of Mechanics â€” Statics and Dynamics."
-    },
-    {
-      "label": "Derivation",
-      "text": "Connection of Mechanics â€” Statics and Dynamics to other topics"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Mechanics â€” Statics and Dynamics."
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define Mechanics â€” Statics and Dynamics.  ·  Q3. Problem on Mechanics â€” Statics and Dynamics.",
+      "text": "- ΣF = 0 (equilibrium); ΣF = ma (dynamics) - v = u + at; s = ut + ½at²; v² = u² + 2as",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Mechanics â€” Statics and Dynamics — exam flow\"><title>Mechanics â€” Statics and Dynamics — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Mechanics â€” Statics and Dynamics</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Mechanics â€” Statics and Dynamics covers</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">essential principles and applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Mechanics</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">(optional): Statics â€” forces and resultant</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">forces, parallelogram law of forces,…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Mechanics â€” Statics</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">and Dynamics.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define Mechanics â€” Statics and</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">Dynamics. · Q3. Problem on Mechanics â€”</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">Statics and Dynamics.</text></svg>",
-        "caption": "Mechanics â€” Statics and Dynamics — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Mechanics â€” Statics and Dynamics — formula board\"><title>Mechanics â€” Statics and Dynamics — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Mechanics â€” Statics and Dynamics</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- ΣF = 0 (equilibrium); ΣF = ma (dynamics) - v = u + at;</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">s = ut + ½at²; v² = u² + 2as</text></svg>",
+        "caption": "Mechanics â€” Statics and Dynamics — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    },
+    {
+      "label": "Special cases",
+      "text": "Rest and uniform motion are the same state - the first law says so."
+    },
+    {
+      "label": "Solved",
+      "text": "***The third law's bookkeeping*** - action and reaction act on different bodies, so they never meet in one body's force sum; equilibrium is one body's inventory."
+    },
+    {
+      "label": "Limitation",
+      "text": "Statics is dynamics with a = 0 - one law, two subjects.  ·  Statics: equilibrium, sum F = 0. Dynamics: acceleration, sum F = ma - the second law covers both, statics is the a = 0 case. Three laws: inertia (and inertial frames), F = dp/dt = ma, mutual pairs on different bodies. Kinematics: v = u + at, s = ut + at^2/2, v^2 = u^2 + 2as - choose the equation omitting the unneeded quantity. Sign discipline first: declare the positive direction, then the algebra is mechanical."
+    },
+    {
+      "label": "Derivation",
+      "text": "## 1. Topic Introduction — Statics and Dynamics: The Two Halves of Mechanics Mechanics splits by one question: is the body accelerating? **Statics** studies bodies at rest or in uniform motion — forces in balance; **dynamics** studies accelerated motion — forces causing change. This canonical is the overview that anchors both halves in Newton's three laws.  ·  ## 2. Theorem Mirror - **First law (inertia):** a body remains at rest or in uniform straight-line motion unless a net external force acts — rest and uniform motion are the same state, distinguished by frame only. - **Second law:** net force = rate of change of momentum = ma (for constant mass) — the quantitative engine of dynamics.…"
+    },
+    {
+      "label": "Shortcut",
+      "text": "List knowns against (u, v, a, t, s) - the missing two pick the equation before any algebra."
+    },
+    {
+      "label": "Board question",
+      "text": "**NEB-style (5m): A book rests on a table. Identify all forces acting on it and show they balance; explain why the book's weight and its reaction on the table do not cancel.** — **Forces on the book:** weight W (down, the Earth's pull) and the table's normal reaction N (up). **Balance:** no acceleration ⟹ ΣF = 0 ⟹ N = W.…  ·  **NEB-style (6m): A particle starts from rest with uniform acceleration 4 m/s². Find its velocity and displacement after 3 s, and verify with a third equation.** — **Data:** u = 0, a = 4, t = 3. **Velocity:** v = u + at = 0 + 12 = **12 m/s**. **Displacement:** s = ut + ½at² = 0 + ½·4·9 = **18 m**.…"
+    },
+    {
       "label": "Hints",
-      "text": "Statement 5: Corollary or consequence of Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point; Dynamics â€” motion of particle in a straight line, motion with uniform acceleration, motion under…"
+      "text": "State the positive direction explicitly in every motion answer - markers award the discipline."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Any three of (u, v, a, t, s) determine the other two through the kinematic system."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): A stone is dropped from a height of 80 m (take g = 10 m/s²). Find the time of fall and the impact speed, declaring your positive direction.** — **Positive direction: downward** (the motion's direction). **Data:** u = 0, a = g = 10, s = 80.…  ·  **NEB-style (6m): A ball is thrown vertically upward at 20 m/s (g = 10 m/s²). Find the maximum height, the time to reach it, and the total flight time — and explain the symmetry.** — **Positive direction: upward.** **At the top v = 0:** v² = u² + 2as ⟹ 0 = 400 − 20s ⟹ **h = 20 m**.…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Deep Conceptual — Statics as the Degenerate Case of Dynamics - Setting a = 0 in ΣF = ma collapses dynamics into statics: the second law doesn't retire at equilibrium — it reads \"the forces sum to zero.\" Every statics problem is a dynamics problem whose acceleration is known to be zero.…  ·  ## 4. Deep Conceptual — The Three Equations as a Complete System - For uniform acceleration, the three kinematic equations connect the five quantities (u, v, a, t, s); any problem supplies three and asks for the others.…  ·  ## 5. Worked Example Types - **Type A — statics identification:** decide equilibrium versus acceleration from ΣF. - **Type B — equation selection:** pick the kinematic equation omitting the irrelevant quantity. - **Type C — sign discipline:** motion under gravity with declared positive direction.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "A body at rest on a table: identify the forces and show they balance.  ·  Choose the right kinematic equation for \"find distance without knowing the final velocity\".  ·  State Newton's third law and explain why its pair never cancels."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Action–reaction cancel\":** they act on different bodies — only forces on the *same* body can cancel. **\"An object at rest has no forces\":** it has forces in balance — ΣF = 0, not F = 0 on each."
     }
   ]
 }

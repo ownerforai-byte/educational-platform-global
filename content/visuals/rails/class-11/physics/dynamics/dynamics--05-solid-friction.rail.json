@@ -24,18 +24,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics.…",
+      "text": "Friction opposes attempted or actual relative motion along surfaces. **Static friction self-adjusts** up to the limiting value μ_sN; kinetic friction runs at μ_kN, slightly smaller and nearly speed-independent. The laws: friction opposes relative motion, is proportional to normal reaction, and ignores contact area — verified by spring-balance pulls with added weights (straight-line f–N graph), face-swaps (same…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solid Friction — quick idea map\"><title>Solid Friction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Solid Friction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Friction is a contact</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">force opposing relative</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">motion (or its tendency)…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Static friction is</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">variable (up to μ_sN);</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">kinetic friction is</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Static friction is</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">VARIABLE: it matches the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">applied force up to μ_sN.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kinetic friction is</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">approximately CONSTANT:</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f_k = μ_kN during sliding.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solid Friction — quick idea map\"><title>Solid Friction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Solid Friction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Friction is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">self-adjusting:** static</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">friction matches your push</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Laws: opposes relative</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">motion; f ∝ N; independent</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of contact area; kinetic…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Angle of repose: μ = tan</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">θ_r.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- f_max = μN; f_k = μ_k N</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Angle of repose: μ = tan</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">θ_r - Incline: N = mg…</text></svg>",
         "caption": "Solid Friction — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Maximum static friction: f_s(max) = μ_sN (acts just before slipping)\nKinetic friction: f_k = μ_kN (acts during sliding; μ_k < μ_s)\nSlope sliding condition: body slides when tan θ > μ_s; a = g(sin θ − μ_k cos θ)",
+      "text": "- f_max = μN; f_k = μ_k N - Angle of repose: μ = tan θ_r - Incline: N = mg cos θ; a = g(sin θ − μ cos θ) - Pull up at constant speed: F = mg(sin θ + μ cos θ)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solid Friction — formula board\"><title>Solid Friction — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Solid Friction</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Maximum static friction: f_s(max) = μ_sN (acts just</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">before slipping)</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Kinetic friction: f_k = μ_kN (acts during sliding; μ_k</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">&lt; μ_s)</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Slope sliding condition: body slides when tan θ &gt;</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">μ_s; a = g(sin θ − μ_k cos θ)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Solid Friction — formula board\"><title>Solid Friction — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Solid Friction</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- f_max = μN; f_k = μ_k N - Angle of repose: μ = tan θ_r</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- Incline: N = mg cos θ; a = g(sin θ − μ cos θ) - Pull</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">up at constant speed: F = mg(sin θ + μ cos θ)</text></svg>",
         "caption": "Solid Friction — formula board of this topic's own formulas"
       }
     },
@@ -49,7 +49,7 @@
     },
     {
       "label": "Solved",
-      "text": "Slope: A 5 kg block on a 30° slope (μ_s = 0.4). tan 30° = 0.577 > 0.4 → slides. a = g(sin30° − μ_k cos30°) = 9.8(0.5 − 0.4×0.866) = 1.51 m/s².  ·  Horizontal pull: A 10 kg block (μ_k = 0.25) pulled by 40 N at 20° above horizontal. N = 98 − 40sin20° = 84.3 N; f = 21.1 N; F_net = 40cos20° − 21.1 = 16.5 N; a = 1.65 m/s²."
+      "text": "***5 kg block, μ_s = 0.4*** — needs just over 20 N to start (NEB 2023)."
     },
     {
       "label": "Limitation",
@@ -61,39 +61,27 @@
     },
     {
       "label": "Shortcut",
-      "text": "Slope check: compare tan θ with μ_s — if tan θ > μ_s, the body slides; otherwise it stays.  ·  Normal force shortcut: N = mg (horizontal), N = mg cos θ (slope), N = mg − F sin θ (pulling up), N = mg + F sin θ (pushing down)."
+      "text": "\"Just slides → μ = tan θ.\""
     },
     {
       "label": "Board question",
-      "text": "A 15 kg block rests on a horizontal surface (μ_s = 0.6). What is the maximum static friction? What horizontal force is needed to just start it moving?  ·  A 5 kg block slides down a 40° slope (μ_k = 0.25). Find the acceleration."
+      "text": "**Numerical (3m): A 20 kg block is pulled up a 30° incline (μ = 0.25) at constant speed. Find the required force (g = 10).** — F = mg(sin θ + μ cos θ) = 200(0.5 + 0.25×0.866) = 200 × 0.7165 = 143.3 N."
     },
     {
       "label": "Hints",
-      "text": "Slope problems are the most common — know the tan θ vs μ_s check and the a = g(sin θ − μ_k cos θ) formula.  ·  Pulling/pushing at an angle changes the normal force — always recalculate N before finding friction."
+      "text": "Most-tested: the three incline/starting numericals (2021, 2023, 2024). Learn the laws + verifications for theory marks."
     },
     {
       "label": "Quick concepts",
-      "text": "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.  ·  Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).  ·  μ_k < μ_s — harder to start sliding than to keep sliding.  ·  The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s."
+      "text": "**Friction is self-adjusting:** static friction matches your push exactly until the limiting value — then motion begins."
     },
     {
       "label": "Key points",
-      "text": "Static friction is VARIABLE: it matches the applied force up to μ_sN.  ·  Kinetic friction is approximately CONSTANT: f_k = μ_kN during sliding.  ·  Friction is (approximately) independent of the apparent area of contact.  ·  Pulling at an angle reduces N and friction; pushing at an angle increases both."
+      "text": "Laws: opposes relative motion; f ∝ N; independent of contact area; kinetic friction independent of speed; μ_k < μ_s.  ·  Angle of repose: μ = tan θ_r.  ·  Incline: N = mg cos θ; sliding a = g(sin θ − μ cos θ); pull up at constant speed F = mg(sin θ + μ cos θ)."
     },
     {
       "label": "Universal facts",
-      "text": "Friction is independent of the apparent area of contact — a counterintuitive but experimentally verified law.  ·  μ_k < μ_s for most surface pairs — this is why objects jerk when starting to slide."
-    },
-    {
-      "label": "More practice",
-      "text": "A 10 kg block is pulled by a 50 N force at 30° above horizontal (μ_k = 0.2). Find the acceleration.  ·  A block remains at rest on a slope up to 35°. Find μ_s. If the slope is increased to 40°, find the acceleration (μ_k = 0.6).  ·  Explain why it is harder to start sliding a heavy box than to keep it sliding."
-    },
-    {
-      "label": "More hints",
-      "text": "Static friction is variable — do NOT assume f = μ_sN unless the body is at the point of slipping.  ·  The angle of repose equals the angle of friction — both are tan⁻¹μ_s."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Angle of repose: A block slides at constant speed down a 35° slope. μ_k = tan 35° = 0.70. μ_s is slightly higher (≈ 0.75).  ·  Static friction variable: A 20 kg box (μ_s = 0.5). Push with 40 N — box doesn't move, f_s = 40 N. Push with 120 N — box moves (max f_s = 98 N)."
+      "text": "Anti-lock brakes keep tyres rolling rather than sliding because kinetic friction is smaller than peak static friction — maximum stopping force comes just below sliding."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**What friction is:** a contact force that opposes relative motion (or its tendency) between two surfaces in contact. It acts parallel to the contact surface. Static friction (no sliding) and kinetic friction (sliding) are the two main types.  ·  **Laws of friction:** (1) Friction is independent of the apparent area of contact (to a good approximation). (2) Maximum static friction and kinetic friction are both proportional to the normal reaction: f_s(max) = μ_sN, f_k = μ_kN. (3) μ_k < μ_s — it is harder to start sliding than to keep sliding.  ·  **Static friction is a variable force:** it matches the applied force up to a maximum: f_s ≤ μ_sN. If you push with 30 N and the object doesn't move, f_s = 30 N (not μ_sN). Only at the point of slipping does f_s = μ_sN."
+      "text": "## 1. Topic Introduction — The Force That Opposes Every Push Friction is the contact force opposing relative (or attempted) motion between surfaces. It is indispensable — walking, brakes, nail grips — and costly — worn engines, wasted fuel. The syllabus asks for the laws of solid friction and their experimental verifications, plus incline numericals.  ·  ## 2. Fundamental Concepts | Term | Definition | |---|---| | **Static friction** | Opposes the *start* of motion; self-adjusting up to a maximum | | **Limiting friction** | Maximum static friction just before sliding begins: $f_s^{max} = \\mu_s N$ | | **Kinetic friction** | Opposes motion once sliding: $f_k = \\mu_k N$, roughly constant and slightly less than limiting friction |…  ·  ## 3. Worked Numericals **Q1 (3m, 2023):** A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? (g = 10 m/s²) $N = mg = 50$ N; $f_{limiting} = \\mu_s N = 0.4 \\times 50 = 20$ N.…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 1: Core definition of Solid friction: laws of solid friction and their verifications  ·  Concept 2: Key theorem or principle in Solid friction: laws of solid friction and their verifications  ·  Concept 3: Important application area of Solid friction: laws of solid friction and their verifications"
+      "text": "**Area Independence (Ideal Model):** The laws of friction assume friction is independent of the apparent contact area (Coulomb's model). This holds well for dry, rigid surfaces but breaks down for soft materials, lubricated contacts, or adhesive forces where real contact area matters.  ·  **Static vs kinetic friction:** static self-adjusts up to μ_s N (starting is harder); kinetic is roughly constant at μ_k N and slightly smaller.  ·  **Friction vs normal reaction:** friction is proportional to N — press harder and it grows; lighten the load and it shrinks."
     },
     {
       "label": "More ideas",
-      "text": "Concept 4: Fundamental relationship in Solid friction: laws of solid friction and their verifications  ·  Concept 5: Connection between Solid friction: laws of solid friction and their verifications and other topics  ·  Angle of friction: tan λ = μ_s (angle between normal and resultant reaction)"
+      "text": "Friction can act in the direction of motion — static friction pushes you forward when walking.  ·  The angle of repose depends only on μ_s, not on the mass of the body.  ·  NEB frequently asks: 'Does the body slide? If so, find the acceleration' — check tan θ vs μ_s first."
     },
     {
       "label": "More ideas",
-      "text": "Angle of repose: tan θ_r = μ_s → θ_r = λ (steepest angle for rest)  ·  Governing equation for \"Solid friction: laws of solid friction and their verifica…\" — state with units, then use in one numerical.  ·  Application formula for Solid friction: laws of solid friction and their verifications"
+      "text": "Note 1: Pay attention to the conditions under which Solid friction: laws of solid friction and their verifications applies  ·  Note 2: Solid friction: laws of solid friction and their verifications connects to multiple other topics in Science  ·  Note 3: Practice numerical problems regularly for mastery of Solid friction: laws of solid friction and their verifications"
     },
     {
       "label": "More ideas",
-      "text": "Derivation result for Solid friction: laws of solid friction and their verifications  ·  **Area Independence (Ideal Model):** The laws of friction assume friction is independent of the apparent contact area (Coulomb's model). This holds well for dry, rigid surfaces but breaks down for soft materials, lubricated contacts, or adhesive forces where real contact area matters.  ·  • Solid friction"
+      "text": "Note 4: Remember the units and dimensions involved in Solid friction: laws of solid friction and their verifications  ·  Note 5: Solid friction: laws of solid friction and their verifications frequently appears in examination questions  ·  Verified PYQs: starting force (2023, 3m); incline friction (2021, 3m); angle of repose (2024, 3m)."
     },
     {
       "label": "More ideas",
-      "text": "• Laws of solid friction  ·  • Their verifications  ·  ❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion (or its tendency). Static friction can act IN the direction of motion — e.g., the static friction on your feet pushes you forward when walking."
+      "text": "\"Friction always bills the motion.\"  ·  Why is it harder to start a crate moving than to keep it moving?  ·  Solve 3 angle-of-repose problems showing θ_r = tan⁻¹μ_s."
     }
   ]
 }

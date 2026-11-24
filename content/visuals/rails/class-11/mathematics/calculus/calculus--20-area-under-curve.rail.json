@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Geometric area is an absolute accumulation, so it is written with $|f|$ rather than $f$. Whenever the curve crosses the axis the signed integral partially cancels and understates the true area, which is why the interval must be split at the roots and the negative pieces negated. Infinite intervals are handled with an improper limit, and convergence is not guaranteed by the height of the graph.",
+      "text": "Area under a curve begins with the ledger/map distinction: the definite integral is signed (net displacement), the geometric area is |f| split at the roots (total ground). Symmetry halves or cancels the signed work, and recognised shapes — triangles, trapezoids, quarter circles — replace anti-derivatives with geometry.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Under a Curve — quick idea map\"><title>Area Under a Curve — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Area Under a Curve</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area uses the ABSOLUTE</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value of the function; the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">signed integral can be…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Split the interval at</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">every root of the</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">integrand.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area uses the ABSOLUTE</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value of the function; the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">signed integral can be…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Split the interval at</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">every root of the</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">integrand.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Under a Curve — quick idea map\"><title>Area Under a Curve — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Area Under a Curve</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One number, two questions:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the ledger (net, signed)</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and the map (total,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Signed area: above the</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">axis positive, below</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">negative - the integral is</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Geometric area =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">∫ₐᵇ|f(x)|dx - ∫₀ᵃ√(a² −</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">x²)dx = πa²/4; ∫₋ₐᵃf =</text></svg>",
         "caption": "Area Under a Curve — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Area: $A=\\int_a^b |f(x)|dx$\nSigned: $\\int_a^b f(x)dx = F(b)-F(a)$\nSplit at roots: $A=\\int_a^{r_1}|f|+\\int_{r_1}^{r_2}|f|+\\dots$",
+      "text": "- Geometric area = ∫ₐᵇ|f(x)|dx - ∫₀ᵃ√(a² − x²)dx = πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Under a Curve — formula board\"><title>Area Under a Curve — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Area Under a Curve</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Area: $A=\\int_a^b |f(x)|dx$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Signed: $\\int_a^b f(x)dx = F(b)-F(a)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Split at roots:</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$A=\\int_a^{r_1}|f|+\\int_{r_1}^{r_2}|f|+\\dots$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Under a Curve — formula board\"><title>Area Under a Curve — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Area Under a Curve</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- Geometric area = ∫ₐᵇ|f(x)|dx - ∫₀ᵃ√(a² − x²)dx =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)</text></svg>",
         "caption": "Area Under a Curve — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Area uses the ABSOLUTE value of the function; the signed integral can be smaller or zero.  ·  Split the interval at every root of the integrand."
+      "text": "***The dip below*** - a curve crossing the axis mid-interval: the raw integral understates the true area by twice the dipped part - split and add magnitudes."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Sketch or sign-check first: if $f$ changes sign inside the interval, split before integrating.  ·  For $f$ symmetric about an axis with $f\\ge0$, integrate from 0 and double."
+      "text": "Find the roots in [a, b] first - they are the split points for geometric area."
     },
     {
       "label": "Board question",
-      "text": "Area under a curve that crosses the axis is a frequent 4-mark question, and the split is where the marks are."
+      "text": "**NEB-style (5m): Find the area under y = x² from x = 0 to x = 3.** — **Sign check:** x² ≥ 0 on [0, 3] ⟹ signed = geometric, no split needed. **Evaluate:** ∫₀³x²dx = [x³/3]₀³ = **9 square units**. **Shape note:** the region is a parabolic segment — no standard shape, so the integral is the tool.…  ·  **NEB-style (6m): Find the geometric area between y = x² − 4 and the x-axis for 0 ≤ x ≤ 5.** — **Roots in [0, 5]:** x² − 4 = 0 ⟹ x = 2 (and −2, outside). **Sign strips:** f < 0 on [0, 2) (dips below), f > 0 on (2, 5]. **Piece 1:** ∫₀²(4 − x²)dx = [4x − x³/3]₀² = 8 − 8/3 = 16/3.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Worked example, $y=x^2$ on $[0,3]$ since $x^2 ge0$ there is no split, and the area is $ left[ frac{x^3}{3} right]_0^3 = 9$ square units."
+      "text": "State whether the question asks for signed area or geometric area; the answers differ whenever the curve dips."
     },
     {
       "label": "Quick concepts",
-      "text": "An infinite interval needs an improper limit, which may converge."
+      "text": "One number, two questions: the ledger (net, signed) and the map (total, geometric) - split at roots to convert."
+    },
+    {
+      "label": "Key points",
+      "text": "Signed area: above the axis positive, below negative - the integral is a net. Geometric area: integral of |f| - split at the roots, integrate piecewise, add magnitudes. Displacement vs distance is the same distinction. Symmetry: even f halves the work, odd f cancels to zero on [-a, a].…"
     },
     {
       "label": "Universal facts",
-      "text": "The area under a velocity–time graph equals the distance travelled, and the area under an acceleration–time graph equals the change in velocity — the same integral doing physical work in two different units.  ·  The finite area under $e^{-x}$ despite infinite height is the reason probability densities can be normalised: a curve may grow unbounded while the probability it represents stays at 1."
+      "text": "Every integral property has a picture; the picture is the fastest verification."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): Evaluate ∫₋₂²x³dx and ∫₋₂²x²dx, and explain the asymmetry.** — **Odd integrand:** x³ is odd ⟹ ∫₋₂²x³dx = **0** — the credit on [0, 2] exactly cancels the debit on [−2, 0]. **Even integrand:** x² is even ⟹ ∫₋₂²x²dx = 2∫₀²x²dx = 2·(8/3) = **16/3**.…  ·  **NEB-style (6m): Find the area enclosed by y = √(9 − x²) and the x-axis, and verify by geometry.** — **Recognise the shape:** y² = 9 − x² ⟹ x² + y² = 9 — the upper semicircle of radius 3. **Domain:** −3 ≤ x ≤ 3; the integrand is nonnegative throughout ⟹ no split.…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Geometric area is an ABSOLUTE accumulation,** so it is $\\int_a^b |f(x)|dx$, not $\\int_a^b f(x)dx$. Whenever the curve crosses the axis inside the interval the signed integral cancels and understates the area — the most important distinction in the topic.  ·  **Split at the roots.** Find where $f(x)=0$, split the interval at those points, and negate the negative pieces. For $f=x^2-4$ on $[-3,3]$ the roots are $\\pm2$, and the area is $\\int_{-3}^{-2}-f + \\int_{-2}^{2}f + \\int_{2}^{3}-f = \\frac{32}{3}$.  ·  **Split also at any change in which curve is on top** when the region is bounded by more than one function, since otherwise the integrand switches sign mid-interval."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Area Under a Curve This canonical is the **short-form doorway** to area under a curve: the signed-area reading of the definite integral and the standard area computations in one page.…  ·  ## 2. Theorem Mirror - **Signed area:** ∫ₐᵇf(x)dx counts area above the axis positively, below negatively — the integral is a *net*, not a total. - **True (geometric) area:** ∫ₐᵇ|f(x)|dx — split at the axis crossings, integrate each piece, add magnitudes. - **Area between curve and axis:** find the roots of f in [a, b], partition, integrate |f| piecewise.…  ·  ## 3. Deep Conceptual — Signed vs Geometric: The Ledger and the Map - The definite integral is a **ledger** (credits above the axis, debits below — the net displacement reading); the geometric area is a **map** (every region counts positively — the total distance reading).…"
     },
     {
       "label": "More ideas",
-      "text": "Improper: $A=\\lim_{b\\to\\infty}\\int_a^b f(x)dx$  ·  Statement 1: Area $A=\\int_a^b|f(x)|dx$ is an absolute accumulation.  ·  Statement 2: The integral must be split at the zeros of the integrand."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Ask \"is this a triangle or a quarter circle?\" before writing any anti-derivative.  ·  Find the area under y = x² from 0 to 3."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: No constant of integration appears in an area calculation.  ·  Statement 4: On an infinite interval the integral is defined by an improper limit.  ·  Statement 5: An unbounded integrand may still have a finite integral."
+      "text": "Find the geometric area between y = x² − 4 and the x-axis on [0, 5].  ·  Find ∫₋₂² x³dx and interpret.  ·  ## 4. Deep Conceptual — Symmetry and Standard Shapes as Shortcuts - **Even/odd symmetry:** for even f, ∫₋ₐᵃf = 2∫₀ᵃf; for odd f, ∫₋ₐᵃf = 0 — the signed ledger cancels symmetric debits and credits. Half the work for even functions, zero work for odd ones.…"
     },
     {
       "label": "More ideas",
-      "text": "**The area is a definite integral, so no constant of integration appears** and the answer is a pure number with units of (function units) × (x-units).  ·  **An infinite interval needs an improper limit:** $\\int_0^\\infty e^{-x}dx = \\lim_{b\\to\\infty}[-e^{-x}]_0^b = 1$. The limit must actually exist; the graph may rise to infinity while the area stays finite.  ·  **Worked example, $y=x^2$ on $[0,3]$:** since $x^2\\ge0$ there is no split, and the area is $\\left[\\frac{x^3}{3}\\right]_0^3 = 9$ square units."
+      "text": "## 5. Worked Example Types - **Type A — simple positive region:** one anti-derivative, endpoints, done. - **Type B — sign change mid-interval:** split at the root, add magnitudes. - **Type C — symmetry shortcut:** even/odd halving or cancellation. - **Type D — recognised shape:** line (triangle) or circle (quarter).  ·  ## 6. Common Confusions **\"The integral is the area\":** it is the signed area — split at roots for the geometric answer. **\"Always integrate\":** recognise triangles and circular quarters first."
     }
   ]
 }

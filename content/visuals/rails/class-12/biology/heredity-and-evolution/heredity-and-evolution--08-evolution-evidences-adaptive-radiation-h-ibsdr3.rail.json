@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Evolution: evidences, adaptive radiation, Hardy-Weinberg … — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: evolution, evidences, adaptive radiation, hardy-weinberg equilibrium · one worked example · one misconception each."
+      "text": "# Evolution: evidences, adaptive radiation, Hardy-Weinberg equilibrium, human evolution ## 1. Introduction Opening frame for **Evolution** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  Darwin's 1859 theory — descent with modification by natural selection — is supported by evidence from every branch of biology. Population genetics later gave it a mathematical spine: the **Hardy–Weinberg equilibrium** defines the genetic baseline of a population that is NOT evolving, so any deviation names the evolutionary force at work.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Adaptive radiation  ·  • Hardy-Weinberg equilibrium"
+      "text": "Trick 1: Evidences list: palaeontology (fossils), comparative anatomy (homologous/analogous organs), embryology (Haeckel), molecular (cytochrome c), biogeography — five with one line each.  ·  Trick 2: Hardy–Weinberg: p² + 2pq + q² = 1 — p² = AA, 2pq = Aa, q² = aa; disturbed by mutation, migration, drift, selection, non-random mating — the five forces."
     },
     {
       "label": "Board question",
@@ -76,7 +76,7 @@
     },
     {
       "label": "Key points",
-      "text": "• Human evolution"
+      "text": "• Adaptive radiation  ·  • Hardy-Weinberg equilibrium  ·  • Human evolution"
     },
     {
       "label": "More practice",
@@ -88,15 +88,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Evidences.** one-line definition + one-line exam use.  ·  **Adaptive radiation.** one-line definition + one-line exam use.  ·  **Hardy-Weinberg equilibrium.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from Darwin to human origins (study in this order)** | Step | Concept | Key idea | |---|---|---| | 1 | Natural selection (Darwin, 1859) | Variation + overproduction + struggle → survival of the fittest → new species | | 2 | Evidence for evolution | Fossils, embryology, comparative anatomy, molecular homology, biogeography | | 3 | Population genetics | Allele…  ·  **Evidence for evolution — classified by source** | Type of evidence | Classic example | What it shows | |---|---|---| | Palaeontological (fossils) | Archaeopteryx (reptile + bird); horse series | Life changed through time; transitional forms exist | | Embryological | Vertebrate embryos share gill pouches and tail | Common ancestry in early development | | Comparative anatomy…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: evolution, evidences, adaptive radiation, hardy-weinberg equilibrium.  ·  one worked example for \"Evolution: evidences, adaptive radiation, Hardy-Weinberg …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Adaptive radiation: Darwin's finches (beaks), Australian marsupials — one ancestor → many niches; convergent evolution is the analogous-organ flip side.  ·  Trick 4: Human evolution order: Australopithecus → Homo habilis → H. erectus → Neanderthal → H. sapiens — brain size increases, jaw decreases.  ·  define + example each sub-idea: evolution, evidences, adaptive radiation, hardy-weinberg equilibrium."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Human evolution.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Evolution: evidences, adaptive radiation, Hardy-Weinberg …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Hardy–Weinberg — the five conditions and the force each one hides** | Condition for equilibrium | If violated, the force at work is | Effect on allele frequencies | |---|---|---| | No mutation | Mutation | Creates new alleles directly | | No migration (large population) | Gene flow | Alleles move between populations…  ·  **Human evolution — the main stages in order** | Stage | Approx. age | Brain capacity | Key features | |---|---|---|---| | Australopithecus (e.g. 'Lucy', A. afarensis) | 4–2 million yrs ago | 400–500 cc | Bipedal but small-brained; ape-like face; East Africa | | Homo habilis | 2.4–1.4 million yrs ago | 600–750 cc |…  ·  ## 4. Diagrams and figures - **D1** — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Evolution — process or life-cycle flow (authored SVG — English labels) - **D3** — Evolution — detailed reference plate (curated external — English labels; source, author and…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Adaptive radiation — Darwin's finches: one ancestor, four beak types <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Adaptive radiation on the…  ·  ## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — Hardy–Weinberg.** In a population of 1,000 people, 160 cannot roll the tongue (recessive, tt). q² = 160/1000 = 0.16, so q = 0.4 and p = 0.6. Carriers 2pq = 2 × 0.6 × 0.4 = 0.48 → **480 carriers**, TT = p² = 360. Check: 360 + 480 + 160 = 1,000.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.  ·  **Most-asked points (NEB).** (1) List the five lines of evidence for evolution with one example each. (2) Homology vs analogy with examples. (3) State the Hardy–Weinberg law and solve for carrier frequency. (4) Name the five forces that break equilibrium.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
     }
   ]
 }

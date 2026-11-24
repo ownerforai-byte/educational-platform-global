@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change.…",
+      "text": "Kinematics begins with three vectors: **position** (location from an origin), **velocity** (rate of change of position, $v = dr/dt$) and **acceleration** (rate of change of velocity, $a = dv/dt$). Average values span a finite interval; instantaneous values are their limits as the interval shrinks — the tangent slope on a position–time graph gives instantaneous velocity, the tangent slope on a velocity–time graph…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Instantaneous Velocity and Acceleration — quick idea map\"><title>Instantaneous Velocity and Acceleration — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Instantaneous Velocity and Acceleration</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Limit</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">definition — instantaneous</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">quantities are average</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Derivative</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">chain: $x</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\xrightarrow{d/dt} v</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Instantaneous velocity is</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the slope of the tangent</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of the $x$–$t$ graph;…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Displacement is the area</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">under the $v$–$t$ graph;</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">change in velocity is the…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Instantaneous Velocity and Acceleration — quick idea map\"><title>Instantaneous Velocity and Acceleration — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Instantaneous Velocity and Acceleration</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The limit is the idea:**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">instantaneous values are</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">average values over an…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Instantaneous velocity v =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dr/dt (slope of x–t</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tangent); instantaneous…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area under v–t graph =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">displacement.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- v = dr/dt; a = dv/dt -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Average: v_av = Δr/Δt;</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a_av = Δv/Δt - Uniform a:</text></svg>",
         "caption": "Instantaneous Velocity and Acceleration — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Instantaneous velocity: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$\nInstantaneous acceleration: $a = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$\nDisplacement from velocity: $x_2 - x_1 = \\int_{t_1}^{t_2} v\\,dt$ (area under $v$–$t$ curve)"
+      "text": "- v = dr/dt; a = dv/dt - Average: v_av = Δr/Δt; a_av = Δv/Δt - Uniform a: v = u + at; s = ut + ½at²"
     },
     {
       "label": "Conditions",
@@ -45,11 +45,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: $x(t) = 3t^2$ m → $v = 6t$ m/s; at $t = 2$ s the instantaneous velocity is 12 m/s, while the average velocity over 0–2 s is $\\frac{12-0}{2} = 6$ m/s — different because the motion speeds up.  ·  Example 2: A metro train's $v$–$t$ graph: trapezoid of acceleration, cruise, braking. Displacement = area of trapezoid; acceleration = slope in each segment."
+      "text": "***Car from rest to 20 m/s in 10 s*** — a = 2 m/s², s = 100 m (NEB 2014)."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Instantaneous velocity equals average velocity.' ✅ Only when motion is uniform. In general $v_{inst} = dx/dt$ while $v_{avg} = \\Delta x/\\Delta t$; they coincide only if the $x$–$t$ graph is a straight line.  ·  ❌ 'Negative acceleration always means slowing down.' ✅ Slowing means $v$ and $a$ have OPPOSITE signs. A ball thrown upward (up = positive) has $v > 0$ with $a = -g$ — it slows going up and speeds up coming down, with the SAME downward acceleration throughout."
+      "text": "**Speed vs velocity:** speed is the scalar path-length rate; velocity is the vector displacement rate — equal only in straight-line motion without reversal.  ·  **Zero velocity vs zero acceleration:** at the top of a vertical throw v = 0 but a = g downward; in uniform velocity motion a = 0."
     },
     {
       "label": "Derivation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: 'At rest' ⇒ set $dx/dt = 0$ and solve for $t$; then check the sign of $v$ on both sides to classify pause vs reversal.  ·  Trick 2: In graph MCQs, remember: slope of $x$–$t$ = $v$; slope of $v$–$t$ = $a$; area of $v$–$t$ = $x$; area of $a$–$t$ = $v$."
+      "text": "\"Slope of x–t gives v; slope of v–t gives a; area under v–t gives s.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define instantaneous velocity with the limit definition and explain its graphical meaning on an $x$–$t$ graph.  ·  Q2. Distinguish between average acceleration and instantaneous acceleration with one example each."
+      "text": "**Numerical (3m): A car moving at 10 m/s accelerates uniformly at 2 m/s² for 4 s. Find the final velocity and distance travelled.** — v = u + at = 10 + 2×4 = 18 m/s; s = ut + ½at² = 10×4 + ½×2×16 = 40 + 16 = 56 m (NEB 2023)."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a given time — show the derivative step explicitly.  ·  Exam Tip 2: In graph-conversion questions (given $v$–$t$, sketch $x$–$t$), track curvature: constant $v$ → straight $x$ line; linear $v$ → parabolic $x$.",
+      "text": "Most-tested: definitions (2024) and two-equation numericals (2014, 2023). Graph-reading questions use slopes and areas.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Instantaneous Velocity and Acceleration — topic mind map\"><title>Instantaneous Velocity and Acceleration — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Instantaneous velocity and acceleration</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Instantaneous velocity</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Acceleration</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Instantaneous Velocity and Acceleration — topic mind map of this topic's own sub-topics"
@@ -73,27 +73,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Limit definition — instantaneous quantities are average quantities over a vanishing interval.  ·  Concept 2: Derivative chain: $x \\xrightarrow{d/dt} v \\xrightarrow{d/dt} a$; integrals run the reverse way with initial conditions.  ·  Concept 3: Graph duality — slopes give rates (v, a); areas give accumulations (x, v).  ·  Concept 4: Sign logic — direction of motion from sign of $v$; speeding up/slowing down from relative signs of $v$ and $a$."
+      "text": "**The limit is the idea:** instantaneous values are average values over an interval shrunk to zero — the derivative before calculus names it."
     },
     {
       "label": "Key points",
-      "text": "Instantaneous velocity is the slope of the tangent of the $x$–$t$ graph; instantaneous acceleration is the slope of the $v$–$t$ graph.  ·  Displacement is the area under the $v$–$t$ graph; change in velocity is the area under the $a$–$t$ graph.  ·  $v = 0$ does not imply $a = 0$ — turning points have zero velocity but non-zero acceleration.  ·  Speeding up ⟺ $v$ and $a$ share the same sign; slowing down ⟺ opposite signs."
+      "text": "Instantaneous velocity v = dr/dt (slope of x–t tangent); instantaneous acceleration a = dv/dt (slope of v–t tangent).  ·  Area under v–t graph = displacement.  ·  Uniform acceleration numericals: a = (v−u)/t; s = ut + ½at²."
     },
     {
       "label": "Universal facts",
-      "text": "Calculus was invented (Newton and Leibniz, 1660s–70s) precisely to handle instantaneous quantities — physics and calculus were born together, and Newton's name for the derivative was the 'fluxion'.  ·  Car speedometers show instantaneous speed, while trip computers computing distance ÷ time show average speed — the two can differ enormously in city traffic."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).  ·  Q4. Sketch the $v$–$t$ graph for a ball thrown vertically upward and returning; mark where $v = 0$ and the sign of $a$ throughout.  ·  Q5. A particle moves with $v = kt$ where $k = 2$ m/s². Find its instantaneous acceleration and displacement after 3 s from rest."
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 3: When asked 'when is the particle at rest', also state the acceleration at that instant — examiners expect the follow-through.  ·  Exam Tip 4: Define the limit properly in theory questions: shrinking interval, ratio of small changes — vague wording loses marks."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 3: $v(t) = 8 - 4t$: the particle reverses at $t = 2$ s where $v = 0$ but $a = -4$ m/s² throughout — illustrating reversal with constant acceleration.  ·  Example 4: Two instants with equal speeds but different velocities: $v = +10$ m/s at $t_1$ and $v = -10$ m/s at $t_2$ — same speed, opposite direction of motion."
+      "text": "A body can move with increasing speed and decreasing acceleration — acceleration measures how fast velocity changes, not how large velocity is."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning for instantaneous velocity and acceleration.  ·  **Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta v}{\\Delta t}$ likewise. They smooth out everything that happened in between — a car doing 100 km in 2 h has $v_{avg} = 50$ km/h regardless of traffic.  ·  **The limit idea:** instantaneous velocity is the average velocity as $\\Delta t \\to 0$: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$. It answers 'how fast RIGHT NOW' — exactly what a speedometer reads."
+      "text": "## 1. Topic Introduction — From Average to Instantaneous A car's speedometer does not show its average speed over the whole trip; it shows the velocity **right now**. Defining velocity and acceleration at an instant — as limits of shrinking time intervals — is the conceptual heart of kinematics, and the gateway to calculus-based physics.  ·  ## 2. Fundamental Concepts (NEB 2024) | Quantity | Definition | Unit | Nature | |---|---|---|---| | **Position** ($\\vec r$) | Location relative to an origin, with direction | m | Vector | | **Displacement** ($\\Delta\\vec r$) | Change of position: final − initial | m | Vector | | **Average velocity** | $\\vec v_{av} = \\Delta\\vec r/\\Delta t$ over a finite interval | m/s | Vector |…  ·  ## 3. Graphical Meaning - On a **position–time graph**, instantaneous velocity is the **slope of the tangent** at that instant (average velocity is the slope of the chord). - On a **velocity–time graph**, instantaneous acceleration is the slope of the tangent; the **area under the v–t curve** gives displacement.…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Generality — the derivative definitions hold for any acceleration; constant-$a$ equations are a special case.  ·  Velocity from acceleration: $v_2 - v_1 = \\int_{t_1}^{t_2} a\\,dt$  ·  Rest condition: $v = \\frac{dx}{dt} = 0$; reversal check: sign change of $v$ around that instant"
+      "text": "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a eq 0$ (e.g., ball at top of flight: $v=0$, $a=g$).  ·  Note 3: When integrating acceleration, always determine integration constants from given initial conditions.  ·  Note 4: In 'is the particle speeding up?' questions, compare signs of $v$ and $a$ at that instant — not the sign of $a$ alone."
     },
     {
       "label": "More ideas",
-      "text": "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a eq 0$ (e.g., ball at top of flight: $v=0$, $a=g$).  ·  Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions.  ·  The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only."
+      "text": "Verified PYQs: define position/velocity/acceleration (2024, 2m); uniform-acceleration numerical (2014, 3m).  ·  \"The speedometer reads instantaneous speed; the odometer averages.\"  ·  Can a body have constant speed and non-zero acceleration?"
     },
     {
       "label": "More ideas",
-      "text": "❌ 'The area under an $x$–$t$ graph gives velocity.' ✅ The SLOPE of $x$–$t$ gives velocity; the AREA under a $v$–$t$ graph gives displacement. Mixing these up is the classic graph-question error.  ·  ❌ 'At the turning point, acceleration is zero.' ✅ At a reversal, $v = 0$ but $a$ is NOT zero (e.g. a ball at the top of its flight has $v = 0$, $a = g$ downward). Zero velocity ≠ zero acceleration.  ·  ❌ 'Speed can be negative.' ✅ Speed is $|v|$, always non-negative; velocity carries the sign (direction)."
+      "text": "Task 3: Given $a(t) = 4t$ with $v(0) = 5$ m/s and $x(0) = 2$ m, find $v(t)$ and $x(t)$.  ·  Task 4: Solve the NEB past question: particle at rest — find times, positions and accelerations at those times.  ·  Task 5: Explain to a classmate why a speedometer shows instantaneous speed and why trip-average speed can differ, using the limit definition."
     },
     {
       "label": "More ideas",
-      "text": "❌ 'If $v = 0$ at an instant, the particle has stopped permanently.' ✅ $v = 0$ can be a momentary pause (top of a throw) — check the acceleration to know what happens next.  ·  Example 5: From $a = 6t$ and $v(0) = 2$ m/s: integrate to $v = 3t^2 + 2$ and, with $x(0) = 0$, $x = t^3 + 2t$ — showing how derivatives run downward ($x \\to v \\to a$) and integrals run upward.  ·  Note 3: When integrating acceleration, always determine integration constants from given initial conditions."
-    },
-    {
-      "label": "More ideas",
-      "text": "Note 4: In 'is the particle speeding up?' questions, compare signs of $v$ and $a$ at that instant — not the sign of $a$ alone.  ·  Note 1: Zero instantaneous velocity does not imply zero acceleration (turning points).  ·  Note 2: Instantaneous speed equals the magnitude of instantaneous velocity, but never carries a direction."
+      "text": "## 4. Conceptual Relationships - **To Topic 7:** relative velocity is velocity measured from a moving frame. - **To Topic 8:** the equations of motion are the integrals of constant acceleration — the graphical treatment makes this visible.…  ·  ## 5. Exam Orientation and Previous Year Questions (NEB) ### 5.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Kinematics | Definitions | Define position, velocity, and acceleration in kinematics.…"
     }
   ]
 }

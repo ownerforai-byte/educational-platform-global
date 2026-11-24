@@ -55,7 +55,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
+      "text": "Trick 1: Classifier — can you write g(y)dy = f(x)dx? → variable separable; M dx + N dy with M, N homogeneous of same degree → put y = vx; dy/dx + Py = Q → linear (integrating factor e^{∫P dx}).  ·  Trick 2: Linear equation answer template: y·IF = ∫Q·IF dx + C — write it immediately after finding the IF."
     },
     {
       "label": "Board question",
@@ -74,6 +74,10 @@
       "text": "• Solving first order  ·  • First degree equations: variable separable  ·  • Homogeneous  ·  • Linear"
     },
     {
+      "label": "Universal facts",
+      "text": "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Solving first order, first degree equations: variable sep…\" and verify the answer is plausible."
     },
@@ -87,15 +91,23 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: solving first order, first degree equations: variable separable, homogeneous, linear.  ·  one worked example for \"Solving first order, first degree equations: variable sep…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: For homogeneous equations, the substitution y = vx ALWAYS ends in a separable equation; back-substitute v = y/x at the end.  ·  Trick 4: Initial conditions determine C — substitute the point BEFORE simplifying the general solution to avoid algebra errors.  ·  define + example each sub-idea: solving first order, first degree equations: variable separable, homogeneous, linear."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult).  ·  **First degree equations: variable separable.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Solving first order, first degree equations: variable sep…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Homogeneous.** one-line definition + one-line exam use.  ·  **Linear.** one-line definition + one-line exam use."
+      "text": "Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult).  ·  **First degree equations: variable separable.** one-line definition + one-line exam use.  ·  **Homogeneous.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Linear.** one-line definition + one-line exam use.  ·  # Solving first order, first degree equations: variable separable, homogeneous, linear ## 1. Introduction and motivation What the tool **Solving first order** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differential Equations fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1)."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Solving first order — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Solving first order — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Solving first order —…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…"
     }
   ]
 }

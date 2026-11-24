@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Integration is differentiation run backwards, so the rule table is read in reverse and $\\frac{x^{n+1}}{n+1}$ replaces $nx^{n-1}$. The exponent $n=-1$ is the one exception, giving a logarithm. Constants of integration must be carried on indefinite integrals and cancel from definite ones.…",
+      "text": "Anti-differentiation is differentiation with the arrows flipped: the table is the derivative table reversed, the + C restores the family that differentiation erased, and linearity carries over intact. The n = −1 gap is the logarithm's home, initial conditions pin the family to a single curve, and every answer is verified by differentiating it back.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Anti-derivatives: Integration — quick idea map\"><title>Anti-derivatives: Integration — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Anti-derivatives: Integration</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every antiderivative is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F+C$; the constant of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">integration is mandatory.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$n=-1$ is the exception to</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the power rule and gives</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\ln|x|$.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every antiderivative is</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F+C$; the constant of</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">integration is mandatory.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$n=-1$ is the exception to</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the power rule and gives</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$\\ln|x|$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Anti-derivatives: Integration — quick idea map\"><title>Anti-derivatives: Integration — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Anti-derivatives: Integration</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Integration is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">differentiation with the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">arrows flipped; + C is the</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Anti-derivative: F' = f;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the indefinite integral is</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a FAMILY F + C (equal…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- ∫xⁿdx = xⁿ⁺¹/(n+1) + C</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(n ≠ −1); ∫dx/x = ln|x| +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C - ∫dx/(1+x²) = tan⁻¹x +…</text></svg>",
         "caption": "Anti-derivatives: Integration — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Power: $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$\nLogarithmic: $\\int\\frac1x\\,dx=\\ln|x|+C$\nTrig: $\\int\\sin x\\,dx=-\\cos x+C$, $\\int\\cos x\\,dx=\\sin x+C$",
+      "text": "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C - ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Anti-derivatives: Integration — formula board\"><title>Anti-derivatives: Integration — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Anti-derivatives: Integration</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Power: $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Logarithmic: $\\int\\frac1x\\,dx=\\ln|x|+C$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Trig: $\\int\\sin x\\,dx=-\\cos x+C$, $\\int\\cos x\\,dx=\\sin</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">x+C$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Anti-derivatives: Integration — formula board\"><title>Anti-derivatives: Integration — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Anti-derivatives: Integration</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C -</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C</text></svg>",
         "caption": "Anti-derivatives: Integration — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Every antiderivative is $F+C$; the constant of integration is mandatory.  ·  $n=-1$ is the exception to the power rule and gives $\\ln|x|$."
+      "text": "***The pinning*** - f' = 2x, f(1) = 4: integrate to x^2 + C, then C = 3 - one condition selects one curve from the parallel family."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Differentiate your answer to check it — the fastest possible verification of an indefinite integral.  ·  Memorise $\\int\\frac{dx}{x}=\\ln|x|$ as the exception, so the power rule can be applied without hesitation everywhere else."
+      "text": "Write + C on every indefinite integral - it is a mark, not a decoration."
     },
     {
       "label": "Board question",
-      "text": "Finding indefinite integrals of powers, trig and exponential functions is a guaranteed 3–4 mark question."
+      "text": "**NEB-style (5m): Evaluate ∫(3x² − 4x + 5)dx and verify by differentiation.** — **Linearity + power rule (n + 1 over n + 1):** ∫3x²dx = x³; ∫4x dx = 2x²; ∫5dx = 5x ⟹ **x³ − 2x² + 5x + C**. **Verification:** d/dx[x³ − 2x² + 5x + C] = 3x² − 4x + 5 ✓ — the integrand returns exactly.…  ·  **NEB-style (5m): Evaluate ∫(2eˣ + 1/x)dx for x > 0.** — **Table entries:** ∫2eˣdx = 2eˣ (the exponential's self-replication); ∫dx/x = ln x on x > 0 (the |x| unnecessary on a positive domain) ⟹ **2eˣ + ln x + C**. **Verification:** 2eˣ + 1/x ✓.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Some functions have no elementary antiderivative $ int e^{-x^2} ,dx$ has no expression in elementary functions and is written as $ frac{ sqrt pi}{2} operatorname{erf}(x)$."
+      "text": "Check answers by differentiation; the check line doubles as your error detector."
     },
     {
       "label": "Quick concepts",
-      "text": "Integration is a signed accumulation, so parts below the axis subtract."
+      "text": "Integration is differentiation with the arrows flipped; + C is the price of reversing."
+    },
+    {
+      "label": "Key points",
+      "text": "Anti-derivative: F' = f; the indefinite integral is a FAMILY F + C (equal derivatives differ by a constant - MVT corollary). Linearity carries over. Table = derivative table reversed: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, -cos, sin, sec^2, tan^-1, sin^-1. The n = -1 gap is filled by the logarithm.…"
     },
     {
       "label": "Universal facts",
-      "text": "Accumulated radiation dose in radiotherapy is a definite integral of a rate, and the same structure gives total charge from current.  ·  The normalisation of the Gaussian error function exists precisely because $\\int e^{-x^2}dx$ has no elementary closed form — the need to evaluate it anyway is what motivated the special function."
+      "text": "The |x| in ln|x| is the domain repair that lets one antiderivative serve both half-lines."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find f(x) given f′(x) = 6x² − 2 and f(1) = 3.** — **Integrate:** f(x) = ∫(6x² − 2)dx = 2x³ − 2x + C — the parallel family. **Pin C:** f(1) = 2 − 2 + C = 3 ⟹ **C = 3** ⟹ f(x) = **2x³ − 2x + 3**. **Verification:** f′ = 6x² − 2 ✓ and f(1) = 2 − 2 + 3 = 3 ✓ — both conditions check.…  ·  **NEB-style (6m): A particle moves with velocity v(t) = 3t² − 6t (m/s) and s(0) = 2 m. Find s(t) and the times when the particle is at rest.** — **Integrate:** s(t) = ∫(3t² − 6t)dt = t³ − 3t² + C; s(0) = 2 ⟹ **C = 2** ⟹ s(t) = t³ − 3t² + 2.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**An anti-derivative reverses differentiation:** if $F'(x)=f(x)$ then $F$ is an antiderivative of $f$. Every antiderivative of $f$ has the form $F+C$, because differentiating a constant gives zero — so $C$ is arbitrary and this is not a defect of the method but the reason the constant of integration must always appear.  ·  **Integration reads the rule table backwards:** from $\\frac{d}{dx}x^n=nx^{n-1}$ we get $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$. The case $n=-1$ is the exception and gives $\\ln|x|+C$, which is why $\\frac1x$ behaves differently from every other power.  ·  **Reversing the trigonometric derivatives:** $\\int\\sin x\\,dx=-\\cos x+C$ and $\\int\\cos x\\,dx=\\sin x+C$, with the minus sign on the first coming from the negative derivative of cosine. From $\\int\\sec x\\tan x\\,dx=\\sec x+C$ and $\\int\\csc x\\cot x\\,dx=-\\csc x+C$ come the standard $\\sec$ and $\\csc$ integrals."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Anti-Derivatives and Integration This canonical is the **short-form doorway** to anti-derivatives and basic integration: the reverse of differentiation, the standard integral table, and the constant of integration in one page.…  ·  ## 2. Theorem Mirror - **Definition:** F is an anti-derivative of f on an interval if F′ = f there; ∫f(x)dx = F(x) + C. - **Constant of integration:** all anti-derivatives differ by a constant (MVT corollary: equal derivatives ⟹ equal up to constant) — the indefinite integral is a *family* of parallel curves.…  ·  ## 3. Deep Conceptual — Integration Is Differentiation Read Backwards - Every integral table entry is a derivative table entry reversed: ∫cos = sin because (sin)′ = cos. The table is not new mathematics but the old table with the arrows flipped — and the + C is the price of reversing (derivatives erase constants, so anti-differentiation must restore a whole family).…"
     },
     {
       "label": "More ideas",
-      "text": "Exponential: $\\int e^x\\,dx=e^x+C$  ·  Sum rule: $\\int(u\\pm v)\\,dx=\\int u\\,dx\\pm\\int v\\,dx$  ·  Statement 1: If $F'=f$ then $F$ is an antiderivative of $f$."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  No integral answer is complete until its derivative reproduces the integrand.  ·  Evaluate ∫(3x² − 4x + 5)dx."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: Every antiderivative of $f$ is of the form $F+C$.  ·  Statement 3: $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$.  ·  Statement 4: $\\int\\frac1x\\,dx=\\ln|x|+C$."
+      "text": "Evaluate ∫(2eˣ + 1/x)dx for x > 0.  ·  Find f given f′(x) = 6x² − 2 and f(1) = 3.  ·  ## 4. Deep Conceptual — The Family Picture and Initial Conditions - ∫f dx = F + C draws **parallel curves**: vertical translates sharing one slope field. An initial condition (F(0) = 3) selects one member — this is exactly how velocity + initial position determines position, the first differential equation every…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: The definite integral is a signed accumulation, so odd functions integrate to zero on symmetric intervals.  ·  **The integral is a signed area, not a sum of positive pieces:** $\\int$ accumulates over an INTERVAL with orientation, so a function below the axis contributes negatively. This is why $\\int_{-2}^{2}x\\,dx=0$ — the two halves cancel exactly rather than summing to a positive area.  ·  **The sum rule extends to any finite number of terms,** and constants of integration combine into a single $+C$ at the end. Writing a separate $C$ on every line is harmless but unnecessary."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Some functions have no elementary antiderivative:** $\\int e^{-x^2}\\,dx$ has no expression in elementary functions and is written as $\\frac{\\sqrt\\pi}{2}\\operatorname{erf}(x)$. A question expecting an elementary answer always uses an integrable function, so recognising the un-integrable case prevents wasted effort."
+      "text": "## 5. Worked Example Types - **Type A — table direct:** single entries with + C written every time. - **Type B — linearity splits:** polynomials and sums term by term. - **Type C — initial conditions:** integrate, then pin C from given data.…  ·  ## 6. Common Confusions **\"Forgetting + C\":** the family is the answer; one curve is not. **\"∫x⁻¹dx = x⁰/0\":** the gap is real — the logarithm is a different species, not a special case."
     }
   ]
 }

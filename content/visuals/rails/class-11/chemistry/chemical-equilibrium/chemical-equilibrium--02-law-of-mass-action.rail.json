@@ -24,16 +24,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+      "text": "The law of mass action converts equilibrium's rate-tie into a fraction. **Active mass** is molar concentration — except for pure solids and liquids, whose constant active masses (unity) banish them from every expression. Stated, the law says rate ∝ product of active masses raised to their coefficients; applied to aA + bB ⇌ cC + dD, the tie k_f[A]^a[B]^b = k_r[C]^c[D]^d rearranges to **Kc = [C]^c[D]^d/[A]^a[B]^b =…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Law of Mass Action and Equilibrium Constant — quick idea map\"><title>Law of Mass Action and Equilibrium Constant — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Law of Mass Action and Equilibrium Constant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 02 law</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of mass action.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 02 law of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">mass action.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kc =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">[Products]/[Reactants]</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kp = Kc(RT)^Δn</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Law of Mass Action and Equilibrium Constant — quick idea map\"><title>Law of Mass Action and Equilibrium Constant — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Law of Mass Action and Equilibrium Constant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The law of mass action is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Le Chatelier's</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">quantitative root: adding</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Active mass = molar</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">concentration; solids/pure</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">liquids = constant</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- rate = k[A]^a[B]^b - Kc</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= [C]^c[D]^d / [A]^a[B]^b</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= k_f/k_r - N₂ + 3H₂ ⇌…</text></svg>",
         "caption": "Law of Mass Action and Equilibrium Constant — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Kc = [Products]/[Reactants]\nKp = Kc(RT)^Δn\npH = -log[H⁺]"
+      "text": "- rate = k[A]^a[B]^b - Kc = [C]^c[D]^d / [A]^a[B]^b = k_f/k_r - N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³) - CaCO₃(s) ⇌ CaO(s) + CO₂(g): Kc = [CO₂] - Units of Kc = (mol/L)^Δn"
     },
     {
       "label": "Conditions",
@@ -45,7 +45,7 @@
     },
     {
       "label": "Solved",
-      "text": "Haber process: N₂+3H₂⇌2NH₃ (exothermic, high P favors NH₃)"
+      "text": "***The Haber expression*** — [NH₃]²/([N₂][H₂]³) printed on every fertiliser-plant flow sheet: the whole ammonia industry optimises against one fraction."
     },
     {
       "label": "Limitation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Law of Mass Action and Equilibrium Constant."
+      "text": "Expression recipe: \"products up, reactants down, coefficients as powers, solids out\". Flip/scale rules: reverse 1/Kc, double Kc², halve √Kc. Units: (mol/L)^Δn."
     },
     {
       "label": "Board question",
-      "text": "Practice identifying organelles and their functions in electron micrographs.  ·  Practice distinguishing prokaryotic from eukaryotic cells."
+      "text": "**NEB-style (3m): State the law of mass action. Derive the expression for the equilibrium constant Kc for the general reaction aA + bB ⇌ cC + dD.** — **Statement:** at constant temperature, the rate of a chemical reaction is directly proportional to the product of the active masses (molar concentrations) of the reactants, each raised to…  ·  **NEB-style (2m): Write the equilibrium constant expression and units for (a) N₂(g) + 3H₂(g) ⇌ 2NH₃(g) and (b) CaCO₃(s) ⇌ CaO(s) + CO₂(g).** — **(a)** Kc = [NH₃]² / ([N₂][H₂]³) — each coefficient becomes a power. Δn = (moles gaseous products) − (moles gaseous reactants) = 2 − 4 = −2, so the units are (mol/L)⁻², i.e. L²/mol².…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 02 law of mass action.",
+      "text": "In derivations, define active mass before using it and show the rate-equality step explicitly — the algebra from rates to Kc is where the marks live.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Law of Mass Action and Equilibrium Constant — topic mind map\"><title>Law of Mass Action and Equilibrium Constant — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Law of mass action</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Law of mass action</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Law of Mass Action and Equilibrium Constant — topic mind map of this topic's own sub-topics"
@@ -73,130 +73,47 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 02 law of mass action."
+      "text": "The law of mass action is Le Chatelier's quantitative root: adding reactant raises the denominator, unbalancing the fraction, and the reaction must shift forward to restore Kc — concentration effects are arithmetic, not mystery."
     },
     {
       "label": "Key points",
-      "text": "Core point for 02 law of mass action."
+      "text": "Active mass = molar concentration; solids/pure liquids = constant (omitted). Law of mass action: rate proportional to product of active masses raised to coefficients. Derivation: k_f[A]^a[B]^b = k_r[C]^c[D]^d → Kc = k_f/k_r = [C]^c[D]^d/[A]^a[B]^b. Kc depends only on temperature; catalyst no effect.…"
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 02 law of mass action."
+      "text": "Blood's oxygen loading obeys mass action: more O₂ partial pressure (deep breathing) pushes haemoglobin toward the loaded form — the law written in physiology."
     },
     {
       "label": "More practice",
-      "text": "Practice drawing and labeling the fluid mosaic model of the cell membrane.  ·  Practice explaining the steps of mitosis with diagrams.  ·  Practice explaining the stages of meiosis and comparing with mitosis."
+      "text": "**NEB-style (2m): The equilibrium constant for H₂(g) + I₂(g) ⇌ 2HI(g) is 49 at 450 °C. Calculate Kc for (a) 2HI ⇌ H₂ + I₂ and (b) ½H₂ + ½I₂ ⇌ HI at the same temperature.** — **(a)** Reversing an equation inverts its equilibrium constant: Kc = 1/49 ≈ **0.0204**.…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 02 law of mass action? → A  ·  What happens to K when temperature increases for an exothermic reaction? → B"
+      "text": "Question about 02 law of mass action? → A  ·  Active mass means: → B"
     },
     {
       "label": "Study notes",
-      "text": "Dynamic equilibrium: forward rate = backward rate.  ·  Kc = [products]/[reactants].  ·  Le Chatelier's principle."
+      "text": "## 1. Topic Introduction — The Law Behind Every Equilibrium Constant Guldberg and Waage (1864) turned the rate-tie of equilibrium into algebra: at equilibrium, the product of the products' concentrations divided by the product of the reactants' concentrations is a **constant** at fixed temperature.…  ·  ## 2. Fundamental Concepts ### 2.1 Active mass - **Active mass = molar concentration** (mol/L), symbolised [A]; for dilute solutions and gases it is proportional to the number of moles per litre. - Active masses of **pure solids and pure liquids are constant** (taken as unity) — they never appear in equilibrium expressions; only gases and solutes do.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Active mass** | Molar concentration, mol/L | [H₂] in mol/L | | **Law of mass action** | Rate proportional to product of active masses | rate = k[A]^a[B]^b | | **Equilibrium constant Kc** | k_f/k_r at equilibrium, fixed T | [C]^c[D]^d/[A]^a[B]^b | | **Heterogeneous equilibrium** | Species in…"
     },
     {
       "label": "More ideas",
-      "text": "Ka × Kb = Kw  ·  ❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.  ·  ❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity."
+      "text": "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.  ·  ❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.  ·  ❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways."
     },
     {
       "label": "More ideas",
-      "text": "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.  ·  ❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).  ·  ❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions."
+      "text": "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).  ·  ❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.  ·  ❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis."
     },
     {
       "label": "More ideas",
-      "text": "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.  ·  ❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.  ·  ❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat."
+      "text": "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.  ·  ❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.  ·  ❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels."
     },
     {
       "label": "More ideas",
-      "text": "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.  ·  ❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.  ·  ❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen."
+      "text": "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.  ·  ❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.  ·  ❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin)."
     },
     {
       "label": "More ideas",
-      "text": "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).  ·  ❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.  ·  ❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition)."
+      "text": "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.  ·  ❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).  ·  ❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane."
     }
-  ],
-  "keyPoints": [
-    "02 Law Of Mass Action is a core concept in chemical equilibrium.",
-    "Understanding 02 law of mass action requires knowing its definition, conditions, and limitations.",
-    "02 Law Of Mass Action has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 law of mass action must be memorized precisely.",
-    "02 Law Of Mass Action connects to neighbouring topics within chemical equilibrium and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 law of mass action.",
-    "Practical examples solidify understanding of 02 Law Of Mass Action and its real-world relevance.",
-    "Misconceptions about 02 law of mass action often arise from confusing it with similar concepts.",
-    "02 Law Of Mass Action follows systematic rules that can be applied step-by-step.",
-    "Review of 02 law of mass action should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Law Of Mass Action is defined by its specific characteristics within chemical equilibrium.",
-    "The conditions under which 02 law of mass action applies are as important as the concept itself.",
-    "02 Law Of Mass Action can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 law of mass action through application-based and comparison questions.",
-    "A clear grasp of 02 Law Of Mass Action builds the foundation for advanced topics in chemical equilibrium."
-  ],
-  "importantNotes": [
-    "When studying 02 law of mass action, always note the exceptions alongside the general rule.",
-    "02 Law Of Mass Action should be reviewed with at least one worked example per sub-point.",
-    "Link 02 law of mass action back to prior knowledge in chemical equilibrium for deeper retention.",
-    "Practice past NEB board questions on 02 Law Of Mass Action to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Law Of Mass Action: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 law of mass action with a related concept from chemical equilibrium.",
-    "Exam-style problem: solve a question involving 02 Law Of Mass Action under time pressure.",
-    "Real-world connection: show how 02 Law Of Mass Action appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Law Of Mass Action and state two conditions required for it to occur.",
-    "Differentiate 02 Law Of Mass Action from the most commonly confused concept in chemical equilibrium.",
-    "Solve a numerical or structural problem involving 02 Law Of Mass Action.",
-    "List three applications of 02 Law Of Mass Action in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Law Of Mass Action without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Law Of Mass Action.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Law Of Mass Action."
-  ],
-  "universalFacts": [
-    "02 Law Of Mass Action is part of the NEB Class 11 chemical equilibrium syllabus.",
-    "Every concept in chemical equilibrium builds upon definitions established earlier in the chapter.",
-    "02 Law Of Mass Action is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Law Of Mass Action improves performance across the entire chemical equilibrium unit.",
-    "Revision of 02 Law Of Mass Action should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Law Of Mass Action with closely related concepts in chemical equilibrium — focus on distinguishing features.",
-    "The scope of 02 Law Of Mass Action is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Law Of Mass Action outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Law Of Mass Action and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Law Of Mass Action? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Law Of Mass Action is primarily studied under which branch of chemical equilibrium? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Law Of Mass Action is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemical equilibrium — Answer: B",
-    "Which example correctly illustrates 02 Law Of Mass Action? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Law Of Mass Action differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Law Of Mass Action.",
-    "Step-by-step animated derivation of the key relationship in 02 Law Of Mass Action.",
-    "Interactive toggle between correct and incorrect representations of 02 Law Of Mass Action."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Law Of Mass Action.",
-    "Side-by-side comparison animation of 02 Law Of Mass Action vs commonly confused concept.",
-    "Timelapse build-up of 02 Law Of Mass Action from prerequisite knowledge in chemical equilibrium."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Law Of Mass Action",
-    "Comparison table: 02 Law Of Mass Action vs related concepts in chemical equilibrium",
-    "Step-by-step worked example layout for 02 Law Of Mass Action"
-  ],
-  "summary": [
-    "02 Law Of Mass Action is a fundamental concept in chemical equilibrium that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Law Of Mass Action involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Law Of Mass Action alongside related concepts in chemical equilibrium ensures strong conceptual clarity and exam readiness."
   ]
 }

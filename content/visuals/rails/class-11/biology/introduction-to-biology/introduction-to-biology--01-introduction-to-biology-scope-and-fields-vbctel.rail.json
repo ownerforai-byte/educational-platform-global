@@ -21,9 +21,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Biology is the scientific study of living organisms, from molecules (DNA, proteins) to the entire biosphere. It encompasses branches such as Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, and Biotechnology. Living things share seven characteristics: cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli, and evolution.…",
+      "text": "Biology spans molecules to the biosphere and splits into branches by organism (botany, zoology, microbiology), by level (cytology, histology, physiology, ecology) and by purpose (medicine, agriculture, biotechnology). Its work runs from pure curiosity — how DNA replicates, how the lac operon switches — to urgent application — insulin in E.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Introduction to Biology — Scope and Fields — quick idea map\"><title>Introduction to Biology — Scope and Fields — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Introduction to Biology — Scope and Fields</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition of biology</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">9-level scope</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Biology: the study of</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">living organisms.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scope: from molecules to</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the biosphere (9 levels).</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Introduction to Biology — Scope and Fields — quick idea map\"><title>Introduction to Biology — Scope and Fields — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Introduction to Biology — Scope and Fields</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Biology is layered:**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">each level (molecule →</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">biosphere) has its own…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scope: molecules →</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">biosphere; fields split by</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">organism…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Branches: botany, zoology,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">microbiology, morphology,</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">anatomy, cytology,…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Biology = Bios (life) +</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Logos (study) = the study</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of living organisms</text></svg>",
         "caption": "Introduction to Biology — Scope and Fields — quick idea map of this topic's headline ideas"
       }
     },
@@ -34,7 +34,7 @@
     },
     {
       "label": "Conditions",
-      "text": "Biology is NOT the same as medicine or agriculture; it is the foundational science, and medicine/agriculture are applied fields.  ·  Botany studies plants (including algae and fungi in some systems); Zoology studies animals."
+      "text": "**Morphology vs anatomy:** morphology = external form; anatomy = internal organisation of tissues.  ·  **Basic vs applied:** basic asks \"how does it work?\"; applied asks \"how can we use it?\""
     },
     {
       "label": "Special cases",
@@ -42,11 +42,11 @@
     },
     {
       "label": "Solved",
-      "text": "Botany: Oryza sativa (rice) — a monocot, angiosperm, Poaceae.  ·  Zoology: Rana tigrina (tiger frog) — an amphibian, Chordata, Anura."
+      "text": "***Gene therapy*** — applied branch product built on decades of basic molecular genetics."
     },
     {
       "label": "Limitation",
-      "text": "Microbiology includes bacteria, viruses, fungi, protists; it overlaps with botany and zoology.  ·  Physiology = function; Anatomy = structure; they are complementary, not the same."
+      "text": "Branch questions appeared in 2021 and 2024 — memorise 6+ branch-definition pairs so you can choose any asked number."
     },
     {
       "label": "Derivation",
@@ -54,15 +54,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Biology = B-I-O (Basic, Investigative, Organic) = life study.  ·  Scope: Molecule → Cell → Tissue → Organ → Organism → Population → Community → Ecosystem → Biosphere."
+      "text": "\"Bio = life; -ology = study; the prefix names the slice of life.\""
     },
     {
       "label": "Board question",
-      "text": "List 8 branches of biology with one focus each.  ·  State the characteristics of life (7)."
+      "text": "**Q.** Define taxonomy and ecology. **Answer.** **Taxonomy** — the science of naming, describing and classifying organisms into hierarchical groups (kingdom → species) using rules such as binomial nomenclature.…"
     },
     {
       "label": "Hints",
-      "text": "State the 7 characteristics of life.  ·  Explain the scientific method (6 steps).",
+      "text": "Most-tested: five branches with problems (2021), four branches (2024), basic vs applied (2023).",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Introduction to Biology — Scope and Fields — topic mind map\"><title>Introduction to Biology — Scope and Fields — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Introduction to Biology</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Introduction to Biology:</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Scope</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Fields of biology</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Introduction to Biology — Scope and Fields — topic mind map of this topic's own sub-topics"
@@ -70,27 +70,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition of biology  ·  9-level scope  ·  7 characteristics of life  ·  Branches of biology"
+      "text": "**Biology is layered:** each level (molecule → biosphere) has its own questions and emergent properties — no single branch sees the whole organism."
     },
     {
       "label": "Key points",
-      "text": "Biology: the study of living organisms.  ·  Scope: from molecules to the biosphere (9 levels).  ·  Branches: Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, Biotechnology.  ·  Characteristics of life: cellular, metabolism, homeostasis, growth, reproduction, response, evolution."
+      "text": "Scope: molecules → biosphere; fields split by organism (botany/zoology/microbiology), by level (molecular to ecosystem), by purpose (medicine/agriculture/environment).  ·  Branches: botany, zoology, microbiology, morphology, anatomy, cytology, histology, physiology, ecology, genetics, evolution, taxonomy, embryology, paleontology, molecular biology, biotechnology, parasitology.  ·  Basic research = knowledge for its own sake (DNA replication); applied = problem-solving (insulin in E. coli)."
     },
     {
       "label": "Universal facts",
-      "text": "There are approximately 8.7 million species on Earth (only ~15% described).  ·  Biology is the fastest-growing science; over 200,000 biology research papers are published annually."
-    },
-    {
-      "label": "More practice",
-      "text": "Explain the scientific method (steps).  ·  Differentiate botany from zoology (4 points).  ·  Describe the key features of Scope and Fields of Biology."
-    },
-    {
-      "label": "More hints",
-      "text": "Differentiate botany from zoology.  ·  Scope and Fields of Biology is frequently tested."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Microbiology: Escherichia coli — a Gram-negative, prokaryotic bacterium.  ·  Genetics: Mendel's pea experiments — the foundation of modern genetics."
+      "text": "Biology, medicine and agriculture together employ more scientists than any other natural science."
     },
     {
       "label": "MCQ drill",
@@ -98,27 +86,27 @@
     },
     {
       "label": "Study notes",
-      "text": "Biology: the study of living organisms (Greek: bios = life, logos = study).  ·  Scope: from molecules (DNA, proteins) to cells, tissues, organs, organisms, populations, communities, ecosystems, and the biosphere.  ·  Branches: Botany (plants), Zoology (animals), Microbiology (microorganisms), Genetics (heredity), Ecology (organism-environment), Physiology (function), Anatomy (structure), Taxonomy (classification), Biotechnology (application)."
+      "text": "## 1. Topic Introduction — What Biology Studies and How Far It Reaches Biology (Greek *bios* = life, *logos* = study) is the science of living organisms — their structure, function, origin, evolution and relations.…  ·  ## 2. Fundamental Concepts — Scope of Biology | Level | Question asked | Field | |---|---|---| | Molecules | How does DNA code protein? | Molecular biology, biochemistry | | Cells | How do cells divide and specialise? | Cytology, cell biology | | Tissues/organs | How does a leaf breathe? | Anatomy, physiology | | Organisms | How does an organism develop, behave? | Morphology,…  ·  ## 3. Major Branches of Biology (NEB 2021 — five with problems studied; NEB 2024 — any four) | Branch | Studies | Example problem | |---|---|---| | **Botany** | Plants — structure, physiology, classification | Why do sal forests regenerate poorly under heavy lopping? | | **Zoology** | Animals — structure, behaviour, classification | How does the tiger population respond to…"
     },
     {
       "label": "More ideas",
-      "text": "Scientific method  ·  Botany vs zoology  ·  Experimental science"
+      "text": "Branches of biology: know at least 8 with their focus.  ·  Differentiate botany from zoology (4 points).  ·  Pay attention to key terminology in Scope and Fields of Biology."
     },
     {
       "label": "More ideas",
-      "text": "Species diversity  ·  5 Scopes of Biology Biology is very important as it helps us to understand nature and living things and adjust to our surroundings.  ·  Its application extends far beyond basic scientific research, impacting crucial sectors like health, genetics, nursing, agriculture, environmental science, and conservation."
+      "text": "Connect this topic to other biological concepts.  ·  \"Biology is the study of the only things in the universe known to study anything.\"  ·  Which branch would you choose to study Nepal's yarsagumba trade, and why? **Answer.** **Ecology** (supported by economic botany and conservation biology). Yarsagumba (*Ophiocordyceps sinensis*, a fungus parasitic on alpine caterpillars) is harvested from alpine meadows above ~3,500 m, so the question is really an…"
     },
     {
       "label": "More ideas",
-      "text": "The diverse scopes of biology underscore its importance in addressing societal challenges and advancing technological innovations that benefit both humans and the environment.  ·  Some important scopes of biology can be discussed under following heads: 1.  ·  In the Field of Health, Disease and Medicine: Biology provides essential knowledge for understanding human health, disease mechanisms, and developing medical treatments."
+      "text": "Explain scientific method  ·  Differentiate botany from zoology  ·  Study the definitions and key terms."
     },
     {
       "label": "More ideas",
-      "text": "Scientific method: observation → hypothesis → experiment → conclusion.  ·  Biology is an experimental, evidence-based science.  ·  ~8.7 million species; only ~15% described."
+      "text": "Create a summary of Scope and Fields of Biology.  ·  Practice with previous exam questions.  ·  ## 4. Conceptual Relationships - **Here → every later topic:** each unit of this syllabus is one of these branches in action (taxonomy → Unit 2; ecology → Unit 4; evolution → Unit 7). - **Here → scientific method (Topic 31):** the fields share one method of knowing.…"
     },
     {
       "label": "More ideas",
-      "text": "A \"characteristic of life\" must be present in ALL living things (e.g., metabolism, reproduction); not all organisms reproduce sexually (some reproduce asexually).  ·  The scientific method is iterative; a single experiment rarely proves a hypothesis.  ·  Distinguish between key concepts in Scope and Fields of Biology."
+      "text": "## 5. Exam Orientation and Previous Year Questions (NEB) ### 5.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2077/2021 | Introduction to Biology | Branches | Describe any five branches of biology with one example of the kind of problem studied…"
     }
   ]
 }

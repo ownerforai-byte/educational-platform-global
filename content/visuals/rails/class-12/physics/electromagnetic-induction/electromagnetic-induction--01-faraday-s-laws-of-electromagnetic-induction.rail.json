@@ -24,9 +24,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Faraday's laws of electromagnetic induction (Electromagnetic Induction, Physics, class-12-notes) covers Faraday's laws of electromagnetic induction. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "An emf is induced only while flux linkage is changing, and its magnitude is N times the rate of change of flux. More turns or a faster change mean a larger emf. A steady flux induces nothing, and Lenz's law fixes the direction.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Faraday's laws of electromagnetic induction — quick idea map\"><title>Faraday's laws of electromagnetic induction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Faraday's laws of electromagnetic induction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Faraday's laws of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electromagnetic induction</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Faraday's laws of electromagnetic induction — quick idea map\"><title>Faraday's laws of electromagnetic induction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Faraday's laws of electromagnetic induction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Flux linkage</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Faraday emf</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Faraday's laws of</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electromagnetic induction</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A changing flux induces an</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">emf.</text></svg>",
         "caption": "Faraday's laws of electromagnetic induction — quick idea map of this topic's headline ideas"
       }
     },
@@ -37,15 +37,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Faraday's laws of electromagnetic induction\" as one blob → ✅ split into: faraday's laws of electromagnetic induction.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
+      "text": "1 V = 1 Wb/s.  ·  A search coil measures a changing field by the induced emf."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Faraday found that an emf appears in a coil while the magnetic flux through it is changing. A bar magnet at rest in the coil, however strong, induces nothing.  ·  The flux through one turn is B times the perpendicular area. For N turns the flux linkage is N times that flux. The induced emf equals the negative of the rate of change of flux linkage."
     },
     {
       "label": "Limitation",
@@ -53,47 +53,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Faraday's laws of electromagnetic induction — Electromagnetic Induction, Physics (class-12-notes).  ·  **Tested.** define it · list: faraday's laws of electromagnetic induction · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "No change, no emf.  ·  emf = N times the rate of change of flux."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Faraday's laws of electromagnetic induction\" with one example.  ·  compare \"Faraday's laws of electromagnetic induction\" with the related idea from a neighbouring unit."
+      "text": "Write the induced emf for N turns.  ·  Name two ways to change the flux."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Faraday's laws of electromagnetic induction — topic mind map\"><title>Faraday's laws of electromagnetic induction — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Faraday's laws of electromagnetic induction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Faraday's laws of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">electromagnetic</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Faraday's laws of electromagnetic induction — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Flux linkage  ·  Faraday emf  ·  Many turns  ·  Open-circuit emf"
+    },
+    {
       "label": "Key points",
-      "text": "• Faraday's laws of electromagnetic induction"
+      "text": "• Faraday's laws of electromagnetic induction  ·  A changing flux induces an emf.  ·  More turns mean a larger emf.  ·  A steady flux induces nothing."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Faraday's laws of electromagnetic induction\" and verify the answer is plausible."
+      "text": "What does the minus sign mean?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A coil of 100 turns has its flux increased by 0.020 Wb in 0.50 s. Find the magnitude of the average induced emf."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Faraday's laws of electromagnetic induction\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "A magnet at rest in a coil induces → B  ·  The induced emf is larger when → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "The flux can be changed by moving the magnet, by switching the field, by changing the area of the loop, or by rotating the coil. A generator uses the rotation.  ·  A faster change produces a larger emf. Doubling N doubles the emf for the same change of flux per turn. That is why a search coil has many turns.  ·  If the circuit is closed, the emf drives an induced current. If the circuit is open, the emf is still there and can be read by a voltmeter, but no current flows."
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  define + example each sub-idea: faraday's laws of electromagnetic induction.  ·  one worked example for \"Faraday's laws of electromagnetic induction\" — check units / edge cases."
+      "text": "L = NΦ/I  ·  The minus sign is Lenz's law.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ.."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+      "text": "A steady field does not induce an emf.  ·  The emf depends on the rate, not on the flux alone.  ·  N multiplies the emf."
+    },
+    {
+      "label": "More ideas",
+      "text": "An open circuit can have an emf and no current.  ·  Include N when the coil has many turns.  ·  Say what is changing."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Induced emf = − N dΦ/dt and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
     }
   ]
 }

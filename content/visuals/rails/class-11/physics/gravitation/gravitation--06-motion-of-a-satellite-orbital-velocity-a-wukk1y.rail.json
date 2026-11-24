@@ -29,16 +29,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "A satellite orbits when gravity supplies the centripetal force: v₀ = √(GM/r) and T = 2π√(r³/GM). Energy is K = GMm/2r, U = −GMm/r, E = −GMm/2r. Orbital speed is mass-independent; higher orbits are slower but longer-period. Weightlessness arises from continuous free fall.",
+      "text": "A satellite orbits because gravity supplies exactly the centripetal force: $mv_o^2/r = GMm/r^2$, giving the orbital velocity $v_o = \\sqrt{GM/r}$ — independent of the satellite's own mass. The period $T = 2\\pi\\sqrt{r^3/GM}$ obeys Kepler's third law $T^2 \\propto r^3$: nearer orbits are faster. At Earth's surface the orbital speed is $\\sqrt{gR} \\approx 7.9$ km/s; escape speed is $\\sqrt{2}$ times larger.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a satellite: orbital velocity and time period o… — quick idea map\"><title>Motion of a satellite: orbital velocity and time period o… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion of a satellite: orbital velocity and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">time period o…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Orbital velocity v₀ =</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">√(GM/r) follows from</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">gravity = centripetal</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Period T = 2π√(r³/GM) —</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kepler's third law.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Motion of a satellite:</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">orbital velocity</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Time period of the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">satellite</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a satellite: orbital velocity and time period o… — quick idea map\"><title>Motion of a satellite: orbital velocity and time period o… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Motion of a satellite: orbital velocity and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">time period o…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Gravity is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">centripetal force:**</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$mv_o^2/r = GMm/r^2$ — one</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_o = \\sqrt{GM/r}$</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(mass-independent); $T =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2\\pi\\sqrt{r^3/GM}$; $T^2</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_o$ at surface orbit ≈</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">7.9 km/s; $v_e =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\sqrt{2}v_o$.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- mv_o²/r = GMm/r² → v_o =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">√(GM/r) - v_o =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">R√(g/(R+h)) - T =</text></svg>",
         "caption": "Motion of a satellite: orbital velocity and time period o… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "g = GM/r²\nv_orb = √(GM/r)\nv_esc = √(2GM/r)"
+      "text": "- mv_o²/r = GMm/r² → v_o = √(GM/r) - v_o = R√(g/(R+h)) - T = 2π√(r³/GM); T² ∝ r³ - v_e = √2 · v_o"
     },
     {
       "label": "Conditions",
@@ -50,7 +50,7 @@
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  LEO speed: v = √(gR) = √(9.8×6.4×10⁶) ≈ 7.9 km/s."
+      "text": "***NEB 2022*** — 600 km orbit: r = 7×10⁶ m → v_o = 7.56 km/s, T ≈ 96 min."
     },
     {
       "label": "Limitation",
@@ -62,15 +62,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Near surface: v₀ = √(gR) ≈ 7.9 km/s — remember this anchor value.  ·  T applet: for the ISS (≈ 90 min) confirm with T = 2π√(r³/GM)."
+      "text": "\"r = R + h; v_o = √(GM/r); T = 2πr/v_o.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Motion of a satellite: orbital velocity and time period o…\" with one example.  ·  compare \"Motion of a satellite: orbital velocity\" with the related idea from a neighbouring unit."
+      "text": "**Numerical (4m): Find the orbital radius for a satellite with period 24 h (M = 6×10²⁴ kg, G = 6.67×10⁻¹¹).** — r³ = GMT²/4π² = 6.67×10⁻¹¹×6×10²⁴×(86400)²/39.48 = 7.54×10²² m³ → r = 4.23×10⁷ m ≈ 42 300 km (the geostationary radius)."
     },
     {
       "label": "Hints",
-      "text": "Deriving v₀ and T from equating gravity to centripetal force is a year-on-year question.  ·  Finding the altitude for a given period (e.g., 2 h, 24 h) is a standard numerical.",
+      "text": "The 2022 numerical is the template: add the altitude, one square root, done.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Motion of a satellite: orbital velocity and time period o… — topic mind map\"><title>Motion of a satellite: orbital velocity and time period o… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Motion of a satellite</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Motion of a satellite:</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">orbital velocity</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Time period of the</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">satellite</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Motion of a satellite: orbital velocity and time period o… — topic mind map of this topic's own sub-topics"
@@ -78,27 +78,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Orbital velocity v₀ = √(GM/r) follows from gravity = centripetal force.  ·  Period T = 2π√(r³/GM) — Kepler's third law.  ·  Orbital speed is independent of satellite mass.  ·  Energy: K = GMm/2r, U = −GMm/r, E = −GMm/2r."
+      "text": "**Gravity is the centripetal force:** $mv_o^2/r = GMm/r^2$ — one line that generates all orbital results."
     },
     {
       "label": "Key points",
-      "text": "• Motion of a satellite: orbital velocity  ·  • Time period of the satellite  ·  v₀ = √(GM/r) — orbital speed depends only on radius, not satellite mass.  ·  T = 2π√(r³/GM) — Kepler's third law: T² ∝ r³."
+      "text": "$v_o = \\sqrt{GM/r}$ (mass-independent); $T = 2\\pi\\sqrt{r^3/GM}$; $T^2 \\propto r^3$.  ·  $v_o$ at surface orbit ≈ 7.9 km/s; $v_e = \\sqrt{2}v_o$."
     },
     {
       "label": "Universal facts",
-      "text": "Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².  ·  Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r)."
-    },
-    {
-      "label": "More practice",
-      "text": "solve / apply for \"Motion of a satellite: orbital velocity and time period o…\" and verify the answer is plausible.  ·  A satellite orbits at 200 km above Earth. Find its orbital speed and period.  ·  Find the height at which a satellite has an orbital period of 2 hours."
-    },
-    {
-      "label": "More hints",
-      "text": "Energy numericals (K, U, E) for a given orbit are frequently asked.  ·  Conceptual: 'why do astronauts float?' — answer free fall."
-    },
-    {
-      "label": "Extra solved",
-      "text": "ISS period ≈ 93 minutes at r = 6.8×10⁶ m.  ·  Geostationary altitude ≈ 35,800 km; v ≈ 3.08 km/s."
+      "text": "The ISS completes an orbit in about 92 minutes; the Moon, 60× farther out, takes 27.3 days — T² ∝ r³ in action."
     },
     {
       "label": "MCQ drill",
@@ -106,27 +94,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s².  ·  **Fact.** Orbital velocity v = √(GM/r); time period T = 2π√(r³/GM); escape velocity v_esc = √(2GM/r) = √2·v_orbital (at same r).  ·  **Fact.** For a uniform sphere, g ∝ r inside and g = 0 at the centre; g decreases as 1/r² outside."
+      "text": "## 1. Topic Introduction — Falling Around the World A satellite is simply a projectile whose horizontal speed is so large that its fall curves around the Earth instead of ending on it. Gravity supplies exactly the centripetal force needed, and from that single equation follow the orbital speed, the period and Kepler's third law.  ·  ## 2. Fundamental Concepts ### 2.1 Orbital velocity derivation For a satellite of mass $m$ in a circular orbit of radius $r$ (= R + h) around Earth (mass $M$): $$\\frac{mv_o^2}{r} = \\frac{GMm}{r^2} \\Rightarrow \\boxed{v_o = \\sqrt{\\frac{GM}{r}}}$$ Independent of the satellite's mass. Using $g_0 = GM/R^2$: $v_o = R\\sqrt{g/(R+h)}$.…  ·  ## 3. Conceptual Relationships - **To Topic 24:** gravity plays the centripetal role — the orbital equation is $F_c = F_g$. - **To Topic 34:** $v_e = \\sqrt{2}\\,v_o$ at the same radius. - **To Topic 35:** orbital KE = GMm/2r; total energy −GMm/2r. - **To Kepler:** $T^2 \\propto r^3$ is Kepler's third law derived from Newton."
     },
     {
       "label": "More ideas",
-      "text": "Weightlessness = free fall.  ·  T² ∝ r³ (Kepler)  ·  Orbital velocity: v₀ = √(GM/r)"
+      "text": "**Energy Relations:** For circular orbits: $K = GMm/2r$, $U = -GMm/r$, $E = -GMm/2r$. Notice $K = -U/2$ and $E = U/2$. The negative total energy confirms a bound orbit. To raise an orbit, you ADD energy (thrust), but the orbital speed *decreases* because $v_0 \\propto 1/\\sqrt{r}$.  ·  **Satellites DO fall** — continuously; their sideways speed makes the fall miss the ground. That is orbiting.  ·  **r means distance from the centre** (R + h), never the altitude alone."
     },
     {
       "label": "More ideas",
-      "text": "Near-surface orbital speed: v₀ = √(gR)  ·  Time period: T = 2πr/v₀ = 2π√(r³/GM)  ·  Kinetic energy: K = GMm/2r"
+      "text": "E is negative everywhere in orbit — a positive total energy means escape.  ·  To compare orbits always compute r = R + h first.  ·  NEB asks to derive v₀ and T and to solve for altitude given T."
     },
     {
       "label": "More ideas",
-      "text": "Total energy: E = −GMm/2r (E = U/2, K = −U/2)  ·  **Energy Relations:** For circular orbits: $K = GMm/2r$, $U = -GMm/r$, $E = -GMm/2r$. Notice $K = -U/2$ and $E = U/2$. The negative total energy confirms a bound orbit. To raise an orbit, you ADD energy (thrust), but the orbital speed *decreases* because $v_0 \\propto 1/\\sqrt{r}$.  ·  Higher orbit → slower speed, longer period."
+      "text": "Verified PYQ: orbital speed numerical (2022, 4m).  ·  \"A satellite is a body continuously falling freely towards the Earth while moving tangentially.\"  ·  Why does a heavier satellite need the same orbital speed?"
     },
     {
       "label": "More ideas",
-      "text": "E_total = −GMm/2r: bound orbit, with K = −U/2.  ·  Astronauts float because of free fall, not absence of gravity.  ·  ❌ skip the key fact → ✅ newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s².."
+      "text": "Compute K, U and E for a given orbit.  ·  Find the geostationary altitude from T = 24 h.  ·  Explain weightlessness in orbit in terms of free fall."
     },
     {
       "label": "More ideas",
-      "text": "❌ 'A satellite must be above the atmosphere to feel no gravity.' ✅ A satellite feels gravity at every altitude — it is in continuous free fall. It never falls to Earth because its forward speed curves its fall into an orbit.  ·  ❌ 'Weightlessness means g = 0 on the ISS.' ✅ g at 400 km is ≈ 8.7 m/s² (89% of surface). Astronauts float because both they and the station accelerate toward Earth together (free fall).  ·  ❌ 'Heavier satellites orbit slower.' ✅ Orbital speed is independent of the satellite's mass: v₀ = √(GM/r)."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: newton: f = g m₁m₂/r²; g = gm/r²; at earth's surface g = gm/r² ≈ 9.8 m/s².  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2078/2022 | Mechanics | Circular motion/Gravitation | An artificial satellite revolves in a circular orbit 600 km above the surface of…"
     }
   ]
 }

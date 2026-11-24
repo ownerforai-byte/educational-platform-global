@@ -61,7 +61,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Applications  ·  • Rate of change"
+      "text": "Trick 1: Related rates recipe: write the relation between variables → differentiate w.r.t. t → substitute known values and rates → solve; keep units in the final answer.  ·  Trick 2: Approximation: f(x + δx) ≈ f(x) + f′(x)δx — choose the base point where f and f′ are easy (e.g. 25 for √26)."
     },
     {
       "label": "Board question",
@@ -77,7 +77,7 @@
     },
     {
       "label": "Key points",
-      "text": "• Approximation  ·  • Error estimation"
+      "text": "• Applications  ·  • Rate of change  ·  • Approximation  ·  • Error estimation"
     },
     {
       "label": "More practice",
@@ -93,11 +93,19 @@
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: applications, rate of change, approximation, error estimation.  ·  one worked example for \"Applications: rate of change, approximation, error estima…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Relative error = δx/x; percentage error ×100 — for products, relative errors ADD: δ(P)/P = δa/a + δb/b.  ·  Trick 4: For sphere/volume rates, differentiate V = (4/3)πr³ → dV/dt = 4πr² dr/dt — quote the differentiated form first for the method mark.  ·  define + example each sub-idea: applications, rate of change, approximation, error estimation."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Applications: rate of change, approximation, error estima…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Applications: rate of change, approximation, error estimation ## 1. Introduction and motivation What the tool **Applications** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differentiation fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Figures and graphs - **F1** — Applications — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Applications — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Applications — curated reference…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…  ·  ## 8. Exam Zone, practice and textbook exercises NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).…"
     }
   ]
 }

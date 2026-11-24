@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Discontinuities sort into three types, distinguished entirely by the one-sided limits. Removable means they agree but the function value differs, so one reassignment repairs it. Jump means both exist and differ, giving a finite step. Infinite means at least one diverges, producing a vertical asymptote. Differentiability is impossible at all three, because it presupposes continuity.",
+      "text": "Every discontinuity answers two questions: do the sides exist and agree, and does the value match? Agreement plus mismatch is removable (repairable by one value); finite disagreement is a jump (size = |RHL − LHL|); blow-up is a wall (odd splits, even unifies); no side limit is oscillatory. Rational functions triage by factorisation — cancelled roots are holes, surviving roots are walls.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Types of Discontinuity — quick idea map\"><title>Types of Discontinuity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Types of Discontinuity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Removable: the one-sided</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limits agree but the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function value does not.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Jump: both one-sided</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limits exist and differ.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Removable: the one-sided</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limits agree but the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function value does not.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Jump: both one-sided</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limits exist and differ.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Types of Discontinuity — quick idea map\"><title>Types of Discontinuity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Types of Discontinuity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Two binary questions</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">classify every</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">discontinuity; the repair</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Decision tree: sides exist</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and agree? No -&gt; jump</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(finite unequal),</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Removable: lim exists,</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f(a) ≠ L or undefined ⟹</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">repair f(a) = L - Jump:</text></svg>",
         "caption": "Types of Discontinuity — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Removable: $f(a^-)=f(a^+)=L\\ne f(a)$, or $f(a)$ undefined\nJump: $f(a^-),f(a^+)$ finite but $f(a^-)\\ne f(a^+)$\nJump size: $|f(a^+)-f(a^-)|$",
+      "text": "- Removable: lim exists, f(a) ≠ L or undefined ⟹ repair f(a) = L - Jump: LHL ≠ RHL, both finite; size = |RHL − LHL|",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Types of Discontinuity — formula board\"><title>Types of Discontinuity — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Types of Discontinuity</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Removable: $f(a^-)=f(a^+)=L\\ne f(a)$, or $f(a)$</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">undefined</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Jump: $f(a^-),f(a^+)$ finite but $f(a^-)\\ne f(a^+)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Jump size: $|f(a^+)-f(a^-)|$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Types of Discontinuity — formula board\"><title>Types of Discontinuity — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Types of Discontinuity</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- Removable: lim exists, f(a) ≠ L or undefined ⟹ repair</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">f(a) = L - Jump: LHL ≠ RHL, both finite; size = |RHL −</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">LHL|</text></svg>",
         "caption": "Types of Discontinuity — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Removable: the one-sided limits agree but the function value does not.  ·  Jump: both one-sided limits exist and differ."
+      "text": "***The wall with a dot*** - assigning f(2) = 1/4 at a wall's foot changes nothing: walls live in the neighbourhood, dots live at the point."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Compute BOTH one-sided limits first; comparing $(f(a^-), f(a^+), f(a))$ classifies every case.  ·  If one side is infinite, stop — it is an infinite discontinuity regardless of the other side."
+      "text": "Sides first, value second - the order of the tree is the order of the marks."
     },
     {
       "label": "Board question",
-      "text": "Classifying a discontinuity from its one-sided limits is a frequent 3-mark question."
+      "text": "**NEB-style (6m): Classify the discontinuity of f(x) = (x² − 1)/(x − 1) for x ≠ 1 with f(1) = 3, and state the repair.** — **Sides:** (x²−1)/(x−1) = x + 1 for x ≠ 1 ⟹ LHL = **2**, RHL = **2** — sides exist and agree ⟹ limit L = 2. **Value:** f(1) = 3 ≠ 2.…  ·  **NEB-style (6m): Find and classify all discontinuities of f(x) = (x + 1)/(x² − 5x + 6).** — **Factor:** (x − 2)(x − 3) ⟹ suspects {2, 3}; numerator at 2 is 3 ≠ 0, at 3 is 4 ≠ 0 ⟹ no cancellation, both are walls. **At x = 2:** denominator ≈ (x−2)(−1); x → 2⁺ ⟹ small negative ⟹ → **−∞**; x → 2⁻ ⟹ → **+∞** (splitting).…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Effect on the derivative differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
+      "text": "State the repair verdict explicitly: \"removable, repair f(a) = L\" or \"non-removable\"."
     },
     {
       "label": "Quick concepts",
-      "text": "Infinite: at least one one-sided limit diverges, giving a vertical asymptote.  ·  Any discontinuity rules out differentiability at that point."
+      "text": "Two binary questions classify every discontinuity; the repair test separates point-sickness from neighbourhood-sickness."
+    },
+    {
+      "label": "Key points",
+      "text": "Decision tree: sides exist and agree? No -> jump (finite unequal), infinite (blow-up, odd splits/even unifies), or oscillatory. Yes -> limit L exists; f(a) = L? Yes -> continuous; No -> removable, repair f(a) = L. Rational triage: cancelled roots are holes, surviving denominator roots are walls.…"
     },
     {
       "label": "Universal facts",
-      "text": "The jump in a sampled digital signal is the physical origin of quantisation noise in audio and image compression.  ·  A removable discontinuity is why a computer's piecewise approximation to a smooth function can be made continuous by assigning the limit at the join."
+      "text": "Removable breaks leave every limit intact; only continuity and value questions see them."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify the behaviour at x = 2 fully.** — **LHL:** lim_{x→2⁻} x = **2**. **RHL:** lim_{x→2⁺} (7 − 2x) = 7 − 4 = **3**. **Value:** f(2) = 3 (≥ owns the point).…  ·  **NEB-style (6m): For f(x) = (x³ − 1)/(x² − 1) for x ≠ 1 with f(1) = k: find k for continuity and classify what happens at x = −1.** — **Factor:** x³ − 1 = (x−1)(x² + x + 1); x² − 1 = (x−1)(x+1) ⟹ f(x) = (x² + x + 1)/(x + 1) for x ≠ 1.…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Removable (hole):** $\\lim_{x\\to a^-}f=\\lim_{x\\to a^+}f=L\\ne f(a)$, or $f(a)$ undefined. Both one-sided limits AGREE, so only one point is wrong. Examples: $\\frac{x^2-4}{x-2}$ at 2, or $\\frac{\\sin x}{x}$ at 0 if its value is wrongly set to 1.  ·  **Jump (step):** both one-sided limits exist but DIFFER, so the two-sided limit does not exist. $\\frac{x}{|x|}$ at 0 and the floor function at integers are standard. The jump SIZE is $|f(a^+)-f(a^-)|$.  ·  **Infinite (second kind):** at least one one-sided limit is infinite, so a vertical asymptote passes through $x=a$. $\\frac1x$ at 0 and $\\tan x$ at $\\frac{\\pi}{2}$ are the standard examples. Opposite-sign divergence means the asymptote is approached from both sides."
+      "text": "## 1. Topic Introduction — The Companion Doorway to the Discontinuity Taxonomy This canonical is the **short-form doorway** to the types of discontinuity: the decision tree that sorts every break into removable, jump, infinite, or oscillatory in one page.…  ·  ## 2. Theorem Mirror - **The two questions:** (1) do the one-sided limits exist and agree? (2) does f(a) match the merged limit? - **Removable:** sides agree (limit L exists) but f(a) is missing or ≠ L — hole or detached dot; **repairable** by f(a) = L. - **Jump:** sides exist, finite, **unequal** — vertical gap of size |RHL − LHL|; non-removable.…  ·  ## 3. Deep Conceptual — The Taxonomy Is a Decision Tree, Not a List - Two binary questions — sides agree? value matches? — generate all four types. Computing in the right order (sides first, value second) makes classification mechanical: no agreement ⟹ jump/infinite/oscillatory by the sides' behaviour; agreement ⟹ removable or continuous by the value.…"
     },
     {
       "label": "More ideas",
-      "text": "Infinite: $f(a^-)=\\pm\\infty$ or $f(a^+)=\\pm\\infty$  ·  Statement 1: A removable discontinuity has equal one-sided limits.  ·  Statement 2: A jump discontinuity has two finite but unequal one-sided limits."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Compute both sides before naming any discontinuity type.  ·  Classify the discontinuity of f(x) = (x² − 1)/(x − 1), x ≠ 1, f(1) = 3."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: An infinite discontinuity has at least one one-sided limit equal to $\\pm\\infty$.  ·  Statement 4: A function cannot be differentiable where it is discontinuous.  ·  Statement 5: The jump magnitude is $|f(a^+)-f(a^-)|$."
+      "text": "Find the walls of f(x) = (x + 1)/(x² − 5x + 6) with side behaviour.  ·  For f(x) = x for x < 2, f(x) = 7 − 2x for x ≥ 2: classify at 2.  ·  ## 4. Deep Conceptual — Where Each Type Lives in Mathematics - **Removable breaks are cancellation shadows:** 0/0 forms are shared roots wearing disguises; the limit sees through them, continuity does not.…"
     },
     {
       "label": "More ideas",
-      "text": "**Classifying from one-sided limits:** equal and equal to $f(a)$ means continuous; equal but not equal to $f(a)$ is removable; both finite but different is a jump; either infinite is an infinite discontinuity. This four-way test settles every classification question.  ·  **Why the type matters:** a removable discontinuity is repairable with a single reassigned value, a jump is not, and an infinite one means the function is unbounded near $a$. The intermediate value theorem fails at all three, but differently.  ·  **Effect on the derivative:** differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
+      "text": "## 5. Worked Example Types - **Type A — rational audit:** factor fully; cancelled roots ⟹ holes with limits; surviving roots ⟹ walls with side signs. - **Type B — piecewise seam:** LHL from the left branch, RHL from the right, f(a) from the owning branch; unanimous agreement ⟹ continuous.…  ·  ## 6. Common Confusions **\"Any break is a jump\":** jumps need finite *unequal* sides — compute before naming. **\"f(a) defined ⟹ no discontinuity\":** a wrong value is a removable break, not immunity."
     }
   ]
 }

@@ -22,52 +22,72 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Angle Bisector — Verifying with the tan θ Method covers essential principles and applications.",
+      "text": "The tan θ verification is the geometric audit of a bisector's label: measure the arm-to-bisector tangent, compare with 1 — the right angle's threshold — and the acute/obtuse verdict is certified without computing any angle. The acute and obtuse half-angles emerge as tangent reciprocals, their complementarity being the bisectors' perpendicularity visible inside the arithmetic.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Angle Bisector — Verifying with the tan θ Method — quick idea map\"><title>Angle Bisector — Verifying with the tan θ Method — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Angle Bisector — Verifying with the tan θ</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Method</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Angle</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bisector — Verifying with</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Angle</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bisector — Verifying with</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the tan θ Method to other</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Angle Bisector — Verifying with the tan θ Method — quick idea map\"><title>Angle Bisector — Verifying with the tan θ Method — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Angle Bisector — Verifying with the tan θ</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Method</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The test reads the wedge's</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">own geometry: a ray inside</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the acute wedge stays…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tan theta = |(m2-m1)/(1+m1</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m2)|. The acute bisector's</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">half-angle is below 45…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- tan θ = |(m₂ − m₁)/(1 +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m₁m₂)| - tan θ &lt; 1 ⟹</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">acute bisector; tan θ &gt;</text></svg>",
         "caption": "Angle Bisector — Verifying with the tan θ Method — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines,…\nStatement 2: Theorem related to Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of…"
-    },
-    {
-      "label": "Conditions",
-      "text": "Angle Bisector — Verifying with the tan θ Method is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines to be valid  ·  Statement 4: Principle governing Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines"
-    },
-    {
-      "label": "Solved",
-      "text": "Definition and significance of Angle Bisector — Verifying with the tan θ Method.  ·  Statement 5: Corollary or consequence of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines"
-    },
-    {
-      "label": "Limitation",
-      "text": "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector  ·  **Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3"
-    },
-    {
-      "label": "Derivation",
-      "text": "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope  ·  **If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Angle Bisector — Verifying with the tan θ Method."
-    },
-    {
-      "label": "Board question",
-      "text": "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method",
+      "text": "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)| - tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Angle Bisector — Verifying with the tan θ Method — exam flow\"><title>Angle Bisector — Verifying with the tan θ Method — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Angle Bisector — Verifying with the tan θ</text><text x=\"450\" y=\"84\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Method</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Angle Bisector — Verifying with the tan θ</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">Method covers essential principles and</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Pair of straight</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">lines: general equation of second degree in</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">x and y, condition for…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Angle Bisector —</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Verifying with the tan θ Method.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Since tan θ = 1/3 &lt; 1, this confirms 6x +</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">6y − 1 = 0 is definitively the **acute angle</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">bisector** — matching the a₁a₂ +…</text></svg>",
-        "caption": "Angle Bisector — Verifying with the tan θ Method — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Angle Bisector — Verifying with the tan θ Method — formula board\"><title>Angle Bisector — Verifying with the tan θ Method — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Angle Bisector — Verifying with the tan θ Method</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- tan θ = |(m₂ − m₁)/(1 + m₁m₂)| - tan θ &lt; 1 ⟹ acute</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">bisector; tan θ &gt; 1 ⟹ obtuse bisector</text></svg>",
+        "caption": "Angle Bisector — Verifying with the tan θ Method — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonicals."
+    },
+    {
+      "label": "Special cases",
+      "text": "The 45-degree threshold is the right angle - the wedge's boundary case."
+    },
+    {
+      "label": "Solved",
+      "text": "***The threshold*** - tan theta = 1/3 < 1 certifies the acute label in one fraction; no angle needs to be computed."
+    },
+    {
+      "label": "Limitation",
+      "text": "The test reads the wedge's own geometry: a ray inside the acute wedge stays below 45 degrees from each arm.  ·  tan theta = |(m2-m1)/(1+m1 m2)|. The acute bisector's half-angle is below 45 degrees, so tan theta < 1 certifies acute, > 1 certifies obtuse - the threshold is the right angle. One tangent comparison replaces angle computation. Dual-channel verification: algebra (the rule) derives, geometry (tan theta) confirms. 1 + m1 m2 = 0 means perpendicular - the formula's failure mode is the answer."
+    },
+    {
+      "label": "Derivation",
+      "text": "## 1. Topic Introduction — The tan θ Verification of a Bisector This canonical carries the **cross-check that certifies a bisector's label**: measure the angle θ between one original line and the claimed bisector; θ < 45° certifies the acute bisector, θ > 45° the obtuse one. It is the geometric audit that closes the algebraic pipeline.  ·  ## 2. Theorem Mirror - **Angle between two lines:** tan θ = |(m₂ − m₁)/(1 + m₁m₂)| for slopes m₁, m₂ (1 + m₁m₂ ≠ 0). - **The bisection fact:** each bisector makes equal angles with the two original lines; the acute bisector's half-angle is θ/2 < 45°, the obtuse bisector's is > 45° (when the lines' angle ≠ 90°).…"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Compare tan theta with 1, not with 45 degrees - the fraction comparison is the whole test."
+    },
+    {
+      "label": "Board question",
+      "text": "**NEB-style (6m): Using the tangent formula, verify that 6x + 6y − 1 = 0 is the acute angle bisector of the lines x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = −6/6 = **−1**; L₁: y = (5−x)/2 ⟹ m₁ = **−1/2**. **Tangent:** tan θ = |(−1 − (−1/2))/(1 + (−1)(−1/2))| = |−1/2|/(1 + 1/2) = (1/2)/(3/2) = **1/3**.…  ·  **NEB-style (6m): Verify that 2x − 2y + 19 = 0 is the obtuse bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.** — **Slopes:** bisector m_b = 1; L₁ slope m₁ = −1/2. **Tangent:** tan θ = |(1 + 1/2)/(1 + (1)(−1/2))| = (3/2)/(1/2) = **3**. **Verdict:** tan θ = 3 > 1 ⟹ θ ≈ 71.6° > 45° ⟹ this bisector splits the **obtuse** angle ✓.…"
+    },
+    {
       "label": "Hints",
-      "text": "Connection of Angle Bisector — Verifying with the tan θ Method to other topics"
+      "text": "State the certifying sentence explicitly: \"tan theta < 1, hence the acute bisector\" - the conclusion needs its licence."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Algebra deriving and geometry confirming is dual-channel verification - agreement is stronger evidence than repetition."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): Show that the bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular, and explain why this had to happen.** — **Slopes:** m₁ = −6/6 = −1; m₂ = 2/2 = 1 ⟹ m₁m₂ = **−1** ⟹ perpendicular ✓.…  ·  **NEB-style (6m): The line y = 2x is claimed to be a bisector of the angle between x = 0 and y = x. Verify or refute using the tangent test.** — **Slopes:** candidate m_b = 2; arms m₁ = ∞ (the y-axis, vertical) and m₂ = 1.…"
+    },
+    {
+      "label": "Study notes",
+      "text": "## 3. Deep Conceptual — The Verification Reads the Angle's Own Geometry - The acute bisector splits the *small* angle: any ray inside the acute wedge makes an angle < 45° with each arm (when the wedge is narrower than 90°). The test exploits exactly this: measure one arm-to-bisector angle and compare with 45° — the threshold is the right angle, the wedge's boundary case.…  ·  ## 4. Deep Conceptual — Verification as an Independent Channel - The tan θ test verifies the *label* (acute vs obtuse) through geometry, while the a₁a₂ + b₁b₂ rule derived it through algebra — two independent channels agreeing is far stronger evidence than one computation repeated.…  ·  ## 5. Worked Example Types - **Type A — certify the acute label:** tan θ < 1 with full fraction working. - **Type B — certify the obtuse label:** tan θ > 1. - **Type C — both bisectors audited:** the pair tested against each other's arms. - **Type D — perpendicularity re-check:** slopes product −1 as the companion audit."
+    },
+    {
+      "label": "More ideas",
+      "text": "Verify via tan θ that 6x + 6y − 1 = 0 is the acute bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.  ·  Verify via tan θ that 2x − 2y + 19 = 0 is the obtuse bisector of the same pair.  ·  Check that the two bisectors 6x + 6y − 1 = 0 and 2x − 2y + 19 = 0 are perpendicular."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"tan θ < 1 means the lines are acute\":** it means the *bisector* splits an angle below 45° — the statement is about the half-angle. **\"The test replaces the rule\":** it verifies it — the two channels agree, which is the point."
     }
   ]
 }

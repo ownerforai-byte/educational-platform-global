@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "An indeterminate form describes the shape an expression takes near a point, never its value — the same $0/0$ may resolve to $0$, $1$, or nothing at all. Four techniques cover essentially every case: factorise and cancel, rationalise with a conjugate, apply L'Hôpital to $0/0$ and $\\infty/\\infty$, and take logarithms for $1^\\infty$.",
+      "text": "The indeterminate-forms drill trains the subject's real skill: diagnosis. Each of the seven shapes routes to a named cure — factor or steer for 0/0, degrees for ∞/∞, a flip for 0·∞, a merge for ∞ − ∞, the log bridge for the power trio — and the cheapest cure that works is the right one. Forms are properties of the current expression, re-checked after every rewrite; determinate neighbours (like 0^∞) answer outright.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Indeterminate Forms — quick idea map\"><title>Indeterminate Forms — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Indeterminate Forms</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An indeterminate form is a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shape, not a value.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Factorise, rationalise, or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">use L'Hôpital — never</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">substitute and stop.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An indeterminate form is a</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shape, not a value.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Factorise, rationalise, or</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">use L'Hôpital — never</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">substitute and stop.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Indeterminate Forms — quick idea map\"><title>Indeterminate Forms — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Indeterminate Forms</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Drills train the eye: form</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">first, cure second,</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">arithmetic last - the…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Drill table: 0/0 -&gt;</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">factor/conjugate/steer/L'Hopital;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">inf/inf -&gt;…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- 0·∞ ⟹ f·g = f/(1/g) -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f^g = e^{g ln f}</text></svg>",
         "caption": "Indeterminate Forms — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Forms: $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $1^\\infty$, $0^0$, $\\infty^0$\n$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+\\dots+b^{n-1})$\nConjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$",
+      "text": "- 0·∞ ⟹ f·g = f/(1/g) - f^g = e^{g ln f}",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Indeterminate Forms — formula board\"><title>Indeterminate Forms — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Indeterminate Forms</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Forms: $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$,</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\infty-\\infty$, $1^\\infty$, $0^0$, $\\infty^0$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+\\dots+b^{n-1})$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Conjugate: $\\frac{1-\\cos x}{1+\\cos</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">x}=\\frac{\\sin^2x}{1+\\cos x}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Indeterminate Forms — formula board\"><title>Indeterminate Forms — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Indeterminate Forms</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- 0·∞ ⟹ f·g = f/(1/g) - f^g = e^{g ln f}</text></svg>",
         "caption": "Indeterminate Forms — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "An indeterminate form is a shape, not a value.  ·  Factorise, rationalise, or use L'Hôpital — never substitute and stop."
+      "text": "***Two cures, one answer*** - (e^{3x}-1)/ln(1+2x) yields 3/2 by stars in two lines and by L'Hopital in three - cost ranking is a drill skill."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Match technique to form: $0/0$ → factorise, rationalise or L'Hôpital; $1^\\infty$ → logs; $0\\cdot\\infty$ and $\\infty-\\infty$ → rewrite as a quotient.  ·  If the expression contains a root, reach for the conjugate first."
+      "text": "Match-order 0/0? Coefficient ratio. Mixed families at infinity? Ladder. Power? Log bridge."
     },
     {
       "label": "Board question",
-      "text": "Naming the correct technique for a given form is a frequent 2-mark question in the limits block."
+      "text": "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0} (ln(1 + 4x))/(e^{2x} − 1).** — **Form:** (ln 1)/(1 − 1) = **0/0** ✓. **Cure — coefficient ratio:** ln(1+4x) ~ 4x (coefficient 4); e^{2x} − 1 ~ 2x (coefficient 2) ⟹ same order ⟹ **4/2 = 2**. **Rigorous:** [ln(1+4x)/(4x)]·[(2x)/(e^{2x}−1)]·2 → 1·1·2 = 2 ✓.…  ·  **NEB-style (5m): Diagnose the form and evaluate lim_{x→∞} x²·e^{−3x}.** — **Form:** ∞ · 0 ⟹ **0·∞ species**. **Flip:** x²/e^{3x} ⟹ **∞/∞** ✓. **Ladder:** exponential dominates any power ⟹ **0**. **L'Hôpital double-check:** x²/e^{3x} → 2x/(3e^{3x}) → 2/(9e^{3x}) → 0 ✓.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Technique 4 — logs for $1^ infty$ with $y=(1+f)^{g}$ and $f to0$, take logs and use $ lim frac{ ln(1+f)}{f}=1$, giving $ lim y = e^{ lim g ln(1+f)}$."
+      "text": "If a cure leaves the same form, stop - the cure was misapplied; re-diagnose."
     },
     {
       "label": "Quick concepts",
-      "text": "L'Hôpital applies only to $0/0$ and $\\infty/\\infty$.  ·  For $1^\\infty$, take logarithms to reduce to a $0/0$ quotient."
+      "text": "Drills train the eye: form first, cure second, arithmetic last - the diagnosis carries the method mark."
+    },
+    {
+      "label": "Key points",
+      "text": "Drill table: 0/0 -> factor/conjugate/steer/L'Hopital; inf/inf -> degrees/dominant division; 0*inf -> flip; inf-inf -> merge/conjugate; power forms -> log bridge. Diagnosis is the skill; the algebra is short. Forms are properties of the current expression, changed by legal rewriting.…"
     },
     {
       "label": "Universal facts",
-      "text": "Euler's number is defined as a limit, $e=\\lim_{n\\to\\infty}(1+\\frac1n)^n$ — the compound-interest form of the $1^\\infty$ case.  ·  Numerical differentiation avoids $f(x+h)-f(x)$ over $h$ precisely because at tiny $h$ this $0/0$ suffers catastrophic cancellation."
+      "text": "Every indeterminate-form problem in the syllabus falls to one of the five cures in the table."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Diagnose the form and evaluate lim_{x→0⁺} x^{1/x}.** — **Form:** base → 0⁺, exponent 1/x → +∞ ⟹ **0^∞** — actually *determinate*: a small positive base raised to a huge power collapses to 0.…  ·  **NEB-style (6m): Diagnose the form and evaluate lim_{x→1} (1/(x − 1) − 1/ln x).** — **Form:** both terms → ∞ (1/(x−1) blows up; 1/ln x → ∞ since ln x → 0) ⟹ **∞ − ∞**. **Merge:** = [ln x − (x − 1)]/[(x − 1)ln x]. **Form re-check:** numerator → 0 − 0 = 0; denominator → 0·0 = 0 ⟹ **0/0** ✓.…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**What 'indeterminate' means:** a form like $0/0$ describes the SHAPE the expression takes as $x$ approaches the point, never its value. The same form can give $0$, $1$, $7$, $\\infty$, or no limit at all. $\\frac{x^2}{x}\\to0$, $\\frac{x^2}{x^2}\\to1$ and $\\frac{x}{x^2}\\to\\infty$ are all $0/0$.  ·  **The seven forms:** $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $\\infty^0$, $0^0$, $1^\\infty$. Everything else is determinate — $\\frac{0}{5}=0$ and $\\frac{5}{0}=\\infty$ need no further work. $0\\cdot\\infty$ is the classic trap because each factor is a LIMIT rather than a value.  ·  **Technique 1 — factorise and cancel:** find the common vanishing factor. $\\lim_{x\\to2}\\frac{x^2-4}{x-2}=\\lim\\frac{(x-2)(x+2)}{x-2}=4$. For powers use $a^n-b^n=(a-b)(a^{n-1}+\\dots+b^{n-1})$."
+      "text": "## 1. Topic Introduction — The Indeterminate-Forms Drill Gallery This canonical is the **drill gallery for the indeterminate forms**: a focused problem set where every item is a form diagnosis followed by its cure. The parent canonical teaches the forms; this companion runs them at exam speed with four heavy-mark problems.  ·  ## 2. Theorem Mirror — The Diagnosis Table | Form | Cure | Signature | |---|---|---| | 0/0 | factor, conjugate, steer, L'Hôpital | shared root or matched stars | | ∞/∞ | degree comparison, dominant division | rational or mixed-family race | | 0·∞ | flip one factor | x ln x patterns | | ∞ − ∞ | merge fractions, conjugate | sec − tan, √(x²+x) − x | | 1^∞, 0⁰, ∞⁰ | log bridge f^g…  ·  ## 3. Deep Conceptual — Drilling the Diagnosis, Not the Algebra - The algebra of each cure is short; the **skill is the diagnosis** — seeing that (e^{5x} − 1)/(ln(1+2x)) is a coefficient-ratio 0/0 before touching it. Drills train the eye: form first, cure second, arithmetic last.…"
     },
     {
       "label": "More ideas",
-      "text": "L'Hôpital: $\\lim\\frac{f}{g}=\\lim\\frac{f'}{g'}$ for $0/0$ or $\\infty/\\infty$  ·  $\\lim_{n\\to\\infty}(1+\\frac{k}{n})^n = e^k$  ·  Statement 1: $0/0$ and $\\infty/\\infty$ are indeterminate, but $5/0$ and $0/5$ are determinate."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Write the form before the cure; the recognition line is graded.  ·  Diagnose and evaluate lim_{x→0} (ln(1+4x))/(e^{2x} − 1)."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: L'Hôpital's rule may be applied only to $0/0$ and $\\infty/\\infty$ forms.  ·  Statement 3: Differentiating both parts is only part of L'Hôpital — the resulting limit must exist.  ·  Statement 4: $0\\cdot\\infty$ and $\\infty-\\infty$ must be rewritten as a quotient first."
+      "text": "Diagnose and evaluate lim_{x→∞} x²·e^{−3x}.  ·  Diagnose and evaluate lim_{x→0⁺} x^{1/x}.  ·  ## 4. Deep Conceptual — The Exam Economy of Forms - **Marks live in the form line:** writing \"0/0 (indeterminate)\" earns the recognition mark even if algebra slips later; skipping it makes a correct answer look lucky.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: $\\lim_{n\\to\\infty}(1+\\frac{k}{n})^n = e^k$.  ·  **Technique 2 — rationalise with the conjugate:** $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\lim\\frac{1-\\cos^2x}{x^2(1+\\cos x)}=\\lim\\frac{\\sin^2x}{x^2(1+\\cos x)}=\\frac12$. The conjugate is chosen so a difference of squares appears.  ·  **Technique 3 — L'Hôpital:** for $0/0$ or $\\infty/\\infty$, differentiate numerator and denominator SEPARATELY and take the limit of the ratio, provided that limit exists. $\\frac{x^2-4}{x-2}$ becomes $\\frac{2x}{1}\\to4$."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Technique 4 — logs for $1^\\infty$:** with $y=(1+f)^{g}$ and $f\\to0$, take logs and use $\\lim\\frac{\\ln(1+f)}{f}=1$, giving $\\lim y = e^{\\lim g\\ln(1+f)}$. Hence $\\lim_{n\\to\\infty}(1+\\frac1n)^n=e$."
+      "text": "## 5. Worked Example Types - **Type A — matched stars:** same-order 0/0 ⟹ coefficient ratio. - **Type B — flip races:** 0·∞ ⟹ quotient ⟹ ladder or L'Hôpital. - **Type C — merge and resolve:** ∞ − ∞ ⟹ conjugate ⟹ hidden constant. - **Type D — power forms:** log bridge ⟹ single constant ⟹ e^c.  ·  ## 6. Common Confusions **\"Every 0/0 needs L'Hôpital\":** the stars are usually cheaper. **\"∞ − ∞ = 0\":** the form hides anything — merge first."
     }
   ]
 }

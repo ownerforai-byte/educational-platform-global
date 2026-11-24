@@ -21,18 +21,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "The six trigonometric ratios come from a right triangle: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = sin θ/cos θ, with cosec, sec and cot their reciprocals, and their special values at 0°, 30°, 45°, 60° and 90° are tabulated. Three fundamental identities tie the ratios together: sin^2 θ + cos^2 θ = 1, 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ.…",
+      "text": "Trigonometric identities are the working grammar: true for **every** admissible angle, proved by transformation, never solved. Everything descends from the **unit circle**: sin²θ + cos²θ = 1, and by division 1 + tan²θ = sec²θ, 1 + cot²θ = cosec²θ.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Trigonometric ratios and identities — quick idea map\"><title>Trigonometric ratios and identities — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Trigonometric ratios and identities</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ratios in a right</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">triangle: sin θ =</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">opposite/hypotenuse, cos θ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Reciprocal ratios: cosec θ</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= 1/sin θ, sec θ = 1/cos θ</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and cot θ = 1/tan θ =…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sin(A + B) is not sin A +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sin B; the compound angle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula must be used…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">In the cosine formula the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">signs are opposite, so</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cos(A + B) = cos A cos B</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Trigonometric ratios and identities — quick idea map\"><title>Trigonometric ratios and identities — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Trigonometric ratios and identities</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">An identity is used, not</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">solved: the proof walks</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">one side into the other</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fundamental identity:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sin^2 th + cos^2 th = 1;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dividing gives 1 + tan^2</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- sin²θ + cos²θ = 1; 1 +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">tan²θ = sec²θ; 1 + cot²θ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cosec²θ - sin(A±B) = sin…</text></svg>",
         "caption": "Trigonometric ratios and identities — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "sin^2 theta + cos^2 theta = 1\nsin(A +/- B) = sin A cos B +/- cos A sin B\ncos 2A = cos^2 A - sin^2 A",
+      "text": "- sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ - sin(A±B) = sin A cos B ± cos A sin B; cos(A±B) = cos A cos B ∓ sin A sin B - tan(A±B) = (tan A ± tan B)/(1 ∓ tan A tan B) - sin 2θ = 2 sin θ cos θ; cos 2θ =…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Trigonometric ratios and identities — formula board\"><title>Trigonometric ratios and identities — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Trigonometric ratios and identities</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">sin^2 theta + cos^2 theta = 1</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">sin(A +/- B) = sin A cos B +/- cos A sin B</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">cos 2A = cos^2 A - sin^2 A</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Trigonometric ratios and identities — formula board\"><title>Trigonometric ratios and identities — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Trigonometric ratios and identities</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">cosec²θ - sin(A±B) = sin A cos B ± cos A sin B; cos(A±B)</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">= cos A cos B ∓ sin A sin B - tan(A±B) = (tan A ± tan</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">B)/(1 ∓ tan A tan B) - sin 2θ = 2 sin θ cos θ; cos 2θ =</text></svg>",
         "caption": "Trigonometric ratios and identities — formula board of this topic's own formulas"
       }
     },
@@ -46,11 +46,11 @@
     },
     {
       "label": "Solved",
-      "text": "Prove: sin^2 theta + cos^2 theta = 1  ·  If sin theta = 3/5, find all other trig ratios."
+      "text": "***The telescoping trick*** — multiply cos th + cos 3th + ... + cos(2n-1)th by 2 sin th: each product becomes a difference of sines and the middle terms cancel, leaving sin 2nth (NEB 2020's proof in one move)."
     },
     {
       "label": "Limitation",
-      "text": "tan(A + B) needs 1 - tan A tan B != 0; when it is zero the sum is 90° (mod 180°) and the tangent is undefined even though sin and cos are well defined.  ·  The identity sin(A + B) sin(A - B) = sin^2 A - sin^2 B is a product-to-sum result often asked as a proof, with the right side reached by expanding both factors."
+      "text": "Verified PYQs: NEB 2021 (standard values evaluation), NEB 2020 (cosine series proof) — assigned to this row. Other items are NEB-style practice."
     },
     {
       "label": "Derivation",
@@ -58,31 +58,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "To get all the ratios from sin θ = 3/5, build the right triangle with hypotenuse 5, opposite 3 and adjacent 4, then read off cos = 4/5 and tan = 3/4.  ·  For cos 2A choose 2cos^2 A - 1 or 1 - 2sin^2 A, since using cos^2 A - sin^2 A forces you to find the other ratio first."
+      "text": "Prove identities: start from the complicated side, convert to sines and cosines, hunt sin^2 + cos^2 = 1. cos(A-B) keeps a PLUS sign. tan(A+B) has minus in the denominator. r-formula: r = sqrt(a^2+b^2), max = r, min = -r."
     },
     {
       "label": "Board question",
-      "text": "Prove that sin^2 θ + cos^2 θ = 1.  ·  If sin θ = 3/5 and θ is acute, find cos θ, tan θ, sec θ, cosec θ and cot θ."
+      "text": "**NEB 2021 (verified PYQ): Evaluate sin²30° + cos²60° − tan²45°. (1m)** — From the standard table: **sin 30° = 1/2**, **cos 60° = 1/2**, **tan 45° = 1**. Therefore sin²30° = 1/4, cos²60° = 1/4, tan²45° = 1, and the expression equals **1/4 + 1/4 − 1 = −1/2** — **option (d)**.…  ·  **NEB 2020 (verified PYQ): Prove that cos θ + cos 3θ + cos 5θ + ⋯ + cos(2n−1)θ = sin 2nθ / (2 sin θ). (3m)** — **Setup:** let S = cos θ + cos 3θ + ⋯ + cos(2n−1)θ and multiply both sides by **2 sin θ**.…"
     },
     {
       "label": "Hints",
-      "text": "Finding the remaining ratios from one given ratio is the most common 2-mark question, and the quadrant must be stated.  ·  Proving an identity is a standard 5-mark question, with marks for starting from one side, for each valid step, and for reaching the other side."
+      "text": "For the NEB 2020 series proof, name the two formulas you use (product-to-sum and telescoping) — method marks live in the naming."
     },
     {
       "label": "Quick concepts",
-      "text": "Ratios in a right triangle: sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent = sin θ/cos θ.  ·  Reciprocal ratios: cosec θ = 1/sin θ, sec θ = 1/cos θ and cot θ = 1/tan θ = cos θ/sin θ.  ·  The identity sin^2 θ + cos^2 θ = 1 and its two rearrangements 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ.  ·  Compound angles: sin(A ± B) = sin A cos B ± cos A sin B and cos(A ± B) = cos A cos B ∓ sin A sin B, where the two signs are always opposite for cosine."
+      "text": "An identity is used, not solved: the proof walks one side into the other with known identities — no value of theta is ever substituted."
     },
     {
       "label": "Key points",
-      "text": "sin(A + B) is not sin A + sin B; the compound angle formula must be used instead.  ·  In the cosine formula the signs are opposite, so cos(A + B) = cos A cos B - sin A sin B while cos(A - B) = cos A cos B + sin A sin B.  ·  cos 2A has three forms, and the useful one is the one matching what you are given: 2cos^2 A - 1 if you know cos A, or 1 - 2sin^2 A if you know sin A.  ·  tan 2A = 2 tan A/(1 - tan^2 A), not 2 tan A, and it is undefined when tan A = ±1."
+      "text": "Fundamental identity: sin^2 th + cos^2 th = 1; dividing gives 1 + tan^2 th = sec^2 th and 1 + cot^2 th = cosec^2 th. Addition formulas: sin(A+B) = sinA cosB + cosA sinB; cos(A-B) = cosA cosB + sinA sinB; tan(A+B) = (tanA+tanB)/(1 - tanA tanB).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Every identity in the syllabus descends from one geometric fact: the unit circle point (cos th, sin th) lies at distance 1 from the origin."
     },
     {
       "label": "More practice",
-      "text": "Prove that sin(A + B) sin(A - B) = sin^2 A - sin^2 B.  ·  Solve 2sin^2 x - sin x - 1 = 0 for 0° <= x <= 360°.  ·  If cos A = 4/5 and sin B = 3/5 with A and B acute, find sin(A + B) and cos 2A."
-    },
-    {
-      "label": "More hints",
-      "text": "Evaluating sin(A + B) or cos 2A from given ratios is a 5-mark question, and the answer is left as an exact fraction with a surd.  ·  MCQs give a value from the table of standard angles and ask for the ratio of another angle, or give an equation and ask for its solutions in a stated interval."
+      "text": "**NEB-style (3m): Express 3 sin θ + 4 cos θ in the form r sin(θ + φ) and state its maximum and minimum values.** — Match **3 sin θ + 4 cos θ = r sin(θ + φ) = r sin θ cos φ + r cos θ sin φ**. Comparing coefficients: **r cos φ = 3** and **r sin φ = 4**.…"
     },
     {
       "label": "MCQ drill",
@@ -90,27 +90,27 @@
     },
     {
       "label": "Study notes",
-      "text": "### 1. Basic Trigonometric Ratios  ·  In a right triangle with angle theta:  ·  - sin theta = opposite/hypotenuse"
+      "text": "## 1. Topic Introduction — Identities Are the Grammar of Trigonometry A trigonometric **identity** is an equation true for **every** admissible angle — not solved, but *used*. The syllabus theorem set: the **fundamental identity** sin²θ + cos²θ = 1, the **addition formulas**, the **double/half-angle formulas**, the **transformation formulas** (sum ↔ product), and the…  ·  ## 2. Fundamental Concepts ### 2.1 The fundamental identity and its family - **Theorem (Pythagorean identity):** for every angle θ, **sin²θ + cos²θ = 1**. - Proof idea: place θ in the unit circle — the terminal point is (cos θ, sin θ); the radius is 1, so x² + y² = 1 gives the identity.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Identity** | Equation holding for all admissible θ | sin²θ + cos²θ = 1 | | **Conditional identity** | a sinθ + b cosθ rewritten as a single sine with r, φ | 3sinθ + 4cosθ = 5sin(θ + 53.13°) | | **Transformation formula** | Converts sums of trig functions to products and back | sin C + sin D…"
     },
     {
       "label": "More ideas",
-      "text": "Double angles as the case B = A: sin 2A = 2 sin A cos A, cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A, and tan 2A = 2 tan A/(1 - tan^2 A).  ·  Standard values: sin 30° = 1/2, sin 45° = 1/sqrt(2), sin 60° = sqrt(3)/2, with cosine running in the reverse order and tan 45° = 1, tan 30° = 1/sqrt(3), tan 60° = sqrt(3).  ·  tan θ = sin θ/cos θ requires cos θ != 0, which is why tan 90° is undefined while sin 90° = 1 and cos 90° = 0."
+      "text": "tan(A + B) needs 1 - tan A tan B != 0; when it is zero the sum is 90° (mod 180°) and the tangent is undefined even though sin and cos are well defined.  ·  The identity sin(A + B) sin(A - B) = sin^2 A - sin^2 B is a product-to-sum result often asked as a proof, with the right side reached by expanding both factors.  ·  Because the standard values are exact surds, exact answers should be left as fractions with surds rather than rounded decimals."
     },
     {
       "label": "More ideas",
-      "text": "Because the standard values are exact surds, exact answers should be left as fractions with surds rather than rounded decimals.  ·  In a right triangle sin θ = opposite/hypotenuse, cos θ = adjacent/hypotenuse and tan θ = opposite/adjacent, while cosec θ, sec θ and cot θ are the reciprocals of sin, cos and tan.  ·  The fundamental identities are sin^2 θ + cos^2 θ = 1, 1 + tan^2 θ = sec^2 θ and 1 + cot^2 θ = cosec^2 θ."
+      "text": "\"a sin th + b cos th = r sin(th + ph) with r = sqrt(a^2 + b^2), tan ph = b/a; hence the expression ranges over [-r, r].\"  ·  Prove that cos(A − B) = cos A cos B + sin A sin B using the unit circle.  ·  Express 3 sin θ + 4 cos θ as r sin(θ + φ) and find its range."
     },
     {
       "label": "More ideas",
-      "text": "The compound angle formulas are sin(A ± B) = sin A cos B ± cos A sin B, cos(A ± B) = cos A cos B ∓ sin A sin B and tan(A ± B) = (tan A ± tan B)/(1 ∓ tan A tan B).  ·  The double angle formulas are sin 2A = 2 sin A cos A, cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A and tan 2A = 2 tan A/(1 - tan^2 A).  ·  If sin θ = 3/5 for an acute angle then cos θ = 4/5 and tan θ = 3/4, so a single known ratio and the quadrant determine all the others."
+      "text": "Prove cos θ + cos 3θ + ⋯ + cos(2n−1)θ = sin 2nθ/(2 sin θ).  ·  Evaluate sin(A + B), cos 2A or tan 2A when the ratios of A and B are given, choosing the form of the formula that needs the least work.  ·  Solve a trigonometric equation in a stated interval, first reducing it to sin x = c, cos x = c or tan x = c and then listing every solution in 0° <= x <= 360°."
     },
     {
       "label": "More ideas",
-      "text": "When solving in 0° <= x <= 360°, remember that sin x = c and cos x = c give two angles each while tan x = c gives only one per period.  ·  Fix the signs from the quadrant, where sin is positive in I and II, cos in I and IV, and tan in I and III, which is faster than calculation.  ·  Prove: sin(A+B)sin(A-B) = sin^2 A - sin^2 B"
+      "text": "## 4. Detailed Explanation ### 4.1 Why identities are \"proved\", not \"solved\" - A proof starts from one side and transforms it with known identities into the other; no values of θ are ever substituted. Solving an equation, by contrast, finds *which* θ make it true — the distinction is examinable.…  ·  ## 5. Comparison Tables **The three Pythagorean identities and their rearrangements** | Identity | Solved for sin² | Solved for cos² | |---|---|---| | sin²θ + cos²θ = 1 | sin²θ = 1 − cos²θ | cos²θ = 1 − sin²θ | | 1 + tan²θ = sec²θ | — | sec²θ − tan²θ = 1 | | 1 + cot²θ = cosec²θ | cosec²θ − cot²θ = 1 | — |  ·  ## 6. Common Confusions **cos(A − B) has a plus sign:** cos A cos B **+** sin A sin B — students carry the minus over from the argument."
     },
     {
       "label": "More ideas",
-      "text": "Solve: 2sin^2 x - sin x - 1 = 0 for 0 <= x <= 360 degrees  ·  Evaluate sin(A + B), cos 2A or tan 2A when the ratios of A and B are given, choosing the form of the formula that needs the least work.  ·  Solve a trigonometric equation in a stated interval, first reducing it to sin x = c, cos x = c or tan x = c and then listing every solution in 0° <= x <= 360°."
+      "text": "**tan(A ± B) denominators:** minus in the denominator for the **sum**, plus for the **difference** — the reverse of intuition.  ·  **Half-angle sign:** √((1−cosθ)/2) needs the quadrant of θ/2 — never quote the ± silently.  ·  ## 7. Exam Application **NEB 2021 (verified PYQ): sin²30° + cos²60° − tan²45° = ?** — sin 30° = 1/2 so sin²30° = 1/4; cos 60° = 1/2 so cos²60° = 1/4; tan 45° = 1 so tan²45° = 1. Sum: 1/4 + 1/4 − 1 = **−1/2 → option (d)**.…"
     }
   ]
 }

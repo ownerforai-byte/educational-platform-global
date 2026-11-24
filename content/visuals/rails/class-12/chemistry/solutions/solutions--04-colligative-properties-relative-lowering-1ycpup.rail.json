@@ -57,7 +57,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
+      "text": "Trick 1: Colligative = depends on the NUMBER of solute particles, not their nature — say the definition first; then the four: Δp/p° = x2, ΔTb = Kb·m, ΔTf = Kf·m, π = CRT.  ·  Trick 2: ΔTb = Kb·m and ΔTf = Kf·m — molality in both; Kf for water 1.86, Kb 0.52 K kg/mol; every numerical is one multiplication."
     },
     {
       "label": "Board question",
@@ -76,6 +76,10 @@
       "text": "• Colligative properties — relative lowering of vapour pressure  ·  • Elevation of boiling point  ·  • Depression of freezing point  ·  • Osmosis"
     },
     {
+      "label": "Universal facts",
+      "text": "m (molality) = mol solute / kg solvent; dilute solution π ≈ (n/V)RT → used to find molar mass."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Colligative properties — relative lowering of vapour pres…\" and verify the answer is plausible."
     },
@@ -89,19 +93,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Osmotic pressure  ·  define + example each sub-idea: colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis.  ·  one worked example for \"Colligative properties — relative lowering of vapour pres…\" — check units / edge cases."
+      "text": "• Osmotic pressure  ·  Trick 3: Molar mass from freezing point: M2 = (Kf·w2·1000)/(ΔTf·w1) — the most-asked numerical template.  ·  Trick 4: Osmotic pressure π = nRT/V — preferred for polymers because it is measurable at room temperature with tiny concentrations."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult)."
+      "text": "define + example each sub-idea: colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis.  ·  one worked example for \"Colligative properties — relative lowering of vapour pres…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
       "label": "More ideas",
-      "text": "**Elevation of boiling point.** one-line definition + one-line exam use.  ·  **Depression of freezing point.** one-line definition + one-line exam use.  ·  **Osmosis.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: colligative properties depend on number of solute particles: relative lowering of vapour pressure δp/p = x₂ (raoult).  ·  **Elevation of boiling point.** one-line definition + one-line exam use."
     },
     {
       "label": "More ideas",
-      "text": "**Osmotic pressure.** one-line definition + one-line exam use."
+      "text": "**Depression of freezing point.** one-line definition + one-line exam use.  ·  **Osmosis.** one-line definition + one-line exam use.  ·  **Osmotic pressure.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis and osmotic pressure ## 1. Introduction Chemical picture of **Colligative properties — relative lowering of vapour pressure** — what the substance or principle is, an everyday or Nepal…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Relations and worked quantities** | Relation | Symbols + units | When it holds | Worked angle | | --- | --- | --- | --- |  ·  ## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…"
     }
   ]
 }

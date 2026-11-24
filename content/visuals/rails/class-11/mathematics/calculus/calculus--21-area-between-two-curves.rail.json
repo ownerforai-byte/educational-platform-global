@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Area between two curves is a single idea: find where the curves intersect, identify which is on top over each sub-interval, and integrate the difference. The intersections are what bound the region, and where the ordering changes the integral must be split.…",
+      "text": "Area between two curves is |f − g| made structured: the intersections supply the limits and split points, the strip test fixes who is on top, and top-minus-bottom integrates the resolved order. Interior crossings swap the roles and demand partitioning; the slicing axis is chosen by counting splits; and verified symmetry doubles a half.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Between Two Curves — quick idea map\"><title>Area Between Two Curves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Area Between Two Curves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Intersection points bound</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the region; the graph does</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">not.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Top function minus bottom</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function, so the answer is</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">automatically positive.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Intersection points bound</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the region; the graph does</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">not.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Top function minus bottom</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">function, so the answer is</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">automatically positive.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Between Two Curves — quick idea map\"><title>Area Between Two Curves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Area Between Two Curves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Top-minus-bottom is |f -</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">g| disassembled: the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">intersection analysis</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Area between curves =</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">integral of (top - bottom)</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dx, nonnegative;…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- A = ∫ₐᵇ[f_top(x) −</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f_bottom(x)]dx - A =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">∫[g_right(y) −</text></svg>",
         "caption": "Area Between Two Curves — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$A=\\int_a^b\\big(f_{top}(x)-f_{bottom}(x)\\big)dx$\nIntersections: solve $f_{top}(x)=f_{bottom}(x)$\nPiecewise: split where the two functions exchange order",
+      "text": "- A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx - A = ∫[g_right(y) − g_left(y)]dy (horizontal slices)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Between Two Curves — formula board\"><title>Area Between Two Curves — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Area Between Two Curves</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$A=\\int_a^b\\big(f_{top}(x)-f_{bottom}(x)\\big)dx$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Intersections: solve $f_{top}(x)=f_{bottom}(x)$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Symmetry: $A=2\\int_{half}$ about a vertical axis,</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$A=4\\int_{quarter}$ about both</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Area Between Two Curves — formula board\"><title>Area Between Two Curves — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Area Between Two Curves</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx - A = ∫[g_right(y) −</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">g_left(y)]dy (horizontal slices)</text></svg>",
         "caption": "Area Between Two Curves — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Intersection points bound the region; the graph does not.  ·  Top function minus bottom function, so the answer is automatically positive."
+      "text": "***The swap*** - two curves crossing mid-interval: the strip test (who is on top at a sample point?) settles each subinterval's order."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Solve for the intersections algebraically before doing any integration — if there are fewer than two, there is no bounded region.  ·  Sketch the two curves; a wrong 'top' function is visible instantly and costs no algebra."
+      "text": "Solve f = g first; the intersection x-values are the integral's limits and split points."
     },
     {
       "label": "Board question",
-      "text": "Area between curves with two or three intersection points is a standard 4–5 mark question."
+      "text": "**NEB-style (6m): Find the area of the region bounded by y = x² and y = x.** — **Intersections:** x² = x ⟹ x = 0, 1 ⟹ limits [0, 1]. **Order test:** at x = 1/2: line 1/2 > parabola 1/4 ⟹ **line on top**. **Evaluate:** ∫₀¹(x − x²)dx = [x²/2 − x³/3]₀¹ = 1/2 − 1/3 = **1/6**.…  ·  **NEB-style (6m): Find the area between y = 4 − x² and y = x + 2.** — **Intersections:** 4 − x² = x + 2 ⟹ x² + x − 2 = 0 ⟹ (x + 2)(x − 1) = 0 ⟹ x = −2, 1. **Order test:** at x = 0: parabola 4 > line 2 ⟹ parabola on top throughout (no interior crossing).…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: Symmetry halves the work if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
+      "text": "Negative answers mean the order was wrong on some strip - re-test with a sample point."
     },
     {
       "label": "Quick concepts",
-      "text": "A negative answer means the curves were named in the wrong order."
+      "text": "Top-minus-bottom is |f - g| disassembled: the intersection analysis resolves the absolute value into an explicit order."
+    },
+    {
+      "label": "Key points",
+      "text": "Area between curves = integral of (top - bottom) dx, nonnegative; intersections from f = g supply the limits and any splits. Interior crossings swap top/bottom - partition and test one point per strip. The formula is |f - g| with the absolute value resolved by the order analysis.…"
     },
     {
       "label": "Universal facts",
-      "text": "The area of a circular segment cut by a chord is exactly this integral, and the same computation gives the circular-segment formula in terms of the half-angle.  ·  Hydrostatic pressure force on a curved surface is an area integral of pressure over depth, where the pressure varies with depth — an area computation with a non-constant integrand."
+      "text": "The slicing axis is a computational decision: count the splits each choice demands."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (6m): Find the area of the region bounded by x = y² and x = 4.** — **Set-up choice:** the boundaries are x = y² (left) and x = 4 (right) — functions of y ⟹ **horizontal slices (dy)**. **Intersections:** y² = 4 ⟹ y = ±2 ⟹ limits y ∈ [−2, 2].…  ·  **NEB-style (6m): Find the area enclosed between y² = 2x and y = x − 4 — carefully identifying all boundary pieces.** — **Intersections:** substitute x = y + 4 into y² = 2x: y² = 2y + 8 ⟹ y² − 2y − 8 = 0 ⟹ (y − 4)(y + 2) = 0 ⟹ y = 4, −2 ⟹ points (8, 4) and (2, −2).…"
     },
     {
       "label": "MCQ drill",
@@ -87,19 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**The rule in one line:** find the intersection points, then integrate (TOP function − BOTTOM function) over the interval between them. The intersections bound the region, and the integrand's sign encodes which curve is on top.  ·  **Intersections come from solving equalities, not from the graph.** For $y=x^2$ and $y=4x^2$ the intersections are where $x^2=4x^2$, giving $x=0$ only, which is why the two parabolas touch at the origin and enclose no bounded region — a quick sanity check that the setup is wrong.  ·  **A worked case, $y^2=4x$ and $x^2=4y$:** solving gives $(0,0)$ and $(4,4)$. Between them $y=\\frac{x^2}{4}$ is the lower boundary and $y=2\\sqrt{x}$ the upper, so the area is $\\int_0^4\\left(2\\sqrt{x}-\\frac{x^2}{4}\\right)dx = \\frac{32}{3}-\\frac{64}{12} = \\frac{32}{3}$ square units."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Area Between Two Curves This canonical is the **short-form doorway** to area between two curves: the top-minus-bottom integral, intersection finding, and the split protocol in one page.…  ·  ## 2. Theorem Mirror - **Basic formula:** area = ∫ₐᵇ[top − bottom]dx where top is the larger y on each strip — always nonnegative. - **Intersections:** solve f(x) = g(x) to find a and b (and any interior crossings that force splits). - **Split protocol:** if the curves cross inside [a, b], the top/bottom roles swap — partition at each crossing and sum the pieces.…  ·  ## 3. Deep Conceptual — Top Minus Bottom Is |Difference| Made Structured - The area between curves is ∫|f − g|dx in principle; the **top-minus-bottom form is that absolute value resolved by knowledge of which curve is on top** — the intersection analysis converts |·| into an explicit order. Finding intersections is not bookkeeping; it is the absolute value's disassembly.…"
     },
     {
       "label": "More ideas",
-      "text": "Symmetry: $A=2\\int_{half}$ about a vertical axis, $A=4\\int_{quarter}$ about both  ·  Statement 1: The intersection points of the curves bound the region.  ·  Statement 2: The integrand is the top function minus the bottom function."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  A sketch is not decoration - it bounds the answer and exposes the crossings.  ·  Find the area between y = x² and y = x."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: The interval must be split wherever the curves exchange order.  ·  Statement 4: A negative computed area indicates the curves were named in reverse.  ·  Statement 5: Symmetry about a vertical axis halves the integration range."
+      "text": "Find the area between y = 4 − x² and y = x + 2.  ·  Find the area between x = y² and x = 4.  ·  ## 4. Deep Conceptual — Choosing the Slicing Axis - **Vertical slices (dx)** suit curves given as y = f(x); **horizontal slices (dy)** suit curves given as x = g(y) or regions bounded left-right by functions of y. The choice that avoids splitting is the cheaper computation.…"
     },
     {
       "label": "More ideas",
-      "text": "**When the top curve changes, split the integral.** Regions bounded by three or more curves require a piecewise integrand, and using a single function across the whole span gives a wrong answer that still looks plausible.  ·  **The 'top minus bottom' sign is what guarantees a positive answer.** If an integral over a bounded region returns a negative number, the curves were named in the wrong order — reverse them rather than taking an absolute value at the end.  ·  **Symmetry halves the work:** if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
+      "text": "## 5. Worked Example Types - **Type A — no interior crossing:** one integral, top minus bottom. - **Type B — interior crossing:** split at the crossing, two integrals. - **Type C — dy slicing:** horizontal strips for x = g(y) boundaries. - **Type D — symmetric doubling:** verify symmetry, compute half, double.  ·  ## 6. Common Confusions **\"Top minus bottom needs absolute values\":** once the order is known per strip, plain subtraction is correct — the |·| was resolved by the analysis. **\"Integrate in dx always\":** count the splits; dy may halve the work."
     }
   ]
 }

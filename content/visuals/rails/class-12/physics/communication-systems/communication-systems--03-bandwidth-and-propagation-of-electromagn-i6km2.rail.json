@@ -22,9 +22,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Bandwidth and propagation of electromagnetic waves (Communication Systems, Physics, class-12-notes) covers Bandwidth, propagation of electromagnetic waves. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Bandwidth is the frequency width a signal needs. Ground waves follow the Earth at lower frequencies, sky waves can bounce from the ionosphere, and space waves travel in line of sight. The radio horizon of a mast of height h is about the square root of 2 R h.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bandwidth and propagation of electromagnetic waves — quick idea map\"><title>Bandwidth and propagation of electromagnetic waves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bandwidth and propagation of electromagnetic</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Bandwidth</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Propagation of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electromagnetic waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = qvB sinθ</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ε = −N dΦ/dt</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bandwidth and propagation of electromagnetic waves — quick idea map\"><title>Bandwidth and propagation of electromagnetic waves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Bandwidth and propagation of electromagnetic</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bandwidth</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ground wave</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Bandwidth is the spread of</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">frequencies used.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Ground waves follow the</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Earth.</text></svg>",
         "caption": "Bandwidth and propagation of electromagnetic waves — quick idea map of this topic's headline ideas"
       }
     },
@@ -35,15 +35,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Bandwidth\" as one blob → ✅ split into: bandwidth, propagation of electromagnetic waves.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
+      "text": "Take R = 6400 km unless the question gives another radius.  ·  Night-time ionosphere conditions change the sky-wave range."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Bandwidth is the range of frequencies a signal or a channel occupies. A wider message, such as television, needs a wider channel than speech. Two stations must be separated by at least their bandwidths or they overlap.  ·  A ground wave travels along the surface of the Earth. The ground absorbs more energy at higher frequency, so ground-wave broadcast is used for the lower radio frequencies and does not reach around the world."
     },
     {
       "label": "Limitation",
@@ -51,51 +51,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Bandwidth and propagation of electromagnetic waves — Communication Systems, Physics (class-12-notes).  ·  **Tested.** define it · list: bandwidth, propagation of electromagnetic waves · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "Ground, sky, space.  ·  Higher antenna, farther horizon."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Bandwidth and propagation of electromagnetic waves\" with one example.  ·  compare \"Bandwidth\" with the related idea from a neighbouring unit."
+      "text": "Name the three propagation paths.  ·  Which path do television signals use?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Bandwidth and propagation of electromagnetic waves — topic mind map\"><title>Bandwidth and propagation of electromagnetic waves — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Bandwidth and propagation of electromagnetic …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Bandwidth</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Propagation of</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">electromagnetic waves</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Bandwidth and propagation of electromagnetic waves — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Bandwidth  ·  Ground wave  ·  Sky wave  ·  Space wave"
+    },
+    {
       "label": "Key points",
-      "text": "• Bandwidth  ·  • Propagation of electromagnetic waves"
+      "text": "Bandwidth is the spread of frequencies used.  ·  Ground waves follow the Earth.  ·  Sky waves reflect from the ionosphere.  ·  Space waves travel in line of sight."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Bandwidth and propagation of electromagnetic waves\" and verify the answer is plausible."
+      "text": "What does a higher mast do to the radio horizon?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A transmitting antenna is 100 m above the Earth. Take R = 6.40 × 10^6 m. Estimate the radio-horizon distance with √(2 R h)."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Bandwidth and propagation of electromagnetic waves\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Television typically uses → B  ·  A sky wave can be returned by → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.  ·  **Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).  ·  **Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+      "text": "A sky wave is sent upward and can be returned by the ionosphere. That is how short-wave radio crosses long distances. The ionosphere is not a metal mirror at every frequency: above a critical frequency the wave passes through.  ·  A space wave travels in a straight line from a high transmitting antenna to the receiver. Television and FM use it. The Earth's curve limits the range to a little beyond the geometric horizon.  ·  For an antenna at height h above a spherical Earth of radius R, the horizon distance is about √(2 R h) when h is much smaller than R. A higher mast sees farther."
     },
     {
       "label": "More ideas",
-      "text": "L = NΦ/I  ·  define + example each sub-idea: bandwidth, propagation of electromagnetic waves.  ·  one worked example for \"Bandwidth and propagation of electromagnetic waves\" — check units / edge cases."
+      "text": "L = NΦ/I  ·  ❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ..  ·  Bandwidth is not the carrier frequency."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
+      "text": "A sky wave is not guaranteed at every frequency.  ·  A space wave does not follow the ground.  ·  The horizon formula uses the radius of the Earth, not the height alone."
     },
     {
       "label": "More ideas",
-      "text": "**Propagation of electromagnetic waves.** one-line definition + one-line exam use."
+      "text": "Match the service to the path.  ·  Keep bandwidth and carrier frequency as different numbers.  ·  Write Ground-wave range is limited by the surface and by frequency. and say what each symbol means."
+    },
+    {
+      "label": "More ideas",
+      "text": "Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one.  ·  Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ.  ·  The same information can be sent in a narrow band by slowing it down, or in a wide band by sending it quickly. The channel must be at least as wide as the signal."
     }
   ]
 }

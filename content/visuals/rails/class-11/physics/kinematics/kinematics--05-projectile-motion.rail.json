@@ -24,18 +24,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles.…",
+      "text": "A projectile runs two independent motions on one clock: uniform horizontal velocity $u\\cos\\theta$ and vertical free fall from $u\\sin\\theta$. For an angled launch on level ground, the time of flight is $T = 2u\\sin\\theta/g$ (exactly twice the time to the top — NEB 2019), the maximum height is $H = u^2\\sin^2\\theta/2g$, and the range is $R = u^2\\sin2\\theta/g$ — maximal at 45° and identical for complementary angles, so…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Projectile Motion — quick idea map\"><title>Projectile Motion — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Projectile Motion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Independence of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">horizontal (uniform) and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vertical (accelerated)…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Component</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">kinematics — $v_x$</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant, $v_y$ with</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Horizontal and vertical</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">motions are independent;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">they share only TIME.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_x$ is constant; $v_y$</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">changes by $g$ every</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">second; the path is a</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Projectile Motion — quick idea map\"><title>Projectile Motion — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Projectile Motion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Independence again:**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the horizontal motion</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">never knows about gravity;</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Components: u cos θ</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant horizontal; u sin</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">θ vertical under g.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">T = 2u sinθ/g; H =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">u²sin²θ/2g; R = u²sin2θ/g;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">R max at 45°.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- uₓ = u cos θ; u_y = u</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sin θ - T = 2u sin θ/g; H</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= u² sin²θ/2g; R = u² sin…</text></svg>",
         "caption": "Projectile Motion — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Components: $v_x = u\\cos\\theta$ (constant); $v_y = u\\sin\\theta - gt$\nTime of flight: $T = \\dfrac{2u\\sin\\theta}{g}$\nMaximum height: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$",
+      "text": "- uₓ = u cos θ; u_y = u sin θ - T = 2u sin θ/g; H = u² sin²θ/2g; R = u² sin 2θ/g - Horizontal projection: t = √(2h/g); R = u√(2h/g); v = √(u² + 2gh) - Trajectory: y = x tan θ − gx²/(2u² cos²θ)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Projectile Motion — formula board\"><title>Projectile Motion — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Projectile Motion</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Components: $v_x = u\\cos\\theta$ (constant); $v_y =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">u\\sin\\theta - gt$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Time of flight: $T = \\dfrac{2u\\sin\\theta}{g}$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Maximum height: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Projectile Motion — formula board\"><title>Projectile Motion — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Projectile Motion</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- uₓ = u cos θ; u_y = u sin θ - T = 2u sin θ/g; H = u²</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">sin²θ/2g; R = u² sin 2θ/g - Horizontal projection: t =</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">√(2h/g); R = u√(2h/g); v = √(u² + 2gh) - Trajectory: y =</text><text x=\"450\" y=\"298\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">x tan θ − gx²/(2u² cos²θ)</text></svg>",
         "caption": "Projectile Motion — formula board of this topic's own formulas"
       }
     },
@@ -49,11 +49,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1 (horizontal launch): a stone thrown horizontally at 15 m/s from a 20 m tower: $t = \\sqrt{2 \\times 20/10} = 2$ s; lands 30 m out — vertical fall sets the TIME, horizontal speed sets the DISTANCE.  ·  Example 2 (full trajectory): $u = 25$ m/s at $\\theta = 37°$ ($\\sin 37° = 0.6$, $\\cos 37° = 0.8$): $T = 3$ s, $H = 11.25$ m, $R = 60$ m — the classic 3-4-5 projectile."
+      "text": "***20 m/s at 30°*** — H = 5 m, R = 34.6 m (NEB 2024)."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'A projectile's horizontal velocity decreases during flight.' ✅ $v_x = u\\cos\\theta$ is CONSTANT (no horizontal force in the ideal model); only $v_y$ changes.  ·  ❌ 'At the top of the trajectory the velocity is zero.' ✅ Only $v_y = 0$; the horizontal component $u\\cos\\theta$ persists — speed at the top is $u\\cos\\theta$, the MINIMUM of the flight."
+      "text": "**Angle projection vs horizontal projection:** angled launch uses T = 2u sinθ/g; horizontal launch from a height uses t = √(2h/g) — different formulas for different setups.  ·  **Maximum range at 45°:** true only for level ground (launch and landing at the same height)."
     },
     {
       "label": "Derivation",
@@ -61,39 +61,27 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: $R = u^2\\sin2\\theta/g$ — for 30° and 60°, $\\sin 2\\theta = \\sin 60° = 0.866$; write the common range instantly.  ·  Trick 2: At 45°, $R = 4H$ — if a question gives one, the other is a division away."
+      "text": "\"Range reads sin 2θ — 45° splits it best.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Show that the path of a projectile is a parabola by eliminating $t$ from the equations of motion.  ·  Q2. Derive $R = \\dfrac{u^2 \\sin 2\\theta}{g}$ and hence prove that the range is maximum for $\\theta = 45°$."
+      "text": "**Numerical (3m): Find the maximum range of a projectile launched at 40 m/s on level ground.** — R_max = u²/g at 45° = 1600/10 = 160 m (g = 10 m/s²)."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: Derivations of $T$, $H$ and $R$ from components are standard 4-mark questions — write the two component tables first.  ·  Exam Tip 2: Draw the trajectory with $v_x$ arrows equal everywhere and $v_y$ arrows shrinking/rising — examiners look for the independence idea."
+      "text": "Most-tested unit so far: five verified questions. Practise all three setups (angled, horizontal, vertical) and both derivations."
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Independence of horizontal (uniform) and vertical (accelerated) motions.  ·  Concept 2: Component kinematics — $v_x$ constant, $v_y$ with $-gt$; time is the shared variable.  ·  Concept 3: Standard results: $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$.  ·  Concept 4: Symmetry — equal speeds at equal heights; landing mirrors launching."
+      "text": "**Independence again:** the horizontal motion never knows about gravity; the vertical motion never knows about u cos θ — one clock, two independent problems."
     },
     {
       "label": "Key points",
-      "text": "Horizontal and vertical motions are independent; they share only TIME.  ·  $v_x$ is constant; $v_y$ changes by $g$ every second; the path is a parabola.  ·  At the top: $v_y = 0$, speed $= u\\cos\\theta$ (minimum), $a = g$ downward.  ·  Landing speed equals launch speed; landing angle equals −launch angle (symmetry)."
+      "text": "Components: u cos θ constant horizontal; u sin θ vertical under g.  ·  T = 2u sinθ/g; H = u²sin²θ/2g; R = u²sin2θ/g; R max at 45°.  ·  Complementary angles (θ, 90°−θ) give equal ranges — 30° and 60° ratio 1:1.  ·  Horizontal projection: t = √(2h/g), R = ut, v = √(u² + 2gh)."
     },
     {
       "label": "Universal facts",
-      "text": "Galileo's *Dialogues* (1638) first showed projectile motion is a parabola by superposing uniform horizontal motion with vertical fall — the first known composition of motions.  ·  Artillery fire above ~30 km (Paris Gun, WWI) deviates from the parabola: thin air changes drag and $g$'s direction varies — ideal parabolic flight is a near-Earth, no-air model."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. Show that two angles of projection differing by 90° give the same horizontal range.  ·  Q4. A projectile is fired at 50 m/s at 60°. Find (a) time of flight, (b) maximum height, (c) velocity after 2 s.  ·  Q5. Show that the relation between range and maximum height is $R = 4H\\cot\\theta$, and verify it for $\\theta = 45°$ where $R = 4H$."
-    },
-    {
-      "label": "More hints",
-      "text": "Exam Tip 3: For 'velocity at height h' questions use $v_y^2 = (u\\sin\\theta)^2 - 2gh$ — avoids solving a quadratic in $t$.  ·  Exam Tip 4: State the no-air-resistance assumption; if a question mentions drag, the parabola model no longer applies."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Example 3 (velocity at top): speed at the top $= u\\cos\\theta = 20$ m/s for the previous shot — the projectile is never at rest.  ·  Example 4 (45° range): maximum range with $u = 30$ m/s is $R_{max} = u^2/g = 90$ m at 45°, with $H = R/4 = 22.5$ m — note $R_{max} = 4H$."
+      "text": "Without air resistance a bullet fired horizontally and a bullet dropped from the same height hit the ground at the same instant."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Type 2 — alternate treatment:** this version builds projectile motion from the independence of the two components and derives all standard results step by step — the derivation chain NEB expects.  ·  **The governing idea:** horizontal and vertical motions are INDEPENDENT. Gravity acts only vertically, so the horizontal velocity stays constant ($v_x = u\\cos\\theta$) while the vertical motion is free fall with initial speed $u\\sin\\theta$. The path is the combination — a parabola.  ·  **Component equations (up positive, launch at angle $\\theta$ with speed $u$):** horizontal: $x = (u\\cos\\theta)t$, $v_x = u\\cos\\theta$; vertical: $y = (u\\sin\\theta)t - \\tfrac{1}{2}gt^2$, $v_y = u\\sin\\theta - gt$."
+      "text": "## 1. Topic Introduction — Two Motions Wearing One Body A projectile is free fall with a head start: uniform horizontal velocity (a = 0) superposed on vertical free fall (a = g). Because the components are independent, the whole parabolic story unfolds from two one-dimensional problems sharing one clock.  ·  ## 2. Fundamental Concepts ### 2.1 Projectile launched at angle θ with speed u (level ground) | Quantity | Formula | |---|---| | Horizontal component | $u_x = u\\cos\\theta$ (constant throughout) | | Vertical component | $u_y = u\\sin\\theta$ (changes by g) | | Time to maximum height | $t_{up} = u\\sin\\theta/g$ | | **Time of flight** | $T = 2u\\sin\\theta/g$ | | **Maximum height** |…  ·  ## 3. Worked Numericals **Q1 (3m, 2024):** A body is projected with velocity 20 m/s at 30° to the horizontal. Find its maximum height and horizontal range. (g = 10 m/s²) *Given:* u = 20 m/s, θ = 30°. *Substitution:* $H = u^2\\sin^2\\theta/2g = 400 \\times 0.25/20 = 5$ m. $R = u^2\\sin2\\theta/g = 400 \\times \\sin60°/10 = 40 \\times 0.866 = 34.6$ m.…"
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Trajectory parabola and the $R$–$H$ relation $R = 4H\\cot\\theta$.  ·  Definition and significance of Projectile Motion & Its Applications.  ·  Range: $R = \\dfrac{u^2\\sin 2\\theta}{g}$; $R_{max} = \\dfrac{u^2}{g}$ at $\\theta = 45°$"
+      "text": "**Symmetry and Range Maxima:** Time of flight $T = rac{2u\\sin heta}{g}$, max height $H = rac{u^2\\sin^2 heta}{2g}$, range $R = rac{u^2\\sin 2 heta}{g}$. Maximum range at $ heta = 45^\\circ$. Complementary angles ($ heta$ and $90^\\circ- heta$) give identical ranges because $\\sin 2 heta = \\sin(180^\\circ-2 heta)$.…  ·  Note 3: 'Same range' pairs: compare heights as $\\sin^2\\theta : \\sin^2(90°-\\theta)$ — the steeper shot rises 3× higher for the 30°/60° pair.  ·  Note 4: State the assumptions (no air resistance, constant $g$, flat ground) in theory answers — they define the model."
     },
     {
       "label": "More ideas",
-      "text": "Trajectory: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$ (parabola); $R = 4H\\cot\\theta$  ·  **Symmetry and Range Maxima:** Time of flight $T = rac{2u\\sin heta}{g}$, max height $H = rac{u^2\\sin^2 heta}{2g}$, range $R = rac{u^2\\sin 2 heta}{g}$. Maximum range at $ heta = 45^\\circ$. Complementary angles ($ heta$ and $90^\\circ- heta$) give identical ranges because $\\sin 2 heta = \\sin(180^\\circ-2 heta)$.…  ·  $R$ is maximum at 45°; complementary angles give equal ranges but different heights."
+      "text": "Verified PYQs: 2024 numerical 3m; 2022 complementary-angles derivation 3m; 2022 horizontal-projection 5m; 2022 vertical projection 4m; 2019 T = 2·t_up derivation 3m.  ·  \"A projectile writes a parabola because one axis coasts while the other falls.\"  ·  Why do 30° and 60° give the same range but different maximum heights?"
     },
     {
       "label": "More ideas",
-      "text": "$R \\propto u^2$ and $H \\propto u^2$ — doubling launch speed quadruples both.  ·  Connection of Projectile Motion & Its Applications to other topics  ·  ❌ 'The path is part of a circle / straight line decaying.' ✅ The trajectory is a PARABOLA — the graph of $y = x\\tan\\theta - gx^2/(2u^2\\cos^2\\theta)$."
+      "text": "Task 3: Verify the complementary-angle range equality numerically for 15°/75° with $u = 40$ m/s.  ·  Task 4: Trace the full trajectory table ($x, y, v_x, v_y$ each 0.5 s) for $u = 20$ m/s at 30° and plot it.  ·  Task 5: Explain in words why a horizontally thrown stone and a dropped stone hit the ground together."
     },
     {
       "label": "More ideas",
-      "text": "❌ Using $\\sin\\theta$ instead of $\\sin 2\\theta$ in the range. ✅ $R = u^2\\sin 2\\theta/g$; and $\\sin 2\\theta$ is maximal at $\\theta = 45°$, not $90°$.  ·  ❌ 'Complementary angles give different ranges.' ✅ $\\sin 2(90°-\\theta) = \\sin(180°-2\\theta) = \\sin 2\\theta$ — $30°$ and $60°$ land at the SAME spot (the 60° shot flies higher).  ·  ❌ Doubling $u$ doubles the range. ✅ $R \\propto u^2$ — doubling launch speed QUADRUPLES range (and quadruples max height too)."
-    },
-    {
-      "label": "More ideas",
-      "text": "Example 5 (bomb release): a plane at 500 m flying level at 100 m/s releases a bomb — it lands after $t = 10$ s, $500$ m ahead of the release point (it keeps the plane's horizontal velocity).  ·  Note 3: 'Same range' pairs: compare heights as $\\sin^2\\theta : \\sin^2(90°-\\theta)$ — the steeper shot rises 3× higher for the 30°/60° pair.  ·  Note 4: State the assumptions (no air resistance, constant $g$, flat ground) in theory answers — they define the model."
+      "text": "## 4. Derivation asked at NEB (2019, 2022) **Time of flight is double the time to maximum height (3m, 2019):** At maximum height the vertical velocity vanishes: $0 = u\\sin\\theta - gt_{up} → t_{up} = u\\sin\\theta/g$.…  ·  ## 5. Conceptual Relationships - **To Topic 4 (resolution):** the whole topic is resolution in action — $u\\cos\\theta$ and $u\\sin\\theta$ start two independent problems. - **To Topic 9:** the vertical half is free fall; the horizontal half is uniform velocity.…  ·  ## 6. Exam Orientation and Previous Year Questions (NEB) ### 6.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Kinematics | Projectile | A body is projected with velocity 20 m s⁻¹ at 30° to the horizontal.…"
     }
   ]
 }

@@ -56,11 +56,11 @@
     },
     {
       "label": "Shortcut",
-      "text": "• Mechanics  ·  • Optional"
+      "text": "Trick 1: Resultant of two forces: R = √(P² + Q² + 2PQ cos θ); direction tan α = Q sin θ/(P + Q cos θ) — two formulas cover every statics numerical.  ·  Trick 2: Equilibrium of three forces → Lami's theorem: P/sin α = Q/sin β = R/sin γ — use when three concurrent forces balance."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Mechanics (optional): Statics — forces and resultant forc…\" with one example.  ·  compare \"Mechanics\" with the related idea from a neighbouring unit."
+      "text": "Q1. **NEB-style (5m):** Two forces of 3 N and 4 N act at right angles on a particle. Find the resultant's magnitude and direction. **Solution.** **Magnitude:** R = √(3$^2$ + 4$^2$) = √25 = **5 N** (perpendicular case of the parallelogram law: cos θ = 0). **Direction:** tan α = 4/3 ⟹ α = 36.87° from the 3 N force toward the 4 N force.…  ·  Q2. **NEB-style (6m):** State the parallelogram law of forces and use it to find the resultant of two equal forces of 5 N with 60° between them. **Solution.** **Law:** if two forces acting at a point are represented in magnitude and direction by the adjacent sides of a parallelogram, the resultant is represented by the diagonal through…"
     },
     {
       "label": "Hints",
@@ -72,11 +72,11 @@
     },
     {
       "label": "Key points",
-      "text": "• : Statics — forces  ·  • Resultant forces  ·  • Parallelogram law of forces  ·  • Composition"
+      "text": "• Mechanics  ·  • Optional  ·  • : Statics — forces  ·  • Resultant forces"
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Mechanics (optional): Statics — forces and resultant forc…\" and verify the answer is plausible."
+      "text": "Q3. **NEB-style (6m):** Find the magnitude and direction of the resultant of forces 7 N and 5 N acting at 120° to each other. **Solution.** **Magnitude:** R = √(49 + 25 + 2·35·cos 120°) = √(74 - 35) = √39 ≈ **6.245 N**.…  ·  Q4. **NEB-style (5m):** Resolve a force of 10 N acting at 30° to the horizontal into rectangular components. **Solution.** **Horizontal:** F cos 30° = 10·(√3/2) = **5√3 ≈ 8.66 N**. **Vertical:** F sin 30° = 10·(1/2) = **5 N**.…  ·  Q5. **NEB-style (6m):** A particle is in equilibrium under three forces: 6 N and 8 N at right angles, and a third force R. Find R and verify with Lami's theorem. **Solution.** **Resultant of the pair:** √(36 + 64) = 10 N; equilibrium requires the third force to balance it ⟹ **R = 10 N** opposite…"
     },
     {
       "label": "MCQ drill",
@@ -88,6 +88,14 @@
     },
     {
       "label": "More ideas",
+      "text": "• Parallelogram law of forces  ·  • Composition  ·  Trick 3: Resolution trick: choose axes along and perpendicular to the likely resultant; ΣFx and ΣFy then give R and θ directly."
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 4: Minimum force to move... on a smooth plane: resolve weight along the plane mg sin θ — the standard free-body setup earns the method mark.  ·  Q6. **NEB-style (6m):** Two forces of 5 N and 3 N act at a point. Between what limits can their resultant lie? Find the angle between them if the resultant is 4 N. **Solution.** **Limits:** maximum when θ = 0°: R = 5 + 3 = 8 N; minimum when θ = 180°: R = 5 - 3 = 2 N ⟹ resultant lies in **[2, 8] N**.…  ·  Q7. **NEB-style (6m):** Derive the direction formula tan α = (Q sin θ)/(P + Q cos θ) for the resultant of P and Q, and evaluate it for P = 4 N, Q = 3 N at 90°. **Solution.** Resolve Q along and perpendicular to P: components Q cos θ (along P) and Q sin θ (perpendicular).…"
+    },
+    {
+      "label": "More ideas",
       "text": "define + example each sub-idea: mechanics, optional, : statics — forces, resultant forces.  ·  one worked example for \"Mechanics (optional): Statics — forces and resultant forc…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
@@ -96,7 +104,7 @@
     },
     {
       "label": "More ideas",
-      "text": "**Resolution of forces.** one-line definition + one-line exam use.  ·  **Resultant of coplanar forces acting on a point.** one-line definition + one-line exam use."
+      "text": "**Resolution of forces.** one-line definition + one-line exam use.  ·  **Resultant of coplanar forces acting on a point.** one-line definition + one-line exam use.  ·  # Mechanics (optional): Statics — forces and resultant forces, parallelogram law of forces, composition and resolution of forces, resultant of coplanar forces acting on a point ## 1.…"
     }
   ]
 }

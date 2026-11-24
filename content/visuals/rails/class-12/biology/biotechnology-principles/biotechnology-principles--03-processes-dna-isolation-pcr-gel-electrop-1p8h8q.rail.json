@@ -52,11 +52,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Processes: DNA isolation, PCR, gel electrophoresis, gene … — Biotechnology — Principles and Processes, Biology (class-12-notes).  ·  **Tested.** define it · list: processes, dna isolation, gel electrophoresis, gene transfer · one worked example · one misconception each."
+      "text": "# Processes: DNA isolation, PCR, gel electrophoresis, gene transfer ## 1. Introduction Opening frame for **Processes** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Biotechnology — Principles and Processes fill pass. ## 2.…  ·  The working processes of biotech: **DNA isolation** (lyse cells, remove proteins, precipitate pure DNA), **PCR** (polymerase chain reaction — amplify a DNA segment a billion-fold in hours using Taq polymerase through denaturation, primer annealing and extension cycles), **gel electrophoresis** (separate DNA fragments by size through an agarose gel — DNA is negative, so it runs to the anode), and **gene transfer**…"
     },
     {
       "label": "Shortcut",
-      "text": "• Gel electrophoresis  ·  • Gene transfer"
+      "text": "Trick 1: DNA isolation: cell lysis (lysozyme/EDTA/detergent) → protease/RNase → chilled ethanol precipitation ('spooling') — the three-step order.  ·  Trick 2: PCR three steps: denaturation 94–95 °C, primer annealing 50–60 °C, extension 72 °C (Taq polymerase) — temperatures ARE the marks; 30 cycles ≈ 10⁹ copies."
     },
     {
       "label": "Board question",
@@ -71,6 +71,10 @@
       }
     },
     {
+      "label": "Key points",
+      "text": "• Gel electrophoresis  ·  • Gene transfer"
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Processes: DNA isolation, PCR, gel electrophoresis, gene …\" and verify the answer is plausible."
     },
@@ -80,15 +84,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**DNA isolation.** one-line definition + one-line exam use.  ·  **Gel electrophoresis.** one-line definition + one-line exam use.  ·  **Gene transfer.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Process steps** | Step | What happens | Where | Key enzyme or number | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables carry…  ·  **Concept flow — the processes in the order a cloning project uses them (study in this order)** | Step | Process | Purpose | |---|---|---| | 1 | DNA isolation | Extract clean DNA from cells (lysis → RNase/protease → ethanol precipitation) | | 2 | Cutting with restriction enzymes | Produce fragments with usable ends | | 3 | PCR | Amplify the specific fragment a billion-fold | |…  ·  **PCR — the three temperatures and what happens at each** | Step | Temperature | What happens | |---|---|---| | 1. Denaturation | ~94–95°C | Double helix separates into two single strands | | 2. Primer annealing | ~50–60°C | Short primers bind the flanking sequences of the target | | 3.…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: processes, dna isolation, gel electrophoresis, gene transfer.  ·  one worked example for \"Processes: DNA isolation, PCR, gel electrophoresis, gene …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Gel electrophoresis: DNA moves to the anode (negative charge), smaller fragments faster; ethidium bromide + UV visualises; compare with a ladder.  ·  Trick 4: Gene transfer: microinjection (direct into cell), gene gun (gold particles), disarmed Ti plasmid of Agrobacterium (plants) — three routes.  ·  define + example each sub-idea: processes, dna isolation, gel electrophoresis, gene transfer."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Processes: DNA isolation, PCR, gel electrophoresis, gene …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Gene transfer methods — classified** | Method | How it works | Used for | |---|---|---| | Transformation (CaCl2 + heat shock) | Cold calcium makes membranes permeable; brief heat shock lets DNA in | Bacteria (E.…  ·  ## 4. Diagrams and figures - **D1** — DNA processes and genetic-cross diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Processes — process or life-cycle flow (authored SVG — English labels) - **D3** — Processes — detailed reference plate (curated external — English labels; source, author and…  ·  ```svg PCR — temperature cycles double the target each round <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Polymerase chain reaction (PCR)</text><line…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — PCR maths.** Starting with 1 copy and running 30 cycles: copies = 2³⁰ ≈ 1.07 billion. With 20 cycles: 2²⁰ ≈ 1 million. So the choice of cycle count sets sensitivity — forensic and diagnostic PCR use 30–40 cycles to detect vanishingly small starting amounts, which is also why contamination is fatal:…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) List the three PCR steps with their temperatures. (2) Why is Taq polymerase used and where does it come from? (3) How does gel electrophoresis separate DNA, and which pole does DNA run toward? (4) Name four gene-transfer methods and one use each.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Isolate, cut, amplify (PCR), check (gel), join, transfer — the standard pipeline of every cloning project. PCR's exponential maths and electrophoresis's size sorting are the two skills the exam loves. **Self-check:** can you state the three PCR temperatures and compute 2²⁰?"
     }
   ]
 }

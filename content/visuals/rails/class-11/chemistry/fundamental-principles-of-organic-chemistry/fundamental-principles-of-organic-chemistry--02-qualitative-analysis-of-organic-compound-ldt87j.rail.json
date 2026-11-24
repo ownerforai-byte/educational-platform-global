@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Qualitative analysis of organic compounds (detection of N… (Fundamental Principles of Organic Chemistry, Chemistry, class-11-notes) covers Qualitative analysis of organic compounds, detection of N, halogens by Lassaigne's test. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Lassaigne's test** makes covalently bound N, S and halogens detectable by one stroke: fuse the compound with **sodium metal** red-hot, drop the mass into water, boil and filter — the **extract** now holds **NaCN, Na₂S and NaX**. **Nitrogen:** FeSO₄ + NaOH builds sodium ferrocyanide; acidification with Fe³⁺ throws **Prussian blue Fe₄[Fe(CN)₆]₃** — unless sulphur is also present, in which case **NaSCN** forms and…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Qualitative analysis of organic compounds (detection of N… — quick idea map\"><title>Qualitative analysis of organic compounds (detection of N… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Qualitative analysis of organic compounds</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">(detection of N…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Qualitative analysis of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">organic compounds</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Detection of N</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parent-chain + locant(s) +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">sub-prefix + suffix =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">IUPAC name</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Qualitative analysis of organic compounds (detection of N… — quick idea map\"><title>Qualitative analysis of organic compounds (detection of N… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Qualitative analysis of organic compounds</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">(detection of N…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The whole test is one</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">idea: convert covalent to</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ionic, then let textbook…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Lassaigne's test: fuse</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">organic compound with Na</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">metal red-hot -&gt; drop</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Fusion: Na + C, N, S, X</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">→ NaCN, Na₂S, NaX - N:</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fe²⁺ + CN⁻ →</text></svg>",
         "caption": "Qualitative analysis of organic compounds (detection of N… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+      "text": "- Fusion: Na + C, N, S, X → NaCN, Na₂S, NaX - N: Fe²⁺ + CN⁻ → Na₄[Fe(CN)₆]; 4Fe³⁺ + 3[Fe(CN)₆]⁴⁻ → Fe₄[Fe(CN)₆]₃ (Prussian blue) - S: Na₂S + Pb(C₂H₃O₂)₂ → PbS↓ (black) - N+S: NaSCN + Fe³⁺ → Fe(SCN)₃ (blood red) - X:…"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Qualitative analysis of organic compounds\" as one blob → ✅ split into: qualitative analysis of organic compounds, detection of n, halogens by lassaigne's test.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).  ·  Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: qualitative analysis of organic compounds, detection of n, halogens by lassaigne's test (within Fundamental Principles of Organic Chemistry).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Lassaigne's test detects nitrogen, sulphur and halogens in organic compounds by converting them into ionic sodium salts during fusion with sodium metal.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The blood-red that is not a mistake*** — a compound containing both N and S gives NaSCN on fusion; with Fe3+ it turns blood red instead of Prussian blue — and that red colour is the positive proof of both elements at once."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Qualitative analysis of organic compounds (detection of N… — Fundamental Principles of Organic Chemistry, Chemistry (class-11-notes).  ·  **Tested.** define it · list: qualitative analysis of organic compounds, detection of n, halogens by lassaigne's test · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Making the Invisible Detectable Carbon and hydrogen reveal themselves by simple combustion tests, but **nitrogen, sulphur and halogens** hide inside covalent molecules where ionic reagents cannot touch them. **Lassaigne's test** (sodium fusion) solves this by converting every covalent N, S and X into **ions** (CN⁻, S²⁻, X⁻) in one operation — then classic inorganic tests finish the job.  ·  ## 2. Fundamental Concepts ### 2.1 Why sodium fusion is needed - In an organic molecule, N, S and halogens are held in **covalent bonds**; the usual ionic precipitation tests fail. - Fusing the compound with **molten sodium** converts them to **ionic sodium salts**: **NaCN** (from N), **Na₂S** (from S), **NaX** (from halogen).…"
     },
     {
       "label": "Shortcut",
-      "text": "Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+      "text": "Extract recipe: Na fusion red-hot -> water -> boil -> filter. N = Prussian blue; S = violet (nitroprusside) or black PbS; X = AgNO3 colours white/pale-yellow/yellow with NH4OH solubility test; N+S = blood red NaSCN."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Qualitative analysis of organic compounds (detection of N…\" with one example.  ·  compare \"Qualitative analysis of organic compounds\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Describe Lassaigne's test for the detection of nitrogen in an organic compound.** — A small piece of **sodium metal** is heated with a little of the organic compound in a fusion tube until **red hot**, then plunged into distilled water, boiled and filtered.…  ·  **NEB-style (3m): How are sulphur and halogens detected using Lassaigne's extract?** — **Sulphur:** (i) extract + **sodium nitroprusside** → **violet colour** (Na₄[Fe(CN)₅NOS]) confirms sulphur; (ii) extract + **acetic acid, then lead acetate** → **black precipitate of PbS** confirms sulphur.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…)..",
+      "text": "Write the chemical equations (NaCN formation, Na4[Fe(CN)6], Fe4[Fe(CN)6]3, PbS, AgX) — observations alone score half.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Qualitative analysis of organic compounds (detection of N… — topic mind map\"><title>Qualitative analysis of organic compounds (detection of N… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Qualitative analysis of organic compounds (de…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Qualitative analysis of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">organic compounds</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Detection of N</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Halogens by Lassaigne's</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">test</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Qualitative analysis of organic compounds (detection of N… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The whole test is one idea: convert covalent to ionic, then let textbook inorganic chemistry do the rest — sodium fusion is the bridge between the two chemistries."
+    },
+    {
       "label": "Key points",
-      "text": "• Qualitative analysis of organic compounds  ·  • Detection of N  ·  • Halogens by Lassaigne's test"
+      "text": "Lassaigne's test: fuse organic compound with Na metal red-hot -> drop in water, boil, filter = Lassaigne's extract (NaCN, Na2S, NaX). Nitrogen: extract + FeSO4 + NaOH, boil (Na4[Fe(CN)6]), acidify H2SO4 + Fe3+ -> Prussian blue Fe4[Fe(CN)6]3.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Prussian blue, the nitrogen confirmatory precipitate, is the same pigment that 18th-century artists ground into paint — analytical chemistry and art history share one formula."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Qualitative analysis of organic compounds (detection of N…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): Why is sodium fusion necessary before testing for nitrogen, sulphur and halogens?** — In organic molecules, N, S and the halogens are held in **covalent bonds**, so the usual ionic tests — ferrocyanide formation, PbS precipitation, AgX precipitation — cannot operate on them.…"
     },
     {
       "label": "MCQ drill",
@@ -89,102 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).  ·  **Fact.** Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.  ·  **Fact.** Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Lassaigne's extract** | Filtrate from the sodium-fused mass containing NaCN/Na₂S/NaX | the working solution | | **Sodium fusion** | Red-hot fusion of organic compound with Na metal | converts covalent N, S, X to ions | | **Prussian blue** | Fe₄[Fe(CN)₆]₃ — confirmatory precipitate for…  ·  ## 4. Detailed Explanation ### 4.1 The logic chain of the test - Covalent → ionic (fusion) → ionic test (precipitation/colour). Every observation downstream is a standard inorganic test; Lassaigne's contribution is the conversion step. Quote this logic — it is what the question \"why is sodium fusion necessary?\" rewards.…  ·  ## 5. Comparison Tables **Observation → conclusion in Lassaigne's test** | Reagent added | Observation | Element | |---|---|---| | FeSO₄ + NaOH, boil; then H₂SO₄/Fe³⁺ | Prussian blue | N | | sodium nitroprusside | violet colour | S | | acetic acid + lead acetate | black ppt (PbS) | S | | HNO₃, boil, then AgNO₃ | white ppt, soluble in NH₄OH | Cl | | HNO₃, boil, then AgNO₃ |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: qualitative analysis of organic compounds, detection of n, halogens by lassaigne's test.  ·  one worked example for \"Qualitative analysis of organic compounds (detection of N…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on this row exists in the bank; all items here are NEB-style practice.  ·  Describe the preparation of Lassaigne's extract and its purpose.  ·  Give the tests and observations for nitrogen, sulphur and halogens with equations."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: iupac: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).  ·  **Detection of N.** one-line definition + one-line exam use."
+      "text": "Explain the blood-red colour obtained when both N and S are present.  ·  ## 6. Common Confusions **The blood-red colour is not a failure:** when N and S are both present, Prussian blue cannot form; the red Fe(SCN)₃ is the *correct* positive result for both elements.  ·  **HNO₃ boiling is not optional:** skipping it leaves CN⁻/S²⁻ to form AgCN/Ag₂S, muddying the halogen colours."
     },
     {
       "label": "More ideas",
-      "text": "**Halogens by Lassaigne's test.** one-line definition + one-line exam use."
+      "text": "**Flame/combustion tests detect C and H, not N/S/X:** C and H need no fusion (CO₂ turns lime water milky; H₂O condenses on a cold surface) — only N, S, X need the extract.  ·  ## 7. Exam Application **NEB-style (3m): Describe Lassaigne's test for the detection of nitrogen in an organic compound.** — A small piece of **sodium metal** is heated with the organic compound in a fusion tube until **red hot**; the hot mass is plunged into distilled water, boiled and filtered — the filtrate is…  ·  **NEB-style (3m): How are sulphur and halogens detected in an organic compound?** — **Sulphur:** (i) a portion of Lassaigne's extract + **sodium nitroprusside** → **violet colour** confirms S; (ii) another portion + **acetic acid + lead acetate** → **black precipitate of PbS** confirms S.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why is sodium fusion necessary before testing for N, S and halogens?** — In organic compounds these elements are locked in **covalent bonds**, so the standard **ionic precipitation tests** (ferrocyanide formation, PbS, AgX) cannot act on them.…"
     }
-  ],
-  "keyPoints": [
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is a core concept in fundamental principles of organic chemistry.",
-    "Understanding 02 qualitative analysis of organic compound ldt87j requires knowing its definition, conditions, and limitations.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 qualitative analysis of organic compound ldt87j must be memorized precisely.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j connects to neighbouring topics within fundamental principles of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 qualitative analysis of organic compound ldt87j.",
-    "Practical examples solidify understanding of 02 Qualitative Analysis Of Organic Compound Ldt87j and its real-world relevance.",
-    "Misconceptions about 02 qualitative analysis of organic compound ldt87j often arise from confusing it with similar concepts.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j follows systematic rules that can be applied step-by-step.",
-    "Review of 02 qualitative analysis of organic compound ldt87j should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is defined by its specific characteristics within fundamental principles of organic chemistry.",
-    "The conditions under which 02 qualitative analysis of organic compound ldt87j applies are as important as the concept itself.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 qualitative analysis of organic compound ldt87j through application-based and comparison questions.",
-    "A clear grasp of 02 Qualitative Analysis Of Organic Compound Ldt87j builds the foundation for advanced topics in fundamental principles of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 02 qualitative analysis of organic compound ldt87j, always note the exceptions alongside the general rule.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j should be reviewed with at least one worked example per sub-point.",
-    "Link 02 qualitative analysis of organic compound ldt87j back to prior knowledge in fundamental principles of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 02 Qualitative Analysis Of Organic Compound Ldt87j to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Qualitative Analysis Of Organic Compound Ldt87j: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 qualitative analysis of organic compound ldt87j with a related concept from fundamental principles of organic chemistry.",
-    "Exam-style problem: solve a question involving 02 Qualitative Analysis Of Organic Compound Ldt87j under time pressure.",
-    "Real-world connection: show how 02 Qualitative Analysis Of Organic Compound Ldt87j appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Qualitative Analysis Of Organic Compound Ldt87j and state two conditions required for it to occur.",
-    "Differentiate 02 Qualitative Analysis Of Organic Compound Ldt87j from the most commonly confused concept in fundamental principles of organic chemistry.",
-    "Solve a numerical or structural problem involving 02 Qualitative Analysis Of Organic Compound Ldt87j.",
-    "List three applications of 02 Qualitative Analysis Of Organic Compound Ldt87j in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Qualitative Analysis Of Organic Compound Ldt87j without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Qualitative Analysis Of Organic Compound Ldt87j.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Qualitative Analysis Of Organic Compound Ldt87j."
-  ],
-  "universalFacts": [
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is part of the NEB Class 11 fundamental principles of organic chemistry syllabus.",
-    "Every concept in fundamental principles of organic chemistry builds upon definitions established earlier in the chapter.",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Qualitative Analysis Of Organic Compound Ldt87j improves performance across the entire fundamental principles of organic chemistry unit.",
-    "Revision of 02 Qualitative Analysis Of Organic Compound Ldt87j should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Qualitative Analysis Of Organic Compound Ldt87j with closely related concepts in fundamental principles of organic chemistry — focus on distinguishing features.",
-    "The scope of 02 Qualitative Analysis Of Organic Compound Ldt87j is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Qualitative Analysis Of Organic Compound Ldt87j outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Qualitative Analysis Of Organic Compound Ldt87j and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Qualitative Analysis Of Organic Compound Ldt87j? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is primarily studied under which branch of fundamental principles of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Qualitative Analysis Of Organic Compound Ldt87j is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to fundamental principles of organic chemistry — Answer: B",
-    "Which example correctly illustrates 02 Qualitative Analysis Of Organic Compound Ldt87j? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Qualitative Analysis Of Organic Compound Ldt87j differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Qualitative Analysis Of Organic Compound Ldt87j.",
-    "Step-by-step animated derivation of the key relationship in 02 Qualitative Analysis Of Organic Compound Ldt87j.",
-    "Interactive toggle between correct and incorrect representations of 02 Qualitative Analysis Of Organic Compound Ldt87j."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Qualitative Analysis Of Organic Compound Ldt87j.",
-    "Side-by-side comparison animation of 02 Qualitative Analysis Of Organic Compound Ldt87j vs commonly confused concept.",
-    "Timelapse build-up of 02 Qualitative Analysis Of Organic Compound Ldt87j from prerequisite knowledge in fundamental principles of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Qualitative Analysis Of Organic Compound Ldt87j",
-    "Comparison table: 02 Qualitative Analysis Of Organic Compound Ldt87j vs related concepts in fundamental principles of organic chemistry",
-    "Step-by-step worked example layout for 02 Qualitative Analysis Of Organic Compound Ldt87j"
-  ],
-  "summary": [
-    "02 Qualitative Analysis Of Organic Compound Ldt87j is a fundamental concept in fundamental principles of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Qualitative Analysis Of Organic Compound Ldt87j involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Qualitative Analysis Of Organic Compound Ldt87j alongside related concepts in fundamental principles of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

@@ -24,64 +24,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Red Data Book and IUCN categories (Biodiversity and Conservation, Biology, class-12-notes) covers Red Data Book, IUCN categories. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "The IUCN Red Data Book ranks extinction risk. From Extinct and Extinct in the Wild, risk falls through Critically Endangered, Endangered and Vulnerable to Near Threatened and Least Concern. The rank uses population decline, numbers and range, and it guides protection. It does not itself save the habitat.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Red Data Book and IUCN categories — quick idea map\"><title>Red Data Book and IUCN categories — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Red Data Book and IUCN categories</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Red Data Book</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• IUCN categories</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Red Data Book and IUCN categories — quick idea map\"><title>Red Data Book and IUCN categories — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Red Data Book and IUCN categories</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Red Data Book</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">IUCN category order</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Red Data Book: IUCN's</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">account of extinction risk</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and threats.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Order of risk: EX, EW, CR,</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">EN, VU, NT, LC.</text></svg>",
         "caption": "Red Data Book and IUCN categories — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Red Data Book\n• IUCN categories"
+      "text": "Risk order: EX > EW > CR > EN > VU > NT > LC.\nTests used: rate of decline, number of mature individuals, extent of occurrence and area of occupancy."
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Red Data Book\" as one blob → ✅ split into: red data book, iucn categories.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "Extinct in the Wild is not the same as Extinct. EW means individuals survive only in captivity or cultivation. EX means none survive anywhere.  ·  Vulnerable is not a mild word for Critically Endangered. CR is the higher risk."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Red Data Book and IUCN categories\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Threatened, in the strict IUCN sense, means CR, EN or VU together. NT is not inside that trio.  ·  Do not invent a current category from memory if the question does not give it. Describe the criteria instead."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A bird that survives only in one breeding centre is a candidate for Extinct in the Wild, not for Extinct, while those birds live.  ·  A wide-ranging species with a stable population is typically Least Concern even if people rarely see it."
     },
     {
       "label": "Limitation",
-      "text": "Covers only: red data book, iucn categories (within Biodiversity and Conservation).  ·  Out of scope here: topics of neighbouring units in Biology — don't mix them."
+      "text": "Data Deficient does not mean safe. It means we cannot tell. A poorly studied species may be in serious trouble.  ·  Being in a national park does not automatically put a species in Least Concern. The list follows population evidence, not the name of a park."
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Red Data Book and IUCN categories — Biodiversity and Conservation, Biology (class-12-notes).  ·  **Tested.** define it · list: red data book, iucn categories · one worked example · one misconception each."
+      "text": "Write the category chain from EX to LC and mark the threatened trio.  ·  Distinguish a red-list assessment from a hunting ban."
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Red Data Book and IUCN categories\" and verify the answer is plausible.  ·  define + example each sub-idea: red data book, iucn categories."
+      "text": "EX gone, EW gone from the wild, then CR-EN-VU are the threatened trio, then NT, then LC.  ·  Higher in the list means closer to extinction. CR is above EN."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Red Data Book and IUCN categories\" with one example.  ·  compare \"Red Data Book\" with the related idea from a neighbouring unit."
+      "text": "Why is Data Deficient not a reason to treat a species as safe?  ·  A population has fallen very fast and only a few mature adults remain. Which end of the list does that point to?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Write the category initials in order and expand CR, EN and VU in words.  ·  Use one Nepal animal and name the threat, not only the category.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Red Data Book and IUCN categories — topic mind map\"><title>Red Data Book and IUCN categories — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Red Data Book and IUCN categories</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Red Data Book</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">IUCN categories</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Red Data Book and IUCN categories — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Red Data Book  ·  IUCN category order  ·  Threatened trio CR EN VU  ·  Extinct versus Extinct in the Wild"
+    },
+    {
+      "label": "Key points",
+      "text": "Red Data Book: IUCN's account of extinction risk and threats.  ·  Order of risk: EX, EW, CR, EN, VU, NT, LC.  ·  Judgements use decline, number of mature individuals, and size of the range.  ·  CR is more urgent than EN, which is more urgent than VU."
+    },
+    {
+      "label": "Universal facts",
+      "text": "The IUCN categories used in school answers are EX, EW, CR, EN, VU, NT and LC, with Data Deficient kept separate.  ·  Red lists are revised. A species' category in an old textbook can be out of date."
+    },
+    {
+      "label": "More practice",
+      "text": "How does a Red Data Book entry differ from a law that bans hunting?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Snow leopard conservation in Nepal is driven by a high-risk listing plus named threats: retaliation killing, prey loss and fragmented high-altitude habitat."
+    },
+    {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Red Data Book and IUCN categories\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Which category means the species survives only in captivity? → B  ·  The correct order from higher risk to lower risk is → B"
     },
     {
       "label": "Study notes",
-      "text": "**IUCN categories.** one-line definition + one-line exam use."
+      "text": "The Red Data Book is the IUCN record of species at risk. For each species it states the category of extinction risk, the threats, and the evidence those judgements rest on. National red lists apply the same idea inside one country.  ·  The main IUCN categories, from highest risk to lowest, are Extinct (EX), Extinct in the Wild (EW), Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT) and Least Concern (LC). Data Deficient means the evidence is too poor to judge.  ·  A species is placed by quantitative tests: how fast the population is falling, how many mature individuals remain, and how small or fragmented its range is. The labels are reassessed, so a species can move between categories."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Red Data Book and IUCN categories\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Quantitative listing criteria  ·  A listing informs the law. It does not by itself protect habitat.  ·  Memorise the order as a single chain so the letters cannot be swapped."
+    },
+    {
+      "label": "More ideas",
+      "text": "Link each category answer to evidence: decline, head-count, or range.  ·  The IUCN Red List is the global standard for extinction risk.  ·  Categories are comparative: each step from CR to LC is a lower risk of extinction in the wild."
+    },
+    {
+      "label": "More ideas",
+      "text": "Threat accounts in the Red Data Book name the causes, so conservation effort can be aimed at those causes.  ·  Write the seven categories in order from highest risk to lowest.  ·  Explain the difference between EX and EW with one sentence each."
+    },
+    {
+      "label": "More ideas",
+      "text": "Give two measurements the IUCN uses besides a verbal description.  ·  Critically Endangered is the last step before extinction in the wild. Endangered is the next lower risk, then Vulnerable. Treating VU and CR as the same label hides a large difference in urgency.  ·  Nepal's flagship threatened animals include the greater one-horned rhinoceros, the Bengal tiger, the snow leopard and the red panda. Their categories depend on the latest assessment. Habitat loss and poaching are the usual threats named in the accounts."
+    },
+    {
+      "label": "More ideas",
+      "text": "A red-list category is a scientific judgement. Legal protection (a hunting ban, a park, CITES) is a separate decision that often uses that judgement. Listing alone does not guard a nest or a forest.  ·  # Red Data Book and IUCN categories ## 1. Introduction Opening frame for **Red Data Book and IUCN categories** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I).…  ·  The **IUCN Red List** is the world's standard inventory of species' extinction risk, maintained by the International Union for Conservation of Nature. Each assessed species is placed in one of nine categories on a ladder from **Least Concern** to **Extinct**, based on population size, decline rate and range.…"
     }
   ]
 }

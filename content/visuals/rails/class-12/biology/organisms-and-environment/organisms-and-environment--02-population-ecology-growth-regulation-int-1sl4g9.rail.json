@@ -54,11 +54,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Population ecology — growth, regulation, interactions — Organisms and Environment, Biology (class-12-notes).  ·  **Tested.** define it · list: population ecology — growth, regulation, interactions · one worked example · one misconception each."
+      "text": "# Population ecology — growth, regulation, interactions ## 1. Introduction Opening frame for **Population ecology — growth** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Organisms and Environment fill pass. ## 2.…  ·  A **population** is a group of individuals of one species in one place and time. Its size (N) changes by four processes: natality (+), mortality (−), immigration (+), emigration (−). Growth follows two models — unlimited **exponential** growth or **logistic** growth limited by carrying capacity (K). Populations also interact: competition, predation, parasitism, commensalism, mutualism and amensalism."
     },
     {
       "label": "Shortcut",
-      "text": "• Interactions  ·  solve / apply for \"Population ecology — growth, regulation, interactions\" and verify the answer is plausible."
+      "text": "Trick 1: Growth equations: exponential dN/dt = rN (J-curve, unlimited); logistic dN/dt = rN(K−N)/K (S-curve, carrying capacity K) — quote both equations and their curve shapes.  ·  Trick 2: r-strategists: small, short-lived, many offspring, unstable habitat; K-strategists: large, few offspring, stable habitat — the contrast pair."
     },
     {
       "label": "Board question",
@@ -73,20 +73,40 @@
       }
     },
     {
+      "label": "Key points",
+      "text": "• Interactions"
+    },
+    {
+      "label": "More practice",
+      "text": "solve / apply for \"Population ecology — growth, regulation, interactions\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "Which of the following is a distinct sub-topic under \"Population ecology — growth, regulation, interactions\"? → A  ·  A common examiner point on \"Population ecology — growth, regulation, interactions\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Regulation.** one-line definition + one-line exam use.  ·  **Interactions.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — from population size to interaction types (study in this order)** | Step | Concept | Key equation / example | |---|---|---| | 1 | Population attributes | N = size; density; birth rate, death rate; sex ratio; age pyramids | | 2 | Four processes change N | Natality + immigration − mortality − emigration | | 3 | Exponential growth (unlimited resources) | dN/dt =…  ·  **Population interactions — who wins and who loses** | Interaction | Species A | Species B | Example | |---|---|---|---| | Mutualism | + | + | Mycorrhiza and plant; lichen alga + fungus; fig and wasp | | Commensalism | + | 0 | Cattle egret and cattle; barnacles on whale | | Predation | + | − | Tiger and deer; also herbivores on plants | | Parasitism | + | − | Flea on dog;…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: population ecology — growth, regulation, interactions.  ·  one worked example for \"Population ecology — growth, regulation, interactions\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Interactions table: mutualism (+/+), competition (−/−), predation (+/−), parasitism (+/−), commensalism (+/0), amensalism (−/0) — six signs, six marks.  ·  Trick 4: Gause's principle: two species with identical niches cannot coexist — competitive exclusion; resource partitioning is the escape.  ·  define + example each sub-idea: population ecology — growth, regulation, interactions."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "one worked example for \"Population ecology — growth, regulation, interactions\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Exponential vs logistic growth; r- vs K-strategists** | Feature | Exponential (J-curve) | Logistic (S-curve) | |---|---|---| | Resources | Unlimited (never true for long) | Limited — the real world | | Equation | dN/dt = rN | dN/dt = rN(K − N)/K | | Final outcome | Explosion, then crash | Stabilises at carrying…  ·  ## 4. Diagrams and figures - **D1** — Growth curves / cause–effect–control diagrams (authored SVG — English labels, viewBox 900×640) - **D2** — Population ecology — growth — process or life-cycle flow (authored SVG — English labels) - **D3** — Population ecology — growth — detailed reference plate (curated external —…  ·  ```svg Logistic growth — the S-curve and carrying capacity K <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">Logistic growth curve</text><line x1=\"90\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — Gause's competition.** Two *Paramecium* species grown together in one tube: *P. aurelia* outgrows *P. caudatum*, which dies out — **competitive exclusion**: two species with the same niche cannot coexist.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Define population and list the four processes that change its size. (2) Write both growth equations and draw both curves. (3) Define carrying capacity. (4) Tabulate the six interactions with signs (+/−/0) and one example each.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Population size is a balance of four flows; growth is J-shaped without limits and S-shaped with them; six interaction types (+/−/0) structure every community. **Self-check:** can you assign the correct +/−/0 signs to all six interactions and name one example for each?"
     }
   ]
 }

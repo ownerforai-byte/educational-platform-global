@@ -23,28 +23,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "LCR series circuit and power factor (Alternating Current, Physics, class-12-notes) covers LCR series circuit, power factor. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Average power is V_rms I_rms times the power factor cosφ, and cosφ = R/Z. It is 1 at resonance and 0 in a pure reactor. A lagging power factor is inductive and is often corrected with capacitors.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"LCR series circuit and power factor — quick idea map\"><title>LCR series circuit and power factor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">LCR series circuit and power factor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• LCR series circuit</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Power factor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;LCR series circuit</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and power factor&quot; —</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"LCR series circuit and power factor — quick idea map\"><title>LCR series circuit and power factor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">LCR series circuit and power factor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power factor</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Average power</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power factor is cosφ.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">It equals R/Z.</text></svg>",
         "caption": "LCR series circuit and power factor — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"LCR series circuit and power factor\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"LCR series circuit and power factor\" — state with units, then use in one numerical.\nAverage power = V_rms I_rms cosφ\ncosφ = R/Z"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"LCR series circuit\" as one blob → ✅ split into: lcr series circuit, power factor.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"LCR series circuit and power factor\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Leading means capacitive. Lagging means inductive.  ·  Use rms values in the power formula."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "The average power in a series LCR circuit is V_rms I_rms cosφ, not the product of the rms voltage and current alone. The extra factor cosφ is the power factor.  ·  From the impedance triangle, cosφ = R/Z. A circuit that is almost a pure resistor has Z near R and a power factor near 1. A circuit dominated by reactance has a small power factor."
     },
     {
       "label": "Limitation",
@@ -52,43 +52,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** LCR series circuit and power factor — Alternating Current, Physics (class-12-notes).  ·  **Tested.** define it · list: lcr series circuit, power factor · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• LCR series circuit  ·  • Power factor"
+      "text": "Power factor 1 means φ = 0.  ·  Useful power is I^2 R."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"LCR series circuit and power factor\" with one example.  ·  compare \"LCR series circuit\" with the related idea from a neighbouring unit."
+      "text": "Write the average power.  ·  What is cosφ in terms of R and Z?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"LCR series circuit and power factor — topic mind map\"><title>LCR series circuit and power factor — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">LCR series circuit and power factor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">LCR series circuit</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Power factor</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "LCR series circuit and power factor — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Power factor  ·  Average power  ·  Resonance at cosφ = 1  ·  Lagging and leading"
+    },
+    {
+      "label": "Key points",
+      "text": "Power factor is cosφ.  ·  It equals R/Z.  ·  It is 1 at resonance.  ·  It is 0 for a pure L or C."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"LCR series circuit and power factor\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"LCR series circuit and power factor\" and verify the answer is plausible."
+      "text": "Why do factories correct a lagging power factor?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "In the series circuit with Z = 5.0 Ω and R = 3.0 Ω, the supply is 20 V rms. Find the power factor and the average power."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"LCR series circuit and power factor\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Average power is → B  ·  cosφ equals → B"
     },
     {
       "label": "Study notes",
-      "text": "**Power factor.** one-line definition + one-line exam use."
+      "text": "At resonance X_L = X_C, φ = 0 and the power factor is 1. All of the average power is then the heating I_rms^2 R in the resistor. The inductor and capacitor still exchange energy, but their average contribution is zero.  ·  A power factor of zero means the current is 90° out of phase with the voltage, as in a pure inductor or a pure capacitor. Energy sloshes back to the source.  ·  A lagging power factor is the inductive case, common with motors. Capacitors are added in industry to pull the power factor back toward 1 so that the current, for a given useful power, is smaller."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: lcr series circuit, power factor.  ·  one worked example for \"LCR series circuit and power factor\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Power factor is not the phase angle itself. It is the cosine.  ·  cosφ = R/Z, not Z/R.  ·  Resonance makes the power factor 1, not 0."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "A high power factor means less reactive current, not a larger resistance by itself.  ·  Do not drop cosφ.  ·  R/Z cannot exceed 1."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write Average power = V_rms I_rms cosφ and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  The instantaneous power oscillates. The average is what the meter records. Quoting V I without cosφ overstates the power whenever the phase is not zero.  ·  # LCR series circuit and power factor ## 1. Introduction Physical picture of **LCR series circuit and power factor** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — LCR series circuit and power factor — circuit diagram with standard symbols (authored SVG) - **D2** — LCR series circuit and power factor — graph or second construction (authored SVG — axes, units and labels) - **D3** — LCR series circuit and power factor — detailed reference…"
     }
   ]
 }

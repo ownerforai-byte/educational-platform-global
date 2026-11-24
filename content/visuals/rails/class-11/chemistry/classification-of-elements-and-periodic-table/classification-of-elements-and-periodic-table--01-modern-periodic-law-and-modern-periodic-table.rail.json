@@ -24,159 +24,88 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "### 1. Historical Evolution of Periodic Classification",
+      "text": "The modern periodic law re-founds Mendeleev's table on **atomic number**: properties are a periodic function of Z (Moseley, 1913), because electronic configurations — the true cause of chemical behaviour — repeat at regular intervals of Z. Every mass-based anomaly dissolves: Te (Z = 52) precedes I (Z = 53), Ar (18) precedes K (19), and all isotopes share one position.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Modern Periodic Law and Modern Periodic Table — quick idea map\"><title>Modern Periodic Law and Modern Periodic Table — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Modern Periodic Law and Modern Periodic Table</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Modern Periodic Law and Modern Periodic Table — quick idea map\"><title>Modern Periodic Law and Modern Periodic Table — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Modern Periodic Law and Modern Periodic Table</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Configuration →</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">position:** write the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">electronic configuration</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Modern law: properties are</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a periodic function of</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">atomic number (Moseley,…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Modern periodic law:</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">properties ∝ f(atomic</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">number Z) - Period =</text></svg>",
         "caption": "Modern Periodic Law and Modern Periodic Table — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "❌ Modern Periodic Law is based on atomic mass like Mendeleev's law. ✅ Modern Periodic Law is strictly based on atomic number (Z), discovered by Moseley via X-ray spectroscopy.\n❌ Isotopes need separate positions in the modern periodic table. ✅ Isotopes possess identical atomic numbers, so they naturally share the exact same slot in the modern table."
+      "text": "- Modern periodic law: properties ∝ f(atomic number Z) - Period = highest occupied n; Group = outer e⁻ (s/p block), outer s e⁻ + 10 (d block) - Shell capacity 2n²; groups 18, periods 7"
     },
     {
       "label": "Conditions",
-      "text": "❌ Cobalt was placed before Nickel by Mendeleev as an error. ✅ Mendeleev placed Co before Ni based on chemical properties despite Co being heavier (58.93 vs 58.69); modern table confirms Co (Z=27) correctly precedes Ni (Z=28).  ·  ❌ Moseley's graph plotted frequency ν against atomic weight. ✅ Moseley plotted the square root of frequency (√ν) against atomic number (Z), obtaining a perfect straight line: √ν = a(Z - b)."
+      "text": "**Z vs A:** atomic **number** (protons) orders the table; atomic **mass number** (protons + neutrons) does not — that was Mendeleev's error.  ·  **Group of d-block elements:** count s electrons + 10, not s + d electrons (Sc: 4s²3d¹ is group 3, not 3)."
     },
     {
       "label": "Special cases",
-      "text": "Henry Moseley established atomic number as the genuine identity of chemical elements in 1913, shortly before dying in World War I at age 27.  ·  The 7 periods of the modern table correspond exactly to principal energy levels n = 1 to 7."
+      "text": "\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\" — the Modern Periodic Law."
     },
     {
       "label": "Solved",
-      "text": "State Moseley's Law and derive its significance in formulating the Modern Periodic Table.  ·  Write the IUPAC systematic name and symbol for elements with atomic numbers 108, 114, 117, and 119."
+      "text": "***Tellurium before iodine*** — by mass 127.6 > 126.9 would put Te after I, breaking the chemical pattern; by Z (52 < 53) Te precedes I and the pattern holds — the anomaly that proved the modern law."
     },
     {
       "label": "Limitation",
-      "text": "❌ Period number corresponds to total number of electrons. ✅ Period number corresponds directly to the principal quantum number (n) of the outermost valence electron shell."
+      "text": "Verified PYQs: NEB 2021 3m — three differences, modern vs Mendeleev (table above); NEB 2024 3m — period and group of Z = 19, 20, 31, 36, 55 (table above). Other items are NEB-style practice."
     },
     {
       "label": "Derivation",
-      "text": "• **Dobereiner's Law of Triads (1829):** Grouped elements into triads where atomic mass of middle element was roughly arithmetic mean of first and third (e.g., Li 7, Na 23, K 39; Ca 40, Sr 88, Ba 137; Cl 35.5, Br 80, I 127). Failed because only a few triads could be identified.  ·  • **Newlands' Law of Octaves (1865):** When elements are arranged in order of increasing atomic mass, every eighth element shows similar physical and chemical properties like musical notes (Sa, Re, Ga, Ma...). Failed after Calcium (valid only up to Ca, Z=20) and could not accommodate noble gases discovered later."
+      "text": "## 1. Topic Introduction — From Atomic Mass to Atomic Number Mendeleev arranged elements by **atomic mass** and left brilliant gaps — but mass-based ordering put tellurium (127.6) before iodine (126.9) and stacked argon against potassium wrongly. Moseley's X-ray work (1913) gave each element a true serial number — the **atomic number Z** — and the modern periodic law re-founded the table on it.…  ·  ## 2. Fundamental Concepts ### 2.1 The Modern Periodic Law **\"The physical and chemical properties of the elements are a periodic function of their atomic numbers.\"** - Atomic number Z = number of protons = the element's true identity. - Properties repeat because **electronic configurations repeat**: each new shell begins a new period, and elements with the same outer-shell configuration land in the same group.…"
     },
     {
       "label": "Shortcut",
-      "text": "Periodicity in chemical properties arises from the periodic recurrence of similar valence shell electronic configurations."
+      "text": "\"Z decides, configuration places.\" Period = highest n; group = outer e⁻ (+10 if d-block). Mendeleev-vs-modern: mass→Z, anomalies→none, isotopes→one place, cause→configuration."
     },
     {
       "label": "Board question",
-      "text": "How does the Long Form of the Periodic Table resolve the position of isotopes and anomalous pairs of Mendeleev?  ·  Calculate the maximum number of electrons and elements accommodated in the 4th, 5th, and 6th periods using quantum orbital capacities."
+      "text": "**NEB 2021 (3m): How does the Modern Periodic Law differ from Mendeleev's Periodic Law? State any three points of difference.** — (1) Basis: Mendeleev orders by **atomic mass**; the modern law orders by **atomic number**.…  ·  **NEB 2024 (3m): Identify the elements with atomic numbers 19, 20, 31, 36 and 55, and state the period and group of each in the long form of the periodic table.** — 19: K, [Ar]4s¹ → period 4, group 1. 20: Ca, [Ar]4s² → period 4, group 2. 31: Ga, [Ar]4s²3d¹⁰4p¹ → period 4, group 13. 36: Kr, [Ar]4s²3d¹⁰4p⁶ → period 4, group 18.…"
     },
     {
       "label": "Hints",
-      "text": "Predict the period, group, and block for the element having atomic number Z = 35 and Z = 56.  ·  • **Lothar Meyer's Curve (1869):** Plotted atomic volume against atomic weight. Alkali metals occupied sharp peaks; alkaline earth metals occupied descending curves; halogens occupied ascending slopes; transition metals occupied valleys.",
+      "text": "For the law-contrast question, answer in numbered rows (basis: Mendeleev vs modern) — NEB awards per contrast, not per paragraph. Always name the anomaly (Te/I or Ar/K) as evidence.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Modern Periodic Law and Modern Periodic Table — topic mind map\"><title>Modern Periodic Law and Modern Periodic Table — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Modern periodic law and modern periodic table</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Modern periodic law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Modern periodic table</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Modern Periodic Law and Modern Periodic Table — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**Configuration → position:** write the electronic configuration and read off period (highest n), block (last-entering subshell) and group (outer electrons, +10 for d-block). This one skill answers every \"locate the element\" question."
+    },
+    {
+      "label": "Key points",
+      "text": "Modern law: properties are a periodic function of atomic number (Moseley, 1913). Cause: repeating outer electronic configurations. Long form: 18 groups, 7 periods, s/p/d/f blocks. Mass anomalies (Te/I, Ar/K) and isotope placement resolve automatically.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Moseley was killed at Gallipoli in 1915 at age 27; scientists called it the war's greatest loss to science — he had just given the periodic table its true foundation."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): State the Modern Periodic Law and name the scientist whose work established it.** — \"Physical and chemical properties of the elements are a periodic function of their atomic numbers\" — established by **H. G. J. Moseley (1913)** through X-ray spectral studies.  ·  **NEB-style (2m): An element has the configuration [Ar] 4s² 3d¹⁰ 4p³. Give its period, group, block and name.** — Highest n = 4 → period 4; last electron in p → p-block; outer electrons 4s²4p³ = 5 → group 15; the element is **arsenic (As, Z = 33)**."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "The modern periodic law is based on: → B  ·  The modern periodic law was established by: → B"
+    },
+    {
       "label": "Study notes",
-      "text": "• **Mendeleev's Periodic Law (1869):** 'The physical and chemical properties of elements are periodic functions of their atomic masses.' Mendeleev left gaps for undiscovered elements (Eka-Boron = Scandium, Eka-Aluminium = Gallium, Eka-Silicon = Germanium).…  ·  ### 2. Moseley's Experiment and Modern Periodic Law (1913)  ·  • English physicist Henry Moseley bombarded various metal anticathodes with high-speed cathode rays (electrons) and studied characteristic X-ray emission spectra."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Modern periodic law** | Properties are a periodic function of atomic number | Moseley, 1913 | | **Period** | Horizontal row; electrons enter the same principal shell | Period 3 = n = 3 | | **Group** | Vertical column with the same outer configuration | Group 1: ns¹ | | **Periodicity** |…  ·  ## 4. Detailed Explanation ### 4.1 NEB 2021 (3m, verified PYQ) — Modern vs Mendeleev's periodic law | # | Mendeleev's law | Modern periodic law | |---|---|---| | 1 | Properties are a periodic function of **atomic mass** | Properties are a periodic function of **atomic number** | | 2 | Position decided by mass; anomalies needed force-fitting (Te before I) | Position decided by…  ·  ## 5. Comparison Tables **Mendeleev vs Moseley — the identity of the \"position-decider\"** | Basis | Mendeleev (1869) | Modern (Moseley, 1913) | |---|---|---| | Ordering quantity | Atomic mass | Atomic number Z | | Anomalies (Te/I, Ar/K) | Present, unexplained | Absent | | Isotopes | No logical place | One place per element | | Cause of periodicity | Not explained | Repeating…"
     },
     {
       "label": "More ideas",
-      "text": "• **Moseley's Law:** The square root of the frequency (√ν) of the characteristic X-ray spectral line is directly proportional to the atomic number (Z) of the target element:  ·  $$\\sqrt{\\nu} = a(Z - b)$$  ·  where ν = frequency of K_α X-ray line, Z = atomic number (nuclear charge), a and b are constants characteristic of the spectral line series (screening constant b ≈ 1 for K-series)."
+      "text": "Why did mass-based ordering fail for Ar–K while Z-based ordering succeeds?  ·  An element ends 5s² 4d¹⁰ 5p⁵ — name its period, group and block without looking it up.  ·  Why is periodicity better explained by outer-shell configuration than by atomic mass?"
     },
     {
       "label": "More ideas",
-      "text": "• **Fundamental Conclusion:** Plot of √ν vs Z yields a straight line, whereas plot of √ν vs atomic mass (A) does not. This conclusively proved that **atomic number (Z)**, representing the net positive nuclear charge (number of protons), is the fundamental property governing the chemical identity of elements, NOT…  ·  • **Statement of Modern Periodic Law:** 'The physical and chemical properties of elements are periodic functions of their atomic numbers.'  ·  ### 3. Resolution of Mendeleev's Anomalies by Modern Periodic Table"
+      "text": "## 6. Common Confusions **Periodic function of Z — not of mass:** quoting the modern law with \"atomic weight\" is an automatic zero; the one word that matters is **atomic number**.  ·  **Period vs group:** period = row = shell being filled (highest n); group = column = outer configuration. Z = 19 and Z = 55 share group 1 but sit in different periods.  ·  **d-block group counting:** for d-block elements group = outer s electrons + 10 (Sc: 4s²3d¹ → group 3; Zn: 4s²3d¹⁰ → group 12)."
     },
     {
       "label": "More ideas",
-      "text": "• **Anomalous Pairs Resolved:** Argon (Z=18) naturally precedes Potassium (Z=19); Cobalt (Z=27) naturally precedes Nickel (Z=28); Tellurium (Z=52) naturally precedes Iodine (Z=53) purely by increasing atomic numbers, regardless of atomic weights.  ·  • **Position of Isotopes:** Since isotopes share identical atomic numbers (same Z, different mass number A), they occupy one single position in the periodic table without conflict.  ·  • **Scientific Division into Blocks:** Reflects filling of electron shells according to quantum mechanics (Aufbau principle, Pauli exclusion, Hund's rule)."
-    },
-    {
-      "label": "More ideas",
-      "text": "### 4. Structural Layout of the Long Form (Bohr's Form) Periodic Table  ·  • **Periods (7 Horizontal Rows):** Corresponds to principal quantum number n of outermost valence shell.  ·  - Period 1 (n=1): 2 elements (1s²)"
-    },
-    {
-      "label": "More ideas",
-      "text": "- Period 2 (n=2): 8 elements (2s² 2p⁶)  ·  - Period 3 (n=3): 8 elements (3s² 3p⁶)  ·  - Period 4 (n=4): 18 elements (4s² 3d¹⁰ 4p⁶)"
+      "text": "## 7. Exam Application **NEB-style (2m): Why do properties of elements repeat periodically?** — Because electronic configurations repeat: each period starts filling a new shell, and elements with the same outer-shell configuration (same valence count) show the same chemistry — the cause Mendeleev's law could not…  ·  **NEB-style (2m): Where do ¹H, ²H and ³H sit in the modern table and why?** — All three (protium, deuterium, tritium) occupy the single position of hydrogen (Z = 1): the modern law orders by Z, and isotopes differ in mass number, not Z.  ·  **NEB-style (2m): An element has configuration [Ar] 4s² 3d¹⁰ 4p². Give its period, group and block.** — Highest n = 4 → period 4; six outer electrons (4s² 4p²) → group 14; last electron enters p → p-block. (The element is Ge.)"
     }
-  ],
-  "keyPoints": [
-    "01 Modern Periodic Law And Modern Periodic Table is a core concept in classification of elements and periodic table.",
-    "Understanding 01 modern periodic law and modern periodic table requires knowing its definition, conditions, and limitations.",
-    "01 Modern Periodic Law And Modern Periodic Table has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 01 modern periodic law and modern periodic table must be memorized precisely.",
-    "01 Modern Periodic Law And Modern Periodic Table connects to neighbouring topics within classification of elements and periodic table and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 01 modern periodic law and modern periodic table.",
-    "Practical examples solidify understanding of 01 Modern Periodic Law And Modern Periodic Table and its real-world relevance.",
-    "Misconceptions about 01 modern periodic law and modern periodic table often arise from confusing it with similar concepts.",
-    "01 Modern Periodic Law And Modern Periodic Table follows systematic rules that can be applied step-by-step.",
-    "Review of 01 modern periodic law and modern periodic table should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "01 Modern Periodic Law And Modern Periodic Table is defined by its specific characteristics within classification of elements and periodic table.",
-    "The conditions under which 01 modern periodic law and modern periodic table applies are as important as the concept itself.",
-    "01 Modern Periodic Law And Modern Periodic Table can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 01 modern periodic law and modern periodic table through application-based and comparison questions.",
-    "A clear grasp of 01 Modern Periodic Law And Modern Periodic Table builds the foundation for advanced topics in classification of elements and periodic table."
-  ],
-  "importantNotes": [
-    "When studying 01 modern periodic law and modern periodic table, always note the exceptions alongside the general rule.",
-    "01 Modern Periodic Law And Modern Periodic Table should be reviewed with at least one worked example per sub-point.",
-    "Link 01 modern periodic law and modern periodic table back to prior knowledge in classification of elements and periodic table for deeper retention.",
-    "Practice past NEB board questions on 01 Modern Periodic Law And Modern Periodic Table to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 01 Modern Periodic Law And Modern Periodic Table: apply the standard definition to a simple case.",
-    "Intermediate example: combine 01 modern periodic law and modern periodic table with a related concept from classification of elements and periodic table.",
-    "Exam-style problem: solve a question involving 01 Modern Periodic Law And Modern Periodic Table under time pressure.",
-    "Real-world connection: show how 01 Modern Periodic Law And Modern Periodic Table appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 01 Modern Periodic Law And Modern Periodic Table and state two conditions required for it to occur.",
-    "Differentiate 01 Modern Periodic Law And Modern Periodic Table from the most commonly confused concept in classification of elements and periodic table.",
-    "Solve a numerical or structural problem involving 01 Modern Periodic Law And Modern Periodic Table.",
-    "List three applications of 01 Modern Periodic Law And Modern Periodic Table in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 01 Modern Periodic Law And Modern Periodic Table without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 01 Modern Periodic Law And Modern Periodic Table.",
-    "Create three flashcards covering definition, formula, and limitation of 01 Modern Periodic Law And Modern Periodic Table."
-  ],
-  "universalFacts": [
-    "01 Modern Periodic Law And Modern Periodic Table is part of the NEB Class 11 classification of elements and periodic table syllabus.",
-    "Every concept in classification of elements and periodic table builds upon definitions established earlier in the chapter.",
-    "01 Modern Periodic Law And Modern Periodic Table is assessed through both short-answer and long-answer board questions.",
-    "Understanding 01 Modern Periodic Law And Modern Periodic Table improves performance across the entire classification of elements and periodic table unit.",
-    "Revision of 01 Modern Periodic Law And Modern Periodic Table should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 01 Modern Periodic Law And Modern Periodic Table with closely related concepts in classification of elements and periodic table — focus on distinguishing features.",
-    "The scope of 01 Modern Periodic Law And Modern Periodic Table is sometimes overstated; remember its precise boundaries.",
-    "Applying 01 Modern Periodic Law And Modern Periodic Table outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 01 Modern Periodic Law And Modern Periodic Table and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 01 Modern Periodic Law And Modern Periodic Table? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "01 Modern Periodic Law And Modern Periodic Table is primarily studied under which branch of classification of elements and periodic table? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 01 Modern Periodic Law And Modern Periodic Table is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to classification of elements and periodic table — Answer: B",
-    "Which example correctly illustrates 01 Modern Periodic Law And Modern Periodic Table? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "01 Modern Periodic Law And Modern Periodic Table differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 01 Modern Periodic Law And Modern Periodic Table.",
-    "Step-by-step animated derivation of the key relationship in 01 Modern Periodic Law And Modern Periodic Table.",
-    "Interactive toggle between correct and incorrect representations of 01 Modern Periodic Law And Modern Periodic Table."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 01 Modern Periodic Law And Modern Periodic Table.",
-    "Side-by-side comparison animation of 01 Modern Periodic Law And Modern Periodic Table vs commonly confused concept.",
-    "Timelapse build-up of 01 Modern Periodic Law And Modern Periodic Table from prerequisite knowledge in classification of elements and periodic table."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 01 Modern Periodic Law And Modern Periodic Table",
-    "Comparison table: 01 Modern Periodic Law And Modern Periodic Table vs related concepts in classification of elements and periodic table",
-    "Step-by-step worked example layout for 01 Modern Periodic Law And Modern Periodic Table"
-  ],
-  "summary": [
-    "01 Modern Periodic Law And Modern Periodic Table is a fundamental concept in classification of elements and periodic table that describes specific chemical behaviour under defined conditions.",
-    "Mastering 01 Modern Periodic Law And Modern Periodic Table involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 01 Modern Periodic Law And Modern Periodic Table alongside related concepts in classification of elements and periodic table ensures strong conceptual clarity and exam readiness."
   ]
 }

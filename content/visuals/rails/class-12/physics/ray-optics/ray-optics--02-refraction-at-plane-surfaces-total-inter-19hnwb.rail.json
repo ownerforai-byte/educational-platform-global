@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Refraction at plane surfaces — total internal reflection (Ray Optics, Physics, class-12-notes) covers Refraction at plane surfaces — total internal reflection. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Snell's law bends a ray toward the normal when it enters a slower medium, and the frequency stays the same. Total internal reflection needs the light to be inside the denser medium and past the critical angle, where sin c = n2/n1. For glass of index 1.50 against air, that angle is about 42°.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Refraction at plane surfaces — total internal reflection — quick idea map\"><title>Refraction at plane surfaces — total internal reflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Refraction at plane surfaces — total internal</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Refraction at plane</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">surfaces — total internal</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reflection</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">1/f = (μ−1)(1/R₁ − 1/R₂)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P = 1/f</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Refraction at plane surfaces — total internal reflection — quick idea map\"><title>Refraction at plane surfaces — total internal reflection — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Refraction at plane surfaces — total internal</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">reflection</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Snell's law</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Critical angle</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Refraction at plane</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">surfaces — total internal</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reflection</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Frequency stays the same.</text></svg>",
         "caption": "Refraction at plane surfaces — total internal reflection — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Refraction at plane surfaces — total internal reflection\" as one blob → ✅ split into: refraction at plane surfaces — total internal reflection.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
+      "text": "For n = 1.50, c is about 42°.  ·  The incident medium must be the denser one."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Snell's law is n1 sin i = n2 sin r, with both angles measured from the normal. The frequency does not change at a stationary boundary. The speed and the wavelength do.  ·  If light enters a slower medium, a larger index, the ray bends toward the normal. If it enters a faster medium, it bends away. A larger index means a smaller speed."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Refraction at plane surfaces — total internal reflection — Ray Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: refraction at plane surfaces — total internal reflection · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "Into glass: toward the normal.  ·  Out of glass, past c: TIR."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Refraction at plane surfaces — total internal reflection\" with one example.  ·  compare \"Refraction at plane surfaces — total internal reflection\" with the related idea from a neighbouring unit."
+      "text": "Write Snell's law.  ·  Write sin c for glass to air."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Refraction at plane surfaces — total internal reflection — topic mind map\"><title>Refraction at plane surfaces — total internal reflection — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Refraction at plane surfaces — total internal…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Refraction at plane</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">surfaces — total</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Refraction at plane surfaces — total internal reflection — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Snell's law  ·  Critical angle  ·  Total internal reflection  ·  Optical fibre"
+    },
+    {
       "label": "Key points",
-      "text": "• Refraction at plane surfaces — total internal reflection"
+      "text": "• Refraction at plane surfaces — total internal reflection  ·  Frequency stays the same.  ·  The ray bends toward the normal when it slows.  ·  TIR needs the larger index on the incident side."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Refraction at plane surfaces — total internal reflection\" and verify the answer is plausible."
+      "text": "Why does a fibre keep the light in?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Glass has n = 1.50. Find sin c for a ray going from glass toward air, and state the approximate critical angle."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Refraction at plane surfaces — total internal reflection\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "When light enters glass from air it bends → B  ·  TIR can occur when light goes → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Lens maker: 1/f = (μ − 1)(1/R₁ − 1/R₂). Power P = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  **Fact.** Refraction at a plane surface (Snell): n₁ sinθ₁ = n₂ sinθ₂. Total internal reflection when θ > θ_c, sinθ_c = n₂/n₁ (n₂<n₁).  ·  **Fact.** Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+      "text": "Total internal reflection happens only when light is going from the larger index toward the smaller index, and the angle of incidence is greater than the critical angle. Then there is no refracted ray.  ·  At the critical angle the refracted ray runs along the boundary, so r = 90° and sin c = n2/n1. For glass to air, n2 = 1 and sin c = 1/n.  ·  At exactly the critical angle the light grazes the surface. Beyond it, all the light is reflected. The reflection is stronger than an ordinary glass-to-air reflection at a small angle."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: refraction at plane surfaces — total internal reflection.  ·  one worked example for \"Refraction at plane surfaces — total internal reflection\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "The critical angle is the onset.  ·  ❌ skip the key fact → ✅ lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact..  ·  TIR does not happen when light enters glass from air."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact."
+      "text": "At the critical angle the ray is along the boundary, not yet fully reflected as the only path in the 'greater than' sense.  ·  Frequency does not fall in glass.  ·  sin c = 1/n for glass to air, not n."
+    },
+    {
+      "label": "More ideas",
+      "text": "Name which side has the larger index.  ·  Use angles from the normal.  ·  Write n1 sin i = n2 sin r and say what each symbol means."
+    },
+    {
+      "label": "More ideas",
+      "text": "Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one.  ·  Prism minimum deviation: n = sin((A + D_min)/2)/sin(A/2). Achromatic doublet pairs crown (low Abbe) + flint (high Abbe)."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: lens maker: 1/f = (μ − 1)(1/r₁ − 1/r₂). power p = 1/f (dioptre, f in metres); lenses add powers in contact.  ·  Optical fibres keep light inside by total internal reflection. A prism in binoculars uses the same effect to turn the beam without a silvered mirror."
     }
   ]
 }

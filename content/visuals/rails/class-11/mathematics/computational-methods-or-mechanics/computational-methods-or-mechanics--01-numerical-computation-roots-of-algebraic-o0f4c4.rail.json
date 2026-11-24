@@ -56,11 +56,11 @@
     },
     {
       "label": "Shortcut",
-      "text": "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+      "text": "Trick 1: Bisection protocol: find a, b with f(a)f(b) < 0 → midpoint c = (a+b)/2 → keep the subinterval with the sign change → repeat; each step halves the interval (error after n steps ≤ (b−a)/2^n).  ·  Trick 2: Newton–Raphson one formula: x_{n+1} = x_n − f(x_n)/f′(x_n) — choose the initial guess near the root; a wrong start (f′ ≈ 0) diverges."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Numerical computation: roots of algebraic and transcenden…\" with one example.  ·  compare \"Numerical computation\" with the related idea from a neighbouring unit."
+      "text": "Q1. **NEB-style (6m):** Using the bisection method, find the root of f(x) = x$^3$ - 4 correct to two iterations on [1, 2]. **Solution.** f(1) = -3 < 0, f(2) = 4 > 0 ⟹ a root lies in [1, 2] (sign change). **Iteration 1:** midpoint x = 1.5; f(1.5) = 3.375 - 4 = -0.625 < 0 ⟹ root in [1.5, 2].…  ·  Q2. **NEB-style (6m):** Use Newton-Raphson with x$_0$ = 2 to find √5 and verify against the true value. **Solution.** f(x) = x$^2$ - 5, f'(x) = 2x. **x$_1$** = 2 - (4 - 5)/4 = 2 + 0.25 = 2.25. **x$_2$** = 2.25 - (5.0625 - 5)/(4.5) = 2.25 - 0.013889 = 2.236111. **True value:** √5 = 2.2360680...…"
     },
     {
       "label": "Hints",
@@ -75,8 +75,12 @@
       "text": "• Numerical computation  ·  • Roots of algebraic  ·  • Transcendental equations  ·  • Bisection"
     },
     {
+      "label": "Universal facts",
+      "text": "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Numerical computation: roots of algebraic and transcenden…\" and verify the answer is plausible."
+      "text": "Q3. **NEB-style (6m):** Apply Newton-Raphson to compute ∛7 starting from x$_0$ = 2 (two iterations). **Solution.** f(x) = x$^3$ - 7, f'(x) = 3x$^2$. **x$_1$** = 2 - (8 - 7)/12 = 2 - 0.083333 = 1.916667. **x$_2$:** x$_1$$^2$ = 3.673611, x$_1$$^3$ = 7.041667...…  ·  Q4. **NEB-style (5m):** Show that the equation x = cos x has a root between 0 and 1, and state the condition that guarantees bisection applies. **Solution.** Define f(x) = x - cos x. f(0) = 0 - 1 = -1 < 0; f(1) = 1 - cos 1 ≈ 1 - 0.5403 = 0.4597 > 0.…  ·  Q5. **NEB-style (6m):** Derive the Newton-Raphson formula from the tangent line and interpret it geometrically. **Solution.** At (x$_0$, f(x$_0$)) the tangent is y - f(x$_0$) = f'(x$_0$)(x - x$_0$).…"
     },
     {
       "label": "MCQ drill",
@@ -88,19 +92,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Newton-Raphson method  ·  define + example each sub-idea: numerical computation, roots of algebraic, transcendental equations, bisection.  ·  one worked example for \"Numerical computation: roots of algebraic and transcenden…\" — check units / edge cases."
+      "text": "• Newton-Raphson method  ·  Trick 3: Speed comparison: NR converges quadratically (doubles correct digits), bisection linearly — quote when asked to compare.  ·  Trick 4: For transcendental equations (e.g. x = cos x), first isolate f(x) = x − cos x and bracket the root by testing integer values."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
+      "text": "Q6. **NEB-style (5m):** After n bisection iterations on [1, 2], what is the error bound? Find the least n making the error less than 0.01. **Solution.** Each iteration halves the interval: width after n steps is (b - a)/2$^n$ = 1/2$^n$, and the midpoint is within half that of the root ⟹ error ≤ 1/2$^{n+1}$.…  ·  Q7. **NEB-style (6m):** Apply Newton-Raphson to f(x) = (x - 1)$^2$ from x$_0$ = 3 and explain what the iteration reveals about repeated roots. **Solution.** f' = 2(x - 1). **x$_1$** = 3 - (2)$^2$/4 = 3 - 1 = 2. **x$_2$** = 2 - (1)/2 = 1.5. **x$_3$** = 1.5 - (0.25)/1 = 1.25.…  ·  define + example each sub-idea: numerical computation, roots of algebraic, transcendental equations, bisection."
     },
     {
       "label": "More ideas",
-      "text": "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).  ·  **Roots of algebraic.** one-line definition + one-line exam use.  ·  **Transcendental equations.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Numerical computation: roots of algebraic and transcenden…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Bisection.** one-line definition + one-line exam use.  ·  **Newton-Raphson method.** one-line definition + one-line exam use."
+      "text": "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.  ·  **Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).  ·  **Roots of algebraic.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Transcendental equations.** one-line definition + one-line exam use.  ·  **Bisection.** one-line definition + one-line exam use.  ·  **Newton-Raphson method.** one-line definition + one-line exam use."
     }
   ]
 }

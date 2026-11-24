@@ -24,28 +24,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Energy of charged capacitor (Capacitor, Physics, class-11-notes) covers Energy of charged capacitor. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Charging a capacitor stores energy in its electric field: integrating the charging work gives $U = \\frac{1}{2}CV^2 = \\frac{1}{2}QV = \\frac{Q^2}{2C}$ — the ½ because the average charging voltage is V/2. NEB 2022's 6 μF at 100 V stores 0.03 J (3m); NEB 2024's 12 μF at 100 V stores 0.06 J (2m).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Energy of charged capacitor — quick idea map\"><title>Energy of charged capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Energy of charged capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Energy of charged</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">capacitor</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = Q/V</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C = ε₀A/d</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Energy of charged capacitor — quick idea map\"><title>Energy of charged capacitor — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Energy of charged capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Average voltage V/2</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">during charging** is where</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the ½ comes from.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">U = ½CV² = ½QV = Q²/2C.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- U = ½CV² = ½QV = Q²/2C -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Energy density: u = ½ε₀E²</text></svg>",
         "caption": "Energy of charged capacitor — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "C = Q/V\nC = ε₀A/d\nU = ½CV²"
+      "text": "- U = ½CV² = ½QV = Q²/2C - Energy density: u = ½ε₀E²"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Energy of charged capacitor\" as one blob → ✅ split into: energy of charged capacitor.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**The ½ is real:** U = ½CV² = ½QV = Q²/2C — three equivalent forms.  ·  **Energy sits in the field**, not \"on the plates\" — density ½ε₀E²."
     },
     {
       "label": "Special cases",
-      "text": "Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).  ·  Energy stored U = ½CV² = Q²/2C."
+      "text": "A sketched sign convention is part of the data.  ·  A dimensionless ratio still needs the two quantities named."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***NEB 2022*** — 6 μF at 100 V: 0.03 J. ***NEB 2024*** — 12 μF at 100 V: 0.06 J."
     },
     {
       "label": "Limitation",
@@ -53,47 +53,51 @@
     },
     {
       "label": "Derivation",
-      "text": "**Energy stored.** The work done charging a capacitor is stored as electrostatic energy U = ½CV² = Q²/2C = ½QV, where C is capacitance, Q the charge and V the potential difference.  ·  **Energy density.** The energy per unit volume between the plates is u = ½ε₀E²; the same expression gives the energy density of any electric field in vacuum."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+      "text": "\"U = ½ × μF × V² — watch the exponents.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Energy of charged capacitor\" with one example.  ·  compare \"Energy of charged capacitor\" with the related idea from a neighbouring unit."
+      "text": "**Numerical (3m): Find the energy in a 100 μF capacitor at 50 V.** — U = ½ × 10⁻⁴ × 2500 = 0.125 J."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)..",
+      "text": "Quote all three equivalent forms; the derivation from Q–V area earns full marks.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Energy of charged capacitor — topic mind map\"><title>Energy of charged capacitor — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Energy of charged capacitor</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Energy of charged</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">capacitor</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Energy of charged capacitor — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Key points",
-      "text": "• Energy of charged capacitor"
+      "label": "Quick concepts",
+      "text": "**Average voltage V/2 during charging** is where the ½ comes from."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Energy of charged capacitor\" and verify the answer is plausible."
+      "label": "Key points",
+      "text": "U = ½CV² = ½QV = Q²/2C."
+    },
+    {
+      "label": "Universal facts",
+      "text": "A defibrillator's ~200 J arrives from a capacitor of a few hundred μF charged to nearly a kilovolt."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Energy of charged capacitor\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Energy density in vacuum is → A  ·  Doubling E multiplies the energy density by → B"
     },
     {
       "label": "Study notes",
-      "text": "**Charging a capacitor.** A battery of emf V supplies energy QV while charging, but only half (½QV) is stored — the rest is dissipated as heat in the circuit resistance.  ·  **Sharing between capacitors.** When a charged capacitor shares charge with an uncharged one, total charge is conserved but energy is lost as heat until the potentials equalise.  ·  **Applications.** Stored capacitor energy drives camera flashes, defibrillators and pulsed lasers, where energy must be released very rapidly."
+      "text": "## 1. Topic Introduction — Energy Held in Empty Space A charged capacitor stores energy in the electric field between its plates — no moving parts, no chemistry. Discharge it through a flash lamp or a defibrillator and the field's work arrives in a burst. U = ½CV² is the formula NEB keeps testing.  ·  ## 2. Fundamental Concepts (NEB 2022, 2024) ### 2.1 Deriving the stored energy Charging a capacitor is a gradual process: when charge q has been transferred, the remaining work pushes charge against potential v = q/C.…  ·  ## 3. Conceptual Relationships - **To Topic 90:** U = ½QV is the area under the charging curve — potential energy language. - **To Topic 93/94:** C sets the storage capacity. - **To fields:** energy density ½ε₀E² makes field energy a real, localised physical quantity."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: energy of charged capacitor.  ·  one worked example for \"Energy of charged capacitor\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQs: 0.03 J (2022, 3m); 0.06 J (2024, 2m).  ·  \"The energy stored in a charged capacitor is half the product of its capacitance and the square of the potential difference.\"  ·  Why does a capacitor deliver its energy faster than a battery?"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d).  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2078/2022 | Electricity | Capacitor | A capacitor of capacitance 6 μF is charged to a potential difference of 100 V.…"
     }
   ]
 }

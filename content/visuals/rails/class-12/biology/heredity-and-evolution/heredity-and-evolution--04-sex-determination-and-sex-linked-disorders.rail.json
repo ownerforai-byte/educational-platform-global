@@ -56,11 +56,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Sex determination and sex-linked disorders — Heredity and Evolution, Biology (class-12-notes).  ·  **Tested.** define it · list: sex determination, sex-linked disorders · one worked example · one misconception each."
+      "text": "# Sex determination and sex-linked disorders ## 1. Introduction Opening frame for **Sex determination and sex-linked disorders** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Heredity and Evolution fill pass. ## 2.…  ·  In humans and most mammals, sex is fixed at fertilisation by the sex chromosomes: **XX** = female, **XY** = male. The Y chromosome carries **SRY**, the master switch that turns the embryonic gonads into testes; without it, development defaults to female.…"
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Sex determination and sex-linked disorders\" and verify the answer is plausible.  ·  define + example each sub-idea: sex determination, sex-linked disorders."
+      "text": "Trick 1: Human sex determination: XX female, XY male; the father's sperm (X or Y) decides the sex — 50:50; state 'male is heterogametic'.  ·  Trick 2: Haemophilia pedigree: affected father X^hY passes to ALL daughters (carriers) and NO sons; carrier mother × normal father → 50% sons affected — the two standard crosses."
     },
     {
       "label": "Board question",
@@ -75,16 +75,36 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Sex determination and sex-linked disorders\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Sex determination and sex-linked disorders\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Sex-linked disorders.** one-line definition + one-line exam use."
+      "text": "## 3. Classified tables **Table 1 — Classification at a glance** | Group | Diagnostic features | Examples (≥ 2) | Economic importance | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | ---…  ·  **Concept flow — from chromosomes to haemophilia (study in this order)** | Step | Concept | Key fact | |---|---|---| | 1 | Sex chromosomes vs autosomes | 22 pairs of autosomes + 1 pair of sex chromosomes in humans | | 2 | XX / XY system | The ovum is always X; the sperm is X or Y — the father determines sex | | 3 | SRY gene on Y | Triggers testis development; without it,…  ·  **Sex determination systems across organisms** | Organism / group | System | Mechanism | |---|---|---| | Humans, most mammals | XX / XY | Y chromosome with SRY determines maleness | | Birds, butterflies | ZZ / ZW | The FEMALE is the heterogametic sex (ZW) | | Honeybee | Haplodiploidy | Fertilised eggs (2n) = females; unfertilised (n) = males | | Some reptiles (turtle,…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Colour blindness is X-linked recessive; females need BOTH X's affected — hence males (hemizygous) suffer far more.  ·  Trick 4: Other disorders for the list: sickle-cell anaemia (autosomal recessive, HbS), Down syndrome (trisomy 21), Turner (XO), Klinefelter (XXY).  ·  define + example each sub-idea: sex determination, sex-linked disorders."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Sex determination and sex-linked disorders\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "**X-linked recessive vs X-linked dominant inheritance** | Feature | X-linked recessive | X-linked dominant | |---|---|---| | Who is affected more | Males far more (only one X) | Females slightly more (two chances to inherit) | | Carrier state | Heterozygous females are silent carriers | No silent carriers — one allele…  ·  ## 4. Diagrams and figures - **D1** — Sex determination and sex-linked disorders — structure (authored SVG — English labels, viewBox 900×640) - **D2** — Sex determination and sex-linked disorders — process or life-cycle flow (authored SVG — English labels) - **D3** — Sex determination and sex-linked disorders —…  ·  ```svg Haemophilia — carrier mother × normal father (X-linked recessive) <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"30\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">X(H) X(h) &#215; X(H) Y &#8212;…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example.** A colour-blind man marries a woman with normal vision whose father was colour-blind. The woman is an obligate carrier (X^C X^c). Children: 25% colour-blind sons, 25% carrier daughters, 25% normal sons, 25% normal daughters.…  ·  ## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Most-asked points (NEB).** (1) Why is the father, not the mother, the parent who determines a child's sex? (2) Draw the Punnett square for a carrier mother × normal father for haemophilia.…  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass.  ·  **Summary.** Sex in humans is chromosomal (XX/XY) with SRY as the switch. Genes on the X follow sex-linked patterns: recessive ones hit males hardest and skip generations through carrier females; dominant ones show father-to-all-daughters transmission.…"
     }
   ]
 }

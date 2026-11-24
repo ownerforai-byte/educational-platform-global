@@ -25,9 +25,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Specific latent heat of fusion and vaporization (Quantity of Heat, Physics, class-11-notes) covers Specific latent heat of fusion, vaporization. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Specific latent heat is the heat per unit mass for a change of state at constant temperature, Q = m L. Fusion covers melting and freezing. Vaporization covers boiling and condensation. A path that both changes state and changes temperature needs an m L term and an mc Δθ term.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Specific latent heat of fusion and vaporization — quick idea map\"><title>Specific latent heat of fusion and vaporization — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Specific latent heat of fusion and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Specific latent heat of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">fusion</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mcΔT</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = mL</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Specific latent heat of fusion and vaporization — quick idea map\"><title>Specific latent heat of fusion and vaporization — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Specific latent heat of fusion and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Latent heat of fusion</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Latent heat of</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Latent heat changes the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">state at constant</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Fusion is solid to liquid.</text></svg>",
         "caption": "Specific latent heat of fusion and vaporization — quick idea map of this topic's headline ideas"
       }
     },
@@ -38,15 +38,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Specific latent heat of fusion\" as one blob → ✅ split into: specific latent heat of fusion, vaporization.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained."
+      "text": "Values of L depend on the pressure. The quoted values are for standard atmospheric pressure.  ·  Sublimation, solid to gas, has its own latent heat."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Specific latent heat L is the heat absorbed or released when 1 kg of a substance changes state at constant temperature. The heat is Q = m L, and there is no Δθ term while the change of state is going on.  ·  The specific latent heat of fusion, L_f, is for melting or freezing. For ice at 0°C it is about 3.34 × 10^5 J/kg. Melting absorbs this heat. Freezing releases it."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Specific latent heat of fusion and vaporization — Quantity of Heat, Physics (class-11-notes).  ·  **Tested.** define it · list: specific latent heat of fusion, vaporization · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "Change of state: m L. Change of temperature: mc Δθ.  ·  Do the journey in order."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Specific latent heat of fusion and vaporization\" with one example.  ·  compare \"Specific latent heat of fusion\" with the related idea from a neighbouring unit."
+      "text": "Write Q for a change of state.  ·  Why is a steam burn worse than a hot-water burn at 100°C?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Specific latent heat of fusion and vaporization — topic mind map\"><title>Specific latent heat of fusion and vaporization — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Specific latent heat of fusion and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">vaporization</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Specific latent heat of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">fusion</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Vaporization</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Specific latent heat of fusion and vaporization — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Latent heat of fusion  ·  Latent heat of vaporization  ·  Q = m L  ·  Constant temperature"
+    },
+    {
       "label": "Key points",
-      "text": "• Specific latent heat of fusion  ·  • Vaporization"
+      "text": "Latent heat changes the state at constant temperature.  ·  Fusion is solid to liquid.  ·  Vaporization is liquid to gas.  ·  L is heat per unit mass."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Specific latent heat of fusion and vaporization\" and verify the answer is plausible."
+      "text": "What stays constant during boiling?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "How much heat melts 0.20 kg of ice at 0°C and then warms the water to 20°C? Take L_f = 3.34 × 10^5 J/kg and c = 4200 J kg^-1 K^-1."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Specific latent heat of fusion and vaporization\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "During melting, the temperature → B  ·  Q for vaporizing a mass m is → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.  ·  **Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.  ·  **Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
+      "text": "The specific latent heat of vaporization, L_v, is for boiling or condensation. For water at 100°C it is about 2.26 × 10^6 J/kg, several times larger than L_f, because the molecules must be separated much further.  ·  During melting the temperature stays at the melting point until all the solid has changed. The supplied energy increases the potential energy of the molecules, not the average kinetic energy that temperature tracks.  ·  A warming problem that crosses a change of state is done in pieces: mc Δθ up to the change point, then m L, then mc Δθ in the new state. Leaving out m L is the usual error."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: specific latent heat of fusion, vaporization.  ·  one worked example for \"Specific latent heat of fusion and vaporization\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar..  ·  Latent heat is not specific heat. One happens at constant temperature.  ·  Steam at 100°C carries extra energy m L_v that water at 100°C does not."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  **Vaporization.** one-line definition + one-line exam use."
+      "text": "L_f and L_v are properties of the substance and the change, not of the mass. The mass sits outside, in Q = m L.  ·  The temperature does not rise while ice is still melting in the mixture.  ·  Do not multiply L by a temperature change."
+    },
+    {
+      "label": "More ideas",
+      "text": "Keep ice at 0°C and steam at 100°C unless the question moves them further.  ·  Write Q = m L and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀).  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.  ·  The same L applies to the reverse change. Condensing 1 kg of steam at 100°C releases m L_v, which is why a steam burn is severe compared with a burn from water at the same temperature.  ·  # Specific latent heat of fusion and vaporization ## 1. Introduction Physical picture of **Specific latent heat of fusion and vaporization** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

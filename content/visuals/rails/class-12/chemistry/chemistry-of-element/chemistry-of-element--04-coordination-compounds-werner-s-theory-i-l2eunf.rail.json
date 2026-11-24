@@ -56,7 +56,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+      "text": "Trick 1: Werner's postulates: two valencies — primary (ionisable, satisfied by anions) and secondary (coordination, satisfied by ligands); test with AgCl precipitation counts (one vs three Cl− outside the sphere).  ·  Trick 2: Nomenclature order: ligands (alphabetical, di/tri/tetra) → metal → oxidation state in Roman numerals → anion last; anionic ligands end in −o (chlorido, cyanido); neutral ligands keep names (aqua, ammine)."
     },
     {
       "label": "Board question",
@@ -75,6 +75,10 @@
       "text": "• Coordination compounds  ·  • Werner's theory  ·  • IUPAC nomenclature  ·  • Qualitative"
     },
     {
+      "label": "Universal facts",
+      "text": "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Coordination compounds: Werner's theory, IUPAC nomenclatu…\" and verify the answer is plausible."
     },
@@ -88,19 +92,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Isomerism  ·  define + example each sub-idea: coordination compounds, werner's theory, iupac nomenclature, qualitative.  ·  one worked example for \"Coordination compounds: Werner's theory, IUPAC nomenclatu…\" — check units / edge cases."
+      "text": "• Isomerism  ·  Trick 3: VBT: inner-orbital (d²sp³, low spin) vs outer-orbital (sp³d², high spin) — count unpaired electrons to decide; [Fe(CN)6]³⁻ has 1 unpaired (low spin), [FeF6]³⁻ has 5 (high spin).  ·  Trick 4: CFT: d orbitals split into t2g and eg by Δo; strong-field ligands (CN−, NH3) pair electrons; weak-field (F−, H2O) don't — spectrochemical series snippet earns the mark."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
+      "text": "define + example each sub-idea: coordination compounds, werner's theory, iupac nomenclature, qualitative.  ·  one worked example for \"Coordination compounds: Werner's theory, IUPAC nomenclatu…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
       "label": "More ideas",
-      "text": "**Werner's theory.** one-line definition + one-line exam use.  ·  **IUPAC nomenclature.** one-line definition + one-line exam use.  ·  **Qualitative.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2.  ·  **Werner's theory.** one-line definition + one-line exam use."
     },
     {
       "label": "More ideas",
-      "text": "**Isomerism.** one-line definition + one-line exam use."
+      "text": "**IUPAC nomenclature.** one-line definition + one-line exam use.  ·  **Qualitative.** one-line definition + one-line exam use.  ·  **Isomerism.** one-line definition + one-line exam use."
+    },
+    {
+      "label": "More ideas",
+      "text": "# Coordination compounds: Werner's theory, IUPAC nomenclature, VBT, CFT (qualitative), isomerism ## 1. Introduction Chemical picture of **Coordination compounds** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Reaction and reagent sheet** | Transformation | Reagent + conditions | Product | Note or trap | | --- | --- | --- | --- |  ·  ## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…"
     }
   ]
 }

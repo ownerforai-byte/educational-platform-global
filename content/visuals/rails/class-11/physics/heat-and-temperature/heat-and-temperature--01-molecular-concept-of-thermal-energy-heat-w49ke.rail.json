@@ -22,28 +22,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Molecular concept of thermal energy, heat and temperature… (Heat and Temperature, Physics, class-11-notes) covers Molecular concept of thermal energy, heat, temperature. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Molecules of every body are in ceaseless random motion; their total kinetic and potential energies make up **thermal energy**. **Temperature** measures the *average* translational kinetic energy ($\\bar{KE} = \\frac{3}{2}k_BT$) — an intensive quantity in kelvin that decides the direction of heat flow.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Molecular concept of thermal energy, heat and temperature… — quick idea map\"><title>Molecular concept of thermal energy, heat and temperature… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Molecular concept of thermal energy, heat and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">temperature…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Molecular concept of</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">thermal energy</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Heat</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n = m / M</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n = V / 22.4 (g at STP)</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Molecular concept of thermal energy, heat and temperature… — quick idea map\"><title>Molecular concept of thermal energy, heat and temperature… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Molecular concept of thermal energy, heat and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">temperature…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Intensive vs</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">extensive:** temperature</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is intensive (independent</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Temperature ∝ average</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">translational KE; heat</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">flows hot → cold due to</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Units: heat — joule;</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature — kelvin.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- T_K = T_C + 273.15 -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">KE_avg = (3/2)k_B T - 1</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">cal = 4.186 J</text></svg>",
         "caption": "Molecular concept of thermal energy, heat and temperature… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "n = m / M\nn = V / 22.4 (g at STP)\n% yield = (actual / theoretical) × 100"
+      "text": "- T_K = T_C + 273.15 - KE_avg = (3/2)k_B T - 1 cal = 4.186 J"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Molecular concept of thermal energy\" as one blob → ✅ split into: molecular concept of thermal energy, heat, temperature.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**Heat ≠ temperature:** heat is energy in transit (J); temperature is average molecular KE (K).  ·  **Bodies don't 'contain heat'** — they contain internal energy; heat describes the transfer."
     },
     {
       "label": "Special cases",
-      "text": "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).  ·  n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ."
+      "text": "The zeroth law says that if each of two bodies is in equilibrium with a third, they are in equilibrium with each other. That is what makes a thermometer possible.  ·  Absolute zero is 0 K, about −273°C, where the classical molecular picture reaches its lowest energy."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Sparkler vs bathtub*** — a 1000 °C spark has tiny energy; a 40 °C bathtub scalds — temperature ≠ energy."
     },
     {
       "label": "Limitation",
@@ -51,55 +51,51 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Molecular concept of thermal energy, heat and temperature… — Heat and Temperature, Physics (class-11-notes).  ·  **Tested.** define it · list: molecular concept of thermal energy, heat, temperature, cause · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+      "text": "\"Two-row table: definition, unit, mass-dependence, instrument.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Molecular concept of thermal energy, heat and temperature…\" with one example.  ·  compare \"Molecular concept of thermal energy\" with the related idea from a neighbouring unit."
+      "text": "**Short (2m): A red-hot nail and a bucket of warm water — which has more thermal energy? Which has higher temperature?** — The nail has higher temperature; the bucket of water (much larger mass) has more thermal energy. Temperature is intensive, energy extensive."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)..",
+      "text": "The 2m difference question appeared in three years — memorise the four contrasts.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Molecular concept of thermal energy, heat and temperature… — topic mind map\"><title>Molecular concept of thermal energy, heat and temperature… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Molecular concept of thermal energy, heat and…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Molecular concept of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">thermal energy</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Heat</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Temperature</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Cause</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Molecular concept of thermal energy, heat and temperature… — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Key points",
-      "text": "• Molecular concept of thermal energy  ·  • Heat  ·  • Temperature  ·  • Cause"
+      "label": "Quick concepts",
+      "text": "**Intensive vs extensive:** temperature is intensive (independent of size); heat/thermal energy is extensive (scales with mass)."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Molecular concept of thermal energy, heat and temperature…\" and verify the answer is plausible."
+      "label": "Key points",
+      "text": "Temperature ∝ average translational KE; heat flows hot → cold due to ΔT.  ·  Units: heat — joule; temperature — kelvin."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Absolute zero (0 K = −273.15 °C) is the temperature of minimum possible molecular kinetic energy."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Molecular concept of thermal energy, heat and temperature…\"? → A  ·  A common examiner point on \"Molecular concept of thermal energy, heat and temperature…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Heat flows → B  ·  Temperature of an ideal gas tracks → B"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).  ·  **Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.  ·  **Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+      "text": "## 1. Topic Introduction — Two Words That Are Not Synonyms \"Heat\" and \"temperature\" are used interchangeably in daily speech — and wrongly in physics. Temperature measures the average kinetic energy of molecules; heat is energy *in transit* because of a temperature difference.…  ·  ## 2. Fundamental Concepts (NEB 2021, 2022, 2024) ### 2.1 Molecular concept of thermal energy Matter is made of particles in ceaseless random motion. **Thermal energy** is the total internal energy of these particles — kinetic (translation, rotation, vibration) plus potential (intermolecular).…  ·  ## 3. Conceptual Relationships - **To Topic 44:** thermal equilibrium and the zeroth law formalise \"no net heat flow\". - **To Kinetic theory (Unit 13):** $\\bar{KE} = \\frac{3}{2}k_BT$ makes temperature molecular. - **To Quantity of heat (Unit 11):** Q = mcΔT quantifies heat."
     },
     {
       "label": "More ideas",
-      "text": "• Direction of heat flow  ·  define + example each sub-idea: molecular concept of thermal energy, heat, temperature, cause.  ·  one worked example for \"Molecular concept of thermal energy, heat and temperature…\" — check units / edge cases."
+      "text": "Verified PYQs: difference question (2021, 2022, 2024 — 2m each) — a NEB favourite.  ·  \"Heat is the energy in transit due to temperature difference; temperature measures the average kinetic energy of molecules.\"  ·  Why does metal at 20 °C feel colder than wood at 20 °C?"
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Heat.** one-line definition + one-line exam use.  ·  **Temperature.** one-line definition + one-line exam use.  ·  **Cause.** one-line definition + one-line exam use."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Direction of heat flow.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2077/2021 | Heat | Heat & temperature | Differentiate between heat and temperature.…"
     }
   ]
 }

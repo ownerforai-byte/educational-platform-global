@@ -28,16 +28,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental. Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.…",
+      "text": "The IUPAC system is a **reversible code** between structure and name. A name is assembled from a **word root** (meth → hex for C1 → C6), a **primary suffix** (-ane/-ene/-yne for single/double/triple bonds), **functional suffixes with locants** (-ol, -al, -one, -oic acid), and **alphabetical prefixes with locants** for substituents (di-/tri- ignored in alphabetising).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"IUPAC Nomenclature of Organic Compounds — quick idea map\"><title>IUPAC Nomenclature of Organic Compounds — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">IUPAC Nomenclature of Organic Compounds</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 01 iupac</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">nomenclature of organic</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">compounds up to chain…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 01 iupac</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">nomenclature of organic</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">compounds up to chain</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F = m \\cdot a$ (relevant</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula for 01 iupac</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">nomenclature of organic…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"IUPAC Nomenclature of Organic Compounds — quick idea map\"><title>IUPAC Nomenclature of Organic Compounds — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">IUPAC Nomenclature of Organic Compounds</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One structure must yield</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">one name worldwide:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">longest chain fixes the</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">IUPAC name = prefix(es) +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">word root + primary suffix</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ functional suffix with…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Root ladder: C1 meth ·</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C2 eth · C3 prop · C4 but</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">· C5 pent · C6 hex -…</text></svg>",
         "caption": "IUPAC Nomenclature of Organic Compounds — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$F = m \\cdot a$ (relevant formula for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms)"
+      "text": "- Root ladder: C1 meth · C2 eth · C3 prop · C4 but · C5 pent · C6 hex - Suffixes: -ane / -ene / -yne; -ol, -al, -one, -oic acid, -amine - CH₃CH(OH)CH₂CH₃ = butan-2-ol; CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH =…"
     },
     {
       "label": "Conditions",
@@ -49,7 +49,7 @@
     },
     {
       "label": "Solved",
-      "text": "CH₄ + Cl₂ → CH₃Cl (free radical substitution)"
+      "text": "***The NEB 2023 name decoded*** — CH3CH(CH3)CH2CH2CH(CH2CH3)CH2OH looks fearsome until the rules run: longest chain holding the OH carbon = 6 (hexan-1-ol), ethyl at C-2, methyl at C-5, alphabetical order — 2-ethyl-5-methylhexan-1-ol."
     },
     {
       "label": "Limitation",
@@ -61,15 +61,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1"
+      "text": "Chain length -> root; saturation -> ane/ene/yne; group position -> locant. Number from the functional-group end. Alphabetise prefixes ignoring di/tri. Practice set: butan-2-ol, butanoic acid, ethanal, ethane-1,2-diol, 2-methylpropanoic acid, 2-ethyl-5-methylhexan-1-ol."
     },
     {
       "label": "Board question",
-      "text": "Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
+      "text": "**NEB 2024 (verified PYQ): Write the IUPAC name of CH₃CH(OH)CH₂CH₃.** — The **longest continuous chain** contains **four carbon atoms** → word root **but-**. All bonds are single → infix **-an-**. Numbering from the end nearer the **–OH** group places the hydroxyl on **C-2** → suffix **-2-ol**.…  ·  **NEB 2024 (verified PYQ): Give the IUPAC names of (a) CH₃CH₂CH₂COOH (b) CH₃CHO (c) HOCH₂CH₂OH (d) CH₃CH(CH₃)COOH.** — (a) The carboxyl carbon is C-1 of a four-carbon chain → **butanoic acid**. (b) Two carbons ending in **–CHO** → **ethanal**. (c) Two carbons, each carrying an **–OH** → **ethane-1,2-diol**.…"
     },
     {
       "label": "Hints",
-      "text": "Exam note 1.",
+      "text": "Show the numbered chain in the margin: examiners award method marks for correct longest-chain choice and correct numbering even if the final word slips.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"IUPAC Nomenclature of Organic Compounds — topic mind map\"><title>IUPAC Nomenclature of Organic Compounds — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">IUPAC Nomenclature of Organic Compounds (up t…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">IUPAC Nomenclature of</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Organic Compounds</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Up to chain having</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">6-carbon atoms</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "IUPAC Nomenclature of Organic Compounds — topic mind map of this topic's own sub-topics"
@@ -77,19 +77,19 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+      "text": "One structure must yield one name worldwide: longest chain fixes the parent, lowest locant fixes the numbering, alphabetical order fixes the listing — three rules, one unambiguous name."
     },
     {
       "label": "Key points",
-      "text": "Core point for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+      "text": "IUPAC name = prefix(es) + word root + primary suffix + functional suffix with locant. Roots: meth 1, eth 2, prop 3, but 4, pent 5, hex 6. Suffixes: ane/ene/yne for single/double/triple bonds; -ol, -al, -one, -oic acid, -amine for groups.…"
     },
     {
       "label": "Universal facts",
-      "text": "Universal scientific fact for 01 iupac nomenclature of organic compounds up to chain having 6 carbon atoms."
+      "text": "IUPAC names are constructed, not memorised: any chemist can rebuild the structure from the name alone — the system is a reversible code between words and molecules."
     },
     {
       "label": "More practice",
-      "text": "Practice identifying limiting reagents in stoichiometric calculations.  ·  Practice calculating percent yield from experimental data.  ·  Practice converting between molarity and molality."
+      "text": "**NEB 2023 (verified PYQ): Give the IUPAC name of the compound CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.** — Step 1 — parent chain: the longest chain **containing the –CH₂OH carbon** runs through six carbons → root **hex-**.…  ·  **NEB-style (2m): State any three rules of IUPAC nomenclature.** — (i) Select the **longest continuous carbon chain** as the parent — it must include the principal functional group or multiple bond if present.…"
     },
     {
       "label": "MCQ drill",
@@ -97,7 +97,7 @@
     },
     {
       "label": "Study notes",
-      "text": "Electronic effects: inductive, resonance, electromeric.  ·  Bond fission: homolytic (radicals), heterolytic (ions).  ·  Reaction mechanisms: step-by-step electron movement."
+      "text": "## 1. Topic Introduction — A Name That Encodes the Structure Before IUPAC, one compound wore many names (wood spirit, grain alcohol…). The **IUPAC system** builds every name from the structure itself: a **word root** for chain length, a **suffix** for the bond type/functional group, and **prefixes** for substituents.…  ·  ## 2. Fundamental Concepts ### 2.1 The three parts of an IUPAC name - **Word root:** chain length — meth (1), eth (2), prop (3), but (4), pent (5), hex (6). - **Primary suffix:** saturation — **ane** (single bonds), **ene** (C=C), **yne** (C≡C).…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Word root** | Name part giving the parent chain length | pent- = 5 carbons | | **Primary suffix** | Saturation class of the chain | -ane, -ene, -yne | | **Locant** | Number fixing a substituent or group position | butan-**2**-ol | | **Prefix** | Substituent name before the root | 2-methyl… |"
     },
     {
       "label": "More ideas",
@@ -119,88 +119,5 @@
       "label": "More ideas",
       "text": "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.  ·  ❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).  ·  ❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K."
     }
-  ],
-  "keyPoints": [
-    "01 Iupac Nomenclature Of Organic Compounds is a core concept in fundamental principles of organic chemistry.",
-    "Understanding 01 iupac nomenclature of organic compounds requires knowing its definition, conditions, and limitations.",
-    "01 Iupac Nomenclature Of Organic Compounds has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 01 iupac nomenclature of organic compounds must be memorized precisely.",
-    "01 Iupac Nomenclature Of Organic Compounds connects to neighbouring topics within fundamental principles of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 01 iupac nomenclature of organic compounds.",
-    "Practical examples solidify understanding of 01 Iupac Nomenclature Of Organic Compounds and its real-world relevance.",
-    "Misconceptions about 01 iupac nomenclature of organic compounds often arise from confusing it with similar concepts.",
-    "01 Iupac Nomenclature Of Organic Compounds follows systematic rules that can be applied step-by-step.",
-    "Review of 01 iupac nomenclature of organic compounds should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "01 Iupac Nomenclature Of Organic Compounds is defined by its specific characteristics within fundamental principles of organic chemistry.",
-    "The conditions under which 01 iupac nomenclature of organic compounds applies are as important as the concept itself.",
-    "01 Iupac Nomenclature Of Organic Compounds can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 01 iupac nomenclature of organic compounds through application-based and comparison questions.",
-    "A clear grasp of 01 Iupac Nomenclature Of Organic Compounds builds the foundation for advanced topics in fundamental principles of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 01 iupac nomenclature of organic compounds, always note the exceptions alongside the general rule.",
-    "01 Iupac Nomenclature Of Organic Compounds should be reviewed with at least one worked example per sub-point.",
-    "Link 01 iupac nomenclature of organic compounds back to prior knowledge in fundamental principles of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 01 Iupac Nomenclature Of Organic Compounds to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 01 Iupac Nomenclature Of Organic Compounds: apply the standard definition to a simple case.",
-    "Intermediate example: combine 01 iupac nomenclature of organic compounds with a related concept from fundamental principles of organic chemistry.",
-    "Exam-style problem: solve a question involving 01 Iupac Nomenclature Of Organic Compounds under time pressure.",
-    "Real-world connection: show how 01 Iupac Nomenclature Of Organic Compounds appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 01 Iupac Nomenclature Of Organic Compounds and state two conditions required for it to occur.",
-    "Differentiate 01 Iupac Nomenclature Of Organic Compounds from the most commonly confused concept in fundamental principles of organic chemistry.",
-    "Solve a numerical or structural problem involving 01 Iupac Nomenclature Of Organic Compounds.",
-    "List three applications of 01 Iupac Nomenclature Of Organic Compounds in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 01 Iupac Nomenclature Of Organic Compounds without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 01 Iupac Nomenclature Of Organic Compounds.",
-    "Create three flashcards covering definition, formula, and limitation of 01 Iupac Nomenclature Of Organic Compounds."
-  ],
-  "universalFacts": [
-    "01 Iupac Nomenclature Of Organic Compounds is part of the NEB Class 11 fundamental principles of organic chemistry syllabus.",
-    "Every concept in fundamental principles of organic chemistry builds upon definitions established earlier in the chapter.",
-    "01 Iupac Nomenclature Of Organic Compounds is assessed through both short-answer and long-answer board questions.",
-    "Understanding 01 Iupac Nomenclature Of Organic Compounds improves performance across the entire fundamental principles of organic chemistry unit.",
-    "Revision of 01 Iupac Nomenclature Of Organic Compounds should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 01 Iupac Nomenclature Of Organic Compounds with closely related concepts in fundamental principles of organic chemistry — focus on distinguishing features.",
-    "The scope of 01 Iupac Nomenclature Of Organic Compounds is sometimes overstated; remember its precise boundaries.",
-    "Applying 01 Iupac Nomenclature Of Organic Compounds outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 01 Iupac Nomenclature Of Organic Compounds and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 01 Iupac Nomenclature Of Organic Compounds? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "01 Iupac Nomenclature Of Organic Compounds is primarily studied under which branch of fundamental principles of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 01 Iupac Nomenclature Of Organic Compounds is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to fundamental principles of organic chemistry — Answer: B",
-    "Which example correctly illustrates 01 Iupac Nomenclature Of Organic Compounds? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "01 Iupac Nomenclature Of Organic Compounds differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 01 Iupac Nomenclature Of Organic Compounds.",
-    "Step-by-step animated derivation of the key relationship in 01 Iupac Nomenclature Of Organic Compounds.",
-    "Interactive toggle between correct and incorrect representations of 01 Iupac Nomenclature Of Organic Compounds."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 01 Iupac Nomenclature Of Organic Compounds.",
-    "Side-by-side comparison animation of 01 Iupac Nomenclature Of Organic Compounds vs commonly confused concept.",
-    "Timelapse build-up of 01 Iupac Nomenclature Of Organic Compounds from prerequisite knowledge in fundamental principles of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 01 Iupac Nomenclature Of Organic Compounds",
-    "Comparison table: 01 Iupac Nomenclature Of Organic Compounds vs related concepts in fundamental principles of organic chemistry",
-    "Step-by-step worked example layout for 01 Iupac Nomenclature Of Organic Compounds"
-  ],
-  "summary": [
-    "01 Iupac Nomenclature Of Organic Compounds is a fundamental concept in fundamental principles of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 01 Iupac Nomenclature Of Organic Compounds involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 01 Iupac Nomenclature Of Organic Compounds alongside related concepts in fundamental principles of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

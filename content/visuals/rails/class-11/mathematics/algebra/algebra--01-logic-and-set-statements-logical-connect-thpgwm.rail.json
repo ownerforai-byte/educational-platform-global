@@ -27,16 +27,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Logic and Set covers essential principles and applications.",
+      "text": "Logic and sets share one grammar. A **statement** has a definite truth value; connectives build compound statements whose truth tables obey fixed conventions — crucially **p → q is false only for T→F** (vacuous truth elsewhere), and p → q ≡ ¬p ∨ q. **Tautologies** are always true, contradictions always false.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Logic and set: statements, logical connectives, truth tab… — quick idea map\"><title>Logic and set: statements, logical connectives, truth tab… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Logic and set: statements, logical</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">connectives, truth tab…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Logic and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Set.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Logic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Set: statements</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Logic and set: statements, logical connectives, truth tab… — quick idea map\"><title>Logic and set: statements, logical connectives, truth tab… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Logic and set: statements, logical</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">connectives, truth tab…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The membership table is a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">finite proof of an</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">infinite statement: two</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Statement: definite truth</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value. Connectives: not,</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and, or, implies, iff; p…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- p → q ≡ ¬p ∨ q; ¬(p ∧ q)</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">¬q - |A∪B| = |A| + |B|…</text></svg>",
         "caption": "Logic and set: statements, logical connectives, truth tab… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Logic and Set\nStatement 2: Theorem related to Logic and Set"
+      "text": "- p → q ≡ ¬p ∨ q; ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q - |A∪B| = |A| + |B| − |A∩B|; |P(A)| = 2ⁿ - A∪(B∩C) = (A∪B)∩(A∪C); A∪(A∩B) = A; A∪A′ = U - a³ + b³ + c³ − 3abc = (a+b+c)(a²+b²+c²−ab−bc−ca)"
     },
     {
       "label": "Conditions",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Statement 3: Condition for Logic and Set to be valid  ·  Statement 4: Principle governing Logic and Set"
+      "text": "\"(A u B)' = A' n B'; A u (B n C) = (A u B) n (A u C); p -> q is false only when p is true and q is false.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The dictionary*** — every tautology is a set identity wearing logic clothes: swap not/and/or for complement/intersection/union and the truth table becomes a membership table."
     },
     {
       "label": "Limitation",
@@ -56,19 +56,19 @@
     },
     {
       "label": "Derivation",
-      "text": "• Logic  ·  • Set: statements"
+      "text": "## 1. Topic Introduction — Logic Meets Sets Statements, connectives and truth tables are the grammar of reasoning; sets are the nouns the grammar talks about. The theorems: the **algebra of sets** — De Morgan's laws, distributive laws, absorption — proved by membership tables, with truth tables as the logical twin.  ·  ## 2. Fundamental Concepts ### 2.1 Statements and connectives - A **statement** is a declarative sentence that is definitively true or false. **Connectives:** ¬ (not), ∧ (and), ∨ (or), → (implies), ↔ (if and only if). - **Truth-table conventions:** ¬ flips T/F; p ∧ q is true only when both are true; p ∨ q is false only when both are false; **p → q is false only when p is T and q is F** (vacuously true otherwise); p…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Logic and Set."
+      "text": "Truth table of p -> q: only T,F,T,T. A - B = A n B'. Power set: 2^n. Set identities: membership table, 8 rows. a+b+c = 0 => a^3+b^3+c^3 = 3abc."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Logic and set: statements, logical connectives, truth tab…\" with one example.  ·  compare \"Logic\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)** — **Union** — elements in at least one set: A∪B = **{1, 2, 3, 4}**. **Intersection** — elements common to both: A∩B = **{2, 3}**.…  ·  **NEB 2022 (verified PYQ): Prove that A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)** — **Membership-table proof.** Every element x is in one of 8 patterns w.r.t. A, B, C. Build the columns: **B∩C** (T iff both T); **LHS = A∪(B∩C)**; **A∪B**; **A∪C**; **RHS = (A∪B)∩(A∪C)**.…"
     },
     {
       "label": "Hints",
-      "text": "Logic and Set is based on fundamental principles.",
+      "text": "In membership-table proofs, label the columns and state \"all rows agree, hence equal\" - the concluding sentence carries the proof mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Logic and set: statements, logical connectives, truth tab… — topic mind map\"><title>Logic and set: statements, logical connectives, truth tab… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Logic and set</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Logic</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Set: statements</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Logical connectives</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Truth tables</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Logic and set: statements, logical connectives, truth tab… — topic mind map of this topic's own sub-topics"
@@ -76,31 +76,43 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Logic and Set."
+      "text": "The membership table is a finite proof of an infinite statement: two sets are equal iff every one of the 8 membership patterns agrees on both sides."
     },
     {
       "label": "Key points",
-      "text": "• Logical connectives  ·  • Truth tables  ·  • Theorems based on set operations  ·  Connection of Logic and Set to other topics"
+      "text": "Statement: definite truth value. Connectives: not, and, or, implies, iff; p -> q false only when p T and q F (vacuously true otherwise). Tautology (always true), contradiction (always false), contingency. Power set has 2^n members. Inclusion-exclusion: |A u B| = |A| + |B| - |A n B|.…"
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Logic and set: statements, logical connectives, truth tab…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "De Morgan's laws are the reason search engines understand \"NOT (cats OR dogs)\" as \"(not cats) AND (not dogs)\"."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Logic and set: statements, logical connectives, truth tab…\" and verify the answer is plausible."
+      "text": "**NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ is equal to: (a) abc (b) 3abc (c) −abc (d) 0 (1m)** — **Key identity:** a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca).…"
     },
     {
       "label": "MCQ drill",
       "text": "Which of the following is a distinct sub-topic under \"Logic and set: statements, logical connectives, truth tab…\"? → Logic  ·  A common examiner point on \"Logic and set: statements, logical connectives, truth tab…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
-      "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Logic and Set  ·  one worked example for \"Logic and set: statements, logical connectives, truth tab…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "label": "Study notes",
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Statement** | Sentence with a definite truth value | \"3 is prime\" (T) | | **Tautology** | True under every assignment | p → p | | **Power set** | Set of all subsets | P({1,2}) has 4 members | | **De Morgan's laws** | Complement flips ∪/∩ | (A∪B)′ = A′∩B′ |  ·  ## 4. Detailed Explanation ### 4.1 Why the membership table proves everything - Two sets are equal iff they contain exactly the same elements. Tabulating membership for every element-type (in/out of each of A, B, C) exhausts all cases — a finite proof of an infinite statement.…  ·  ## 5. Comparison Tables **Connectives vs set operations** | Logic | Sets | Meaning | |---|---|---| | ¬p | A′ | not in | | p ∧ q | A∩B | in both | | p ∨ q | A∪B | in at least one | | p → q | A ⊆ B | membership transfers |"
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Verified PYQs: NEB 2023 (A = {1,2,3}, B = {2,3,4} operations), NEB 2022 (distributive law proof; a^3+b^3+c^3 = 3abc MCQ) - assigned to this row.  ·  If A = {1,2,3}, B = {2,3,4}, find A∪B, A∩B, A−B.  ·  Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) by membership table."
+    },
+    {
+      "label": "More ideas",
+      "text": "Show p → q ≡ ¬p ∨ q by truth table.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 6. Common Confusions **p → q with false p is true:** the only false case is T→F — students mark false antecedent rows wrong."
+    },
+    {
+      "label": "More ideas",
+      "text": "**A − B ≠ B − A:** difference is not commutative; A−B = A∩B′ is the working form.  ·  **De Morgan's flip:** complementing a union gives an intersection of complements — the connective changes too.  ·  ## 7. Exam Application **NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)** — **Union** (elements in either): A∪B = **{1, 2, 3, 4}**. **Intersection** (elements in both): A∩B = **{2, 3}**. **Difference** (in A, not in B): A−B = **{1}**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB 2022 (verified PYQ): Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)** — **Membership table** with rows for x in/out of A, B, C. Columns: B∩C (T only when both B, C are T); left A∪(B∩C); A∪B; A∪C; right (A∪B)∩(A∪C).…  ·  **NEB-style (2m): Construct the truth table of p → q and (¬p) ∨ q and show they are logically equivalent.** — Rows (p, q): (T,T), (T,F), (F,T), (F,F). p→q: T, F, T, T. ¬p∨q: F→T gives T; T→F gives F; F→T gives T; F→F gives T — column T, F, T, T.…  ·  **NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ equals: (1m)** — **Identity:** a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca). With a + b + c = 0 the right side vanishes, so a³ + b³ + c³ = **3abc → option (b)**. (This is the algebra's most-quoted conditional identity.)"
     }
   ]
 }

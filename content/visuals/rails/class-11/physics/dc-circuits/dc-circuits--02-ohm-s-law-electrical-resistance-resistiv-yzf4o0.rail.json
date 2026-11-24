@@ -26,72 +26,76 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is constant.",
+      "text": "**Ohm's law**: at constant temperature, V ∝ I in a metallic conductor, or V = IR with R the **resistance** (ohm). Resistance grows with length and shrinks with area: $R = \\rho l/A$, where **resistivity** ρ (Ω·m) is a material property (copper 1.7×10⁻⁸) and **conductivity** σ = 1/ρ its inverse. Temperature raises metals' resistance and lowers semiconductors'.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ohm's Law, Resistance, Resistivity and Conductivity — quick idea map\"><title>Ohm's Law, Resistance, Resistivity and Conductivity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ohm's Law, Resistance, Resistivity and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Conductivity</text><text x=\"450\" y=\"300\" text-anchor=\"middle\" font-size=\"22\" fill=\"#64748b\">Idea map — see rows below</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ohm's Law, Resistance, Resistivity and Conductivity — quick idea map\"><title>Ohm's Law, Resistance, Resistivity and Conductivity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Ohm's Law, Resistance, Resistivity and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Conductivity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Stretching a wire to n</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">times its length</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">multiplies R by n²** —</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">V = IR; R = ρl/A; σ = 1/ρ.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- V = IR (Ω = V/A) - R =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ρl/A; σ = 1/ρ - Stretch to</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">n×: R' = n²R</text></svg>",
         "caption": "Ohm's Law, Resistance, Resistivity and Conductivity — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Ohm's Law Validity:** Ohm's law ($V = IR$) applies strictly to ohmic conductors at *constant temperature*. For metals, resistance increases with temperature, so the law holds only if temperature is held constant…\n**Resistivity vs. Resistance:** Resistivity ($ ho$) is an *intensive* material property (independent of geometry), while resistance ($R = ho L/A$) is an *extensive* property depending on the conductor's length and…"
+      "text": "- V = IR (Ω = V/A) - R = ρl/A; σ = 1/ρ - Stretch to n×: R' = n²R"
     },
     {
       "label": "Conditions",
-      "text": "**Conductivity Definition:** Conductivity ($\\sigma = 1/ ho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials."
+      "text": "**Ohm's Law Validity:** Ohm's law ($V = IR$) applies strictly to ohmic conductors at *constant temperature*. For metals, resistance increases with temperature, so the law holds only if temperature is held constant (isothermal conditions).  ·  **Resistivity vs. Resistance:** Resistivity ($ ho$) is an *intensive* material property (independent of geometry), while resistance ($R = ho L/A$) is an *extensive* property depending on the conductor's length and cross-section. Temperature changes affect $ ho$, which in turn changes $R$."
     },
     {
       "label": "Special cases",
-      "text": "A tungsten filament lamp has a resistance that changes by a factor of 10-15 between cold and hot, making it a classic example of non-ohmic behavior due to temperature-dependent resistivity.  ·  The threshold voltage of a silicon diode is approximately 0.7 V because this is the energy needed to overcome the potential barrier of the p-n junction, corresponding to the band gap energy of silicon."
+      "text": "\"The current through a metallic conductor is proportional to the potential difference across it, provided physical conditions remain constant.\""
     },
     {
       "label": "Solved",
-      "text": "A filament lamp has a resistance of $20\\\\\\\\,\\\\\\\\Omega$ when cold and $240\\\\\\\\,\\\\\\\\Omega$ when glowing at full brightness. If connected to a 12 V supply, find the current when cold and when glowing. Solution: Cold: $I = V/R = 12/20 = 0.6$ A. Glowing: $I = V/R = 12/240 = 0.05$ A. The inrush current is 12 times the steady-state current.  ·  A silicon diode has a forward voltage drop of 0.7 V at a current of 10 mA. It is connected in series with a 500 $\\\\\\Omega$ resistor and a 5 V battery. Find the current. Solution: The diode drops 0.7 V, so the resistor sees $5 - 0.7 = 4.3$ V. $I = 4.3/500 = 8.6$ mA."
+      "text": "***Copper wiring*** — ρ ≈ 1.7×10⁻⁸ Ω·m: low resistivity makes it the standard conductor."
     },
     {
       "label": "Limitation",
-      "text": "Ohm's law $V = IR$ is a definition of resistance, not a law that all materials obey. Only ohmic conductors have a linear $I$-$V$ relationship. For non-ohmic devices, $R = V/I$ is still defined but varies.  ·  A filament lamp becomes a better conductor (lower resistance) when cold. This is why bulbs often burn out at the moment they are switched on - the initial current surge is 10 times the steady-state current."
+      "text": "**Ohm's law is conditional:** constant temperature — a glowing filament defies it.  ·  **Resistivity belongs to the material; resistance to the object.**"
     },
     {
       "label": "Derivation",
-      "text": "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.  ·  **Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature)."
+      "text": "## 1. Topic Introduction — The Law of the Linear Circuit For a metal wire at steady temperature, doubling the voltage doubles the current. That proportionality — Ohm's law — and its material constants (resistivity, conductivity) turn circuit design into arithmetic.  ·  ## 2. Fundamental Concepts ### 2.1 Ohm's law **Statement:** at constant temperature, the current through a conductor is directly proportional to the potential difference across it: $$V \\propto I \\Rightarrow V = IR$$ - R, the **electrical resistance**, is the constant of proportionality (unit: ohm, Ω = V/A).…"
     },
     {
       "label": "Shortcut",
-      "text": "Semiconductors have a negative temperature coefficient of resistance (NTC thermistors) because more charge carriers are thermally excited across the band gap, increasing conductivity.  ·  Ohmic materials include most metals at constant temperature. Non-ohmic materials include all semiconductors, electrolytes, and any device where temperature or other conditions change with current."
+      "text": "\"R' = R × (l'/l) × (A/A') — handle stretch problems factor by factor.\""
     },
     {
       "label": "Board question",
-      "text": "A thermistor has resistance $R_0 = 10\\\\\\\\,\\ ext{k}\\\\\\\\Omega$ at 25$^{\\\\\\\\circ}$C and $R = 2\\\\\\\\,\\ ext{k}\\\\\\\\Omega$ at 50$^{\\\\\\\\circ}$C. Find the resistance at 0$^{\\\\\\\\circ}$C assuming a linear temperature coefficient.…  ·  A $I$-$V$ graph of a device shows that at $V = 3$ V, the current is 0.15 A, and the tangent at that point has slope $dI/dV = 0.02$ A/V. Find the static resistance and dynamic resistance. Solution: Static resistance $R_s = V/I = 3/0.15 = 20\\\\\\\\,\\\\\\\\Omega$. Dynamic resistance $R_d = 1/(dI/dV) = 1/0.02 = 50\\\\\\\\,\\\\\\\\Omega$."
+      "text": "**Numerical (2m): A wire of R = 4 Ω is stretched to twice its length. Find the new resistance.** — R' = 4 × 2² = 16 Ω."
     },
     {
       "label": "Hints",
-      "text": "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the static resistance is $V/I$ while the dynamic resistance is the slope of the $I$-$V$ curve at that point.  ·  A diode is not simply a 'one-way valve' for current. In reverse bias, a tiny leakage current (nA to $\\\\\\mu$A range) still flows. In forward bias, the current is exponentially related to voltage, not linearly.",
+      "text": "State the temperature condition — it carries a mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Ohm's Law, Resistance, Resistivity and Conductivity — topic mind map\"><title>Ohm's Law, Resistance, Resistivity and Conductivity — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Ohm's law; electrical resistance; resistivity…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ohm's law</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electrical resistance</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Resistivity</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Conductivity</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Ohm's Law, Resistance, Resistivity and Conductivity — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "**Stretching a wire to n times its length multiplies R by n²** — both l and A change."
+    },
+    {
+      "label": "Key points",
+      "text": "V = IR; R = ρl/A; σ = 1/ρ."
+    },
+    {
       "label": "Universal facts",
-      "text": "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
+      "text": "Superconductors drop to exactly zero resistance below a critical temperature — ohm's law with R = 0."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "Ohm's law states: → A  ·  The unit of resistance is: → B"
     },
     {
       "label": "Study notes",
-      "text": "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.  ·  **Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point.  ·  **Forward bias diode:** current flows easily once the voltage exceeds the threshold ($\\\\\\\\approx 0.7$ V for silicon, $\\\\\\\\approx 0.3$ V for germanium). Below threshold, very little current flows."
+      "text": "## 3. Conceptual Relationships - **To Topic 98:** Ohm's law emerges from drift: v_d = μE gives I ∝ E ∝ V. - **To Topic 100:** Ohmic conductors keep R constant; non-ohmic ones don't. - **To series/parallel (Topic 101):** R values combine via the rules.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the R = ρl/A numericals and the stretching problem as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. State Ohm's law and its limitations (3m). 2. R = ρl/A numerical (2–3m). 3.…"
     },
     {
       "label": "More ideas",
-      "text": "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes.  ·  A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\\\\\\Omega$ across a 10 V battery with series resistor of 500 $\\\\\\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener).…  ·  **Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.  ·  **Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator.  ·  **Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Temperature coefficient of filament:** tungsten has $\\\\\\\\alpha \\\\\\\\approx 0.0045$ $^{\\\\\\\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\\\\\\\,\\\\\\\\Omega$ but hot resistance of $529\\\\\\\\,\\\\\\\\Omega$."
+      "text": "**Conductivity Definition:** Conductivity ($\\sigma = 1/ ho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials.  ·  No verified PYQ; NEB-style practice (statement 3m, R = ρl/A numericals 2–3m).  ·  Why are transmission cables thick?"
     }
   ]
 }

@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Moving coil galvanometer, ammeter, and voltmeter (Magnetism and Magnetic Effect of Current, Physics, class-12-notes) covers Moving coil galvanometer, ammeter, voltmeter. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "A coil in a radial field deflects in proportion to current because N I A B balances the spring. A parallel shunt turns the movement into an ammeter, and a series resistor turns it into a voltmeter. The coil current at full scale stays the small movement current.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Moving coil galvanometer, ammeter, and voltmeter — quick idea map\"><title>Moving coil galvanometer, ammeter, and voltmeter — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Moving coil galvanometer, ammeter, and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">voltmeter</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Moving coil galvanometer</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Ammeter</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;Moving coil</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">galvanometer, ammeter, and</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Moving coil galvanometer, ammeter, and voltmeter — quick idea map\"><title>Moving coil galvanometer, ammeter, and voltmeter — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Moving coil galvanometer, ammeter, and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">voltmeter</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Radial field</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Spring balance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Torque balances a spring.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The scale is linear in a</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">radial field.</text></svg>",
         "caption": "Moving coil galvanometer, ammeter, and voltmeter — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"Moving coil galvanometer, ammeter, and voltmeter\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"Moving coil galvanometer, ammeter, and voltmeter\" — state with units, then use in one numerical.\nN I A B = k θ\nShunt S = I_g G / (I − I_g)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Moving coil galvanometer\" as one blob → ✅ split into: moving coil galvanometer, ammeter, voltmeter.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Moving coil galvanometer, ammeter, and voltmeter\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "A 1 mA movement is typical in these problems.  ·  Critical damping settles the needle in the shortest time without overshoot."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "A moving-coil galvanometer carries a coil in a radial magnetic field. The torque is N I A B and does not change with angle, because the field is radial. A hairspring supplies a restoring torque k θ.  ·  At rest, N I A B = k θ, so the deflection is proportional to the current. The scale can be marked in equal current steps."
     },
     {
       "label": "Limitation",
@@ -54,47 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Moving coil galvanometer, ammeter, and voltmeter — Magnetism and Magnetic Effect of Current, Physics (class-12-notes).  ·  **Tested.** define it · list: moving coil galvanometer, ammeter, voltmeter · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• Moving coil galvanometer  ·  • Ammeter"
+      "text": "Shunt: parallel. Voltmeter: series.  ·  S = I_g G / (I − I_g)."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Moving coil galvanometer, ammeter, and voltmeter\" with one example.  ·  compare \"Moving coil galvanometer\" with the related idea from a neighbouring unit."
+      "text": "Write the equilibrium of the coil.  ·  Where does the ammeter shunt go?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Moving coil galvanometer, ammeter, and voltmeter — topic mind map\"><title>Moving coil galvanometer, ammeter, and voltmeter — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Moving coil galvanometer, ammeter, and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">voltmeter</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Moving coil galvanometer</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ammeter</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Voltmeter</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Moving coil galvanometer, ammeter, and voltmeter — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Radial field  ·  Spring balance  ·  Ammeter shunt  ·  Voltmeter multiplier"
+    },
+    {
       "label": "Key points",
-      "text": "• Voltmeter"
+      "text": "Torque balances a spring.  ·  The scale is linear in a radial field.  ·  A shunt makes an ammeter.  ·  A series resistor makes a voltmeter."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"Moving coil galvanometer, ammeter, and voltmeter\": define → method → result. Structure earns the marks on 6–10 mark questions."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Moving coil galvanometer, ammeter, and voltmeter\" and verify the answer is plausible."
+      "text": "Where does the voltmeter resistor go?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "A galvanometer of resistance 100 Ω gives full scale at 1.0 mA. Find the shunt that lets it read 1.0 A at full scale."
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Moving coil galvanometer, ammeter, and voltmeter\"? → A  ·  A common examiner point on \"Moving coil galvanometer, ammeter, and voltmeter\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "At equilibrium → A  ·  An ammeter shunt is connected → A"
     },
     {
       "label": "Study notes",
-      "text": "**Ammeter.** one-line definition + one-line exam use.  ·  **Voltmeter.** one-line definition + one-line exam use."
+      "text": "The coil current must stay small. To measure a large current, a low-resistance shunt is connected in parallel with the galvanometer. Most of the current bypasses the coil.  ·  If the galvanometer has resistance G and full-scale current I_g, and the ammeter is to read I, the shunt is S = I_g G / (I − I_g). A larger range needs a smaller shunt.  ·  To make a voltmeter, a large resistor is connected in series. The instrument then draws little current and can be placed across a component. The series resistor is (V / I_g) − G for a full-scale voltage V."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: moving coil galvanometer, ammeter, voltmeter.  ·  one worked example for \"Moving coil galvanometer, ammeter, and voltmeter\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "The shunt is parallel.  ·  The voltmeter resistor is series.  ·  A smaller shunt gives a larger current range."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "The radial field is what keeps the scale linear.  ·  Do not swap shunt and multiplier.  ·  The coil still carries only I_g at full scale."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write N I A B = k θ and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  The coil is damped, often by eddy currents in a metal frame, so the needle settles instead of swinging. Swapping the shunt and the series resistor builds the wrong instrument.  ·  # Moving coil galvanometer, ammeter, and voltmeter ## 1. Introduction Physical picture of **Moving coil galvanometer** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…  ·  ## 5. Diagrams and figures - **D1** — Moving coil galvanometer — free-body and field picture (authored SVG — English labels, viewBox 900×640) - **D2** — Moving coil galvanometer — graph or second construction (authored SVG — axes, units and labels) - **D3** — Moving coil galvanometer — detailed reference plate…"
     }
   ]
 }

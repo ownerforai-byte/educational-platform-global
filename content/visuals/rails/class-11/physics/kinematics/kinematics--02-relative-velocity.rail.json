@@ -24,48 +24,48 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Relative Velocity covers essential principles and applications.",
+      "text": "Velocity is frame-dependent: the relative velocity of A with respect to B is the vector difference $\\vec v_{AB} = \\vec v_A - \\vec v_B$. Same-direction motion subtracts speeds (20 and 25 m/s give 5 m/s — NEB 2017); opposite-direction motion adds them; angled motion needs the cosine rule.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relative Velocity — quick idea map\"><title>Relative Velocity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Relative Velocity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Relative</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Velocity.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Relative</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Velocity to other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relative Velocity — quick idea map\"><title>Relative Velocity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Relative Velocity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**All velocity is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">relative:** stating a</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">velocity without naming</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">v_AB = v_A − v_B (vector</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">subtraction).</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Same direction: difference</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of speeds; opposite: sum;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">angle θ: √(v_A² + v_B² −…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- v_AB = v_A − v_B - Same</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">direction: v_rel = |v_A −</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">v_B|; opposite: v_rel =…</text></svg>",
         "caption": "Relative Velocity — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "**Vector Subtraction Rule:** $\\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A$ is the velocity of B as measured in A's rest frame. The order matters: $\\vec{v}_{A/B} = -\\vec{v}_{B/A}$.…\n**Galilean Relativity Limit:** Velocity addition $\\vec{v} = \\vec{v}' + \\vec{u}$ (where $\\vec{u}$ is frame velocity) is valid only for speeds $\\ll c$.…"
+      "text": "- v_AB = v_A − v_B - Same direction: v_rel = |v_A − v_B|; opposite: v_rel = v_A + v_B - Rain-umbrella: tan θ = v_p/v_r"
     },
     {
       "label": "Conditions",
-      "text": "**Apparent vs Real Motion:** In the rain/river problems, the actual velocity of the rain/boat is unchanged; only the *observed* (relative) velocity changes when the observer moves. The rain still falls vertically; the umbrella is tilted to match the apparent velocity."
+      "text": "**Vector Subtraction Rule:** $\\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A$ is the velocity of B as measured in A's rest frame. The order matters: $\\vec{v}_{A/B} = -\\vec{v}_{B/A}$. This is a vector equation — subtract components, not speeds.  ·  **Galilean Relativity Limit:** Velocity addition $\\vec{v} = \\vec{v}' + \\vec{u}$ (where $\\vec{u}$ is frame velocity) is valid only for speeds $\\ll c$. At relativistic speeds, Einstein's velocity addition $v = (v' + u)/(1 + v'u/c^2)$ must be used. For everyday kinematics, Galilean addition is exact."
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Relative Velocity  ·  Statement 2: Theorem related to Relative Velocity"
+      "text": "\"There is no absolute rest — only frames.\""
     },
     {
       "label": "Solved",
-      "text": "Application of Relative Velocity"
+      "text": "***20 m/s and 25 m/s same direction*** — relative velocity 5 m/s (NEB 2017)."
     },
     {
       "label": "Limitation",
-      "text": "Relative velocity is NOT the same as the difference in speeds. For two cars moving at 60 km/h and 40 km/h in the SAME direction, the relative speed is 20 km/h, NOT 100 km/h. For opposite directions, the relative speed is the SUM (100 km/h).  ·  When subtracting vectors, the ORDER MATTERS: \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of B AS SEEN BY A. \\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B = -\\vec{v}_{B/A}. They are equal in magnitude but opposite in direction."
+      "text": "**v_AB vs v_BA:** v_AB = v_A − v_B (A seen from B); v_BA is its negative — same magnitude, opposite direction.  ·  **Relative speed in same vs opposite direction:** same direction subtracts; opposite directions add."
     },
     {
       "label": "Derivation",
-      "text": "**Definition of relative velocity:** The velocity of an object B as measured from the reference frame of another moving object A. It is the velocity of B relative to A.  ·  **Same direction (one-dimensional):** If car A moves at velocity v_A and car B at v_B in the same direction, the velocity of B relative to A is v_{B/A} = v_B - v_A. If v_B > v_A, B moves ahead relative to A; if v_B < v_A, B falls behind."
+      "text": "## 1. Topic Introduction — Motion Depends on Who Is Watching A passenger walking forward at 1 m/s in a train moving at 20 m/s moves at 21 m/s relative to the ground but 1 m/s relative to the train. Velocity has meaning only **relative to a frame** — this topic defines relative velocity and works the standard cases: same direction, opposite direction, perpendicular crossing (rain-umbrella, boat-river).  ·  ## 2. Fundamental Concepts (NEB 2017) **Relative velocity:** the velocity of body A as observed from body B: $$\\vec v_{AB} = \\vec v_A - \\vec v_B$$ (velocity of A minus velocity of B, vector subtraction). | Case | Relative velocity | |---|---| | Same direction | $v_{AB} = v_A - v_B$ (difference of magnitudes) | | Opposite directions | $v_{AB} = v_A + v_B$ (sum of magnitudes) | | At angle θ | magnitude $\\sqrt{v_A^2 +…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Relative Velocity."
+      "text": "\"Same direction minus, opposite plus, angled — cosine rule.\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define Relative Velocity.  ·  Q3. Problem on Relative Velocity."
+      "text": "**Numerical (3m): A river 200 m wide flows at 3 m/s; a boat aimed straight across moves at 4 m/s. Find crossing time and downstream drift.** — t = 200/4 = 50 s; drift = 3 × 50 = 150 m; resultant speed 5 m/s at 36.9° from straight-across."
     },
     {
       "label": "Hints",
-      "text": "Relative Velocity is based on fundamental principles.",
+      "text": "Most-tested: the definition + same-direction numerical (2017). Boat-river and rain-umbrella are the classic extension problems.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Relative Velocity — topic mind map\"><title>Relative Velocity — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Relative velocity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Relative velocity</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Relative Velocity — topic mind map of this topic's own sub-topics"
@@ -73,39 +73,27 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Relative Velocity."
+      "text": "**All velocity is relative:** stating a velocity without naming the frame is incomplete — the ground frame is just a convention."
     },
     {
       "label": "Key points",
-      "text": "Connection of Relative Velocity to other topics"
+      "text": "v_AB = v_A − v_B (vector subtraction).  ·  Same direction: difference of speeds; opposite: sum; angle θ: √(v_A² + v_B² − 2v_Av_B cos θ).  ·  Rain-umbrella: tan θ = v_person/v_rain, tilt forward. Boat-river: aim straight → drift = v_river × t."
     },
     {
       "label": "Universal facts",
-      "text": "Galilean relativity (velocity addition v' = v - u) was the standard until Einstein's special relativity (1905) showed it is only an approximation valid for v ≪ c. At everyday speeds, the error is completely negligible.  ·  Relative velocity is a fundamental concept in all of physics — from classical mechanics to electromagnetism (magnetic fields are electric fields viewed from a moving frame) to special relativity."
+      "text": "Aeroplane timetables account for jet streams — the same aircraft flies Kathmandu–Doha faster westward-to-eastward because the wind is a relative-velocity term."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "The relative velocity of A with respect to B is: → B  ·  Two cars at 20 m/s and 25 m/s in the same direction have relative velocity: → B"
     },
     {
       "label": "Study notes",
-      "text": "**Opposite directions (one-dimensional):** If A and B move toward each other with speeds v_A and v_B, the relative speed (magnitude of relative velocity) is v_{rel} = v_A + v_B. The direction of v_{B/A} is toward A if B is moving toward A.  ·  **Vector form (two/three dimensions):** \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of B in the ground frame minus the velocity of A in the ground frame. In components: (v_{B/A})_x = v_{Bx} - v_{Ax}, etc.  ·  **Relative velocity in 2D — Rain example:** If rain falls vertically downward at speed v_r and a person runs horizontally at speed v_p, the rain appears to come at the person at an angle heta where tan heta = v_p / v_r. The apparent speed is \\sqrt{v_r^2 + v_p^2}."
+      "text": "## 3. Worked Numericals **Q1:** A boat crosses a 200 m river, current 3 m/s, boat speed 4 m/s in still water, aimed straight across. Find crossing time and drift. *Crossing time:* t = width/$v_{boat}$ = 200/4 = 50 s. *Drift:* = $v_{river} \\times t$ = 3 × 50 = 150 m downstream. *Resultant velocity:* $\\sqrt{4^2 + 3^2} = 5$ m/s at $\\tan^{-1}(3/4) = 36.9°$ from straight-across.…  ·  ## 4. Conceptual Relationships - **To Topic 6:** relative velocity is velocity defined against a moving frame — same derivative idea, different reference. - **To Vectors:** relative velocity is vector subtraction — the magnitude formula mirrors the cosine rule.…  ·  ## 5. Exam Orientation and Previous Year Questions (NEB) ### 5.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2073/2017 | Kinematics | Relative velocity | Define relative velocity. Two cars move in the same direction with velocities 20 m s⁻¹ and 25 m s⁻¹. Find their relative velocity.…"
     },
     {
       "label": "More ideas",
-      "text": "A common mistake in river problems: students add the boat's speed to the current speed as scalars. You must add them as VECTORS: the boat's velocity relative to water PLUS water's velocity relative to ground. The angle matters!  ·  In the rain problem, the rain does NOT change its actual velocity — it still falls vertically. Only the APPARENT velocity (relative to the moving person) is angled. The person tilts their umbrella forward to block the apparent rain.  ·  Galilean relativity breaks down at speeds close to the speed of light (c). Einstein's special relativity replaces it with the Lorentz velocity addition formula: v = (v1 + v2)/(1 + v1v2/c^2). For everyday speeds (<< c), this reduces to Galilean addition."
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 3: Condition for Relative Velocity to be valid  ·  Statement 4: Principle governing Relative Velocity  ·  Statement 5: Corollary or consequence of Relative Velocity"
-    },
-    {
-      "label": "More ideas",
-      "text": "Two trains A and B are moving on parallel tracks. Train A moves east at 60 km/h. Train B moves east at 80 km/h. Find the velocity of B relative to A, and the velocity of A relative to B. Solution: v_{B/A} = 80 - 60 = 20 km/h east (B moves ahead of A at 20 km/h).…  ·  Rain is falling vertically at 30 m/s. A man runs horizontally at 10 m/s. At what angle from vertical does the rain appear to fall? What is the apparent speed? Solution: tan heta = v_man/v_rain = 10/30 = 1/3. heta = an^{-1}(1/3) = 18.4° from vertical. Apparent speed = \\sqrt{30^2 + 10^2} = \\sqrt{1000} = 31.6 m/s.  ·  A boat's speed in still water is 5 m/s. The river flows at 3 m/s east. The boat wants to reach a point directly across the river (north). (a) At what angle must the boat head? (b) What is its ground speed? (c) Time to cross a 100 m wide river? Solution: (a) Boat must cancel eastward current: 5 sin heta = 3 → heta =…"
-    },
-    {
-      "label": "More ideas",
-      "text": "Two particles move on the x-axis. Particle A: x_A(t) = 2t + 1. Particle B: x_B(t) = -3t + 10. Find their relative velocity at t = 2 s. Solution: v_A = dx_A/dt = 2 m/s. v_B = dx_B/dt = -3 m/s. v_{B/A} = v_B - v_A = -3 - 2 = -5 m/s. The distance between them decreases at 5 m/s.  ·  An airplane flies at 400 km/h relative to air. The wind blows at 100 km/h from the west (toward east). What is the plane's ground speed and direction if it heads (a) north? (b) northeast? Solution: (a) v_ground = \\sqrt{400^2 + 100^2} = 412 km/h. Direction: tan heta = 100/400 = 1/4 → heta = 14° east of north.…  ·  The principle of Galilean relativity: the laws of motion are identical in all inertial frames. If you toss a ball up in a moving train (constant velocity), it lands back in your hand — the ball has the train's forward velocity added to its motion."
-    },
-    {
-      "label": "More ideas",
-      "text": "In collision problems, the relative velocity of approach is often more useful than individual velocities. For elastic collisions, the relative velocity of separation equals the relative velocity of approach (in magnitude).  ·  The concept of relative velocity explains why we don't feel Earth's orbital speed (30 km/s) or rotation speed (0.46 km/s at equator) — we move with the Earth, so our velocity relative to Earth is zero. Only in non-inertial frames (acceleration) do we feel fictitious forces.  ·  **River crossing (boat relative to water vs. ground):** Let \\vec{v}_{bw} be the boat's velocity relative to the water (its heading and speed), and \\vec{v}_{wg} be the water's velocity relative to ground (current). Then the boat's ground velocity is \\vec{v}_{bg} = \\vec{v}_{bw} + \\vec{v}_{wg}.…"
+      "text": "**Apparent vs Real Motion:** In the rain/river problems, the actual velocity of the rain/boat is unchanged; only the *observed* (relative) velocity changes when the observer moves. The rain still falls vertically; the umbrella is tilted to match the apparent velocity.  ·  Verified PYQ: define relative velocity + two-car numerical (2017, 2m).  ·  Why does rain appear slanted to a moving observer?"
     }
   ]
 }

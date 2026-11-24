@@ -24,20 +24,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+      "text": "Balancing redox is double-entry bookkeeping: atoms on one ledger, electrons on the other. The **oxidation-number method** equalises totals — find every number that moves, multiply until total increase equals total decrease, then mop up O with water and H with H⁺ (NEB 2023's MnO₄⁻/C₂O₄²⁻ lands on 2 : 5 : 16 → 2 : 10 : 8).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Balancing redox reactions by oxidation number and ion-ele… — quick idea map\"><title>Balancing redox reactions by oxidation number and ion-ele… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Balancing redox reactions by oxidation number</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and ion-ele…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 03</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">balancing redox reactions.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Balancing redox</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reactions by oxidation</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">number</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Ion-electron</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E°cell = E°cathode -</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E°anode</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Balancing redox reactions by oxidation number and ion-ele… — quick idea map\"><title>Balancing redox reactions by oxidation number and ion-ele… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Balancing redox reactions by oxidation number</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and ion-ele…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Both methods are the same</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">conservation law in two</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">costumes: electrons (or…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Oxidation-number method:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">assign ONs, equalise</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">increase = decrease,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">+ 4H₂O - Cr₂O₇²⁻ + 14H⁺ +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">6e⁻ → 2Cr³⁺ + 7H₂O -…</text></svg>",
         "caption": "Balancing redox reactions by oxidation number and ion-ele… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "E°cell = E°cathode - E°anode\nQ = It\nm = ZIt (Faraday's first law)"
+      "text": "- MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O - Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O - MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O - 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O - Equivalent mass = formula mass / n-factor"
     },
     {
       "label": "Conditions",
-      "text": "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.  ·  ❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons."
+      "text": "**Balance O with H₂O and H with H⁺ — in that order:** reversing the sequence scrambles ionic equations; charge (electrons) always comes last.  ·  **Equivalent mass is reaction-specific:** K₂Cr₂O₇ is 49 as an oxidant but different in other roles — always derive n from the actual half-reaction quoted."
     },
     {
       "label": "Special cases",
@@ -45,7 +45,7 @@
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V"
+      "text": "***The permanganate titration*** — every KMnO₄-vs-oxalate practical in the lab runs on the NEB 2023 equation: 2:5:16 stoichiometry, purple to colourless at the endpoint."
     },
     {
       "label": "Limitation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Balancing Redox Reactions."
+      "text": "Acid half-reaction recipe: \"O → H₂O, H → H⁺, charge → e⁻\". Common products: MnO₄⁻/H⁺ → Mn²⁺ (5e), Cr₂O₇²⁻/H⁺ → 2Cr³⁺ (6e), MnO₄⁻/H₂O → MnO₂ (3e). Eq masses: 31.6, 49, 52.7."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Balancing redox reactions by oxidation number and ion-ele…\" with one example.  ·  compare \"Balancing redox reactions by oxidation number\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (3m): Balance the redox reaction by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — **Reduction half:** MnO₄⁻ → Mn²⁺. Balance oxygen with water: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance hydrogen with H⁺: MnO₄⁻ + 8H⁺ → Mn²⁺ + 4H₂O.…  ·  **NEB 2023 (3m): Balance by the oxidation number (half-reaction) method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Assign numbers: Mn falls from **+7 to +2** (decrease of 5 per Mn); carbon rises from **+3 to +4** (increase of 1 per C, i.e. 2 per C₂O₄²⁻).…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 03 balancing redox reactions.",
+      "text": "Write every intermediate step of the half-reactions — examiners award marks for O, H, charge balancing separately. Finish with the charge check; stating \"+17 both sides\" is a visible proof line.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Balancing redox reactions by oxidation number and ion-ele… — topic mind map\"><title>Balancing redox reactions by oxidation number and ion-ele… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Balancing redox reactions by oxidation number…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Balancing redox</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">reactions by oxidation</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Ion-electron</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Half reaction</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Method</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Balancing redox reactions by oxidation number and ion-ele… — topic mind map of this topic's own sub-topics"
@@ -73,134 +73,47 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 03 balancing redox reactions."
+      "text": "Both methods are the same conservation law in two costumes: electrons (or oxidation-number units) lost must equal gained. The ion-electron half-reactions reappear verbatim as electrode reactions in electrolysis and cells — learn them once, use them thrice."
     },
     {
       "label": "Key points",
-      "text": "• Balancing redox reactions by oxidation number  ·  • Ion-electron  ·  • Half reaction  ·  • Method"
+      "text": "Oxidation-number method: assign ONs, equalise increase = decrease, balance rest by inspection. Ion-electron: split halves, balance O→H₂O, H→H⁺, charge→e⁻, equalise electrons, add, cancel. Worked: MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O (NEB 2024); 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O (NEB 2023).…"
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Balancing redox reactions by oxidation number and ion-ele…\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Hydrogen sulphide scrubbers, bleaching plants and iron-and-manganese water filters all run balanced redox equations of this topic's type — the arithmetic keeps industrial chemistry lawful."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Balancing redox reactions by oxidation number and ion-ele…\" and verify the answer is plausible.  ·  Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Cu deposited by 2A for 30min: m≈1.19g"
+      "text": "**NEB 2021 (2m): Calculate the equivalent mass (equivalent weight) of potassium dichromate, K₂Cr₂O₇, acting as an oxidising agent in acidic medium.** — In acid, the dichromate half-reaction is Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O: each chromium falls from +6 to +3 (3 electrons), and there are two…"
     },
     {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Balancing redox reactions by oxidation number and ion-ele…\"? → A  ·  A common examiner point on \"Balancing redox reactions by oxidation number and ion-ele…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "In the ion-electron method, oxygen is balanced by adding: → B  ·  MnO4- + 5Fe2+ + 8H+ gives: → A"
     },
     {
       "label": "Study notes",
-      "text": "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).  ·  Oxidation numbers identify redox.  ·  Galvanic cells: chemical → electrical energy."
+      "text": "## 1. Topic Introduction — Making Electrons Balance on Paper A redox equation must balance twice: atoms **and** electrons. Two formal methods deliver this — the **oxidation-number method** (compare numbers, equalise total increase and decrease) and the **ion-electron (half-reaction) method** (split into oxidation and reduction halves, balance each, add).…  ·  ## 2. Fundamental Concepts ### 2.1 Oxidation-number method — the steps 1. Write the skeleton equation and assign oxidation numbers to every atom. 2. Identify the elements whose numbers change; note the **increase** and **decrease** per atom. 3. **Equalise** total increase = total decrease by multiplying species with suitable coefficients. 4.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Value to quote | |---|---|---| | **Half-reaction** | One half of a redox: oxidation or reduction alone | MnO₄⁻ → Mn²⁺ | | **Ion-electron method** | Balancing by adding balanced half-reactions | Electrons cancel | | **Oxidation-number method** | Balancing by equalising total ON change | Increase = decrease | |…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).  ·  ❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.  ·  ❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons."
+      "text": "Verified PYQs: NEB 2024 — ion-electron balancing of MnO₄⁻/Fe²⁺; NEB 2023 — oxidation-number balancing of MnO₄⁻/C₂O₄²⁻; NEB 2021 — equivalent mass of K₂Cr₂O₇ = 49 (all solved above). NEB 2022's H₂O₂ question is answered in topic 38. Other items are NEB-style practice.  ·  \"In a balanced redox equation, the total increase in oxidation numbers equals the total decrease — equivalently, electrons lost equal electrons gained.\"  ·  Balance FeSO₄ + KMnO₄ + H₂SO₄ → Fe₂(SO₄)₃ + K₂SO₄ + MnSO₄ + H₂O by the ion-electron method."
     },
     {
       "label": "More ideas",
-      "text": "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.  ·  ❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).  ·  ❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½."
+      "text": "Balance Zn + HNO₃ (dilute) → Zn(NO₃)₂ + NH₄NO₃ + H₂O by the oxidation-number method.  ·  Calculate the equivalent masses of KMnO₄ in acidic and neutral media and explain the difference.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...  ·  ❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.  ·  ❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins."
+      "text": "## 4. Detailed Explanation ### 4.1 Verified PYQ (NEB 2024): ion-electron method — MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic) - **Reduction half:** MnO₄⁻ → Mn²⁺. Balance O: MnO₄⁻ → Mn²⁺ + 4H₂O. Balance H: 8H⁺ on the left.…  ·  ## 5. Comparison Tables **The two methods side by side** | Basis | Oxidation-number method | Ion-electron method | |---|---|---| | Principle | Total ON increase = total decrease | Electrons lost = electrons gained | | Works best for | Molecular equations | Ionic equations in acid/base | | Bookkeeping | Coefficients…  ·  ## 6. Common Confusions **Electrons never appear in the final answer:** they cancel when the halves are added — an equation with electrons left in it is unfinished work."
     },
     {
       "label": "More ideas",
-      "text": "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.  ·  ❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.  ·  ❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass)."
+      "text": "**Medium changes n-factor:** KMnO₄ takes 5 electrons in acid but only 3 in neutral solution (MnO₂ product) — quote the medium with every equivalent mass.  ·  **Charge balance is the proof:** after balancing, check total charge on both sides; if it differs, an electron count is wrong.  ·  ## 7. Exam Application **Verified PYQ (NEB 2024): Balance by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).** — Reduction half: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O (O by water, H by H⁺, charge by electrons). Oxidation half: Fe²⁺ → Fe³⁺ + e⁻.…"
     },
     {
       "label": "More ideas",
-      "text": "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.  ·  ❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).  ·  ❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize."
+      "text": "**Verified PYQ (NEB 2023): Balance by the oxidation number method: MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O.** — Mn falls +7 → +2 (5 per Mn); carbon rises +3 → +4 (2 per oxalate). Equalising at LCM 10: 2 MnO₄⁻ and 5 C₂O₄²⁻. Balancing O and H with water and H⁺: **2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O**.…  ·  **Verified PYQ (NEB 2021): Calculate the equivalent mass of K₂Cr₂O₇ acting as an oxidising agent in acid medium.** — In acid, dichromate accepts 6 electrons: Cr₂O₇²⁻ + 14H⁺ + 6e⁻ → 2Cr³⁺ + 7H₂O (each Cr drops +6 → +3). Formula mass = 2(39) + 2(52) + 7(16) = 294. **Equivalent mass = 294/6 = 49.**  ·  **NEB-style (3m): Balance Cu + dilute HNO₃ → Cu(NO₃)₂ + NO + H₂O by the oxidation-number method.** — Cu: 0 → +2 (increase 2); N in HNO₃: +5 → +2 in NO (decrease 3). LCM 6: **3 Cu and 2 HNO₃ (reduced)**.…"
     }
-  ],
-  "keyPoints": [
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is a core concept in oxidation and reduction.",
-    "Understanding 03 balancing redox reactions by oxidation n mpztcv requires knowing its definition, conditions, and limitations.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 balancing redox reactions by oxidation n mpztcv must be memorized precisely.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv connects to neighbouring topics within oxidation and reduction and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 balancing redox reactions by oxidation n mpztcv.",
-    "Practical examples solidify understanding of 03 Balancing Redox Reactions By Oxidation N Mpztcv and its real-world relevance.",
-    "Misconceptions about 03 balancing redox reactions by oxidation n mpztcv often arise from confusing it with similar concepts.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv follows systematic rules that can be applied step-by-step.",
-    "Review of 03 balancing redox reactions by oxidation n mpztcv should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is defined by its specific characteristics within oxidation and reduction.",
-    "The conditions under which 03 balancing redox reactions by oxidation n mpztcv applies are as important as the concept itself.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 balancing redox reactions by oxidation n mpztcv through application-based and comparison questions.",
-    "A clear grasp of 03 Balancing Redox Reactions By Oxidation N Mpztcv builds the foundation for advanced topics in oxidation and reduction."
-  ],
-  "importantNotes": [
-    "When studying 03 balancing redox reactions by oxidation n mpztcv, always note the exceptions alongside the general rule.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv should be reviewed with at least one worked example per sub-point.",
-    "Link 03 balancing redox reactions by oxidation n mpztcv back to prior knowledge in oxidation and reduction for deeper retention.",
-    "Practice past NEB board questions on 03 Balancing Redox Reactions By Oxidation N Mpztcv to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Balancing Redox Reactions By Oxidation N Mpztcv: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 balancing redox reactions by oxidation n mpztcv with a related concept from oxidation and reduction.",
-    "Exam-style problem: solve a question involving 03 Balancing Redox Reactions By Oxidation N Mpztcv under time pressure.",
-    "Real-world connection: show how 03 Balancing Redox Reactions By Oxidation N Mpztcv appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Balancing Redox Reactions By Oxidation N Mpztcv and state two conditions required for it to occur.",
-    "Differentiate 03 Balancing Redox Reactions By Oxidation N Mpztcv from the most commonly confused concept in oxidation and reduction.",
-    "Solve a numerical or structural problem involving 03 Balancing Redox Reactions By Oxidation N Mpztcv.",
-    "List three applications of 03 Balancing Redox Reactions By Oxidation N Mpztcv in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Balancing Redox Reactions By Oxidation N Mpztcv without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Balancing Redox Reactions By Oxidation N Mpztcv.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Balancing Redox Reactions By Oxidation N Mpztcv."
-  ],
-  "universalFacts": [
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is part of the NEB Class 11 oxidation and reduction syllabus.",
-    "Every concept in oxidation and reduction builds upon definitions established earlier in the chapter.",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Balancing Redox Reactions By Oxidation N Mpztcv improves performance across the entire oxidation and reduction unit.",
-    "Revision of 03 Balancing Redox Reactions By Oxidation N Mpztcv should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Balancing Redox Reactions By Oxidation N Mpztcv with closely related concepts in oxidation and reduction — focus on distinguishing features.",
-    "The scope of 03 Balancing Redox Reactions By Oxidation N Mpztcv is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Balancing Redox Reactions By Oxidation N Mpztcv outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Balancing Redox Reactions By Oxidation N Mpztcv and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Balancing Redox Reactions By Oxidation N Mpztcv? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is primarily studied under which branch of oxidation and reduction? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Balancing Redox Reactions By Oxidation N Mpztcv is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to oxidation and reduction — Answer: B",
-    "Which example correctly illustrates 03 Balancing Redox Reactions By Oxidation N Mpztcv? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Balancing Redox Reactions By Oxidation N Mpztcv.",
-    "Step-by-step animated derivation of the key relationship in 03 Balancing Redox Reactions By Oxidation N Mpztcv.",
-    "Interactive toggle between correct and incorrect representations of 03 Balancing Redox Reactions By Oxidation N Mpztcv."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Balancing Redox Reactions By Oxidation N Mpztcv.",
-    "Side-by-side comparison animation of 03 Balancing Redox Reactions By Oxidation N Mpztcv vs commonly confused concept.",
-    "Timelapse build-up of 03 Balancing Redox Reactions By Oxidation N Mpztcv from prerequisite knowledge in oxidation and reduction."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Balancing Redox Reactions By Oxidation N Mpztcv",
-    "Comparison table: 03 Balancing Redox Reactions By Oxidation N Mpztcv vs related concepts in oxidation and reduction",
-    "Step-by-step worked example layout for 03 Balancing Redox Reactions By Oxidation N Mpztcv"
-  ],
-  "summary": [
-    "03 Balancing Redox Reactions By Oxidation N Mpztcv is a fundamental concept in oxidation and reduction that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Balancing Redox Reactions By Oxidation N Mpztcv involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Balancing Redox Reactions By Oxidation N Mpztcv alongside related concepts in oxidation and reduction ensures strong conceptual clarity and exam readiness."
   ]
 }

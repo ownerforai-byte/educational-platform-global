@@ -26,104 +26,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Boltzmann Constant and RMS Speed is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "The Boltzmann constant k = R/N_A = 1.38 × 10⁻²³ J/K links macroscopic temperature to microscopic molecular energy. RMS speed v_rms = √(3kT/m) = √(3RT/M) characterizes the typical molecular speed in a gas at temperature T. At the same temperature, lighter molecules move faster; v_rms determines diffusion rates, effusion, and kinetic energy.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Boltzmann Constant and RMS Speed — quick idea map\"><title>Boltzmann Constant and RMS Speed — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Boltzmann Constant and RMS Speed</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Boltzmann Constant and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">RMS Speed</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Boltzmann</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Constant and RMS Speed</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Kinetic temperature is rms</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">temperature: at the same T</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">every gas has the same…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$v_{rms} =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\sqrt{\\frac{3RT}{M}} =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\sqrt{\\frac{3kT}{m}}$, and</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Boltzmann Constant and RMS Speed — quick idea map\"><title>Boltzmann Constant and RMS Speed — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Boltzmann Constant and RMS Speed</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">k = 1.38 × 10⁻²³ J/K</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">bridges macroscopic T and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">microscopic energy.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">v_rms = √(3RT/M): depends</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">on T and M, not on P or V</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">directly.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Boltzmann constant: $k =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{R}{N_A} = 1.38</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\times 10^{-23} \\text{</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">RMS speed: $v_{rms} =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\sqrt{\\frac{3kT}{m}} =</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\sqrt{\\frac{3RT}{M}}$</text></svg>",
         "caption": "Boltzmann Constant and RMS Speed — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3kT}{m}}$, and $v_{avg} = \\sqrt{\\frac{8RT}{\\pi M}}$, $v_{mp} = \\sqrt{\\frac{2RT}{M}}$.\nRatio of the three speeds: $v_{mp} : v_{avg} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.41 : 1.60 : 1.73$.",
+      "text": "Boltzmann constant: $k = \\frac{R}{N_A} = 1.38 \\times 10^{-23} \\text{ J/K}$\nRMS speed: $v_{rms} = \\sqrt{\\frac{3kT}{m}} = \\sqrt{\\frac{3RT}{M}}$\nMost probable speed: $v_{mp} = \\sqrt{\\frac{2kT}{m}} = \\sqrt{\\frac{2RT}{M}}$",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Boltzmann Constant and RMS Speed — formula board\"><title>Boltzmann Constant and RMS Speed — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Boltzmann Constant and RMS Speed</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$v_{rms} = \\sqrt{\\frac{3RT}{M}} = \\sqrt{\\frac{3kT}{m}}$,</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">and $v_{avg} = \\sqrt{\\frac{8RT}{\\pi M}}$, $v_{mp} =</text><text x=\"450\" y=\"264\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\sqrt{\\frac{2RT}{M}}$.</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Ratio of the three speeds: $v_{mp} : v_{avg} : v_{rms} =</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.41 : 1.60 :</text><text x=\"450\" y=\"434\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">1.73$.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Boltzmann Constant and RMS Speed — formula board\"><title>Boltzmann Constant and RMS Speed — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Boltzmann Constant and RMS Speed</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Boltzmann constant: $k = \\frac{R}{N_A} = 1.38 \\times</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">10^{-23} \\text{ J/K}$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">RMS speed: $v_{rms} = \\sqrt{\\frac{3kT}{m}} =</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\sqrt{\\frac{3RT}{M}}$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Most probable speed: $v_{mp} = \\sqrt{\\frac{2kT}{m}} =</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">\\sqrt{\\frac{2RT}{M}}$</text></svg>",
         "caption": "Boltzmann Constant and RMS Speed — formula board of this topic's own formulas"
       }
     },
     {
       "label": "Conditions",
-      "text": "Carefully distinguish between similar-looking concepts in boltzmann constant and rms speed.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "Ideal Gas Assumption: Formulas assume point particles with elastic collisions and no intermolecular forces. Real gases deviate at high P or low T.  ·  Thermal Equilibrium Required: Maxwell-Boltzmann distribution and well-defined v_rms apply only at equilibrium. Non-equilibrium flows have different velocity distributions."
     },
     {
       "label": "Special cases",
-      "text": "Note 1: Pay attention to the conditions under which Boltzmann Constant and RMS Speed applies  ·  Note 2: Boltzmann Constant and RMS Speed connects to multiple other topics in Science"
+      "text": "Statement 1: Boltzmann constant relates temperature to average molecular kinetic energy via ⟨KE⟩ = (3/2)kT.  ·  Statement 2: RMS speed is the square root of the mean of squared molecular speeds, not the arithmetic mean speed."
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Boltzmann Constant and RMS Speed  ·  Example 2: Practical demonstration of Boltzmann Constant and RMS Speed concepts"
+      "text": "Oxygen at 27°C (300 K): v_rms = √(3×8.314×300/0.032) = √(233,812) ≈ 483 m/s.  ·  Hydrogen at 300 K: v_rms = √(3×8.314×300/0.002) ≈ 1920 m/s. Ratio to O₂: √(32/2) = 4×."
     },
     {
       "label": "Limitation",
-      "text": "Practice with multiple examples to solidify your understanding."
+      "text": "Confusing v_rms with average speed: v_rms = √(⟨v²⟩) ≠ ⟨v⟩. They differ by ~8% for Maxwellian gases.  ·  Using M in g/mol instead of kg/mol: Must convert to SI (kg/mol) for v_rms in m/s."
     },
     {
       "label": "Derivation",
-      "text": "Task 1: Solve 10 numerical problems on Boltzmann Constant and RMS Speed  ·  Task 2: Derive the main formula for Boltzmann Constant and RMS Speed"
+      "text": "Boltzmann Constant Definition: k = R/N_A where R = 8.314 J/(mol·K) and N_A = 6.022 × 10²³ mol⁻¹. Value: k = 1.380649 × 10⁻²³ J/K (exact since 2019 SI redefinition). It converts temperature (kelvin) into energy (joules) per particle.  ·  Physical Significance of k: Average translational KE per molecule = (3/2)kT. At 300 K, ⟨KE⟩ = (3/2)(1.38×10⁻²³)(300) ≈ 6.21 × 10⁻²¹ J ≈ 0.039 eV. This is the thermal energy scale governing molecular motion."
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Boltzmann Constant and RMS Speed formula  ·  Trick 2: Elimination technique for Boltzmann Constant and RMS Speed MCQs"
+      "text": "v_rms = √(3RT/M): plug T in K, M in kg/mol, R = 8.314.  ·  Same T → same ⟨KE⟩; lighter = faster."
     },
     {
       "label": "Board question",
-      "text": "Q1. Define and explain Boltzmann Constant and RMS Speed with suitable example.  ·  Q2. Solve problems related to Boltzmann Constant and RMS Speed."
+      "text": "Q1. Define Boltzmann constant and state its value with units.  ·  Q2. Derive the expression for rms speed of gas molecules."
     },
     {
       "label": "Hints",
-      "text": "Exam Tip 1: Focus on numerical problems from Boltzmann Constant and RMS Speed  ·  Exam Tip 2: Practice previous year questions on Boltzmann Constant and RMS Speed"
-    },
-    {
-      "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Boltzmann Constant and RMS Speed  ·  Concept 2: Key theorem or principle in Boltzmann Constant and RMS Speed  ·  Concept 3: Important application area of Boltzmann Constant and RMS Speed  ·  Concept 4: Fundamental relationship in Boltzmann Constant and RMS Speed"
+      "text": "Calculate v_rms numerically: convert M to kg/mol (e.g., O₂ = 0.032 kg/mol).  ·  Compare speeds of two gases at same T using v₁/v₂ = √(M₂/M₁)."
     },
     {
       "label": "Key points",
-      "text": "Kinetic temperature is rms temperature: at the same T every gas has the same ⟨KE⟩ but a lighter molecule moves faster as 1/√M."
+      "text": "k = 1.38 × 10⁻²³ J/K bridges macroscopic T and microscopic energy.  ·  v_rms = √(3RT/M): depends on T and M, not on P or V directly.  ·  At same T, all gases have same ⟨KE⟩ but different v_rms.  ·  v_rms > v_avg > v_mp always for Maxwellian distribution."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding boltzmann constant and rms speed builds the foundation for more advanced topics in mathematics."
+      "text": "Ludwig Boltzmann (1844–1906) established statistical mechanics; his constant was named posthumously.  ·  The 2019 SI redefinition fixed k exactly, making the kelvin dependent on the joule rather than water's triple point."
     },
     {
       "label": "More practice",
-      "text": "Q3. Differentiate between various aspects of Boltzmann Constant and RMS Speed.  ·  Q4. Derive the key formula related to Boltzmann Constant and RMS Speed.  ·  Q5. What are the applications of Boltzmann Constant and RMS Speed?"
+      "text": "Q3. Calculate v_rms for helium at 400 K. (M = 4 g/mol)  ·  Q4. Compare rms speeds of H₂ and CO₂ at the same temperature.  ·  Q5. State Graham's law of effusion and explain it using kinetic theory."
     },
     {
       "label": "More hints",
-      "text": "Exam Tip 4: Learn the derivations for Boltzmann Constant and RMS Speed thoroughly  ·  Exam Tip 5: Review common mistakes related to Boltzmann Constant and RMS Speed"
+      "text": "Explain why hydrogen escapes Earth's atmosphere but nitrogen does not.  ·  Derive v_rms from P = (1/3)ρv²_rms and PV = nRT."
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Boltzmann Constant and RMS Speed  ·  Example 5: Application in daily life involving Boltzmann Constant and RMS Speed"
+      "text": "At what T does N₂ have v_rms = 1000 m/s? T = Mv²/(3R) = 0.028×10⁶/(3×8.314) ≈ 1123 K.  ·  Graham's law: H₂ effuses √(32/2) = 4 times faster than O₂ through a pinhole at same T and P."
     },
     {
       "label": "MCQ drill",
-      "text": "The primary application of Boltzmann Constant and RMS Speed is in: → A  ·  For Boltzmann Constant and RMS Speed, which condition is necessary? → A"
+      "text": "Boltzmann constant k equals: → B  ·  At the same temperature, which gas has the highest rms speed? → C"
     },
     {
       "label": "Study notes",
-      "text": "**Boltzmann Constant and RMS Speed:** This topic covers the fundamental concepts of boltzmann constant and rms speed in the physics curriculum.  ·  Understanding boltzmann constant and rms speed is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to boltzmann constant and rms speed should be memorized and practiced regularly."
+      "text": "RMS Speed Formula: v_rms = √(⟨v²⟩) = √(3kT/m) = √(3RT/M), where m = molecular mass, M = molar mass. Derived from equating pressure expression P = (1/3)ρv²_rms with ideal gas law PV = nRT.  ·  Speed Hierarchy: For Maxwell-Boltzmann distribution: v_mp = √(2kT/m) < v_avg = √(8kT/πm) < v_rms = √(3kT/m). Numerical ratio: v_mp : v_avg : v_rms ≈ 1.41 : 1.60 : 1.73 (or 1 : 1.13 : 1.22 normalized to v_mp).  ·  Temperature Dependence: v_rms ∝ √T. Doubling absolute temperature increases v_rms by factor √2 ≈ 1.414. Cooling to 1/4 original T halves the rms speed."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Boltzmann Constant and RMS Speed and other topics  ·  Note 3: Practice numerical problems regularly for mastery of Boltzmann Constant and RMS Speed  ·  Note 4: Remember the units and dimensions involved in Boltzmann Constant and RMS Speed"
+      "text": "Average speed: $v_{avg} = \\sqrt{\\frac{8kT}{\\pi m}} = \\sqrt{\\frac{8RT}{\\pi M}}$  ·  Average KE per molecule: $\\langle KE \\rangle = \\frac{3}{2} kT$  ·  Speed ratio: $v_{mp} : v_{avg} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3}$"
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Boltzmann Constant and RMS Speed frequently appears in examination questions  ·  Note 1: Boltzmann Constant and RMS Speed is based on fundamental principles  ·  Note 2: Remember the distinction between different types in Boltzmann Constant and RMS Speed"
+      "text": "Translational Motion Only: v_rms refers to center-of-mass translational speed. Rotational and vibrational energies contribute to total internal energy but not to v_rms.  ·  Classical Regime: Quantum effects become significant when de Broglie wavelength λ = h/(mv) approaches interparticle spacing. For most gases above ~10 K, classical treatment is valid.  ·  Lighter molecules move faster: v_rms ∝ 1/√M."
     },
     {
       "label": "More ideas",
-      "text": "Note 3: Boltzmann Constant and RMS Speed has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Boltzmann Constant and RMS Speed  ·  Note 5: Cross-check your answers using alternative methods for Boltzmann Constant and RMS Speed"
+      "text": "Graham's law of effusion follows directly from v_rms ∝ 1/√M.  ·  Thinking heavier gases have higher KE at same T: All gases at same T have identical ⟨KE⟩ = (3/2)kT regardless of mass.  ·  Believing v_rms depends on pressure: v_rms depends only on T and M for ideal gases; P affects density, not individual molecular speeds."
     },
     {
       "label": "More ideas",
-      "text": "Statement 1: Definition of Boltzmann Constant and RMS Speed  ·  Statement 2: Theorem related to Boltzmann Constant and RMS Speed  ·  Statement 3: Condition for Boltzmann Constant and RMS Speed to be valid"
+      "text": "Assuming all molecules move at v_rms: Individual speeds vary widely; v_rms is a statistical measure of the distribution.  ·  Since 2019, k is defined exactly as 1.380649 × 10⁻²³ J/K, fixing the kelvin in terms of energy.  ·  v_rms appears in pressure formula because pressure depends on ⟨v²⟩, not ⟨v⟩²."
     },
     {
       "label": "More ideas",
-      "text": "Statement 4: Principle governing Boltzmann Constant and RMS Speed  ·  Statement 5: Corollary or consequence of Boltzmann Constant and RMS Speed  ·  Trick 3: Dimensional analysis shortcut for Boltzmann Constant and RMS Speed"
+      "text": "Escape velocity criterion: if v_rms > v_escape/6, significant atmospheric loss occurs over geological time.  ·  NEB frequently asks numerical calculation of v_rms given T and M — ensure M in kg/mol.  ·  Statement 3: At identical temperatures, gases with lower molar mass have higher rms speeds."
     }
   ]
 }

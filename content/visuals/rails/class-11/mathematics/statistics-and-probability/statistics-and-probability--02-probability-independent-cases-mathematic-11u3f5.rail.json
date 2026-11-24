@@ -21,16 +21,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Probability covers essential principles and applications. Probability â€” Definitions and Basic Laws covers essential principles and applications.",
+      "text": "Probability quantifies chance: **P(A) = m/n** on equally likely outcomes, bounded by the axioms with the **complement law** P(A) + P(A′) = 1 powering the \"at least one = 1 − none\" shortcut. The **addition law** P(A∪B) = P(A) + P(B) − P(A∩B) subtracts the double-counted overlap (NEB 2022: 0.6 + 0.5 − 0.3 = **0.8**), collapsing to a sum only for mutually exclusive events — which are emphatically **not** independent.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Probability: independent cases, mathematical and empirica… — quick idea map\"><title>Probability: independent cases, mathematical and empirica… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Probability: independent cases, mathematical</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and empirica…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Probability.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Probability â€”</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Probability</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Independent cases</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Probability: independent cases, mathematical and empirica… — quick idea map\"><title>Probability: independent cases, mathematical and empirica… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Probability: independent cases, mathematical</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and empirica…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The complement trick</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">converts &quot;at least</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">one&quot; questions into</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Classical definition: P(A)</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= m/n for equally likely</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">outcomes.…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- P(A) = m/n; P(A′) = 1 −</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P(A) - P(A∪B) = P(A) +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">P(B) − P(A∩B); exclusive:…</text></svg>",
         "caption": "Probability: independent cases, mathematical and empirica… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "P(A∪B) = P(A)+P(B)−P(A∩B)\nP(A∩B) = P(A)P(B|A)\nP(A') = 1 − P(A)"
+      "text": "- P(A) = m/n; P(A′) = 1 − P(A) - P(A∪B) = P(A) + P(B) − P(A∩B); exclusive: P(A) + P(B) - P(A|B) = P(A∩B)/P(B); P(A∩B) = P(A)P(B|A) - Bayes: P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ)/Σⱼ P(Aⱼ)P(B|Aⱼ)"
     },
     {
       "label": "Conditions",
@@ -38,11 +38,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Statement 1: Definition of Probability  ·  Statement 2: Theorem related to Probability"
+      "text": "\"P(A u B) = P(A) + P(B) - P(A n B); P(A|B) = P(A n B)/P(B); Bayes: P(Ai|B) = P(Ai)P(B|Ai) / sum P(Aj)P(B|Aj).\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***The deck remembers*** — without replacement the second draw is conditional on the first (3/9 after a red); with replacement it is independent (4/10 again)."
     },
     {
       "label": "Limitation",
@@ -50,19 +50,19 @@
     },
     {
       "label": "Derivation",
-      "text": "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).  ·  **Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B)."
+      "text": "## 1. Topic Introduction — The Arithmetic of Chance Probability measures uncertainty on a 0–1 scale. The theorem set: the **classical (Laplace) definition** m/n, the **addition law** with the mutually-exclusive special case, the **conditional probability** P(A|B), the **multiplication law**, **independence**, and **Bayes' theorem**.  ·  ## 2. Fundamental Concepts ### 2.1 Classical definition and its axioms - **P(A) = m/n**: m favourable outcomes among n equally likely ones. - **Axioms:** 0 ≤ P(A) ≤ 1; P(φ) = 0; P(S) = 1; and P(A) + P(A′) = **1** (the complement law — the \"at least one\" workhorse: P(at least one) = 1 − P(none)). ### 2.2 Addition law - **Theorem:** P(A∪B) = P(A) + P(B) − P(A∩B) — the overlap counted twice must be subtracted once.…"
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for Probability.  ·  Recall the formula for Probability â€” Definitions and Basic Laws."
+      "text": "At least one: 1 - P(none). King or heart: add then subtract the overlap. Both-red without replacement: multiply conditionals. Bayes: prior x likelihood over total probability."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Probability: independent cases, mathematical and empirica…\" with one example.  ·  compare \"Probability\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) — the intersection must be subtracted because the individual probabilities count it twice. **Substitute:** P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**.…  ·  **NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Case named:** without replacement ⟹ conditional (the deck remembers). **Step 1:** P(first red) = 4/10 = 2/5.…"
     },
     {
       "label": "Hints",
-      "text": "Probability is based on fundamental principles.  ·  Probability â€” Definitions and Basic Laws is based on fundamental principles.",
+      "text": "Name the case (with/without replacement, exclusive/independent) before computing - the naming is the method mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Probability: independent cases, mathematical and empirica… — topic mind map\"><title>Probability: independent cases, mathematical and empirica… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Probability</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Probability</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Independent cases</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Mathematical</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Empirical definition of</text><text x=\"660\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">probability</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Probability: independent cases, mathematical and empirica… — topic mind map of this topic's own sub-topics"
@@ -70,19 +70,19 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Definition and significance of Probability.  ·  Definition and significance of Probability â€” Definitions and Basic Laws."
+      "text": "The complement trick converts \"at least one\" questions into one subtraction; Bayes converts evidence about effects back into probabilities of causes."
     },
     {
       "label": "Key points",
-      "text": "• Probability  ·  • Independent cases  ·  • Mathematical  ·  • Empirical definition of probability"
+      "text": "Classical definition: P(A) = m/n for equally likely outcomes. Axioms: 0 <= P <= 1; P(S) = 1; complement law P(A) + P(A') = 1, so P(at least one) = 1 - P(none). Addition law: P(A u B) = P(A) + P(B) - P(A n B); mutually exclusive case drops the intersection. Conditional probability: P(A|B) = P(A n B)/P(B).…"
     },
     {
       "label": "Universal facts",
-      "text": "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).  ·  Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B)."
+      "text": "Medical screening misleads intuition precisely because P(positive | disease) and P(disease | positive) differ - Bayes' theorem is the correction."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Probability: independent cases, mathematical and empirica…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): One card is drawn from a well-shuffled pack of 52. Find the probability that it is a king or a heart.** — **Sets:** kings (4 cards), hearts (13 cards), and their intersection (king of hearts, 1 card). **Addition law:** P(king ∪ heart) = 4/52 + 13/52 − 1/52 = 16/52 = **4/13**.…  ·  **NEB-style (3m): Machine A produces 60% of a factory's items with 2% defective rate; machine B produces 40% with 5% defective rate. An item chosen at random is found defective.…"
     },
     {
       "label": "MCQ drill",
@@ -90,27 +90,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Sample space S** | Set of all outcomes | two dice: 36 ordered pairs | | **Mutually exclusive** | A∩B = φ | head and tail on one toss | | **Conditional probability** | P(A|B) = P(A∩B)/P(B) | draw given a red came first | | **Independent events** | P(A∩B) = P(A)P(B) | two separate coins |  ·  ## 4. Detailed Explanation ### 4.1 The complement trick - \"At least one success\" is the complement of \"no successes\". Counting at-least-one directly is error-prone; 1 − P(none) is one line. The single most useful probability shortcut. ### 4.2 With and without replacement - Without replacement, the second draw's probability is **conditional** — the deck remembers.…  ·  ## 5. Comparison Tables **Key distinctions** | Pair | Difference | |---|---| | exclusive vs independent | exclusive: cannot co-occur; independent: no influence | | P(A|B) vs P(B|A) | different conditionals; Bayes converts between them | | with vs without replacement | independent vs conditional draws |"
     },
     {
       "label": "More ideas",
-      "text": "• Two basic laws of probability  ·  • Without proof  ·  Connection of Probability to other topics"
+      "text": "Verified PYQ: NEB 2022 (addition law MCQ, P(A u B) = 0.8) - assigned to this row. Other items are NEB-style practice.  ·  If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, find P(A∪B).  ·  Two balls drawn without replacement from 4 red, 6 black: probability both red?"
     },
     {
       "label": "More ideas",
-      "text": "Connection of Probability â€” Definitions and Basic Laws to other topics  ·  Statement 3: Condition for Probability to be valid  ·  Statement 4: Principle governing Probability"
+      "text": "A king or a heart is drawn from 52 cards - find the probability.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: Corollary or consequence of Probability  ·  Statement 1: Definition of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)  ·  Statement 2: Theorem related to Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)"
+      "text": "## 6. Common Confusions **Mutually exclusive ≠ independent:** if A and B are exclusive and P(A), P(B) > 0, then P(A∩B) = 0 ≠ P(A)P(B) — exclusive events are maximally dependent.  ·  **Addition law needs the overlap:** forgetting −P(A∩B) overcounts; only the exclusive case drops it.  ·  **P(A|B) ≠ P(B|A):** the probability of disease given a positive test is not the test's accuracy — Bayes exists because these differ."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Condition for Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof) to be valid  ·  Statement 4: Principle governing Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)  ·  Statement 5: Corollary or consequence of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)"
+      "text": "## 7. Exam Application **NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5 and P(A∩B) = 0.3, then P(A∪B) = ? (1m)** — Addition law: P(A∪B) = 0.6 + 0.5 − 0.3 = **0.8**. Note P(A∩B) = 0.3 ≠ P(A)P(B) = 0.30...…  ·  **NEB-style (3m): A bag contains 4 red and 6 black balls. Two balls are drawn one after the other without replacement. Find the probability that both are red.** — **Conditional multiplication:** P(1st red) = 4/10; P(2nd red | 1st red) = 3/9. P(both red) = (4/10)(3/9) = **12/90 = 2/15**.…  ·  **NEB-style (2m): A card is drawn from a pack of 52. Find the probability that it is a king or a heart.** — P(king) = 4/52; P(heart) = 13/52; P(king ∩ heart) = 1/52 (the king of hearts is counted twice otherwise). Addition law: 4/52 + 13/52 − 1/52 = **16/52 = 4/13**."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Probability: independent cases, mathematical and empirica…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
+      "text": "**NEB-style (3m): In a factory, machine A produces 60% of items with 2% defectives, machine B 40% with 5% defectives. An item is found defective. Find the probability it came from A. (Bayes)** — P(defective) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = 0.032 (total probability).…"
     }
   ]
 }

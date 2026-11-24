@@ -21,16 +21,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Measure of dispersion: standard deviation, variance, coef… (Statistics and Probability, Mathematics, class-11-notes) covers Measure of dispersion: standard deviation, variance, coefficient of variation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Dispersion quantifies the roam. **Range** is instant but crude; **mean deviation** averages |xᵢ − x̄| (minimised at the median); **variance** σ² = Σxᵢ²/n − x̄² squares the deviations — analytic but with squared units — and **σ = √σ²** restores them (NEB 2024: mean 25, σ ≈ 9.41 for the 10-mark set; NEB 2023: variance of 1…10 is 385/10 − 5.5² = **8.25**). Adding a constant leaves σ unchanged; scaling scales it.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measure of dispersion: standard deviation, variance, coef… — quick idea map\"><title>Measure of dispersion: standard deviation, variance, coef… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measure of dispersion: standard deviation,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">variance, coef…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Measure of dispersion:</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">standard deviation</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Variance</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ω = (μv − μr)/(μd − 1)</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Power of achromatic</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">combination → 0 net</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dispersion</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measure of dispersion: standard deviation, variance, coef… — quick idea map\"><title>Measure of dispersion: standard deviation, variance, coef… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Measure of dispersion: standard deviation,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">variance, coef…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Variance squares to stay</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">analytic, then takes a</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">root to speak in data</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Range = max - min. Mean</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deviation = (1/n) sum |xi</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- xbar|; minimised about…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- σ² = (1/n)Σ(xᵢ − x̄)² =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(1/n)Σxᵢ² − x̄²; σ = √σ² -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C.V.…</text></svg>",
         "caption": "Measure of dispersion: standard deviation, variance, coef… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "ω = (μv − μr)/(μd − 1)\nPower of achromatic combination → 0 net dispersion"
+      "text": "- σ² = (1/n)Σ(xᵢ − x̄)² = (1/n)Σxᵢ² − x̄²; σ = √σ² - C.V. = (σ/x̄) × 100% - Pearson skewness: (x̄ − mode)/σ or 3(x̄ − median)/σ - Σi² = n(n+1)(2n+1)/6; variance of first n naturals = (n²−1)/12"
     },
     {
       "label": "Conditions",
@@ -38,11 +38,11 @@
     },
     {
       "label": "Special cases",
-      "text": "Dispersive power ω = (μv − μr)/(μd − 1); angular dispersion ΔD ∝ ω for a given refractive index.  ·  Achromatism: net deviation of two cemented prisms is zero for a chosen colour → (ω₁/ω₂) relations on D/(μ−1)."
+      "text": "\"sigma^2 = (1/n) sum xi^2 - (mean)^2; CV = (sigma/mean) x 100; Pearson skewness = (mean - mode)/sigma.\""
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***Mean of squares minus square of mean*** — sigma^2 = sum(xi^2)/n - xbar^2: the one identity that turns variance into two running sums, no deviation table required."
     },
     {
       "label": "Limitation",
@@ -50,31 +50,39 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Measure of dispersion: standard deviation, variance, coef… — Statistics and Probability, Mathematics (class-11-notes).  ·  **Tested.** define it · list: measure of dispersion: standard deviation, variance, coefficient of variation, skewness · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Measuring the Spread Central tendency says where data sits; **dispersion** says how widely it roams. The theorem set: **range**, **mean deviation**, **variance and standard deviation** (with the computational identity σ² = E(x²) − [E(x)]²), the **coefficient of variation**, and **Karl Pearson's skewness** coefficients.  ·  ## 2. Fundamental Concepts ### 2.1 Range and mean deviation - **Range** = max − min — crude but instant. - **Mean deviation** = (1/n)Σ|xᵢ − x̄| — average distance from the mean; about the median it is minimised (a theorem: the median minimises Σ|xᵢ − a|). ### 2.2 Variance and standard deviation - **Variance:** σ² = (1/n)Σ(xᵢ − x̄)² — mean squared deviation.…"
     },
     {
       "label": "Shortcut",
-      "text": "Glass with higher Abbe number disperses less; flint glass > crown in dispersion."
+      "text": "SD via the identity: mean of squares minus square of mean. First n naturals: sigma^2 = (n^2 - 1)/12. Lower CV wins consistency. Skewness sign: mean - mode."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Measure of dispersion: standard deviation, variance, coef…\" with one example.  ·  compare \"Measure of dispersion: standard deviation\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2024 (verified PYQ): The marks obtained by 10 students in a test are 12, 15, 18, 20, 22, 25, 28, 30, 35 and 45. Calculate (i) the mean, and (ii) the standard deviation. (4m)** — **(i) Mean:** x̄ = Σxᵢ/n = (12 + 15 + 18 + 20 + 22 + 25 + 28 + 30 + 35 + 45)/10 = 250/10 = **25**.…  ·  **NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (a) 8.25 (b) 9.25 (c) 10.25 (d) 11.25 (1m)** — Data: 1, 2, …, 10 with mean (10+1)/2 = 5.5. **Sum of squares formula:** Σxᵢ² = n(n+1)(2n+1)/6 = (10)(11)(21)/6 = **385**.…"
     },
     {
       "label": "Hints",
-      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index..",
+      "text": "Show both routes in SD questions (deviation table and identity) when time allows - the identity is the check that catches arithmetic slips.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Measure of dispersion: standard deviation, variance, coef… — topic mind map\"><title>Measure of dispersion: standard deviation, variance, coef… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Measure of dispersion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Measure of dispersion:</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">standard deviation</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Variance</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Coefficient of variation</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Skewness</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Measure of dispersion: standard deviation, variance, coef… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Variance squares to stay analytic, then takes a root to speak in data units; dividing by the mean (C.V.) makes spread comparable across different scales."
+    },
+    {
       "label": "Key points",
-      "text": "• Measure of dispersion: standard deviation  ·  • Variance  ·  • Coefficient of variation  ·  • Skewness"
+      "text": "Range = max - min. Mean deviation = (1/n) sum |xi - xbar|; minimised about the median. Variance: sigma^2 = (1/n) sum (xi - xbar)^2 = (1/n) sum xi^2 - xbar^2 (computational identity). Standard deviation sigma = sqrt(variance), same units as data.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "The C.V. is why a ±5 error on a 1000 g weighing is excellent and on a 10 g weighing is a disaster: relative, not absolute, spread tells the story."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Measure of dispersion: standard deviation, variance, coef…\" and verify the answer is plausible."
+      "text": "**NEB-style (3m): Two machines fill packets with means 500 g and 505 g and standard deviations 4 g and 6 g respectively. Which is more consistent?** — **Coefficient of variation** is the fair comparator: C.V.₁ = (4/500) × 100 = **0.8%**; C.V.₂ = (6/505) × 100 ≈ **1.19%**. The **lower C.V.…"
     },
     {
       "label": "MCQ drill",
@@ -82,23 +90,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Dispersive power ω = (μv − μr)/(μd − 1); angular dispersion ΔD ∝ ω for a given refractive index.  ·  **Fact.** Achromatism: net deviation of two cemented prisms is zero for a chosen colour → (ω₁/ω₂) relations on D/(μ−1).  ·  **Fact.** Glass with higher Abbe number disperses less; flint glass > crown in dispersion."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Variance** | Mean squared deviation from the mean | σ² = Σxᵢ²/n − x̄² | | **Standard deviation** | √variance — typical distance from the mean | same units as data | | **Coefficient of variation** | Relative spread: σ/x̄ × 100% | unit-free comparison | | **Skewness** | Asymmetry of the…  ·  ## 4. Detailed Explanation ### 4.1 Why squares for variance - Absolute values are awkward analytically; squares are differentiable and additive. The price: units get squared — the √ in σ restores them. ### 4.2 The computational identity at work - σ² = Σxᵢ²/n − x̄² lets you compute variance from running sums — no deviation table needed, and it is the identity examiners test.…  ·  ## 5. Comparison Tables **Dispersion measures compared** | Measure | Uses | Robust to outliers? | |---|---|---| | Range | extremes only | no | | Mean deviation | absolute distances | somewhat | | Standard deviation | squared distances | no (squares amplify) | | C.V. | relative spread | no |"
     },
     {
       "label": "More ideas",
-      "text": "• Karl Pearson's coefficient of skewness  ·  define + example each sub-idea: measure of dispersion: standard deviation, variance, coefficient of variation, skewness.  ·  one worked example for \"Measure of dispersion: standard deviation, variance, coef…\" — check units / edge cases."
+      "text": "❌ answer with no steps → ✅ show each step and box the result.  ·  ❌ skip the key fact → ✅ dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index..  ·  Verified PYQs: NEB 2024 (mean and SD of 10 marks), NEB 2023 (variance of first 10 naturals MCQ) — assigned to this row. The NEB 2022 addition-law MCQ bridges to the probability row."
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index."
+      "text": "Compute the mean and SD of 12, 15, 18, 20, 22, 25, 28, 30, 35, 45.  ·  Find the variance of the first 10 natural numbers.  ·  Compare the consistency of two data sets using the coefficient of variation."
     },
     {
       "label": "More ideas",
-      "text": "**Variance.** one-line definition + one-line exam use.  ·  **Coefficient of variation.** one-line definition + one-line exam use.  ·  **Skewness.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index.  ·  ## 6. Common Confusions **Variance units are squared:** report σ, not σ², when the question asks for spread in original units."
     },
     {
       "label": "More ideas",
-      "text": "**Karl Pearson's coefficient of skewness.** one-line definition + one-line exam use."
+      "text": "**Lower C.V. = more consistent:** students invert this — the smaller relative spread wins.  ·  **Skewness sign:** mean > mode ⟹ **positive** (right) skew — the tail pulls the mean, not the mode.  ·  ## 7. Exam Application **NEB 2024 (verified PYQ): Marks of 10 students: 12, 15, 18, 20, 22, 25, 28, 30, 35, 45. Calculate (i) the mean, (ii) the standard deviation. (4m)** — **Mean:** x̄ = (12+15+18+20+22+25+28+30+35+45)/10 = 250/10 = **25**.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (1m MCQ)** — First 10 naturals: 1…10, mean 5.5. Σxᵢ² = n(n+1)(2n+1)/6 = 10·11·21/6 = 385. Variance = 385/10 − (5.5)² = 38.5 − 30.25 = **8.25 → option (a)**. The formula shortcut n(n+1)(2n+1)/6 turns this into a 30-second question.  ·  **NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) = 0.6 + 0.5 − 0.3 = **0.8 → option (a)**. (The subtraction of the intersection prevents double-counting the overlap — the addition law is the topic's core theorem.)"
     }
   ]
 }

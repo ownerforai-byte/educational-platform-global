@@ -21,52 +21,96 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Collinear and Non-collinear Vectors covers essential principles and applications.",
+      "text": "Two non-zero vectors are collinear (parallel) when one is a scalar multiple of the other, so their cross product is zero and their component ratios are equal. Non-collinear vectors are linearly independent in a plane and can serve as a basis for every vector in that plane.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and Non-collinear Vectors — quick idea map\"><title>Collinear and Non-collinear Vectors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Collinear and Non-collinear Vectors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Definition and</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">significance of Collinear</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Non-collinear Vectors.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application of Collinear</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Non-collinear Vectors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Connection of Collinear</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and Non-collinear Vectors</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to other topics</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and Non-collinear Vectors — quick idea map\"><title>Collinear and Non-collinear Vectors — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Collinear and Non-collinear Vectors</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Parallel vectors</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scalar multiple</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Scalar-multiple test</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Cross-product test</text></svg>",
         "caption": "Collinear and Non-collinear Vectors — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Statement 1: Definition of Collinear and Non-collinear Vectors\nStatement 2: Theorem related to Collinear and Non-collinear Vectors"
-    },
-    {
-      "label": "Conditions",
-      "text": "Collinear and Non-collinear Vectors is based on fundamental principles."
-    },
-    {
-      "label": "Special cases",
-      "text": "Statement 3: Condition for Collinear and Non-collinear Vectors to be valid  ·  Statement 4: Principle governing Collinear and Non-collinear Vectors"
-    },
-    {
-      "label": "Solved",
-      "text": "Application of Collinear and Non-collinear Vectors"
-    },
-    {
-      "label": "Limitation",
-      "text": "Definition and significance of Collinear and Non-collinear Vectors."
-    },
-    {
-      "label": "Derivation",
-      "text": "Connection of Collinear and Non-collinear Vectors to other topics"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Recall the formula for Collinear and Non-collinear Vectors."
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define Collinear and Non-collinear Vectors.  ·  Q3. Problem on Collinear and Non-collinear Vectors.",
+      "text": "b = λa (λ ∈ ℝ) ⇔ a ∥ b\na × b = 0 ⇔ a ∥ b (for non-zero a, b)\n(x₁, y₁) ∥ (x₂, y₂) ⇔ x₁y₂ − x₂y₁ = 0",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and Non-collinear Vectors — exam flow\"><title>Collinear and Non-collinear Vectors — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Collinear and Non-collinear Vectors</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Collinear and Non-collinear Vectors covers</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">essential principles and applications.</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Statement 1: Definition of Collinear and</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">Non-collinear Vectors Statement 2: Theorem</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">related to Collinear and…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Recall the formula for Collinear and</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Non-collinear Vectors.</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define Collinear and Non-collinear</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">Vectors. · Q3. Problem on Collinear and</text><text x=\"310\" y=\"610\" font-size=\"18\" fill=\"#7c2d12\">Non-collinear Vectors.</text></svg>",
-        "caption": "Collinear and Non-collinear Vectors — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Collinear and Non-collinear Vectors — formula board\"><title>Collinear and Non-collinear Vectors — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Collinear and Non-collinear Vectors</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">b = λa (λ ∈ ℝ) ⇔ a ∥ b</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a × b = 0 ⇔ a ∥ b (for non-zero a, b)</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">(x₁, y₁) ∥ (x₂, y₂) ⇔ x₁y₂ − x₂y₁ = 0</text></svg>",
+        "caption": "Collinear and Non-collinear Vectors — formula board of this topic's own formulas"
       }
     },
     {
+      "label": "Conditions",
+      "text": "Assuming equal lengths imply parallel vectors; direction, not magnitude, decides collinearity.  ·  Dividing by a zero component when comparing ratios; use cross multiplication instead."
+    },
+    {
+      "label": "Special cases",
+      "text": "A line through point a with direction d has vector equation r = a + td; collinearity is the statement that two points share such a direction d.  ·  Unit vectors give direction only: â = a/|a|; collinear vectors have either equal or opposite unit vectors."
+    },
+    {
+      "label": "Solved",
+      "text": "Are (1, 2, 3) and (2, 4, 6) collinear? Ratios 2/1 = 4/2 = 6/3 = 2, so the second is 2× the first; yes, same direction.  ·  Find k such that a = (k, 3) and b = (4, 6) are parallel. k·6 − 4·3 = 0 ⇒ 6k = 12 ⇒ k = 2."
+    },
+    {
+      "label": "Limitation",
+      "text": "The zero vector is parallel to every vector by convention, so exclude it from direction arguments.  ·  A negative scalar multiple reverses direction but preserves the line of action."
+    },
+    {
+      "label": "Derivation",
+      "text": "Classify six vector pairs  ·  Solve three section-formula problems"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Cross-multiply component pairs instead of dividing, so zero components never break the test.  ·  For 2-D vectors (x₁, y₁) and (x₂, y₂), check x₁y₂ − x₂y₁ = 0 as a one-line parallel test."
+    },
+    {
+      "label": "Board question",
+      "text": "Determine whether (2, −1, 4) and (−4, 2, −8) are parallel, and state the scalar.  ·  Find k if points (1, 2), (3, k) and (5, 8) are collinear."
+    },
+    {
       "label": "Hints",
-      "text": "Statement 5: Corollary or consequence of Collinear and Non-collinear Vectors"
+      "text": "State the non-zero condition before using a × b = 0.  ·  For collinear points, always work with AB and AC, then conclude about A, B, C."
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Parallel vectors  ·  Scalar multiple  ·  Linear independence  ·  Coplanarity"
+    },
+    {
+      "label": "Key points",
+      "text": "Scalar-multiple test  ·  Cross-product test  ·  Section formula"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Any set containing the zero vector is linearly dependent.  ·  In three dimensions three non-coplanar vectors form a basis of ℝ³."
+    },
+    {
+      "label": "More practice",
+      "text": "Express (7, 1) as a linear combination of (1, 1) and (2, −1)."
+    },
+    {
+      "label": "MCQ drill",
+      "text": "Vectors (2, −3) and (−4, 6) are → B  ·  Three points A, B, C are collinear when → B"
+    },
+    {
+      "label": "Study notes",
+      "text": "**Collinearity.** Non-zero vectors a and b are collinear iff b = λa for some real scalar λ; λ > 0 means the same direction, λ < 0 the opposite direction.  ·  **Component test.** For a = (a₁, a₂, a₃) and b = (b₁, b₂, b₃), collinearity means a₁/b₁ = a₂/b₂ = a₃/b₃ wherever the denominators are non-zero; handle zero components by cross multiplication instead of division.  ·  **Cross-product test.** a and b are parallel exactly when a × b = 0. This works in both two and three dimensions (embed a 2-D vector as (x, y, 0))."
+    },
+    {
+      "label": "More ideas",
+      "text": "p = (n·a + m·b)/(m + n) for AP : PB = m : n  ·  [a b c] = a · (b × c) = 0 ⇔ a, b, c coplanar  ·  Collinearity of points is tested with displacement vectors, not position vectors."
+    },
+    {
+      "label": "More ideas",
+      "text": "Two non-zero vectors are collinear if and only if their cross product vanishes.  ·  Two non-collinear vectors in a plane form a basis for that plane.  ·  Three points are collinear exactly when the triangle they form has zero area."
+    },
+    {
+      "label": "More ideas",
+      "text": "To prove three points collinear, show AB = λ AC rather than comparing all three position vectors.  ·  Plot three pairs of 2-D vectors and classify each as parallel, opposite, or non-collinear.  ·  Verify that (1, 1) and (2, −1) span every vector in the plane by solving for general (p, q)."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Worked example.** a = (2, −3, 1) and b = (−6, 9, −3) give ratios −6/2 = 9/(−3) = −3/1 = −3, so b = −3a and the vectors are anti-parallel.  ·  **Non-collinear.** If no single scalar λ satisfies b = λa, the vectors are non-collinear; in a plane two non-collinear vectors are linearly independent.  ·  **Linear independence.** αa + βb = 0 forces α = β = 0 when a and b are non-collinear; for collinear vectors non-trivial choices exist, e.g. α = λ, β = −1."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Basis of a plane.** Any vector r in the plane of two non-collinear vectors a, b can be written uniquely as r = xa + yb; the coefficients (x, y) are the coordinates in that basis.  ·  **Section formula.** If point P divides AB in the ratio m : n, then p = (n·a + m·b)/(m + n); the midpoint case m = n gives p = (a + b)/2.  ·  **Collinear points.** Three points A, B, C are collinear iff AB and AC are parallel, i.e. AB × AC = 0, or equivalently the area of triangle ABC is zero."
     }
   ]
 }

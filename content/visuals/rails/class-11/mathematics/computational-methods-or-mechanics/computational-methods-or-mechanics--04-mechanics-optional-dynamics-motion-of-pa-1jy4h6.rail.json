@@ -56,11 +56,11 @@
     },
     {
       "label": "Shortcut",
-      "text": "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+      "text": "Trick 1: The SUVAT set: v = u + at, s = ut + ½at², v² = u² + 2as — pick by what is ABSENT (no v → second; no s → first; no t → third).  ·  Trick 2: Sign discipline: take one direction positive; deceleration is negative a; 'comes to rest' means v = 0 — most mistakes are sign errors, not formulas."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Mechanics (optional): Dynamics — motion of particle in a …\" with one example.  ·  compare \"Mechanics\" with the related idea from a neighbouring unit."
+      "text": "Q1. **NEB-style (5m):** A body starts from rest with uniform acceleration 4 m/s$^2$. Find its velocity and displacement after 3 s. **Solution.** u = 0, a = 4, t = 3. **v** = u + at = 12 **m/s**. **s** = ut + ½at$^2$ = 0 + ½·4·9 = **18 m**.…  ·  Q2. **NEB-style (6m):** A car travelling at 20 m/s brakes with uniform deceleration 5 m/s$^2$. Find the stopping time and stopping distance. **Solution.** Take the direction of motion positive: u = 20, a = -5, v = 0. **Time:** v = u + at ⟹ 0 = 20 - 5t ⟹ **t = 4 s**.…"
     },
     {
       "label": "Hints",
@@ -75,8 +75,12 @@
       "text": "• Mechanics  ·  • Optional  ·  • : Dynamics — motion of particle in a straight line  ·  • Motion with uniform acceleration"
     },
     {
+      "label": "Universal facts",
+      "text": "3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body)."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"Mechanics (optional): Dynamics — motion of particle in a …\" and verify the answer is plausible."
+      "text": "Q3. **NEB-style (6m):** A particle with u = 10 m/s and a = 2 m/s$^2$ moves for 5 s. Find v and s, and verify with the third equation. **Solution.** **v** = 10 + 2·5 = **20 m/s**. **s** = 10·5 + ½·2·25 = 50 + 25 = **75 m**.…  ·  Q4. **NEB-style (6m):** A stone is dropped from 80 m (g = 10 m/s$^2$). Find the fall time and impact speed. **Solution.** Downward positive; u = 0, a = 10, s = 80. **Time:** 80 = 0 + ½·10·t$^2$ ⟹ t$^2$ = 16 ⟹ **t = 4 s**. **Impact speed:** v$^2$ = 2·10·80 = 1600 ⟹ **v = 40 m/s**.…  ·  Q5. **NEB-style (6m):** A ball is thrown vertically upward at 20 m/s (g = 10 m/s$^2$). Find the maximum height, time to the top, and total flight time. **Solution.** Upward positive. **At the top v = 0:** 0 = 400 - 20h ⟹ **h = 20 m**. **Time up:** 0 = 20 - 10t ⟹ **t = 2 s**.…"
     },
     {
       "label": "MCQ drill",
@@ -88,23 +92,23 @@
     },
     {
       "label": "More ideas",
-      "text": "• Motion under gravity  ·  • Motion down a smooth inclined plane  ·  define + example each sub-idea: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration."
+      "text": "• Motion under gravity  ·  • Motion down a smooth inclined plane  ·  Trick 3: Distance in the nth second: s_n = u + a(2n − 1)/2 — the favourite 2-mark formula."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Mechanics (optional): Dynamics — motion of particle in a …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Trick 4: Gravity problems: g = 9.8 m/s² downward; time of flight 2u/g, max height u²/2g for vertical projection — quote the pair.  ·  Q6. **NEB-style (6m):** A body slides from rest down a smooth inclined plane of angle 30°. Find its acceleration, velocity and distance after 2 s (g = 10 m/s$^2$). **Solution.** The weight's component along the plane drives the motion: a = g sin 30° = 10·½ = **5 m/s$^2$**. **Velocity:** v = 0 + 5·2 = **10 m/s**.…  ·  Q7. **NEB-style (6m):** A particle moving with uniform acceleration covers 5 m in the first second and 15 m in the next second. Find the acceleration, the initial velocity, and the distance covered in the third second. **Solution.** Distance in the n-th second: s$_n$ = u + a(n - ½).…"
     },
     {
       "label": "More ideas",
-      "text": "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.  ·  **Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).  ·  **Optional.** one-line definition + one-line exam use."
+      "text": "define + example each sub-idea: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration.  ·  one worked example for \"Mechanics (optional): Dynamics — motion of particle in a …\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
     },
     {
       "label": "More ideas",
-      "text": "**: Dynamics — motion of particle in a straight line.** one-line definition + one-line exam use.  ·  **Motion with uniform acceleration.** one-line definition + one-line exam use.  ·  **Motion under gravity.** one-line definition + one-line exam use."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.  ·  **Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
     },
     {
       "label": "More ideas",
-      "text": "**Motion down a smooth inclined plane.** one-line definition + one-line exam use."
+      "text": "**Optional.** one-line definition + one-line exam use.  ·  **: Dynamics — motion of particle in a straight line.** one-line definition + one-line exam use.  ·  **Motion with uniform acceleration.** one-line definition + one-line exam use."
     }
   ]
 }

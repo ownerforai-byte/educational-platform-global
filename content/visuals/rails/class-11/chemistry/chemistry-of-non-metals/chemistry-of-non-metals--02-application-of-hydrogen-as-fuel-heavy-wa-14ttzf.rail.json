@@ -31,151 +31,92 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Application of hydrogen as fuel; heavy water and its appl… (Chemistry of Non-metals, Chemistry, class-11-notes) covers Application of hydrogen as fuel, heavy water, its applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Hydrogen's applied chapter has two stars. As a **fuel**, H₂ outranks every chemical energy carrier per gram (~142 kJ/g, three times petrol) and burns to nothing but water — in the oxy-hydrogen flame at ~2800 °C, in rocket tanks as cryogenic liquid, and most elegantly in the **fuel cell**, where anode H₂ → 2H⁺ + 2e⁻ and cathode ½O₂ + 2H⁺ + 2e⁻ → H₂O deliver electricity at 60–70 % efficiency with steam the only…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Application of hydrogen as fuel; heavy water and its appl… — quick idea map\"><title>Application of hydrogen as fuel; heavy water and its appl… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Application of hydrogen as fuel; heavy water</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and its appl…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Application of hydrogen</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">as fuel</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Heavy water</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Application of hydrogen as fuel; heavy water and its appl… — quick idea map\"><title>Application of hydrogen as fuel; heavy water and its appl… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Application of hydrogen as fuel; heavy water</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and its appl…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The isotope effect is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">engine of heavy-water</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">production: identical…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Hydrogen fuel: 2H2 + O2</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">-&gt; 2H2O, dH = -286</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">kJ/mol, ~142 kJ/g (3x</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- 2H₂ + O₂ → 2H₂O, ΔH =</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">−286 kJ/mol - Anode: H₂ →</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2H⁺ + 2e⁻; Cathode: ½O₂ +…</text></svg>",
         "caption": "Application of hydrogen as fuel; heavy water and its appl… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Application of hydrogen as fuel\n• Heavy water"
+      "text": "- 2H₂ + O₂ → 2H₂O, ΔH = −286 kJ/mol - Anode: H₂ → 2H⁺ + 2e⁻; Cathode: ½O₂ + 2H⁺ + 2e⁻ → H₂O - CH₄ + H₂O → CO + 3H₂ (steam reforming, current H₂ source) - D₂O: mp 3.8 °C, bp 101.4 °C, d = 1.108 g/mL"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Application of hydrogen as fuel\" as one blob → ✅ split into: application of hydrogen as fuel, heavy water, its applications.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Application of hydrogen as fuel; heavy water and its appl…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: application of hydrogen as fuel, heavy water, its applications (within Chemistry of Non-metals).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Heavy water (D2O) is used as a moderator in nuclear reactors because it slows neutrons efficiently while absorbing very few of them.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***The rocket tank*** — liquid hydrogen plus liquid oxygen lifts every heavy launcher: highest specific energy in a tank, and the exhaust is a cloud of steam."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Application of hydrogen as fuel; heavy water and its appl… — Chemistry of Non-metals, Chemistry (class-11-notes).  ·  **Tested.** define it · list: application of hydrogen as fuel, heavy water, its applications · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Hydrogen as Fuel and the Water That Is Not Two applied faces of hydrogen: **D₂O (heavy water)** with its nuclear-reactor career, and **hydrogen as the fuel of the future** — the only combustion product of which is water. This topic covers hydrogen fuel's chemistry, its storage problem, and heavy water's preparation and applications.  ·  ## 2. Fundamental Concepts ### 2.1 Hydrogen as a fuel - **Combustion:** 2H₂ + O₂ → 2H₂O, ΔH = −286 kJ/mol — the highest energy per unit mass of any chemical fuel (~142 kJ/g vs petrol ~48 kJ/g). - **Zero-carbon:** the only product is water — no CO₂, CO, SO₂ or particulates.…"
     },
     {
       "label": "Shortcut",
-      "text": "• Its applications  ·  solve / apply for \"Application of hydrogen as fuel; heavy water and its appl…\" and verify the answer is plausible."
+      "text": "142 kJ/g, 3x petrol, product = water only. Fuel cell: anode H2 -> 2H+ + 2e-, cathode O2 + 2H+ + 2e- -> H2O. D2O numbers: 3.8 / 101.4 / 1.108 / 99.75%. Moderator slows, control rods absorb."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Application of hydrogen as fuel; heavy water and its appl…\" with one example.  ·  compare \"Application of hydrogen as fuel\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): What is heavy water? How is it prepared, and why is it used in nuclear reactors?** — **Heavy water** is deuterium oxide, D₂O — water in which both hydrogen atoms are the isotope deuterium (²H) instead of ordinary protium.…  ·  **NEB-style (2m): Give two advantages of hydrogen as a fuel and one major difficulty in its use.** — **Advantages:** (1) **Highest energy density per unit mass** of any chemical fuel — about 142 kJ per gram, roughly three times that of petrol — so a small mass of hydrogen delivers a large amount of energy.…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "In the heavy-water answer, name the isotope effect explicitly (H evolves faster than D at the cathode) — that mechanism sentence is the distinguishing mark between average and full-credit answers.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Application of hydrogen as fuel; heavy water and its appl… — topic mind map\"><title>Application of hydrogen as fuel; heavy water and its appl… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Application of hydrogen as fuel; heavy water …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Application of hydrogen</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">as fuel</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Heavy water</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Its applications</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Application of hydrogen as fuel; heavy water and its appl… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "The isotope effect is the engine of heavy-water production: identical chemistry, different bond-breaking speeds — electrolysis separates what chemistry cannot."
+    },
+    {
+      "label": "Key points",
+      "text": "Hydrogen fuel: 2H2 + O2 -> 2H2O, dH = -286 kJ/mol, ~142 kJ/g (3x petrol), only product water. Uses: oxy-hydrogen flame ~2800 C, fuel cells (anode H2 -> 2H+ + 2e-, cathode 1/2O2 + 2H+ + 2e- -> H2O, ~60-70% efficient), rocket propellant.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Fuel-cell buses and taxis already run in several countries; the same reaction 2H2 + O2 -> 2H2O that powers them is the one every electrolysis plant runs backwards."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Write the electrode reactions of the hydrogen–oxygen fuel cell and state one advantage it has over an internal-combustion engine.** — **Anode (negative electrode):** H₂ → 2H⁺ + 2e⁻ — hydrogen is oxidised, releasing electrons to the external circuit.…"
+    },
+    {
       "label": "MCQ drill",
-      "text": "Which of the following is a distinct sub-topic under \"Application of hydrogen as fuel; heavy water and its appl…\"? → A  ·  A common examiner point on \"Application of hydrogen as fuel; heavy water and its appl…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Energy per gram of hydrogen is about: → B  ·  The only combustion product of hydrogen fuel is: → B"
     },
     {
       "label": "Study notes",
-      "text": "**Heavy water.** one-line definition + one-line exam use.  ·  **Its applications.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Hydrogen fuel** | H₂ burned or electrochemically combined with O₂ for energy | Fuel-cell vehicles | | **Fuel cell** | Device converting fuel + oxidant directly to electricity | H₂–O₂ fuel cell | | **Heavy water** | D₂O, deuterium oxide | Reactor moderator | | **Moderator** | Material slowing…  ·  ## 4. Detailed Explanation ### 4.1 The fuel cell in one picture - At the anode: H₂ → 2H⁺ + 2e⁻; at the cathode: ½O₂ + 2H⁺ + 2e⁻ → H₂O. Electrons flow through the external circuit — electricity directly, no combustion, ~2× the efficiency of a heat engine.…  ·  ## 5. Comparison Tables **Hydrogen vs petrol as fuel** | Basis | Hydrogen | Petrol | |---|---|---| | Energy per gram | ~142 kJ/g | ~48 kJ/g | | Combustion product | H₂O only | CO₂, CO, SO₂, particulates | | Storage | 700 bar gas / −253 °C liquid / hydride | Ambient liquid | | Renewable route | Electrolysis with green power | Fossil origin | **H₂O vs D₂O in reactors** | Basis |…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: application of hydrogen as fuel, heavy water, its applications.  ·  one worked example for \"Application of hydrogen as fuel; heavy water and its appl…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on hydrogen-as-fuel or heavy water exists in the current bank; all items above are NEB-style practice.  ·  Write the overall and electrode reactions of the H2-O2 fuel cell.  ·  Explain why electrolysis enriches the residual water in deuterium."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "List the three hydrogen storage strategies with one drawback each.  ·  ## 6. Common Confusions **Heavy water is not \"more purified water\":** D₂O is chemically H₂O with deuterium in place of protium — a different isotope, not a different purity.  ·  **Fuel cells do not burn hydrogen:** they electrochemically combine it — no flame, higher efficiency; calling a fuel cell \"hydrogen combustion\" loses the point."
+    },
+    {
+      "label": "More ideas",
+      "text": "**The moderator's job is slowing, not stopping:** it reduces neutron speed to thermal energies so ²³⁵U fission becomes probable; control rods (cadmium/boron) do the absorbing.  ·  ## 7. Exam Application **NEB-style (3m): What is heavy water? How is it prepared, and why is it used in nuclear reactors?** — **Heavy water** is deuterium oxide, D₂O, in which both hydrogen atoms of water are the isotope deuterium (²H).…  ·  **NEB-style (2m): Give two advantages of hydrogen as a fuel and one major difficulty in its use.** — **Advantages:** (1) the highest energy per unit mass of any chemical fuel (about 142 kJ/g, roughly three times petrol), and (2) its combustion or fuel-cell reaction produces only water — no CO₂, CO, SO₂ or particulate…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Write the electrode reactions of the hydrogen–oxygen fuel cell and state one advantage over internal combustion.** — **Anode:** H₂ → 2H⁺ + 2e⁻. **Cathode:** ½O₂ + 2H⁺ + 2e⁻ → H₂O. **Overall:** 2H₂ + O₂ → 2H₂O.…"
     }
-  ],
-  "keyPoints": [
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is a core concept in chemistry of non metals.",
-    "Understanding 02 application of hydrogen as fuel heavy wa 14ttzf requires knowing its definition, conditions, and limitations.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 02 application of hydrogen as fuel heavy wa 14ttzf must be memorized precisely.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf connects to neighbouring topics within chemistry of non metals and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 02 application of hydrogen as fuel heavy wa 14ttzf.",
-    "Practical examples solidify understanding of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf and its real-world relevance.",
-    "Misconceptions about 02 application of hydrogen as fuel heavy wa 14ttzf often arise from confusing it with similar concepts.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf follows systematic rules that can be applied step-by-step.",
-    "Review of 02 application of hydrogen as fuel heavy wa 14ttzf should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is defined by its specific characteristics within chemistry of non metals.",
-    "The conditions under which 02 application of hydrogen as fuel heavy wa 14ttzf applies are as important as the concept itself.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 02 application of hydrogen as fuel heavy wa 14ttzf through application-based and comparison questions.",
-    "A clear grasp of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf builds the foundation for advanced topics in chemistry of non metals."
-  ],
-  "importantNotes": [
-    "When studying 02 application of hydrogen as fuel heavy wa 14ttzf, always note the exceptions alongside the general rule.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf should be reviewed with at least one worked example per sub-point.",
-    "Link 02 application of hydrogen as fuel heavy wa 14ttzf back to prior knowledge in chemistry of non metals for deeper retention.",
-    "Practice past NEB board questions on 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf: apply the standard definition to a simple case.",
-    "Intermediate example: combine 02 application of hydrogen as fuel heavy wa 14ttzf with a related concept from chemistry of non metals.",
-    "Exam-style problem: solve a question involving 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf under time pressure.",
-    "Real-world connection: show how 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf and state two conditions required for it to occur.",
-    "Differentiate 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf from the most commonly confused concept in chemistry of non metals.",
-    "Solve a numerical or structural problem involving 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf.",
-    "List three applications of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf.",
-    "Create three flashcards covering definition, formula, and limitation of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf."
-  ],
-  "universalFacts": [
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is part of the NEB Class 11 chemistry of non metals syllabus.",
-    "Every concept in chemistry of non metals builds upon definitions established earlier in the chapter.",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is assessed through both short-answer and long-answer board questions.",
-    "Understanding 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf improves performance across the entire chemistry of non metals unit.",
-    "Revision of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf with closely related concepts in chemistry of non metals — focus on distinguishing features.",
-    "The scope of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is sometimes overstated; remember its precise boundaries.",
-    "Applying 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is primarily studied under which branch of chemistry of non metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of non metals — Answer: B",
-    "Which example correctly illustrates 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf.",
-    "Step-by-step animated derivation of the key relationship in 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf.",
-    "Interactive toggle between correct and incorrect representations of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf.",
-    "Side-by-side comparison animation of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf vs commonly confused concept.",
-    "Timelapse build-up of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf from prerequisite knowledge in chemistry of non metals."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf",
-    "Comparison table: 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf vs related concepts in chemistry of non metals",
-    "Step-by-step worked example layout for 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf"
-  ],
-  "summary": [
-    "02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf is a fundamental concept in chemistry of non metals that describes specific chemical behaviour under defined conditions.",
-    "Mastering 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 02 Application Of Hydrogen As Fuel Heavy Wa 14ttzf alongside related concepts in chemistry of non metals ensures strong conceptual clarity and exam readiness."
   ]
 }

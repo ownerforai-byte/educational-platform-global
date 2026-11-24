@@ -22,20 +22,24 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Universe and Big Bang is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "**Hubble's law**, v = H₀d with H₀ ≈ 70 km s⁻¹/Mpc, makes every galaxy recede with speed proportional to distance — evidence that **space itself expands** (measured via redshift, z ≈ v/c). Running expansion backwards gives the **Big Bang** ~13.8 billion years ago: quarks and leptons in the first microsecond, nucleosynthesis of H and He by 3 minutes, and at 380,000 years the release of radiation that cools into…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Universe and Big Bang — quick idea map\"><title>Universe and Big Bang — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Universe and Big Bang</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Universe and Big Bang</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Universe and</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Big Bang</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Application formula for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Universe and Big Bang</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Derivation result for</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Universe and Big Bang</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Universe and Big Bang — quick idea map\"><title>Universe and Big Bang — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Universe and Big Bang</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Three evidence pillars**</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">— recession law, CMB,</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">light-element abundances.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">v = H₀d (H₀ ≈ 70</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">km/s/Mpc); CMB 2.7 K; ~75%</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">H, ~25% He.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- v = H₀d, H₀ ≈ 70 km</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">s⁻¹/Mpc - z = Δλ/λ ≈ v/c -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Age ≈ 13.8 billion years</text></svg>",
         "caption": "Universe and Big Bang — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Application formula for Universe and Big Bang\nDerivation result for Universe and Big Bang"
+      "text": "- v = H₀d, H₀ ≈ 70 km s⁻¹/Mpc - z = Δλ/λ ≈ v/c - Age ≈ 13.8 billion years",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Universe and Big Bang — formula board\"><title>Universe and Big Bang — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Universe and Big Bang</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- v = H₀d, H₀ ≈ 70 km s⁻¹/Mpc - z = Δλ/λ ≈ v/c - Age ≈</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">13.8 billion years</text></svg>",
+        "caption": "Universe and Big Bang — formula board of this topic's own formulas"
+      }
     },
     {
       "label": "Conditions",
-      "text": "Carefully distinguish between similar-looking concepts in universe and big bang.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "**The Big Bang is an expansion OF space, not an explosion INTO space** — there is no centre.  ·  **The CMB is the Big Bang's afterglow**, cooled to 2.7 K over 13.8 billion years."
     },
     {
       "label": "Special cases",
@@ -43,11 +47,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Universe and Big Bang  ·  Practical demonstration of Universe and Big Bang concepts"
+      "text": "***A 100 Mpc galaxy*** — recedes at 7000 km/s."
     },
     {
       "label": "Limitation",
-      "text": "Practice with multiple examples to solidify your understanding."
+      "text": "No verified PYQ; NEB-style practice (Hubble 2–3m, Big Bang evidence 3m)."
     },
     {
       "label": "Derivation",
@@ -55,39 +59,27 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Universe and Big Bang formula  ·  Trick 2: Elimination technique for Universe and Big Bang MCQs"
+      "text": "\"v (km/s) = 70 × d (Mpc).\""
     },
     {
       "label": "Board question",
-      "text": "Q1. Define and explain Universe and Big Bang with suitable example.  ·  Q2. Solve problems related to Universe and Big Bang.",
-      "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Universe and Big Bang — exam flow\"><title>Universe and Big Bang — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Universe and Big Bang</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Universe and Big Bang is a fundamental</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">concept in Science that covers the essential</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">principles, formulas, and…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Application formula for Universe and Big</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">Bang Derivation result for Universe and Big</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">Bang</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Trick 1: Quick method to identify applicable</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Universe and Big Bang formula · Trick 2:</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">Elimination technique for…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define and explain Universe and Big Bang</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">with suitable example. · Q2.…</text></svg>",
-        "caption": "Universe and Big Bang — exam flow: concept → formula → shortcut → board question"
-      }
+      "text": "**NEB-style (2m): A galaxy 50 Mpc away recedes at what speed?** — v = 70 × 50 = 3500 km/s."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Universe and Big Bang  ·  Practice previous year questions on Universe and Big Bang"
+      "text": "List all three evidence items — one mark each in a 3m answer."
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Universe and Big Bang  ·  Concept 2: Key theorem or principle in Universe and Big Bang  ·  Concept 3: Important application area of Universe and Big Bang  ·  Concept 4: Fundamental relationship in Universe and Big Bang"
+      "text": "**Three evidence pillars** — recession law, CMB, light-element abundances."
+    },
+    {
+      "label": "Key points",
+      "text": "v = H₀d (H₀ ≈ 70 km/s/Mpc); CMB 2.7 K; ~75% H, ~25% He."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding universe and big bang builds the foundation for more advanced topics in mathematics."
-    },
-    {
-      "label": "More practice",
-      "text": "Q3. Differentiate between various aspects of Universe and Big Bang.  ·  Q4. Derive the key formula related to Universe and Big Bang.  ·  Q5. What are the applications of Universe and Big Bang?"
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Universe and Big Bang thoroughly  ·  Review common mistakes related to Universe and Big Bang"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Universe and Big Bang  ·  Application in daily life involving Universe and Big Bang"
+      "text": "Expansion is accelerating — attributed to dark energy, ~70% of the universe's content."
     },
     {
       "label": "MCQ drill",
@@ -95,27 +87,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Big Bang model.** The universe began about 13.8 billion years ago in an extremely hot, dense state and has been expanding and cooling ever since; space itself expands, galaxies recede from each other.  ·  **Hubble's evidence.** Galaxies show redshift proportional to distance (v = H₀d) — the expansion law that founded observational cosmology.  ·  **Cosmic microwave background.** The faint 2.7 K microwave glow filling the sky is the cooled remnant of the fireball, released when atoms formed about 380,000 years after the Big Bang."
+      "text": "## 1. Topic Introduction — The Expanding Universe Every distant galaxy recedes, and the farther it is, the faster it flees — Hubble's law. Run the film backwards and everything converges ~13.8 billion years ago: the **Big Bang**, whose echo still fills the sky as the cosmic microwave background.  ·  ## 2. Fundamental Concepts ### 2.1 Hubble's law Recession speed is proportional to distance: $$v = H_0 d \\qquad H_0 ≈ 70 \\text{ km s}^{-1}\\text{/Mpc}$$ - Measured from galactic **redshift**: light stretched by expansion shifts to longer wavelengths; z = Δλ/λ ≈ v/c for small speeds.…  ·  ## 3. Conceptual Relationships - **To Topic 115:** the Big Bang's first second produced the particle families. - **To Topic 117:** dark matter and dark energy dominate the universe's fate. - **To Doppler effect (Unit 4):** redshift is the same physics applied to light."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Universe and Big Bang and other topics  ·  Note 3: Practice numerical problems regularly for mastery of Universe and Big Bang  ·  Note 4: Remember the units and dimensions involved in Universe and Big Bang"
+      "text": "Note 3: Practice numerical problems regularly for mastery of Universe and Big Bang  ·  Note 4: Remember the units and dimensions involved in Universe and Big Bang  ·  Note 5: Universe and Big Bang frequently appears in examination questions"
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Universe and Big Bang frequently appears in examination questions  ·  Note 1: Universe and Big Bang is based on fundamental principles  ·  Note 2: Remember the distinction between different types in Universe and Big Bang"
+      "text": "\"The recession velocity of a galaxy is proportional to its distance from any observer.\"  ·  Why do all observers see the same Hubble law?  ·  Task 3: Create a concept map for Universe and Big Bang"
     },
     {
       "label": "More ideas",
-      "text": "Note 3: Universe and Big Bang has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Universe and Big Bang  ·  Note 5: Cross-check your answers using alternative methods for Universe and Big Bang"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 1: Definition of Universe and Big Bang  ·  Statement 2: Theorem related to Universe and Big Bang  ·  Statement 3: Condition for Universe and Big Bang to be valid"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 4: Principle governing Universe and Big Bang  ·  Statement 5: Corollary or consequence of Universe and Big Bang  ·  Trick 3: Dimensional analysis shortcut for Universe and Big Bang"
+      "text": "Task 4: Practice previous year exam questions on Universe and Big Bang  ·  Task 5: Explain Universe and Big Bang to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise Hubble's law, the Big Bang timeline and the three evidence pillars as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
     }
   ]
 }

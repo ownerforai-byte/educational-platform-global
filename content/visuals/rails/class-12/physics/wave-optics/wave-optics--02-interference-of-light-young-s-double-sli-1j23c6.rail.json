@@ -23,9 +23,9 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Interference of light — Young's double slit experiment (Wave Optics, Physics, class-12-notes) covers Interference of light — Young's double slit experiment. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Two slits fed by one source interfere. Bright fringes sit at whole-number wavelengths of path difference, and the equal spacing is λ D / d. The centre is bright. A wider slit gap packs the fringes closer, and separate lamps do not keep the phase steady.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Interference of light — Young's double slit experiment — quick idea map\"><title>Interference of light — Young's double slit experiment — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Interference of light — Young's double slit</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">experiment</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Interference of light —</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Young's double slit</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">experiment</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">β = λD/d</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a sinθ = mλ</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Interference of light — Young's double slit experiment — quick idea map\"><title>Interference of light — Young's double slit experiment — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Interference of light — Young's double slit</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">experiment</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Coherence</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Path difference</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Interference of light —</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Young's double slit</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">experiment</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One source feeds both</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">slits.</text></svg>",
         "caption": "Interference of light — Young's double slit experiment — quick idea map of this topic's headline ideas"
       }
     },
@@ -36,15 +36,15 @@
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Interference of light — Young's double slit experiment\" as one blob → ✅ split into: interference of light — young's double slit experiment.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.  ·  Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use)."
+      "text": "The small-angle form needs D much greater than d.  ·  Order m = 0 is the centre."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Young's experiment lets one wavefront illuminate two narrow slits. The two waves that leave the slits stay in step, so they interfere on a distant screen. Two separate lamps do not keep that fixed phase.  ·  Where the path difference is a whole number of wavelengths, the waves arrive in phase and the fringe is bright. Where the path difference is an odd number of half wavelengths, the fringe is dark."
     },
     {
       "label": "Limitation",
@@ -52,47 +52,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Interference of light — Young's double slit experiment — Wave Optics, Physics (class-12-notes).  ·  **Tested.** define it · list: interference of light — young's double slit experiment · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+      "text": "Centre bright.  ·  Bigger d, smaller β."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Interference of light — Young's double slit experiment\" with one example.  ·  compare \"Interference of light — Young's double slit experiment\" with the related idea from a neighbouring unit."
+      "text": "Write the fringe width.  ·  Why is the centre bright?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ..",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Interference of light — Young's double slit experiment — topic mind map\"><title>Interference of light — Young's double slit experiment — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Interference of light — Young's double slit e…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Interference of light —</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Young's double slit…</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Interference of light — Young's double slit experiment — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Coherence  ·  Path difference  ·  Fringe width  ·  White-light centre"
+    },
+    {
       "label": "Key points",
-      "text": "• Interference of light — Young's double slit experiment"
+      "text": "• Interference of light — Young's double slit experiment  ·  One source feeds both slits.  ·  The centre is bright.  ·  Fringes are equally spaced."
+    },
+    {
+      "label": "Universal facts",
+      "text": "Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.  ·  Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use)."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Interference of light — Young's double slit experiment\" and verify the answer is plausible."
+      "text": "What does increasing d do?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Two slits are 1.0 mm apart and the screen is 2.0 m away. The wavelength is 500 nm. Find the fringe width."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Interference of light — Young's double slit experiment\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "The central fringe is → B  ·  Fringe width is → A"
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.  ·  **Fact.** Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use).  ·  **Fact.** Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+      "text": "The central fringe is bright because the two paths are equal. The bright fringes are equally spaced. The spacing is β = λ D / d, with D the screen distance and d the slit separation, when D is much larger than d.  ·  A longer wavelength, a more distant screen, or closer slits all widen the pattern. Closing one slit removes the two-source fringes and leaves the single-slit spread.  ·  White light gives a white central fringe and coloured fringes farther out, because each colour has its own spacing. The red fringes sit farther apart than the blue ones."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: interference of light — young's double slit experiment.  ·  one worked example for \"Interference of light — Young's double slit experiment\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "A larger slit separation packs them closer.  ·  ❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ..  ·  β = λ D / d, not λ d / D."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ."
+      "text": "Closer slits make wider fringes.  ·  Two lamps are not coherent.  ·  D is the screen distance and d is the slit gap."
+    },
+    {
+      "label": "More ideas",
+      "text": "Coherence comes from splitting one wave.  ·  Write β = λ D / d and say what each symbol means.  ·  Mark the known values, then substitute one step at a time."
+    },
+    {
+      "label": "More ideas",
+      "text": "Finish with the number, the unit, and the direction when the quantity has one.  ·  Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "Limit to remember: young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ.  ·  The path difference at a small angle is d sinθ, or d x / D on the screen. Setting that equal to m λ locates the bright fringe of order m.  ·  # Interference of light — Young's double slit experiment ## 1. Introduction Physical picture of **Interference of light — Young's double slit experiment** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
     }
   ]
 }

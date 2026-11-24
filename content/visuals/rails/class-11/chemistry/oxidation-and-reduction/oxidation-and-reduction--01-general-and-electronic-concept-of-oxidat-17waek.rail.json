@@ -24,20 +24,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+      "text": "Redox is electron bookkeeping: **oxidation is loss, reduction is gain** (OIL RIG), and because electrons are conserved the two always run together — one species climbs in oxidation number while another falls. The **oxidising agent** accepts electrons and is itself reduced (KMnO₄, K₂Cr₂O₇, O₂, F₂); the **reducing agent** donates them and is itself oxidised (Zn, H₂, CO, C) — role and fate are always opposite.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General and Electronic Concepts of Oxidation and Reduction — quick idea map\"><title>General and Electronic Concepts of Oxidation and Reduction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">General and Electronic Concepts of Oxidation</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Reduction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 01</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">general and electronic</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">concept of oxidation and…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Core point for 01 general</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and electronic concept of</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">oxidation and reduction.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E°cell = E°cathode -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E°anode</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Q = It</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General and Electronic Concepts of Oxidation and Reduction — quick idea map\"><title>General and Electronic Concepts of Oxidation and Reduction — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">General and Electronic Concepts of Oxidation</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">and Reduction</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">intermediate-oxidation-state</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">rule powers H₂O₂'s dual</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">OIL RIG: oxidation = loss</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of electrons/ON increase;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">reduction = gain/ON…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Zn + CuSO₄ → ZnSO₄ + Cu</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(E°: −0.76 vs +0.34 V) -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">H₂O₂ as oxidant: H₂O₂ +…</text></svg>",
         "caption": "General and Electronic Concepts of Oxidation and Reduction — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "E°cell = E°cathode - E°anode\nQ = It\nm = ZIt (Faraday's first law)"
+      "text": "- Zn + CuSO₄ → ZnSO₄ + Cu (E°: −0.76 vs +0.34 V) - H₂O₂ as oxidant: H₂O₂ + 2Fe²⁺ + 2H⁺ → 2Fe³⁺ + 2H₂O - H₂O₂ as reductant: H₂O₂ + Cl₂ → 2HCl + O₂ - 2H₂O₂ → 2H₂O + O₂ (disproportionation) - Halogen oxidising power: F₂ >…"
     },
     {
       "label": "Conditions",
-      "text": "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.  ·  ❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil."
+      "text": "**Agent vs fate:** the oxidising agent is reduced; the reducing agent is oxidised — name the *role* from what happens to the *other* species.  ·  **Displacement direction:** the metal higher in the series displaces the lower metal's ion — students often reverse it; Zn (higher) displaces Cu, never the reverse."
     },
     {
       "label": "Special cases",
@@ -45,11 +45,11 @@
     },
     {
       "label": "Solved",
-      "text": "Zn|Zn²⁺||Cu²⁺|Cu: E°=+1.10V  ·  Cu deposited by 2A for 30min: m≈1.19g"
+      "text": "***The copper coin trick*** — an iron nail dropped in CuSO₄ comes out copper-plated: Fe (higher in the series) displaces Cu²⁺; the same logic that corrodes pipes and runs the classic displacement practical."
     },
     {
       "label": "Limitation",
-      "text": "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.  ·  ❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes."
+      "text": "Verified PYQs: NEB 2024 — agent definitions with Zn/CuSO₄, electrochemical series with Zn displacement, H₂O₂ dual behaviour, fluorine strongest oxidising halogen; NEB 2022 — H₂O₂ dual behaviour with balanced equations (all solved above). Other items are NEB-style practice."
     },
     {
       "label": "Derivation",
@@ -57,15 +57,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Recall the formula for General and Electronic Concepts of Oxidation and Reduction."
+      "text": "OIL RIG. Agent-fate flip: \"oxidant is reduced\". Series mnemonic: \"Li K Ba Ca Na Mg Al Zn Fe Pb H Cu Hg Ag Au\". Halogen oxidising power: \"F Cl Br I falls\". H₂O₂ pivot: −1 between 0 and −2."
     },
     {
       "label": "Board question",
-      "text": "Practice identifying organelles and their functions in electron micrographs.  ·  Practice distinguishing prokaryotic from eukaryotic cells."
+      "text": "**NEB 2024 (2m): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An **oxidising agent** is a species that accepts electrons and is itself reduced in the process; a **reducing agent** is a species that donates electrons and is itself oxidised.…  ·  **NEB 2024 (3m): What is the electrochemical series? Explain why zinc displaces copper from copper sulphate solution.** — The **electrochemical series** is the arrangement of elements in order of their standard electrode potentials, i.e. their tendency to be reduced (equivalently, the inverse of their tendency to be oxidised).…"
     },
     {
       "label": "Hints",
-      "text": "Important note regarding 01 general and electronic concept of oxidation and reduction.",
+      "text": "For agent-identification answers, write the half-reactions first — the species oxidised is the reducing agent, the species reduced is the oxidising agent. For H₂O₂, give one balanced equation per role; unbalanced pairs lose the chemistry mark.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"General and Electronic Concepts of Oxidation and Reduction — topic mind map\"><title>General and Electronic Concepts of Oxidation and Reduction — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">General and electronic concept of oxidation a…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">General</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Electronic concept of</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">oxidation</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Reduction</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "General and Electronic Concepts of Oxidation and Reduction — topic mind map of this topic's own sub-topics"
@@ -73,126 +73,47 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 01 general and electronic concept of oxidation and reduction."
+      "text": "The intermediate-oxidation-state rule powers H₂O₂'s dual behaviour and all disproportionation: an element between two accessible states can move both ways; an element at an extreme (F at −1 floor) cannot."
     },
     {
       "label": "Key points",
-      "text": "Core point for 01 general and electronic concept of oxidation and reduction."
+      "text": "OIL RIG: oxidation = loss of electrons/ON increase; reduction = gain/ON decrease; both simultaneous. Oxidising agent accepts e⁻ (is reduced): KMnO₄, K₂Cr₂O₇, F₂, O₂. Reducing agent donates e⁻ (is oxidised): Zn, H₂, CO, C.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Respiration is a redox relay: glucose is oxidised (C from 0 toward +4) while O₂ is reduced (0 → −2 in water) — the same electron accounting as a zinc-copper cell, at 37 °C."
     },
     {
       "label": "More practice",
-      "text": "Practice drawing and labeling the fluid mosaic model of the cell membrane.  ·  Practice explaining the steps of mitosis with diagrams.  ·  Practice explaining the stages of meiosis and comparing with mitosis."
+      "text": "**NEB 2022/2024 (3m): Hydrogen peroxide can act both as an oxidising and a reducing agent. Explain with one reaction of each type.** — In H₂O₂ oxygen is at **−1**, an intermediate state between 0 (in O₂) and −2 (in H₂O), so H₂O₂ can be reduced or oxidised.…  ·  **NEB 2024 (2m): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine combines the **smallest atomic size**, the **highest electronegativity (4.0)** and the **most positive standard reduction potential** (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V) of all the halogens, so it accepts…"
     },
     {
       "label": "MCQ drill",
-      "text": "Question about 01 general and electronic concept of oxidation and reduction? → A  ·  In the reaction Zn → Zn²⁺ + 2e⁻, zinc is: → A"
+      "text": "Question about 01 general and electronic concept of oxidation and reduction? → A  ·  Oxidation is best defined as: → B"
     },
     {
       "label": "Study notes",
-      "text": "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).  ·  Oxidation numbers identify redox.  ·  Galvanic cells: chemical → electrical energy."
+      "text": "## 1. Topic Introduction — Electron Accounting for Every Reaction Burning, rusting, respiration, plating and batteries all share one bookkeeping system: **oxidation–reduction (redox)**. The modern definition is electronic — oxidation is electron **loss**, reduction is electron **gain** — and every redox reaction is a transfer: one species loses what another gains,…  ·  ## 2. Fundamental Concepts ### 2.1 The electronic concept - **Oxidation:** loss of electrons — Fe²⁺ → Fe³⁺ + e⁻; Zn → Zn²⁺ + 2e⁻. - **Reduction:** gain of electrons — Cu²⁺ + 2e⁻ → Cu; Cl₂ + 2e⁻ → 2Cl⁻. - The two always occur **together** — electrons lost must be gained somewhere; a half-reaction alone cannot happen.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Oxidation** | Loss of electrons / increase in oxidation number | Zn → Zn²⁺ + 2e⁻ | | **Reduction** | Gain of electrons / decrease in oxidation number | Cu²⁺ + 2e⁻ → Cu | | **Oxidising agent** | Accepts electrons; is reduced | KMnO₄, F₂ | | **Reducing agent** | Donates electrons; is oxidised…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.  ·  ❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.  ·  ❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways."
+      "text": "\"Oxidation is the loss of electrons and reduction is the gain of electrons; the two processes occur simultaneously in a redox reaction.\"  ·  Classify each transformation: Fe²⁺ to Fe³⁺, Cl₂ to Cl⁻, S²⁻ to S, MnO₄⁻ to Mn²⁺ — oxidation or reduction, and which agents?  ·  Can Na⁺ act as an oxidising agent toward Cu metal? Use the electrochemical series to justify."
     },
     {
       "label": "More ideas",
-      "text": "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).  ·  ❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.  ·  ❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis."
+      "text": "Write balanced equations showing H₂O₂ oxidising PbS to PbSO₄ and reducing Ag₂O to Ag.  ·  ## 4. Detailed Explanation ### 4.1 Verified PYQ (NEB 2024): define the agents; identify each in Zn + CuSO₄ - **Oxidising agent:** accepts electrons and is reduced. **Reducing agent:** donates electrons and is oxidised.…  ·  ## 5. Comparison Tables **Oxidation vs reduction — the full mirror** | Basis | Oxidation | Reduction | |---|---|---| | Electrons | Lost | Gained | | Oxidation number | Increases | Decreases | | Oxygen/hydrogen (classical) | Gains O / loses H | Gains H / loses O | | Agent role | The species is the **reducing agent** |…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.  ·  ❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.  ·  ❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels."
+      "text": "## 6. Common Confusions **The agent does the opposite of its name:** an oxidising agent does not get oxidised — it *causes* oxidation and is itself reduced. Role and fate are opposite; exams punish swapping them.  ·  **Oxidation number is not charge:** Mn is +7 in KMnO₄ but no Mn⁷⁺ ion floats in the solution — oxidation numbers are bookkeeping, not ionic charges.  ·  **Disproportionation needs an intermediate state:** the element must sit between two accessible states (Cl at 0 between −1 and +1; O in H₂O₂ at −1 between −2 and 0) — F₂ cannot disproportionate because −1 is its floor."
     },
     {
       "label": "More ideas",
-      "text": "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.  ·  ❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.  ·  ❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin)."
+      "text": "## 7. Exam Application **Verified PYQ (NEB 2024): Define oxidising and reducing agents. Identify each in Zn + CuSO₄ → ZnSO₄ + Cu.** — An oxidising agent accepts electrons and is itself reduced; a reducing agent donates electrons and is itself oxidised.…  ·  **Verified PYQ (NEB 2024): What is the electrochemical series? Why does zinc displace copper from CuSO₄?** — The electrochemical series arranges elements in order of their standard electrode potentials — tendency to be reduced (equivalently, inverse tendency to be oxidised).…  ·  **Verified PYQ (NEB 2022 + 2024): Hydrogen peroxide acts as both oxidising and reducing agent. Explain with one reaction of each.** — Oxygen in H₂O₂ is at −1, intermediate between 0 (O₂) and −2 (H₂O), so H₂O₂ can move either way.…"
     },
     {
       "label": "More ideas",
-      "text": "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.  ·  ❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).  ·  ❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane."
+      "text": "**Verified PYQ (NEB 2024): Why is fluorine the strongest oxidising agent among the halogens?** — Fluorine is the smallest and most electronegative halogen (4.0) with the most positive reduction potential (F₂ + 2e⁻ → 2F⁻, E° = +2.87 V): it accepts electrons most readily and its small F⁻ ions are strongly hydrated,…"
     }
-  ],
-  "keyPoints": [
-    "01 General And Electronic Concept Of Oxidat 17waek is a core concept in oxidation and reduction.",
-    "Understanding 01 general and electronic concept of oxidat 17waek requires knowing its definition, conditions, and limitations.",
-    "01 General And Electronic Concept Of Oxidat 17waek has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 01 general and electronic concept of oxidat 17waek must be memorized precisely.",
-    "01 General And Electronic Concept Of Oxidat 17waek connects to neighbouring topics within oxidation and reduction and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 01 general and electronic concept of oxidat 17waek.",
-    "Practical examples solidify understanding of 01 General And Electronic Concept Of Oxidat 17waek and its real-world relevance.",
-    "Misconceptions about 01 general and electronic concept of oxidat 17waek often arise from confusing it with similar concepts.",
-    "01 General And Electronic Concept Of Oxidat 17waek follows systematic rules that can be applied step-by-step.",
-    "Review of 01 general and electronic concept of oxidat 17waek should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "01 General And Electronic Concept Of Oxidat 17waek is defined by its specific characteristics within oxidation and reduction.",
-    "The conditions under which 01 general and electronic concept of oxidat 17waek applies are as important as the concept itself.",
-    "01 General And Electronic Concept Of Oxidat 17waek can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 01 general and electronic concept of oxidat 17waek through application-based and comparison questions.",
-    "A clear grasp of 01 General And Electronic Concept Of Oxidat 17waek builds the foundation for advanced topics in oxidation and reduction."
-  ],
-  "importantNotes": [
-    "When studying 01 general and electronic concept of oxidat 17waek, always note the exceptions alongside the general rule.",
-    "01 General And Electronic Concept Of Oxidat 17waek should be reviewed with at least one worked example per sub-point.",
-    "Link 01 general and electronic concept of oxidat 17waek back to prior knowledge in oxidation and reduction for deeper retention.",
-    "Practice past NEB board questions on 01 General And Electronic Concept Of Oxidat 17waek to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 01 General And Electronic Concept Of Oxidat 17waek: apply the standard definition to a simple case.",
-    "Intermediate example: combine 01 general and electronic concept of oxidat 17waek with a related concept from oxidation and reduction.",
-    "Exam-style problem: solve a question involving 01 General And Electronic Concept Of Oxidat 17waek under time pressure.",
-    "Real-world connection: show how 01 General And Electronic Concept Of Oxidat 17waek appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 01 General And Electronic Concept Of Oxidat 17waek and state two conditions required for it to occur.",
-    "Differentiate 01 General And Electronic Concept Of Oxidat 17waek from the most commonly confused concept in oxidation and reduction.",
-    "Solve a numerical or structural problem involving 01 General And Electronic Concept Of Oxidat 17waek.",
-    "List three applications of 01 General And Electronic Concept Of Oxidat 17waek in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 01 General And Electronic Concept Of Oxidat 17waek without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 01 General And Electronic Concept Of Oxidat 17waek.",
-    "Create three flashcards covering definition, formula, and limitation of 01 General And Electronic Concept Of Oxidat 17waek."
-  ],
-  "universalFacts": [
-    "01 General And Electronic Concept Of Oxidat 17waek is part of the NEB Class 11 oxidation and reduction syllabus.",
-    "Every concept in oxidation and reduction builds upon definitions established earlier in the chapter.",
-    "01 General And Electronic Concept Of Oxidat 17waek is assessed through both short-answer and long-answer board questions.",
-    "Understanding 01 General And Electronic Concept Of Oxidat 17waek improves performance across the entire oxidation and reduction unit.",
-    "Revision of 01 General And Electronic Concept Of Oxidat 17waek should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 01 General And Electronic Concept Of Oxidat 17waek with closely related concepts in oxidation and reduction — focus on distinguishing features.",
-    "The scope of 01 General And Electronic Concept Of Oxidat 17waek is sometimes overstated; remember its precise boundaries.",
-    "Applying 01 General And Electronic Concept Of Oxidat 17waek outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 01 General And Electronic Concept Of Oxidat 17waek and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 01 General And Electronic Concept Of Oxidat 17waek? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "01 General And Electronic Concept Of Oxidat 17waek is primarily studied under which branch of oxidation and reduction? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 01 General And Electronic Concept Of Oxidat 17waek is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to oxidation and reduction — Answer: B",
-    "Which example correctly illustrates 01 General And Electronic Concept Of Oxidat 17waek? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "01 General And Electronic Concept Of Oxidat 17waek differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 01 General And Electronic Concept Of Oxidat 17waek.",
-    "Step-by-step animated derivation of the key relationship in 01 General And Electronic Concept Of Oxidat 17waek.",
-    "Interactive toggle between correct and incorrect representations of 01 General And Electronic Concept Of Oxidat 17waek."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 01 General And Electronic Concept Of Oxidat 17waek.",
-    "Side-by-side comparison animation of 01 General And Electronic Concept Of Oxidat 17waek vs commonly confused concept.",
-    "Timelapse build-up of 01 General And Electronic Concept Of Oxidat 17waek from prerequisite knowledge in oxidation and reduction."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 01 General And Electronic Concept Of Oxidat 17waek",
-    "Comparison table: 01 General And Electronic Concept Of Oxidat 17waek vs related concepts in oxidation and reduction",
-    "Step-by-step worked example layout for 01 General And Electronic Concept Of Oxidat 17waek"
-  ],
-  "summary": [
-    "01 General And Electronic Concept Of Oxidat 17waek is a fundamental concept in oxidation and reduction that describes specific chemical behaviour under defined conditions.",
-    "Mastering 01 General And Electronic Concept Of Oxidat 17waek involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 01 General And Electronic Concept Of Oxidat 17waek alongside related concepts in oxidation and reduction ensures strong conceptual clarity and exam readiness."
   ]
 }

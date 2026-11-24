@@ -31,52 +31,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Stability of carbonate and nitrate of alkaline earth meta… (Chemistry of Metals, Chemistry, class-11-notes) covers Stability of carbonate, nitrate of alkaline earth metals, general trend with explanation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Thermal stability in Group IIA is the **polarisation ladder**. The M²⁺ cation bends the big CO₃²⁻/NO₃⁻ electron cloud; polarising power = charge/size, so it falls steadily from Be²⁺ to Ba²⁺. **Carbonates** respond with a clean decomposition-temperature ladder — BeCO₃ <100 °C, MgCO₃ 350 °C, CaCO₃ 900 °C, SrCO₃ 1290 °C, BaCO₃ 1360 °C, all yielding MO + CO₂.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stability of carbonate and nitrate of alkaline earth meta… — quick idea map\"><title>Stability of carbonate and nitrate of alkaline earth meta… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stability of carbonate and nitrate of alkaline</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">earth meta…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Stability of carbonate</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nitrate of alkaline</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">earth metals</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stability of carbonate and nitrate of alkaline earth meta… — quick idea map\"><title>Stability of carbonate and nitrate of alkaline earth meta… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stability of carbonate and nitrate of alkaline</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">earth meta…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Polarising power is charge</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">over size, and it is the</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">single dial that tunes…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Carbonates MCO3 -&gt; MO +</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CO2; stability increases</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">down: BeCO3 &lt;100 C,</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- MCO₃ → MO + CO₂↑ -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2Mg(NO₃)₂ → 2MgO + 4NO₂↑ +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">O₂↑ - Ba(NO₃)₂ → Ba(NO₂)₂</text></svg>",
         "caption": "Stability of carbonate and nitrate of alkaline earth meta… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Stability of carbonate\n• Nitrate of alkaline earth metals"
+      "text": "- MCO₃ → MO + CO₂↑ - 2Mg(NO₃)₂ → 2MgO + 4NO₂↑ + O₂↑ - Ba(NO₃)₂ → Ba(NO₂)₂ + O₂↑ - Li₂CO₃ → Li₂O + CO₂↑; Na₂CO₃ stable - NaNO₃ → NaNO₂ + ½O₂↑ - Decomposition temps: BeCO₃ <100, MgCO₃ 350, CaCO₃ 900, SrCO₃ 1290, BaCO₃…"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Stability of carbonate\" as one blob → ✅ split into: stability of carbonate, nitrate of alkaline earth metals, general trend with explanation.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Stability of carbonate and nitrate of alkaline earth meta…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: stability of carbonate, nitrate of alkaline earth metals, general trend with explanation (within Chemistry of Metals).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"The thermal stability of the carbonates of the alkaline earth metals increases with increasing atomic number, because the polarising power of the doubly charged cation decreases as its size increases.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Limestone versus magnesite in the kiln*** — magnesite calcines at 350 °C, limestone demands 900 °C: the same CO₃²⁻ anion, but Mg²⁺ bends it until it snaps while Ca²⁺ merely leans on it — two ores, two kiln temperatures, one Fajans argument."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Stability of carbonate and nitrate of alkaline earth meta… — Chemistry of Metals, Chemistry (class-11-notes).  ·  **Tested.** define it · list: stability of carbonate, nitrate of alkaline earth metals, general trend with explanation · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Why Small Cations Burn Their Carbonates Thermal stability of the Group IIA carbonates and nitrates is the Fajans polarisation story: the smaller the M²⁺ ion, the harder it distorts the big anion's electron cloud, weakening a C–O or N–O bond until CO₂ or NO₂+O₂ escapes.…  ·  ## 2. Fundamental Concepts ### 2.1 The decomposition reactions - Carbonates: MCO₃ → MO + CO₂↑ (all except BeCO₃ need heating; BeCO₃ decomposes below 100 °C, MgCO₃ ~350 °C, CaCO₃ ~900 °C, SrCO₃ ~1290 °C, BaCO₃ ~1360 °C). - Nitrates: all decompose on heating, but in two stages of product: - **Be and Mg:** 2M(NO₃)₂ → 2MO + 4NO₂↑ + O₂↑ (nitrate → oxide).…"
     },
     {
       "label": "Shortcut",
-      "text": "• General trend with explanation  ·  solve / apply for \"Stability of carbonate and nitrate of alkaline earth meta…\" and verify the answer is plausible."
+      "text": "Carbonate ladder: 100/350/900/1290/1360 C. Nitrate split at Mg/Ca: Be/Mg -> oxide + NO2 + O2; Ca/Sr/Ba -> nitrite + O2. Li parallels Mg (diagonal). Polarising power = charge/size."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Stability of carbonate and nitrate of alkaline earth meta…\" with one example.  ·  compare \"Stability of carbonate\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): Describe the trend in thermal stability of the carbonates of the alkaline earth metals and explain it with the polarisation concept.** — The carbonates grow **steadily more stable down the group**: BeCO₃ decomposes below 100 °C (it is stable only under a CO₂ atmosphere), MgCO₃ at about 350 °C, CaCO₃ at about 900 °C,…  ·  **NEB-style (3m): What products are obtained on heating the nitrates of beryllium, magnesium and barium? Write the equations and explain the difference in behaviour.** — **Beryllium nitrate and magnesium nitrate** decompose completely to the **oxide**, evolving brown nitrogen dioxide and oxygen: 2Be(NO₃)₂ → 2BeO + 4NO₂↑ + O₂↑; 2Mg(NO₃)₂…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "The nitrate question needs both equations AND the polarisation explanation of the split — products alone score half.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stability of carbonate and nitrate of alkaline earth meta… — topic mind map\"><title>Stability of carbonate and nitrate of alkaline earth meta… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Stability of carbonate and nitrate of alkalin…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Stability of carbonate</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nitrate of alkaline</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">earth metals</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">General trend with</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">explanation</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Stability of carbonate and nitrate of alkaline earth meta… — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Quick concepts",
+      "text": "Polarising power is charge over size, and it is the single dial that tunes the whole group: the smaller the cation, the more it bends the big anion's cloud, and the lower the temperature at which CO2 or NO2+O2 escapes."
+    },
+    {
+      "label": "Key points",
+      "text": "Carbonates MCO3 -> MO + CO2; stability increases down: BeCO3 <100 C, MgCO3 ~350 C, CaCO3 ~900 C, SrCO3 ~1290 C, BaCO3 ~1360 C. Explanation: Fajans polarisation - small M2+ (high charge density) distorts CO3^2-, weakens C-O, anion splits; polarising power = charge/size falls down the group.…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "The CaCO₃ → CaO + CO₂ decomposition at ~900 °C releases roughly 0.44 t of CO₂ per tonne of lime — cement kilns are among the world's largest single CO₂ sources, all of it the polarisation ladder's top rung being climbed industrially."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (2m): Why does lithium carbonate, unlike the other alkali metal carbonates, decompose on heating?** — **Li⁺ is the smallest alkali cation**, so despite its single charge it has an unusually high charge density and **polarises the carbonate ion** appreciably; the distortion weakens a C–O…"
     },
     {
       "label": "MCQ drill",
@@ -84,98 +100,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Nitrate of alkaline earth metals.** one-line definition + one-line exam use.  ·  **General trend with explanation.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Thermal stability** | Resistance to decomposition on heating | BaCO₃ stable to ~1360 °C | | **Polarisation (Fajans)** | Distortion of anion electron cloud by cation | Be²⁺ on CO₃²⁻ | | **Polarising power** | Charge/size ratio of the cation | Be²⁺ highest in group | | **Nitrite** | Salt of…  ·  ## 4. Detailed Explanation ### 4.1 Why the carbonate ladder runs Be → Ba - Decomposition temperature climbs steadily: BeCO₃ <100, MgCO₃ 350, CaCO₃ 900, SrCO₃ 1290, BaCO₃ 1360 °C. The cation's polarising power falls as its radius grows (charge constant), so the anion distortion weakens and the C–O bond survives longer.…  ·  ## 5. Comparison Tables **Stability ladders** | Compound class | Trend down IIA | Products on heating | |---|---|---| | MCO₃ | stability increases | MO + CO₂ (all members) | | M(NO₃)₂ (Be, Mg) | least stable | MO + NO₂ + O₂ | | M(NO₃)₂ (Ca, Sr, Ba) | more stable | M(NO₂)₂ + O₂ | **IA vs IIA carbonates** | Basis | Group IA | Group IIA | |---|---|---| | Cation charge | +1, weak…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: stability of carbonate, nitrate of alkaline earth metals, general trend with explanation.  ·  one worked example for \"Stability of carbonate and nitrate of alkaline earth meta…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "No verified PYQ on carbonate/nitrate stability exists in the bank; all items here are NEB-style practice.  ·  List the decomposition temperatures of the five alkaline earth carbonates and explain the ladder by polarising power.  ·  Write the equations for heating Mg(NO3)2 and Ba(NO3)2 and explain why the products differ."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Compare the thermal behaviour of Li2CO3 with Na2CO3 and connect it to the Li-Mg diagonal relationship.  ·  ## 6. Common Confusions **\"More stable down the group\" applies to carbonates AND to the nitrate decomposition *temperature*, but the nitrate *products* change family:** Be/Mg give oxide, Ca/Sr/Ba give nitrite — stability and product identity are different statements.  ·  **NO₂ is brown, O₂ is not:** the decomposition of Mg(NO₃)₂ gives brown fumes (NO₂) plus a colourless gas that relights a glowing splint (O₂) — quote both observations."
+    },
+    {
+      "label": "More ideas",
+      "text": "**BaCO₃ does not decompose in a Bunsen flame:** ~1360 °C is beyond ordinary lab heat; writing \"carbonates decompose on heating\" without the temperature ladder loses the discrimination mark.  ·  ## 7. Exam Application **NEB-style (3m): Describe the trend in the thermal stability of the carbonates of the alkaline earth metals and explain it using the polarisation concept.** — The carbonates become **more thermally stable down the group**: BeCO₃ decomposes below 100 °C, MgCO₃ at about 350 °C, CaCO₃ at about 900…  ·  **NEB-style (3m): What happens when the nitrates of beryllium, magnesium and barium are heated? Write equations and explain the difference.** — **Beryllium and magnesium nitrates** decompose all the way to the oxide, with brown nitrogen dioxide and oxygen: 2Be(NO₃)₂ → 2BeO + 4NO₂↑ + O₂↑ and 2Mg(NO₃)₂ → 2MgO + 4NO₂↑ +…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why is Li₂CO₃, alone among the alkali metal carbonates, decomposed on heating while Na₂CO₃ and K₂CO₃ are not?** — Li⁺ is the smallest alkali cation and, although singly charged, its high charge density polarises CO₃²⁻ enough to weaken a C–O bond, so lithium carbonate decomposes on heating: Li₂CO₃ →…"
     }
-  ],
-  "keyPoints": [
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is a core concept in chemistry of metals.",
-    "Understanding 12 stability of carbonate and nitrate of al gxbasf requires knowing its definition, conditions, and limitations.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 12 stability of carbonate and nitrate of al gxbasf must be memorized precisely.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf connects to neighbouring topics within chemistry of metals and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 12 stability of carbonate and nitrate of al gxbasf.",
-    "Practical examples solidify understanding of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf and its real-world relevance.",
-    "Misconceptions about 12 stability of carbonate and nitrate of al gxbasf often arise from confusing it with similar concepts.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf follows systematic rules that can be applied step-by-step.",
-    "Review of 12 stability of carbonate and nitrate of al gxbasf should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is defined by its specific characteristics within chemistry of metals.",
-    "The conditions under which 12 stability of carbonate and nitrate of al gxbasf applies are as important as the concept itself.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 12 stability of carbonate and nitrate of al gxbasf through application-based and comparison questions.",
-    "A clear grasp of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf builds the foundation for advanced topics in chemistry of metals."
-  ],
-  "importantNotes": [
-    "When studying 12 stability of carbonate and nitrate of al gxbasf, always note the exceptions alongside the general rule.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf should be reviewed with at least one worked example per sub-point.",
-    "Link 12 stability of carbonate and nitrate of al gxbasf back to prior knowledge in chemistry of metals for deeper retention.",
-    "Practice past NEB board questions on 12 Stability Of Carbonate And Nitrate Of Al Gxbasf to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf: apply the standard definition to a simple case.",
-    "Intermediate example: combine 12 stability of carbonate and nitrate of al gxbasf with a related concept from chemistry of metals.",
-    "Exam-style problem: solve a question involving 12 Stability Of Carbonate And Nitrate Of Al Gxbasf under time pressure.",
-    "Real-world connection: show how 12 Stability Of Carbonate And Nitrate Of Al Gxbasf appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 12 Stability Of Carbonate And Nitrate Of Al Gxbasf and state two conditions required for it to occur.",
-    "Differentiate 12 Stability Of Carbonate And Nitrate Of Al Gxbasf from the most commonly confused concept in chemistry of metals.",
-    "Solve a numerical or structural problem involving 12 Stability Of Carbonate And Nitrate Of Al Gxbasf.",
-    "List three applications of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 12 Stability Of Carbonate And Nitrate Of Al Gxbasf.",
-    "Create three flashcards covering definition, formula, and limitation of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf."
-  ],
-  "universalFacts": [
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is part of the NEB Class 11 chemistry of metals syllabus.",
-    "Every concept in chemistry of metals builds upon definitions established earlier in the chapter.",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is assessed through both short-answer and long-answer board questions.",
-    "Understanding 12 Stability Of Carbonate And Nitrate Of Al Gxbasf improves performance across the entire chemistry of metals unit.",
-    "Revision of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 12 Stability Of Carbonate And Nitrate Of Al Gxbasf with closely related concepts in chemistry of metals — focus on distinguishing features.",
-    "The scope of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf is sometimes overstated; remember its precise boundaries.",
-    "Applying 12 Stability Of Carbonate And Nitrate Of Al Gxbasf outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 12 Stability Of Carbonate And Nitrate Of Al Gxbasf and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 12 Stability Of Carbonate And Nitrate Of Al Gxbasf? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is primarily studied under which branch of chemistry of metals? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 12 Stability Of Carbonate And Nitrate Of Al Gxbasf is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to chemistry of metals — Answer: B",
-    "Which example correctly illustrates 12 Stability Of Carbonate And Nitrate Of Al Gxbasf? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 12 Stability Of Carbonate And Nitrate Of Al Gxbasf.",
-    "Step-by-step animated derivation of the key relationship in 12 Stability Of Carbonate And Nitrate Of Al Gxbasf.",
-    "Interactive toggle between correct and incorrect representations of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 12 Stability Of Carbonate And Nitrate Of Al Gxbasf.",
-    "Side-by-side comparison animation of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf vs commonly confused concept.",
-    "Timelapse build-up of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf from prerequisite knowledge in chemistry of metals."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 12 Stability Of Carbonate And Nitrate Of Al Gxbasf",
-    "Comparison table: 12 Stability Of Carbonate And Nitrate Of Al Gxbasf vs related concepts in chemistry of metals",
-    "Step-by-step worked example layout for 12 Stability Of Carbonate And Nitrate Of Al Gxbasf"
-  ],
-  "summary": [
-    "12 Stability Of Carbonate And Nitrate Of Al Gxbasf is a fundamental concept in chemistry of metals that describes specific chemical behaviour under defined conditions.",
-    "Mastering 12 Stability Of Carbonate And Nitrate Of Al Gxbasf involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 12 Stability Of Carbonate And Nitrate Of Al Gxbasf alongside related concepts in chemistry of metals ensures strong conceptual clarity and exam readiness."
   ]
 }

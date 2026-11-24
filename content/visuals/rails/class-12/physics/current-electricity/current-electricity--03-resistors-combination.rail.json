@@ -48,11 +48,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Resistors in Combination  ·  Example 2: Practical demonstration of Resistors in Combination concepts"
+      "text": "Example 2: Practical demonstration of Resistors in Combination concepts  ·  Example 4: Diagram-based question on Resistors in Combination"
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Total resistance in series is the average of individual resistances.' ✅ In series, the total resistance is the *sum* of individual resistances (Rs = R1 + R2), which is always greater than the largest individual resistor."
+      "text": "❌ 'Total resistance in series is the average of individual resistances.' ✅ In series, the total resistance is the *sum* of individual resistances (Rs = R1 + R2), which is always greater than the largest individual resistor.  ·  Parallel resistors do not add their ohm values."
     },
     {
       "label": "Derivation",
@@ -96,7 +96,7 @@
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Resistors in Combination  ·  Example 5: Application in daily life involving Resistors in Combination"
+      "text": "Example 5: Application in daily life involving Resistors in Combination"
     },
     {
       "label": "MCQ drill",
@@ -104,11 +104,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Resistors in Combination:** This topic covers the fundamental concepts of resistors in combination in the physics curriculum.  ·  Understanding resistors in combination is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to resistors in combination should be memorized and practiced regularly."
+      "text": "Resistors in series carry the same current. The total voltage is the sum of the voltages, so the equivalent resistance is R = R1 + R2 + R3. The equivalent is larger than the largest single resistor.  ·  Resistors in parallel have the same potential difference. The total current is the sum of the branch currents, so 1/R = 1/R1 + 1/R2 + 1/R3. The equivalent is smaller than the smallest branch.  ·  Two parallel resistors have the shortcut R = R1 R2 / (R1 + R2). It is the product over the sum, and it is not used for three resistors without grouping."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Resistors in Combination and other topics  ·  Key Formula 5: Important relation in Resistors in Combination  ·  Note 3: Practice numerical problems regularly for mastery of Resistors in Combination"
+      "text": "Concept 5: Connection between Resistors in Combination and other topics  ·  Key Formula 5: Important relation in Resistors in Combination  ·  The product-over-sum rule is for two resistors only."
+    },
+    {
+      "label": "More ideas",
+      "text": "Series current is the same. Series voltage is not.  ·  A parallel equivalent is never larger than the smaller branch.  ·  Note 3: Practice numerical problems regularly for mastery of Resistors in Combination"
     },
     {
       "label": "More ideas",
@@ -120,11 +124,7 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Cross-check your answers using alternative methods for Resistors in Combination  ·  Statement 1: Definition of Resistors in Combination  ·  Statement 2: Theorem related to Resistors in Combination"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 3: Condition for Resistors in Combination to be valid  ·  Statement 4: Principle governing Resistors in Combination  ·  Statement 5: Corollary or consequence of Resistors in Combination"
+      "text": "Note 5: Cross-check your answers using alternative methods for Resistors in Combination  ·  Trick 3: Dimensional analysis shortcut for Resistors in Combination  ·  Trick 4: Memory aid for Resistors in Combination formulas"
     }
   ]
 }

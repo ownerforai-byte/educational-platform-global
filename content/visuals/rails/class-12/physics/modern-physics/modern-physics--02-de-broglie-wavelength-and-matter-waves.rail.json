@@ -25,28 +25,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "De Broglie wavelength and matter waves (Modern Physics, Physics, class-12-notes) covers De Broglie wavelength, matter waves. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Matter has wavelength h/p. Electrons accelerated through V volts have λ about 12.27/√V angstroms, short enough at 100 V to diffract from a crystal. Heavier everyday objects have wavelengths too small to notice. The wave describes probability, and the particle is still detected whole.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"De Broglie wavelength and matter waves — quick idea map\"><title>De Broglie wavelength and matter waves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">De Broglie wavelength and matter waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• De Broglie wavelength</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Matter waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Governing equation for</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">&quot;De Broglie</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">wavelength and matter</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"De Broglie wavelength and matter waves — quick idea map\"><title>De Broglie wavelength and matter waves — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">De Broglie wavelength and matter waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Matter wave</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Momentum</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Every particle has a</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">wavelength.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A larger momentum means a</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shorter wavelength.</text></svg>",
         "caption": "De Broglie wavelength and matter waves — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Governing equation for \"De Broglie wavelength and matter waves\" — state with units, then use in one numerical."
+      "text": "Governing equation for \"De Broglie wavelength and matter waves\" — state with units, then use in one numerical.\nλ = h / p\nλ = h / √(2 m e V) for an electron accelerated through V"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"De Broglie wavelength\" as one blob → ✅ split into: de broglie wavelength, matter waves.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "❌ state the rule without its limit → ✅ note when it applies / stops applying.  ·  ❌ no diagram → ✅ add one labelled figure / structured list."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"De Broglie wavelength and matter waves\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "h = 6.63 × 10^−34 J s.  ·  1 Å = 10^−10 m."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "De Broglie proposed that matter has a wavelength λ = h / p, where p is the momentum and h is Planck's constant. A faster or heavier particle has a shorter wavelength.  ·  For an electron accelerated from rest through a potential difference V, (1/2) m v^2 = e V, so p = √(2 m e V) and λ = h / √(2 m e V)."
     },
     {
       "label": "Limitation",
@@ -54,43 +54,71 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** De Broglie wavelength and matter waves — Modern Physics, Physics (class-12-notes).  ·  **Tested.** define it · list: de broglie wavelength, matter waves · one worked example · one misconception each."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "• De Broglie wavelength  ·  • Matter waves"
+      "text": "λ(Å) ≈ 12.27 / √V for electrons.  ·  Big momentum, short wavelength."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"De Broglie wavelength and matter waves\" with one example.  ·  compare \"De Broglie wavelength\" with the related idea from a neighbouring unit."
+      "text": "Write the de Broglie relation.  ·  Why is 100 V enough to show electron diffraction?"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"De Broglie wavelength and matter waves — topic mind map\"><title>De Broglie wavelength and matter waves — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">De Broglie wavelength and matter waves</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">De Broglie wavelength</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Matter waves</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "De Broglie wavelength and matter waves — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Matter wave  ·  Momentum  ·  Electron wavelength  ·  Davisson–Germer"
+    },
+    {
+      "label": "Key points",
+      "text": "Every particle has a wavelength.  ·  A larger momentum means a shorter wavelength.  ·  The electron is the usual classroom particle.  ·  The wave is a probability wave, not a sound wave."
+    },
+    {
+      "label": "Universal facts",
+      "text": "answer pattern for \"De Broglie wavelength and matter waves\": define → method → result. Structure earns the marks on 6–10 mark questions."
+    },
+    {
       "label": "More practice",
-      "text": "solve / apply for \"De Broglie wavelength and matter waves\" and verify the answer is plausible."
+      "text": "What did Davisson and Germer observe?"
+    },
+    {
+      "label": "Extra solved",
+      "text": "Find the de Broglie wavelength of an electron accelerated through 100 V. Use λ in angstroms ≈ 12.27 / √V."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"De Broglie wavelength and matter waves\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "De Broglie wavelength is → B  ·  Raising the speed → B"
     },
     {
       "label": "Study notes",
-      "text": "**Matter waves.** one-line definition + one-line exam use."
+      "text": "In angstroms a useful electron form is λ ≈ 12.27 / √V when V is in volts. At 100 V the wavelength is about 1.23 Å, the size of atomic spacings, which is why electron diffraction is visible.  ·  A cricket ball has a tiny wavelength because its momentum is huge. Its wave nature is real and undetectable. The effect shows up for electrons, neutrons and atoms.  ·  Davisson and Germer diffracted electrons from a nickel crystal and found the wavelength that de Broglie predicted. That is the experimental anchor."
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: de broglie wavelength, matter waves.  ·  one worked example for \"De Broglie wavelength and matter waves\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "A larger speed means a shorter wavelength, not a longer one.  ·  The angstrom formula is for electrons, not for protons.  ·  The wave is not a mechanical ripple."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "h/p uses momentum, not kinetic energy, unless you have converted.  ·  Use p = mv only when the speed is well below light.  ·  Name the particle before using the 12.27 formula."
+    },
+    {
+      "label": "More ideas",
+      "text": "Write λ = h / p and say what each symbol means.  ·  Mark the known values, then substitute one step at a time.  ·  Finish with the number, the unit, and the direction when the quantity has one."
+    },
+    {
+      "label": "More ideas",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  The wave is not the electron wiggling through a medium. It is the wave associated with the probability of finding the electron. The electron is still detected as a particle.  ·  # De Broglie wavelength and matter waves ## 1. Introduction Physical picture of **De Broglie wavelength and matter waves** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Quantities and graph reading** | Quantity | Symbol + SI unit | Graph (slope or area meaning) | Worked angle | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with…  ·  ## 5. Diagrams and figures - **D1** — De Broglie wavelength and matter waves — field, flux or wave construction (authored SVG) - **D2** — De Broglie wavelength and matter waves — graph or second construction (authored SVG — axes, units and labels) - **D3** — De Broglie wavelength and matter waves — detailed reference…"
     }
   ]
 }

@@ -23,28 +23,28 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Coulomb's law: force between two point charges (Electric Charges, Physics, class-11-notes) covers Coulomb's law: force between two point charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "**Coulomb's law** gives the force between point charges: $F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2}$, along the line joining them — repulsive for like charges, attractive for unlike — with $k = 9\\times10^9$ N m²C⁻². NEB 2024's pair (2 μC, 3 μC, 0.1 m) repels at 5.4 N (3m); NEB 2022's MCQ (+2 μC, −3 μC, 0.6 m) gives 0.15 N attractive (1m).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Coulomb's law: force between two point charges — quick idea map\"><title>Coulomb's law: force between two point charges — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Coulomb's law: force between two point charges</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Coulomb's law: force</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">between two point charges</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = k q₁q₂/r²</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">E = F/q</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Coulomb's law: force between two point charges — quick idea map\"><title>Coulomb's law: force between two point charges — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Coulomb's law: force between two point charges</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Coulomb's law is</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Newton's gravitation with</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">charge in place of mass**</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">F = kq₁q₂/r²; k = 9×10⁹ N</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">m²C⁻²; like repel, unlike</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">attract.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- F = (1/4πε₀) q₁q₂/r²; k</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= 9×10⁹ N m²C⁻² - ε₀ =</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">8.85×10⁻¹² C²N⁻¹m⁻² - In…</text></svg>",
         "caption": "Coulomb's law: force between two point charges — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "F = k q₁q₂/r²\nE = F/q\n∮E·dA = Q/ε₀"
+      "text": "- F = (1/4πε₀) q₁q₂/r²; k = 9×10⁹ N m²C⁻² - ε₀ = 8.85×10⁻¹² C²N⁻¹m⁻² - In medium: F = k q₁q₂/(ε_r r²)"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Coulomb's law: force between two point charges\" as one blob → ✅ split into: coulomb's law: force between two point charges.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "**Micro means 10⁻⁶:** 2 μC = 2×10⁻⁶ C — the standard conversion slip.  ·  **Inverse square:** double the distance → force ÷ 4."
     },
     {
       "label": "Special cases",
-      "text": "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.  ·  Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry."
+      "text": "A sketched sign convention is part of the data.  ·  A dimensionless ratio still needs the two quantities named."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "***NEB 2024*** — 2 μC and 3 μC at 0.1 m: F = 5.4 N repulsive."
     },
     {
       "label": "Limitation",
@@ -52,47 +52,51 @@
     },
     {
       "label": "Derivation",
-      "text": "**Coulomb's law.** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)q₁q₂/r².  ·  **Direction.** The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law."
+      "text": "Copy the worked example and hide the result until the last step.  ·  Name the unit of every term in the formula."
     },
     {
       "label": "Shortcut",
-      "text": "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+      "text": "\"F = 9×10⁹ q₁q₂/r² with charges in coulombs, r in metres.\""
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Coulomb's law: force between two point charges\" with one example.  ·  compare \"Coulomb's law: force between two point charges\" with the related idea from a neighbouring unit."
+      "text": "**Numerical (3m): Two identical charges 5 cm apart repel with 0.36 N. Find each charge.** — q² = Fr²/k = 0.36 × 0.0025/9×10⁹ = 10⁻¹³ → q = 3.16×10⁻⁷ C ≈ 0.32 μC."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.  ·  ❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+      "text": "State the law in words first, then compute — the 2024 3m awards marks for both.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Coulomb's law: force between two point charges — topic mind map\"><title>Coulomb's law: force between two point charges — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Coulomb's law</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Coulomb's law: force</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">between two point</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Coulomb's law: force between two point charges — topic mind map of this topic's own sub-topics"
       }
     },
     {
-      "label": "Key points",
-      "text": "• Coulomb's law: force between two point charges"
+      "label": "Quick concepts",
+      "text": "**Coulomb's law is Newton's gravitation with charge in place of mass** — plus the possibility of repulsion."
     },
     {
-      "label": "More practice",
-      "text": "solve / apply for \"Coulomb's law: force between two point charges\" and verify the answer is plausible."
+      "label": "Key points",
+      "text": "F = kq₁q₂/r²; k = 9×10⁹ N m²C⁻²; like repel, unlike attract."
+    },
+    {
+      "label": "Universal facts",
+      "text": "The electrostatic force between an electron and proton is ~10³⁹ times their gravitational attraction — gravity is negligible inside atoms."
     },
     {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Coulomb's law: force between two point charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Doubling r multiplies F by → B  ·  Like charges → A"
     },
     {
       "label": "Study notes",
-      "text": "**Permittivity.** In a medium of dielectric constant K the force falls to F = q₁q₂/4πε₀Kr²; for vacuum K = 1 and ε₀ = 8.85 × 10⁻¹² C² N⁻¹ m⁻².  ·  **Vector form.** F₁₂ = (q₁q₂/4πε₀) × (r₂ − r₁)/|r₂ − r₁|³ gives both magnitude and direction automatically, with the sign of the charges deciding attraction or repulsion.  ·  **Limitations.** The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger."
+      "text": "## 1. Topic Introduction — The Inverse Square Law of Charge Two centuries before electrons were discovered, Coulomb measured with a torsion balance how charged bodies push and pull: a force proportional to each charge, inversely proportional to the square of the separation. That law is the electrostatic twin of Newton's gravitation.  ·  ## 2. Fundamental Concepts (NEB 2022, 2024) ### 2.1 Statement and formula **Coulomb's law:** the electrostatic force between two point charges acts along the line joining them, is proportional to the product of the charges and inversely proportional to the square of their separation: $$F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2} = k\\frac{q_1q_2}{r^2}$$ - $k =…  ·  ## 3. Conceptual Relationships - **To Topic 83:** the law quantifies the interactions of quantised, conserved charges. - **To Topic 86:** superposition extends the two-charge law to systems. - **To gravitation (Unit 7):** same inverse-square mathematics, different source and strength."
     },
     {
       "label": "More ideas",
-      "text": "V = kq/r  ·  define + example each sub-idea: coulomb's law: force between two point charges.  ·  one worked example for \"Coulomb's law: force between two point charges\" — check units / edge cases."
+      "text": "Verified PYQs: law + 5.4 N numerical (2024, 3m); 0.15 N attractive MCQ (2022, 1m).  ·  \"The force between two point charges is proportional to the product of the charges and inversely proportional to the square of their separation.\"  ·  Why don't we feel electrostatic forces in daily life despite their strength?"
     },
     {
       "label": "More ideas",
-      "text": "recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2078/2022 | Electricity | Coulomb | Two charges of +2 μC and −3 μC are placed 0.6 m apart.…"
     }
   ]
 }

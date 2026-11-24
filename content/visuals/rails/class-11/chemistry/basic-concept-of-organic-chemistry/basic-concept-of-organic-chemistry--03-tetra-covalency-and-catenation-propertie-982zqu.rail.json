@@ -26,16 +26,16 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Atomic structure: From Rutherford's nuclear model through Bohr's quantized orbits to the modern quantum mechanical model, understanding electron configuration using four quantum numbers is fundamental. Stoichiometry: The mole concept bridges atomic and macroscopic scales; limiting reagent determines theoretical yield; concentration expressed as molarity or molality.…",
+      "text": "Carbon's chemistry rests on two properties. **Tetravalency:** the ground state 1s²2s²2p² has only two unpaired electrons, but promotion to the excited state **2s¹2p³** provides four; the ~406 kJ/mol excitation cost is repaid twice over by two extra strong bonds, so carbon forms four equivalent covalent bonds everywhere (sp³ tetrahedral in methane).…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Tetra-covalency and catenation properties of carbon — quick idea map\"><title>Tetra-covalency and catenation properties of carbon — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Tetra-covalency and catenation properties of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">carbon</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key concept 1 for 03 tetra</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">covalency and catenation</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">properties of carbon…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Tetra-covalency</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Catenation properties of</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">carbon</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">$F = m \\cdot a$ (relevant</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">formula for 03 tetra</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">covalency and catenation…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Tetra-covalency and catenation properties of carbon — quick idea map\"><title>Tetra-covalency and catenation properties of carbon — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Tetra-covalency and catenation properties of</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">carbon</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Tetravalency is a</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">thermodynamic investment:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">carbon borrows ~406 kJ/mol</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Carbon ground state 1s2</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2s2 2p2 = 2 unpaired -&gt;</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">valency would be 2;…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- Ground state: 1s² 2s²</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2p² → excited state: 1s²</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">2s¹ 2p³ (4 unpaired) -…</text></svg>",
         "caption": "Tetra-covalency and catenation properties of carbon — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$F = m \\cdot a$ (relevant formula for 03 tetra covalency and catenation properties of carbon classification of organic compounds)"
+      "text": "- Ground state: 1s² 2s² 2p² → excited state: 1s² 2s¹ 2p³ (4 unpaired) - Excitation energy ≈ 406 kJ/mol; C–H bond ≈ 413 kJ/mol; C–C ≈ 348 kJ/mol; Si–Si ≈ 226 kJ/mol - Isomers: C₄H₁₀ → 2; C₅H₁₂ → 3; C₆H₁₄ → 5; C₁₀H₂₂ → 75"
     },
     {
       "label": "Conditions",
@@ -47,7 +47,7 @@
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges.  ·  Methane CH₄, Ethane C₂H₆, Ethene C₂H₄"
+      "text": "***The isomer explosion*** — C4H10 has 2 isomers, C10H22 has 75, C20H42 has over 300,000: catenation plus branching turns one formula into a library, and that library is organic chemistry."
     },
     {
       "label": "Limitation",
@@ -59,15 +59,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1"
+      "text": "Excitation: 2s2 2p2 -> 2s1 2p3, cost ~406 kJ/mol, repaid by 2 extra bonds. Catenation ladder: C-C 348 vs Si-Si 226 kJ/mol. Isomer counts: C4H10=2, C5H12=3, C10H22=75."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Tetra-covalency and catenation properties of carbon\" with one example.  ·  compare \"Tetra-covalency\" with the related idea from a neighbouring unit."
+      "text": "**NEB-style (3m): How does the excited state explain the tetravalency of carbon?** — Carbon's ground state is **1s² 2s² 2p²**: the 2p sub-shell holds two unpaired electrons, which would limit carbon to valency 2.…  ·  **NEB-style (3m): What is catenation? Why does carbon show maximum catenation in its group?** — **Catenation** is the property by which atoms of an element **link with one another** to form chains and rings.…"
     },
     {
       "label": "Hints",
-      "text": "Exam note 1.",
+      "text": "The tetravalency answer must show both configurations (ground and excited) and the energy-repayment argument — configuration alone scores half.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Tetra-covalency and catenation properties of carbon — topic mind map\"><title>Tetra-covalency and catenation properties of carbon — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Tetra-covalency and catenation properties of …</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Tetra-covalency</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Catenation properties of</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">carbon</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Tetra-covalency and catenation properties of carbon — topic mind map of this topic's own sub-topics"
@@ -75,19 +75,19 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Key concept 1 for 03 tetra covalency and catenation properties of carbon classification of organic compounds."
+      "text": "Tetravalency is a thermodynamic investment: carbon borrows ~406 kJ/mol to promote one electron and earns it back twice over in two extra strong bonds — four-handedness is profitable, so it is universal."
     },
     {
       "label": "Key points",
-      "text": "• Tetra-covalency  ·  • Catenation properties of carbon"
+      "text": "Carbon ground state 1s2 2s2 2p2 = 2 unpaired -> valency would be 2; excitation 2s1 2p3 gives 4 unpaired -> tetravalency; excitation cost ~406 kJ/mol repaid by two extra bonds (C-H ~413 kJ/mol each). Tetravalency + equivalent bonds (sp3 tetrahedral in CH4).…"
     },
     {
       "label": "Universal facts",
-      "text": "answer pattern for \"Tetra-covalency and catenation properties of carbon\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Polyethylene chains contain hundreds of thousands of carbon atoms linked head to tail — catenation operating at industrial scale in a plastic bag."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Tetra-covalency and catenation properties of carbon\" and verify the answer is plausible.  ·  Practice drawing Lewis structures for ionic and covalent compounds.  ·  Practice using the mole concept to convert between mass, moles, and particles."
+      "text": "**NEB-style (2m): Why is the number of organic compounds so large? Connect your answer to catenation and isomerism.** — Carbon **catenates** into chains and rings of unlimited length (strong C–C bonds, small atoms, tetravalency), and every carbon in the chain can carry a **functional group** (–OH,…"
     },
     {
       "label": "MCQ drill",
@@ -95,7 +95,7 @@
     },
     {
       "label": "Study notes",
-      "text": "Organic chemistry: study of carbon compounds.  ·  Carbon: tetravalent, forms 4 bonds.  ·  Functional groups: -OH (alcohol), -COOH (carboxylic acid), etc."
+      "text": "## 1. Topic Introduction — Four Bonds and a Chain Two properties of carbon build the entire organic world: **tetravalency** (four bonds per atom) and **catenation** (self-linking into chains and rings). This topic shows where the fourth bond comes from (the excited state), why C–C bonds are strong enough for unlimited chains, and what catenation costs the neighbours — silicon…  ·  ## 2. Fundamental Concepts ### 2.1 Tetravalency — the excited-state story - Carbon: **1s² 2s² 2p²** — ground state has only **2 unpaired electrons**, which would suggest valency 2. - On excitation, one 2s electron jumps to the empty 2p orbital: **2s¹ 2p³** — **4 unpaired electrons** → valency **4**.…  ·  ## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Tetravalency** | Forming four covalent bonds per atom | CH₄, CCl₄ | | **Excited state** | Electron promoted to higher orbital before bonding | 2s²2p² → 2s¹2p³ | | **Catenation** | Self-linking of atoms into chains/rings | C–C–C in hexane | | **Hybridisation** | Mixing of orbitals to give…"
     },
     {
       "label": "More ideas",
@@ -117,88 +117,5 @@
       "label": "More ideas",
       "text": "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.  ·  ❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).  ·  ❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize."
     }
-  ],
-  "keyPoints": [
-    "03 Tetra Covalency And Catenation Propertie 982zqu is a core concept in basic concept of organic chemistry.",
-    "Understanding 03 tetra covalency and catenation propertie 982zqu requires knowing its definition, conditions, and limitations.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 tetra covalency and catenation propertie 982zqu must be memorized precisely.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu connects to neighbouring topics within basic concept of organic chemistry and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 tetra covalency and catenation propertie 982zqu.",
-    "Practical examples solidify understanding of 03 Tetra Covalency And Catenation Propertie 982zqu and its real-world relevance.",
-    "Misconceptions about 03 tetra covalency and catenation propertie 982zqu often arise from confusing it with similar concepts.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu follows systematic rules that can be applied step-by-step.",
-    "Review of 03 tetra covalency and catenation propertie 982zqu should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Tetra Covalency And Catenation Propertie 982zqu is defined by its specific characteristics within basic concept of organic chemistry.",
-    "The conditions under which 03 tetra covalency and catenation propertie 982zqu applies are as important as the concept itself.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 tetra covalency and catenation propertie 982zqu through application-based and comparison questions.",
-    "A clear grasp of 03 Tetra Covalency And Catenation Propertie 982zqu builds the foundation for advanced topics in basic concept of organic chemistry."
-  ],
-  "importantNotes": [
-    "When studying 03 tetra covalency and catenation propertie 982zqu, always note the exceptions alongside the general rule.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu should be reviewed with at least one worked example per sub-point.",
-    "Link 03 tetra covalency and catenation propertie 982zqu back to prior knowledge in basic concept of organic chemistry for deeper retention.",
-    "Practice past NEB board questions on 03 Tetra Covalency And Catenation Propertie 982zqu to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Tetra Covalency And Catenation Propertie 982zqu: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 tetra covalency and catenation propertie 982zqu with a related concept from basic concept of organic chemistry.",
-    "Exam-style problem: solve a question involving 03 Tetra Covalency And Catenation Propertie 982zqu under time pressure.",
-    "Real-world connection: show how 03 Tetra Covalency And Catenation Propertie 982zqu appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Tetra Covalency And Catenation Propertie 982zqu and state two conditions required for it to occur.",
-    "Differentiate 03 Tetra Covalency And Catenation Propertie 982zqu from the most commonly confused concept in basic concept of organic chemistry.",
-    "Solve a numerical or structural problem involving 03 Tetra Covalency And Catenation Propertie 982zqu.",
-    "List three applications of 03 Tetra Covalency And Catenation Propertie 982zqu in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Tetra Covalency And Catenation Propertie 982zqu without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Tetra Covalency And Catenation Propertie 982zqu.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Tetra Covalency And Catenation Propertie 982zqu."
-  ],
-  "universalFacts": [
-    "03 Tetra Covalency And Catenation Propertie 982zqu is part of the NEB Class 11 basic concept of organic chemistry syllabus.",
-    "Every concept in basic concept of organic chemistry builds upon definitions established earlier in the chapter.",
-    "03 Tetra Covalency And Catenation Propertie 982zqu is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Tetra Covalency And Catenation Propertie 982zqu improves performance across the entire basic concept of organic chemistry unit.",
-    "Revision of 03 Tetra Covalency And Catenation Propertie 982zqu should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Tetra Covalency And Catenation Propertie 982zqu with closely related concepts in basic concept of organic chemistry — focus on distinguishing features.",
-    "The scope of 03 Tetra Covalency And Catenation Propertie 982zqu is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Tetra Covalency And Catenation Propertie 982zqu outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Tetra Covalency And Catenation Propertie 982zqu and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Tetra Covalency And Catenation Propertie 982zqu? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Tetra Covalency And Catenation Propertie 982zqu is primarily studied under which branch of basic concept of organic chemistry? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Tetra Covalency And Catenation Propertie 982zqu is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to basic concept of organic chemistry — Answer: B",
-    "Which example correctly illustrates 03 Tetra Covalency And Catenation Propertie 982zqu? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Tetra Covalency And Catenation Propertie 982zqu differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Tetra Covalency And Catenation Propertie 982zqu.",
-    "Step-by-step animated derivation of the key relationship in 03 Tetra Covalency And Catenation Propertie 982zqu.",
-    "Interactive toggle between correct and incorrect representations of 03 Tetra Covalency And Catenation Propertie 982zqu."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Tetra Covalency And Catenation Propertie 982zqu.",
-    "Side-by-side comparison animation of 03 Tetra Covalency And Catenation Propertie 982zqu vs commonly confused concept.",
-    "Timelapse build-up of 03 Tetra Covalency And Catenation Propertie 982zqu from prerequisite knowledge in basic concept of organic chemistry."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Tetra Covalency And Catenation Propertie 982zqu",
-    "Comparison table: 03 Tetra Covalency And Catenation Propertie 982zqu vs related concepts in basic concept of organic chemistry",
-    "Step-by-step worked example layout for 03 Tetra Covalency And Catenation Propertie 982zqu"
-  ],
-  "summary": [
-    "03 Tetra Covalency And Catenation Propertie 982zqu is a fundamental concept in basic concept of organic chemistry that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Tetra Covalency And Catenation Propertie 982zqu involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Tetra Covalency And Catenation Propertie 982zqu alongside related concepts in basic concept of organic chemistry ensures strong conceptual clarity and exam readiness."
   ]
 }

@@ -28,60 +28,68 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Unsaturated hydrocarbons (Alkenes): preparation by dehydr… (Hydrocarbons, Chemistry, class-11-notes) covers Unsaturated hydrocarbons, Alkenes, : preparation by dehydration of alcohol. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Alkenes (**CₙH₂ₙ**) are built by elimination. **Dehydration**: ethanol loses water over **conc. H₂SO₄ at 170 °C** (Al₂O₃ at 350 °C) → **CH₂=CH₂ + H₂O** — but at 140 °C the same mix gives the ether, so the temperature is the discriminator. **Dehydrohalogenation**: **alc.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — quick idea map\"><title>Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Unsaturated hydrocarbons (Alkenes):</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">preparation by dehydr…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Unsaturated hydrocarbons</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Alkenes</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — quick idea map\"><title>Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Unsaturated hydrocarbons (Alkenes):</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">preparation by dehydr…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Elimination chemistry</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">makes π bonds: water out</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(acid, 170 °C), HX out…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Alkenes CnH2n, sp2 planar,</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">one C=C. Preparation: (1)</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dehydration of alcohols…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- C₂H₅OH → CH₂=CH₂ + H₂O</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(conc. H₂SO₄, 170 °C) -</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">CH₃CH₂Br + alc.…</text></svg>",
         "caption": "Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Unsaturated hydrocarbons\n• Alkenes"
+      "text": "- C₂H₅OH → CH₂=CH₂ + H₂O (conc. H₂SO₄, 170 °C) - CH₃CH₂Br + alc. KOH → CH₂=CH₂ + KBr + H₂O - HC≡CH + H₂ (Lindlar) → CH₂=CH₂ - CH₂=CH₂ + H₂ (Ni, 200 °C) → CH₃–CH₃"
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Unsaturated hydrocarbons\" as one blob → ✅ split into: unsaturated hydrocarbons, alkenes, : preparation by dehydration of alcohol.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
-    },
-    {
-      "label": "Special cases",
-      "text": "answer pattern for \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\": define → method → result. Structure earns the marks on 6–10 mark questions."
-    },
-    {
-      "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
-    },
-    {
-      "label": "Limitation",
       "text": "Covers only: unsaturated hydrocarbons, alkenes, : preparation by dehydration of alcohol, dehydrohalogenation (within Hydrocarbons).  ·  Out of scope here: topics of neighbouring units in Chemistry — don't mix them."
     },
     {
+      "label": "Special cases",
+      "text": "\"Alkenes are prepared by dehydration of alcohols, dehydrohalogenation of haloalkanes with alcoholic KOH, and partial catalytic hydrogenation of alkynes.\""
+    },
+    {
+      "label": "Solved",
+      "text": "***Sabotage as selectivity*** — poisoning palladium with quinoline slows it just enough to stop at the alkene: the Lindlar catalyst is controlled imperfection."
+    },
+    {
+      "label": "Limitation",
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
       "label": "Derivation",
-      "text": "**Scope.** Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — Hydrocarbons, Chemistry (class-11-notes).  ·  **Tested.** define it · list: unsaturated hydrocarbons, alkenes, : preparation by dehydration of alcohol, dehydrohalogenation · one worked example · one misconception each."
+      "text": "## 1. Topic Introduction — Making the π Bond Alkenes carry one C=C double bond (**CₙH₂ₙ**, sp², planar). Their preparations all create that π bond by **elimination**: water out of an alcohol (**dehydration**), HX out of a haloalkane (**dehydrohalogenation**), or H₂ off an alkyne (**catalytic hydrogenation** of the triple bond).  ·  ## 2. Fundamental Concepts ### 2.1 Dehydration of alcohols - **C₂H₅OH → CH₂=CH₂ + H₂O** with **conc. H₂SO₄ at ~170 °C** (or Al₂O₃, ~350 °C). - Ethanol → ethene; propan-2-ol → propene. Acid-catalysed: protonate –OH, lose water, lose H⁺. - Competing substitution (ethoxyethane) at lower temperature (~140 °C) — temperature decides. ### 2.2 Dehydrohalogenation (β-elimination) - **CH₃CH₂Br + alc.…"
     },
     {
       "label": "Shortcut",
-      "text": "• : preparation by dehydration of alcohol  ·  • Dehydrohalogenation"
+      "text": "H2SO4 170 °C = alkene; 140 °C = ether. alc. KOH = eliminate; aq. KOH = substitute. Lindlar = stop at alkene. Hydrogenation mechanism: adsorb → syn add → desorb."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\" with one example.  ·  compare \"Unsaturated hydrocarbons\" with the related idea from a neighbouring unit."
+      "text": "**NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethane is prepared from ethene by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃**, over **nickel at ~200 °C** (or Pt/Pd at room temperature).…  ·  **NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — By **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst, Ni ~200 °C or Pt/Pd at room temperature).…"
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "For the NEB 2023/2024 mechanism answer, name the three surface steps (adsorption, syn addition, desorption) — naming them is worth as much as the equation.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — topic mind map\"><title>Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Unsaturated hydrocarbons (Alkenes)</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Unsaturated hydrocarbons</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Alkenes</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">: preparation by</text><text x=\"240\" y=\"462\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">dehydration of alcohol</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Dehydrohalogenation</text><text x=\"660\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Unsaturated hydrocarbons (Alkenes): preparation by dehydr… — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Elimination chemistry makes π bonds: water out (acid, 170 °C), HX out (alcoholic base), H₂ partially off an alkyne (poisoned catalyst) — three exits, one alkene."
+    },
+    {
       "label": "Key points",
-      "text": "• Catalytic hydrogenation of alkyne"
+      "text": "Alkenes CnH2n, sp2 planar, one C=C. Preparation: (1) dehydration of alcohols — C2H5OH -> CH2=CH2 + H2O, conc H2SO4 ~170C or Al2O3 ~350C; 140C gives ether instead. (2) Dehydrohalogenation — CH3CH2Br + alc. KOH -> CH2=CH2 + KBr + H2O; beta-elimination; Saytzeff rule (more substituted alkene major).…"
+    },
+    {
+      "label": "Universal facts",
+      "text": "Saytzeff's rule is stability in disguise: the more substituted double bond is the more hyperconjugation-stabilised one, so elimination votes for it."
     },
     {
       "label": "More practice",
-      "text": "solve / apply for \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\" and verify the answer is plausible."
+      "text": "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration of ethanol** with **concentrated H₂SO₄ at about 170 °C** (or by passing vapour over **Al₂O₃ at ~350 °C**): **C₂H₅OH → CH₂=CH₂ + H₂O**.…"
     },
     {
       "label": "MCQ drill",
@@ -89,98 +97,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Alkenes.** one-line definition + one-line exam use.  ·  **: preparation by dehydration of alcohol.** one-line definition + one-line exam use.  ·  **Dehydrohalogenation.** one-line definition + one-line exam use."
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **Dehydration** | Loss of water from an alcohol to form C=C | ethanol → ethene (H₂SO₄, 170 °C) | | **Dehydrohalogenation** | Loss of HX from a haloalkane (alc.…  ·  ## 4. Detailed Explanation ### 4.1 Temperature controls the exit - Ethanol + H₂SO₄ at **170 °C** → elimination (ethene); at **140 °C** → substitution (ethoxyethane). Same reagents, different destiny — a classic exam discriminator.…  ·  ## 5. Comparison Tables **Three routes to alkenes** | Route | Reagents | Starting material | Notes | |---|---|---|---| | Dehydration | conc. H₂SO₄ 170 °C / Al₂O₃ 350 °C | alcohol | water leaves | | Dehydrohalogenation | alcoholic KOH, Δ | haloalkane | HX leaves; Saytzeff | | Partial hydrogenation | H₂ + Lindlar (or Na/NH₃) | alkyne | stop at C=C |"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: unsaturated hydrocarbons, alkenes, : preparation by dehydration of alcohol, dehydrohalogenation.  ·  one worked example for \"Unsaturated hydrocarbons (Alkenes): preparation by dehydr…\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Verified PYQs: NEB 2023 and NEB 2024 — ethane from ethene with reaction mechanism (assigned to this row).  ·  Prepare ethene from ethanol and from bromoethane, with conditions.  ·  Explain the surface mechanism of catalytic hydrogenation of ethene."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  **Catalytic hydrogenation of alkyne.** one-line definition + one-line exam use."
+      "text": "Why does the Lindlar catalyst stop at the alkene?  ·  ## 6. Common Confusions **170 vs 140 °C:** ethene at 170 °C, ether at 140 °C — quote both numbers to earn the mark.  ·  **Alc. KOH ≠ aq. KOH:** the solvent word decides elimination vs substitution."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Lindlar stops at the alkene:** full hydrogenation (Ni, excess H₂) gives the alkane — the poisoned catalyst is the point.  ·  ## 7. Exam Application **NEB 2023 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Ethene is converted to ethane by **catalytic hydrogenation**: **CH₂=CH₂ + H₂ → CH₃–CH₃** over **Ni (~200 °C) or Pt/Pd at room temperature**.…  ·  **NEB 2024 (verified PYQ): How is ethane prepared from ethene? Write the reaction mechanism. (3m)** — Same chemistry: **CH₂=CH₂ + H₂ → CH₃–CH₃** (Ni/Pt catalyst). Mechanism: H₂ is **adsorbed and dissociated** on the catalyst surface into H atoms; ethene adsorbs through its π bond; the surface H atoms add **one after…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): How is ethene obtained from ethanol?** — By **dehydration** with **conc. H₂SO₄ at ~170 °C**: **C₂H₅OH → CH₂=CH₂ + H₂O** (or over Al₂O₃ at ~350 °C). The acid protonates the –OH, water departs as a good leaving group, and a β-hydrogen is lost to form the π bond.…"
     }
-  ],
-  "keyPoints": [
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is a core concept in hydrocarbons.",
-    "Understanding 03 unsaturated hydrocarbons alkenes prepara w3e13f requires knowing its definition, conditions, and limitations.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f has direct applications in problem-solving and exam questions.",
-    "Key formulas and relationships associated with 03 unsaturated hydrocarbons alkenes prepara w3e13f must be memorized precisely.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f connects to neighbouring topics within hydrocarbons and broader chemistry.",
-    "Common exam patterns test the ability to define, illustrate, and differentiate 03 unsaturated hydrocarbons alkenes prepara w3e13f.",
-    "Practical examples solidify understanding of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f and its real-world relevance.",
-    "Misconceptions about 03 unsaturated hydrocarbons alkenes prepara w3e13f often arise from confusing it with similar concepts.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f follows systematic rules that can be applied step-by-step.",
-    "Review of 03 unsaturated hydrocarbons alkenes prepara w3e13f should include solved problems, practice questions, and self-assessment."
-  ],
-  "importantStatements": [
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is defined by its specific characteristics within hydrocarbons.",
-    "The conditions under which 03 unsaturated hydrocarbons alkenes prepara w3e13f applies are as important as the concept itself.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f can be understood through both theoretical explanation and practical examples.",
-    "Examiners frequently test 03 unsaturated hydrocarbons alkenes prepara w3e13f through application-based and comparison questions.",
-    "A clear grasp of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f builds the foundation for advanced topics in hydrocarbons."
-  ],
-  "importantNotes": [
-    "When studying 03 unsaturated hydrocarbons alkenes prepara w3e13f, always note the exceptions alongside the general rule.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f should be reviewed with at least one worked example per sub-point.",
-    "Link 03 unsaturated hydrocarbons alkenes prepara w3e13f back to prior knowledge in hydrocarbons for deeper retention.",
-    "Practice past NEB board questions on 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f to understand expected answer format."
-  ],
-  "examples": [
-    "Basic illustration of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f: apply the standard definition to a simple case.",
-    "Intermediate example: combine 03 unsaturated hydrocarbons alkenes prepara w3e13f with a related concept from hydrocarbons.",
-    "Exam-style problem: solve a question involving 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f under time pressure.",
-    "Real-world connection: show how 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f appears in everyday chemistry or industry."
-  ],
-  "practiceQuestions": [
-    "Define 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f and state two conditions required for it to occur.",
-    "Differentiate 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f from the most commonly confused concept in hydrocarbons.",
-    "Solve a numerical or structural problem involving 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f.",
-    "List three applications of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f in modern chemistry."
-  ],
-  "practice": [
-    "Write a one-paragraph summary of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f without looking at notes.",
-    "Draw a labelled diagram or flowchart illustrating 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f.",
-    "Create three flashcards covering definition, formula, and limitation of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f."
-  ],
-  "universalFacts": [
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is part of the NEB Class 11 hydrocarbons syllabus.",
-    "Every concept in hydrocarbons builds upon definitions established earlier in the chapter.",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is assessed through both short-answer and long-answer board questions.",
-    "Understanding 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f improves performance across the entire hydrocarbons unit.",
-    "Revision of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f should happen at least twice before the final exam."
-  ],
-  "confusion": [
-    "Students often confuse 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f with closely related concepts in hydrocarbons — focus on distinguishing features.",
-    "The scope of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is sometimes overstated; remember its precise boundaries.",
-    "Applying 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f outside its stated conditions leads to incorrect results.",
-    "Mixing up terminology between 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f and neighbouring topics causes avoidable exam errors."
-  ],
-  "mcs": [
-    "Which of the following best defines 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f? A) Correct definition B) Partial definition C) Wrong concept D) Unrelated term — Answer: A",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is primarily studied under which branch of hydrocarbons? A) Organic B) Inorganic C) Physical D) Analytical — Answer varies by topic",
-    "A common misconception about 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is: A) It applies universally B) It has specific conditions C) It was disproven D) It is unrelated to hydrocarbons — Answer: B",
-    "Which example correctly illustrates 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f? A) Correct example B) Counter-example C) Unrelated process D) Different concept — Answer: A",
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f differs from similar concepts mainly in: A) Molecular weight B) Conditions of applicability C) Color D) State of matter — Answer: B"
-  ],
-  "animation3D": [
-    "3D rotation model showing the spatial arrangement relevant to 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f.",
-    "Step-by-step animated derivation of the key relationship in 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f.",
-    "Interactive toggle between correct and incorrect representations of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f."
-  ],
-  "motionGraphics": [
-    "Animated flowchart showing decision process for identifying 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f.",
-    "Side-by-side comparison animation of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f vs commonly confused concept.",
-    "Timelapse build-up of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f from prerequisite knowledge in hydrocarbons."
-  ],
-  "visualType": [
-    "Labelled structural diagram for 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f",
-    "Comparison table: 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f vs related concepts in hydrocarbons",
-    "Step-by-step worked example layout for 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f"
-  ],
-  "summary": [
-    "03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f is a fundamental concept in hydrocarbons that describes specific chemical behaviour under defined conditions.",
-    "Mastering 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f involves understanding its definition, applying its rules, recognising its limitations, and practising exam-style problems.",
-    "This topic appears regularly in NEB board examinations through definition, differentiation, and application questions.",
-    "Consistent revision of 03 Unsaturated Hydrocarbons Alkenes Prepara W3e13f alongside related concepts in hydrocarbons ensures strong conceptual clarity and exam readiness."
   ]
 }

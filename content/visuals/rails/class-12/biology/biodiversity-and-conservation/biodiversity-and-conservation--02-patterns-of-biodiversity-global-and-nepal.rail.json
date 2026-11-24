@@ -24,64 +24,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Patterns of biodiversity — global and Nepal (Biodiversity and Conservation, Biology, class-12-notes) covers Patterns of biodiversity — global, Nepal. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+      "text": "Biodiversity is richest toward the equator because of time, stability and energy. The number of species grows with area as S = c A^z, more slowly than area itself. Nepal's richness comes from a huge altitude range and from lying in the Himalaya and Indo-Burma hotspots, each of which must combine high endemism with heavy habitat loss.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Patterns of biodiversity — global and Nepal — quick idea map\"><title>Patterns of biodiversity — global and Nepal — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Patterns of biodiversity — global and Nepal</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Patterns of biodiversity</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">— global</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">• Nepal</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Patterns of biodiversity — global and Nepal — quick idea map\"><title>Patterns of biodiversity — global and Nepal — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Patterns of biodiversity — global and Nepal</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Latitudinal diversity</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">gradient</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Species-area relationship</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Latitudinal gradient:</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">species richness generally</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">increases toward the</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Species-area law: S = c</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A^z, and log S = log c + z</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">log A.</text></svg>",
         "caption": "Patterns of biodiversity — global and Nepal — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "• Patterns of biodiversity — global\n• Nepal"
+      "text": "S = c A^z, where S is species number, A is area, c is a constant and z is the slope.\nlog S = log c + z log A.\nHotspot thresholds: endemic vascular plants >= 1500, and original habitat lost > 70 percent."
     },
     {
       "label": "Conditions",
-      "text": "❌ treat \"Patterns of biodiversity — global\" as one blob → ✅ split into: patterns of biodiversity — global, nepal.  ·  ❌ state the rule without its limit → ✅ note when it applies / stops applying."
+      "text": "A hotspot is not simply a place with many species. It also requires many endemics and severe habitat loss. A well-preserved forest with few unique species is not a hotspot.  ·  The species-area curve does not say that every extra hectare adds the same number of species. The rise flattens: the first hectares add many species, later hectares add fewer."
     },
     {
       "label": "Special cases",
-      "text": "answer pattern for \"Patterns of biodiversity — global and Nepal\": define → method → result. Structure earns the marks on 6–10 mark questions."
+      "text": "Quote z as a range, not a single number: about 0.1-0.2 locally, about 0.6-1.2 for very large areas.  ·  Do not call every protected forest a hotspot. Protected status and hotspot status are different ideas."
     },
     {
       "label": "Solved",
-      "text": "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+      "text": "Amazon rainforest and Indo-Pacific coral reefs illustrate high equatorial richness.  ·  Chitwan's lowland forest and the Annapurna mid-hills hold different communities along Nepal's altitude gradient."
     },
     {
       "label": "Limitation",
-      "text": "Covers only: patterns of biodiversity — global, nepal (within Biodiversity and Conservation).  ·  Out of scope here: topics of neighbouring units in Biology — don't mix them."
+      "text": "Equatorial richness is not caused only by heat. Time, climatic stability and productivity act together. A hot desert can be species-poor.  ·  Endemic means the species is found nowhere else, not merely that it is rare inside Nepal. A widespread species that is uncommon in one valley is not an endemic."
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Patterns of biodiversity — global and Nepal — Biodiversity and Conservation, Biology (class-12-notes).  ·  **Tested.** define it · list: patterns of biodiversity — global, nepal · one worked example · one misconception each."
+      "text": "Plot the idea of log S against log A and mark z as the slope.  ·  List the two hotspot tests and apply them to a made-up region."
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Patterns of biodiversity — global and Nepal\" and verify the answer is plausible.  ·  define + example each sub-idea: patterns of biodiversity — global, nepal."
+      "text": "Equator = more species. Poles = fewer. Remember time + stability + energy.  ·  Hotspot = many unique plants AND most of the habitat already gone. Both tests are required."
     },
     {
       "label": "Board question",
-      "text": "state + explain the main idea of \"Patterns of biodiversity — global and Nepal\" with one example.  ·  compare \"Patterns of biodiversity — global\" with the related idea from a neighbouring unit."
+      "text": "Why does a log-log plot of species against area become a straight line?  ·  Explain why z is larger for islands and continents than for small sample plots."
     },
     {
       "label": "Hints",
-      "text": "❌ no diagram → ✅ add one labelled figure / structured list.",
+      "text": "Draw or describe the species-area curve and write both the power form and the log form.  ·  Name Nepal's two hotspots and the two criteria, with the numbers 1,500 and 70 percent.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Patterns of biodiversity — global and Nepal — topic mind map\"><title>Patterns of biodiversity — global and Nepal — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Patterns of biodiversity — global and Nepal</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Patterns of biodiversity</text><text x=\"240\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">— global</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Nepal</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Patterns of biodiversity — global and Nepal — topic mind map of this topic's own sub-topics"
       }
     },
     {
+      "label": "Quick concepts",
+      "text": "Latitudinal diversity gradient  ·  Species-area relationship  ·  Slope z  ·  Biodiversity hotspot criteria"
+    },
+    {
+      "label": "Key points",
+      "text": "Latitudinal gradient: species richness generally increases toward the equator.  ·  Species-area law: S = c A^z, and log S = log c + z log A.  ·  z is shallow (about 0.1-0.2) for local samples and steeper for continents and islands.  ·  Nepal lies in two hotspots, the Himalaya and Indo-Burma."
+    },
+    {
+      "label": "Universal facts",
+      "text": "There are 36 recognised global biodiversity hotspots. Two of them, Himalaya and Indo-Burma, include parts of Nepal.  ·  More than half of the world's species live in tropical regions, which cover a much smaller share of the land surface."
+    },
+    {
+      "label": "More practice",
+      "text": "A region has 2,000 endemic plants but has lost only 20 percent of its forest. Is it a hotspot? Say why."
+    },
+    {
+      "label": "Extra solved",
+      "text": "A 10-fold increase in area does not give a 10-fold increase in species, because z is well below 1."
+    },
+    {
       "label": "MCQ drill",
-      "text": "A common examiner point on \"Patterns of biodiversity — global and Nepal\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
+      "text": "Species richness of most groups generally increases toward the → B  ·  The species-area relationship is written as → B"
     },
     {
       "label": "Study notes",
-      "text": "**Nepal.** one-line definition + one-line exam use."
+      "text": "Species richness is not spread evenly. The strongest global pattern is the latitudinal gradient: the number of species of most groups rises from the poles toward the equator, so tropical forests and coral reefs hold far more species than tundra or boreal forest.  ·  Two ideas explain that gradient. The tropics have had a longer uninterrupted time for speciation, and a more stable climate, so extinction rates stay lower. Higher solar energy also supports higher productivity and, through that, more niches.  ·  The species-area relationship says that larger areas hold more species. Plotted as species against area it is a rectangular hyperbola, S = c A^z. On a log-log graph it becomes a straight line, log S = log c + z log A."
     },
     {
       "label": "More ideas",
-      "text": "one worked example for \"Patterns of biodiversity — global and Nepal\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+      "text": "Nepal's altitude gradient  ·  Hotspot rule: at least 1,500 endemic vascular plants and over 70 percent habitat loss.  ·  Pair each pattern with a Nepal example: latitude (Terai versus alpine), area (larger continuous forest versus a fragment), hotspot (Himalaya, Indo-Burma)."
+    },
+    {
+      "label": "More ideas",
+      "text": "The log form is the one used to read z as the slope of a straight line.  ·  Alexander von Humboldt described the species-area relationship: within a region, species richness increases with the area explored, but with a decreasing slope.  ·  Tropics hold more species because of greater evolutionary time, climatic stability and higher productivity."
+    },
+    {
+      "label": "More ideas",
+      "text": "Nepal's biodiversity is high for its area because of the sharp altitude range from the Terai to the high Himalaya.  ·  State the latitudinal gradient and give one reason it exists.  ·  Write the species-area equation and say what z means."
+    },
+    {
+      "label": "More ideas",
+      "text": "Name the two hotspots that include Nepal and the two numerical tests for a hotspot.  ·  The slope z is about 0.1 to 0.2 when the areas are samples inside one continent. It rises to about 0.6 to 1.2 for whole continents or islands, because isolation adds species that occur nowhere else.  ·  Nepal is small in area but sits where two global biodiversity hotspots meet: the Himalaya and the Indo-Burma region. A hotspot must have at least 1,500 endemic vascular plant species and must have lost more than 70 percent of its original habitat."
+    },
+    {
+      "label": "More ideas",
+      "text": "Inside Nepal, richness is highest in the mid-hills and the tropical lowland forests, while many endemics are concentrated in the high mountains. Altitude, rainfall and the east-west moisture gradient all change which species can live there.  ·  # Patterns of biodiversity — global and Nepal ## 1. Introduction Opening frame for **Patterns of biodiversity — global and Nepal** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I).…  ·  Biodiversity is not spread evenly. Two great patterns: the **latitudinal gradient** — species richness rises from the poles toward the tropics (the Amazon holds more tree species than all of Europe) — and the **species–area relationship**, where larger areas hold more species following log S = log C + Z log A.…"
     }
   ]
 }

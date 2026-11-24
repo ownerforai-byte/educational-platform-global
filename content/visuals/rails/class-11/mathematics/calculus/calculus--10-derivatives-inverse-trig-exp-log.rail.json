@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Every inverse trigonometric derivative takes the form 'one over the derivative of its partner', with a sign that is negative for arccos and arccot. The exponential $e^x$ is uniquely self-derivative, while $a^x$ carries an extra $\\ln a$ factor — the same factor that differentiating a logarithm removes, which is why logs and exponentials are paired.…",
+      "text": "Inverse trigonometric, exponential and logarithmic derivatives come from one engine — (f⁻¹)′ = 1/f′ — plus branch discipline and the Pythagorean dictionary; every singularity of an inverse derivative is the original's horizontal tangent made visible. The exponential family orbits e: the self-replicating base pays no ln a tax, every other base wears one, and the log's reciprocal rule completes the inverse pair.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Inverse Trigonometric, Exponential and Logarithmic — quick idea map\"><title>Derivatives: Inverse Trigonometric, Exponential and Logarithmic — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Derivatives: Inverse Trigonometric,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Exponential and Logarithmic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Arccos and arccot</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivatives are negative;</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the others are positive.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Only $e^x$ is its own</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivative — $a^x$ needs</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the $\\ln a$ factor.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Arccos and arccot</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivatives are negative;</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the others are positive.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Only $e^x$ is its own</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">derivative — $a^x$ needs</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the $\\ln a$ factor.</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Inverse Trigonometric, Exponential and Logarithmic — quick idea map\"><title>Derivatives: Inverse Trigonometric, Exponential and Logarithmic — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Derivatives: Inverse Trigonometric,</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Exponential and Logarithmic</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">One engine and branch</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">discipline replace six</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">memorisations; e is the</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Inverse-engine rule:</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(f^-1)'(f(x)) = 1/f'(x),</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">f' != 0 - derives the</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- (f⁻¹)′(f(x)) = 1/f′(x) -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(tan⁻¹x)′ = 1/(1 + x²);</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(aˣ)′ = aˣ·ln a</text></svg>",
         "caption": "Derivatives: Inverse Trigonometric, Exponential and Logarithmic — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "$(\\arcsin x)' = \\frac1{\\sqrt{1-x^2}}$, $(\\arccos x)' = -\\frac1{\\sqrt{1-x^2}}$\n$(\\arctan x)' = \\frac1{1+x^2}$, $(\\operatorname{arccot}x)' = -\\frac1{1+x^2}$\n$(\\operatorname{arcsec}x)' = \\frac1{|x|\\sqrt{x^2-1}}$, $(\\operatorname{arccsc}x)' = -\\frac1{|x|\\sqrt{x^2-1}}$",
+      "text": "- (f⁻¹)′(f(x)) = 1/f′(x) - (tan⁻¹x)′ = 1/(1 + x²); (aˣ)′ = aˣ·ln a",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Inverse Trigonometric, Exponential and Logarithmic — formula board\"><title>Derivatives: Inverse Trigonometric, Exponential and Logarithmic — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Derivatives: Inverse Trigonometric, Exponential and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Logarithmic</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$(\\arcsin x)' = \\frac1{\\sqrt{1-x^2}}$, $(\\arccos x)' =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">-\\frac1{\\sqrt{1-x^2}}$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$(\\arctan x)' = \\frac1{1+x^2}$,</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$(\\operatorname{arccot}x)' = -\\frac1{1+x^2}$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$(\\operatorname{arcsec}x)' = \\frac1{|x|\\sqrt{x^2-1}}$,</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$(\\operatorname{arccsc}x)' = -\\frac1{|x|\\sqrt{x^2-1}}$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Derivatives: Inverse Trigonometric, Exponential and Logarithmic — formula board\"><title>Derivatives: Inverse Trigonometric, Exponential and Logarithmic — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Derivatives: Inverse Trigonometric, Exponential and</text><text x=\"450\" y=\"88\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Logarithmic</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- (f⁻¹)′(f(x)) = 1/f′(x) - (tan⁻¹x)′ = 1/(1 + x²); (aˣ)′</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">= aˣ·ln a</text></svg>",
         "caption": "Derivatives: Inverse Trigonometric, Exponential and Logarithmic — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Arccos and arccot derivatives are negative; the others are positive.  ·  Only $e^x$ is its own derivative — $a^x$ needs the $\\ln a$ factor."
+      "text": "***The branch decides the sign*** - on y in [-pi/2, pi/2], cos y >= 0 forces the positive root in (sin^-1)' - the ± temptation dies at the branch."
     },
     {
       "label": "Limitation",
@@ -63,23 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "Inverse trig derivative = 1 over the partner's derivative, then adjust the sign for the 'co' functions (cos, cot, csc, sec).  ·  For $a^x$, always write $a^x\\ln a$ — omitting $\\ln a$ is the common slip."
+      "text": "Derive, do not recall: state the engine, name the branch, read the sign."
     },
     {
       "label": "Board question",
-      "text": "Differentiating inverse trig and logarithmic expressions with the chain rule is a reliable 3-mark question."
+      "text": "**NEB-style (6m): Derive (tan⁻¹x)′ = 1/(1 + x²) using the inverse-engine rule, stating the branch.** — **Setup:** y = tan⁻¹x ⟹ x = tan y with y ∈ (−π/2, π/2) — the principal branch, on which tan is one-to-one and sec y > 0. **Engine:** (tan⁻¹)′(x) = 1/(tan)′(y) = 1/sec²y.…  ·  **NEB-style (5m): Differentiate y = 5ˣ and y = log₃x, making each base tax explicit.** — **Exponential:** (5ˣ)′ = 5ˣ·ln 5 — the general-base tax ln 5 ≈ 1.609; only e pays none. **Logarithm:** (log₃x)′ = 1/(x·ln 3) — the same tax in the denominator; equivalently log₃x = ln x/ln 3 and the constant multiple rule delivers it.…"
     },
     {
       "label": "Hints",
-      "text": "Topic anchor: The derivative of $ ln$ inverts the exponent since $e^x$ is its own derivative, $ frac{d}{dx} ln x = frac1x$ follows by inverse-function differentiation."
+      "text": "State domains with inverse trig derivatives - |x| < 1 or |x| > 1 is part of the answer."
     },
     {
       "label": "Quick concepts",
-      "text": "The arcsec and arccsc derivatives require an absolute value on $x$."
+      "text": "One engine and branch discipline replace six memorisations; e is the unique base whose derivative is itself."
+    },
+    {
+      "label": "Key points",
+      "text": "Inverse-engine rule: (f^-1)'(f(x)) = 1/f'(x), f' != 0 - derives the whole inverse trig table. Entries: sin^-1 -> 1/sqrt(1-x^2); tan^-1 -> 1/(1+x^2); sec^-1 -> 1/(|x|sqrt(x^2-1)); co-functions carry minus signs; branches supply positivity.…"
     },
     {
       "label": "Universal facts",
-      "text": "Compound interest is the reason $e$ matters: continuous growth is $e^{rt}$, and the derivative of the exponential is what makes that growth self-similar in time.  ·  The curve $y=\\ln x$ is the inverse of $y=e^x$ and shares its steepness there, because a function and its inverse are reflections in $y=x$ and have reciprocal slopes."
+      "text": "The ln a factor is the general-base tax; e is the unique base that pays none."
+    },
+    {
+      "label": "More practice",
+      "text": "**NEB-style (5m): Differentiate y = sin⁻¹(3x) and state the domain of the answer.** — **Chain rule (outer table, inner derivative):** (sin⁻¹)′(u) = 1/√(1 − u²) with u = 3x, u′ = 3 ⟹ y′ = 3/√(1 − 9x²).…  ·  **NEB-style (6m): Using the inverse-engine rule, derive (sec⁻¹x)′ = 1/(|x|√(x² − 1)) and explain the absolute value.** — **Setup:** y = sec⁻¹x ⟹ x = sec y, y ∈ [0, π] \\\\ {π/2} (the principal branch). **Engine:** (sec⁻¹)′(x) = 1/(sec)′(y) = 1/(sec y·tan y) = 1/(x·tan y).…"
     },
     {
       "label": "MCQ drill",
@@ -87,23 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Inverse trigonometric derivatives all carry a denominator:** $\\frac{d}{dx}\\arcsin x = \\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$. Arccos carries a minus sign, which is the detail most often lost.  ·  **The remaining three follow the same shape:** $\\frac{d}{dx}\\operatorname{arccot}x = -\\frac1{1+x^2}$, $\\frac{d}{dx}\\operatorname{arcsec}x = \\frac1{|x|\\sqrt{x^2-1}}$, $\\frac{d}{dx}\\operatorname{arccsc}x = -\\frac1{|x|\\sqrt{x^2-1}}$. The absolute value on $x$ is required, not optional.  ·  **Exponential:** $\\frac{d}{dx}e^x = e^x$ is unique in being its own derivative. For $a^x$ use $\\frac{d}{dx}a^x = a^x\\ln a$, so $a^x$ is its own derivative only when $a=e$."
+      "text": "## 1. Topic Introduction — The Companion Doorway to Inverse Trig, Exp and Log Derivatives This canonical is the **short-form doorway** to derivatives of inverse trigonometric, exponential and logarithmic functions: the inverse-engine rule and the base-e story in one page.…  ·  ## 2. Theorem Mirror - **Inverse-engine rule:** if f is invertible and differentiable with f′ ≠ 0, then (f⁻¹)′(f(x)) = 1/f′(x) — differentiate the identity f⁻¹(f(x)) = x by the chain rule. - **Inverse trig table:** (sin⁻¹x)′ = 1/√(1−x²); (cos⁻¹x)′ = −1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); (cot⁻¹x)′ = −1/(1+x²); (sec⁻¹x)′ = 1/(|x|√(x²−1)); (cosec⁻¹x)′ = −1/(|x|√(x²−1)).…  ·  ## 3. Deep Conceptual — One Engine, Six Derivatives - The inverse-engine rule derives the **entire inverse trig table**: sin⁻¹ via 1/cos y = 1/√(1−x²) (the positive root forced by the principal branch); tan⁻¹ via 1/sec²y = cos²y = 1/(1+x²). One theorem plus branch discipline replaces six memorisations.…"
     },
     {
       "label": "More ideas",
-      "text": "$(e^x)' = e^x$, $(a^x)' = a^x\\ln a$  ·  $(\\ln x)' = \\frac1x$, $(\\log_a x)' = \\frac1{x\\ln a}$  ·  Statement 1: $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  Every singularity of an inverse derivative is a horizontal tangent of the original function.  ·  Derive (tan⁻¹x)′ = 1/(1 + x²) from the inverse-engine rule."
     },
     {
       "label": "More ideas",
-      "text": "Statement 2: $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$.  ·  Statement 3: $\\frac{d}{dx}e^x = e^x$ but $\\frac{d}{dx}a^x = a^x\\ln a$.  ·  Statement 4: $\\frac{d}{dx}\\ln x = \\frac1x$."
+      "text": "Differentiate y = 5ˣ and y = log₃x.  ·  Differentiate y = sin⁻¹(3x).  ·  ## 4. Deep Conceptual — Branches Supply the Signs - The inverse trig derivatives' signs come from the **principal branches**: on y ∈ [−π/2, π/2], cos y ≥ 0, so the square root in (sin⁻¹)′ is positive; the co-function minus signs are the branch's mirror. Sign errors in this table are almost always branch errors.…"
     },
     {
       "label": "More ideas",
-      "text": "Statement 5: The arcsec and arccsc derivatives involve $|x|$ in the denominator.  ·  **Logarithms:** $\\frac{d}{dx}\\ln x = \\frac1x$ and $\\frac{d}{dx}\\log_a x = \\frac1{x\\ln a}$. The identity $\\frac{d}{dx}\\log_a u = \\frac{u'}{u\\ln a}$ is what makes $\\log$ a natural tool for exponential-growth problems, since $\\frac{d}{dx}a^x$ contains exactly the factor $\\ln a$ that $\\log$ removes.  ·  **Log of a product splits into a sum:** $\\ln(xy)=\\ln x+\\ln y$, so $\\frac{d}{dx}\\ln(xy)=\\frac1y+\\frac1x$ — the chain rule applied to a product, which is a classic exam step."
-    },
-    {
-      "label": "More ideas",
-      "text": "**The derivative of $\\ln$ inverts the exponent:** since $e^x$ is its own derivative, $\\frac{d}{dx}\\ln x = \\frac1x$ follows by inverse-function differentiation. The same logic gives $\\frac{d}{dx}\\arctan x$ once $\\frac{d}{dx}\\tan x=\\sec^2x$ is known."
+      "text": "## 5. Worked Example Types - **Type A — engine derivation:** derive one inverse trig entry from the rule, stating the branch. - **Type B — base conversions:** (aˣ)′ and (log_a x)′ with the ln a tax made explicit. - **Type C — chain-wrapped entries:** sin⁻¹(u), ln(u), eᵘ with the inner derivative attached.…  ·  ## 6. Common Confusions **\"1/√(1−x²) needs a ±\":** the branch decides — principal branches make it positive. **\"(aˣ)′ = aˣ\":** only for a = e; the ln a tax is otherwise mandatory."
     }
   ]
 }

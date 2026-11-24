@@ -48,11 +48,11 @@
     },
     {
       "label": "Solved",
-      "text": "Example 1: Real-world application of Wheatstone and Meter Bridge  ·  Example 2: Practical demonstration of Wheatstone and Meter Bridge concepts"
+      "text": "Example 2: Practical demonstration of Wheatstone and Meter Bridge concepts  ·  Example 4: Diagram-based question on Wheatstone and Meter Bridge"
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Wheatstone bridge and meter bridge are completely different instruments.' ✅ A meter bridge is essentially a *Wheatstone bridge* with a uniform 1-meter wire replacing two arms."
+      "text": "❌ 'Wheatstone bridge and meter bridge are completely different instruments.' ✅ A meter bridge is essentially a *Wheatstone bridge* with a uniform 1-meter wire replacing two arms.  ·  Balance is zero galvanometer current, not zero battery current."
     },
     {
       "label": "Derivation",
@@ -96,7 +96,7 @@
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Wheatstone and Meter Bridge  ·  Example 5: Application in daily life involving Wheatstone and Meter Bridge"
+      "text": "Example 5: Application in daily life involving Wheatstone and Meter Bridge"
     },
     {
       "label": "MCQ drill",
@@ -104,11 +104,15 @@
     },
     {
       "label": "Study notes",
-      "text": "**Wheatstone and Meter Bridge:** This topic covers the fundamental concepts of wheatstone and meter bridge in the physics curriculum.  ·  Understanding wheatstone and meter bridge is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to wheatstone and meter bridge should be memorized and practiced regularly."
+      "text": "A Wheatstone bridge has four resistances P, Q, R and S, with a galvanometer across one diagonal and the battery across the other. At balance the galvanometer current is zero and P/Q = R/S.  ·  The metre bridge is that bridge with a uniform 100 cm wire as two of the arms. If the jockey balances at length l1 from the left, the left wire resistance is proportional to l1 and the right to l2 = 100 − l1.  ·  If the known resistance R is in the left gap and the unknown X is in the right gap, the balance condition is X/R = l2/l1, or the swapped form if the gaps are swapped. The diagram decides which length is which."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Wheatstone and Meter Bridge and other topics  ·  Key Formula 5: Important relation in Wheatstone and Meter Bridge  ·  Note 3: Practice numerical problems regularly for mastery of Wheatstone and Meter Bridge"
+      "text": "Concept 5: Connection between Wheatstone and Meter Bridge and other topics  ·  Key Formula 5: Important relation in Wheatstone and Meter Bridge  ·  l1 and l2 must match the gaps in the formula."
+    },
+    {
+      "label": "More ideas",
+      "text": "The wire ratio is not the resistance ratio if the wire is not uniform.  ·  100 cm is the wire, not the length of the unknown resistor.  ·  Note 3: Practice numerical problems regularly for mastery of Wheatstone and Meter Bridge"
     },
     {
       "label": "More ideas",
@@ -120,11 +124,7 @@
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Cross-check your answers using alternative methods for Wheatstone and Meter Bridge  ·  Statement 1: Definition of Wheatstone and Meter Bridge  ·  Statement 2: Theorem related to Wheatstone and Meter Bridge"
-    },
-    {
-      "label": "More ideas",
-      "text": "Statement 3: Condition for Wheatstone and Meter Bridge to be valid  ·  Statement 4: Principle governing Wheatstone and Meter Bridge  ·  Statement 5: Corollary or consequence of Wheatstone and Meter Bridge"
+      "text": "Note 5: Cross-check your answers using alternative methods for Wheatstone and Meter Bridge  ·  Trick 3: Dimensional analysis shortcut for Wheatstone and Meter Bridge  ·  Trick 4: Memory aid for Wheatstone and Meter Bridge formulas"
     }
   ]
 }

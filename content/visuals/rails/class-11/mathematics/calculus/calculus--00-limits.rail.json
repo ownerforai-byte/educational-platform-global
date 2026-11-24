@@ -26,18 +26,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "A limit fixes the value a function approaches as $x$ nears $a$, independently of whether $f(a)$ is defined, which is why $\\frac{x^2-4}{x-2}$ is undefined at 2 yet has limit 4. A two-sided limit requires matching one-sided limits. Forms such as $0/0$ are not answers but signals that the function must first be rewritten by factorising, rationalising, or using $\\lim\\frac{\\sin x}{x}=1$.…",
+      "text": "The introductory drill builds the subject's reflexes slowly: substitute where continuity is licensed, read 0/0 as a transform signal, run the four-line rhythm — form, transform, licence, value — and cross-check against the matching star or a numeric preview.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits of a Function — quick idea map\"><title>Limits of a Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits of a Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Informal and epsilon-delta</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">meanings of a limit, and</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">why $x=a$ is excluded.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Left-hand, right-hand and</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">two-sided limits, and the</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">jump discontinuity.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">A limit describes the</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value approached, not the</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">value taken at the point.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The two-sided limit exists</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">only if the one-sided</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">limits are equal and</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits of a Function — quick idea map\"><title>Limits of a Function — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Limits of a Function</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">The licence line</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(&quot;for x != a&quot;)</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">is where the definition is</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Starter kit: substitution</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">where continuous; 0/0 as</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">the transform signal;…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- x² − a² = (x − a)(x +</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">a); x³ − a³ = (x − a)(x² +</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ax + a²) - sin u/u → 1;…</text></svg>",
         "caption": "Limits of a Function — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Limit: $\\lim_{x \\to a} f(x) = L$\nEpsilon-delta: $|f(x)-L|<\\varepsilon$ whenever $0<|x-a|<\\delta$\nOne-sided: $\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L$",
+      "text": "- x² − a² = (x − a)(x + a); x³ − a³ = (x − a)(x² + ax + a²) - sin u/u → 1; (eᵘ − 1)/u → 1 (u → 0)",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits of a Function — formula board\"><title>Limits of a Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Limits of a Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Limit: $\\lim_{x \\to a} f(x) = L$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Epsilon-delta: $|f(x)-L|&lt;\\varepsilon$ whenever</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$0&lt;|x-a|&lt;\\delta$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">One-sided: $\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L$</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Limits of a Function — formula board\"><title>Limits of a Function — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Limits of a Function</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- x² − a² = (x − a)(x + a); x³ − a³ = (x − a)(x² + ax +</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">a²) - sin u/u → 1; (eᵘ − 1)/u → 1 (u → 0)</text></svg>",
         "caption": "Limits of a Function — formula board of this topic's own formulas"
       }
     },
@@ -51,7 +51,7 @@
     },
     {
       "label": "Solved",
-      "text": "Instantaneous speed: the speedometer value is a limit of average velocities taken over a shrinking interval.  ·  Camera shutter speeds: at very short exposures the 'instant' is really an average over sensor read-out time, so a limit is only ever approached."
+      "text": "***The numeric preview*** - f(2.9), f(2.99), f(2.999) reading 5.9, 5.99, 5.999 previews lim = 6 before any algebra."
     },
     {
       "label": "Limitation",
@@ -63,31 +63,31 @@
     },
     {
       "label": "Shortcut",
-      "text": "$0/0$ fix order: factorise, rationalise (conjugate), divide by the highest vanishing power, then use $\\lim\\frac{\\sin x}{x}=1$.  ·  Degree check at infinity: smaller numerator degree gives 0, equal degrees gives the ratio of leading coefficients, larger gives $\\pm\\infty$."
+      "text": "Write all four lines even when the algebra is easy - the rhythm is the marks."
     },
     {
       "label": "Board question",
-      "text": "Q1. State the $\\varepsilon$-$\\delta$ definition of $\\lim_{x\\to a}f(x)=L$ and explain why $0<|x-a|$ appears.  ·  Q2. Evaluate $\\lim_{x\\to4}\\frac{x^2-16}{x-4}$ and $\\lim_{x\\to5}\\frac{x-2}{x-5}$, stating which is undefined at the point."
+      "text": "**NEB-style (4m): Evaluate lim_{x→7} (2x − 3), citing the theorem.** — **Theorem:** every polynomial is continuous on ℝ ⟹ lim_{x→a} P(x) = P(a) — direct substitution licensed. **Value:** 2(7) − 3 = **11**.…  ·  **NEB-style (5m): Evaluate lim_{x→1} (x² − 1)/(x − 1) with the four-line rhythm.** — **Form:** (1 − 1)/0 = **0/0** — indeterminate, transform required. **Transform:** x² − 1 = (x − 1)(x + 1) ⟹ expression = x + 1 for x ≠ 1. **Licence:** the cancellation is valid for x ≠ 1 — exactly the punctured neighbourhood the limit reads.…"
     },
     {
       "label": "Hints",
-      "text": "The epsilon-delta definition and evaluation of $0/0$ forms are the most frequently asked 2–3 mark items from this topic."
+      "text": "Preview numerically when unsure: f(a + 0.01) and f(a - 0.01) bracket the answer."
     },
     {
       "label": "Quick concepts",
-      "text": "Informal and epsilon-delta meanings of a limit, and why $x=a$ is excluded.  ·  Left-hand, right-hand and two-sided limits, and the jump discontinuity.  ·  Indeterminate forms and the rewrites that resolve them.  ·  Infinite limits, vertical asymptotes and horizontal asymptotes."
+      "text": "The licence line (\"for x != a\") is where the definition is understood - the excluded point makes cancellation legal."
     },
     {
       "label": "Key points",
-      "text": "A limit describes the value approached, not the value taken at the point.  ·  The two-sided limit exists only if the one-sided limits are equal and finite.  ·  $0/0$ signals failure of substitution, not a result of zero.  ·  Infinity is never a value; it denotes unbounded growth or a vertical asymptote."
+      "text": "Starter kit: substitution where continuous; 0/0 as the transform signal; difference-of-powers factoring; single conjugate; first stars sin u/u and (e^u-1)/u. Four-line rhythm: form, transform, licence, value - each line is a theorem.…"
     },
     {
       "label": "Universal facts",
-      "text": "The derivative is itself a limit, $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$, so differential calculus rests entirely on the limit concept.  ·  A speedometer reports a limit, not an average: it is the limit of average velocities as the averaging interval shrinks to zero."
+      "text": "Every hard limit technique is a faster version of a rhythm learned on these starter problems."
     },
     {
       "label": "More practice",
-      "text": "Q3. Find the horizontal and vertical asymptotes of $y=\\frac{2x+1}{x^2-4}$."
+      "text": "**NEB-style (5m): Evaluate lim_{h→0} ((2 + h)² − 4)/h and connect the answer to a derivative.** — **Form:** (4 − 4)/0 = **0/0** ✓. **Transform:** (2 + h)² − 4 = 4 + 4h + h² − 4 = h(4 + h) ⟹ expression = 4 + h for h ≠ 0. **Value:** lim = **4**.…  ·  **NEB-style (6m): For f(x) = (x³ − 1)/(x − 1), make a numeric preview table near x = 1, state the limit, and verify algebraically.** — **Preview:** f(0.9) = (0.729 − 1)/(−0.1) = 2.71; f(0.99) = (0.970299 − 1)/(−0.01) = 2.9701; f(1.01) = (1.030301 − 1)/(0.01) = 3.0301 ⟹ the values bracket **3** from…"
     },
     {
       "label": "MCQ drill",
@@ -95,27 +95,19 @@
     },
     {
       "label": "Study notes",
-      "text": "**Meaning of a limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ gets arbitrarily close to $a$ (from either side, and without ever requiring $x = a$) the value of $f(x)$ gets arbitrarily close to $L$. The point $x=a$ may be undefined and the limit still exist — which is why $\\frac{x^2-4}{x-2}$, undefined at 2, has limit 4.  ·  **The $\\varepsilon$-$\\delta$ definition:** for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| < \\varepsilon$. The condition $0 < |x-a|$ EXCLUDES the point itself, and that exclusion is exactly what makes a limit independent of $f(a)$.  ·  **One-sided limits:** $\\lim_{x \\to a^-}$ approaches from below, $\\lim_{x \\to a^+}$ from above. The two-sided limit exists **if and only if** both exist and are equal. Equal-but-different still means no limit — a jump discontinuity is the standard counter-example."
+      "text": "## 1. Topic Introduction — The Introductory Limits Drill This canonical is the **introductory limits drill**: first-contact problems that build the substitution-then-transform reflex gently, mirroring the parent limit-system canonical's opening. The drill's discipline is the four-line rhythm done slowly and completely.  ·  ## 2. Theorem Mirror — The Starter Kit - **Substitution:** licensed wherever the function is continuous — polynomials, roots at interior points, |x|, rational functions off zeros. - **0/0 recognition:** substitute first; a 0/0 result is the signal to transform, never a verdict.…  ·  ## 3. Deep Conceptual — Why Beginners Must Write All Four Lines - The four-line rhythm is **training wheels for the theorems**: the form line practices diagnosis, the transform line practices identities, the licence line practices the x ≠ a justification, the value line practices continuity-licensed substitution. Skipping lines skips the theorems.…"
     },
     {
       "label": "More ideas",
-      "text": "Standard limit: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ (radians only)  ·  Conjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$  ·  Horizontal asymptotes come from limits at infinity via the dominant-term rule."
+      "text": "NEB-style practice beyond the verified PYQs recorded on the parent canonical.  ·  0/0 is a signal to transform, never a verdict.  ·  Evaluate lim_{x→7} (2x − 3) and cite the theorem."
     },
     {
       "label": "More ideas",
-      "text": "A limit is a boundary of behaviour, never an attained value — the same reason $f'(a)$ is independent of $f(a)$.  ·  Statement 1: $\\lim_{x\\to a}f(x)=L$ does not require $f(a)$ to be defined.  ·  Statement 2: The two-sided limit exists if and only if both one-sided limits equal the same finite number."
+      "text": "Evaluate lim_{x→1} (x² − 1)/(x − 1) with all four lines.  ·  Evaluate lim_{h→0} ((2 + h)² − 4)/h.  ·  Locate vertical and horizontal asymptotes from limits."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: $0/0$ indicates that substitution failed, not that the limit is zero.  ·  Statement 4: A vertical asymptote occurs where the one-sided limits diverge with opposite signs.  ·  Statement 5: If $\\lim_{x\\to\\infty}f(x)=L$ then $y=L$ is a horizontal asymptote."
-    },
-    {
-      "label": "More ideas",
-      "text": "Always state BOTH one-sided limits when asked about discontinuity at a point — the values carry the marks.  ·  Locate vertical and horizontal asymptotes from limits.  ·  **Indeterminate forms are signals, not answers:** $0/0$, $\\infty-\\infty$, $0\\cdot\\infty$, $\\infty/\\infty$, $1^\\infty$, $0^0$, $\\infty^0$ mean direct substitution FAILED. Rewrite instead: factorise and cancel, rationalise with the conjugate, divide by the highest vanishing power, or use $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Infinite limits and asymptotes:** $\\infty$ is never a value, only shorthand for unbounded growth. Opposite-sign one-sided limits give a VERTICAL asymptote; a finite limit at infinity gives a HORIZONTAL asymptote, found by the dominant-term rule."
+      "text": "## 4. Deep Conceptual — The First Contact With \"Approach\" - Introductory drills should be *narrated*: at x = 2.9, 2.99, 2.999 the function reads 5.9, 5.99, 5.999 — the approach is visible numerically before it is formal.…  ·  ## 5. Worked Example Types - **Type A — pure substitution:** polynomials and continuous pieces; cite continuity. - **Type B — first 0/0:** difference of squares, cancel, substitute, star-check. - **Type C — first conjugate:** single radical, one multiplication, one cancellation.…  ·  ## 6. Common Confusions **\"0/0 means the limit is 0\":** it means transform — the answer could be anything. **\"Cancelling changes the function\":** only at the excluded point, which the limit never visits."
     }
   ]
 }

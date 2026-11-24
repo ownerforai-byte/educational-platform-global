@@ -88,6 +88,7 @@
     "graphify:gods": "node scripts/graphify.mjs god-nodes --top 15",
     "graphify:mcp": "node scripts/graphify-mcp.mjs",
     "graphify:benchmark": "node scripts/graphify.mjs benchmark",
+    "repomix:pack": "npx --yes repomix@latest -c repomix.config.json",
     "tokenkit:codegraph": "node scripts/tokenkit/codegraph.mjs",
     "tokenkit:grepai": "node scripts/tokenkit/grepai.mjs",
     "tokenkit:pack": "node scripts/tokenkit/pack.mjs",

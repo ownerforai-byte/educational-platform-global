@@ -59,7 +59,7 @@
     },
     {
       "label": "Shortcut",
-      "text": "solve / apply for \"Batteries — primary and secondary cells\" and verify the answer is plausible.  ·  define + example each sub-idea: batteries — primary, secondary cells."
+      "text": "Trick 1: Classification line: primary = single use (dry cell, mercury cell); secondary = rechargeable (lead storage, Ni–Cd, Li-ion) — one example each earns the pair.  ·  Trick 2: Lead storage reactions: discharge Pb + PbO2 + 2H2SO4 → 2PbSO4 + 2H2O; cell potential ~2 V per cell, 6 cells = 12 V; recharging reverses it."
     },
     {
       "label": "Board question",
@@ -74,16 +74,32 @@
       }
     },
     {
+      "label": "More practice",
+      "text": "solve / apply for \"Batteries — primary and secondary cells\" and verify the answer is plausible."
+    },
+    {
       "label": "MCQ drill",
       "text": "A common examiner point on \"Batteries — primary and secondary cells\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE? → True"
     },
     {
       "label": "Study notes",
-      "text": "**Secondary cells.** one-line definition + one-line exam use."
+      "text": "**Secondary cells.** one-line definition + one-line exam use.  ·  # Batteries — primary and secondary cells ## 1. Introduction Chemical picture of **Batteries — primary and secondary cells** — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Electrochemistry fill pass.…  ·  ## 3. Reaction and equation block Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship). **Table 1 — Relations and worked quantities** | Relation | Symbols + units | When it holds | Worked angle | | --- | --- | --- | --- |"
+    },
+    {
+      "label": "More ideas",
+      "text": "Trick 3: Mercury cell gives a CONSTANT voltage throughout life (used in watches) — the 'why' is the fixed NaOH/ZnO concentration.  ·  Trick 4: Ni–Cd: 'memory-free' rechargeable; Li-ion: highest energy density, lightweight — the comparison table for 2 marks.  ·  define + example each sub-idea: batteries — primary, secondary cells."
     },
     {
       "label": "More ideas",
       "text": "one worked example for \"Batteries — primary and secondary cells\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Mechanism, IUPAC and structures Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).…  ·  ## 5. Diagrams and figures - **D1** — Batteries — primary and secondary cells — plant or apparatus flow with conditions labelled (authored SVG) - **D2** — Batteries — primary and secondary cells — second structure, flow or plot (authored SVG — English labels) - **D3** — Batteries — primary and secondary cells —…  ·  ## 6. Worked problems ≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass. ## 7.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 8. Exam Zone and self-check Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.…"
     }
   ]
 }

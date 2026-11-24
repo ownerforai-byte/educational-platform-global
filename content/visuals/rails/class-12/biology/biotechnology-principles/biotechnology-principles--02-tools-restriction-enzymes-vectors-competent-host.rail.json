@@ -52,11 +52,11 @@
     },
     {
       "label": "Derivation",
-      "text": "**Scope.** Tools: restriction enzymes, vectors, competent host — Biotechnology — Principles and Processes, Biology (class-12-notes).  ·  **Tested.** define it · list: tools, restriction enzymes, vectors, competent host · one worked example · one misconception each."
+      "text": "# Tools: restriction enzymes, vectors, competent host ## 1. Introduction Opening frame for **Tools** — what the topic is, why it matters, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (biology-plan.md §3.1, block I). Prose depth is written in the Biotechnology — Principles and Processes fill pass. ## 2.…  ·  Genetic engineering needs a standard toolkit. **Restriction enzymes** — the molecular scissors — recognise specific palindromic sequences and cut, leaving sticky or blunt ends. **Vectors** — plasmids, phage, cosmids — carry the gene into cells and replicate there; they need an origin of replication, a selectable marker and cloning sites. The **competent host** (usually *E.…"
     },
     {
       "label": "Shortcut",
-      "text": "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "Trick 1: Restriction enzymes: cut palindromic sites; EcoRI = E. coli restriction I; produce sticky ends (5' overhangs) — the nomenclature and sticky ends are the marks.  ·  Trick 2: Vector requirements: origin of replication (ori), selectable marker (antibiotic resistance), cloning site (MCS), small size, high copy number — five criteria."
     },
     {
       "label": "Board question",
@@ -75,6 +75,10 @@
       "text": "• Tools  ·  • Restriction enzymes  ·  • Vectors  ·  • Competent host"
     },
     {
+      "label": "Universal facts",
+      "text": "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+    },
+    {
       "label": "More practice",
       "text": "solve / apply for \"Tools: restriction enzymes, vectors, competent host\" and verify the answer is plausible."
     },
@@ -84,19 +88,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).  ·  **Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+      "text": "## 3. Classified tables **Table 1 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 2 — Key ideas and worked angles** | Idea | Statement | Where used | Worked example | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB marks trend | | --- | --- | --- | Tables…  ·  **Concept flow — the toolkit in working order (study in this order)** | Step | Tool | Job | |---|---|---| | 1 | Restriction enzyme (e.g. EcoRI) | Cuts source DNA and vector at the same recognition site | | 2 | DNA ligase | Seals insert into vector | | 3 | Vector (plasmid pBR322, phage lambda) | Replicates inside the host; carries selectable marker | | 4 | Competent host (E.…  ·  **Restriction enzymes — naming, recognition and cut types** | Feature | Detail | Example | |---|---|---| | Naming | First letter = genus, next two = species, then strain/number | EcoRI = E. coli R strain, enzyme I | | Recognition site | Palindromic sequence, 4–8 bp | EcoRI: GAATTC; BamHI: GGATCC | | Sticky ends | Staggered cut leaves single-stranded overhangs | EcoRI cuts…"
     },
     {
       "label": "More ideas",
-      "text": "define + example each sub-idea: tools, restriction enzymes, vectors, competent host.  ·  one worked example for \"Tools: restriction enzymes, vectors, competent host\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid."
+      "text": "Trick 3: Competent host: CaCl2 + cold shock (0 °C → 42 °C) makes E. coli take up plasmids; alternatives: microinjection, gene gun (biolistics), electroporation — the methods list.  ·  Trick 4: Insertional inactivation: insert in lacZ/blue-white screening — the selection trick worth a mark.  ·  define + example each sub-idea: tools, restriction enzymes, vectors, competent host."
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Restriction enzymes.** one-line definition + one-line exam use."
+      "text": "one worked example for \"Tools: restriction enzymes, vectors, competent host\" — check units / edge cases.  ·  recall card: definition → formula → limit → one error to avoid.  ·  State the limit / condition where a formula or rule stops being valid before applying it."
     },
     {
       "label": "More ideas",
-      "text": "**Vectors.** one-line definition + one-line exam use.  ·  **Competent host.** one-line definition + one-line exam use."
+      "text": "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).  ·  **Vectors — requirements and types** | Feature / type | What it provides | Example | |---|---|---| | Origin of replication (ori) | The vector copies itself inside the host | Every plasmid has one; copy number varies | | Selectable marker | Distinguishes transformed cells (antibiotic resistance) | ampR, tetR genes on…  ·  ## 4. Diagrams and figures - **D1** — rDNA workflow and PCR cycle (authored SVG — English labels, viewBox 900×640) - **D2** — Tools — process or life-cycle flow (authored SVG — English labels) - **D3** — Tools — detailed reference plate (curated external — English labels; source, author and license recorded at fill) -…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg EcoRI cuts GAATTC — sticky ends explained <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><text x=\"320\" y=\"28\" text-anchor=\"middle\" font-size=\"19\" font-weight=\"bold\" fill=\"#14161a\">EcoRI: the staggered cut</text><text x=\"320\" y=\"70\"…  ·  ## 5. Worked examples and applications ≥ 6 worked examples with solved steps, live examples and Nepal-context applications (biology-plan.md §3.1, block V) — written in the unit fill pass. ## 6. Key terms and statements Every new term defined once; exam-grade definitions live here and in keyPoints (block VI).  ·  **Worked example — reading a plasmid map.** pBR322 carries ampR and tetR. The gene is inserted at a site inside tetR. Cells grown on ampicillin survive if they carry any plasmid; cells grown on tetracycline die if the insert disrupted tetR. So the clone of interest is: ampicillin-resistant AND tetracycline-sensitive.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 7. Exam Zone NEB past-question map (long/short), topic-wise MCQs with explanations, and short tricks (block VII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.  ·  **Most-asked points (NEB).** (1) Explain the naming of EcoRI. (2) Define palindromic recognition site with an example. (3) Sticky ends vs blunt ends. (4) List the three features every vector needs and why. (5) How is a host made competent (CaCl2, heat shock; electroporation)? (6) What is insertional inactivation?  ·  ## 8. Summary and self-check 5–10 line chapter summary, self-check questions and the common-confusions list (block VIII) — completed in the unit fill pass."
     }
   ]
 }

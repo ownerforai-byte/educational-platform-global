@@ -24,18 +24,18 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Stress (σ = F/A) and strain (ε = Δl/l) describe how solids respond to deforming forces. Within the elastic limit, σ = Eε (Hooke's law). Elastic bodies recover their shape; plastic bodies deform permanently. The stress–strain curve shows the proportional limit, elastic limit, yield point, ultimate strength and fracture — ductile materials deform plastically first, brittle materials shatter suddenly.",
+      "text": "**Stress** $\\sigma = F/A$ (Pa) is force per unit area; **strain** $\\epsilon = \\Delta L/L$ is the dimensionless fractional deformation; **Young's modulus** $Y = FL/(A\\Delta L)$ is their ratio within the elastic limit. Elasticity means full shape recovery on unloading; plasticity means permanent deformation.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stress, Strain, Elasticity and Plasticity — quick idea map\"><title>Stress, Strain, Elasticity and Plasticity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stress, Strain, Elasticity and Plasticity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Stress σ = F/A is the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">internal force per unit</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">area resisting</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Strain ε = Δl/l is the</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">dimensionless fractional</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deformation.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Stress is force per unit</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">area; strain is fractional</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deformation…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Elasticity = recovery of</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shape when the force is</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">removed; plasticity =…</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stress, Strain, Elasticity and Plasticity — quick idea map\"><title>Stress, Strain, Elasticity and Plasticity — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Stress, Strain, Elasticity and Plasticity</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**Stress and strain belong</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">to the material;** force</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">and extension belong to…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">σ = F/A (Pa); ε = ΔL/L</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">(dimensionless); Y = σ/ε =</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">FL/(AΔL).</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Elasticity = regains</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">shape; plasticity = keeps</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">deformed shape.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- σ = F/A; ε = ΔL/L - Y =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">FL/(AΔL) - Breaking force</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">= breaking stress × A</text></svg>",
         "caption": "Stress, Strain, Elasticity and Plasticity — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Stress: σ = F/A (N/m² or Pa)\nStrain: ε = Δl/l (dimensionless; ε_V = ΔV/V, shear ε = θ)\nHooke's law in stress–strain form: σ = Eε",
+      "text": "- σ = F/A; ε = ΔL/L - Y = FL/(AΔL) - Breaking force = breaking stress × A",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stress, Strain, Elasticity and Plasticity — formula board\"><title>Stress, Strain, Elasticity and Plasticity — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Stress, Strain, Elasticity and Plasticity</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Stress: σ = F/A (N/m² or Pa)</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Strain: ε = Δl/l (dimensionless; ε_V = ΔV/V, shear ε =</text><text x=\"450\" y=\"400\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">θ)</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Hooke's law in stress–strain form: σ = Eε</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Stress, Strain, Elasticity and Plasticity — formula board\"><title>Stress, Strain, Elasticity and Plasticity — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Stress, Strain, Elasticity and Plasticity</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">- σ = F/A; ε = ΔL/L - Y = FL/(AΔL) - Breaking force =</text><text x=\"450\" y=\"230\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">breaking stress × A</text></svg>",
         "caption": "Stress, Strain, Elasticity and Plasticity — formula board of this topic's own formulas"
       }
     },
@@ -49,11 +49,11 @@
     },
     {
       "label": "Solved",
-      "text": "Stress: A 1000 N force on a 5 cm² bar gives σ = 1000/(5×10⁻⁴) = 2×10⁶ Pa.  ·  Strain: A wire stretched from 2.00 m to 2.01 m has ε = 0.01/2 = 5×10⁻³."
+      "text": "***NEB 2022/2024*** — 100 N on 2 mm²: σ = 5×10⁷ Pa, ε = 2.5×10⁻⁴."
     },
     {
       "label": "Limitation",
-      "text": "❌ 'Stress and pressure are the same.' ✅ Both have units N/m², but stress is the INTERNAL resisting force per unit area produced in a body, while pressure is an EXTERNAL force per unit area applied by a fluid.  ·  ❌ 'Strain has units.' ✅ Strain is dimensionless — it is a ratio of lengths (or volumes/angles). This is essential for dimensional analysis."
+      "text": "**Stress is not force:** it is force divided by area — a thin wire breaks under the same force that a thick rod survives.  ·  **Strain is dimensionless** — a ratio of like quantities."
     },
     {
       "label": "Derivation",
@@ -61,39 +61,27 @@
     },
     {
       "label": "Shortcut",
-      "text": "Remember: strain has NO units — a quick sanity check for MCQs.  ·  To find E: rearrange to E = Fl/(AΔl) — compute σ then divide by ε."
+      "text": "\"1 mm² = 10⁻⁶ m² — the #1 conversion trap.\""
     },
     {
       "label": "Board question",
-      "text": "A steel rod of length 3 m and area 2 cm² is stretched by a 6000 N force. Given E = 2×10¹¹ N/m², find stress, strain and extension.  ·  A rubber band of original length 10 cm stretches to 12 cm. Find the strain and the percentage elongation."
+      "text": "**Numerical (3m): A wire of length 3 m and radius 0.5 mm extends 1.5 mm under 200 N. Find Y.** — A = πr² = 7.85×10⁻⁷ m²; Y = FL/(AΔL) = 200×3/(7.85×10⁻⁷×1.5×10⁻³) = 600/1.18×10⁻⁹ = 5.1×10¹¹ Pa."
     },
     {
       "label": "Hints",
-      "text": "Stress and strain numericals are a guaranteed exam topic — practice unit conversions (mm² → m²).  ·  Labeling the stress–strain curve and identifying regions carries direct marks."
+      "text": "Definitions repeat (2023, 2024); numericals appear nearly every year — practise all three patterns."
     },
     {
       "label": "Quick concepts",
-      "text": "Stress σ = F/A is the internal force per unit area resisting deformation.  ·  Strain ε = Δl/l is the dimensionless fractional deformation.  ·  Hooke's law: σ = Eε inside the elastic limit.  ·  Elasticity recovers shape; plasticity causes permanent deformation."
+      "text": "**Stress and strain belong to the material;** force and extension belong to the specimen — that is why engineers tabulate Y, not k."
     },
     {
       "label": "Key points",
-      "text": "Stress is force per unit area; strain is fractional deformation (dimensionless).  ·  Elasticity = recovery of shape when the force is removed; plasticity = permanent deformation.  ·  Stress is proportional to strain only within the elastic limit (Hooke's law, σ = Eε).  ·  The stress–strain curve has six regions: proportional, elastic, yield, plastic, ultimate, fracture."
+      "text": "σ = F/A (Pa); ε = ΔL/L (dimensionless); Y = σ/ε = FL/(AΔL).  ·  Elasticity = regains shape; plasticity = keeps deformed shape."
     },
     {
       "label": "Universal facts",
-      "text": "Stress and strain were first quantified by Robert Hooke and later generalised by Thomas Young, after whom Young's modulus is named.  ·  The area under the stress–strain curve equals the energy absorbed per unit volume (toughness) — important for crash safety design."
-    },
-    {
-      "label": "More practice",
-      "text": "A column of area 0.25 m² supports a weight of 2.5×10⁵ N. Find the compressive stress.  ·  A mild steel wire of area 1 mm² breaks when the stress reaches 4×10⁸ Pa. Find the breaking (maximum) load.  ·  A body under 10⁵ Pa pressure suffers a volume strain of 2×10⁻⁴. Find its bulk modulus."
-    },
-    {
-      "label": "More hints",
-      "text": "Young's modulus problems (extension of a wire) appear almost every year.  ·  Bulk modulus and shear modulus are often asked as short-answer comparisons."
-    },
-    {
-      "label": "Extra solved",
-      "text": "Young's modulus: σ = 1.96×10⁸ Pa, ε = 9.8×10⁻⁴ → E = 2×10¹¹ N/m² (steel).  ·  Shear: A force parallel to the top face of a cube displaces it — shear stress τ = F/A, shear strain θ."
+      "text": "Steel's Y ≈ 2×10¹¹ Pa; copper's ≈ 1.1×10¹¹ Pa; human bone ≈ 1.6×10¹⁰ Pa."
     },
     {
       "label": "MCQ drill",
@@ -101,27 +89,23 @@
     },
     {
       "label": "Study notes",
-      "text": "**Stress (σ):** the internal resisting force per unit area set up in a body when external forces are applied: σ = F/A. Empirical units are N/m² or Pa (pascal). Normal stress = force perpendicular to the area (tension/compression); shear stress = force parallel to the area.  ·  **Strain (ε):** the fractional deformation produced: strain = change in dimension / original dimension. It is dimensionless. Linear strain = Δl/l, shear strain = θ (angle of shear), volumetric strain = ΔV/V.  ·  **Elasticity and plasticity:** elasticity is the property of a body to regain its original shape and size when the deforming force is removed. Plasticity is the property of remaining permanently deformed after the deforming force is removed. Bodies are elastic below the elastic limit and plastic beyond it."
+      "text": "## 1. Topic Introduction — How Materials Respond to Load Pull on any solid and it deforms. Stress normalises the pull by area, strain normalises the deformation by size — together they describe the *material*, not the specimen. Their ratio is Young's modulus, and their graph tells the whole story from elastic stretch to fracture.  ·  ## 2. Fundamental Concepts (NEB 2023, 2024) ### 2.1 Definitions **Stress:** force per unit area acting on a body. $$\\sigma = \\frac{F}{A} \\quad \\text{(N/m}^2 = \\text{Pa)}$$ Types: **longitudinal (tensile/compressive)**, **shear** (tangential force), **volume (bulk)** (uniform pressure). **Strain:** the fractional deformation produced — dimensionless.…  ·  ## 3. Conceptual Relationships - **To Topic 38:** $k = YA/L$ — object stiffness from material stiffness. - **To Topic 41:** Poisson's ratio links lateral to longitudinal strain. - **Stress–strain graph regions:** proportional limit (Hooke) → elastic limit → yield → ultimate stress → fracture.…"
     },
     {
       "label": "More ideas",
-      "text": "Moduli: E (Young), G (shear), B (bulk) each relate a stress to its corresponding strain.  ·  Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)  ·  Bulk modulus: B = −P/(ΔV/V); Shear modulus: G = τ/θ"
+      "text": "**Ductile vs Brittle Failure Mode:** Ductile materials have a significant plastic region (yield, strain hardening, necking) and fracture after large deformation. Brittle materials fracture near the elastic limit with little/no plastic deformation — no warning before failure.  ·  The elastic limit is the maximum stress from which the body still recovers fully.  ·  For safety design, working stress is kept well below the yield/ultimate stress (safety factor)."
     },
     {
       "label": "More ideas",
-      "text": "**Ductile vs Brittle Failure Mode:** Ductile materials have a significant plastic region (yield, strain hardening, necking) and fracture after large deformation. Brittle materials fracture near the elastic limit with little/no plastic deformation — no warning before failure.  ·  Ductile materials deform plastically before breaking; brittle ones break suddenly near the elastic limit.  ·  ❌ 'Elasticity means materials are always elastic.' ✅ Every material is elastic only up to its elastic limit; beyond it, plastic deformation occurs."
+      "text": "NEB frequently asks to label the stress–strain curve and to calculate E from a numerical.  ·  Verified PYQs: definitions (2023, 2024 — 3m); steel-wire numerical (2022, 2024 — 3m); copper-wire Y (2020 — 4m); cable mass (2024 — 3m).  ·  \"Young's modulus is the ratio of longitudinal stress to longitudinal strain within the elastic limit.\""
     },
     {
       "label": "More ideas",
-      "text": "❌ 'Stress equals force.' ✅ Stress is force PER unit area (σ = F/A). Doubling the area halves the stress for the same force.  ·  ❌ 'The stress–strain graph is a straight line everywhere.' ✅ Only up to the proportional limit. After that it curves at the yield point and beyond.  ·  ❌ 'A ductile material breaks near the elastic limit.' ✅ DUCTILE materials deform plastically and stretch before fracturing; brittle materials break with little warning near the elastic limit."
+      "text": "Why are ropes for cranes made of many thin wires braided together?  ·  Solve 3 bulk-modulus and 3 shear-modulus problems.  ·  Compare ductile vs brittle behaviour with two real examples each."
     },
     {
       "label": "More ideas",
-      "text": "Volume: Pressure P on a sphere → B = −P/(ΔV/V). For water, B ≈ 2.2×10⁹ Pa.  ·  The elastic limit is the maximum stress from which the body still recovers fully.  ·  For safety design, working stress is kept well below the yield/ultimate stress (safety factor)."
-    },
-    {
-      "label": "More ideas",
-      "text": "NEB frequently asks to label the stress–strain curve and to calculate E from a numerical.  ·  Always distinguish stress (F/A) from strain (Δl/l) — one has units, one is dimensionless.  ·  The elastic limit is the boundary between recoverable (elastic) and permanent (plastic) deformation."
+      "text": "Compute the safe (working) load using a given safety factor.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2079/2023 | Mechanics | Elasticity | Define stress, strain, and Young's modulus.…"
     }
   ]
 }

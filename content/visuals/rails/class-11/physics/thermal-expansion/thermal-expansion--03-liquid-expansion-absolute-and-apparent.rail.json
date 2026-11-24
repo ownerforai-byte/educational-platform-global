@@ -23,20 +23,20 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Liquid expansion: absolute and apparent is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Liquid Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications.…",
+      "text": "A heated liquid's true growth is its **absolute (real) expansion** $\\Delta V_r = \\gamma_r V_0 \\Delta T$, but a vessel observer sees only the **apparent expansion** $\\Delta V_a = \\gamma_a V_0 \\Delta T$, because the vessel's cavity expands too: $\\gamma_r = \\gamma_a + \\gamma_g$ (γ_g = 3α of the vessel material). Density falls as $\\rho_T = \\rho_0/(1+\\gamma_r\\Delta T)$.…",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Liquid Expansion — Absolute and Apparent — quick idea map\"><title>Liquid Expansion — Absolute and Apparent — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Liquid Expansion — Absolute and Apparent</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Liquid expansion:</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">absolute and apparent</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Liquid</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">expansion: absolute and</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Liquid</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Liquid expansion:</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Liquid Expansion — Absolute and Apparent — quick idea map\"><title>Liquid Expansion — Absolute and Apparent — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Liquid Expansion — Absolute and Apparent</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">**The 4 °C refuge:** the</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">anomaly stratifies winter</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lakes with dense 4 °C…</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">γ_r = γ_a + γ_g; water's</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">maximum density at 4 °C.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Anomaly → ice floats →</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">lakes freeze top-down →</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">aquatic life survives at</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">- γ_r = γ_a + γ_g - ρ_T =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">ρ₀/(1 + γ_rΔT) - Water:</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">max density at 4 °C</text></svg>",
         "caption": "Liquid Expansion — Absolute and Apparent — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Liquid expansion: absolute and apparent\nKey Formula 3: Application formula for Liquid expansion: absolute and apparent\nKey Formula 4: Derivation result for Liquid expansion: absolute and apparent"
+      "text": "- γ_r = γ_a + γ_g - ρ_T = ρ₀/(1 + γ_rΔT) - Water: max density at 4 °C"
     },
     {
       "label": "Conditions",
-      "text": "❌ Apparent expansion equals absolute expansion. ✅ Apparent expansion is LESS than absolute expansion because the container also expands. $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container} < \\gamma_{liq}$.  ·  ❌ The apparent expansion of a liquid is independent of the container material. ✅ The apparent expansion DEPENDS on the container. A liquid in a copper container ($\\gamma_{Cu} \\approx 51 \\times 10^{-6}$) shows less apparent expansion than in glass ($\\gamma_{glass} \\approx 27 \\times 10^{-6}$)."
+      "text": "**Real vs apparent:** you see the apparent; the real includes the vessel's own expansion: γ_r = γ_a + γ_g.  ·  **Water's anomaly is 0–4 °C only** — above 4 °C water behaves normally."
     },
     {
       "label": "Special cases",
@@ -44,11 +44,11 @@
     },
     {
       "label": "Solved",
-      "text": "Real-world application of Liquid expansion: absolute and apparent  ·  Practical demonstration of Liquid expansion: absolute and apparent concepts"
+      "text": "***NEB 2024*** — anomaly + aquatic life: ice insulates; fish live in the unfrozen 4 °C layer."
     },
     {
       "label": "Limitation",
-      "text": "❌ Water expands uniformly when cooled from 10°C to 0°C. ✅ Water CONTRACTS when cooled from 10°C to 4°C (reaches maximum density at 4°C), then EXPANDS from 4°C to 0°C. This anomalous behavior is unique among common liquids.  ·  ❌ A liquid's absolute expansion can be measured directly with any container. ✅ It CANNOT — the container always expands. You must either use a container with negligible expansion (impossible) or apply the correction $\\gamma_{liq} = \\gamma_{app} + \\gamma_{container}$."
+      "text": "Verified PYQ: anomalous expansion + aquatic life (2024, 3m)."
     },
     {
       "label": "Derivation",
@@ -56,15 +56,15 @@
     },
     {
       "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Liquid expansion: absolute and apparent formula  ·  Trick 2: Elimination technique for Liquid expansion: absolute and apparent MCQs"
+      "text": "\"Anomaly answer: 0–4 °C contracts → max density 4 °C → ice floats → insulated lake → life survives.\""
     },
     {
       "label": "Board question",
-      "text": "Q2. Solve problems related to Liquid expansion: absolute and apparent.  ·  Q3. Differentiate between various aspects of Liquid expansion: absolute and apparent."
+      "text": "**Numerical (3m): A liquid shows apparent γ_a = 1.2×10⁻⁴ K⁻¹ in a copper vessel (α_Cu = 1.7×10⁻⁵ K⁻¹). Find γ_r.** — γ_g = 3α = 5.1×10⁻⁵; γ_r = 1.2×10⁻⁴ + 5.1×10⁻⁵ = 1.71×10⁻⁴ K⁻¹."
     },
     {
       "label": "Hints",
-      "text": "Focus on numerical problems from Liquid expansion: absolute and apparent  ·  Practice previous year questions on Liquid expansion: absolute and apparent",
+      "text": "The 2024 question is a 3m explanation — write the lake-stratification chain in order.",
       "figure": {
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Liquid Expansion — Absolute and Apparent — topic mind map\"><title>Liquid Expansion — Absolute and Apparent — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Liquid expansion</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Liquid expansion</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Absolute</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"434\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Apparent</text><text x=\"240\" y=\"500\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"526\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Liquid Expansion — Absolute and Apparent — topic mind map of this topic's own sub-topics"
@@ -72,27 +72,15 @@
     },
     {
       "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Liquid expansion: absolute and apparent  ·  Concept 2: Key theorem or principle in Liquid expansion: absolute and apparent  ·  Concept 3: Important application area of Liquid expansion: absolute and apparent  ·  Concept 4: Fundamental relationship in Liquid expansion: absolute and apparent"
+      "text": "**The 4 °C refuge:** the anomaly stratifies winter lakes with dense 4 °C water at the bottom."
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Liquid expansion: absolute and apparent  ·  Key Point 3: Important condition or constraint for Liquid expansion: absolute and apparent  ·  Key Point 4: Common applications of Liquid expansion: absolute and apparent  ·  Key Point 5: Connection to other topics in Science"
+      "text": "γ_r = γ_a + γ_g; water's maximum density at 4 °C.  ·  Anomaly → ice floats → lakes freeze top-down → aquatic life survives at ~4 °C."
     },
     {
       "label": "Universal facts",
-      "text": "The anomalous expansion of water was first studied by Daniel Bernoulli in the 18th century. It remains one of the most important anomalies in nature, making life on Earth possible.  ·  The weight thermometer method for measuring liquid expansion was devised by Dulong and Petit in 1816. It remains the standard laboratory method for determining coefficients of cubical expansion."
-    },
-    {
-      "label": "More practice",
-      "text": "Q4. Derive the key formula related to Liquid expansion: absolute and apparent.  ·  Q5. What are the applications of Liquid expansion: absolute and apparent?  ·  Q2. Solve problems related to Liquid Expansion."
-    },
-    {
-      "label": "More hints",
-      "text": "Learn the derivations for Liquid expansion: absolute and apparent thoroughly  ·  Review common mistakes related to Liquid expansion: absolute and apparent"
-    },
-    {
-      "label": "Extra solved",
-      "text": "Diagram-based question on Liquid expansion: absolute and apparent  ·  Application in daily life involving Liquid expansion: absolute and apparent"
+      "text": "If water were normal, lakes would freeze from the bottom up and fish would die every winter."
     },
     {
       "label": "MCQ drill",
@@ -100,27 +88,27 @@
     },
     {
       "label": "Study notes",
-      "text": "**Why liquids need special treatment:** Unlike solids, liquids cannot maintain a fixed shape and must be contained. When heated, BOTH the liquid and the container expand, making direct measurement of liquid expansion impossible without correction.  ·  **Absolute (real) expansion:** The actual increase in volume of the liquid itself, independent of the container. $\\Delta V_{abs} = V_0 \\gamma_{liq} \\Delta T$, where $\\gamma_{liq}$ is the coefficient of cubical expansion of the liquid.  ·  **Apparent expansion:** The observed increase in volume of the liquid as read from the container's scale. Since the container also expands, the scale marks move apart, making the liquid level appear to rise LESS than it actually does."
+      "text": "## 1. Topic Introduction — Liquids Take the Shape of the Question A heated liquid expands — but observed through a container, part of the expansion is swallowed by the expanding glass. Physics separates the **apparent** expansion (what you see) from the **absolute** expansion (what really happens): their difference is the container's expansion.…  ·  ## 2. Fundamental Concepts ### 2.1 Real (absolute) and apparent expansion When a liquid in a vessel of volume $V_0$ is heated by ΔT: - **Absolute (real) expansion:** the true volume increase of the liquid: $\\Delta V_{real} = \\gamma_r V_0 \\Delta T$, with γ_r the **coefficient of absolute (real) cubical expansion**.…  ·  ## 3. Conceptual Relationships - **To Topic 47:** γ_r and γ_a are cubical coefficients; the vessel's γ_g = 3α_glass. - **To Topic 49:** Dulong–Petit measures γ_r using the apparent expansion in two different vessels. - **To density bottle / hydrometer:** liquid expansion instruments."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Liquid expansion: absolute and apparent and other topics  ·  Concept 1: Core definition of Liquid Expansion  ·  Concept 2: Key theorem or principle in Liquid Expansion"
+      "text": "Note 3: Practice numerical problems regularly for mastery of Liquid expansion: absolute and apparent  ·  Note 4: Remember the units and dimensions involved in Liquid expansion: absolute and apparent  ·  Note 5: Liquid expansion: absolute and apparent frequently appears in examination questions"
     },
     {
       "label": "More ideas",
-      "text": "Concept 3: Important application area of Liquid Expansion  ·  Concept 4: Fundamental relationship in Liquid Expansion  ·  Concept 5: Connection between Liquid Expansion and other topics"
+      "text": "Note 1: Pay attention to the conditions under which Liquid Expansion applies  ·  Note 2: Liquid Expansion connects to multiple other topics in Science  ·  Note 3: Practice numerical problems regularly for mastery of Liquid Expansion"
     },
     {
       "label": "More ideas",
-      "text": "Key Formula 5: Important relation in Liquid expansion: absolute and apparent  ·  ❌ The weight of the liquid changes when heated. ✅ The MASS is constant. Only the volume changes. The weight thermometer measures the mass of liquid expelled, not its weight changing.  ·  ❌ All liquids expand when heated. ✅ Most liquids expand, but water between 0°C and 4°C CONTRACTS. Some alloys (like invar) also show anomalous expansion behavior over certain temperature ranges."
+      "text": "Note 4: Remember the units and dimensions involved in Liquid Expansion  ·  Note 5: Liquid Expansion frequently appears in examination questions  ·  \"Water has maximum density at 4 °C; between 0 °C and 4 °C it contracts on heating.\""
     },
     {
       "label": "More ideas",
-      "text": "❌ Ice floating is due to water's density being the same as liquid water. ✅ Ice is LESS dense than liquid water (about 9% less) because water EXPANDS upon freezing. This is a direct consequence of the anomalous expansion below 4°C.  ·  Carefully distinguish between similar-looking concepts in liquid expansion.  ·  Pay attention to the conditions under which formulas and theorems apply."
+      "text": "Why does a mercury thermometer's reading change if you warm the bulb *after* reading?  ·  Task 3: Create a concept map for Liquid expansion: absolute and apparent  ·  Task 4: Practice previous year exam questions on Liquid expansion: absolute and apparent"
     },
     {
       "label": "More ideas",
-      "text": "Practice with multiple examples to solidify your understanding.  ·  Real-world application of Liquid Expansion  ·  Practical demonstration of Liquid Expansion concepts"
+      "text": "Task 5: Explain Liquid expansion: absolute and apparent to a peer or study group  ·  Task 1: Solve 10 numerical problems on Liquid Expansion  ·  Task 2: Derive the main formula for Liquid Expansion"
     }
   ]
 }

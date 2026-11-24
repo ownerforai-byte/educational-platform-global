@@ -26,104 +26,100 @@
   "rows": [
     {
       "label": "Concept",
-      "text": "Heat Capacities of Gases is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+      "text": "Gases have two principal specific heats: C_v at constant volume and C_p at constant pressure. For ideal gases, C_p − C_v = R (Mayer's relation). The ratio γ = C_p/C_v depends on molecular degrees of freedom: monatomic γ = 5/3, diatomic γ = 7/5. These values govern adiabatic processes, sound speed, and thermodynamic cycles.",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases — quick idea map\"><title>Heat Capacities of Gases — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Heat Capacities of Gases</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 1: Core definition</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">of Heat Capacities of</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Gases</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Concept 2: Key theorem or</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">principle in Heat</text><text x=\"660\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Capacities of Gases</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 2: Essential</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">theorem or principle</text><text x=\"240\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">related to Heat Capacities</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Key Point 3: Important</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">condition or constraint</text><text x=\"660\" y=\"502\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">for Heat Capacities of</text></svg>",
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases — quick idea map\"><title>Heat Capacities of Gases — quick idea map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#e0f2fe\" stroke=\"#0369a1\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#0c4a6e\">Heat Capacities of Gases</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#0284c7\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C_p &gt; C_v because</text><text x=\"240\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">constant-pressure heating</text><text x=\"240\" y=\"292\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">includes expansion work.</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#0284c7\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"228\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mayer's relation: C_p −</text><text x=\"660\" y=\"260\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C_v = R for ideal gases.</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,382 247,382 240,396\" fill=\"#0284c7\"/><rect x=\"70\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"240\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Mayer's relation: $C_p -</text><text x=\"240\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">C_v = R$</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"392\" stroke=\"#0284c7\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,382 667,382 660,396\" fill=\"#0284c7\"/><rect x=\"490\" y=\"400\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f0f9ff\" stroke=\"#0284c7\" stroke-width=\"2.5\"/><text x=\"660\" y=\"438\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">Adiabatic index: $\\gamma =</text><text x=\"660\" y=\"470\" text-anchor=\"middle\" font-size=\"21\" fill=\"#0c4a6e\">\\frac{C_p}{C_v}$</text></svg>",
         "caption": "Heat Capacities of Gases — quick idea map of this topic's headline ideas"
       }
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "Key Formula 2: Mathematical expression of Heat Capacities of Gases\nKey Formula 3: Application formula for Heat Capacities of Gases\nKey Formula 4: Derivation result for Heat Capacities of Gases"
-    },
-    {
-      "label": "Conditions",
-      "text": "Carefully distinguish between similar-looking concepts in heat capacities of gases.  ·  Pay attention to the conditions under which formulas and theorems apply."
-    },
-    {
-      "label": "Special cases",
-      "text": "Note 1: Pay attention to the conditions under which Heat Capacities of Gases applies  ·  Note 2: Heat Capacities of Gases connects to multiple other topics in Science"
-    },
-    {
-      "label": "Solved",
-      "text": "Example 1: Real-world application of Heat Capacities of Gases  ·  Example 2: Practical demonstration of Heat Capacities of Gases concepts"
-    },
-    {
-      "label": "Limitation",
-      "text": "Practice with multiple examples to solidify your understanding."
-    },
-    {
-      "label": "Derivation",
-      "text": "Task 1: Solve 10 numerical problems on Heat Capacities of Gases  ·  Task 2: Derive the main formula for Heat Capacities of Gases"
-    },
-    {
-      "label": "Shortcut",
-      "text": "Trick 1: Quick method to identify applicable Heat Capacities of Gases formula  ·  Trick 2: Elimination technique for Heat Capacities of Gases MCQs"
-    },
-    {
-      "label": "Board question",
-      "text": "Q1. Define and explain Heat Capacities of Gases with suitable example.  ·  Q2. Solve problems related to Heat Capacities of Gases.",
+      "text": "Mayer's relation: $C_p - C_v = R$\nAdiabatic index: $\\gamma = \\frac{C_p}{C_v}$\nMonatomic: $C_v = \\frac{3}{2}R$, $C_p = \\frac{5}{2}R$, $\\gamma = \\frac{5}{3}$",
       "figure": {
-        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases — exam flow\"><title>Heat Capacities of Gases — exam flow</title><rect x=\"180\" y=\"20\" width=\"540\" height=\"80\" rx=\"10\" fill=\"#fff7ed\" stroke=\"#c2410c\" stroke-width=\"3\"/><text x=\"450\" y=\"54\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#7c2d12\">Heat Capacities of Gases</text><rect x=\"80\" y=\"130\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"130\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"178\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Concept</text><text x=\"310\" y=\"164\" font-size=\"18\" fill=\"#7c2d12\">Heat Capacities of Gases is a fundamental</text><text x=\"310\" y=\"192\" font-size=\"18\" fill=\"#7c2d12\">concept in Science that covers the essential</text><text x=\"310\" y=\"220\" font-size=\"18\" fill=\"#7c2d12\">principles, formulas, and…</text><polygon points=\"442,244 458,244 450,256\" fill=\"#ea580c\"/><rect x=\"80\" y=\"260\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"260\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"308\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Formula</text><text x=\"310\" y=\"294\" font-size=\"18\" fill=\"#7c2d12\">Key Formula 2: Mathematical expression of</text><text x=\"310\" y=\"322\" font-size=\"18\" fill=\"#7c2d12\">Heat Capacities of Gases Key Formula 3:</text><text x=\"310\" y=\"350\" font-size=\"18\" fill=\"#7c2d12\">Application formula for Heat…</text><polygon points=\"442,374 458,374 450,386\" fill=\"#ea580c\"/><rect x=\"80\" y=\"390\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"390\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"438\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Shortcut</text><text x=\"310\" y=\"424\" font-size=\"18\" fill=\"#7c2d12\">Trick 1: Quick method to identify applicable</text><text x=\"310\" y=\"452\" font-size=\"18\" fill=\"#7c2d12\">Heat Capacities of Gases formula · Trick 2:</text><text x=\"310\" y=\"480\" font-size=\"18\" fill=\"#7c2d12\">Elimination technique for Heat…</text><polygon points=\"442,504 458,504 450,516\" fill=\"#ea580c\"/><rect x=\"80\" y=\"520\" width=\"740\" height=\"112\" rx=\"10\" fill=\"#fffbeb\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><rect x=\"80\" y=\"520\" width=\"210\" height=\"112\" rx=\"10\" fill=\"#fed7aa\" stroke=\"#ea580c\" stroke-width=\"2.5\"/><text x=\"185\" y=\"568\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#7c2d12\">Board question</text><text x=\"310\" y=\"554\" font-size=\"18\" fill=\"#7c2d12\">Q1. Define and explain Heat Capacities of</text><text x=\"310\" y=\"582\" font-size=\"18\" fill=\"#7c2d12\">Gases with suitable example. · Q2.…</text></svg>",
-        "caption": "Heat Capacities of Gases — exam flow: concept → formula → shortcut → board question"
+        "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Heat Capacities of Gases — formula board\"><title>Heat Capacities of Gases — formula board</title><rect x=\"150\" y=\"24\" width=\"600\" height=\"80\" rx=\"10\" fill=\"#ecfdf5\" stroke=\"#047857\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#064e3b\">Heat Capacities of Gases</text><rect x=\"60\" y=\"150\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"196\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Mayer's relation: $C_p - C_v = R$</text><rect x=\"60\" y=\"320\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"366\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Adiabatic index: $\\gamma = \\frac{C_p}{C_v}$</text><rect x=\"60\" y=\"490\" width=\"780\" height=\"150\" rx=\"10\" fill=\"#f0fdfa\" stroke=\"#0d9488\" stroke-width=\"2.5\"/><text x=\"450\" y=\"536\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">Monatomic: $C_v = \\frac{3}{2}R$, $C_p = \\frac{5}{2}R$,</text><text x=\"450\" y=\"570\" text-anchor=\"middle\" font-size=\"22\" fill=\"#134e4a\">$\\gamma = \\frac{5}{3}$</text></svg>",
+        "caption": "Heat Capacities of Gases — formula board of this topic's own formulas"
       }
     },
     {
-      "label": "Hints",
-      "text": "Exam Tip 1: Focus on numerical problems from Heat Capacities of Gases  ·  Exam Tip 2: Practice previous year questions on Heat Capacities of Gases"
+      "label": "Conditions",
+      "text": "Ideal Gas Assumption: Mayer's relation C_p − C_v = R holds exactly only for ideal gases. Real gases show deviations at high P or low T.  ·  Temperature Range Matters: Degrees of freedom activated depend on T. Room-temperature diatomic values assume rotation active but vibration frozen."
     },
     {
-      "label": "Quick concepts",
-      "text": "Concept 1: Core definition of Heat Capacities of Gases  ·  Concept 2: Key theorem or principle in Heat Capacities of Gases  ·  Concept 3: Important application area of Heat Capacities of Gases  ·  Concept 4: Fundamental relationship in Heat Capacities of Gases"
+      "label": "Special cases",
+      "text": "Statement 1: Molar heat capacity at constant pressure exceeds that at constant volume by the gas constant R.  ·  Statement 2: The ratio γ = C_p/C_v is always greater than unity for any gas."
+    },
+    {
+      "label": "Solved",
+      "text": "Argon (monatomic): C_v = 12.47 J/(mol·K), C_p = 20.79 J/(mol·K), γ = 1.67. Difference = 8.32 ≈ R.  ·  Nitrogen at 300 K: C_v = 20.8 J/(mol·K) ≈ 5R/2, C_p = 29.1 J/(mol·K) ≈ 7R/2, γ = 1.40."
+    },
+    {
+      "label": "Limitation",
+      "text": "Thinking C_p and C_v are material constants independent of process: They are defined FOR specific processes (constant P or V).  ·  Using R without checking molar vs mass basis: Molar uses R = 8.314; specific uses R/M."
+    },
+    {
+      "label": "Derivation",
+      "text": "Specific Heat Definition: Amount of heat required to raise temperature of unit mass by 1 K. For gases, value depends on process conditions because gases expand significantly when heated.  ·  C_v (Constant Volume): Heat added increases only internal energy (no work done since dV = 0). Q = nC_vΔT = ΔU. For monatomic ideal gas: C_v = (3/2)R. Diatomic at room T: C_v = (5/2)R."
+    },
+    {
+      "label": "Shortcut",
+      "text": "C_p − C_v = R: memorize as 'difference equals gas constant'.  ·  γ = 1 + 2/f: quick formula from DOF count."
+    },
+    {
+      "label": "Board question",
+      "text": "Q1. Derive Mayer's relation C_p − C_v = R for an ideal gas.  ·  Q2. Why is C_p always greater than C_v? Explain physically."
+    },
+    {
+      "label": "Hints",
+      "text": "Derive Mayer's relation starting from first law and ideal gas equation.  ·  Calculate γ from experimental C_p and C_v data."
     },
     {
       "label": "Key points",
-      "text": "Key Point 2: Essential theorem or principle related to Heat Capacities of Gases  ·  Key Point 3: Important condition or constraint for Heat Capacities of Gases  ·  Key Point 4: Common applications of Heat Capacities of Gases  ·  Key Point 5: Connection to other topics in Science"
+      "text": "C_p > C_v because constant-pressure heating includes expansion work.  ·  Mayer's relation: C_p − C_v = R for ideal gases.  ·  γ = C_p/C_v determines adiabatic behavior and sound speed.  ·  Degrees of freedom dictate heat capacity values via equipartition."
     },
     {
       "label": "Universal facts",
-      "text": "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.  ·  Understanding heat capacities of gases builds the foundation for more advanced topics in mathematics."
+      "text": "Julius Robert von Mayer first stated C_p − C_v = R in 1841, contributing to energy conservation principle.  ·  Einstein and Debye models explain low-temperature heat capacity anomalies using quantum statistics."
     },
     {
       "label": "More practice",
-      "text": "Q3. Differentiate between various aspects of Heat Capacities of Gases.  ·  Q4. Derive the key formula related to Heat Capacities of Gases.  ·  Q5. What are the applications of Heat Capacities of Gases?"
+      "text": "Q3. Calculate γ for a triatomic gas with all vibrational modes active.  ·  Q4. How does heat capacity of hydrogen change from 50 K to 3000 K?  ·  Q5. Given C_v = 20.8 J/(mol·K) for a gas, find C_p and γ."
     },
     {
       "label": "More hints",
-      "text": "Exam Tip 4: Learn the derivations for Heat Capacities of Gases thoroughly  ·  Exam Tip 5: Review common mistakes related to Heat Capacities of Gases"
+      "text": "Explain why C_p > C_v physically using work argument.  ·  Relate changes in γ to molecular complexity and temperature effects."
     },
     {
       "label": "Extra solved",
-      "text": "Example 4: Diagram-based question on Heat Capacities of Gases  ·  Example 5: Application in daily life involving Heat Capacities of Gases"
+      "text": "Speed of sound in air at 20°C: v = √(1.4 × 8.314 × 293 / 0.029) ≈ 343 m/s.  ·  Adiabatic compression: Air compressed from 1 atm to 8 atm. T₂/T₁ = (P₂/P₁)^((γ−1)/γ) = 8^(0.286) ≈ 1.81. If T₁ = 300 K, T₂ ≈ 543 K."
     },
     {
       "label": "MCQ drill",
-      "text": "The primary application of Heat Capacities of Gases is in: → A  ·  For Heat Capacities of Gases, which condition is necessary? → A"
+      "text": "For an ideal gas, C_p − C_v equals: → C  ·  The adiabatic index γ for a monatomic gas is: → C"
     },
     {
       "label": "Study notes",
-      "text": "**Heat Capacities of Gases:** This topic covers the fundamental concepts of heat capacities of gases in the physics curriculum.  ·  Understanding heat capacities of gases is essential for solving problems and building higher-level mathematical skills.  ·  Key definitions and theorems related to heat capacities of gases should be memorized and practiced regularly."
+      "text": "C_p (Constant Pressure): Heat added increases internal energy AND does expansion work against external pressure. Q = nC_pΔT = ΔU + PΔV. Always C_p > C_v because extra energy goes into work.  ·  Mayer's Relation: C_p − C_v = R for one mole of ideal gas. Derived from H = U + PV and ideal gas law. Per unit mass: c_p − c_v = R/M where M is molar mass.  ·  Adiabatic Index γ: γ = C_p/C_v. Monatomic: γ = 5/3 ≈ 1.67. Diatomic (room T): γ = 7/5 = 1.40. Polyatomic: γ ≈ 1.33. Determines adiabatic process behavior: PV^γ = constant."
     },
     {
       "label": "More ideas",
-      "text": "Concept 5: Connection between Heat Capacities of Gases and other topics  ·  Key Formula 5: Important relation in Heat Capacities of Gases  ·  Note 3: Practice numerical problems regularly for mastery of Heat Capacities of Gases"
+      "text": "Diatomic (room T): $C_v = \\frac{5}{2}R$, $C_p = \\frac{7}{2}R$, $\\gamma = \\frac{7}{5}$  ·  General: $C_v = \\frac{f}{2}R$, $C_p = \\left(\\frac{f}{2}+1\\right)R$  ·  Speed of sound: $v = \\sqrt{\\frac{\\gamma RT}{M}}$"
     },
     {
       "label": "More ideas",
-      "text": "Note 4: Remember the units and dimensions involved in Heat Capacities of Gases  ·  Note 5: Heat Capacities of Gases frequently appears in examination questions  ·  Note 1: Heat Capacities of Gases is based on fundamental principles"
+      "text": "Per Mole vs Per Mass: Molar heat capacities use R; specific (mass-based) use R/M. Always check units in problems.  ·  Quasi-static Processes: Definitions assume reversible, quasi-static heating. Rapid non-equilibrium heating gives different effective heat capacities.  ·  Monatomic γ = 5/3; diatomic γ = 7/5 at ordinary temperatures."
     },
     {
       "label": "More ideas",
-      "text": "Note 2: Remember the distinction between different types in Heat Capacities of Gases  ·  Note 3: Heat Capacities of Gases has both theoretical and practical significance  ·  Note 4: Study the derivations step by step for Heat Capacities of Gases"
+      "text": "Vibrational modes increase C_v at high temperatures.  ·  Assuming γ is always 1.4: Only true for diatomic gases near room temperature. Monatomic and polyatomic differ.  ·  Believing vibrational modes always contribute: They activate only above characteristic temperatures (e.g., ~2000 K for N₂)."
     },
     {
       "label": "More ideas",
-      "text": "Note 5: Cross-check your answers using alternative methods for Heat Capacities of Gases  ·  Statement 1: Definition of Heat Capacities of Gases  ·  Statement 2: Theorem related to Heat Capacities of Gases"
+      "text": "Confusing heat capacity with thermal conductivity: Heat capacity stores energy; conductivity transfers it. Different physical quantities.  ·  For air (mostly N₂ + O₂), γ ≈ 1.40 at STP — matches diatomic prediction.  ·  Steam (H₂O, polyatomic) has γ ≈ 1.33; helium (monatomic) has γ ≈ 1.67."
     },
     {
       "label": "More ideas",
-      "text": "Statement 3: Condition for Heat Capacities of Gases to be valid  ·  Statement 4: Principle governing Heat Capacities of Gases  ·  Statement 5: Corollary or consequence of Heat Capacities of Gases"
+      "text": "At cryogenic temperatures, H₂ behaves as monatomic (rotation frozen): γ → 5/3.  ·  NEB frequently asks derivation of C_p − C_v = R and calculation of γ for given molecular types.  ·  Statement 3: Heat capacity values reflect the number of active molecular degrees of freedom."
     }
   ]
 }
