@@ -275,7 +275,7 @@ function pyqQuestionOverlap(entry: CorpusEntry, terms: string[]): number {
  * Score every validated record against the question's tokens. Pure ranking — no
  * threshold, no bonuses; `retrieve()` applies the coverage rules on top.
  */
-function scoreRecords(tokens: QueryToken[]): CurriculumHit[] {
+function scoreRecords(tokens: QueryToken[], questionTerms: string[]): CurriculumHit[] {
   const { entries } = getCorpus();
   const table = idfTable(entries);
   const hits: CurriculumHit[] = [];
@@ -339,12 +339,20 @@ function scoreRecords(tokens: QueryToken[]): CurriculumHit[] {
     if (matched.length && entry.source.includes("/drills/")) score += 1.5;
 
     // Owner-book recall floor (owner 2026-11-24): the ingested books under
-    // kb/books/ are the owner's chosen treatment, so a book record that
-    // already matched a query term gets a fixed lift — enough to win a
+    // kb/books/ are the owner's chosen treatment, so a book record that is
+    // genuinely ABOUT the asked concept gets a fixed lift — enough to win a
     // near-tie against an equally-matched note, never enough to qualify an
     // unmatched record or to cross the strong/weak bar (gradeStrength decides
     // that on match position, not on this boost).
-    if (matched.length && isBookEntry(entry)) score += 2.5;
+    //
+    // "Genuinely about" = the CURRENT MESSAGE's own content term matched the
+    // record's position (title/slug/unit). A book that only MENTIONS the term
+    // in its body, or that matched only the conversation tail's words (a
+    // follow-up that switched topics must keep the new topic's winner), gets
+    // no lift: the current message always outvotes the tail, and a passing
+    // mention is not the book's treatment of the concept.
+    const onTopic = questionTerms.some((term) => positionTokens.includes(term));
+    if (onTopic && isBookEntry(entry)) score += 2.5;
 
     hits.push({
       entry,
@@ -441,6 +449,12 @@ export function gradeStrength(
   hit: CurriculumHit,
   target: string[],
   questionTokenCount: number,
+  /** The CURRENT message's own content terms. When given, an owner drop-in's
+   * "is this record about the concept?" bar is judged against THESE — never
+   * against the conversation tail, whose words must not crown a record the
+   * new topic did not ask for (the current message outvotes the tail).
+   */
+  messageTerms?: string[],
 ): "strong" | "weak" {
   const allContent = target.every((term) => hit.matched.includes(term));
   if (!allContent) return "weak";
@@ -455,11 +469,19 @@ export function gradeStrength(
   const namesConcept = hit.positionTokens.some((t) => target.includes(t));
   const unitTokens = new Set(tokenize(hit.entry.unit.replace(/-/g, " ")).map(stem));
   const unitIsConcept = target.some((t) => unitTokens.has(t));
-  const namesTheConcept = namesConcept || unitIsConcept;
 
   // An owner's own book: the same "is this record about the concept?" bar,
   // reached at a lower ratio because a chapter is not named after one idea.
-  if (hit.entry.dropIn) return namesTheConcept ? "strong" : "weak";
+  // The concept it must name is the CURRENT message's (messageTerms when the
+  // caller supplies them) — a tail word naming the record's unit must not
+  // resurrect the previous topic after the user moved on.
+  if (hit.entry.dropIn) {
+    const scope = messageTerms && messageTerms.length ? messageTerms : target;
+    const namesInScope =
+      hit.positionTokens.some((t) => scope.includes(t)) ||
+      scope.some((t) => unitTokens.has(t));
+    return namesInScope ? "strong" : "weak";
+  }
 
   return namesConcept && (questionRatio >= 0.6 || substantiveMatches >= 2 || unitIsConcept)
     ? "strong"
@@ -582,7 +604,13 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
         .slice(0, 2)
         .map((t) => t.token);
 
-  const scored = scoreRecords(tokens);
+  // The current message's OWN content terms — conversation-tail tokens ride at
+  // weight 0.5 and are excluded, so the owner-book lift is decided by this
+  // message alone and a topic switch is never dragged back by the tail. With
+  // no content term at all, the fallback target stands in.
+  const messageTerms = tokens.filter((t) => t.weight >= 1 && t.content).map((t) => t.token);
+
+  const scored = scoreRecords(tokens, messageTerms.length ? messageTerms : target);
   const candidates: CurriculumHit[] = [];
   for (const hit of scored) {
     // The record must match at least one CONTENT term of the question — this is
@@ -591,7 +619,7 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
     const contentHits = hit.matched.filter((m) => target.includes(m));
     if (!contentHits.length) continue;
 
-    const strength = gradeStrength(hit, target, tokens.length);
+    const strength = gradeStrength(hit, target, tokens.length, messageTerms);
     if (strength === "strong") contentHits.forEach((m) => matchedTerms.add(m));
     candidates.push({ ...hit, strength });
   }
