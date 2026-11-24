@@ -112,10 +112,28 @@ def apply_to(notes, blocks, label, dry):
     return changes
 
 
+def expand_blocks(blocks):
+    """A block may carry several content keys (md, table, svg). The engine
+    renders one type per block, so expand multi-key blocks into one block per
+    key, preserving authored order (md, table, svg)."""
+    out = []
+    for b in blocks:
+        keys = [k for k in ("md", "table", "svg") if k in b]
+        if len(keys) <= 1:
+            out.append(b)
+            continue
+        for k in keys:
+            nb = {"after": b["after"], k: b[k]}
+            out.append(nb)
+    return out
+
+
 def run_pack(pack_name, dry):
     mod = importlib.import_module("packs." + pack_name)
     total = 0
     for topic in mod.TOPICS:
+        topic = dict(topic)
+        topic["blocks"] = expand_blocks(topic.get("blocks", []))
         rel = topic["file"]
         path = os.path.normpath(os.path.join(BASE, rel))
         with open(path, encoding="utf-8") as f:
