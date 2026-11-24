@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { MemberHome } from "@/components/home/tier-interfaces";
 import { HomeSubjectRails } from "@/components/home/home-subject-rails";
+import { HomeSubjectRailsSkeleton } from "@/components/home/home-subject-rails-skeleton";
 import { TierHomeGate } from "@/components/home/tier-home-gate";
 
 export const metadata: Metadata = {
@@ -11,7 +13,13 @@ export const metadata: Metadata = {
 export default function MemberHomePage() {
   return (
     <TierHomeGate tier="member">
-      <MemberHome rails={<HomeSubjectRails />} />
+      <MemberHome
+        rails={
+          <Suspense fallback={<HomeSubjectRailsSkeleton />}>
+            <HomeSubjectRails />
+          </Suspense>
+        }
+      />
     </TierHomeGate>
   );
 }

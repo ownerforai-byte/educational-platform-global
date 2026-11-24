@@ -1,6 +1,5 @@
 package com.ravikisan.platform;
 
-import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
@@ -10,12 +9,11 @@ import androidx.core.app.NotificationCompat;
 
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
-import com.ravikisan.platform.fcm.FcmRegistrar;
+import com.ravikisan.platform.fcm.NotificationChannels;
+import com.ravikisan.platform.security.SecureDeepLink;
 import com.ravikisan.platform.session.SessionManager;
 
 public class RnPushMessagingService extends FirebaseMessagingService {
-
-    private static final String CHANNEL_ID = "community_activity";
 
     @Override
     public void onNewToken(String token) {
@@ -45,9 +43,10 @@ public class RnPushMessagingService extends FirebaseMessagingService {
 
         String deepLink = message.getData().get("deepLink");
         if (deepLink == null) deepLink = message.getData().get("url");
-        if (deepLink == null) deepLink = "/home/member";
-
-        ensureChannel();
+        deepLink = SecureDeepLink.sanitizePath(deepLink != null ? deepLink : "/home/member");
+        String kind = message.getData().get("kind");
+        String channelId = NotificationChannels.channelForKind(kind);
+        NotificationChannels.ensureAll(this);
 
         Intent open = new Intent(this, MainActivity.class);
         open.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
@@ -59,30 +58,19 @@ public class RnPushMessagingService extends FirebaseMessagingService {
         }
         PendingIntent pending = PendingIntent.getActivity(this, 0, open, flags);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_notification_icon)
-                .setContentTitle(title)
-                .setContentText(body)
-                .setAutoCancel(true)
-                .setContentIntent(pending)
-                .setPriority(NotificationCompat.PRIORITY_HIGH);
+        NotificationCompat.Builder builder =
+                new NotificationCompat.Builder(this, channelId)
+                        .setSmallIcon(R.drawable.ic_notification_icon)
+                        .setContentTitle(title)
+                        .setContentText(body)
+                        .setStyle(new NotificationCompat.BigTextStyle().bigText(body))
+                        .setAutoCancel(true)
+                        .setContentIntent(pending)
+                        .setPriority(NotificationCompat.PRIORITY_HIGH);
 
         NotificationManager nm = getSystemService(NotificationManager.class);
         if (nm != null) {
             nm.notify((int) System.currentTimeMillis(), builder.build());
-        }
-    }
-
-    private void ensureChannel() {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) return;
-        NotificationChannel channel = new NotificationChannel(
-                CHANNEL_ID,
-                "Community & alerts",
-                NotificationManager.IMPORTANCE_HIGH);
-        channel.enableVibration(true);
-        NotificationManager nm = getSystemService(NotificationManager.class);
-        if (nm != null) {
-            nm.createNotificationChannel(channel);
         }
     }
 }

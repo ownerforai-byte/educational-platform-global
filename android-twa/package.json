@@ -10,7 +10,9 @@
     "dev": "npx @bubblewrap/cli dev",
     "serve": "npx @bubblewrap/cli serve",
     "deploy": "npx @bubblewrap/cli deploy",
-    "test:vendor": "node vendor/secure-extract-zip/self-test.js"
+    "test:vendor": "node vendor/secure-extract-zip/self-test.js",
+    "verify:native-security": "node scripts/verify-native-security.mjs",
+    "verify:native-shell": "node scripts/verify-android-native-shell.mjs"
   },
   "devDependencies": {
     "@bubblewrap/cli": "^1.27.0",

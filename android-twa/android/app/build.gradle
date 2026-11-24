@@ -48,8 +48,8 @@ android {
         applicationId "com.ravikisan.platform"
         minSdkVersion 30
         targetSdkVersion 36
-        versionCode 13
-        versionName "1.0.11"
+        versionCode 17
+        versionName "1.0.15"
         buildConfigField "String", "API_BASE", '"https://harindrasah.com.np"'
         resValue "string", "appName", "Ravikisan\\'s Platform"
         resValue "string", "launcherName", "Ravikisan"

@@ -1553,10 +1553,11 @@ code, kbd, samp, pre {
    cards sliding through stay painted). Topic rails carry hundreds of cards —
    each rendered twice for the seamless loop — so only the cards near the
    viewport pay layout/paint cost. `contain-intrinsic-size` gives skipped cards
-   their width placeholder so the -50% seam never shifts. */
+   their width placeholder so the -50% seam never shifts. The base size matches
+   the mobile knowledge-card clamp (min of 22rem and the viewport inset). */
 .subject-rail-track > li {
   content-visibility: auto;
-  contain-intrinsic-size: auto 22rem;
+  contain-intrinsic-size: auto min(22rem, calc(100vw - 2.5rem));
 }
 @media (min-width: 640px) {
   .subject-rail-track > li {
@@ -1566,6 +1567,19 @@ code, kbd, samp, pre {
 @media (min-width: 1280px) {
   .subject-rail-track > li {
     contain-intrinsic-size: auto 44rem;
+  }
+}
+
+/* Sticky syllabus bar: under the app header (z-40, min-h-14 at lg, two rows
+   plus the safe-area inset on small screens) and under menus (z-50). */
+.home-syllabus-progress {
+  position: sticky;
+  z-index: 30;
+  top: calc(env(safe-area-inset-top, 0px) + 6.75rem);
+}
+@media (min-width: 1024px) {
+  .home-syllabus-progress {
+    top: 3.5rem;
   }
 }
 

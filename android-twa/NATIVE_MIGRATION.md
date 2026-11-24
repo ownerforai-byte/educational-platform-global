@@ -26,11 +26,11 @@
 
 | Layer | Implementation |
 |-------|----------------|
-| **UI** | `SplashActivity` → `LoginActivity` / `MainActivity` + bottom nav (Home, Learn, Search, Profile, Settings) |
+| **UI** | `SplashActivity` → `LoginActivity` / `MainActivity` + bottom nav; study routes in `WebHostFragment` (in-app WebView + session cookies) |
 | **API** | OkHttp → `https://harindrasah.com.np/api` (auth, profile, community feed) |
 | **Offline** | Room `app_cache` table + last-sync timestamps |
 | **Sync** | WorkManager periodic refresh when online |
-| **FCM** | `RnPushMessagingService` → tray + deep link into `MainActivity`; register on login; revoke on logout |
+| **FCM** | `RnPushMessagingService` → categorized tray channels + deep link → `WebHostFragment` route; native registers token (web push skipped via `__RN_NATIVE_ANDROID__`) |
 | **Permissions** | `INTERNET`, `ACCESS_NETWORK_STATE`, `POST_NOTIFICATIONS` |
 
 ## Backend (already in repo)
@@ -56,6 +56,13 @@ cd android-twa/android
 ./gradlew bundleRelease
 # Output: app/build/outputs/bundle/release/app-release.aab
 ```
+
+## In-app shell (no Chrome, same account as website)
+
+- **Sign-in:** `LoginActivity` loads `/login` in the **embedded WebView** (same UI as the browser). Session cookies mirror into `SessionManager` via `WebSessionCookies.ingestWebSession`.
+- **Navigation:** `PlatformWebViewClient` + `PlatformWebChromeClient` keep study URLs and Google OAuth inside the WebView.
+- **Web UI:** Injected `__RN_NATIVE_ANDROID__` hides Play/rate-in-browser footer promos and skips the PWA service worker (updates ship through Play).
+- **Settings:** "Open full study site" is hidden — the app *is* the platform.
 
 ## Phase 2 (follow-up, not in this scaffold)
 

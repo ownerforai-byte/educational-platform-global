@@ -18,6 +18,7 @@ import { isFcmConfigured } from "./config";
 import { logFcmResult, registerFcmToken, syncFcmToken } from "./register-token";
 import { startFcmTokenRefresh } from "./token-refresh";
 import { bindAndroidNativeFcmBridge } from "./android-native-bridge";
+import { isAndroidNativeShell } from "@/lib/native-android";
 import { SOCIAL_NOTIFICATION_REFRESH_EVENT } from "@/lib/hooks/use-social-notification-unread";
 
 function deepLinkFromPayload(data: Record<string, string> | undefined): string | null {
@@ -74,6 +75,7 @@ export function FcmNotificationListener() {
 
   useEffect(() => {
     if (!isFcmConfigured() || isLoading) return;
+    if (isAndroidNativeShell()) return;
 
     const statusToken = readStatusToken();
     const shouldRegister = Boolean(user) || Boolean(statusToken);
@@ -98,6 +100,7 @@ export function FcmNotificationListener() {
   // prompts, and re-registers only when something actually changed).
   useEffect(() => {
     if (!isFcmConfigured() || isLoading) return;
+    if (isAndroidNativeShell()) return;
     const statusToken = readStatusToken();
     if (!user && !statusToken) return;
     void syncFcmToken({ statusToken, deepLink: normalizeDeepLink(pathname) }).then((result) =>
@@ -106,7 +109,7 @@ export function FcmNotificationListener() {
   }, [user, isLoading, pathname]);
 
   useEffect(() => {
-    if (!isFcmConfigured()) return;
+    if (!isFcmConfigured() || isAndroidNativeShell()) return;
     let unsub: (() => void) | undefined;
     let cancelled = false;
 

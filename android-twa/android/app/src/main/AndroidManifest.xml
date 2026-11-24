@@ -17,10 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RnPlatform">
 
-        <meta-data
-            android:name="asset_statements"
-            android:resource="@string/asset_statements" />
-
         <activity
             android:name=".SplashActivity"
             android:exported="true"
@@ -35,6 +31,10 @@
             android:name=".LoginActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+
+        <activity
+            android:name=".SecurityBlockedActivity"
+            android:exported="false" />
 
         <activity
             android:name=".MainActivity"

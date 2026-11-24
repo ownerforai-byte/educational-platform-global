@@ -2,98 +2,88 @@ package com.ravikisan.platform;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.os.Handler;
+import android.os.Looper;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import com.google.android.material.button.MaterialButton;
-import com.google.android.material.textfield.TextInputEditText;
-import com.ravikisan.platform.auth.FirebaseAuthGateway;
 import com.ravikisan.platform.fcm.FcmRegistrar;
-import com.ravikisan.platform.net.ApiClient;
 import com.ravikisan.platform.security.SecureWindow;
+import com.ravikisan.platform.security.SecurityBootstrap;
+import com.ravikisan.platform.session.SessionManager;
 import com.ravikisan.platform.sync.SyncScheduler;
+import com.ravikisan.platform.web.WebHostFragment;
+import com.ravikisan.platform.web.WebSessionCookies;
 
-import org.json.JSONObject;
-
-public class LoginActivity extends AppCompatActivity {
-    private ApiClient api;
-    private TextView error;
-    private ProgressBar progress;
+/**
+ * Sign-in uses the same web flow as the browser (in-app WebView only — never Chrome).
+ */
+public class LoginActivity extends AppCompatActivity implements WebHostFragment.WebAuthListener {
+    private final Handler handler = new Handler(Looper.getMainLooper());
+    private boolean finishingAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         SecureWindow.apply(this);
+        if (new SessionManager(this).isSignedIn()) {
+            openMainAndFinish();
+            return;
+        }
         setContentView(R.layout.activity_login);
-        api = new ApiClient(this);
-        error = findViewById(R.id.error);
-        progress = findViewById(R.id.progress);
-        TextInputEditText email = findViewById(R.id.email);
-        TextInputEditText password = findViewById(R.id.password);
-        MaterialButton signIn = findViewById(R.id.sign_in);
-        signIn.setOnClickListener(v -> {
-            String em = email.getText() != null ? email.getText().toString().trim() : "";
-            String pw = password.getText() != null ? password.getText().toString() : "";
-            if (em.isEmpty() || pw.isEmpty()) {
-                showError("Enter email and password.");
-                return;
-            }
-            progress.setVisibility(View.VISIBLE);
-            error.setVisibility(View.GONE);
-            attemptSignIn(em, pw);
-        });
+        if (savedInstanceState == null) {
+            WebHostFragment login = WebHostFragment.newInstance("/login");
+            login.setWebAuthListener(this);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.login_fragment_host, login, "login_web")
+                    .commit();
+        }
     }
 
     @Override
-    protected void onStop() {
-        TextInputEditText password = findViewById(R.id.password);
-        if (password != null) {
-            password.setText("");
+    public void onWebAuthMaybeReady() {
+        if (finishingAuth || isFinishing()) return;
+        if (!WebSessionCookies.ingestWebSession(this)) return;
+        if (!new SessionManager(this).isSignedIn()) return;
+        finishingAuth = true;
+        handler.post(this::completeWebSignIn);
+    }
+
+    private void completeWebSignIn() {
+        if (isFinishing()) return;
+        FcmRegistrar.requestPermissionIfNeeded(this);
+        FcmRegistrar.registerForSignedInUser(this);
+        SyncScheduler.schedule(this);
+        SecurityBootstrap.enforceAuthenticatedSession(this);
+        openMainAndFinish();
+    }
+
+    private void openMainAndFinish() {
+        Intent main = new Intent(this, MainActivity.class);
+        if (getIntent() != null && getIntent().hasExtra(MainActivity.EXTRA_DEEP_LINK)) {
+            main.putExtra(MainActivity.EXTRA_DEEP_LINK, getIntent().getStringExtra(MainActivity.EXTRA_DEEP_LINK));
+        } else if (getIntent() != null && getIntent().getData() != null) {
+            main.setData(getIntent().getData());
         }
-        super.onStop();
+        startActivity(main);
+        finish();
     }
 
-    private void attemptSignIn(String email, String password) {
-        if (FirebaseAuthGateway.isReady(this)) {
-            FirebaseAuthGateway.signIn(this, email, password, (idToken, err) -> {
-                if (idToken == null) {
-                    runOnUiThread(() -> {
-                        progress.setVisibility(View.GONE);
-                        showError(err != null ? err.getMessage() : "Sign in failed");
-                    });
-                    return;
-                }
-                api.loginWithIdToken(idToken, this::finishLogin);
-            });
-            return;
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
+    }
+
+    /** Re-attach listener after config change. */
+    @Override
+    protected void onStart() {
+        super.onStart();
+        Fragment f = getSupportFragmentManager().findFragmentByTag("login_web");
+        if (f instanceof WebHostFragment) {
+            ((WebHostFragment) f).setWebAuthListener(this);
         }
-        api.loginWithPassword(email, password, this::finishLogin);
-    }
-
-    private void finishLogin(JSONObject res, Exception err) {
-        runOnUiThread(() -> {
-            progress.setVisibility(View.GONE);
-            if (err != null || res == null) {
-                showError(err != null ? err.getMessage() : "Sign in failed");
-                return;
-            }
-            if (res.optJSONObject("user") == null) {
-                showError(res.optString("message", res.optString("error", "Could not open session.")));
-                return;
-            }
-            FcmRegistrar.requestPermissionIfNeeded(this);
-            FcmRegistrar.registerForSignedInUser(this);
-            SyncScheduler.schedule(this);
-            startActivity(new Intent(this, MainActivity.class));
-            finish();
-        });
-    }
-
-    private void showError(String message) {
-        error.setText(message);
-        error.setVisibility(View.VISIBLE);
     }
 }

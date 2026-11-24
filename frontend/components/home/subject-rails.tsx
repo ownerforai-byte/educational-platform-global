@@ -505,6 +505,18 @@ function getAcademicEssentials(
 
 const ESSENTIAL_ICONS = [BookOpen, Lightbulb, Compass, Zap] as const;
 
+/**
+ * Card widths clamp to the viewport so a 22rem knowledge card (or a 13rem
+ * unit divider) cannot spill past the page inset on screens under 375px.
+ * sm/xl steps stay the wide desktop sizes. Both loop copies share these
+ * strings, so the measured card step stays identical.
+ */
+export const RAIL_KNOWLEDGE_CARD_WIDTH =
+  "w-[min(22rem,calc(100vw-2.5rem))] sm:w-[38rem] xl:w-[44rem]";
+
+export const RAIL_PLACEHOLDER_CARD_WIDTH =
+  "w-[min(13rem,calc(100vw-2.5rem))] sm:w-[16rem]";
+
 /* Memoised: each rail renders its slide set twice (the second copy is the
    seamless-loop duplicate), and a Pause/Play click re-renders only its own
    rail section. Without this every card in that rail re-rendered too. The
@@ -545,17 +557,17 @@ function SlideCardView({  rail,
               ? undefined
               : `${slide.unitDivider.unitTitle} — ${slide.unitDivider.meta}`
           }
-          className={`group relative flex w-[13rem] flex-col justify-center gap-1 overflow-hidden rounded-2xl border border-dashed bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 sm:w-[16rem] sm:p-5 ${rail.accent.border}`}
+          className={`group relative flex min-w-0 ${RAIL_PLACEHOLDER_CARD_WIDTH} flex-col justify-center gap-1 overflow-hidden rounded-2xl border border-dashed bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 sm:p-5 ${rail.accent.border}`}
         >
           <span
             className={`text-[10px] font-bold uppercase tracking-wider ${rail.accent.text}`}
           >
             {slide.tag}
           </span>
-          <span className="text-base font-black leading-snug tracking-tight text-foreground sm:text-lg">
+          <span className="min-w-0 break-words text-base font-black leading-snug tracking-tight text-foreground sm:text-lg">
             {slide.unitDivider.unitTitle}
           </span>
-          <span className="text-[11px] font-semibold text-muted-foreground">
+          <span className="min-w-0 break-words text-[11px] font-semibold text-muted-foreground">
             {slide.unitDivider.meta}
           </span>
           <span className="text-[10px] font-semibold text-muted-foreground/80">
@@ -583,7 +595,7 @@ function SlideCardView({  rail,
         href={slide.href}
         aria-hidden={duplicate || undefined}
         tabIndex={duplicate ? -1 : undefined}
-        className={`group relative flex h-full w-[22rem] flex-col gap-3 overflow-hidden rounded-2xl border bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:w-[38rem] sm:p-6 xl:w-[44rem] ${
+        className={`group relative flex h-full min-w-0 ${RAIL_KNOWLEDGE_CARD_WIDTH} flex-col gap-3 overflow-hidden rounded-2xl border bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:p-6 ${
           slide.teaser ? "border-dashed" : ""
         } ${rail.accent.border}`}
       >
@@ -613,7 +625,7 @@ function SlideCardView({  rail,
           ) : null}
         </div>
 
-        <h4 className="relative text-base font-black leading-snug tracking-tight text-foreground sm:text-lg">
+        <h4 className="relative min-w-0 break-words text-base font-black leading-snug tracking-tight text-foreground sm:text-lg">
           {slide.title}
         </h4>
 

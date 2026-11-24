@@ -11,26 +11,52 @@ import com.ravikisan.platform.session.SessionManager;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class ContentSyncWorker extends Worker {
-    public ContentSyncWorker(@NonNull Context context, @NonNull WorkerParameters params) {
-        super(context, params);
+  private static final int MAX_ATTEMPTS = 4;
+
+  public ContentSyncWorker(@NonNull Context context, @NonNull WorkerParameters params) {
+    super(context, params);
+  }
+
+  @NonNull
+  @Override
+  public Result doWork() {
+    if (getRunAttemptCount() > MAX_ATTEMPTS) {
+      return Result.success();
+    }
+    SessionManager session = new SessionManager(getApplicationContext());
+    if (!session.isSignedIn()) {
+      return Result.success();
+    }
+    ApiClient api = new ApiClient(getApplicationContext());
+    CountDownLatch latch = new CountDownLatch(2);
+    AtomicBoolean authFailed = new AtomicBoolean(false);
+
+    api.refreshMe((value, error) -> {
+      if (error instanceof ApiClient.HttpException ex && (ex.status == 401 || ex.status == 403)) {
+        authFailed.set(true);
+      }
+      latch.countDown();
+    });
+    api.refreshFeed((value, error) -> {
+      if (error instanceof ApiClient.HttpException ex && (ex.status == 401 || ex.status == 403)) {
+        authFailed.set(true);
+      }
+      latch.countDown();
+    });
+
+    try {
+      latch.await(25, TimeUnit.SECONDS);
+    } catch (InterruptedException e) {
+      Thread.currentThread().interrupt();
+      return Result.success();
     }
 
-    @NonNull
-    @Override
-    public Result doWork() {
-        SessionManager session = new SessionManager(getApplicationContext());
-        if (!session.isSignedIn()) return Result.success();
-        ApiClient api = new ApiClient(getApplicationContext());
-        try {
-            CountDownLatch latch = new CountDownLatch(2);
-            api.refreshMe((value, error) -> latch.countDown());
-            api.refreshFeed((value, error) -> latch.countDown());
-            boolean ok = latch.await(25, TimeUnit.SECONDS);
-            return ok ? Result.success() : Result.retry();
-        } catch (Exception e) {
-            return Result.retry();
-        }
+    if (authFailed.get()) {
+      return Result.success();
     }
+    return latch.getCount() == 0 ? Result.success() : Result.retry();
+  }
 }

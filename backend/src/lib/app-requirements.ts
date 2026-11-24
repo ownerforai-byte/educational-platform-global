@@ -6,7 +6,7 @@ export const APP_SUPPORT_EMAIL = "sahrocky81@gmail.com";
 export const ANDROID_PACKAGE_ID = "com.ravikisan.platform";
 
 /** Current Play `versionCode` in android-twa/android/app/build.gradle */
-export const MIN_ANDROID_VERSION_CODE = 13;
+export const MIN_ANDROID_VERSION_CODE = 17;
 
 /**
  * Canonical legal, support, and client requirements exposed at GET /api/v2/meta

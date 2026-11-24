@@ -17,6 +17,7 @@ import {
   STATIC_PUBLIC_DIRS,
   TRUST_PROXY_HOPS,
 } from "./config/server";
+import { enforceNativeAndroidClient } from "./middleware/native-android-client.js";
 
 export function createApp(): express.Express {
   const app = express();
@@ -41,6 +42,8 @@ export function createApp(): express.Express {
         "X-Request-Id",
         "X-Upload-Filename",
         "X-Storage-Path",
+        "X-Rn-Client",
+        "X-Rn-Signing-Cert",
       ],
     }),
   );
@@ -51,6 +54,7 @@ export function createApp(): express.Express {
   // skips responses that are already compressed or have no Accept-Encoding.
   app.use(compression());
   app.use(rateLimit);
+  app.use(enforceNativeAndroidClient);
   // Body limit rationale lives in config/server.ts (JSON_BODY_LIMIT).
   app.use(express.json({ limit: JSON_BODY_LIMIT }));
   app.use(cookieParser());

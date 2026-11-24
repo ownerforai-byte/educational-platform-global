@@ -42,6 +42,7 @@ import {
 } from "@/lib/core/navigation";
 import { SparkGate } from "@/features/credits/spark-gate";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { HomeSyllabusProgressBar } from "@/components/home/home-syllabus-progress";
 import { useJourney } from "@/components/study/use-journey";
 import { useStudyGoals } from "@/components/study/use-study-goals";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
@@ -402,6 +403,7 @@ function TierPage({
 }) {
   return (
     <div className="mx-auto w-full max-w-7xl space-y-8 px-4 py-8">
+      <HomeSyllabusProgressBar />
       <TierHero tier={tier} headline={headline} blurb={blurb} />
       <DeskPulse />
       <QuickLinksRail tier={tier} />

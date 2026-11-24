@@ -20,8 +20,11 @@
  * Plans are shown only in the footer (not scattered around the app).
  */
 
+"use client";
+
 import Link from "next/link";
 import { CloudDownload, Star } from "lucide-react";
+import { isAndroidNativeShell } from "@/lib/native-android";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/core/navigation";
@@ -180,6 +183,7 @@ export const LEGAL_LINKS: [string, string][] = [
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.ravikisan.platform";
 
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
+  const inNativeApp = isAndroidNativeShell();
   return (
     <footer className="mt-auto border-t-2 border-border/80 bg-background">
       {/* ── Mobile view (owner 2026-11-09: "resolve the footer like this …") ──
@@ -187,34 +191,38 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           Updates / Rate this App) and a compact essentials strip. The website
           view below stays exactly as it is. */}
       <div className="md:hidden">
-        <div className="h-2.5 w-full bg-muted/50" aria-hidden="true" />
-        <ul className="divide-y divide-border/60">
-          <li className="flex items-center gap-3 px-4 py-3.5">
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-              <CloudDownload className="h-[18px] w-[18px]" />
-            </span>
-            <div className="min-w-0">
-              <p className="text-sm font-bold text-foreground">Check for Updates</p>
-              <p className="text-xs text-muted-foreground">Current version {DEPLOY_VERSION}</p>
-            </div>
-          </li>
-          <li>
-            <a
-              href={PLAY_STORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
-                <Star className="h-[18px] w-[18px]" />
-              </span>
-              <div className="min-w-0">
-                <p className="text-sm font-bold text-foreground">Rate this App</p>
-                <p className="text-xs text-muted-foreground">Share your feedback on Google Play</p>
-              </div>
-            </a>
-          </li>
-        </ul>
+        {!inNativeApp && (
+          <>
+            <div className="h-2.5 w-full bg-muted/50" aria-hidden="true" />
+            <ul className="divide-y divide-border/60">
+              <li className="flex items-center gap-3 px-4 py-3.5">
+                <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                  <CloudDownload className="h-[18px] w-[18px]" />
+                </span>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-foreground">Check for Updates</p>
+                  <p className="text-xs text-muted-foreground">Current version {DEPLOY_VERSION}</p>
+                </div>
+              </li>
+              <li>
+                <a
+                  href={PLAY_STORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 px-4 py-3.5 transition-colors hover:bg-muted/30"
+                >
+                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary/10 text-primary" aria-hidden="true">
+                    <Star className="h-[18px] w-[18px]" />
+                  </span>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-foreground">Rate this App</p>
+                    <p className="text-xs text-muted-foreground">Share your feedback on Google Play</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </>
+        )}
         <div className="space-y-3 px-4 pb-6 pt-3 text-[11px] leading-relaxed text-muted-foreground">
           <p>After signing, the account is approved by the system verification and administrative approval.</p>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">

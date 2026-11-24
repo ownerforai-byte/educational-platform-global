@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { isAndroidNativeShell } from "@/lib/native-android";
 
 /**
  * Registers the service worker and applies every new version AUTOMATICALLY.
@@ -20,6 +21,7 @@ import { useEffect } from "react";
  */
 export function ServiceWorkerRegistrar() {
   useEffect(() => {
+    if (isAndroidNativeShell()) return;
     if (!("serviceWorker" in navigator)) return;
 
     const sw = navigator.serviceWorker;

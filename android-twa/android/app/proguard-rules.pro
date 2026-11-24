@@ -13,6 +13,11 @@
 # FCM entrypoint (manifest)
 -keep class com.ravikisan.platform.RnPushMessagingService { *; }
 
+# WebView JS bridge (@JavascriptInterface)
+-keepclassmembers class com.ravikisan.platform.web.NativeJsBridge {
+    @android.webkit.JavascriptInterface <methods>;
+}
+
 # Firebase / Play Services (reflective)
 -keep class com.google.firebase.** { *; }
 -dontwarn com.google.firebase.**
