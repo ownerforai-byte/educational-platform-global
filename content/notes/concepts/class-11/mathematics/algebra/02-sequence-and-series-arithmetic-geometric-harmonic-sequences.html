@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Sequence and series: arithmetic, geometric, harmonic sequences</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Sequence and series: arithmetic, geometric, harmonic sequences</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -154,47 +157,113 @@
   <section class="field"><h2>Unit SLUG</h2><p>algebra</p></section>
 <section class="field"><h2>Topic SLUG</h2><p>sequence-and-series-arithmetic-geometric-harmonic-sequences</p></section>
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
-<section class="field"><h2>Notes</h2><ul><li><h4>1. Sequence Definition</h4></li><li>An ordered list of numbers following a pattern: a1, a2, a3, ..., an, ...</li><li><h4>2. Arithmetic Progression (AP)</h4></li><li><ul>
-<li>Common difference: d = an - a(n-1)</li>
-</ul></li><li><ul>
-<li>nth term: an = a + (n-1)d</li>
-</ul></li><li><ul>
-<li>Sum of n terms: Sn = n/2[2a + (n-1)d] = n/2(a + l)</li>
-</ul></li><li><ul>
-<li>Arithmetic Mean: A = (a+b)/2</li>
-</ul></li><li><h4>3. Geometric Progression (GP)</h4></li><li><ul>
-<li>Common ratio: r = an/a(n-1)</li>
-</ul></li><li><ul>
-<li>nth term: an = ar^(n-1)</li>
-</ul></li><li><ul>
-<li>Sum of n terms: Sn = a(r^n - 1)/(r-1) for r != 1</li>
-</ul></li><li><ul>
-<li>Infinite GP (|r| &lt; 1): S_infinity = a/(1-r)</li>
-</ul></li><li><ul>
-<li>Geometric Mean: G = sqrt(ab)</li>
-</ul></li><li><h4>4. Harmonic Progression (HP)</h4></li><li>Reciprocals of an AP: 1/a, 1/(a+d), 1/(a+2d), ...</li><li><ul>
-<li>Harmonic Mean: H = 2ab/(a+b)</li>
-</ul></li><li><ul>
-<li>Relation: A x H = G^2 (AM x HM = GM^2)</li>
-</ul></li><li><h4>5. Important Relations</h4></li><li><ul>
-<li>For AP: an - a(n-1) = d (constant)</li>
-</ul></li><li><ul>
-<li>For GP: an/a(n-1) = r (constant)</li>
-</ul></li><li><ul>
-<li>AM &gt;= GM &gt;= HM for positive numbers</li>
-</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>MCQs: Find nth term, sum, GM/HM; Word problems on AP/GP; relation between AM, GM, HM.</li></ul></section>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Progress With a Pattern</h3>
+<p>A <strong>sequence</strong> is an ordered list with a rule; a <strong>series</strong> is its sum. The theorems: the AP nth-term and sum formulas, the GP nth-term, sum and <strong>sum to infinity</strong>, the AM–GM–HM ordering, and the special sums Σn, Σn², Σn³.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Arithmetic progression (AP)</h4>
+<ul>
+<li>Constant difference d: aₙ = a + (n−1)d; <strong>sum Sₙ = n/2[2a + (n−1)d] = n/2(a + l)</strong> (l = last term).</li>
+<li><strong>Arithmetic mean:</strong> the middle term of any three-term AP block: b = (a + c)/2.</li>
+</ul>
+<h4>2.2 Geometric progression (GP)</h4>
+<ul>
+<li>Constant ratio r: aₙ = arⁿ⁻¹; <strong>sum Sₙ = a(rⁿ − 1)/(r − 1)</strong> (r ≠ 1).</li>
+<li><strong>Sum to infinity (theorem):</strong> converges iff |r| &lt; 1, and then <strong>S∞ = a/(1 − r)</strong>. Proof idea: Sₙ = a(1 − rⁿ)/(1 − r) and rⁿ → 0 exactly when |r| &lt; 1.</li>
+<li><strong>Geometric mean:</strong> b² = ac for three-term GP blocks (positive terms).</li>
+</ul>
+<h4>2.3 Harmonic progression and the means</h4>
+<ul>
+<li><strong>HP:</strong> reciprocals form an AP; nth term = 1/(a + (n−1)d)′... i.e. 1/(Aₙ of the reciprocal AP).</li>
+<li><strong>AM–GM–HM inequality (theorem):</strong> for positive a, b: <strong>AM ≥ GM ≥ HM</strong>, with equality iff a = b; AM·HM = GM².</li>
+<li>AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).</li>
+</ul>
+<h4>2.4 Special sums (theorems)</h4>
+<ul>
+<li><strong>Σi = n(n+1)/2</strong>; <strong>Σi² = n(n+1)(2n+1)/6</strong>; <strong>Σi³ = [n(n+1)/2]²</strong> — the cube sum is the square of the triangular number.</li>
+<li><strong>Σ(arᵏ)</strong> for k = 0…n−1 is the GP sum; arithmetico-geometric series use term-by-term subtraction (the &quot;multiply by r and shift&quot; trick).</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>AP</strong></td><td>Constant difference d</td><td>3, 7, 11, … (d = 4)</td></tr><tr><td><strong>GP</strong></td><td>Constant ratio r</td><td>2, 6, 18, … (r = 3)</td></tr><tr><td><strong>S∞</strong></td><td>Limit of GP partial sums,</td><td>r</td><td>&lt; 1</td><td>1 + ½ + ¼ + ⋯ = 2</td></tr><tr><td><strong>AM–GM–HM</strong></td><td>The three means, ordered</td><td>AM ≥ GM ≥ HM</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the AP sum formula works</h4>
+<ul>
+<li>Write S forwards and backwards and add: each column sums to a + l, and there are n columns — Gauss's pairing argument gives Sₙ = n(a + l)/2.</li>
+</ul>
+<h4>4.2 Why |r| &lt; 1 is the convergence cliff</h4>
+<ul>
+<li>Partial sums Sₙ = a(1 − rⁿ)/(1 − r): the fate of the series hangs on rⁿ. It dies to 0 iff |r| &lt; 1; otherwise it oscillates or explodes — no middle ground.</li>
+</ul>
+<h4>4.3 Reading the means geometrically</h4>
+<ul>
+<li>For a right triangle's altitude to the hypotenuse: GM appears as the altitude, AM as the half-hypotenuse — the inequality AM ≥ GM becomes a length comparison.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>The three sequences</strong></p>
+<table><thead><tr><th>Basis</th><th>AP</th><th>GP</th><th>HP</th></tr></thead><tbody><tr><td>constant</td><td>difference d</td><td>ratio r</td><td>reciprocals in AP</td></tr><tr><td>nth term</td><td>a + (n−1)d</td><td>arⁿ⁻¹</td><td>1/(a + (n−1)d)</td></tr><tr><td>sum</td><td>n/2[2a + (n−1)d]</td><td>a(rⁿ−1)/(r−1)</td><td>no closed form</td></tr><tr><td>S∞</td><td>diverges (d ≠ 0)</td><td>a/(1−r) if \</td><td>r\</td><td>&lt; 1</td><td>diverges</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>S∞ needs |r| &lt; 1:</strong> a/(1 − r) for r = 2 gives a negative &quot;sum&quot; — nonsense; the formula is licensed only inside the convergence cliff.</li><li><strong>n vs n−1 in the nth term:</strong> aₙ = a + (n−1)d — the first term uses 0 steps.</li><li><strong>GM of negatives:</strong> √(ab) with a, b &lt; 0 is defined via |ab| but the AM–GM theorem needs <strong>positive</strong> terms.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): The sum of the first 10 terms of an AP is 175 and the first term is 5. Find the common difference and the 10th term.</strong> — S₁₀ = 10/2[2(5) + 9d] = 5(10 + 9d) = 175 ⟹ 10 + 9d = 35 ⟹ <strong>d = 25/9</strong>. Then a₁₀ = 5 + 9(25/9) = 5 + 25 = <strong>30</strong>. (Check: S₁₀ = 10/2(5 + 30) = 5 × 35 = 175 ✓.)</li><li><strong>NEB-style (3m): Find the sum to infinity of the GP 8 − 4 + 2 − 1 + ⋯</strong> — Ratio r = −4/8 = <strong>−1/2</strong>, and |r| = ½ &lt; 1 ⟹ convergent. <strong>S∞ = a/(1 − r) = 8/(1 − (−½)) = 8/(3/2) = 16/3 ≈ 5.33.</strong> Partial-sum check: S₄ = 8 − 4 + 2 − 1 = 5, already close to 5.33 ✓.</li><li><strong>NEB-style (2m): Insert 3 arithmetic means between 4 and 16.</strong> — The block 4, A₁, A₂, A₃, 16 is an AP with a = 4, l = 16, n = 5 terms: 16 = 4 + 4d ⟹ d = 3. <strong>Means: 7, 10, 13.</strong> (Geometric means between them would instead solve 16 = 4r⁴ ⟹ r = √2, giving 4√2, 8, 8√2.)</li><li><strong>NEB-style (2m): Prove AM ≥ GM for positive a, b.</strong> — (a − b)² ≥ 0 ⟹ a² − 2ab + b² ≥ 0 ⟹ a² + 2ab + b² ≥ 4ab ⟹ (a + b)² ≥ 4ab ⟹ (a + b)/2 ≥ √(ab) (both sides positive). <strong>AM ≥ GM</strong>, equality iff a = b ∎.</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>x HP has a direct sum formula. x Take reciprocals, use AP sum.</li><li>x r can be any value in infinite GP. x Must have |r| &lt; 1 for convergence.</li><li>x AM = GM always. x AM &gt;= GM, equality only when all terms equal.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>Find the 20th term and sum of first 20 terms of AP: 3, 7, 11, ...</li><li>Find the GP: 2, 6, 18, ... and its 8th term.</li><li>If AM = 13 and GM = 12, find the two numbers.</li><li>Sum of infinite GP: 1 + 1/3 + 1/9 + ...</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>an = a + (n-1)d (AP)</li><li>Sn = n/2[2a + (n-1)d] (AP)</li><li>an = ar^(n-1) (GP)</li><li>Sn = a(r^n - 1)/(r-1) (GP)</li><li>S_infinity = a/(1-r), |r| &lt; 1 (GP)</li><li>G = sqrt(ab), H = 2ab/(a+b)</li></ul></section>
-<section class="field"><h2>Summary</h2><p>A sequence is an ordered list a1, a2, a3, ... following a pattern, and a series is the sum of its terms. In an arithmetic progression the difference d = a_n - a_(n-1) is constant, giving a_n = a + (n-1)d and S_n = n/2[2a + (n-1)d] = n/2(a + l); in a geometric progression the ratio r = a_n/a_(n-1) is constant, giving a_n = a r^(n-1) and S_n = a(r^n - 1)/(r - 1), which reduces to a/(1 - r) only when |r| &lt; 1. A harmonic progression is the reciprocal of an AP, and for two positive numbers the means satisfy A &gt;= G &gt;= H with A x H = G^2.</p></section>
-<section class="field"><h2>Important Concepts</h2><ul><li>Arithmetic progression: the successive differences a_n - a_(n-1) = d are constant, so terms rise by equal jumps.</li><li>Geometric progression: the successive ratios a_n/a_(n-1) = r are constant, so each term is a fixed multiple of the previous one.</li><li>Harmonic progression: the reciprocals 1/a, 1/(a+d), 1/(a+2d) form an arithmetic progression, so it has no direct sum formula.</li><li>Means of two positive numbers a and b: A = (a+b)/2, G = sqrt(ab) and H = 2ab/(a+b), with A &gt;= G &gt;= H.</li><li>An infinite GP converges to a/(1 - r) only when |r| &lt; 1; for r = 1 the terms stay constant and for r &gt; 1 they grow.</li><li>The last term l of an AP is l = a + (n-1)d, which lets S_n be written in the short form n/2(a + l).</li></ul></section>
-<section class="field"><h2>Important Statements</h2><ul><li>The nth term of an AP with first term a and common difference d is a_n = a + (n-1)d, and the sum of n terms is S_n = n/2[2a + (n-1)d] = n/2(a + l).</li><li>The nth term of a GP with first term a and common ratio r is a_n = a r^(n-1), and for r != 1 the sum of n terms is S_n = a(r^n - 1)/(r - 1).</li><li>An infinite geometric series 1 + r + r^2 + ... sums to S_infinity = a/(1 - r) if and only if |r| &lt; 1.</li><li>For two positive numbers the geometric mean is G = sqrt(ab) and the harmonic mean is H = 2ab/(a+b), and these satisfy A x H = G^2.</li><li>For positive numbers AM &gt;= GM &gt;= HM, with equality in any of the three comparisons only when a = b.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>In an AP, S₁₀ = 175 and a = 5; find d and a₁₀.</li><li>Find the sum to infinity of 8 − 4 + 2 − 1 + ⋯</li><li>Prove AM ≥ GM for positive a, b and state the equality case.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>AP: aₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d] = n/2(a + l)</li>
+<li>GP: aₙ = arⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1); S∞ = a/(1−r) iff |r| &lt; 1</li>
+<li>AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b); AM·HM = GM²</li>
+<li>Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²</li>
+</ul></li></ul></section>
+<section class="field"><h2>Summary</h2><p>Sequences impose patterns; series sum them. <strong>AP</strong> (constant difference): aₙ = a + (n−1)d and <strong>Sₙ = n/2(a + l)</strong> — Gauss's forward–backward pairing proves it in one line. <strong>GP</strong> (constant ratio): aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), and the <strong>sum to infinity S∞ = a/(1 − r) exists iff |r| &lt; 1</strong> — the fate of rⁿ is the whole story (8 − 4 + 2 − 1 + ⋯ with r = −½ sums to 16/3). <strong>HP</strong> hides an AP in the reciprocals. The <strong>means order</strong>: AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b), equality iff a = b, proved by expanding (a − b)² ≥ 0. Insertion problems reduce to counting terms and solving for d or r (4→16 with three arithmetic means: d = 3, giving 7, 10, 13). The special sums Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]² — the cube sum squaring the triangular number — close the toolkit.</p></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Convergence hangs on r^n: |r| &lt; 1 kills it, and only then does a/(1 - r) mean anything - the formula is licensed by the limit, not the other way round.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;S_inf = a/(1 - r) iff |r| &lt; 1; AM &gt;= GM &gt;= HM with equality iff a = b; sum i^3 = [n(n+1)/2]^2.&quot;</li></ul></section>
 <section class="field"><h2>Important Tasks</h2><ul><li>Find the nth term and the sum of the first n terms of a given AP, having first identified a and d, or the last term l, from the listed terms.</li><li>Find the nth term and the sum to n terms of a GP, having first identified the common ratio by dividing any term by the one before it.</li><li>Sum an infinite geometric series, checking |r| &lt; 1 before quoting the formula a/(1 - r).</li><li>Recover two numbers from their AM, GM or HM by setting x + y = 2A and xy = G^2 = A x H and solving the resulting quadratic.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>A difference signals an AP and a ratio signals a GP, so subtract a(n-1) to get d and divide by a(n-1) to get r.</li><li>S_n = n/2(a + l) is often the quickest AP sum, because l is usually given directly in the question.</li><li>For a GP with r &lt; 1, write S_n as a(1 - r^n)/(1 - r) so that the bracket stays positive.</li><li>Never use S_infinity = a/(1 - r) without first confirming that |r| &lt; 1.</li><li>AM, GM and HM are means of two numbers; they are not obtained by averaging the terms of a progression.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>AP: a_n = a + (n-1)d; S_n = n/2[2a + (n-1)d] = n/2(a + l); arithmetic mean b = (a + c)/2. GP: a_n = ar^(n-1); S_n = a(r^n - 1)/(r - 1); sum to infinity S_inf = a/(1 - r) iff |r| &lt; 1; geometric mean b^2 = ac. HP: reciprocals form an AP. AM-GM-HM: AM = (a+b)/2 &gt;= GM = sqrt(ab) &gt;= HM = 2ab/(a+b), equality iff a = b; AM x HM = GM^2. Special sums: sum i = n(n+1)/2; sum i^2 = n(n+1)(2n+1)/6; sum i^3 = [n(n+1)/2]^2. Gauss pairing proves the AP sum; the fate of r^n decides GP convergence.</li></ul></section>
 <section class="field"><h2>Special Notes</h2><ul><li>A harmonic progression has no sum formula of its own: take reciprocals, sum the resulting AP, and the sum of the HP is the sum of the reciprocals of those partial sums.</li><li>If r = 1 the GP is constant with S_n = na, and the formula carrying (r - 1) in the denominator is undefined.</li><li>Negative or zero r still give a valid finite sum formula, but the series diverges to infinity unless |r| &lt; 1.</li><li>AM = GM = HM only when every number is equal, so a strict inequality A &gt; G &gt; H is the signal that the numbers are not identical.</li><li>Arithmetic mean is always defined, but GM needs non-negative numbers and HM needs non-zero numbers, since the means are taken over reciprocals.</li></ul></section>
-<section class="field"><h2>Exam Short Tricks</h2><ul><li>Read the first three terms: a constant second difference means AP, while a constant ratio means GP.</li><li>For the sum of n terms of an AP use S_n = n/2(a + l) when the last term is given, and n/2[2a + (n-1)d] otherwise.</li><li>To find two numbers from their AM and GM, set x + y = 2A and xy = G^2, then solve t^2 - 2At + G^2 = 0.</li><li>An infinite series with |r| &gt;= 1 has no finite sum, so if the options are all rational numbers |r| &lt; 1 is the intended case.</li></ul></section>
-<section class="field"><h2>Exam Notes</h2><ul><li>MCQs ask for a single missing term, the common difference or ratio, or the nature of a given series, all in about 1 mark.</li><li>5-mark questions typically ask for the nth term and S_n of an AP or a GP, and 10-mark questions add an infinite sum or a word problem.</li><li>Word problems on salary, instalments or interest are AP and GP wordings, so convert them to a_n = a + (n-1)d or a_n = a r^(n-1) before any algebra.</li><li>The chain A &gt;= G &gt;= H is a frequent 1-mark MCQ, and recovering the two numbers from A and H is a standard 5-mark question.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>Find the 20th term and the sum of the first 20 terms of the AP 3, 7, 11, ...</li><li>Find the common ratio and the 8th term of the GP 2, 6, 18, ..., and state the formula for S_n.</li><li>If the AM of two positive numbers is 13 and their GM is 12, find the two numbers.</li><li>Find the sum to infinity of 1 + 1/3 + 1/9 + ... and state the condition on the common ratio.</li><li>The first term of a GP is 5 and the sum to infinity is 10; find the common ratio and hence the third term.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>AP sum: pair first and last. GP S_inf: check |r| &lt; 1 first. Means insertion: count terms then solve for d or r. AM-GM: expand (a - b)^2 &gt;= 0.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>For S_inf questions, write the convergence check |r| &lt; 1 as a separate line - it is a mark even when the arithmetic is trivial.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB-style (3m): The sum of the first 10 terms of an AP is 175 and its first term is 5. Find the common difference and the 10th term.</strong> — <strong>Sum formula:</strong> S₁₀ = n/2[2a + (n−1)d] = (10/2)[2(5) + 9d] = 5(10 + 9d). <strong>Set equal:</strong> 5(10 + 9d) = 175 ⟹ 10 + 9d = 35 ⟹ <strong>d = 25/9</strong>. <strong>Tenth term:</strong> a₁₀ = a + 9d = 5 + 9(25/9) = 5 + 25 = <strong>30</strong>. <strong>Verification via the paired formula:</strong> S₁₀ = n/2(a + l) = (10/2)(5 + 30) = 5 × 35 = 175 ✓ — the two sum formulas agree, confirming both answers.</li><li><strong>NEB-style (3m): Find the sum to infinity of the geometric series 8 − 4 + 2 − 1 + ⋯</strong> — <strong>Step 1 — ratio:</strong> r = (−4)/8 = <strong>−1/2</strong>. <strong>Step 2 — convergence check:</strong> |r| = 1/2 &lt; 1 ✓ — the necessary licence for using S∞; without it the formula is meaningless. <strong>Step 3 — formula:</strong> S∞ = a/(1 − r) = 8/(1 − (−½)) = 8/(3/2) = <strong>16/3 ≈ 5.33</strong>. <strong>Partial-sum sanity:</strong> S₄ = 8 − 4 + 2 − 1 = 5, S₅ = 5.5, oscillating ever closer to 5.33 — the alternating signs make the partial sums bracket the limit from both sides.</li><li><strong>NEB-style (2m): Insert three arithmetic means between 4 and 16, and verify the block.</strong> — The sequence 4, A₁, A₂, A₃, 16 must be an AP with first term a = 4, fifth term 16, so 5 terms total. <strong>Solve for d:</strong> a₅ = a + 4d ⟹ 16 = 4 + 4d ⟹ <strong>d = 3</strong>. <strong>Means:</strong> A₁ = 4 + 3 = <strong>7</strong>, A₂ = <strong>10</strong>, A₃ = <strong>13</strong>. <strong>Verification:</strong> the block 4, 7, 10, 13, 16 has constant difference 3 ✓ and 4 + 7 + 10 + 13 + 16 = 50 = n/2(a + l) = (5/2)(20) ✓. (The geometric counterpart would use 16 = 4r⁴ ⟹ r = 2^{1/2}, giving means 4√2, 8, 8√2 — same endpoints, multiplicative spacing.)</li></ul></section>
 <section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The 20th term of the AP 3, 7, 11, ... is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>83</li><li>79</li><li>80</li><li>77</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Here a = 3 and d = 4, so a_20 = a + (20 - 1)d = 3 + 19 x 4 = 79. Reaching the 20th term needs 19 jumps, not 20.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The sum to infinity of the series 1 + 1/3 + 1/9 + ... is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>3/2</li><li>1/2</li><li>2/3</li><li>4/3</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Here a = 1 and r = 1/3 with |r| &lt; 1, so the sum is a/(1 - r) = 1/(1 - 1/3) = 1/(2/3) = 3/2.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The 8th term of the GP 2, 6, 18, ... is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>4374</li><li>2187</li><li>1458</li><li>8748</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The common ratio is r = 6/2 = 3, so a_8 = a r^7 = 2 x 3^7 = 2 x 2187 = 4374. The exponent is 7 because a r^0 is the first term.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>An infinite geometric series with common ratio r converges to a finite sum only when</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>r &gt; 1</li><li>r = 1</li><li>|r| &lt; 1</li><li>r &lt; -1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>The terms must tend to zero, which requires |r| &lt; 1. For r = 1 the sum is na and diverges, and for |r| &gt; 1 the terms grow without bound.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>The AM and GM of two positive numbers are 13 and 12 respectively. The numbers are</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>8 and 18</li><li>9 and 17</li><li>12 and 14</li><li>6 and 20</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>AM = 13 gives x + y = 26 and GM = 12 gives xy = 144, so t^2 - 26t + 144 = 0 = (t - 8)(t - 18). Hence the numbers are 8 and 18.</p></div></div></div></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Progress With a Pattern</h3>
+<p>A <strong>sequence</strong> is an ordered list with a rule; a <strong>series</strong> is its sum. The theorems: the AP nth-term and sum formulas, the GP nth-term, sum and <strong>sum to infinity</strong>, the AM–GM–HM ordering, and the special sums Σn, Σn², Σn³.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Arithmetic progression (AP)</h4>
+<ul>
+<li>Constant difference d: aₙ = a + (n−1)d; <strong>sum Sₙ = n/2[2a + (n−1)d] = n/2(a + l)</strong> (l = last term).</li>
+<li><strong>Arithmetic mean:</strong> the middle term of any three-term AP block: b = (a + c)/2.</li>
+</ul>
+<h4>2.2 Geometric progression (GP)</h4>
+<ul>
+<li>Constant ratio r: aₙ = arⁿ⁻¹; <strong>sum Sₙ = a(rⁿ − 1)/(r − 1)</strong> (r ≠ 1).</li>
+<li><strong>Sum to infinity (theorem):</strong> converges iff |r| &lt; 1, and then <strong>S∞ = a/(1 − r)</strong>. Proof idea: Sₙ = a(1 − rⁿ)/(1 − r) and rⁿ → 0 exactly when |r| &lt; 1.</li>
+<li><strong>Geometric mean:</strong> b² = ac for three-term GP blocks (positive terms).</li>
+</ul>
+<h4>2.3 Harmonic progression and the means</h4>
+<ul>
+<li><strong>HP:</strong> reciprocals form an AP; nth term = 1/(a + (n−1)d)′... i.e. 1/(Aₙ of the reciprocal AP).</li>
+<li><strong>AM–GM–HM inequality (theorem):</strong> for positive a, b: <strong>AM ≥ GM ≥ HM</strong>, with equality iff a = b; AM·HM = GM².</li>
+<li>AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).</li>
+</ul>
+<h4>2.4 Special sums (theorems)</h4>
+<ul>
+<li><strong>Σi = n(n+1)/2</strong>; <strong>Σi² = n(n+1)(2n+1)/6</strong>; <strong>Σi³ = [n(n+1)/2]²</strong> — the cube sum is the square of the triangular number.</li>
+<li><strong>Σ(arᵏ)</strong> for k = 0…n−1 is the GP sum; arithmetico-geometric series use term-by-term subtraction (the &quot;multiply by r and shift&quot; trick).</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>AP</strong></td><td>Constant difference d</td><td>3, 7, 11, … (d = 4)</td></tr><tr><td><strong>GP</strong></td><td>Constant ratio r</td><td>2, 6, 18, … (r = 3)</td></tr><tr><td><strong>S∞</strong></td><td>Limit of GP partial sums,</td><td>r</td><td>&lt; 1</td><td>1 + ½ + ¼ + ⋯ = 2</td></tr><tr><td><strong>AM–GM–HM</strong></td><td>The three means, ordered</td><td>AM ≥ GM ≥ HM</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the AP sum formula works</h4>
+<ul>
+<li>Write S forwards and backwards and add: each column sums to a + l, and there are n columns — Gauss's pairing argument gives Sₙ = n(a + l)/2.</li>
+</ul>
+<h4>4.2 Why |r| &lt; 1 is the convergence cliff</h4>
+<ul>
+<li>Partial sums Sₙ = a(1 − rⁿ)/(1 − r): the fate of the series hangs on rⁿ. It dies to 0 iff |r| &lt; 1; otherwise it oscillates or explodes — no middle ground.</li>
+</ul>
+<h4>4.3 Reading the means geometrically</h4>
+<ul>
+<li>For a right triangle's altitude to the hypotenuse: GM appears as the altitude, AM as the half-hypotenuse — the inequality AM ≥ GM becomes a length comparison.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>The three sequences</strong></p>
+<table><thead><tr><th>Basis</th><th>AP</th><th>GP</th><th>HP</th></tr></thead><tbody><tr><td>constant</td><td>difference d</td><td>ratio r</td><td>reciprocals in AP</td></tr><tr><td>nth term</td><td>a + (n−1)d</td><td>arⁿ⁻¹</td><td>1/(a + (n−1)d)</td></tr><tr><td>sum</td><td>n/2[2a + (n−1)d]</td><td>a(rⁿ−1)/(r−1)</td><td>no closed form</td></tr><tr><td>S∞</td><td>diverges (d ≠ 0)</td><td>a/(1−r) if \</td><td>r\</td><td>&lt; 1</td><td>diverges</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>S∞ needs |r| &lt; 1:</strong> a/(1 − r) for r = 2 gives a negative &quot;sum&quot; — nonsense; the formula is licensed only inside the convergence cliff.</li><li><strong>n vs n−1 in the nth term:</strong> aₙ = a + (n−1)d — the first term uses 0 steps.</li><li><strong>GM of negatives:</strong> √(ab) with a, b &lt; 0 is defined via |ab| but the AM–GM theorem needs <strong>positive</strong> terms.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): The sum of the first 10 terms of an AP is 175 and the first term is 5. Find the common difference and the 10th term.</strong> — S₁₀ = 10/2[2(5) + 9d] = 5(10 + 9d) = 175 ⟹ 10 + 9d = 35 ⟹ <strong>d = 25/9</strong>. Then a₁₀ = 5 + 9(25/9) = 5 + 25 = <strong>30</strong>. (Check: S₁₀ = 10/2(5 + 30) = 5 × 35 = 175 ✓.)</li><li><strong>NEB-style (3m): Find the sum to infinity of the GP 8 − 4 + 2 − 1 + ⋯</strong> — Ratio r = −4/8 = <strong>−1/2</strong>, and |r| = ½ &lt; 1 ⟹ convergent. <strong>S∞ = a/(1 − r) = 8/(1 − (−½)) = 8/(3/2) = 16/3 ≈ 5.33.</strong> Partial-sum check: S₄ = 8 − 4 + 2 − 1 = 5, already close to 5.33 ✓.</li><li><strong>NEB-style (2m): Insert 3 arithmetic means between 4 and 16.</strong> — The block 4, A₁, A₂, A₃, 16 is an AP with a = 4, l = 16, n = 5 terms: 16 = 4 + 4d ⟹ d = 3. <strong>Means: 7, 10, 13.</strong> (Geometric means between them would instead solve 16 = 4r⁴ ⟹ r = √2, giving 4√2, 8, 8√2.)</li><li><strong>NEB-style (2m): Prove AM ≥ GM for positive a, b.</strong> — (a − b)² ≥ 0 ⟹ a² − 2ab + b² ≥ 0 ⟹ a² + 2ab + b² ≥ 4ab ⟹ (a + b)² ≥ 4ab ⟹ (a + b)/2 ≥ √(ab) (both sides positive). <strong>AM ≥ GM</strong>, equality iff a = b ∎.</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>AP: a_n = a + (n-1)d; S_n = n/2[2a + (n-1)d] = n/2(a + l); arithmetic mean b = (a + c)/2. GP: a_n = ar^(n-1); S_n = a(r^n - 1)/(r - 1); sum to infinity S_inf = a/(1 - r) iff |r| &lt; 1; geometric mean b^2 = ac. HP: reciprocals form an AP. AM-GM-HM: AM = (a+b)/2 &gt;= GM = sqrt(ab) &gt;= HM = 2ab/(a+b), equality iff a = b; AM x HM = GM^2. Special sums: sum i = n(n+1)/2; sum i^2 = n(n+1)(2n+1)/6; sum i^3 = [n(n+1)/2]^2. Gauss pairing proves the AP sum; the fate of r^n decides GP convergence.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>Convergence hangs on r^n: |r| &lt; 1 kills it, and only then does a/(1 - r) mean anything - the formula is licensed by the limit, not the other way round.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>Gauss's pairing</strong></em> - write the AP sum forwards and backwards; every column pairs to a + l, giving S_n = n(a + l)/2 without any algebra.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Zeno's paradox dissolves in S_inf = a/(1 - r): infinitely many steps, finite total distance - 1/2 + 1/4 + 1/8 + ... = 1.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;S_inf = a/(1 - r) iff |r| &lt; 1; AM &gt;= GM &gt;= HM with equality iff a = b; sum i^3 = [n(n+1)/2]^2.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>AP sum: pair first and last. GP S_inf: check |r| &lt; 1 first. Means insertion: count terms then solve for d or r. AM-GM: expand (a - b)^2 &gt;= 0.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>For S_inf questions, write the convergence check |r| &lt; 1 as a separate line - it is a mark even when the arithmetic is trivial.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>AP: aₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d] = n/2(a + l)</li>
+<li>GP: aₙ = arⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1); S∞ = a/(1−r) iff |r| &lt; 1</li>
+<li>AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b); AM·HM = GM²</li>
+<li>Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>In an AP, S₁₀ = 175 and a = 5; find d and a₁₀.</li><li>Find the sum to infinity of 8 − 4 + 2 − 1 + ⋯</li><li>Prove AM ≥ GM for positive a, b and state the equality case.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB-style (3m): The sum of the first 10 terms of an AP is 175 and its first term is 5. Find the common difference and the 10th term.</strong> — <strong>Sum formula:</strong> S₁₀ = n/2[2a + (n−1)d] = (10/2)[2(5) + 9d] = 5(10 + 9d). <strong>Set equal:</strong> 5(10 + 9d) = 175 ⟹ 10 + 9d = 35 ⟹ <strong>d = 25/9</strong>. <strong>Tenth term:</strong> a₁₀ = a + 9d = 5 + 9(25/9) = 5 + 25 = <strong>30</strong>. <strong>Verification via the paired formula:</strong> S₁₀ = n/2(a + l) = (10/2)(5 + 30) = 5 × 35 = 175 ✓ — the two sum formulas agree, confirming both answers.</li><li><strong>NEB-style (3m): Find the sum to infinity of the geometric series 8 − 4 + 2 − 1 + ⋯</strong> — <strong>Step 1 — ratio:</strong> r = (−4)/8 = <strong>−1/2</strong>. <strong>Step 2 — convergence check:</strong> |r| = 1/2 &lt; 1 ✓ — the necessary licence for using S∞; without it the formula is meaningless. <strong>Step 3 — formula:</strong> S∞ = a/(1 − r) = 8/(1 − (−½)) = 8/(3/2) = <strong>16/3 ≈ 5.33</strong>. <strong>Partial-sum sanity:</strong> S₄ = 8 − 4 + 2 − 1 = 5, S₅ = 5.5, oscillating ever closer to 5.33 — the alternating signs make the partial sums bracket the limit from both sides.</li><li><strong>NEB-style (2m): Insert three arithmetic means between 4 and 16, and verify the block.</strong> — The sequence 4, A₁, A₂, A₃, 16 must be an AP with first term a = 4, fifth term 16, so 5 terms total. <strong>Solve for d:</strong> a₅ = a + 4d ⟹ 16 = 4 + 4d ⟹ <strong>d = 3</strong>. <strong>Means:</strong> A₁ = 4 + 3 = <strong>7</strong>, A₂ = <strong>10</strong>, A₃ = <strong>13</strong>. <strong>Verification:</strong> the block 4, 7, 10, 13, 16 has constant difference 3 ✓ and 4 + 7 + 10 + 13 + 16 = 50 = n/2(a + l) = (5/2)(20) ✓. (The geometric counterpart would use 16 = 4r⁴ ⟹ r = 2^{1/2}, giving means 4√2, 8, 8√2 — same endpoints, multiplicative spacing.)</li></ul></dd></div></dl></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>Gauss's pairing</strong></em> - write the AP sum forwards and backwards; every column pairs to a + l, giving S_n = n(a + l)/2 without any algebra.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Zeno's paradox dissolves in S_inf = a/(1 - r): infinitely many steps, finite total distance - 1/2 + 1/4 + 1/8 + ... = 1.</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></section>
   <nav class="pager"><a href="02-real-numbers-geometric-representation-of-real-numbers-interval-absolute-value.html" title="Real numbers: geometric representation of real numbers, i…">‹ Real numbers: geometric representation of rea…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="03-function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-qua.html" title="Function: domain and range of a function, inverse functio…">Function: domain and range of a function, inv… ›</a></nav>
 </div></body></html>

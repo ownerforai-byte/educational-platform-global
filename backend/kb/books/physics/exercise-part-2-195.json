@@ -1,0 +1,26 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Exercise",
+  "title": "Exercise (part 2)",
+  "source": "neb-class-11-physics — Exercise, pages 433-440 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Workedout Example: 1. How much charge flows through the filament of an electric lamp in 1 hour when the current in it is 250 mA? 2. The electron charge is 1.6 × 10–19 C. How many electrons flow through the filament during this time? Solution 1. 𝛥𝑄 = 𝐼 𝛥𝑡 = 250 × 10−3 𝐴 × (60 × 60)𝑠 = 900 𝐶 2. 𝑛𝑢𝑚𝑏𝑒𝑟 𝑜𝑓 𝑒𝑙𝑒𝑐𝑡𝑟𝑜𝑛𝑠 = 𝑡𝑜𝑡𝑎𝑙 𝑐ℎ𝑎𝑟𝑔𝑒 𝑐ℎ𝑎𝑟𝑔𝑒 𝑜𝑓 𝑎𝑛 𝑒𝑙𝑒𝑐𝑡𝑟𝑜𝑛 = 1.6×10−19 900𝐶 𝐶 = 5.6 × 1021𝑒𝑙𝑒𝑐𝑡𝑟𝑜𝑛𝑠 23.2 Conventional Current - Drift Velocity People often think that conventional current means the normal, or usual current, but the word 'convention' refers here to an agreement. The scientists who discovered and worked on electricity agreed to define the direction of current as from the positive terminal of a power supply to the negative terminal before the electron was discovered in 1897. Unfortunately, this means that conventional current is in the opposite direction to electron flow. However, not all currents are due to a flow of electrons. In a solution, or an ionised gas, positive ions flow in the direction of conventional current. Imagine a battery connected in series with a switch and a lamp. When we close the switch, we complete the circuit and the lamp lights up instantaneously, so far as our senses can tell us. How fast do you think electrons flow through the wires? The outer electrons in metal atoms are not attracted as strongly to the nucleus as those in atoms of non-metals. These electrons are free to move between all the atoms (or rather ions, because they have lost their outermost electrons) in the metal. The metal ions sit like islands in a 'sea' of free electrons, also called delocalised or conduction electrons.",
+    "The free electrons in a metal move around randomly due to their thermal energy with no overall direction to their movement. However, if a cell or battery is connected across a metal wire, the free electrons will also be pushed away from its negative terminal and pulled towards its positive terminal. The average speed at which they move in this direction is called their mean drift velocity. Mean drift velocity is small compared to the electrons' thermal velocities, but as the thermal velocities are random, they produce no overall motion of the electrons.",
+    "Physics, Grade 11 | 432",
+    "In a metallic conductor, the charge carriers are loosely bound to outer electrons – so-called ‘free’ or ‘delocalised’ electrons. On average, there is approximately one ‘free’ electron per atom. These ‘free’ electrons move randomly to and fro within the crystal lattice of the metal at speeds approaching one-thousandth the speed of light and are also mainly responsible for metals being good conductors of heat. When a potential difference is applied to a circuit, an electric field is created and exerts a force on the ‘free’ electrons, which causes them to ‘drift’ in the direction of the force.",
+    "Consider a wire of length d and cross-sectional area A. This wire contains n free electrons per unit volume, where n is called the number density of charge carriers (here, free electrons), or the number of charge carriers per cubic metre.",
+    "The total number of free electrons in this volume, V, of the wire is simply 𝑛 × 𝑉,",
+    "or 𝑛 × 𝐴 × 𝑑. The size of the charge on an electron is e, so the total amount of charge that is",
+    "free to move is given by,",
+    "𝑄 = 𝑒 × 𝑛 × 𝐴 × 𝑑.",
+    "Now 𝑄 𝑒×𝑛 × 𝐴 × 𝑑 𝐼= 𝑡 = 𝑡",
+    "But the mean drift velocity of an electron, v, is equal to the distance it travels along the wire divided by the time taken, i.e., 𝑑 𝑣=𝑡 So, 𝐼 = 𝑒𝑛𝐴𝑣",
+    "Note that n also applies to other charge carriers such as ions in a solution or a plasma (ionised gas). In this case, the charge on each charge carrier would be q, as an ion can have several times the electronic charge. This gives us: 𝐼 = 𝑛𝐴𝑣𝑞",
+    "Physics, Grade 11 | 433",
+    "Workedout Example Consider the circuit in Figure.",
+    "The diameter of the tungsten filament is 0.025 mm and the diameter of the copper connecting leads is 0.72 mm. Calculate the drift velocity of the electrons in:",
+    "(a) the filament (b) the connecting leads when the circuit current is 160 mA. You may take the number of charge carriers per cubic metre to be 4.0 × 1028 m–3 for tungsten and 8.0 × 1028 m–3 for copper. Solution: (a) For the filament: 𝐼 = 𝑛𝐴𝑣𝑞 Rearranging:𝑣 = 𝐼 𝑛𝐴𝑞 160 × 10−3𝐴 = 4.0 × 1028𝑚−3 × 𝜋 × (0.5 × 0.025 × 10−3𝑚)2 × 1.60 × 10−19 𝐶 = 0.051𝑚𝑠−1 = 51𝑚𝑚𝑠−1 (b) For the leads: 𝐼 𝑣 = 𝑛𝐴𝑞 160 × 10−3𝐴 = 8.0 × 1028 𝑚−3 × 𝜋 × (0.5 × 0.72 × 10−3𝑚)2 × 1.60 × 10−19𝐶 = 3.1 × 10−5 𝑚𝑠 −1 = 0.031𝑚𝑚𝑠−1 23.3 Potential difference To understand how electrons can be made to flow around a circuit and thereby create an electric current, a comparison with the flow of water in a pipe is often helpful. Such an analogy is shown in the figure.",
+    "Physics, Grade 11 | 434"
+  ]
+}

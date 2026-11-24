@@ -49,9 +49,11 @@ import type { SyllabusUnit } from "@/lib/core/syllabus";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { DirectStreamPdfBlocks } from "./direct-stream-pdf-blocks";
+import { NepalieducateStreamBlocks } from "./nepalieducate-stream-blocks";
 import { NoteswiftStreamBlocks } from "./noteswift-stream-blocks";
 import {
   getChapterDocs,
+  getChapterNepalieducateStreamPdfs,
   getChapterNoteswiftStreamPdfs,
   getChapterStreamPdfs,
   type ChapterDoc,
@@ -474,6 +476,7 @@ function TabPanel({
   if (tab.kind === "resources") {
     const streamPdfs = getChapterStreamPdfs(classSlug, subjectSlug, unitId);
     const noteswiftPdfs = getChapterNoteswiftStreamPdfs(classSlug, subjectSlug, unitId);
+    const nepalieducatePdfs = getChapterNepalieducateStreamPdfs(classSlug, subjectSlug, unitId);
     return (
       <div className="space-y-4">
         {/* ⚠️ IMPORTANT — RETAINED CODE, NOT DEAD CODE (lib/stream-sources.ts).
@@ -483,6 +486,7 @@ function TabPanel({
             doc-count driven with no fixed two-block cap. */}
         <DirectStreamPdfBlocks pdfs={streamPdfs} />
         <NoteswiftStreamBlocks pdfs={noteswiftPdfs} />
+        <NepalieducateStreamBlocks pdfs={nepalieducatePdfs} />
         <RavikishanTopicResources
           classSlug={classSlug}
           subjectSlug={subjectSlug}

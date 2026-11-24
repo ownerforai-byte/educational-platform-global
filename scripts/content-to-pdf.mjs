@@ -259,18 +259,22 @@ function mdToHtml(src) {
   while (i < lines.length) {
     const line = lines[i];
 
-    // fenced block
-    const fence = line.match(/^```(\w*)\s*$/);
+    // fenced block — `lang` plus an optional caption on the fence line
+    const fence = line.match(/^```(\w+)(?:\s+(.*))?\s*$/) || line.match(/^```\s*$/);
     if (fence) {
       closeList();
       const lang = (fence[1] || "").toLowerCase();
+      const caption = (fence[2] || "").trim();
       const buf = [];
       i += 1;
       while (i < lines.length && !/^```\s*$/.test(lines[i])) buf.push(lines[i++]);
       i += 1;
       const body = buf.join("\n");
       if (lang === "svg") {
-        if (!DROP_FIGURES) out.push(`<div class="fig authored">${body}</div>`);
+        if (!DROP_FIGURES)
+          out.push(
+            `<div class="fig authored">${body}${caption ? `<div class="fig-cap">${inline(caption)}</div>` : ""}</div>`,
+          );
       } else {
         out.push(`<pre><code>${esc(body)}</code></pre>`);
       }
@@ -484,6 +488,7 @@ const CSS = `
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -525,6 +530,8 @@ const WEB_CSS = `
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;

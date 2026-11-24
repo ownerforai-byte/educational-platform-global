@@ -1,0 +1,33 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Workedout Example",
+  "title": "Workedout Example (part 6)",
+  "source": "neb-class-11-physics — Workedout Example, pages 441-456 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Solution: (a) As the pd across the resistor is 1.2 V, the pd across the LDR must be 6 – 1.2 = 4.8 V. The current in the circuit is, 𝑉 1.2𝑉 𝐼 = 𝑅 = 1800Ω = 0.67 𝑚𝐴 The resistance of the LDR is, 4.8𝑉 0.67 × 10−3𝐴 = 7200Ω (b) 𝑇ℎ𝑒 𝑟𝑎𝑡𝑖𝑜 𝑜𝑓 resistance across LDR = 2400Ω = 1.33 resistance across 1800 Ω 1800Ω This ithe same value as pd across LDR for the ratio of pds to be 1.33, the pds must be pd across 1800 Ω 2.6 V and 3.4 V with the 3.4 V across the LDR.",
+    "23.11 Internal Resistance and Electromotive Force",
+    "The potential difference across the terminals of a cell (the terminal potential difference) depends on the size of the current being drawn from the cell. If no current is being drawn (i.e., if the cell is on an open circuit), the terminal potential difference has its maximum value known as the electromotive force (EMF) of the cell.",
+    "The chemicals within a cell offer a resistance to the flow of the current, known as the internal resistance of the cell. When a cell is connected across an external circuit (a load) some of the EMF is used to drive current through the load and the rest of the EMF drives the same current through the internal resistance.",
+    "The internal resistance behaves as if it is in series with the cell and the external circuit.",
+    "The chemical action inside a battery produces a surplus of electrons at one of its terminals (the negative), and creates a shortage at the other (the positive). It is then able to maintain a flow of electrons, i.e., an electric current, in any circuit connected across its terminals for as long as the chemical action lasts. A work is done by the battery in moving charge around the circuit. Electromotive force (e.m.f.), symbol E, is defined as the electrical work, W, done by a source in moving a unit charge around a complete circuit:",
+    "𝑤𝑜𝑟𝑘 𝑑𝑜𝑛𝑒 (𝑏𝑦 𝑎 𝑠𝑜𝑢𝑟𝑐𝑒)",
+    "𝑒. 𝑚. 𝑓. =",
+    "𝑐ℎ𝑎𝑟𝑔𝑒",
+    "𝑊 𝐸= 𝑄",
+    "Physics, Grade 11 | 449",
+    "Point to remember: Electromotive force e.m.f. is the electrical work done by a source in moving unit charge around a complete circuit. Potential difference p.d. is the work done by a unit charge passing through a component. In an electric circuit, an electric current transfers energy from an energy store, such as a battery, to components in the circuit which then transfer energy into the surroundings. In the case of a lamp, energy is transferred to the surroundings by light and by heating. Real power supplies, such as batteries and laboratory power packs, always have an internal resistance, r. As the current flows through the power supply, the internal resistance creates a potential difference that leads to electrical energy being transferred to thermal energy inside the power supply. This is one of the reasons why hand-held devices such as tablets warm up when they are in use for a long period of time. The internal resistance of most batteries and power supplies is very low: a typical AA battery has an internal resistance of about 0.2Ω and, as such, can effectively be ignored when measuring the electrical properties of most circuits. The internal resistance of a power supply cannot be measured directly as it is ‘inside’ the power supply. The only way to measure it is to use its electrical characteristics. A circuit that can be used to do this is shown in the figure below.",
+    "Circuit calculations can be used to determine the internal resistance and the electromotive force. The electromotive force, E, must be the same as the sum of the potential differences in the circuit (Conservation of energy). There are two potential differences in this circuit: one is across the external variable resistor, V, and the other is the p.d. across the internal resistor. This cannot be measured directly, but the p.d. across this resistor is equal to Ir. This means that: 𝐸 = 𝑉 + 𝐼𝑟 The current, I, can be measured directly using an ammeter; E and r are both constants, so the equation can be rewritten as: 𝑉 = 𝐸 − 𝐼𝑟 or 𝑉 = −𝐼𝑟 + 𝐸, Physics, Grade 11 | 450",
+    "which is the equation of a straight line of the form, y = mx + c, where the gradient is negative. If an electrical characteristic is drawn using values of V and I from various values of R (the external load resistance) then the y-intercept of the graph is the electromotive force, E, and the gradient is negative and equal to –r, the internal resistance.",
+    "An alternative rearrangement of the energy equation that enables us to find the current is: 𝐸 𝐸 = 𝐼𝑅 + 𝐼𝑟 ∴ 𝐼 = 𝑅 + 𝑟",
+    "Workedout Example",
+    "A torch battery of e.m.f. 4.5 V and internal resistance 0.4 Ω is connected across a lamp of resistance 6.4 Ω.",
+    "What is the current in the lamp?",
+    "𝐸",
+    ". 4.5 V",
+    "𝐼 = 𝑅 + 𝑟 = 4.5 V + 0.4 Ω = 0.66 𝐴",
+    "23.12 Energy and Power in Electrical Circuits Fig needed",
+    "Consider a simple circuit in which a steady current, I, is flowing through a load. The load may be an electric motor for example, or simply a resistor. As the current flows through the load, it dissipates energy in it. The energy dissipated is equal to the potential energy lost by the charge as it moves through the potential difference that exist between the input and output terminals of the device.",
+    "Physics, Grade 11 | 451"
+  ]
+}

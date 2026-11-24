@@ -1,0 +1,30 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Workedout Example",
+  "title": "Workedout Example",
+  "source": "neb-class-11-physics — Workedout Example, pages 427-429 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Fig. 22.9",
+    "Figure 22.9 (a) shows some typical designs used for practical capacitors. A very common type of capacitor is the electrolytic capacitor shown as a cutaway in figure 22.9 (b). The designer here uses the dielectric advantageously by using it to space the two metal foils apart. The capacitor layers are then rolled up together (rather like rolling up three carpets initially on top of each other). This type of capacitor must be connected into a circuit correctly. The dielectric material is a chemical (the electrolyte in the diagram) that is a good dielectric when the electric field direction is correct. In this design the layers are very thin (good because d is small) and the plate area is large (even better) giving some of the largest values of capacitance possible in a given volume.",
+    "Materials used for the dielectric include; paper, mica (a mineral that can be cut into thin layers), Teflon, plastics, ceramics, and the oxides of various metals such as aluminium.",
+    "Workedout Example",
+    "In a laboratory experiment, two parallel plates, each of area 100 cm2, are separated by 1.5 cm.",
+    "Calculate the capacitance of the arrangement if the gap between the plates is filled with:",
+    "(a) air",
+    "(b) polystyrene.",
+    "Solution:",
+    "(a) Convert the cm units to m: area = 100 × 10–4 = 10–2 m2 ; separation = 0.015 m",
+    "𝐴",
+    "10−2𝑚2",
+    "𝐶 == 𝜀0 = 8.9 × 10−12 𝐹𝑚−1 ×",
+    "= 5.9 × 10−12 𝐹",
+    "𝑑",
+    "0.015𝑚",
+    "(b) Polystyrene has a dielectric constant of 3, which means that",
+    "𝐶2 = 𝜀0 𝑑𝐴 = 𝜀0 ∴ 𝐶 𝜀0 2 = 𝐶1 × (𝑑𝑖𝑒𝑙𝑒𝑐𝑡𝑟𝑖𝑐 𝑐𝑜𝑛𝑠𝑡𝑎𝑛𝑡) 𝐶1 𝜀 𝐴𝑑 𝜀 𝜀 𝐶 = 5.9 × 10−12 𝐹 × 3 = 1.8 × 10−11 𝐹",
+    "Physics, Grade 11 | 422",
+    "22.6 Combination of Capacitors Super capacitors are compact specialist capacitors with capacitance values in the thousands of farads. They are used as alternatives to battery packs, memory backup devices, and emergency lighting. Unlike rechargeable batteries, which degrade over time, super capacitors can be charged over and over again. We can connect the capacitors available in order to get a desired value. We need an enormous number of capacitors if we want thousands of farads. 2.6.1 Capacitors in Parallel Fig. 22.10 Figure 22.10 shows two capacitors of capacitances C1 and C2 connected in parallel. The combined capacitance is greater than their individual capacitances, so the combination will store more charge for a given potential difference (p.d.). For two or more capacitors in parallel: The p.d. V across each capacitor is the same. Electrical charge is conserved. Therefore, the total charge stored Q is equal to the sum of the individual charges stored by the capacitors, 𝑄 = 𝑄1 + 𝑄2 + ⋯ The potential difference between each capacitor is the same. If the total capacitance is C, then, 𝐶𝑉 = 𝐶1𝑉 + 𝐶2𝑉 ∴ 𝐶 = 𝐶1 + 𝐶2 The total capacitance C is the sum of the individual capacitances of the capacitors. Physics, Grade 11 | 423",
+    "2.6.2 Capacitors in series Fig. 22.11 Figure 22.11 shows two capacitors of capacitances C1 and C2 connected in series. Their combined capacitance is less than their individual capacitances, so this combination will store less charge for a given p.d. All the capacitors in the series store the same charge. This is even true when they have different capacitances. The cell is connected to the left-hand plate of the capacitor of capacitance C1 and to the right-hand plate of the capacitor of capacitance C2. These plates acquire equal and opposite charges as electrons flow from and to these plates. The middle two plates are not connected to the cell because of the presence of the dielectric layers, but transfer of electrons between these plates ensures that they too acquire charge Q of the same magnitude. The overall charge of each capacitor is zero, but the magnitude of the charge on each plate is Q. For two or more capacitors in series: The total p.d. V across the combination is the sum of the individual p.d.s across the capacitors, 𝑉 = 𝑉1 + 𝑉2 The charge Q stored by each capacitor is the same, i.e., 𝑄 = 𝑄1 = 𝑄2 If the combined capacitance is C, then, 𝑄𝑄𝑄 𝐶 = 𝐶1 + 𝐶2 111 ∴ 𝐶 = 𝐶1 + 𝐶2 Physics, Grade 11 | 424"
+  ]
+}

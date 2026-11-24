@@ -1,0 +1,25 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Worked Out Examples",
+  "title": "Worked Out Examples (part 1)",
+  "source": "neb-class-11-physics — Worked Out Examples, pages 20-23 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Worked Out Examples Q: Find the dimensional formula of power. Solution: Power is the work done per unit time. Hence, Power (P) = Work/ time = (Force × displacement)/time Also, [F] = [MLT-2] [d] = [L] [t]= [T] Thus, [P] = [MLT-2] [L] / [T] = [ML2T-3]",
+    "Q: Taking force, length, and time as fundamental quantities, find the dimensional formula for energy.",
+    "Solution: Here, Energy = Work =Force × Displacement [Force] = [F] [Displacement] = [L] Then, [Energy] = [F] [L] = [F L] ∴ [E] = [F L T0] Sample Question: 1. The power is expressed in a new system of units with fundamental quantities of force, length, and time. Find the dimensional formula for the power. (Ans: [F L T-1])",
+    "Principle of Homogeneity: In a valid physical equation, the dimensions of each term on one side must be consistent and identical to the dimensions of each corresponding term on the other side. This principle is based on the fact that only the physical quantities of the same kind can be added, subtracted, or compared. According to this, mass can be added to or subtracted from mass but not to length. Similarly, force can be added to or subtracted from force but not to energy.",
+    "For example, in the equation v = u + at, dimensional formula of v, u and at are same, and hence the equation follows the principle of homogeneity.",
+    "Physics, Grade 11 | 15",
+    "Types of Physical Quantity Based on dimension, physical quantities are of the following types:",
+    "a. Dimensional variables: These are physical quantities that do not have a fixed value but have dimensions. Examples are work, power, pressure, velocity, etc.",
+    "b. Dimensionless variables: These are physical quantities that possess neither a fixed value nor dimensions. Examples are strain, specific gravity, etc. Such quantities have no units.",
+    "c. Dimensional Constants: These are the physical quantities that have dimensions and a fixed value. Examples are Gravitational constant, Planck’s constant, etc.",
+    "d. Dimensionless constants: These are physical quantities that have no dimension but a fixed value. Examples are Coefficient of friction, pi (π), etc.",
+    "1.6.1Application of Dimensional Analysis: Following are the applications of dimensional analysis: i) To check the correctness of a physical relation, ii) To derive a relation between various physical quantities, iii) To convert one system of physical quantity to another system of physical quantity iv) To find the dimensions of an unknown physical quantity in a given relation. Let us discuss some of the applications To check the correctness of a physical relation: Let s = ut + 1 at2 be a physical relation.",
+    "To test the correctness of this equation whether it is correct or not, let us put the dimensional formula of each physical quantity in the relation [L] = [LT-1] [T] + [LT-2] [T2], Here ½ is the dimensionless constant and it is needless to write. Or, [L] = [L] + [L] = [L] Hence, by the principle of homogeneity of dimension, both sides have the same dimension, and thus the equation is dimensionally correct. If the above relation is written as s = ut +at2 and on testing, dimensionally it is found to be correct as above but the relation is physically wrong as the multiplier ½ in the second term is missing. Also, take the physical equation as s= ut2 + 1 at2. On testing the equation dimensionally, it is found incorrect, and itis also incorrect physically. From above it is strongly concluded that a dimensionally correct equation may not be physically correct. But it is sure that a dimensionally wrong equation is physically wrong.",
+    "Physics, Grade 11 | 16",
+    "Worked Out Examples: Q: A student writes the scape velocity as v =√2 GM . Test the correctness of the equation.",
+    "R Here, using the dimensional formula for the concerned physical quantities in the relation, [M0 L T-1] = √[𝑀1 𝐿3 𝑇 −2][𝑀] = [M0 L T-1] 𝐿 Hence the student has written the correct formula. Q: A student writes in a dimensional sense as 2[L] + [L] = [L] and [L] – [L] = [L]. Justify the expression. In the first expression, some length is added to the other length so that the result is again some length [L]. In the second expression, some length is subtracted from the other length so the result is again length. More precisely, two similar quantities of the same dimension can be added to the result of the quantity of the same dimension and taking the difference between two similar quantities of the same dimension also results in the third quantity of the same dimension."
+  ]
+}

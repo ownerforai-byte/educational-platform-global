@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Scalar and Vector Triple Products</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Scalar and Vector Triple Products</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -154,115 +157,116 @@
   <section class="field"><h2>Unit SLUG</h2><p>vectors</p></section>
 <section class="field"><h2>Topic SLUG</h2><p>scalar-and-vector-triple-products</p></section>
 <section class="field"><h2>Relevance</h2><p><code>92</code></p></section>
-<section class="field"><h2>Notes</h2><p class="empty">—</p></section>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Volume in One Number</h3>
+<p>The <strong>scalar triple product</strong> [a b c] = a·(b × c) turns three vectors into a signed volume; the <strong>vector triple product</strong> a × (b × c) stays a vector and obeys the <strong>BAC–CAB rule</strong>. Their theorems: the determinant form, the coplanarity criterion, the volume theorem, and the two expansion rules.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Scalar triple product</h4>
+<ul>
+<li><strong>Definition:</strong> [a b c] = a·(b × c) — a scalar.</li>
+<li><strong>Determinant form:</strong> [a b c] = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|.</li>
+<li><strong>Theorem (volume):</strong> |[a b c]| = volume of the <strong>parallelepiped</strong> with coterminous edges a, b, c; <strong>one-sixth</strong> of it is the tetrahedron's volume.</li>
+<li><strong>Theorem (coplanarity):</strong> a, b, c are coplanar ⟺ <strong>[a b c] = 0</strong>.</li>
+</ul>
+<h4>2.2 Cyclic invariance</h4>
+<ul>
+<li><strong>Theorem:</strong> [a b c] = [b c a] = [c a b] (cyclic rotations preserve value); swapping any two vectors <strong>changes the sign</strong>: [b a c] = −[a b c].</li>
+<li>The dot and cross may be interchanged: <strong>a·(b × c) = (a × b)·c</strong>.</li>
+</ul>
+<h4>2.3 Vector triple product</h4>
+<ul>
+<li><strong>Definition:</strong> a × (b × c) — a vector perpendicular to a and to (b × c).</li>
+<li><strong>Theorem (BAC–CAB):</strong> <strong>a × (b × c) = (a·c)b − (a·b)c</strong>; and (a × b) × c = (a·c)b − (b·c)a — note the different bracketing gives a different result: the vector triple product is <strong>not associative</strong>.</li>
+<li>Proof idea: expand b × c in components, multiply by a, and collect — or verify both sides agree on the basis î, ĵ, k̂ and use linearity.</li>
+</ul>
+<h4>2.4 Tetrahedron volume</h4>
+<ul>
+<li><strong>Theorem:</strong> the tetrahedron with coterminous edges a, b, c has volume <strong>⅙|[a b c]|</strong> — the pyramid is one-sixth of the box.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Scalar triple product</strong></td><td>a·(b × c) — signed volume</td><td>[î ĵ k̂] = 1</td></tr><tr><td><strong>Cyclic invariance</strong></td><td>Rotating the triple keeps the value</td><td>[a b c] = [b c a]</td></tr><tr><td><strong>Vector triple product</strong></td><td>a × (b × c) — obeys BAC–CAB</td><td>not associative</td></tr><tr><td><strong>Parallelepiped</strong></td><td>Box with edges a, b, c</td><td>volume</td><td>[a b c]</td><td></td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why volume</h4>
+<ul>
+<li>b × c is the base parallelogram's area vector; dotting a onto it multiplies by the height — base × height = volume. The sign records orientation (right- vs left-handed triples).</li>
+</ul>
+<h4>4.2 Reading BAC–CAB</h4>
+<ul>
+<li>a × (b × c) lands in the plane of b and c (it is perpendicular to a × (b × c)'s own axis... precisely: the result is a combination of b and c) — BAC–CAB makes that visible: only b and c appear.</li>
+</ul>
+<h4>4.3 Non-associativity is structural</h4>
+<ul>
+<li>(a × b) × c lies in the plane of a and b; a × (b × c) lies in the plane of b and c. Different planes, different vectors — the bracketing decides the plane.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Triple products side by side</strong></p>
+<table><thead><tr><th>Basis</th><th>Scalar triple [a b c]</th><th>Vector triple a × (b × c)</th></tr></thead><tbody><tr><td>result</td><td>scalar</td><td>vector</td></tr><tr><td>geometric meaning</td><td>signed volume</td><td>in-plane vector</td></tr><tr><td>zero when</td><td>coplanar</td><td>a ⊥ (b × c) plane cases</td></tr><tr><td>key law</td><td>cyclic invariance</td><td>BAC–CAB</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Cyclic, not any permutation:</strong> [b a c] = −[a b c] — only rotations keep the sign.</li><li><strong>BAC–CAB order:</strong> a × (b × c) = (a·c)b − (a·b)c — the dot product with <strong>c</strong> multiplies <strong>b</strong>; reversing pairs is the classic slip.</li><li><strong>Tetrahedron factor:</strong> ⅙ of the parallelepiped volume, not ½ (that is the triangle's share of the parallelogram).</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)</strong> — For vectors a, b, c the <strong>scalar triple product</strong> is <strong>[a b c] = a·(b × c)</strong> — the dot product of one vector with the cross product of the other two; in components it is the determinant |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|. <strong>Geometric significance:</strong> |[a b c]| equals the <strong>volume of the parallelepiped</strong> whose three coterminous edges are a, b, c (base area |b × c| times height |a|cos θ); its <strong>sign</strong> records the orientation (handedness) of the triple. <strong>[a b c] = 0 ⟺ the three vectors are coplanar</strong> — the box collapses.</li><li><strong>NEB-style (3m): Show that the vectors a = î + ĵ + k̂, b = 2î + 3ĵ − k̂... coplanarity via [a b c] = 0 (template).</strong> — Assemble the component determinant and expand; zero ⟹ coplanar (one vector is a combination of the other two), non-zero ⟹ they span space with volume |[a b c]|.</li><li><strong>NEB-style (2m): Verify BAC–CAB for a = î, b = ĵ, c = ĵ.</strong> — Left: a × (b × c) = î × (ĵ × ĵ) = î × 0 = <strong>0</strong>. Right: (a·c)b − (a·b)c = (î·ĵ)ĵ − (î·ĵ)ĵ = 0 − 0 = <strong>0</strong> ✓. Both sides agree; the identity holds even in degenerate cases.</li></ul></section>
 <section class="field"><h2>Confusion</h2><p class="empty">—</p></section>
-<section class="field"><h2>Practice</h2><p class="empty">—</p></section>
-<section class="field"><h2>Universal Facts</h2><p class="empty">—</p></section>
+<section class="field"><h2>Practice</h2><ul><li>Define the scalar triple product and state its geometric significance.</li><li>Prove the cyclic invariance of [a b c].</li><li>State and verify the BAC–CAB rule with a = î, b = ĵ, c = k̂.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Determinant sign conventions in linear algebra (row swaps flip sign) are the triple product's cyclic law generalised.</li></ul></section>
 <section class="field"><h2>Animation3 D</h2><p>vectors</p></section>
 <section class="field"><h2>Motion Graphics</h2><p>vectors</p></section>
-<section class="field"><h2>Examples</h2><ul><li>Application of Scalar and Vector Triple Products</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define Scalar and Vector Triple Products.</li><li>Q3. Problem on Scalar and Vector Triple Products.</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>Scalar triple product <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:1.2274em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">a</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9774em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">b</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace"> </span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">c</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:0.714em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">a</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2274em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9774em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">b</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">c</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> is the volume of the parallelepiped; it is zero for coplanar vectors.</li><li>Vector triple product: <span class="katex"><span class="katex-html" aria-hidden="true"><span class="katex-base"><span class="katex-strut" style="height:0.7973em;vertical-align:-0.0833em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">a</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2274em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9774em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">b</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">c</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">a</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2274em;vertical-align:-0.25em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">c</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9774em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">b</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">a</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222em;"></span></span><span class="katex-base"><span class="katex-strut" style="height:1.2274em;vertical-align:-0.25em;"></span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.9774em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">b</span></span><span style="top:-3.2634em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.2355em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span><span class="mclose">)</span><span class="mord katex-accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.714em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal">c</span></span><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.1799em;"><span class="katex-overlay" style="height:0.714em;width:0.471em;"><svg xmlns="http://www.w3.org/2000/svg" width="0.471em" height="0.714em" style="width:0.471em" viewBox="0 0 471 714" preserveAspectRatio="xMinYMin"><path d="M377 20c0-5.333 1.833-10 5.5-14S391 0 397 0c4.667 0 8.667 1.667 12 5
-3.333 2.667 6.667 9 10 19 6.667 24.667 20.333 43.667 41 57 7.333 4.667 11
-10.667 11 18 0 6-1 10-3 12s-6.667 5-14 9c-28.667 14.667-53.667 35.667-75 63
--1.333 1.333-3.167 3.5-5.5 6.5s-4 4.833-5 5.5c-1 .667-2.5 1.333-4.5 2s-4.333 1
--7 1c-4.667 0-9.167-1.833-13.5-5.5S337 184 337 178c0-12.667 15.667-32.333 47-59
-H213l-171-1c-8.667-6-13-12.333-13-19 0-4.667 4.333-11.333 13-20h359
-c-16-25.333-24-45-24-59z"/></svg></span></span></span></span></span></span></span></span></span></span>.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>Coplanarity test in one line: the volume [a b c] is 0 — use it instead of solving three planes for a common point.</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Scalar and Vector Triple Products covers essential principles and applications.</p></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>BAC-CAB in the plane</strong></em> — a x (b x c) always lands in the plane of b and c: the identity's right side contains only b and c, no a.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)</strong> — <strong>Definition:</strong> for three vectors a, b, c the <strong>scalar triple product</strong> is <strong>[a b c] = a·(b × c)</strong> — the scalar obtained by dotting one vector with the cross product of the other two. In components it is the determinant <strong>|a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|</strong>, and the dot and cross can be exchanged: a·(b × c) = (a × b)·c. <strong>Geometric significance:</strong> |[a b c]| is the <strong>volume of the parallelepiped</strong> whose coterminous edges are a, b, c — the cross product b × c supplies the base parallelogram's area vector, and the dot product with a supplies the height. The <strong>sign</strong> of [a b c] records the orientation (handedness) of the triple, and <strong>[a b c] = 0 exactly when the three vectors are coplanar</strong> — the collapsed box. The tetrahedron on the same edges has volume ⅙|[a b c]|.</li><li><strong>NEB-style (3m): Prove the cyclic invariance [a b c] = [b c a] = [c a b] and that interchanging two vectors reverses the sign.</strong> — <strong>Determinant route:</strong> [a b c] is the determinant of the matrix with rows a, b, c. <strong>Cyclic rotation</strong> of the rows (a,b,c → b,c,a) is achieved by <strong>two</strong> row interchanges: (a,b,c) → (b,a,c) → (b,c,a). Each interchange multiplies the determinant by −1, so two of them multiply by (−1)² = +1: [a b c] = [b c a], and similarly [c a b]. <strong>Single interchange</strong> (a,b,c → b,a,c) is one swap: the determinant changes sign, so [b a c] = −[a b c]. ∎ <strong>Geometric reading:</strong> rotating which vector is called &quot;first&quot; does not change the box or its handedness; swapping two vectors mirrors the box, flipping the orientation sign while leaving the volume.</li><li><strong>NEB-style (2m): Verify the BAC–CAB rule for a = î, b = ĵ, c = k̂.</strong> — <strong>Left side:</strong> b × c = ĵ × k̂ = î, so a × (b × c) = î × î = <strong>0</strong>. <strong>Right side:</strong> (a·c)b − (a·b)c = (î·k̂)ĵ − (î·ĵ)k̂ = (0)ĵ − (0)k̂ = <strong>0</strong>. Both sides agree ✓. (A non-degenerate check: a = î, b = ĵ, c = k̂ replaced by c = î + k̂ gives left = î × (ĵ × (î + k̂)) = î × (ĵ × î + ĵ × k̂) = î × (−k̂ + î) = −(î × k̂) + 0 = ĵ; right = (î·(î+k̂))ĵ − (î·ĵ)(î+k̂) = ĵ ✓ — the identity survives.)</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>[a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| = (a × b)·c</li>
+<li>|[a b c]| = parallelepiped volume; tetrahedron Ⅵ... ⅙|[a b c]|</li>
+<li>[a b c] = [b c a] = [c a b]; [b a c] = −[a b c]</li>
+<li>a × (b × c) = (a·c)b − (a·b)c</li>
+</ul></li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Scalar triple product: [a b c] = a.(b x c) = determinant of components = (a x b).c. Volume theorem: |[a b c]| = parallelepiped volume; tetrahedron = (1/6)|[a b c]|. Coplanarity: [a b c] = 0. Cyclic invariance: [a b c] = [b c a] = [c a b]; any swap flips sign. Dot and cross interchangeable: a.(b x c) = (a x b).c. Vector triple product: a x (b x c) = (a.c)b - (a.b)c (BAC-CAB); (a x b) x c = (a.c)b - (b.c)a; NOT associative - bracketing changes the plane.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The <strong>scalar triple product</strong> [a b c] = a·(b × c) — the component determinant — measures <strong>signed volume</strong>: |[a b c]| is the parallelepiped's volume (NEB 2024's definition-and-significance answer), ⅙ of it the tetrahedron's, and <strong>zero exactly for coplanar</strong> vectors. It is <strong>cyclically invariant</strong> ([a b c] = [b c a] = [c a b]) and <strong>sign-flipping</strong> under any single swap. The <strong>vector triple product</strong> a × (b × c) is a vector lying in the plane of b and c, expanded by <strong>BAC–CAB</strong>: (a·c)b − (a·b)c — and its non-associativity is structural: the two bracketings land in different planes. Volume with a sign; plane membership for free; BAC–CAB for the vector case — the triple products close the vector-algebra toolkit.</p></section>
 <section class="field"><h2>Special Notes</h2><p class="empty">—</p></section>
-<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Definition of Scalar and Vector Triple Products</li><li>Statement 2: Theorem related to Scalar and Vector Triple Products</li><li>Statement 3: Condition for Scalar and Vector Triple Products to be valid</li><li>Statement 4: Principle governing Scalar and Vector Triple Products</li><li>Statement 5: Corollary or consequence of Scalar and Vector Triple Products</li></ul></section>
-<section class="field"><h2>Important Notes</h2><ul><li>Scalar and Vector Triple Products is based on fundamental principles.</li></ul></section>
-<section class="field"><h2>Exam Short Tricks</h2><ul><li>Recall the formula for Scalar and Vector Triple Products.</li></ul></section>
-<section class="field"><h2>Exam Notes</h2><p class="empty">—</p></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;[a b c] = a.(b x c); |[a b c]| is the parallelepiped volume; a x (b x c) = (a.c)b - (a.b)c.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Verified PYQ: NEB 2024 (scalar triple product definition and geometric significance) — assigned to this row. Other items are NEB-style practice.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Coplanarity: determinant = 0. Volume: |determinant|; tetrahedron: divide by 6. Swaps flip sign; rotations keep it. BAC-CAB: (a.c)b - (a.b)c - c pairs with b.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>For the definition question, give the formula AND the volume interpretation - the significance sentence is a full mark.</li></ul></section>
 <section class="field"><h2>Mcs</h2><p class="empty">—</p></section>
-<section class="field"><h2>Important Concepts</h2><ul><li>Definition and significance of Scalar and Vector Triple Products.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>The scalar triple product is base-times-height in one symbol: cross for the base area, dot for the height - volume with a sign.</li></ul></section>
 <section class="field"><h2>Important Tasks</h2><p class="empty">—</p></section>
 <section class="field"><h2>Duplicate Type</h2><p><code>1</code></p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Volume in One Number</h3>
+<p>The <strong>scalar triple product</strong> [a b c] = a·(b × c) turns three vectors into a signed volume; the <strong>vector triple product</strong> a × (b × c) stays a vector and obeys the <strong>BAC–CAB rule</strong>. Their theorems: the determinant form, the coplanarity criterion, the volume theorem, and the two expansion rules.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Scalar triple product</h4>
+<ul>
+<li><strong>Definition:</strong> [a b c] = a·(b × c) — a scalar.</li>
+<li><strong>Determinant form:</strong> [a b c] = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|.</li>
+<li><strong>Theorem (volume):</strong> |[a b c]| = volume of the <strong>parallelepiped</strong> with coterminous edges a, b, c; <strong>one-sixth</strong> of it is the tetrahedron's volume.</li>
+<li><strong>Theorem (coplanarity):</strong> a, b, c are coplanar ⟺ <strong>[a b c] = 0</strong>.</li>
+</ul>
+<h4>2.2 Cyclic invariance</h4>
+<ul>
+<li><strong>Theorem:</strong> [a b c] = [b c a] = [c a b] (cyclic rotations preserve value); swapping any two vectors <strong>changes the sign</strong>: [b a c] = −[a b c].</li>
+<li>The dot and cross may be interchanged: <strong>a·(b × c) = (a × b)·c</strong>.</li>
+</ul>
+<h4>2.3 Vector triple product</h4>
+<ul>
+<li><strong>Definition:</strong> a × (b × c) — a vector perpendicular to a and to (b × c).</li>
+<li><strong>Theorem (BAC–CAB):</strong> <strong>a × (b × c) = (a·c)b − (a·b)c</strong>; and (a × b) × c = (a·c)b − (b·c)a — note the different bracketing gives a different result: the vector triple product is <strong>not associative</strong>.</li>
+<li>Proof idea: expand b × c in components, multiply by a, and collect — or verify both sides agree on the basis î, ĵ, k̂ and use linearity.</li>
+</ul>
+<h4>2.4 Tetrahedron volume</h4>
+<ul>
+<li><strong>Theorem:</strong> the tetrahedron with coterminous edges a, b, c has volume <strong>⅙|[a b c]|</strong> — the pyramid is one-sixth of the box.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Scalar triple product</strong></td><td>a·(b × c) — signed volume</td><td>[î ĵ k̂] = 1</td></tr><tr><td><strong>Cyclic invariance</strong></td><td>Rotating the triple keeps the value</td><td>[a b c] = [b c a]</td></tr><tr><td><strong>Vector triple product</strong></td><td>a × (b × c) — obeys BAC–CAB</td><td>not associative</td></tr><tr><td><strong>Parallelepiped</strong></td><td>Box with edges a, b, c</td><td>volume</td><td>[a b c]</td><td></td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why volume</h4>
+<ul>
+<li>b × c is the base parallelogram's area vector; dotting a onto it multiplies by the height — base × height = volume. The sign records orientation (right- vs left-handed triples).</li>
+</ul>
+<h4>4.2 Reading BAC–CAB</h4>
+<ul>
+<li>a × (b × c) lands in the plane of b and c (it is perpendicular to a × (b × c)'s own axis... precisely: the result is a combination of b and c) — BAC–CAB makes that visible: only b and c appear.</li>
+</ul>
+<h4>4.3 Non-associativity is structural</h4>
+<ul>
+<li>(a × b) × c lies in the plane of a and b; a × (b × c) lies in the plane of b and c. Different planes, different vectors — the bracketing decides the plane.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Triple products side by side</strong></p>
+<table><thead><tr><th>Basis</th><th>Scalar triple [a b c]</th><th>Vector triple a × (b × c)</th></tr></thead><tbody><tr><td>result</td><td>scalar</td><td>vector</td></tr><tr><td>geometric meaning</td><td>signed volume</td><td>in-plane vector</td></tr><tr><td>zero when</td><td>coplanar</td><td>a ⊥ (b × c) plane cases</td></tr><tr><td>key law</td><td>cyclic invariance</td><td>BAC–CAB</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Cyclic, not any permutation:</strong> [b a c] = −[a b c] — only rotations keep the sign.</li><li><strong>BAC–CAB order:</strong> a × (b × c) = (a·c)b − (a·b)c — the dot product with <strong>c</strong> multiplies <strong>b</strong>; reversing pairs is the classic slip.</li><li><strong>Tetrahedron factor:</strong> ⅙ of the parallelepiped volume, not ½ (that is the triangle's share of the parallelogram).</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)</strong> — For vectors a, b, c the <strong>scalar triple product</strong> is <strong>[a b c] = a·(b × c)</strong> — the dot product of one vector with the cross product of the other two; in components it is the determinant |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|. <strong>Geometric significance:</strong> |[a b c]| equals the <strong>volume of the parallelepiped</strong> whose three coterminous edges are a, b, c (base area |b × c| times height |a|cos θ); its <strong>sign</strong> records the orientation (handedness) of the triple. <strong>[a b c] = 0 ⟺ the three vectors are coplanar</strong> — the box collapses.</li><li><strong>NEB-style (3m): Show that the vectors a = î + ĵ + k̂, b = 2î + 3ĵ − k̂... coplanarity via [a b c] = 0 (template).</strong> — Assemble the component determinant and expand; zero ⟹ coplanar (one vector is a combination of the other two), non-zero ⟹ they span space with volume |[a b c]|.</li><li><strong>NEB-style (2m): Verify BAC–CAB for a = î, b = ĵ, c = ĵ.</strong> — Left: a × (b × c) = î × (ĵ × ĵ) = î × 0 = <strong>0</strong>. Right: (a·c)b − (a·b)c = (î·ĵ)ĵ − (î·ĵ)ĵ = 0 − 0 = <strong>0</strong> ✓. Both sides agree; the identity holds even in degenerate cases.</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Scalar triple product: [a b c] = a.(b x c) = determinant of components = (a x b).c. Volume theorem: |[a b c]| = parallelepiped volume; tetrahedron = (1/6)|[a b c]|. Coplanarity: [a b c] = 0. Cyclic invariance: [a b c] = [b c a] = [c a b]; any swap flips sign. Dot and cross interchangeable: a.(b x c) = (a x b).c. Vector triple product: a x (b x c) = (a.c)b - (a.b)c (BAC-CAB); (a x b) x c = (a.c)b - (b.c)a; NOT associative - bracketing changes the plane.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>The scalar triple product is base-times-height in one symbol: cross for the base area, dot for the height - volume with a sign.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>BAC-CAB in the plane</strong></em> — a x (b x c) always lands in the plane of b and c: the identity's right side contains only b and c, no a.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Determinant sign conventions in linear algebra (row swaps flip sign) are the triple product's cyclic law generalised.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;[a b c] = a.(b x c); |[a b c]| is the parallelepiped volume; a x (b x c) = (a.c)b - (a.b)c.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Verified PYQ: NEB 2024 (scalar triple product definition and geometric significance) — assigned to this row. Other items are NEB-style practice.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Coplanarity: determinant = 0. Volume: |determinant|; tetrahedron: divide by 6. Swaps flip sign; rotations keep it. BAC-CAB: (a.c)b - (a.b)c - c pairs with b.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>For the definition question, give the formula AND the volume interpretation - the significance sentence is a full mark.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>[a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| = (a × b)·c</li>
+<li>|[a b c]| = parallelepiped volume; tetrahedron Ⅵ... ⅙|[a b c]|</li>
+<li>[a b c] = [b c a] = [c a b]; [b a c] = −[a b c]</li>
+<li>a × (b × c) = (a·c)b − (a·b)c</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Define the scalar triple product and state its geometric significance.</li><li>Prove the cyclic invariance of [a b c].</li><li>State and verify the BAC–CAB rule with a = î, b = ĵ, c = k̂.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB 2024 (verified PYQ): What is the scalar triple product? Write its geometric significance. (2m)</strong> — <strong>Definition:</strong> for three vectors a, b, c the <strong>scalar triple product</strong> is <strong>[a b c] = a·(b × c)</strong> — the scalar obtained by dotting one vector with the cross product of the other two. In components it is the determinant <strong>|a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃|</strong>, and the dot and cross can be exchanged: a·(b × c) = (a × b)·c. <strong>Geometric significance:</strong> |[a b c]| is the <strong>volume of the parallelepiped</strong> whose coterminous edges are a, b, c — the cross product b × c supplies the base parallelogram's area vector, and the dot product with a supplies the height. The <strong>sign</strong> of [a b c] records the orientation (handedness) of the triple, and <strong>[a b c] = 0 exactly when the three vectors are coplanar</strong> — the collapsed box. The tetrahedron on the same edges has volume ⅙|[a b c]|.</li><li><strong>NEB-style (3m): Prove the cyclic invariance [a b c] = [b c a] = [c a b] and that interchanging two vectors reverses the sign.</strong> — <strong>Determinant route:</strong> [a b c] is the determinant of the matrix with rows a, b, c. <strong>Cyclic rotation</strong> of the rows (a,b,c → b,c,a) is achieved by <strong>two</strong> row interchanges: (a,b,c) → (b,a,c) → (b,c,a). Each interchange multiplies the determinant by −1, so two of them multiply by (−1)² = +1: [a b c] = [b c a], and similarly [c a b]. <strong>Single interchange</strong> (a,b,c → b,a,c) is one swap: the determinant changes sign, so [b a c] = −[a b c]. ∎ <strong>Geometric reading:</strong> rotating which vector is called &quot;first&quot; does not change the box or its handedness; swapping two vectors mirrors the box, flipping the orientation sign while leaving the volume.</li><li><strong>NEB-style (2m): Verify the BAC–CAB rule for a = î, b = ĵ, c = k̂.</strong> — <strong>Left side:</strong> b × c = ĵ × k̂ = î, so a × (b × c) = î × î = <strong>0</strong>. <strong>Right side:</strong> (a·c)b − (a·b)c = (î·k̂)ĵ − (î·ĵ)k̂ = (0)ĵ − (0)k̂ = <strong>0</strong>. Both sides agree ✓. (A non-degenerate check: a = î, b = ĵ, c = k̂ replaced by c = î + k̂ gives left = î × (ĵ × (î + k̂)) = î × (ĵ × î + ĵ × k̂) = î × (−k̂ + î) = −(î × k̂) + 0 = ĵ; right = (î·(î+k̂))ĵ − (î·ĵ)(î+k̂) = ĵ ✓ — the identity survives.)</li></ul></dd></div></dl></section>
   <nav class="pager"><a href="03-cross-product-of-two-vectors.html" title="Cross Product of Two Vectors">‹ Cross Product of Two Vectors</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="05-applications-of-vectors-work-torque-angular-momentum.html" title="{">{ ›</a></nav>
 </div></body></html>

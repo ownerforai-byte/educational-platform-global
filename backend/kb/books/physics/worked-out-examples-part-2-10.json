@@ -1,0 +1,15 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Worked Out Examples",
+  "title": "Worked Out Examples (part 2)",
+  "source": "neb-class-11-physics — Worked Out Examples, pages 20-23 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Sample Question: 1. Test the correctness of the physical equation v2 = u2 + as2 To derive the relation between various physical quantities: Let us derive the relation for the period (T) of a simple pendulum. Consider that the period T of pendulum depends on its mass m, length l, and acceleration due to the gravity g. That is, T∝ ma lb gc Or, T = k ma lb gc Now, using the dimensional formula for the concerned quantities, [M0 L0T1] =k [Ma Lb[ LT-2]c] = k[Ma Lb+c T-2c] Using the principle of homogeneity, we get a= 0, b = 1/2 and c= -1/2 The value of k is experimentally observed to be 2π. Recalling these values in the above equation, T =k √l g The value of k is experimentally observed to be 2π. ∴ T = 2π√l g Hence the physical relation has been established.",
+    "Physics, Grade 11 | 17",
+    "Sample Question: 1. The frequency of vibration of a stretched string is a function of tension T on it, its length L and its mass per unit length, μ. Using the knowledge of dimensional analysis establish the relation of the frequency.",
+    "To find the dimension of an unknown physical quantity: The velocity of a particle is written as v = A+ Bt +Ct2. If t is time, then find the dimensional formula for A, B, and C. In the given relation, according to principal of homogeneity, the dimensional formula of A, Bt, and Ct2 should be consistent with that of v. Thus, [v] = [LT-1] = [A] = [Bt] = [Ct2] Then, [A] = [LT-1] [B] = [LT−1] = [LT-2] [T] [C] = [LT−1] 2 = [LT-3] [T ]",
+    "Sample Question: 1. In the relation y = a cos (ωt –kx), find the dimensional formula for k, where t is time and x is position.(Ans: [L-1]) 1.6.2 Limitation of Dimensional Analysis Following are some of the limitations of the dimensional analysis. i) It does not provide information on whether a physical quantity is a scalar or a vector. ii) It cannot solve the problem related to trigonometric functions, exponential and logarithm functions. iii) It does not give the information on dimensionless constant.",
+    "Physics, Grade 11 | 18"
+  ]
+}

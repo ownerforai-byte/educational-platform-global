@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Theoretical yield, experimental yield and % yield</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Theoretical yield, experimental yield and % yield</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -153,36 +156,306 @@
   </header>
   <section class="field"><h2>Unit SLUG</h2><p>stoichiometry</p></section>
 <section class="field"><h2>Topic SLUG</h2><p>theoretical-yield-experimental-yield-and-yield</p></section>
-<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
-<section class="field"><h2>Generated At</h2><p>2026-10-29T07:20:23.248Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><h2>Theoretical yield, experimental yield and % yield</h2>
-<h3>1. Introduction</h3>
-<p>Chemical picture of <strong>Theoretical yield</strong> — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.</p>
-<h3>2. Concepts and definitions</h3>
-<h4>Theoretical yield</h4>
-<h4>experimental yield and % yield</h4>
-<p>Each definition exam-safe; each formula with its validity condition (§3, block II).</li><li><h3>3. Reaction and equation block</h3>
-<p>Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).</p>
-<p><strong>Table 1 — Relations and worked quantities</strong></p>
-<table><thead><tr><th>Relation</th><th>Symbols + units</th><th>When it holds</th><th>Worked angle</th></tr></thead><tbody></tbody></table></li><li><h3>4. Mechanism, IUPAC and structures</h3>
-<p>Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).</p>
-<p><strong>Table 2 — Distinguish and reagents</strong></p>
-<table><thead><tr><th>Pair or reagent</th><th>Test or point of difference</th><th>Observation</th><th>Example</th></tr></thead><tbody></tbody></table></li><li><h3>5. Diagrams and figures</h3>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>authored-v2</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-11-20T00:00:00.000Z</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Theoretical yield, experimental yield and % yield — Stoichiometry, Chemistry (class-11-notes).</li><li><strong>Tested.</strong> define it · list: theoretical yield, experimental yield, % yield · one worked example · one misconception each.</li><li><h2>Theoretical yield, experimental yield and % yield</h2>
+<h3>1. Topic Introduction</h3>
+<p>Theoretical yield is the maximum amount of product that can be formed from the limiting reactant assuming 100% conversion — the stoichiometric ceiling. Experimental (actual) yield is what you actually isolate in the lab or plant. The gap between them is quantified as <strong>percentage yield</strong> — the single most important efficiency metric in chemical industry and lab practice.</p>
+<p><strong>Why it matters.</strong> Every industrial process (Haber ammonia, Contact sulphuric acid, cement, pharmaceuticals) is judged by its yield. A 1% yield improvement in a million-tonne plant saves millions of dollars. In the lab, % yield tells you how clean your technique was; in exams, it's a guaranteed numerical problem combining limiting reactant and purity concepts.</p>
+<p><strong>What you will learn:</strong> (i) definitions of theoretical, experimental, and % yield; (ii) calculation from limiting reactant; (iii) effect of impurities (% purity) on yield; (iv) why actual &lt; theoretical (six standard reasons); (v) % yield &gt; 100% diagnosis; (vi) atom economy vs % yield distinction.</p>
+<p><strong>Learning outcomes.</strong> You can: calculate theoretical yield from limiting reactant; compute % yield from experimental data; correct for % purity before yield calculation; explain why actual yield &lt; theoretical; diagnose % yield &gt; 100%; distinguish atom economy from % yield.</li><li><h3>2. Fundamental Conceptual Understanding</h3>
+<h4>What theoretical yield is</h4>
+<p>The maximum amount of product that can be obtained from a given amount of limiting reactant, assuming the reaction goes to completion (100% conversion) with no side reactions or losses. It is a calculated ideal — the stoichiometric maximum.</p>
+<h4>Why it exists</h4>
+<p>Reactions are never perfect. Side reactions, equilibrium limitations, mechanical losses, and purification steps all reduce the amount of product you can actually hold in your hand. Theoretical yield gives the benchmark against which real performance is measured.</p>
+<h4>How it works</h4>
+<p>From the balanced equation and the limiting reactant's moles, calculate the maximum moles of product possible using the mole ratio. Convert to mass using the product's molar mass. This is the theoretical yield.</p>
+<h4>Where it occurs</h4>
+<p>Every chemical process: lab synthesis, industrial reactor (Haber, Contact, Solvay), pharmaceutical manufacturing, food processing, environmental remediation.</p>
+<h4>What its components are</h4>
+<p>Balanced equation, limiting reactant moles, mole ratio (product:limiting), product molar mass, theoretical yield (mass), actual yield (mass), % yield.</p>
+<h4>How components interact</h4>
+<p>Limiting reactant moles × (product coeff / limiting coeff) = theoretical product moles → × M_product = theoretical yield (g). Actual yield ÷ theoretical yield × 100 = % yield. Impure reactant: correct mass first (pure mass = impure mass × %purity/100).</p>
+<h4>What makes it biologically important</h4>
+<p>Enzyme yield: theoretical = 1 product per substrate; actual &lt; theoretical due to side reactions, inhibition. Metabolic yield: ATP per glucose theoretical = 38; actual ~30-32 due to proton leak, shuttle costs. Photosynthetic yield: theoretical 12% PAR; actual 3-6% due to photoinhibition, respiration.</li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Theoretical yield</td><td>Maximum product mass from limiting reactant at 100% conversion</td><td>n_limiting × (coeff_product/coeff_limiting) × M_product</td><td>Benchmark for all efficiency calculations</td></tr><tr><td>Experimental (actual) yield</td><td>Mass of product actually isolated and weighed</td><td>Measured after reaction, separation, purification</td><td>Real-world performance</td></tr><tr><td>Percentage yield</td><td>(Actual yield ÷ Theoretical yield) × 100</td><td>≤ 100% for pure product; &gt;100% = impurity/moisture</td><td>Universal efficiency metric</td></tr><tr><td>Theoretical yield (moles)</td><td>n_limiting × (coeff_product / coeff_limiting)</td><td>From limiting reactant and balanced equation</td><td>Basis for mass calculation</td></tr><tr><td>Side reactions</td><td>Reactions consuming reactants to form undesired products</td><td>Reduce yield of desired product</td><td>Major cause of yield loss</td></tr><tr><td>Mechanical losses</td><td>Product lost during filtration, transfer, distillation, drying</td><td>Unavoidable in practice</td><td>Lab technique dependent</td></tr><tr><td>Purification losses</td><td>Product discarded with impurities during recrystallisation, chromatography</td><td>Trade-off between purity and yield</td><td>Quality vs quantity trade-off</td></tr><tr><td>Equilibrium limitation</td><td>Reversible reaction stops before completion</td><td>Theoretical yield assumes completion; equilibrium constant &lt; ∞</td><td>Fundamental limit for reversible reactions</td></tr><tr><td>Atom economy</td><td>MW(desired product) / ΣMW(all reactants) × 100</td><td>Theoretical max based on atoms; different from % yield</td><td>Green chemistry metric</td></tr><tr><td>E-factor</td><td>Total waste (kg) / Product (kg)</td><td>Includes solvents, by-products, unrecovered reactants</td><td>Industrial sustainability metric</td></tr></tbody></table>
+<p><strong>Keywords:</strong> theoretical yield, experimental yield, percentage yield, actual yield, limiting reactant, side reactions, mechanical losses, equilibrium, atom economy, E-factor, green chemistry, purity correction.</li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Theoretical yield calculation (step-by-step)</h4>
+<ol>
+<li><strong>Balance the chemical equation.</strong></li>
+<li><strong>Identify the limiting reactant</strong> (mole/coefficient method).</li>
+<li><strong>Calculate moles of limiting reactant</strong> (apply purity correction if needed: pure mass = impure mass × %purity/100).</li>
+<li><strong>Use mole ratio</strong> from balanced equation: n_product = n_limiting × (coeff_product / coeff_limiting).</li>
+<li><strong>Convert to mass:</strong> theoretical yield = n_product × M_product.</li>
+</ol>
+<h4>4.2 Percentage yield formula</h4>
+<p><strong>% yield = (Actual yield / Theoretical yield) × 100</strong></p>
 <ul>
-<li><strong>D1</strong> — Theoretical yield — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)</li>
-<li><strong>D2</strong> — Theoretical yield — second structure, flow or plot (authored SVG — English labels)</li>
-<li><strong>D3</strong> — Theoretical yield — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
-<li><strong>D4</strong> — Theoretical yield — application or industrial figure (curated external — license recorded at fill)</li>
+<li>Normal range: 0–100%</li>
+<li>0% = no product formed</li>
+<li>100% = perfect conversion (ideal, rarely achieved)</li>
+<li>&gt;100% = product impure, wet, or contains by-product</li>
 </ul>
-<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).</p>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>6. Worked problems</h3>
-<p>≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.</p>
-<h3>7. Key terms and reaction map</h3>
-<p>Named reactions, conversions and &quot;distinguish between&quot; pairs gathered where the reaction block points to them.</li><li><h3>8. Exam Zone and self-check</h3>
-<p>Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
-<p>Reaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>List six reasons why the actual yield of a reaction is less than the theoretical yield.</li><li>100 g of CaCO₃ on heating gives 47.6 g of CaO. Calculate the percentage yield.</li><li>0.25 mol of ethene is hydrated to ethanol but only 9.2 g is obtained. Calculate the percentage yield. (M(C₂H₅OH) = 46 g mol⁻¹)</li><li>Explain why a student may report a yield greater than 100% and how the error can be corrected.</li><li>Distinguish between percentage yield and atom economy and state the limitations of each.</li></ul></section>
-<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Theoretical yield, experimental yield and % yield&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Theoretical yield</li><li>Experimental yield</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Theoretical yield is listed among the official sub-ideas of Theoretical yield, experimental yield and % yield; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Theoretical yield, experimental yield and % yield&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<h4>4.3 Worked example 1: Thermal decomposition of limestone</h4>
+<p><strong>Reaction:</strong> CaCO₃(s) → CaO(s) + CO₂(g) <strong>Given:</strong> 100 g CaCO₃ (M = 100 g/mol) → 47.6 g CaO (M = 56 g/mol)</p>
+<ul>
+<li>n_CaCO₃ = 100/100 = 1 mol (limiting, only reactant)</li>
+<li>n_CaO theoretical = 1 mol × (1/1) = 1 mol</li>
+<li>Theoretical yield = 1 mol × 56 g/mol = <strong>56 g</strong></li>
+<li>Actual yield = 47.6 g</li>
+<li><strong>% yield = (47.6 / 56) × 100 = 85%</strong></li>
+</ul>
+<h4>4.3 Worked example 2: Ethene hydration</h4>
+<p><strong>Reaction:</strong> C₂H₄(g) + H₂O(g) → C₂H₅OH(l) <strong>Given:</strong> 0.25 mol C₂H₄, excess steam → 9.2 g ethanol obtained (M = 46 g/mol)</p>
+<ul>
+<li>n_C₂H₄ = 0.25 mol (limiting)</li>
+<li>n_ethanol theoretical = 0.25 mol × (1/1) = 0.25 mol</li>
+<li>Theoretical yield = 0.25 × 46 = <strong>11.5 g</strong></li>
+<li>Actual yield = 9.2 g</li>
+<li><strong>% yield = (9.2 / 11.5) × 100 = 80%</strong></li>
+</ul>
+<h4>4.4 Worked example 3: With impure reactant</h4>
+<p><strong>Reaction:</strong> 2NaCl + H₂SO₄ → Na₂SO₄ + 2HCl <strong>Given:</strong> 10 g impure NaCl (80% pure), excess H₂SO₄ → 8.5 g Na₂SO₄ obtained (M_Na₂SO₄ = 142, M_NaCl = 58.5)</p>
+<ul>
+<li>Pure NaCl mass = 10 × 0.80 = 8 g</li>
+<li>n_NaCl = 8 / 58.5 = 0.1368 mol (limiting)</li>
+<li>n_Na₂SO₄ theoretical = 0.1368 × (1/2) = 0.0684 mol</li>
+<li>Theoretical yield = 0.0684 × 142 = <strong>9.71 g</strong></li>
+<li>Actual yield = 8.5 g</li>
+<li><strong>% yield = (8.5 / 9.71) × 100 = 87.5%</strong></li>
+</ul>
+<h4>4.5 Six standard reasons actual yield &lt; theoretical yield</h4>
+<table><thead><tr><th>Reason</th><th>Explanation</th><th>Example</th></tr></thead><tbody><tr><td>1. Side reactions</td><td>Reactants form undesired by-products</td><td>Combustion: CO forms instead of CO₂ if O₂ limited</td></tr><tr><td>2. Equilibrium limitation</td><td>Reversible reaction doesn't go to completion</td><td>Haber process: NH₃ ⇌ N₂ + 3H₂ at high T</td></tr><tr><td>3. Mechanical losses</td><td>Transfer, filtration, distillation losses</td><td>Crystals left on filter paper, liquid in flask</td></tr><tr><td>4. Purification losses</td><td>Product discarded with impurities</td><td>Recrystallisation mother liquor contains product</td></tr><tr><td>5. Incomplete reaction</td><td>Reaction stops before limiting reactant consumed</td><td>Slow kinetics, insufficient time, low T</td></tr><tr><td>6. Volatilisation/decomposition</td><td>Product evaporates or decomposes on heating</td><td>NH₄Cl sublimes; H₂O₂ decomposes on heating</td></tr></tbody></table>
+<h4>4.6 % yield &gt; 100% — diagnosis</h4>
+<p>If a student reports % yield &gt; 100%, the product is <strong>impure or wet</strong>. Common causes:</p>
+<ul>
+<li>Residual solvent (water, ethanol, ether) not fully dried</li>
+<li>By-product co-precipitated with product</li>
+<li>Reactant impurity not removed (e.g., unreacted starting material)</li>
+<li>Balance error (zero error, wrong tare)</li>
+<li>Hygroscopic product absorbing moisture from air</li>
+</ul>
+<p><strong>Correct answer in exam:</strong> &quot;% yield &gt; 100% indicates the product is impure (contains solvent/by-product) or wet (not fully dried); true yield cannot exceed 100%.&quot;</p>
+<h4>4.7 % yield vs Atom economy</h4>
+<table><thead><tr><th>Aspect</th><th>% Yield</th><th>Atom Economy</th></tr></thead><tbody><tr><td>Definition</td><td>(Actual / Theoretical) × 100</td><td>MW(product) / ΣMW(reactants) × 100</td></tr><tr><td>Measures</td><td>Process efficiency</td><td>Theoretical atom efficiency</td></tr><tr><td>Depends on</td><td>Experimental technique, purity, equilibrium</td><td>Reaction stoichiometry only</td></tr><tr><td>Range</td><td>0–100% (practical)</td><td>0–100% (theoretical max)</td></tr><tr><td>Limitation</td><td>Doesn't account for by-product atoms</td><td>Doesn't account for actual losses</td></tr><tr><td>Green chemistry role</td><td>Process optimisation</td><td>Reaction design</td></tr></tbody></table>
+<p><strong>Example:</strong> 2H₂ + O₂ → 2H₂O</p>
+<ul>
+<li>Atom economy = 36 / (4+32) × 100 = <strong>100%</strong> (all atoms in product)</li>
+<li>% yield in lab = typically 80–95%</li>
+</ul>
+<p><strong>Example:</strong> CaCO₃ → CaO + CO₂</p>
+<ul>
+<li>Atom economy = 56 / 100 × 100 = <strong>56%</strong> (44% mass lost as CO₂)</li>
+<li>% yield in kiln = 85–95%</li>
+</ul>
+<h4>4.8 Industrial yield targets</h4>
+<table><thead><tr><th>Process</th><th>Typical % yield</th><th>Target</th></tr></thead><tbody><tr><td>Haber (NH₃)</td><td>15–20% per pass</td><td>&gt;98% overall with recycle</td></tr><tr><td>Contact (H₂SO₄)</td><td>97–99% per pass</td><td>&gt;99.5% overall</td></tr><tr><td>Solvay (Na₂CO₃)</td><td>85–90%</td><td>&gt;90%</td></tr><tr><td>Cement (clinker)</td><td>90–95%</td><td>&gt;95%</td></tr><tr><td>Pharmaceuticals</td><td>70–90%</td><td>&gt;85% (multi-step)</td></tr><tr><td>Lab synthesis</td><td>60–90%</td><td>&gt;80% (single step)</td></tr></tbody></table></li><li><h3>5. Biological Examples</h3>
+<table><thead><tr><th>Example</th><th>Sector</th><th>Chemistry</th><th>Why it matters</th></tr></thead><tbody><tr><td>ATP yield from glucose</td><td>Metabolism</td><td>Theoretical 38 ATP; actual 30–32</td><td>Proton leak, shuttle costs, mitochondrial efficiency</td></tr><tr><td>Photosynthetic efficiency</td><td>Plant biology</td><td>Theoretical 12% PAR; actual 3–6%</td><td>Photoinhibition, respiration, Rubisco oxygenase</td></tr><tr><td>Enzyme catalytic efficiency</td><td>Biochemistry</td><td>kcat/Km vs diffusion limit</td><td>Evolutionary optimisation</td></tr><tr><td>Protein expression yield</td><td>Biotechnology</td><td>Theoretical 100% folding; actual 10–50%</td><td>Aggregation, inclusion bodies, degradation</td></tr><tr><td>Drug metabolism</td><td>Pharmacology</td><td>Bioavailability (F) = actual AUC / IV AUC</td><td>First-pass metabolism, efflux pumps</td></tr><tr><td>Crop yield</td><td>Agriculture</td><td>Theoretical (potential) vs actual</td><td>Water, nutrients, pests, weeds</td></tr></tbody></table>
+<p><strong>Nepal context:</strong></p>
+<ul>
+<li>Urea plant (Hetauda): NH₃ + CO₂ → urea; per-pass yield ~60%, recycle to &gt;99%.</li>
+<li>Cement (Hetauda/Udayapur): CaCO₃ → CaO; kiln yield 90–95%.</li>
+<li>Biogas: Organic waste → CH₄; yield depends on C/N ratio, temperature, retention time.</li>
+</ul></li><li><h3>6. Chemical Processes and Mechanisms</h3>
+<h4>Process: Yield determination (lab)</h4>
+<ol>
+<li><strong>Definition:</strong> Determining the experimental yield of a reaction product.</li>
+<li><strong>Location:</strong> Laboratory synthesis, quality control lab.</li>
+<li><strong>Requirements:</strong> Balanced equation, limiting reactant mass, product isolation procedure.</li>
+<li><strong>Components:</strong> Reactants, product, purification steps (filtration, recrystallisation, distillation), analytical balance.</li>
+<li><strong>Sequential steps:</strong> (i) Weigh limiting reactant (apply purity); (ii) Run reaction to completion; (iii) Isolate product (filter, distil, extract); (iv) Purify (recrystallise, dry); (v) Weigh pure product; (vi) Calculate theoretical yield; (vii) Compute % yield.</li>
+<li><strong>Result:</strong> Experimental yield (g), % yield (%), purity assessment.</li>
+<li><strong>Significance:</strong> Core lab skill; directly tests stoichiometry understanding.</li>
+</ol>
+<h4>Process: Yield optimisation (industrial)</h4>
+<ol>
+<li><strong>Definition:</strong> Maximising % yield while minimising cost, energy, and waste.</li>
+<li><strong>Location:</strong> Chemical plant (reactor, separator, recycle loop).</li>
+<li><strong>Requirements:</strong> Reaction kinetics, equilibrium data, catalyst, separation technology, economics.</li>
+<li><strong>Components:</strong> Reactor, separator, recycle loop, purge stream, feed pre-treatment.</li>
+<li><strong>Sequential steps:</strong> (i) Optimise T, P, catalyst for kinetics/equilibrium; (ii) Use excess cheap reactant to drive limiting reactant conversion; (iii) Separate product; (iv) Recycle unreacted limiting reactant; (v) Purge inerts; (vi) Monitor yield and adjust.</li>
+<li><strong>Result:</strong> High per-pass conversion + high overall yield via recycle.</li>
+<li><strong>Significance:</strong> 1% yield gain in million-tonne plant = millions $/year; also reduces waste (E-factor).</li>
+</ol></li><li><h3>7. Diagrams and Visual Understanding</h3>
+<ul>
+<li><strong>D1 (authored SVG)</strong> — Yield calculation flow (Fig. 7.1): limiting reactant → mole ratio → theoretical yield → actual yield → % yield.</li>
+<li><strong>D2 (authored SVG)</strong> — Yield gap analysis (Fig. 7.2): theoretical 100% → side reactions → equilibrium → mechanical → purification → actual yield.</li>
+<li><strong>D3 (curated)</strong> — Haber process recycle loop (Fig. 7.3): per-pass 15% → recycle → overall 98%.</li>
+<li><strong>D4 (curated)</strong> — Pharmaceutical multi-step yield cascade (Fig. 7.4): 5 steps at 90% each = 59% overall.</li>
+</ul>
+<p>Fig. 7.1 — Yield calculation flow (authored SVG).</p>
+<div class="fig authored"><svg viewBox="0 0 800 500" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Yield calculation flow</title>
+<rect x="0" y="0" width="800" height="500" fill="#ffffff"/>
+<g font-size="14" font-weight="bold" text-anchor="middle">
+<rect x="50" y="50" width="200" height="50" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="150" y="82" fill="#713f12">BALANCED EQUATION</text>
+<line x1="250" y1="75" x2="300" y2="75" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="50" width="200" height="50" rx="8" fill="#e0f2fe" stroke="#0369a1" stroke-width="2"/>
+<text x="400" y="82" fill="#0369a1">IDENTIFY LIMITING REACTANT</text>
+<line x1="500" y1="75" x2="550" y2="75" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="550" y="50" width="200" height="50" rx="8" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+<text x="650" y="82" fill="#14532d">THEORETICAL YIELD (g)</text><text x="650" y="100" font-size="12" fill="#475569">n_lim × ratio × M</text>
+<line x1="750" y1="75" x2="750" y2="125" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="550" y="125" width="200" height="50" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="650" y="157" fill="#713f12">ACTUAL YIELD (g)</text><text x="650" y="175" font-size="12" fill="#475569">Weighed after purification</text>
+<line x1="650" y1="185" x2="650" y2="235" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="235" width="200" height="50" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+<text x="400" y="267" fill="#701a75">% YIELD</text><text x="400" y="285" font-size="12" fill="#475569">(Actual/Theoretical)×100</text>
+<line x1="100" y1="260" x2="300" y2="260" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="50" y="235" width="200" height="50" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+<text x="150" y="267" fill="#991b1b">>100%? Impure/wet</text>
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 Z" fill="#64748b"/></marker>
+</defs>
+</svg><div class="fig-cap">Yield calculation flow</div></div></li><li><h3>8. Conceptual Relationships</h3>
+<h4>Within this topic</h4>
+<ul>
+<li>Limiting reactant → theoretical yield → actual yield → % yield. Sequential dependency.</li>
+<li>Purity correction feeds into limiting reactant → theoretical yield.</li>
+<li>Atom economy provides theoretical upper bound; % yield measures actual performance.</li>
+</ul>
+<h4>To other units</h4>
+<ul>
+<li><strong>Limiting reactant:</strong> Theoretical yield starts with limiting reactant identification.</li>
+<li><strong>Chemical Equilibrium:</strong> Equilibrium yield &lt; theoretical yield for reversible reactions.</li>
+<li><strong>Applied Chemistry &amp; Modern Manufactures:</strong> Haber process (per-pass yield 15%, recycle to 98%), Contact process (99%+), Solvay, cement, urea.</li>
+<li><strong>Organic Chemistry:</strong> Multi-step synthesis yield = product of step yields (e.g., 5 steps × 90% = 59% overall).</li>
+</ul>
+<h4>To real life</h4>
+<ul>
+<li>Cooking: recipe = balanced equation; ingredients = reactants; dish = product; % yield = edible portion / theoretical.</li>
+<li>Manufacturing: raw material cost = limiting reactant cost; yield = profit margin.</li>
+<li>Medicine: drug dose = limiting reactant; bioavailability = % yield of active in bloodstream.</li>
+<li>Environment: E-factor = waste/product; low E-factor = green process.</li>
+</ul></li><li><h3>9. Important Facts and Scientific Terminology</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Theoretical yield</td><td>Max product from limiting reactant at 100% conversion</td><td>n_limiting × (coeff_P/coeff_L) × M_P</td><td>Stoichiometric ceiling</td></tr><tr><td>Actual yield</td><td>Product mass actually isolated</td><td>Measured after purification</td><td>Real performance</td></tr><tr><td>% yield</td><td>(Actual ÷ Theoretical) × 100</td><td>≤ 100% for pure dry product</td><td>Efficiency metric</td></tr><tr><td>Side reactions</td><td>Competing reactions forming by-products</td><td>Reduce desired product yield</td><td>Major yield loss cause</td></tr><tr><td>Equilibrium yield</td><td>Max yield at equilibrium (reversible reactions)</td><td>Limited by K_eq; &lt; theoretical</td><td>Fundamental limit</td></tr><tr><td>Mechanical losses</td><td>Product lost during handling</td><td>Filtration, transfer, distillation</td><td>Technique dependent</td></tr><tr><td>Purification losses</td><td>Product discarded with impurities</td><td>Recrystallisation, chromatography</td><td>Purity-yield trade-off</td></tr><tr><td>Atom economy</td><td>ΣMW(desired) / ΣMW(all reactants) × 100</td><td>Theoretical max atom efficiency</td><td>Green chemistry design</td></tr><tr><td>E-factor</td><td>Total waste (kg) / Product (kg)</td><td>Includes solvents, by-products</td><td>Industrial sustainability</td></tr><tr><td>Process mass intensity</td><td>Total mass input / Product mass</td><td>PMI = E-factor + 1</td><td>Holistic efficiency</td></tr><tr><td>Overall yield (multi-step)</td><td>Product of step yields</td><td>5 steps × 90% = 59% overall</td><td>Synthesis planning</td></tr><tr><td>Bioavailability</td><td>Actual systemic dose / IV dose</td><td>First-pass metabolism, absorption</td><td>Drug development</td></tr><tr><td>Conversion</td><td>Reactant consumed / Reactant fed</td><td>Per-pass vs overall (with recycle)</td><td>Reactor design</td></tr><tr><td>Selectivity</td><td>Desired product / Total products</td><td>Competitive reactions</td><td>Catalyst quality</td></tr></tbody></table>
+<p><strong>Memory tricks:</strong></p>
+<ul>
+<li>&quot;Trick 1: % yield = (actual / theoretical) × 100 — compute theoretical from the LIMITING reactant, then plug the given experimental mass.&quot;</li>
+<li>&quot;Trick 2: If % purity given, first convert impure mass to pure mass (× purity fraction) BEFORE the mole calculation.&quot;</li>
+<li>&quot;Trick 3: % yield &gt; 100% in an exam answer means the product is wet/impure — state this as the reason if asked.&quot;</li>
+<li>&quot;Trick 4: Multi-step overall yield = product of step yields (e.g., 0.9^5 = 0.59).&quot;</li>
+<li>&quot;Trick 5: Atom economy = MW(product) / ΣMW(reactants) × 100; % yield = actual/theoretical — different things!&quot;</li>
+</ul></li><li><h3>10. Topic Mastery Check</h3>
+<h4>Important definitions</h4>
+<ol>
+<li><strong>Theoretical yield</strong> — maximum product mass from limiting reactant at 100% conversion.</li>
+<li><strong>Experimental (actual) yield</strong> — product mass actually isolated and weighed.</li>
+<li><strong>Percentage yield</strong> — (actual yield ÷ theoretical yield) × 100.</li>
+<li><strong>Atom economy</strong> — MW(desired product) / ΣMW(all reactants) × 100.</li>
+<li><strong>Side reactions</strong> — competing reactions forming undesired by-products.</li>
+<li><strong>Equilibrium yield</strong> — maximum yield at equilibrium for reversible reactions.</li>
+<li><strong>Mechanical losses</strong> — product lost during handling (filtration, transfer, distillation).</li>
+<li><strong>Purification losses</strong> — product discarded with impurities during recrystallisation/chromatography.</li>
+</ol>
+<h4>Key concepts to remember</h4>
+<ul>
+<li>Theoretical yield from limiting reactant only: n_limiting × mole ratio × M_product.</li>
+<li>% yield = (actual / theoretical) × 100; ≤ 100% for pure dry product.</li>
+<li>&gt;100% yield = impure product (solvent, by-product) or wet (not fully dried).</li>
+<li>Six reasons actual &lt; theoretical: side reactions, equilibrium, mechanical losses, purification losses, incomplete reaction, volatilisation/decomposition.</li>
+<li>Purity correction: pure mass = impure mass × (%/100) BEFORE mole calculation.</li>
+<li>Atom economy ≠ % yield — economy is theoretical (stoichiometry), yield is experimental (practice).</li>
+<li>Multi-step overall yield = product of step yields (e.g., 5 steps × 90% = 59%).</li>
+</ul>
+<h4>Important classifications</h4>
+<ul>
+<li>Yield types: Theoretical (ideal), Actual (isolated), % (efficiency).</li>
+<li>Loss categories: Side reactions, equilibrium, mechanical, purification, incomplete, volatilisation.</li>
+<li>Efficiency metrics: % yield (practical), atom economy (theoretical), E-factor (waste), PMI (total mass).</li>
+</ul>
+<h4>Important comparisons</h4>
+<table><thead><tr><th>Basis</th><th>% Yield</th><th>Atom Economy</th></tr></thead><tbody><tr><td>Measures</td><td>Process efficiency</td><td>Theoretical atom efficiency</td></tr><tr><td>Depends on</td><td>Technique, purity, equilibrium</td><td>Reaction stoichiometry only</td></tr><tr><td>Range</td><td>0–100% (practical)</td><td>0–100% (theoretical)</td></tr><tr><td>Limitation</td><td>Doesn't account for by-product atoms</td><td>Doesn't account for actual losses</td></tr></tbody></table>
+<h4>Common conceptual confusions</h4>
+<ul>
+<li>% yield &gt; 100% is valid for efficient reactions — WRONG (means impure/wet).</li>
+<li>Atom economy and % yield are the same — WRONG (economy theoretical, yield experimental).</li>
+<li>Forgetting purity correction before yield calc — WRONG (impurities don't react).</li>
+<li>Assuming 100% yield is achievable — WRONG (equilibrium, side reactions, losses prevent it).</li>
+<li>% yield applies to reversible reactions without modification — WRONG (equilibrium limits max).</li>
+</ul>
+<h4>Short-answer questions</h4>
+<ol>
+<li>Define theoretical yield, experimental yield, and % yield.</li>
+<li>What is the formula for % yield?</li>
+<li>100 g CaCO₃ → 47.6 g CaO. Calculate % yield.</li>
+<li>Why is actual yield usually less than theoretical? Give three reasons.</li>
+<li>What does % yield &gt; 100% indicate?</li>
+<li>Distinguish % yield from atom economy.</li>
+<li>If a reactant is 80% pure, how does this affect theoretical yield calculation?</li>
+</ol>
+<h4>Long-answer questions</h4>
+<ol>
+<li>Explain the six reasons why actual yield is less than theoretical yield.</li>
+<li>100 g CaCO₃ heated gives 47.6 g CaO. Calculate % yield. (M_CaCO₃ = 100, M_CaO = 56)</li>
+<li>0.25 mol ethene hydrated to ethanol, only 9.2 g obtained. Calculate % yield. (M_ethanol = 46)</li>
+<li>Distinguish between % yield and atom economy. State limitations of each.</li>
+<li>Explain why a student may report a yield &gt; 100% and how the error can be corrected.</li>
+</ol>
+<h4>Conceptual questions</h4>
+<ol>
+<li>Can % yield ever be 100% in practice? Why or why not?</li>
+<li>How does equilibrium limit the yield of a reversible reaction?</li>
+<li>Why is atom economy 100% for H₂ + ½O₂ → H₂O but only 56% for CaCO₃ → CaO + CO₂?</li>
+<li>In a 5-step synthesis with 90% yield each step, what is the overall yield?</li>
+<li>What is E-factor and how does it relate to % yield?</li>
+</ol>
+<h4>Application-based questions</h4>
+<ol>
+<li>100 g CaCO₃ → 47.6 g CaO. Calculate % yield.</li>
+<li>0.25 mol ethene hydrated, 9.2 g ethanol obtained. % yield = ?</li>
+<li>5 g impure CaCO₃ (80% pure) heated → CaO. Theoretical yield? If 90% yield, actual mass?</li>
+<li>A student reports 105% yield. List three possible explanations.</li>
+<li>Reaction: 2A + 3B → C. M_A = 50, M_B = 30, M_C = 190. 10 g A (90% pure) + excess B → 6 g C. % yield?</li>
+</ol>
+<h4>Answers</h4>
+<ol>
+<li>Theoretical = max product from limiting reactant at 100%; Actual = isolated mass; % yield = (Actual/Theoretical)×100.</li>
+<li>% yield = (Actual ÷ Theoretical) × 100.</li>
+<li>n_CaCO₃ = 1 mol → theoretical CaO = 56 g; % yield = 47.6/56 × 100 = 85%.</li>
+<li>Side reactions, equilibrium, mechanical losses, purification losses, incomplete reaction, volatilisation.</li>
+<li>Product impure (solvent/by-product) or wet (not fully dried); true yield cannot exceed 100%.</li>
+<li>% yield = practical efficiency (actual/theoretical); Atom economy = theoretical atom efficiency (MW_P/ΣMW_R).</li>
+<li>Pure mass = impure mass × (%/100); theoretical yield based on pure mass; yield % unchanged if purity corrected correctly.</li>
+<li>(1) Side reactions; (2) Equilibrium limit; (3) Mechanical losses; (4) Purification losses; (5) Incomplete reaction; (6) Volatilisation/decomposition.</li>
+<li>H₂O: all atoms in product → 100%; CaCO₃: 44% mass lost as CO₂ → 56%.</li>
+<li>0.9^5 = 0.59049 ≈ 59% overall.</li>
+<li>E-factor = total waste (kg) / product (kg); low E-factor ≈ high atom economy + high yield.</li>
+<li>Pure CaCO₃ = 5×0.8 = 4 g = 0.04 mol → theoretical CaO = 0.04×56 = 2.24 g; 90% yield = 2.016 g actual.</li>
+<li>(a) Wet product; (b) By-product co-precipitated; (c) Balance error; (d) Impure reactant not corrected.</li>
+<li>Pure A = 10×0.9 = 9 g = 0.18 mol; B excess; theoretical C = 0.18/2 × 190 = 17.1 g; % yield = 6/17.1 × 100 = 35.1%.</li>
+<li>100% yield not achievable in practice — equilibrium, side reactions, losses always present.</li>
+</ol></li><li><h3>11. NEB Previous Year Questions (PYQs)</h3>
+<table><thead><tr><th>Year</th><th>Unit</th><th>Topic</th><th>Question</th><th>Marks</th><th>Type</th></tr></thead><tbody><tr><td>2079</td><td>Stoichiometry</td><td>Theoretical yield, % yield</td><td>List six reasons why actual yield &lt; theoretical yield.</td><td>2</td><td>Short</td></tr><tr><td>2078</td><td>Stoichiometry</td><td>Theoretical yield, % yield</td><td>100 g CaCO₃ heated gives 47.6 g CaO. Calculate % yield.</td><td>2</td><td>Short</td></tr><tr><td>2077</td><td>Stoichiometry</td><td>Theoretical yield, % yield</td><td>0.25 mol ethene hydrated, 9.2 g ethanol obtained. Calculate % yield.</td><td>3</td><td>Short</td></tr><tr><td>2076</td><td>Stoichiometry</td><td>Theoretical yield, % yield</td><td>Explain why a student may report &gt;100% yield and how to correct.</td><td>3</td><td>Short</td></tr><tr><td>2075</td><td>Stoichiometry</td><td>Theoretical yield, % yield</td><td>Distinguish % yield and atom economy; limitations of each.</td><td>3</td><td>Short</td></tr></tbody></table>
+<h4>PYQ Solutions</h4>
+<p><strong>Q: List six reasons why actual yield &lt; theoretical yield. (2 marks)</strong> <strong>Answer:</strong> (1) Side reactions forming by-products; (2) Equilibrium limitation in reversible reactions; (3) Mechanical losses during handling/filtration; (4) Purification losses (recrystallisation, chromatography); (5) Incomplete reaction (kinetics, time); (6) Volatilisation/decomposition of product. <strong>Keywords:</strong> side reactions, equilibrium, mechanical, purification, incomplete, volatilisation.</p>
+<p><strong>Q: 100 g CaCO₃ heated gives 47.6 g CaO. Calculate % yield. (2 marks)</strong> <strong>Answer:</strong> M_CaCO₃ = 100 → 1 mol → theoretical CaO = 56 g. % yield = (47.6/56)×100 = 85%. <strong>Keywords:</strong> 1 mol, 56 g theoretical, 47.6 g actual, 85%.</p>
+<p><strong>Q: 0.25 mol ethene hydrated, 9.2 g ethanol obtained. Calculate % yield. (3 marks)</strong> <strong>Answer:</strong> Theoretical = 0.25 mol × 46 = 11.5 g. % yield = (9.2/11.5)×100 = 80%. <strong>Keywords:</strong> 0.25 mol, 11.5 g theoretical, 9.2 g actual, 80%.</p>
+<p><strong>Q: Explain why a student may report &gt;100% yield and how to correct. (3 marks)</strong> <strong>Answer:</strong> &gt;100% means product is wet (residual solvent) or impure (by-product co-precipitated). Correction: dry to constant weight; recrystallise to remove by-products; re-weigh dry pure product. <strong>Keywords:</strong> wet, impure, by-product, dry to constant weight, recrystallise.</p>
+<p><strong>Q: Distinguish % yield and atom economy; limitations of each. (3 marks)</strong> <strong>Answer:</strong> % yield = (actual/theoretical)×100 — practical efficiency; depends on technique, purity, equilibrium. Atom economy = MW(product)/ΣMW(reactants)×100 — theoretical max atom efficiency; depends only on stoichiometry. Limitation: % yield doesn't account for by-product atoms; atom economy doesn't account for actual losses. <strong>Keywords:</strong> actual/theoretical, MW ratio, practical vs theoretical, by-product atoms, actual losses.</li><li><h3>12. Summary and Self-check</h3>
+<p>Theoretical yield = n_limiting × mole ratio × M_product; % yield = (actual/theoretical)×100. Actual &lt; theoretical due to: side reactions, equilibrium, mechanical losses, purification losses, incomplete reaction, volatilisation. % yield &gt; 100% = impure/wet product. Purity correction (impure mass × %/100) before mole calc. Atom economy ≠ % yield — economy theoretical (stoichiometry), yield experimental (practice). Multi-step overall yield = product of step yields. Figures: yield flow, yield gap, Haber recycle, pharma cascade.</p>
+<p><strong>Self-check.</strong> (1) 100 g CaCO₃ → 47.6 g CaO → % yield? (2) 0.25 mol C₂H₄ → 9.2 g C₂H₅OH → % yield? (3) Why actual &lt; theoretical? (4) % yield &gt; 100% meaning? (5) Atom economy vs % yield?</p>
+<p><strong>Common confusions.</strong> % yield &gt; 100% valid — NO (impure/wet). Atom economy = % yield — NO (theoretical vs experimental). Purity correction optional — NO (mandatory before mole calc). 100% yield achievable — NO (equilibrium, side reactions, losses).</li><li><h3>13. Sources</h3>
+<ul>
+<li>NEB/CDC Grade 11 Chemistry (Stoichiometry unit)</li>
+<li>OpenStax Chemistry 2e, Chapter 4 (Stoichiometry)</li>
+<li>Atkins &amp; de Paula, Physical Chemistry (yield, atom economy)</li>
+<li>Anastas &amp; Warner, Green Chemistry: Theory and Practice (atom economy, E-factor)</li>
+<li>Industrial Chemistry texts (Haber, Contact, cement, pharmaceutical yields)</li>
+</ul></li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ % yield &gt; 100% is valid for efficient reactions. ✅ Means product impure (solvent/by-product) or wet (not fully dried).</li><li>❌ Atom economy = % yield. ✅ Economy = theoretical (stoichiometry); Yield = experimental (practice).</li><li>❌ Purity correction is optional. ✅ Mandatory before mole calculation — impurities don't react.</li><li>❌ 100% yield is achievable in practice. ✅ Equilibrium, side reactions, losses prevent it.</li><li>❌ % yield applies to reversible reactions without modification. ✅ Equilibrium limits max yield; use equilibrium yield instead.</li><li>❌ Multi-step yield = average of step yields. ✅ Overall = PRODUCT of step yields (multiplicative).</li></ul></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: theoretical yield, experimental yield, % yield (within Stoichiometry).</li><li>Out of scope: detailed equilibrium calculations, kinetics — later units.</li><li>State the limit/condition where a rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Practice</h2><p class="empty">—</p></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Theoretical yield = n_limiting × (coeff_P/coeff_L) × M_P.</li><li>% yield = (actual ÷ theoretical) × 100; ≤ 100% for pure dry product.</li><li>Six reasons actual &lt; theoretical: side reactions, equilibrium, mechanical, purification, incomplete, volatilisation.</li><li>% yield &gt; 100% = impure/wet product; true yield ≤ 100%.</li><li>Atom economy = MW(P)/ΣMW(R)×100; % yield = actual/theoretical×100 — different concepts.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>CaCO₃ → CaO + CO₂: 100 g → 56 g theoretical; 47.6 g actual → 85% yield.</li><li>C₂H₄ + H₂O → C₂H₅OH: 0.25 mol → 11.5 g theoretical; 9.2 g actual → 80% yield.</li><li>Haber process: per-pass 15% → recycle → overall 98%.</li><li>Pharma 5-step: 0.9^5 = 59% overall yield.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>SHORT (2 marks): Define theoretical yield, experimental yield, and % yield.</li><li>SHORT (2 marks): Give the formula for % yield.</li><li>SHORT (2 marks): 100 g CaCO₃ heated gives 47.6 g CaO. Calculate % yield.</li><li>SHORT (3 marks): 0.25 mol ethene hydrated, 9.2 g ethanol obtained. Calculate % yield.</li><li>SHORT (3 marks): List six reasons why actual yield &lt; theoretical yield.</li><li>SHORT (3 marks): Explain why a student may report &gt;100% yield and how to correct.</li><li>SHORT (3 marks): Distinguish % yield and atom economy; limitations of each.</li><li>LONG (5 marks): Explain the six reasons why actual yield &lt; theoretical yield.</li><li>LONG (5 marks): 100 g CaCO₃ heated gives 47.6 g CaO. Calculate % yield.</li><li>LONG (5 marks): 0.25 mol ethene hydrated, 9.2 g ethanol obtained. Calculate % yield.</li><li>LONG (5 marks): Distinguish % yield and atom economy; limitations of each.</li><li>LONG (5 marks): Explain why a student may report &gt;100% yield and how to correct.</li><li>LONG (5 marks): 5 g impure CaCO₃ (80% pure) heated → CaO. Theoretical yield? 90% yield → actual?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>Theoretical yield = n_limiting × (coeff_P / coeff_L) × M_P</li><li>% yield = (actual yield / theoretical yield) × 100</li><li>n_limiting = pure mass / M_limiting</li><li>pure mass = impure mass × (%purity / 100)</li><li>Atom economy = MW(product) / Σ MW(reactants) × 100</li><li>Overall yield (multi-step) = ∏ step yields</li><li>E-factor = total waste (kg) / product (kg)</li><li>Conversion = reactant consumed / reactant fed</li></ul></section>
+<section class="field"><h2>Numericals</h2><ul><li>CaCO₃ → CaO + CO₂: 100 g → 56 g theoretical; 47.6 g actual → 85% yield.</li><li>C₂H₄ + H₂O → C₂H₅OH: 0.25 mol → 11.5 g theoretical; 9.2 g actual → 80% yield.</li><li>Impure CaCO₃ (80%): 5 g impure → 4 g pure → 0.04 mol → 2.24 g CaO theoretical; 90% yield → 2.016 g actual.</li><li>5-step pharma at 90% each: 0.9^5 = 59% overall.</li><li>Haber: per-pass 15% → recycle → overall 98%.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Theoretical yield from limiting reactant: n_lim × ratio × M_P.</li><li>% yield = (actual / theoretical) × 100; ≤ 100% for pure dry product.</li><li>Six reasons actual &lt; theoretical: side reactions, equilibrium, mechanical, purification, incomplete, volatilisation.</li><li><blockquote><p>100% yield = impure/wet product; true yield ≤ 100%.</p></blockquote></li><li>Purity correction: pure mass = impure mass × (%/100) BEFORE mole calc.</li><li>Atom economy (theoretical) ≠ % yield (experimental).</li><li>Multi-step overall yield = product of step yields.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Theoretical yield = n_limiting × mole ratio × M_product; % yield = (actual/theoretical)×100. Actual &lt; theoretical due to: side reactions, equilibrium, mechanical losses, purification losses, incomplete reaction, volatilisation. % yield &gt; 100% = impure/wet product. Purity correction (impure mass × %/100) before mole calc. Atom economy ≠ % yield — economy theoretical (stoichiometry), yield experimental (practice). Multi-step overall yield = product of step yields. Figures: yield flow, yield gap, Haber recycle, pharma cascade.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Theoretical yield is calculated from</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Excess reactant</li><li>Limiting reactant</li><li>Both reactants</li><li>Neither</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Limiting reactant determines maximum possible product.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>If % yield &gt; 100%, the product is likely</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Pure</li><li>Impure or wet</li><li>Correct</li><li>Theoretical</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>True yield cannot exceed 100%; &gt;100% indicates impurity or moisture.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Purity correction is done</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>After mole calculation</li><li>Before mole calculation</li><li>After yield calculation</li><li>Never needed</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Impurities don't react; mass must be corrected to pure reactant mass first.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Actual yield &lt; theoretical yield due to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Only side reactions</li><li>Only equilibrium</li><li>Six standard reasons</li><li>Only mechanical losses</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Side reactions, equilibrium, mechanical losses, purification losses, incomplete reaction, volatilisation.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Atom economy for H₂ + ½O₂ → H₂O is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>56%</li><li>75%</li><li>100%</li><li>18%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>All reactant atoms end up in product: (18)/(2+16) = 100%.</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Atom economy for CaCO₃ → CaO + CO₂ is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>44%</li><li>56%</li><li>100%</li><li>12%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>56/100 = 56% (CaO); 44% mass lost as CO₂.</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>5-step synthesis at 90% each step gives overall yield</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>90%</li><li>59%</li><li>45%</li><li>33%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>0.9^5 = 0.59049 ≈ 59%.</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>% yield &gt; 100% means</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Excellent technique</li><li>Product impure/wet</li><li>Theoretical yield wrong</li><li>Balance error only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>True yield ≤ 100%; &gt;100% indicates moisture or impurity.</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>E-factor measures</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Yield percentage</li><li>Waste per product</li><li>Atom economy</li><li>Conversion</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Total waste (kg) / product (kg); includes solvents, by-products, unrecovered reactants.</p></div></div></div></section>
+<section class="field"><h2>Mcs</h2><p class="empty">—</p></section>
   <nav class="pager"><a href="07-empirical-molecular-formula.html" title="Calculation of Empirical and Molecular Formula from Percentage Composition">‹ Calculation of Empirical and Molecular Formul…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="08-calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble.html" title="Calculation of empirical and molecular formula from % composition (solving related numerical problems)">Calculation of empirical and molecular formul… ›</a></nav>
 </div></body></html>

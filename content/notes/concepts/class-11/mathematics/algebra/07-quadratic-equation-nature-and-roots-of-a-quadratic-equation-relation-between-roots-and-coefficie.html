@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Quadratic equation: nature and roots of a quadratic equat…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Quadratic equation: nature and roots of a quadratic equat…</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -156,44 +159,109 @@
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
 <section class="field"><h2>Source</h2><p>generated</p></section>
 <section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Quadratic equation: nature and roots of a quadratic equat… — Algebra, Mathematics (class-11-notes).</li><li><strong>Tested.</strong> define it · list: quadratic equation, nature, roots of a quadratic equation, relation between roots · one worked example · one misconception each.</li><li><strong>Fact.</strong> ax² + bx + c = 0; discriminant D = b² − 4ac: D&gt;0 two distinct real, D=0 equal, D&lt;0 complex conjugate.</li><li><strong>Fact.</strong> Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.</li><li><strong>Fact.</strong> For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) &lt; 0). One root common with another: discriminant-of-conditions / resultant.</li><li><strong>Nature.</strong> one-line definition + one-line exam use.</li><li><strong>Roots of a quadratic equation.</strong> one-line definition + one-line exam use.</li><li><strong>Relation between roots.</strong> one-line definition + one-line exam use.</li><li><strong>Coefficient.</strong> one-line definition + one-line exam use.</li><li><strong>Formation of a quadratic equation.</strong> one-line definition + one-line exam use.</li><li><strong>Symmetric roots.</strong> one-line definition + one-line exam use.</li><li><strong>One or both roots common.</strong> one-line definition + one-line exam use.</li><li><h2>Quadratic equation: nature and roots of a quadratic equation, relation between roots and coefficient, formation of a quadratic equation, symmetric roots, one or both roots common</h2>
-<h3>1. Introduction and motivation</h3>
-<p>What the tool <strong>Quadratic equation</strong> is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.</p>
-<h3>2. Definitions and theorems</h3>
-<h4>Quadratic equation: nature and roots of a quadratic equation</h4>
-<h4>relation between roots and coefficient</h4>
-<h4>formation of a quadratic equation</h4>
-<h4>symmetric roots</h4>
-<h4>one or both roots common</h4>
-<p>Each result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).</li><li><h3>3. Formula sheet</h3>
-<p><strong>Table 1 — Formula sheet</strong></p>
-<table><thead><tr><th>Formula</th><th>Symbols</th><th>Validity condition</th><th>Where used</th></tr></thead><tbody></tbody></table>
-<p>Complete for the topic; every row carries its validity condition (§3.1).</li><li><h3>4. Methods and standard forms</h3>
-<p><strong>Table 2 — Theorem and method sheet</strong></p>
-<table><thead><tr><th>Result or method</th><th>Hypotheses</th><th>Worked example</th><th>If the condition is dropped</th></tr></thead><tbody></tbody></table>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>5. Figures and graphs</h3>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Quadratics Fully Decoded</h3>
+<p>The discriminant b² − 4ac governs everything: <strong>nature of roots</strong>, and the <strong>Viète relations</strong> sum = −b/a, product = c/a — the pair that converts root information into coefficient equations and back.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 The quadratic formula and discriminant</h4>
 <ul>
-<li><strong>F1</strong> — Quadratic equation — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)</li>
-<li><strong>F2</strong> — Quadratic equation — second figure: construction, region or comparison (authored SVG — English labels)</li>
-<li><strong>F3</strong> — Quadratic equation — curated reference figure where it beats SVG (curated external — license recorded at fill)</li>
+<li><strong>x = (−b ± √D)/2a</strong>, D = b² − 4ac.</li>
+<li><strong>Nature theorem:</strong> D &gt; 0 ⟹ two distinct real roots; <strong>D = 0</strong> ⟹ one repeated real root (−b/2a); <strong>D &lt; 0</strong> ⟹ two conjugate complex roots (−b ± i√|D|)/2a.</li>
+<li><strong>Perfect-square sub-case:</strong> D &gt; 0 and a perfect square ⟹ rational roots (factorable over ℚ).</li>
 </ul>
-<p>Authored figures first (§3.3): every graph plotted from the same equation the text uses.</li><li><h3>6. Worked examples</h3>
-<p>≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.</p>
-<h3>7. Traps and common mistakes</h3>
-<p>The classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).</li><li><h3>8. Exam Zone, practice and textbook exercises</h3>
-<p>NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).</p>
-<p>Textbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces.</li></ul></section>
+<h4>2.2 Viète's relations (root–coefficient theorems)</h4>
+<ul>
+<li>For roots α, β of ax² + bx + c = 0: <strong>α + β = −b/a</strong> and <strong>αβ = c/a</strong>.</li>
+<li>Proof: ax² + bx + c = a(x − α)(x − β) = a[x² − (α+β)x + αβ]; comparing coefficients gives both relations.</li>
+<li>Consequences: α² + β² = (α+β)² − 2αβ = b²/a² − 2c/a; 1/α + 1/β = (α+β)/αβ = −b/c; |α − β| = √D/|a|.</li>
+</ul>
+<h4>2.3 Building equations from roots</h4>
+<ul>
+<li><strong>Theorem:</strong> the monic quadratic with roots α, β is <strong>x² − (α+β)x + αβ = 0</strong> — sum with a minus, product as is.</li>
+<li>Symmetric transformations: roots kα, kβ or α+k, β+k or 1/α, 1/β — recompute the new sum and product, then rebuild.</li>
+</ul>
+<h4>2.4 Graph connections</h4>
+<ul>
+<li>Real roots ⟺ the parabola cuts the x-axis; repeated root ⟺ tangency (vertex on the axis); complex roots ⟺ no intersection. Sign of a and position of c refine the picture.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Discriminant</strong></td><td>D = b² − 4ac — root classifier</td><td>D = 0: double root</td></tr><tr><td><strong>Viète relations</strong></td><td>α+β = −b/a, αβ = c/a</td><td>sum/product from coefficients</td></tr><tr><td><strong>Conjugate roots</strong></td><td>D &lt; 0 gives z and z̄</td><td>1 ± i√3</td></tr><tr><td><strong>Repeated root</strong></td><td>D = 0: both roots −b/2a</td><td>(x−3)² = 0</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the discriminant decides</h4>
+<ul>
+<li>√D must be real (D ≥ 0) or imaginary (D &lt; 0); the formula's structure makes D the complete classifier — one number, three regimes.</li>
+</ul>
+<h4>4.2 Viète as a translation device</h4>
+<ul>
+<li>Many questions never ask for the roots — only for symmetric combinations (sums of squares, reciprocals). Viète converts such expressions into coefficients without solving anything.</li>
+</ul>
+<h4>4.3 The reconstruction template</h4>
+<ul>
+<li>Any &quot;new roots are f(α), f(β)&quot; question: compute the new sum S′ and product P′ via Viète, then write x² − S′x + P′ = 0. Four lines, every time.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Discriminant regimes</strong></p>
+<table><thead><tr><th>D</th><th>Roots</th><th>Graph</th></tr></thead><tbody><tr><td>&gt; 0</td><td>two distinct real</td><td>cuts x-axis twice</td></tr><tr><td>= 0</td><td>repeated real</td><td>tangent to x-axis</td></tr><tr><td>&lt; 0</td><td>conjugate complex</td><td>misses x-axis</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Sum carries the minus:</strong> α + β = −b/a — dropping the sign is the most common Viète error.</li><li><strong>Complex roots come in conjugate pairs</strong> only when coefficients are real — state the hypothesis.</li><li><strong>|α − β| = √D/|a|:</strong> the |a| in the denominator is forgotten when a is negative.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)</strong> — Factor: (x − 2)(x − 3) = 0 ⟹ <strong>x = 2, 3</strong>. Viète check: sum 5 = −(−5)/1 ✓, product 6 = 6/1 ✓ — the root–coefficient relations confirm the factorisation.</li><li><strong>NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.</strong> — Viète: α+β = 5/2, αβ = 3/2. <strong>α² + β²</strong> = (α+β)² − 2αβ = 25/4 − 3 = <strong>13/4</strong>. <strong>1/α + 1/β</strong> = (α+β)/αβ = (5/2)/(3/2) = <strong>5/3</strong>. No root was ever computed — Viète did all the work.</li><li><strong>NEB-style (3m): For what value of k does x² + kx + 9 = 0 have equal roots?</strong> — Equal roots ⟺ <strong>D = 0</strong>: k² − 36 = 0 ⟹ <strong>k = ±6</strong>. For k = 6 the double root is −3; for k = −6 it is +3 — the sign of k only moves the root's position, not the tangency.</li><li><strong>NEB-style (2m): Form the quadratic equation whose roots are 2 + √3 and 2 − √3.</strong> — Sum = 4; product = 4 − 3 = 1. <strong>Equation: x² − 4x + 1 = 0.</strong> (The roots are conjugate surds, so the coefficients are rational — as guaranteed for quadratics with rational coefficients.)</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>❌ treat &quot;Quadratic equation&quot; as one blob → ✅ split into: quadratic equation, nature, roots of a quadratic equation.</li><li>❌ state the rule without its limit → ✅ note when it applies / stops applying.</li><li>❌ answer with no steps → ✅ show each step and box the result.</li><li>❌ skip the key fact → ✅ ax² + bx + c = 0; discriminant d = b² − 4ac: d&gt;0 two distinct real, d=0 equal, d&lt;0 complex conjugate..</li></ul></section>
 <section class="field"><h2>Bounds</h2><ul><li>Covers only: quadratic equation, nature, roots of a quadratic equation, relation between roots (within Algebra).</li><li>Out of scope here: topics of neighbouring units in Mathematics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: ax² + bx + c = 0; discriminant d = b² − 4ac: d&gt;0 two distinct real, d=0 equal, d&lt;0 complex conjugate.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>define + example each sub-idea: quadratic equation, nature, roots of a quadratic equation, relation between roots.</li><li>one worked example for &quot;Quadratic equation: nature and roots of a quadratic equat…&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
-<section class="field"><h2>Universal Facts</h2><ul><li>ax² + bx + c = 0; discriminant D = b² − 4ac: D&gt;0 two distinct real, D=0 equal, D&lt;0 complex conjugate.</li><li>Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.</li><li>For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) &lt; 0). One root common with another: discriminant-of-conditions / resultant.</li></ul></section>
-<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Quadratic equation: nature and roots of a quadratic equat…&quot; with one example.</li><li>compare &quot;Quadratic equation&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Quadratic equation: nature and roots of a quadratic equat…&quot; and verify the answer is plausible.</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>x = (−b ± √D)/(2a)</li><li>α + β = −b/a</li><li>αβ = c/a</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Solve x² − 5x + 6 = 0 and verify with Viète's relations.</li><li>For α, β roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.</li><li>Find k so that x² + kx + 9 = 0 has equal roots.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Projectile range maximisation hides a D = 0 condition: the peak of a parabola is its repeated-root geometry in physics clothing.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>Tangency as D = 0</strong></em> - a repeated root means the parabola just touches the x-axis: the discriminant's zero case is a geometry statement.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)</strong> — <strong>Factoring:</strong> two numbers with product 6 and sum −5 are −2 and −3: x² − 5x + 6 = (x − 2)(x − 3) = 0 ⟹ <strong>x = 2 or x = 3</strong>. <strong>Viète verification:</strong> the roots' sum is 2 + 3 = 5, matching −b/a = −(−5)/1 = 5 ✓; their product is 6, matching c/a = 6/1 ✓ — the root–coefficient relations independently confirm the factorisation. <strong>Discriminant reading:</strong> D = 25 − 24 = 1 &gt; 0 (a perfect square ⟹ rational roots, exactly what factoring found).</li><li><strong>NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β without solving the equation.</strong> — <strong>Viète relations:</strong> α + β = −b/a = 5/2 and αβ = c/a = 3/2. <strong>Sum of squares:</strong> α² + β² = (α + β)² − 2αβ = (5/2)² − 2(3/2) = 25/4 − 3 = <strong>13/4</strong>. <strong>Sum of reciprocals:</strong> 1/α + 1/β = (α + β)/(αβ) = (5/2)/(3/2) = <strong>5/3</strong>. <strong>Method note:</strong> both target expressions are <strong>symmetric</strong> in α, β — expressible through the sum and product alone — so the roots themselves never need to be found; Viète's relations are exactly the translation dictionary from root-symmetric language to coefficient language.</li><li><strong>NEB-style (3m): For what values of k does the equation x² + kx + 9 = 0 have (i) equal roots, (ii) real roots?</strong> — <strong>(i) Equal roots ⟺ D = 0:</strong> D = k² − 4(1)(9) = k² − 36 = 0 ⟹ <strong>k = ±6</strong>. For k = 6 the repeated root is −b/2a = −3; for k = −6 it is +3 — the parabola is tangent to the x-axis in either case. <strong>(ii) Real roots ⟺ D ≥ 0:</strong> k² − 36 ≥ 0 ⟹ <strong>k ≤ −6 or k ≥ 6</strong>, i.e. |k| ≥ 6 — outside the open interval (−6, 6) the parabola meets the axis (twice for |k| &gt; 6, once at |k| = 6), and inside it the roots retreat into a conjugate complex pair.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>x = (−b ± √D)/2a; D = b² − 4ac</li>
+<li>α + β = −b/a; αβ = c/a; α² + β² = (α+β)² − 2αβ; |α − β| = √D/|a|</li>
+<li>reconstruction: x² − (α+β)x + αβ = 0</li>
+</ul></li></ul></section>
 <section class="field"><h2>Numericals</h2><ul><li>Use  x = (−b ± √D)/(2a)  — pick reasonable values, solve, and check the units.</li><li>Use  α + β = −b/a  — pick reasonable values, solve, and check the units.</li><li>Use  αβ = c/a  — pick reasonable values, solve, and check the units.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>• Quadratic equation</li><li>• Nature</li><li>• Roots of a quadratic equation</li><li>• Relation between roots</li><li>• Coefficient</li><li>• Formation of a quadratic equation</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Quadratic equation: nature and roots of a quadratic equat… (Algebra, Mathematics, class-11-notes) covers Quadratic equation, nature, roots of a quadratic equation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Quadratic formula x = (-b +- sqrt(D))/2a with D = b^2 - 4ac. Nature theorem: D &gt; 0 two distinct real roots (rational if D is a perfect square); D = 0 repeated root -b/2a (tangency); D &lt; 0 conjugate complex roots. Viete relations: alpha + beta = -b/a, alpha beta = c/a, proved by comparing a(x - alpha)(x - beta) with ax^2 + bx + c. Consequences: alpha^2 + beta^2 = (alpha+beta)^2 - 2 alpha beta; 1/alpha + 1/beta = (alpha+beta)/alpha beta; |alpha - beta| = sqrt(D)/|a|. Reconstruction: monic equation with roots alpha, beta is x^2 - (alpha+beta)x + alpha beta = 0. Transformation questions: compute new sum and product, rebuild.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The <strong>discriminant</strong> D = b² − 4ac is the complete root classifier: <strong>D &gt; 0</strong> two distinct real roots (rational when D is a perfect square — NEB 2024's x² − 5x + 6 = 0 has D = 1, roots 2 and 3), <strong>D = 0</strong> a repeated root at −b/2a (tangency — k² − 36 = 0 gives k = ±6), <strong>D &lt; 0</strong> conjugate complex roots. <strong>Viète's relations</strong> α + β = −b/a and αβ = c/a — proved by matching a(x−α)(x−β) with the original — translate any <strong>symmetric</strong> root expression into coefficients without solving: α² + β² = (α+β)² − 2αβ = 13/4 and 1/α + 1/β = (α+β)/αβ = 5/3 for 2x² − 5x + 3. Reconstruction runs the other way: <strong>x² − (α+β)x + αβ = 0</strong> builds the equation from its roots (2 ± √3 ⟹ x² − 4x + 1). Sum minus, product as-is, D first: the topic's three standing orders.</p></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Quadratic equation: nature and roots of a quadratic equat…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Quadratic equation</li><li>Nature</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Quadratic equation is listed among the official sub-ideas of Quadratic equation: nature and roots of a quadratic equat…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Quadratic equation: nature and roots of a quadratic equat…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Nature of roots: compute D first. Symmetric root expressions: Viete, never solve. Equal roots: set D = 0. New roots: new sum, new product, rebuild x^2 - Sx + P.</li></ul></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Quadratics Fully Decoded</h3>
+<p>The discriminant b² − 4ac governs everything: <strong>nature of roots</strong>, and the <strong>Viète relations</strong> sum = −b/a, product = c/a — the pair that converts root information into coefficient equations and back.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 The quadratic formula and discriminant</h4>
+<ul>
+<li><strong>x = (−b ± √D)/2a</strong>, D = b² − 4ac.</li>
+<li><strong>Nature theorem:</strong> D &gt; 0 ⟹ two distinct real roots; <strong>D = 0</strong> ⟹ one repeated real root (−b/2a); <strong>D &lt; 0</strong> ⟹ two conjugate complex roots (−b ± i√|D|)/2a.</li>
+<li><strong>Perfect-square sub-case:</strong> D &gt; 0 and a perfect square ⟹ rational roots (factorable over ℚ).</li>
+</ul>
+<h4>2.2 Viète's relations (root–coefficient theorems)</h4>
+<ul>
+<li>For roots α, β of ax² + bx + c = 0: <strong>α + β = −b/a</strong> and <strong>αβ = c/a</strong>.</li>
+<li>Proof: ax² + bx + c = a(x − α)(x − β) = a[x² − (α+β)x + αβ]; comparing coefficients gives both relations.</li>
+<li>Consequences: α² + β² = (α+β)² − 2αβ = b²/a² − 2c/a; 1/α + 1/β = (α+β)/αβ = −b/c; |α − β| = √D/|a|.</li>
+</ul>
+<h4>2.3 Building equations from roots</h4>
+<ul>
+<li><strong>Theorem:</strong> the monic quadratic with roots α, β is <strong>x² − (α+β)x + αβ = 0</strong> — sum with a minus, product as is.</li>
+<li>Symmetric transformations: roots kα, kβ or α+k, β+k or 1/α, 1/β — recompute the new sum and product, then rebuild.</li>
+</ul>
+<h4>2.4 Graph connections</h4>
+<ul>
+<li>Real roots ⟺ the parabola cuts the x-axis; repeated root ⟺ tangency (vertex on the axis); complex roots ⟺ no intersection. Sign of a and position of c refine the picture.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Discriminant</strong></td><td>D = b² − 4ac — root classifier</td><td>D = 0: double root</td></tr><tr><td><strong>Viète relations</strong></td><td>α+β = −b/a, αβ = c/a</td><td>sum/product from coefficients</td></tr><tr><td><strong>Conjugate roots</strong></td><td>D &lt; 0 gives z and z̄</td><td>1 ± i√3</td></tr><tr><td><strong>Repeated root</strong></td><td>D = 0: both roots −b/2a</td><td>(x−3)² = 0</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the discriminant decides</h4>
+<ul>
+<li>√D must be real (D ≥ 0) or imaginary (D &lt; 0); the formula's structure makes D the complete classifier — one number, three regimes.</li>
+</ul>
+<h4>4.2 Viète as a translation device</h4>
+<ul>
+<li>Many questions never ask for the roots — only for symmetric combinations (sums of squares, reciprocals). Viète converts such expressions into coefficients without solving anything.</li>
+</ul>
+<h4>4.3 The reconstruction template</h4>
+<ul>
+<li>Any &quot;new roots are f(α), f(β)&quot; question: compute the new sum S′ and product P′ via Viète, then write x² − S′x + P′ = 0. Four lines, every time.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Discriminant regimes</strong></p>
+<table><thead><tr><th>D</th><th>Roots</th><th>Graph</th></tr></thead><tbody><tr><td>&gt; 0</td><td>two distinct real</td><td>cuts x-axis twice</td></tr><tr><td>= 0</td><td>repeated real</td><td>tangent to x-axis</td></tr><tr><td>&lt; 0</td><td>conjugate complex</td><td>misses x-axis</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Sum carries the minus:</strong> α + β = −b/a — dropping the sign is the most common Viète error.</li><li><strong>Complex roots come in conjugate pairs</strong> only when coefficients are real — state the hypothesis.</li><li><strong>|α − β| = √D/|a|:</strong> the |a| in the denominator is forgotten when a is negative.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)</strong> — Factor: (x − 2)(x − 3) = 0 ⟹ <strong>x = 2, 3</strong>. Viète check: sum 5 = −(−5)/1 ✓, product 6 = 6/1 ✓ — the root–coefficient relations confirm the factorisation.</li><li><strong>NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.</strong> — Viète: α+β = 5/2, αβ = 3/2. <strong>α² + β²</strong> = (α+β)² − 2αβ = 25/4 − 3 = <strong>13/4</strong>. <strong>1/α + 1/β</strong> = (α+β)/αβ = (5/2)/(3/2) = <strong>5/3</strong>. No root was ever computed — Viète did all the work.</li><li><strong>NEB-style (3m): For what value of k does x² + kx + 9 = 0 have equal roots?</strong> — Equal roots ⟺ <strong>D = 0</strong>: k² − 36 = 0 ⟹ <strong>k = ±6</strong>. For k = 6 the double root is −3; for k = −6 it is +3 — the sign of k only moves the root's position, not the tangency.</li><li><strong>NEB-style (2m): Form the quadratic equation whose roots are 2 + √3 and 2 − √3.</strong> — Sum = 4; product = 4 − 3 = 1. <strong>Equation: x² − 4x + 1 = 0.</strong> (The roots are conjugate surds, so the coefficients are rational — as guaranteed for quadratics with rational coefficients.)</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Quadratic formula x = (-b +- sqrt(D))/2a with D = b^2 - 4ac. Nature theorem: D &gt; 0 two distinct real roots (rational if D is a perfect square); D = 0 repeated root -b/2a (tangency); D &lt; 0 conjugate complex roots. Viete relations: alpha + beta = -b/a, alpha beta = c/a, proved by comparing a(x - alpha)(x - beta) with ax^2 + bx + c. Consequences: alpha^2 + beta^2 = (alpha+beta)^2 - 2 alpha beta; 1/alpha + 1/beta = (alpha+beta)/alpha beta; |alpha - beta| = sqrt(D)/|a|. Reconstruction: monic equation with roots alpha, beta is x^2 - (alpha+beta)x + alpha beta = 0. Transformation questions: compute new sum and product, rebuild.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>Viete is a translation device: symmetric expressions in the roots convert to coefficients without ever solving the equation.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>Tangency as D = 0</strong></em> - a repeated root means the parabola just touches the x-axis: the discriminant's zero case is a geometry statement.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Projectile range maximisation hides a D = 0 condition: the peak of a parabola is its repeated-root geometry in physics clothing.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;D &gt; 0: two real roots; D = 0: repeated; D &lt; 0: complex conjugates. alpha + beta = -b/a; alpha beta = c/a.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Verified PYQ: NEB 2024 (x^2 - 5x + 6 = 0, also cross-checked via Viete) - assigned to this row. Other items are NEB-style practice.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Nature of roots: compute D first. Symmetric root expressions: Viete, never solve. Equal roots: set D = 0. New roots: new sum, new product, rebuild x^2 - Sx + P.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>For &quot;find k&quot; questions, state the condition (D = 0, or a Viete relation) as a separate line - the condition is the theorem being tested.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>x = (−b ± √D)/2a; D = b² − 4ac</li>
+<li>α + β = −b/a; αβ = c/a; α² + β² = (α+β)² − 2αβ; |α − β| = √D/|a|</li>
+<li>reconstruction: x² − (α+β)x + αβ = 0</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Solve x² − 5x + 6 = 0 and verify with Viète's relations.</li><li>For α, β roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β.</li><li>Find k so that x² + kx + 9 = 0 has equal roots.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)</strong> — <strong>Factoring:</strong> two numbers with product 6 and sum −5 are −2 and −3: x² − 5x + 6 = (x − 2)(x − 3) = 0 ⟹ <strong>x = 2 or x = 3</strong>. <strong>Viète verification:</strong> the roots' sum is 2 + 3 = 5, matching −b/a = −(−5)/1 = 5 ✓; their product is 6, matching c/a = 6/1 ✓ — the root–coefficient relations independently confirm the factorisation. <strong>Discriminant reading:</strong> D = 25 − 24 = 1 &gt; 0 (a perfect square ⟹ rational roots, exactly what factoring found).</li><li><strong>NEB-style (3m): If α and β are the roots of 2x² − 5x + 3 = 0, find α² + β² and 1/α + 1/β without solving the equation.</strong> — <strong>Viète relations:</strong> α + β = −b/a = 5/2 and αβ = c/a = 3/2. <strong>Sum of squares:</strong> α² + β² = (α + β)² − 2αβ = (5/2)² − 2(3/2) = 25/4 − 3 = <strong>13/4</strong>. <strong>Sum of reciprocals:</strong> 1/α + 1/β = (α + β)/(αβ) = (5/2)/(3/2) = <strong>5/3</strong>. <strong>Method note:</strong> both target expressions are <strong>symmetric</strong> in α, β — expressible through the sum and product alone — so the roots themselves never need to be found; Viète's relations are exactly the translation dictionary from root-symmetric language to coefficient language.</li><li><strong>NEB-style (3m): For what values of k does the equation x² + kx + 9 = 0 have (i) equal roots, (ii) real roots?</strong> — <strong>(i) Equal roots ⟺ D = 0:</strong> D = k² − 4(1)(9) = k² − 36 = 0 ⟹ <strong>k = ±6</strong>. For k = 6 the repeated root is −b/2a = −3; for k = −6 it is +3 — the parabola is tangent to the x-axis in either case. <strong>(ii) Real roots ⟺ D ≥ 0:</strong> k² − 36 ≥ 0 ⟹ <strong>k ≤ −6 or k ≥ 6</strong>, i.e. |k| ≥ 6 — outside the open interval (−6, 6) the parabola meets the axis (twice for |k| &gt; 6, once at |k| = 6), and inside it the roots retreat into a conjugate complex pair.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Viete is a translation device: symmetric expressions in the roots convert to coefficients without ever solving the equation.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;D &gt; 0: two real roots; D = 0: repeated; D &lt; 0: complex conjugates. alpha + beta = -b/a; alpha beta = c/a.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Verified PYQ: NEB 2024 (x^2 - 5x + 6 = 0, also cross-checked via Viete) - assigned to this row. Other items are NEB-style practice.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>For &quot;find k&quot; questions, state the condition (D = 0, or a Viete relation) as a separate line - the condition is the theorem being tested.</li></ul></section>
   <nav class="pager"><a href="06-matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-.html" title="Matrices and determinants: transpose of a matrix and its …">‹ Matrices and determinants: transpose of a mat…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="08-complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul.html" title="Complex number: imaginary unit, algebra of complex number…">Complex number: imaginary unit, algebra of co… ›</a></nav>
 </div></body></html>

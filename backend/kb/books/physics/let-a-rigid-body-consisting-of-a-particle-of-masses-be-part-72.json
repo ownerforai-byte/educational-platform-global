@@ -1,0 +1,32 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Let a rigid body consisting of a particle of masses be",
+  "title": "Let a rigid body consisting of a particle of masses be (part 2)",
+  "source": "neb-class-11-physics — Let a rigid body consisting of a particle of masses be, pages 170-175 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Activity to observe Observe the activities that follows * Consider three cases: a man holding a water bucket in his hand, another man carrying a load on his back, and a third person carrying a load on his shoulder (or head). * During walking, if a leg stumbles, which person has a greater chance of falling down? The first person in activity 7.5 shifts his center of gravity downwards and leans in the opposite direction, stretching out his hand to pass the center of gravity within the base. Consequently, the person gains more stability and has the least chance of falling. In the second case, the center of gravity is shifted upwards, and in the third case, the center of gravity is shifted even higher, resulting in a greater chance of falling.",
+    "Activity to observe Observe the activities that follow. * Watch the motion of a man and a cow along a downhill muddy road. * You might observe the man falling on the road due to lack of friction, while the cow (or any other four-footed animals or vehicles) doesn’t easily fall down. In the case of a four-footed animal, the center of gravity lies as low as possible and within the base of the body, which helps to maintain stability. Therefore, for stability, the center of gravity should be positioned as low as possible within the base of the body. The conditions of getting equilibrium are listed below. i. The C.G should lie within the base of the body. ii. The C.G should lie as low as possible and, iii. The base of the body should be as wide as possible. xxix) The center of gravity is based on weight, whereas the center of mass is based on mass. So, when the gravitational field across an object is uniform, the two are identical.",
+    "Physics, Grade 11 | 167",
+    "7.9 Motion of a Satellite Observe the activities that follow. i) The motion of the moon in the sky with its various shapes changing day by day. ii) The immediate news of geographical areas experiencing natural disasters in remote corners of the Earth, beyond human access. iii) The Moon orbits the Earth, completing its cycle in approximately 27.3 days, causing it to appear in different phases.",
+    "Fig 7.14: Showing the motion of the satellite → There are numerous manmade objects orbiting the Earth, equipped with powerful cameras that focus on different territorial regions and transmit images to humans on Earth. In both cases mentioned above, these orbiting bodies are satellites. The former, the moon, is the Earth’s natural satellite, while the latter are artificial satellites. A satellite is an object that orbits a planet, such as the Earth or the Sun. These objects can be natural or artificial. Artificial satellites are utilized for various purposes including research, communication, and gathering intelligence. The gravitational force between the Earth and the satellite provides the centripetal force required for the satellite to maintain its orbit. The moon is Earth’s natural satellite, and today, there are numerous artificial satellites in orbit around our planet.",
+    "Fig7.15: Satellite taking photos When an object is horizontally projected from a high altitude above the Earth's surface, it follows a parabolic path resulting in a certain range. With increased velocity of projection, the range also increases, eventually enabling the object to orbit the Earth without falling, thus forming a satellite. The velocity attained by the projectile at that altitude determines the Physics, Grade 11 | 168",
+    "orbital motion of the satellite. This process of projection is typically achieved using a rocket. The first artificial satellite, Sputnik I, was launched by the Soviet Union in 1957. 7.9.1 Orbital velocity of the Satellite It is the velocity with which a satellite moves in its closed orbit. Consider a satellite of mass (m) orbiting the Earth at an altitude h above the Earth’s surface with the orbital velocity v.",
+    "Fig7.16: Satellite revolving the Earth",
+    "Here R is the radius of the Earth and M is its mass supposed to be concentrated at its centre. For the satellite,",
+    "Since the gravitational force provides centripetal force, GMm mv2 r2 = r OR, v2 = GM 𝑟",
+    "∴v = √GM r",
+    "As we know, g = R2 GM, GM = gR2",
+    "∴ v = √gR2 = R√g",
+    "= R√ g R+h",
+    "It is the orbital velocity of the satellite. On the surface of the Earth, v = √gR = √gR 2 R = √ (9.8× 6400×1000)",
+    "7.9.2 Time Period of the Satellite It is the time interval required for a satellite to round once the Earth. Here we have for a satellite, Physics, Grade 11 | 169",
+    "r2 GMm = mrω2 OR, ω = √ r3 GMm",
+    "OR, 2π/T = √ r3 GMm",
+    "∴ T = 2π√ r = 2π 3 √(R+h)3",
+    "GM",
+    "GM",
+    "In the vicinity of the Earth’s surface, h→0 ⇒T = 2π√gR2 R3 = 2π√R g = 2π√6400 ×𝑅 9.8 = 5000s =1 hours 24 minutes.",
+    "Also from T = 2π√(R+h)3, GM OR, (R+h)3 =T 4π2 2 GM OR, R+h = (T2 GM )1/3 4π2 ∴ h = (T 4π2 2 GM )1/3 – R It gives the expression for the height of the satellite from the Earth’ surface."
+  ]
+}

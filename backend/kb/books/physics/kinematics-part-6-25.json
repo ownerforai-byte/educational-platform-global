@@ -1,0 +1,33 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Kinematics",
+  "title": "Kinematics (part 6)",
+  "source": "neb-class-11-physics — Kinematics, pages 46-62 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "In the same way, here, we develop a general formula to find the distance travelled in an nth",
+    "second, finding first the distance travelled in n seconds and then in (n-1) seconds",
+    "respectively. Therefore, for t= n, S n = un + 1an2………………….. (3.7)",
+    "And, for t= n-1, S n-1 = u (n-1) +1 a (n-1) 2 ……………. (3.8) ∴ Distance travelled in an nth second S nth = S n – S n-1",
+    "= un + 1an 2 – {u (n-1) + 1a (n-1) 2}",
+    "= un + 1an 2 - un + u – 1an 2 + an – 1a",
+    "∴ snth = u + 𝑎 (2𝑛 − 1) ……. (3.9)",
+    "Note: For the deceleration or retardation, a → -a, Therefore, v = u –at, S = ut – 1 at2, V2 = u2 -2as And, Snth = u – 𝑎 (2n -1)",
+    "Motion under Gravity For this, a → g and s → h For falling motion, g is positive (+ve).",
+    "Physics, Grade 11 | 56",
+    "For upward motion, g is negative (-ve). Therefore, v = u +- gt. h = ut ± 1 𝑔𝑡2 v2 = u2 ± 2gh, hnth = u ± 𝑎 (2n- 1)",
+    "Worked Out Examples:",
+    "1. A body begins its motion to move and attains a velocity of 25 ms-1 in 5 s and 34 ms-1",
+    "in 8 s. Calculate the distance it travelled in 12th second.",
+    "Solution: here, a = v2 − v1 = 34−25 = 3 ms-2",
+    "t2 − t1",
+    "8−5",
+    "Now distance travelled in the 12th second, S12th = u + 𝑎 (2n – 1) = 0 + 𝑎 (2×12 -1)",
+    "= 3 × 23",
+    "= 34.5 m",
+    "3.6 Projectile Motion Activity 3.3 Do the activities, observe the phenomena and answer the questions that follow: ● Take a small piece of a stone you feel easy to throw. xvi) Go to the top of a tower and throw the stone horizontally with as much force as you can. ● Observe the motion, the path it follows, and the time it takes to come to a stop. ● Note the horizontal distance it covered on reaching the ground. ● Take two similar bodies again and throw one horizontally forward, while releasing the other to fall vertically downward. ● Note the time taken by the bodies to reach the ground. Q. 1 Sketch the path followed by the particle and find the nature of the path. Q. 2What types of motion did you see in the journey? Q. 3 Do the two bodies in step 5 fall off together or there is some time lag?",
+    "Any object thrown into the region of space that moves under the effect of gravity alone is called a projectile. The path followed by the projectile is called its trajectory. A stone thrown into the air, a bullet fired from a rifle, or a bomb dropped from a flying aero plane are some examples of the projectile. It is hence mainly used in the military field.",
+    "In a projectile, there are two motions: horizontal motion free from gravity and the vertical motion under the effect of gravity. Motion where u and a are constant but mutually perpendicular The projectile motion is categorized into two parts:",
+    "Physics, Grade 11 | 57"
+  ]
+}

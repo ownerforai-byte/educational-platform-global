@@ -10,9 +10,11 @@ import {
   type CorpusEntry,
 } from "../../src/ai/curriculum-corpus";
 import {
+  bookOrderKey,
   buildCurriculumContext,
   formatRecord,
   hasCurriculumCoverage,
+  isBookEntry,
   retrieveCurriculum,
 } from "../../src/ai/curriculum-retrieval";
 import { classifyScope, CLASS_SCOPE_RULES, DIRECTIVES } from "../../src/ai/class-scope";
@@ -241,6 +243,55 @@ describe("class scope — strictly Class 11/12, and the rule for the rest", () =
     expect(CLASS_SCOPE_RULES).toContain("STRICTLY NEB +2 SCIENCE");
     expect(CLASS_SCOPE_RULES).toContain("NEVER refuse a student");
   });
+});
+
+describe("owner books (kb/books) — read first, taught in book order", () => {
+  test("book records are boosted into the retrieval window", () => {
+    const hits = retrieveCurriculum(
+      "derive the expression for angular magnification of a telescope",
+      6,
+    );
+    expect(hits.length).toBeGreaterThan(0);
+    // The ingested books must be able to win a near-tie against an equally
+    // matched authored note — the owner reads the books first.
+    expect(hits.some((h) => isBookEntry(h.entry))).toBe(true);
+  }, CORPUS_TIMEOUT);
+
+  test("bookOrderKey reads the book file and page range out of the provenance", () => {
+    const keyed = bookOrderKey({
+      source: "kb/books/physics/1-angular-magnification-164.json",
+      provenance:
+        "neb-class-11-physics — 1 Angular magnification, pages 364-365 [neb-class-11-physics-book.pdf]",
+    } as CorpusEntry);
+    expect(keyed.book).toBe("neb-class-11-physics-book.pdf");
+    expect(keyed.start).toBe(364);
+
+    // No provenance (an authored note): book unknown, page sorts last.
+    const bare = bookOrderKey({
+      source: "content/notes/concepts/class-11/physics/lenses/01-x.json",
+    } as CorpusEntry);
+    expect(bare.start).toBe(Number.MAX_SAFE_INTEGER);
+  });
+
+  test("ingested book records carry their provenance into the record block", () => {
+    const { entries } = getCorpus();
+    const bookEntry = entries.find((e) => isBookEntry(e) && e.provenance);
+    expect(bookEntry, "no kb/books entry carries a provenance line").toBeTruthy();
+    const block = formatRecord(bookEntry!);
+    expect(block).toContain("provenance: ");
+    expect(block).toMatch(/pages \d+-\d+/);
+  }, CORPUS_TIMEOUT);
+
+  test("the context block leads with the book contract and book-order promise", () => {
+    const context = buildCurriculumContext(
+      "derive the expression for angular magnification of a telescope",
+      6,
+    );
+    expect(context).toContain("OWNER BOOKS FIRST");
+    expect(context).toContain("MERGE, DO NOT REPEAT");
+    expect(context).toContain("completeness of concepts, not quantity of words");
+    expect(context).toContain("in BOOK ORDER");
+  }, CORPUS_TIMEOUT);
 });
 
 describe("deep-answer contract + source hierarchy reach every chat request", () => {

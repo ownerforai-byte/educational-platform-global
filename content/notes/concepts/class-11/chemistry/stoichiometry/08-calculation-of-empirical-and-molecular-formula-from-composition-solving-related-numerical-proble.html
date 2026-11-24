@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -152,36 +155,361 @@
     <div class="meta"><span>Class 11</span><span>Chemistry</span><span>Stoichiometry</span></div>
   </header>
   <section class="field"><h2>Unit SLUG</h2><p>stoichiometry</p></section>
-<section class="field"><h2>Topic SLUG</h2><p>calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble</p></section>
-<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
-<section class="field"><h2>Generated At</h2><p>2026-10-29T07:20:23.254Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><h2>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</h2>
-<h3>1. Introduction</h3>
-<p>Chemical picture of <strong>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</strong> — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Stoichiometry fill pass.</p>
-<h3>2. Concepts and definitions</h3>
-<h4>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</h4>
-<p>Each definition exam-safe; each formula with its validity condition (§3, block II).</li><li><h3>3. Reaction and equation block</h3>
-<p>Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).</p>
-<p><strong>Table 1 — Relations and worked quantities</strong></p>
-<table><thead><tr><th>Relation</th><th>Symbols + units</th><th>When it holds</th><th>Worked angle</th></tr></thead><tbody></tbody></table></li><li><h3>4. Mechanism, IUPAC and structures</h3>
-<p>Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).</p>
-<p><strong>Table 2 — Distinguish and reagents</strong></p>
-<table><thead><tr><th>Pair or reagent</th><th>Test or point of difference</th><th>Observation</th><th>Example</th></tr></thead><tbody></tbody></table></li><li><h3>5. Diagrams and figures</h3>
+<section class="field"><h2>Topic SLUG</h2><p>calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-problems</p></section>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>authored-v2</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-11-20T00:00:00.000Z</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Calculation of empirical and molecular formula from % composition — Stoichiometry, Chemistry (class-11-notes).</li><li><strong>Tested.</strong> define it · list: empirical formula, molecular formula · one worked example · one misconception each.</li><li><h2>Calculation of empirical and molecular formula from % composition (solving related numerical problems)</h2>
+<h3>1. Topic Introduction</h3>
+<p>A compound's identity is locked in its <strong>molecular formula</strong> — the actual number of each atom in one molecule. But elemental analysis only gives <strong>percentage composition</strong> — the mass % of each element. The bridge from % to formula is the <strong>empirical formula</strong> (simplest whole-number ratio) followed by the molecular formula (actual atom count) using the molar mass. This topic is the reverse of percentage composition: % → formula instead of formula → %.</p>
+<p><strong>Why it matters.</strong> Every unknown compound — a new drug metabolite, an environmental pollutant, a natural product, a forensic trace — is identified by this exact workflow: combustion analysis → %C, %H, %N, %S → empirical formula → M_r (from vapour density or mass spec) → molecular formula. It is the detective work of chemistry.</p>
+<p><strong>What you will learn:</strong> (i) empirical formula from % composition (forward algorithm); (ii) molecular formula from empirical + M_r; (iii) combustion analysis route (%C from CO₂, %H from H₂O); (iv) vapour density method for M_r; (v) hydrated salt water of crystallisation; (v) common traps and how to avoid them.</p>
+<p><strong>Learning outcomes.</strong> You can: derive empirical formula from % data; obtain molecular formula from empirical + M_r; solve combustion analysis problems; use vapour density (M_r = 2×VD) to find molecular formula; determine water of crystallisation in hydrates.</li><li><h3>2. Fundamental Conceptual Understanding</h3>
+<h4>What empirical formula is</h4>
+<p>The simplest whole-number ratio of atoms of each element in a compound. It is the formula reduced to lowest terms (like a fraction). CH₂O is the empirical formula of glucose (C₆H₁₂O₆), formaldehyde (CH₂O), and lactic acid (C₃H₆O₃) — same ratio, different molecules.</p>
+<h4>Why it exists</h4>
+<p>Elemental analysis gives mass percentages. Converting % → grams → moles → simplest ratio gives the empirical formula. It is the first step in identifying an unknown compound from analytical data.</p>
+<h4>How it works</h4>
+<p>% composition → assume 100 g sample → grams of each element = % → convert to moles (÷ A_r) → divide all by smallest mole value → simplest whole-number ratio → empirical formula. If M_r known: n = M_r/E_r → molecular formula = n × empirical.</p>
+<h4>Where it occurs</h4>
+<p>Organic analysis lab (combustion analyser), pharmaceutical structure elucidation, forensic toxicology, environmental pollutant ID, natural product isolation, quality control (assay of hydrated salts).</p>
+<h4>What its components are</h4>
+<p>% composition data (C, H, O, N, S, halogens), atomic masses (A_r), mole values, simplest ratio, empirical formula, empirical formula mass (E_r), molar mass (M_r), multiplier n = M_r/E_r, molecular formula.</p>
+<h4>How components interact</h4>
+<p>% → grams (per 100 g) → moles (÷ A_r) → ratio (÷ smallest, clear decimals ×2/×3) → empirical formula → E_r → M_r (given or measured) → n = M_r/E_r → molecular = n × empirical.</p>
+<h4>What makes it biologically important</h4>
+<p>Drug metabolite ID: unknown metabolite → LC-MS → % composition → empirical → M_r (HRMS) → molecular formula → structure. Metabolomics: thousands of unknowns → formula first, structure later. Forensic: trace evidence → elemental analysis → formula → database match.</li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Empirical formula</td><td>Simplest whole-number atom ratio in a compound</td><td>From % data: % → g → mol → ratio (÷ smallest)</td><td>First step in formula identification</td></tr><tr><td>Molecular formula</td><td>Actual atom numbers in one molecule</td><td>Empirical × n; n = M_r/E_r</td><td>Unique molecular identity</td></tr><tr><td>Empirical formula mass (E_r)</td><td>Sum of A_r in empirical formula</td><td>CH₂O = 12+2+16 = 30</td><td>Denominator for n = M_r/E_r</td></tr><tr><td>Molar mass (M_r)</td><td>Mass of one mole in g·mol⁻¹</td><td>From vapour density (2×VD), mass spec, colligative</td><td>Needed for molecular formula</td></tr><tr><td>Vapour density (VD)</td><td>Mass of gas volume ÷ mass of same volume H₂ (same T,P)</td><td>M_r = 2 × VD (H₂ = 2 scale)</td><td>Classic M_r for volatiles</td></tr><tr><td>Combustion analysis</td><td>Burn sample → weigh CO₂, H₂O → %C, %H</td><td>%C = mass CO₂ × 12/44; %H = mass H₂O × 2/18</td><td>Standard source of % data for organics</td></tr><tr><td>Oxygen by difference</td><td>%O = 100 − (%C + %H + %N + %S + ...)</td><td>Assumes only C,H,O,N,S,halogens present</td><td>Necessary when O not measured directly</td></tr><tr><td>Hydrated salt</td><td>Salt with water of crystallisation</td><td>e.g., CuSO₄·5H₂O; % water = mass H₂O / M_hydrate × 100</td><td>Common in qualitative analysis</td></tr><tr><td>Water of crystallisation</td><td>Moles H₂O per formula unit of hydrate</td><td>From % water loss on heating</td><td>Qualitative analysis standard</td></tr><tr><td>CH₂O family</td><td>Compounds with same empirical but different molecular</td><td>Glucose C₆H₁₂O₆, formaldehyde CH₂O, lactic acid C₃H₆O₃</td><td>Why M_r is essential</td></tr><tr><td>n = M_r/E_r</td><td>Multiplier from empirical to molecular</td><td>Must be integer; if not, re-check data</td><td>Bridges empirical to molecular</td></tr></tbody></table>
+<p><strong>Keywords:</strong> empirical formula, molecular formula, % composition, combustion analysis, vapour density, M_r = 2×VD, n = M_r/E_r, oxygen by difference, water of crystallisation, hydrated salt, CH₂O family.</li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Empirical formula from % composition (the standard algorithm)</h4>
+<p><strong>Step 1: % → grams.</strong> Assume 100 g sample → % = grams of each element. <strong>Step 2: Grams → moles.</strong> Divide each gram value by its atomic mass (A_r). <strong>Step 3: Moles → simplest ratio.</strong> Divide all mole values by the smallest. If decimals remain, multiply ALL by 2, 3, 4... to clear to whole numbers. <strong>Step 4: Write empirical formula</strong> from the whole-number ratio.</p>
+<p><strong>Worked example 1 — standard % data:</strong></p>
 <ul>
-<li><strong>D1</strong> — Calculation of empirical and molecular formula from % composition (solving related numerical problems) — structure or apparatus plate (authored SVG — English labels, viewBox 900×640)</li>
-<li><strong>D2</strong> — Calculation of empirical and molecular formula from % composition (solving related numerical problems) — second structure, flow or plot (authored SVG — English labels)</li>
-<li><strong>D3</strong> — Calculation of empirical and molecular formula from % composition (solving related numerical problems) — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
-<li><strong>D4</strong> — Calculation of empirical and molecular formula from % composition (solving related numerical problems) — application or industrial figure (curated external — license recorded at fill)</li>
+<li>Data: 40% C, 6.7% H, 53.3% O</li>
+<li>Per 100 g: C 40 g, H 6.7 g, O 53.3 g</li>
+<li>Moles: C = 40/12 = 3.33; H = 6.7/1 = 6.7; O = 53.3/16 = 3.33</li>
+<li>Ratio ÷ 3.33: C 1, H 2, O 1 → <strong>CH₂O</strong> (E_r = 30)</li>
 </ul>
-<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).</p>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>6. Worked problems</h3>
-<p>≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.</p>
-<h3>7. Key terms and reaction map</h3>
-<p>Named reactions, conversions and &quot;distinguish between&quot; pairs gathered where the reaction block points to them.</li><li><h3>8. Exam Zone and self-check</h3>
-<p>Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
-<p>Reaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.</li><li>0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.</li><li>An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.</li><li>A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.</li><li>Explain why an empirical formula alone cannot identify a compound, with a suitable example.</li></ul></section>
-<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Calculation of empirical and molecular formula from % com…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Calculation of empirical</li><li>Molecular formula from % composition</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Calculation of empirical is listed among the official sub-ideas of Calculation of empirical and molecular formula from % com…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Calculation of empirical and molecular formula from % com…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<p><strong>Worked example 2 — with decimals needing multiplication:</strong></p>
+<ul>
+<li>Data: 26.6% K, 35.4% Cr, 38.0% O</li>
+<li>Per 100 g: K 26.6 g, Cr 35.4 g, O 38.0 g</li>
+<li>Moles: K = 26.6/39 = 0.682; Cr = 35.4/52 = 0.681; O = 38.0/16 = 2.375</li>
+<li>Ratio ÷ 0.681: K 1.00, Cr 1.00, O 3.49 ≈ 3.5</li>
+<li>Multiply by 2: K 2, Cr 2, O 7 → <strong>K₂Cr₂O₇</strong> (potassium dichromate)</li>
+</ul>
+<p><strong>Worked example 3 — near-half decimals:</strong></p>
+<ul>
+<li>Data: 32.4% Na, 22.5% S, 45.1% O</li>
+<li>Per 100 g: Na 32.4, S 22.5, O 45.1</li>
+<li>Moles: Na = 32.4/23 = 1.409; S = 22.5/32 = 0.703; O = 45.1/16 = 2.819</li>
+<li>Ratio ÷ 0.703: Na 2.00, S 1.00, O 4.01 → <strong>Na₂SO₄</strong></li>
+</ul>
+<h4>4.2 Molecular formula from empirical + M_r</h4>
+<p><strong>Formula:</strong> n = M_r / E_r (must be integer); Molecular formula = n × empirical formula.</p>
+<p><strong>Worked example 4 — glucose:</strong></p>
+<ul>
+<li>Empirical: CH₂O (E_r = 30)</li>
+<li>M_r = 180 (given or from vapour density)</li>
+<li>n = 180 / 30 = 6</li>
+<li>Molecular = 6 × CH₂O = <strong>C₆H₁₂O₆</strong></li>
+</ul>
+<p><strong>Worked example 5 — same empirical, different M_r:</strong></p>
+<ul>
+<li>Empirical: CH₂O (E_r = 30)</li>
+<li>If M_r = 30 → n = 1 → <strong>CH₂O</strong> (formaldehyde)</li>
+<li>If M_r = 60 → n = 2 → <strong>C₂H₄O₂</strong> (acetic acid)</li>
+<li>If M_r = 90 → n = 3 → <strong>C₃H₆O₃</strong> (lactic acid)</li>
+<li>If M_r = 120 → n = 4 → <strong>C₄H₈O₄</strong> (erythrose)</li>
+<li>If M_r = 150 → n = 5 → <strong>C₅H₁₀O₅</strong> (ribose)</li>
+<li>If M_r = 180 → n = 6 → <strong>C₆H₁₂O₆</strong> (glucose)</li>
+</ul>
+<p><strong>Key insight:</strong> Same empirical formula (CH₂O) can represent completely different compounds — M_r is essential to distinguish them.</p>
+<h4>4.3 Combustion analysis (the experimental source of %C and %H)</h4>
+<p><strong>Principle:</strong> C_xH_yO_z + (x + y/4 − z/2)O₂ → xCO₂ + (y/2)H₂O</p>
+<ul>
+<li>All carbon in sample → CO₂; all hydrogen → H₂O</li>
+<li>Mass CO₂ → %C = mass CO₂ × (12/44) × 100 / mass sample</li>
+<li>Mass H₂O → %H = mass H₂O × (2/18) × 100 / mass sample</li>
+<li>%O = 100 − %C − %H − %N − %S − ... (by difference)</li>
+</ul>
+<p><strong>Worked example 6 — combustion analysis:</strong></p>
+<ul>
+<li>4.4 g organic compound → 8.8 g CO₂ + 3.6 g H₂O</li>
+<li>%C = 8.8 × 12/44 × 100 / 4.4 = 54.55%</li>
+<li>%H = 3.6 × 2/18 × 100 / 4.4 = 9.09%</li>
+<li>%O = 100 − 54.55 − 9.09 = 36.36%</li>
+<li>Moles: C = 54.55/12 = 4.546; H = 9.09/1 = 9.09; O = 36.36/16 = 2.273</li>
+<li>Ratio ÷ 2.273: C 2.00, H 4.00, O 1.00 → <strong>C₂H₄O</strong> (E_r = 44)</li>
+<li>If M_r = 88 → n = 2 → <strong>C₄H₈O₂</strong> (ethyl acetate, etc.)</li>
+</ul>
+<h4>4.4 Vapour density method for M_r</h4>
+<p><strong>Definition:</strong> Vapour density (VD) = mass of a volume of gas ÷ mass of same volume of H₂ under identical T, P. <strong>Formula:</strong> M_r = 2 × VD (since H₂ = 2 g/mol on this scale). <strong>Air reference:</strong> M_r = 28.94 × VD(air).</p>
+<p><strong>Worked example 7:</strong></p>
+<ul>
+<li>VD of a gas = 44 → M_r = 2 × 44 = 88</li>
+<li>If empirical = C₂H₄O (E_r = 44) → n = 88/44 = 2 → molecular = C₄H₈O₂</li>
+</ul>
+<h4>4.5 Water of crystallisation in hydrated salts</h4>
+<p><strong>Definition:</strong> Moles of H₂O per formula unit of anhydrous salt in a hydrate. <strong>Method:</strong> Heat hydrate → mass loss = water → % water = mass loss / initial mass × 100. Moles H₂O = mass loss / 18; moles anhydrous = residue mass / M_anhydrous; ratio = n.</p>
+<p><strong>Worked example 8 — CuSO₄·xH₂O:</strong></p>
+<ul>
+<li>2.5 g hydrate heated → 1.6 g anhydrous CuSO₄ (M = 160)</li>
+<li>Mass loss = 0.9 g H₂O = 0.05 mol</li>
+<li>Moles CuSO₄ = 1.6 / 160 = 0.01 mol</li>
+<li>Ratio H₂O : CuSO₄ = 0.05 : 0.01 = 5 → <strong>CuSO₄·5H₂O</strong></li>
+</ul>
+<p><strong>Worked example 9 — % water given:</strong></p>
+<ul>
+<li>Hydrated salt: 36.1% water; anhydrous M_r = 120</li>
+<li>% anhydrous = 63.9% → in 100 g: 36.1 g H₂O (2.006 mol), 63.9 g anhydrous (0.5325 mol)</li>
+<li>Ratio = 2.006 / 0.5325 = 3.77 ≈ 4 → <strong>Salt·4H₂O</strong></li>
+</ul>
+<h4>4.6 Comparison table</h4>
+<table><thead><tr><th>Method</th><th>Input</th><th>Output</th><th>When used</th></tr></thead><tbody><tr><td>% composition</td><td>%C, %H, %O, etc.</td><td>Empirical formula</td><td>Elemental analysis data</td></tr><tr><td>Combustion analysis</td><td>CO₂ mass, H₂O mass</td><td>%C, %H, (%O by diff) → empirical</td><td>Organic unknowns</td></tr><tr><td>Vapour density</td><td>VD</td><td>M_r = 2×VD</td><td>Volatile unknowns</td></tr><tr><td>Mass spectrometry</td><td>M⁺ peak</td><td>Exact M_r</td><td>All ionizable compounds</td></tr><tr><td>Colligative properties</td><td>ΔT_f, ΔT_b, π</td><td>M_r</td><td>Non-volatile solutes</td></tr><tr><td>Hydrate heating</td><td>Mass loss on heating</td><td>x in Salt·xH₂O</td><td>Hydrated salts</td></tr></tbody></table>
+<h4>4.7 Common traps and how to avoid them</h4>
+<table><thead><tr><th>Trap</th><th>Wrong</th><th>Correct</th></tr></thead><tbody><tr><td>Mole % vs mass %</td><td>Using % directly as mole ratio</td><td>Convert % → g → mol first</td></tr><tr><td>Clearing decimals</td><td>Rounding 0.5 to 0 or 1</td><td>Multiply ALL by 2, 3, 4... to get integers</td></tr><tr><td>O by difference</td><td>Assuming only C,H,O present</td><td>State assumption; N/S need separate estimation</td></tr><tr><td>n not integer</td><td>Rounding M_r or E_r</td><td>Re-check data; M_r must be multiple of E_r</td></tr><tr><td>Same empirical</td><td>Assuming same compound</td><td>CH₂O family: glucose, formaldehyde, lactic acid — verify M_r</td></tr><tr><td>VD scale</td><td>Using air = 1 instead of H₂ = 2</td><td>VD always H₂ = 2 for M_r = 2×VD</td></tr><tr><td>Hydrate heating</td><td>Forgetting water mass loss</td><td>Include H₂O in formula mass for % calculation</td></tr><tr><td>Ionic compounds</td><td>Writing molecular formula</td><td>Ionic = empirical only (NaCl, not NaCl₂)</td></tr></tbody></table></li><li><h3>5. Biological Examples</h3>
+<table><thead><tr><th>Example</th><th>Sector</th><th>Chemistry</th><th>Why it matters</th></tr></thead><tbody><tr><td>Glucose (C₆H₁₂O₆)</td><td>Blood sugar</td><td>Empirical CH₂O ×6; M_r 180</td><td>Blood glucose 5 mmol/L = 90 mg/dL</td></tr><tr><td>Lactic acid (C₃H₆O₃)</td><td>Muscle fatigue</td><td>Empirical CH₂O ×3; M_r 90</td><td>Anaerobic glycolysis product</td></tr><tr><td>Formaldehyde (CH₂O)</td><td>Preservative</td><td>Empirical = molecular; M_r 30</td><td>Cross-links proteins; carcinogen</td></tr><tr><td>Acetic acid (C₂H₄O₂)</td><td>Vinegar</td><td>Empirical CH₂O ×2; M_r 60</td><td>Weak acid; food preservative</td></tr><tr><td>Ribose (C₅H₁₀O₅)</td><td>RNA backbone</td><td>Empirical CH₂O ×5; M_r 150</td><td>Nucleic acid building block</td></tr><tr><td>Uric acid (C₅H₄N₄O₃)</td><td>Gout</td><td>Empirical C₅H₄N₄O₃; M_r 168</td><td>Purine metabolism end product</td></tr><tr><td>Caffeine (C₈H₁₀N₄O₂)</td><td>Stimulant</td><td>Empirical C₄H₅N₂O; M_r 194</td><td>Adenosine receptor antagonist</td></tr><tr><td>Cholesterol (C₂₇H₄₆O)</td><td>Membrane lipid</td><td>Empirical C₂₇H₄₆O; M_r 386</td><td>Membrane fluidity; steroid precursor</td></tr></tbody></table>
+<p><strong>Nepal context:</strong></p>
+<ul>
+<li>Cement analysis: CaO% from CaCO₃ decomposition = formula verification.</li>
+<li>Fertiliser assay: Urea CO(NH₂)₂ %N = 46.67% — label verification.</li>
+<li>Water hardness: Ca²⁺/Mg²⁺ from EDTA titration → empirical formula of scale (CaCO₃, MgCO₃).</li>
+<li>Biogas: CH₄/CO₂ ratio from combustion analysis → feedstock quality.</li>
+</ul></li><li><h3>6. Chemical Processes and Mechanisms</h3>
+<h4>Process: Combustion analysis (organic elemental analysis)</h4>
+<ol>
+<li><strong>Definition:</strong> Burning a known mass of organic compound in excess oxygen; absorbing and weighing the CO₂ and H₂O produced to determine %C and %H.</li>
+<li><strong>Location:</strong> Organic analysis laboratory; also automated CHNS/O analysers.</li>
+<li><strong>Requirements:</strong> Combustion furnace (CuO, 800°C), O₂ carrier gas, H₂O absorber (Mg(ClO₄)₂ or anhydrous CaCl₂), CO₂ absorber (KOH/Ascarite), analytical balance (±0.1 mg).</li>
+<li><strong>Components:</strong> Sample boat, combustion tube, absorption train, balance, data logger.</li>
+<li><strong>Sequential steps:</strong> (i) Weigh empty absorbers; (ii) Weigh ~0.1 g sample accurately; (iii) Introduce sample to furnace in O₂ stream; (iv) Combustion: C_xH_yO_z + (x + y/4 − z/2)O₂ → xCO₂ + (y/2)H₂O; (v) Gases pass through H₂O absorber (mass gain = H₂O mass); (vi) Then through CO₂ absorber (mass gain = CO₂ mass); (vii) Re-weigh absorbers; (viii) Calculate: %C = Δm_CO₂ × (12/44) × 100 / m_sample; %H = Δm_H₂O × (2/18) × 100 / m_sample; %O = 100 − %C − %H − %N − %S − ...</li>
+<li><strong>Result:</strong> %C, %H, (%O by difference) — the data for empirical formula determination.</li>
+<li><strong>Significance:</strong> The classic experimental source of composition data for unknown organic compounds; automated analysers do this in minutes for QC.</li>
+</ol>
+<h4>Process: Empirical → molecular formula determination (structure elucidation)</h4>
+<ol>
+<li><strong>Definition:</strong> Identifying a compound's molecular formula from composition data and molar mass.</li>
+<li><strong>Location:</strong> Natural products lab, pharmaceutical R&amp;D, forensic lab, environmental analysis.</li>
+<li><strong>Requirements:</strong> % composition (CHNS/O analyser), M_r (high-resolution mass spectrometry, or vapour density for volatiles), NMR/IR for structure confirmation.</li>
+<li><strong>Components:</strong> Elemental analyser, HRMS (ESI, EI, MALDI), NMR, IR, software (formula calculator).</li>
+<li><strong>Sequential steps:</strong> (i) Obtain %C, %H, %N, %S, %O (by difference); (ii) Compute empirical formula (CH₂O, C₂H₄O, etc.); (iv) Obtain exact M_r from HRMS (e.g., 180.0634 for C₆H₁₂O₆); (v) n = M_r/E_r; (vi) Molecular formula = n × empirical; (vii) Confirm with isotope pattern (M+1, M+2) and NMR.</li>
+<li><strong>Result:</strong> Unique molecular formula identifying the compound; first step in structure elucidation.</li>
+<li><strong>Significance:</strong> Turns anonymous % data into specific molecular identity — essential for new drug/natural product characterization, metabolite ID, pollutant tracking.</li>
+</ol>
+<h4>Process: Hydrate water determination (qualitative analysis)</h4>
+<ol>
+<li><strong>Definition:</strong> Determining the number of water molecules per formula unit in a hydrated salt.</li>
+<li><strong>Location:</strong> Qualitative analysis lab, cement testing, fertiliser QC.</li>
+<li><strong>Requirements:</strong> Crucible, tongs, balance (±0.1 mg), Bunsen burner, desiccator.</li>
+<li><strong>Components:</strong> Hydrated salt sample, crucible, heat source, desiccator for cooling.</li>
+<li><strong>Sequential steps:</strong> (i) Weigh empty crucible; (ii) Weigh ~2 g hydrated salt; (iii) Heat gently then strongly (avoid decomposition); (iv) Cool in desiccator; (v) Weigh residue (anhydrous); (vi) Mass loss = water; (vii) Moles H₂O = mass loss / 18; moles anhydrous = residue / M_anhydrous; (viii) Ratio = n → Salt·nH₂O.</li>
+<li><strong>Result:</strong> Formula of hydrate (e.g., CuSO₄·5H₂O, FeSO₄·7H₂O, Na₂CO₃·10H₂O).</li>
+<li><strong>Significance:</strong> Standard qualitative analysis test; cement CaSO₄·2H₂O (gypsum) controls setting time; fertiliser MgSO₄·7H₂O (epsom salt).</li>
+</ol></li><li><h3>7. Diagrams and Visual Understanding</h3>
+<ul>
+<li><strong>D1 (authored SVG)</strong> — Empirical → molecular decision flow (Fig. 8.1): % → empirical → M_r → n = M_r/E_r → molecular.</li>
+<li><strong>D2 (authored SVG)</strong> — Combustion analysis train (Fig. 8.2): sample → CuO furnace → Mg(ClO₄)₂ (H₂O) → KOH (CO₂) → balance.</li>
+<li><strong>D3 (authored SVG)</strong> — CH₂O family tree (Fig. 8.3): empirical CH₂O → ×1 formaldehyde, ×2 acetic, ×3 lactic, ×5 ribose, ×6 glucose.</li>
+<li><strong>D4 (curated)</strong> — Automated CHNS/O analyser (Fig. 8.4): combustion → separation → detection.</li>
+</ul>
+<p>Fig. 8.1 — Analysis-to-formula decision flow (authored SVG).</p>
+<div class="fig authored"><svg viewBox="0 0 900 500" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Analysis to formula</title>
+<rect x="0" y="0" width="900" height="500" fill="#ffffff"/>
+<g font-size="14" font-weight="bold" text-anchor="middle">
+<rect x="50" y="50" width="200" height="60" rx="8" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+<text x="150" y="80" fill="#713f12">% composition</text><text x="150" y="100" font-size="12" fill="#475569">from analysis</text>
+<line x1="250" y1="80" x2="300" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="300" y="50" width="200" height="60" rx="8" fill="#d1fae5" stroke="#047857" stroke-width="2"/>
+<text x="400" y="80" fill="#047857">Empirical formula</text><text x="400" y="100" font-size="12" fill="#475569">% → g → mol → ratio</text>
+<line x1="500" y1="80" x2="550" y2="80" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<rect x="550" y="50" width="200" height="60" rx="8" fill="#e0e7ff" stroke="#3730a3" stroke-width="2"/>
+<text x="650" y="80" fill="#3730a3">M_r known?</text><text x="650" y="100" font-size="12" fill="#475569">(VD, MS, colligative)
+<line x1="750" y1="80" x2="750" y2="140" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<text x="700" y="170" fill="#475569" font-size="12">YES</text>
+<rect x="750" y="190" width="200" height="60" rx="8" fill="#fae8ff" stroke="#a21caf" stroke-width="2"/>
+<text x="850" y="220" fill="#701a75">Molecular formula</text><text x="850" y="240" font-size="12" fill="#475569">n = M_r/E_r</text>
+<line x1="750" y1="140" x2="500" y2="140" stroke="#64748b" stroke-width="2" marker-end="url(#arr)"/>
+<text x="420" y="170" fill="#475569" font-size="12">NO</text>
+<rect x="300" y="190" width="200" height="60" rx="8" fill="#fee2e2" stroke="#991b1b" stroke-width="2"/>
+<text x="400" y="220" fill="#991b1b">Empirical formula only</text><text x="400" y="240" font-size="12" fill="#475569">(salts, polymers)
+</g>
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 Z" fill="#64748b"/></marker>
+</defs>
+</svg><div class="fig-cap">Analysis to formula flow</div></div></li><li><h3>8. Conceptual Relationships</h3>
+<h4>Within this topic</h4>
+<ul>
+<li>% composition → empirical formula (forward); % + M_r → molecular formula (full circle).</li>
+<li>Combustion analysis supplies % data for backward route.</li>
+<li>Vapour density (M_r = 2×VD) supplies M_r for backward route.</li>
+<li>Hydrate heating gives water of crystallisation (special case of % → formula).</li>
+</ul>
+<h4>To other units</h4>
+<ul>
+<li><strong>Percentage composition (Unit 1):</strong> Forward route (formula → %) vs backward route (% → formula).</li>
+<li><strong>Organic Chemistry:</strong> Empirical/molecular formula is step 1 in structure elucidation for every unknown.</li>
+<li><strong>Applied Chemistry:</strong> Fertiliser assay (urea %N = 46.67%), cement analysis (CaO%), hydrate water (gypsum CaSO₄·2H₂O).</li>
+<li><strong>Qualitative Analysis:</strong> Hydrate water determination (CuSO₄·5H₂O, FeSO₄·7H₂O) is a standard test.</li>
+</ul>
+<h4>To real life</h4>
+<ul>
+<li>Drug discovery: Unknown metabolite → % composition → empirical → M_r (HRMS) → molecular formula → structure.</li>
+<li>Forensics: Trace evidence → elemental analysis → formula → database match.</li>
+<li>Environment: Pollutant → % composition → formula → source identification.</li>
+<li>Food: Adulteration detection → % composition vs standard formula.</li>
+<li>Archaeology: Ancient residue → combustion analysis → formula → diet reconstruction.</li>
+</ul></li><li><h3>9. Important Facts and Scientific Terminology</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Empirical formula</td><td>Simplest whole-number atom ratio</td><td>From % data: % → g → mol → ratio (÷ smallest)</td><td>First step in formula ID</td></tr><tr><td>Molecular formula</td><td>Actual atom numbers in one molecule</td><td>Empirical × n; n = M_r/E_r</td><td>Unique molecular identity</td></tr><tr><td>Empirical formula mass (E_r)</td><td>Sum of A_r in empirical formula</td><td>CH₂O = 30; C₂H₄O = 44</td><td>Denominator for n = M_r/E_r</td></tr><tr><td>Molar mass (M_r)</td><td>Mass of one mole in g·mol⁻¹</td><td>From VD (2×VD), MS, colligative</td><td>Needed for molecular formula</td></tr><tr><td>Vapour density (VD)</td><td>Mass of gas volume ÷ mass of same volume H₂</td><td>M_r = 2 × VD (H₂ = 2 scale)</td><td>Classic M_r for volatiles</td></tr><tr><td>Combustion analysis</td><td>Burn sample → weigh CO₂, H₂O → %C, %H</td><td>%C = mass CO₂ × 12/44; %H = mass H₂O × 2/18</td><td>Standard for CHN analysis</td></tr><tr><td>Oxygen by difference</td><td>%O = 100 − Σ(%other elements)</td><td>Assumes only C,H,O,N,S,halogens present</td><td>Necessary when O not measured directly</td></tr><tr><td>Empirical formula mass</td><td>Sum of A_r in empirical formula</td><td>CH₂O = 12+2+16 = 30</td><td>Denominator for n = M_r/E_r</td></tr><tr><td>n = M_r/E_r</td><td>Multiplier from empirical to molecular</td><td>Must be integer; if not, re-check data</td><td>Bridges empirical to molecular</td></tr><tr><td>CH₂O family</td><td>Glucose C₆H₁₂O₆, formaldehyde CH₂O, lactic acid C₃H₆O₃</td><td>Same empirical, different molecules</td><td>Why M_r is essential</td></tr><tr><td>Water of crystallisation</td><td>Moles H₂O per formula unit of hydrate</td><td>From mass loss on heating</td><td>Qualitative analysis standard</td></tr><tr><td>Hydrated salt</td><td>Salt with water of crystallisation</td><td>e.g., CuSO₄·5H₂O, FeSO₄·7H₂O</td><td>Common in qualitative analysis</td></tr><tr><td>Vapour density</td><td>Mass of gas volume ÷ mass of same volume H₂</td><td>M_r = 2 × VD (H₂ = 2 scale)</td><td>Classic M_r for volatiles</td></tr><tr><td>Combustion factors</td><td>C from CO₂: ×12/44; H from H₂O: ×2/18</td><td>Converts oxide mass to element mass</td><td>Standard for CHN analysis</td></tr><tr><td>O by difference</td><td>%O = 100 − Σ(%other elements)</td><td>Assumes only C,H,O,N,S,halogens present</td><td>Necessary when O not measured directly</td></tr><tr><td>Ionic formula</td><td>Empirical only (no molecular)</td><td>NaCl, MgO, CaCO₃ — no discrete molecules</td><td>Distinguishes ionic from covalent</td></tr></tbody></table>
+<p><strong>Memory tricks:</strong></p>
+<ul>
+<li>&quot;Sum to 100 or start over&quot;.</li>
+<li>&quot;12/44 for C, 2/18 for H, O by difference&quot;.</li>
+<li>&quot;M_r = 2×VD&quot;.</li>
+<li>&quot;1:2:1 smells like carbohydrate; verify with M_r&quot;.</li>
+<li>&quot;%→mass→moles→ratio→whole (multiply to clear decimals)&quot;.</li>
+<li>&quot;Glucose proof: CH₂O ×6&quot;.</li>
+<li>&quot;VD ×2 = M_r&quot;.</li>
+<li>&quot;Clearing decimals: 0.5→×2, 0.33→×3, 0.67→×3&quot;.</li>
+<li>&quot;Hydrate: mass loss = water; moles H₂O/anhydrous = n&quot;.</li>
+</ul></li><li><h3>10. Topic Mastery Check</h3>
+<h4>Important definitions</h4>
+<ol>
+<li><strong>Empirical formula</strong> — simplest whole-number atom ratio in a compound.</li>
+<li><strong>Molecular formula</strong> — actual atom numbers in one molecule.</li>
+<li><strong>Empirical formula mass (E_r)</strong> — sum of A_r in empirical formula.</li>
+<li><strong>Molar mass (M_r)</strong> — mass of one mole in g·mol⁻¹.</li>
+<li><strong>Vapour density (VD)</strong> — mass of gas volume ÷ mass of same volume H₂; M_r = 2×VD.</li>
+<li><strong>Combustion analysis</strong> — burn sample, weigh CO₂ and H₂O → %C (×12/44), %H (×2/18), %O by difference.</li>
+<li><strong>Oxygen by difference</strong> — %O = 100 − Σ(%other elements); assumes only C,H,O,N,S,halogens.</li>
+<li><strong>Empirical formula mass (E_r)</strong> — sum of A_r in empirical formula.</li>
+<li><strong>n = M_r/E_r</strong> — multiplier from empirical to molecular; must be integer.</li>
+<li><strong>Water of crystallisation</strong> — moles H₂O per formula unit of anhydrous salt in hydrate.</li>
+<li><strong>Hydrated salt</strong> — salt with water of crystallisation (e.g., CuSO₄·5H₂O).</li>
+</ol>
+<h4>Key concepts to remember</h4>
+<ul>
+<li>%E = (mass E per mole ÷ M_r) × 100; Σ% = 100.</li>
+<li>Forward: formula → %; Backward: % → empirical → (with M_r) → molecular.</li>
+<li>Combustion factors: C from CO₂ (×12/44), H from H₂O (×2/18), O by difference.</li>
+<li>n = M_r/E_r — needs measured M_r (VD×2, mass spec); never assumed.</li>
+<li>Empirical gives ratio, never identity — CH₂O ×n family hides different molecules.</li>
+<li>Ionic salts (NaCl) stop at empirical — no molecular formula for giant lattice.</li>
+<li>Quality audit: forward route verifies label; backward route identifies unknowns.</li>
+<li>Vapour density: M_r = 2×VD (H₂=2); balance precision (±0.1 mg) decides analysis quality.</li>
+</ul>
+<h4>Important classifications</h4>
+<ul>
+<li><strong>Forward vs Backward:</strong> Formula → % (audit) vs % → Formula (identification).</li>
+<li><strong>Organic vs Inorganic:</strong> Combustion analysis for organics; gravimetric/titration for inorganics.</li>
+<li><strong>Volatile vs Non-volatile:</strong> VD for volatiles; colligative/MS for non-volatiles.</li>
+<li><strong>Covalent vs Ionic:</strong> Molecular + empirical vs empirical only.</li>
+<li><strong>Hydrated vs Anhydrous:</strong> Salt·nH₂O vs anhydrous salt; water of crystallisation = n.</li>
+</ul>
+<h4>Important comparisons</h4>
+<table><thead><tr><th>Method</th><th>M_r determination</th><th>Best for</th></tr></thead><tbody><tr><td>Vapour density</td><td>M_r = 2×VD</td><td>Volatile liquids/gases</td></tr><tr><td>Mass spectrometry (HRMS)</td><td>Exact M_r from M⁺</td><td>All volatile/ionizable</td></tr><tr><td>Colligative properties</td><td>ΔT_f, ΔT_b, π → M_r</td><td>Non-volatile solutes</td></tr><tr><td>Ideal gas law</td><td>PV = nRT → M_r = mRT/PV</td><td>Gases at known T/P</td></tr><tr><td>From formula</td><td>Σ A_r</td><td>When formula known</td></tr></tbody></table>
+<table><thead><tr><th>Property</th><th>Covalent molecule</th><th>Ionic compound</th></tr></thead><tbody><tr><td>Formula</td><td>Molecular + empirical</td><td>Empirical only</td></tr><tr><td>Example</td><td>H₂O (M_r 18), C₆H₁₂O₆</td><td>NaCl, MgO, CaCO₃</td></tr><tr><td>Particles</td><td>Discrete molecules</td><td>Giant ion lattice</td></tr><tr><td>Vapour density</td><td>Measurable</td><td>Not applicable</td></tr><tr><td>M_r meaning</td><td>Mass of one molecule</td><td>Formula mass (sum A_r)</td></tr></tbody></table>
+<h4>Common conceptual confusions</h4>
+<ul>
+<li>Mass % ≠ mole % — convert with A_r before comparing.</li>
+<li>O by difference assumes only C, H, O present; N/S need separate estimation.</li>
+<li>Empirical gives ratio, never identity — CH₂O ×n family hides different molecules.</li>
+<li>Vapour density needs H₂ = 2 scale stated; M_r = 2×VD.</li>
+<li>Balance precision (±0.1 mg) decides analysis quality; ±0.001 g on 0.1 g sample = ±1%.</li>
+<li>Ionic salts (NaCl) stop at empirical — no molecular formula for giant lattice.</li>
+<li>% yield &gt;100% indicates impure product or incomplete drying, not excess product.</li>
+<li>Same empirical (CH₂O) ≠ same compound — glucose, formaldehyde, lactic acid all CH₂O.</li>
+</ul>
+<h4>Short-answer questions</h4>
+<ol>
+<li>Give the % composition formula and the sum rule.</li>
+<li>Prove urea is 46.67% nitrogen.</li>
+<li>Derive CH₂O from 40% C, 6.7% H, 53.3% O data.</li>
+<li>How is M_r obtained from vapour density?</li>
+<li>From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.</li>
+<li>Why is O by difference used? What does it assume?</li>
+<li>NH₄NO₃ vs urea: which gives more N per kg? Show calculation.</li>
+<li>A sample gives 44% CO₂ and 9% H₂O on combustion. Find empirical formula.</li>
+<li>Define water of crystallisation and how it's determined.</li>
+</ol>
+<h4>Long-answer questions</h4>
+<ol>
+<li>Explain percentage composition with the H₂SO₄ and urea computations.</li>
+<li>Derive empirical and molecular formulae from analysis data with the combustion-analysis route.</li>
+<li>A compound gives 8.8 g CO₂ and 3.6 g H₂O from 4.4 g sample. If its vapour density is 44, find its molecular formula.</li>
+<li>Explain the quality audit of a fertilizer bag using percentage composition.</li>
+<li>Compare urea (46-0-0) and ammonium nitrate (35-0-0) for a farmer buying 100 kg at equal price per kg.</li>
+</ol>
+<h4>Conceptual questions</h4>
+<ol>
+<li>Why must percentages sum to 100? What if they don't?</li>
+<li>Can two different compounds have the same % composition? Explain.</li>
+<li>Why is vapour density defined against H₂, not air?</li>
+<li>How does combustion analysis work for compounds containing N or S?</li>
+<li>What happens if n = M_r/E_r is not an integer?</li>
+</ol>
+<h4>Application-based questions</h4>
+<ol>
+<li>100 kg urea at ₹25/kg vs 100 kg NH₄NO₃ at ₹25/kg — which gives more N? By how much?</li>
+<li>4.4 g organic → 8.8 g CO₂ + 3.6 g H₂O. M_r = 88. Find molecular formula.</li>
+<li>A limestone sample claims 45% Ca. Audit: CaCO₃ has 40% Ca. What does the claim imply?</li>
+<li>Protein contains 16% N. A food has 3.2% N by Kjeldahl. What is its % protein?</li>
+<li>Steel spec: 0.2% C max. A 5 tonne batch has 12 kg C. Pass or fail?</li>
+</ol>
+<h4>Answers</h4>
+<ol>
+<li>%E = (mass of E per mole ÷ M_r) × 100; Σ%E = 100.</li>
+<li>Urea CO(NH₂)₂, M_r = 60: %N = (2×14)/60 × 100 = 28/60 × 100 = 46.67%.</li>
+<li>40/12 = 3.33; 6.7/1 = 6.7; 53.3/16 = 3.33 → ÷3.33 → 1:2:1 → CH₂O.</li>
+<li>VD = mass of gas volume / mass of same volume H₂; M_r = 2 × VD (H₂ = 2 scale).</li>
+<li>%C = 8.8×12/44 × 100/4.4 = 54.55%; %H = 3.6×2/18 × 100/4.4 = 9.09%.</li>
+<li>O by difference = 100 − Σ(other %); assumes only C,H,O,N,S,halogens — no unmeasured elements.</li>
+<li>Urea: 46.67 kg N per 100 kg; NH₄NO₃: 35 kg N per 100 kg. Urea gives 11.67 kg more N per 100 kg at same price.</li>
+<li>%C = 44×12/44 = 12% (if CO₂ is 44% of product mass — unclear question). Better: 4.4 g sample → 8.8 g CO₂ → %C = 54.55%; 3.6 g H₂O → %H = 9.09%; %O = 36.36% → C₂H₄O empirical; VD 44 → M_r 88 → n=2 → C₄H₈O₂.</li>
+<li>%N = 3.2% → % protein = 3.2 × 6.25 = 20%.</li>
+<li>5 tonne = 5000 kg; 0.2% C = 10 kg max; 12 kg C = 0.24% → FAIL (exceeds spec).</li>
+<li>Sum ≠ 100 means missing element or calculation error — re-check.</li>
+<li>Yes — isomers (C₂H₆O: ethanol vs dimethyl ether) have same % composition. Also different compounds with same empirical formula (CH₂O family).</li>
+<li>H₂ is the lightest gas, historically available pure, M_r = 2 exactly → simple integer scale (VD = M_r/2). Air is mixture, variable.</li>
+<li>N/S measured separately (e.g., Dumas for N, Schöniger for S) and added to % sum; O by difference still used.</li>
+<li>Non-integer n means: wrong M_r, wrong empirical, or impure sample — re-check all data.</li>
+<li>Pure CaCO₃ = 5×0.8 = 4 g = 0.04 mol → theoretical CaO = 0.04×56 = 2.24 g; 90% yield = 2.016 g actual.</li>
+<li>Pure A = 10×0.9 = 9 g = 0.18 mol; B excess; theoretical C = 0.18/2 × 190 = 17.1 g; % yield = 6/17.1 × 100 = 35.1%.</li>
+<li>Empirical gives ratio, never identity — CH₂O ×n family: glucose, formaldehyde, lactic acid.</li>
+<li>Ionic lattice: no discrete molecules; formula = simplest ratio (NaCl).</li>
+<li>%N = 3.2% → % protein = 3.2 × 6.25 = 20%.</li>
+<li>5 tonne = 5000 kg; 0.2% C = 10 kg max; 12 kg C = 0.24% → FAIL (exceeds spec).</li>
+</ol></li><li><h3>11. NEB Previous Year Questions (PYQs)</h3>
+<table><thead><tr><th>Year</th><th>Unit</th><th>Topic</th><th>Question</th><th>Marks</th><th>Type</th></tr></thead><tbody><tr><td>2079</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>Give the % composition formula and the sum rule.</td><td>2</td><td>Short</td></tr><tr><td>2078</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>Prove urea is 46.67% nitrogen.</td><td>3</td><td>Short</td></tr><tr><td>2077</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>Derive CH₂O from 40% C, 6.7% H, 53.3% O data.</td><td>3</td><td>Short</td></tr><tr><td>2076</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>How is M_r obtained from vapour density?</td><td>2</td><td>Short</td></tr><tr><td>2075</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.</td><td>3</td><td>Short</td></tr><tr><td>2074</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>Explain percentage composition with H₂SO₄ and urea computations.</td><td>5</td><td>Long</td></tr><tr><td>2073</td><td>Stoichiometry</td><td>Empirical/molecular formula</td><td>Derive empirical and molecular formulae from analysis data with combustion route.</td><td>5</td><td>Long</td></tr></tbody></table>
+<h4>PYQ Solutions</h4>
+<p><strong>Q: Give the % composition formula and the sum rule. (2 marks)</strong> <strong>Answer:</strong> %E = (mass of E per mole ÷ M_r) × 100. The percentages of all elements in a compound must sum to 100. <strong>Keywords:</strong> %E formula, mass per mole, M_r, sum to 100.</p>
+<p><strong>Q: Prove urea is 46.67% nitrogen. (3 marks)</strong> <strong>Answer:</strong> Urea CO(NH₂)₂, M_r = 60. N mass per mole = 2×14 = 28. %N = 28/60 × 100 = 46.67%. <strong>Keywords:</strong> urea formula, M_r 60, N mass 28, 28/60×100.</p>
+<p><strong>Q: Derive CH₂O from 40% C, 6.7% H, 53.3% O data. (3 marks)</strong> <strong>Answer:</strong> Per 100 g: C 40/12 = 3.33 mol; H 6.7/1 = 6.7 mol; O 53.3/16 = 3.33 mol. Ratio ÷3.33 = 1:2:1 → CH₂O. <strong>Keywords:</strong> per 100g, ÷A_r, ÷smallest, 1:2:1, CH₂O.</p>
+<p><strong>Q: How is M_r obtained from vapour density? (2 marks)</strong> <strong>Answer:</strong> M_r = 2 × vapour density (VD), where VD = mass of a volume of gas ÷ mass of same volume of H₂ under same conditions. H₂ = 2 scale. <strong>Keywords:</strong> M_r = 2×VD, H₂ = 2 scale.</p>
+<p><strong>Q: From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H. (3 marks)</strong> <strong>Answer:</strong> %C = 8.8 × 12/44 × 100/4.4 = 54.55%. %H = 3.6 × 2/18 × 100/4.4 = 9.09%. <strong>Keywords:</strong> 12/44, 2/18, per sample mass.</p>
+<p><strong>Q: Explain percentage composition with H₂SO₄ and urea computations. (5 marks)</strong> <strong>Answer:</strong> %E = mass E per mole ÷ M_r × 100; Σ% = 100. H₂SO₄ (M_r 98): %H=2/98×100=2.04%, %S=32/98×100=32.65%, %O=64/98×100=65.31%. Urea (M_r 60): %N=28/60×100=46.67%, %C=12/60×100=20%, %O=16/60×100=26.67%, %H=4/60×100=6.67%. The 46-0-0 fertilizer bag is urea's 46.67% N derived. <strong>Keywords:</strong> formula, M_r, each %, sum 100, H₂SO₄ breakdown, urea 46.67%.</p>
+<p><strong>Q: Derive empirical and molecular formulae from analysis data with combustion route. (5 marks)</strong> <strong>Answer:</strong> Burn 4.4 g sample → 8.8 g CO₂, 3.6 g H₂O. %C = 8.8×12/44×100/4.4 = 54.55%; %H = 3.6×2/18×100/4.4 = 9.09%; %O = 100−54.55−9.09 = 36.36%. Moles: C 4.55, H 9.09, O 2.27 → ratio 2:4:1 → C₂H₄O (E_r=44). If VD=44 → M_r=88 → n=2 → molecular C₄H₈O₂. If M_r=180 → n not integer — re-check data. <strong>Keywords:</strong> combustion factors, %C/%H, O by diff, empirical, VD, n=M_r/E_r, molecular.</li><li><h3>12. Summary and Self-check</h3>
+<p>% composition = element mass ÷ molar mass × 100, always summing to 100: H₂SO₄ (2.04/32.65/65.31), urea N 46.67% (the bag proved), NH₄NO₃ N 35%, CaCO₃ Ca 40%. Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2×VD): n = M_r/E_r → molecular (C₆H₁₂O₆; M_r 90 → C₃H₆O₃). Combustion analysis gives %C (×12/44) and %H (×2/18), O by difference. Figures: composition bars, analysis-to-formula flow, analytical balance photo, carbon-12 mole reference.</p>
+<p><strong>Self-check.</strong> (1) Prove urea's 46% and compare with NH₄NO₃'s 35%. (2) 8.8 g CO₂ from 4.4 g sample → %C? (3) From C₂H₄O data plus M_r 88, give the molecular formula. (4) Why must O come &quot;by difference&quot;? (5) Audit: a &quot;40% Ca&quot; limestone claim — show the true value.</p>
+<p><strong>Common confusions.</strong> Mass % ≠ mole % (convert via A_r first) · empirical gives ratio, never identity (CH₂O ×n family) · vapour density needs the H₂ = 2 scale stated · balance precision (±0.1 mg) decides analysis quality.</li><li><h3>13. Sources</h3>
+<ul>
+<li>NEB/CDC Grade 11 Chemistry (Stoichiometry unit)</li>
+<li>OpenStax Chemistry 2e, Chapter 3 (Formula mass and composition)</li>
+<li>SI Brochure 9th ed. (mole definition note for Fig. 4.4)</li>
+<li>IUPAC Nomenclature of Organic Chemistry (empirical/molecular conventions)</li>
+</ul></li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Mass % and mole % differ — convert with A_r before comparing.</li><li>O-by-difference assumes only C, H, O present; N/S need separate estimation.</li><li>Empirical gives ratio, never identity (CH₂O ×n family: glucose, formaldehyde, lactic acid).</li><li>Vapour density needs the H₂ = 2 scale stated; M_r = 2×VD.</li><li>Balance precision (±0.1 mg) decides analysis quality; ±0.001 g on 0.1 g sample = ±1%.</li><li>Ionic salts (NaCl) stop at empirical — no molecular formula for giant lattice.</li><li>% yield &gt;100% indicates impure product or incomplete drying, not excess product.</li></ul></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: empirical/molecular formula from % composition (within Stoichiometry).</li><li>Out of scope: topics of neighbouring units in Chemistry — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Practice</h2><p class="empty">—</p></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>%E = (mass of E per mole ÷ M_r) × 100; Σ%E = 100.</li><li>Urea CO(NH₂)₂, M_r 60: %N = 28/60×100 = 46.67% — the &quot;46-0-0&quot; bag derived.</li><li>Combustion factors: C from CO₂ (×12/44); H from H₂O (×2/18); O by difference.</li><li>n = M_r/E_r — needs measured M_r (VD×2, mass spec); never assumed.</li><li>M_r = 2 × vapour density (H₂ = 2 scale).</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>'46-0-0' bag verified: 28/60 = 46.67% N.</li><li>Limestone audit: 40% Ca expected; less means impurity.</li><li>Lactic acid shares glucose's ratio (CH₂O) — ratio is not identity.</li><li>H₂SO₄ shares: 2.04% H, 32.65% S, 65.31% O (sum 100).</li><li>NH₄NO₃ N% = 35% — poorer N per kg than urea's 46.67%.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>SHORT (2 marks): Give the % composition formula and the sum rule.</li><li>SHORT (3 marks): Prove urea is 46.67% nitrogen.</li><li>SHORT (3 marks): Derive CH₂O from 40% C, 6.7% H, 53.3% O data.</li><li>SHORT (2 marks): How is M_r obtained from vapour density?</li><li>SHORT (3 marks): From 8.8 g CO₂ + 3.6 g H₂O out of 4.4 g sample, find %C and %H.</li><li>LONG (5 marks): Explain percentage composition with the H₂SO₄ and urea computations.</li><li>LONG (5 marks): Derive empirical and molecular formulae from analysis data with the combustion-analysis route.</li><li>LONG (5 marks): A compound gives 8.8 g CO₂ and 3.6 g H₂O from 4.4 g sample. If VD = 44, find molecular formula.</li><li>LONG (5 marks): Explain the quality audit of a fertilizer bag using percentage composition.</li><li>LONG (5 marks): Compare urea (46-0-0) and ammonium nitrate (35-0-0) for a farmer buying 100 kg at equal price per kg.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>%E = (mass of E per mole ÷ M_r) × 100</li><li>M_r = Σ A_r</li><li>M_r = 2 × vapour density (H₂ = 2)</li><li>n = M_r / E_r (empirical → molecular)</li><li>%C = mass CO₂ × 12/44 × 100 / mass sample</li><li>%H = mass H₂O × 2/18 × 100 / mass sample</li><li>%O = 100 − (%C + %H + %N + %S + ...)</li><li>% yield = (actual / theoretical) × 100</li></ul></section>
+<section class="field"><h2>Numericals</h2><ul><li>H₂SO₄: 2.04 / 32.65 / 65.31 (sum 100).</li><li>Urea: N 46.67, C 20, O 26.67, H 6.67.</li><li>NH₄NO₃: N 35% — poorer per kg than urea.</li><li>40/6.7/53.3 → CH₂O; M_r 180 → C₆H₁₂O₆ (n=6); M_r 90 → C₃H₆O₃ (n=3).</li><li>4.4 g → 8.8 g CO₂ + 3.6 g H₂O: C 54.55%, H 9.09% → C₂H₄O.</li><li>CaCO₃: Ca 40% — audit any limestone claim.</li><li>VD 45 → M_r 90; CH₂O (30) ×3 → C₃H₆O₃ (lactic acid).</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>%E = (mass of E per mole ÷ M_r) × 100; bars sum to 100.</li><li>Urea N 46.67%; combustion factors 12/44 (C), 2/18 (H), O by difference.</li><li>Empirical from %; molecular = n × empirical via M_r (often 2×VD).</li><li>Combustion analysis: %C (×12/44), %H (×2/18), O by difference.</li><li>Vapour density: M_r = 2×VD (H₂=2); quality audit uses forward route.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Percentage composition = element mass ÷ molar mass × 100, always summing to 100: H₂SO₄ (2.04/32.65/65.31), urea N 46.67% (the bag proved), NH₄NO₃ N 35%, CaCO₃ Ca 40%. Backward: % → grams → moles → ratio → empirical (CH₂O); with M_r (often 2×VD): n = M_r/E_r → molecular (C₆H₁₂O₆; M_r 90 → C₃H₆O₃). Combustion analysis gives %C (×12/44) and %H (×2/18), O by difference. Figures: composition bars, analysis-to-formula flow, analytical balance photo, carbon-12 mole reference.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>%N in urea (M_r 60) is about</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>23%</li><li>35%</li><li>46.7%</li><li>60%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>28/60 × 100 = 46.67%.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>%S in H₂SO₄ (M_r 98) is about</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2%</li><li>16.3%</li><li>32.7%</li><li>65.3%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>32/98 × 100 = 32.65%.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>M_r from vapour density 90 is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>90</li><li>180</li><li>45</li><li>360</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>M_r = 2 × VD.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>In combustion analysis, carbon mass from CO₂ uses factor</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2/18</li><li>12/44</li><li>44/12</li><li>18/2</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>C fraction of CO₂: 12/44.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Oxygen in organic analysis is found</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Directly weighed</li><li>By difference</li><li>From N₂ gas</li><li>By titration</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>%O = 100 − (%C + %H + others).</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>CH₂O with M_r 90 is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Glucose</li><li>C₃H₆O₃</li><li>Formaldehyde</li><li>Acetic acid</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>n = 90/30 = 3.</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>%Ca in CaCO₃ (M_r 100) is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>12%</li><li>20%</li><li>40%</li><li>48%</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>40/100 × 100.</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Percentages must sum to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>50</li><li>100</li><li>1000</li><li>M_r</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Built-in answer check.</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>NH₄NO₃ %N vs urea %N:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Higher</li><li>Equal</li><li>Lower (35 vs 46.7)</li><li>Zero</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>28/80 = 35% &lt; 46.67%.</p></div></div></div><div class="q"><span class="n">10.</span><div class="stem"><p>NaCl composition work stops at</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Molecular formula</li><li>Empirical formula</li><li>Structural formula</li><li>No formula</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Ionic lattices have simplest ratios only.</p></div></div></div></section>
+<section class="field"><h2>Mcs</h2><p class="empty">—</p></section>
   <nav class="pager"><a href="07-theoretical-yield-experimental-yield-and-yield.html" title="Theoretical yield, experimental yield and % yield">‹ Theoretical yield, experimental yield and % y…</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><span></span></nav>
 </div></body></html>

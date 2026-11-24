@@ -1,0 +1,26 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Vectors",
+  "title": "Vectors (part 1)",
+  "source": "neb-class-11-physics — Vectors, pages 26-40 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Chapter 2 Vectors",
+    "J. Willard Gibbs (1839-1903)",
+    "Oliver Heaviside (1850-19250)",
+    "Vector calculus and its sub-objective Vector Fields was invented by two men J. Willard Gibbs and Oliver Heaviside at the end of the 19th century. This allowed scientists and mathematicians to calculate such things as speed and direction from a graph.",
+    "J. Willard Gibbs (February 11, 1839 – April 28, 1903) was an American mathematician and physicist who became an inventor of vector analysis. Josiah Willard Gibbs, born in New Haven, Connecticut, USA, graduated from Yale (College) in 1858 and continued his career at Yale, earning his doctorate of philosophy in 1863.",
+    "Oliver Heaviside FRS (18 May 1850 – 3 February 1925) was an English self-taught mathematician and physicist who invented a new technique for solving differential equations to the Laplace transform, independently developed vector calculus, and rewrote Maxwell's equations.",
+    "Physics, Grade 11 | 21",
+    "2.1 Introduction Vector, in physics, is a quantity that has both magnitude and direction. It is typically represented by an arrow whose direction is the same as that of the quantity, and whose length is proportional to the quantity's magnitude. Although a vector has magnitude and direction, it does not have position. Consider the Phenomena: i) Pokhara lies at a distance of 200 km from Kathmandu. Can a pilot safely land at Pokhara after flying 200km just in any direction from Kathmandu? ii) A screw is rotated in a clockwise direction. What will be its possible direction of advancement? Do you anticipate any sense from it? iii) Imagine your mother asking you to go to a particular shop to get something, will it be enough for her to say go 200 m from the main gate? Is this information enough for you to locate that shop? You do realize that it isn't enough, right? You need proper directions, these directions are themselves vectors and that's why you need vectors. Physical quantities are classified into two types: scalars and vectors. Scalars, also known as scalar quantities, are characterized solely by their magnitude. On the other hand, vectors, or vector quantities, are fully defined by both magnitude and direction. Mass, length, time, temperature, distance, speed, work, money in the pocket, etc. are scalars. On the other hand, displacement, velocity, force, etc. are all vectors. A hundred-rupee defines only magnitude, and thus it is a scalar quantity. The distance of a place (such as Pokhara lying 200 km from Kathmandu) requires direction for anyone to reach, making it a vector. The rotation of a screw determines its forward or backward movement, which involves direction, thus making it a vector quantity. Moreover, although electric current has both magnitude and direction,it isn’t regarded as a vector quantity. To qualify as a vector, a physical quantity must possess both magnitude and direction and adhere to the principles of vector algebra. Hence the electric current, which does not adhere to the principles of vector algebra, is not considered a vector quantity despite possessing both magnitude and direction. Vector representation Fig 2.1 Graphical representation of vectors Physics, Grade 11 | 22",
+    "Graphically, a vector is represented by a straight line with an arrow attached to it. The length of the line indicates the magnitude and the arrow indicates the direction. The starting point of the arrow is the initial point and the ending point is called the terminal point of a vector. Analytically, a vector is represented as 𝐴→ or by a bold-faced letter A 2.2 Types of a Vector i) Unit Vectors: These are the vectors having unity magnitude. For a vector 𝐴⃗, if A = 1, it is the case of a unit vector. A unit vector is generally denoted by a symbol 𝑛̂ and 𝑛̂ = 𝐴⃗/A A position vector in the space, 𝑂⃗⃗⃗⃗𝑃⃗⃗ = 𝑟⃗= x𝑖̂ +y𝑗̂ +z𝑘̂ ≡ (x, y, z), the magnitude of the unit vector Fig 2.2 Unit vectors OP = 𝑥2 + 𝑦2 + 𝑧2 ⃗⃗⃗⃗⃗⃗ 𝑂⃗⃗⃗⃗𝑃⃗⃗ (x𝑖̂ +y𝑗̂ +z𝑘̂ )",
+    "Hence, the unit vector along 𝑂𝑃 is = = 2 2 2 𝑟̂ 𝑂𝑃 √𝑥 +𝑦 +𝑧 Similarly; 𝑖̂, 𝑗̂ and 𝑘̂ are the unit vectors along the three rectangular coordinates X, Y and Z axes respectively. Sample Questions: Q: Find the unit vector for 2𝑖̂ + 3𝑗̂ -4𝑘̂.",
+    "(Ans: 2/√29𝑖̂ + 3/√29𝑗̂ -4/√29𝐾̂.) ii) Parallel Vectors: Two vectors are said to be parallel if they have the same direction whatever be their magnitudes.",
+    "Fig 2.3 (i) parallel vectors Physics, Grade 11 | 23",
+    "iii) Equal Vectors: Two vectors are said to be equal if they have same directions and magnitude. Fig 2.3 (ii) equal vectors. iv)Negative Vector: A vector 𝐵⃗⃗ is said to be the negative of a given vector 𝐴⃗ if it has the",
+    "same",
+    "magnitude but opposite direction and is written as -𝐴⃗.",
+    "Fig 2.3(iii) Negative vectors",
+    "v) Collinear Vectors: Vectors lying along the same line or parallel lines are called the"
+  ]
+}

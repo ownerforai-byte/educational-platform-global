@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Logic gates — AND, OR, NOT, NAND, NOR</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Logic gates — AND, OR, NOT, NAND, NOR</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -191,5 +194,6 @@
 <section class="field"><h2>Practice</h2><ul><li>Solve at least 5 problems on logic gates from your textbook.</li><li>Try to derive the key formulas from first principles.</li><li>Create a summary sheet with all important formulas and theorems.</li><li>Practice identifying which method/formula to apply in each problem type.</li><li>one worked example for &quot;Logic gates — AND, OR, NOT, NAND, NOR&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
 <section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The primary application of Logic Gates is in:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Field A</li><li>Field B</li><li>Field C</li><li>Field D</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>For Logic Gates, which condition is necessary?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Condition A</li><li>Condition B</li><li>Condition C</li><li>Condition D</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>What is the unit/dimension used in Logic Gates?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Unit A</li><li>Unit B</li><li>Unit C</li><li>Unit D</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Which statement about Logic Gates is FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True statement A</li><li>True statement B</li><li>False statement C</li><li>True statement D</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div></div></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>AND outputs 1 when</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Either input is 1</li><li>Both inputs are 1</li><li>Both are 0</li><li>The inputs differ</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>OR with inputs 1 and 1 outputs</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>0</li><li>1</li><li>2</li><li>Undefined</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>NOT changes 0 to</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>0</li><li>1</li><li>10</li><li>AND</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>A universal gate is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>AND only</li><li>NAND</li><li>A resistor</li><li>NOT only, with no way to build the others by itself in this syllabus's claim for NAND</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div></section>
+<section class="field"><h2>Key Points</h2><ul><li>AND, OR, NOT are the basic gates; NAND, NOR are universal.</li><li>Output expressions: AND = A·B, OR = A + B, NAND = (A·B)', NOR = (A + B)'.</li><li>De Morgan's theorems convert between NAND/NOR forms.</li><li>XOR gives 1 for unequal inputs.</li></ul></section>
   <nav class="pager"><a href="05-semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor.html" title="Semiconductors — intrinsic and extrinsic, p-n junction, d…">‹ Semiconductors — intrinsic and extrinsic, p-n…</a><a class="mid" href="../../../../../_subjects/class-12-physics.html">Physics</a><span></span></nav>
 </div></body></html>

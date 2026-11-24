@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Linear combination of vectors, linearly dependent and ind…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Linear combination of vectors, linearly dependent and ind…</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -156,41 +159,107 @@
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
 <section class="field"><h2>Source</h2><p>generated</p></section>
 <section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Linear combination of vectors, linearly dependent and ind… — Vectors, Mathematics (class-11-notes).</li><li><strong>Tested.</strong> define it · list: linear combination of vectors, linearly dependent, independent vectors · one worked example · one misconception each.</li><li><strong>Fact.</strong> Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li><li><strong>Fact.</strong> Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).</li><li><strong>Fact.</strong> Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).</li><li><strong>Linearly dependent.</strong> one-line definition + one-line exam use.</li><li><strong>Independent vectors.</strong> one-line definition + one-line exam use.</li><li><h2>Linear combination of vectors, linearly dependent and independent vectors</h2>
-<h3>1. Introduction and motivation</h3>
-<p>What the tool <strong>Linear combination of vectors</strong> is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Vectors fill pass.</p>
-<h3>2. Definitions and theorems</h3>
-<h4>Linear combination of vectors</h4>
-<h4>linearly dependent and independent vectors</h4>
-<p>Each result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).</li><li><h3>3. Formula sheet</h3>
-<p><strong>Table 1 — Formula sheet</strong></p>
-<table><thead><tr><th>Formula</th><th>Symbols</th><th>Validity condition</th><th>Where used</th></tr></thead><tbody></tbody></table>
-<p>Complete for the topic; every row carries its validity condition (§3.1).</li><li><h3>4. Methods and standard forms</h3>
-<p><strong>Table 2 — Theorem and method sheet</strong></p>
-<table><thead><tr><th>Result or method</th><th>Hypotheses</th><th>Worked example</th><th>If the condition is dropped</th></tr></thead><tbody></tbody></table>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>5. Figures and graphs</h3>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Building Vectors From a Basis</h3>
+<p>Any vector in a plane can be rebuilt from <strong>two</strong> independent directions; in space, from <strong>three</strong>. The theorems: <strong>linear combination</strong>, and the tests for <strong>linear dependence and independence</strong> — the algebra that decides when a set of vectors genuinely spans a space.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Linear combination</h4>
 <ul>
-<li><strong>F1</strong> — Linear combination of vectors — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)</li>
-<li><strong>F2</strong> — Linear combination of vectors — second figure: construction, region or comparison (authored SVG — English labels)</li>
-<li><strong>F3</strong> — Linear combination of vectors — curated reference figure where it beats SVG (curated external — license recorded at fill)</li>
+<li><strong>Definition:</strong> v is a linear combination of a₁, a₂, …, aₙ if <strong>v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ</strong> for scalars cᵢ.</li>
+<li>The standard basis î, ĵ, k̂ rebuilds any vector: a = a₁î + a₂ĵ + a₃k̂ — the coefficients <em>are</em> the components.</li>
 </ul>
-<p>Authored figures first (§3.3): every graph plotted from the same equation the text uses.</li><li><h3>6. Worked examples</h3>
-<p>≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.</p>
-<h3>7. Traps and common mistakes</h3>
-<p>The classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).</li><li><h3>8. Exam Zone, practice and textbook exercises</h3>
-<p>NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).</p>
-<p>Textbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces.</li></ul></section>
+<h4>2.2 Linear dependence and independence</h4>
+<ul>
+<li><strong>Definition:</strong> vectors are <strong>linearly dependent</strong> if some non-trivial combination c₁a₁ + ⋯ + cₙaₙ = <strong>0</strong> exists (some cᵢ ≠ 0); otherwise <strong>linearly independent</strong>.</li>
+<li><strong>Theorem:</strong> two vectors are dependent ⟺ one is a scalar multiple of the other ⟺ they are parallel (collinear as free vectors).</li>
+<li><strong>Theorem:</strong> three vectors are dependent ⟺ they are <strong>coplanar</strong>.</li>
+<li><strong>Theorem:</strong> any set containing the zero vector is dependent (take the zero's coefficient non-zero, others zero).</li>
+</ul>
+<h4>2.3 The determinant test</h4>
+<ul>
+<li>For three vectors a, b, c in components: they are independent ⟺ the determinant of the 3×3 matrix of components is <strong>non-zero</strong>; dependent ⟺ the determinant is zero (equivalently the scalar triple product [a b c] = 0).</li>
+</ul>
+<h4>2.4 Why independence matters</h4>
+<ul>
+<li>Independent vectors give <strong>unique</strong> coordinates: if a, b, c are independent and x = αa + βb + γc, the coefficients α, β, γ are forced. Dependent sets admit many representations — ambiguity.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Linear combination</strong></td><td>c₁a₁ + ⋯ + cₙaₙ with scalars cᵢ</td><td>3î + ĵ from î, ĵ</td></tr><tr><td><strong>Linearly dependent</strong></td><td>A non-trivial combination equals 0</td><td>a and 2a</td></tr><tr><td><strong>Linearly independent</strong></td><td>Only the trivial combination gives 0</td><td>î, ĵ, k̂</td></tr><tr><td><strong>Basis</strong></td><td>An independent set that spans the space</td><td>{î, ĵ, k̂} for 3D</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Dependence = redundancy</h4>
+<ul>
+<li>A dependent vector adds no new direction: it already lives in the span of the others. Independence is the precise statement of &quot;every vector pulls its own weight&quot;.</li>
+</ul>
+<h4>4.2 Counting directions</h4>
+<ul>
+<li>In 2D, at most 2 independent vectors; in 3D, at most 3. Any fourth vector is automatically a combination of a spanning independent trio — that is what &quot;dimension&quot; means.</li>
+</ul>
+<h4>4.3 The determinant as a volume</h4>
+<ul>
+<li>|[a b c]| is the volume of the parallelepiped spanned by a, b, c. Dependence (det = 0) means the box is flattened — the vectors share a plane (or line).</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dependence tests</strong></p>
+<table><thead><tr><th>Vectors</th><th>Test</th><th>Dependent when</th></tr></thead><tbody><tr><td>two, a and b</td><td>b = λa?</td><td>parallel</td></tr><tr><td>three, a b c</td><td>[a b c] = 0?</td><td>coplanar</td></tr><tr><td>any set</td><td>contains 0?</td><td>always</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Dependence needs a non-trivial combination:</strong> c₁ = c₂ = 0 always works — the definition demands some cᵢ ≠ 0.</li><li><strong>Parallel ≠ dependent for two vectors? No — they are the same thing:</strong> parallel (non-zero) vectors are exactly the dependent pairs.</li><li><strong>Coplanar is dependence for three, not for two:</strong> two vectors are always coplanar (any two directions define a plane); dependence for pairs is parallelism.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): Show that the vectors 2î + ĵ − k̂, î − 3ĵ + 2k̂ and 7î − ĵ − k̂ are linearly dependent or independent.</strong> — Compute the determinant of components: | 2 1 −1; 1 −3 2; 7 −1 −1 | = 2[(−3)(−1) − (2)(−1)] − 1[(1)(−1) − (2)(7)] + (−1)[(1)(−1) − (−3)(7)] = 2[3 + 2] − 1[−1 − 14] − 1[−1 + 21] = 10 + 15 − 20 = <strong>5 ≠ 0</strong>. The determinant is non-zero, so the vectors are <strong>linearly independent</strong> — they span space, and no one of them is a combination of the other two.</li><li><strong>NEB-style (2m): For what value of k are the vectors î + ĵ + k̂, 2î + ĵ + 3k̂ and î + k̂ + k k̂...</strong> — generic determinant-equals-zero exercise: set the component determinant to zero and solve for the parameter; the resulting k makes the third vector a combination of the first two (coplanar family).</li><li><strong>NEB-style (2m): Prove that any three vectors including the zero vector are linearly dependent.</strong> — Let the set be {0, b, c}. Choose coefficients c₁ = 1 (on 0), c₂ = 0, c₃ = 0: the combination <strong>1·0 + 0·b + 0·c = 0</strong> is non-trivial (c₁ ≠ 0), so dependence is witnessed immediately — no geometry needed.</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>❌ treat &quot;Linear combination of vectors&quot; as one blob → ✅ split into: linear combination of vectors, linearly dependent, independent vectors.</li><li>❌ state the rule without its limit → ✅ note when it applies / stops applying.</li><li>❌ answer with no steps → ✅ show each step and box the result.</li><li>❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..</li></ul></section>
 <section class="field"><h2>Bounds</h2><ul><li>Covers only: linear combination of vectors, linearly dependent, independent vectors (within Vectors).</li><li>Out of scope here: topics of neighbouring units in Mathematics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>define + example each sub-idea: linear combination of vectors, linearly dependent, independent vectors.</li><li>one worked example for &quot;Linear combination of vectors, linearly dependent and ind…&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
-<section class="field"><h2>Universal Facts</h2><ul><li>Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li><li>Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).</li><li>Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).</li></ul></section>
-<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Linear combination of vectors, linearly dependent and ind…&quot; with one example.</li><li>compare &quot;Linear combination of vectors&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Linear combination of vectors, linearly dependent and ind…&quot; and verify the answer is plausible.</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>a·b = a₁b₁+a₂b₂+a₃b₃</li><li>|a×b| = |a||b|sinθ</li><li>|a| = √(a²+b²+c²)</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Test {2î+ĵ−k̂, î−3ĵ+2k̂, 7î−ĵ−k̂} for independence.</li><li>Prove that any set containing the zero vector is dependent.</li><li>Explain why three coplanar vectors cannot span space.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>In 3D no set of four vectors can be independent — the fourth is always a combination of an independent trio; that is the meaning of dimension three.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>The flattened box</strong></em> — three vectors span a parallelepiped of volume |[a b c]|; dependence (det = 0) is exactly the box collapsing into a plane.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB-style (3m): Show whether the vectors a = 2î + ĵ − k̂, b = î − 3ĵ + 2k̂, c = 7î − ĵ − k̂ are linearly dependent or independent.</strong> — <strong>Test:</strong> three space vectors are independent iff the determinant of their components is non-zero. det = |2 1 −1; 1 −3 2; 7 −1 −1| = 2[(−3)(−1) − (2)(−1)] − 1[(1)(−1) − (2)(7)] + (−1)[(1)(−1) − (−3)(7)] = 2(3 + 2) − 1(−1 − 14) − 1(−1 + 21) = 10 + 15 − 20 = <strong>5 ≠ 0</strong>. <strong>Conclusion:</strong> the vectors are <strong>linearly independent</strong> — none is a combination of the other two, they are not coplanar, and they span all of 3D space (every vector has unique coordinates in this basis).</li><li><strong>NEB-style (2m): Prove that any set of vectors containing the zero vector is linearly dependent.</strong> — Let the set contain <strong>0</strong> together with any other vectors a₁, …, aₙ. Form the combination with coefficient <strong>1 on the zero vector and 0 on every other vector</strong>: 1·0 + 0·a₁ + ⋯ + 0·aₙ = <strong>0</strong>. This combination is <strong>non-trivial</strong> (the zero's coefficient is 1 ≠ 0), which is precisely the definition of linear dependence. Hence any set containing 0 is dependent — no geometric argument is needed, the definition does all the work.</li><li><strong>NEB-style (2m): Show that the vectors î + ĵ, ĵ + k̂ and k̂ + î are linearly independent.</strong> — Determinant of components: det = |1 1 0; 0 1 1; 1 0 1| = 1[(1)(1) − (1)(0)] − 1[(0)(1) − (1)(1)] + 0[(0)(0) − (1)(1)] = 1(1) − 1(−1) + 0 = <strong>2 ≠ 0</strong>. Non-zero determinant ⟹ <strong>linearly independent</strong>. Geometric reading: each pair spans a coordinate plane and the trio points out of every plane — they form a (non-orthogonal) basis of space with volume |[a b c]| = 2.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ</li>
+<li>a, b dependent ⟺ b = λa; a, b, c dependent ⟺ [a b c] = 0</li>
+<li>Independence ⟺ det(a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃) ≠ 0</li>
+</ul></li></ul></section>
 <section class="field"><h2>Numericals</h2><ul><li>Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.</li><li>Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.</li><li>Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>• Linear combination of vectors</li><li>• Linearly dependent</li><li>• Independent vectors</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Linear combination of vectors, linearly dependent and ind… (Vectors, Mathematics, class-11-notes) covers Linear combination of vectors, linearly dependent, independent vectors. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Linear combination: v = c1 a1 + ... + cn an. Dependent: some non-trivial combination equals 0; independent: only the trivial one. Two vectors dependent &lt;=&gt; parallel (one is a scalar multiple). Three vectors dependent &lt;=&gt; coplanar. Any set containing the zero vector is dependent. Determinant test: three vectors in components are independent iff the 3x3 determinant of components is non-zero (equivalently scalar triple product non-zero). Independent sets give unique coefficients; the standard basis i, j, k rebuilds every vector as a1 i + a2 j + a3 k.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>A <strong>linear combination</strong> rebuilds vectors from chosen directions: v = c₁a₁ + ⋯ + cₙaₙ, with the standard basis î, ĵ, k̂ returning the components themselves. Vectors are <strong>linearly dependent</strong> when a non-trivial combination vanishes — for two vectors that means parallelism (one is a multiple of the other), for three it means <strong>coplanarity</strong>, and any set containing <strong>0</strong> is dependent outright. The working test for three space vectors is the <strong>component determinant</strong>: non-zero ⟹ independent (the parallelepiped has genuine volume), zero ⟹ dependent (the box is flattened). Independence buys uniqueness of coordinates; that is why {î, ĵ, k̂} — and any independent trio — can serve as a basis of space.</p></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Linear combination of vectors, linearly dependent and ind…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Linear combination of vectors</li><li>Linearly dependent</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Linear combination of vectors is listed among the official sub-ideas of Linear combination of vectors, linearly dependent and ind…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Linear combination of vectors, linearly dependent and ind…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Building Vectors From a Basis</h3>
+<p>Any vector in a plane can be rebuilt from <strong>two</strong> independent directions; in space, from <strong>three</strong>. The theorems: <strong>linear combination</strong>, and the tests for <strong>linear dependence and independence</strong> — the algebra that decides when a set of vectors genuinely spans a space.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Linear combination</h4>
+<ul>
+<li><strong>Definition:</strong> v is a linear combination of a₁, a₂, …, aₙ if <strong>v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ</strong> for scalars cᵢ.</li>
+<li>The standard basis î, ĵ, k̂ rebuilds any vector: a = a₁î + a₂ĵ + a₃k̂ — the coefficients <em>are</em> the components.</li>
+</ul>
+<h4>2.2 Linear dependence and independence</h4>
+<ul>
+<li><strong>Definition:</strong> vectors are <strong>linearly dependent</strong> if some non-trivial combination c₁a₁ + ⋯ + cₙaₙ = <strong>0</strong> exists (some cᵢ ≠ 0); otherwise <strong>linearly independent</strong>.</li>
+<li><strong>Theorem:</strong> two vectors are dependent ⟺ one is a scalar multiple of the other ⟺ they are parallel (collinear as free vectors).</li>
+<li><strong>Theorem:</strong> three vectors are dependent ⟺ they are <strong>coplanar</strong>.</li>
+<li><strong>Theorem:</strong> any set containing the zero vector is dependent (take the zero's coefficient non-zero, others zero).</li>
+</ul>
+<h4>2.3 The determinant test</h4>
+<ul>
+<li>For three vectors a, b, c in components: they are independent ⟺ the determinant of the 3×3 matrix of components is <strong>non-zero</strong>; dependent ⟺ the determinant is zero (equivalently the scalar triple product [a b c] = 0).</li>
+</ul>
+<h4>2.4 Why independence matters</h4>
+<ul>
+<li>Independent vectors give <strong>unique</strong> coordinates: if a, b, c are independent and x = αa + βb + γc, the coefficients α, β, γ are forced. Dependent sets admit many representations — ambiguity.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Linear combination</strong></td><td>c₁a₁ + ⋯ + cₙaₙ with scalars cᵢ</td><td>3î + ĵ from î, ĵ</td></tr><tr><td><strong>Linearly dependent</strong></td><td>A non-trivial combination equals 0</td><td>a and 2a</td></tr><tr><td><strong>Linearly independent</strong></td><td>Only the trivial combination gives 0</td><td>î, ĵ, k̂</td></tr><tr><td><strong>Basis</strong></td><td>An independent set that spans the space</td><td>{î, ĵ, k̂} for 3D</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Dependence = redundancy</h4>
+<ul>
+<li>A dependent vector adds no new direction: it already lives in the span of the others. Independence is the precise statement of &quot;every vector pulls its own weight&quot;.</li>
+</ul>
+<h4>4.2 Counting directions</h4>
+<ul>
+<li>In 2D, at most 2 independent vectors; in 3D, at most 3. Any fourth vector is automatically a combination of a spanning independent trio — that is what &quot;dimension&quot; means.</li>
+</ul>
+<h4>4.3 The determinant as a volume</h4>
+<ul>
+<li>|[a b c]| is the volume of the parallelepiped spanned by a, b, c. Dependence (det = 0) means the box is flattened — the vectors share a plane (or line).</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dependence tests</strong></p>
+<table><thead><tr><th>Vectors</th><th>Test</th><th>Dependent when</th></tr></thead><tbody><tr><td>two, a and b</td><td>b = λa?</td><td>parallel</td></tr><tr><td>three, a b c</td><td>[a b c] = 0?</td><td>coplanar</td></tr><tr><td>any set</td><td>contains 0?</td><td>always</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Dependence needs a non-trivial combination:</strong> c₁ = c₂ = 0 always works — the definition demands some cᵢ ≠ 0.</li><li><strong>Parallel ≠ dependent for two vectors? No — they are the same thing:</strong> parallel (non-zero) vectors are exactly the dependent pairs.</li><li><strong>Coplanar is dependence for three, not for two:</strong> two vectors are always coplanar (any two directions define a plane); dependence for pairs is parallelism.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): Show that the vectors 2î + ĵ − k̂, î − 3ĵ + 2k̂ and 7î − ĵ − k̂ are linearly dependent or independent.</strong> — Compute the determinant of components: | 2 1 −1; 1 −3 2; 7 −1 −1 | = 2[(−3)(−1) − (2)(−1)] − 1[(1)(−1) − (2)(7)] + (−1)[(1)(−1) − (−3)(7)] = 2[3 + 2] − 1[−1 − 14] − 1[−1 + 21] = 10 + 15 − 20 = <strong>5 ≠ 0</strong>. The determinant is non-zero, so the vectors are <strong>linearly independent</strong> — they span space, and no one of them is a combination of the other two.</li><li><strong>NEB-style (2m): For what value of k are the vectors î + ĵ + k̂, 2î + ĵ + 3k̂ and î + k̂ + k k̂...</strong> — generic determinant-equals-zero exercise: set the component determinant to zero and solve for the parameter; the resulting k makes the third vector a combination of the first two (coplanar family).</li><li><strong>NEB-style (2m): Prove that any three vectors including the zero vector are linearly dependent.</strong> — Let the set be {0, b, c}. Choose coefficients c₁ = 1 (on 0), c₂ = 0, c₃ = 0: the combination <strong>1·0 + 0·b + 0·c = 0</strong> is non-trivial (c₁ ≠ 0), so dependence is witnessed immediately — no geometry needed.</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Linear combination: v = c1 a1 + ... + cn an. Dependent: some non-trivial combination equals 0; independent: only the trivial one. Two vectors dependent &lt;=&gt; parallel (one is a scalar multiple). Three vectors dependent &lt;=&gt; coplanar. Any set containing the zero vector is dependent. Determinant test: three vectors in components are independent iff the 3x3 determinant of components is non-zero (equivalently scalar triple product non-zero). Independent sets give unique coefficients; the standard basis i, j, k rebuilds every vector as a1 i + a2 j + a3 k.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>Dependence is redundancy: a dependent vector adds no new direction, and the determinant/volume test detects the flattening geometrically.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>The flattened box</strong></em> — three vectors span a parallelepiped of volume |[a b c]|; dependence (det = 0) is exactly the box collapsing into a plane.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>In 3D no set of four vectors can be independent — the fourth is always a combination of an independent trio; that is the meaning of dimension three.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;Vectors are linearly dependent iff a non-trivial combination equals the zero vector; for three space vectors this is equivalent to coplanarity.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Two vectors: check one = multiple of the other. Three: compute the component determinant. Zero vector in the set: dependent, done. Parameter questions: set det = 0 and solve.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>Show the determinant expansion line by line — the sign errors live in the cofactor signs, and the method mark needs the working.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ</li>
+<li>a, b dependent ⟺ b = λa; a, b, c dependent ⟺ [a b c] = 0</li>
+<li>Independence ⟺ det(a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃) ≠ 0</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Test {2î+ĵ−k̂, î−3ĵ+2k̂, 7î−ĵ−k̂} for independence.</li><li>Prove that any set containing the zero vector is dependent.</li><li>Explain why three coplanar vectors cannot span space.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB-style (3m): Show whether the vectors a = 2î + ĵ − k̂, b = î − 3ĵ + 2k̂, c = 7î − ĵ − k̂ are linearly dependent or independent.</strong> — <strong>Test:</strong> three space vectors are independent iff the determinant of their components is non-zero. det = |2 1 −1; 1 −3 2; 7 −1 −1| = 2[(−3)(−1) − (2)(−1)] − 1[(1)(−1) − (2)(7)] + (−1)[(1)(−1) − (−3)(7)] = 2(3 + 2) − 1(−1 − 14) − 1(−1 + 21) = 10 + 15 − 20 = <strong>5 ≠ 0</strong>. <strong>Conclusion:</strong> the vectors are <strong>linearly independent</strong> — none is a combination of the other two, they are not coplanar, and they span all of 3D space (every vector has unique coordinates in this basis).</li><li><strong>NEB-style (2m): Prove that any set of vectors containing the zero vector is linearly dependent.</strong> — Let the set contain <strong>0</strong> together with any other vectors a₁, …, aₙ. Form the combination with coefficient <strong>1 on the zero vector and 0 on every other vector</strong>: 1·0 + 0·a₁ + ⋯ + 0·aₙ = <strong>0</strong>. This combination is <strong>non-trivial</strong> (the zero's coefficient is 1 ≠ 0), which is precisely the definition of linear dependence. Hence any set containing 0 is dependent — no geometric argument is needed, the definition does all the work.</li><li><strong>NEB-style (2m): Show that the vectors î + ĵ, ĵ + k̂ and k̂ + î are linearly independent.</strong> — Determinant of components: det = |1 1 0; 0 1 1; 1 0 1| = 1[(1)(1) − (1)(0)] − 1[(0)(1) − (1)(1)] + 0[(0)(0) − (1)(1)] = 1(1) − 1(−1) + 0 = <strong>2 ≠ 0</strong>. Non-zero determinant ⟹ <strong>linearly independent</strong>. Geometric reading: each pair spans a coordinate plane and the trio points out of every plane — they form a (non-orthogonal) basis of space with volume |[a b c]| = 2.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Dependence is redundancy: a dependent vector adds no new direction, and the determinant/volume test detects the flattening geometrically.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;Vectors are linearly dependent iff a non-trivial combination equals the zero vector; for three space vectors this is equivalent to coplanarity.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Two vectors: check one = multiple of the other. Three: compute the component determinant. Zero vector in the set: dependent, done. Parameter questions: set det = 0 and solve.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Show the determinant expansion line by line — the sign errors live in the cofactor signs, and the method mark needs the working.</li></ul></section>
   <nav class="pager"><a href="02-dot-product-of-two-vectors.html" title="Dot Product of Two Vectors">‹ Dot Product of Two Vectors</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="02-linear-combination-vectors.html" title="Linear Combination of Vectors">Linear Combination of Vectors ›</a></nav>
 </div></body></html>

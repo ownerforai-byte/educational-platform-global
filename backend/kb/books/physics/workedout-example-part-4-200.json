@@ -1,0 +1,30 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Workedout Example",
+  "title": "Workedout Example (part 4)",
+  "source": "neb-class-11-physics — Workedout Example, pages 441-456 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "The resistance of the conductor, R, increases with increasing length, l (There are more positive ion cores in the way of the gas of electrons moving through the conductor.). In fact, if the length, l, doubles, then the resistance, R, doubles. This means that 𝑅 ∝ 𝑙. The resistance of the conductor decreases with increasing cross-sectional area, A. (There are more conducting pathways through the conductor for the electrons to move through.) In this case, if the cross-sectional area, A, doubles, then the resistance, R, halves. This means that 𝑅 ∝ 1. Combining both of these proportionality statements together: 𝐴 1 𝑅 ∝ 𝐴 and replacing the proportionality sign and adding a constant of proportionality, ρ, we have: 𝜌×𝑙 𝑅= 𝐴 where ρ (‘rho’) is called the electrical resistivity of the material. Resistivity is the property that gives the intrinsic resistance of the material independent of its physical dimensions, such as length and cross-sectional area. Resistivity has the units of ohm metres, Ωm, and is defined by the rearranged form of the equation: 𝑅𝐴 𝜌= 𝑙 where R is the resistance (measured in ohms, Ω), A is the cross-sectional area (measured in metres squared, m2) and l is the length (measured in metres, m). The resistivity of a material depends on some intrinsic properties of the material. In particular, it relates directly to the number of free, conducting electrons that can flow through the structure and the mobility of these electrons to flow through the structure. The arrangement of the atoms in the conductor and any distribution of impurities affects this mobility, as does the temperature of the material.",
+    "Physics, Grade 11 | 443",
+    "At room temperature (20°C), good insulating materials, such as ABS plastic (the material that most mains plugs are now made from), have extremely high resistivity (ABS has an electrical resistivity of 1 × 1015Ωm at 20°C).",
+    "Good metallic conductors have very low resistivity; the resistivity of copper, for example, is 1.68 × 10−8Ωm at 20°C. Superconductors have zero resistivity below their critical temperature.",
+    "We can use a water analogy to help understand resistivity. A hose pipe full of sand is like a high resistivity conductor, as water trickles through slowly when pressure is applied. However, that same pressure pushes water quickly through an empty hose pipe, which is like a low resistivity conductor. Remember though that the ability of the water to pass through the hose pipe also depends on the length of the hose pipe and its cross-sectional area.",
+    "Resistivity is also dependent on temperature. The resistivity of metals increases with increasing temperature, and the resistivity of many semiconductors, such as silicon and germanium, decreases with increasing temperature. The resistivity of a superconducting material decreases with decreasing temperature above its critical temperature (like a metal), but its resistivity drops to zero below the critical temperature.",
+    "Workedout Example: A carbon chip of resistivity 3.0 × 10–5 Ω m has the dimensions shown in Figure.",
+    "What resistance does the chip have for a current in the direction shown?",
+    "Solution:",
+    "Using the formula:",
+    "𝜌×𝑙 𝑅= 𝐴",
+    "where l= 10 mm = 10 × 10–3m and A = 5 mm × 1 mm = 5 × 10–3m × 1 × 10–3m = 5 × 10–6m2",
+    "𝑅 = 𝜌×𝑙 = −6 2 3.0 × 10−5 Ω m×10×10−3 m = 0.060 Ω",
+    "𝐴",
+    "5 ×10 𝑚",
+    "23.8 Resistors in Series The figure shows the part of a simple circuit, but now there are two resistors connected in series. Connecting resistors in series means that there are no junctions in the wire connecting any two resistors, and so the current through all of them is the same. Let I be the common current in the two resistors.",
+    "Physics, Grade 11 | 444",
+    "Applying the law of conservation of energy, the p.d. across R1 plus the p.d. across R2 must be equal to the p.d. across the combination. 𝑉 = 𝑉1 + 𝑉2 The potential difference across each of the resistors is: 𝑉1 = 𝐼𝑅1𝑎𝑛𝑑𝑉2 = 𝐼𝑅2 The combination could be replaced by one resistor. 𝐼𝑅 = 𝐼𝑅1 + 𝐼𝑅2 ∴ 𝑅 = 𝑅1 + 𝑅2 If more than two were present, we would simply add all of them. Adding resistors in series increases the total resistance. 23.9 Resistors in Parallel In a parallel circuit the current splits in two.",
+    "The combination could be replaced by one resistor.",
+    "Applying the law of conservation of charge, we know that the current going into a junction must be equal to the current coming out. 𝐼 = 𝐼1 + 𝐼2 Applying Ohm’s law to each resistor gives; 𝑉𝑉 𝑉 𝑅 = 𝑅1 + 𝑅2 111 ∴ 𝑅 = 𝑅1 + 𝑅2 Physics, Grade 11 | 445",
+    "The formula shows that the total resistance is smaller than any of the individual resistances being added. We have thus learned how to replace resistors that are connected in series or parallel by a single resistor in each case, thus greatly simplifying the circuit. Workedout Example: Four resistors each of resistance 1.5 Ω are connected as shown. Calculate the combined resistance of these resistors."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Work, Energy & Power",
+  "title": "Work, Energy & Power (part 2)",
+  "source": "neb-class-11-physics — Work, Energy & Power, pages 108-111 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "If a force is applied on a system or on a particle, and displacement is caused in the direction of the force, then work done, W = Fd If the force makes an angle θ with the displacement, we consider the effective part of the force in the direction of the displacement, known as the component of the force Fcosθ. Therefore, the work done, W, is calculated as W = Fcosθd = Fdcosθ. Hence W = Fd cosθ is the general formula. If θ = 0, then W = Fd i.e F and d act in the same direction. If θ = 900, then W = 0 as cos900 = 0 Up to this point, the examples we have studied are all the instances of work done by a constant force.",
+    "Fig 5.1: A concept of work And for such a constant force, w= F.d If the force acts at an angle θ, then w = Fdcosθ.",
+    "Physics, Grade 11 | 105",
+    "i) We push a vehicle when its engine doesn’t start and write W = Fd as the force acts in the direction of the displacement. ii) We pull or push the desks in the classroom to arrange them properly. The force acts at some angle θ with the displacement, and therefore, we write F cosθ instead of F to calculate the work done, expressed as W = F cosθ d = F d cosθ",
+    "b. Work Done by a Variable Force",
+    "In this case, the value of the force applied to do work isn’t constant. Either the magnitude, the direction of the force, or both change. The force acting on a spring is an example of a variable force, where the force changes with the extension produced in the wire. Other examples include magnetic force, electrostatic force, and gravitational force. The work done by a variable force can be analyzed both analytically and graphically.",
+    "Analytical Method",
+    "Let 𝐹⃗ be a varying force that makes an infinitesimal distance ⃗𝑑⃗⃗⃗𝑆⃗ .",
+    "Hence the small amount of work done, Dw is written as 𝑑⃗⃗⃗⃗𝑊⃗⃗⃗ =𝐹⃗. ⃗𝑑⃗⃗⃗𝑆⃗",
+    "Therefore, total work done, W =∫𝑥2 𝐹⃗ . ⃗𝑑⃗⃗⃗𝑆⃗ = ∫𝑥2 (𝐹𝑐𝑜𝑠𝜃)𝑑𝑠",
+    "𝑥1",
+    "𝑥1",
+    "Fig 5.2a Analytical representation of work done by a variable force ● If you use a wheelbarrow along a curved path, the force you apply varies. The work done is evaluated by integrating the product of the force (F) over a small increment (ds) and the cosine of the angle between them.",
+    "Graphical Method Let F be a variable force that varies along the x-axis. Here, we have to calculate the work done due to this variable force along the x-axis from the initial position, xi to the final position, xf. For the purpose,a plot of force against displacement, F(x) vs x has been plotted. Let the displacement be divided into small increments ∆xi such that the value of F(x) for each elementary area is constant. Threrfore, work done for each interval, ∆W = F∆x Physics, Grade 11 | 106"
+  ]
+}

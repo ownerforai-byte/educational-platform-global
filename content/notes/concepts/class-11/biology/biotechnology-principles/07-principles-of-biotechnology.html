@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Principles of biotechnology</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Principles of biotechnology</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -176,7 +179,8 @@
 <li><strong>Examples</strong>: Plasmids, bacteriophages, cosmids, Ti plasmid</li>
 </ul></li><li><ul>
 <li><strong>Competent Host</strong>: Modified to accept foreign DNA (CaCl2 treatment for bacteria)</li>
-</ul></li><li><h4>4. Steps in rDNA Technology</h4></li><li><ol>
+</ul></li><li><strong>Tools of recombinant DNA technology</strong></p>
+<table><thead><tr><th>Tool</th><th>What it is</th><th>Key examples</th><th>Why it matters</th></tr></thead><tbody><tr><td>Restriction enzymes</td><td>Molecular scissors — cut DNA at specific palindromic recognition sites</td><td>EcoRI (GAATTC), HindIII (AAGCTT)</td><td>Create sticky ends that let foreign DNA be spliced into a vector</td></tr><tr><td>Sticky ends</td><td>Overhanging single-stranded ends left after a staggered cut</td><td>The overhang of EcoRI-cut DNA</td><td>Complementary overhangs anneal, then ligase seals the join</td></tr><tr><td>Blunt ends</td><td>Straight cuts with no overhang</td><td>Some restriction enzymes</td><td>Harder to ligate — no base pairing to hold fragments</td></tr><tr><td>Vectors</td><td>Molecular vehicles that carry foreign DNA into a host</td><td>Plasmids, bacteriophages, cosmids, Ti plasmid of Agrobacterium</td><td>Replicate inside the host so the cloned gene is copied with them</td></tr><tr><td>Competent host</td><td>A cell made able to take up foreign DNA</td><td>E. coli treated with CaCl₂, then heat-shocked</td><td>Transformation succeeds only if the membrane is made permeable</td></tr></tbody></table></li><li><h4>4. Steps in rDNA Technology</h4></li><li><ol>
 <li>Isolation of genetic material (DNA extraction)</li>
 </ol></li><li><ol>
 <li>Cutting DNA with restriction enzymes</li>
@@ -198,7 +202,8 @@
 <li><strong>Components</strong>: Template DNA, primers, dNTPs, Taq polymerase</li>
 </ul></li><li><ul>
 <li><strong>Applications</strong>: Forensics, disease diagnosis, genetic research</li>
-</ul></li><li><h4>6. Gel Electrophoresis</h4></li><li><ul>
+</ul></li><li><strong>PCR — the three temperatures of every cycle</strong></p>
+<table><thead><tr><th>Step</th><th>Temperature</th><th>What happens</th></tr></thead><tbody><tr><td>1. Denaturation</td><td>~94°C</td><td>The double-stranded template separates into two single strands</td></tr><tr><td>2. Annealing</td><td>50–65°C</td><td>Primers bind (anneal) to the complementary sequences flanking the target</td></tr><tr><td>3. Extension</td><td>~72°C</td><td>Taq polymerase extends the primers, building new DNA strands</td></tr><tr><td>Result</td><td>—</td><td>Each cycle doubles the target DNA — millions of copies in ~30 cycles; Taq from Thermus aquaticus survives the heat</td></tr></tbody></table></li><li><h4>6. Gel Electrophoresis</h4></li><li><ul>
 <li>Separates DNA fragments by size using electric field</li>
 </ul></li><li><ul>
 <li>DNA is negatively charged, moves toward positive electrode</li>

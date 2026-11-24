@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Incomplete dominance and codominance</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Incomplete dominance and codominance</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -162,7 +165,7 @@
 <li>Example: Snapdragon flowers - Red (RR) x White (WW) -&gt; Pink (RW)</li>
 </ul></li><li><ul>
 <li>Phenotypic ratio matches genotypic ratio: 1:2:1</li>
-</ul></li><li><h4>3. Codominance</h4></li><li><ul>
+</ul></li><li><div class="fig authored"><svg viewBox="0 0 640 380" font-family="Segoe UI" font-size="14"><rect x="0" y="0" width="640" height="380" fill="#ffffff"/><text x="320" y="28" text-anchor="middle" font-size="19" font-weight="bold" fill="#14161a">Snapdragon: RR &#215; WW &#8594; all RW (pink)</text><circle cx="150" cy="120" r="30" fill="#dc2626" stroke="#7f1d1d" stroke-width="2.5"/><text x="150" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">RR red</text><text x="320" y="125" text-anchor="middle" font-size="22" fill="#475569">&#215;</text><circle cx="490" cy="120" r="30" fill="#f8fafc" stroke="#475569" stroke-width="2.5"/><text x="490" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">WW white</text><line x1="190" y1="140" x2="270" y2="230" stroke="#475569" stroke-width="2.5"/><line x1="450" y1="140" x2="370" y2="230" stroke="#475569" stroke-width="2.5"/><circle cx="320" cy="270" r="34" fill="#f9a8d4" stroke="#db2777" stroke-width="2.5"/><text x="320" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#831843">RW pink — 100% of F1; F2 gives 1 red : 2 pink : 1 white</text><text x="320" y="364" text-anchor="middle" font-size="13" fill="#4b5563">Phenotype ratio = genotype ratio (1:2:1). No allele is hidden — blending is at phenotype level only.</text></svg><div class="fig-cap">Incomplete dominance — red x white gives pink</div></div></li><li><h4>3. Codominance</h4></li><li><ul>
 <li>Both alleles are fully expressed in heterozygote</li>
 </ul></li><li><ul>
 <li>Neither masks the other</li>
@@ -170,7 +173,8 @@
 <li>Example: ABO blood groups - IA and IB are codominant</li>
 </ul></li><li><ul>
 <li>Example: Roan cattle - red and white hairs both appear</li>
-</ul></li><li><h4>4. Multiple Alleles</h4></li><li><ul>
+</ul></li><li><strong>Incomplete dominance vs codominance vs Mendelian dominance</strong></p>
+<table><thead><tr><th>Feature</th><th>Complete dominance (Mendel)</th><th>Incomplete dominance</th><th>Codominance</th></tr></thead><tbody><tr><td>Heterozygote phenotype</td><td>Looks like the dominant parent</td><td>Intermediate blend of both parents</td><td>Shows BOTH parental characters together</td></tr><tr><td>F₂ phenotypic ratio</td><td>3:1</td><td>1:2:1 (same as genotypic)</td><td>1:2:1</td></tr><tr><td>Dominance relationship</td><td>One allele masks the other</td><td>Neither allele dominates</td><td>Both alleles express equally</td></tr><tr><td>Classic example</td><td>Tall × dwarf pea → all tall</td><td>Red × white snapdragon → pink</td><td>IA × IB → blood group AB; roan cattle</td></tr><tr><td>Effect of the recessive allele</td><td>Hidden completely</td><td>Partially expressed (diluted)</td><td>Fully expressed in a different spot</td></tr></tbody></table></li><li><h4>4. Multiple Alleles</h4></li><li><ul>
 <li>More than two alleles exist for a gene in the population</li>
 </ul></li><li><ul>
 <li>Individual still has only two alleles</li>
@@ -186,7 +190,8 @@
 <li>ii = Group O (recessive)</li>
 </ul></li><li><ul>
 <li>Anti-A antibodies in type B and O; Anti-B antibodies in type A and O</li>
-</ul></li><li><h4>6. Entrance Exam Focus</h4></li><li>Distinguish incomplete dominance vs codominance; Solve blood group crosses.</li><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li><li>ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.</li><li>A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.</li><li>Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes.</li></ul></section>
+</ul></li><li><strong>ABO blood groups — genotype, antigen and antibody</strong></p>
+<table><thead><tr><th>Blood group</th><th>Genotypes</th><th>Antigen on RBC</th><th>Antibody in plasma</th><th>Can donate to</th></tr></thead><tbody><tr><td>A</td><td>IAIA, IAi</td><td>A</td><td>anti-B</td><td>A, AB</td></tr><tr><td>B</td><td>IBIB, IBi</td><td>B</td><td>anti-A</td><td>B, AB</td></tr><tr><td>AB</td><td>IAIB</td><td>A and B</td><td>none — universal recipient</td><td>AB only</td></tr><tr><td>O</td><td>ii</td><td>none</td><td>anti-A and anti-B</td><td>O, A, B, AB — universal donor</td></tr></tbody></table></li><li><h4>6. Entrance Exam Focus</h4></li><li>Distinguish incomplete dominance vs codominance; Solve blood group crosses.</li><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li><li>Codominance means both alleles are fully expressed together, as in blood group AB where the A antigen and the B antigen are both on the cell.</li><li>ABO blood uses the alleles IA, IB and i. IA and IB are codominant with each other, and i is recessive to both of them.</li><li>A roan coat, with red hairs and white hairs on the same animal, is the coat example of codominance rather than a blended colour.</li><li>Neither incomplete dominance nor codominance overturns segregation. The alleles still separate. Only the look of the heterozygote changes.</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>x Incomplete dominance = blending. x It's not permanent blending - alleles remain distinct.</li><li>x Codominance = incomplete dominance. x In codominance both show fully, not intermediate.</li><li>x Type AB can donate to anyone. x Type AB can ONLY receive, not donate.</li><li>Pink flowers are not a blend of the alleles themselves. Each allele stays whole and segregates.</li><li>AB blood is codominance, not incomplete dominance. Both antigens are present, not a halfway antigen.</li><li>1:2:1 here is both genotype and phenotype under incomplete dominance.</li><li>A recessive allele is not 'weak DNA'. It is an allele whose product does not show when the other is present.</li></ul></section>
 <section class="field"><h2>Practice</h2><ul><li>Cross red snapdragon (RR) with white (WW). What are F1 and F2 ratios?</li><li>A type A father and type B mother have a type O child. What are parent genotypes?</li><li>Can a type AB parent and type O parent have a type O child? Why/why not?</li><li>Explain why codominance differs from incomplete dominance.</li></ul></section>
 <section class="field"><h2>Formulas</h2><ul><li>Incomplete dominance means the heterozygote is intermediate, so a red flower crossed with a white flower can give a pink flower.</li><li>Under incomplete dominance the phenotype ratio matches the genotype ratio, one to two to one, because the heterozygote looks unlike either parent.</li></ul></section>
@@ -214,7 +219,7 @@
 <li>Example: Snapdragon flowers - Red (RR) x White (WW) -&gt; Pink (RW)</li>
 </ul></li><li><ul>
 <li>Phenotypic ratio matches genotypic ratio: 1:2:1</li>
-</ul></li><li><h4>3. Codominance</h4></li><li><ul>
+</ul></li><li><div class="fig authored"><svg viewBox="0 0 640 380" font-family="Segoe UI" font-size="14"><rect x="0" y="0" width="640" height="380" fill="#ffffff"/><text x="320" y="28" text-anchor="middle" font-size="19" font-weight="bold" fill="#14161a">Snapdragon: RR &#215; WW &#8594; all RW (pink)</text><circle cx="150" cy="120" r="30" fill="#dc2626" stroke="#7f1d1d" stroke-width="2.5"/><text x="150" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#7f1d1d">RR red</text><text x="320" y="125" text-anchor="middle" font-size="22" fill="#475569">&#215;</text><circle cx="490" cy="120" r="30" fill="#f8fafc" stroke="#475569" stroke-width="2.5"/><text x="490" y="180" text-anchor="middle" font-size="13" font-weight="bold" fill="#475569">WW white</text><line x1="190" y1="140" x2="270" y2="230" stroke="#475569" stroke-width="2.5"/><line x1="450" y1="140" x2="370" y2="230" stroke="#475569" stroke-width="2.5"/><circle cx="320" cy="270" r="34" fill="#f9a8d4" stroke="#db2777" stroke-width="2.5"/><text x="320" y="340" text-anchor="middle" font-size="13" font-weight="bold" fill="#831843">RW pink — 100% of F1; F2 gives 1 red : 2 pink : 1 white</text><text x="320" y="364" text-anchor="middle" font-size="13" fill="#4b5563">Phenotype ratio = genotype ratio (1:2:1). No allele is hidden — blending is at phenotype level only.</text></svg><div class="fig-cap">Incomplete dominance — red x white gives pink</div></div></li><li><h4>3. Codominance</h4></li><li><ul>
 <li>Both alleles are fully expressed in heterozygote</li>
 </ul></li><li><ul>
 <li>Neither masks the other</li>

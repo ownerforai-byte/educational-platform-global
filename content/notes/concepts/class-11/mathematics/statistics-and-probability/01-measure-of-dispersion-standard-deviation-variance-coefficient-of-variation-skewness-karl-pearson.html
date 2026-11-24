@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Measure of dispersion: standard deviation, variance, coef…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Measure of dispersion: standard deviation, variance, coef…</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -156,44 +159,115 @@
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
 <section class="field"><h2>Source</h2><p>generated</p></section>
 <section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Measure of dispersion: standard deviation, variance, coef… — Statistics and Probability, Mathematics (class-11-notes).</li><li><strong>Tested.</strong> define it · list: measure of dispersion: standard deviation, variance, coefficient of variation, skewness · one worked example · one misconception each.</li><li><strong>Fact.</strong> Dispersive power ω = (μv − μr)/(μd − 1); angular dispersion ΔD ∝ ω for a given refractive index.</li><li><strong>Fact.</strong> Achromatism: net deviation of two cemented prisms is zero for a chosen colour → (ω₁/ω₂) relations on D/(μ−1).</li><li><strong>Fact.</strong> Glass with higher Abbe number disperses less; flint glass &gt; crown in dispersion.</li><li><strong>Variance.</strong> one-line definition + one-line exam use.</li><li><strong>Coefficient of variation.</strong> one-line definition + one-line exam use.</li><li><strong>Skewness.</strong> one-line definition + one-line exam use.</li><li><strong>Karl Pearson's coefficient of skewness.</strong> one-line definition + one-line exam use.</li><li><h2>Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness</h2>
-<h3>1. Introduction and motivation</h3>
-<p>What the tool <strong>Measure of dispersion</strong> is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Statistics and Probability fill pass.</p>
-<h3>2. Definitions and theorems</h3>
-<h4>Measure of dispersion: standard deviation</h4>
-<h4>variance</h4>
-<h4>coefficient of variation</h4>
-<h4>skewness</h4>
-<h4>Karl Pearson's coefficient of skewness</h4>
-<p>Each result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).</li><li><h3>3. Formula sheet</h3>
-<p><strong>Table 1 — Formula sheet</strong></p>
-<table><thead><tr><th>Formula</th><th>Symbols</th><th>Validity condition</th><th>Where used</th></tr></thead><tbody></tbody></table>
-<p>Complete for the topic; every row carries its validity condition (§3.1).</li><li><h3>4. Methods and standard forms</h3>
-<p><strong>Table 2 — Theorem and method sheet</strong></p>
-<table><thead><tr><th>Result or method</th><th>Hypotheses</th><th>Worked example</th><th>If the condition is dropped</th></tr></thead><tbody></tbody></table>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>5. Figures and graphs</h3>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Measuring the Spread</h3>
+<p>Central tendency says where data sits; <strong>dispersion</strong> says how widely it roams. The theorem set: <strong>range</strong>, <strong>mean deviation</strong>, <strong>variance and standard deviation</strong> (with the computational identity σ² = E(x²) − [E(x)]²), the <strong>coefficient of variation</strong>, and <strong>Karl Pearson's skewness</strong> coefficients.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Range and mean deviation</h4>
 <ul>
-<li><strong>F1</strong> — Measure of dispersion — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)</li>
-<li><strong>F2</strong> — Measure of dispersion — second figure: construction, region or comparison (authored SVG — English labels)</li>
-<li><strong>F3</strong> — Measure of dispersion — curated reference figure where it beats SVG (curated external — license recorded at fill)</li>
+<li><strong>Range</strong> = max − min — crude but instant.</li>
+<li><strong>Mean deviation</strong> = (1/n)Σ|xᵢ − x̄| — average distance from the mean; about the median it is minimised (a theorem: the median minimises Σ|xᵢ − a|).</li>
 </ul>
-<p>Authored figures first (§3.3): every graph plotted from the same equation the text uses.</li><li><h3>6. Worked examples</h3>
-<p>≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.</p>
-<h3>7. Traps and common mistakes</h3>
-<p>The classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).</li><li><h3>8. Exam Zone, practice and textbook exercises</h3>
-<p>NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).</p>
-<p>Textbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces.</li></ul></section>
+<h4>2.2 Variance and standard deviation</h4>
+<ul>
+<li><strong>Variance:</strong> σ² = (1/n)Σ(xᵢ − x̄)² — mean squared deviation.</li>
+<li><strong>Computational identity (theorem):</strong> <strong>σ² = (1/n)Σxᵢ² − x̄²</strong> — the &quot;mean of squares minus square of mean&quot;. Proof: expand Σ(xᵢ − x̄)² = Σxᵢ² − 2x̄Σxᵢ + nx̄² and use Σxᵢ = nx̄.</li>
+<li><strong>Standard deviation:</strong> σ = √variance — same units as the data.</li>
+<li><strong>Theorem (shift invariance):</strong> adding a constant c to every datum leaves σ unchanged (xᵢ + c has the same spread); multiplying by c multiplies σ by |c|.</li>
+</ul>
+<h4>2.3 Coefficient of variation</h4>
+<ul>
+<li><strong>C.V. = (σ/x̄) × 100%</strong> — a relative, unit-free spread; <strong>lower C.V. = more consistent</strong>.</li>
+<li>Used to compare variability across data sets with different units or means.</li>
+</ul>
+<h4>2.4 Karl Pearson's skewness</h4>
+<ul>
+<li><strong>Absolute skewness:</strong> Sk = mean − mode (or mean − median).</li>
+<li><strong>Pearson's first coefficient:</strong> Sk_p = <strong>(mean − mode)/σ</strong>; <strong>second coefficient:</strong> Sk_p = <strong>3(mean − median)/σ</strong>.</li>
+<li>Skewness sign: positive ⟹ right tail longer (mean &gt; mode); negative ⟹ left tail longer; zero ⟹ symmetric.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Variance</strong></td><td>Mean squared deviation from the mean</td><td>σ² = Σxᵢ²/n − x̄²</td></tr><tr><td><strong>Standard deviation</strong></td><td>√variance — typical distance from the mean</td><td>same units as data</td></tr><tr><td><strong>Coefficient of variation</strong></td><td>Relative spread: σ/x̄ × 100%</td><td>unit-free comparison</td></tr><tr><td><strong>Skewness</strong></td><td>Asymmetry of the distribution</td><td>Pearson: (mean − mode)/σ</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why squares for variance</h4>
+<ul>
+<li>Absolute values are awkward analytically; squares are differentiable and additive. The price: units get squared — the √ in σ restores them.</li>
+</ul>
+<h4>4.2 The computational identity at work</h4>
+<ul>
+<li>σ² = Σxᵢ²/n − x̄² lets you compute variance from running sums — no deviation table needed, and it is the identity examiners test.</li>
+</ul>
+<h4>4.3 C.V. as the fair comparison</h4>
+<ul>
+<li>σ alone misleads: ₹100 spread on a ₹50 mean is huge, on a ₹10,000 mean trivial. Dividing by the mean normalises — that is the C.V.'s whole point.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dispersion measures compared</strong></p>
+<table><thead><tr><th>Measure</th><th>Uses</th><th>Robust to outliers?</th></tr></thead><tbody><tr><td>Range</td><td>extremes only</td><td>no</td></tr><tr><td>Mean deviation</td><td>absolute distances</td><td>somewhat</td></tr><tr><td>Standard deviation</td><td>squared distances</td><td>no (squares amplify)</td></tr><tr><td>C.V.</td><td>relative spread</td><td>no</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Variance units are squared:</strong> report σ, not σ², when the question asks for spread in original units.</li><li><strong>Lower C.V. = more consistent:</strong> students invert this — the smaller relative spread wins.</li><li><strong>Skewness sign:</strong> mean &gt; mode ⟹ <strong>positive</strong> (right) skew — the tail pulls the mean, not the mode.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): Marks of 10 students: 12, 15, 18, 20, 22, 25, 28, 30, 35, 45. Calculate (i) the mean, (ii) the standard deviation. (4m)</strong> — <strong>Mean:</strong> x̄ = (12+15+18+20+22+25+28+30+35+45)/10 = 250/10 = <strong>25</strong>. <strong>Squared deviations:</strong> (12−25)²=169, (15−25)²=100, (18−25)²=49, (20−25)²=25, (22−25)²=9, (25−25)²=0, (28−25)²=9, (30−25)²=25, (35−25)²=100, (45−25)²=400. Sum = 886. <strong>Variance:</strong> σ² = 886/10 = 88.6. <strong>Standard deviation:</strong> σ = √88.6 ≈ <strong>9.41</strong>. (Equivalently via the identity: Σxᵢ²/n − x̄² = 7136/10 − 625 = 713.6 − 625 = 88.6 ✓.)</li><li><strong>NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (1m MCQ)</strong> — First 10 naturals: 1…10, mean 5.5. Σxᵢ² = n(n+1)(2n+1)/6 = 10·11·21/6 = 385. Variance = 385/10 − (5.5)² = 38.5 − 30.25 = <strong>8.25 → option (a)</strong>. The formula shortcut n(n+1)(2n+1)/6 turns this into a 30-second question.</li><li><strong>NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, then P(A∪B) is: (1m)</strong> — <strong>Addition law:</strong> P(A∪B) = P(A) + P(B) − P(A∩B) = 0.6 + 0.5 − 0.3 = <strong>0.8 → option (a)</strong>. (The subtraction of the intersection prevents double-counting the overlap — the addition law is the topic's core theorem.)</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>❌ treat &quot;Measure of dispersion: standard deviation&quot; as one blob → ✅ split into: measure of dispersion: standard deviation, variance, coefficient of variation.</li><li>❌ state the rule without its limit → ✅ note when it applies / stops applying.</li><li>❌ answer with no steps → ✅ show each step and box the result.</li><li>❌ skip the key fact → ✅ dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index..</li></ul></section>
 <section class="field"><h2>Bounds</h2><ul><li>Covers only: measure of dispersion: standard deviation, variance, coefficient of variation, skewness (within Statistics and Probability).</li><li>Out of scope here: topics of neighbouring units in Mathematics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>define + example each sub-idea: measure of dispersion: standard deviation, variance, coefficient of variation, skewness.</li><li>one worked example for &quot;Measure of dispersion: standard deviation, variance, coef…&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
-<section class="field"><h2>Universal Facts</h2><ul><li>Dispersive power ω = (μv − μr)/(μd − 1); angular dispersion ΔD ∝ ω for a given refractive index.</li><li>Achromatism: net deviation of two cemented prisms is zero for a chosen colour → (ω₁/ω₂) relations on D/(μ−1).</li><li>Glass with higher Abbe number disperses less; flint glass &gt; crown in dispersion.</li></ul></section>
-<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Measure of dispersion: standard deviation, variance, coef…&quot; with one example.</li><li>compare &quot;Measure of dispersion: standard deviation&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Measure of dispersion: standard deviation, variance, coef…&quot; and verify the answer is plausible.</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>ω = (μv − μr)/(μd − 1)</li><li>Power of achromatic combination → 0 net dispersion</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Compute the mean and SD of 12, 15, 18, 20, 22, 25, 28, 30, 35, 45.</li><li>Find the variance of the first 10 natural numbers.</li><li>Compare the consistency of two data sets using the coefficient of variation.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>The C.V. is why a ±5 error on a 1000 g weighing is excellent and on a 10 g weighing is a disaster: relative, not absolute, spread tells the story.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>Mean of squares minus square of mean</strong></em> — sigma^2 = sum(xi^2)/n - xbar^2: the one identity that turns variance into two running sums, no deviation table required.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB 2024 (verified PYQ): The marks obtained by 10 students in a test are 12, 15, 18, 20, 22, 25, 28, 30, 35 and 45. Calculate (i) the mean, and (ii) the standard deviation. (4m)</strong> — <strong>(i) Mean:</strong> x̄ = Σxᵢ/n = (12 + 15 + 18 + 20 + 22 + 25 + 28 + 30 + 35 + 45)/10 = 250/10 = <strong>25</strong>. <strong>(ii) Standard deviation:</strong> deviations xᵢ − 25 are −13, −10, −7, −5, −3, 0, 3, 5, 10, 20; squares: 169, 100, 49, 25, 9, 0, 9, 25, 100, 400 — sum = 886. Variance σ² = 886/10 = <strong>88.6</strong>; standard deviation σ = √88.6 ≈ <strong>9.41 marks</strong>. Cross-check by the computational identity: Σxᵢ² = 144+225+324+400+484+625+784+900+1225+2025 = 7136; σ² = 7136/10 − 25² = 713.6 − 625 = 88.6 ✓ — both routes agree.</li><li><strong>NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (a) 8.25 (b) 9.25 (c) 10.25 (d) 11.25 (1m)</strong> — Data: 1, 2, …, 10 with mean (10+1)/2 = 5.5. <strong>Sum of squares formula:</strong> Σxᵢ² = n(n+1)(2n+1)/6 = (10)(11)(21)/6 = <strong>385</strong>. <strong>Variance via the identity:</strong> σ² = Σxᵢ²/n − x̄² = 385/10 − (5.5)² = 38.5 − 30.25 = <strong>8.25 — option (a)</strong>. (General fact worth memorising: the variance of the first n naturals is (n² − 1)/12, which for n = 10 gives 99/12 = 8.25 ✓.)</li><li><strong>NEB-style (3m): Two machines fill packets with means 500 g and 505 g and standard deviations 4 g and 6 g respectively. Which is more consistent?</strong> — <strong>Coefficient of variation</strong> is the fair comparator: C.V.₁ = (4/500) × 100 = <strong>0.8%</strong>; C.V.₂ = (6/505) × 100 ≈ <strong>1.19%</strong>. The <strong>lower C.V. indicates greater consistency</strong>, so <strong>machine 1 is more consistent</strong> — its spread is smaller relative to its mean, even though its absolute σ (4 g) is being compared against a slightly different mean. The C.V. exists precisely because raw σ cannot be compared across different means.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>σ² = (1/n)Σ(xᵢ − x̄)² = (1/n)Σxᵢ² − x̄²; σ = √σ²</li>
+<li>C.V. = (σ/x̄) × 100%</li>
+<li>Pearson skewness: (x̄ − mode)/σ or 3(x̄ − median)/σ</li>
+<li>Σi² = n(n+1)(2n+1)/6; variance of first n naturals = (n²−1)/12</li>
+</ul></li></ul></section>
 <section class="field"><h2>Numericals</h2><ul><li>Use  ω = (μv − μr)/(μd − 1)  — pick reasonable values, solve, and check the units.</li><li>Use  Power of achromatic combination → 0 net dispersion  — pick reasonable values, solve, and check the units.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>• Measure of dispersion: standard deviation</li><li>• Variance</li><li>• Coefficient of variation</li><li>• Skewness</li><li>• Karl Pearson's coefficient of skewness</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Measure of dispersion: standard deviation, variance, coef… (Statistics and Probability, Mathematics, class-11-notes) covers Measure of dispersion: standard deviation, variance, coefficient of variation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Range = max - min. Mean deviation = (1/n) sum |xi - xbar|; minimised about the median. Variance: sigma^2 = (1/n) sum (xi - xbar)^2 = (1/n) sum xi^2 - xbar^2 (computational identity). Standard deviation sigma = sqrt(variance), same units as data. Shift invariance: adding constant c leaves sigma unchanged; scaling by c multiplies sigma by |c|. Coefficient of variation: CV = (sigma/xbar) x 100%; lower CV = more consistent. Karl Pearson skewness: (mean - mode)/sigma or 3(mean - median)/sigma; positive = right skew (mean &gt; mode). Sum of squares of first n naturals: n(n+1)(2n+1)/6.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Dispersion quantifies the roam. <strong>Range</strong> is instant but crude; <strong>mean deviation</strong> averages |xᵢ − x̄| (minimised at the median); <strong>variance</strong> σ² = Σxᵢ²/n − x̄² squares the deviations — analytic but with squared units — and <strong>σ = √σ²</strong> restores them (NEB 2024: mean 25, σ ≈ 9.41 for the 10-mark set; NEB 2023: variance of 1…10 is 385/10 − 5.5² = <strong>8.25</strong>). Adding a constant leaves σ unchanged; scaling scales it. The <strong>coefficient of variation</strong> σ/x̄ × 100% makes spread comparable across scales — lower C.V., more consistent. <strong>Karl Pearson's skewness</strong> (mean − mode)/σ (or 3(mean − median)/σ) signs the asymmetry: positive when the right tail drags the mean past the mode. The identity &quot;mean of squares minus square of mean&quot; is the topic's engine.</p></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Measure of dispersion: standard deviation, variance, coef…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Measure of dispersion: standard deviation</li><li>Variance</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Measure of dispersion: standard deviation is listed among the official sub-ideas of Measure of dispersion: standard deviation, variance, coef…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Measure of dispersion: standard deviation, variance, coef…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>SD via the identity: mean of squares minus square of mean. First n naturals: sigma^2 = (n^2 - 1)/12. Lower CV wins consistency. Skewness sign: mean - mode.</li></ul></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Measuring the Spread</h3>
+<p>Central tendency says where data sits; <strong>dispersion</strong> says how widely it roams. The theorem set: <strong>range</strong>, <strong>mean deviation</strong>, <strong>variance and standard deviation</strong> (with the computational identity σ² = E(x²) − [E(x)]²), the <strong>coefficient of variation</strong>, and <strong>Karl Pearson's skewness</strong> coefficients.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Range and mean deviation</h4>
+<ul>
+<li><strong>Range</strong> = max − min — crude but instant.</li>
+<li><strong>Mean deviation</strong> = (1/n)Σ|xᵢ − x̄| — average distance from the mean; about the median it is minimised (a theorem: the median minimises Σ|xᵢ − a|).</li>
+</ul>
+<h4>2.2 Variance and standard deviation</h4>
+<ul>
+<li><strong>Variance:</strong> σ² = (1/n)Σ(xᵢ − x̄)² — mean squared deviation.</li>
+<li><strong>Computational identity (theorem):</strong> <strong>σ² = (1/n)Σxᵢ² − x̄²</strong> — the &quot;mean of squares minus square of mean&quot;. Proof: expand Σ(xᵢ − x̄)² = Σxᵢ² − 2x̄Σxᵢ + nx̄² and use Σxᵢ = nx̄.</li>
+<li><strong>Standard deviation:</strong> σ = √variance — same units as the data.</li>
+<li><strong>Theorem (shift invariance):</strong> adding a constant c to every datum leaves σ unchanged (xᵢ + c has the same spread); multiplying by c multiplies σ by |c|.</li>
+</ul>
+<h4>2.3 Coefficient of variation</h4>
+<ul>
+<li><strong>C.V. = (σ/x̄) × 100%</strong> — a relative, unit-free spread; <strong>lower C.V. = more consistent</strong>.</li>
+<li>Used to compare variability across data sets with different units or means.</li>
+</ul>
+<h4>2.4 Karl Pearson's skewness</h4>
+<ul>
+<li><strong>Absolute skewness:</strong> Sk = mean − mode (or mean − median).</li>
+<li><strong>Pearson's first coefficient:</strong> Sk_p = <strong>(mean − mode)/σ</strong>; <strong>second coefficient:</strong> Sk_p = <strong>3(mean − median)/σ</strong>.</li>
+<li>Skewness sign: positive ⟹ right tail longer (mean &gt; mode); negative ⟹ left tail longer; zero ⟹ symmetric.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Variance</strong></td><td>Mean squared deviation from the mean</td><td>σ² = Σxᵢ²/n − x̄²</td></tr><tr><td><strong>Standard deviation</strong></td><td>√variance — typical distance from the mean</td><td>same units as data</td></tr><tr><td><strong>Coefficient of variation</strong></td><td>Relative spread: σ/x̄ × 100%</td><td>unit-free comparison</td></tr><tr><td><strong>Skewness</strong></td><td>Asymmetry of the distribution</td><td>Pearson: (mean − mode)/σ</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why squares for variance</h4>
+<ul>
+<li>Absolute values are awkward analytically; squares are differentiable and additive. The price: units get squared — the √ in σ restores them.</li>
+</ul>
+<h4>4.2 The computational identity at work</h4>
+<ul>
+<li>σ² = Σxᵢ²/n − x̄² lets you compute variance from running sums — no deviation table needed, and it is the identity examiners test.</li>
+</ul>
+<h4>4.3 C.V. as the fair comparison</h4>
+<ul>
+<li>σ alone misleads: ₹100 spread on a ₹50 mean is huge, on a ₹10,000 mean trivial. Dividing by the mean normalises — that is the C.V.'s whole point.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dispersion measures compared</strong></p>
+<table><thead><tr><th>Measure</th><th>Uses</th><th>Robust to outliers?</th></tr></thead><tbody><tr><td>Range</td><td>extremes only</td><td>no</td></tr><tr><td>Mean deviation</td><td>absolute distances</td><td>somewhat</td></tr><tr><td>Standard deviation</td><td>squared distances</td><td>no (squares amplify)</td></tr><tr><td>C.V.</td><td>relative spread</td><td>no</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Variance units are squared:</strong> report σ, not σ², when the question asks for spread in original units.</li><li><strong>Lower C.V. = more consistent:</strong> students invert this — the smaller relative spread wins.</li><li><strong>Skewness sign:</strong> mean &gt; mode ⟹ <strong>positive</strong> (right) skew — the tail pulls the mean, not the mode.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): Marks of 10 students: 12, 15, 18, 20, 22, 25, 28, 30, 35, 45. Calculate (i) the mean, (ii) the standard deviation. (4m)</strong> — <strong>Mean:</strong> x̄ = (12+15+18+20+22+25+28+30+35+45)/10 = 250/10 = <strong>25</strong>. <strong>Squared deviations:</strong> (12−25)²=169, (15−25)²=100, (18−25)²=49, (20−25)²=25, (22−25)²=9, (25−25)²=0, (28−25)²=9, (30−25)²=25, (35−25)²=100, (45−25)²=400. Sum = 886. <strong>Variance:</strong> σ² = 886/10 = 88.6. <strong>Standard deviation:</strong> σ = √88.6 ≈ <strong>9.41</strong>. (Equivalently via the identity: Σxᵢ²/n − x̄² = 7136/10 − 625 = 713.6 − 625 = 88.6 ✓.)</li><li><strong>NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (1m MCQ)</strong> — First 10 naturals: 1…10, mean 5.5. Σxᵢ² = n(n+1)(2n+1)/6 = 10·11·21/6 = 385. Variance = 385/10 − (5.5)² = 38.5 − 30.25 = <strong>8.25 → option (a)</strong>. The formula shortcut n(n+1)(2n+1)/6 turns this into a 30-second question.</li><li><strong>NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, then P(A∪B) is: (1m)</strong> — <strong>Addition law:</strong> P(A∪B) = P(A) + P(B) − P(A∩B) = 0.6 + 0.5 − 0.3 = <strong>0.8 → option (a)</strong>. (The subtraction of the intersection prevents double-counting the overlap — the addition law is the topic's core theorem.)</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Range = max - min. Mean deviation = (1/n) sum |xi - xbar|; minimised about the median. Variance: sigma^2 = (1/n) sum (xi - xbar)^2 = (1/n) sum xi^2 - xbar^2 (computational identity). Standard deviation sigma = sqrt(variance), same units as data. Shift invariance: adding constant c leaves sigma unchanged; scaling by c multiplies sigma by |c|. Coefficient of variation: CV = (sigma/xbar) x 100%; lower CV = more consistent. Karl Pearson skewness: (mean - mode)/sigma or 3(mean - median)/sigma; positive = right skew (mean &gt; mode). Sum of squares of first n naturals: n(n+1)(2n+1)/6.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>Variance squares to stay analytic, then takes a root to speak in data units; dividing by the mean (C.V.) makes spread comparable across different scales.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>Mean of squares minus square of mean</strong></em> — sigma^2 = sum(xi^2)/n - xbar^2: the one identity that turns variance into two running sums, no deviation table required.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>The C.V. is why a ±5 error on a 1000 g weighing is excellent and on a 10 g weighing is a disaster: relative, not absolute, spread tells the story.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;sigma^2 = (1/n) sum xi^2 - (mean)^2; CV = (sigma/mean) x 100; Pearson skewness = (mean - mode)/sigma.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Verified PYQs: NEB 2024 (mean and SD of 10 marks), NEB 2023 (variance of first 10 naturals MCQ) — assigned to this row. The NEB 2022 addition-law MCQ bridges to the probability row.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>SD via the identity: mean of squares minus square of mean. First n naturals: sigma^2 = (n^2 - 1)/12. Lower CV wins consistency. Skewness sign: mean - mode.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>Show both routes in SD questions (deviation table and identity) when time allows - the identity is the check that catches arithmetic slips.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>σ² = (1/n)Σ(xᵢ − x̄)² = (1/n)Σxᵢ² − x̄²; σ = √σ²</li>
+<li>C.V. = (σ/x̄) × 100%</li>
+<li>Pearson skewness: (x̄ − mode)/σ or 3(x̄ − median)/σ</li>
+<li>Σi² = n(n+1)(2n+1)/6; variance of first n naturals = (n²−1)/12</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Compute the mean and SD of 12, 15, 18, 20, 22, 25, 28, 30, 35, 45.</li><li>Find the variance of the first 10 natural numbers.</li><li>Compare the consistency of two data sets using the coefficient of variation.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB 2024 (verified PYQ): The marks obtained by 10 students in a test are 12, 15, 18, 20, 22, 25, 28, 30, 35 and 45. Calculate (i) the mean, and (ii) the standard deviation. (4m)</strong> — <strong>(i) Mean:</strong> x̄ = Σxᵢ/n = (12 + 15 + 18 + 20 + 22 + 25 + 28 + 30 + 35 + 45)/10 = 250/10 = <strong>25</strong>. <strong>(ii) Standard deviation:</strong> deviations xᵢ − 25 are −13, −10, −7, −5, −3, 0, 3, 5, 10, 20; squares: 169, 100, 49, 25, 9, 0, 9, 25, 100, 400 — sum = 886. Variance σ² = 886/10 = <strong>88.6</strong>; standard deviation σ = √88.6 ≈ <strong>9.41 marks</strong>. Cross-check by the computational identity: Σxᵢ² = 144+225+324+400+484+625+784+900+1225+2025 = 7136; σ² = 7136/10 − 25² = 713.6 − 625 = 88.6 ✓ — both routes agree.</li><li><strong>NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (a) 8.25 (b) 9.25 (c) 10.25 (d) 11.25 (1m)</strong> — Data: 1, 2, …, 10 with mean (10+1)/2 = 5.5. <strong>Sum of squares formula:</strong> Σxᵢ² = n(n+1)(2n+1)/6 = (10)(11)(21)/6 = <strong>385</strong>. <strong>Variance via the identity:</strong> σ² = Σxᵢ²/n − x̄² = 385/10 − (5.5)² = 38.5 − 30.25 = <strong>8.25 — option (a)</strong>. (General fact worth memorising: the variance of the first n naturals is (n² − 1)/12, which for n = 10 gives 99/12 = 8.25 ✓.)</li><li><strong>NEB-style (3m): Two machines fill packets with means 500 g and 505 g and standard deviations 4 g and 6 g respectively. Which is more consistent?</strong> — <strong>Coefficient of variation</strong> is the fair comparator: C.V.₁ = (4/500) × 100 = <strong>0.8%</strong>; C.V.₂ = (6/505) × 100 ≈ <strong>1.19%</strong>. The <strong>lower C.V. indicates greater consistency</strong>, so <strong>machine 1 is more consistent</strong> — its spread is smaller relative to its mean, even though its absolute σ (4 g) is being compared against a slightly different mean. The C.V. exists precisely because raw σ cannot be compared across different means.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>Variance squares to stay analytic, then takes a root to speak in data units; dividing by the mean (C.V.) makes spread comparable across different scales.</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;sigma^2 = (1/n) sum xi^2 - (mean)^2; CV = (sigma/mean) x 100; Pearson skewness = (mean - mode)/sigma.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Verified PYQs: NEB 2024 (mean and SD of 10 marks), NEB 2023 (variance of first 10 naturals MCQ) — assigned to this row. The NEB 2022 addition-law MCQ bridges to the probability row.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>Show both routes in SD questions (deviation table and identity) when time allows - the identity is the check that catches arithmetic slips.</li></ul></section>
   <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="02-probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law.html" title="Probability: independent cases, mathematical and empirica…">Probability: independent cases, mathematical … ›</a></nav>
 </div></body></html>

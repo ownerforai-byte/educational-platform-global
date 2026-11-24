@@ -1,0 +1,19 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Workedout Example",
+  "title": "Workedout Example (part 3)",
+  "source": "neb-class-11-physics — Workedout Example, pages 441-456 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Most thermistors are negative temperature coefficient (ntc) components. This means that their resistance decreases with increasing temperature. The vast majority of ntc thermistors also have a non-linear response to changing temperature; in other words, a graph of resistance against temperature is a curve. Thermistors are widely used in circuits to sense temperature changes, and then to control devices; the change in the resistance of the thermistor affects a current, which can be used to switch devices on or off. They can be found in thermal cut-out circuits to prevent devices from overheating (such as a hairdryer), central heating circuits, digital thermometers and enginemanagement circuits.",
+    "Physics, Grade 11 | 440",
+    "23.6.4 Strain Gauge A strain gauge is made by sealing a length of very fine wire in a small rectangle of thin plastic, as shown in the figure below.",
+    "When the plastic is stretched (the plastic experiences a strain), the wire will also be stretched. This causes the wire’s length to increase and its cross-sectional area to decrease slightly. Both these changes cause the resistance of the wire to increase. Strain gauges are usually glued very securely to the material that is under test. The resistance R of a wire of length L and of uniform cross-sectional area A is given by the expression R = ρL /A, where ρ is the resistivity of the material of the wire. Assuming that, when the wire extends by a small amount ∆L, the change in the crosssectional area is negligible, the new resistance will be given by, (R + ∆R) = ρ(L +∆L) /A, where ∆R is the change in the resistance. Subtracting these two expressions, ∆R = ρ∆L /A or, ∆R ∝ ∆L. Thus, the strain which is proportional to the extension ∆L is also proportional to the change in resistance ∆R. Note that the cross-sectional area A is assumed to be constant. 23.6.5 The Change in Resistance with Light Intensity of a Light-dependent Resistor (LDR) A light-dependent resistor (LDR) may be made by sandwiching a film of cadmium sulphide between two metal electrodes. Typically, in moonlight, its resistance is about 1 MΩ and in sunlight, 100 Ω. The symbol for an LDR is shown in the figure below.",
+    "Physics, Grade 11 | 441",
+    "The resistance of an LDR is constant at constant light intensity. An LDR is sensitive to changes in light intensity. Note that the change in resistance with change in light intensity is not linear. 23.5.6 The Temperature Characteristic of a Negative Temperature Coefficient Thermistor The resistance of most substances does change slightly with a change in temperature. However, a thermistor is a device that is manufactured in various shapes and sizes using the oxides of different metals so that there is a significant change in resistance with temperature. The symbol for a thermistor is shown in the figure below.",
+    "Negative temperature coefficient thermistors have a resistance that becomes less as the temperature of the thermistor rises. The change in resistance R with temperature θ for a typical thermistor is illustrated in the figure below.",
+    "It can be seen that there is a comparatively largeer change in resistance with temperature but this change is non-linear.",
+    "Physics, Grade 11 | 442",
+    "23.7 Resistivity How is the intrinsic ‘resistance’ of different materials compared? How do you decide which material would be best for the internal connections of a mains plug, or for using as an insulator on a high-voltage line? The resistance of a metal wire, for example, depends on the length and area of the wire, as well as the material that the wire is made from. Consider figure 13.28, showing a metal conductor."
+  ]
+}

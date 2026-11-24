@@ -26,7 +26,12 @@
  * ═══════════════════════════════════════════════════════════════════════════
  */
 
-export type StreamSourceId = "webnotee" | "platform" | "nepalenotes" | "noteswift";
+export type StreamSourceId =
+  | "webnotee"
+  | "platform"
+  | "nepalenotes"
+  | "noteswift"
+  | "nepalieducate";
 
 export type StreamSourceFlag = {
   /** true = this source's PDFs stream normally. Must stay true. */
@@ -61,6 +66,12 @@ export const STREAM_SOURCES: Readonly<Record<StreamSourceId, StreamSourceFlag>> 
     label: "NoteSwift chapter notes",
     registry: "lib/streams/noteswift-catalog.ts",
     note: "noteswift.in embedded Google Drive solution PDFs only (no article iframes); classified to syllabus units for the NoteSwift exercise-solutions stream block on Resources tabs.",
+  },
+  nepalieducate: {
+    enabled: true,
+    label: "Nepali Educate exercise PDFs",
+    registry: "lib/streams/nepalieducate-catalog.ts",
+    note: "nepalieducate.com class 11 exercise and chapter solution PDFs on Google Drive; separate emerald stream block on Resources tabs (NoteSwift-style, not duplicated in the direct-stream pool).",
   },
 };
 

@@ -1,0 +1,33 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Vectors",
+  "title": "Vectors (part 3)",
+  "source": "neb-class-11-physics — Vectors, pages 26-40 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "2.3.3 Polygon Law of Vector Addition: Activity 1.1 i) Take a small piece of stone and displace it first by a displacement OA, then by AB, BC, CD, and finally to E, where E is the final point. ii) Join the initial point O with the final point E and determine the net displacement travelled by the stone you took. Clearly, the net displacement is OE, which is opposite to all the displacements and represents the resultant of all the displacements. This technique is known as the polygon law of vector addition. Statement: If the forces (vectors) acting on a particle are represented by the sides of a polygon in magnitude and order, then the closing side of the polygon taken in the opposite order represents the resultant of the vectors.",
+    "Fig 2.7 Polygon law of vectors Let⃗⃗A⃗⃗,B⃗⃗, C⃗⃗⃗, D⃗⃗⃗ and E⃗⃗ be the vectors acting on a particle. The vectors are arranged by the sides of a polygon in magnitude and order as O⃗⃗⃗⃗A⃗⃗,A⃗⃗⃗⃗B⃗⃗, B⃗⃗⃗⃗C⃗⃗, C⃗⃗⃗⃗D⃗⃗ and D⃗⃗⃗⃗E⃗⃗ respectively. Then, the closing side ⃗O⃗⃗⃗E⃗⃗ taken in the opposite order represents the resultant. a.Subtraction of a Vector The subtraction of one vector from another vector is equivalent to adding the negative of the second vector to the first vector.",
+    "Fig 2.8 Showing subtraction of vectors Physics, Grade 11 | 28",
+    "Let a⃗⃗ and b⃗⃗ be the two vectors and the vector b⃗⃗ is to be subtracted from the vector a⃗⃗. For the purpose, we take the negative of the vector b⃗⃗ by reversing its direction without altering its length as -b⃗⃗. Then using the triangle law of vector addition on a⃗⃗ and−b⃗⃗, we get the resultant R⃗⃗ as R⃗⃗ =a⃗⃗ −b⃗⃗. The triangle law in the fig. indicates the difference between a⃗⃗ +b⃗⃗ and a⃗⃗ -b⃗⃗ .",
+    "C. Resolution of a Vector: Resolution is the reverse process of the addition of vectors. In resolution, a vector is split into two or more vectors as components of the original vector. The component of a vector is the effective part of the vector in the direction taken. Generally, it is expressed as the magnitude of the vector times, the cosine of the angle between the vector and the component vector.",
+    "Let ⃗O⃗⃗⃗P⃗⃗ = P⃗⃗ be a vector at an angle α with the direction of OA and β with the direction of OB. The effect or the shadow of vector P⃗⃗ on OA is Pcosα and the effect or component on OB is",
+    "Pcosꞵ",
+    "P 𝑝⃗",
+    "Pcos β.",
+    "ꞵ α A Pcosα Fig2.8 Resolution of a vector",
+    "2.5.1 Rectangular Component of a Vector:",
+    "Fig 2.9 Rectangular Components of a vector Let O⃗⃗⃗⃗A⃗⃗ = A⃗⃗ be a vector acting at an angle θ with the X-axis. The shadow of this vector on the X – axis is the X component (or the horizontal component) of the vector, and the shadow on the Y-axis is called the Y- component (or the vertical component) of the vector. Hence to evaluate the components, let's draw AM⊥ OX and AN⊥ OY.",
+    "Physics, Grade 11 | 29",
+    "Then, ON = AX → X- component, and OM = AY → Y- component of the vector. OM Now we have, cosθ = OA = AX, A ∴ Ax = Acosθ And, sinθ = MA = ON = AY/A OA OA ∴ Ax = Asinθ Also, Ax2 +AY2 = A2 Or, A = √Ax2 + Ay2 Also, A⃗⃗ = AXî + AY And tanθ = AX AY ∴ θ = tan-1AX AY In the 3-D space, the vector A⃗⃗ is resolved as AX, AY and AZ and is written as , A⃗⃗ = Ax𝑖̂+ AY𝑗̂+ AZ𝑘̂ ≡ (AX, AY, AZ) Here î , ĵ and k̂ are the unit vectors along the three mutually perpendicular coordinate axes X , Y and Z respectively.",
+    "Worked Out Examples: Q: A force of 100N acts at an angle of 450 with the X-axis. Find the X – component and the Y – component.",
+    "Solution: Here, F = 100N, θ = 450 Fx =?, Fy =? We have, Fx = Fcosθ = 100cos450 =100.1/√2 = 70.42N= Fy. Sample Question: 1. A vector is defined by 𝐴⃗ = 3𝑖̂ +4𝑗̂- 5𝑘̂. What is the magnitude of Y component of 𝐴⃗?",
+    "(Ans: 4)",
+    "a. Scalar and vector Products",
+    "Activity 1.3 i) Take any two natural numbers and multiply them; the result is called a scalar, and the multiplication is referred to as the scalar product of the two vectors. ii) Take a screw and rotate it clockwise, then note the direction of the advancement. iii) Repeat the same process in the anticlockwise direction, and once again note the direction of advancement.",
+    "In the first case of screw rotation, it advances downwards, while in the latter case it advances upwards, indicating a specific direction in each instance. This product is known as the vector product or the cross product of the two vectors.",
+    "Physics, Grade 11 | 30",
+    "The physical significance of both these is actually a beautiful concept.",
+    "For example, in your airplane case, a dot product would give the combined effect of the coordinates in different dimensions on each other. A cross product would actually help you discover and identify a new path, which would be normal to both the vectors you mentioned.",
+    "The cross product could help you identify the path, which would result in the most damage if a bird hits the aeroplane through it. The dot product could give you the interference of sound waves produced by the revving of an engine on the journey."
+  ]
+}

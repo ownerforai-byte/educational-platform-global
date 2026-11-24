@@ -80,6 +80,13 @@ export interface CorpusEntry {
   haystack: string;
   /** Repo-relative path this record was read from. */
   source: string;
+  /**
+   * The record's own provenance line when it declares one — for ingested books
+   * this is "<Book> — <chapter>, pages N-M [<pdf>]" (see book-ingest.ts). Empty
+   * for records that carry no source key. META: never taught as knowledge; it
+   * exists for citations and for recovering a book's own page order.
+   */
+  provenance?: string;
   /** True when the record came from the drop-in `backend/kb` folder. */
   dropIn: boolean;
   /** Characters of VALIDATED content that survived boilerplate filtering. */
@@ -421,6 +428,12 @@ function toEntry(
 
   const contentChars = sectionsCharCount(sections);
 
+  // The record's own provenance (META key "source") is dropped from the
+  // sections but kept on the entry: the ingested books write their book name
+  // and page range here, which is what book-order presentation and honest
+  // citations read.
+  const provenance = typeof obj.source === "string" ? obj.source.trim() : "";
+
   return {
     id: meta.id,
     classLevel: indexedClass,
@@ -432,6 +445,7 @@ function toEntry(
     sections,
     haystack,
     source: meta.file,
+    provenance,
     dropIn: meta.dropIn,
     contentChars,
     filler: contentChars < MIN_TEACHABLE_CHARS,

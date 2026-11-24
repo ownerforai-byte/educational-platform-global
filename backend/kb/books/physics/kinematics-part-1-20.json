@@ -1,0 +1,33 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Kinematics",
+  "title": "Kinematics (part 1)",
+  "source": "neb-class-11-physics — Kinematics, pages 46-62 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "Chapter 3 Kinematics",
+    "Franz Reuleaux",
+    "Ferdinand Freudenstein",
+    "Various physicists and mathematicians including Isaac Newton, Galileo Galilei, and Franz Reuleaux, contributed to the development of kinematics throughout history. The term 'kinematics' was coined in 1834 by the physicist J.C. Ampère. Since the nature of motion was not very precisely defined at the time, he felt it necessary to further study it.",
+    "German engineering scientist Franz Reuleaux (1829-1905), known as the “father of kinematics,” conducted extensive studies in the field. He served as a lecturer at the Berlin Royal Technical Academy and later became its president. Reuleaux was a leader in his profession, making significant contributions to various domains of science and knowledge.",
+    "American physicist and engineer Ferdinand Freudenstein (12 May 1926 – 30 March 2006) is known as the 'Father of Modern Kinematics.' Freudenstein applied digital computation to the kinematic synthesis of mechanisms. .",
+    "3.1 Introduction The word “kinematics” comes from the Greek word “kinesis” meaning motion, and is related to other English words such as “cinema” (movies) and “kinesiology” (the study of human motion). Kinematic analysis is the process of measuring the kinematic quantities used to describe motion. Kinematics deals with the study of motion without considering its causes. At any given instant, a body may be at rest or in motion. If no force acts upon a body, it remains at rest. Similarly, if a body is subject to the influence of numerous forces, and their resultant force is zero, the body remains at rest.",
+    "Kinematics is used in astrophysics to describe the motion of celestial bodies and systems; and in mechanical engineering, robotics and biomechanics to describe the motion of systems",
+    "Physics, Grade 11 | 41",
+    "composed of joined parts (such as an engine, a robotic arm, or the skeleton of the human body).",
+    "If a body changes its position with respect to its surroundings over time, it is said to be in motion. Conversely, if a body does not change its position with respect to its surroundings, it is said to be at rest. Two persons in a moving bus are at rest with respect to each other but seem to be in motion when viewed from outside. Similarly, a person or a tree on the surface of the Earth appears to be at rest when viewed from outside the Earth due to the Earth's motion. Hence, rest and motion are relative terms.",
+    "Some terms on Kinematics Distance and Displacement: Distance is the total length a particle has traversed during its journey between two points. It depends on the shape of the path that a particle follows. Displacement, on the other hand, is the shortest distance between the two points in a particular direction, and hence it is a vector quantity. ● If an ant completes a circle during its journey, the displacement is the length of the circumference it traveled, and it returns to the same point, resulting in a zero displacement. ● A ball thrown upwards falls back to the thrower. The net displacement between the initial point (point of throw) and the final point (point of catch) is therefore zero, while distance represents the total length covered during the upward and downward motions. ● If an object at point P reaches point Q along one zig-zag path and returns to point Q following a separate zig-zag path, then the net distance is the sum of the lengths of the two zig-zag paths, while displacement is the shortest distance between P and Q. ● The magnitude of displacement can be less than distance, as it represents the shortest distance in a specific direction. ● In one-dimensional motion, distance and displacement can have the same value.",
+    "Speed and Velocity Speed is the rate of change of distance, and it is a scalar quantity that can be solved using simple ordinary algebra. Therefore, speed (v) = distance (d) time (t) i.e, v = d t Velocity is the rate of change of displacement; hence, it is a vector quantity and is solved using vector algebra. Hence, velocity = speed + direction. And therefore, velocity, v =distance. time When a particular direction is specified, the term ‘speed' is referred to as 'velocity.' However, if the direction is not explicitly stated but the meaning is clear, it is simply referred to as speed.",
+    "Physics, Grade 11 | 42",
+    "Fig 3.1: Showing the concept of speed and velocity",
+    "Uniform Velocity:",
+    "If a body undergoes equal displacements in equal time intervals, it exhibits uniform",
+    "velocity.",
+    "Variable Velocity:",
+    "If a body changes either the magnitude or the direction of its motion, or both, with time, it",
+    "is said to have variable velocity.",
+    "Average velocity:",
+    "It is the ratio of the total displacement to the total time interval taken",
+    "i.e., average velocity, vav = total displacement/ time taken."
+  ]
+}

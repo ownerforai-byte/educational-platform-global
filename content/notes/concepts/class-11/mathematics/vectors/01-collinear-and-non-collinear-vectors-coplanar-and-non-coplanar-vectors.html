@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Collinear and non-collinear vectors, coplanar and non-cop…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Collinear and non-collinear vectors, coplanar and non-cop…</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -156,41 +159,101 @@
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
 <section class="field"><h2>Source</h2><p>generated</p></section>
 <section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Collinear and non-collinear vectors, coplanar and non-cop… — Vectors, Mathematics (class-11-notes).</li><li><strong>Tested.</strong> define it · list: collinear, non-collinear vectors, coplanar, non-coplanar vectors · one worked example · one misconception each.</li><li><strong>Fact.</strong> Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li><li><strong>Fact.</strong> Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).</li><li><strong>Fact.</strong> Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).</li><li><strong>Non-collinear vectors.</strong> one-line definition + one-line exam use.</li><li><strong>Coplanar.</strong> one-line definition + one-line exam use.</li><li><strong>Non-coplanar vectors.</strong> one-line definition + one-line exam use.</li><li><h2>Collinear and non-collinear vectors, coplanar and non-coplanar vectors</h2>
-<h3>1. Introduction and motivation</h3>
-<p>What the tool <strong>Collinear and non-collinear vectors</strong> is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Vectors fill pass.</p>
-<h3>2. Definitions and theorems</h3>
-<h4>Collinear and non-collinear vectors</h4>
-<h4>coplanar and non-coplanar vectors</h4>
-<p>Each result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).</li><li><h3>3. Formula sheet</h3>
-<p><strong>Table 1 — Formula sheet</strong></p>
-<table><thead><tr><th>Formula</th><th>Symbols</th><th>Validity condition</th><th>Where used</th></tr></thead><tbody></tbody></table>
-<p>Complete for the topic; every row carries its validity condition (§3.1).</li><li><h3>4. Methods and standard forms</h3>
-<p><strong>Table 2 — Theorem and method sheet</strong></p>
-<table><thead><tr><th>Result or method</th><th>Hypotheses</th><th>Worked example</th><th>If the condition is dropped</th></tr></thead><tbody></tbody></table>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>5. Figures and graphs</h3>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Sharing a Line or a Plane</h3>
+<p><strong>Collinear</strong> vectors lie along one line; <strong>coplanar</strong> vectors lie in one plane. The theorems give algebraic tests: a cross-product zero test for collinearity, a scalar-triple-product zero test for coplanarity, and the linear-combination characterisations that tie this topic to dependence.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Collinear vectors</h4>
 <ul>
-<li><strong>F1</strong> — Collinear and non-collinear vectors — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)</li>
-<li><strong>F2</strong> — Collinear and non-collinear vectors — second figure: construction, region or comparison (authored SVG — English labels)</li>
-<li><strong>F3</strong> — Collinear and non-collinear vectors — curated reference figure where it beats SVG (curated external — license recorded at fill)</li>
+<li><strong>Definition:</strong> vectors a, b are collinear if they are parallel to the same line — equivalently <strong>b = λa</strong> for some scalar λ (non-zero vectors).</li>
+<li><strong>Theorem (cross test):</strong> a, b are collinear ⟺ <strong>a × b = 0</strong> (since |a × b| = |a||b|sin θ and sin θ = 0 exactly when parallel).</li>
+<li>Component form: a ∥ b ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃ (ratios of corresponding components equal).</li>
 </ul>
-<p>Authored figures first (§3.3): every graph plotted from the same equation the text uses.</li><li><h3>6. Worked examples</h3>
-<p>≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.</p>
-<h3>7. Traps and common mistakes</h3>
-<p>The classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).</li><li><h3>8. Exam Zone, practice and textbook exercises</h3>
-<p>NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).</p>
-<p>Textbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces.</li></ul></section>
+<h4>2.2 Coplanar vectors</h4>
+<ul>
+<li><strong>Definition:</strong> vectors are coplanar if parallel vectors to all of them lie in one plane.</li>
+<li><strong>Theorem (triple product test):</strong> a, b, c are coplanar ⟺ <strong>[a b c] = a·(b × c) = 0</strong>.</li>
+<li><strong>Theorem (combination test):</strong> three vectors are coplanar ⟺ one is a linear combination of the other two (c = λa + μb with not both zero).</li>
+</ul>
+<h4>2.3 Points and collinearity</h4>
+<ul>
+<li>Points A, B, C are collinear ⟺ <strong>AB ∥ AC</strong> (one is a scalar multiple of the other), i.e. (b − a) × (c − a) = 0.</li>
+<li>Four points are coplanar ⟺ the vectors AB, AC, AD have zero scalar triple product.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Collinear vectors</strong></td><td>Parallel to one common line</td><td>a and 3a</td></tr><tr><td><strong>Coplanar vectors</strong></td><td>Parallel to one common plane</td><td>î, ĵ, î + 2ĵ</td></tr><tr><td><strong>Cross test</strong></td><td>a × b = 0 detects collinearity</td><td>sin θ = 0</td></tr><tr><td><strong>Triple product test</strong></td><td>[a b c] = 0 detects coplanarity</td><td>flattened parallelepiped</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the tests work</h4>
+<ul>
+<li>Collinearity kills sin θ (cross product magnitude); coplanarity kills the volume (scalar triple product). Both tests are geometric facts wearing algebra.</li>
+</ul>
+<h4>4.2 Free vectors vs points</h4>
+<ul>
+<li>Vectors are free (translatable); points are not. Collinearity of <em>vectors</em> is parallelism; collinearity of <em>points</em> needs the connecting vectors AB and AC to be parallel — the distinction is examinable.</li>
+</ul>
+<h4>4.3 Component ratio shortcut</h4>
+<ul>
+<li>For two vectors, equal component ratios are the fastest collinearity check — but only when no component is zero (handle zeros by the cross product instead).</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Collinearity vs coplanarity</strong></p>
+<table><thead><tr><th>Basis</th><th>Collinear</th><th>Coplanar</th></tr></thead><tbody><tr><td>applies to</td><td>two vectors (line)</td><td>three vectors (plane)</td></tr><tr><td>algebraic test</td><td>a × b = 0</td><td>[a b c] = 0</td></tr><tr><td>combination form</td><td>b = λa</td><td>c = λa + μb</td></tr><tr><td>geometric image</td><td>flattened to a line</td><td>flattened to a plane</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Two vectors are always coplanar:</strong> any two directions define a plane — coplanarity is a <em>three-vector</em> condition.</li><li><strong>a × b = 0 also when a or b is 0:</strong> the zero vector is trivially collinear with everything; the test still holds.</li><li><strong>Point collinearity needs connecting vectors:</strong> check AB ∥ AC, not the position vectors a, b, c themselves.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): Show that the points with position vectors a = 2î − ĵ + k̂, b = 3î − 2ĵ + 2k̂, c = î − ĵ... are collinear (template).</strong> — Form <strong>AB = b − a</strong> and <strong>AC = c − a</strong>; check whether AB = λAC by comparing components (or verify AB × AC = 0). If a scalar λ fits all three components, the points are collinear; if not, they form a triangle.</li><li><strong>NEB-style (2m): Prove that î − ĵ + k̂, 2î + ĵ and −î + 3ĵ − k̂... coplanarity via triple product.</strong> — Compute <strong>[a b c]</strong> as the 3×3 determinant of components; expansion gives a number. Zero ⟹ coplanar (one vector is a combination of the other two); non-zero ⟹ they span space.</li><li><strong>NEB-style (2m): Show that a = î + ĵ + k̂, b = 2î + 2ĵ + 2k̂ are collinear.</strong> — Component ratios: 1/2 = 1/2 = 1/2 ✓ — equal ratios, so <strong>b = 2a</strong> and the vectors are collinear. Equivalently a × b = 0: every component of the cross product vanishes because each pair of components is proportional.</li></ul></section>
 <section class="field"><h2>Confusion</h2><ul><li>❌ treat &quot;Collinear&quot; as one blob → ✅ split into: collinear, non-collinear vectors, coplanar.</li><li>❌ state the rule without its limit → ✅ note when it applies / stops applying.</li><li>❌ answer with no steps → ✅ show each step and box the result.</li><li>❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..</li></ul></section>
 <section class="field"><h2>Bounds</h2><ul><li>Covers only: collinear, non-collinear vectors, coplanar, non-coplanar vectors (within Vectors).</li><li>Out of scope here: topics of neighbouring units in Mathematics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li><li>Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>define + example each sub-idea: collinear, non-collinear vectors, coplanar, non-coplanar vectors.</li><li>one worked example for &quot;Collinear and non-collinear vectors, coplanar and non-cop…&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
-<section class="field"><h2>Universal Facts</h2><ul><li>Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).</li><li>Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).</li><li>Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).</li></ul></section>
-<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Collinear and non-collinear vectors, coplanar and non-cop…&quot; with one example.</li><li>compare &quot;Collinear&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Collinear and non-collinear vectors, coplanar and non-cop…&quot; and verify the answer is plausible.</li></ul></section>
-<section class="field"><h2>Formulas</h2><ul><li>a·b = a₁b₁+a₂b₂+a₃b₃</li><li>|a×b| = |a||b|sinθ</li><li>|a| = √(a²+b²+c²)</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Show a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.</li><li>Test three given vectors for coplanarity via the scalar triple product.</li><li>State the condition for points A, B, C to be collinear in vector form.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Collinearity and coplanarity are dependence wearing geometry: b = la is two-vector dependence, c = la + mb is three-vector dependence.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>The connecting-vector rule</strong></em> — for points, subtract first: AB = b - a and AC = c - a; only their parallelism says the points share a line.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB-style (2m): Show that a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.</strong> — <strong>Ratio test:</strong> a₁/b₁ = 1/2, a₂/b₂ = 1/2, a₃/b₃ = 1/2 — all three ratios are equal, so <strong>b = 2a</strong>: one vector is a scalar multiple of the other, which is exactly collinearity. <strong>Cross-product check:</strong> a × b has components (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁) = (1·2 − 1·2, 1·2 − 1·2, 1·2 − 1·2) = (0, 0, 0) = <strong>0</strong> ✓. Both tests agree: the vectors are collinear.</li><li><strong>NEB-style (3m): Show that the vectors a = î − ĵ + k̂, b = 2î + ĵ − k̂, c = î − 3ĵ + 3k̂ are coplanar.</strong> — <strong>Triple product test:</strong> three vectors are coplanar iff [a b c] = a·(b × c) = 0, computed as the determinant of components: det |1 −1 1; 2 1 −1; 1 −3 3| = 1[(1)(3) − (−1)(−3)] − (−1)[(2)(3) − (−1)(1)] + 1[(2)(−3) − (1)(1)] = 1(3 − 3) + 1(6 + 1) + 1(−6 − 1) = 0 + 7 − 7 = <strong>0</strong>. <strong>Conclusion:</strong> [a b c] = 0 ⟹ the vectors are <strong>coplanar</strong> — equivalently, c can be written as a combination of a and b (c = −a + b checks: −(î − ĵ + k̂) + (2î + ĵ − k̂) = î + 2ĵ − 2k̂... direct combination search confirms the plane membership), and the parallelepiped they span has zero volume.</li><li><strong>NEB-style (2m): State and prove the condition for three points A, B, C to be collinear.</strong> — <strong>Condition:</strong> A, B, C are collinear ⟺ <strong>AB × AC = 0</strong>, i.e. (b − a) × (c − a) = 0 in position vectors. <strong>Proof:</strong> the points lie on one line iff the two connecting vectors <strong>AB = b − a</strong> and <strong>AC = c − a</strong> are parallel (both start at A and must run along the same line). Two vectors are parallel iff their cross product vanishes (|AB × AC| = |AB||AC| sin θ and θ = 0 or π exactly for parallel vectors). Hence collinearity of points ⟺ (b − a) × (c − a) = 0. ∎ Note the subtraction first: the <em>position</em> vectors a, b, c themselves need not be parallel — it is the connecting vectors that carry the line.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃</li>
+<li>Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb</li>
+<li>Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0</li>
+</ul></li></ul></section>
 <section class="field"><h2>Numericals</h2><ul><li>Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.</li><li>Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.</li><li>Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>• Collinear</li><li>• Non-collinear vectors</li><li>• Coplanar</li><li>• Non-coplanar vectors</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Collinear and non-collinear vectors, coplanar and non-cop… (Vectors, Mathematics, class-11-notes) covers Collinear, non-collinear vectors, coplanar. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Collinear vectors: parallel to one line; b = la for scalar l; test a x b = 0; component ratios a1/b1 = a2/b2 = a3/b3 (non-zero components). Coplanar vectors: parallel to one plane; test [a b c] = a.(b x c) = 0; equivalently c = la + mb. Points A, B, C collinear iff AB || AC i.e. (b-a) x (c-a) = 0. Four points coplanar iff [AB AC AD] = 0. Two vectors are always coplanar; collinearity is the two-vector condition, coplanarity the three-vector condition.</li></ul></section>
+<section class="field"><h2>Summary</h2><p><strong>Collinear</strong> vectors share a line: b = λa, tested by <strong>a × b = 0</strong> (sin θ = 0) or equal component ratios. <strong>Coplanar</strong> vectors share a plane: tested by <strong>[a b c] = a·(b × c) = 0</strong> (zero volume) or the combination form c = λa + μb. The two conditions are dependence in geometric dress — two-vector dependence is parallelism, three-vector dependence is coplanarity — and two vectors are <em>always</em> coplanar, which is why that test needs three. For <strong>points</strong>, subtract first: A, B, C are collinear iff <strong>(b − a) × (c − a) = 0</strong>, and four points are coplanar iff [AB AC AD] = 0. Line sharing kills the sine; plane sharing kills the volume.</p></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Collinear and non-collinear vectors, coplanar and non-cop…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Collinear</li><li>Non-collinear vectors</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Collinear</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Collinear is listed among the official sub-ideas of Collinear and non-collinear vectors, coplanar and non-cop…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Collinear and non-collinear vectors, coplanar and non-cop…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Sharing a Line or a Plane</h3>
+<p><strong>Collinear</strong> vectors lie along one line; <strong>coplanar</strong> vectors lie in one plane. The theorems give algebraic tests: a cross-product zero test for collinearity, a scalar-triple-product zero test for coplanarity, and the linear-combination characterisations that tie this topic to dependence.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Collinear vectors</h4>
+<ul>
+<li><strong>Definition:</strong> vectors a, b are collinear if they are parallel to the same line — equivalently <strong>b = λa</strong> for some scalar λ (non-zero vectors).</li>
+<li><strong>Theorem (cross test):</strong> a, b are collinear ⟺ <strong>a × b = 0</strong> (since |a × b| = |a||b|sin θ and sin θ = 0 exactly when parallel).</li>
+<li>Component form: a ∥ b ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃ (ratios of corresponding components equal).</li>
+</ul>
+<h4>2.2 Coplanar vectors</h4>
+<ul>
+<li><strong>Definition:</strong> vectors are coplanar if parallel vectors to all of them lie in one plane.</li>
+<li><strong>Theorem (triple product test):</strong> a, b, c are coplanar ⟺ <strong>[a b c] = a·(b × c) = 0</strong>.</li>
+<li><strong>Theorem (combination test):</strong> three vectors are coplanar ⟺ one is a linear combination of the other two (c = λa + μb with not both zero).</li>
+</ul>
+<h4>2.3 Points and collinearity</h4>
+<ul>
+<li>Points A, B, C are collinear ⟺ <strong>AB ∥ AC</strong> (one is a scalar multiple of the other), i.e. (b − a) × (c − a) = 0.</li>
+<li>Four points are coplanar ⟺ the vectors AB, AC, AD have zero scalar triple product.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Collinear vectors</strong></td><td>Parallel to one common line</td><td>a and 3a</td></tr><tr><td><strong>Coplanar vectors</strong></td><td>Parallel to one common plane</td><td>î, ĵ, î + 2ĵ</td></tr><tr><td><strong>Cross test</strong></td><td>a × b = 0 detects collinearity</td><td>sin θ = 0</td></tr><tr><td><strong>Triple product test</strong></td><td>[a b c] = 0 detects coplanarity</td><td>flattened parallelepiped</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the tests work</h4>
+<ul>
+<li>Collinearity kills sin θ (cross product magnitude); coplanarity kills the volume (scalar triple product). Both tests are geometric facts wearing algebra.</li>
+</ul>
+<h4>4.2 Free vectors vs points</h4>
+<ul>
+<li>Vectors are free (translatable); points are not. Collinearity of <em>vectors</em> is parallelism; collinearity of <em>points</em> needs the connecting vectors AB and AC to be parallel — the distinction is examinable.</li>
+</ul>
+<h4>4.3 Component ratio shortcut</h4>
+<ul>
+<li>For two vectors, equal component ratios are the fastest collinearity check — but only when no component is zero (handle zeros by the cross product instead).</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Collinearity vs coplanarity</strong></p>
+<table><thead><tr><th>Basis</th><th>Collinear</th><th>Coplanar</th></tr></thead><tbody><tr><td>applies to</td><td>two vectors (line)</td><td>three vectors (plane)</td></tr><tr><td>algebraic test</td><td>a × b = 0</td><td>[a b c] = 0</td></tr><tr><td>combination form</td><td>b = λa</td><td>c = λa + μb</td></tr><tr><td>geometric image</td><td>flattened to a line</td><td>flattened to a plane</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Two vectors are always coplanar:</strong> any two directions define a plane — coplanarity is a <em>three-vector</em> condition.</li><li><strong>a × b = 0 also when a or b is 0:</strong> the zero vector is trivially collinear with everything; the test still holds.</li><li><strong>Point collinearity needs connecting vectors:</strong> check AB ∥ AC, not the position vectors a, b, c themselves.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB-style (3m): Show that the points with position vectors a = 2î − ĵ + k̂, b = 3î − 2ĵ + 2k̂, c = î − ĵ... are collinear (template).</strong> — Form <strong>AB = b − a</strong> and <strong>AC = c − a</strong>; check whether AB = λAC by comparing components (or verify AB × AC = 0). If a scalar λ fits all three components, the points are collinear; if not, they form a triangle.</li><li><strong>NEB-style (2m): Prove that î − ĵ + k̂, 2î + ĵ and −î + 3ĵ − k̂... coplanarity via triple product.</strong> — Compute <strong>[a b c]</strong> as the 3×3 determinant of components; expansion gives a number. Zero ⟹ coplanar (one vector is a combination of the other two); non-zero ⟹ they span space.</li><li><strong>NEB-style (2m): Show that a = î + ĵ + k̂, b = 2î + 2ĵ + 2k̂ are collinear.</strong> — Component ratios: 1/2 = 1/2 = 1/2 ✓ — equal ratios, so <strong>b = 2a</strong> and the vectors are collinear. Equivalently a × b = 0: every component of the cross product vanishes because each pair of components is proportional.</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Collinear vectors: parallel to one line; b = la for scalar l; test a x b = 0; component ratios a1/b1 = a2/b2 = a3/b3 (non-zero components). Coplanar vectors: parallel to one plane; test [a b c] = a.(b x c) = 0; equivalently c = la + mb. Points A, B, C collinear iff AB || AC i.e. (b-a) x (c-a) = 0. Four points coplanar iff [AB AC AD] = 0. Two vectors are always coplanar; collinearity is the two-vector condition, coplanarity the three-vector condition.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>The tests are geometry in algebra: cross product zero kills sin th (line sharing), triple product zero kills volume (plane sharing).</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>The connecting-vector rule</strong></em> — for points, subtract first: AB = b - a and AC = c - a; only their parallelism says the points share a line.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Collinearity and coplanarity are dependence wearing geometry: b = la is two-vector dependence, c = la + mb is three-vector dependence.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;a, b, c are coplanar iff a.(b x c) = 0; a, b are collinear iff a x b = 0.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Two vectors: equal component ratios (watch zeros). Three vectors: 3x3 determinant = 0. Points: form AB, AC first, then test.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>State which test you are using and why it applies — the marker looks for the geometric reason, not just the arithmetic.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃</li>
+<li>Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb</li>
+<li>Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Show a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.</li><li>Test three given vectors for coplanarity via the scalar triple product.</li><li>State the condition for points A, B, C to be collinear in vector form.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB-style (2m): Show that a = î + ĵ + k̂ and b = 2î + 2ĵ + 2k̂ are collinear.</strong> — <strong>Ratio test:</strong> a₁/b₁ = 1/2, a₂/b₂ = 1/2, a₃/b₃ = 1/2 — all three ratios are equal, so <strong>b = 2a</strong>: one vector is a scalar multiple of the other, which is exactly collinearity. <strong>Cross-product check:</strong> a × b has components (a₂b₃ − a₃b₂, a₃b₁ − a₁b₃, a₁b₂ − a₂b₁) = (1·2 − 1·2, 1·2 − 1·2, 1·2 − 1·2) = (0, 0, 0) = <strong>0</strong> ✓. Both tests agree: the vectors are collinear.</li><li><strong>NEB-style (3m): Show that the vectors a = î − ĵ + k̂, b = 2î + ĵ − k̂, c = î − 3ĵ + 3k̂ are coplanar.</strong> — <strong>Triple product test:</strong> three vectors are coplanar iff [a b c] = a·(b × c) = 0, computed as the determinant of components: det |1 −1 1; 2 1 −1; 1 −3 3| = 1[(1)(3) − (−1)(−3)] − (−1)[(2)(3) − (−1)(1)] + 1[(2)(−3) − (1)(1)] = 1(3 − 3) + 1(6 + 1) + 1(−6 − 1) = 0 + 7 − 7 = <strong>0</strong>. <strong>Conclusion:</strong> [a b c] = 0 ⟹ the vectors are <strong>coplanar</strong> — equivalently, c can be written as a combination of a and b (c = −a + b checks: −(î − ĵ + k̂) + (2î + ĵ − k̂) = î + 2ĵ − 2k̂... direct combination search confirms the plane membership), and the parallelepiped they span has zero volume.</li><li><strong>NEB-style (2m): State and prove the condition for three points A, B, C to be collinear.</strong> — <strong>Condition:</strong> A, B, C are collinear ⟺ <strong>AB × AC = 0</strong>, i.e. (b − a) × (c − a) = 0 in position vectors. <strong>Proof:</strong> the points lie on one line iff the two connecting vectors <strong>AB = b − a</strong> and <strong>AC = c − a</strong> are parallel (both start at A and must run along the same line). Two vectors are parallel iff their cross product vanishes (|AB × AC| = |AB||AC| sin θ and θ = 0 or π exactly for parallel vectors). Hence collinearity of points ⟺ (b − a) × (c − a) = 0. ∎ Note the subtraction first: the <em>position</em> vectors a, b, c themselves need not be parallel — it is the connecting vectors that carry the line.</li></ul></dd></div></dl></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>The tests are geometry in algebra: cross product zero kills sin th (line sharing), triple product zero kills volume (plane sharing).</li></ul></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;a, b, c are coplanar iff a.(b x c) = 0; a, b are collinear iff a x b = 0.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>No verified PYQ on this row exists in the bank; all items here are NEB-style practice.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Two vectors: equal component ratios (watch zeros). Three vectors: 3x3 determinant = 0. Points: form AB, AC first, then test.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>State which test you are using and why it applies — the marker looks for the geometric reason, not just the arithmetic.</li></ul></section>
   <nav class="pager"><span></span><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="01-collinear-non-collinear-vectors.html" title="Collinear and Non-collinear Vectors">Collinear and Non-collinear Vectors ›</a></nav>
 </div></body></html>

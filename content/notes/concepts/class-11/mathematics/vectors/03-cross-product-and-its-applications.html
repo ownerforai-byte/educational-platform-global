@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Cross Product and Its Applications</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Cross Product and Its Applications</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -154,25 +157,119 @@
   <section class="field"><h2>Unit SLUG</h2><p>vectors</p></section>
 <section class="field"><h2>Topic SLUG</h2><p>cross-product-and-its-applications</p></section>
 <section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
-<section class="field"><h2>Notes</h2><p class="empty">—</p></section>
-<section class="field"><h2>Confusion</h2><p class="empty">—</p></section>
-<section class="field"><h2>Practice</h2><p class="empty">—</p></section>
-<section class="field"><h2>Universal Facts</h2><p class="empty">—</p></section>
 <section class="field"><h2>Animation3 D</h2><p>vectors</p></section>
 <section class="field"><h2>Motion Graphics</h2><p>vectors</p></section>
-<section class="field"><h2>Examples</h2><ul><li>Application of Cross Product and Its Applications</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>Q1. Define Cross Product and Its Applications.</li><li>Q3. Problem on Cross Product and Its Applications.</li></ul></section>
-<section class="field"><h2>Formulas</h2><p class="empty">—</p></section>
-<section class="field"><h2>Key Points</h2><ul><li>Application of Cross Product and Its Applications</li><li>Connection of Cross Product and Its Applications to other topics</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Cross Product and Its Applications covers essential principles and applications.</p></section>
-<section class="field"><h2>Special Notes</h2><p class="empty">—</p></section>
-<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Definition of Cross product (vector product) and its applications</li><li>Statement 2: Theorem related to Cross product (vector product) and its applications</li><li>Statement 3: Condition for Cross product (vector product) and its applications to be valid</li><li>Statement 4: Principle governing Cross product (vector product) and its applications</li><li>Statement 5: Corollary or consequence of Cross product (vector product) and its applications</li></ul></section>
-<section class="field"><h2>Important Notes</h2><ul><li>Cross Product and Its Applications is based on fundamental principles.</li></ul></section>
-<section class="field"><h2>Exam Short Tricks</h2><ul><li>Recall the formula for Cross Product and Its Applications.</li></ul></section>
-<section class="field"><h2>Exam Notes</h2><p class="empty">—</p></section>
-<section class="field"><h2>Mcs</h2><p class="empty">—</p></section>
-<section class="field"><h2>Important Concepts</h2><ul><li>Definition and significance of Cross Product and Its Applications.</li></ul></section>
-<section class="field"><h2>Important Tasks</h2><p class="empty">—</p></section>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — The Area Machine</h3>
+<p>The <strong>cross (vector) product</strong> a × b returns a <strong>vector</strong>: magnitude |a||b|sin θ, direction perpendicular to both by the right-hand rule. Its theorems: anticommutativity, the parallel criterion a × b = 0, the area theorems (triangle and parallelogram), and the component determinant formula.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Definition and component form</h4>
+<ul>
+<li><strong>a × b = |a||b| sin θ n̂</strong>, n̂ perpendicular to both by the right-hand rule.</li>
+<li><strong>Component form:</strong> a × b = determinant |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃ − a₃b₂)î + (a₃b₁ − a₁b₃)ĵ + (a₁b₂ − a₂b₁)k̂.</li>
+<li>Cyclic basis products: î × ĵ = k̂, ĵ × k̂ = î, k̂ × î = ĵ; reversed order gives the negative.</li>
+</ul>
+<h4>2.2 Algebraic laws</h4>
+<ul>
+<li><strong>Anticommutative:</strong> a × b = −(b × a) — order matters.</li>
+<li><strong>Distributive:</strong> a × (b + c) = a × b + a × c; <strong>λ(a × b) = (λa) × b</strong>.</li>
+<li><strong>No associativity with dot:</strong> a × (b × c) ≠ (a × b) × c in general — bracketing matters.</li>
+<li><strong>No cancellation:</strong> a × b = a × c does not give b = c.</li>
+</ul>
+<h4>2.3 The parallel criterion</h4>
+<ul>
+<li><strong>Theorem:</strong> a ∥ b ⟺ <strong>a × b = 0</strong> (non-zero vectors), since sin θ = 0 exactly for θ = 0 or π.</li>
+<li>Consequence: a × a = 0 for every vector.</li>
+</ul>
+<h4>2.4 Area theorems</h4>
+<ul>
+<li><strong>Theorem:</strong> |a × b| = area of the <strong>parallelogram</strong> with adjacent sides a, b; <strong>half</strong> of it is the triangle's area: Δ = ½|a × b|.</li>
+<li>For a triangle with vertices A, B, C: Δ = ½|AB × AC|.</li>
+<li><strong>Lagrange's identity:</strong> |a × b|² = |a|²|b|² − (a·b)² — computing |a × b| without the angle.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Cross product</strong></td><td></td><td>a</td><td></td><td>b</td><td>sin θ n̂ — a vector</td><td>î × ĵ = k̂</td></tr><tr><td><strong>Anticommutativity</strong></td><td>Swapping order flips the sign</td><td>b × a = −a × b</td></tr><tr><td><strong>Right-hand rule</strong></td><td>Curl fingers a→b; thumb gives n̂</td><td>fixes the perpendicular's direction</td></tr><tr><td><strong>Parallelogram area</strong></td><td></td><td>a × b</td><td>with adjacent sides a, b</td><td>the geometric face</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why sin θ</h4>
+<ul>
+<li>The cross product measures <em>perpendicular cooperation</em>: full strength at right angles (sin 90° = 1), nothing when parallel (sin 0 = 0). It is the dot product's complement.</li>
+</ul>
+<h4>4.2 Reading the determinant</h4>
+<ul>
+<li>Expand along the top row with cofactor signs + − +; each 2×2 minor deletes one component column. The formula is mechanical but sign-hungry — the middle term carries the minus.</li>
+</ul>
+<h4>4.3 Direction is half the answer</h4>
+<ul>
+<li>|a × b| gives size; the right-hand rule gives which of the two perpendicular directions. In exams, quote the vector, not just its magnitude, when the question asks for a × b.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dot vs cross</strong></p>
+<table><thead><tr><th>Basis</th><th>a·b</th><th>a × b</th></tr></thead><tbody><tr><td>result</td><td>scalar</td><td>vector</td></tr><tr><td>angle function</td><td>cos θ</td><td>sin θ</td></tr><tr><td>commutative?</td><td>yes</td><td>no (anti)</td></tr><tr><td>zero when</td><td>perpendicular</td><td>parallel</td></tr><tr><td>measures</td><td>agreement</td><td>perpendicular strength / area</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Anticommutative, not commutative:</strong> swapping inputs negates the output — a sign error here poisons every downstream result.</li><li><strong>The middle component's sign:</strong> (a₃b₁ − a₁b₃) — students write a₁b₃ − a₃b₁ and lose the ĵ component.</li><li><strong>Area of triangle = half the parallelogram:</strong> Δ = ½|a × b| — forgetting the ½ doubles the answer.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (part of 3m)</strong> — a × b = |î ĵ k̂; 2 3 −1; 1 −1 2| = î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = <strong>5î − 5ĵ − 5k̂</strong>. |a × b| = √(25 + 25 + 25) = <strong>5√3</strong>.</li><li><strong>NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)</strong> — a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = <strong>5k̂</strong> (2D shortcut: only the k̂ component survives). <strong>Area = |a × b| = 5 square units.</strong></li><li><strong>NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (part of 4m)</strong> — A perpendicular to the plane is parallel to <strong>a × b</strong>: a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î − ĵ + 0k̂ = <strong>î − ĵ</strong>. |î − ĵ| = √2. <strong>Unit perpendicular: (î − ĵ)/√2</strong> (its negative serves equally — both directions are perpendicular).</li><li><strong>NEB 2021 (verified PYQ): Given a = î − 2ĵ + 3k̂ and b = 3î + 4ĵ − k̂, find a·b and |a × b|. (3m)</strong> — a·b = 3 − 8 − 3 = −14. For |a × b| without the full vector, use <strong>Lagrange</strong>: |a|² = 1 + 4 + 9 = 14; |b|² = 9 + 16 + 1 = 26; |a × b|² = (14)(26) − (−14)² = 364 − 196 = 168 ⟹ <strong>|a × b| = √168 = 2√42</strong>.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Cross product: a x b = |a||b| sin th n-hat (right-hand rule) = determinant |i j k; a1 a2 a3; b1 b2 b3|. Anticommutative: a x b = -(b x a); distributive; NOT associative with dot. Parallel criterion: a || b iff a x b = 0; a x a = 0. Area theorems: |a x b| = parallelogram area; triangle area = (1/2)|a x b| = (1/2)|AB x AC|. Lagrange identity: |a x b|^2 = |a|^2|b|^2 - (a.b)^2. Cyclic products: i x j = k, j x k = i, k x i = j. 2D shortcut: (a1, a2) x (b1, b2) = (a1b2 - a2b1) k.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>The <strong>cross product</strong> a × b = |a||b|sin θ n̂ returns a vector perpendicular to both inputs (right-hand rule), computed mechanically as the 3×3 determinant with +−+ cofactor signs. It is <strong>anticommutative</strong> (order flips sign), distributive, and <strong>zero exactly for parallel</strong> vectors — the mirror of the dot product's perpendicularity criterion. Its geometric cargo: <strong>|a × b| is the parallelogram area</strong>, half of it the triangle's area (Δ = ½|AB × AC|), and <strong>Lagrange's identity</strong> |a × b|² = |a|²|b|² − (a·b)² computes the magnitude without the angle. Verified PYQs: |a × b| = <strong>5√3</strong> for (2î+3ĵ−k̂, î−ĵ+2k̂) and parallelogram area <strong>5</strong> for (2î+ĵ, î+3ĵ) (NEB 2024); unit perpendicular <strong>(î − ĵ)/√2</strong> (NEB 2020); |a × b| = 2√42 via Lagrange (NEB 2021). Parallel kills it; area is its day job.</p></section>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;a x b = |a||b| sin th n-hat; |a x b| is the parallelogram area; a || b iff a x b = 0.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Verified PYQs: NEB 2024 (|a x b| = 5 sqrt3; parallelogram area 5), NEB 2023 (a.b and |a x b| pair), NEB 2021 (Lagroute route 2 sqrt42), NEB 2020 (unit perpendicular (i - j)/sqrt2) — assigned to this row.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Determinant expansion: + - + cofactor signs. 2D cross: single k-hat component a1b2 - a2b1. Unit perpendicular to a plane: a x b normalised. |a x b| without angle: Lagrange sqrt(|a|^2|b|^2 - (a.b)^2).</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>The cross product is the dot product's complement: cos th measures agreement, sin th measures perpendicular cooperation — and sin th doubles as the area ratio.</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)</li>
+<li>a ∥ b ⟺ a × b = 0; a × b = −(b × a)</li>
+<li>parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²</li>
+</ul></li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>Half a parallelogram</strong></em> — the triangle with sides a, b is exactly half the parallelogram they span: Delta = (1/2)|a x b|; forgetting the half doubles every triangle-area answer.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (3m with a·b)</strong> — <strong>Determinant form:</strong> a × b = |î ĵ k̂; 2 3 −1; 1 −1 2|. <strong>Expand:</strong> î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = <strong>5î − 5ĵ − 5k̂</strong>. <strong>Magnitude:</strong> |a × b| = √(5² + 5² + 5²) = √75 = <strong>5√3</strong>. (Combined with a·b = −3 from the dot-product row, cos θ = −3/(7·√14) and sin θ = 5√3/(7√14) — the pair pins the angle completely.)</li><li><strong>NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)</strong> — <strong>2D shortcut:</strong> with no k̂ components, the cross product reduces to its k̂ part: a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = <strong>5k̂</strong>. <strong>Area theorem:</strong> the parallelogram spanned by a and b has area |a × b| = |5k̂| = <strong>5 square units</strong>. (The corresponding triangle would have area 5/2 — the half factor belongs to triangles only.)</li><li><strong>NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (4m with part ii)</strong> — <strong>Key fact:</strong> a × b is perpendicular to <strong>both</strong> a and b, hence to their plane. <strong>Compute:</strong> a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î(1) − ĵ(1) + k̂(0) = <strong>î − ĵ</strong>. <strong>Normalise:</strong> |î − ĵ| = √2, so the required unit vector is <strong>(î − ĵ)/√2</strong> — or its negative (î − ĵ)(−1)/√2; both directions are perpendicular to the plane, and either answer is accepted unless a handedness is specified.</li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>Treating the cross product as commutative; reversing the order negates the result.</li><li>Confusing |a × b| with a · b: the former uses sin θ and is an area, the latter uses cos θ and is a scalar projection.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>Compute a × b and |a × b| for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂.</li><li>Find the area of the parallelogram with sides 2î + ĵ and î + 3ĵ.</li><li>Find a unit vector perpendicular to the plane of î + ĵ and ĵ + k̂.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Torque = r x F and angular momentum = r x p are cross products in physics clothing: perpendicular levers, right-hand directions.</li></ul></section>
+<section class="field"><h2>Special Notes</h2><ul><li>The direction of a × b follows the right-hand rule: curl the fingers from a to b, the thumb gives n̂.</li><li>A plane through a point p with direction vectors u and v has normal u × v and equation (r − p) · (u × v) = 0.</li></ul></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>For |a x b| questions, compute the full cross product then its magnitude — the intermediate vector earns method marks even if only the length is asked.</li></ul></section>
+<section class="field"><h2>Important Tasks</h2><ul><li>Solve four area problems by cross product</li><li>Compute two scalar triple products</li></ul></section>
+<section class="field"><h2>Mcs</h2><div class="q"><span class="n">1.</span><div class="stem"><p>If a and b are parallel non-zero vectors, then a × b equals</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>|a||b|</li><li>the zero vector</li><li>a unit normal</li><li>a · b</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>sin 0° = 0, so the magnitude is zero; the result is the zero vector, not the scalar 0.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>For a = (1, 0, 0) and b = (0, 1, 0), a × b is</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>(0, 0, −1)</li><li>(0, 0, 1)</li><li>(1, 0, 0)</li><li>(0, 1, 0)</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>i × j = k, i.e. (0, 0, 1), consistent with the right-hand rule.</p></div></div></div></section>
+<section class="field"><h2>Visual Type</h2><p>cross-product</p></section>
 <section class="field"><h2>Duplicate Type</h2><p><code>1</code></p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — The Area Machine</h3>
+<p>The <strong>cross (vector) product</strong> a × b returns a <strong>vector</strong>: magnitude |a||b|sin θ, direction perpendicular to both by the right-hand rule. Its theorems: anticommutativity, the parallel criterion a × b = 0, the area theorems (triangle and parallelogram), and the component determinant formula.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Definition and component form</h4>
+<ul>
+<li><strong>a × b = |a||b| sin θ n̂</strong>, n̂ perpendicular to both by the right-hand rule.</li>
+<li><strong>Component form:</strong> a × b = determinant |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃ − a₃b₂)î + (a₃b₁ − a₁b₃)ĵ + (a₁b₂ − a₂b₁)k̂.</li>
+<li>Cyclic basis products: î × ĵ = k̂, ĵ × k̂ = î, k̂ × î = ĵ; reversed order gives the negative.</li>
+</ul>
+<h4>2.2 Algebraic laws</h4>
+<ul>
+<li><strong>Anticommutative:</strong> a × b = −(b × a) — order matters.</li>
+<li><strong>Distributive:</strong> a × (b + c) = a × b + a × c; <strong>λ(a × b) = (λa) × b</strong>.</li>
+<li><strong>No associativity with dot:</strong> a × (b × c) ≠ (a × b) × c in general — bracketing matters.</li>
+<li><strong>No cancellation:</strong> a × b = a × c does not give b = c.</li>
+</ul>
+<h4>2.3 The parallel criterion</h4>
+<ul>
+<li><strong>Theorem:</strong> a ∥ b ⟺ <strong>a × b = 0</strong> (non-zero vectors), since sin θ = 0 exactly for θ = 0 or π.</li>
+<li>Consequence: a × a = 0 for every vector.</li>
+</ul>
+<h4>2.4 Area theorems</h4>
+<ul>
+<li><strong>Theorem:</strong> |a × b| = area of the <strong>parallelogram</strong> with adjacent sides a, b; <strong>half</strong> of it is the triangle's area: Δ = ½|a × b|.</li>
+<li>For a triangle with vertices A, B, C: Δ = ½|AB × AC|.</li>
+<li><strong>Lagrange's identity:</strong> |a × b|² = |a|²|b|² − (a·b)² — computing |a × b| without the angle.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Cross product</strong></td><td></td><td>a</td><td></td><td>b</td><td>sin θ n̂ — a vector</td><td>î × ĵ = k̂</td></tr><tr><td><strong>Anticommutativity</strong></td><td>Swapping order flips the sign</td><td>b × a = −a × b</td></tr><tr><td><strong>Right-hand rule</strong></td><td>Curl fingers a→b; thumb gives n̂</td><td>fixes the perpendicular's direction</td></tr><tr><td><strong>Parallelogram area</strong></td><td></td><td>a × b</td><td>with adjacent sides a, b</td><td>the geometric face</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why sin θ</h4>
+<ul>
+<li>The cross product measures <em>perpendicular cooperation</em>: full strength at right angles (sin 90° = 1), nothing when parallel (sin 0 = 0). It is the dot product's complement.</li>
+</ul>
+<h4>4.2 Reading the determinant</h4>
+<ul>
+<li>Expand along the top row with cofactor signs + − +; each 2×2 minor deletes one component column. The formula is mechanical but sign-hungry — the middle term carries the minus.</li>
+</ul>
+<h4>4.3 Direction is half the answer</h4>
+<ul>
+<li>|a × b| gives size; the right-hand rule gives which of the two perpendicular directions. In exams, quote the vector, not just its magnitude, when the question asks for a × b.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Dot vs cross</strong></p>
+<table><thead><tr><th>Basis</th><th>a·b</th><th>a × b</th></tr></thead><tbody><tr><td>result</td><td>scalar</td><td>vector</td></tr><tr><td>angle function</td><td>cos θ</td><td>sin θ</td></tr><tr><td>commutative?</td><td>yes</td><td>no (anti)</td></tr><tr><td>zero when</td><td>perpendicular</td><td>parallel</td></tr><tr><td>measures</td><td>agreement</td><td>perpendicular strength / area</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>Anticommutative, not commutative:</strong> swapping inputs negates the output — a sign error here poisons every downstream result.</li><li><strong>The middle component's sign:</strong> (a₃b₁ − a₁b₃) — students write a₁b₃ − a₃b₁ and lose the ĵ component.</li><li><strong>Area of triangle = half the parallelogram:</strong> Δ = ½|a × b| — forgetting the ½ doubles the answer.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (part of 3m)</strong> — a × b = |î ĵ k̂; 2 3 −1; 1 −1 2| = î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = <strong>5î − 5ĵ − 5k̂</strong>. |a × b| = √(25 + 25 + 25) = <strong>5√3</strong>.</li><li><strong>NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)</strong> — a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = <strong>5k̂</strong> (2D shortcut: only the k̂ component survives). <strong>Area = |a × b| = 5 square units.</strong></li><li><strong>NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (part of 4m)</strong> — A perpendicular to the plane is parallel to <strong>a × b</strong>: a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î − ĵ + 0k̂ = <strong>î − ĵ</strong>. |î − ĵ| = √2. <strong>Unit perpendicular: (î − ĵ)/√2</strong> (its negative serves equally — both directions are perpendicular).</li><li><strong>NEB 2021 (verified PYQ): Given a = î − 2ĵ + 3k̂ and b = 3î + 4ĵ − k̂, find a·b and |a × b|. (3m)</strong> — a·b = 3 − 8 − 3 = −14. For |a × b| without the full vector, use <strong>Lagrange</strong>: |a|² = 1 + 4 + 9 = 14; |b|² = 9 + 16 + 1 = 26; |a × b|² = (14)(26) − (−14)² = 364 − 196 = 168 ⟹ <strong>|a × b| = √168 = 2√42</strong>.</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Cross product: a x b = |a||b| sin th n-hat (right-hand rule) = determinant |i j k; a1 a2 a3; b1 b2 b3|. Anticommutative: a x b = -(b x a); distributive; NOT associative with dot. Parallel criterion: a || b iff a x b = 0; a x a = 0. Area theorems: |a x b| = parallelogram area; triangle area = (1/2)|a x b| = (1/2)|AB x AC|. Lagrange identity: |a x b|^2 = |a|^2|b|^2 - (a.b)^2. Cyclic products: i x j = k, j x k = i, k x i = j. 2D shortcut: (a1, a2) x (b1, b2) = (a1b2 - a2b1) k.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>The cross product is the dot product's complement: cos th measures agreement, sin th measures perpendicular cooperation — and sin th doubles as the area ratio.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>Half a parallelogram</strong></em> — the triangle with sides a, b is exactly half the parallelogram they span: Delta = (1/2)|a x b|; forgetting the half doubles every triangle-area answer.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>Torque = r x F and angular momentum = r x p are cross products in physics clothing: perpendicular levers, right-hand directions.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;a x b = |a||b| sin th n-hat; |a x b| is the parallelogram area; a || b iff a x b = 0.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Verified PYQs: NEB 2024 (|a x b| = 5 sqrt3; parallelogram area 5), NEB 2023 (a.b and |a x b| pair), NEB 2021 (Lagroute route 2 sqrt42), NEB 2020 (unit perpendicular (i - j)/sqrt2) — assigned to this row.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Determinant expansion: + - + cofactor signs. 2D cross: single k-hat component a1b2 - a2b1. Unit perpendicular to a plane: a x b normalised. |a x b| without angle: Lagrange sqrt(|a|^2|b|^2 - (a.b)^2).</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>For |a x b| questions, compute the full cross product then its magnitude — the intermediate vector earns method marks even if only the length is asked.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)</li>
+<li>a ∥ b ⟺ a × b = 0; a × b = −(b × a)</li>
+<li>parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>Compute a × b and |a × b| for a = 2î + 3ĵ − k̂, b = î − ĵ + 2k̂.</li><li>Find the area of the parallelogram with sides 2î + ĵ and î + 3ĵ.</li><li>Find a unit vector perpendicular to the plane of î + ĵ and ĵ + k̂.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB 2024 (verified PYQ): If a = 2î + 3ĵ − k̂ and b = î − ĵ + 2k̂, find |a × b|. (3m with a·b)</strong> — <strong>Determinant form:</strong> a × b = |î ĵ k̂; 2 3 −1; 1 −1 2|. <strong>Expand:</strong> î[(3)(2) − (−1)(−1)] − ĵ[(2)(2) − (−1)(1)] + k̂[(2)(−1) − (3)(1)] = î(6 − 1) − ĵ(4 + 1) + k̂(−2 − 3) = <strong>5î − 5ĵ − 5k̂</strong>. <strong>Magnitude:</strong> |a × b| = √(5² + 5² + 5²) = √75 = <strong>5√3</strong>. (Combined with a·b = −3 from the dot-product row, cos θ = −3/(7·√14) and sin θ = 5√3/(7√14) — the pair pins the angle completely.)</li><li><strong>NEB 2024 (verified PYQ): Find the area of the parallelogram with adjacent sides a = 2î + ĵ and b = î + 3ĵ. (3m)</strong> — <strong>2D shortcut:</strong> with no k̂ components, the cross product reduces to its k̂ part: a × b = (a₁b₂ − a₂b₁)k̂ = (2·3 − 1·1)k̂ = <strong>5k̂</strong>. <strong>Area theorem:</strong> the parallelogram spanned by a and b has area |a × b| = |5k̂| = <strong>5 square units</strong>. (The corresponding triangle would have area 5/2 — the half factor belongs to triangles only.)</li><li><strong>NEB 2020 (verified PYQ): Find a unit vector perpendicular to the plane containing a = î + ĵ and b = ĵ + k̂. (4m with part ii)</strong> — <strong>Key fact:</strong> a × b is perpendicular to <strong>both</strong> a and b, hence to their plane. <strong>Compute:</strong> a × b = î[(1)(1) − (0)(1)] − ĵ[(1)(1) − (0)(1)] + k̂[(1)(1) − (1)(1)] = î(1) − ĵ(1) + k̂(0) = <strong>î − ĵ</strong>. <strong>Normalise:</strong> |î − ĵ| = √2, so the required unit vector is <strong>(î − ĵ)/√2</strong> — or its negative (î − ĵ)(−1)/√2; both directions are perpendicular to the plane, and either answer is accepted unless a handedness is specified.</li></ul></dd></div></dl></section>
   <nav class="pager"><a href="02-linear-combination-vectors.html" title="Linear Combination of Vectors">‹ Linear Combination of Vectors</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="03-cross-product-of-two-vectors.html" title="Cross Product of Two Vectors">Cross Product of Two Vectors ›</a></nav>
 </div></body></html>

@@ -4,3 +4,7 @@ export {
   getChapterNoteswiftBundles,
   noteswiftClassifiedUnitIds,
 } from "./streams/noteswift-catalog";
+export {
+  getChapterNepalieducateStreamPdfs,
+  nepalieducateClassifiedUnitIds,
+} from "./streams/nepalieducate-catalog";

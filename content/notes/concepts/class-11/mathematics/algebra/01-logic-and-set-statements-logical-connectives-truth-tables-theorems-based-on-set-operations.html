@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Logic and set: statements, logical connectives, truth tab…</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Logic and set: statements, logical connectives, truth tab…</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -158,50 +161,113 @@
 <section class="field"><h2>Generated At</h2><p>2026-09-10T13:48:26.104Z</p></section>
 <section class="field"><h2>Confusion</h2><ul><li>❌ answer with no steps → ✅ show each step and box the result.</li></ul></section>
 <section class="field"><h2>Bounds</h2><ul><li>Covers only: logic, set: statements, logical connectives, truth tables (within Algebra).</li><li>Out of scope here: topics of neighbouring units in Mathematics — don't mix them.</li><li>State the limit / condition where a formula or rule stops being valid before applying it.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>one worked example for &quot;Logic and set: statements, logical connectives, truth tab…&quot; — check units / edge cases.</li><li>recall card: definition → formula → limit → one error to avoid.</li></ul></section>
-<section class="field"><h2>Universal Facts</h2><ul><li>answer pattern for &quot;Logic and set: statements, logical connectives, truth tab…&quot;: define → method → result. Structure earns the marks on 6–10 mark questions.</li></ul></section>
-<section class="field"><h2>Examples</h2><ul><li>Worked: identify given → pick sub-concept → apply standard form → check units / edges.</li></ul></section>
-<section class="field"><h2>Practice Questions</h2><ul><li>state + explain the main idea of &quot;Logic and set: statements, logical connectives, truth tab…&quot; with one example.</li><li>compare &quot;Logic&quot; with the related idea from a neighbouring unit.</li><li>solve / apply for &quot;Logic and set: statements, logical connectives, truth tab…&quot; and verify the answer is plausible.</li></ul></section>
+<section class="field"><h2>Practice</h2><ul><li>If A = {1,2,3}, B = {2,3,4}, find A∪B, A∩B, A−B.</li><li>Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) by membership table.</li><li>Show p → q ≡ ¬p ∨ q by truth table.</li></ul></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>De Morgan's laws are the reason search engines understand &quot;NOT (cats OR dogs)&quot; as &quot;(not cats) AND (not dogs)&quot;.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li><em><strong>The dictionary</strong></em> — every tautology is a set identity wearing logic clothes: swap not/and/or for complement/intersection/union and the truth table becomes a membership table.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li><strong>NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)</strong> — <strong>Union</strong> — elements in at least one set: A∪B = <strong>{1, 2, 3, 4}</strong>. <strong>Intersection</strong> — elements common to both: A∩B = <strong>{2, 3}</strong>. <strong>Difference</strong> — elements of A not in B: A−B = <strong>{1}</strong> (note B−A would be {4} — difference is not commutative). <strong>Consistency check:</strong> the inclusion–exclusion theorem |A∪B| = |A| + |B| − |A∩B| gives 3 + 3 − 2 = 4 = |{1,2,3,4}| ✓ — the counts agree, so no element was missed or double-counted.</li><li><strong>NEB 2022 (verified PYQ): Prove that A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)</strong> — <strong>Membership-table proof.</strong> Every element x is in one of 8 patterns w.r.t. A, B, C. Build the columns: <strong>B∩C</strong> (T iff both T); <strong>LHS = A∪(B∩C)</strong>; <strong>A∪B</strong>; <strong>A∪C</strong>; <strong>RHS = (A∪B)∩(A∪C)</strong>. Checking the 8 rows: x∈A,∈B,∈C: LHS T, RHS T∩T = T ✓; x∈A only: LHS T (in A), RHS (A∪B=T)∩(A∪C=T) = T ✓; x∈B only: B∩C = F so LHS F; RHS T∩F = F ✓; x∈C only: LHS F, RHS F∩T = F ✓; x∈none: F = F∩F = F ✓; x∈B,C not A: B∩C = T so LHS T; RHS T∩T = T ✓; remaining rows (A with B not C; A with C not B) both give T = T ✓. <strong>All 8 rows agree ⟹ A ∪ (B∩C) = (A∪B)∩(A∪C)</strong> — the distributive law of union over intersection. ∎</li><li><strong>NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ is equal to: (a) abc (b) 3abc (c) −abc (d) 0 (1m)</strong> — <strong>Key identity:</strong> a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca). <strong>Apply the hypothesis:</strong> a + b + c = 0 makes the right-hand side zero, hence a³ + b³ + c³ − 3abc = 0, i.e. <strong>a³ + b³ + c³ = 3abc — option (b)</strong>. (Conversely, a³ + b³ + c³ = 3abc forces a + b + c = 0 or a = b = c — the identity cuts both ways, which is why it is a favourite factorisation tool.)</li></ul></section>
 <section class="field"><h2>Numericals</h2><ul><li>Set up the defining equation for &quot;Logic and set: statements, logical connectives, truth tab…&quot;, substitute simple values, and compute the result with units.</li><li>Re-derive the standard result from first principles in ≤ 4 steps.</li><li>Apply it to one boundary case (where the limit applies) and state the answer.</li></ul></section>
-<section class="field"><h2>Key Points</h2><ul><li>• Logic</li><li>• Set: statements</li><li>• Logical connectives</li><li>• Truth tables</li><li>• Theorems based on set operations</li><li>Connection of Logic and Set to other topics</li></ul></section>
-<section class="field"><h2>Summary</h2><p>Logic and Set covers essential principles and applications.</p></section>
+<section class="field"><h2>Key Points</h2><ul><li>Statement: definite truth value. Connectives: not, and, or, implies, iff; p -&gt; q false only when p T and q F (vacuously true otherwise). Tautology (always true), contradiction (always false), contingency. Power set has 2^n members. Inclusion-exclusion: |A u B| = |A| + |B| - |A n B|. De Morgan: (A u B)' = A' n B', (A n B)' = A' u B'. Distributive: A u (B n C) = (A u B) n (A u C) and the dual. Absorption: A u (A n B) = A. Proof method: membership table over the 8 in/out patterns of A, B, C. Logic-set dictionary: not-complement, and-intersection, or-union. Material implication: p -&gt; q equivalent to (not p) or q. Conditional identity: a^3 + b^3 + c^3 = 3abc when a + b + c = 0.</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Logic and sets share one grammar. A <strong>statement</strong> has a definite truth value; connectives build compound statements whose truth tables obey fixed conventions — crucially <strong>p → q is false only for T→F</strong> (vacuous truth elsewhere), and p → q ≡ ¬p ∨ q. <strong>Tautologies</strong> are always true, contradictions always false. On the set side, the <strong>membership table</strong> — 8 in/out patterns for A, B, C — proves every identity finitely: <strong>De Morgan</strong> ((A∪B)′ = A′∩B′), <strong>distributivity</strong> (A∪(B∩C) = (A∪B)∩(A∪C), verified row-by-row), <strong>absorption</strong> A∪(A∩B) = A, and <strong>inclusion–exclusion</strong> |A∪B| = |A| + |B| − |A∩B| (NEB 2023's {1,2,3}/{2,3,4} operations check out: union {1,2,3,4}, intersection {2,3}, difference {1}). The logic–set dictionary (¬↔′, ∧↔∩, ∨↔∪) makes one table serve both subjects, and the conditional identity a³+b³+c³ = 3abc when a+b+c = 0 (NEB 2022) is algebra's most-quoted bonus.</p></section>
 <section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>Which of the following is a distinct sub-topic under &quot;Logic and set: statements, logical connectives, truth tab…&quot;?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Logic</li><li>Set: statements</li><li>Unrelated topic</li><li>None of the above</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>Logic</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Logic is listed among the official sub-ideas of Logic and set: statements, logical connectives, truth tab…; the others are not part of this topic.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>A common examiner point on &quot;Logic and set: statements, logical connectives, truth tab…&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div></section>
-<section class="field"><h2>Important Statements</h2><ul><li>Statement 1: Definition of Logic and Set</li><li>Statement 2: Theorem related to Logic and Set</li><li>Statement 3: Condition for Logic and Set to be valid</li><li>Statement 4: Principle governing Logic and Set</li><li>Statement 5: Corollary or consequence of Logic and Set</li></ul></section>
-<section class="field"><h2>Important Notes</h2><ul><li>Logic and Set is based on fundamental principles.</li></ul></section>
-<section class="field"><h2>Exam Short Tricks</h2><ul><li>Recall the formula for Logic and Set.</li></ul></section>
-<section class="field"><h2>Important Concepts</h2><ul><li>Definition and significance of Logic and Set.</li></ul></section>
-<section class="field"><h2>Notes</h2><ul><li><h2>Logic and set: statements, logical connectives, truth tables, theorems based on set operations</h2>
-<h3>1. Introduction and motivation</h3>
-<p>What the tool <strong>Logic and set</strong> is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Algebra fill pass.</p>
-<h3>2. Definitions and theorems</h3>
-<h4>Logic and set: statements</h4>
-<h4>logical connectives</h4>
-<h4>truth tables</h4>
-<h4>theorems based on set operations</h4>
-<p>Each result: statement → hypotheses box → proof or derivation with reasons → remarks, plus what breaks when a hypothesis is dropped (block II — the flagship).</li><li><h3>3. Formula sheet</h3>
-<p><strong>Table 1 — Formula sheet</strong></p>
-<table><thead><tr><th>Formula</th><th>Symbols</th><th>Validity condition</th><th>Where used</th></tr></thead><tbody></tbody></table>
-<p>Complete for the topic; every row carries its validity condition (§3.1).</li><li><h3>4. Methods and standard forms</h3>
-<p><strong>Table 2 — Counts and distributions</strong></p>
-<table><thead><tr><th>Case</th><th>Rule or formula</th><th>Worked example</th><th>Trap</th></tr></thead><tbody></tbody></table>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>5. Figures and graphs</h3>
+<section class="field"><h2>Important Statements</h2><ul><li>&quot;(A u B)' = A' n B'; A u (B n C) = (A u B) n (A u C); p -&gt; q is false only when p is true and q is false.&quot;</li></ul></section>
+<section class="field"><h2>Important Notes</h2><ul><li>Verified PYQs: NEB 2023 (A = {1,2,3}, B = {2,3,4} operations), NEB 2022 (distributive law proof; a^3+b^3+c^3 = 3abc MCQ) - assigned to this row.</li></ul></section>
+<section class="field"><h2>Exam Short Tricks</h2><ul><li>Truth table of p -&gt; q: only T,F,T,T. A - B = A n B'. Power set: 2^n. Set identities: membership table, 8 rows. a+b+c = 0 =&gt; a^3+b^3+c^3 = 3abc.</li></ul></section>
+<section class="field"><h2>Important Concepts</h2><ul><li>The membership table is a finite proof of an infinite statement: two sets are equal iff every one of the 8 membership patterns agrees on both sides.</li></ul></section>
+<section class="field"><h2>Notes</h2><ul><li><h3>1. Topic Introduction — Logic Meets Sets</h3>
+<p>Statements, connectives and truth tables are the grammar of reasoning; sets are the nouns the grammar talks about. The theorems: the <strong>algebra of sets</strong> — De Morgan's laws, distributive laws, absorption — proved by membership tables, with truth tables as the logical twin.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Statements and connectives</h4>
 <ul>
-<li><strong>F1</strong> — Logic and set — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled)</li>
-<li><strong>F2</strong> — Logic and set — second figure: construction, region or comparison (authored SVG — English labels)</li>
-<li><strong>F3</strong> — Logic and set — curated reference figure where it beats SVG (curated external — license recorded at fill)</li>
+<li>A <strong>statement</strong> is a declarative sentence that is definitively true or false. <strong>Connectives:</strong> ¬ (not), ∧ (and), ∨ (or), → (implies), ↔ (if and only if).</li>
+<li><strong>Truth-table conventions:</strong> ¬ flips T/F; p ∧ q is true only when both are true; p ∨ q is false only when both are false; <strong>p → q is false only when p is T and q is F</strong> (vacuously true otherwise); p ↔ q true when both agree.</li>
 </ul>
-<p>Authored figures first (§3.3): every graph plotted from the same equation the text uses.</li><li><h3>6. Worked examples</h3>
-<p>≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass.</p>
-<h3>7. Traps and common mistakes</h3>
-<p>The classic exam traps of this topic (sign slips, dropped conditions, domain holes) as a table (block VI).</li><li><h3>8. Exam Zone, practice and textbook exercises</h3>
-<p>NEB question-type map (prove, show, evaluate, solve) with past-question patterns and topic MCQs; existing entrance-exam (CEE) material stays where it is (block VII).</p>
-<p>Textbook Exercise Solutions (block IX, math-plan.md §6A): every exercise of the mapped Sukunda chapters is solved file-by-file under content/practice/solutions/ — literally all questions and sub-parts, each with verification. Exercise-file shells are built alongside these interfaces.</li></ul></section>
+<h4>2.2 Tautology, contradiction, contingency</h4>
+<ul>
+<li><strong>Tautology:</strong> true for every assignment (e.g. p ∨ ¬p); <strong>contradiction:</strong> false for every assignment (p ∧ ¬p); <strong>contingency:</strong> mixed.</li>
+</ul>
+<h4>2.3 Sets and operations</h4>
+<ul>
+<li>Union A∪B, intersection A∩B, difference A−B, complement A′, and the power set P(A) with <strong>2ⁿ</strong> members for |A| = n.</li>
+<li><strong>Inclusion–exclusion (theorem):</strong> for two sets |A∪B| = |A| + |B| − |A∩B|; for three, add pairwise intersections, subtract the triple.</li>
+</ul>
+<h4>2.4 The algebra of sets (theorems)</h4>
+<ul>
+<li><strong>De Morgan:</strong> (A∪B)′ = A′∩B′ and (A∩B)′ = A′∪B′ — negation flips the connective.</li>
+<li><strong>Distributive:</strong> A∪(B∩C) = (A∪B)∩(A∪C); A∩(B∪C) = (A∩B)∪(A∩C).</li>
+<li><strong>Absorption:</strong> A∪(A∩B) = A; <strong>Idempotent:</strong> A∪A = A; <strong>Complement laws:</strong> A∪A′ = U, A∩A′ = φ.</li>
+<li>Proof method: <strong>membership (element) table</strong> — each x is in/out of A, B, C (8 rows); both sides agree in every row ⟺ the identity holds.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Statement</strong></td><td>Sentence with a definite truth value</td><td>&quot;3 is prime&quot; (T)</td></tr><tr><td><strong>Tautology</strong></td><td>True under every assignment</td><td>p → p</td></tr><tr><td><strong>Power set</strong></td><td>Set of all subsets</td><td>P({1,2}) has 4 members</td></tr><tr><td><strong>De Morgan's laws</strong></td><td>Complement flips ∪/∩</td><td>(A∪B)′ = A′∩B′</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the membership table proves everything</h4>
+<ul>
+<li>Two sets are equal iff they contain exactly the same elements. Tabulating membership for every element-type (in/out of each of A, B, C) exhausts all cases — a finite proof of an infinite statement.</li>
+</ul>
+<h4>4.2 The logic–set dictionary</h4>
+<ul>
+<li>¬ ↔ complement, ∧ ↔ intersection, ∨ ↔ union, → ⊂-style inclusion: every tautology is a set identity in disguise. Learning one table serves both subjects.</li>
+</ul>
+<h4>4.3 Implication's oddity</h4>
+<ul>
+<li>p → q is vacuously true when p is false — &quot;if the moon is cheese then 2 = 2&quot; is true. This convention makes proofs by implication coherent.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Connectives vs set operations</strong></p>
+<table><thead><tr><th>Logic</th><th>Sets</th><th>Meaning</th></tr></thead><tbody><tr><td>¬p</td><td>A′</td><td>not in</td></tr><tr><td>p ∧ q</td><td>A∩B</td><td>in both</td></tr><tr><td>p ∨ q</td><td>A∪B</td><td>in at least one</td></tr><tr><td>p → q</td><td>A ⊆ B</td><td>membership transfers</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>p → q with false p is true:</strong> the only false case is T→F — students mark false antecedent rows wrong.</li><li><strong>A − B ≠ B − A:</strong> difference is not commutative; A−B = A∩B′ is the working form.</li><li><strong>De Morgan's flip:</strong> complementing a union gives an intersection of complements — the connective changes too.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)</strong> — <strong>Union</strong> (elements in either): A∪B = <strong>{1, 2, 3, 4}</strong>. <strong>Intersection</strong> (elements in both): A∩B = <strong>{2, 3}</strong>. <strong>Difference</strong> (in A, not in B): A−B = <strong>{1}</strong>. Check: |A∪B| = |A| + |B| − |A∩B| = 3 + 3 − 2 = 4 ✓ — inclusion–exclusion confirms the count.</li><li><strong>NEB 2022 (verified PYQ): Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)</strong> — <strong>Membership table</strong> with rows for x in/out of A, B, C. Columns: B∩C (T only when both B, C are T); left A∪(B∩C); A∪B; A∪C; right (A∪B)∩(A∪C). Comparing columns row by row: for every one of the 8 membership patterns, A∪(B∩C) and (A∪B)∩(A∪C) agree — e.g. x ∈ A only: both T (left: in A; right: in both unions); x ∉ A, x ∈ B only: left = B∩C = F, right = (T)∩(F) = F. All 8 rows agree ⟹ the sets are equal ∎ (distributive law of union over intersection).</li><li><strong>NEB-style (2m): Construct the truth table of p → q and (¬p) ∨ q and show they are logically equivalent.</strong> — Rows (p, q): (T,T), (T,F), (F,T), (F,F). p→q: T, F, T, T. ¬p∨q: F→T gives T; T→F gives F; F→T gives T; F→F gives T — column T, F, T, T. <strong>Identical columns ⟹ p → q ≡ ¬p ∨ q</strong>, the material-implication equivalence that converts implications into disjunctions.</li><li><strong>NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ equals: (1m)</strong> — <strong>Identity:</strong> a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca). With a + b + c = 0 the right side vanishes, so a³ + b³ + c³ = <strong>3abc → option (b)</strong>. (This is the algebra's most-quoted conditional identity.)</li></ul></section>
 <section class="field"><h2>Animation3 D</h2><p>algebra</p></section>
 <section class="field"><h2>Motion Graphics</h2><p>algebra</p></section>
-<section class="field"><h2>Formulas</h2><p class="empty">—</p></section>
+<section class="field"><h2>Formulas</h2><ul><li><ul>
+<li>p → q ≡ ¬p ∨ q; ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q</li>
+<li>|A∪B| = |A| + |B| − |A∩B|; |P(A)| = 2ⁿ</li>
+<li>A∪(B∩C) = (A∪B)∩(A∪C); A∪(A∩B) = A; A∪A′ = U</li>
+<li>a³ + b³ + c³ − 3abc = (a+b+c)(a²+b²+c²−ab−bc−ca)</li>
+</ul></li></ul></section>
 <section class="field"><h2>Special Notes</h2><p class="empty">—</p></section>
-<section class="field"><h2>Exam Notes</h2><p class="empty">—</p></section>
+<section class="field"><h2>Exam Notes</h2><ul><li>In membership-table proofs, label the columns and state &quot;all rows agree, hence equal&quot; - the concluding sentence carries the proof mark.</li></ul></section>
 <section class="field"><h2>Important Tasks</h2><p class="empty">—</p></section>
+<section class="field"><h2>Enriched Content</h2><dl class="obj"><div class="kv"><dt>Notes</dt><dd><ul><li><h3>1. Topic Introduction — Logic Meets Sets</h3>
+<p>Statements, connectives and truth tables are the grammar of reasoning; sets are the nouns the grammar talks about. The theorems: the <strong>algebra of sets</strong> — De Morgan's laws, distributive laws, absorption — proved by membership tables, with truth tables as the logical twin.</li><li><h3>2. Fundamental Concepts</h3>
+<h4>2.1 Statements and connectives</h4>
+<ul>
+<li>A <strong>statement</strong> is a declarative sentence that is definitively true or false. <strong>Connectives:</strong> ¬ (not), ∧ (and), ∨ (or), → (implies), ↔ (if and only if).</li>
+<li><strong>Truth-table conventions:</strong> ¬ flips T/F; p ∧ q is true only when both are true; p ∨ q is false only when both are false; <strong>p → q is false only when p is T and q is F</strong> (vacuously true otherwise); p ↔ q true when both agree.</li>
+</ul>
+<h4>2.2 Tautology, contradiction, contingency</h4>
+<ul>
+<li><strong>Tautology:</strong> true for every assignment (e.g. p ∨ ¬p); <strong>contradiction:</strong> false for every assignment (p ∧ ¬p); <strong>contingency:</strong> mixed.</li>
+</ul>
+<h4>2.3 Sets and operations</h4>
+<ul>
+<li>Union A∪B, intersection A∩B, difference A−B, complement A′, and the power set P(A) with <strong>2ⁿ</strong> members for |A| = n.</li>
+<li><strong>Inclusion–exclusion (theorem):</strong> for two sets |A∪B| = |A| + |B| − |A∩B|; for three, add pairwise intersections, subtract the triple.</li>
+</ul>
+<h4>2.4 The algebra of sets (theorems)</h4>
+<ul>
+<li><strong>De Morgan:</strong> (A∪B)′ = A′∩B′ and (A∩B)′ = A′∪B′ — negation flips the connective.</li>
+<li><strong>Distributive:</strong> A∪(B∩C) = (A∪B)∩(A∪C); A∩(B∪C) = (A∩B)∪(A∩C).</li>
+<li><strong>Absorption:</strong> A∪(A∩B) = A; <strong>Idempotent:</strong> A∪A = A; <strong>Complement laws:</strong> A∪A′ = U, A∩A′ = φ.</li>
+<li>Proof method: <strong>membership (element) table</strong> — each x is in/out of A, B, C (8 rows); both sides agree in every row ⟺ the identity holds.</li>
+</ul></li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Example</th></tr></thead><tbody><tr><td><strong>Statement</strong></td><td>Sentence with a definite truth value</td><td>&quot;3 is prime&quot; (T)</td></tr><tr><td><strong>Tautology</strong></td><td>True under every assignment</td><td>p → p</td></tr><tr><td><strong>Power set</strong></td><td>Set of all subsets</td><td>P({1,2}) has 4 members</td></tr><tr><td><strong>De Morgan's laws</strong></td><td>Complement flips ∪/∩</td><td>(A∪B)′ = A′∩B′</td></tr></tbody></table></li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Why the membership table proves everything</h4>
+<ul>
+<li>Two sets are equal iff they contain exactly the same elements. Tabulating membership for every element-type (in/out of each of A, B, C) exhausts all cases — a finite proof of an infinite statement.</li>
+</ul>
+<h4>4.2 The logic–set dictionary</h4>
+<ul>
+<li>¬ ↔ complement, ∧ ↔ intersection, ∨ ↔ union, → ⊂-style inclusion: every tautology is a set identity in disguise. Learning one table serves both subjects.</li>
+</ul>
+<h4>4.3 Implication's oddity</h4>
+<ul>
+<li>p → q is vacuously true when p is false — &quot;if the moon is cheese then 2 = 2&quot; is true. This convention makes proofs by implication coherent.</li>
+</ul></li><li><h3>5. Comparison Tables</h3>
+<p><strong>Connectives vs set operations</strong></p>
+<table><thead><tr><th>Logic</th><th>Sets</th><th>Meaning</th></tr></thead><tbody><tr><td>¬p</td><td>A′</td><td>not in</td></tr><tr><td>p ∧ q</td><td>A∩B</td><td>in both</td></tr><tr><td>p ∨ q</td><td>A∪B</td><td>in at least one</td></tr><tr><td>p → q</td><td>A ⊆ B</td><td>membership transfers</td></tr></tbody></table></li><li><h3>6. Common Confusions</h3>
+<p><strong>p → q with false p is true:</strong> the only false case is T→F — students mark false antecedent rows wrong.</li><li><strong>A − B ≠ B − A:</strong> difference is not commutative; A−B = A∩B′ is the working form.</li><li><strong>De Morgan's flip:</strong> complementing a union gives an intersection of complements — the connective changes too.</li><li><h3>7. Exam Application</h3>
+<p><strong>NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)</strong> — <strong>Union</strong> (elements in either): A∪B = <strong>{1, 2, 3, 4}</strong>. <strong>Intersection</strong> (elements in both): A∩B = <strong>{2, 3}</strong>. <strong>Difference</strong> (in A, not in B): A−B = <strong>{1}</strong>. Check: |A∪B| = |A| + |B| − |A∩B| = 3 + 3 − 2 = 4 ✓ — inclusion–exclusion confirms the count.</li><li><strong>NEB 2022 (verified PYQ): Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)</strong> — <strong>Membership table</strong> with rows for x in/out of A, B, C. Columns: B∩C (T only when both B, C are T); left A∪(B∩C); A∪B; A∪C; right (A∪B)∩(A∪C). Comparing columns row by row: for every one of the 8 membership patterns, A∪(B∩C) and (A∪B)∩(A∪C) agree — e.g. x ∈ A only: both T (left: in A; right: in both unions); x ∉ A, x ∈ B only: left = B∩C = F, right = (T)∩(F) = F. All 8 rows agree ⟹ the sets are equal ∎ (distributive law of union over intersection).</li><li><strong>NEB-style (2m): Construct the truth table of p → q and (¬p) ∨ q and show they are logically equivalent.</strong> — Rows (p, q): (T,T), (T,F), (F,T), (F,F). p→q: T, F, T, T. ¬p∨q: F→T gives T; T→F gives F; F→T gives T; F→F gives T — column T, F, T, T. <strong>Identical columns ⟹ p → q ≡ ¬p ∨ q</strong>, the material-implication equivalence that converts implications into disjunctions.</li><li><strong>NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ equals: (1m)</strong> — <strong>Identity:</strong> a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca). With a + b + c = 0 the right side vanishes, so a³ + b³ + c³ = <strong>3abc → option (b)</strong>. (This is the algebra's most-quoted conditional identity.)</li></ul></dd></div><div class="kv"><dt>Key Points</dt><dd><ul><li>Statement: definite truth value. Connectives: not, and, or, implies, iff; p -&gt; q false only when p T and q F (vacuously true otherwise). Tautology (always true), contradiction (always false), contingency. Power set has 2^n members. Inclusion-exclusion: |A u B| = |A| + |B| - |A n B|. De Morgan: (A u B)' = A' n B', (A n B)' = A' u B'. Distributive: A u (B n C) = (A u B) n (A u C) and the dual. Absorption: A u (A n B) = A. Proof method: membership table over the 8 in/out patterns of A, B, C. Logic-set dictionary: not-complement, and-intersection, or-union. Material implication: p -&gt; q equivalent to (not p) or q. Conditional identity: a^3 + b^3 + c^3 = 3abc when a + b + c = 0.</li></ul></dd></div><div class="kv"><dt>Important Concepts</dt><dd><ul><li>The membership table is a finite proof of an infinite statement: two sets are equal iff every one of the 8 membership patterns agrees on both sides.</li></ul></dd></div><div class="kv"><dt>Examples</dt><dd><ul><li><em><strong>The dictionary</strong></em> — every tautology is a set identity wearing logic clothes: swap not/and/or for complement/intersection/union and the truth table becomes a membership table.</li></ul></dd></div><div class="kv"><dt>Universal Facts</dt><dd><ul><li>De Morgan's laws are the reason search engines understand &quot;NOT (cats OR dogs)&quot; as &quot;(not cats) AND (not dogs)&quot;.</li></ul></dd></div><div class="kv"><dt>Important Statements</dt><dd><ul><li>&quot;(A u B)' = A' n B'; A u (B n C) = (A u B) n (A u C); p -&gt; q is false only when p is true and q is false.&quot;</li></ul></dd></div><div class="kv"><dt>Important Notes</dt><dd><ul><li>Verified PYQs: NEB 2023 (A = {1,2,3}, B = {2,3,4} operations), NEB 2022 (distributive law proof; a^3+b^3+c^3 = 3abc MCQ) - assigned to this row.</li></ul></dd></div><div class="kv"><dt>Exam Short Tricks</dt><dd><ul><li>Truth table of p -&gt; q: only T,F,T,T. A - B = A n B'. Power set: 2^n. Set identities: membership table, 8 rows. a+b+c = 0 =&gt; a^3+b^3+c^3 = 3abc.</li></ul></dd></div><div class="kv"><dt>Exam Notes</dt><dd><ul><li>In membership-table proofs, label the columns and state &quot;all rows agree, hence equal&quot; - the concluding sentence carries the proof mark.</li></ul></dd></div><div class="kv"><dt>Formulas</dt><dd><ul><li><ul>
+<li>p → q ≡ ¬p ∨ q; ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q</li>
+<li>|A∪B| = |A| + |B| − |A∩B|; |P(A)| = 2ⁿ</li>
+<li>A∪(B∩C) = (A∪B)∩(A∪C); A∪(A∩B) = A; A∪A′ = U</li>
+<li>a³ + b³ + c³ − 3abc = (a+b+c)(a²+b²+c²−ab−bc−ca)</li>
+</ul></li></ul></dd></div><div class="kv"><dt>Practice</dt><dd><ul><li>If A = {1,2,3}, B = {2,3,4}, find A∪B, A∩B, A−B.</li><li>Prove A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) by membership table.</li><li>Show p → q ≡ ¬p ∨ q by truth table.</li></ul></dd></div><div class="kv"><dt>Practice Questions</dt><dd><ul><li><strong>NEB 2023 (verified PYQ): If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B and A − B. (3m)</strong> — <strong>Union</strong> — elements in at least one set: A∪B = <strong>{1, 2, 3, 4}</strong>. <strong>Intersection</strong> — elements common to both: A∩B = <strong>{2, 3}</strong>. <strong>Difference</strong> — elements of A not in B: A−B = <strong>{1}</strong> (note B−A would be {4} — difference is not commutative). <strong>Consistency check:</strong> the inclusion–exclusion theorem |A∪B| = |A| + |B| − |A∩B| gives 3 + 3 − 2 = 4 = |{1,2,3,4}| ✓ — the counts agree, so no element was missed or double-counted.</li><li><strong>NEB 2022 (verified PYQ): Prove that A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C). (3m)</strong> — <strong>Membership-table proof.</strong> Every element x is in one of 8 patterns w.r.t. A, B, C. Build the columns: <strong>B∩C</strong> (T iff both T); <strong>LHS = A∪(B∩C)</strong>; <strong>A∪B</strong>; <strong>A∪C</strong>; <strong>RHS = (A∪B)∩(A∪C)</strong>. Checking the 8 rows: x∈A,∈B,∈C: LHS T, RHS T∩T = T ✓; x∈A only: LHS T (in A), RHS (A∪B=T)∩(A∪C=T) = T ✓; x∈B only: B∩C = F so LHS F; RHS T∩F = F ✓; x∈C only: LHS F, RHS F∩T = F ✓; x∈none: F = F∩F = F ✓; x∈B,C not A: B∩C = T so LHS T; RHS T∩T = T ✓; remaining rows (A with B not C; A with C not B) both give T = T ✓. <strong>All 8 rows agree ⟹ A ∪ (B∩C) = (A∪B)∩(A∪C)</strong> — the distributive law of union over intersection. ∎</li><li><strong>NEB 2022 (verified PYQ): If a + b + c = 0, then a³ + b³ + c³ is equal to: (a) abc (b) 3abc (c) −abc (d) 0 (1m)</strong> — <strong>Key identity:</strong> a³ + b³ + c³ − 3abc = (a + b + c)(a² + b² + c² − ab − bc − ca). <strong>Apply the hypothesis:</strong> a + b + c = 0 makes the right-hand side zero, hence a³ + b³ + c³ − 3abc = 0, i.e. <strong>a³ + b³ + c³ = 3abc — option (b)</strong>. (Conversely, a³ + b³ + c³ = 3abc forces a + b + c = 0 or a = b = c — the identity cuts both ways, which is why it is a favourite factorisation tool.)</li></ul></dd></div></dl></section>
   <nav class="pager"><a href="01-function-domain-and-range-of-a-function-inverse-function.html" title="Function: domain and range of a function, inverse function">‹ Function: domain and range of a function, inv…</a><a class="mid" href="../../../../../_subjects/class-11-mathematics.html">Mathematics</a><a href="02-real-numbers-geometric-representation-of-real-numbers-interval-absolute-value.html" title="Real numbers: geometric representation of real numbers, i…">Real numbers: geometric representation of rea… ›</a></nav>
 </div></body></html>

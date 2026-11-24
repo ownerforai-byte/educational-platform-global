@@ -338,6 +338,14 @@ function scoreRecords(tokens: QueryToken[]): CurriculumHit[] {
     // never qualifies an unmatched record.
     if (matched.length && entry.source.includes("/drills/")) score += 1.5;
 
+    // Owner-book recall floor (owner 2026-11-24): the ingested books under
+    // kb/books/ are the owner's chosen treatment, so a book record that
+    // already matched a query term gets a fixed lift — enough to win a
+    // near-tie against an equally-matched note, never enough to qualify an
+    // unmatched record or to cross the strong/weak bar (gradeStrength decides
+    // that on match position, not on this boost).
+    if (matched.length && isBookEntry(entry)) score += 2.5;
+
     hits.push({
       entry,
       score,
@@ -708,6 +716,10 @@ export function formatRecord(entry: CorpusEntry): string {
   ];
   if (entry.topicSlug) lines.push(`  topic slug: ${entry.topicSlug}`);
   lines.push(`  source: ${entry.source}`);
+  // The book records carry their own provenance ("<Book> — <chapter>, pages
+  // N-M [<pdf>]"); handing it to the model is what lets it cite the book by
+  // name and page instead of inventing one.
+  if (entry.provenance) lines.push(`  provenance: ${entry.provenance}`);
 
   for (const section of entry.sections) {
     lines.push(`  ▸ ${section.label}:`);
@@ -715,6 +727,30 @@ export function formatRecord(entry: CorpusEntry): string {
   }
 
   return lines.join("\n");
+}
+
+/**
+ * The owner's ingested books live under `kb/books/` (written by
+ * scripts/ingest-books.ts). The owner (2026-11-24) wants the tutor to read
+ * THESE first — they are the chosen treatment of the syllabus, and the
+ * platform's notes and the model's own knowledge fill what they lack.
+ */
+export function isBookEntry(entry: CorpusEntry): boolean {
+  return entry.source.toLowerCase().includes("kb/books/");
+}
+
+/**
+ * Where a book record sits in its own book. The ingest writes the provenance
+ * "<Book> — <chapter>, pages N-M [<pdf>]" into the record's source key, so a
+ * book's own order is recoverable without touching the body: the book file
+ * groups the records, the first page orders them inside it. Records without a
+ * page range sort after the ranged ones of the same book.
+ */
+export function bookOrderKey(entry: CorpusEntry): { book: string; start: number } {
+  const provenance = entry.provenance || "";
+  const book = /\[([^\]]+)\]\s*$/.exec(provenance)?.[1] ?? entry.source;
+  const start = Number(/pages?\s+(\d+)/i.exec(provenance)?.[1] ?? Number.MAX_SAFE_INTEGER);
+  return { book, start };
 }
 
 /** What the model is told to DO with the records it was handed. */
@@ -751,6 +787,36 @@ function directiveFor(coverage: CoverageGrade, recordCount: number): string[] {
 }
 
 /**
+ * What the model is told to DO with the owner's book records (owner 2026-11-24):
+ * read the books first, teach in the books' own order, merge the books'
+ * treatments of one idea instead of repeating them, and prefer completeness of
+ * concepts over quantity of words.
+ */
+function bookDirective(bookCount: number): string[] {
+  return [
+    `OWNER BOOKS FIRST — ${bookCount} of the records above come from the owner's own`,
+    `textbooks (kb/books). They are the PRIMARY source for this answer: search them`,
+    `before anything else, and let the platform notes and your own knowledge only`,
+    `fill what the books do not carry.`,
+    `- The book records are handed to you in BOOK ORDER (each book's page order,`,
+    `  books in sequence), NOT by relevance. Teach in that order: the foundational`,
+    `  idea first, the ideas built on it after, exactly as the books develop them.`,
+    `- MERGE, DO NOT REPEAT: when several records (or several books) treat the same`,
+    `  idea, teach that idea ONCE, combining what each adds. Where the books differ`,
+    `  in approach, notation or depth, say so plainly — the contrast is the clarity.`,
+    `- Cover EVERY distinct concept the book records carry for this question — the`,
+    `  goal is completeness of concepts, not quantity of words. For each concept give`,
+    `  its related ideas and its contrasts (what it is often confused with, and what`,
+    `  separates the two).`,
+    `- Cite the book by its own name (the provenance line carries book and pages)`,
+    `  when a fact comes from it; never invent a book, page or edition.`,
+    `- If the coverage line above says WEAK, the books matched this question's words`,
+    `  without a dedicated section: use what their pages genuinely carry, and say`,
+    `  plainly that the rest comes from your own knowledge.`,
+  ];
+}
+
+/**
  * Build the `[CURRICULUM SOURCE]` block for one question.
  *
  * Returns "" when the platform has no matching material — the caller then
@@ -780,9 +846,22 @@ export function buildCurriculumContext(
       ` records without enough real content: ${stats.fillerRecords})` +
       ` from ${stats.roots.length} source folder(s).`;
 
+    // Owner books lead the block, in the books' own page order — the owner
+    // (2026-11-24) wants the tutor to read the books first and teach in book
+    // order, mixing every book's treatment of an idea, not relevance-ranked.
+    // Everything else keeps its ranked order after them.
+    const bookHits = teachingHits
+      .filter((hit) => isBookEntry(hit.entry))
+      .sort((a, b) => {
+        const ka = bookOrderKey(a.entry);
+        const kb = bookOrderKey(b.entry);
+        return ka.book.localeCompare(kb.book) || ka.start - kb.start;
+      });
+    const otherHits = teachingHits.filter((hit) => !isBookEntry(hit.entry));
+
     const blocks: string[] = [];
     let used = 0;
-    for (const hit of teachingHits) {
+    for (const hit of [...bookHits, ...otherHits]) {
       const block = formatRecord(hit.entry);
       if (used + block.length > MAX_CONTEXT_CHARS && blocks.length) break; // keep records whole
       blocks.push(block);
@@ -798,6 +877,7 @@ export function buildCurriculumContext(
         ? [`Every attached teaching record was retrieved verbatim and in full — nothing was summarised or cut.`]
         : [`No matching teaching record was selected; answer from established knowledge and use the indexed past questions only as exam examples.`]),
       ...(blocks.length ? directiveFor(coverage, blocks.length) : []),
+      ...(bookHits.length ? bookDirective(bookHits.length) : []),
       ``,
       ...blocks,
       ...(relatedPyqs.length ? [formatRelatedPyqs(relatedPyqs)] : []),

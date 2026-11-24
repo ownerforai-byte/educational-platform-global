@@ -1,0 +1,24 @@
+{
+  "class": "class-11",
+  "subject": "physics",
+  "unit": "Workedout Example",
+  "title": "Workedout Example (part 1)",
+  "source": "neb-class-11-physics — Workedout Example, pages 441-456 [neb-class-11-physics-book.pdf]",
+  "textbookText": [
+    "From 𝑉 = 𝑊 it follows that the unit of p.d. is joules per coulomb (J C–1). 𝑄 This unit is called the volt. Thus, a p.d. of 1 V exists between two points in a circuit if 1 J of energy is converted when 1 C of charge passes between the points. Because the potential difference is measured in volts, the potential difference is often called the voltage between two points in a circuit.",
+    "Workedout Example The element of an electric kettle that takes a current of 12.5 A produces 540 kJ of thermal energy in three minutes.",
+    "1. How much charge passes through the element in these three minutes? 2. What is the potential difference across the ends of the element?",
+    "Solution:",
+    "1. 𝛥𝑄 = 𝐼 𝛥𝑡 = 12.5 𝐴 × (3.0 × 60) 𝑠 = 2250 𝐶",
+    "2. 𝑉 = 𝑊 = 540 ×103 𝐽 = 240 𝑉",
+    "𝑄",
+    "2250 𝐶",
+    "23.4 Potential Difference and Electromotive Force Electric current only measures the rate at which the charged particles (usually electrons) flow around a circuit. It tells us nothing about the electrical energy involved with circuits. The quantity used to describe the electrical energy in circuits is potential difference (p.d.), symbol V, measured in volts, V.",
+    "A potential difference across an electrical component is measured by putting a voltmeter across the component, in parallel with it.",
+    "Electrical energy in circuits is defined in terms of the electrical work done by the electric charge flowing through the circuit. Potential difference (p.d.) is defined as the electrical work done per unit (coulomb) of charge flowing through components such as bulbs, motors, resistors, etc. This electrical energy is transferred into heat, light and other more useful forms of energy by the components. potential difference, V (V) = electrical work done by the charge, W (J) charge flow, Q (C) 𝑊 𝑉= 𝑄 1𝑉 = 1𝐽𝐶−1 The potential difference, however, cannot be used to describe the energy changes involved with power supplies such as cells, generators and mains power supply units. These devices transfer other forms of energy, such as chemical energy into electrical energy. To make a distinction between these different energy transfers, we define another quantity, electromotive force (emf), symbol E. Both emf and p.d. are measured in volts, symbol V, using a voltmeter.",
+    "Physics, Grade 11 | 436",
+    "Electromotive force (emf) is defined as the electrical work done per unit (coulomb) of charge as it flows through a source of electrical energy such as a cell, generator or power supply unit (psu). The sources of electrical energy transfer other forms of energy such as kinetic or light energy into electrical energy. electromotive force, E (V) = electrical work done on the charge, W (J) charge flow, Q (C) 𝑊 𝐸= 𝑄 The law of conservation of energy can now be written in terms of emf and p.d. In a series circuit, where the components are connected one after another in a complete loop, the total electrical energy per coulomb transferring into the circuit (the sum of the emfs in the circuit) must equal the energy per coulomb transferring into other forms of energy (the sum of the p.ds). 23.5 Resistance When current flows through the material of a circuit, such as the metal of the connecting wires, the material of the circuit gets in the way of the flow of the charge. On a microscopic level, as the electrons flow through the metal they collide with the vibrating positive ion cores of the metal structure. The collisions between the electrons and the positive ion cores transfer electrical energy from the electrons to the structure of the metal, causing the metal ion cores to vibrate more, thus heating up the wire. The opposition of a component to the flow of electric current through it is called resistance, the symbol is R, and the unit is ohms, Ω.",
+    "The model of a metal shown above explains what happens to the resistance of the metal when it is heated. The resistance increases as the temperature increases. While vibrating the positively charged ion cores move around more as the temperature increases, thus getting in the way of electron flow. This opposes the flow of the gas of electrons moving through the structure. Components with very high resistance let very little current through them, and are considered to be electrical insulators. Some materials, at very low temperatures, have zero resistance. These materials are called superconductors.",
+    "Physics, Grade 11 | 437"
+  ]
+}

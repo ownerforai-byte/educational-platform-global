@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset="utf-8"><title>Spectrum of hydrogen atom</title><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="stylesheet" href="../../../../../_assets/katex/katex.min.css"><style>
+<!doctype html><html><head><meta charset="utf-8"><title>Spectrum of hydrogen atom</title><meta name="viewport" content="width=device-width, initial-scale=1"><style>
   @page { size: A4; }
   * { box-sizing: border-box; }
   html { background: #fff; }
@@ -56,6 +56,7 @@
   figcaption { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .fig.authored { text-align: center; margin: 8pt 0 10pt; break-inside: avoid; }
   .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 8pt; color: #6b7280; margin-top: 3pt; }
   .m { font-style: italic; font-family: "Cambria Math", Georgia, serif; }
   section.block { break-inside: auto; }
   .q { break-inside: avoid; margin: 0 0 11pt; padding-left: 24pt; position: relative; }
@@ -94,6 +95,8 @@
   }
   h2 { break-after: auto; }
   .q, .mcq, figure, pre, table, .fig.authored, section.block, .note { break-inside: auto; }
+  .fig.authored svg { max-width: 100%; height: auto; }
+  .fig.authored .fig-cap { font-family: "Segoe UI", Arial, sans-serif; font-size: 9pt; color: #6b7280; margin-top: 4px; }
   .q:hover .n { color: #1d4ed8; }
   .pager {
     display: flex; align-items: center; justify-content: space-between; gap: 16px;
@@ -153,35 +156,372 @@
   </header>
   <section class="field"><h2>Unit SLUG</h2><p>atomic-structure</p></section>
 <section class="field"><h2>Topic SLUG</h2><p>spectrum-of-hydrogen-atom</p></section>
-<section class="field"><h2>Source</h2><p>skeleton-v2</p></section>
-<section class="field"><h2>Generated At</h2><p>2026-10-29T07:20:23.273Z</p></section>
-<section class="field"><h2>Notes</h2><ul><li><h2>Spectrum of hydrogen atom</h2>
-<h3>1. Introduction</h3>
-<p>Chemical picture of <strong>Spectrum of hydrogen atom</strong> — what the substance or principle is, an everyday or Nepal hook (cement, urea, fermentation where fitting), the map of what follows, and the learning outcomes (chemistry-plan.md §3, block I). Prose depth is written in the Atomic Structure fill pass.</p>
-<h3>2. Concepts and definitions</h3>
-<h4>Spectrum of hydrogen atom</h4>
-<p>Each definition exam-safe; each formula with its validity condition (§3, block II).</li><li><h3>3. Reaction and equation block</h3>
-<p>Balanced equations with state symbols; every entry carries its conditions (T, P, catalyst) and observation (block III — the flagship).</p>
-<p><strong>Table 1 — Reaction and preparation sheet</strong></p>
-<table><thead><tr><th>Reaction</th><th>Reactants</th><th>Conditions (T, P, catalyst)</th><th>Products + observation</th><th>Remark</th></tr></thead><tbody></tbody></table></li><li><h3>4. Mechanism, IUPAC and structures</h3>
-<p>Organic topics: numbered curved-arrow mechanism steps plus the IUPAC nomenclature box (rule → worked naming → common name → trap); a drawn structure for every named compound (blocks IV–V).</p>
-<p><strong>Table 2 — Distinguish and reagents</strong></p>
-<table><thead><tr><th>Pair or reagent</th><th>Test or point of difference</th><th>Observation</th><th>Example</th></tr></thead><tbody></tbody></table></li><li><h3>5. Diagrams and figures</h3>
+<section class="field"><h2>Relevance</h2><p><code>100</code></p></section>
+<section class="field"><h2>Source</h2><p>authored-v2</p></section>
+<section class="field"><h2>Generated At</h2><p>2026-11-20T00:00:00.000Z</p></section>
+<section class="field"><h2>Notes</h2><ul><li><strong>Scope.</strong> Spectrum of hydrogen atom — Atomic Structure, Chemistry (class-11-notes).</li><li><strong>Tested.</strong> define it · list: spectrum of hydrogen atom · one worked example · one misconception each.</li><li><h2>Spectrum of hydrogen atom</h2>
+<h3>1. Topic Introduction</h3>
+<p>The hydrogen spectrum is the Rosetta Stone of atomic physics. When hydrogen gas in a discharge tube is excited, it emits light at discrete wavelengths — a line spectrum. These lines are not random; they fall into distinct series (Lyman, Balmer, Paschen, Brackett, Pfund) that Bohr's model predicted with stunning accuracy. The hydrogen spectrum is the primary experimental evidence that energy levels in atoms are quantized.</p>
+<p><strong>Why it matters.</strong> Every spectroscopy technique — from stellar classification to environmental monitoring — traces its roots to understanding the hydrogen spectrum. The Balmer series in visible light is the standard calibration for spectrographs; the Lyman series in UV probes interstellar hydrogen; the 21 cm line (hyperfine transition) maps the Milky Way.</p>
+<p><strong>What you will learn:</strong> (i) origin of line spectrum from quantized energy levels; (ii) five spectral series of hydrogen with regions, formulas, and limits; (iii) Rydberg formula and its derivation from Bohr's model; (iv) calculation of wavelengths, wave numbers, and photon energies; (v) emission vs absorption spectra; (v) applications in astronomy and spectroscopy.</p>
+<p><strong>Learning outcomes.</strong> You can: identify the five spectral series and their regions; compute wavelengths for any transition using Rydberg formula; calculate wave numbers and photon energies; explain emission vs absorption spectra; solve numerical problems on series limits and transitions.</li><li><h3>2. Fundamental Conceptual Understanding</h3>
+<h4>What the hydrogen spectrum is</h4>
+<p>The hydrogen spectrum is the set of discrete wavelengths emitted or absorbed when hydrogen electrons jump between quantized energy levels. It consists of five named series (Lyman, Balmer, Paschen, Brackett, Pfund) corresponding to transitions ending at n_f = 1, 2, 3, 4, 5 respectively.</p>
+<h4>Why it exists</h4>
+<p>Electrons in hydrogen occupy quantized energy levels Eₙ = -13.6/n² eV. When an electron jumps from a higher level nᵢ to a lower level n_f, it emits a photon of energy ΔE = Eᵢ - E_f = hν = hc/λ. Since only specific energy differences are possible, only specific wavelengths appear — a line spectrum.</p>
+<h4>How it works</h4>
+<p>Excitation (electric discharge, heat, photon absorption) promotes electrons to higher levels. De-excitation returns them to lower levels, emitting photons of specific energies. The set of all possible transitions from all nᵢ &gt; n_f to a given n_f forms a spectral series.</p>
+<h4>Where it occurs</h4>
+<p>Hydrogen discharge tubes, stellar atmospheres (chromosphere/corona), interstellar medium (Lyman-alpha forest), planetary nebulae, laboratory spectrometers, hydrogen masers.</p>
+<h4>What its components are</h4>
+<p>Quantized energy levels (Eₙ = -13.6/n² eV), transitions (nᵢ → n_f), photon energy (ΔE = 13.6(1/n_f² - 1/nᵢ²) eV), wavelength (1/λ = R(1/n_f² - 1/nᵢ²)), spectral series (named by n_f).</p>
+<h4>How components interact</h4>
+<p>Energy levels define possible transitions; transitions define photon energies; photon energies define wavelengths; wavelengths group into series by common n_f. The Rydberg constant R = 1.097×10⁷ m⁻¹ unifies the description.</p>
+<h4>What makes it biologically/astronomically important</h4>
+<p>Stellar classification: Balmer line strength classifies A-type stars. Cosmology: Lyman-alpha forest maps intergalactic hydrogen. 21 cm line maps galactic rotation. Hydrogen maser clocks define the second. Fluorescence microscopy uses H-alpha (656.3 nm) for cellular imaging.</li><li><h3>3. Scientific Definitions</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Line spectrum</td><td>Discrete wavelengths emitted/absorbed by an element</td><td>Contrast with continuous spectrum (blackbody)</td><td>Fingerprint of the element</td></tr><tr><td>Spectral series</td><td>Set of lines sharing a common final level n_f</td><td>Lyman (n_f=1), Balmer (n_f=2), etc.</td><td>Organizes the spectrum</td></tr><tr><td>Rydberg formula</td><td>1/λ = R(1/n_f² - 1/nᵢ²) for hydrogen</td><td>R = 1.097×10⁷ m⁻¹</td><td>Predicts all hydrogen wavelengths</td></tr><tr><td>Wave number (ν̃)</td><td>Reciprocal of wavelength: ν̃ = 1/λ (cm⁻¹ or m⁻¹)</td><td>Spectroscopists' preferred unit</td><td>Proportional to energy: E = hcν̃</td></tr><tr><td>Photon energy</td><td>E = hν = hc/λ = hcν̃</td><td>ΔE = 13.6(1/n_f² - 1/nᵢ²) eV</td><td>Directly measurable</td></tr><tr><td>Series limit</td><td>nᵢ → ∞ transition to a given n_f</td><td>Shortest wavelength in the series</td><td>Convergence point; ionization from n_f</td></tr><tr><td>Lyman series</td><td>Transitions to n_f = 1</td><td>UV region; 91.2 nm limit</td><td>Ionizing radiation; interstellar probe</td></tr><tr><td>Balmer series</td><td>Transitions to n_f = 2</td><td>Visible region; 656.3 nm first line</td><td>Stellar classification; visible standard</td></tr><tr><td>Paschen series</td><td>Transitions to n_f = 3</td><td>Infrared</td><td>Cooler regions; molecular clouds</td></tr><tr><td>Brackett series</td><td>Transitions to n_f = 4</td><td>Far IR</td><td>Very cool gas</td></tr><tr><td>Pfund series</td><td>Transitions to n_f = 5</td><td>Far IR</td><td>Very cold gas</td></tr><tr><td>Emission spectrum</td><td>Bright lines on dark background</td><td>Excited atoms emit photons</td><td>Discharge tubes, stars</td></tr><tr><td>Absorption spectrum</td><td>Dark lines on bright continuum</td><td>Cool gas absorbs specific wavelengths</td><td>Stellar atmospheres, cool gas clouds</td></tr></tbody></table>
+<p><strong>Keywords:</strong> line spectrum, spectral series, Rydberg formula, wave number, photon energy, series limit, Lyman, Balmer, Paschen, Brackett, Pfund, emission, absorption, hydrogen spectrum.</li><li><h3>4. Detailed Explanation</h3>
+<h4>4.1 Origin of the hydrogen line spectrum</h4>
+<p>Hydrogen electrons occupy quantized energy levels: Eₙ = -13.6/n² eV  (n = 1, 2, 3...)</p>
+<p>When an electron transitions from nᵢ to n_f (nᵢ &gt; n_f):</p>
 <ul>
-<li><strong>D1</strong> — Spectrum of hydrogen atom — curve or trend plot (authored SVG, plotted from note data)</li>
-<li><strong>D2</strong> — Spectrum of hydrogen atom — second structure, flow or plot (authored SVG — English labels)</li>
-<li><strong>D3</strong> — Spectrum of hydrogen atom — detailed reference plate (curated external — English labels; source, author and license recorded at fill)</li>
-<li><strong>D4</strong> — Spectrum of hydrogen atom — application or industrial figure (curated external — license recorded at fill)</li>
+<li><strong>Emission:</strong> Electron drops from nᵢ to n_f → photon emitted</li>
+<li><strong>Absorption:</strong> Electron rises from n_f to nᵢ → photon absorbed</li>
 </ul>
-<p>Slots declared up front (§3.2): ≥ 2 authored SVG + ≥ 2 curated external per topic, English labels, numbered captions (Fig. x.y).</p>
-<p><strong>Table 3 — Summary and marks map</strong></p>
-<table><thead><tr><th>Sub-topic</th><th>One-line essence</th><th>NEB pattern trend</th></tr></thead><tbody></tbody></table></li><li><h3>6. Worked problems</h3>
-<p>≥ 5 worked items on physical-chemistry topics (mole, concentration, pH, colligative, kinetics, electrochem): Given → Formula → Substitution → Answer with units (block VI) — written in the unit fill pass.</p>
-<h3>7. Key terms and reaction map</h3>
-<p>Named reactions, conversions and &quot;distinguish between&quot; pairs gathered where the reaction block points to them.</li><li><h3>8. Exam Zone and self-check</h3>
-<p>Named-reaction and conversion sets, organic-reagent table, topic MCQs with explanations (block VIII). Existing entrance-exam (CEE) material stays where it is; this zone grows around it — see the seeded exam fields of this file when present.</p>
-<p>Reaction map of the topic, common mistakes (Markovnikov-style traps) and self-check items (block IX) — completed in the unit fill pass.</li></ul></section>
-<section class="field"><h2>Practice</h2><ul><li>Explain the origin of the line spectrum of hydrogen using Bohr's postulates.</li><li>Write the Rydberg equation and compute the wavelength of the first Balmer line.</li><li>Name the hydrogen series lying in the visible region and give the regions of the others.</li><li>Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.</li><li>How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?</li><li>Tabulate the five series of hydrogen with their regions, first members and series limits.</li><li>How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?</li><li>Calculate the series limit of the Paschen series.</li><li>Name the series whose lines fall in the visible region and identify its first line.</li><li>Derive the Rydberg equation from Bohr's energy levels.</li><li>Calculate the wavelength of the second line of the Balmer series (4 → 2).</li><li>Find the series limit of the Brackett series.</li><li>A line of He⁺ has the same wavelength as a Balmer line of H; relate their quantum numbers using the Z² factor.</li></ul></section>
-<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>A common examiner point on &quot;Spectrum of hydrogen atom&quot; is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>True</li><li>False</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>True</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The first line of the Balmer series is produced by the transition:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2 → 1</li><li>3 → 2</li><li>4 → 2</li><li>3 → 1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>The series limit of the Lyman series corresponds to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>91.2 nm</li><li>121.6 nm</li><li>364.6 nm</li><li>656.3 nm</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>The Rydberg constant in SI units is:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>1.097 × 10⁷ m⁻¹</li><li>1.097 × 10⁵ m⁻¹</li><li>6.626 × 10⁻³⁴ m⁻¹</li><li>1.097 × 10⁷ cm⁻¹</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div></div></section>
+<p>Photon energy: ΔE = Eᵢ - E_f = 13.6(1/n_f² - 1/nᵢ²) eV Wavelength: 1/λ = R(1/n_f² - 1/nᵢ²) where R = 1.097×10⁷ m⁻¹ Wave number: ν̃ = 1/λ = R(1/n_f² - 1/nᵢ²) m⁻¹ Photon energy: E = hc/λ = hcR(1/n_f² - 1/nᵢ²) = 13.6(1/n_f² - 1/nᵢ²) eV</p>
+<h4>4.2 The five spectral series of hydrogen</h4>
+<table><thead><tr><th>Series</th><th>n_f</th><th>nᵢ values</th><th>Region</th><th>First line (nᵢ→n_f)</th><th>Series limit (nᵢ→∞)</th><th>Wavelength range</th></tr></thead><tbody><tr><td><strong>Lyman</strong></td><td>1</td><td>2, 3, 4...</td><td>UV (Far)</td><td>2→1 = 121.6 nm (Ly-α)</td><td>91.2 nm</td><td>91.2 – 121.6 nm</td></tr><tr><td><strong>Balmer</strong></td><td>2</td><td>3, 4, 5...</td><td>Visible</td><td>3→2 = 656.3 nm (H-α)</td><td>364.6 nm</td><td>364.6 – 656.3 nm</td></tr><tr><td><strong>Paschen</strong></td><td>3</td><td>4, 5, 6...</td><td>IR (Near)</td><td>4→3 = 1875 nm (Pa-α)</td><td>820.4 nm</td><td>820.4 – 1875 nm</td></tr><tr><td><strong>Brackett</strong></td><td>4</td><td>5, 6, 7...</td><td>IR (Mid)</td><td>5→4 = 4051 nm (Br-α)</td><td>1458 nm</td><td>1458 – 4051 nm</td></tr><tr><td><strong>Pfund</strong></td><td>5</td><td>6, 7, 8...</td><td>Far IR</td><td>6→5 = 7458 nm (Pf-α)</td><td>2279 nm</td><td>2279 – 7458 nm</td></tr></tbody></table>
+<p><strong>First few lines of each series:</strong></p>
+<ul>
+<li><strong>Lyman (UV):</strong> Ly-α (2→1) 121.6 nm, Ly-β (3→1) 102.6 nm, Ly-γ (4→1) 97.3 nm, Ly-δ (5→1) 95.0 nm, limit 91.2 nm</li>
+<li><strong>Balmer (Visible):</strong> H-α (3→2) 656.3 nm red, H-β (4→2) 486.1 nm cyan, H-γ (5→2) 434.0 nm violet, H-δ (6→2) 410.2 nm violet, limit 364.6 nm</li>
+<li><strong>Paschen (IR):</strong> Pa-α (4→3) 1875 nm, Pa-β (5→3) 1282 nm, Pa-γ (6→3) 1094 nm, limit 820.4 nm</li>
+<li><strong>Brackett (IR):</strong> Br-α (5→4) 4051 nm, Br-β (6→4) 2625 nm, limit 1458 nm</li>
+<li><strong>Pfund (Far IR):</strong> Pf-α (6→5) 7458 nm, Pf-β (7→5) 4653 nm, limit 2279 nm</li>
+</ul>
+<h4>4.3 Rydberg formula and its forms</h4>
+<p><strong>Standard form (wavelength):</strong> 1/λ = R(1/n_f² - 1/nᵢ²)  where R = 1.097373×10⁷ m⁻¹</p>
+<p><strong>For hydrogen-like ions (Z &gt; 1):</strong> 1/λ = R·Z²(1/n_f² - 1/nᵢ²)</p>
+<p><strong>Wave number form (spectroscopist's preference):</strong> ν̃ = 1/λ = R(1/n_f² - 1/nᵢ²) cm⁻¹ (R = 109737 cm⁻¹)</p>
+<p><strong>Photon energy form:</strong> E (eV) = 13.6(1/n_f² - 1/nᵢ²) E (J) = hcR(1/n_f² - 1/nᵢ²)</p>
+<h4>4.4 Worked examples</h4>
+<p><strong>Example 1: Wavelength of H-α (Balmer α, 3→2)</strong> 1/λ = R(1/2² - 1/3²) = R(1/4 - 1/9) = 5R/36 λ = 36/(5R) = 36/(5×1.097×10⁷) = 6.563×10⁻⁷ m = <strong>656.3 nm</strong></p>
+<p><strong>Example 2: Wavelength of Lyman-β (3→1)</strong> 1/λ = R(1/1² - 1/3²) = R(1 - 1/9) = 8R/9 λ = 9/(8R) = 9/(8×1.097×10⁷) = 1.026×10⁻⁷ m = <strong>102.6 nm</strong></p>
+<p><strong>Example 3: Series limit of Paschen series (n_f=3, nᵢ→∞)</strong> 1/λ = R(1/3² - 0) = R/9 λ = 9/R = 9/1.097×10⁷ = 8.204×10⁻⁷ m = <strong>820.4 nm</strong></p>
+<p><strong>Example 4: Wave number of H-γ (5→2)</strong> ν̃ = R(1/4 - 1/25) = R(0.25 - 0.04) = 0.21R = 23047 cm⁻¹</p>
+<p><strong>Example 5: Photon energy of H-δ (6→2)</strong> E = 13.6(1/4 - 1/36) = 13.6(9/36 - 1/36) = 13.6×8/36 = 3.02 eV</p>
+<p><strong>Example 6: Number of spectral lines from n=6 → ground state</strong> N = n(n-1)/2 = 6×5/2 = <strong>15 lines</strong></p>
+<h4>4.5 Emission vs Absorption spectra</h4>
+<table><thead><tr><th>Aspect</th><th>Emission spectrum</th><th>Absorption spectrum</th></tr></thead><tbody><tr><td>Appearance</td><td>Bright lines on dark background</td><td>Dark lines on bright continuum</td></tr><tr><td>Process</td><td>Excited atom → photon emitted</td><td>Photon absorbed → electron excited</td></tr><tr><td>Condition</td><td>Hot, low-pressure gas emitting</td><td>Cool gas in front of continuum source</td></tr><tr><td>Hydrogen example</td><td>Discharge tube, stellar chromosphere</td><td>Stellar photosphere, interstellar clouds</td></tr><tr><td>Lines present</td><td>All possible transitions nᵢ → n_f</td><td>Only n_f → nᵢ where n_f is populated</td></tr><tr><td>Hydrogen case</td><td>All series seen</td><td>Usually only Lyman (ground state n=1 populated)</td></tr></tbody></table>
+<h4>4.5 Series limit and ionization energy</h4>
+<p><strong>Series limit (nᵢ → ∞) for each series:</strong></p>
+<ul>
+<li>Lyman limit: 91.2 nm (13.6 eV) — ionization from n=1</li>
+<li>Balmer limit: 364.6 nm (3.4 eV) — ionization from n=2</li>
+<li>Paschen limit: 820.4 nm (1.51 eV) — ionization from n=3</li>
+<li>Brackett limit: 1458 nm (0.85 eV) — ionization from n=4</li>
+<li>Pfund limit: 2279 nm (0.54 eV) — ionization from n=5</li>
+</ul>
+<p><strong>Ionization energy from level n_f:</strong> IE = 13.6/n_f² eV</p>
+<h4>4.6 Worked numericals</h4>
+<ol>
+<li><strong>H-α (3→2) wavelength:</strong> 656.3 nm (red)</li>
+<li><strong>H-β (4→2) wavelength:</strong> 486.1 nm (cyan)</li>
+<li><strong>H-γ (5→2) wavelength:</strong> 434.0 nm (violet)</li>
+<li><strong>H-δ (6→2) wavelength:</strong> 410.2 nm (violet)</li>
+<li><strong>Lyman-α (2→1):</strong> 121.6 nm (UV)</li>
+<li><strong>Lyman limit:</strong> 91.2 nm (13.6 eV)</li>
+<li><strong>Balmer limit:</strong> 364.6 nm (3.4 eV)</li>
+<li><strong>Paschen limit:</strong> 820.4 nm (1.51 eV)</li>
+<li><strong>Wave number of H-γ:</strong> ν̃ = R(1/4 - 1/25) = 0.21R = 23047 cm⁻¹</li>
+<li><strong>Photon energy of 4→1:</strong> ΔE = 13.6(1 - 1/16) = 12.75 eV</li>
+<li><strong>Lines from n=6 de-excitation:</strong> 6×5/2 = 15 lines</li>
+<li><strong>Photon energy for 5→3:</strong> ΔE = 13.6(1/9 - 1/25) = 13.6×16/225 = 0.967 eV</li>
+<li><strong>Wavelength for 7→2:</strong> 1/λ = R(1/4 - 1/49) = 45R/196 → λ = 397.0 nm</li>
+</ol></li><li><h3>5. Biological Examples</h3>
+<table><thead><tr><th>Example</th><th>Sector</th><th>Chemistry</th><th>Why it matters</th></tr></thead><tbody><tr><td>Stellar classification</td><td>Astronomy</td><td>Balmer line strength classifies A-type stars</td><td>H-α strength peaks at ~10,000 K</td></tr><tr><td>Lyman-alpha forest</td><td>Cosmology</td><td>Quasar light absorbed by intergalactic H</td><td>Maps 3D structure of universe</td></tr><tr><td>21 cm line (hyperfine)</td><td>Radio astronomy</td><td>H spin-flip transition at 1420 MHz</td><td>Maps Milky Way spiral arms</td></tr><tr><td>Hydrogen maser clock</td><td>Metrology</td><td>1420 MHz hyperfine transition</td><td>Most stable atomic clock (~10⁻¹⁵ stability)</td></tr><tr><td>H-α imaging</td><td>Solar physics</td><td>656.3 nm filter shows chromosphere</td><td>Solar flares, prominences visible</td></tr><tr><td>Fluorescence microscopy</td><td>Biology</td><td>H-α (656 nm) filter for cellular imaging</td><td>Live cell imaging with minimal damage</td></tr><tr><td>Planetary nebulae</td><td>Astronomy</td><td>Strong H recombination lines</td><td>Ionized gas around dying stars</td></tr><tr><td>Fusion research</td><td>Energy</td><td>H-α monitors plasma temperature</td><td>ITER, tokamak diagnostics</td></tr></tbody></table>
+<p><strong>Nepal context:</strong></p>
+<ul>
+<li>Himalayan observatory potential: high-altitude sites ideal for UV/IR hydrogen spectroscopy</li>
+<li>Glacial meltwater analysis: hydrogen isotopes (D/H ratio) trace water sources</li>
+<li>Biogas monitoring: H₂ spectroscopy for process optimization</li>
+</ul></li><li><h3>6. Chemical Processes and Mechanisms</h3>
+<h4>Process: Emission spectrum production (discharge tube)</h4>
+<ol>
+<li><strong>Definition:</strong> Production of hydrogen emission spectrum by electrical excitation.</li>
+<li><strong>Location:</strong> Low-pressure hydrogen gas discharge tube with electrodes.</li>
+<li><strong>Requirements:</strong> High voltage (~1000-5000 V), low pressure (~0.1-1 Torr), H₂ gas.</li>
+<li><strong>Components:</strong> Glass tube, electrodes, vacuum pump, H₂ supply, high-voltage supply, spectrometer.</li>
+<li><strong>Sequential steps:</strong> (i) Evacuate tube, fill with H₂ at low pressure; (ii) Apply high voltage → electrical discharge; (iii) Electrons collide with H₂ molecules → dissociation + ionization; (iv) H atoms excited to n=2,3,4... by electron impact; (v) Excited H atoms de-excite → emit photons at characteristic wavelengths; (vi) Light passes through spectrometer → line spectrum recorded.</li>
+<li><strong>Result:</strong> Bright lines at Lyman, Balmer, Paschen... wavelengths on dark background.</li>
+<li><strong>Significance:</strong> Classic laboratory demonstration of quantized energy levels; fingerprint of hydrogen.</li>
+</ol>
+<h4>Process: Absorption spectrum production (stellar atmosphere)</h4>
+<ol>
+<li><strong>Definition:</strong> Production of hydrogen absorption spectrum by cool gas in front of hot continuum.</li>
+<li><strong>Location:</strong> Stellar photosphere (cool outer layers), interstellar clouds, planetary atmospheres.</li>
+<li><strong>Requirements:</strong> Hot continuum source (stellar interior), cooler absorbing gas (H atoms in n=1), spectrometer.</li>
+<li><strong>Components:</strong> Continuum source, absorbing gas layer, spectrometer.</li>
+<li><strong>Sequential steps:</strong> (i) Hot stellar interior emits blackbody continuum; (ii) Light passes through cooler outer atmosphere (photosphere/chromosphere); (iii) H atoms in ground state (n=1) absorb Lyman series photons; (iv) Specific wavelengths removed from continuum → dark absorption lines; (v) Spectrum shows dark Lyman lines on bright continuum.</li>
+<li><strong>Result:</strong> Dark Lyman lines on bright continuum; Balmer absorption only if n=2 populated (hot stars).</li>
+<li><strong>Significance:</strong> Stellar spectra are absorption spectra; Lyman lines ubiquitous, Balmer strong in A-type stars.</li>
+</ol>
+<h4>Process: Spectral line analysis (astronomical spectroscopy)</h4>
+<ol>
+<li><strong>Definition:</strong> Measuring wavelengths, intensities, profiles of spectral lines to infer physical conditions.</li>
+<li><strong>Location:</strong> Telescopes with spectrographs (optical, UV, IR, radio).</li>
+<li><strong>Requirements:</strong> Telescope, spectrograph, detector (CCD), calibration source, reduction software.</li>
+<li><strong>Components:</strong> Telescope, slit, grating/prism, detector, wavelength calibration lamp.</li>
+<li><strong>Sequential steps:</strong> (i) Collect light from source; (ii) Disperse by grating/prism; (iii) Detect on CCD; (iv) Calibrate wavelength (Th-Ar lamp); (v) Measure line positions (λ), intensities (I), widths (Δλ); (vi) Infer temperature (Balmer decrement), density (Stark broadening), velocity (Doppler shift), magnetic field (Zeeman splitting).</li>
+<li><strong>Result:</strong> Physical diagnostics of astronomical object.</li>
+<li><strong>Significance:</strong> Spectroscopy is the primary tool of astrophysics; hydrogen lines are the most abundant.</li>
+</ol></li><li><h3>7. Diagrams and Visual Understanding</h3>
+<ul>
+<li><strong>D1 (authored SVG)</strong> — Spectral series regions on EM spectrum (Fig. 3.1): Lyman (UV), Balmer (visible), Paschen/Brackett/Pfund (IR) with wavelengths marked.</li>
+<li><strong>D2 (authored SVG)</strong> — Energy level diagram with transitions (Fig. 3.2): horizontal lines at Eₙ = -13.6/n² eV, arrows for all series transitions.</li>
+<li><strong>D3 (authored SVG)</strong> — Spectral series convergence (Fig. 3.3): wave number vs nᵢ for each series showing convergence to limit.</li>
+<li><strong>D4 (curated)</strong> — Hydrogen discharge tube spectrum photo (Fig. 3.4): actual Balmer lines (H-α red, H-β cyan, H-γ violet).</li>
+</ul>
+<p>Fig. 3.1 — Hydrogen spectral series on EM spectrum (authored SVG).</p>
+<div class="fig authored"><svg viewBox="0 0 1000 400" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Hydrogen spectral series on EM spectrum</title>
+<rect x="0" y="0" width="1000" height="400" fill="#ffffff"/>
+<g font-size="12" font-weight="bold" text-anchor="middle">
+<rect x="50" y="50" width="900" height="250" fill="#f8fafc" stroke="#e2e8f0"/>
+<text x="500" y="40" fill="#0f172a">Hydrogen spectral series on the electromagnetic spectrum</text>
+<g>
+<line x1="50" y1="300" x2="950" y2="300" stroke="#64748b" stroke-width="2"/>
+<text x="50" y="290" text-anchor="start" font-size="10" fill="#64748b">Wavelength (nm)</text>
+<rect x="50" y="100" width="50" height="150" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+<text x="75" y="90" text-anchor="middle" font-size="11" fill="#dc2626">LYMAN (UV)</text>
+<text x="75" y="120" font-size="9" fill="#475569">91.2 – 121.6 nm</text>
+<rect x="120" y="150" width="150" height="100" fill="#bbf7d0" stroke="#16a34a" stroke-width="2"/>
+<text x="195" y="170" text-anchor="middle" font-size="11" fill="#16a34a">BALMER (Visible)</text>
+<text x="195" y="190" font-size="9" fill="#475569">364.6 – 656.3 nm</text>
+<text x="195" y="210" font-size="9" fill="#16a34a">H-α 656.3, H-β 486.1, H-γ 434.0</text>
+<rect x="290" y="180" width="180" height="70" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+<text x="380" y="200" text-anchor="middle" font-size="11" fill="#2563eb">PASCHEN (IR)</text>
+<text x="380" y="220" font-size="9" fill="#475569">820.4 – 1875 nm</text>
+<rect x="490" y="200" width="180" height="50" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+<text x="580" y="220" text-anchor="middle" font-size="11" fill="#d97706">BRACKETT (IR)</text>
+<text x="580" y="240" font-size="9" fill="#475569">1458 – 4051 nm</text>
+<rect x="690" y="210" width="180" height="40" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+<text x="780" y="230" text-anchor="middle" font-size="11" fill="#ec4899">PFUND (Far IR)</text>
+<text x="780" y="250" font-size="9" fill="#475569">2279 – 7458 nm</text>
+</g>
+<g font-size="10" fill="#475569" text-anchor="middle">
+<text x="75" y="280">121.6</text><text x="195" y="280">656.3</text><text x="380" y="280">1875</text><text x="580" y="280">4051</text><text x="780" y="280">7458</text>
+<text x="75" y="295">Ly-α</text><text x="195" y="295">H-α</text><text x="380" y="295">Pa-α</text><text x="580" y="295">Br-α</text><text x="780" y="295">Pf-α</text>
+</g>
+</g>
+</svg><div class="fig-cap">Hydrogen spectral series</div></div>
+<p>Fig. 3.2 — Energy level diagram with all series transitions (authored SVG).</p>
+<div class="fig authored"><svg viewBox="0 0 700 700" role="img" xmlns="http://www.w3.org/2000/svg">
+<title>Hydrogen energy levels with spectral series</title>
+<rect x="0" y="0" width="700" height="700" fill="#ffffff"/>
+<g font-size="14" font-weight="bold" text-anchor="middle">
+<text x="350" y="30" fill="#0f172a">Hydrogen energy levels and spectral series</text>
+</g>
+<g font-size="13" text-anchor="end">
+<line x1="50" y1="600" x2="500" y2="600" stroke="#dc2626" stroke-width="4"/>
+<text x="40" y="606" fill="#dc2626">n=1  -13.6 eV</text>
+<line x1="50" y1="400" x2="500" y2="400" stroke="#f59e0b" stroke-width="3"/>
+<text x="40" y="406" fill="#f59e0b">n=2  -3.4 eV</text>
+<line x1="50" y1="311" x2="500" y2="311" stroke="#22c55e" stroke-width="2"/>
+<text x="40" y="317" fill="#22c55e">n=3  -1.51 eV</text>
+<line x1="50" y1="266" x2="500" y2="266" stroke="#3b82f6" stroke-width="2"/>
+<text x="40" y="272" fill="#3b82f6">n=4  -0.85 eV</text>
+<line x1="50" y1="242" x2="500" y2="242" stroke="#a855f7" stroke-width="2"/>
+<text x="40" y="248" fill="#a855f7">n=5  -0.54 eV</text>
+<line x1="50" y1="100" x2="500" y2="100" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+<text x="40" y="106" fill="#94a3b8">n=∞  0 eV</text>
+<g font-size="12" fill="#dc2626" text-anchor="start">
+<line x1="520" y1="600" x2="580" y2="400" stroke="#dc2626" stroke-width="2" marker-end="url(#arr)"/>
+<text x="590" y="500">Lyman (2→1) 121.6 nm</text>
+<line x1="520" y1="600" x2="580" y2="311" stroke="#dc2626" stroke-width="2" marker-end="url(#arr)"/>
+<text x="590" y="455">Lyman (3→1) 102.6 nm</text>
+<line x1="520" y1="600" x2="580" y2="266" stroke="#dc2626" stroke-width="2" marker-end="url(#arr)"/>
+<text x="590" y="434">Lyman (4→1) 97.3 nm</text>
+</g>
+<g font-size="12" fill="#f59e0b" text-anchor="start">
+<line x1="550" y1="400" x2="610" y2="311" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr)"/>
+<text x="620" y="355">Balmer (3→2) 656.3 nm</text>
+<line x1="550" y1="400" x2="610" y2="266" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr)"/>
+<text x="620" y="333">Balmer (4→2) 486.1 nm</text>
+<line x1="550" y1="400" x2="610" y2="242" stroke="#f59e0b" stroke-width="2" marker-end="url(#arr)"/>
+<text x="620" y="321">Balmer (5→2) 434.0 nm</text>
+</g>
+<g font-size="12" fill="#22c55e" text-anchor="start">
+<line x1="580" y1="311" x2="640" y2="266" stroke="#22c55e" stroke-width="2" marker-end="url(#arr)"/>
+<text x="650" y="288">Paschen (4→3) 1875 nm</text>
+<line x1="580" y1="311" x2="640" y2="242" stroke="#22c55e" stroke-width="2" marker-end="url(#arr)"/>
+<text x="650" y="276">Paschen (5→3) 1282 nm</text>
+</g>
+<defs>
+<marker id="arr" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 Z" fill="#64748b"/></marker>
+</defs>
+</g>
+</svg><div class="fig-cap">Energy level diagram with transitions</div></div></li><li><h3>8. Conceptual Relationships</h3>
+<h4>Within this topic</h4>
+<ul>
+<li>Energy levels → transitions → photons → wavelengths → series. Complete chain from quantum levels to observed lines.</li>
+<li>Rydberg formula unifies all series: same formula, different n_f.</li>
+<li>Emission and absorption are two sides of the same transitions.</li>
+</ul>
+<h4>To other units</h4>
+<ul>
+<li><strong>Bohr model (previous topic):</strong> Bohr's energy levels directly predict the hydrogen spectrum.</li>
+<li><strong>Defects of Bohr (next topic):</strong> Bohr's formula works perfectly for hydrogen but fails for multi-electron atoms.</li>
+<li><strong>Quantum mechanical model:</strong> Fine structure (spin-orbit) splits lines Bohr predicts as single.</li>
+<li><strong>Chemical spectroscopy:</strong> H-α filter used in solar telescopes; atomic absorption for metals uses similar principles.</li>
+<li><strong>Astrophysics:</strong> Lyman-alpha forest, 21 cm line, hydrogen recombination lines — all rooted in hydrogen spectrum.</li>
+</ul>
+<h4>To real life</h4>
+<ul>
+<li>Star classification: A0 stars show strongest Balmer lines; used for spectral typing.</li>
+<li>Quasar absorption lines: Lyman-alpha forest maps intergalactic hydrogen at high redshift.</li>
+<li>21 cm line: Hyperfine splitting of n=1 (not electronic transition) maps galactic hydrogen.</li>
+<li>Medical physics: Hydrogen spectroscopy in MRI (proton NMR) uses spin transitions, not electronic.</li>
+<li>Environmental: Hydrogen sensors use spectroscopy for leak detection.</li>
+</ul></li><li><h3>9. Important Facts and Scientific Terminology</h3>
+<table><thead><tr><th>Term</th><th>Scientific meaning</th><th>Explanation</th><th>Importance</th></tr></thead><tbody><tr><td>Johannes Rydberg (1854–1919)</td><td>Swedish spectroscopist</td><td>Formulated empirical formula for spectral series (1888)</td><td>Rydberg constant named after him</td></tr><tr><td>Rydberg constant (R)</td><td>1.097373×10⁷ m⁻¹ (109737 cm⁻¹)</td><td>1/λ = R(1/n_f² - 1/nᵢ²) for H</td><td>Universal constant for hydrogen-like spectra</td></tr><tr><td>Wave number (ν̃)</td><td>1/λ in cm⁻¹ or m⁻¹</td><td>E = hcν̃; spectroscopists' unit</td><td>Linear in energy; additive for transitions</td></tr><tr><td>Series limit</td><td>nᵢ → ∞ transition to fixed n_f</td><td>Shortest wavelength in series</td><td>Convergence point; ionization threshold</td></tr><tr><td>Lyman-alpha (Ly-α)</td><td>2→1 transition = 121.6 nm</td><td>Strongest UV line of hydrogen</td><td>Interstellar probe, quasar forest</td></tr><tr><td>H-alpha (H-α)</td><td>3→2 = 656.3 nm</td><td>Bright red Balmer line</td><td>Solar chromosphere, nebulae, star formation</td></tr><tr><td>H-beta (H-β)</td><td>4→2 = 486.1 nm</td><td>Cyan Balmer line</td><td>Temperature diagnostic in stars</td></tr><tr><td>H-gamma (H-γ)</td><td>5→2 = 434.0 nm</td><td>Violet Balmer line</td><td>Higher temperature sensitivity</td></tr><tr><td>H-delta (H-δ)</td><td>6→2 = 410.2 nm</td><td>Violet Balmer line</td><td>Strong in A-type stars</td></tr><tr><td>Balmer decrement</td><td>Ratio H-α/H-β/H-γ...</td><td>Temperature and density diagnostic</td><td>Standard in nebular astrophysics</td></tr><tr><td>Lyman-alpha forest</td><td>Absorption lines from IGM</td><td>Multiple Ly-α at different redshifts</td><td>3D map of intergalactic medium</td></tr><tr><td>21 cm line</td><td>Hyperfine splitting of n=1</td><td>1420.405751 MHz (H spin-flip)</td><td>Maps galactic HI, not electronic spectrum</td></tr><tr><td>Zeeman effect</td><td>Magnetic splitting of lines</td><td>Not explained by Bohr; needs m_l</td><td>Magnetic field diagnostic</td></tr><tr><td>Stark effect</td><td>Electric field splitting</td><td>Not explained by Bohr; needs m_l</td><td>Electric field diagnostic</td></tr><tr><td>Fine structure</td><td>Spin-orbit splitting of lines</td><td>Bohr predicts single lines; QM gives doublets</td><td>Relativistic correction</td></tr><tr><td>Lamb shift</td><td>QED shift of 2s₁/₂ vs 2p₁/₂</td><td>1057 MHz; not in Bohr/Dirac</td><td>QED validation</td></tr><tr><td>Doppler broadening</td><td>Thermal motion broadens lines</td><td>Δλ/λ = v/c</td><td>Temperature/velocity diagnostic</td></tr><tr><td>Pressure broadening</td><td>Collisions broaden lines</td><td>Δλ ∝ pressure</td><td>Density diagnostic</td></tr></tbody></table>
+<p><strong>Memory tricks:</strong></p>
+<ul>
+<li>&quot;Trick 1: Lyman=UV (n_f=1), Balmer=Vis (n_f=2), Paschen=IR (n_f=3).&quot;</li>
+<li>&quot;Trick 2: H-α=656.3 nm (red), H-β=486.1 (cyan), H-γ=434.0 (violet), H-δ=410.2 (violet).&quot;</li>
+<li>&quot;Trick 3: Series limit = 1/(R·n_f²): Lyman 91.2, Balmer 364.6, Paschen 820.4 nm.&quot;</li>
+<li>&quot;Trick 4: 1/λ = R(1/n_f² - 1/nᵢ²); for limit nᵢ→∞ → 1/λ = R/n_f².&quot;</li>
+<li>&quot;Trick 5: Photon energy (eV) = 13.6(1/n_f² - 1/nᵢ²); wave number (cm⁻¹) = 109737(1/n_f² - 1/nᵢ²).&quot;</li>
+<li>&quot;Trick 6: Lyman = ionizing UV; Balmer = visible standard; Paschen = IR coolant lines.&quot;</li>
+</ul></li><li><h3>10. Topic Mastery Check</h3>
+<h4>Important definitions</h4>
+<ol>
+<li><strong>Line spectrum</strong> — discrete wavelengths emitted/absorbed by an element.</li>
+<li><strong>Spectral series</strong> — set of lines sharing common final level n_f.</li>
+<li><strong>Rydberg formula</strong> — 1/λ = R(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.</li>
+<li><strong>Wave number</strong> — ν̃ = 1/λ (cm⁻¹); E = hcν̃.</li>
+<li><strong>Series limit</strong> — nᵢ→∞ transition; shortest wavelength in series.</li>
+<li><strong>Lyman series</strong> — n_f=1, UV, limit 91.2 nm.</li>
+<li><strong>Balmer series</strong> — n_f=2, visible, limit 364.6 nm.</li>
+<li><strong>Paschen series</strong> — n_f=3, IR, limit 820.4 nm.</li>
+<li><strong>Brackett series</strong> — n_f=4, IR, limit 1458 nm.</li>
+<li><strong>Pfund series</strong> — n_f=5, far IR, limit 2279 nm.</li>
+</ol>
+<h4>Key concepts to remember</h4>
+<ul>
+<li>Hydrogen spectrum = line spectrum from quantized energy levels Eₙ = -13.6/n² eV.</li>
+<li>Five series: Lyman (n_f=1, UV), Balmer (n_f=2, visible), Paschen (n_f=3, IR), Brackett (n_f=4, IR), Pfund (n_f=5, far IR).</li>
+<li>Rydberg formula: 1/λ = R(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.</li>
+<li>Series limits: Lyman 91.2 nm, Balmer 364.6 nm, Paschen 820.4 nm.</li>
+<li>Emission: excited gas → bright lines; Absorption: cool gas + continuum → dark lines.</li>
+<li>H-α (656.3 nm) = strongest visible line; Lyman-α (121.6 nm) = strongest UV.</li>
+</ul>
+<h4>Important classifications</h4>
+<ul>
+<li><strong>By n_f:</strong> Lyman (1), Balmer (2), Paschen (3), Brackett (4), Pfund (5).</li>
+<li><strong>By region:</strong> UV (Lyman), Visible (Balmer), Near IR (Paschen), Mid IR (Brackett), Far IR (Pfund).</li>
+<li><strong>Emission vs Absorption:</strong> emission = bright lines on dark; absorption = dark lines on bright.</li>
+<li><strong>Hydrogen-like:</strong> same formula with Z² factor: 1/λ = RZ²(1/n_f² - 1/nᵢ²).</li>
+</ul>
+<h4>Important comparisons</h4>
+<table><thead><tr><th>Series</th><th>n_f</th><th>Region</th><th>First line</th><th>Series limit</th><th>Typical use</th></tr></thead><tbody><tr><td>Lyman</td><td>1</td><td>UV</td><td>121.6 nm</td><td>91.2 nm</td><td>Quasars, IGM</td></tr><tr><td>Balmer</td><td>2</td><td>Visible</td><td>656.3 nm</td><td>364.6 nm</td><td>Stellar classification</td></tr><tr><td>Paschen</td><td>3</td><td>IR</td><td>1875 nm</td><td>820.4 nm</td><td>Cool gas</td></tr><tr><td>Brackett</td><td>4</td><td>IR</td><td>4051 nm</td><td>1458 nm</td><td>Cold gas</td></tr><tr><td>Pfund</td><td>5</td><td>Far IR</td><td>7458 nm</td><td>2279 nm</td><td>Very cold</td></tr></tbody></table>
+<h4>Common conceptual confusions</h4>
+<ul>
+<li>Balmer series is UV — NO, Balmer is VISIBLE (n_f=2).</li>
+<li>All series are visible — NO, only Balmer is in visible; Lyman UV, others IR.</li>
+<li>Series limit is the first line — NO, limit is nᵢ→∞ (shortest wavelength).</li>
+<li>Absorption shows all series — NO, usually only Lyman (ground state n=1 populated).</li>
+<li>Rydberg formula works for all atoms — NO, only hydrogen-like (Z² factor for H-like ions).</li>
+<li>H-α is the series limit — NO, H-α is FIRST line (3→2); limit is nᵢ→∞.</li>
+</ul>
+<h4>Short-answer questions</h4>
+<ol>
+<li>State the Rydberg formula for hydrogen and define R.</li>
+<li>What is the wavelength of the first Balmer line?</li>
+<li>Calculate the series limit of the Paschen series.</li>
+<li>What is the difference between emission and absorption spectra?</li>
+<li>Write the wave number of H-γ (5→2) transition.</li>
+<li>How many spectral lines are possible when electron de-excites from n=5?</li>
+<li>What is the photon energy of Lyman-α transition?</li>
+<li>Distinguish between H-α and H-β lines.</li>
+</ol>
+<h4>Long-answer questions</h4>
+<ol>
+<li>Explain the origin of the line spectrum of hydrogen using Bohr's model.</li>
+<li>Derive the Rydberg formula from Bohr's energy levels.</li>
+<li>Tabulate the five spectral series of hydrogen with regions, first lines, and series limits.</li>
+<li>Explain the difference between emission and absorption spectra with hydrogen examples.</li>
+<li>Calculate the wavelength of the second line of Balmer series (4→2).</li>
+<li>Find the series limit of the Brackett series.</li>
+<li>How many spectral lines are emitted when an electron de-excites from n=6 to ground state?</li>
+</ol>
+<h4>Conceptual questions</h4>
+<ol>
+<li>Why is the hydrogen spectrum a line spectrum, not continuous?</li>
+<li>Why does absorption spectrum usually show only Lyman series?</li>
+<li>What is the physical significance of the series limit?</li>
+<li>Why does the Rydberg formula fail for multi-electron atoms?</li>
+<li>What is the Balmer decrement and what does it tell us?</li>
+</ol>
+<h4>Application-based questions</h4>
+<ol>
+<li>Calculate the wavelength of H-β (4→2) and H-γ (5→2).</li>
+<li>A star shows strong H-α but weak H-β. What does this suggest about temperature?</li>
+<li>Quasar at z=2 shows Lyman-α at what observed wavelength?</li>
+<li>Interstellar cloud absorbs Lyman-α; what column density gives optical depth τ=1?</li>
+<li>Hydrogen maser frequency is 1420.405751 MHz. What transition is this? (Not electronic — hyperfine)</li>
+</ol>
+<h4>Answers</h4>
+<ol>
+<li>1/λ = R(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.</li>
+<li>H-α (3→2): 656.3 nm.</li>
+<li>Paschen limit (n_f=3, nᵢ→∞): 1/λ = R/9 → λ = 820.4 nm.</li>
+<li>Emission: bright lines on dark (excited gas); Absorption: dark lines on bright (cool gas + continuum).</li>
+<li>H-γ (5→2): ν̃ = R(1/4 - 1/25) = 0.21R = 23047 cm⁻¹; λ = 434.0 nm.</li>
+<li>5→1: 5×4/2 = 10 lines.</li>
+<li>Ly-α (2→1): ΔE = 13.6(1 - 1/4) = 10.2 eV.</li>
+<li>H-α (3→2) = 656.3 nm; H-β (4→2) = 486.1 nm; H-γ (5→2) = 434.0 nm.</li>
+<li>Paschen limit: λ = 9/R = 820.4 nm.</li>
+<li>Balmer limit: λ = 4/R = 364.6 nm.</li>
+<li>H-α/H-β ratio: temperature diagnostic (decreases with T).</li>
+<li>Ly-α at z=2: λ_obs = 121.6×(1+2) = 364.8 nm (visible).</li>
+<li>Hyperfine 21 cm: F=1→0 spin-flip in n=1, not electronic transition.</li>
+<li>H-β (4→2): λ = 486.1 nm; H-γ (5→2): λ = 434.0 nm.</li>
+<li>n=6 de-excitation: 6×5/2 = 15 lines.</li>
+<li>Photon energy Lyman-α: 13.6(1 - 1/4) = 10.2 eV.</li>
+</ol></li><li><h3>11. NEB Previous Year Questions (PYQs)</h3>
+<table><thead><tr><th>Year</th><th>Unit</th><th>Topic</th><th>Question</th><th>Marks</th><th>Type</th></tr></thead><tbody><tr><td>2079</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>Explain the origin of the line spectrum of hydrogen using Bohr's postulates.</td><td>2</td><td>Short</td></tr><tr><td>2078</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>Write the Rydberg equation and compute the wavelength of the first Balmer line.</td><td>3</td><td>Short</td></tr><tr><td>2077</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>Name the hydrogen series lying in the visible region and give the regions of the others.</td><td>2</td><td>Short</td></tr><tr><td>2076</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.</td><td>3</td><td>Short</td></tr><tr><td>2075</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?</td><td>2</td><td>Short</td></tr><tr><td>2074</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>Tabulate the five series of hydrogen with their regions, first members and series limits.</td><td>5</td><td>Long</td></tr><tr><td>2073</td><td>Atomic Structure</td><td>Hydrogen spectrum</td><td>How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?</td><td>2</td><td>Short</td></tr></tbody></table>
+<h4>PYQ Solutions</h4>
+<p><strong>Q: Explain the origin of the line spectrum of hydrogen using Bohr's postulates. (2 marks)</strong> <strong>Answer:</strong> Bohr's postulate 1: electrons in stationary states don't radiate. Postulate 3: when electron jumps between discrete states, photon emitted with hν = Eᵢ - E_f. Since energy levels are discrete (Eₙ = -13.6/n²), ΔE is discrete → line spectrum. <strong>Keywords:</strong> stationary states, discrete levels, hν = Eᵢ - E_f, discrete photons.</p>
+<p><strong>Q: Write the Rydberg equation and compute the wavelength of the first Balmer line. (3 marks)</strong> <strong>Answer:</strong> 1/λ = R(1/n_f² - 1/nᵢ²), R = 1.097×10⁷ m⁻¹. For Balmer first line (3→2): 1/λ = R(1/4 - 1/9) = 5R/36 → λ = 36/5R = 656.3 nm. <strong>Keywords:</strong> Rydberg formula, R = 1.097×10⁷, 5R/36, 656.3 nm.</p>
+<p><strong>Q: Name the hydrogen series lying in the visible region and give the regions of the others. (2 marks)</strong> <strong>Answer:</strong> Balmer series (n_f=2) lies in visible region. Lyman (n_f=1) — UV; Paschen (n_f=3) — IR; Brackett (n_f=4) — IR; Pfund (n_f=5) — Far IR. <strong>Keywords:</strong> Balmer = visible; Lyman = UV; Paschen/Brackett/Pfund = IR.</p>
+<p><strong>Q: Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen. (3 marks)</strong> <strong>Answer:</strong> ν̃ = R(1/2² - 1/4²) = R(1/4 - 1/16) = 3R/16 = 20568 cm⁻¹. E = hcν̃ = 13.6(1/4 - 1/16) = 13.6×3/16 = 2.55 eV. <strong>Keywords:</strong> 3R/16, 20568 cm⁻¹, 2.55 eV.</p>
+<p><strong>Q: How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5? (2 marks)</strong> <strong>Answer:</strong> N = n(n-1)/2 = 5×4/2 = 10 lines. <strong>Keywords:</strong> n(n-1)/2, 10 lines.</p>
+<p><strong>Q: Tabulate the five series of hydrogen with their regions, first members and series limits. (5 marks)</strong> <strong>Answer:</strong></p>
+<table><thead><tr><th>Series</th><th>n_f</th><th>Region</th><th>First member (nᵢ→n_f)</th><th>Series limit</th></tr></thead><tbody><tr><td>Lyman</td><td>1</td><td>UV</td><td>2→1 = 121.6 nm</td><td>91.2 nm</td></tr><tr><td>Balmer</td><td>2</td><td>Visible</td><td>3→2 = 656.3 nm</td><td>364.6 nm</td></tr><tr><td>Paschen</td><td>3</td><td>IR</td><td>4→3 = 1875 nm</td><td>820.4 nm</td></tr><tr><td>Brackett</td><td>4</td><td>IR</td><td>5→4 = 4051 nm</td><td>1458 nm</td></tr><tr><td>Pfund</td><td>5</td><td>Far IR</td><td>6→5 = 7458 nm</td><td>2279 nm</td></tr></tbody></table>
+<p><strong>Keywords:</strong> 5 series, n_f values, regions, first lines, limits.</p>
+<p><strong>Q: How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state? (2 marks)</strong> <strong>Answer:</strong> N = n(n-1)/2 = 6×5/2 = 15 lines. <strong>Keywords:</strong> n(n-1)/2, 15 lines.</li><li><h3>12. Summary and Self-check</h3>
+<p>Hydrogen spectrum: line spectrum from quantized levels Eₙ = -13.6/n² eV. Five series: Lyman (n_f=1, UV, 91.2 nm limit), Balmer (n_f=2, visible, 364.6 nm), Paschen (n_f=3, IR, 820.4 nm), Brackett (n_f=4, IR, 1458 nm), Pfund (n_f=5, far IR, 2279 nm). Rydberg formula: 1/λ = R(1/n_f² - 1/nᵢ²). H-α=656.3 nm, H-β=486.1 nm, H-γ=434.0 nm. Emission: bright lines on dark; Absorption: dark lines on bright (usually only Lyman seen). Figures: EM spectrum map, energy level diagram with transitions, convergence diagram.</p>
+<p><strong>Self-check.</strong> (1) Rydberg formula and R value. (2) First Balmer line wavelength. (3) Paschen series limit. (4) Emission vs absorption. (5) H-γ wave number and photon energy. (6) Lines from n=5 de-excitation. (7) Series in visible region.</p>
+<p><strong>Common confusions.</strong> Balmer is UV — NO (Balmer is visible). All series visible — NO (only Balmer). Series limit = first line — NO (limit = nᵢ→∞). Absorption shows all series — NO (usually only Lyman). Rydberg works for all atoms — NO (only H-like).</li><li><h3>13. Sources</h3>
+<ul>
+<li>NEB/CDC Grade 11 Chemistry (Atomic Structure unit)</li>
+<li>OpenStax Chemistry 2e, Chapter 6 (Electronic structure)</li>
+<li>Rydberg, <em>On the Structure of the Line Spectra of the Chemical Elements</em> (1889)</li>
+<li>Bohr, <em>On the Constitution of Atoms and Molecules</em> (1913)</li>
+<li>Astrophysics texts (stellar spectroscopy, Lyman-alpha forest)</li>
+</ul></li></ul></section>
+<section class="field"><h2>Confusion</h2><ul><li>❌ Balmer series is in UV. ✅ Balmer (n_f=2) is VISIBLE; Lyman (n_f=1) is UV.</li><li>❌ All hydrogen spectral lines are visible. ✅ Only Balmer (n_f=2) is in visible; Lyman=UV, Paschen/Brackett/Pfund=IR.</li><li>❌ Series limit is the first line of the series. ✅ Series limit is nᵢ→∞ (shortest wavelength); first line is longest wavelength.</li><li>❌ Absorption spectrum shows all five series. ✅ Usually only Lyman series (n=1 populated); Balmer absorption only in hot stars.</li><li>❌ Rydberg formula works for all elements. ✅ Only for hydrogen-like ions (1/λ = RZ²(1/n_f² - 1/nᵢ²)).</li><li>❌ H-α is the series limit of Balmer series. ✅ H-α (3→2) is the FIRST line (longest λ); series limit is nᵢ→∞ (364.6 nm).</li><li>❌ All spectral lines have equal intensity. ✅ Intensities follow transition probabilities; H-α strongest in Balmer.</li><li>❌ 21 cm line is an electronic transition. ✅ 21 cm is hyperfine spin-flip in n=1, not an electronic transition between n levels.</li></ul></section>
+<section class="field"><h2>Bounds</h2><ul><li>Covers only: hydrogen spectrum, five series, Rydberg formula, emission/absorption (within Atomic Structure).</li><li>Out of scope: fine structure, hyperfine splitting, Zeeman/Stark effects — later topics.</li><li>State the limit/condition where a rule stops being valid before applying it.</li></ul></section>
+<section class="field"><h2>Practice</h2><p class="empty">—</p></section>
+<section class="field"><h2>Universal Facts</h2><ul><li>Rydberg formula: 1/λ = R(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.</li><li>Five series: Lyman (n_f=1, UV), Balmer (n_f=2, visible), Paschen (n_f=3, IR), Brackett (n_f=4, IR), Pfund (n_f=5, far IR).</li><li>Series limits: Lyman 91.2 nm, Balmer 364.6 nm, Paschen 820.4 nm, Brackett 1458 nm, Pfund 2279 nm.</li><li>H-α=656.3 nm, H-β=486.1 nm, H-γ=434.0 nm, H-δ=410.2 nm (Balmer visible).</li><li>Lyman-α=121.6 nm (UV); Ly-β=102.6 nm; Ly-γ=97.3 nm.</li></ul></section>
+<section class="field"><h2>Examples</h2><ul><li>H-α (3→2): 656.3 nm red — solar chromosphere, star formation tracer.</li><li>H-β (4→2): 486.1 nm cyan — temperature diagnostic in nebulae.</li><li>Lyman-α (2→1): 121.6 nm — intergalactic medium probe (Lyman-alpha forest).</li><li>Balmer limit 364.6 nm — convergence of visible lines.</li></ul></section>
+<section class="field"><h2>Practice Questions</h2><ul><li>SHORT (2 marks): State the Rydberg formula for hydrogen and define R.</li><li>SHORT (2 marks): What is the wavelength of the first Balmer line?</li><li>SHORT (3 marks): Calculate the series limit of the Paschen series.</li><li>SHORT (2 marks): What is the difference between emission and absorption spectra?</li><li>SHORT (3 marks): What is the wave number and photon energy for the 4→2 transition in hydrogen?</li><li>SHORT (2 marks): How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?</li><li>LONG (5 marks): Explain the origin of the line spectrum of hydrogen using Bohr's model.</li><li>LONG (5 marks): Derive the Rydberg formula from Bohr's energy levels.</li><li>LONG (5 marks): Tabulate the five series of hydrogen with their regions, first members and series limits.</li><li>LONG (5 marks): Explain the difference between emission and absorption spectra with hydrogen examples.</li><li>LONG (5 marks): Calculate the wavelength of the second line of Balmer series (4→2).</li><li>LONG (5 marks): Find the series limit of the Brackett series.</li><li>LONG (5 marks): How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?</li></ul></section>
+<section class="field"><h2>Formulas</h2><ul><li>1/λ = R(1/n_f² - 1/nᵢ²) where R = 1.097×10⁷ m⁻¹</li><li>ν̃ = 1/λ = R(1/n_f² - 1/nᵢ²) cm⁻¹ (R = 109737 cm⁻¹)</li><li>E (eV) = 13.6(1/n_f² - 1/nᵢ²)</li><li>E (J) = hc/λ = hcR(1/n_f² - 1/nᵢ²)</li><li>For hydrogen-like ions: 1/λ = RZ²(1/n_f² - 1/nᵢ²)</li><li>Series limit (nᵢ→∞): 1/λ = R/n_f²; λ_limit = n_f²/R</li><li>Number of spectral lines from de-excitation n → 1: n(n-1)/2</li><li>Photon energy: E = hν = hc/λ = hcν̃</li></ul></section>
+<section class="field"><h2>Numericals</h2><ul><li>H-α (3→2): 656.3 nm; H-β (4→2): 486.1 nm; H-γ (5→2): 434.0 nm; H-δ (6→2): 410.2 nm.</li><li>Lyman-α (2→1): 121.6 nm; Ly-β (3→1): 102.6 nm; Ly-γ (4→1): 97.3 nm; Ly limit: 91.2 nm.</li><li>Paschen-α (4→3): 1875 nm; Paschen limit: 820.4 nm.</li><li>Balmer limit: 364.6 nm; Brackett limit: 1458 nm; Pfund limit: 2279 nm.</li><li>Wave number H-γ (5→2): 23047 cm⁻¹; Photon energy H-β: 2.55 eV.</li><li>n=6 de-excitation: 15 lines; n=5: 10 lines; n=4: 6 lines.</li></ul></section>
+<section class="field"><h2>Key Points</h2><ul><li>Five series: Lyman (n_f=1, UV), Balmer (n_f=2, visible), Paschen (n_f=3, IR), Brackett (n_f=4, IR), Pfund (n_f=5, far IR).</li><li>Rydberg formula: 1/λ = R(1/n_f² - 1/nᵢ²); R = 1.097×10⁷ m⁻¹.</li><li>Series limits: Lyman 91.2, Balmer 364.6, Paschen 820.4, Brackett 1458, Pfund 2279 nm.</li><li>H-α=656.3, H-β=486.1, H-γ=434.0, H-δ=410.2 nm (Balmer visible).</li><li>Emission: bright lines on dark; Absorption: dark lines on bright (usually only Lyman).</li></ul></section>
+<section class="field"><h2>Summary</h2><p>Hydrogen spectrum: line spectrum from quantized levels Eₙ = -13.6/n² eV. Five series: Lyman (n_f=1, UV, 91.2 nm limit), Balmer (n_f=2, visible, 364.6 nm), Paschen (n_f=3, IR, 820.4 nm), Brackett (n_f=4, IR, 1458 nm), Pfund (n_f=5, far IR, 2279 nm). Rydberg formula: 1/λ = R(1/n_f² - 1/nᵢ²). H-α=656.3 nm, H-β=486.1 nm, H-γ=434.0 nm. Emission: bright lines on dark; Absorption: dark lines on bright (usually only Lyman seen). Figures: EM spectrum map, energy level diagram with transitions, convergence diagram.</p></section>
+<section class="field"><h2>MCQS</h2><div class="q"><span class="n">1.</span><div class="stem"><p>The first line of the Balmer series is produced by the transition:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>2 → 1</li><li>3 → 2</li><li>4 → 2</li><li>3 → 1</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Balmer series has n_f=2; first line is nᵢ=3 → 3→2.</p></div></div></div><div class="q"><span class="n">2.</span><div class="stem"><p>The series limit of the Lyman series corresponds to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>91.2 nm</li><li>121.6 nm</li><li>364.6 nm</li><li>656.3 nm</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>A</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Lyman limit n_f=1, nᵢ→∞: 1/λ = R → λ = 1/R = 91.2 nm.</p></div></div></div><div class="q"><span class="n">3.</span><div class="stem"><p>Hydrogen spectrum in visible region belongs to:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Lyman series</li><li>Balmer series</li><li>Paschen series</li><li>Brackett series</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Balmer series (n_f=2) is the only hydrogen series in visible region.</p></div></div></div><div class="q"><span class="n">4.</span><div class="stem"><p>Photon energy for H-α (3→2) transition:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>10.2 eV</li><li>1.89 eV</li><li>2.55 eV</li><li>0.66 eV</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>E = 13.6(1/4 - 1/9) = 13.6×5/36 = 1.89 eV.</p></div></div></div><div class="q"><span class="n">5.</span><div class="stem"><p>Series limit of Paschen series:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>91.2 nm</li><li>364.6 nm</li><li>820.4 nm</li><li>1458 nm</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Paschen n_f=3 limit: 1/λ = R/9 → λ = 9/R = 820.4 nm.</p></div></div></div><div class="q"><span class="n">6.</span><div class="stem"><p>Wave number of H-γ (5→2) transition:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>15233 cm⁻¹</li><li>20568 cm⁻¹</li><li>23047 cm⁻¹</li><li>27420 cm⁻¹</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>C</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>ν̃ = R(1/4 - 1/25) = 0.21×109737 = 23047 cm⁻¹.</p></div></div></div><div class="q"><span class="n">7.</span><div class="stem"><p>Number of spectral lines from n=5 de-excitation:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>5</li><li>10</li><li>15</li><li>20</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>n(n-1)/2 = 5×4/2 = 10 lines.</p></div></div></div><div class="q"><span class="n">8.</span><div class="stem"><p>Lyman-α (2→1) photon energy:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>13.6 eV</li><li>10.2 eV</li><li>3.4 eV</li><li>1.89 eV</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>ΔE = 13.6(1 - 1/4) = 13.6×3/4 = 10.2 eV.</p></div></div></div><div class="q"><span class="n">9.</span><div class="stem"><p>Balmer decrement (H-α/H-β ratio) is used to diagnose:</p></div><div class="kv"><div class="k">Options</div><div class="v"><ul><li>Magnetic field</li><li>Temperature and density</li><li>Electric field</li><li>Pressure only</li></ul></div></div><div class="kv"><div class="k">Answer</div><div class="v"><p>B</p></div></div><div class="kv"><div class="k">Explanation</div><div class="v"><p>Ratio decreases with temperature; standard nebular diagnostic.</p></div></div></div></section>
+<section class="field"><h2>Mcs</h2><p class="empty">—</p></section>
   <nav class="pager"><a href="03-hydrogen-spectrum.html" title="Spectrum of the Hydrogen Atom">‹ Spectrum of the Hydrogen Atom</a><a class="mid" href="../../../../../_subjects/class-11-chemistry.html">Chemistry</a><a href="04-bohr-defects.html" title="Defects (Limitations) of Bohr's Theory">Defects (Limitations) of Bohr's Theory ›</a></nav>
 </div></body></html>

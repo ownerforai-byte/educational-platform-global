@@ -15,6 +15,7 @@ import {
   STREAM_BLOCK_LIMIT,
   classifiedUnitIds,
   getChapterDocs,
+  getChapterNepalieducateStreamPdfs,
   getChapterNoteswiftStreamPdfs,
   getChapterStreamPdfs,
   nepalenotesPreviewUrlsFor,
@@ -79,7 +80,13 @@ describe("chapter resource classification", () => {
    * "cleans up dead code" and deletes a registry, this test must fail loudly.
    */
   it("keeps all stream sources live while hiding only the source badge", () => {
-    expect(STREAM_SOURCE_IDS).toEqual(["webnotee", "platform", "nepalenotes", "noteswift"]);
+    expect(STREAM_SOURCE_IDS).toEqual([
+      "webnotee",
+      "platform",
+      "nepalenotes",
+      "noteswift",
+      "nepalieducate",
+    ]);
     expect(DIRECT_STREAM_ENABLED).toBe(true);
     expect(SHOW_SOURCE_BADGE).toBe(false);
     for (const id of STREAM_SOURCE_IDS) {
@@ -107,6 +114,13 @@ describe("chapter resource classification", () => {
     expect(nepalenotesPreviewUrlsFor(CLASS_11, "biology")[0]).toMatch(
       /^https:\/\/drive\.google\.com\/file\/d\/[A-Za-z0-9_-]+\/preview$/,
     );
+  });
+
+  it("streams Nepali Educate class 11 exercise PDFs on the matching syllabus unit", () => {
+    const algebra = getChapterNepalieducateStreamPdfs(CLASS_11, "mathematics", "algebra");
+    expect(algebra.length).toBeGreaterThan(0);
+    expect(algebra.every((p) => p.articleUrl.includes("nepalieducate.com"))).toBe(true);
+    expect(getChapterNepalieducateStreamPdfs(CLASS_12, "mathematics", "algebra")).toEqual([]);
   });
 
   it("streams NoteSwift solution PDFs only on the matching syllabus unit", () => {
