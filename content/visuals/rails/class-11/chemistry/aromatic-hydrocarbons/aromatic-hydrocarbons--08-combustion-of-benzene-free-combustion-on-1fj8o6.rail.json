@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Sooty Flame as Stoichiometry Made Visible - The balanced equation demands 15 O₂ per 2 benzene — an oxygen-hungry ratio. In a real flame the fuel-rich zones cannot supply that oxygen locally, so carbon is released as fine particles before reaching CO₂; these particles glow incandescently (luminous yellow) and deposit as soot.…  ·  ## 4. Deep Conceptual — Uses Follow Structure, and Safety Follows Toxicity - **Solvent use** is the non-polarity chapter (dispersion contact with non-polar solutes); **precursor use** is the substitution chemistry chapter (nitration → aniline chain; alkylation → styrene chain; hydrogenation → cyclohexane/nylon chain) — each industrial route is a syllabus reaction scaled up.…  ·  ## 5. Worked Example Types - **Type A — write and balance:** the combustion equation with coefficients. - **Type B — explain the soot:** C% and H : C ratio reasoning. - **Type C — list uses by category:** solvent / precursor / fuel with one example each. - **Type D — energy calculation:** heat released from mass of benzene burnt."
+      "text": "## 3. Deep Conceptual — The Sooty Flame as Stoichiometry Made Visible - The balanced equation demands 15 O₂ per 2 benzene — an oxygen-hungry ratio. In a real flame the fuel-rich zones cannot supply that oxygen locally, so carbon is released as fine particles before reaching CO₂; these particles glow incandescently (luminous yellow) and deposit as soot.…  ·  ```svg From benzene to everyday materials — the uses chain <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><circle cx=\"320\" cy=\"80\" r=\"40\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"3\"/><text x=\"320\" y=\"85\" text-anchor=\"middle\" fill=\"#1d4ed8\" font-size=\"15\">C&#8326;H&#8326;</text><g font-size=\"13\"…  ·  ### Deep dive — combustion arithmetic and the uses list that follows structure Complete combustion: 2C₆H₆ + 15O₂ → 12CO₂ + 6H₂O, ΔH ≈ −3268 kJ/mol of benzene (high fuel value). Incomplete combustion in a limited oxygen supply gives the luminous, smoky flame: free carbon particles (soot) form because the C:H ratio (1:1) is far richer in carbon than an alkane's (1:3).…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Compare the flame of benzene with that of cyclohexane using the H : C ratio.  ·  ## 6. Common Confusions **\"Sooty flame means incomplete equation\":** the equation is complete; the *flame* is locally fuel-rich — the soot is kinetics and mixing, not stoichiometry error.…"
+      "text": "Compare the flame of benzene with that of cyclohexane using the H : C ratio.  ·  **Combustion data and uses — one table, two exam directions** | Aspect | Fact | Exam hook | |---|---|---| | Complete combustion | 2C₆H₆ + 15O₂ &#8594; 12CO₂ + 6H₂O | Balance the equation (1 mark) | | Enthalpy of combustion | ≈ &#8722;3268 kJ/mol | Fuel-value numerical | | Flame character | Luminous, sooty |…  ·  ## 4. Deep Conceptual — Uses Follow Structure, and Safety Follows Toxicity - **Solvent use** is the non-polarity chapter (dispersion contact with non-polar solutes); **precursor use** is the substitution chemistry chapter (nitration → aniline chain; alkylation → styrene chain; hydrogenation → cyclohexane/nylon chain)…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — write and balance:** the combustion equation with coefficients. - **Type B — explain the soot:** C% and H : C ratio reasoning. - **Type C — list uses by category:** solvent / precursor / fuel with one example each.…  ·  ## 6. Common Confusions **\"Sooty flame means incomplete equation\":** the equation is complete; the *flame* is locally fuel-rich — the soot is kinetics and mixing, not stoichiometry error.…"
     }
   ]
 }

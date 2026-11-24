@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Why Raw Materials Dominate Chemical Costs - In most chemical processes the **variable cost is 60–80% of total cost, and raw materials are the largest slice** — energy second, labour a distant third in automated plants.…  ·  ## 4. Deep Conceptual — Time Is a Cost: The Cash-Flow Cycle's Lags - Money spent on raw materials today becomes revenue only after processing, storage, delivery, and the customer's payment terms — weeks to months of lag.…  ·  ## 5. Worked Example Types - **Type A — draw and label:** the cash-flow cycle with its lags. - **Type B — fixed vs variable classification:** sort a cost list into the two bins. - **Type C — break-even calculation:** given fixed costs, price, variable cost — find break-even output. - **Type D — economies of scale argument:** why unit cost falls with output."
+      "text": "## 3. Deep Conceptual — Why Raw Materials Dominate Chemical Costs - In most chemical processes the **variable cost is 60–80% of total cost, and raw materials are the largest slice** — energy second, labour a distant third in automated plants.…  ·  ## 4. Deep Conceptual — Time Is a Cost: The Cash-Flow Cycle's Lags - Money spent on raw materials today becomes revenue only after processing, storage, delivery, and the customer's payment terms — weeks to months of lag.…  ·  ### Deep dive — why raw materials dominate the cost sheet Break a typical heavy-chemical cost: **raw materials 40–60%**, utilities (steam, power, cooling water) 10–20%, labour 5–10%, maintenance 5%, depreciation and overhead the rest.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Compute the break-even output for given fixed costs, price and variable cost.  ·  ## 6. Common Confusions **\"Depreciation is a cash outflow\":** it is a fixed *accounting* cost — no cash leaves; the cash left when the plant was bought. **\"Break-even means no profit and no loss on every unit\":** it means total revenue = total cost *at that output* — each unit above it contributes (price − variable…"
+      "text": "Compute the break-even output for given fixed costs, price and variable cost.  ·  **Where the money goes in a heavy-chemical plant** | Cost item | Share of production cost | Levers to reduce | |---|---|---| | Raw materials | 40&#8211;60% | Better conversion/selectivity, recycling unreacted feed | | Utilities | 10&#8211;20% | Heat integration, better catalysts (lower T) | | Labour | 5&#8211;10% |…  ·  ## 5. Worked Example Types - **Type A — draw and label:** the cash-flow cycle with its lags. - **Type B — fixed vs variable classification:** sort a cost list into the two bins. - **Type C — break-even calculation:** given fixed costs, price, variable cost — find break-even output.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Depreciation is a cash outflow\":** it is a fixed *accounting* cost — no cash leaves; the cash left when the plant was bought. **\"Break-even means no profit and no loss on every unit\":** it means total revenue = total cost *at that output* — each unit above it contributes (price − variable…  ·  ```svg The cash-flow cycle — pay now, get paid later <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><g font-size=\"14\" fill=\"#111827\" text-anchor=\"middle\"><circle cx=\"320\" cy=\"70\" r=\"34\" fill=\"#fefce8\" stroke=\"#a16207\"/><text x=\"320\"…"
     }
   ]
 }

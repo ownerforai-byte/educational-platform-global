@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Substitution Mechanism as One Story - Every electrophilic substitution is the same three acts: **(1)** the electrophile E⁺ attacks the π cloud forming the σ-complex (arenium/Wheland intermediate) — the ring loses aromaticity at one carbon; **(2)** the σ-complex is stabilised by delocalising the positive charge over o/p positions (resonance…  ·  ## 4. Deep Conceptual — Directors: Two Questions, Two Answers - **Reactivity** (activating vs deactivating) answers: does the substituent push electrons into the ring (−OH, −NH₂, −CH₃: activate) or pull (−NO₂, −COOH: deactivate)? Halogens pull *inductively* but donate *by resonance* — net deactivating yet o/p-directing: the one famous split verdict.…  ·  ## 5. Worked Example Types - **Type A — write and condition:** each named reaction with reagents/conditions. - **Type B — mechanism:** nitration's NO₂⁺ generation and the three-act substitution. - **Type C — orientation prediction:** given substituents, predict the major product. - **Type D — Friedel–Crafts diagnosis:** limitations and the acylation-vs-alkylation contrast."
+      "text": "## 3. Deep Conceptual — The Substitution Mechanism as One Story - Every electrophilic substitution is the same three acts: **(1)** the electrophile E⁺ attacks the π cloud forming the σ-complex (arenium/Wheland intermediate) — the ring loses aromaticity at one carbon; **(2)** the σ-complex is stabilised by delocalising the positive charge over o/p positions (resonance…  ·  ### Deep dive — electrophilic aromatic substitution in three moves Every EAS reaction of benzene — halogenation, nitration, sulphonation, Friedel–Crafts — is the same three-step story with different electrophiles: 1.…  ·  **Electrophilic substitution reactions of benzene** | Reaction | Reagents and condition | Electrophile | Product | |---|---|---|---| | Halogenation | Cl₂ or Br₂ + FeX₃ (anhydrous), dark | X⁺ | chlorobenzene / bromobenzene | | Nitration | conc. HNO₃ + conc.…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Draw the mechanism of nitration including NO₂⁺ generation and the σ-complex.  ·  Predict the major product of nitrating (a) toluene, (b) nitrobenzene.  ·  ## 6. Common Confusions **\"FeCl₃ is consumed\":** it is a catalyst — regenerated when the HCl leaves. **\"o/p directors always activate\":** halogens direct o/p while deactivating — reactivity and regiochemistry are separate axes.…"
+      "text": "Draw the mechanism of nitration including NO₂⁺ generation and the σ-complex.  ·  Predict the major product of nitrating (a) toluene, (b) nitrobenzene.  ·  ## 4. Deep Conceptual — Directors: Two Questions, Two Answers - **Reactivity** (activating vs deactivating) answers: does the substituent push electrons into the ring (−OH, −NH₂, −CH₃: activate) or pull (−NO₂, −COOH: deactivate)? Halogens pull *inductively* but donate *by resonance* — net deactivating yet…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg EAS energy profile — the σ-complex is the hill; aromaticity is restored by H⁺ loss <svg viewBox=\"0 0 640 330\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"330\" fill=\"#ffffff\"/><line x1=\"60\" y1=\"290\" x2=\"600\" y2=\"290\" stroke=\"#9ca3af\" stroke-width=\"2\"/><line x1=\"60\" y1=\"290\"…  ·  ## 5. Worked Example Types - **Type A — write and condition:** each named reaction with reagents/conditions. - **Type B — mechanism:** nitration's NO₂⁺ generation and the three-act substitution. - **Type C — orientation prediction:** given substituents, predict the major product.…  ·  ## 6. Common Confusions **\"FeCl₃ is consumed\":** it is a catalyst — regenerated when the HCl leaves. **\"o/p directors always activate\":** halogens direct o/p while deactivating — reactivity and regiochemistry are separate axes.…"
     }
   ]
 }

@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Plant as a Balanced Network, Not a Machine - The flowsheet's discipline is the **balance**: every unit operation obeys \"in = out\" for mass and energy, and the design arithmetic is these balances applied unit by unit.…  ·  ## 4. Deep Conceptual — Safety Is Designed In, Not Bolted On - The design sequence places safety after materials but *before layout* deliberately: relief valves, containment, interlocks, and inherently safer choices (less hazardous solvent, milder conditions, smaller inventory) are cheapest at the flowsheet stage and impossible to retrofit cheaply.…  ·  ## 5. Worked Example Types - **Type A — flowsheet reading:** identify unit operations and unit processes in a given scheme. - **Type B — mass balance arithmetic:** simple in–out with recycle. - **Type C — siting argument:** justify a plant location against the factor list. - **Type D — safety hierarchy:** order protective measures by the inherent-safety principle."
+      "text": "## 3. Deep Conceptual — The Plant as a Balanced Network, Not a Machine - The flowsheet's discipline is the **balance**: every unit operation obeys \"in = out\" for mass and energy, and the design arithmetic is these balances applied unit by unit.…  ·  ## 4. Deep Conceptual — Safety Is Designed In, Not Bolted On - The design sequence places safety after materials but *before layout* deliberately: relief valves, containment, interlocks, and inherently safer choices (less hazardous solvent, milder conditions, smaller inventory) are cheapest at the flowsheet stage and impossible to retrofit cheaply.…  ·  ### Deep dive — safety is designed in, not bolted on Plant design begins with the **flowsheet**: reactors, separators, heat exchangers, pumps and their interconnection. Then come the layers of protection: (1) **inherent safety** — choose less hazardous chemistry (dilute instead of pure, water as solvent instead of benzene); (2) **engineered controls** — relief valves,…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "List the siting factors for a new fertiliser plant and rank the top three.  ·  ## 6. Common Confusions **\"Unit operation and unit process are synonyms\":** operations are physical, processes are chemical — distillation vs nitration. **\"Safety means alarms\":** alarms are the last layer; inherent safety (less hazardous inventory) is the first."
+      "text": "List the siting factors for a new fertiliser plant and rank the top three.  ·  **Layers of plant protection — from best to last resort** | Layer | Principle | Example | |---|---|---| | Inherent safety | Remove the hazard itself | Dilute acid handling instead of concentrated | | Engineered controls | Hardware that fails safe | Relief valve, interlock, burst disc | | Procedural controls | Written…  ·  ## 5. Worked Example Types - **Type A — flowsheet reading:** identify unit operations and unit processes in a given scheme. - **Type B — mass balance arithmetic:** simple in–out with recycle. - **Type C — siting argument:** justify a plant location against the factor list.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Unit operation and unit process are synonyms\":** operations are physical, processes are chemical — distillation vs nitration. **\"Safety means alarms\":** alarms are the last layer; inherent safety (less hazardous inventory) is the first.  ·  ```svg The protection onion — layers around the hazard <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><g fill=\"none\" stroke-width=\"2\"><circle cx=\"320\" cy=\"150\" r=\"34\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><circle cx=\"320\" cy=\"150\" r=\"66\"…"
     }
   ]
 }

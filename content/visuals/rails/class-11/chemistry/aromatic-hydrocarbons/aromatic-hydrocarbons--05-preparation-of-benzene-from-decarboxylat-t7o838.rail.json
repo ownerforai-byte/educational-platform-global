@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — What Each Route Teaches About the Ring - **Decarboxylation is a proton-for-carboxylate swap:** soda lime's NaOH abstracts the carboxyl proton machinery and the CO₂ leaves as carbonate; the aryl carbon receives H.…  ·  ## 4. Deep Conceptual — Conditions Are Part of the Equation - Each route's condition is *diagnostic*, not decorative: soda lime (not NaOH alone — CaO raises the fusion temperature and absorbs water); zinc dust (not Zn granules — surface area); red-hot iron tube ~873 K (not a flame — the temperature *is* the reagent).…  ·  ## 5. Worked Example Types - **Type A — write the preparation:** equation + condition, for each of the three routes. - **Type B — condition justification:** why soda lime, why zinc dust, why red heat. - **Type C — route selection:** given a starting material, choose and justify the route. - **Type D — generalisation:** apply decarboxylation to substituted benzoates."
+      "text": "## 3. Deep Conceptual — What Each Route Teaches About the Ring - **Decarboxylation is a proton-for-carboxylate swap:** soda lime's NaOH abstracts the carboxyl proton machinery and the CO₂ leaves as carbonate; the aryl carbon receives H.…  ·  ## 4. Deep Conceptual — Conditions Are Part of the Equation - Each route's condition is *diagnostic*, not decorative: soda lime (not NaOH alone — CaO raises the fusion temperature and absorbs water); zinc dust (not Zn granules — surface area); red-hot iron tube ~873 K (not a flame — the temperature *is* the reagent).…  ·  ```svg Route map — three laboratory entries into the benzene ring <svg viewBox=\"0 0 640 320\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"320\" fill=\"#ffffff\"/><circle cx=\"320\" cy=\"160\" r=\"52\" fill=\"#eff6ff\" stroke=\"#1d4ed8\" stroke-width=\"3\"/><text x=\"320\" y=\"156\" text-anchor=\"middle\" fill=\"#1d4ed8\" font-size=\"17\">C&#8326;H&#8326;</text><text…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Starting from sodium p-methylbenzoate, predict the product of soda-lime decarboxylation.  ·  ## 6. Common Confusions **\"NaOH alone decarboxylates\":** the soda-lime mixture (NaOH + CaO) is required — CaO's role is fusion-temperature and water absorption. **\"Ethyne trimerisation needs a catalyst like Ni\":** the syllabus condition is the red-hot iron tube (~873 K); quoting organometallic catalysts imports…"
+      "text": "Starting from sodium p-methylbenzoate, predict the product of soda-lime decarboxylation.  ·  ### Deep dive — writing the three preparations the NEB way Each laboratory route to benzene is defined by reagent, condition and by-product; losing any one costs marks. 1. **Decarboxylation of sodium benzoate** — C₆H₅COONa + NaOH (soda-lime, NaOH + CaO) heated: the NaOH converts the acid group to the sodium salt and…  ·  **Three laboratory preparations of benzene** | Route | Reagents and conditions | Equation (skeleton) | By-product | |---|---|---|---| | Decarboxylation | sodium benzoate + soda-lime (NaOH/CaO), heat | C₆H₅COONa + NaOH &#8594; C₆H₆ + Na₂CO₃ | Na₂CO₃ | | From phenol | phenol vapour + Zn dust, red heat (~500 °C) | C₆H₅OH…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — write the preparation:** equation + condition, for each of the three routes. - **Type B — condition justification:** why soda lime, why zinc dust, why red heat. - **Type C — route selection:** given a starting material, choose and justify the route.…  ·  ## 6. Common Confusions **\"NaOH alone decarboxylates\":** the soda-lime mixture (NaOH + CaO) is required — CaO's role is fusion-temperature and water absorption. **\"Ethyne trimerisation needs a catalyst like Ni\":** the syllabus condition is the red-hot iron tube (~873 K); quoting organometallic catalysts imports…"
     }
   ]
 }

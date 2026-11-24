@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Ammonia as a Carrier: The Process's Masterstroke - Ammonia's role is **provisional basicity:** it raises the brine's effective carbonate concentration by holding CO₂ as NH₄HCO₃, creating the conditions in which NaHCO₃ precipitates — then it is *recovered and returned*.…  ·  ## 4. Deep Conceptual — Why NaHCO3 Precipitates: Solubility as Selectivity - The carbonating tower's brine contains Na⁺, NH₄⁺, Cl⁻ and HCO₃⁻ — four salts are possible; **only NaHCO₃ is sparingly soluble** in the cold concentrated solution (NaCl, NH₄Cl, NH₄HCO₃ all stay dissolved).…  ·  ## 5. Worked Example Types - **Type A — describe with equations:** the four steps and the net reaction. - **Type B — ammonia's role:** carrier vs catalyst distinction. - **Type C — the solubility argument:** why NaHCO₃ alone precipitates. - **Type D — by-product reasoning:** CaCl₂ outlets and process viability."
+      "text": "## 3. Deep Conceptual — Ammonia as a Carrier: The Process's Masterstroke - Ammonia's role is **provisional basicity:** it raises the brine's effective carbonate concentration by holding CO₂ as NH₄HCO₃, creating the conditions in which NaHCO₃ precipitates — then it is *recovered and returned*.…  ·  ## 4. Deep Conceptual — Why NaHCO3 Precipitates: Solubility as Selectivity - The carbonating tower's brine contains Na⁺, NH₄⁺, Cl⁻ and HCO₃⁻ — four salts are possible; **only NaHCO₃ is sparingly soluble** in the cold concentrated solution (NaCl, NH₄Cl, NH₄HCO₃ all stay dissolved).…  ·  ### Deep dive — Solvay: ammonia as a recyclable carrier of CO₂ Brine (NaCl) + limestone (CaCO₃) + ammonia produce NaHCO₃, which calcines to Na₂CO₃. The elegant part is the **ammonia cycle**: NH₃ is absorbed in brine, CO₂ (from CaCO₃ calcination) precipitates NaHCO₃ because it is the least soluble thing in the four-ion system, and NH₃ is recovered from the mother liquor by…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Argue from solubility why only NaHCO3 precipitates.  ·  ## 6. Common Confusions **\"Ammonia is a raw material\":** it is a *recycled carrier* — consumed in no net amount; calling it a raw material misses the process's whole point. **\"Na2CO3 precipitates\":** it is NaHCO₃ that precipitates; the carbonate appears only on calcination."
+      "text": "Argue from solubility why only NaHCO3 precipitates.  ·  **Solvay chemistry — reaction, location, purpose** | Reaction | Where | Purpose | |---|---|---| | CaCO&#8323; &#8594; CaO + CO&#8322; | Kiln | CO&#8322; source | | NH&#8323; + H&#8322;O + CO&#8322; &#8594; NH&#8324;HCO&#8323; | Absorber | Bicarbonate carrier | | NaCl + NH&#8324;HCO&#8323; &#8594; NaHCO&#8323;&#8595; +…  ·  ## 5. Worked Example Types - **Type A — describe with equations:** the four steps and the net reaction. - **Type B — ammonia's role:** carrier vs catalyst distinction. - **Type C — the solubility argument:** why NaHCO₃ alone precipitates. - **Type D — by-product reasoning:** CaCl₂ outlets and process viability."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Ammonia is a raw material\":** it is a *recycled carrier* — consumed in no net amount; calling it a raw material misses the process's whole point. **\"Na2CO3 precipitates\":** it is NaHCO₃ that precipitates; the carbonate appears only on calcination.  ·  ```svg The ammonia cycle — a carrier, not a reactant <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><rect x=\"70\" y=\"60\" width=\"150\" height=\"55\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"145\" y=\"85\" text-anchor=\"middle\"…"
     }
   ]
 }

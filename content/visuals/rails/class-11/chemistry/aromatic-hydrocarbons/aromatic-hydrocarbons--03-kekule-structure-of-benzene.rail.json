@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Three Failures as Three Experiments - **Bond lengths (X-ray/electron diffraction):** alternating bonds would give two distinct lengths; measurement shows one — 139 pm, the average weighted toward the double-bond character. A structural proposal that predicts two lengths and reality shows one has been falsified at the 10-pm level.…  ·  ## 4. Deep Conceptual — Why the Kekulé Structure Survives on Every Page - Modern resonance theory *keeps* the two Kekulé forms as contributing structures: benzene is a resonance hybrid of the two, with equal weights — the real structure is neither, but both are bookkeeping entries toward it.…  ·  ## 5. Worked Example Types - **Type A — draw the two forms:** the verified PYQ's request, plus the equal-length explanation. - **Type B — explain the failures:** bond length, hydrogenation heat, reactivity, each with numbers. - **Type C — isomer counting:** why one monosubstitution and three disubstitution products.…"
+      "text": "## 3. Deep Conceptual — The Three Failures as Three Experiments - **Bond lengths (X-ray/electron diffraction):** alternating bonds would give two distinct lengths; measurement shows one — 139 pm, the average weighted toward the double-bond character. A structural proposal that predicts two lengths and reality shows one has been falsified at the 10-pm level.…  ·  ```svg Kekulé structures are the two resonance contributors of one real molecule <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><g stroke=\"#111827\" stroke-width=\"2.5\" fill=\"none\"><polygon points=\"110,70 165,102 165,166 110,198 55,166 55,102\"/><line x1=\"137\" y1=\"86\" x2=\"137\" y2=\"118\"/><line x1=\"137\"…  ·  ### Deep dive — Kekulé's postulates and their experimental verdicts Kekulé (1865) proposed a hexagonal ring with alternating single and double bonds and, in 1872, added the oscillating-hypothesis: the double bonds shift position so fast that all positions are equivalent.…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Contrast benzene's observed bond length with both alkane and alkene standards.  ·  ## 6. Common Confusions **\"Benzene alternates rapidly between two structures\":** no — it is a single time-independent hybrid; the two Kekulé forms are mathematical components, not flickering states.…"
+      "text": "Contrast benzene's observed bond length with both alkane and alkene standards.  ·  **Kekulé's predictions vs experimental facts** | Property | Kekulé predicts | Experiment shows | Conclusion | |---|---|---|---| | C–C bond lengths | 3 short (134 pm) + 3 long (154 pm) | All six 139 pm | Bonds are equivalent | | o-disubstitution | Two isomers (1,2 across C=C vs C–C) | One isomer only | Positions…  ·  ## 4. Deep Conceptual — Why the Kekulé Structure Survives on Every Page - Modern resonance theory *keeps* the two Kekulé forms as contributing structures: benzene is a resonance hybrid of the two, with equal weights — the real structure is neither, but both are bookkeeping entries toward it.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — draw the two forms:** the verified PYQ's request, plus the equal-length explanation. - **Type B — explain the failures:** bond length, hydrogenation heat, reactivity, each with numbers. - **Type C — isomer counting:** why one monosubstitution and three disubstitution products.…  ·  ## 6. Common Confusions **\"Benzene alternates rapidly between two structures\":** no — it is a single time-independent hybrid; the two Kekulé forms are mathematical components, not flickering states.…"
     }
   ]
 }

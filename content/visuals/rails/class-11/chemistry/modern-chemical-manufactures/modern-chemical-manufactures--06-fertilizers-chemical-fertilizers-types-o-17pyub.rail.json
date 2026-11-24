@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Why Urea Wins: The Nutrient-Density Argument - **Nitrogen content is the currency:** per tonne of product, urea delivers 46% N against ammonium nitrate's 35% and ammonium sulphate's 21% — every shipment carries the least ballast.…  ·  ## 4. Deep Conceptual — What Each Nutrient Actually Does - **N:** builds amino acids, proteins, chlorophyll — drives leafy vegetative growth; deficiency shows as **general yellowing (chlorosis), oldest leaves first**; excess causes lodging (weak stems) and delayed maturity.…  ·  ## 5. Worked Example Types - **Type A — classify and quantify:** fertilizer types with N% comparison. - **Type B — the urea flow sheet:** reactions, conditions, recycle. - **Type C — deficiency diagnosis:** match symptom to nutrient with the mobile-nutrient logic. - **Type D — NPK grade reading:** interpret a grade and compute nutrient supply."
+      "text": "## 3. Deep Conceptual — Why Urea Wins: The Nutrient-Density Argument - **Nitrogen content is the currency:** per tonne of product, urea delivers 46% N against ammonium nitrate's 35% and ammonium sulphate's 21% — every shipment carries the least ballast.…  ·  ## 4. Deep Conceptual — What Each Nutrient Actually Does - **N:** builds amino acids, proteins, chlorophyll — drives leafy vegetative growth; deficiency shows as **general yellowing (chlorosis), oldest leaves first**; excess causes lodging (weak stems) and delayed maturity.…  ·  ### Deep dive — N, P, K: what each nutrient actually does **Nitrogen** builds amino acids, proteins and chlorophyll — deficiency shows as general yellowing (chlorosis) of older leaves. Sources: urea CO(NH₂)₂ (46% N, the world standard), ammonium sulfate (21% N, acidifying), ammonium nitrate, and calcium ammonium nitrate.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Diagnose a deficiency from leaf symptoms using the mobile-nutrient rule.  ·  ## 6. Common Confusions **\"NPK means equal parts of elements\":** the numbers are N : P₂O₅ : K₂O *equivalents* — not elemental P and K. **\"Urea is ammonium\":** it is an organic amide; the soil's urease converts it to ammonium before roots absorb it."
+      "text": "Diagnose a deficiency from leaf symptoms using the mobile-nutrient rule.  ·  **The three macronutrients — role, deficiency, fertiliser** | Nutrient | Role in plant | Deficiency sign | Common fertiliser (% nutrient) | |---|---|---|---| | N | Proteins, chlorophyll | Yellowing of older leaves | Urea (46% N); (NH&#8324;)&#8322;SO&#8324; (21% N) | | P | Roots, ATP, flowering | Purple tinge, stunted…  ·  ## 5. Worked Example Types - **Type A — classify and quantify:** fertilizer types with N% comparison. - **Type B — the urea flow sheet:** reactions, conditions, recycle. - **Type C — deficiency diagnosis:** match symptom to nutrient with the mobile-nutrient logic.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"NPK means equal parts of elements\":** the numbers are N : P₂O₅ : K₂O *equivalents* — not elemental P and K. **\"Urea is ammonium\":** it is an organic amide; the soil's urease converts it to ammonium before roots absorb it.  ·  ```svg Nutrient → role → deficiency — reading the leaf <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g font-size=\"14\" text-anchor=\"middle\"><rect x=\"60\" y=\"60\" width=\"150\" height=\"50\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#166534\"/><text x=\"135\"…"
     }
   ]
 }

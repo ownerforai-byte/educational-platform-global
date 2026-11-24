@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Cell Is Three Products and a Separation Problem - The electrolysis of brine produces **three sellable products at three electrodes/spaces:** Cl₂ (anode space), H₂ (cathode space), NaOH (cathode solution).…  ·  ## 4. Deep Conceptual — Why the Diaphragm Must Percolate - The diaphragm is porous and brine **flows through it** from anode to cathode side: the flow's purpose is to sweep Na⁺ (and NaOH) to the cathode side while its bulk keeps the hydroxide from back-diffusing to the anode.…  ·  ## 5. Worked Example Types - **Type A — cell description:** electrodes, half-equations, diaphragm role. - **Type B — the discharge competition:** why Cl₂ at the anode, H₂ at the cathode. - **Type C — the no-diaphragm consequence:** write the parasitic reaction. - **Type D — the two-cell contrast:** aqueous diaphragm cell vs molten Downs cell."
+      "text": "## 3. Deep Conceptual — The Cell Is Three Products and a Separation Problem - The electrolysis of brine produces **three sellable products at three electrodes/spaces:** Cl₂ (anode space), H₂ (cathode space), NaOH (cathode solution).…  ·  ## 4. Deep Conceptual — Why the Diaphragm Must Percolate - The diaphragm is porous and brine **flows through it** from anode to cathode side: the flow's purpose is to sweep Na⁺ (and NaOH) to the cathode side while its bulk keeps the hydroxide from back-diffusing to the anode.…  ·  ### Deep dive — the diaphragm cell: keeping the products apart Brine is electrolysed: at the **cathode** 2H₂O + 2e⁻ → H₂ + 2OH⁻ (NaOH forms in the catholyte); at the **anode** 2Cl⁻ → Cl₂ + 2e⁻. The whole engineering problem is keeping the three products separated — NaOH meeting Cl₂ makes bleach (NaClO), and Cl₂ meeting H₂ is explosive.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Write the reaction that would consume the products if the diaphragm failed.  ·  ## 6. Common Confusions **\"Sodium metal forms at the cathode\":** never in aqueous solution — water discharges first; Na metal requires molten NaCl (Downs). **\"The diaphragm is an insulator\":** it is a *selective barrier* — ions and brine pass; the gases and products must not mix."
+      "text": "Write the reaction that would consume the products if the diaphragm failed.  ·  **Diaphragm cell — electrode reactions and products** | Location | Reaction | Product | Use | |---|---|---|---| | Anode (+) | 2Cl&#8315; &#8594; Cl&#8322; + 2e&#8315; | Chlorine | PVC, bleach, disinfectant | | Cathode (&#8722;) | 2H&#8322;O + 2e&#8315; &#8594; H&#8322; + 2OH&#8315; | Hydrogen + OH&#8315; | Fuel,…  ·  ## 5. Worked Example Types - **Type A — cell description:** electrodes, half-equations, diaphragm role. - **Type B — the discharge competition:** why Cl₂ at the anode, H₂ at the cathode. - **Type C — the no-diaphragm consequence:** write the parasitic reaction.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Sodium metal forms at the cathode\":** never in aqueous solution — water discharges first; Na metal requires molten NaCl (Downs). **\"The diaphragm is an insulator\":** it is a *selective barrier* — ions and brine pass; the gases and products must not mix.  ·  ```svg Diaphragm cell — anode, cathode, and the barrier between <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><rect x=\"90\" y=\"70\" width=\"460\" height=\"150\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><rect x=\"315\" y=\"70\" width=\"10\" height=\"150\"…"
     }
   ]
 }

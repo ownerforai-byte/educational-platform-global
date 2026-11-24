@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Why Oleum and Not Water: The Fog Problem - Absorbing SO₃ directly into water is thermodynamically fine but **engineering-wise a disaster:** the reaction is violently exothermic and the product leaves the gas–liquid interface as a **mist of tiny H₂SO₄ droplets** that is nearly impossible to condense — it escapes with the exit gas as acid fog.…  ·  ## 4. Deep Conceptual — Why the Pressure Is Low: Reading an Equilibrium Economically - 2SO₂ + O₂ → 2SO₃ reduces 3 mol to 2 mol, so pressure *does* favour the product — yet the plant runs at **1–2 atm**. The reason: at 450 °C with excess air the equilibrium conversion is already ~99% without added pressure, and pressure equipment for a marginal 1% is uneconomic.…  ·  ## 5. Worked Example Types - **Type A — describe with flow sheet:** the four stages with equations. - **Type B — the oleum question:** why not water (fog argument). - **Type C — the pressure contrast:** Contact vs Haber economics. - **Type D — purification logic:** why the catalyst must be protected."
+      "text": "## 3. Deep Conceptual — Why Oleum and Not Water: The Fog Problem - Absorbing SO₃ directly into water is thermodynamically fine but **engineering-wise a disaster:** the reaction is violently exothermic and the product leaves the gas–liquid interface as a **mist of tiny H₂SO₄ droplets** that is nearly impossible to condense — it escapes with the exit gas as acid fog.…  ·  ## 4. Deep Conceptual — Why the Pressure Is Low: Reading an Equilibrium Economically - 2SO₂ + O₂ → 2SO₃ reduces 3 mol to 2 mol, so pressure *does* favour the product — yet the plant runs at **1–2 atm**. The reason: at 450 °C with excess air the equilibrium conversion is already ~99% without added pressure, and pressure equipment for a marginal 1% is uneconomic.…  ·  ### Deep dive — the contact process: why the absorber absorbs into acid, not water S (or FeS₂/pyrite) → SO₂ (roaster or burner) → SO₃ over V₂O₅ catalyst at ~450 °C, 1–2 atm (2SO₂ + O₂ ⇌ 2SO₃, ΔH = −196 kJ, exothermic and mole-reducing, so moderate T and slight pressure) → absorption.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Contrast the pressure choice of the Contact and Haber processes.  ·  ## 6. Common Confusions **\"SO3 is dissolved in water to make acid\":** the textbook shorthand — in the plant it is absorbed in acid to oleum, then diluted. **\"Higher pressure always helps\":** it helps the equilibrium but the 99% conversion already achieved makes it a wasted expense."
+      "text": "Contrast the pressure choice of the Contact and Haber processes.  ·  **Contact process — stage by stage** | Stage | Change | Conditions | Note | |---|---|---|---| | SO&#8322; generation | S + O&#8322; &#8594; SO&#8322; | Burner/roaster, dry air | Gas must be dry and dust-free | | Catalytic oxidation | 2SO&#8322; + O&#8322; &#8646; 2SO&#8323; | V&#8322;O&#8325;, 450&#176;C, 1&#8211;2…  ·  ## 5. Worked Example Types - **Type A — describe with flow sheet:** the four stages with equations. - **Type B — the oleum question:** why not water (fog argument). - **Type C — the pressure contrast:** Contact vs Haber economics. - **Type D — purification logic:** why the catalyst must be protected."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"SO3 is dissolved in water to make acid\":** the textbook shorthand — in the plant it is absorbed in acid to oleum, then diluted. **\"Higher pressure always helps\":** it helps the equilibrium but the 99% conversion already achieved makes it a wasted expense.  ·  ```svg Contact process — oleum absorption avoids the acid-mist problem <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><rect x=\"50\" y=\"95\" width=\"120\" height=\"65\" rx=\"10\" fill=\"#fefce8\" stroke=\"#a16207\"/><text x=\"110\" y=\"122\"…"
     }
   ]
 }

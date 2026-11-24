@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Each Step Has Its Own Temperature Logic - **Step 1 needs heat:** the NH₃ oxidation is run hot (800–900 °C) for rate and selectivity — the Pt–Rh gauze lights the reaction and the mixture's own oxidation sustains it; the short contact time prevents decomposition of NH₃ to N₂ (the undesired competing path).…  ·  ## 4. Deep Conceptual — Why Platinum–Rhodium, and Why a Gauze - **Catalytic demands:** NH₃ oxidation needs a catalyst active at 800–900 °C, selective for NO (not N₂), and resistant to oxidation itself — platinum is nearly unique; rhodium adds mechanical strength and reduces platinum loss (Pt vaporises slowly at operating temperature).…  ·  ## 5. Worked Example Types - **Type A — describe with equations:** the three steps with conditions. - **Type B — the quench question:** why rapid cooling between steps 1 and 2. - **Type C — catalyst reasoning:** Pt–Rh gauze selection and geometry. - **Type D — chain-of-industry:** NH₃ → HNO₃ → ammonium nitrate/ANFO linkage."
+      "text": "## 3. Deep Conceptual — Each Step Has Its Own Temperature Logic - **Step 1 needs heat:** the NH₃ oxidation is run hot (800–900 °C) for rate and selectivity — the Pt–Rh gauze lights the reaction and the mixture's own oxidation sustains it; the short contact time prevents decomposition of NH₃ to N₂ (the undesired competing path).…  ·  ## 4. Deep Conceptual — Why Platinum–Rhodium, and Why a Gauze - **Catalytic demands:** NH₃ oxidation needs a catalyst active at 800–900 °C, selective for NO (not N₂), and resistant to oxidation itself — platinum is nearly unique; rhodium adds mechanical strength and reduces platinum loss (Pt vaporises slowly at operating temperature).…  ·  ### Deep dive — Ostwald: three steps, one catalyst, one absorber **Step 1** — catalytic oxidation: 4NH₃ + 5O₂ → 4NO + 6H₂O, ΔH = −905 kJ, over Pt/Rh gauze at ~800–900 °C. The mixture must be lean in ammonia (≈10%) because NH₃ + O₂ can otherwise burn to N₂ — selectivity is everything.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Justify the Pt-Rh gauze's composition and geometry.  ·  ## 6. Common Confusions **\"NO₂ is absorbed as such\":** the net absorption consumes O₂ too — the balanced tower equation includes it. **\"Cooling is for safety\":** it is for *equilibrium* — step 2's product only exists in quantity at low temperature."
+      "text": "Justify the Pt-Rh gauze's composition and geometry.  ·  **Ostwald steps — equation, conditions, purpose** | Step | Equation | Conditions | Watch for | |---|---|---|---| | 1 Oxidation | 4NH&#8323; + 5O&#8322; &#8594; 4NO + 6H&#8322;O | Pt/Rh, 800&#8211;900&#176;C, &#8776;10% NH&#8323; | Lean mixture or N&#8322; forms instead | | 2 Oxidation | 2NO + O&#8322; &#8594;…  ·  ## 5. Worked Example Types - **Type A — describe with equations:** the three steps with conditions. - **Type B — the quench question:** why rapid cooling between steps 1 and 2. - **Type C — catalyst reasoning:** Pt–Rh gauze selection and geometry.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"NO₂ is absorbed as such\":** the net absorption consumes O₂ too — the balanced tower equation includes it. **\"Cooling is for safety\":** it is for *equilibrium* — step 2's product only exists in quantity at low temperature.  ·  ```svg Ostwald train — converter, cooler-oxidiser, absorber with NO recycle <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><rect x=\"50\" y=\"90\" width=\"140\" height=\"70\" rx=\"10\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><text x=\"120\" y=\"118\"…"
     }
   ]
 }

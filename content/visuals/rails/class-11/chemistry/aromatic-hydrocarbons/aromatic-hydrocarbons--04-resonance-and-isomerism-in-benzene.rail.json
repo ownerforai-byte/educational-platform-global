@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Resonance Is Bookkeeping, Not Flickering - The molecule does not jump between Kekulé forms; it *is* the hybrid, all the time. Contributing structures are human bookkeeping — ways of placing electron pairs on a page — and the real structure is their weighted superposition.…  ·  ## 4. Deep Conceptual — Isomerism as the Hybrid's Geometric Shadow - The delocalised ring has no fixed double bonds, but it *does* have fixed positions: 1 through 6 around a hexagon. Substitution is positional, not bond-selective — hence exactly three disubstitution patterns regardless of where the \"double bonds\" are drawn.…  ·  ## 5. Worked Example Types - **Type A — define and illustrate:** resonance with benzene's contributing structures and the hybrid icon. - **Type B — resonance energy calculation:** from hydrogenation heats, the 360 − 208 arithmetic. - **Type C — isomer counting:** enumerate o/m/p products for a given disubstitution.…"
+      "text": "## 3. Deep Conceptual — Resonance Is Bookkeeping, Not Flickering - The molecule does not jump between Kekulé forms; it *is* the hybrid, all the time. Contributing structures are human bookkeeping — ways of placing electron pairs on a page — and the real structure is their weighted superposition.…  ·  ## 4. Deep Conceptual — Isomerism as the Hybrid's Geometric Shadow - The delocalised ring has no fixed double bonds, but it *does* have fixed positions: 1 through 6 around a hexagon. Substitution is positional, not bond-selective — hence exactly three disubstitution patterns regardless of where the \"double bonds\" are drawn.…  ·  ```svg Energy profile — the resonance hybrid sits below its contributors <svg viewBox=\"0 0 640 320\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"320\" fill=\"#ffffff\"/><line x1=\"70\" y1=\"280\" x2=\"590\" y2=\"280\" stroke=\"#9ca3af\" stroke-width=\"2\"/><line x1=\"70\" y1=\"280\" x2=\"70\" y2=\"40\" stroke=\"#9ca3af\" stroke-width=\"2\"/><text x=\"50\" y=\"160\"…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "List the disubstitution isomers of C₆H₄XY and explain why there are exactly three.  ·  ## 6. Common Confusions **\"Benzene is sometimes one Kekulé form and sometimes the other\":** it is always the hybrid — the forms are descriptions, not states. **\"Resonance means the molecule is unstable\":** the opposite — resonance *stabilises*; the energy of the hybrid is below every contributor."
+      "text": "List the disubstitution isomers of C₆H₄XY and explain why there are exactly three.  ·  ### Deep dive — the rules that make a resonance argument valid Resonance is the quantum-mechanical bookkeeping for a structure no single Lewis formula can draw. The contributors must obey five rules, and NEB answers that quote them earn full marks: 1.…  ·  **Resonance rules applied to benzene** | Rule | In benzene | Why it matters | |---|---|---| | Atoms fixed | Hexagonal σ skeleton identical in both contributors | Only π electrons shift | | Valence rules obeyed | Every carbon keeps 4 bonds and an octet | No impossible contributor drawn | | Only π/lone-pair/charge move…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — define and illustrate:** resonance with benzene's contributing structures and the hybrid icon. - **Type B — resonance energy calculation:** from hydrogenation heats, the 360 − 208 arithmetic. - **Type C — isomer counting:** enumerate o/m/p products for a given disubstitution.…  ·  ## 6. Common Confusions **\"Benzene is sometimes one Kekulé form and sometimes the other\":** it is always the hybrid — the forms are descriptions, not states. **\"Resonance means the molecule is unstable\":** the opposite — resonance *stabilises*; the energy of the hybrid is below every contributor."
     }
   ]
 }

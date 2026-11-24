@@ -97,6 +97,10 @@
     },
     {
       "label": "More ideas",
+      "text": "```svg Corner, face and body sharing — how unit-cell counts arise <svg viewBox=\"0 0 640 320\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"320\" fill=\"#ffffff\"/><g stroke=\"#111827\" stroke-width=\"2\" fill=\"none\"><rect x=\"70\" y=\"70\" width=\"120\" height=\"120\"/></g><g fill=\"#1d4ed8\"><circle…  ·  ### Deep dive — lattice, unit cell and the counting that follows The **crystal lattice** is the infinite three-dimensional array of points; the **unit cell** is the smallest block which, stacked by translation, rebuilds the whole lattice.…  ·  **Unit-cell counting and the three cubic cells** | Position of particle | Share belonging to one cell | Simple cubic | Body-centred | Face-centred | |---|---|---|---|---| | Corner | 1/8 | 8 × 1/8 = 1 | 8 × 1/8 = 1 | 8 × 1/8 = 1 | | Face centre | 1/2 | — | — | 6 × 1/2 = 3 | | Body centre | 1 | — | 1 | — | | Total Z | —…"
+    },
+    {
+      "label": "More ideas",
       "text": "## 6. Common Confusions **Lattice vs unit cell:** the lattice is the infinite pattern of points; the unit cell is one repeat box of it. Saying \"the unit cell is the lattice\" loses the mark — one is the map, the other one tile of the map.  ·  **Lattice points are positions, not atoms:** a lattice point marks where a particle *sits*; the particle may be an atom, a molecule or a whole ion pair. Do not write \"lattice points are atoms\".  ·  **Shared particles are not counted whole:** a corner atom belongs to eight neighbouring cells, so only 1/8 of it lies in any one cell — counting it as 1 gives impossible particle counts."
     },
     {

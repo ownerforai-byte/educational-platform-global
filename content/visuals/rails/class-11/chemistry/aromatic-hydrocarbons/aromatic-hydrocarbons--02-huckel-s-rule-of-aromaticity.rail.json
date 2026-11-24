@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Where the Electrons Come From Is the Whole Game - The count is not \"count the double bonds\" — it is \"count the electrons in the cyclic p system.\" A lone pair may contribute two (pyrrole's NH), zero (pyridine's N lone pair locked in sp² outside), or the charge may supply them (C₅H₅⁻) or remove them (tropylium's C⁺ contributes an *empty* p orbital — zero…  ·  ## 4. Deep Conceptual — The Rule's Counterexamples Are Its Credentials - **Cyclobutadiene:** 4 π = 4n, forced planar ⟹ antiaromatic — rectangular, with alternating long/short bonds, desperately trying to localise. - **Cyclooctatetraene:** 8 π = 4n, but puckers into a tub ⟹ non-aromatic, behaves like four isolated double bonds.…  ·  ## 5. Worked Example Types - **Type A — state and apply:** quote the rule, count, verdict (the verified PYQ pattern). - **Type B — ion counting:** C₅H₅⁻, C₇H₇⁺, C₃H₃⁺ (2 π, aromatic). - **Type C — heterocycle counting:** pyridine vs pyrrole lone-pair disposition. - **Type D — counterexample diagnosis:** 4n planar (antiaromatic) vs puckered (non-aromatic)."
+      "text": "## 3. Deep Conceptual — Where the Electrons Come From Is the Whole Game - The count is not \"count the double bonds\" — it is \"count the electrons in the cyclic p system.\" A lone pair may contribute two (pyrrole's NH), zero (pyridine's N lone pair locked in sp² outside), or the charge may supply them (C₅H₅⁻) or remove them (tropylium's C⁺ contributes an *empty* p orbital — zero…  ·  ### Deep dive — counting π electrons correctly Hückel's rule (4n + 2 π electrons, n = 0, 1, 2, …) is easy to state and easy to get wrong, because the electron count depends on how each ring atom contributes: - A neutral sp² carbon in a double bond contributes **1 π electron**.…  ·  **π-electron contribution of common ring atoms** | Ring atom / fragment | Hybridisation | π electrons contributed | Example | |---|---|---|---| | sp² carbon in C=C | sp² | 1 | benzene (6 × 1 = 6) | | Carbocation carbon (C⁺) | sp², empty p | 0 | tropylium C₇H₇⁺: 7 sp² C but 6 π e⁻ total | | Carbanion carbon (C⁻) | sp², lone pair in p | 2 | C₅H₅⁻ → 4 + 2 = 6 | | Pyridine N |…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Explain why pyridine and pyrrole are both aromatic despite different lone-pair roles.  ·  ## 6. Common Confusions **\"Pyridine's lone pair counts\":** it does not — it occupies the sp² orbital in the ring plane, orthogonal to the π system; the ring's six π electrons come from the five C–H carbons and the N's one p electron.…"
+      "text": "Explain why pyridine and pyrrole are both aromatic despite different lone-pair roles.  ·  ## 4. Deep Conceptual — The Rule's Counterexamples Are Its Credentials - **Cyclobutadiene:** 4 π = 4n, forced planar ⟹ antiaromatic — rectangular, with alternating long/short bonds, desperately trying to localise.…  ·  ## 5. Worked Example Types - **Type A — state and apply:** quote the rule, count, verdict (the verified PYQ pattern). - **Type B — ion counting:** C₅H₅⁻, C₇H₇⁺, C₃H₃⁺ (2 π, aromatic). - **Type C — heterocycle counting:** pyridine vs pyrrole lone-pair disposition.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Hückel ladder — 2, 6 and 10 π-electron rings are aromatic; 4 and 8 are anti-aromatic <svg viewBox=\"0 0 640 380\" font-family=\"Segoe UI\" font-size=\"16\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"380\" fill=\"#ffffff\"/><g stroke=\"#1d4ed8\" stroke-width=\"3\" fill=\"none\"><circle cx=\"90\" cy=\"110\" r=\"38\"/><circle cx=\"240\"…  ·  ## 6. Common Confusions **\"Pyridine's lone pair counts\":** it does not — it occupies the sp² orbital in the ring plane, orthogonal to the π system; the ring's six π electrons come from the five C–H carbons and the N's one p electron.…"
     }
   ]
 }

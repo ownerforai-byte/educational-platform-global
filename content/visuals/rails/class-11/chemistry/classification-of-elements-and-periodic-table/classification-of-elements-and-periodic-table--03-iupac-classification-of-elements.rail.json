@@ -93,7 +93,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **IUPAC** | International Union of Pure and Applied Chemistry — the naming authority | Ratifies element names | | **Systematic temporary name** | Digit-root name for an element awaiting confirmation | Unnilquadium for Z = 104 | | **Element 118 (Og)** | Oganesson — completes period 7 | Named…  ·  ## 4. Detailed Explanation ### 4.1 Building a name — the 3m drill **Q: Derive the IUPAC temporary name and symbol for Z = 117.** Digits: 1, 1, 7 → un, un, sept → **Ununseptium**, symbol **Uus** (now permanently Tennessine, Ts). The method: split Z into digits, translate each to its root, append -ium, take initials for the symbol.…  ·  ## 5. Comparison Tables **Old group notation vs IUPAC numbering** | Old (US) | IUPAC | Family | |---|---|---| | IA | 1 | Alkali metals | | IIA | 2 | Alkaline earth metals | | IIIB–VIIIB | 3–10 | Transition series | | IB, IIB | 11, 12 | Coinage / zinc families | | IIIA–VA | 13–15 | Pnicogens, chalcogens… | | VIA, VIIA | 16, 17 | Chalcogens, halogens | | 0 | 18 | Noble gases |…"
+      "text": "## 3. Scientific Definitions | Term | Scientific meaning | Example | |---|---|---| | **IUPAC** | International Union of Pure and Applied Chemistry — the naming authority | Ratifies element names | | **Systematic temporary name** | Digit-root name for an element awaiting confirmation | Unnilquadium for Z = 104 | | **Element 118 (Og)** | Oganesson — completes period 7 | Named…  ·  ## 4. Detailed Explanation ### 4.1 Building a name — the 3m drill **Q: Derive the IUPAC temporary name and symbol for Z = 117.** Digits: 1, 1, 7 → un, un, sept → **Ununseptium**, symbol **Uus** (now permanently Tennessine, Ts). The method: split Z into digits, translate each to its root, append -ium, take initials for the symbol.…  ·  **The four blocks — what fills, where they sit, who they are** | Block | Subshell filling | Groups | Character | |---|---|---|---| | s | ns&#185;&#8211;&#178; | 1&#8211;2 (+He) | Very reactive metals; low IE; form +1/+2 ions | | p | np&#185;&#8211;&#8310; | 13&#8211;18 | Spread of properties: metals &#8594; metalloids &#8594; non-metals &#8594; noble gases | | d |…"
     },
     {
       "label": "More ideas",
@@ -105,11 +105,15 @@
     },
     {
       "label": "More ideas",
-      "text": "## 6. Common Confusions **Symbol vs name initials:** the symbol comes from the **root initials in order** — Z = 107 → Un-nil-Septium → **Uus**; taking 'U' + element meaning loses the mark.  ·  **enn before nil vs before oct:** drop the duplicate n only before **nil** (ennil); before other roots and before -ium the full \"enn\" stays.  ·  **Temporary names never use capital roots:** Unnilquadium — only the first letter is capital; \"unNilquadium\" is wrong."
+      "text": "## 5. Comparison Tables **Old group notation vs IUPAC numbering** | Old (US) | IUPAC | Family | |---|---|---| | IA | 1 | Alkali metals | | IIA | 2 | Alkaline earth metals | | IIIB–VIIIB | 3–10 | Transition series | | IB, IIB | 11, 12 | Coinage / zinc families | | IIIA–VA | 13–15 | Pnicogens, chalcogens… | | VIA, VIIA…  ·  ## 6. Common Confusions **Symbol vs name initials:** the symbol comes from the **root initials in order** — Z = 107 → Un-nil-Septium → **Uus**; taking 'U' + element meaning loses the mark.  ·  **enn before nil vs before oct:** drop the duplicate n only before **nil** (ennil); before other roots and before -ium the full \"enn\" stays."
     },
     {
       "label": "More ideas",
-      "text": "## 7. Exam Application **NEB-style (2m): Write the IUPAC name and symbol for the element with Z = 121.** — Digits 1, 2, 1 → un, bi, un → **Unbiunium**, symbol **Ubu** (a hypothetical period-8 element).  ·  **NEB-style (2m): Why did IUPAC introduce systematic nomenclature?** — Rival discovery claims (Z = 104–109) created naming disputes; a rule-based name derived from Z is neutral and unambiguous until priority is settled and a permanent name ratified.  ·  **NEB-style (2m): Convert old group VIIA and group 0 to IUPAC numbering.** — VIIA → **group 17** (halogens); group 0 → **group 18** (noble gases)."
+      "text": "**Temporary names never use capital roots:** Unnilquadium — only the first letter is capital; \"unNilquadium\" is wrong.  ·  ## 7. Exam Application **NEB-style (2m): Write the IUPAC name and symbol for the element with Z = 121.** — Digits 1, 2, 1 → un, bi, un → **Unbiunium**, symbol **Ubu** (a hypothetical period-8 element).  ·  ```svg The periodic table as four blocks — sorted by the subshell being filled <svg viewBox=\"0 0 640 340\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"340\" fill=\"#ffffff\"/><g fill=\"#eff6ff\" stroke=\"#1d4ed8\"><rect x=\"60\" y=\"50\" width=\"90\" height=\"30\"/><rect x=\"60\" y=\"85\" width=\"90\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**NEB-style (2m): Why did IUPAC introduce systematic nomenclature?** — Rival discovery claims (Z = 104–109) created naming disputes; a rule-based name derived from Z is neutral and unambiguous until priority is settled and a permanent name ratified.  ·  **NEB-style (2m): Convert old group VIIA and group 0 to IUPAC numbering.** — VIIA → **group 17** (halogens); group 0 → **group 18** (noble gases)."
     }
   ]
 }

@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Compromise That Runs the World - Thermodynamics and kinetics pull opposite ways: **low T maximises yield, high T maximises rate.** The 450–500 °C operating point is neither the yield optimum nor the rate optimum — it is the *profit* optimum: enough rate per pass to make the plant pay, with the yield shortfall recovered by recycling.…  ·  ## 4. Deep Conceptual — Why High Pressure Is a Three-Layer Answer - **Equilibrium layer:** 4 mol gas → 2 mol gas; Le Chatelier ⟹ pressure favours the ammonia side, raising the per-pass mole fraction. - **Rate layer:** high pressure concentrates the molecules — more collisions per second — so the iron catalyst works on a denser gas, accelerating the slow N₂ activation.…  ·  ## 5. Worked Example Types - **Type A — describe with flow sheet:** reaction, conditions, stages, recycle. - **Type B — the pressure question:** three-layer justification. - **Type C — the temperature compromise:** Le Chatelier versus Arrhenius. - **Type D — feed-gas chemistry:** reforming and shift reactions."
+      "text": "## 3. Deep Conceptual — The Compromise That Runs the World - Thermodynamics and kinetics pull opposite ways: **low T maximises yield, high T maximises rate.** The 450–500 °C operating point is neither the yield optimum nor the rate optimum — it is the *profit* optimum: enough rate per pass to make the plant pay, with the yield shortfall recovered by recycling.…  ·  ## 4. Deep Conceptual — Why High Pressure Is a Three-Layer Answer - **Equilibrium layer:** 4 mol gas → 2 mol gas; Le Chatelier ⟹ pressure favours the ammonia side, raising the per-pass mole fraction. - **Rate layer:** high pressure concentrates the molecules — more collisions per second — so the iron catalyst works on a denser gas, accelerating the slow N₂ activation.…  ·  ### Deep dive — Haber: an equilibrium argument turned into 150 million tonnes N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ, Δn = −2. Le Chatelier says high pressure and low temperature favour ammonia — but low temperature is uselessly slow. The industrial compromise: **200–300 atm, 450–500 °C, Fe catalyst (with Mo or K₂O/Al₂O₅ promoters)**, and continuous removal of NH₃ by liquefaction.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Write the steam-reforming and water-gas-shift reactions for hydrogen supply.  ·  ## 6. Common Confusions **\"The catalyst increases yield\":** it increases *rate* only — the equilibrium position is fixed by T and P; the catalyst's gift is a lower compromise temperature. **\"Low temperature is best\":** best for equilibrium, fatal for rate — the plant would produce almost nothing per day."
+      "text": "Write the steam-reforming and water-gas-shift reactions for hydrogen supply.  ·  **Haber conditions — the equilibrium-rate compromise** | Variable | Equilibrium wants | Rate wants | Industrial choice | |---|---|---|---| | Pressure | High (fewer moles) | High | 200&#8211;300 atm | | Temperature | Low (exothermic) | High | 450&#8211;500&#176;C compromise | | Catalyst | No effect on position | High |…  ·  ## 5. Worked Example Types - **Type A — describe with flow sheet:** reaction, conditions, stages, recycle. - **Type B — the pressure question:** three-layer justification. - **Type C — the temperature compromise:** Le Chatelier versus Arrhenius. - **Type D — feed-gas chemistry:** reforming and shift reactions."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"The catalyst increases yield\":** it increases *rate* only — the equilibrium position is fixed by T and P; the catalyst's gift is a lower compromise temperature. **\"Low temperature is best\":** best for equilibrium, fatal for rate — the plant would produce almost nothing per day.  ·  ```svg The Haber loop — react, condense, recycle <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><rect x=\"250\" y=\"70\" width=\"140\" height=\"70\" rx=\"10\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><text x=\"320\" y=\"98\" text-anchor=\"middle\"…"
     }
   ]
 }

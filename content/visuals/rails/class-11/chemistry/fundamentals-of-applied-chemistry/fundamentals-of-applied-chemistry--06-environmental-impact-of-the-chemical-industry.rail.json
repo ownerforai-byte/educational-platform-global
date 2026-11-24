@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Prevention Ranks Above Treatment: Why - Treatment is a *cost* — scrubbers, effluent plants and landfills consume capital and energy while converting one waste into another (a scrubber turns an air problem into a sludge problem).…  ·  ## 4. Deep Conceptual — The Impact Is a Flow, Not a List - Pollutants act through *flows and fates*: SO₂ emitted high travels and returns as acid rain hundreds of kilometres away; mercury discharged to water bioaccumulates up the food chain (Minamata); CO₂ accumulates over decades.…  ·  ## 5. Worked Example Types - **Type A — classify the wastes:** gas/liquid/solid with one example and one harm each. - **Type B — treatment matching:** pair each waste with its standard treatment and equation. - **Type C — atom economy calculation:** compare two routes to the same product.…"
+      "text": "## 3. Deep Conceptual — Prevention Ranks Above Treatment: Why - Treatment is a *cost* — scrubbers, effluent plants and landfills consume capital and energy while converting one waste into another (a scrubber turns an air problem into a sludge problem).…  ·  ## 4. Deep Conceptual — The Impact Is a Flow, Not a List - Pollutants act through *flows and fates*: SO₂ emitted high travels and returns as acid rain hundreds of kilometres away; mercury discharged to water bioaccumulates up the food chain (Minamata); CO₂ accumulates over decades.…  ·  ### Deep dive — the three media and the response hierarchy Industrial chemistry touches air, water and land. **Air**: SO₂ and NOₓ → acid rain; CO₂ → warming; particulates and VOCs → smog. **Water**: heavy metals (Hg, Cd, Pb), cyanides, and nutrient run-off → eutrophication. **Land**: solid residues, tailings, and persistent organics.…"
     },
     {
       "label": "More ideas",
@@ -102,7 +102,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Compute the atom economy of a given route and compare with its yield.  ·  ## 6. Common Confusions **\"High yield means clean process\":** yield and atom economy are independent — a 100%-yield substitution can dump 70% of its mass as by-product. **\"Scrubbing solves pollution\":** it transfers the pollutant to another phase — the sludge still needs disposal; only prevention reduces the total."
+      "text": "Compute the atom economy of a given route and compare with its yield.  ·  **Pollutant → effect → control** | Medium | Pollutant | Effect | Control | |---|---|---|---| | Air | SO&#8322;, NO&#8339; | Acid rain | Scrubbing (CaCO&#8323; slurry), low-S fuel | | Air | CO&#8322; | Global warming | Efficiency, capture, process choice | | Water | Hg, Cd, Pb | Bioaccumulation, Minamata |…  ·  ## 5. Worked Example Types - **Type A — classify the wastes:** gas/liquid/solid with one example and one harm each. - **Type B — treatment matching:** pair each waste with its standard treatment and equation. - **Type C — atom economy calculation:** compare two routes to the same product.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"High yield means clean process\":** yield and atom economy are independent — a 100%-yield substitution can dump 70% of its mass as by-product. **\"Scrubbing solves pollution\":** it transfers the pollutant to another phase — the sludge still needs disposal; only prevention reduces the total.  ·  ```svg Response hierarchy — prevent before treat before dispose <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g font-size=\"14\" text-anchor=\"middle\"><rect x=\"190\" y=\"40\" width=\"260\" height=\"44\" rx=\"8\" fill=\"#f0fdf4\" stroke=\"#166534\"/><text…"
     }
   ]
 }

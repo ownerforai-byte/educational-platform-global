@@ -96,7 +96,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Symmetry Packs, Shape Boils - **Melting point is a packing story:** 5.5 °C is high for a 78 g/mol molecule (cyclohexane, 84 g/mol, melts at 6.5 °C — similar, but n-hexane, 86 g/mol, melts at −95 °C!). The difference is shape: flat, rigid, symmetric disks stack into efficient crystals; floppy chains waste contact area in the solid.…  ·  ## 4. Deep Conceptual — Reading a Property Table as Evidence - Each physical constant cross-checks a structural claim: mp 5.5 °C (planarity/packing), bp 80.5 °C (contact area), density < 1 (no strong interaction with water), immiscibility (no H-bonding), sooty combustion (92.3% C).…  ·  ## 5. Worked Example Types - **Type A — recite with reasons:** state each property with its structural cause. - **Type B — compare:** benzene vs cyclohexane vs hexane on mp/bp — the shape argument. - **Type C — miscibility prediction:** which of two solvents mixes with benzene, why. - **Type D — density arithmetic:** mass of benzene delivered by a measured volume."
+      "text": "## 3. Deep Conceptual — Symmetry Packs, Shape Boils - **Melting point is a packing story:** 5.5 °C is high for a 78 g/mol molecule (cyclohexane, 84 g/mol, melts at 6.5 °C — similar, but n-hexane, 86 g/mol, melts at −95 °C!). The difference is shape: flat, rigid, symmetric disks stack into efficient crystals; floppy chains waste contact area in the solid.…  ·  ```svg Symmetry and packing — why flat benzene melts at 5.5 °C but toluene at −95 °C <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"15\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><g stroke=\"#1d4ed8\" stroke-width=\"2.5\" fill=\"#eff6ff\"><polygon points=\"120,60 170,90 170,150 120,180 70,150 70,90\"/><polygon points=\"230,60 280,90 280,150 230,180 180,150…  ·  ### Deep dive — reading benzene's physical constants like a chemist Benzene is a colourless, mobile liquid, b.p. 80 °C, m.p. 5.5 °C, density 0.879 g/cm³, insoluble in water but an excellent solvent for non-polar solutes (iodine, sulphur, rubber, fats).…"
     },
     {
       "label": "More ideas",
@@ -104,7 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Predict whether iodine dissolves better in benzene or in water, with reasoning.  ·  ## 6. Common Confusions **\"Benzene is denser than water because it is aromatic\":** 0.879 < 1 — it floats; aromaticity does not imply density. **\"High mp means strong hydrogen bonding\":** benzene has none — its mp is pure packing efficiency."
+      "text": "Predict whether iodine dissolves better in benzene or in water, with reasoning.  ·  **Physical constants compared — structure explains the numbers** | Property | Benzene | Cyclohexane | Toluene | Reason | |---|---|---|---|---| | Boiling point (°C) | 80 | 81 | 111 | Similar per-molecule forces; toluene heavier | | Melting point (°C) | 5.5 | 6.5 | −95 | Flat disc packs; methyl destroys symmetry | |…  ·  ## 4. Deep Conceptual — Reading a Property Table as Evidence - Each physical constant cross-checks a structural claim: mp 5.5 °C (planarity/packing), bp 80.5 °C (contact area), density < 1 (no strong interaction with water), immiscibility (no H-bonding), sooty combustion (92.3% C).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — recite with reasons:** state each property with its structural cause. - **Type B — compare:** benzene vs cyclohexane vs hexane on mp/bp — the shape argument. - **Type C — miscibility prediction:** which of two solvents mixes with benzene, why.…  ·  ## 6. Common Confusions **\"Benzene is denser than water because it is aromatic\":** 0.879 < 1 — it floats; aromaticity does not imply density. **\"High mp means strong hydrogen bonding\":** benzene has none — its mp is pure packing efficiency."
     }
   ]
 }
