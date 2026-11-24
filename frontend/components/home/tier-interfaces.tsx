@@ -40,7 +40,6 @@ import {
   quickLinkShownForTier,
   quickLinkUnlocked,
 } from "@/lib/core/navigation";
-import { SparkGate } from "@/features/credits/spark-gate";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { HomeSyllabusProgressBar } from "@/components/home/home-syllabus-progress";
 import { useJourney } from "@/components/study/use-journey";
@@ -408,13 +407,7 @@ function TierPage({
       <DeskPulse />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />
-      <SparkGate
-        minLevel="pro"
-        title="Home features"
-        description="Subject rails, study tools and the full home dashboard open on the Pro plan."
-      >
-        {rails}
-      </SparkGate>
+      {rails}
       <OpenSectionsRail tier={tier} />
       {tier === "owner" ? <NextRungTeaser tier={tier} /> : null}
     </div>

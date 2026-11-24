@@ -46,7 +46,7 @@ describe("Diagram Hub coin position — spark-priced tier, owner-only unlock", (
   });
 
   it("the server unlock route treats imagehub as owner-only and owner-free", () => {
-    const src = readBackendApiSource("user.ts");
+    const src = readBackendApiSource("user/profile.controller.ts");
     expect(src).toContain("imagehub: 0");
     expect(src).toMatch(/z\.enum\(\[[^\]]*"imagehub"[^\]]*\]\)/);
     expect(src).toContain('category === "imagehub"');
