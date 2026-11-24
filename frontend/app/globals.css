@@ -2379,6 +2379,24 @@ pre {
       radial-gradient(120% 90% at 50% 0%, rgb(0 0 0 / 0.04), transparent 60%),
       linear-gradient(rgb(0 0 0 / 0.03), rgb(0 0 0 / 0.05));
   }
+  /* Standalone app: content only — no desk gradient or page shadow */
+  .a4-desk-standalone {
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+  }
+  .a4-paper-standalone {
+    max-width: none;
+    width: 100%;
+    box-shadow: none;
+    padding: clamp(18px, 4vw, 40px) clamp(14px, 5vw, 28px);
+  }
+
+  /* Native WebView: UA + post-load class — trim web chrome before React hydrates */
+  html.rn-native-android .doc-view > header.print\:hidden {
+    display: none !important;
+  }
   :root.dark .a4-desk,
   .dark .a4-desk {
     background:

@@ -37,6 +37,14 @@ public class PlatformWebViewClient extends WebViewClient {
     }
 
     @Override
+    public void onPageStarted(WebView view, String url, android.graphics.Bitmap favicon) {
+        super.onPageStarted(view, url, favicon);
+        if (host instanceof WebHostFragment) {
+            ((WebHostFragment) host).onPlatformPageStarted(view);
+        }
+    }
+
+    @Override
     public void onPageFinished(WebView view, String url) {
         super.onPageFinished(view, url);
         if (host instanceof WebHostFragment) {

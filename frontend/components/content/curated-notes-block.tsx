@@ -24,6 +24,7 @@ import {
   type CuratedNotes,
 } from "@/lib/api/curate-notes";
 import { cn } from "@/lib/utils";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
 
 type Status = "idle" | "loading" | "done" | "error";
 
@@ -148,8 +149,8 @@ export function CuratedNotesBlock({
 
       {/* The notes themselves — 20–80 bullets, grouped by Agnes */}
       {status === "done" && notes && (
-        <div className="relative mt-4 rounded-xl border-2 border-border/80 bg-card">
-          <div className="flex items-center justify-between gap-3 border-b border-border/60 px-4 py-2.5">
+        <div className="relative mt-4">
+          <div className="mb-2 flex items-center justify-between gap-3 print:hidden">
             <p className="min-w-0 truncate text-[11px] font-bold uppercase tracking-[0.12em] text-muted-foreground">
               {notes.title} · {notes.bulletCount} bullets
             </p>
@@ -186,26 +187,25 @@ export function CuratedNotesBlock({
               </button>
             </div>
           </div>
-          <div className="max-h-80 overflow-y-auto p-4">
-            {notes.sections.map((section) => (
-              <div key={section.heading} className="mb-3.5 last:mb-0">
-                <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-primary">
-                  {section.heading}
-                </h4>
-                <ul className="mt-1.5 space-y-1.5">
-                  {section.bullets.map((bullet) => (
-                    <li key={bullet} className="flex items-start gap-2 text-[13px] leading-relaxed text-foreground">
-                      <span
-                        aria-hidden="true"
-                        className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60"
-                      />
-                      <span className="min-w-0">{bullet}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+          <PaperJsonBody>
+            <h2 className="a4-title text-left">{notes.title}</h2>
+            <div className="mt-4 max-h-[32rem] overflow-y-auto print:max-h-none">
+              {notes.sections.map((section) => (
+                <div key={section.heading} className="mb-3.5 last:mb-0">
+                  <h4 className="text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-700">
+                    {section.heading}
+                  </h4>
+                  <ul className="mt-1.5 list-disc space-y-1.5 pl-5 text-[13px] leading-relaxed text-neutral-800">
+                    {section.bullets.map((bullet) => (
+                      <li key={bullet} className="min-w-0">
+                        {bullet}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </PaperJsonBody>
         </div>
       )}
     </section>

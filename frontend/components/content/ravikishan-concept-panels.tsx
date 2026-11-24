@@ -4,7 +4,9 @@ import { useEffect, useMemo, useState } from "react";
 import { classDirOfTrack, normalizeClassDir, parseContentPath } from "@/lib/content/paths";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
-import { DocPaper, DocToolbar } from "@/features/docs/academic-doc-layout";
+import { A4DocumentSurface, DocToolbar } from "@/features/docs/academic-doc-layout";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 import { EmptyState } from "./empty-state";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -415,32 +417,31 @@ export function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
       {/* Full-width ordered list: one concept block per row so each idea
           finishes on its own line instead of wrapping mid-sentence in a
           narrow 2/3-column card. */}
-      <div className="grid grid-cols-1 gap-3">
-        {sortedFields.map((def, idx) => (
-          <FieldCard
-            key={def.key}
-            def={def}
-            orderLabel={`${String(idx + 1).padStart(2, "0")} / ${String(sortedFields.length).padStart(2, "0")}`}
-            items={
-              def.key === "summary"
-                ? (data.summary as string)
-                : (data[def.key] as string[] | McqItem[] | undefined)
-            }
-          />
-        ))}
-      </div>
+      <PaperJsonBody className="mt-3">
+        <div className="grid grid-cols-1 gap-4">
+          {sortedFields.map((def, idx) => (
+            <FieldCard
+              key={def.key}
+              def={def}
+              orderLabel={`${String(idx + 1).padStart(2, "0")} / ${String(sortedFields.length).padStart(2, "0")}`}
+              items={
+                def.key === "summary"
+                  ? (data.summary as string)
+                  : (data[def.key] as string[] | McqItem[] | undefined)
+              }
+            />
+          ))}
+        </div>
 
-      {data.summary && (
-        <Card className="border-primary/20 bg-gradient-to-br from-primary/5 via-background to-background">
-          <div className="px-3 py-2 flex items-center gap-2 border-b border-border/50">
-            <BookMarked className="h-3.5 w-3.5 text-primary" />
-            <span className="text-xs font-bold text-primary">Topic Summary</span>
+        {data.summary && (
+          <div className="mt-6 border-t border-neutral-300 pt-4">
+            <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+              Topic summary
+            </p>
+            <MathMarkdown content={data.summary} className="text-[13px] leading-relaxed" />
           </div>
-          <div className="p-3 text-xs leading-relaxed">
-            <MathMarkdown content={data.summary} />
-          </div>
-        </Card>
-      )}
+        )}
+      </PaperJsonBody>
     </div>
   );
 }
@@ -481,8 +482,9 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
   // `summary` is one rich string, not one of the ordered list fields.
   if (field === "summary") {
     const summary = data.summary?.trim();
+    const standalone = isStandaloneReaderChrome();
     return (
-      <DocPaper ariaLabel={`Summary for ${props.topicTitle ?? props.topicSlug}`}>
+      <article className="doc-view" aria-label={`Summary for ${props.topicTitle ?? props.topicSlug}`}>
         <DocToolbar
           badge="Docs Viewer · Executive Summary"
           title={`${props.topicTitle ?? props.topicSlug} — Summary`}
@@ -492,23 +494,31 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
             { label: "LaTeX / KaTeX", tone: "sky" },
           ]}
         />
-        <div className="rounded-xl border-l-4 border-emerald-500 bg-emerald-500/10 dark:bg-emerald-500/5 p-5 shadow-2xs">
-          {summary ? (
-            <MathMarkdown content={summary} className="text-sm leading-relaxed" />
-          ) : (
-            <p className="text-xs text-muted-foreground/70 italic border border-dashed border-muted-foreground/20 rounded-md p-2.5 bg-background/30">
-              Empty — populate summary when adding content
-            </p>
+        <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>
+          {standalone && (
+            <h1 className="a4-title mb-4 text-left">
+              {props.topicTitle ?? props.topicSlug} — Summary
+            </h1>
           )}
-        </div>
-      </DocPaper>
+          <div className="border-l-4 border-emerald-600 pl-4">
+            {summary ? (
+              <MathMarkdown content={summary} className="text-sm leading-relaxed" />
+            ) : (
+              <p className="text-xs italic text-neutral-500">
+                Empty — populate summary when adding content
+              </p>
+            )}
+          </div>
+        </A4DocumentSurface>
+      </article>
     );
   }
 
   const def = KNOWLEDGE_FIELDS.find((f) => f.key === field);
   if (!def) return null;
+  const standalone = isStandaloneReaderChrome();
   return (
-    <DocPaper ariaLabel={`${def.label} for ${props.topicTitle ?? props.topicSlug}`}>
+    <article className="doc-view" aria-label={`${def.label} for ${props.topicTitle ?? props.topicSlug}`}>
       <DocToolbar
         badge="Docs Viewer · Knowledge Document"
         title={`${props.topicTitle ?? props.topicSlug} — ${def.label}`}
@@ -518,11 +528,18 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
           { label: "LaTeX / KaTeX", tone: "emerald" },
         ]}
       />
-      <FieldCard
-        def={def}
-        items={data[field] as string[] | McqItem[] | string | undefined}
-      />
-    </DocPaper>
+      <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>
+        {standalone && (
+          <h1 className="a4-title mb-4 text-left">
+            {props.topicTitle ?? props.topicSlug} — {def.label}
+          </h1>
+        )}
+        <FieldCard
+          def={def}
+          items={data[field] as string[] | McqItem[] | string | undefined}
+        />
+      </A4DocumentSurface>
+    </article>
   );
 }
 

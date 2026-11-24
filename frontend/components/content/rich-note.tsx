@@ -1,4 +1,5 @@
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
 import { resolveBlock } from "@/components/content/blocks/registry";
 import { FormulaLab } from "@/components/content/formula-lab";
 import { BlockSchema, type Block, type ConceptNote, type Formula } from "@/lib/content/schema";
@@ -14,12 +15,14 @@ import { BlockSchema, type Block, type ConceptNote, type Formula } from "@/lib/c
 
 export function RichNote({ note }: { note: ConceptNote }) {
   return (
-    <div className="space-y-3">
-      {note.notes.map((n, i) => (
-        <MathMarkdown key={i} content={n} />
-      ))}
-      <NoteBlocks blocks={note.blocks} formulaSpecs={note.formulaSpecs} />
-    </div>
+    <PaperJsonBody>
+      <div className="space-y-3">
+        {note.notes.map((n, i) => (
+          <MathMarkdown key={i} content={n} className="text-[13px] leading-relaxed" />
+        ))}
+        <NoteBlocks blocks={note.blocks} formulaSpecs={note.formulaSpecs} />
+      </div>
+    </PaperJsonBody>
   );
 }
 

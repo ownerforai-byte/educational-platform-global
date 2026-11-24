@@ -43,12 +43,18 @@ describe("topic supplemental materials", () => {
 
     expect(screen.getByRole("heading", { name: "More material for this topic" })).toBeInTheDocument();
     expect(screen.getByText("Projectile trajectory — parabolic path")).toBeInTheDocument();
-    expect(screen.getByText("Graph")).toBeInTheDocument();
+    expect(screen.getByText(/Graph · graph data/)).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Science Graph Bank" })).toHaveAttribute("href", "/graphs");
     // Markdown is rendered, not dumped as a raw string.
     expect(screen.getByText(/path of a projectile is a/)).toBeInTheDocument();
     // The authored graph metadata is shown as a caption table.
     expect(screen.getByText("Horizontal distance")).toBeInTheDocument();
     expect(screen.getByText("Curve")).toBeInTheDocument();
+  });
+
+  it("renders non-graph JSON on the paper sheet", () => {
+    const { container } = render(<TopicSupplementalMaterials entries={[formulaEntry]} scope="topic" />);
+    expect(container.querySelector("[data-a4-paper]")).toBeTruthy();
   });
 
   it("renders unit-level files under the unit heading", () => {

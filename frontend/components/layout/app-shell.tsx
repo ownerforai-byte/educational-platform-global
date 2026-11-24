@@ -27,6 +27,7 @@ import {
   PREFERENCES_NAMESPACE,
   scheduleNamespacePush,
 } from "@/lib/state/user-state";
+import { isAndroidNativeShell } from "@/lib/native-android";
 
 interface AppShellProps {
   children: React.ReactNode;
@@ -46,10 +47,26 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   );
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [inNativeApp, setInNativeApp] = useState(
+    () => typeof window !== "undefined" && isAndroidNativeShell(),
+  );
+  const studySurface =
+    !!pathname &&
+    (pathname.includes("/topics/") ||
+      pathname.includes("/chapters/") ||
+      pathname.startsWith("/notes/"));
+  const flushStudy = inNativeApp && studySurface && !isChatRoom;
   // Three shells: phone and tablet share bottom tabs + drawer (footer on
   // tablet only, below lg). Desktop (lg+) uses the persistent sidebar.
   const isDesktop = useMediaQuery("(min-width: 1024px)", true);
   const navCollapsed = !isDesktop || sidebarCollapsed;
+
+  useEffect(() => {
+    const sync = () => setInNativeApp(isAndroidNativeShell());
+    sync();
+    window.addEventListener("rn-native-ready", sync);
+    return () => window.removeEventListener("rn-native-ready", sync);
+  }, []);
 
   useEffect(() => {
     try {
@@ -74,12 +91,16 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       className={
         isChatRoom
           ? "flex h-[100dvh] max-h-[100dvh] flex-col overflow-hidden bg-background"
-          : "flex min-h-screen flex-col bg-background pb-tabbar lg:pb-0"
+          : `flex min-h-screen flex-col bg-background pb-tabbar lg:pb-0 ${inNativeApp ? "standalone-app" : ""}`
       }
     >
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       <header
-        className="pt-safe-top sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 translate-y-0"
+        className={
+          inNativeApp && flushStudy
+            ? "pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background/95"
+            : "pt-safe-top sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-xl supports-[backdrop-filter]:bg-background/70 translate-y-0"
+        }
       >
         <div className="grid min-h-12 lg:min-h-14 grid-cols-[auto_minmax(0,1fr)] lg:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 lg:px-6 py-1.5">
           <div className="flex items-center gap-2 min-w-0">
@@ -110,14 +131,16 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/70 shadow-md shadow-primary/20 transition-transform group-hover:scale-105">
                 <span className="text-sm font-extrabold text-white">R</span>
               </div>
-              <span className="font-semibold text-sm tracking-tight text-foreground">Ravikisan&apos;s Platform</span>
+              {!inNativeApp && (
+                <span className="font-semibold text-sm tracking-tight text-foreground">Ravikisan&apos;s Platform</span>
+              )}
             </Link>
           </div>
 
           {/* Center group — search + the CEE square, centered in the header
               (owner 2026-11-09: "make the position of square of cee in center
               in header"). */}
-          {(searchUnlocked || user) && (
+          {!inNativeApp && (searchUnlocked || user) && (
             <div className="col-span-2 row-start-2 flex min-w-0 items-center justify-center gap-2 px-1 lg:col-span-1 lg:col-start-2 lg:row-start-1 lg:px-4">
               {searchUnlocked && <GlobalSearch />}
               {user && (
@@ -175,7 +198,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           className={
             isChatRoom
               ? "flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden px-1 pt-1 pb-0 focus:outline-none lg:px-1.5"
-              : "min-w-0 flex-1 px-4 py-5 pb-tabbar focus:outline-none sm:py-6 sm:pb-tabbar lg:px-8 lg:pb-8"
+              : flushStudy
+                ? "min-w-0 flex-1 px-0 py-2 pb-tabbar focus:outline-none"
+                : "min-w-0 flex-1 px-4 py-5 pb-tabbar focus:outline-none sm:py-6 sm:pb-tabbar lg:px-8 lg:pb-8"
           }
         >
           {!isChatRoom && breadcrumbs && breadcrumbs.length > 0 && (
@@ -224,11 +249,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
       {!isChatRoom && <BottomTabBar />}
 
       {/* Back navigation — chat has its own header controls */}
-      {!isChatRoom && <BackButton />}
+      {!isChatRoom && !inNativeApp && <BackButton />}
 
-      {!isChatRoom && <PlatformGuideWidget />}
-      <AIWidget />
-      <QuickToolsLauncher />
+      {!isChatRoom && !inNativeApp && <PlatformGuideWidget />}
+      {!inNativeApp && <AIWidget />}
+      {!inNativeApp && <QuickToolsLauncher />}
     </div>
   );
 }

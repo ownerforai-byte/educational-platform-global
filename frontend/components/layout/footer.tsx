@@ -184,6 +184,7 @@ export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com
 
 export function Footer({ user }: { user?: AiSparkUserLike | null }) {
   const inNativeApp = isAndroidNativeShell();
+  if (inNativeApp) return null;
   return (
     <footer className="mt-auto border-t-2 border-border/80 bg-background">
       {/* ── Mobile view (owner 2026-11-09: "resolve the footer like this …") ──

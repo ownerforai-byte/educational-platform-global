@@ -1,6 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { ACCESS_LABELS } from "@/lib/core/access-level";
+import { A4DocumentSurface, canDocExportActions } from "@/features/docs/academic-doc-layout";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 import {
   BookOpen,
   Copy,
@@ -32,6 +36,9 @@ export function PracticalNotebookView({
   unitTitle,
 }: PracticalNotebookViewProps) {
   const [copied, setCopied] = useState(false);
+  const { user, isLoading } = useSession();
+  const exportUnlocked = !isLoading && canDocExportActions(user);
+  const standalone = isStandaloneReaderChrome();
 
   const fullMarkdown = `
 # NEB PRACTICAL RECORD NOTEBOOK
@@ -77,8 +84,8 @@ ${experiment.precautions?.map((p) => `- ${p}`).join("\n") || "Standard lab preca
 
   return (
     <div className="rounded-3xl border border-border bg-card shadow-xl overflow-hidden">
-      {/* Toolbar — same features the inline modal had */}
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/80 px-6 py-4 bg-muted/40">
+      {!standalone && (
+      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/80 bg-muted/40 px-6 py-4">
         <div className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-primary/10 text-primary">
             <BookOpen className="h-4 w-4" />
@@ -95,24 +102,35 @@ ${experiment.precautions?.map((p) => `- ${p}`).join("\n") || "Standard lab preca
         </div>
 
         <div className="flex items-center gap-2">
-          <button
-            onClick={handleCopy}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold bg-primary text-primary-foreground hover:opacity-90 transition-opacity"
-          >
-            {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
-            {copied ? "Copied!" : "Copy Record"}
-          </button>
-          <button
-            onClick={handlePrint}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold border border-border hover:bg-muted"
-          >
-            <Printer className="h-3.5 w-3.5" /> Print / PDF
-          </button>
+          {exportUnlocked ? (
+            <>
+              <button
+                type="button"
+                onClick={handleCopy}
+                className="flex items-center gap-1.5 rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                {copied ? <Check className="h-3.5 w-3.5" /> : <Copy className="h-3.5 w-3.5" />}
+                {copied ? "Copied!" : "Copy Record"}
+              </button>
+              <button
+                type="button"
+                onClick={handlePrint}
+                className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-xs font-semibold hover:bg-muted"
+              >
+                <Printer className="h-3.5 w-3.5" /> Print / PDF
+              </button>
+            </>
+          ) : (
+            <p className="rounded-lg border border-border/60 bg-muted/40 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground">
+              Link &amp; PDF · {ACCESS_LABELS.pro}+
+            </p>
+          )}
         </div>
       </div>
+      )}
 
-      {/* Notebook body */}
-      <div className="p-6 sm:p-8 space-y-6 text-xs text-foreground leading-relaxed bg-background/50">
+      <A4DocumentSurface className="rounded-none border-0 bg-transparent shadow-none">
+      <div className="space-y-6 text-xs leading-relaxed text-foreground">
         {/* Header block */}
         <div className="text-center border-b border-border/60 pb-4 space-y-1">
           <span className="text-[10px] font-bold uppercase tracking-widest text-primary">
@@ -235,6 +253,7 @@ ${experiment.precautions?.map((p) => `- ${p}`).join("\n") || "Standard lab preca
           </div>
         )}
       </div>
+      </A4DocumentSurface>
     </div>
   );
 }

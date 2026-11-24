@@ -8,6 +8,7 @@ import { ChevronRight, BookOpen, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { DerivationScaffold } from "@/components/derivations/derivation-scaffold";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
 import {
   TopicKnowledgeFloat,
   type TopicKnowledgeRow,
@@ -180,81 +181,72 @@ export default async function TheoremDetailPage({
         )}
       </section>
 
-      <section className="space-y-3">
-        <h2 className="text-base font-semibold">Statement</h2>
-        {Array.isArray(notes) && notes.length > 0 ? (
-          <div className="prose prose-sm dark:prose-invert max-w-none">
-            {notes.map((note: string, i: number) => (
-              <div key={i} className="rounded-lg border border-border bg-card p-4">
-                {/* MathMarkdown handles inline math/markdown */}
-                <MathMarkdown content={note} />
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-sm text-muted-foreground">{entry.preview}</p>
-        )}
-      </section>
+      <PaperJsonBody className="mt-4">
+        <h1 className="a4-title text-left">{title}</h1>
+        <section className="mt-6 space-y-3">
+          <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-600">Statement</h2>
+          {Array.isArray(notes) && notes.length > 0 ? (
+            <div className="space-y-3">
+              {notes.map((note: string, i: number) => (
+                <div key={i}>
+                  <MathMarkdown content={note} className="text-[13px] leading-relaxed" />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <p className="text-sm text-neutral-600">{entry.preview}</p>
+          )}
+        </section>
 
-      {entry.hasProof && Array.isArray(notes) && notes.some((n: string) => /proof/i.test(n)) && (
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold flex items-center gap-2">
-            <FileText className="h-4 w-4 text-violet-500" />
-            Proof
-          </h2>
-          <div className="rounded-lg border border-violet-200 dark:border-violet-800 bg-violet-50/50 dark:bg-violet-950/10 p-4">
+        {entry.hasProof && Array.isArray(notes) && notes.some((n: string) => /proof/i.test(n)) && (
+          <section className="mt-6 space-y-3 border-t border-neutral-300 pt-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-600">Proof</h2>
             {notes
               .filter((n: string) => /proof/i.test(n))
               .map((proof: string, i: number) => (
-                <div key={i} className="prose prose-sm dark:prose-invert max-w-none">
-                  <MathMarkdown content={proof} />
+                <div key={i}>
+                  <MathMarkdown content={proof} className="text-[13px] leading-relaxed" />
                 </div>
               ))}
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {confusion.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold">Common Confusions</h2>
-          <div className="space-y-2">
+        {confusion.length > 0 && (
+          <section className="mt-6 space-y-2 border-t border-neutral-300 pt-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-600">Common confusions</h2>
             {confusion.map((c: string, i: number) => (
-              <div key={i} className="rounded-lg border border-amber-200 dark:border-amber-800 bg-amber-50/50 dark:bg-amber-950/10 px-4 py-3 text-sm">
-                <MathMarkdown content={c} />
+              <div key={i} className="text-sm">
+                <MathMarkdown content={c} className="text-[13px] leading-relaxed" />
               </div>
             ))}
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {practice.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold">Practice &amp; Proof Exercises</h2>
-          <div className="space-y-2">
+        {practice.length > 0 && (
+          <section className="mt-6 space-y-2 border-t border-neutral-300 pt-4">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-neutral-600">Practice</h2>
             {practice.map((p: string, i: number) => (
-              <div key={i} className="flex items-start gap-3 rounded-lg border border-border bg-card/50 px-4 py-3">
-                <span className="shrink-0 w-5 h-5 rounded-full bg-primary/10 text-primary text-xs font-semibold flex items-center justify-center mt-0.5">{i + 1}</span>
-                <span className="text-sm">
-                  <MathMarkdown content={p} />
-                </span>
+              <div key={i} className="flex items-start gap-2 text-sm">
+                <span className="font-bold text-neutral-800">{i + 1}.</span>
+                <MathMarkdown content={p} className="min-w-0 flex-1 text-[13px] leading-relaxed" />
               </div>
             ))}
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {universalFacts.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="text-base font-semibold">Key Takeaways</h2>
-          <ul className="list-disc list-inside space-y-1 text-sm text-muted-foreground">
-            {universalFacts.map((f: string, i: number) => (
-              <li key={i}>
-                <MathMarkdown content={f} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+        {universalFacts.length > 0 && (
+          <section className="mt-6 border-t border-neutral-300 pt-4">
+            <h2 className="mb-2 text-sm font-bold uppercase tracking-wider text-neutral-600">Key takeaways</h2>
+            <ul className="list-disc space-y-1 pl-5 text-sm text-neutral-700">
+              {universalFacts.map((f: string, i: number) => (
+                <li key={i}>
+                  <MathMarkdown content={f} className="text-[13px] leading-relaxed [&_p]:my-0" />
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+      </PaperJsonBody>
 
       <Link
         href={subjectHref}

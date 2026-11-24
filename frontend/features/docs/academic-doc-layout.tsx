@@ -6,9 +6,17 @@
  * Provides the shared paper layout, interactive reader controls (Print/PDF,
  * font sizing, link copying), highlighted academic cards, and section styling
  * for all knowledge-based, theory, and syllabus content across the platform.
+ *
+ * Documents read like a sheet of paper (A4 proportions in CSS) without surfacing
+ * "A4" in the UI. Link + Print/PDF are Pro and Owner only; font sizing stays
+ * available to every tier that can open the document.
  */
 
 import React, { useState } from "react";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { ACCESS_LABELS, hasLevel } from "@/lib/core/access-level";
+import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 import {
   Check,
   Copy,
@@ -25,6 +33,37 @@ import {
 } from "lucide-react";
 
 export type DocFontSize = "sm" | "base" | "lg";
+
+/** Pro + Owner may copy the document URL or print / save as PDF. */
+export function canDocExportActions(user: AiSparkUserLike | null | undefined): boolean {
+  return hasLevel(user, "pro");
+}
+
+/** Desk + single continuous paper sheet (typography from `.a4-paper` in globals.css). */
+export function A4DocumentSurface({
+  children,
+  className = "",
+  innerClassName = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+  innerClassName?: string;
+}) {
+  const standalone = isStandaloneReaderChrome();
+  const deskClass = standalone
+    ? `a4-desk a4-desk-standalone print:p-0 ${className}`
+    : `a4-desk rounded-xl px-2 py-6 sm:px-6 sm:py-10 print:p-0 ${className}`;
+  const paperClass = standalone
+    ? `a4-paper a4-paper-standalone flow-root ${innerClassName}`
+    : `a4-paper flow-root ${innerClassName}`;
+  return (
+    <div className={deskClass}>
+      <div data-a4-paper="" className={paperClass} role="document">
+        {children}
+      </div>
+    </div>
+  );
+}
 
 export function getDocFontClass(size: DocFontSize): string {
   switch (size) {
@@ -50,10 +89,10 @@ export function DocPaper({
 }) {
   return (
     <article
-      className={`doc-view doc-viewer-paper mx-auto max-w-4xl space-y-8 rounded-2xl border border-border/80 bg-card p-6 shadow-xs sm:p-10 print:border-none print:bg-white print:p-0 print:shadow-none ${className}`}
+      className={`doc-view mx-auto max-w-[820px] print:p-0 ${className}`}
       aria-label={ariaLabel}
     >
-      {children}
+      <A4DocumentSurface className="mt-0">{children}</A4DocumentSurface>
     </article>
   );
 }
@@ -81,7 +120,14 @@ export function DocToolbar({
   onFontSizeChange?: (size: DocFontSize) => void;
   showActions?: boolean;
 }) {
+  const standalone = isStandaloneReaderChrome();
   const [copied, setCopied] = useState(false);
+  const { user, isLoading } = useSession();
+  const exportUnlocked = !isLoading && canDocExportActions(user);
+
+  if (standalone) {
+    return null;
+  }
 
   const handlePrint = () => {
     if (typeof window !== "undefined") {
@@ -154,27 +200,35 @@ export function DocToolbar({
               </div>
             )}
 
-            {/* Copy Link */}
-            <button
-              type="button"
-              onClick={handleCopy}
-              title="Copy document link"
-              className="inline-flex h-8 items-center gap-1 rounded-lg border border-border/70 bg-background/80 px-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground"
-            >
-              {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
-              <span>{copied ? "Copied" : "Link"}</span>
-            </button>
-
-            {/* Print / Save PDF */}
-            <button
-              type="button"
-              onClick={handlePrint}
-              title="Print document or Save as PDF"
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-xs font-bold text-primary-foreground hover:bg-primary/90"
-            >
-              <Printer className="h-3.5 w-3.5" />
-              <span>Print / PDF</span>
-            </button>
+            {exportUnlocked ? (
+              <>
+                <button
+                  type="button"
+                  onClick={handleCopy}
+                  title="Copy document link"
+                  className="inline-flex h-8 items-center gap-1 rounded-lg border border-border/70 bg-background/80 px-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground"
+                >
+                  {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
+                  <span>{copied ? "Copied" : "Link"}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handlePrint}
+                  title="Print document or Save as PDF"
+                  className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-xs font-bold text-primary-foreground hover:bg-primary/90"
+                >
+                  <Printer className="h-3.5 w-3.5" />
+                  <span>Print / PDF</span>
+                </button>
+              </>
+            ) : (
+              <p
+                className="rounded-lg border border-border/60 bg-muted/40 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
+                title={`Link and Print/PDF open on ${ACCESS_LABELS.pro}`}
+              >
+                Link &amp; PDF · {ACCESS_LABELS.pro}+
+              </p>
+            )}
           </div>
         </div>
       )}

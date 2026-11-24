@@ -10,6 +10,7 @@ import {
   isFormulaSubjectSlug,
 } from "@/lib/formula-sheet";
 import { AnnotationBlock, AnnotationBlockLegend, ClassifiedNotes } from "@/components/formulas/classified-notes";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
 import { getUnitDerivationLinks } from "@/features/formulas/derivation-links";
 
 /**
@@ -125,7 +126,7 @@ export default async function UnitFormulaPage({
 
       {unit.topics.map((topic) => (
         <section key={topic.filename} className="space-y-3">
-          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border/50 pb-2">
+          <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border/50 pb-2 print:hidden">
             <h2 className="text-lg font-bold tracking-tight text-foreground">
               {topic.title}
             </h2>
@@ -135,7 +136,9 @@ export default async function UnitFormulaPage({
             </span>
           </div>
 
-          <div className="space-y-2.5">
+          <PaperJsonBody className="mt-2">
+          <h2 className="a4-title text-left">{topic.title}</h2>
+          <div className="mt-4 space-y-2.5">
             {topic.formulas.map((formula, fi) => {
               formulaNo += 1;
               const annotations = topic.annotationsByFormula.get(formula);
@@ -143,7 +146,7 @@ export default async function UnitFormulaPage({
               return (
                 <article
                   key={`${topic.filename}-${formulaNo}`}
-                  className="flex gap-3 rounded-2xl border border-border/70 bg-card px-4 py-3.5 shadow-sm transition-colors hover:border-primary/30"
+                  className="flex gap-3 border-b border-neutral-200 py-3 last:border-b-0"
                 >
                   <span className="mt-0.5 flex h-5 min-w-5 shrink-0 items-center justify-center rounded-md bg-primary/10 px-1.5 font-mono text-[10px] font-extrabold text-primary">
                     {String(formulaNo).padStart(2, "0")}
@@ -167,6 +170,7 @@ export default async function UnitFormulaPage({
           {topic.classifiedNotes && (
             <ClassifiedNotes group={topic.classifiedNotes} />
           )}
+          </PaperJsonBody>
         </section>
       ))}
 

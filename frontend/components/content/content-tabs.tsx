@@ -53,6 +53,8 @@ import { getChapterDocs, getChapterStreamPdfs, type ChapterDoc } from "@/lib/cha
 import { pdfViewerHref, downloadDoc, downloadFileName } from "@/lib/pdf-src";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { ACCESS_LABELS, hasLevel, type AccessLevel } from "@/lib/core/access-level";
+import { A4DocumentSurface } from "@/features/docs/academic-doc-layout";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 
 export type CompanionTabProfile =
   | "default"
@@ -536,6 +538,7 @@ export function ContentTabs({
   const unlocked = hasLevel(user, active.minTier);
   const canAccessLearning = hasLevel(user, "member");
   const showLearning = active.kind === "learning" && unlocked;
+  const standalone = isStandaloneReaderChrome();
 
   return (
     <div className="space-y-4">
@@ -579,45 +582,63 @@ export function ContentTabs({
       <div className="min-h-[200px]" role="tabpanel">
         {canAccessLearning && (
           <div hidden={!showLearning}>
-            <TopicVerticalNotes
-              classSlug={classSlug}
-              subjectSlug={subjectSlug}
-              unitId={unitId}
-              topicSlug={topicSlug}
-              topicTitle={topicTitle}
-              section={active.kind === "learning" ? active.learningSection : "notes"}
-            />
+            {active.kind === "learning" && active.learningSection === "notes" ? (
+              <TopicVerticalNotes
+                classSlug={classSlug}
+                subjectSlug={subjectSlug}
+                unitId={unitId}
+                topicSlug={topicSlug}
+                topicTitle={topicTitle}
+                section="notes"
+              />
+            ) : (
+              <A4DocumentSurface className="mt-2">
+                <TopicVerticalNotes
+                  classSlug={classSlug}
+                  subjectSlug={subjectSlug}
+                  unitId={unitId}
+                  topicSlug={topicSlug}
+                  topicTitle={topicTitle}
+                  section={active.kind === "learning" ? active.learningSection : "notes"}
+                />
+              </A4DocumentSurface>
+            )}
           </div>
         )}
         {!showLearning && (!unlocked ? (
           <LockedTabCard tab={active} />
         ) : active.kind !== "learning" ? (
           <div className="space-y-3">
-            <div className="flex items-center justify-between gap-2">
-              <h3 className="text-lg font-semibold">{active.label}</h3>
-              <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
-                {ACCESS_LABELS[active.minTier]}
-              </span>
-            </div>
-            <p className="text-xs text-muted-foreground">{active.description}</p>
-            <TabPanel
-              tab={active}
-              classSlug={classSlug}
-              subjectSlug={subjectSlug}
-              unitId={unitId}
-              topicSlug={topicSlug}
-              topicTitle={topicTitle}
-              topicPath={topicPath}
-              onOpenNotes={() => setActiveTab("notes")}
-            />
+            {!standalone && (
+              <>
+                <div className="flex items-center justify-between gap-2 print:hidden">
+                  <h3 className="text-lg font-semibold">{active.label}</h3>
+                  <span className="rounded-full bg-primary/10 px-2 py-0.5 text-[10px] font-bold text-primary">
+                    {ACCESS_LABELS[active.minTier]}
+                  </span>
+                </div>
+                <p className="text-xs text-muted-foreground print:hidden">{active.description}</p>
+              </>
+            )}
+            <A4DocumentSurface className="mt-2">
+              <TabPanel
+                tab={active}
+                classSlug={classSlug}
+                subjectSlug={subjectSlug}
+                unitId={unitId}
+                topicSlug={topicSlug}
+                topicTitle={topicTitle}
+                topicPath={topicPath}
+                onOpenNotes={() => setActiveTab("notes")}
+              />
+            </A4DocumentSurface>
           </div>
         ) : null)}
       </div>
 
-      {/* Source Info */}
-      <p className="text-xs text-muted-foreground font-mono">
-        Source: {topicPath}
-      </p>
+      {!standalone && (
+        <p className="font-mono text-xs text-muted-foreground">Source: {topicPath}</p>
+      )}
     </div>
   );
 }

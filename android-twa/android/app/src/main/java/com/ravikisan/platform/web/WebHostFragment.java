@@ -167,6 +167,7 @@ public class WebHostFragment extends Fragment {
                         + "window.__RN_ANDROID_VERSION__='"
                         + BuildConfig.VERSION_NAME.replace("'", "")
                         + "';"
+                        + "window.dispatchEvent(new Event('rn-native-ready'));"
                         + "})();";
         view.evaluateJavascript(js, null);
     }
@@ -183,6 +184,12 @@ public class WebHostFragment extends Fragment {
                                     + "');";
                     view.evaluateJavascript(js, null);
                 });
+    }
+
+    /** Called as soon as navigation starts so the site can detect native before paint. */
+    void onPlatformPageStarted(WebView view) {
+        if (!isAdded() || webView != view) return;
+        injectNativeBootstrap(view);
     }
 
     /** Called from PlatformWebViewClient after each finished load. */

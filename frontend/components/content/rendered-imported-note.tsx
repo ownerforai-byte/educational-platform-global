@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { ImportedNoteView } from "@/components/content/imported-note-view";
 import { StatusBadge } from "@/components/content/status-badge";
 import { NOTE_STATUS, getNoteStatus } from "@/lib/content/note-status";
 import { loadData } from "@/lib/data-loader";
@@ -41,14 +42,6 @@ async function getRExportEntry(subject: string, chapterPath: string) {
   );
   if (!entry) return null;
   return { ...entry, source: "r-export" as const };
-}
-
-function renderInlineNotes(notes: string[]) {
-  return notes.map((note, idx) => (
-    <div key={idx} className="rounded-xl border border-border bg-muted/20 p-5 backdrop-blur-sm">
-      <MathMarkdown content={note} className="space-y-3" />
-    </div>
-  ));
 }
 
 type LoadedNote = {
@@ -98,21 +91,7 @@ export async function RenderedImportedNote({ note }: { note: { title: string; pa
     );
   }
 
-  return (
-    <Card className="card card-hover border-primary/20 bg-background/80 backdrop-blur-sm">
-      <CardHeader className="pb-4">
-        <div className="flex items-start justify-between gap-4">
-          <CardTitle className="text-base leading-snug">{data.title}</CardTitle>
-          <span className="shrink-0 rounded-full border border-border bg-muted/50 px-2.5 py-0.5 text-xs font-medium text-muted-foreground">
-            {data.source === "ravikishan" ? "Ravikishan" : "R Export"}
-          </span>
-        </div>
-      </CardHeader>
-      <CardContent className="space-y-4">
-        {renderInlineNotes(data.notes)}
-      </CardContent>
-    </Card>
-  );
+  return <ImportedNoteView title={data.title} notes={data.notes} source={data.source} />;
 }
 
 function BrokenNoteCard({ title }: { title: string }) {

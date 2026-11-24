@@ -32,6 +32,7 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { NoteBlocks } from "@/components/content/rich-note";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { TopicDocView } from "@/features/docs/doc-view";
+import { A4DocumentSurface } from "@/features/docs/academic-doc-layout";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
 import {
@@ -943,9 +944,12 @@ export function TopicVerticalNotes({
 
       <VisualWorkspace classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} topicSlug={topicSlug} topicTitle={topicTitle} concepts={activeData ? [activeData] : []} />
 
-      {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
-
-      <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
+      {(hasHighYieldTopicData(highYield) || (activeData?.blocks && Array.isArray(activeData.blocks) && activeData.blocks.length > 0)) && (
+        <A4DocumentSurface className="mt-4">
+          {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
+          <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
+        </A4DocumentSurface>
+      )}
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { TutorConsole } from "@/components/ai/tutor-console";
+import { SparkGate } from "@/features/credits/spark-gate";
 
 export const metadata: Metadata = {
   title: "Veer & Study Assistant — NEB Science",
@@ -34,7 +35,13 @@ export default async function ChatPage({
 
   return (
     <div className="h-full min-h-0 w-full">
-      <TutorConsole initialQuestion={initialQuestion} />
+      <SparkGate
+        minLevel="plus"
+        title="Veer chat opens on Plus"
+        description="Private Veer Study, Nepali, and Grammar chats unlock on Plus, Pro, and Owner."
+      >
+        <TutorConsole initialQuestion={initialQuestion} />
+      </SparkGate>
     </div>
   );
 }

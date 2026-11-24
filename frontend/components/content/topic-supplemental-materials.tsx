@@ -3,6 +3,9 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import type { SupplementalEntry } from "@/lib/content/topic-supplemental";
 import type { ContentKind } from "@/lib/content/paths";
+import { PaperJsonBody } from "@/components/content/paper-json-body";
+import { supplementalKindOnPaper } from "@/lib/content/a4-paper-policy";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 
 /**
  * TOPIC / UNIT SUPPLEMENTAL MATERIAL
@@ -145,26 +148,63 @@ function EntryBody({ entry }: { entry: SupplementalEntry }) {
   );
 }
 
-function EntryCard({ entry }: { entry: SupplementalEntry }) {
+function EntryHeading({ entry }: { entry: SupplementalEntry }) {
   const meta = KIND_META[entry.kind as keyof typeof KIND_META];
   if (!meta) return null;
   const Icon = meta.icon;
+  return (
+    <header className="mb-4 border-b border-neutral-300 pb-3 print:hidden">
+      <div className="mb-1 flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-neutral-500">
+        <Icon className={`h-4 w-4 shrink-0 ${meta.tint}`} />
+        {meta.label}
+      </div>
+      <h3 className="a4-title text-left">{entry.title}</h3>
+    </header>
+  );
+}
+
+function EntryCard({ entry }: { entry: SupplementalEntry }) {
+  const meta = KIND_META[entry.kind as keyof typeof KIND_META];
+  if (!meta) return null;
+  const standalone = isStandaloneReaderChrome();
+  const onPaper = supplementalKindOnPaper(entry.kind);
+
+  if (!onPaper) {
+    const Icon = meta.icon;
+    return (
+      <Card className="border-border/70">
+        <CardHeader className="pb-2">
+          <div className="flex items-center gap-2">
+            <Icon className={`h-4 w-4 shrink-0 ${meta.tint}`} />
+            <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+              {meta.label} · graph data
+            </span>
+          </div>
+          <CardTitle className="text-sm leading-snug sm:text-base">{entry.title}</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <EntryBody entry={entry} />
+          <p className="mt-3 text-[10px] text-muted-foreground">
+            Open the{" "}
+            <a href="/graphs" className="font-semibold text-primary hover:underline">
+              Science Graph Bank
+            </a>{" "}
+            for the interactive chart.
+          </p>
+        </CardContent>
+      </Card>
+    );
+  }
 
   return (
-    <Card className="border-border/70">
-      <CardHeader className="pb-2">
-        <div className="flex items-center gap-2">
-          <Icon className={`h-4 w-4 shrink-0 ${meta.tint}`} />
-          <span className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
-            {meta.label}
-          </span>
-        </div>
-        <CardTitle className="text-sm leading-snug sm:text-base">{entry.title}</CardTitle>
-      </CardHeader>
-      <CardContent>
-        <EntryBody entry={entry} />
-      </CardContent>
-    </Card>
+    <PaperJsonBody className="mt-0">
+      {standalone ? (
+        <h1 className="a4-title mb-4 text-left">{entry.title}</h1>
+      ) : (
+        <EntryHeading entry={entry} />
+      )}
+      <EntryBody entry={entry} />
+    </PaperJsonBody>
   );
 }
 
@@ -180,19 +220,23 @@ export function TopicSupplementalMaterials({
   const heading = scope === "topic" ? "More material for this topic" : "More material for this unit";
   const description =
     scope === "topic"
-      ? "Authored guides, worked examples, practice sets, past-year questions, formula sheets and graphs filed under this topic."
-      : "Authored guides, worked examples, practice sets, past-year questions, formula sheets and graphs filed for this unit.";
+      ? "Authored guides, worked examples, practice sets, past-year questions and formula sheets on paper; graph JSON stays in the Graph Bank."
+      : "Authored guides, worked examples, practice sets, past-year questions and formula sheets on paper; graph JSON stays in the Graph Bank.";
+
+  const standalone = isStandaloneReaderChrome();
 
   return (
     <section aria-labelledby="supplemental-material-heading" className="space-y-4">
-      <div>
-        <h2 id="supplemental-material-heading" className="text-lg font-bold tracking-tight">
-          {heading}
-        </h2>
-        <p className="mt-1 text-xs text-muted-foreground">
-          {description} <span className="text-muted-foreground/70">({entries.length})</span>
-        </p>
-      </div>
+      {!standalone && (
+        <div>
+          <h2 id="supplemental-material-heading" className="text-lg font-bold tracking-tight">
+            {heading}
+          </h2>
+          <p className="mt-1 text-xs text-muted-foreground">
+            {description} <span className="text-muted-foreground/70">({entries.length})</span>
+          </p>
+        </div>
+      )}
       <div className="grid gap-4">
         {entries.map((entry) => (
           <EntryCard key={entry.path} entry={entry} />

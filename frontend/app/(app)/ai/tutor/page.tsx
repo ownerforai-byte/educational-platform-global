@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Bot, History, Plus, Search, Sparkles } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import { SparkGate } from "@/features/credits/spark-gate";
 import { AiToolShell } from "@/components/ai/ai-tool-shell";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 import { StudySuggestionsPanel } from "@/components/content/study-suggestions-panel";
@@ -41,7 +42,13 @@ export default function AITutorPage() {
       meter={<AiPlanStrip />}
       features={FEATURES}
     >
-      <AIChatInterface />
+      <SparkGate
+        minLevel="plus"
+        title="Veer chat opens on Plus"
+        description="Private Veer Study, Nepali, and Grammar chats unlock on Plus, Pro, and Owner."
+      >
+        <AIChatInterface />
+      </SparkGate>
 
       <div className="mt-4">
         <StudySuggestionsPanel />

@@ -33,6 +33,10 @@ import { parseNotes, readingMinutes } from "./doc-parser";
 import { getTopicFigures, type TopicFigure } from "./figures/registry";
 import { buildDocConceptMap, type RawMindmap } from "./doc-mindmap";
 import { buildDocPageItems } from "./doc-pages";
+import { canDocExportActions } from "./academic-doc-layout";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { ACCESS_LABELS } from "@/lib/core/access-level";
+import { isStandaloneReaderChrome } from "@/lib/standalone-reader";
 
 export interface TopicDocData {
   summary?: string;
@@ -97,6 +101,9 @@ export function TopicDocView({
   const [fontSize, setFontSize] = useState<"sm" | "base" | "lg">("base");
   const [copied, setCopied] = useState(false);
   const paperRef = useRef<HTMLDivElement>(null);
+  const { user, isLoading } = useSession();
+  const exportUnlocked = !isLoading && canDocExportActions(user);
+  const standalone = isStandaloneReaderChrome();
 
   const notes = useMemo(() => data?.notes ?? [], [data]);
   const blocks = useMemo(() => parseNotes(notes), [notes]);
@@ -181,7 +188,7 @@ export function TopicDocView({
       className="doc-view"
       aria-label={`${topicTitle} document`}
     >
-      {/* ── Document Reader Toolbar (desk chrome — never printed) ── */}
+      {!standalone && (
       <header className="print:hidden">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">
@@ -222,27 +229,35 @@ export function TopicDocView({
               </button>
             </div>
 
-            {/* Copy Link */}
-            <button
-              type="button"
-              onClick={handleCopyLink}
-              title="Copy document link"
-              className="inline-flex h-8 items-center gap-1 rounded-lg border border-border/70 bg-background/80 px-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground"
-            >
-              {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
-              <span>{copied ? "Copied" : "Link"}</span>
-            </button>
-
-            {/* Print / Save PDF */}
-            <button
-              type="button"
-              onClick={handlePrint}
-              title="Print document or Save as PDF"
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-xs font-bold text-primary-foreground hover:bg-primary/90"
-            >
-              <Printer className="h-3.5 w-3.5" />
-              <span>Print / PDF</span>
-            </button>
+            {exportUnlocked ? (
+              <>
+                <button
+                  type="button"
+                  onClick={handleCopyLink}
+                  title="Copy document link"
+                  className="inline-flex h-8 items-center gap-1 rounded-lg border border-border/70 bg-background/80 px-2.5 text-xs font-semibold text-muted-foreground hover:text-foreground"
+                >
+                  {copied ? <Check className="h-3.5 w-3.5 text-emerald-500" /> : <Copy className="h-3.5 w-3.5" />}
+                  <span>{copied ? "Copied" : "Link"}</span>
+                </button>
+                <button
+                  type="button"
+                  onClick={handlePrint}
+                  title="Print document or Save as PDF"
+                  className="inline-flex h-8 items-center gap-1.5 rounded-lg bg-primary px-3 text-xs font-bold text-primary-foreground hover:bg-primary/90"
+                >
+                  <Printer className="h-3.5 w-3.5" />
+                  <span>Print / PDF</span>
+                </button>
+              </>
+            ) : (
+              <p
+                className="rounded-lg border border-border/60 bg-muted/40 px-2.5 py-1.5 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground"
+                title={`Link and Print/PDF open on ${ACCESS_LABELS.pro}`}
+              >
+                Link &amp; PDF · {ACCESS_LABELS.pro}+
+              </p>
+            )}
           </div>
         </div>
 
@@ -269,14 +284,19 @@ export function TopicDocView({
           </ol>
         </nav>
       </header>
+      )}
 
-      {/* ── The desk the A4 sheet lies on ── */}
-      <div className="a4-desk mt-4 rounded-xl px-2 py-6 sm:px-6 sm:py-10 print:p-0">
-        {/* ── The A4 paper: one continuous sheet, all content printed on it ── */}
+      <div
+        className={
+          standalone
+            ? "a4-desk a4-desk-standalone mt-0 print:p-0"
+            : "a4-desk mt-4 rounded-xl px-2 py-6 sm:px-6 sm:py-10 print:p-0"
+        }
+      >
         <div
           ref={paperRef}
           data-a4-paper=""
-          className="a4-paper"
+          className={standalone ? "a4-paper a4-paper-standalone" : "a4-paper"}
           role="document"
         >
           {/* Printed document head — badges, title, standfirst */}
