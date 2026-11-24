@@ -82,12 +82,14 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
     expect(home).not.toContain("<HomeMindStudio />");
     // The OwnerOnly helper itself still exists for the owner console and rails.
     expect(read("features/auth/owner-only.tsx")).toContain("isOwnerUser(user)");
-    // Subject rails mount on every tier home — no Spark gate on the rail slot.
+    // Subject rails mount on owner home only — no Spark gate on the rail slot.
     const tierShell = read("components/home/tier-interfaces.tsx");
-    expect(tierShell).toContain("{rails}");
+    expect(tierShell).toContain('tier === "owner" ? rails : null');
     expect(tierShell).not.toMatch(
       /<SparkGate[\s\S]*?\{rails\}[\s\S]*?<\/SparkGate>/,
     );
+    expect(read("app/(app)/home/owner/page.tsx")).toContain("<HomeSubjectRails />");
+    expect(read("app/(app)/home/member/page.tsx")).not.toContain("<HomeSubjectRails");
   });
 });
 

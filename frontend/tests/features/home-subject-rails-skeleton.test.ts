@@ -25,22 +25,21 @@ describe("home subject rails skeleton", () => {
     expect(skeleton).not.toContain("node:fs");
   });
 
-  it("wraps HomeSubjectRails in Suspense on every tier home", () => {
-    for (const page of TIER_PAGES) {
-      const source = read(page);
-      expect(source).toContain("<HomeSubjectRails />");
-      expect(source).toContain("<Suspense fallback={<HomeSubjectRailsSkeleton />}>");
-      expect(source).toContain("</Suspense>");
+  it("wraps HomeSubjectRails in Suspense on the owner tier home only", () => {
+    const owner = read("app/(app)/home/owner/page.tsx");
+    expect(owner).toContain("<HomeSubjectRails />");
+    expect(owner).toContain("<Suspense fallback={<HomeSubjectRailsSkeleton />}>");
+    expect(owner).toContain("</Suspense>");
+    for (const page of ["app/(app)/home/member/page.tsx", "app/(app)/home/plus/page.tsx", "app/(app)/home/pro/page.tsx"]) {
+      expect(read(page)).not.toContain("<HomeSubjectRails");
     }
   });
 
-  it("mounts the syllabus bar on the tier shell outside the Pro rail gate", () => {
+  it("mounts the syllabus bar on the tier shell above the owner-only rails", () => {
     const tierShell = read("components/home/tier-interfaces.tsx");
     expect(tierShell).toContain("<HomeSyllabusProgressBar />");
-    const gate = tierShell.match(/<SparkGate[\s\S]*?<\/SparkGate>/)?.[0] ?? "";
-    expect(gate).toContain('minLevel="pro"');
-    expect(gate).toContain("{rails}");
-    expect(gate).not.toContain("HomeSyllabusProgressBar");
+    expect(tierShell).toContain('tier === "owner" ? rails : null');
+    expect(tierShell).not.toMatch(/<SparkGate[\s\S]*?\{rails\}[\s\S]*?<\/SparkGate>/);
 
     const bar = read("components/home/home-syllabus-progress.tsx");
     expect(bar).toContain("home-syllabus-progress");

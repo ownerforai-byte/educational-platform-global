@@ -407,7 +407,7 @@ function TierPage({
       <DeskPulse />
       <QuickLinksRail tier={tier} />
       <SpotlightRow items={spotlights} />
-      {rails}
+      {tier === "owner" ? rails : null}
       <OpenSectionsRail tier={tier} />
       {tier === "owner" ? <NextRungTeaser tier={tier} /> : null}
     </div>
