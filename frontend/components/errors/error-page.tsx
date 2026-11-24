@@ -3,6 +3,7 @@
 import { useId } from "react";
 import Link from "next/link";
 import {
+  ArrowRight,
   CircleAlert,
   Clock,
   CloudOff,
@@ -18,9 +19,12 @@ import {
   type LucideIcon,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { PLATFORM_DISPLAY_NAME } from "@/lib/core/platform-brand";
 import { useOnlineStatus } from "@/lib/hooks/use-online-status";
 import {
+  ERROR_PAGE_ACTION_HREFS,
   ERROR_PAGE_REGISTRY,
+  errorQuickLinksForVariant,
   resolveErrorPageVariant,
   type ErrorPageAction,
   type ErrorPageIcon,
@@ -46,67 +50,97 @@ const ICONS: Record<ErrorPageIcon, LucideIcon> = {
 
 const TREATMENTS: Record<
   ErrorPageTreatment,
-  { stripe: string; icon: string; code: string }
+  {
+    stripe: string;
+    glow: string;
+    icon: string;
+    code: string;
+    ring: string;
+  }
 > = {
   amber: {
-    stripe: "bg-amber-500",
-    icon: "bg-amber-500/10 text-amber-700 dark:text-amber-300",
-    code: "text-amber-500/10",
+    stripe: "from-amber-400 via-amber-500 to-orange-500",
+    glow: "bg-amber-500/20",
+    icon: "bg-amber-500/15 text-amber-800 dark:text-amber-200",
+    code: "text-amber-500/20",
+    ring: "ring-amber-500/25",
   },
   indigo: {
-    stripe: "bg-indigo-500",
-    icon: "bg-indigo-500/10 text-indigo-700 dark:text-indigo-300",
-    code: "text-indigo-500/10",
+    stripe: "from-indigo-400 via-indigo-500 to-violet-500",
+    glow: "bg-indigo-500/20",
+    icon: "bg-indigo-500/15 text-indigo-800 dark:text-indigo-200",
+    code: "text-indigo-500/20",
+    ring: "ring-indigo-500/25",
   },
   rose: {
-    stripe: "bg-rose-500",
-    icon: "bg-rose-500/10 text-rose-700 dark:text-rose-300",
-    code: "text-rose-500/10",
+    stripe: "from-rose-400 via-rose-500 to-pink-500",
+    glow: "bg-rose-500/20",
+    icon: "bg-rose-500/15 text-rose-800 dark:text-rose-200",
+    code: "text-rose-500/20",
+    ring: "ring-rose-500/25",
   },
   violet: {
-    stripe: "bg-violet-500",
-    icon: "bg-violet-500/10 text-violet-700 dark:text-violet-300",
-    code: "text-violet-500/10",
+    stripe: "from-violet-400 via-violet-500 to-purple-500",
+    glow: "bg-violet-500/20",
+    icon: "bg-violet-500/15 text-violet-800 dark:text-violet-200",
+    code: "text-violet-500/20",
+    ring: "ring-violet-500/25",
   },
   orange: {
-    stripe: "bg-orange-500",
-    icon: "bg-orange-500/10 text-orange-700 dark:text-orange-300",
-    code: "text-orange-500/10",
+    stripe: "from-orange-400 via-orange-500 to-amber-500",
+    glow: "bg-orange-500/20",
+    icon: "bg-orange-500/15 text-orange-800 dark:text-orange-200",
+    code: "text-orange-500/20",
+    ring: "ring-orange-500/25",
   },
   yellow: {
-    stripe: "bg-yellow-500",
-    icon: "bg-yellow-500/10 text-yellow-700 dark:text-yellow-300",
-    code: "text-yellow-500/10",
+    stripe: "from-yellow-400 via-yellow-500 to-amber-400",
+    glow: "bg-yellow-500/20",
+    icon: "bg-yellow-500/15 text-yellow-900 dark:text-yellow-100",
+    code: "text-yellow-500/20",
+    ring: "ring-yellow-500/25",
   },
   red: {
-    stripe: "bg-red-500",
-    icon: "bg-red-500/10 text-red-700 dark:text-red-300",
-    code: "text-red-500/10",
+    stripe: "from-red-400 via-red-500 to-rose-600",
+    glow: "bg-red-500/20",
+    icon: "bg-red-500/15 text-red-800 dark:text-red-200",
+    code: "text-red-500/20",
+    ring: "ring-red-500/25",
   },
   cyan: {
-    stripe: "bg-cyan-500",
-    icon: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-300",
-    code: "text-cyan-500/10",
+    stripe: "from-cyan-400 via-cyan-500 to-sky-500",
+    glow: "bg-cyan-500/20",
+    icon: "bg-cyan-500/15 text-cyan-900 dark:text-cyan-100",
+    code: "text-cyan-500/20",
+    ring: "ring-cyan-500/25",
   },
   teal: {
-    stripe: "bg-teal-500",
-    icon: "bg-teal-500/10 text-teal-700 dark:text-teal-300",
-    code: "text-teal-500/10",
+    stripe: "from-teal-400 via-teal-500 to-emerald-500",
+    glow: "bg-teal-500/20",
+    icon: "bg-teal-500/15 text-teal-900 dark:text-teal-100",
+    code: "text-teal-500/20",
+    ring: "ring-teal-500/25",
   },
   blue: {
-    stripe: "bg-blue-500",
-    icon: "bg-blue-500/10 text-blue-700 dark:text-blue-300",
-    code: "text-blue-500/10",
+    stripe: "from-blue-400 via-blue-500 to-indigo-500",
+    glow: "bg-blue-500/20",
+    icon: "bg-blue-500/15 text-blue-900 dark:text-blue-100",
+    code: "text-blue-500/20",
+    ring: "ring-blue-500/25",
   },
   sky: {
-    stripe: "bg-sky-500",
-    icon: "bg-sky-500/10 text-sky-700 dark:text-sky-300",
-    code: "text-sky-500/10",
+    stripe: "from-sky-400 via-sky-500 to-cyan-500",
+    glow: "bg-sky-500/20",
+    icon: "bg-sky-500/15 text-sky-900 dark:text-sky-100",
+    code: "text-sky-500/20",
+    ring: "ring-sky-500/25",
   },
   slate: {
-    stripe: "bg-slate-500",
-    icon: "bg-slate-500/10 text-slate-700 dark:text-slate-300",
-    code: "text-slate-500/10",
+    stripe: "from-slate-400 via-slate-500 to-zinc-500",
+    glow: "bg-slate-500/15",
+    icon: "bg-slate-500/15 text-slate-800 dark:text-slate-200",
+    code: "text-slate-500/20",
+    ring: "ring-slate-500/25",
   },
 };
 
@@ -132,6 +166,7 @@ export function ErrorPage({
   const treatment = TREATMENTS[definition.treatment];
   const Icon = ICONS[definition.icon];
   const titleId = useId();
+  const quickLinks = errorQuickLinksForVariant(resolvedVariant);
   const Container = compact ? "section" : "main";
 
   const retry = () => {
@@ -140,7 +175,7 @@ export function ErrorPage({
   };
   const goBack = () => {
     if (window.history.length > 1) window.history.back();
-    else window.location.assign("/");
+    else window.location.assign(ERROR_PAGE_ACTION_HREFS.home);
   };
 
   const actionButton = (
@@ -152,9 +187,9 @@ export function ErrorPage({
     const buttonVariant = secondary ? "outline" : "default";
 
     if (action === "home" || action === "login" || action === "plans") {
-      const href = action === "login" ? "/login" : action === "plans" ? "/plans" : "/";
+      const href = ERROR_PAGE_ACTION_HREFS[action];
       return (
-        <Button key={key} asChild variant={buttonVariant}>
+        <Button key={key} asChild variant={buttonVariant} className="rounded-full px-5">
           <Link href={href}>{label}</Link>
         </Button>
       );
@@ -165,6 +200,7 @@ export function ErrorPage({
         key={key}
         type="button"
         variant={buttonVariant}
+        className="rounded-full px-5"
         onClick={action === "back" ? goBack : retry}
       >
         {label}
@@ -182,61 +218,131 @@ export function ErrorPage({
       data-connectivity={isOnline ? "online" : "offline"}
       className={cn(
         "relative flex w-full items-center justify-center overflow-hidden px-4 py-10 sm:px-6",
-        compact ? "min-h-[60vh]" : "min-h-screen bg-background",
+        compact
+          ? "min-h-[60vh]"
+          : "min-h-[calc(100dvh-3.5rem)] flex-1 bg-background sm:min-h-[calc(100dvh-4rem)]",
       )}
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,hsl(var(--muted)),transparent_62%)] opacity-70" />
-      <div className="relative w-full max-w-2xl overflow-hidden rounded-[2rem] border border-border bg-card text-card-foreground shadow-xl">
-        <div className={cn("h-1.5 w-full", treatment.stripe)} aria-hidden="true" />
-        <span
+      <div
+        className={cn(
+          "pointer-events-none absolute -top-28 left-1/2 h-80 w-[36rem] -translate-x-1/2 rounded-full blur-[120px]",
+          treatment.glow,
+        )}
+      />
+      <div className="pointer-events-none absolute bottom-0 right-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]" />
+
+      <div
+        className={cn(
+          "relative w-full max-w-3xl overflow-hidden rounded-[2rem] border border-border/80 bg-card/95 text-card-foreground shadow-2xl shadow-black/5 backdrop-blur-sm",
+          treatment.ring,
+          "ring-1",
+        )}
+      >
+        <div
+          className={cn("h-1.5 w-full bg-gradient-to-r", treatment.stripe)}
           aria-hidden="true"
-          className={cn(
-            "pointer-events-none absolute -right-3 top-2 select-none text-[9rem] font-black leading-none tracking-tighter sm:text-[12rem]",
-            treatment.code,
-          )}
-        >
-          {definition.displayCode}
-        </span>
+        />
 
-        <div className="relative flex flex-col items-start gap-5 p-6 sm:p-10">
-          <div className="flex w-full flex-wrap items-center justify-end gap-3">
-            <span
-              role="status"
-              aria-live="polite"
-              className="inline-flex items-center gap-2 text-xs font-medium text-muted-foreground"
-            >
-              <span
-                className={cn("h-2 w-2 rounded-full", isOnline ? "bg-emerald-500" : "bg-slate-400")}
-                aria-hidden="true"
-              />
-              {isOnline
-                ? resolvedVariant === "offline"
-                  ? "Connection restored"
-                  : "Online"
-                : "Offline"}
-            </span>
-          </div>
-
+        <div className="relative grid sm:grid-cols-[9.5rem_1fr]">
           <div
-            className={cn("flex h-14 w-14 items-center justify-center rounded-2xl", treatment.icon)}
+            className={cn(
+              "relative hidden border-b border-border/60 bg-muted/30 sm:flex sm:flex-col sm:border-b-0 sm:border-r sm:p-6",
+            )}
             aria-hidden="true"
           >
-            <Icon className="h-7 w-7" strokeWidth={1.8} />
+            <span
+              className={cn(
+                "select-none text-5xl font-black leading-none tracking-tighter",
+                treatment.code,
+              )}
+            >
+              {definition.displayCode}
+            </span>
+            <p className="mt-auto pt-8 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
+              {PLATFORM_DISPLAY_NAME}
+            </p>
           </div>
 
-          {/* One sentence of what happened, one of what to do — nothing else. */}
-          <div className="space-y-2">
-            <h1 id={titleId} className="text-3xl font-bold tracking-tight sm:text-4xl">
-              {definition.title}
-            </h1>
-            <p className="text-base font-medium text-foreground/90">{definition.hint}</p>
-          </div>
+          <span
+            aria-hidden="true"
+            className={cn(
+              "pointer-events-none absolute right-2 top-0 select-none text-[7rem] font-black leading-none tracking-tighter sm:hidden",
+              treatment.code,
+            )}
+          >
+            {definition.displayCode}
+          </span>
 
-          <div className="flex flex-wrap gap-3 pt-2">
-            {actionButton(definition.primaryAction, definition.primaryLabel)}
-            {definition.secondaryAction && definition.secondaryLabel
-              ? actionButton(definition.secondaryAction, definition.secondaryLabel, true)
-              : null}
+          <div className="relative flex flex-col gap-5 p-6 sm:p-8">
+            <div className="flex flex-wrap items-center justify-between gap-3">
+              <p className="text-[11px] font-bold uppercase tracking-widest text-muted-foreground">
+                Something went wrong
+              </p>
+              <span
+                role="status"
+                aria-live="polite"
+                className="inline-flex items-center gap-2 rounded-full border border-border/80 bg-background/80 px-3 py-1 text-xs font-medium text-muted-foreground"
+              >
+                <span
+                  className={cn(
+                    "h-2 w-2 rounded-full",
+                    isOnline ? "bg-emerald-500" : "bg-slate-400",
+                  )}
+                  aria-hidden="true"
+                />
+                {isOnline
+                  ? resolvedVariant === "offline"
+                    ? "Connection restored"
+                    : "Online"
+                  : "Offline"}
+              </span>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div
+                className={cn(
+                  "flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl ring-1 ring-inset ring-border/50",
+                  treatment.icon,
+                )}
+              >
+                <Icon className="h-7 w-7" strokeWidth={1.8} />
+              </div>
+              <div className="min-w-0 space-y-2 pt-0.5">
+                <h1 id={titleId} className="text-2xl font-bold tracking-tight sm:text-3xl">
+                  {definition.title}
+                </h1>
+                <p className="text-base font-medium text-foreground/90">{definition.hint}</p>
+              </div>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              {actionButton(definition.primaryAction, definition.primaryLabel)}
+              {definition.secondaryAction && definition.secondaryLabel
+                ? actionButton(definition.secondaryAction, definition.secondaryLabel, true)
+                : null}
+            </div>
+
+            <nav
+              aria-label="Helpful links"
+              className="flex flex-col gap-3 border-t border-border/70 pt-5 sm:flex-row sm:flex-wrap sm:items-center"
+            >
+              <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+                Quick links
+              </span>
+              <ul className="flex flex-wrap gap-x-4 gap-y-2">
+                {quickLinks.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline underline-offset-4"
+                    >
+                      {link.label}
+                      <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
           </div>
         </div>
       </div>

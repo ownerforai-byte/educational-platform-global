@@ -84,4 +84,13 @@ describe("ErrorPage", () => {
     fireEvent.click(screen.getByRole("button", { name: "Refresh" }));
     expect(reset).toHaveBeenCalledTimes(1);
   });
+
+  it("renders working quick links for 404", () => {
+    render(<ErrorPage variant="404" />);
+    const home = screen.getByRole("link", { name: /study home/i });
+    expect(home).toHaveAttribute("href", "/home");
+    expect(screen.getByRole("link", { name: /help center/i })).toHaveAttribute("href", "/help");
+    expect(screen.getByRole("link", { name: /contact/i })).toHaveAttribute("href", "/contact");
+    expect(screen.getByRole("link", { name: /go home/i })).toHaveAttribute("href", "/home");
+  });
 });

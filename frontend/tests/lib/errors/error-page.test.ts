@@ -1,7 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
+  ERROR_PAGE_ACTION_HREFS,
   ERROR_PAGE_REGISTRY,
   ERROR_PAGE_VARIANTS,
+  ERROR_QUICK_LINKS,
+  errorQuickLinksForVariant,
   resolveErrorPageVariant,
 } from "@/lib/errors/error-page";
 
@@ -39,6 +42,23 @@ describe("error page registry", () => {
   it("points a plan-locked page at the plans", () => {
     expect(ERROR_PAGE_REGISTRY["403"].hint).toContain("plans");
     expect(ERROR_PAGE_REGISTRY["403"].primaryAction).toBe("plans");
+  });
+
+  it("maps CTA and quick-link hrefs to real app routes", () => {
+    for (const href of Object.values(ERROR_PAGE_ACTION_HREFS)) {
+      expect(href).toMatch(/^\/[a-z0-9/-]+$/);
+    }
+    for (const link of Object.values(ERROR_QUICK_LINKS)) {
+      expect(link.href).toMatch(/^\/[a-z0-9/-]+$/);
+      expect(link.label.length).toBeGreaterThan(2);
+    }
+    for (const variant of ERROR_PAGE_VARIANTS) {
+      const links = errorQuickLinksForVariant(variant);
+      expect(links.length).toBeGreaterThanOrEqual(3);
+      for (const link of links) {
+        expect(link.href.startsWith("/")).toBe(true);
+      }
+    }
   });
 });
 

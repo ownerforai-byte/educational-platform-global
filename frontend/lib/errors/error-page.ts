@@ -52,6 +52,49 @@ export type ErrorPageTreatment =
 
 export type ErrorPageAction = "retry" | "login" | "home" | "back" | "plans";
 
+/** In-app destinations for primary/secondary CTAs (must match real App Router pages). */
+export const ERROR_PAGE_ACTION_HREFS = {
+  home: "/home",
+  login: "/login",
+  plans: "/plans",
+} as const satisfies Record<Exclude<ErrorPageAction, "retry" | "back">, string>;
+
+export interface ErrorQuickLink {
+  readonly href: string;
+  readonly label: string;
+}
+
+/** Guest-safe shortcuts rendered under every error card. */
+export const ERROR_QUICK_LINKS = {
+  help: { href: "/help", label: "Help center" },
+  contact: { href: "/contact", label: "Contact" },
+  home: { href: "/home", label: "Study home" },
+  plans: { href: "/plans", label: "Plans" },
+  login: { href: "/login", label: "Sign in" },
+  status: { href: "/status", label: "Platform status" },
+} as const satisfies Record<string, ErrorQuickLink>;
+
+export function errorQuickLinksForVariant(
+  variant: ErrorPageVariant,
+): readonly ErrorQuickLink[] {
+  switch (variant) {
+    case "401":
+      return [ERROR_QUICK_LINKS.help, ERROR_QUICK_LINKS.home, ERROR_QUICK_LINKS.contact];
+    case "403":
+      return [ERROR_QUICK_LINKS.help, ERROR_QUICK_LINKS.home, ERROR_QUICK_LINKS.contact];
+    case "404":
+      return [ERROR_QUICK_LINKS.help, ERROR_QUICK_LINKS.contact, ERROR_QUICK_LINKS.home];
+    case "500":
+    case "502":
+    case "503":
+    case "504":
+    case "network":
+      return [ERROR_QUICK_LINKS.status, ERROR_QUICK_LINKS.help, ERROR_QUICK_LINKS.contact];
+    default:
+      return [ERROR_QUICK_LINKS.help, ERROR_QUICK_LINKS.home, ERROR_QUICK_LINKS.contact];
+  }
+}
+
 export interface ErrorPageDefinition {
   /** Big watermark number — the only technical reference left on screen. */
   readonly displayCode: string;
