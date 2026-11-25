@@ -18,7 +18,8 @@
     "**Collinear points.** Three points A, B, C are collinear iff AB and AC are parallel, i.e. AB × AC = 0, or equivalently the area of triangle ABC is zero.",
     "**Zero vector caveat.** The zero vector has no direction; by convention it is parallel to every vector, so state 'non-zero vectors' before applying the scalar-multiple test.",
     "**Coplanar extension.** Three vectors are coplanar iff their scalar triple product [a b c] = a · (b × c) = 0; this generalises the two-vector parallel test.",
-    "**Exam caution.** Equal magnitudes do not imply collinearity: |i| = |j| = 1, yet i and j are perpendicular. Likewise a · b = 0 signals perpendicularity, not parallelism."
+    "**Exam caution.** Equal magnitudes do not imply collinearity: |i| = |j| = 1, yet i and j are perpendicular. Likewise a · b = 0 signals perpendicularity, not parallelism.",
+    "**Vector alignment — the classified relations**\n\n| Relation | Algebraic test | Zero-vector caveat |\n|---|---|---|\n| Collinear (parallel) | a = t b for some scalar t | Zero vector is parallel to everything |\n| Non-collinear | No scalar t works; components not proportional | Spans a plane |\n| Opposite direction | t < 0 | Still collinear |\n| Same direction | t > 0 | Unit vectors coincide |"
   ],
   "keyPoints": [
     "Scalar-multiple test",

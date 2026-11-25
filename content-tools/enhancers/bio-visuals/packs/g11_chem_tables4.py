@@ -1,0 +1,42 @@
+# Conceptual classified tables — class-11 chemistry, part 4.
+
+def T(title, header, rows):
+    return {"append": True, "table": (title, header, rows)}
+
+TOPICS = [
+ {"file": "class-11/chemistry/foundation-and-fundamentals/01-introduction-importance-chemistry.json",
+  "blocks": [T("Chemistry in daily life — contributions classified",
+    ["Sector", "Chemistry's role", "Example"],
+    [["Medicine", "Drug design", "Aspirin, antibiotics"],
+     ["Agriculture", "Fertilisers, pesticides", "Urea, DDT history"],
+     ["Materials", "Polymers, alloys", "Nylon, steel"],
+     ["Energy", "Fuels, cells", "Petrol refining, batteries"]])]},
+ {"file": "class-11/chemistry/foundation-and-fundamentals/03-percentage-composition.json",
+  "blocks": [T("Composition calculations — classified by question type",
+    ["Question", "Route", "Output"],
+    [["Percentage of element", "mass of element / molar mass x 100", "% composition"],
+     ["Empirical formula", "Convert % to moles, simplest ratio", "EF"],
+     ["Molecular formula", "EF x (molar mass / EF mass)", "MF"],
+     ["Water of crystallisation", "Mass loss on heating", "x in salt.xH2O"]])]},
+ {"file": "class-11/chemistry/fundamental-principles-of-organic-chemistry/03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types.json",
+  "blocks": [T("Structural isomerism — classified",
+    ["Type", "Difference lies in", "Example"],
+    [["Chain (skeletal)", "Carbon skeleton", "n-butane vs isobutane"],
+     ["Position", "Where the group sits", "1- vs 2-chloropropane"],
+     ["Functional", "Different function groups", "Alcohol vs ether (C2H6O)"],
+     ["Metamerism", "Alkyl groups around a heteroatom", "C2H5-O-C3H7 vs C4H9-O-CH3"],
+     ["Tautomerism", "Dynamic keto-enol shift", "Acetone <=> enol"]])]},
+ {"file": "class-11/chemistry/fundamental-principles-organic/01-iupac-nomenclature.json",
+  "blocks": [T("IUPAC naming — the word-parts classified",
+    ["Part", "Carries", "Example"],
+    [["Word root", "Chain length", "meth, eth, prop, but, pent"],
+     ["Suffix", "Principal function group", "-ol, -al, -one, -oic acid"],
+     ["Prefix", "Branches and lower-priority groups", "methyl-, chloro-"],
+     ["Locants", "Positions", "2-methylbutane"]])]},
+ {"file": "class-11/chemistry/fundamental-principles-organic/02-isomerism.json",
+  "blocks": [T("Isomerism — the master classification",
+    ["Family", "Branches", "Key idea"],
+    [["Structural", "Chain, position, functional, metamerism, tautomerism", "Different connectivity"],
+     ["Stereoisomerism", "Geometric (cis-trans), optical (R/S)", "Same connectivity, different arrangement"],
+     ["Optical activity requirement", "Chiral centre (usually)", "Non-superimposable mirror images"]])]},
+]

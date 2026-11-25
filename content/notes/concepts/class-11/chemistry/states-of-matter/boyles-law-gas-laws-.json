@@ -22,7 +22,8 @@
     "### Limitations",
     "• Ideal-gas law: fails at high pressure (PV rises above nRT) and near liquefaction; gases with strong attraction (CO₂, SO₂, NH₃) deviate most; H₂ and He deviate least.",
     "• Requires fixed mass and constant temperature — a temperature change during compression invalidates it.",
-    "• Cannot be extrapolated to the liquid state; below the critical temperature compression produces condensation, not further Boyle-law shrinkage."
+    "• Cannot be extrapolated to the liquid state; below the critical temperature compression produces condensation, not further Boyle-law shrinkage.",
+    "**Boyle's law — the classified faces**\n\n| Face | Statement | Graph |\n|---|---|---|\n| Verbal | P inversely proportional to V at fixed T | Downward hyperbola (P vs V) |\n| Algebraic | PV = constant | Rectangular hyperbola |\n| Isotherms | Each temperature its own curve | Higher T curves sit further out |\n| Limits | Fails at high P, low T | Real gas attractions intervene |"
   ],
   "confusion": [
     "❌ PV = constant for any gas under any conditions. ✅ Only for fixed mass at constant temperature and ideal behaviour.",

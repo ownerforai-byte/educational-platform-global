@@ -20,7 +20,8 @@
     "**Elementary functions:** polynomials are continuous everywhere, so $\\lim_{x\\to a}P(x)=P(a)$ by direct substitution. $\\frac1x$, $\\tan x$, roots and logarithms are continuous only where defined.",
     "**Continuity of a piece:** the test is $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$. For piece-wise functions this value-matches-both-sides check is almost always what a question intends.",
     "**Removable discontinuity:** the limit exists but $f(a)$ is undefined or differs from it. Assigning the missing value equal to the limit repairs the function — a strong hint the break is removable.",
-    "**Composite and inverse:** $g\\circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $\\sqrt{\\tan x}$ is continuous exactly where both parts are."
+    "**Composite and inverse:** $g\\circ f$ is continuous wherever $f$ is continuous and $g$ is continuous at $f(x)$; the inverse of a continuous one-to-one function is continuous on its range, which is why $\\sqrt{\\tan x}$ is continuous exactly where both parts are.",
+    "**Evaluating limits — technique arsenal, classified**\n\n| Technique | Applies when | Example move |\n|---|---|---|\n| Direct substitution | Function is continuous at a | Plug in and stop |\n| Factor and cancel | 0/0 from polynomials | Kill the (x-a) factor |\n| Rationalise | Roots cause 0/0 | Multiply by the conjugate |\n| Standard limits | Trig/exp/log shapes | sin x/x -> 1, (e^x-1)/x -> 1 |\n| Dominant term | x -> inf rational functions | Ratio of leading coefficients |"
   ],
   "confusion": [
     "Substituting the point and stopping — the limit asks what the function APPROACHES, not what it equals there.",
