@@ -94,11 +94,15 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 33:** the geostationary radius is the answer to \"what r gives T = 24 h?\" — $r = (GMT^2/4\\pi^2)^{1/3}$. - **To Kepler's third law:** $T^2 \\propto r^3$ fixes the radius once T is fixed. - **To GPS (Topic 37):** GPS satellites are NOT geostationary — they orbit at ~20 200 km with 12-hour periods, needing six orbital planes.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank (the 2022 satellite numerical belongs to Topic 33). Practise the conditions, radius derivation and uses as **NEB-style practice**. ### 4.2 Likely question forms 1.…"
+      "text": "**Geostationary conditions and numbers** | Requirement | Value | Why | |---|---|---| | Orbital plane | equatorial | stays over one longitude | | Direction | west &#8594; east | matches Earth's spin | | Period | 23 h 56 min 4 s | one sidereal day | | Orbit radius | &#8776; 42,400 km | from Kepler's third law | | Height above surface | &#8776; 35,800 km | r &#8722; R | | Orbital…  ·  **Geostationary vs low-orbit satellites** | Property | Geostationary | Low Earth orbit (e.g. ISS) | |---|---|---| | Height | &#8776; 35,800 km | &#8776; 400 km | | Period | 24 h | &#8776; 90 min | | Appears | fixed in the sky | crosses overhead every ~90 min | | Uses | TV, weather, communication | ISS, imaging, GPS (~20,200 km MEO) | | Signal delay | &#8776; 0.24 s round trip…  ·  ### Deep dive: the three conditions, and why the height is fixed A geostationary satellite must (1) orbit directly above the equator, (2) revolve west-to-east, the same direction as Earth's rotation, and (3) have a period of exactly one sidereal day (23 h 56 min 4 s). Kepler's third law then leaves no freedom: $T = 24$ h fixes $r \\approx 42,400$ km from the centre, i.e.…"
     },
     {
       "label": "More ideas",
-      "text": "Why can a geostationary satellite not observe the poles?"
+      "text": "Why can a geostationary satellite not observe the poles?  ·  ```svg Geostationary belt — satellites fixed over the equator <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><circle cx=\"320\" cy=\"150\" r=\"50\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"320\" y=\"155\" text-anchor=\"middle\"…  ·  ## 3. Conceptual Relationships - **To Topic 33:** the geostationary radius is the answer to \"what r gives T = 24 h?\" — $r = (GMT^2/4\\pi^2)^{1/3}$. - **To Kepler's third law:** $T^2 \\propto r^3$ fixes the radius once T is fixed.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank (the 2022 satellite numerical belongs to Topic 33). Practise the conditions, radius derivation and uses as **NEB-style practice**. ### 4.2 Likely question forms 1.…  ·  ```svg Why the orbit must be equatorial — a tilted track drifts <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"180\" cy=\"130\" r=\"45\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><ellipse cx=\"180\" cy=\"130\" rx=\"100\"…"
     }
   ]
 }

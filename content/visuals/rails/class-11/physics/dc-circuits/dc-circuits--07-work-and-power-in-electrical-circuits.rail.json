@@ -91,11 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 99:** P = V²/R compares resistances at fixed voltage; P = I²R at fixed current. - **To Topic 103:** the internal drop Ir dissipates I²r inside the battery — power \"lost\". - **To heat (Units 9–11):** Joule heating feeds the same calorimetry equations.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the three power formulas, bulb-rating numericals and kWh conversions as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. Derive P = VI and state the two other forms (3m). 2.…"
+      "text": "**Power formulas and when each is the honest comparison** | Formula | Best when | Series example | Parallel example | |---|---|---|---| | $P = VI$ | always valid | &#8212; | &#8212; | | $P = I&#178;R$ | same I (series) | bigger R wins | misleading | | $P = V&#178;/R$ | same V (parallel) | misleading | smaller R wins | | Energy | $W = Pt = VIt$ | 1 kWh = 3.6 MJ | &#8212; |  ·  **Everyday power ratings (NEB context)** | Appliance | Power | Energy in 1 h | |---|---|---| | LED bulb | 9 W | 9 Wh | | Filament bulb | 60 W | 60 Wh | | Fan | 75 W | 75 Wh | | Heater | 1500 W | 1.5 kWh | | 1 unit (kWh) | 1000 W for 1 h | 3.6 MJ |  ·  ### Deep dive: one watt, three formulas — pick by what is shared Electrical work is $W = VIt$ and power $P = VI = I^2R = V^2/R$; the three forms are algebraically identical *only* when you know which quantity is common to the elements. In series, the same I flows, so comparing $I^2R$ is honest — the larger R dissipates more.…"
     },
     {
       "label": "More ideas",
       "text": "**Energy Units:** Electrical energy is measured in joules (SI) or kilowatt-hours (practical). $1 ext{ kWh} = 3.6 imes 10^6 ext{ J}$. Power (watts) is the *rate* of energy transfer, not energy itself.  ·  No verified PYQ; NEB-style practice (formulas 3m, ratings 2–3m).  ·  Why do kettles need thick short elements while transmission lines want thin long ones... or do they?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Series vs parallel — which R dissipates more <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"70\" y=\"70\" width=\"230\" height=\"110\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"185\" y=\"100\"…  ·  ## 3. Conceptual Relationships - **To Topic 99:** P = V²/R compares resistances at fixed voltage; P = I²R at fixed current. - **To Topic 103:** the internal drop Ir dissipates I²r inside the battery — power \"lost\". - **To heat (Units 9–11):** Joule heating feeds the same calorimetry equations.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the three power formulas, bulb-rating numericals and kWh conversions as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg 1 kWh = 3.6 MJ — the meter's unit <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"140\" y=\"70\" width=\"160\" height=\"80\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"220\" y=\"100\" fill=\"#1d4ed8\">1…"
     }
   ]
 }

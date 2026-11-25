@@ -87,7 +87,7 @@
     },
     {
       "label": "Study notes",
-      "text": "A spherical lens has two refracting surfaces that are portions of spheres. A convex lens is usually converging in air; a concave lens is usually diverging. Immersion in a medium with a different refractive index can alter this behaviour.  ·  Linear magnification m=hi/ho=v/u in the Cartesian lens convention compares image and object heights. Its magnitude gives size ratio; its sign indicates orientation.  ·  Angular magnification M=β/α compares the angle subtended at the eye with the instrument to that without it. For a simple magnifier with near point D, M≈1+D/f; for relaxed viewing at infinity, M≈D/f."
+      "text": "A spherical lens has two refracting surfaces that are portions of spheres. A convex lens is usually converging in air; a concave lens is usually diverging. Immersion in a medium with a different refractive index can alter this behaviour.  ·  ### Deep dive: two refractions in one glass A lens is two curved refracting surfaces back to back: rays bend entering the glass and bend again leaving it, so the net effect is convergence (convex) or divergence (concave).…  ·  **Lens vocabulary and sign conventions** | Term | Meaning | Sign (Cartesian) | |---|---|---| | Focal length f | distance from optical centre to focus | + convex, &#8722; concave | | Object distance u | object to lens | negative for real objects | | Image distance v | lens to image | + real (opposite side), &#8722; virtual | | Linear magnification | $m = v/u = h_i/h_o$ | +…"
     },
     {
       "label": "More ideas",
@@ -95,11 +95,15 @@
     },
     {
       "label": "More ideas",
-      "text": "A special case, such as a right angle or a steady temperature, has to be stated before it is used.  ·  A magnifier has f = 5.0 cm and D = 25 cm. Find the relaxed-eye magnification.  ·  Worked example: a magnifier with f=5.0 cm used at the conventional near point D=25 cm gives M≈1+25/5=6. A shorter focal length gives greater angular magnification."
+      "text": "A special case, such as a right angle or a steady temperature, has to be stated before it is used.  ·  A magnifier has f = 5.0 cm and D = 25 cm. Find the relaxed-eye magnification.  ·  **Convex lens image cases (u = object distance)** | Object position | Image position | Nature | Use | |---|---|---|---| | Beyond 2f | between f and 2f | real, inverted, smaller | camera | | At 2f | at 2f | real, inverted, same size | photocopier 1:1 | | Between f and 2f | beyond 2f | real, inverted, enlarged |…"
     },
     {
       "label": "More ideas",
-      "text": "The near point is a convention (often 25 cm for a normal eye). Real comfortable viewing distance varies; a magnifier also has a limited field of view and depth of focus."
+      "text": "```svg Convex lens — three principal rays building the real image <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><line x1=\"320\" y1=\"50\" x2=\"320\" y2=\"250\" stroke=\"#a16207\" stroke-width=\"6\"/><ellipse cx=\"320\" cy=\"150\" rx=\"14\" ry=\"100\"…  ·  Linear magnification m=hi/ho=v/u in the Cartesian lens convention compares image and object heights. Its magnitude gives size ratio; its sign indicates orientation.  ·  Angular magnification M=β/α compares the angle subtended at the eye with the instrument to that without it. For a simple magnifier with near point D, M≈1+D/f; for relaxed viewing at infinity, M≈D/f."
+    },
+    {
+      "label": "More ideas",
+      "text": "Worked example: a magnifier with f=5.0 cm used at the conventional near point D=25 cm gives M≈1+25/5=6. A shorter focal length gives greater angular magnification.  ·  The near point is a convention (often 25 cm for a normal eye). Real comfortable viewing distance varies; a magnifier also has a limited field of view and depth of focus.  ·  ```svg Angular magnification — angle with vs without the lens <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"110\" cy=\"130\" r=\"8\" fill=\"#111827\"/><text x=\"110\" y=\"165\" fill=\"#374151\">object</text><circle…"
     }
   ]
 }

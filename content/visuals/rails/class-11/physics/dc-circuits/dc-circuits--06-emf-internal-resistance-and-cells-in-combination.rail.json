@@ -55,7 +55,7 @@
     },
     {
       "label": "Derivation",
-      "text": "**Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the terminal voltage to drop when current flows.  ·  **Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load, $V < \\mathcal{E}$."
+      "text": "**EMF vs terminal voltage** | Situation | Terminal voltage V | Comment | |---|---|---| | Open circuit (I = 0) | $V = \\mathcal{E}$ | EMF measured directly | | Discharging | $V = \\mathcal{E} - Ir$ | less than EMF | | Charging | $V = \\mathcal{E} + Ir$ | more than EMF | | Short circuit (R = 0) | $I_{sc} = \\mathcal{E}/r$ | V = 0, dangerous current | | Maximum power to load | R = r | $P_{max} = \\mathcal{E}&#178;/4r$ |  ·  **Cells in combination (n identical cells)** | Combination | EMF | Internal resistance | Best for | |---|---|---|---| | Series (n cells) | $n\\mathcal{E}$ | $nr$ | high-voltage needs | | Parallel (n cells) | $\\mathcal{E}$ | $r/n$ | high-current needs | | Mixed grid (m rows &#215; n) | $n\\mathcal{E}$ | $nr/m$ | matched to load R = nr/m |"
     },
     {
       "label": "Shortcut",
@@ -79,19 +79,23 @@
     },
     {
       "label": "Study notes",
+      "text": "### Deep dive: the terminal voltage is what the circuit actually gets A real cell is an ideal EMF in series with an internal resistance $r$. When it drives current I, the terminals show $V = \\mathcal{E} - Ir$ — less than the EMF, and the difference $Ir$ is heat wasted inside the cell.…  ·  ```svg Real cell = EMF + internal r — terminal voltage drops with I <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"100\" y=\"100\" width=\"90\" height=\"70\" rx=\"8\" fill=\"#fefce8\" stroke=\"#a16207\"/><text x=\"145\" y=\"130\" fill=\"#a16207\">EMF &#8496;</text><text x=\"145\" y=\"150\"…  ·  **Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the terminal voltage to drop when current flows."
+    },
+    {
+      "label": "More ideas",
+      "text": "A fresh battery has a high open-circuit voltage (close to its EMF) but drops significantly under load if its internal resistance has increased with age. That is why old batteries seem weak.  ·  Find the external resistance for maximum power transfer to a cell with EMF 12 V and internal resistance 2 $\\\\\\Omega$. Find the maximum power. Solution: $R = r = 2\\\\\\\\,$\\Omega$. $I = 12/(2+2) = 3$ A. $P_{max} = I^2 R = 9 \\ imes 2 = 18$ W. Alternatively $P_{max} = \\\\\\\\mathcal{E}^2/(4r) = 144/8 = 18$ W.  ·  **Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load, $V < \\mathcal{E}$."
+    },
+    {
+      "label": "More ideas",
       "text": "**Cells in series:** $\\mathcal{E}_{total} = \\mathcal{E}_1 + \\mathcal{E}_2 + \\ldots$, $r_{total} = r_1 + r_2 + \\ldots$. Series adds both EMF and internal resistance.  ·  **Cells in parallel:** $\\mathcal{E}_{total} = \\mathcal{E}$ (if all equal), $r_{total} = r/n$ for $n$ identical cells. Parallel reduces internal resistance, allowing higher current delivery.  ·  **Maximum power transfer:** the power delivered to an external load $R$ is maximum when $R = r$. The maximum power is $P_{max} = \\mathcal{E}^2/(4r)$."
     },
     {
       "label": "More ideas",
-      "text": "A fresh battery has a high open-circuit voltage (close to its EMF) but drops significantly under load if its internal resistance has increased with age. That is why old batteries seem weak.  ·  Find the external resistance for maximum power transfer to a cell with EMF 12 V and internal resistance 2 $\\\\\\Omega$. Find the maximum power. Solution: $R = r = 2\\\\\\\\,$\\Omega$. $I = 12/(2+2) = 3$ A. $P_{max} = I^2 R = 9 \\ imes 2 = 18$ W. Alternatively $P_{max} = \\\\\\\\mathcal{E}^2/(4r) = 144/8 = 18$ W.  ·  **Current in a simple circuit:** $I = \\mathcal{E}/(R + r)$, where $R$ is the external resistance and $r$ is the internal resistance."
+      "text": "**Current in a simple circuit:** $I = \\mathcal{E}/(R + r)$, where $R$ is the external resistance and $r$ is the internal resistance.  ·  **Efficiency:** the efficiency of power transfer is $\\eta = R/(R + r)$. Maximum efficiency approaches 100% when $R \\gg r$, but maximum power requires $R = r$.  ·  **Short circuit current:** when $R = 0$, $I_{sc} = \\\\\\\\mathcal{E}/r$. This can be very large and dangerous, causing heating and damage."
     },
     {
       "label": "More ideas",
-      "text": "**Efficiency:** the efficiency of power transfer is $\\eta = R/(R + r)$. Maximum efficiency approaches 100% when $R \\gg r$, but maximum power requires $R = r$.  ·  **Short circuit current:** when $R = 0$, $I_{sc} = \\\\\\\\mathcal{E}/r$. This can be very large and dangerous, causing heating and damage.  ·  **Cells with different EMFs:** when cells with different EMFs are connected in parallel, circulating currents flow between them. This can damage cells and should be avoided."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Real cell behavior:** as a cell discharges, its EMF slowly decreases and its internal resistance increases. An old battery reads lower than its rated voltage even when not loaded."
+      "text": "**Cells with different EMFs:** when cells with different EMFs are connected in parallel, circulating currents flow between them. This can damage cells and should be avoided.  ·  **Real cell behavior:** as a cell discharges, its EMF slowly decreases and its internal resistance increases. An old battery reads lower than its rated voltage even when not loaded.  ·  ```svg V = E - Ir — the terminal-voltage line <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"210\" x2=\"580\" y2=\"210\"/><line x1=\"80\" y1=\"210\" x2=\"80\" y2=\"50\"/></g><line x1=\"100\" y1=\"80\"…"
     }
   ]
 }

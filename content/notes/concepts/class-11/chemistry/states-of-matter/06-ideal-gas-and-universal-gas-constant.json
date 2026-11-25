@@ -26,7 +26,10 @@
     "• PV = nRT is exact only for an ideal gas; real gases deviate measurably, and grossly at high pressure or near the critical temperature.",
     "• Both central assumptions are unattainable — molecules always have finite size and always attract one another (otherwise no gas could be liquefied).",
     "• It cannot describe condensation, critical phenomena or the liquid state, and fails for associating (H-bonded) or highly polar gases even at ordinary pressure.",
-    "• R is constant only for an ideal gas; for a real gas PV/T varies with pressure, so the van der Waals equation or Z = PV/nRT corrections are needed."
+    "• R is constant only for an ideal gas; for a real gas PV/T varies with pressure, so the van der Waals equation or Z = PV/nRT corrections are needed.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ An ideal gas is merely a light gas such as hydrogen. ✅ Ideality is about behaviour (no forces, no molecular volume), not mass; hydrogen merely approaches it best.",

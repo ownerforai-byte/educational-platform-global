@@ -88,11 +88,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 46:** everything derives from ΔL = αLΔT. - **To Topic 48:** liquids have only cubical expansion (no fixed shape). - **To density:** heated solid's density falls as $\\rho_T = \\rho_0/(1+\\gamma\\Delta T)$.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank; the related linear-expansion questions (2019–2024) belong to Topic 46. Practise the β = 2α, γ = 3α derivations and area/volume numericals as **NEB-style practice**. ### 4.2 Likely question forms 1. Show that β = 2α (3m). 2.…"
+      "text": "### Deep dive: derive &#946; = 2&#945; and &#947; = 3&#945; yourself A square plate of side $L_0$ heated by $\\Delta T$ grows to $L = L_0(1+\\alpha\\Delta T)$ on each side, so $A = L^2 = A_0(1+\\alpha\\Delta T)^2 \\approx A_0(1+2\\alpha\\Delta T)$ — the $\\alpha^2$ term is negligibly small, giving $\\beta = 2\\alpha$.…  ·  **From length to area to volume** | Step | Exact | First-order | |---|---|---| | Side | $L = L_0(1+\bb1lpha\\ gammadT)$ | &#8212; | | Area | $A = A_0(1+\bb1lpha\\ gammadT)^2$ | $A_0(1+2\bb1lpha\\ gammadT)$, so \bb2 = 2\bb1lpha | | Volume | $V = V_0(1+\bb1lpha\\ gammadT)^3$ | $V_0(1+3\bb1lpha\\ gammadT)$, so \u0013b3 = 3\bb1lpha | | Density | $\u001c1 = \u001c1_0/(1+\u0013b3\\ gammadT)$ | $\u001c1_0(1&#8722;\u0013b3\\…  ·  **Typical coefficients (/K, near room temperature)** | Material | \bb1lpha (linear) | \u0013b3 (cubical) | |---|---|---| | Steel | 12&#215;10&#8315;&#8310; | 36&#215;10&#8315;&#8310; | | Copper | 17&#215;10&#8315;&#8310; | 51&#215;10&#8315;&#8310; | | Aluminium | 23&#215;10&#8315;&#8310; | 69&#215;10&#8315;&#8310; | | Glass | 9&#215;10&#8315;&#8310; | 27&#215;10&#8315;&#8310; | |…"
     },
     {
       "label": "More ideas",
       "text": "Solid Container: For liquid expansion, container expansion must be accounted for to get real expansion.  ·  No verified PYQ; NEB-style practice (derivations 3m, numericals 3m).  ·  Why does a tight metal lid loosen under hot water?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Cube of side L — three directions triple the linear effect <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"180\" y=\"70\" width=\"120\" height=\"120\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"240\" y=\"215\"…  ·  ## 3. Conceptual Relationships - **To Topic 46:** everything derives from ΔL = αLΔT. - **To Topic 48:** liquids have only cubical expansion (no fixed shape). - **To density:** heated solid's density falls as $\\rho_T = \\rho_0/(1+\\gamma\\Delta T)$.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank; the related linear-expansion questions (2019–2024) belong to Topic 46.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Density drops as volume grows — why hot water rises <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"120\" y=\"70\" width=\"150\" height=\"90\" rx=\"8\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"195\" y=\"120\"…"
     }
   ]
 }

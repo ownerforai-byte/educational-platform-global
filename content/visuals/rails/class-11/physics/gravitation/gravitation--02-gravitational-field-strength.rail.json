@@ -94,7 +94,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 1. Topic Introduction — Gravity as a Field Instead of asking \"what force acts between two masses?\", field theory asks \"what force would act on a unit mass at this point in space?\" The answer — the gravitational field strength — turns gravity into a property of space itself, ready to act on whatever mass arrives.  ·  ## 2. Fundamental Concepts ### 2.1 Definitions **Gravitational field:** the region of space around a mass in which another mass experiences a gravitational force. **Gravitational field strength ($\\vec g$):** the gravitational force per unit mass at a point: $$\\vec g = \\frac{\\vec F}{m} \\quad \\text{(N/kg, numerically equal to m/s²)}$$ For a point mass $M$, at distance $r$: $$g =…  ·  ## 3. Conceptual Relationships - **To Topic 28:** field strength is the law of gravitation rewritten per unit mass. - **To Topic 31:** $g$ at height/depth is this formula evaluated at different $r$. - **To electric fields:** $g = F/m$ mirrors $\\vec E = \\vec F/q$ — same field concept, different source property (mass vs charge).…"
+      "text": "## 1. Topic Introduction — Gravity as a Field Instead of asking \"what force acts between two masses?\", field theory asks \"what force would act on a unit mass at this point in space?\" The answer — the gravitational field strength — turns gravity into a property of space itself, ready to act on whatever mass arrives.  ·  ## 2. Fundamental Concepts ### 2.1 Definitions **Gravitational field:** the region of space around a mass in which another mass experiences a gravitational force. **Gravitational field strength ($\\vec g$):** the gravitational force per unit mass at a point: $$\\vec g = \\frac{\\vec F}{m} \\quad \\text{(N/kg, numerically equal to m/s²)}$$ For a point mass $M$, at distance $r$: $$g =…  ·  **Field strength g — how it varies** | Location | Distance from centre | g value | Comment | |---|---|---|---| | Earth's surface | $r = R$ | &#8776; 9.8 N/kg | standard value | | Height h above surface | $r = R + h$ | $g' = gR&#178;/(R+h)&#178;$ | falls as 1/r&#178; | | At 2R from centre | doubled | g/4 | inverse-square check | | At depth d | $r = R - d$ | $g' = g(1 - d/R)$ |…"
     },
     {
       "label": "More ideas",
@@ -110,7 +110,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank — the related questions (variation of g, 2021) belong to Topic 31. Practise the definition and the $GM/r^2$ evaluation as **NEB-style practice**.…"
+      "text": "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity.  ·  **Field language NEB expects** | Term | Definition | Unit | |---|---|---| | Gravitational field strength | force per unit test mass | N/kg (= m/s&#178;) | | Field line | path a test mass would follow | &#8212; | | Superposition | $\\vec{g}_{net} = \\sum \\vec{g}_i$ | vector sum | | Point of zero field | fields from two…  ·  ### Deep dive: gravity as a field, not a contact push The field concept lets gravity act across empty space: at every point around a mass, the field strength $g = GM/r^2$ assigns the acceleration a unit mass would feel there. Two structural facts follow.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Field lines around Earth — density falls as 1/r² <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><circle cx=\"320\" cy=\"150\" r=\"55\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"320\" y=\"155\" text-anchor=\"middle\" fill=\"#1d4ed8\">Earth</text><g…  ·  ## 3. Conceptual Relationships - **To Topic 28:** field strength is the law of gravitation rewritten per unit mass. - **To Topic 31:** $g$ at height/depth is this formula evaluated at different $r$.…  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank — the related questions (variation of g, 2021) belong to Topic 31. Practise the definition and the $GM/r^2$ evaluation as **NEB-style practice**.…"
     }
   ]
 }

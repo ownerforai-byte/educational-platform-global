@@ -100,7 +100,7 @@
     },
     {
       "label": "Study notes",
-      "text": "**Superficial (area) expansion:** When a solid sheet is heated, its area increases. $\\Delta A = A_0 \\beta \\Delta T$, where $\\beta$ is the coefficient of superficial expansion.  ·  **Cubical (volume) expansion:** When a solid is heated, its volume increases. $\\Delta V = V_0 \\gamma \\Delta T$, where $\\gamma$ is the coefficient of cubical expansion.  ·  **Relation for isotropic solids:** $\\alpha : \\beta : \\gamma = 1 : 2 : 3$. That is, $\\beta = 2\\alpha$ and $\\gamma = 3\\alpha$. This holds for isotropic materials (same properties in all directions)."
+      "text": "**Superficial (area) expansion:** When a solid sheet is heated, its area increases. $\\Delta A = A_0 \\beta \\Delta T$, where $\\beta$ is the coefficient of superficial expansion.  ·  ### Deep dive: one coefficient, three powers A solid expands by the same fractional amount in every direction, so the three coefficients are not independent: $\beta = 2\\ gammalpha$ and $\u0013b3 = 3\\ gammalpha$ (to first order). Each area grows as $A = A_0(1 + \beta\\ gammadT)$ and each volume as $V = V_0(1 + \u0013b3\\ gammadT)$.…  ·  **The three expansion coefficients** | Expansion | Coefficient | Relation | Example (aluminium) | |---|---|---|---| | Linear | \bb1lpha | &#8212; | 23&#215;10&#8315;&#8310; /K | | Superficial | \bb2 | \bb2 = 2\bb1lpha | 46&#215;10&#8315;&#8310; /K | | Cubical | \u0013b3 | \u0013b3 = 3\bb1lpha | 69&#215;10&#8315;&#8310; /K |"
     },
     {
       "label": "More ideas",

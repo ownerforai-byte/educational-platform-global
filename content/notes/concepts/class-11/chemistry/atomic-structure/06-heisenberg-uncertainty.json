@@ -33,7 +33,10 @@
     "### Relation to the probability concept",
     "Because r and p cannot both be sharp, the electron's state is described by ψ with |ψ|² = probability density. The 1s radial probability peaks at 0.529 Å — Bohr's radius reappears as the *most probable* distance. 'Electron cloud', boundary surfaces and atomic radii averages all follow from this probabilistic description.",
     "### Limits of the principle",
-    "It matters only for microscopic particles: for a 1 g body at Δx = 10⁻¹⁰ m, Δv ≈ 10⁻²⁴ m s⁻¹ — utterly negligible, so classical mechanics remains valid for everyday objects."
+    "It matters only for microscopic particles: for a 1 g body at Δx = 10⁻¹⁰ m, Δv ≈ 10⁻²⁴ m s⁻¹ — utterly negligible, so classical mechanics remains valid for everyday objects.",
+    "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
   ],
   "confusion": [
     "❌ The principle is due to clumsy instruments. ✅ It is fundamental; better instruments cannot beat h/4π.",

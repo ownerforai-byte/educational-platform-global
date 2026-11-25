@@ -91,11 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 98:** Ohm's law emerges from drift: v_d = μE gives I ∝ E ∝ V. - **To Topic 100:** Ohmic conductors keep R constant; non-ohmic ones don't. - **To series/parallel (Topic 101):** R values combine via the rules.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the R = ρl/A numericals and the stretching problem as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. State Ohm's law and its limitations (3m). 2. R = ρl/A numerical (2–3m). 3.…"
+      "text": "**R, ρ and σ — who owns which factor** | Quantity | Formula | Depends on | Unit | |---|---|---|---| | Resistance R | $V/I$ | material + geometry | ohm (&#937;) | | Resistivity ρ | $RA/L$ | material + temperature only | &#937;m | | Conductivity σ | 1/ρ = neμ | carrier density &#215; mobility | S/m | | Temperature effect | $\\rho = \\rho_0(1+\\alpha\\Delta T)$ | &#945; &gt; 0…  ·  **Geometry effects on a wire's resistance** | Change | Effect on R | Reason | |---|---|---| | Length doubled | R doubles | R &#8746; L | | Diameter doubled | R quarters | A &#8746; d&#178; | | Same mass, stretched to 2L | R &#215;4 | A halves too | | Same volume, drawn to 3L | R &#215;9 | A = V/L shrinks 3&#215; |  ·  ### Deep dive: resistance is geometry plus material Ohm's law, $V = IR$ at constant temperature, is a *material* statement about proportionality, not a definition of resistance. The resistance of a specimen separates into two factors: $R = \\rho L/A$ — resistivity $\\rho$ is the material's property (copper $1.7\\times10^{-8}\\,\\Omega$m, nichrome ~100× larger), while $L/A$ is pure…"
     },
     {
       "label": "More ideas",
       "text": "**Conductivity Definition:** Conductivity ($\\sigma = 1/ ho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials.  ·  No verified PYQ; NEB-style practice (statement 3m, R = ρl/A numericals 2–3m).  ·  Why are transmission cables thick?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg R = ρL/A — long thin wire resists, short fat wire conducts <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"80\" y=\"90\" width=\"220\" height=\"24\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"190\" y=\"80\"…  ·  ## 3. Conceptual Relationships - **To Topic 98:** Ohm's law emerges from drift: v_d = μE gives I ∝ E ∝ V. - **To Topic 100:** Ohmic conductors keep R constant; non-ohmic ones don't. - **To series/parallel (Topic 101):** R values combine via the rules.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the R = ρl/A numericals and the stretching problem as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg V-I straight line through the origin — Ohm's law <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"210\" x2=\"580\" y2=\"210\"/><line x1=\"80\" y1=\"210\" x2=\"80\" y2=\"50\"/></g><line x1=\"100\"…"
     }
   ]
 }

@@ -97,7 +97,15 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg Order from experiment — doubling [A] and watching the rate <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g font-size=\"14\" fill=\"#111827\"><text x=\"60\" y=\"70\">rate = k[A]^m[B]^n (m, n from experiment)</text><text x=\"60\" y=\"105\">[A]…"
+      "text": "```svg Order from experiment — doubling [A] and watching the rate <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"14\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g font-size=\"14\" fill=\"#111827\"><text x=\"60\" y=\"70\">rate = k[A]^m[B]^n (m, n from experiment)</text><text x=\"60\" y=\"105\">[A]…  ·  **Scope.** Rate law and order of reaction — Chemical Kinetics, Chemistry (class-12-notes).  ·  **Tested.** define it · list: rate law, order of reaction · one worked example · one misconception each."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Fact.** Rate law: rate = k[A]ᵐ[B]ⁿ (order from experiment, not formula). Zero/first/second order have distinct integrated forms.  ·  **Fact.** First order: t = (2.303/k) log([A]₀/[A]); t_½ = 0.693/k (independent of concentration).  ·  **Fact.** Arrhenius: k = Ae^(−Ea/RT); Ea = 2.303R (t₂/t₁)·ln(k₂/k₁)·(T₁T₂)/(T₂−T₁)."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Order of reaction.** one-line definition + one-line exam use."
     }
   ]
 }

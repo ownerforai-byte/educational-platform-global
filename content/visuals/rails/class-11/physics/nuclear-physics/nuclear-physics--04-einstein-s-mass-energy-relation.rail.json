@@ -91,11 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 109:** mass defect × c² = binding energy — the relation's nuclear workhorse role. - **To Topic 110:** pair creation and annihilation are mass ⇄ energy at the particle level. - **To Topic 111:** fission and fusion release energy as lost mass.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the 931.5 MeV/u conversion and the numericals as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. State Einstein's mass-energy relation and explain it (2–3m). 2.…"
+      "text": "### Deep dive: mass defect is the binding energy Einstein's relation $E = mc^2$ says mass is a form of energy with an enormous exchange rate: 1 kg ↔ 9×10¹⁶ J, and 1 u ↔ 931.5 MeV. In nuclei the assembled mass is *less* than the sum of its parts — the mass defect $\\Delta m = (Zm_p + Nm_n) - M_{nucleus}$ — and that missing mass is the binding energy $BE = \\Delta mc^2$ that holds…  ·  **Mass–energy conversion factors** | Quantity | Value | Use | |---|---|---| | 1 u in kg | 1.6605&#215;10&#8315;&#178;&#8311; kg | nuclear masses | | 1 u in energy | 931.5 MeV | binding-energy sums | | 1 kg in energy | 9&#215;10&#185;&#8310; J | E = mc&#178; macroscopic | | Electron rest energy | 0.511 MeV | pair creation needs 1.022 MeV | | Proton rest energy | 938.3 MeV |…  ·  **Binding energy per nucleon — the fusion/fission map** | Nucleus | BE/A (MeV) | Energy direction | |---|---|---| | &#178;H (deuteron) | &#8776; 1.1 | fusion releases | | &#8308;He | &#8776; 7.1 | fusion releases strongly | | &#8322;&#8310;Fe (iron, A &#8776; 56) | &#8776; 8.8 (peak) | neither — most bound | | &#178;&#8321;&#8320;U | &#8776; 7.6 | fission releases |"
     },
     {
       "label": "More ideas",
       "text": "Conservation: Mass-energy is conserved, not mass and energy separately. In E = mc², mass converts to energy and vice versa.  ·  No verified PYQ; NEB-style practice (statement 2–3m, conversions 2–3m).  ·  Why did it take a nuclear age to test E = mc²?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Mass defect — assembled nucleus is lighter than its parts <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"150\" cy=\"100\" r=\"14\" fill=\"#991b1b\"/><text x=\"150\" y=\"140\" fill=\"#991b1b\">2…  ·  ## 3. Conceptual Relationships - **To Topic 109:** mass defect × c² = binding energy — the relation's nuclear workhorse role. - **To Topic 110:** pair creation and annihilation are mass ⇄ energy at the particle level. - **To Topic 111:** fission and fusion release energy as lost mass.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the 931.5 MeV/u conversion and the numericals as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg BE/A curve — fusion below iron, fission above <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"220\" x2=\"580\" y2=\"220\"/><line x1=\"80\" y1=\"220\" x2=\"80\" y2=\"50\"/></g><path d=\"M100 200…"
     }
   ]
 }

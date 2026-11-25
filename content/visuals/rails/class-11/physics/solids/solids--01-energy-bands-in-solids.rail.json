@@ -87,7 +87,7 @@
     },
     {
       "label": "Study notes",
-      "text": "When many atoms form a solid, interactions split atomic energy levels into closely spaced allowed bands separated by forbidden energy gaps. Electrons cannot occupy energies in an ideal band gap.  ·  The valence band contains bonding electrons; the conduction band contains mobile carriers. The gap Eg=Ec−Ev and the band filling help explain conductivity.  ·  Metals have partially filled bands or overlapping bands. Insulators have a large gap and very few room-temperature carriers. Semiconductors have a smaller gap, so thermal or optical excitation can promote electrons into the conduction band."
+      "text": "When many atoms form a solid, interactions split atomic energy levels into closely spaced allowed bands separated by forbidden energy gaps. Electrons cannot occupy energies in an ideal band gap.  ·  The valence band contains bonding electrons; the conduction band contains mobile carriers. The gap Eg=Ec−Ev and the band filling help explain conductivity.  ·  ### Deep dive: bands, gaps and the conductor/insulator switch When N atoms bond into a solid, each atomic level splits into N closely spaced levels — effectively a continuous *band*. The valence band holds the bonding electrons; the conduction band is the first empty band where electrons can move freely.…"
     },
     {
       "label": "More ideas",
@@ -95,7 +95,15 @@
     },
     {
       "label": "More ideas",
-      "text": "In an intrinsic semiconductor, promoting an electron leaves a hole in the valence band. Both the electron and the hole can carry current; heating can therefore increase carrier concentration.  ·  A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors."
+      "text": "**Band pictures of the three classes** | Class | Band situation | Gap Eg | Behaviour with T | |---|---|---|---| | Conductor | valence and conduction overlap | none | resistance rises (metal) | | Semiconductor | small gap between bands | &#8776; 1 eV (Si 1.1) | resistance falls | | Insulator | large gap | &gt; 3 eV…  ·  **Band-gap energies at 300 K** | Material | Eg (eV) | Use | |---|---|---| | Ge | 0.66 | early transistors, IR detectors | | Si | 1.12 | workhorse of electronics | | GaAs | 1.43 | LEDs, lasers | | Diamond | 5.5 | insulator / UV optics |  ·  ```svg Energy bands — gap size decides the class <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"70\" y=\"150\" width=\"140\" height=\"50\" fill=\"#bfdbfe\" stroke=\"#1d4ed8\"/><rect x=\"70\" y=\"110\" width=\"140\" height=\"30\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "Metals have partially filled bands or overlapping bands. Insulators have a large gap and very few room-temperature carriers. Semiconductors have a smaller gap, so thermal or optical excitation can promote electrons into the conduction band.  ·  In an intrinsic semiconductor, promoting an electron leaves a hole in the valence band. Both the electron and the hole can carry current; heating can therefore increase carrier concentration.  ·  A photon can excite an electron across the gap if hν≥Eg. This underlies photoconductivity and semiconductor photodetectors."
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Temperature switch: metal vs semiconductor resistance <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M100 70 C 220 90, 380 130, 540 180\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.5\"/><path d=\"M100…"
     }
   ]
 }

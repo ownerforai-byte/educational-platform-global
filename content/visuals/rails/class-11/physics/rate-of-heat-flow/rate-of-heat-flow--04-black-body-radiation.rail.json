@@ -89,11 +89,15 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 58:** the black body is the ideal radiator defined there. - **To Topic 60:** Stefan's law is the integral of the black-body spectrum. - **To modern physics:** Planck's fix of the ultraviolet catastrophe launched quantum mechanics (1900). - **To cosmology:** the CMB at 2.7 K is the most perfect black body known.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the black-body definition, Wien's law and the spectrum description as **NEB-style practice**. ### 4.2 Likely question forms 1. What is a black body? How is it realised in practice? (3m) 2.…"
+      "text": "### Deep dive: the perfect emitter that defines the scale A black body absorbs every wavelength falling on it and, by Kirchhoff's logic, is also the best possible emitter at every wavelength. Its spectrum is a smooth hump (Planck's law) whose *total* power obeys Stefan–Boltzmann, $P = e\\sigma AT^4$ with $\\sigma = 5.67\\times10^{-8}$ W m⁻² K⁻⁴; the *peak* wavelength obeys Wien's…  ·  **The two radiation laws** | Law | Statement | Reads as | |---|---|---| | Stefan&#8211;Boltzmann | $P = e\\sigma AT^4$ | total power &#8746; T&#8308; | | Wien | $\\lambda_{max}T = 2.9&#215;10^&#8722;3$ m&#183;K | hotter &#8594; peak shifts bluer | | Kirchhoff | good absorber = good emitter | e = 1 for a black body | | Prevost theory | all bodies radiate continuously | net…  ·  **Peak wavelengths across temperature** | T (K) | λ_max | Where the peak sits | |---|---|---| | 300 (room) | &#8776; 9.7 &#956;m | far infrared (invisible) | | 1000 (dull red) | &#8776; 2.9 &#956;m | near infrared + red tail | | 3000 (tungsten lamp) | &#8776; 970 nm | red-heavy visible | | 5800 (Sun) | &#8776; 500 nm | middle of the visible band |"
     },
     {
       "label": "More ideas",
-      "text": "Why do stars' colours tell their temperatures?"
+      "text": "Why do stars' colours tell their temperatures?  ·  ```svg Black-body spectra — hotter peaks shift bluer and taller <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"220\" x2=\"580\" y2=\"220\"/><line x1=\"80\" y1=\"220\" x2=\"80\" y2=\"50\"/></g><path…  ·  ## 3. Conceptual Relationships - **To Topic 58:** the black body is the ideal radiator defined there. - **To Topic 60:** Stefan's law is the integral of the black-body spectrum. - **To modern physics:** Planck's fix of the ultraviolet catastrophe launched quantum mechanics (1900).…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the black-body definition, Wien's law and the spectrum description as **NEB-style practice**. ### 4.2 Likely question forms 1.…  ·  ```svg Doubling absolute temperature ×16 the radiated power <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"80\" y=\"70\" width=\"220\" height=\"90\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"190\" y=\"100\"…"
     }
   ]
 }

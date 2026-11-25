@@ -91,11 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 108:** both processes are E = mc² — creation converts energy to mass, annihilation the reverse. - **To Topic 109:** rest energies (0.51 MeV per particle) set the thresholds. - **To photons (Unit 6):** the photon's energy and momentum bookkeeping governs both.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the thresholds, the conservation arguments and the numericals as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. Explain pair creation and annihilation with equations (3m). 2.…"
+      "text": "### Deep dive: energy ↔ matter, both directions with the books balanced Pair creation turns a photon into a particle–antiparticle pair; annihilation turns the pair back into photons. Both are governed by strict conservation laws.…  ·  **Conservation laws in pair creation and annihilation** | Law | Pair creation (&#947; &#8594; e&#8315;e&#8314;) | Annihilation (e&#8315;e&#8314; &#8594; &#947;&#947;) | |---|---|---| | Energy | $E_&#947; &#8805; 1.022$ MeV | two photons, 0.511 MeV each (slow pair) | | Momentum | needs a nearby nucleus | photons back-to-back | | Charge | +1 + (&#8722;1) = 0 | 0 = 0 + 0 | |…  ·  **Everyday and cosmic appearances** | Process | Where seen | Signature | |---|---|---| | Pair creation | cosmic-ray showers, near nuclei | tracks from a single point | | Annihilation | positron emission tomography (PET) | two 511 keV &#947; rays opposite | | &#946;&#8314; decay source | proton-rich nuclei | positron then annihilation | | Pair instability | massive stars | core…"
     },
     {
       "label": "More ideas",
       "text": "Photon Disappears: In pair production, the photon is completely absorbed — it does not survive.  ·  No verified PYQ; NEB-style practice (processes 3m, thresholds 2m).  ·  Why can't pair production happen in a perfect vacuum?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Pair creation and annihilation — the reversible bookkeeping <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M100 140 L 300 140\" stroke=\"#a16207\" stroke-width=\"2.5\"/><text x=\"180\" y=\"125\"…  ·  ## 3. Conceptual Relationships - **To Topic 108:** both processes are E = mc² — creation converts energy to mass, annihilation the reverse. - **To Topic 109:** rest energies (0.51 MeV per particle) set the thresholds. - **To photons (Unit 6):** the photon's energy and momentum bookkeeping governs both.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the thresholds, the conservation arguments and the numericals as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg PET scan principle — annihilation photons detected in pairs <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><ellipse cx=\"320\" cy=\"130\" rx=\"110\" ry=\"70\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><text x=\"320\" y=\"130\"…"
     }
   ]
 }

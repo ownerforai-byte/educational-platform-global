@@ -88,7 +88,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 1. Topic Introduction — Superposition: Adding Forces Vectorially With three or more charges, every pair interacts independently. Coulomb's law plus the **principle of superposition** — add all pairwise forces as vectors — handles any configuration, from electron clouds to charged spheres.  ·  ## 2. Fundamental Concepts ### 2.1 Principle of superposition The force on any charge in a system equals the **vector sum** of the forces each other charge would exert alone: $$\\vec{F}_1 = \\vec{F}_{12} + \\vec{F}_{13} + \\vec{F}_{14} + \\cdots$$ - Each pairwise force obeys Coulomb's law independently — the presence of other charges does not modify any single pair's force.…  ·  ## 3. Conceptual Relationships - **To Topic 85:** superposition takes Coulomb's two-charge law as its building block. - **To electric field (Unit 20):** the same superposition principle applies to field vectors. - **To vectors (Unit 2):** component resolution is the practical tool."
+      "text": "## 1. Topic Introduction — Superposition: Adding Forces Vectorially With three or more charges, every pair interacts independently. Coulomb's law plus the **principle of superposition** — add all pairwise forces as vectors — handles any configuration, from electron clouds to charged spheres.  ·  ## 2. Fundamental Concepts ### 2.1 Principle of superposition The force on any charge in a system equals the **vector sum** of the forces each other charge would exert alone: $$\\vec{F}_1 = \\vec{F}_{12} + \\vec{F}_{13} + \\vec{F}_{14} + \\cdots$$ - Each pairwise force obeys Coulomb's law independently — the presence of other charges does not modify any single pair's force.…  ·  **Superposition — the working recipe** | Step | Action | Note | |---|---|---| | 1 | draw each pair force on the target charge | arrows away from like, toward unlike | | 2 | compute magnitudes $F = kq_1q_2/r&#178;$ | ignore other charges for each pair | | 3 | resolve into components | axes along the geometry | | 4 | add components, recombine | $F = \\sqrt{F_x&#178;+F_y&#178;}$ |…"
     },
     {
       "label": "More ideas",
@@ -96,7 +96,15 @@
     },
     {
       "label": "More ideas",
-      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise superposition numericals and the equilateral-triangle result as **NEB-style practice** (3–4m). ### 4.2 Likely question forms 1.…"
+      "text": "State the limit / condition where a formula or rule stops being valid before applying it.  ·  Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.  ·  **Classic symmetric arrangements** | Arrangement | Net force on centre charge | Reason | |---|---|---| | Equal charges at square corners, test at centre | zero | opposite pairs cancel | | Two equal like charges, test at midpoint | zero | equal and opposite | | Two equal unlike charges, test at midpoint | zero | equal…"
+    },
+    {
+      "label": "More ideas",
+      "text": "### Deep dive: superposition is vector addition of Coulomb forces Coulomb's law gives the force between one *pair* of charges; the principle of superposition extends it to any number: the net force on a charge is the vector sum of the pair forces, each computed as if the others were absent.…  ·  ```svg Superposition — three pair forces add as vectors <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"200\" cy=\"80\" r=\"10\" fill=\"#991b1b\"/><circle cx=\"440\" cy=\"80\" r=\"10\" fill=\"#991b1b\"/><circle cx=\"320\"…  ·  ## 3. Conceptual Relationships - **To Topic 85:** superposition takes Coulomb's two-charge law as its building block. - **To electric field (Unit 20):** the same superposition principle applies to field vectors. - **To vectors (Unit 2):** component resolution is the practical tool."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise superposition numericals and the equilateral-triangle result as **NEB-style practice** (3–4m). ### 4.2 Likely question forms 1.…  ·  ```svg Square of charges — centre charge feels zero net force <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"240\" cy=\"70\" r=\"9\" fill=\"#991b1b\"/><circle cx=\"400\" cy=\"70\" r=\"9\" fill=\"#991b1b\"/><circle…"
     }
   ]
 }

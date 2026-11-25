@@ -94,11 +94,15 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Unit 4 (torque and equilibrium):** the COG is where weight's torque acts; equilibrium requires it above the base. - **To momentum conservation (Topic 12):** $\\vec F_{ext} = M\\vec a_{COM}$ — Newton's second law for systems. - **To satellites:** two-body orbits are rotations about the common COM (barycentre).  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the definitions, the two-body calculation and the COM-vs-COG distinction as **NEB-style practice**. ### 4.2 Likely question forms 1. Distinguish centre of mass and centre of gravity (2–3m). 2.…"
+      "text": "**Centre of mass vs centre of gravity** | Aspect | Centre of mass | Centre of gravity | |---|---|---| | Definition | mass-weighted average position | point where weight resultant acts | | Depends on | mass distribution only | mass distribution + field | | Uniform field | coincide | coincide | | Non-uniform field | unchanged | shifts slightly | | Use in problems | $F =…  ·  **Centre of mass of standard bodies** | Body (uniform) | Centre of mass location | Note | |---|---|---| | Rod | midpoint | on the axis | | Triangle (lamina) | intersection of medians | 1/3 from each side's midpoint | | Disc / sphere | geometric centre | symmetry | | Two masses m, 2m | 2/3 of the way to the 2m mass | closer to heavier mass | | L-shaped / composite | split into…  ·  ### Deep dive: one point that behaves like the whole body The centre of mass is the mass-weighted average position, $\\vec{r}_{cm} = \\sum m_i\\vec{r}_i/\\sum m_i$ — the single point whose motion obeys $\\vec{F}_{net} = M\\vec{a}_{cm}$ exactly, no matter how the body spins or deforms.…"
     },
     {
       "label": "More ideas",
-      "text": "Why does a leaning tower not topple until its COG line leaves the base?"
+      "text": "Why does a leaning tower not topple until its COG line leaves the base?  ·  ```svg Centre of mass of two masses — closer to the heavier one <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><line x1=\"120\" y1=\"120\" x2=\"520\" y2=\"120\" stroke=\"#9ca3af\" stroke-width=\"2\"/><circle cx=\"120\" cy=\"120\" r=\"14\" fill=\"#1d4ed8\"/><text…  ·  ## 3. Conceptual Relationships - **To Unit 4 (torque and equilibrium):** the COG is where weight's torque acts; equilibrium requires it above the base. - **To momentum conservation (Topic 12):** $\\vec F_{ext} = M\\vec a_{COM}$ — Newton's second law for systems.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the definitions, the two-body calculation and the COM-vs-COG distinction as **NEB-style practice**. ### 4.2 Likely question forms 1.…  ·  ```svg Stability — the plumb line from CM must fall inside the base <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M180 200 L 280 200 L 265 90 L 195 90 Z\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><circle cx=\"230\"…"
     }
   ]
 }

@@ -55,7 +55,7 @@
     },
     {
       "label": "Derivation",
-      "text": "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.  ·  **Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature)."
+      "text": "**Ohmic vs non-ohmic devices** | Device | I–V shape | R behaviour | Why | |---|---|---|---| | Metal wire (constant T) | straight line | constant | ions scatter, not electrons | | Filament lamp | flattening curve | R rises when hot | tungsten &#945; &gt; 0 | | Thermistor (NTC) | steepening curve | R falls when hot | more carriers released | | Diode | asymmetric | R tiny one way, huge the other | junction barrier | |…  ·  **Reading an I–V graph correctly** | Question | Read | Formula | |---|---|---| | Static resistance at a point | V/I from origin to point | $R = V/I$ | | Dynamic resistance at a point | slope of the tangent | $r = dV/dI$ | | Ohmic check | are they equal everywhere? | yes &#8594; ohmic | | Slope units | V/A = &#937; | steeper = smaller R |"
     },
     {
       "label": "Shortcut",
@@ -79,19 +79,23 @@
     },
     {
       "label": "Study notes",
+      "text": "### Deep dive: the I–V curve is the fingerprint An ohmic conductor's I–V graph is a straight line through the origin whose slope is $1/R$ — the same R whether you read it at 1 V or 10 V. Non-ohmic devices bend the line for physical reasons: a filament's R grows with temperature (curve flattens), a diode conducts in one direction only (asymmetric curve), a thermistor's R…  ·  ```svg I-V curves — ohmic line vs filament vs diode <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"230\" x2=\"580\" y2=\"230\"/><line x1=\"80\" y1=\"230\" x2=\"80\" y2=\"50\"/></g><line x1=\"100\" y1=\"220\" x2=\"400\" y2=\"70\" stroke=\"#1d4ed8\"…  ·  **Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current."
+    },
+    {
+      "label": "More ideas",
+      "text": "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes.  ·  A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\\\\\\Omega$ across a 10 V battery with series resistor of 500 $\\\\\\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener).…  ·  **Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature)."
+    },
+    {
+      "label": "More ideas",
       "text": "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.  ·  **Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point.  ·  **Forward bias diode:** current flows easily once the voltage exceeds the threshold ($\\\\\\\\approx 0.7$ V for silicon, $\\\\\\\\approx 0.3$ V for germanium). Below threshold, very little current flows."
     },
     {
       "label": "More ideas",
-      "text": "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes.  ·  A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\\\\\\Omega$ across a 10 V battery with series resistor of 500 $\\\\\\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener).…  ·  **Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged."
+      "text": "**Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged.  ·  **Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.  ·  **Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator."
     },
     {
       "label": "More ideas",
-      "text": "**Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.  ·  **Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator.  ·  **Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases."
-    },
-    {
-      "label": "More ideas",
-      "text": "**Temperature coefficient of filament:** tungsten has $\\\\\\\\alpha \\\\\\\\approx 0.0045$ $^{\\\\\\\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\\\\\\\,\\\\\\\\Omega$ but hot resistance of $529\\\\\\\\,\\\\\\\\Omega$."
+      "text": "**Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases.  ·  **Temperature coefficient of filament:** tungsten has $\\\\\\\\alpha \\\\\\\\approx 0.0045$ $^{\\\\\\\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\\\\\\\,\\\\\\\\Omega$ but hot resistance of $529\\\\\\\\,\\\\\\\\Omega$.  ·  ```svg Thermistor vs filament — opposite temperature responses <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"70\" y=\"70\" width=\"230\" height=\"100\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#166534\"/><text x=\"185\" y=\"100\"…"
     }
   ]
 }

@@ -6,6 +6,10 @@
   "relevance": 100,
   "notes": [
     "**EMF ($\\mathcal{E}$):** the open-circuit voltage of a source. It is the work done per unit charge in moving charge around the complete circuit.",
+    "**EMF vs terminal voltage**\n\n| Situation | Terminal voltage V | Comment |\n|---|---|---|\n| Open circuit (I = 0) | $V = \\mathcal{E}$ | EMF measured directly |\n| Discharging | $V = \\mathcal{E} - Ir$ | less than EMF |\n| Charging | $V = \\mathcal{E} + Ir$ | more than EMF |\n| Short circuit (R = 0) | $I_{sc} = \\mathcal{E}/r$ | V = 0, dangerous current |\n| Maximum power to load | R = r | $P_{max} = \\mathcal{E}&#178;/4r$ |",
+    "**Cells in combination (n identical cells)**\n\n| Combination | EMF | Internal resistance | Best for |\n|---|---|---|---|\n| Series (n cells) | $n\\mathcal{E}$ | $nr$ | high-voltage needs |\n| Parallel (n cells) | $\\mathcal{E}$ | $r/n$ | high-current needs |\n| Mixed grid (m rows &#215; n) | $n\\mathcal{E}$ | $nr/m$ | matched to load R = nr/m |",
+    "### Deep dive: the terminal voltage is what the circuit actually gets\n\nA real cell is an ideal EMF in series with an internal resistance $r$. When it drives current I, the terminals show $V = \\mathcal{E} - Ir$ — less than the EMF, and the difference $Ir$ is heat wasted inside the cell. With no current (open circuit) $V = \\mathcal{E}$; while *charging*, current is forced backwards and $V = \\mathcal{E} + Ir$ exceeds the EMF. For n identical cells in series, $\\mathcal{E}_{eq} = n\\mathcal{E}$, $r_{eq} = nr$; in parallel, EMF stays $\\mathcal{E}$ but $r_{eq} = r/n$ — which is why parallel banks deliver more current without overheating. The maximum-power theorem (load R = r) follows from maximising $I^2R$ over R.",
+    "```svg Real cell = EMF + internal r — terminal voltage drops with I\n<svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"100\" y=\"100\" width=\"90\" height=\"70\" rx=\"8\" fill=\"#fefce8\" stroke=\"#a16207\"/><text x=\"145\" y=\"130\" fill=\"#a16207\">EMF &#8496;</text><text x=\"145\" y=\"150\" fill=\"#6b7280\" font-size=\"11\">+ r inside</text><line x1=\"190\" y1=\"135\" x2=\"280\" y2=\"135\" stroke=\"#374151\" stroke-width=\"2\"/><rect x=\"280\" y=\"110\" width=\"60\" height=\"50\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"310\" y=\"140\" fill=\"#1d4ed8\">R</text><line x1=\"340\" y1=\"135\" x2=\"420\" y2=\"135\" stroke=\"#374151\" stroke-width=\"2\"/><line x1=\"420\" y1=\"135\" x2=\"420\" y2=\"100\" stroke=\"#374151\" stroke-width=\"2\"/><line x1=\"420\" y1=\"100\" x2=\"100\" y2=\"100\" stroke=\"#374151\" stroke-width=\"2\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"135\" stroke=\"#374151\" stroke-width=\"2\"/><text x=\"480\" y=\"130\" fill=\"#374151\">V = &#8496; &#8722; Ir</text><text x=\"480\" y=\"155\" fill=\"#6b7280\" font-size=\"12\">open: V = &#8496;</text><text x=\"480\" y=\"180\" fill=\"#6b7280\" font-size=\"12\">short: I = &#8496;/r</text></g></svg>\n```",
     "**Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the terminal voltage to drop when current flows.",
     "**Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load, $V < \\mathcal{E}$.",
     "**Cells in series:** $\\mathcal{E}_{total} = \\mathcal{E}_1 + \\mathcal{E}_2 + \\ldots$, $r_{total} = r_1 + r_2 + \\ldots$. Series adds both EMF and internal resistance.",
@@ -15,7 +19,8 @@
     "**Efficiency:** the efficiency of power transfer is $\\eta = R/(R + r)$. Maximum efficiency approaches 100% when $R \\gg r$, but maximum power requires $R = r$.",
     "**Short circuit current:** when $R = 0$, $I_{sc} = \\\\\\\\mathcal{E}/r$. This can be very large and dangerous, causing heating and damage.",
     "**Cells with different EMFs:** when cells with different EMFs are connected in parallel, circulating currents flow between them. This can damage cells and should be avoided.",
-    "**Real cell behavior:** as a cell discharges, its EMF slowly decreases and its internal resistance increases. An old battery reads lower than its rated voltage even when not loaded."
+    "**Real cell behavior:** as a cell discharges, its EMF slowly decreases and its internal resistance increases. An old battery reads lower than its rated voltage even when not loaded.",
+    "```svg V = E - Ir — the terminal-voltage line\n<svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"210\" x2=\"580\" y2=\"210\"/><line x1=\"80\" y1=\"210\" x2=\"80\" y2=\"50\"/></g><line x1=\"100\" y1=\"80\" x2=\"480\" y2=\"200\" stroke=\"#1d4ed8\" stroke-width=\"2.5\"/><text x=\"90\" y=\"70\" fill=\"#1d4ed8\">&#8496;</text><text x=\"480\" y=\"225\" fill=\"#374151\">I</text><text x=\"300\" y=\"120\" fill=\"#1d4ed8\">V = &#8496; &#8722; Ir</text><text x=\"90\" y=\"45\" fill=\"#111827\">V</text><text x=\"320\" y=\"250\" text-anchor=\"middle\" fill=\"#6b7280\">slope = &#8722;r; intercept = &#8496;</text></svg>\n```"
   ],
   "confusion": [
     "EMF is not a force - it is a voltage (energy per unit charge). The name is historical. EMF is measured in volts, not newtons.",
@@ -40,10 +45,10 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
-    "specificConditions": [
-      "**EMF vs Terminal Voltage:** EMF ($\\mathcal{E}$) is the open-circuit voltage (no current). Terminal voltage $V = \\mathcal{E} - Ir$ under discharge; $V = \\mathcal{E} + Ir$ during charging. The sign of the $Ir$ term depends on current direction.",
-      "**Series/Parallel Cell Rules:** In series: $\\mathcal{E}_{total} = \\sum \\mathcal{E}_i$, $r_{total} = \\sum r_i$. In parallel (identical cells): $\\mathcal{E}_{total} = \\mathcal{E}$, $r_{total} = r/n$. These assume no circulating currents between mismatched cells.",
-      "**Maximum Power Transfer Theorem:** Maximum power to load $R$ occurs at $R = r$, giving $P_{max} = \\mathcal{E}^2/(4r)$. At this point, efficiency is 50%. For efficiency $>50\\%$, need $R > r$; for $>90\\%$, need $R > 9r$."
-    ],
+  "specificConditions": [
+    "**EMF vs Terminal Voltage:** EMF ($\\mathcal{E}$) is the open-circuit voltage (no current). Terminal voltage $V = \\mathcal{E} - Ir$ under discharge; $V = \\mathcal{E} + Ir$ during charging. The sign of the $Ir$ term depends on current direction.",
+    "**Series/Parallel Cell Rules:** In series: $\\mathcal{E}_{total} = \\sum \\mathcal{E}_i$, $r_{total} = \\sum r_i$. In parallel (identical cells): $\\mathcal{E}_{total} = \\mathcal{E}$, $r_{total} = r/n$. These assume no circulating currents between mismatched cells.",
+    "**Maximum Power Transfer Theorem:** Maximum power to load $R$ occurs at $R = r$, giving $P_{max} = \\mathcal{E}^2/(4r)$. At this point, efficiency is 50%. For efficiency $>50\\%$, need $R > r$; for $>90\\%$, need $R > 9r$."
+  ],
   "visualType": "emf-internal-resistance"
 }

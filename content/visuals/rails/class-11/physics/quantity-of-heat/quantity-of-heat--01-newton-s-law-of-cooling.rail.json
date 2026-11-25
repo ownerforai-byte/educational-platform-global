@@ -90,11 +90,15 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 51:** cooling-curve comparison determines specific heat. - **To Stefan–Boltzmann (Unit 12):** the law is the small-ΔT approximation of radiative+convective loss. - **To exponential decay:** same mathematics as RC discharge and radioactive decay.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the exponential form and cooling-rate numericals as **NEB-style practice**. ### 4.2 Likely question forms 1. State Newton's law of cooling (2m). 2. Derive the exponential cooling equation (4m). 3.…"
+      "text": "### Deep dive: exponential decay of the temperature gap Newton's law of cooling states that the rate of heat loss is proportional to the temperature *difference* between the body and its surroundings: $dT/dt = -k(T - T_s)$.…  ·  **The cooling law in three forms** | Form | Equation | Use | |---|---|---| | Differential | $dT/dt = -k(T - T_s)$ | statement of the law | | Integrated | $T = T_s + (T_0 - T_s)e^{-kt}$ | temperature at time t | | Log form | $\\ln(T - T_s) = \\ln(T_0 - T_s) - kt$ | straight line; slope = &#8722;k | | Half-gap time | $t_{1/2} = \\ln 2/k$ | gap halves every fixed interval |  ·  **Validity and failure of the law** | Condition | Law holds? | Reason | |---|---|---| | Small excess temperature (&lt; ~20&#176;C) | yes | linearises the T&#8308; radiation term | | Gentle forced convection | yes | heat flow &#8746; &#916;T | | Large &#916;T (red-hot object) | no | radiation &#8746; T&#8308; dominates | | Changing ambient Ts | no | law assumes fixed…"
     },
     {
       "label": "More ideas",
-      "text": "Why does the cooling curve steepen if you blow air over the beaker?"
+      "text": "Why does the cooling curve steepen if you blow air over the beaker?  ·  ```svg Exponential cooling — the gap halves every fixed interval <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"220\" x2=\"580\" y2=\"220\"/><line x1=\"80\" y1=\"220\" x2=\"80\" y2=\"50\"/></g><line…  ·  ## 3. Conceptual Relationships - **To Topic 51:** cooling-curve comparison determines specific heat. - **To Stefan–Boltzmann (Unit 12):** the law is the small-ΔT approximation of radiative+convective loss. - **To exponential decay:** same mathematics as RC discharge and radioactive decay."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the statement, the exponential form and cooling-rate numericals as **NEB-style practice**. ### 4.2 Likely question forms 1.…  ·  ```svg Log plot makes cooling a straight line — slope = -k <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"210\" x2=\"580\" y2=\"210\"/><line x1=\"80\" y1=\"210\" x2=\"80\" y2=\"50\"/></g><line…"
     }
   ]
 }

@@ -88,11 +88,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 83:** induction conserves charge — it only separates it. - **To conductors vs insulators:** induction needs mobile electrons; insulators polarise only molecularly. - **To lightning protection:** earthing provides a charge reservoir — the same physics in reverse.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the step-by-step induction process and the \"attracts neutral bodies\" reasoning as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. Describe charging a conductor positively by induction (3m). 2.…"
+      "text": "**Induction step by step (negatively charged rod)** | Step | Action | Result on the sphere | |---|---|---| | 1 | bring &#8722;rod near, don't touch | electrons flee to far side; near side + | | 2 | earth the far side (or near side) | excess electrons drain to earth | | 3 | break the earth connection | sphere left with net + charge | | 4 | remove the rod | charge spreads…  ·  **Charging methods compared** | Method | Contact? | Charged object changes? | Works on insulators? | |---|---|---|---| | Friction | rubbing | both objects charge | yes | | Conduction | touch | sharer loses charge | poorly (local only) | | Induction | no | no (reusable) | no (needs mobile charges) | | Electroscope use | induction | no | tests sign of charge |  ·  ### Deep dive: rearranging charge without transferring it Induction works because a charged object's field pushes one sign of charge away and pulls the other toward it *inside* a neutral conductor, splitting it into two oppositely charged regions while the total stays zero.…"
     },
     {
       "label": "More ideas",
       "text": "No verified PYQ; NEB-style practice (process 3m, reasoning 2m).  ·  Why does a charged balloon stick to a wall?  ·  State the limit / condition where a formula or rule stops being valid before applying it."
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Induction sequence — rod near, earth, remove <svg viewBox=\"0 0 640 300\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"300\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"90\" y=\"130\" width=\"90\" height=\"26\" rx=\"8\" fill=\"#991b1b\"/><text x=\"135\" y=\"120\" fill=\"#991b1b\">&#8722;…  ·  ## 3. Conceptual Relationships - **To Topic 83:** induction conserves charge — it only separates it. - **To conductors vs insulators:** induction needs mobile electrons; insulators polarise only molecularly. - **To lightning protection:** earthing provides a charge reservoir — the same physics in reverse.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the step-by-step induction process and the \"attracts neutral bodies\" reasoning as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Conductor vs insulator under a charged rod <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"70\" y=\"70\" width=\"230\" height=\"100\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"185\" y=\"100\"…"
     }
   ]
 }

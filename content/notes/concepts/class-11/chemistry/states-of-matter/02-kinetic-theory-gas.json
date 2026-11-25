@@ -33,7 +33,10 @@
     "2. Intermolecular attractive forces exist; they make a real gas more compressible at moderate pressure and are responsible for liquefaction — neither is in the model.",
     "3. Collisions are not perfectly elastic and molecules are not rigid spheres; polyatomic gases store energy in rotation and vibration, which the simple theory ignores (so it cannot give their specific heats correctly).",
     "4. It presumes a Maxwell–Boltzmann distribution and neglects quantum and relativistic effects (important for very light gases at low temperature).",
-    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses."
+    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ Molecules keep moving at the rms speed. ✅ Speeds obey a Maxwell–Boltzmann distribution; the rms value is only an average measure.",

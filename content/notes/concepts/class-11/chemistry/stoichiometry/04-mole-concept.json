@@ -26,7 +26,10 @@
     "• Molar masses are based on **standard atomic weights**, which are average values for the natural isotopic composition and therefore carry an uncertainty (and vary slightly for elements such as boron, lithium and lead whose isotopic abundances differ with source). Exact work needs isotope-specific molar masses.",
     "• The relation n = V/22.4 L holds only for gases at STP that behave ideally; for real gases and for other conditions PV = nRT must be used, and for associating gases the particle count differs from the formula count.",
     "• The mole expresses *amount*, not concentration — molarity, molality and mole fraction are different measures; molarity in particular is temperature-dependent because volume changes with temperature.",
-    "• Mole-based stoichiometry cannot predict how fast a reaction goes, in which direction it proceeds, or what yield it gives; those come from kinetics, thermodynamics and equilibrium."
+    "• Mole-based stoichiometry cannot predict how fast a reaction goes, in which direction it proceeds, or what yield it gives; those come from kinetics, thermodynamics and equilibrium.",
+    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
+    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
+    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
   "confusion": [
     "❌ One mole of oxygen means 6.022 × 10²³ oxygen atoms always. ✅ It depends on the entity: 1 mol O atoms = 16 g, but 1 mol O₂ molecules = 32 g and contains 2 × 6.022 × 10²³ atoms.",

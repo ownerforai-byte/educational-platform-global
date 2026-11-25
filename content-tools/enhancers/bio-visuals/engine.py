@@ -67,18 +67,31 @@ def md_svg(caption, body):
     return "```svg %s\n%s\n```" % (caption, body)
 
 
+def _table_parts(t):
+    """Accept either a (title, headers, rows) tuple or a dict with
+    title/headers/rows keys."""
+    if isinstance(t, dict):
+        return t["title"], t["headers"], t["rows"]
+    return t[0], t[1], t[2]
+
+
 def signature(block):
-    if "table" in block:
-        return block["table"][0]
+    for key in ("table", "table1", "table2"):
+        if key in block:
+            return _table_parts(block[key])[0]
     if "svg" in block:
         return block["svg"][0]
     return block["md"][:40]
 
 
 def render(block):
-    if "table" in block:
-        t = block["table"]
-        return md_table(t[0], t[1], t[2])
+    t = None
+    for key in ("table", "table1", "table2"):
+        if key in block:
+            t = block[key]
+            break
+    if t is not None:
+        return md_table(*_table_parts(t))
     if "svg" in block:
         c = block["svg"]
         return md_svg(c[0], c[1])
@@ -87,8 +100,11 @@ def render(block):
 
 def is_junk(entry):
     s = entry.strip()
-    return (s.startswith(JUNK_PREFIXES)
-            or any(c in s for c in JUNK_CONTAINS))
+    # Only generated filler is junk. NOTE: lines like "**Fact.** …" are
+    # authored teaching content — dropping them by prefix made pack re-runs
+    # silently delete knowledge from the source tree (the content corpus
+    # guard then refuses to sync). See scripts/build/build-content-corpus.mjs.
+    return any(c in s for c in JUNK_CONTAINS)
 
 
 def apply_to(notes, blocks, label, dry):
@@ -113,12 +129,13 @@ def apply_to(notes, blocks, label, dry):
 
 
 def expand_blocks(blocks):
-    """A block may carry several content keys (md, table, svg). The engine
-    renders one type per block, so expand multi-key blocks into one block per
-    key, preserving authored order (md, table, svg)."""
+    """A block may carry several content keys (md, table, table1, table2, svg).
+    The engine renders one type per block, so expand multi-key blocks into one
+    block per key, preserving authored order."""
+    ORDER = ("md", "table", "table1", "table2", "svg")
     out = []
     for b in blocks:
-        keys = [k for k in ("md", "table", "svg") if k in b]
+        keys = [k for k in ORDER if k in b]
         if len(keys) <= 1:
             out.append(b)
             continue

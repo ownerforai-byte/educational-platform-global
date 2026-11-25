@@ -91,11 +91,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 99:** ohmic behaviour is the validity condition of Ohm's law. - **To Topic 98:** temperature changes the drift-lattice collision rate — the microscopic cause of curvature. - **To thermistors:** falling-R devices enable temperature sensing.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise I–V graph interpretation and the lamp/diode comparisons as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1. Distinguish ohmic and non-ohmic conductors with graphs (3m). 2.…"
+      "text": "**The two-part Ohm's law test** | Condition | What to check | Failure example | |---|---|---| | Straight line | I &#8746; V at fixed T | filament, thermistor | | Through the origin | I = 0 when V = 0 | diode (threshold), rectifier | | Constant temperature | re-measure gives same line | wire that heats under test | | Same R both directions | reverse the battery | diode,…  ·  **I–V graph vocabulary** | Term | Meaning | Units | |---|---|---| | Slope of I–V | conductance G = 1/R | siemens (S) | | V/I at a point | static resistance | &#937; | | dV/dI at a point | dynamic resistance | &#937; | | Equal slopes both ways | symmetric, ohmic | &#8212; |  ·  ### Deep dive: why the origin matters The defining test for ohmic behaviour is not just a straight I–V graph — the line must pass through the *origin*, so that zero voltage gives zero current and the ratio $V/I$ is the same constant everywhere.…"
     },
     {
       "label": "More ideas",
       "text": "Temperature Must Be Constant: Ohm's law assumes temperature stays constant. As current flows, Joule heating ($I^2R$) raises temperature, changing resistance — this is why filament lamps are non-ohmic.  ·  No verified PYQ; NEB-style practice (graphs and comparisons 2–3m).  ·  Why is manganin used for standard resistors?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Through the origin or not — the ohmic test <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"210\" x2=\"580\" y2=\"210\"/><line x1=\"80\" y1=\"210\" x2=\"80\" y2=\"50\"/></g><line x1=\"100\"…  ·  ## 3. Conceptual Relationships - **To Topic 99:** ohmic behaviour is the validity condition of Ohm's law. - **To Topic 98:** temperature changes the drift-lattice collision rate — the microscopic cause of curvature. - **To thermistors:** falling-R devices enable temperature sensing.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise I–V graph interpretation and the lamp/diode comparisons as **NEB-style practice** (2–3m). ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Constant temperature — the hidden condition <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><text x=\"180\" y=\"80\" fill=\"#374151\">measured cold</text><path d=\"M100 200 L 260 100\" stroke=\"#1d4ed8\"…"
     }
   ]
 }

@@ -87,7 +87,7 @@
     },
     {
       "label": "More ideas",
-      "text": "Prove that for a given prism, the angle of incidence that gives minimum deviation is unique. The deviation function $\\delta(i)$ is convex (U-shaped) with a single minimum. This can be shown by taking the derivative $d\\delta/di$ and showing it equals zero at exactly one value of $i$ (where $i = e$)."
+      "text": "Prove that for a given prism, the angle of incidence that gives minimum deviation is unique. The deviation function $\\delta(i)$ is convex (U-shaped) with a single minimum. This can be shown by taking the derivative $d\\delta/di$ and showing it equals zero at exactly one value of $i$ (where $i = e$).  ·  ```svg Deviation vs incidence: a minimum at the symmetric pass <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><line x1=\"80\" y1=\"200\" x2=\"580\" y2=\"200\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><line x1=\"80\" y1=\"200\" x2=\"80\"…"
     }
   ]
 }

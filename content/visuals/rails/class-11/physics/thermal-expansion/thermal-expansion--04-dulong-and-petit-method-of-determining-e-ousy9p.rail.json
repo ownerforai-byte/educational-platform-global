@@ -88,11 +88,19 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Conceptual Relationships - **To Topic 48:** the experiment operationalises γ_r = γ_a + γ_g. - **To Topic 47:** vessel coefficients come from γ = 3α. - **To history:** Dulong and Petit (1818) also discovered the law of constant atomic heat — a different, famous result.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the principle, the subtraction equation and a numerical as **NEB-style practice**. ### 4.2 Likely question forms 1. Describe Dulong and Petit's method to determine the real expansivity of a liquid (4m). 2.…"
+      "text": "### Deep dive: apparent vs real expansivity A liquid has no shape of its own, so its expansion is always measured *relative to a container*. A weight thermometer (a bulb with a capillary) filled and heated overflows a mass of liquid; the overflow reflects the difference between the liquid's real expansion and the glass bulb's expansion.…  ·  **Real vs apparent expansivity** | Quantity | Definition | Measured by | |---|---|---| | Real \u0013b3&#8342; | true volume expansion of the liquid | Dulong&#8211;Petit U-tube | | Apparent \u0013b3&#8336; | expansion relative to the container | weight thermometer | | Glass \u0013b3_g | container's own volume expansion | &#8776; 2.5&#215;10&#8315;&#8305; /K | | Relation | \u0013b3&#8342; =…  ·  **Weight-thermometer working formula** | Step | Symbol | Statement | |---|---|---| | Mass filled at T&#8320; | m&#8320; | fill to a mark | | Mass remaining at T | m | overflow expelled | | Overflow fraction | (m&#8320;&#8722;m)/m | apparent expansion | | Real expansivity | \u0013b3&#8342; | \u0013b3&#8336; + \u0013b3_g |"
     },
     {
       "label": "More ideas",
       "text": "No Flow: Static equilibrium — liquid not flowing, columns stationary.  ·  No verified PYQ; NEB-style practice (description 4m, derivation 3m, numerical 3m).  ·  Why must both bulbs be heated uniformly?"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Apparent = real − glass: the container eats part of the expansion <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"90\" y=\"60\" width=\"200\" height=\"130\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text…  ·  ## 3. Conceptual Relationships - **To Topic 48:** the experiment operationalises γ_r = γ_a + γ_g. - **To Topic 47:** vessel coefficients come from γ = 3α. - **To history:** Dulong and Petit (1818) also discovered the law of constant atomic heat — a different, famous result.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact topic in the bank. Practise the principle, the subtraction equation and a numerical as **NEB-style practice**. ### 4.2 Likely question forms 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Weight thermometer — overflow mass measures apparent γ <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"240\" cy=\"170\" r=\"55\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><rect x=\"228\" y=\"60\" width=\"24\" height=\"70\"…"
     }
   ]
 }

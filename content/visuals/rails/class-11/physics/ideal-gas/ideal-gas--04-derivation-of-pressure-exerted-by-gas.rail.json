@@ -91,7 +91,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 1. Topic Introduction — From Collisions to Pressure The kinetic theory's centrepiece is a calculation: track one molecule bouncing between walls, count its momentum transfers, multiply by N molecules, and the gas pressure appears as $\\frac{1}{3}\\rho \\bar{c^2}$. Matching this to PV = NkT then makes temperature a molecular quantity.  ·  ## 2. Fundamental Concepts ### 2.1 Derivation of $P = \\frac{1}{3}\\rho \\bar{c^2}$ Consider a cubic box of side $l$ containing $N$ molecules, each of mass $m$, with the x-component of a typical molecule's velocity $u$. 1. **One collision with the wall** perpendicular to x reverses $u$: momentum change $= mu - (-mu) = 2mu$. 2.…  ·  ## 3. Conceptual Relationships - **To Topic 63:** this derivation executes the model's assumptions. - **To Topic 61:** matching with PV = NkT identifies temperature. - **To Topic 65:** the KE–temperature relation follows in one line. - **To momentum/impulse (Unit 4):** each wall collision is an impulse 2mu."
+      "text": "## 1. Topic Introduction — From Collisions to Pressure The kinetic theory's centrepiece is a calculation: track one molecule bouncing between walls, count its momentum transfers, multiply by N molecules, and the gas pressure appears as $\\frac{1}{3}\\rho \\bar{c^2}$. Matching this to PV = NkT then makes temperature a molecular quantity.  ·  ## 2. Fundamental Concepts ### 2.1 Derivation of $P = \\frac{1}{3}\\rho \\bar{c^2}$ Consider a cubic box of side $l$ containing $N$ molecules, each of mass $m$, with the x-component of a typical molecule's velocity $u$. 1. **One collision with the wall** perpendicular to x reverses $u$: momentum change $= mu - (-mu) = 2mu$. 2.…  ·  **The four steps of the derivation** | Step | Statement | Result | |---|---|---| | 1. Collision | elastic head-on bounce reverses $v_x$ | momentum delivered $2mv_x$ | | 2. Round trip | time between hits $2L/v_x$ | force from one molecule $mv_x&#178;/L$ | | 3. Sum over N | average and divide by area | $P = Nm\\overline{v_x&#178;}/V$ | | 4.…"
     },
     {
       "label": "More ideas",
@@ -103,7 +103,15 @@
     },
     {
       "label": "More ideas",
-      "text": "Task 4: Practice previous year exam questions on Derivation of pressure exerted by gas  ·  Task 5: Explain Derivation of pressure exerted by gas to a peer or study group  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact derivation in the bank (the related rms-speed and KE numericals belong to Topics 65–66). Practise the 6-step derivation as **NEB-style practice** (4–5m).…"
+      "text": "Task 4: Practice previous year exam questions on Derivation of pressure exerted by gas  ·  Task 5: Explain Derivation of pressure exerted by gas to a peer or study group  ·  **What the derivation buys you** | Comparison | Result | Meaning | |---|---|---| | $P = \\frac{1}{3}\\rho\\overline{v&#178;}$ vs $PV = NkT$ | $\\frac{1}{2}m\\overline{v&#178;} = \\frac{3}{2}kT$ | temperature = mean KE | | r.m.s.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "### Deep dive: pressure from momentum bookkeeping The kinetic-theory derivation turns molecular chaos into a clean formula in four moves. (1) A molecule hitting a wall head-on reverses its momentum, delivering $2mv_x$.…  ·  ```svg Molecule bouncing between walls — momentum 2mv per hit <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g stroke=\"#374151\" stroke-width=\"3\"><line x1=\"160\" y1=\"60\" x2=\"160\" y2=\"200\"/><line x1=\"480\" y1=\"60\" x2=\"480\" y2=\"200\"/></g><line…  ·  ## 3. Conceptual Relationships - **To Topic 63:** this derivation executes the model's assumptions. - **To Topic 61:** matching with PV = NkT identifies temperature. - **To Topic 65:** the KE–temperature relation follows in one line. - **To momentum/impulse (Unit 4):** each wall collision is an impulse 2mu."
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank No verified PYQ for this exact derivation in the bank (the related rms-speed and KE numericals belong to Topics 65–66). Practise the 6-step derivation as **NEB-style practice** (4–5m).…  ·  ```svg Isotropy — the three components share v² equally <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"200\" cy=\"120\" r=\"55\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><path d=\"M200 120 L 255 120\" stroke=\"#1d4ed8\"…"
     }
   ]
 }
