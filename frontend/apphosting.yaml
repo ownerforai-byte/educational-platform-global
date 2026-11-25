@@ -8,10 +8,8 @@ runConfig:
   maxInstances: 10
   concurrency: 80
 
-# Build: root/frontend `apphosting:build` via package.json (keeps the Next.js adapter).
-# Run: Cloud Run probes 0.0.0.0:PORT — localhost-only binds fail health checks.
-scripts:
-  runCommand: next start -H 0.0.0.0 -p $PORT
+# Build/run: use package.json (`apphosting:build`, `start`). Do not set scripts.runCommand
+# here — it overrides the adapter and often runs from the wrong cwd (PORT probe fails).
 
 env:
   - variable: NEXT_PUBLIC_API_URL
