@@ -171,6 +171,11 @@ const nextConfig = {
   async redirects() {
     return [
       {
+        source: "/favicon.ico",
+        destination: "/profile-picture.jpg",
+        permanent: false,
+      },
+      {
         source: "/index",
         destination: "/site-index",
         permanent: false,

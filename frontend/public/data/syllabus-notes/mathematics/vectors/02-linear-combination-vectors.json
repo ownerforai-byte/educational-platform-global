@@ -18,7 +18,8 @@
     "**Determinant test.** For three vectors in ℝ³, independence is equivalent to the determinant of the matrix with those vectors as rows (or columns) being non-zero; zero determinant means coplanar and dependent.",
     "**Affine combinations.** When the coefficients sum to 1, the combination stays in the plane (or line) through the points; p = (1 − t)a + t b traces the segment AB as t runs from 0 to 1.",
     "**Vector equation of a line.** r = a + t d is an affine combination of a point and a direction; the plane through a with directions d₁, d₂ is r = a + s d₁ + t d₂.",
-    "**Exam caution.** Do not assume a basis: check independence first. Three vectors with scalar triple product zero are coplanar, so they cannot represent every vector of ℝ³."
+    "**Exam caution.** Do not assume a basis: check independence first. Three vectors with scalar triple product zero are coplanar, so they cannot represent every vector of ℝ³.",
+    "**Linear combinations — the classified verdicts**\n\n| Verdict | Condition | Geometric meaning |\n|---|---|---|\n| Expressible | c = alpha a + beta b solves | c lies in the span of a, b |\n| Unique coefficients | a, b non-collinear | One and only one representation |\n| Redundant pair | a, b collinear | Span is a line; many or no representations |\n| Basis use | Non-collinear, non-zero pair | Every plane vector decomposes on it |"
   ],
   "keyPoints": [
     "Linear combination",

@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — sign table + classification:** full monotonicity map with max/min verdicts. - **Type B — second-derivative test:** quick classification where f″ is easy. - **Type C — absolute extrema on [a, b]:** candidates + endpoints compared.…  ·  ## 6. Common Confusions **\"f′ = 0 ⟹ extremum\":** x³ forever. **\"Endpoints can't be extrema\":** on closed intervals they are first-class candidates."
+      "text": "## 5. Worked Example Types - **Type A — sign table + classification:** full monotonicity map with max/min verdicts. - **Type B — second-derivative test:** quick classification where f″ is easy. - **Type C — absolute extrema on [a, b]:** candidates + endpoints compared.…  ·  ## 6. Common Confusions **\"f′ = 0 ⟹ extremum\":** x³ forever. **\"Endpoints can't be extrema\":** on closed intervals they are first-class candidates.  ·  **Stationary points — the classified trio** | Type | First-derivative pattern | Second-derivative verdict | |---|---|---| | Local maximum | + then - (f' changes sign) | f'' < 0 confirms | | Local minimum | - then + | f'' > 0 confirms | | Point of inflection (stationary) | f' = 0 but no sign change | f'' = 0 and f'''…"
     }
   ]
 }

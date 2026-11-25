@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — steer to sin u/u:** (sin 5x)/x = 5·(sin 5x)/(5x) → 5. - **Type B — second-order matching:** (1 − cos 4x)/x² = 16·(1 − cos 4x)/(4x)² → 16·(1/2) = 8. - **Type C — mixed exp/log:** (e^{3x} − 1)/ln(1 + 2x) → 3/2 by coefficient ratio.…  ·  ## 6. Common Confusions **Degrees in the sine star:** sin u/u → 1 fails in degrees — convert first. **\"∞ − ∞ = 0\":** the form is indeterminate; merge fractions or rationalise before any verdict."
+      "text": "## 5. Worked Example Types - **Type A — steer to sin u/u:** (sin 5x)/x = 5·(sin 5x)/(5x) → 5. - **Type B — second-order matching:** (1 − cos 4x)/x² = 16·(1 − cos 4x)/(4x)² → 16·(1/2) = 8. - **Type C — mixed exp/log:** (e^{3x} − 1)/ln(1 + 2x) → 3/2 by coefficient ratio.…  ·  ## 6. Common Confusions **Degrees in the sine star:** sin u/u → 1 fails in degrees — convert first. **\"∞ − ∞ = 0\":** the form is indeterminate; merge fractions or rationalise before any verdict.  ·  **Limit families — classified by the tool that resolves them** | Family | Signature | Standard tool | |---|---|---| | Algebraic 0/0 | Polynomial ratio vanishing at a | Factor and cancel, or rationalise | | Trigonometric | sin x / x as x -> 0 | sin x/x -> 1, (1-cos x)/x -> 0 | | Exponential form | 1^inf, e.g.…"
     }
   ]
 }

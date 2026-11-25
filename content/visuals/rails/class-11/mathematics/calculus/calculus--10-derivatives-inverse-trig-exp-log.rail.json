@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — engine derivation:** derive one inverse trig entry from the rule, stating the branch. - **Type B — base conversions:** (aˣ)′ and (log_a x)′ with the ln a tax made explicit. - **Type C — chain-wrapped entries:** sin⁻¹(u), ln(u), eᵘ with the inner derivative attached.…  ·  ## 6. Common Confusions **\"1/√(1−x²) needs a ±\":** the branch decides — principal branches make it positive. **\"(aˣ)′ = aˣ\":** only for a = e; the ln a tax is otherwise mandatory."
+      "text": "## 5. Worked Example Types - **Type A — engine derivation:** derive one inverse trig entry from the rule, stating the branch. - **Type B — base conversions:** (aˣ)′ and (log_a x)′ with the ln a tax made explicit. - **Type C — chain-wrapped entries:** sin⁻¹(u), ln(u), eᵘ with the inner derivative attached.…  ·  ## 6. Common Confusions **\"1/√(1−x²) needs a ±\":** the branch decides — principal branches make it positive. **\"(aˣ)′ = aˣ\":** only for a = e; the ln a tax is otherwise mandatory.  ·  **Derivative families for inverse, exponential and log — classified** | Family | Derivative | Domain note | |---|---|---| | arcsin / arccos | 1/sqrt(1-x^2) and its negative | Only on (-1, 1) | | arctan / arccot | 1/(1+x^2) and its negative | All real x | | exp | (e^x)' = e^x | Fixed point of differentiation | |…"
     }
   ]
 }

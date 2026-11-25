@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — linear substitution:** ∫(ax + b)ⁿ — u = ax + b, the Jacobian 1/a. - **Type B — inner derivative visible:** ∫2x·e^{x²}dx — u = x², du = 2x dx. - **Type C — LIATE parts:** ∫x·eˣdx, ∫ln x dx, ∫x ln x dx. - **Type D — cyclic parts:** ∫eˣsin x dx solved as an equation.  ·  ## 6. Common Confusions **\"Substitute anything\":** u must be the composite's inner function with its derivative present. **\"Parts is for all products\":** only when substitution fails — ∫2x·e^{x²}dx is a substitution problem wearing a product's clothes."
+      "text": "## 5. Worked Example Types - **Type A — linear substitution:** ∫(ax + b)ⁿ — u = ax + b, the Jacobian 1/a. - **Type B — inner derivative visible:** ∫2x·e^{x²}dx — u = x², du = 2x dx. - **Type C — LIATE parts:** ∫x·eˣdx, ∫ln x dx, ∫x ln x dx. - **Type D — cyclic parts:** ∫eˣsin x dx solved as an equation.  ·  ## 6. Common Confusions **\"Substitute anything\":** u must be the composite's inner function with its derivative present. **\"Parts is for all products\":** only when substitution fails — ∫2x·e^{x²}dx is a substitution problem wearing a product's clothes.  ·  **Integration methods — the decision table** | Integrand shape | Method | Trigger to remember | |---|---|---| | Nested function | Substitution u = inner | Inner function's derivative sits outside | | Product of unlike species | Integration by parts | x with e^x, x with sin x, x with ln x | | Rational with sqrt |…"
     }
   ]
 }

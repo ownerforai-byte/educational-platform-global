@@ -53,8 +53,8 @@ function buildNotification(payload) {
     title,
     options: {
       body,
-      icon: "/icon-192.png",
-      badge: "/icon-192.png",
+      icon: "/profile-picture.jpg",
+      badge: "/profile-picture.jpg",
       data: Object.assign({}, data, { url: link }),
     },
   };

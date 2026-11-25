@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — parametric first derivative:** divide the rates; simplify with identities. - **Type B — parametric second derivative:** differentiate dy/dx in t, divide by dx/dt. - **Type C — implicit first derivative:** chain rule on y-terms, linear solve for y′.…  ·  ## 6. Common Confusions **\"Second derivative = quotient of second derivatives\":** the classic parametric error. **\"Implicit means solve for y first\":** usually impossible — differentiate directly."
+      "text": "## 5. Worked Example Types - **Type A — parametric first derivative:** divide the rates; simplify with identities. - **Type B — parametric second derivative:** differentiate dy/dx in t, divide by dx/dt. - **Type C — implicit first derivative:** chain rule on y-terms, linear solve for y′.…  ·  ## 6. Common Confusions **\"Second derivative = quotient of second derivatives\":** the classic parametric error. **\"Implicit means solve for y first\":** usually impossible — differentiate directly.  ·  **Differentiation beyond explicit y = f(x) — classified** | Situation | Method | Result shape | |---|---|---| | Parametric x(t), y(t) | dy/dx = (dy/dt)/(dx/dt) | Second derivative needs the quotient rule again | | Implicit F(x, y) = 0 | Differentiate throughout, collect dy/dx | y' appears on both sides; solve…"
     }
   ]
 }

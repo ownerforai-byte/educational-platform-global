@@ -259,7 +259,7 @@ export async function sendPush(input: FcmSendInput): Promise<FcmSendResult> {
                 notification: {
                   title: input.title,
                   body: input.body,
-                  icon: "/icon-192.png",
+                  icon: "/profile-picture.jpg",
                   data: Object.assign({ url: link }, data),
                 },
               },
@@ -310,7 +310,7 @@ export async function sendGuidedPush(
       notification: {
         title: push.title,
         body: push.body,
-        icon: "/icon-192.png",
+        icon: "/profile-picture.jpg",
         data: {
           kind: push.kind,
           deepLink: push.deepLink,

@@ -62,6 +62,8 @@ export interface TopicDocViewProps {
   topicSlug: string;
   topicTitle: string;
   data: TopicDocData | null | undefined;
+  /** When true, render only the printable body inside a parent `[data-a4-paper]` host. */
+  hostPaper?: boolean;
 }
 
 const SECTIONS = [
@@ -97,6 +99,7 @@ export function TopicDocView({
   topicSlug,
   topicTitle,
   data,
+  hostPaper = false,
 }: TopicDocViewProps) {
   const [fontSize, setFontSize] = useState<"sm" | "base" | "lg">("base");
   const [copied, setCopied] = useState(false);
@@ -182,6 +185,60 @@ export function TopicDocView({
       document.getElementById(sectionId);
     el?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const paperBody = (
+    <>
+      <header className="a4-head mb-8 border-b-2 border-neutral-800 pb-5">
+        <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
+          <span className="text-neutral-800">{classSlug.replace(/-notes$/, "")}</span>
+          <span aria-hidden>·</span>
+          <span className="capitalize">{subjectSlug}</span>
+          <span aria-hidden>·</span>
+          <span>{minutes} min read</span>
+          {formulas.length > 0 && (
+            <span>
+              {formulas.length} equation{formulas.length === 1 ? "" : "s"}
+            </span>
+          )}
+          {figureCount > 0 && (
+            <span>
+              {figureCount} diagram{figureCount === 1 ? "" : "s"}
+            </span>
+          )}
+        </div>
+        <h1 className="a4-title">{topicTitle}</h1>
+        <p className="a4-standfirst mt-2">
+          {branchCount > 0
+            ? `Structured academic document with ${branchCount} conceptual branches, formal derivations, exam shortcuts, and practice problems.`
+            : "Complete verified syllabus document with definitions, worked explanations, and practice exercises."}
+        </p>
+      </header>
+
+      <div className="flow-root">
+        {items.map((it) => (
+          <div
+            key={it.key}
+            data-doc-section={it.sectionId ?? undefined}
+            className="flow-root pb-4"
+          >
+            {it.node}
+          </div>
+        ))}
+      </div>
+
+      <footer className="a4-foot mt-10 border-t border-neutral-300 pt-3 text-center text-[10px] uppercase tracking-[0.2em] text-neutral-400">
+        End of document · {topicTitle}
+      </footer>
+    </>
+  );
+
+  if (hostPaper) {
+    return (
+      <section aria-label={`${topicTitle} document`} className="doc-view doc-view-embedded">
+        {paperBody}
+      </section>
+    );
+  }
 
   return (
     <article
@@ -299,50 +356,7 @@ export function TopicDocView({
           className={standalone ? "a4-paper a4-paper-standalone" : "a4-paper"}
           role="document"
         >
-          {/* Printed document head — badges, title, standfirst */}
-          <header className="a4-head mb-8 border-b-2 border-neutral-800 pb-5">
-            <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-neutral-500">
-              <span className="text-neutral-800">{classSlug.replace(/-notes$/, "")}</span>
-              <span aria-hidden>·</span>
-              <span className="capitalize">{subjectSlug}</span>
-              <span aria-hidden>·</span>
-              <span>{minutes} min read</span>
-              {formulas.length > 0 && (
-                <span>
-                  {formulas.length} equation{formulas.length === 1 ? "" : "s"}
-                </span>
-              )}
-              {figureCount > 0 && (
-                <span>
-                  {figureCount} diagram{figureCount === 1 ? "" : "s"}
-                </span>
-              )}
-            </div>
-            <h1 className="a4-title">{topicTitle}</h1>
-            <p className="a4-standfirst mt-2">
-              {branchCount > 0
-                ? `Structured academic document with ${branchCount} conceptual branches, formal derivations, exam shortcuts, and practice problems.`
-                : "Complete verified syllabus document with definitions, worked explanations, and practice exercises."}
-            </p>
-          </header>
-
-          {/* The printed body: every block flows on the same sheet */}
-          <div className="flow-root">
-            {items.map((it) => (
-              <div
-                key={it.key}
-                data-doc-section={it.sectionId ?? undefined}
-                className="flow-root pb-4"
-              >
-                {it.node}
-              </div>
-            ))}
-          </div>
-
-          {/* Printed foot rule, like a book's end-of-document rule */}
-          <footer className="a4-foot mt-10 border-t border-neutral-300 pt-3 text-center text-[10px] uppercase tracking-[0.2em] text-neutral-400">
-            End of document · {topicTitle}
-          </footer>
+          {paperBody}
         </div>
       </div>
     </article>

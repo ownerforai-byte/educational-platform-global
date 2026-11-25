@@ -520,6 +520,7 @@ function TabPanel({
       unitId={unitId}
       topicSlug={topicSlug}
       topicTitle={topicTitle}
+      inHostPaper
     />
   );
 }
@@ -594,27 +595,14 @@ export function ContentTabs({
       <div className="min-h-[200px]" role="tabpanel">
         {canAccessLearning && (
           <div hidden={!showLearning}>
-            {active.kind === "learning" && active.learningSection === "notes" ? (
-              <TopicVerticalNotes
-                classSlug={classSlug}
-                subjectSlug={subjectSlug}
-                unitId={unitId}
-                topicSlug={topicSlug}
-                topicTitle={topicTitle}
-                section="notes"
-              />
-            ) : (
-              <A4DocumentSurface className="mt-2">
-                <TopicVerticalNotes
-                  classSlug={classSlug}
-                  subjectSlug={subjectSlug}
-                  unitId={unitId}
-                  topicSlug={topicSlug}
-                  topicTitle={topicTitle}
-                  section={active.kind === "learning" ? active.learningSection : "notes"}
-                />
-              </A4DocumentSurface>
-            )}
+            <TopicVerticalNotes
+              classSlug={classSlug}
+              subjectSlug={subjectSlug}
+              unitId={unitId}
+              topicSlug={topicSlug}
+              topicTitle={topicTitle}
+              section={active.kind === "learning" ? active.learningSection : "notes"}
+            />
           </div>
         )}
         {!showLearning && (!unlocked ? (

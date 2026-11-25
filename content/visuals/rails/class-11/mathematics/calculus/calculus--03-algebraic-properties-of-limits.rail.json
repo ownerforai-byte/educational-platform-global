@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — legal assembly:** each piece's limit exists ⟹ combine by the laws (polynomials, continuous pieces). - **Type B — illegal split avoided:** a factor oscillates ⟹ do not split; squeeze or damp it.…  ·  ## 6. Common Confusions **\"lim(A + B) always = lim A + lim B\":** only when both exist — ∞ − ∞ and missing sides break it. **\"c/0 is ∞/∞\":** no — one contestant is standing still; L'Hôpital does not apply."
+      "text": "## 5. Worked Example Types - **Type A — legal assembly:** each piece's limit exists ⟹ combine by the laws (polynomials, continuous pieces). - **Type B — illegal split avoided:** a factor oscillates ⟹ do not split; squeeze or damp it.…  ·  ## 6. Common Confusions **\"lim(A + B) always = lim A + lim B\":** only when both exist — ∞ − ∞ and missing sides break it. **\"c/0 is ∞/∞\":** no — one contestant is standing still; L'Hôpital does not apply.  ·  **Limit laws — classified by what they permit** | Law | Statement shape | Fine print | |---|---|---| | Sum/difference | lim(f +- g) = lim f +- lim g | Both one-sided limits must exist finitely | | Product/quotient | lim(fg) = (lim f)(lim g); lim(f/g) = lim f / lim g | Quotient needs lim g != 0 | | Constant…"
     }
   ]
 }

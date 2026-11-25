@@ -107,7 +107,11 @@
     },
     {
       "label": "More ideas",
-      "text": "Any pair of perpendicular directions may be chosen. Axes along a slope and perpendicular to it are often easier than horizontal and vertical axes."
+      "text": "Any pair of perpendicular directions may be chosen. Axes along a slope and perpendicular to it are often easier than horizontal and vertical axes.  ·  **Resolution principles (classified)** | Principle | Statement | Consequence | |---|---|---| | Two components | Any plane vector splits into two | Choose axes freely | | Orthogonal components | Perpendicular pair is independent | Treat axes separately | | Oblique axes | Allowed but messier | Avoid unless needed | |…  ·  **Common resolutions in physics** | Vector | Typical axes | Components | |---|---|---| | Weight on incline | Along/across slope | mg sinθ, mg cosθ | | Tension of pendulum | Vertical/horizontal | T cosθ, T sinθ | | Velocity of boat | Across/along stream | Resultant steering | | Force on banked road | Normal components…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Same vector, two axis choices <svg viewBox=\"0 0 640 180\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 130 L 300 130\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M140 130 L 140 50\" stroke=\"#374151\" stroke-width=\"2\"/><path…"
     }
   ]
 }

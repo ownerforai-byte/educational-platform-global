@@ -270,23 +270,60 @@ const KNOWLEDGE_FIELDS: FieldDef[] = [
 
 const FIELD_ORDER: (keyof ConceptData)[] = KNOWLEDGE_FIELDS.map((f) => f.key);
 
+function fieldHasContent(items: string[] | McqItem[] | string | undefined): boolean {
+  if (items === undefined || items === null) return false;
+  if (Array.isArray(items)) return items.length > 0;
+  if (typeof items === "string") return items.trim().length > 0;
+  return false;
+}
+
 function FieldCard({
   def,
   items,
   emptyHint,
   orderLabel,
+  notebook = false,
 }: {
   def: FieldDef;
   items: string[] | McqItem[] | string | undefined;
   emptyHint?: boolean;
   orderLabel?: string;
+  notebook?: boolean;
 }) {
   const Icon = def.icon;
-  const isEmpty =
-    items === undefined ||
-    items === null ||
-    (Array.isArray(items) && items.length === 0) ||
-    (typeof items === "string" && items.trim().length === 0);
+  const isEmpty = !fieldHasContent(items);
+
+  if (isEmpty && !emptyHint) return null;
+
+  if (notebook) {
+    if (isEmpty && !emptyHint) return null;
+    if (isEmpty && emptyHint) {
+      return (
+        <section className="a4-field-section">
+          <h3 className="a4-field-heading">
+            {orderLabel ? <span className="text-neutral-400">{orderLabel}</span> : null}
+            <Icon className="h-3.5 w-3.5 text-neutral-600" aria-hidden />
+            <span>{def.label}</span>
+          </h3>
+          <p className="a4-field-empty text-xs italic text-neutral-500">
+            Empty — populate{" "}
+            <code className="font-mono text-[10px] bg-neutral-100 px-1 rounded">{def.key}</code> when
+            adding content
+          </p>
+        </section>
+      );
+    }
+    return (
+      <section className="a4-field-section">
+        <h3 className="a4-field-heading">
+          {orderLabel ? <span className="text-neutral-400">{orderLabel}</span> : null}
+          <Icon className="h-3.5 w-3.5 text-neutral-600" aria-hidden />
+          <span>{def.label}</span>
+        </h3>
+        <div className="a4-field-body">{renderFieldBody(def, items)}</div>
+      </section>
+    );
+  }
 
   return (
     <Card className={`${def.tone} border overflow-hidden w-full`}>
@@ -315,49 +352,60 @@ function FieldCard({
               Empty — populate <code className="font-mono text-[10px] bg-muted px-1 rounded">{def.key}</code> when adding content
             </span>
           </div>
-        ) : typeof items === "string" ? (
-          <div className="text-sm leading-[1.8] break-words">
-            <MathMarkdown content={items} />
-          </div>
-        ) : def.key === "mcs" ? (
-          <ol className="space-y-2.5">
-            {(items as McqItem[]).map((mc, i) => (
-              <li key={i} className="text-sm space-y-1.5 rounded-lg border border-border/40 p-3 bg-background/40 w-full">
-                <p className="font-medium leading-[1.7]">
-                  <span className="mr-2 font-bold text-primary">{i + 1}.</span>
-                  {mc.question}
-                </p>
-                <ol className="pl-7 space-y-1 text-[13px] text-muted-foreground leading-relaxed">
-                  {mc.options.map((opt, j) => (
-                    <li key={j} className="break-words">
-                      {String.fromCharCode(65 + j)}. {opt}
-                    </li>
-                  ))}
-                </ol>
-                <p className="pl-7 text-xs font-semibold text-green-700 dark:text-green-400">
-                  Ans: {mc.answer}
-                </p>
-              </li>
-            ))}
-          </ol>
         ) : (
-          <ol className="space-y-2">
-            {(items as string[]).map((it, i) => (
-              <li key={i} className="flex gap-2.5 text-sm leading-[1.8] w-full min-w-0">
-                <span
-                  className={`shrink-0 font-bold mt-[3px] w-6 text-right text-xs tabular-nums ${def.headerTone}`}
-                >
-                  {i + 1}.
-                </span>
-                <span className="flex-1 min-w-0 break-words">
-                  <MathMarkdown content={it} />
-                </span>
-              </li>
-            ))}
-          </ol>
+          renderFieldBody(def, items)
         )}
       </div>
     </Card>
+  );
+}
+
+function renderFieldBody(
+  def: FieldDef,
+  items: string[] | McqItem[] | string | undefined,
+) {
+  if (typeof items === "string") {
+    return (
+      <div className="text-sm leading-[1.8] break-words">
+        <MathMarkdown content={items} />
+      </div>
+    );
+  }
+  if (def.key === "mcs") {
+    return (
+      <ol className="space-y-2.5">
+        {(items as McqItem[]).map((mc, i) => (
+          <li key={i} className="text-sm space-y-1.5 w-full">
+            <p className="font-medium leading-[1.7]">
+              <span className="mr-2 font-bold text-primary">{i + 1}.</span>
+              {mc.question}
+            </p>
+            <ol className="pl-7 space-y-1 text-[13px] text-muted-foreground leading-relaxed">
+              {mc.options.map((opt, j) => (
+                <li key={j} className="break-words">
+                  {String.fromCharCode(65 + j)}. {opt}
+                </li>
+              ))}
+            </ol>
+            <p className="pl-7 text-xs font-semibold text-green-800">Ans: {mc.answer}</p>
+          </li>
+        ))}
+      </ol>
+    );
+  }
+  return (
+    <ol className="space-y-2">
+      {(items as string[]).map((it, i) => (
+        <li key={i} className="flex gap-2.5 text-sm leading-[1.8] w-full min-w-0">
+          <span className="shrink-0 font-bold mt-[3px] w-6 text-right text-xs tabular-nums text-neutral-600">
+            {i + 1}.
+          </span>
+          <span className="flex-1 min-w-0 break-words">
+            <MathMarkdown content={it} />
+          </span>
+        </li>
+      ))}
+    </ol>
   );
 }
 
@@ -374,74 +422,27 @@ export function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
     }).length;
   }, [data]);
 
-  const sortedFields = useMemo(() => {
-    return [...KNOWLEDGE_FIELDS].sort((a, b) => {
-      const aEmpty =
-        data[a.key] === undefined ||
-        data[a.key] === null ||
-        (Array.isArray(data[a.key]) && (data[a.key] as unknown[]).length === 0) ||
-        (typeof data[a.key] === "string" && (data[a.key] as string).trim().length === 0);
-      const bEmpty =
-        data[b.key] === undefined ||
-        data[b.key] === null ||
-        (Array.isArray(data[b.key]) && (data[b.key] as unknown[]).length === 0) ||
-        (typeof data[b.key] === "string" && (data[b.key] as string).trim().length === 0);
-      if (aEmpty !== bEmpty) return aEmpty ? 1 : -1;
-      return FIELD_ORDER.indexOf(a.key) - FIELD_ORDER.indexOf(b.key);
-    });
-  }, [data]);
-
   return (
-    <div className="space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <Brain className="h-4 w-4 text-primary" />
-          <p className="text-xs font-semibold text-foreground">
-            Knowledge Field Coverage
-          </p>
-        </div>
-        <Badge
-          variant="outline"
-          className={`text-[11px] ${
-            populatedCount >= 15
-              ? "border-green-300 text-green-700 dark:text-green-400 bg-green-50 dark:bg-green-950/30"
-              : populatedCount >= 10
-              ? "border-amber-300 text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/30"
-              : "border-red-300 text-red-700 dark:text-red-400 bg-red-50 dark:bg-red-950/30"
-          }`}
-        >
-          {populatedCount} / {KNOWLEDGE_FIELDS.length} fields populated
-        </Badge>
-      </div>
-
-      {/* Full-width ordered list: one concept block per row so each idea
-          finishes on its own line instead of wrapping mid-sentence in a
-          narrow 2/3-column card. */}
-      <PaperJsonBody className="mt-3">
-        <div className="grid grid-cols-1 gap-4">
-          {sortedFields.map((def, idx) => (
-            <FieldCard
-              key={def.key}
-              def={def}
-              orderLabel={`${String(idx + 1).padStart(2, "0")} / ${String(sortedFields.length).padStart(2, "0")}`}
-              items={
-                def.key === "summary"
-                  ? (data.summary as string)
-                  : (data[def.key] as string[] | McqItem[] | undefined)
-              }
-            />
-          ))}
-        </div>
-
-        {data.summary && (
-          <div className="mt-6 border-t border-neutral-300 pt-4">
-            <p className="mb-2 text-[10px] font-bold uppercase tracking-wider text-neutral-500">
-              Topic summary
-            </p>
-            <MathMarkdown content={data.summary} className="text-[13px] leading-relaxed" />
-          </div>
-        )}
-      </PaperJsonBody>
+    <div className="a4-notebook-flow">
+      <p className="a4-notebook-kicker print:hidden">
+        Knowledge fields · {populatedCount} / {KNOWLEDGE_FIELDS.length} populated
+      </p>
+      {KNOWLEDGE_FIELDS.map((def, idx) => {
+        const items =
+          def.key === "summary"
+            ? (data.summary as string)
+            : (data[def.key] as string[] | McqItem[] | undefined);
+        return (
+          <FieldCard
+            key={def.key}
+            notebook
+            def={def}
+            orderLabel={`${String(idx + 1).padStart(2, "0")}`}
+            items={items}
+            emptyHint={!fieldHasContent(items)}
+          />
+        );
+      })}
     </div>
   );
 }
@@ -456,6 +457,8 @@ export type ConceptFieldPanelProps = {
   unitId: string;
   topicSlug: string;
   topicTitle?: string;
+  /** Parent tab already wrapped this panel in `A4DocumentSurface`. */
+  inHostPaper?: boolean;
 };
 
 /**
@@ -464,7 +467,7 @@ export type ConceptFieldPanelProps = {
  * (owner request 2026-10-23: "create all possible tabs which can be classified
  * in the parts and the parts will be tabs").
  */
-export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
+export function ConceptFieldPanel({ field, inHostPaper = false, ...props }: ConceptFieldPanelProps) {
   const { data, loading } = useTopicConcept(props);
 
   if (loading)
@@ -482,7 +485,33 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
   // `summary` is one rich string, not one of the ordered list fields.
   if (field === "summary") {
     const summary = data.summary?.trim();
+    if (!summary) {
+      if (inHostPaper) {
+        return (
+          <section className="a4-notebook-flow">
+            <h2 className="a4-title mb-3 text-left text-[1.15rem]">
+              {props.topicTitle ?? props.topicSlug} — Summary
+            </h2>
+            <p className="a4-field-empty text-xs italic text-neutral-500">No summary text yet.</p>
+          </section>
+        );
+      }
+      return null;
+    }
     const standalone = isStandaloneReaderChrome();
+    const body = (
+      <>
+        {(standalone || inHostPaper) && (
+          <h2 className="a4-title mb-3 text-left text-[1.15rem]">
+            {props.topicTitle ?? props.topicSlug} — Summary
+          </h2>
+        )}
+        <div className="border-l-4 border-emerald-800 pl-4">
+          <MathMarkdown content={summary} className="text-sm leading-relaxed" />
+        </div>
+      </>
+    );
+    if (inHostPaper) return <section className="a4-notebook-flow">{body}</section>;
     return (
       <article className="doc-view" aria-label={`Summary for ${props.topicTitle ?? props.topicSlug}`}>
         <DocToolbar
@@ -494,29 +523,32 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
             { label: "LaTeX / KaTeX", tone: "sky" },
           ]}
         />
-        <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>
-          {standalone && (
-            <h1 className="a4-title mb-4 text-left">
-              {props.topicTitle ?? props.topicSlug} — Summary
-            </h1>
-          )}
-          <div className="border-l-4 border-emerald-600 pl-4">
-            {summary ? (
-              <MathMarkdown content={summary} className="text-sm leading-relaxed" />
-            ) : (
-              <p className="text-xs italic text-neutral-500">
-                Empty — populate summary when adding content
-              </p>
-            )}
-          </div>
-        </A4DocumentSurface>
+        <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>{body}</A4DocumentSurface>
       </article>
     );
   }
 
   const def = KNOWLEDGE_FIELDS.find((f) => f.key === field);
   if (!def) return null;
+  const items = data[field] as string[] | McqItem[] | string | undefined;
+  if (!fieldHasContent(items) && !inHostPaper) return null;
+
   const standalone = isStandaloneReaderChrome();
+  const fieldBody = (
+    <>
+      {(standalone || inHostPaper) && (
+        <h2 className="a4-title mb-3 text-left text-[1.15rem]">
+          {props.topicTitle ?? props.topicSlug} — {def.label}
+        </h2>
+      )}
+      <FieldCard def={def} notebook items={items} emptyHint={!fieldHasContent(items)} />
+    </>
+  );
+
+  if (inHostPaper) {
+    return <section className="a4-notebook-flow">{fieldBody}</section>;
+  }
+
   return (
     <article className="doc-view" aria-label={`${def.label} for ${props.topicTitle ?? props.topicSlug}`}>
       <DocToolbar
@@ -528,17 +560,7 @@ export function ConceptFieldPanel({ field, ...props }: ConceptFieldPanelProps) {
           { label: "LaTeX / KaTeX", tone: "emerald" },
         ]}
       />
-      <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>
-        {standalone && (
-          <h1 className="a4-title mb-4 text-left">
-            {props.topicTitle ?? props.topicSlug} — {def.label}
-          </h1>
-        )}
-        <FieldCard
-          def={def}
-          items={data[field] as string[] | McqItem[] | string | undefined}
-        />
-      </A4DocumentSurface>
+      <A4DocumentSurface className={standalone ? "mt-0" : "mt-4"}>{fieldBody}</A4DocumentSurface>
     </article>
   );
 }

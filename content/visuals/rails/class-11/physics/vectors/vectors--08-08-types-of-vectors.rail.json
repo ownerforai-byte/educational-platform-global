@@ -107,7 +107,11 @@
     },
     {
       "label": "More ideas",
-      "text": "A free vector may be drawn anywhere provided its magnitude and direction stay the same. A force on a rigid body is not completely free, because its line of action decides the torque. The class keeps that distinction when moments are being calculated."
+      "text": "A free vector may be drawn anywhere provided its magnitude and direction stay the same. A force on a rigid body is not completely free, because its line of action decides the torque. The class keeps that distinction when moments are being calculated.  ·  **Vector classification (classified)** | Type | Definition | Example | |---|---|---| | Zero/null | Magnitude zero, direction undefined | Net force in equilibrium | | Free | Slide anywhere, same effect | Pure velocity arrow | | Localised | Fixed line of action | Force on a lever | | Negative | Same size, opposite sense…  ·  **Position, displacement, and equality** | Concept | Statement | Trap | |---|---|---| | Position vector | Origin to point | Depends on origin | | Displacement | Change in position | Independent of path | | Equal vectors | Same magnitude AND direction | Position irrelevant | | Collinear | Along one line | Can still…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Free vector: same arrow, many homes <svg viewBox=\"0 0 640 180\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 120 L 240 120\" stroke=\"#1d4ed8\" stroke-width=\"3\"/><path d=\"M300 70 L 400 70\" stroke=\"#1d4ed8\"…"
     }
   ]
 }

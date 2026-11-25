@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — no interior crossing:** one integral, top minus bottom. - **Type B — interior crossing:** split at the crossing, two integrals. - **Type C — dy slicing:** horizontal strips for x = g(y) boundaries. - **Type D — symmetric doubling:** verify symmetry, compute half, double.  ·  ## 6. Common Confusions **\"Top minus bottom needs absolute values\":** once the order is known per strip, plain subtraction is correct — the |·| was resolved by the analysis. **\"Integrate in dx always\":** count the splits; dy may halve the work."
+      "text": "## 5. Worked Example Types - **Type A — no interior crossing:** one integral, top minus bottom. - **Type B — interior crossing:** split at the crossing, two integrals. - **Type C — dy slicing:** horizontal strips for x = g(y) boundaries. - **Type D — symmetric doubling:** verify symmetry, compute half, double.  ·  ## 6. Common Confusions **\"Top minus bottom needs absolute values\":** once the order is known per strip, plain subtraction is correct — the |·| was resolved by the analysis. **\"Integrate in dx always\":** count the splits; dy may halve the work.  ·  **Area between curves — classified by the intersection pattern** | Pattern | Set-up | Trap | |---|---|---| | One crossing pair | Integral (top - bottom) dx | Identify top on the whole interval | | Curves cross inside | Split at every intersection | Top-bottom swaps sign at each crossing | | Vertical simplicity |…"
     }
   ]
 }

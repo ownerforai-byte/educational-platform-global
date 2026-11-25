@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — rational ties:** divide by the top power; leading ratio. - **Type B — mixed families:** identify the rungs; the higher rung's coefficient survives. - **Type C — radical two-sided:** |x| split; different answers at ±∞.…  ·  ## 6. Common Confusions **\"Biggest coefficient wins\":** only within a rung; across rungs the family decides. **\"√(x² + 1) = x + …\":** it equals |x|√(1 + 1/x²) — the sign matters at −∞."
+      "text": "## 5. Worked Example Types - **Type A — rational ties:** divide by the top power; leading ratio. - **Type B — mixed families:** identify the rungs; the higher rung's coefficient survives. - **Type C — radical two-sided:** |x| split; different answers at ±∞.…  ·  ## 6. Common Confusions **\"Biggest coefficient wins\":** only within a rung; across rungs the family decides. **\"√(x² + 1) = x + …\":** it equals |x|√(1 + 1/x²) — the sign matters at −∞.  ·  **Squeeze theorem — the classified ingredients** | Ingredient | Requirement | Role | |---|---|---| | Lower bound g | g(x) <= f(x) near a | Floor for f | | Upper bound h | f(x) <= h(x) near a | Ceiling for f | | Common limit | lim g = lim h = L | Floor meets ceiling | | Verdict | lim f = L | f has no room to escape |"
     }
   ]
 }

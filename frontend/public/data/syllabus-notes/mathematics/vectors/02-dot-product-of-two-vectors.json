@@ -10,7 +10,8 @@
     "**Algebraic laws.** a · b = b · a, a · (b + c) = a · b + a · c, and (k a) · b = k(a · b); the dot product is NOT associative because a · b is a scalar.",
     "**Self product.** a · a = |a|², which is why |a| = √(a · a) and why |a + b|² = |a|² + 2a·b + |b|².",
     "**Worked example.** a = (2, −1, 3), b = (1, 4, −2): a·b = 2 − 4 − 6 = −8, |a| = √14, |b| = √21, so cos θ = −8/√294.",
-    "**Exam caution.** The dot product of three vectors such as (a · b) · c is meaningless; use parentheses only where the scalar is multiplied by a vector."
+    "**Exam caution.** The dot product of three vectors such as (a · b) · c is meaningless; use parentheses only where the scalar is multiplied by a vector.",
+    "**Dot product — the classified readings**\n\n| Reading | Formula | Use |\n|---|---|---|\n| Geometric | a . b = |a||b| cos(theta) | Angle between vectors |\n| Component | a . b = a1b1 + a2b2 + a3b3 | Fast computation |\n| Projection | a . b-hat = length of a along b | Work done, shadow length |\n| Orthogonality test | a . b = 0 | Perpendicularity without angles |\n| Sign diagnostic | positive acute, negative obtuse | Quick angle sense |"
   ],
   "confusion": [],
   "practice": [],

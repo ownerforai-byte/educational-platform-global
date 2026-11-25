@@ -72,8 +72,8 @@ async function main() {
   twaManifest.orientation = "portrait";
   twaManifest.themeColor = require("color")("#3b82f6");
   twaManifest.backgroundColor = require("color")("#0f172a");
-  twaManifest.iconUrl = "https://harindrasah.com.np/icon-512.png";
-  twaManifest.maskableIconUrl = "https://harindrasah.com.np/icon-512.png";
+  twaManifest.iconUrl = "https://harindrasah.com.np/profile-picture.jpg";
+  twaManifest.maskableIconUrl = "https://harindrasah.com.np/profile-picture.jpg";
   twaManifest.enableNotifications = true;
   twaManifest.minSdkVersion = 30;
   twaManifest.generatorApp = "bubblewrap";

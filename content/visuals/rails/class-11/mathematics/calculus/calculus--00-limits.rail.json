@@ -108,6 +108,10 @@
     {
       "label": "More ideas",
       "text": "## 4. Deep Conceptual — The First Contact With \"Approach\" - Introductory drills should be *narrated*: at x = 2.9, 2.99, 2.999 the function reads 5.9, 5.99, 5.999 — the approach is visible numerically before it is formal.…  ·  ## 5. Worked Example Types - **Type A — pure substitution:** polynomials and continuous pieces; cite continuity. - **Type B — first 0/0:** difference of squares, cancel, substitute, star-check. - **Type C — first conjugate:** single radical, one multiplication, one cancellation.…  ·  ## 6. Common Confusions **\"0/0 means the limit is 0\":** it means transform — the answer could be anything. **\"Cancelling changes the function\":** only at the excluded point, which the limit never visits."
+    },
+    {
+      "label": "More ideas",
+      "text": "**Limit intuition — the classified behaviours near a point** | Behaviour near a | Limit verdict | Graph signature | |---|---|---| | Values settle on one number | Limit = that number | Smooth approach from both sides | | Left and right settle differently | Limit DNE | Step in the graph | | Values grow without bound |…"
     }
   ]
 }

@@ -22,7 +22,10 @@
     "**Scalar triple product:** $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C})$ gives the volume of the parallelepiped formed by the three vectors. It is cyclic: $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C}) = \\vec{B} \\cdot (\\vec{C} \\times \\vec{A}) = \\vec{C} \\cdot (\\vec{A} \\times \\vec{B})$.",
     "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
     "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
-    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "**Cross product mastery (classified)**\n\n| Item | Statement | Use |\n|---|---|---|\n| Direction | Right-hand rule, ⊥ to both | Orientation |\n| Magnitude | AB sinθ = area of parallelogram | Geometry link |\n| Anti-commutative | A×B = −B×A | Sign discipline |\n| 2-D shortcut | AₓB_y − A_yBₓ | Fast numericals |",
+    "**Cross products in physics**\n\n| Quantity | Formula | Vector nature |\n|---|---|---|\n| Torque | τ = r × F | Axis of rotation |\n| Magnetic force | F = qv × B | Perpendicular to v and B |\n| Angular momentum | L = r × p | Conserved vector |\n| Area vector | A = ½ r₁ × r₂ | Flux calculations |",
+    "```svg Right-hand rule: fingers A to B, thumb gives A×B\n<svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M180 130 L 330 130\" stroke=\"#1d4ed8\" stroke-width=\"3\"/><path d=\"M180 130 L 280 70\" stroke=\"#a16207\" stroke-width=\"3\"/><path d=\"M180 130 L 180 55\" stroke=\"#166534\" stroke-width=\"3\"/><text x=\"345\" y=\"135\" fill=\"#1d4ed8\" font-size=\"12\">A</text><text x=\"255\" y=\"60\" fill=\"#a16207\" font-size=\"12\">B</text><text x=\"150\" y=\"50\" fill=\"#166534\" font-size=\"12\">A×B</text><text x=\"470\" y=\"110\" fill=\"#6b7280\" font-size=\"12\">curl fingers A→B</text></g></svg>\n```"
   ],
   "confusion": [
     "❌ The cross product gives a scalar. ✅ The cross product gives a VECTOR. The result is perpendicular to both input vectors. The dot product gives a scalar; the cross product gives a vector.",

@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — 0/0 by factoring:** shared root exposed, cancelled, substituted. - **Type B — 0·∞ flip:** x ln x → ln x/(1/x) ⟹ L'Hôpital ⟹ 0. - **Type C — ∞ − ∞ merge:** sec x − tan x = (1 − sin x)/cos x ⟹ 0/0 ⟹ resolve. - **Type D — power form:** xˣ → e^{lim x ln x} = e⁰ = 1.  ·  ## 6. Common Confusions **\"0/0 = 1\":** no value exists — transform. **\"1^∞ = 1\":** the base's small displacement times a huge exponent can leave any positive constant — e^c is the answer shape."
+      "text": "## 5. Worked Example Types - **Type A — 0/0 by factoring:** shared root exposed, cancelled, substituted. - **Type B — 0·∞ flip:** x ln x → ln x/(1/x) ⟹ L'Hôpital ⟹ 0. - **Type C — ∞ − ∞ merge:** sec x − tan x = (1 − sin x)/cos x ⟹ 0/0 ⟹ resolve. - **Type D — power form:** xˣ → e^{lim x ln x} = e⁰ = 1.  ·  ## 6. Common Confusions **\"0/0 = 1\":** no value exists — transform. **\"1^∞ = 1\":** the base's small displacement times a huge exponent can leave any positive constant — e^c is the answer shape.  ·  **Indeterminate forms — the classified seven** | Form | Meaning | Standard resolution | |---|---|---| | 0/0 | Two vanishings race | Factor, cancel, or compare rates | | inf/inf | Two growths race | Divide numerator and denominator by the dominant power | | inf - inf | Cancellation race | Common denominator or…"
     }
   ]
 }

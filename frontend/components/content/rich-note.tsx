@@ -38,23 +38,23 @@ export function NoteBlocks({
   const specs = (Array.isArray(formulaSpecs) ? formulaSpecs : []) as Formula[];
 
   return (
-    <div className="space-y-3">
+    <div className="a4-notebook-flow">
       {blocks.map((raw, i) => {
         const parsed = BlockSchema.safeParse(raw);
-        if (!parsed.success) return <BlockInvalid key={i} />;
+        if (!parsed.success) return null;
         const block = parsed.data;
         if (block.kind === "compute") {
           const spec = specs.find((f) => f.id === block.formula);
-          if (!spec) return <BlockMissing key={i} name={block.formula} />;
+          if (!spec) return null;
           return <FormulaLab key={i} block={block} formulaSpec={spec} />;
         }
         const Comp = resolveBlock(block.block);
-        if (!Comp) return <BlockMissing key={i} name={block.block} />;
+        if (!Comp) return null;
         return (
-          <figure key={i} className="space-y-1">
+          <figure key={i} className="a4-inline-figure">
             <Comp {...block.props} />
             {block.caption ? (
-              <figcaption className="text-xs text-slate-400">
+              <figcaption className="text-xs text-neutral-500 text-left">
                 <MathMarkdown content={block.caption} />
               </figcaption>
             ) : null}

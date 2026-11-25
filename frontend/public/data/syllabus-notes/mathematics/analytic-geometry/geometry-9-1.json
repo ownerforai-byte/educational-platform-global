@@ -44,7 +44,8 @@
     "<h2>Question 5 (b)</h2>",
     "<p><b>Problem:</b> Find the equations of the bisectors of the acute angle between each of the following pairs of lines:<br>i) $y = x$ and $y = 7x + 4$<br>ii) $x + 2y - 5 = 0$ and $4x + 2y + 9 = 0$</p>",
     "<h3>Solution for i):</h3>",
-    "<p>Rearrange equations to $x - y = 0$ and $7x - y + 4 = 0$. Make constants positive (already positive or zero).</p>"
+    "<p>Rearrange equations to $x - y = 0$ and $7x - y + 4 = 0$. Make constants positive (already positive or zero).</p>",
+    "**Bisectors of a pair of lines — the complete checklist, classified**\n\n| Object | Equation form | Reading |\n|---|---|---|\n| Bisector pair | (a1x+b1y+c1)/N1 = +-(a2x+b2y+c2)/N2 | Two perpendicular lines through the intersection point |\n| Acute-angle bisector | The branch whose sign matches a1a2 + b1b2 after c's are positive | Closer to the sharper gap between the lines |\n| Obtuse-angle bisector | The opposite-sign branch | Perpendicular partner of the acute one |\n| Degenerate case | a1a2 + b1b2 = 0 | Lines are perpendicular; every 'bisector' test degenerates |"
   ],
   "confusion": [],
   "practice": [],

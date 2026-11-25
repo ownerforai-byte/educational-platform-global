@@ -17,11 +17,26 @@ import { DevContrastAudit } from "@/lib/color-contrast";
 import { FocusTimer } from "@/components/owner/focus-timer";
 import { Toaster } from "sonner";
 import { StarField } from "@/components/theme/star-field";
+import {
+  SITE_FAVICON_URL,
+  SITE_ICON_SIZE,
+  SITE_PROFILE_PICTURE_URL,
+} from "@/lib/site-assets";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform",
   description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
   manifest: "/manifest.json",
+  icons: {
+    icon: [
+      {
+        url: SITE_FAVICON_URL,
+        type: "image/jpeg",
+        sizes: `${SITE_ICON_SIZE.width}x${SITE_ICON_SIZE.height}`,
+      },
+    ],
+    apple: [{ url: SITE_PROFILE_PICTURE_URL, type: "image/jpeg" }],
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
@@ -58,7 +73,8 @@ export default async function RootLayout({
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Ravikisan's Platform" />
-    <link rel="apple-touch-icon" href="/icon-192.png" />
+    <link rel="icon" href={SITE_FAVICON_URL} type="image/jpeg" sizes={`${SITE_ICON_SIZE.width}x${SITE_ICON_SIZE.height}`} />
+    <link rel="apple-touch-icon" href={SITE_PROFILE_PICTURE_URL} />
   </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider defaultTheme="system" storageKey="neb-theme">

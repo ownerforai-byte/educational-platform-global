@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — rational audit:** factor fully; cancelled roots ⟹ holes with limits; surviving roots ⟹ walls with side signs. - **Type B — piecewise seam:** LHL from the left branch, RHL from the right, f(a) from the owning branch; unanimous agreement ⟹ continuous.…  ·  ## 6. Common Confusions **\"Any break is a jump\":** jumps need finite *unequal* sides — compute before naming. **\"f(a) defined ⟹ no discontinuity\":** a wrong value is a removable break, not immunity."
+      "text": "## 5. Worked Example Types - **Type A — rational audit:** factor fully; cancelled roots ⟹ holes with limits; surviving roots ⟹ walls with side signs. - **Type B — piecewise seam:** LHL from the left branch, RHL from the right, f(a) from the owning branch; unanimous agreement ⟹ continuous.…  ·  ## 6. Common Confusions **\"Any break is a jump\":** jumps need finite *unequal* sides — compute before naming. **\"f(a) defined ⟹ no discontinuity\":** a wrong value is a removable break, not immunity.  ·  **Discontinuity — the classified zoo** | Type | Defining mark | Removable? | Textbook example | |---|---|---|---| | Removable (point) | Limit exists but != f(a) or f(a) undefined | Yes — redefine one point | (x^2-1)/(x-1) at x=1 | | Jump | One-sided limits exist but differ | No — a fill-in cannot bridge a gap | Step…"
     }
   ]
 }

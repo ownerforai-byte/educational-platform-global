@@ -103,9 +103,56 @@ const result2 = scanJSON(allJSON);
 console.log("\n=== RE-SCAN AFTER FIX ===");
 console.log("Valid:", result2.ok, "| Broken:", result2.broken.length);
 
-// Gate semantics: fail when JSON is still unparseable after the BOM pass, so
-// `npm run check:content` can actually exit non-zero (it previously never did).
+// ---------- 6. Glued GFM table headers ----------
+// A table whose header row is glued to a lead-in (`**Answer.** | Basis | …`)
+// makes remark-gfm drop the whole block back to a shattered paragraph, because
+// a GFM table must start its own block. Same for an orphan delimiter row with
+// no header above it. Both shipped once already (13 biology tables, 2026-11-25);
+// this gate keeps them out.
+function scanGluedTables(root) {
+  const delimRow = /^\s*\|?\s*:?-{1,}:?\s*(\|\s*:?-+:?\s*)*\|?\s*$/;
+  const hits = [];
+  function walkStr(s) {
+    if (typeof s === "string") {
+      const lines = s.split("\n");
+      for (let i = 0; i < lines.length; i++) {
+        const line = lines[i];
+        const pipeCount = (line.match(/\|/g) || []).length;
+        const next = lines[i + 1];
+        if (pipeCount >= 2 && next && delimRow.test(next)) {
+          // Glued header: the delimiter row follows a line that is not itself
+          // a pipe row. A pure `|---|` first line (orphan delimiter with rows
+          // below but no header) is the same failure in the other direction.
+          if (!/^\s*\|/.test(line) || delimRow.test(line)) hits.push(line.slice(0, 80));
+        }
+      }
+    } else if (Array.isArray(s)) s.forEach(walkStr);
+    else if (s && typeof s === "object") for (const k in s) walkStr(s[k]);
+  }
+  function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      const p = path.join(dir, e.name);
+      if (e.isDirectory()) walk(p);
+      else if (e.name.endsWith(".json")) {
+        try { walkStr(JSON.parse(fs.readFileSync(p, "utf8"))); } catch {}
+      }
+    }
+  }
+  walk(root);
+  return hits;
+}
+const glued = scanGluedTables(path.join(ROOT, "content", "notes", "concepts"));
+console.log("\n=== Glued GFM table headers (content/notes/concepts) ===");
+console.log("Broken tables:", glued.length);
+glued.slice(0, 10).forEach(l => console.log(`  GLUED: ${l}`));
+
+// Gate semantics: fail when JSON is still unparseable after the BOM pass, or
+// when glued table headers would render as shattered paragraphs.
 if (result2.broken.length > 0) {
   console.error("\n" + result2.broken.length + " JSON file(s) still unparseable - content health check FAILED.");
+  process.exit(1);
+}
+if (glued.length > 0) {
+  console.error("\n" + glued.length + " glued table header(s) - tables would render as broken paragraphs. Split the bold lead-in onto its own line before the table.");
   process.exit(1);
 }

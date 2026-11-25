@@ -10,7 +10,8 @@
     "**Anti-commutative.** b × a = −(a × b), and a × a = 0; parallel non-zero vectors have a zero cross product.",
     "**Area.** |a × b| is the area of the parallelogram with adjacent sides a and b, so the area of triangle ABC is ½|AB × AC|.",
     "**Worked example.** a = (1, 2, 3), b = (4, 5, 6): a × b = (12 − 15, 12 − 6, 5 − 8) = (−3, 6, −3), and dotting with a gives −3 + 12 − 9 = 0.",
-    "**Exam caution.** Dot the result with both a and b as a one-line check; a sign error in the j component is the most common mistake."
+    "**Exam caution.** Dot the result with both a and b as a one-line check; a sign error in the j component is the most common mistake.",
+    "**Cross product — the classified properties**\n\n| Property | Statement | Consequence |\n|---|---|---|\n| Direction | a x b perpendicular to both | Normal vector for planes |\n| Magnitude | |a x b| = |a||b| sin(theta) | Area of the parallelogram they span |\n| Anti-commutativity | a x b = -(b x a) | Order matters; dot product order does not |\n| Collinearity test | a x b = 0 | Parallel vectors (incl. zero vector) |\n| Distributive | a x (b + c) = a x b + a x c | Component computation works |"
   ],
   "confusion": [],
   "practice": [],

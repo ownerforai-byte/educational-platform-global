@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — simple positive region:** one anti-derivative, endpoints, done. - **Type B — sign change mid-interval:** split at the root, add magnitudes. - **Type C — symmetry shortcut:** even/odd halving or cancellation. - **Type D — recognised shape:** line (triangle) or circle (quarter).  ·  ## 6. Common Confusions **\"The integral is the area\":** it is the signed area — split at roots for the geometric answer. **\"Always integrate\":** recognise triangles and circular quarters first."
+      "text": "## 5. Worked Example Types - **Type A — simple positive region:** one anti-derivative, endpoints, done. - **Type B — sign change mid-interval:** split at the root, add magnitudes. - **Type C — symmetry shortcut:** even/odd halving or cancellation. - **Type D — recognised shape:** line (triangle) or circle (quarter).  ·  ## 6. Common Confusions **\"The integral is the area\":** it is the signed area — split at roots for the geometric answer. **\"Always integrate\":** recognise triangles and circular quarters first.  ·  **Area under a curve — the classified cases** | Case | Set-up | Sign discipline | |---|---|---| | Curve above x-axis | Integral of f dx | Area = integral directly | | Curve below x-axis | Integral of -f dx (or |f|) | Integral alone gives a negative; flip it | | Curve crossing the axis | Split at each zero | Sum…"
     }
   ]
 }

@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — table direct:** single entries with + C written every time. - **Type B — linearity splits:** polynomials and sums term by term. - **Type C — initial conditions:** integrate, then pin C from given data.…  ·  ## 6. Common Confusions **\"Forgetting + C\":** the family is the answer; one curve is not. **\"∫x⁻¹dx = x⁰/0\":** the gap is real — the logarithm is a different species, not a special case."
+      "text": "## 5. Worked Example Types - **Type A — table direct:** single entries with + C written every time. - **Type B — linearity splits:** polynomials and sums term by term. - **Type C — initial conditions:** integrate, then pin C from given data.…  ·  ## 6. Common Confusions **\"Forgetting + C\":** the family is the answer; one curve is not. **\"∫x⁻¹dx = x⁰/0\":** the gap is real — the logarithm is a different species, not a special case.  ·  **Anti-derivatives — classified by what they answer** | Question | Object | Bookkeeping | |---|---|---| | Which F has F' = f? | Indefinite integral + C | Family of curves, one per constant | | How much accumulates? | Definite integral a to b | F(b) - F(a); constant cancels | | What reverses differentiation? | The…"
     }
   ]
 }

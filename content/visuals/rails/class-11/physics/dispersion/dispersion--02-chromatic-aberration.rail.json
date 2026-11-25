@@ -99,7 +99,11 @@
     },
     {
       "label": "More ideas",
-      "text": "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion."
+      "text": "An achromatic doublet pairs converging crown glass with diverging flint glass so two selected colours focus together. Stopping down reduces marginal-ray error but does not remove material dispersion.  ·  **Chromatic vs spherical aberration (classified)** | Type | Cause | Remedy | |---|---|---| | Chromatic | μ depends on λ | Achromatic doublet | | Spherical | Marginal rays bend more | Stop down / parabolic surface | | Both degrade | Blur and colour fringes | Compound lens design |  ·  **Chromatic aberration facts** | Fact | Statement | Use | |---|---|---| | Violet focuses nearer | f_v &lt; f_r | Fringe order | | Longitudinal measure | f_r − f_v | Numerical | | Achromatic doublet | ω₁/f₁ + ω₂/f₂ = 0 | Design condition | | Effect on image | Coloured edges | Describe defect |"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Violet and red focus at different depths <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><ellipse cx=\"320\" cy=\"100\" rx=\"14\" ry=\"60\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><path d=\"M110 70 C 240 85, 300 92, 380 95 L 470…"
     }
   ]
 }

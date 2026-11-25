@@ -177,6 +177,7 @@ function VisualWorkspace({
   topicSlug,
   topicTitle,
   concepts,
+  notebook = false,
 }: {
   classSlug: string;
   subjectSlug: string;
@@ -184,6 +185,7 @@ function VisualWorkspace({
   topicSlug: string;
   topicTitle: string;
   concepts: RichTopicConcept[];
+  notebook?: boolean;
 }) {
   const [visualTab, setVisualTab] = useState<"schematic" | "3d">("schematic");
   const [visualKey, setVisualKey] = useState(0);
@@ -241,9 +243,19 @@ function VisualWorkspace({
     <section
       ref={visualPanelRef}
       aria-labelledby="visual-workspace-heading"
-      className={`rounded-3xl border border-border/70 bg-card shadow-sm ${isFullscreen ? "h-screen overflow-y-auto" : "overflow-hidden"}`}
+      className={
+        notebook
+          ? `a4-visual-section ${isFullscreen ? "h-screen overflow-y-auto" : "overflow-hidden"}`
+          : `rounded-3xl border border-border/70 bg-card shadow-sm ${isFullscreen ? "h-screen overflow-y-auto" : "overflow-hidden"}`
+      }
     >
-      <div className="flex flex-wrap items-center justify-between gap-3 border-b border-border/60 bg-muted/20 px-5 py-4 sm:px-6">
+      <div
+        className={
+          notebook
+            ? "a4-visual-toolbar flex flex-wrap items-center justify-between gap-3 py-2"
+            : "flex flex-wrap items-center justify-between gap-3 border-b border-border/60 bg-muted/20 px-5 py-4 sm:px-6"
+        }
+      >
         <div className="flex items-center gap-2.5">
           <FlaskConical className="h-5 w-5 text-sky-500" />
           <div>
@@ -919,37 +931,47 @@ export function TopicVerticalNotes({
   }
 
   return (
-    <div id="topic-notes" className="scroll-mt-24 space-y-6">
-      {(subjectSlug.toLowerCase().includes("chem") || topicTitle.toLowerCase().includes("element") || topicTitle.toLowerCase().includes("atom")) && (
-        <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-teal-500/30 bg-teal-500/10 p-5">
-          <div className="flex items-center gap-3"><Atom className="h-8 w-8 shrink-0 text-teal-600" /><div><h3 className="text-sm font-bold">Interactive periodic table and CEE questions</h3><p className="mt-1 text-xs text-muted-foreground">Explore configurations, properties and entrance MCQs.</p></div></div>
-          <Link href="/periodic-table" className="inline-flex min-h-10 items-center gap-2 rounded-xl bg-teal-600 px-4 text-xs font-bold text-white">Open periodic table<ExternalLink className="h-3.5 w-3.5" /></Link>
-        </div>
-      )}
+    <A4DocumentSurface className="mt-0" innerClassName="a4-notebook-flow">
+      <div id="topic-notes" className="scroll-mt-24">
+        {(subjectSlug.toLowerCase().includes("chem") ||
+          topicTitle.toLowerCase().includes("element") ||
+          topicTitle.toLowerCase().includes("atom")) && (
+          <p className="a4-notebook-kicker mb-2">
+            <Link href="/periodic-table" className="underline underline-offset-2">
+              Open periodic table &amp; CEE questions
+            </Link>
+          </p>
+        )}
 
-      {noteLoadFailed && !activeData && (
-        <p role="status" className="rounded-2xl border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm leading-relaxed text-foreground">
-          This topic&apos;s document body could not be loaded. Refresh the page to retry; the mind map and quick checks below still work.
-        </p>
-      )}
+        {noteLoadFailed && !activeData && (
+          <p role="status" className="mb-3 text-sm leading-relaxed text-amber-900">
+            This topic&apos;s document body could not be loaded. Refresh the page to retry; diagrams and checks below may still work.
+          </p>
+        )}
 
-      <TopicDocView
-        classSlug={classSlug}
-        subjectSlug={subjectSlug}
-        unitId={unitId}
-        topicSlug={topicSlug}
-        topicTitle={topicTitle}
-        data={docData}
-      />
+        <TopicDocView
+          hostPaper
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
+          unitId={unitId}
+          topicSlug={topicSlug}
+          topicTitle={topicTitle}
+          data={docData}
+        />
 
-      <VisualWorkspace classSlug={classSlug} subjectSlug={subjectSlug} unitId={unitId} topicSlug={topicSlug} topicTitle={topicTitle} concepts={activeData ? [activeData] : []} />
+        <VisualWorkspace
+          notebook
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
+          unitId={unitId}
+          topicSlug={topicSlug}
+          topicTitle={topicTitle}
+          concepts={activeData ? [activeData] : []}
+        />
 
-      {(hasHighYieldTopicData(highYield) || (activeData?.blocks && Array.isArray(activeData.blocks) && activeData.blocks.length > 0)) && (
-        <A4DocumentSurface className="mt-4">
-          {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
-          <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
-        </A4DocumentSurface>
-      )}
-    </div>
+        {hasHighYieldTopicData(highYield) && <FactBank factBank={factBank} />}
+        <NoteBlocks blocks={activeData?.blocks} formulaSpecs={activeData?.formulaSpecs} />
+      </div>
+    </A4DocumentSurface>
   );
 }

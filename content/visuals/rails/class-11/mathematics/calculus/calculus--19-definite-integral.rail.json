@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — FTC evaluation:** anti-derivative, endpoints, subtract. - **Type B — Riemann limit:** the right-endpoint sum for x² or x, evaluated as n → ∞. - **Type C — accumulation functions:** d/dx of an integral with variable or function limits.…  ·  ## 6. Common Confusions **\"The definite integral needs + C\":** no — endpoints subtract the constant away. **\"∫ₐˣf(t)dt and ∫f(x)dx are the same kind of thing\":** one is a function, the other a family."
+      "text": "## 5. Worked Example Types - **Type A — FTC evaluation:** anti-derivative, endpoints, subtract. - **Type B — Riemann limit:** the right-endpoint sum for x² or x, evaluated as n → ∞. - **Type C — accumulation functions:** d/dx of an integral with variable or function limits.…  ·  ## 6. Common Confusions **\"The definite integral needs + C\":** no — endpoints subtract the constant away. **\"∫ₐˣf(t)dt and ∫f(x)dx are the same kind of thing\":** one is a function, the other a family.  ·  **Definite integral — properties classified by use** | Property | Statement | Use | |---|---|---| | Reversal | Integral(b,a) = -Integral(a,b) | Keeps orientation bookkeeping honest | | Splitting | Integral(a,c) = Integral(a,b) + Integral(b,c) | Breaks awkward ranges at singularities | | Zero-width | Integral(a,a) = 0…"
     }
   ]
 }

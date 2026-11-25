@@ -109,7 +109,11 @@
     },
     {
       "label": "More ideas",
-      "text": "A curved path with changing acceleration, such as a spring-mass oscillation, is not a place to drop these three equations in. Constant a is the condition."
+      "text": "A curved path with changing acceleration, such as a spring-mass oscillation, is not a place to drop these three equations in. Constant a is the condition.  ·  **Three equations of motion (classified)** | Equation | Missing variable | Best for | |---|---|---| | v = u + at | s | Time questions | | s = ut + ½at² | v | Distance questions | | v² = u² + 2as | t | No-time questions | | s = (u+v)t/2 | a | Average-speed method |  ·  **Sign conventions that save marks** | Situation | Take positive | Result | |---|---|---| | Upward throw | Up | a = −g | | Dropped ball | Down | a = +g | | Braking car | Direction of motion | a negative | | Bounce | Choose per segment | Restart each phase |"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Throw up: v decreases, reverses, grows downward <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M110 110 L 560 110\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M110 40 L 110 180\" stroke=\"#374151\"…"
     }
   ]
 }

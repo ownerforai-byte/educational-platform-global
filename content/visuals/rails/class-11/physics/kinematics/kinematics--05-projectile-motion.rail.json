@@ -106,6 +106,10 @@
     {
       "label": "More ideas",
       "text": "## 4. Derivation asked at NEB (2019, 2022) **Time of flight is double the time to maximum height (3m, 2019):** At maximum height the vertical velocity vanishes: $0 = u\\sin\\theta - gt_{up} → t_{up} = u\\sin\\theta/g$.…  ·  ## 5. Conceptual Relationships - **To Topic 4 (resolution):** the whole topic is resolution in action — $u\\cos\\theta$ and $u\\sin\\theta$ start two independent problems. - **To Topic 9:** the vertical half is free fall; the horizontal half is uniform velocity.…  ·  ## 6. Exam Orientation and Previous Year Questions (NEB) ### 6.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Kinematics | Projectile | A body is projected with velocity 20 m s⁻¹ at 30° to the horizontal.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**Projectile formulas (angle θ, speed u) (classified)** | Quantity | Formula | Max value | |---|---|---| | Time of flight | T = 2u sinθ/g | 2u/g at 90° | | Max height | H = u²sin²θ/2g | u²/2g at 90° | | Range | R = u²sin2θ/g | u²/g at 45° | | Complementary angles | θ and 90°−θ | Same range |  ·  **Independence of components** | Axis | Motion | Acceleration | |---|---|---| | Horizontal | Uniform: x = u cosθ · t | Zero (no air) | | Vertical | Accelerated: y = u sinθ · t − ½gt² | −g | | Velocity at apex | Horizontal only | v = u cosθ | | Path shape | Parabola | Combination |  ·  ```svg Parabola: horizontal dashes, vertical arrows <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M110 160 Q 320 20 530 160\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.5\"/><circle cx=\"320\" cy=\"90\" r=\"6\"…"
     }
   ]
 }

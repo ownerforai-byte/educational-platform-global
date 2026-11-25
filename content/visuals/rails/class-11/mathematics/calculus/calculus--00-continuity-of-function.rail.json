@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — three-question audit:** limit, value, match at a named point. - **Type B — classification:** name the discontinuity from the failure pattern. - **Type C — repair:** re-anchor a removable discontinuity.…  ·  ## 6. Common Confusions **\"Continuous means you can draw it without lifting the pen\":** the folk picture — the definition is the three-point match, and it is local. **\"A hole breaks continuity forever\":** removable means one re-definition repairs it."
+      "text": "## 5. Worked Example Types - **Type A — three-question audit:** limit, value, match at a named point. - **Type B — classification:** name the discontinuity from the failure pattern. - **Type C — repair:** re-anchor a removable discontinuity.…  ·  ## 6. Common Confusions **\"Continuous means you can draw it without lifting the pen\":** the folk picture — the definition is the three-point match, and it is local. **\"A hole breaks continuity forever\":** removable means one re-definition repairs it.  ·  **Continuity at a point — the three-condition checklist, classified** | Condition | Failure mode | Named defect | |---|---|---| | f(a) exists | Point missing from domain | Hole | | lim x->a f(x) exists | One-sided limits differ or fail | Jump / oscillation | | Limit equals f(a) | Value parked off the limit | Removable…"
     }
   ]
 }

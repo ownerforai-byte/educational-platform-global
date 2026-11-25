@@ -87,7 +87,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 6. Common Confusions **\"Vertical bisectors are degenerate\":** x = 3/2 is a perfectly good bisector — slope-based tools need the axis-angle fallback, not avoidance. **\"Equal normalisers are luck\":** they are structure — |(a, b)| equal means the lines make equal-magnitude normal vectors, often from slope symmetry."
+      "text": "## 6. Common Confusions **\"Vertical bisectors are degenerate\":** x = 3/2 is a perfectly good bisector — slope-based tools need the axis-angle fallback, not avoidance. **\"Equal normalisers are luck\":** they are structure — |(a, b)| equal means the lines make equal-magnitude normal vectors, often from slope symmetry.  ·  **Worked bisector example — solution anatomy, classified** | Stage | Operation | Why it is there | |---|---|---| | Normalise | Make c1, c2 the same sign (both positive) | Fixes which bisector is + and which is - | | Substitute | Write (a1x+b1y+c1)/sqrt(a1^2+b1^2) = +-(a2x+b2y+c2)/sqrt(a2^2+b2^2) | One line gives both…"
     }
   ]
 }

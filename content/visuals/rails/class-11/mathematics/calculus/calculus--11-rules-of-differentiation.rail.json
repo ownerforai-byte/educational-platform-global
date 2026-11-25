@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — product rule with a trig cross-term:** sin x·cos x → cos 2x patterns. - **Type B — quotient rule:** (u/v) with the minus sign audited. - **Type C — chain stacks:** √(1 + sin 2x)-type nestings. - **Type D — log differentiation:** xˣ, (sin x)^{cos x}, (1+x)^{1/x}.  ·  ## 6. Common Confusions **\"The derivative of a product is the product of derivatives\":** the classic error — the product rule has two terms. **\"Dropping the inner derivative\":** the chain rule's second factor is not optional."
+      "text": "## 5. Worked Example Types - **Type A — product rule with a trig cross-term:** sin x·cos x → cos 2x patterns. - **Type B — quotient rule:** (u/v) with the minus sign audited. - **Type C — chain stacks:** √(1 + sin 2x)-type nestings. - **Type D — log differentiation:** xˣ, (sin x)^{cos x}, (1+x)^{1/x}.  ·  ## 6. Common Confusions **\"The derivative of a product is the product of derivatives\":** the classic error — the product rule has two terms. **\"Dropping the inner derivative\":** the chain rule's second factor is not optional.  ·  **Differentiation rules — classified by the shape of the input** | Input shape | Rule | Memory hook | |---|---|---| | Sum/difference | Differentiate term by term | Linearity | | Product | (uv)' = u'v + uv' | Both partners take a turn | | Quotient | (u/v)' = (u'v - uv')/v^2 | Minus sign and square are the losses | |…"
     }
   ]
 }

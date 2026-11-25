@@ -107,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — sketch from formula:** rational function ⟹ skeleton + holes at cancelled roots + walls at surviving roots with side arrows. - **Type B — read from graph:** given the picture, name each feature's type and the side continuity of each dot.…  ·  ## 6. Common Confusions **\"Open dot means discontinuous\":** yes at that point — but the *type* depends on whether the branches meet (removable) or not (jump). **\"The curve touching the wall means the limit exists\":** hugging a vertical line is blow-up, not approach to a value."
+      "text": "## 5. Worked Example Types - **Type A — sketch from formula:** rational function ⟹ skeleton + holes at cancelled roots + walls at surviving roots with side arrows. - **Type B — read from graph:** given the picture, name each feature's type and the side continuity of each dot.…  ·  ## 6. Common Confusions **\"Open dot means discontinuous\":** yes at that point — but the *type* depends on whether the branches meet (removable) or not (jump). **\"The curve touching the wall means the limit exists\":** hugging a vertical line is blow-up, not approach to a value.  ·  **Reading discontinuity off a graph — visual signatures, classified** | Graph signature | Diagnosis | Continuity verdict | |---|---|---| | Hole in the curve | Point missing, neighbours connected | Removable discontinuity | | Filled dot off the curve | f(a) defined but != limit | Removable by redefining f(a) | |…"
     }
   ]
 }

@@ -6,7 +6,10 @@
     "The resultant magnitude is sqrt(R_x^2 + R_y^2). The angle with the +x-axis satisfies tanα = |R_y / R_x|, and the quadrant follows the signs of R_x and R_y.",
     "This component method is the working form of the polygon law. Drawing the polygon is the picture. Adding components is the calculation.",
     "A vector along the negative x-axis has F_x = −F and F_y = 0. A vector straight down has F_x = 0 and F_y = −F. Leaving these signs out is the usual arithmetic error.",
-    "If the axes are rotated, the components change but the resultant vector does not. Choose axes that set as many angles as possible to 0° or 90°."
+    "If the axes are rotated, the components change but the resultant vector does not. Choose axes that set as many angles as possible to 0° or 90°.",
+    "**Finding components: method (classified)**\n\n| Step | Action | Check |\n|---|---|---|\n| 1 | Draw the vector to scale | Correct quadrant |\n| 2 | Drop perpendiculars on chosen axes | Right angles marked |\n| 3 | Label A cosθ and A sinθ | Adjacent = cos |\n| 4 | Verify: squares add to A² | Numerical check |",
+    "**Worked patterns**\n\n| Given | Components | Note |\n|---|---|---|\n| A at 30° | (0.87A, 0.5A) | Memorise ratios |\n| A at 60° | (0.5A, 0.87A) | Swap of 30° |\n| A at 45° | (0.71A, 0.71A) | Equal components |\n| A along −y | (0, −A) | Signs matter |",
+    "```svg 30-60-90 component ratios\n<svg viewBox=\"0 0 640 180\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M150 130 L 450 130\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M150 130 L 150 40\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M150 130 L 400 55\" stroke=\"#1d4ed8\" stroke-width=\"3\"/><text x=\"300\" y=\"150\" fill=\"#a16207\" font-size=\"12\">0.87A</text><text x=\"440\" y=\"90\" fill=\"#166534\" font-size=\"12\">0.5A</text><text x=\"320\" y=\"170\" fill=\"#6b7280\" font-size=\"12\">θ = 30°: long horizontal, short vertical</text></g></svg>\n```"
   ],
   "examples": [
     "When several vectors lie in one plane, resolve each one into x and y components, then add the components separately. Components along the same line add as ordinary signed numbers.",
