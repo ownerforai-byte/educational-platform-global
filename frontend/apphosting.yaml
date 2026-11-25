@@ -8,9 +8,9 @@ runConfig:
   concurrency: 80
 
 scripts:
-  # Monorepo: install from repo root, build the frontend workspace (matches Vercel).
+  # Monorepo: Cloud Build runs from repo root (rootDir frontend still ships full clone).
   buildCommand: >-
-    cd .. && npm ci --workspace=educational-platform-frontend
+    npm ci --workspace=educational-platform-frontend
     && npm run build --workspace=educational-platform-frontend
 
 env:
