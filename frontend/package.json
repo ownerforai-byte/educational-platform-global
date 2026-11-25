@@ -17,7 +17,8 @@
     "resources:check": "node ../scripts/enrich-resource-docs.mjs --check",
     "sw:precache": "node scripts/generate-sw-precache.mjs",
     "sw:precache:check": "node scripts/generate-sw-precache.mjs --check",
-    "postinstall": "node scripts/patch-rehype-katex.cjs"
+    "postinstall": "node scripts/patch-rehype-katex.cjs",
+    "apphosting:build": "npm --prefix .. run apphosting:build"
   },
   "dependencies": {
     "@radix-ui/react-dropdown-menu": "^2.1.24",
