@@ -30,21 +30,10 @@ export function CreatedAccountGate({
 }) {
   const router = useRouter();
 
-  if (!isAccessApprovalRequired()) {
-    return <>{children}</>;
-  }
-
-  // Visitors without a device signup token must never sit behind a live
-  // account-status poll — a cold backend or 5xx on /account-status used to
-  // leave login/signup on "Checking your account status" forever while email,
-  // Google, and password flows stayed unreachable.
-  const hasSignupToken = Boolean(readStatusToken());
+  // Hooks must run on every render — they live above the early returns below.
   const live = useLiveApprovalRoute();
 
-  if (!hasSignupToken) {
-    return <>{children}</>;
-  }
-
+  // Effect must run on every render — it lives above the early return below.
   useEffect(() => {
     if (!live) return;
     if (mode === "login") {
@@ -56,6 +45,20 @@ export function CreatedAccountGate({
     if (live === WAITING_ROUTE) router.replace(WAITING_ROUTE);
     if (live === APPROVED_ROUTE) router.replace("/login");
   }, [live, mode, router]);
+
+  if (!isAccessApprovalRequired()) {
+    return <>{children}</>;
+  }
+
+  // Visitors without a device signup token must never sit behind a live
+  // account-status poll — a cold backend or 5xx on /account-status used to
+  // leave login/signup on "Checking your account status" forever while email,
+  // Google, and password flows stayed unreachable.
+  const hasSignupToken = Boolean(readStatusToken());
+
+  if (!hasSignupToken) {
+    return <>{children}</>;
+  }
 
   // Signup must not flash "Create account" while status is unknown; login must
   // stay reachable — a device token plus a slow /account-status poll used to

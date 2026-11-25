@@ -46,7 +46,7 @@ jobs:
         with:
           node-version: "22"
           cache: "npm"
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: package-lock.json
 
       # Next's incremental compiler cache survives across runs; the primary key
       # includes the commit so a successful build refreshes the cache, while
@@ -55,9 +55,9 @@ jobs:
         uses: actions/cache@v6
         with:
           path: frontend/.next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-${{ github.sha }}
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-${{ github.sha }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('frontend/package-lock.json') }}-
+            ${{ runner.os }}-nextjs-${{ hashFiles('package-lock.json') }}-
 
       # Step 3 — clean, lockfile-pinned install. Do NOT add --ignore-scripts:
       # the postinstall hook patches rehype-katex's bare import, which the

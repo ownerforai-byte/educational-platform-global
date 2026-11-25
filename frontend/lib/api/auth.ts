@@ -5,7 +5,7 @@ import {
   firebaseClientLogout,
   firebaseClientForgotPassword,
   firebaseClientConfirmPasswordReset,
-  useFirebaseClientAuth,
+  isFirebaseAuthEnabled,
   FirebaseMfaRequiredError,
 } from "@/lib/firebase/client-auth";
 import { apiFetch, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
@@ -31,7 +31,7 @@ export async function login(
   data: AuthLoginRequest
 ): Promise<AuthLoginResponse> {
   let idToken: string | undefined;
-  if (useFirebaseClientAuth()) {
+  if (isFirebaseAuthEnabled()) {
     try {
       idToken = await firebaseEmailLogin(data.email, data.password);
     } catch (err) {
@@ -97,7 +97,7 @@ export async function signup(
   data: AuthSignupRequest
 ): Promise<AuthSignupResponse> {
   let payload: Record<string, unknown> = { ...data };
-  if (useFirebaseClientAuth()) {
+  if (isFirebaseAuthEnabled()) {
     try {
       const idToken = await firebaseEmailSignup(data.email, data.password, data.fullName);
       payload = {
@@ -130,7 +130,7 @@ export async function signup(
  * into ONE POST /api/auth/refresh instead of one per caller.
  */
 export async function refreshSession(): Promise<AuthRefreshResponse> {
-  const idToken = useFirebaseClientAuth() ? await firebaseRefreshIdToken() : null;
+  const idToken = isFirebaseAuthEnabled() ? await firebaseRefreshIdToken() : null;
   const r = await refreshSessionShared(idToken ? { idToken } : undefined);
   if (!r.ok) {
     throw Object.assign(new Error("Session refresh failed"), {
@@ -154,7 +154,7 @@ export async function refreshSession(): Promise<AuthRefreshResponse> {
 export async function logout(): Promise<AuthLogoutResponse> {
   clearStoredToken();
   clearCachedSession();
-  if (useFirebaseClientAuth()) {
+  if (isFirebaseAuthEnabled()) {
     try {
       await firebaseClientLogout();
     } catch {
@@ -241,7 +241,7 @@ export async function ensureSession(): Promise<SessionUser | null> {
 export async function forgotPassword(
   email: string
 ): Promise<{ sent: boolean }> {
-  if (useFirebaseClientAuth()) {
+  if (isFirebaseAuthEnabled()) {
     await firebaseClientForgotPassword(email);
     return { sent: true };
   }
@@ -263,7 +263,7 @@ export async function resetPassword(data: {
   oobCode?: string;
 }): Promise<{ success: boolean }> {
   const oob = data.oobCode ?? data.code;
-  if (useFirebaseClientAuth() && oob) {
+  if (isFirebaseAuthEnabled() && oob) {
     await firebaseClientConfirmPasswordReset(oob, data.password);
     return { success: true };
   }

@@ -7,7 +7,7 @@ import {
   firebaseConsumeRedirectResult,
   firebaseCurrentUserToken,
   firebaseGoogleSignIn,
-  useFirebaseClientAuth,
+  isFirebaseAuthEnabled,
   FirebaseMfaRequiredError,
 } from "@/lib/firebase/client-auth";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
@@ -47,7 +47,7 @@ function AuthCallbackContent() {
         }
 
         let accessToken: string;
-        if (useFirebaseClientAuth()) {
+        if (isFirebaseAuthEnabled()) {
           const state = sessionStorage.getItem("neb_oauth_csrf");
           if (!state || !/^[a-f0-9]{64}$/.test(state)) {
             throw new Error("Sign-in verification expired or failed. Please try again.");

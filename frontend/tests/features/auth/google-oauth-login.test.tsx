@@ -48,7 +48,7 @@ vi.mock("@/lib/firebase/client-auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("@/lib/firebase/client-auth")>();
   return {
     ...actual,
-    useFirebaseClientAuth: () => mocks.firebaseMode,
+    isFirebaseAuthEnabled: () => mocks.firebaseMode,
     firebaseGoogleSignIn: mocks.firebaseGoogleSignIn,
     firebaseConsumeRedirectResult: mocks.firebaseConsumeRedirectResult,
     firebaseCurrentUserToken: vi.fn(async () => "firebase-id-token"),

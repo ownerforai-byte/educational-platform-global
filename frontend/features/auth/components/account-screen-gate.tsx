@@ -64,9 +64,10 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   useEffect(() => {
     if (!isAccessApprovalRequired()) router.replace(defaultMemberHomePath());
   }, [router]);
+  // Hook must run on every render — it lives above the early return below.
+  const liveRoute = useLiveScreenGate(WAITING_ROUTE);
   if (!isAccessApprovalRequired()) return <CheckingScreen />;
 
-  const liveRoute = useLiveScreenGate(WAITING_ROUTE);
   if (!liveRoute || liveRoute !== WAITING_ROUTE) return <CheckingScreen />;
 
   return (

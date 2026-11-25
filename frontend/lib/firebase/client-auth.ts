@@ -25,7 +25,7 @@ import { getFirebaseApp } from "@/lib/fcm/firebase-app";
 import { isFirebaseWebConfigured } from "@/lib/fcm/config";
 import { publicOrigin } from "@/lib/site-url";
 
-export function useFirebaseClientAuth(): boolean {
+export function isFirebaseAuthEnabled(): boolean {
   const flag = getPublicEnv().NEXT_PUBLIC_USE_FIREBASE_AUTH?.trim().toLowerCase();
   const enabled = flag === "1" || flag === "true" || flag === "yes";
   if (!enabled) return false;

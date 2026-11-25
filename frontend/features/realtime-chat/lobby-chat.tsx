@@ -4,13 +4,13 @@ import { useEffect, useRef, useState } from "react";
 import { Send, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAuth } from "@/providers/auth-provider";
-import { useFirebaseClientAuth } from "@/lib/firebase/client-auth";
+import { isFirebaseAuthEnabled } from "@/lib/firebase/client-auth";
 import { isFirebaseWebConfigured } from "@/lib/fcm/config";
 import { useLobbyMessages } from "./use-lobby-messages";
 
 export function LobbyChat() {
   const { user } = useAuth();
-  const firebaseAuth = useFirebaseClientAuth();
+  const firebaseAuth = isFirebaseAuthEnabled();
   const configured = isFirebaseWebConfigured();
   const { messages, send, ready, error, firebaseUid } = useLobbyMessages();
   const [draft, setDraft] = useState("");

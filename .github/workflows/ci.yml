@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: 'package-lock.json'
       - run: npm ci
       - run: npm run lint
       # The 7 React Compiler rules are warnings (legacy backlog), so `npm run
@@ -55,7 +55,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: 'package-lock.json'
       - run: npm ci
       - run: npm run typecheck
 
@@ -78,7 +78,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: 'package-lock.json'
       - run: npm ci
       - run: npm run test:run
 
@@ -126,7 +126,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: 'package-lock.json'
       - run: npm ci
       - run: |
           grep -q "Sentry.init" instrumentation.ts
@@ -155,10 +155,12 @@ jobs:
           cache: 'npm'
           cache-dependency-path: package-lock.json
       - run: npm ci
-      # The validator (like the parity build below) imports the content schemas,
-      # which need zod from frontend/node_modules — so install frontend deps
-      # before running it.
-      - run: cd frontend && npm ci
+      # The validator (and the parity build below) import the content schemas,
+      # which need zod. Since the workspaces migration frontend deps hoist into
+      # the root node_modules, so the single root install covers them. Do NOT
+      # run `cd frontend && npm ci` here: without a frontend lockfile it scopes
+      # to the frontend workspace and prunes root devDeps (tsx) that the
+      # audit:visuals / mindmaps:check scripts invoke via ../node_modules/tsx.
       - run: npx tsx frontend/scripts/content/validate.ts --strict
       # Parity gate (PLANS.md §5.1): the built tree must match the corpus
       # byte-for-byte.
@@ -198,7 +200,7 @@ jobs:
         with:
           node-version: '22'
           cache: 'npm'
-          cache-dependency-path: frontend/package-lock.json
+          cache-dependency-path: 'package-lock.json'
       - run: |
           npx tsx <<'EOF'
           import fs from 'node:fs/promises';

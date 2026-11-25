@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 import { apiFetch, setStoredToken } from "@/lib/api-client";
 import { publicUrl } from "@/lib/site-url";
-import { firebaseGoogleSignIn, useFirebaseClientAuth } from "@/lib/firebase/client-auth";
+import { firebaseGoogleSignIn, isFirebaseAuthEnabled } from "@/lib/firebase/client-auth";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import {
@@ -105,7 +105,7 @@ export function SocialAuthButtons({
       // In browser with active user gesture: try signInWithPopup first.
       // Popups avoid cross-origin redirect storage partitioning (Chrome/Safari third-party cookie restrictions).
       let idToken: string | null = null;
-      if (useFirebaseClientAuth()) {
+      if (isFirebaseAuthEnabled()) {
         try {
           idToken = await firebaseGoogleSignIn("popup");
         } catch (popupErr: unknown) {
