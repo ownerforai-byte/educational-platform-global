@@ -28,7 +28,7 @@ Do not commit `.env*`.
 ### Deploy path
 
 1. **GitHub rollouts (required)** — full repo zip exceeds CLI upload limits (`EntityTooLarge`).
-   - [App Hosting console](https://console.firebase.google.com/project/rn01-af00b/apphosting) → `harindrasah-web` → repo `ownerforai-byte/educational-platform-global`, app root **`frontend`**, live branch **`main`**.
+   - [App Hosting console](https://console.firebase.google.com/project/rn01-af00b/apphosting) → `harindrasah-web` → repo `ownerforai-byte/educational-platform-global`, app root **`frontend`**, live branch **`main`**. (Keep **`frontend`** — not repo root — so the Next.js buildpack finds `package.json`.)
    - Push to `main`, then optionally:
      ```bash
      npx firebase-tools@15.36.0 apphosting:rollouts:create harindrasah-web --git-branch main --project rn01-af00b

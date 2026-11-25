@@ -8,7 +8,7 @@
     "dev": "next dev --webpack -p 5173",
     "prebuild": "node scripts/bump-deploy-version.mjs",
     "build": "next build",
-    "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
+    "start": "node .next/standalone/frontend/server.js",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest",

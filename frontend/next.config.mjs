@@ -16,6 +16,8 @@ function resolveHastUtilEntry() {
 const hastUtilEntry = resolveHastUtilEntry();
 
 const nextConfig = {
+  // Cloud Run / Firebase App Hosting: prebuilt standalone server (faster, reliable PORT bind).
+  output: "standalone",
   // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
   // "/:path*" also hit everything served out of /public, including the 6 MB
   // notes manifest the app fetches at runtime: that turned a cached edge
