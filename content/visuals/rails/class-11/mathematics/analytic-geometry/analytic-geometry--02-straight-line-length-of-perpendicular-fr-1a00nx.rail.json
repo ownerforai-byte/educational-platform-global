@@ -79,7 +79,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Reading the Example as a Chain of Licences - Each step consumes a theorem: the standardisation licenses the rule, the normalisers convert equations into distances, the dot-product verdict assigns the labels, and the perpendicularity closes the audit. The example is not \"arithmetic that happens to work\" — it is four named theorems in sequence.…  ·  ## 4. Deep Conceptual — Why the Verdict (−8 < 0) Was Predictable - The normals (−1, −2) and (4, 2) point in *opposing* half-plane directions (dot product negative) — the same-side wedge (the (+) equation) is the narrow one. Geometrically: two normals pointing away from each other sandwich the acute wedge between the lines.…  ·  ## 5. Worked Example Types - **Type A — full pipeline:** standardise → normalise → rule → both bisectors → checks. - **Type B — factor discipline:** unequal normalisers, lcm multiplication. - **Type C — definition check:** equidistance verified at a bisector point. - **Type D — classification narration:** the −8 verdict explained as normal geometry."
+      "text": "**Angle-bisector formulas at a glance** | Form | Statement | When to use | |---|---|---| | Distance form | $\\dfrac{a_1x+b_1y+c_1}{&#8730;(a_1&#178;+b_1&#178;)} = &#177;\\dfrac{a_2x+b_2y+c_2}{&#8730;(a_2&#178;+b_2&#178;)}$ | always works; pick signs by region | | Same-side check | same sign for both lines on one side | chooses the internal/external branch | | Slope form |…  ·  **Worked example sign map** | Region | Sign of L&#8321; | Sign of L&#8322; | Bisector equation | |---|---|---|---| | Inside the acute angle | + | + | use both with + | | Outside L&#8321; side | &#8722; | + | flip the first sign | | Outside L&#8322; side | + | &#8722; | flip the second sign | | Opposite the origin | &#8722; | &#8722; | both negative again |  ·  ```svg Two bisectors of two intersecting lines <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M120 180 L 520 60\" stroke=\"#1d4ed8\" stroke-width=\"2\"/><path d=\"M120 80 L 520 200\" stroke=\"#166534\" stroke-width=\"2\"/><path d=\"M120 130 L 520 130\" stroke=\"#991b1b\"…"
     },
     {
       "label": "More ideas",
@@ -87,7 +87,11 @@
     },
     {
       "label": "More ideas",
-      "text": "## 6. Common Confusions **\"Drop the factor 2\":** unequal normalisers must be cleared before expanding. **\"The labels are arbitrary\":** they follow from the dot product under the convention — traceable, not chosen."
+      "text": "## 3. Deep Conceptual — Reading the Example as a Chain of Licences - Each step consumes a theorem: the standardisation licenses the rule, the normalisers convert equations into distances, the dot-product verdict assigns the labels, and the perpendicularity closes the audit.…  ·  ## 4. Deep Conceptual — Why the Verdict (−8 < 0) Was Predictable - The normals (−1, −2) and (4, 2) point in *opposing* half-plane directions (dot product negative) — the same-side wedge (the (+) equation) is the narrow one.…  ·  ## 5. Worked Example Types - **Type A — full pipeline:** standardise → normalise → rule → both bisectors → checks. - **Type B — factor discipline:** unequal normalisers, lcm multiplication. - **Type C — definition check:** equidistance verified at a bisector point.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"Drop the factor 2\":** unequal normalisers must be cleared before expanding. **\"The labels are arbitrary\":** they follow from the dot product under the convention — traceable, not chosen.  ·  ```svg Equal distances from both lines — the defining property <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 160 L 500 60\" stroke=\"#1d4ed8\" stroke-width=\"2\"/><path d=\"M140 180 L 500 200\" stroke=\"#166534\"…"
     }
   ]
 }

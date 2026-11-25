@@ -110,7 +110,7 @@
     },
     {
       "label": "More ideas",
-      "text": "**NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (1m MCQ)** — First 10 naturals: 1…10, mean 5.5. Σxᵢ² = n(n+1)(2n+1)/6 = 10·11·21/6 = 385. Variance = 385/10 − (5.5)² = 38.5 − 30.25 = **8.25 → option (a)**. The formula shortcut n(n+1)(2n+1)/6 turns this into a 30-second question.  ·  **NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) = 0.6 + 0.5 − 0.3 = **0.8 → option (a)**. (The subtraction of the intersection prevents double-counting the overlap — the addition law is the topic's core theorem.)"
+      "text": "**NEB 2023 (verified PYQ): The variance of the first 10 natural numbers is: (1m MCQ)** — First 10 naturals: 1…10, mean 5.5. Σxᵢ² = n(n+1)(2n+1)/6 = 10·11·21/6 = 385. Variance = 385/10 − (5.5)² = 38.5 − 30.25 = **8.25 → option (a)**. The formula shortcut n(n+1)(2n+1)/6 turns this into a 30-second question.  ·  **NEB 2022 (verified PYQ): If P(A) = 0.6, P(B) = 0.5, P(A∩B) = 0.3, then P(A∪B) is: (1m)** — **Addition law:** P(A∪B) = P(A) + P(B) − P(A∩B) = 0.6 + 0.5 − 0.3 = **0.8 → option (a)**. (The subtraction of the intersection prevents double-counting the overlap — the addition law is the topic's core theorem.)  ·  ```svg Same mean, different spread — σ tells them apart <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><line x1=\"80\" y1=\"200\" x2=\"580\" y2=\"200\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><path d=\"M200 60 C 260 60, 300 190,…"
     }
   ]
 }

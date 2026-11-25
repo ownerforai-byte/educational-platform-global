@@ -91,7 +91,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — Direction Cosines Are a Unit Vector Read Componentwise - The triple (l, m, n) is **exactly the unit vector** along the line: cosines of the axis angles are the components of û = (cos α, cos β, cos γ), and l² + m² + n² = 1 is the statement |û| = 1. The identity is not a formula to memorise but the Pythagorean theorem on the unit vector.…  ·  ## 4. Deep Conceptual — Distance in Space Is Pythagoras Iterated - The space diagonal formula is **two applications of Pythagoras**: first in the base plane (√[(x₂−x₁)² + (y₂−y₁)²]), then in the vertical plane containing that diagonal and the z-difference.…  ·  ## 5. Worked Example Types - **Type A — distance and midpoint:** three-coordinate arithmetic, box picture as a check. - **Type B — cosines from ratios:** normalise (a, b, c), attach ±, verify l²+m²+n² = 1. - **Type C — angles between lines:** dot product of normalised triples. - **Type D — section formula:** internal/external division in space."
+      "text": "**3-D coordinate toolkit** | Tool | Formula | Notes | |---|---|---| | Distance | $d = &#8730;((x_2&#8722;x_1)&#178;+(y_2&#8722;y_1)&#178;+(z_2&#8722;z_1)&#178;)$ | Pythagoras twice | | Section (internal) | $\\left(\\dfrac{mx_2+nx_1}{m+n}, \\dfrac{my_2+ny_1}{m+n}, \\dfrac{mz_2+nz_1}{m+n}\\right)$ | ratio m:n | | Midpoint | $\\left(\\dfrac{x_1+x_2}{2}, \\dfrac{y_1+y_2}{2},…  ·  **Direction cosines of the axes** | Axis | (l, m, n) | Angles with axes | |---|---|---| | x-axis | (1, 0, 0) | 0&#176;, 90&#176;, 90&#176; | | y-axis | (0, 1, 0) | 90&#176;, 0&#176;, 90&#176; | | z-axis | (0, 0, 1) | 90&#176;, 90&#176;, 0&#176; | | Any line | $l&#178;+m&#178;+n&#178; = 1$ | never all zero |  ·  ```svg A point in space and its direction angles <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 200 L 480 200\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M140 200 L 140 60\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M140 200 L 320 240\" stroke=\"#374151\"…"
     },
     {
       "label": "More ideas",
@@ -99,7 +99,15 @@
     },
     {
       "label": "More ideas",
-      "text": "Find the midpoint of the segment joining (2, −1, 4) and (4, 3, −2).  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 6. Common Confusions **\"Direction cosines are unique\":** a line has two triples (±); only a directed ray has one. **\"Ratios must satisfy l²+m²+n² = 1\":** that identity belongs to cosines; ratios satisfy it only after normalisation."
+      "text": "Find the midpoint of the segment joining (2, −1, 4) and (4, 3, −2).  ·  State the limit / condition where a formula or rule stops being valid before applying it.  ·  ## 3. Deep Conceptual — Direction Cosines Are a Unit Vector Read Componentwise - The triple (l, m, n) is **exactly the unit vector** along the line: cosines of the axis angles are the components of û = (cos α, cos β, cos γ), and l² + m² + n² = 1 is the statement |û| = 1.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 4. Deep Conceptual — Distance in Space Is Pythagoras Iterated - The space diagonal formula is **two applications of Pythagoras**: first in the base plane (√[(x₂−x₁)² + (y₂−y₁)²]), then in the vertical plane containing that diagonal and the z-difference.…  ·  ## 5. Worked Example Types - **Type A — distance and midpoint:** three-coordinate arithmetic, box picture as a check. - **Type B — cosines from ratios:** normalise (a, b, c), attach ±, verify l²+m²+n² = 1. - **Type C — angles between lines:** dot product of normalised triples.…  ·  ## 6. Common Confusions **\"Direction cosines are unique\":** a line has two triples (±); only a directed ray has one. **\"Ratios must satisfy l²+m²+n² = 1\":** that identity belongs to cosines; ratios satisfy it only after normalisation."
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Direction cosines satisfy l² + m² + n² = 1 <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"320\" cy=\"95\" r=\"60\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2\"/><path d=\"M320 95 L 380 95\"…"
     }
   ]
 }

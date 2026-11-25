@@ -116,7 +116,7 @@
     },
     {
       "label": "More ideas",
-      "text": "**NEB-style (3m): Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1). **Telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + ⋯ + (1/n − 1/(n+1)) = **1 − 1/(n+1)** — every middle term cancels. **Limit:** S = lim Sₙ = 1 − 0 = **1**.…  ·  **NEB-style (3m): Find the sum Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ for x ≠ 1.** — **Shift trick:** xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. Subtract: S − xS = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ = (1 − xⁿ)/(1 − x) − nxⁿ. Hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**.…"
+      "text": "**NEB-style (3m): Sum to infinity: 1/(1·2) + 1/(2·3) + 1/(3·4) + ⋯** — **Partial fractions:** 1/(k(k+1)) = 1/k − 1/(k+1). **Telescoping partial sum:** Sₙ = (1 − ½) + (½ − ⅓) + ⋯ + (1/n − 1/(n+1)) = **1 − 1/(n+1)** — every middle term cancels. **Limit:** S = lim Sₙ = 1 − 0 = **1**.…  ·  **NEB-style (3m): Find the sum Sₙ = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ for x ≠ 1.** — **Shift trick:** xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. Subtract: S − xS = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ = (1 − xⁿ)/(1 − x) − nxⁿ. Hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**.…  ·  ```svg AP steps evenly; GP steps by a fixed factor <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><g fill=\"#1d4ed8\"><rect x=\"110\" y=\"180\" width=\"26\" height=\"30\"/><rect x=\"170\" y=\"150\" width=\"26\" height=\"60\"/><rect…"
     }
   ]
 }

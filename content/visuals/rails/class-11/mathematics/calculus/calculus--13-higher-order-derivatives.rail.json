@@ -95,7 +95,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 1. Topic Introduction — The Companion Doorway to Higher-Order Derivatives This canonical is the **short-form doorway** to higher-order derivatives: repeated differentiation, the acceleration reading, and the sinusoid's eigen-equation in one page.…  ·  ## 2. Theorem Mirror - **Definition:** f″(x) = d/dx[f′(x)] — the derivative of the derivative; f⁽ⁿ⁾ by iteration. - **Notations:** d²y/dx², y″, f″(x), D²y — all the same object. - **Parametric second derivative:** d²y/dx² = [d(dy/dx)/dt]/(dx/dt) — the two-step recipe. - **Leibniz:** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.…  ·  ## 3. Deep Conceptual — The Second Derivative's Personalities - f″ measures **how the slope changes** — concavity (f″ > 0: cup up), acceleration (velocity's rate), and curvature's sign. The second derivative is the first place the derivative's own behaviour becomes an object of study.…"
+      "text": "## 1. Topic Introduction — The Companion Doorway to Higher-Order Derivatives This canonical is the **short-form doorway** to higher-order derivatives: repeated differentiation, the acceleration reading, and the sinusoid's eigen-equation in one page.…  ·  ## 2. Theorem Mirror - **Definition:** f″(x) = d/dx[f′(x)] — the derivative of the derivative; f⁽ⁿ⁾ by iteration. - **Notations:** d²y/dx², y″, f″(x), D²y — all the same object. - **Parametric second derivative:** d²y/dx² = [d(dy/dx)/dt]/(dx/dt) — the two-step recipe. - **Leibniz:** (fg)⁽ⁿ⁾ = Σ C(n,k) f⁽ⁿ⁻ᵏ⁾g⁽ᵏ⁾ — the product rule's binomial generalisation.…  ·  **Repeated derivatives of standard functions** | f(x) | f&#8242;(x) | f&#8243;(x) | nth derivative | |---|---|---|---| | x&#8319; | n x&#8319;&#8315;&#185; | n(n&#8722;1)x&#8319;&#8315;&#178; | n! pattern | | e^(ax) | a e^(ax) | a&#178; e^(ax) | a&#8319; e^(ax) | | sin ax | a cos ax | &#8722;a&#178; sin ax | a&#8319; sin(ax + n&#960;/2) | | cos ax | &#8722;a sin ax |…"
     },
     {
       "label": "More ideas",
@@ -103,11 +103,15 @@
     },
     {
       "label": "More ideas",
-      "text": "Verify that y = 4 sin(2x) satisfies y″ = −4y.  ·  Find the n-th derivative of 1/(x + 1).  ·  ## 4. Deep Conceptual — Repeated Differentiation as an Operator Game - D (the differentiation operator) can be treated as an algebraic object: D²y = D(Dy), and Leibniz's formula is literally the binomial theorem (D + A)ⁿ applied to fg with A = \"multiply by g\".…"
+      "text": "Verify that y = 4 sin(2x) satisfies y″ = −4y.  ·  Find the n-th derivative of 1/(x + 1).  ·  **What each order of derivative measures** | Order | Name | Physical meaning | |---|---|---| | f&#8242;(x) | first derivative | rate of change (velocity) | | f&#8243;(x) | second derivative | concavity (acceleration) | | f&#8243;(x) &gt; 0 | convex up | minimum possible | | f&#8243;(x) &lt; 0 | concave down | maximum…"
     },
     {
       "label": "More ideas",
-      "text": "## 5. Worked Example Types - **Type A — repeated power differentiation:** y = x⁴ → 24, the factorial pattern. - **Type B — sinusoid eigen-check:** verify y″ = −m²y for a given sinusoid. - **Type C — parametric second derivative:** the two-step recipe applied.…  ·  ## 6. Common Confusions **\"d²y/dx² means square the first derivative\":** it means differentiate twice — the notation is ordinal, not arithmetic. **\"Higher derivatives always simplify\":** they usually complicate — patterns, not simplification, are the goal."
+      "text": "```svg Second derivative reads the concavity <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M100 70 C 200 70, 280 190, 380 190 C 460 190, 520 120, 560 90\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2.5\"/><text…  ·  ## 3. Deep Conceptual — The Second Derivative's Personalities - f″ measures **how the slope changes** — concavity (f″ > 0: cup up), acceleration (velocity's rate), and curvature's sign. The second derivative is the first place the derivative's own behaviour becomes an object of study.…  ·  ## 4. Deep Conceptual — Repeated Differentiation as an Operator Game - D (the differentiation operator) can be treated as an algebraic object: D²y = D(Dy), and Leibniz's formula is literally the binomial theorem (D + A)ⁿ applied to fg with A = \"multiply by g\".…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 5. Worked Example Types - **Type A — repeated power differentiation:** y = x⁴ → 24, the factorial pattern. - **Type B — sinusoid eigen-check:** verify y″ = −m²y for a given sinusoid. - **Type C — parametric second derivative:** the two-step recipe applied.…  ·  ## 6. Common Confusions **\"d²y/dx² means square the first derivative\":** it means differentiate twice — the notation is ordinal, not arithmetic. **\"Higher derivatives always simplify\":** they usually complicate — patterns, not simplification, are the goal.  ·  ```svg d²y/dx² is differentiation twice, not squaring <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"110\" y=\"60\" width=\"200\" height=\"80\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#166534\"/><text x=\"210\" y=\"95\"…"
     }
   ]
 }

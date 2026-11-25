@@ -104,11 +104,11 @@
     },
     {
       "label": "More ideas",
-      "text": "**Fact.** Fundamental theorem: d/dx ∫_a^x f(t)dt = f(x); ∫_a^b f = F(b) − F(a).  ·  **Trapezoidal rule.** one-line definition + one-line exam use.  ·  **Simpson's rule.** one-line definition + one-line exam use."
+      "text": "**Fact.** Fundamental theorem: d/dx ∫_a^x f(t)dt = f(x); ∫_a^b f = F(b) − F(a).  ·  # Numerical integration: Trapezoidal rule and Simpson's rule ## 1. Introduction and motivation What the tool **Numerical integration** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Computational Methods or Mechanics fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1)."
     },
     {
       "label": "More ideas",
-      "text": "# Numerical integration: Trapezoidal rule and Simpson's rule ## 1. Introduction and motivation What the tool **Numerical integration** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Computational Methods or Mechanics fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+      "text": "## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Numerical integration — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Numerical integration — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Numerical…  ·  ## 6. Worked examples ≥ 8 step-by-step with the reason for each step, ≥ 2 solution methods where they exist, answers checked by substitution or estimation (block IV) — written in the unit fill pass. ## 7.…"
     }
   ]
 }

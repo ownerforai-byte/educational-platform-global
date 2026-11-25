@@ -113,6 +113,10 @@
     {
       "label": "More ideas",
       "text": "## 7. Exam Application **NEB-style (2m): Determine whether f(x) = x³ + x is even, odd or neither, and interpret geometrically.** — f(−x) = (−x)³ + (−x) = −x³ − x = −(x³ + x) = **−f(x)** ⟹ **odd**: the graph is symmetric about the origin (a 180° rotation maps it onto itself).…  ·  **NEB-style (2m): Find the period of (i) sin 3x, (ii) |sin x|.** — (i) sin has period 2π; by the period-shift theorem f(ax) has period 2π/|a|: **π·... 2π/3** for sin 3x. (ii) folding negatives up, |sin(x + π)| = |−sin x| = |sin x|, and no smaller positive T works: **period π** — the fold doubles the repetition rate.  ·  **NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ and deduce that it has an inverse.** — Take a < b; then b³ − a³ = (b − a)(b² + ab + a²). The first factor is positive; the second equals (b² + ab + a²) = (a + b/2)²·...…"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Even: mirror in y-axis; odd: rotate 180° <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><line x1=\"80\" y1=\"120\" x2=\"280\" y2=\"120\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><line x1=\"180\" y1=\"40\" x2=\"180\" y2=\"200\"…"
     }
   ]
 }

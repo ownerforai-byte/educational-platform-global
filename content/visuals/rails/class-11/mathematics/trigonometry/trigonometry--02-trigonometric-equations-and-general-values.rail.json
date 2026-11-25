@@ -91,6 +91,10 @@
     {
       "label": "More ideas",
       "text": "## 7. Exam Application **NEB 2024 (verified PYQ): Solve: 2sin²θ − sin θ − 1 = 0 for 0 ≤ θ ≤ 2π. (4m)** — Factor: **2sin²θ − sinθ − 1 = (2sinθ + 1)(sinθ − 1) = 0**. Case 1: **sin θ = 1** ⟹ principal α = π/2 ⟹ θ = 2nπ + π/2; inside [0, 2π]: **θ = π/2** (n = 0) and θ = 5π/2 is outside.…  ·  **NEB 2022 (verified PYQ): Solve: cos 2θ = cos θ. (4m)** — Use **cos 2θ = 2cos²θ − 1**: 2cos²θ − 1 = cos θ ⟹ **2cos²θ − cos θ − 1 = 0** ⟹ (2cos θ + 1)(cos θ − 1) = 0. Case 1: **cos θ = 1** ⟹ α = 0 ⟹ θ = 2nπ. Case 2: **cos θ = −1/2** ⟹ α = 2π/3 ⟹ θ = 2nπ ± 2π/3. General solution: **θ = 2nπ or θ = 2nπ ± 2π/3**, n ∈ ℤ.…  ·  **NEB 2023 (verified PYQ): Find cos⁻¹(√3/2) + sin⁻¹(1/2). (2m)** — Principal values: **cos⁻¹(√3/2) = π/6** (cosine branch [0, π]) and **sin⁻¹(1/2) = π/6** (sine branch [−π/2, π/2]). Sum: **π/6 + π/6 = π/3**. (This item bridges to inverse functions but is solved by the principal-value discipline established here.)"
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg General solutions repeat around the circle <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"320\" cy=\"110\" r=\"70\" fill=\"none\" stroke=\"#1d4ed8\" stroke-width=\"2\"/><path d=\"M320 110 L 390 110\"…"
     }
   ]
 }

@@ -79,7 +79,7 @@
     },
     {
       "label": "Study notes",
-      "text": "## 3. Deep Conceptual — The Verification Reads the Angle's Own Geometry - The acute bisector splits the *small* angle: any ray inside the acute wedge makes an angle < 45° with each arm (when the wedge is narrower than 90°). The test exploits exactly this: measure one arm-to-bisector angle and compare with 45° — the threshold is the right angle, the wedge's boundary case.…  ·  ## 4. Deep Conceptual — Verification as an Independent Channel - The tan θ test verifies the *label* (acute vs obtuse) through geometry, while the a₁a₂ + b₁b₂ rule derived it through algebra — two independent channels agreeing is far stronger evidence than one computation repeated.…  ·  ## 5. Worked Example Types - **Type A — certify the acute label:** tan θ < 1 with full fraction working. - **Type B — certify the obtuse label:** tan θ > 1. - **Type C — both bisectors audited:** the pair tested against each other's arms. - **Type D — perpendicularity re-check:** slopes product −1 as the companion audit."
+      "text": "**Verification recipe with slopes** | Step | Action | Check | |---|---|---| | 1 | find the bisector slope m | from the distance-form equation | | 2 | compute tan&#952;&#8321; with L&#8321; | $\\tan&#952; = (m&#8722;m_1)/(1+mm_1)$ | | 3 | compute tan&#952;&#8322; with L&#8322; | same formula with m&#8322; | | 4 | compare | tan&#952;&#8321; = &#8722;tan&#952;&#8322; (equal…  ·  **Sign traps in the tan verification** | Situation | Symptom | Fix | |---|---|---| | Denominator zero | $1+mm_1 = 0$ | angle is 90&#176;; use the limiting argument | | Wrong branch | angles equal but supplementary | you picked the external bisector | | Sign slip | tan&#952;&#8321; = tan&#952;&#8322; instead of negatives | one angle measured the wrong way |  ·  ```svg Equal angles on both sides of the bisector <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M160 170 L 520 70\" stroke=\"#1d4ed8\" stroke-width=\"2\"/><path d=\"M160 190 L 520 190\" stroke=\"#166534\" stroke-width=\"2\"/><path d=\"M160 180 L 520 130\" stroke=\"#991b1b\"…"
     },
     {
       "label": "More ideas",
@@ -87,7 +87,11 @@
     },
     {
       "label": "More ideas",
-      "text": "## 6. Common Confusions **\"tan θ < 1 means the lines are acute\":** it means the *bisector* splits an angle below 45° — the statement is about the half-angle. **\"The test replaces the rule\":** it verifies it — the two channels agree, which is the point."
+      "text": "## 3. Deep Conceptual — The Verification Reads the Angle's Own Geometry - The acute bisector splits the *small* angle: any ray inside the acute wedge makes an angle < 45° with each arm (when the wedge is narrower than 90°).…  ·  ## 4. Deep Conceptual — Verification as an Independent Channel - The tan θ test verifies the *label* (acute vs obtuse) through geometry, while the a₁a₂ + b₁b₂ rule derived it through algebra — two independent channels agreeing is far stronger evidence than one computation repeated.…  ·  ## 5. Worked Example Types - **Type A — certify the acute label:** tan θ < 1 with full fraction working. - **Type B — certify the obtuse label:** tan θ > 1. - **Type C — both bisectors audited:** the pair tested against each other's arms.…"
+    },
+    {
+      "label": "More ideas",
+      "text": "## 6. Common Confusions **\"tan θ < 1 means the lines are acute\":** it means the *bisector* splits an angle below 45° — the statement is about the half-angle. **\"The test replaces the rule\":** it verifies it — the two channels agree, which is the point.  ·  ```svg Supplementary vs equal angles — pick the right branch <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"90\" y=\"60\" width=\"220\" height=\"80\" rx=\"10\" fill=\"#f0fdf4\" stroke=\"#166534\"/><text x=\"200\" y=\"95\"…"
     }
   ]
 }

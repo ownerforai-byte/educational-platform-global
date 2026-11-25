@@ -113,6 +113,10 @@
     {
       "label": "More ideas",
       "text": "## 7. Exam Application **NEB 2024 (verified PYQ): Solve x² − 5x + 6 = 0. (2m)** — **Factor:** x² − 5x + 6 = (x − 2)(x − 3) — two numbers multiplying to 6 and adding to −5 are −2, −3.…  ·  **NEB 2023 (verified PYQ): Solve 2√(x + 1) = x − 3. (3m)** — **Isolate and square:** 2√(x+1) = x − 3 requires x − 3 ≥ 0 (the right side must be non-negative since the left is). Squaring: 4(x + 1) = x² − 6x + 9 ⟹ x² − 10x + 5 = 0 ⟹ x = (10 ± √(100 − 20))/2 = 5 ± 2√5.…  ·  **NEB-style (2m): Find the vertex and extremum of f(x) = 2x² − 8x + 5.** — h = −b/2a = 8/4 = **2**; k = f(2) = 8 − 16 + 5 = **−3**. Vertex **(2, −3)**; since a = 2 > 0 the parabola opens up and **−3 is the minimum value**, attained at x = 2. Axis of symmetry x = 2."
+    },
+    {
+      "label": "More ideas",
+      "text": "```svg Function machine: domain in, range out <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"80\" y=\"70\" width=\"120\" height=\"50\" rx=\"8\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"140\" y=\"100\"…"
     }
   ]
 }

@@ -110,7 +110,7 @@
     },
     {
       "label": "More ideas",
-      "text": "**NEB-style (2m): For what value of k are the vectors î + ĵ + k̂, 2î + ĵ + 3k̂ and î + k̂ + k k̂...** — generic determinant-equals-zero exercise: set the component determinant to zero and solve for the parameter; the resulting k makes the third vector a combination of the first two (coplanar family).  ·  **NEB-style (2m): Prove that any three vectors including the zero vector are linearly dependent.** — Let the set be {0, b, c}. Choose coefficients c₁ = 1 (on 0), c₂ = 0, c₃ = 0: the combination **1·0 + 0·b + 0·c = 0** is non-trivial (c₁ ≠ 0), so dependence is witnessed immediately — no geometry needed."
+      "text": "**NEB-style (2m): For what value of k are the vectors î + ĵ + k̂, 2î + ĵ + 3k̂ and î + k̂ + k k̂...** — generic determinant-equals-zero exercise: set the component determinant to zero and solve for the parameter; the resulting k makes the third vector a combination of the first two (coplanar family).  ·  **NEB-style (2m): Prove that any three vectors including the zero vector are linearly dependent.** — Let the set be {0, b, c}. Choose coefficients c₁ = 1 (on 0), c₂ = 0, c₃ = 0: the combination **1·0 + 0·b + 0·c = 0** is non-trivial (c₁ ≠ 0), so dependence is witnessed immediately — no geometry needed.  ·  ```svg Dependent vectors lie in a plane; independent span space <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M120 160 L 300 120\" stroke=\"#1d4ed8\" stroke-width=\"2.5\"/><path d=\"M120 160 L 300 200\"…"
     }
   ]
 }
