@@ -118,6 +118,13 @@ def apply_to(notes, blocks, label, dry):
         if any(sig in n for n in notes):
             changes.append("  SKIP (present) %s :: %s" % (label, sig))
             continue
+        if block.get("append"):
+            # Append mode: no anchor needed — the block lands at the end of
+            # the notes list. Used by the classified-tables completion packs,
+            # whose target files share no common section heading.
+            notes.append(render(block))
+            changes.append("  append %s :: %s" % (label, sig))
+            continue
         anchor = block["after"]
         idx = next((i for i, n in enumerate(notes) if anchor in n), None)
         if idx is None:
