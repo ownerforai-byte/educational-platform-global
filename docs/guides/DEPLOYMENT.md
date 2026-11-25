@@ -4,48 +4,63 @@
 
 | Service | Platform | URL |
 |---|---|---|
-| Frontend | Vercel | https://harindrasah.com.np |
+| Frontend | **Firebase App Hosting** (`harindrasah-web`, `asia-southeast1`) | https://harindrasah.com.np |
 | Backend API | Firebase Cloud Functions (gen2) | https://us-central1-rn01-af00b.cloudfunctions.net/api |
 
-The frontend auto-deploys on push to `main`. The backend deploys as the
-Cloud Functions `api` function with `firebase deploy --only functions:functions-api:api`.
-The former backend host is decommissioned. Never push `main` with failing
-`npm run check:all`.
+Rollouts: GitHub → App Hosting on push to `main` (see `docs/runbooks/deploy-frontend.md`).
+The backend deploys as the Cloud Functions `api` function with
+`firebase deploy --only functions:functions-api:api` from the `firebase/` directory.
+Never push `main` with failing `npm run check:all`.
 
-## Frontend — Vercel
+## Frontend — Firebase App Hosting
 
-**Build command:** `cd frontend && npm install && npm run build`
-**Output directory:** `frontend/.next`
-**Node version:** 22+ (matches `engines` and CI)
+| Setting | Value |
+|---|---|
+| Backend ID | `harindrasah-web` |
+| Region | `asia-southeast1` |
+| App root (GitHub) | `frontend` |
+| Config | Root `firebase.json` (`apphosting`), `frontend/apphosting.yaml` |
+| Build | Root `package.json` → `apphosting:build` (monorepo workspace install + `next build`) |
 
-Required environment variables (set in Vercel dashboard → Settings → Environment):
+Default rollout URL (before custom domain cutover):  
+`https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app`
+
+Required `NEXT_PUBLIC_*` values are in `frontend/apphosting.yaml` (and may be
+overridden in the App Hosting console). Secrets stay out of git.
 
 ```
-NEXT_PUBLIC_SUPABASE_URL=
-NEXT_PUBLIC_SUPABASE_ANON_KEY=
 NEXT_PUBLIC_API_URL=https://us-central1-rn01-af00b.cloudfunctions.net/api
 NEXT_PUBLIC_SITE_URL=https://harindrasah.com.np
+NEXT_PUBLIC_USE_FIREBASE_AUTH=true
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=rn01-af00b.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=rn01-af00b
 ```
 
 Optional:
+
 ```
-NEXT_PUBLIC_SENTRY_DSN=     # enables error monitoring (see AGENTS.md)
+NEXT_PUBLIC_SENTRY_DSN=     # error monitoring (see AGENTS.md)
 ```
 
 ### Canonical domain (apex only)
 
-Production uses **`https://harindrasah.com.np`** only. The repository must not list a `www` hostname in env examples, CORS defaults, Firebase authorized domains, or OAuth URLs.
+Production uses **`https://harindrasah.com.np`** only. Do not rely on
+`*.web.app`, legacy Standard Hosting (`199.36.158.100`), or Vercel preview URLs.
 
-1. Set **`NEXT_PUBLIC_SITE_URL`** and Firebase **`FRONTEND_URL`** to `https://harindrasah.com.np`.
-2. In **Vercel → Project → Settings → Domains**: attach **only** `harindrasah.com.np` to Production; remove any `www` domain from the project after DNS redirects legacy traffic to apex.
-3. In **Firebase Auth → Authorized domains**: keep `harindrasah.com.np` only for production (plus localhost / Firebase defaults as needed).
-4. In **Google Cloud Console / OAuth**: redirect URIs must use `https://harindrasah.com.np/auth/callback`.
-5. Verify: `curl -sI https://harindrasah.com.np/.well-known/assetlinks.json` → `200`; spot-check login and deep links on the apex host.
+1. Set **`NEXT_PUBLIC_SITE_URL`** and Cloud Functions **`FRONTEND_URL`** to `https://harindrasah.com.np`.
+2. **App Hosting → Custom domains** — attach `harindrasah.com.np`; update Cloudflare per Firebase DNS instructions.
+3. **Firebase Auth → Authorized domains** — `harindrasah.com.np`, `rn01-af00b.firebaseapp.com`, and the `*.hosted.app` rollout host during smoke (see `firebase/firebase.json`).
+4. **Google Cloud Console → OAuth client** — redirect URIs include `https://rn01-af00b.firebaseapp.com/__/auth/handler` and your site `/auth/callback` on the apex host.
+5. Verify: login on apex and on the `hosted.app` URL before DNS cutover.
+
+### Legacy Vercel
+
+Vercel project `ravikisan` is **cutover-only**. Disable auto-deploy and remove the domain after DNS points at App Hosting.
 
 ## Backend — Firebase Cloud Functions (gen2)
 
 **Build command:** `cd backend && npm install && npm run build`
-**Deploy command:** `firebase deploy --only functions:functions-api:api` (from the repo root;
+**Deploy command:** `firebase deploy --only functions:functions-api:api` (from `firebase/`;
 deploys the `api` function from the `functions-api` codebase, gen2, region `us-central1` —
 note `--only functions:api` silently targets the bot codebase instead)
 **Node version:** 22 (the `nodejs22` runtime pinned in `firebase/firebase.json`)
@@ -62,6 +77,7 @@ NODE_ENV=production
 ```
 
 Optional (free-tier LLM fallbacks — any subset):
+
 ```
 LLM7_API_KEY=
 OVH_AI_API_KEY=
@@ -79,53 +95,24 @@ and exit with code 1.
 
 ## Cold starts
 
-Cloud Functions scale to zero, so a cold start can take ~30s on the first
-request. The frontend proxy retries with a cold-start-aware timeout
-(`frontend/app/api/[...path]/route.ts`), so no keep-alive ping is needed —
-the old keep-alive workflow was removed with the decommission.
+Cloud Functions gen2 cold starts affect first `/api` request after idle.
+Keep health checks light; use `live-smoke` workflow to monitor deployed API.
 
-## Database migrations
+## Firebase config layout (no Standard Hosting)
 
-There is no migration directory committed in this repository. The database
-schema is managed on the Supabase project itself (dashboard → SQL editor, or
-a Supabase CLI project linked outside this repo).
+| File | Purpose |
+|---|---|
+| Repo root `firebase.json` | App Hosting backend mapping only |
+| `firebase/firebase.json` | Auth, Firestore, Storage, Cloud Functions — **no `hosting` block** |
 
-`@supabase/supabase-js` is included only as a **client** in `backend/` and
-`frontend/` — nothing under `backend/` generates or applies migrations, so
-there is no `npx supabase migration up` step in this deploy flow.
-
-## Content build
-
-The content corpus (`content/`) must be built into `frontend/public/data/`
-before a frontend deploy:
+Deploy rules/auth from `firebase/`:
 
 ```bash
-npm run content:build         # builds all subjects
-npm run content:build:check   # verifies byte parity (CI gate)
+cd firebase
+npx firebase-tools@latest deploy --only firestore:rules,firestore:indexes,auth
 ```
-
-Vercel runs the build command above which includes the content build step.
 
 ## Rollback
 
-```bash
-# Revert to the previous deploy on Vercel:
-# Dashboard → Deployments → select the previous → Promote to Production
-
-# Redeploy a previous backend revision: check out the desired commit and
-# run `firebase deploy --only functions:functions-api:api`.
-
-# Emergency: revert main to a specific commit
-git revert HEAD --no-edit
-git push origin main
-```
-
-## CI/CD workflows
-
-| Workflow | File | Trigger |
-|---|---|---|
-| CI (typecheck + tests) | `.github/workflows/ci.yml` | push to main |
-| E2E smoke | `.github/workflows/e2e-smoke.yml` | push to main |
-| Lighthouse | `.github/workflows/lighthouse.yml` | push to main |
-| URL hygiene | `.github/workflows/url-hygiene.yml` | schedule |
-| CodeQL | `.github/workflows/codeql.yml` | push + weekly |
+- **Frontend:** App Hosting → Rollouts → roll back to the previous successful build.
+- **Backend:** Redeploy the previous Cloud Functions revision from git.

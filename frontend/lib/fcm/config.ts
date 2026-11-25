@@ -54,9 +54,9 @@ export function isFcmConfigured(): boolean {
 }
 
 /**
- * Custom auth subdomains (e.g. auth.example.com) need Firebase Hosting DNS
- * before they work. On localhost, fall back to the default *.firebaseapp.com
- * handler so Google / phone auth keep working during local dev.
+ * Custom auth subdomains require a Firebase auth handler on that host.
+ * Production uses `rn01-af00b.firebaseapp.com` (App Hosting + apex site).
+ * On localhost, fall back to *.firebaseapp.com so Google / phone auth work in dev.
  */
 export function resolveAuthDomain(authDomain: string, projectId: string): string {
   if (typeof window === "undefined") return authDomain;

@@ -8,6 +8,8 @@
         "authorizedRedirectUris": [
           "https://harindrasah.com.np",
           "https://harindrasah.com.np/auth/callback",
+          "https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app",
+          "https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app/auth/callback",
           "http://localhost:5173",
           "http://localhost:5173/auth/callback"
         ]
@@ -22,9 +24,7 @@
       "localhost",
       "127.0.0.1",
       "harindrasah.com.np",
-      "auth.harindrasah.com.np",
       "rn01-af00b.firebaseapp.com",
-      "rn01-af00b.web.app",
       "harindrasah-web--rn01-af00b.asia-southeast1.hosted.app"
     ]
   },

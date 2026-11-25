@@ -2,50 +2,58 @@
 
 **Primary target:** Firebase App Hosting (`rn01-af00b`, backend `harindrasah-web`, region `asia-southeast1`).
 
-**Live default URL (after first successful rollout):**  
+**Live default URL (after a successful rollout):**  
 `https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app`
 
-**Legacy / cutover:** Vercel project `ravikisan` until Cloudflare points at Firebase.
+**Production URL:** `https://harindrasah.com.np` (Cloudflare DNS → App Hosting custom domain).
 
 ## App Hosting (Next.js SSR monorepo)
 
-Config: repo root `firebase.json` (`rootDir: frontend`), `frontend/apphosting.yaml`.
+| Item | Location |
+|---|---|
+| App Hosting backend | Root `firebase.json` → `apphosting[0].rootDir: frontend` |
+| Runtime + env | `frontend/apphosting.yaml` |
+| Monorepo build | Root `package.json` script `apphosting:build` (do **not** set a custom `buildCommand` in yaml — that disables the Next.js adapter) |
 
-Env: pull production from Vercel when needed:
+Env secrets: App Hosting console overrides; git carries `NEXT_PUBLIC_*` only in `apphosting.yaml`.
+
+To copy secrets from a legacy Vercel pull (one-time migration):
 
 ```bash
 cd frontend && vercel env pull .env.production.local --environment=production --yes
 ```
 
-Prefer Firebase Console env overrides for secrets; `apphosting.yaml` lists `NEXT_PUBLIC_*` only.
+Do not commit `.env*`.
 
 ### Deploy path
 
-1. **GitHub rollouts (recommended)** — the repo is ~270MB+ of `content/`; CLI source zip hits GCS `EntityTooLarge`.
-   - [App Hosting console](https://console.firebase.google.com/project/rn01-af00b/apphosting) → `harindrasah-web` → connect `ownerforai-byte/educational-platform-global`, app root **`frontend`**, live branch **`main`**.
-   - Push `firebase.json`, `frontend/apphosting.yaml`, and `.firebaserc` (root) on `main`, then:
+1. **GitHub rollouts (required)** — full repo zip exceeds CLI upload limits (`EntityTooLarge`).
+   - [App Hosting console](https://console.firebase.google.com/project/rn01-af00b/apphosting) → `harindrasah-web` → repo `ownerforai-byte/educational-platform-global`, app root **`frontend`**, live branch **`main`**.
+   - Push to `main`, then optionally:
      ```bash
      npx firebase-tools@15.36.0 apphosting:rollouts:create harindrasah-web --git-branch main --project rn01-af00b
      ```
-2. **CLI source** — only if the zipped tree is under the signed-upload cap (unlikely with full curriculum):
-   ```bash
-   npx firebase-tools@15.36.0 deploy --only apphosting:harindrasah-web --project rn01-af00b
-   ```
-   Do **not** combine with `--only functions` unless you intend to redeploy backend.
+2. **CLI source upload** — only for small trees; unlikely with full `content/`.
 
-DNS cutover (after smoke on `*.hosted.app`): App Hosting → Custom domains → `harindrasah.com.np` → use records Firebase prints (often CNAME apex/www to the backend `*.hosted.app` host, plus TXT verify).
+### Auth (Firebase)
 
-Auth: add `harindrasah-web--rn01-af00b.asia-southeast1.hosted.app` to Firebase Auth authorized domains before OAuth smoke on the default URL.
+- `NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=rn01-af00b.firebaseapp.com` in `apphosting.yaml` (recommended with App Hosting — no Standard Hosting auth subdomain).
+- Deploy auth config after edits: `cd firebase && npx firebase-tools@latest deploy --only auth`
+- Authorized domains and Google redirect URIs: `firebase/firebase.json`
+
+### DNS cutover
+
+App Hosting → Custom domains → `harindrasah.com.np` → apply records in Cloudflare (remove legacy Standard Hosting A/TXT for `199.36.158.100` / `hosting-site=`).
 
 ## Symptoms
 
-Preview/production build fails; site 500s after promote.
+Preview/production build fails; site 404/500 after rollout; OAuth blocked on new host.
 
 ## Checks
 
-1. App Hosting rollout logs — install (`npm ci --workspace=…`) then Next build errors.
-2. Confirm `frontend/package.json` / lockfile / `tsconfig` paths for `features/` aliases.
-3. Preview URL `/home` and `/login` return 200.
+1. Rollout / Cloud Build logs — `npm ci --workspace=educational-platform-frontend`, then `next build`.
+2. `runConfig.maxInstances` × `cpu` must fit regional Cloud Run CPU quota (currently `10` × `2` vCPU for `asia-southeast1`).
+3. Smoke `/home` and `/login` on `hosted.app` then on apex after DNS.
 
 ## Fix
 
@@ -54,4 +62,8 @@ Preview/production build fails; site 500s after promote.
 
 ## Verify
 
-`npm run build:frontend` from repo root; smoke `/home` and `/login` on the hosted.app URL (or custom domain after cutover).
+```bash
+npm run build:frontend
+```
+
+Smoke `/home` and `/login` on the rollout URL and production domain.

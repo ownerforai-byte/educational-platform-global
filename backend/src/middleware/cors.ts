@@ -6,10 +6,16 @@ import { isProductionEnv } from "../config/env";
  * The request Origin is reflected only when it matches an entry; no wildcard
  * is ever emitted (credentials are always allowed).
  *
- * On Vercel, each deployment gets a unique *.vercel.app URL, so we also
- * accept any *.vercel.app origin when FRONTEND_URL is not set.  For
- * production, always set FRONTEND_URL to your custom domain.
+ * In non-production builds, *.vercel.app origins are still accepted for legacy
+ * preview hosts. Production must list every live frontend origin in
+ * FRONTEND_URL (comma-separated) and/or the apex default below.
  */
+export const PRODUCTION_APEX_ORIGIN = "https://harindrasah.com.np";
+
+/** Default App Hosting URL — allow API credentialed calls during cutover smoke. */
+export const APP_HOSTING_DEFAULT_ORIGIN =
+  "https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app";
+
 export function parseAllowedOrigins(raw: string | undefined): string[] {
   if (!raw) return [];
   return raw
@@ -29,9 +35,11 @@ export function getAllowedOrigins(): string[] {
       "http://0.0.0.0:3000"
     );
   }
-  const apex = "https://harindrasah.com.np";
-  if (!origins.includes(apex)) {
-    origins.push(apex);
+  if (!origins.includes(PRODUCTION_APEX_ORIGIN)) {
+    origins.push(PRODUCTION_APEX_ORIGIN);
+  }
+  if (!origins.includes(APP_HOSTING_DEFAULT_ORIGIN)) {
+    origins.push(APP_HOSTING_DEFAULT_ORIGIN);
   }
   return Array.from(new Set(origins));
 }

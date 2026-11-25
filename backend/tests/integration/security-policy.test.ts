@@ -151,6 +151,11 @@ describe("CORS policy", () => {
 
     expect(isOriginAllowed("https://real-frontend.example.com")).toBe(true);
     expect(isOriginAllowed("https://harindrasah.com.np")).toBe(true);
+    expect(
+      isOriginAllowed(
+        "https://harindrasah-web--rn01-af00b.asia-southeast1.hosted.app"
+      )
+    ).toBe(true);
     expect(isOriginAllowed("https://ravikisan.vercel.app")).toBe(false);
     // The old wildcard rules used to allow these:
     expect(isOriginAllowed("https://attacker.vercel.app")).toBe(false);

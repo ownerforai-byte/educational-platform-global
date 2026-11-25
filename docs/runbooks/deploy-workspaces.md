@@ -3,37 +3,22 @@
 The monorepo uses a single root lockfile. Workspaces:
 `backend`, `frontend`, `packages/shared`, `firebase/functions`.
 
-## Vercel (frontend)
+## Frontend (Firebase App Hosting)
 
 | Setting | Value |
 |---|---|
-| Root Directory | `frontend` |
-| Install Command | `npm ci --workspace=educational-platform-frontend` (from repo root; see `frontend/vercel.json`) |
-| Build Command | `npm run build` (default — runs `next build` in `frontend/`) |
-| Ignored Build Step | `frontend/vercel.json` → `ignoreCommand` (inline `sh -c`, not a separate script — Vercel runs it from Root Directory `frontend`) |
+| Backend | `harindrasah-web` (`asia-southeast1`) |
+| GitHub app root | `frontend` |
+| Monorepo install + build | Root `npm run apphosting:build` |
+| Config | `frontend/apphosting.yaml`, root `firebase.json` |
 
-Install from the repo root so the workspace graph and root `overrides` apply.
-Do not restore a nested `frontend/package-lock.json`.
+Install always runs from the **repo root** workspace graph (`npm ci` + workspace
+`educational-platform-frontend`). App Hosting clones the full monorepo even when
+app root is `frontend`.
 
-**Misconfigured project (repo root):** If Root Directory is left blank, Vercel runs the
-**root** `package.json` `build` script (backend `tsc` only) and then fails with
-`.next` missing at `/vercel/path0/.next`. Either set Root Directory to `frontend`
-(preferred) or rely on root `vercel.json`, which builds
-`educational-platform-frontend` and sets `outputDirectory` to `frontend/.next`.
-Disable or delete duplicate Vercel projects that deploy the same repo without
-`frontend` as Root Directory unless you intend to use root `vercel.json`.
-
-### Shared package (`packages/shared`) must trigger frontend builds
-
-Vercel’s Root Directory is `frontend`. A commit that **only** changes
-`packages/shared` is treated as “didn’t affect this project” and the production
-deploy is **canceled** unless the Ignored Build Step says otherwise.
-
-`frontend/vercel.json` `ignoreCommand` runs from Root Directory `frontend/`, so
-pathspecs must be `. ../packages/shared ../.well-known` (not `frontend/…` — that
-path always looks empty from inside `frontend/` and Vercel cancels every build).
-Still skips `dependabot/*`. If you change only `@rn/shared` and a deploy is still
-skipped, add a one-line touch under `frontend/` and push to `main`.
+See `docs/runbooks/deploy-frontend.md`. Legacy Vercel settings (`frontend/vercel.json`)
+remain in-repo for cutover only — do not add `firebase deploy --only hosting` (Standard
+Hosting removed).
 
 ## Backend (Firebase Cloud Functions)
 
