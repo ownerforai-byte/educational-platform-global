@@ -1,0 +1,82 @@
+# Firebase App Hosting — Next.js 16 SSR (Vercel migration target)
+# Env: prefer Console overrides for secrets; NEXT_PUBLIC_* are safe in RUNTIME.
+runConfig:
+  cpu: 2
+  memoryMiB: 2048
+  minInstances: 0
+  maxInstances: 20
+  concurrency: 80
+
+scripts:
+  # Monorepo: install from repo root, build the frontend workspace (matches Vercel).
+  buildCommand: >-
+    cd .. && npm ci --workspace=educational-platform-frontend
+    && npm run build --workspace=educational-platform-frontend
+
+env:
+  - variable: NEXT_PUBLIC_API_URL
+    value: https://us-central1-rn01-af00b.cloudfunctions.net/api
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_SITE_URL
+    value: https://harindrasah.com.np
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_USE_FIREBASE_AUTH
+    value: "true"
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_API_KEY
+    value: AIzaSyBGJm9-JoDwSGp7VAyc_rlsIo6R8NUOO5g
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+    value: rn01-af00b.firebaseapp.com
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: rn01-af00b
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+    value: rn01-af00b.firebasestorage.app
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+    value: "906118704805"
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_APP_ID
+    value: 1:906118704805:web:3f5d4efee58a246bb7e74c
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+    value: G-MYB98RBWSH
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_FIREBASE_VAPID_KEY
+    value: BLEh5zE6qtwJ7YZxxlwdWkjVLXBzCmIQ-oNQEc3P-b8ZpjuNRa8wuobe2h3HeZgrH3nJYjB0NfUpoWanoXq2MTA
+    availability:
+      - BUILD
+      - RUNTIME
+  - variable: NEXT_PUBLIC_ACCESS_APPROVAL_REQUIRED
+    value: "false"
+    availability:
+      - BUILD
+      - RUNTIME
+  # Vercel-only flags — explicitly off on Firebase.
+  - variable: VERCEL
+    value: "0"
+    availability:
+      - BUILD
+      - RUNTIME

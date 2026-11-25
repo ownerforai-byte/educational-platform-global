@@ -1,0 +1,30 @@
+{
+  "apphosting": [
+    {
+      "backendId": "harindrasah-web",
+      "rootDir": "frontend",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "backend",
+        "content-tools",
+        "docs",
+        "android-twa",
+        "visuals-py",
+        "infra",
+        "scripts",
+        "firebase/functions",
+        "firebase/functions-api",
+        "graphify-out",
+        "test-results",
+        "playwright-report",
+        "cell-architecture-studio",
+        "vendor",
+        ".cursor",
+        ".worktrees"
+      ]
+    }
+  ]
+}
