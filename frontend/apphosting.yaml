@@ -4,7 +4,8 @@ runConfig:
   cpu: 2
   memoryMiB: 2048
   minInstances: 0
-  maxInstances: 20
+  # asia-southeast1 Cloud Run quota: 20 vCPU/project — 2 CPU × 10 instances max.
+  maxInstances: 10
   concurrency: 80
 
 # Build: use root package.json `apphosting:build` (keeps the Next.js adapter enabled).
