@@ -81,6 +81,7 @@ export function CommunityPostDetailView() {
     setFollowUpBotCommentId,
     composerFocusTrigger,
     openAndFocusComposer,
+    requestSignIn,
     onLike,
     onRepost,
     onToggleSave,
@@ -298,6 +299,11 @@ export function CommunityPostDetailView() {
               <button
                 type="button"
                 onClick={() => {
+                  // Shares are counted per account — guests get the overlay.
+                  if (!user) {
+                    requestSignIn("share");
+                    return;
+                  }
                   const url = publicUrl(sharePath(post.id));
                   const done = () => {
                     setShareCopied(true);
@@ -395,6 +401,7 @@ export function CommunityPostDetailView() {
               replyTo={(post.comments ?? []).find((comment) => comment.id === followUpBotCommentId) ?? null}
               focusTrigger={composerFocusTrigger}
               onClearReply={() => setFollowUpBotCommentId(null)}
+              onRequireSignIn={() => requestSignIn("comment")}
               onSubmitComment={(body, followUp, replyToCommentId) =>
                 handleSubmitComment(post.id, body, followUp, replyToCommentId)
               }

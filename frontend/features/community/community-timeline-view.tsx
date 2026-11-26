@@ -29,6 +29,7 @@ export function CommunityTimelineView() {
     aiReplyBusyIds,
     isSaved,
     threadPropsForPost,
+    requestSignIn,
     setAppliedQuery,
     setCategory,
     setPostKind,
@@ -96,6 +97,7 @@ export function CommunityTimelineView() {
           onDelete={(postId) => void onDeletePost(postId)}
           onAssistantReply={onAssistantReply}
           onPrefetchPost={handlePrefetchPost}
+          onRequireSignIn={requestSignIn}
         />
       ) : null}
 

@@ -9,7 +9,6 @@ import {
   FileText,
   Heart,
   ImageIcon,
-  Link2,
   MessageCircle,
   Paperclip,
   Pencil,
@@ -25,7 +24,7 @@ import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
 import { BotIdentityBadge } from "@/features/community/bot-identity-badge";
 import { CreatorIdentityBadge } from "@/features/community/creator-identity-badge";
-import { canDeleteCommunityFeed, looksLikeQuestion, plainExcerpt } from "@/features/community/community-helpers";
+import { canDeleteCommunityFeed } from "@/features/community/community-helpers";
 import {
   actionBtn,
   categoryLabel,
@@ -40,6 +39,8 @@ import { CommentList } from "@/features/community/comment-list";
 import { CommentComposer } from "@/features/community/comment-composer";
 import { FeedMediaStrip } from "@/features/community/feed-media-strip";
 import { QuotedPostCard } from "@/features/community/quoted-post-card";
+import { MarkdownBody } from "@/features/community/markdown-body";
+import type { SignInAction } from "@/features/community/sign-in-overlay";
 
 function attachmentSummary(files: FeedPost["attachments"]): {
   label: string;
@@ -97,6 +98,8 @@ export interface FeedPostRowProps extends FeedPostRowThreadProps {
   onDelete: (postId: string) => void;
   onAssistantReply: (item: FeedPost) => void;
   onPrefetch?: (postId: string) => void;
+  /** Opens the sign-in overlay for signed-out viewers (share / comment). */
+  onRequireSignIn?: (action: SignInAction) => void;
 }
 
 export const FeedPostRow = memo(function FeedPostRow({
@@ -107,12 +110,14 @@ export const FeedPostRow = memo(function FeedPostRow({
   saved,
   aiReplyBusy,
   onLike,
-  onRepost,
-  onQuotePost,
+  // NOTE: repost/quote stay in the props contract (callers still pass them)
+  // but the action bar shows exactly three stat boxes — like, comment, share
+  // (owner 2026-11-27: "keep only one, count + below it its link").
   onToggleSave,
   onDelete,
   onAssistantReply,
   onPrefetch,
+  onRequireSignIn,
   viewer = null,
   commentsExpanded,
   botTyping = false,
@@ -134,6 +139,36 @@ export const FeedPostRow = memo(function FeedPostRow({
   const rowRef = useRef<HTMLElement | null>(null);
   const [shareCopied, setShareCopied] = useState(false);
   const [shareCount, setShareCount] = useState<number | null>(null);
+  /** Copies the public link and bumps the persisted share count. */
+  const share = () => {
+    // Shares are counted per account — a signed-out viewer gets the overlay.
+    if (!viewerId) {
+      onRequireSignIn?.("share");
+      return;
+    }
+    const url = publicUrl(sharePath(item.id));
+    const done = () => {
+      setShareCopied(true);
+      window.setTimeout(() => setShareCopied(false), 2000);
+    };
+    if (navigator.clipboard?.writeText) {
+      navigator.clipboard.writeText(url).then(done, () => {});
+    } else {
+      const area = document.createElement("textarea");
+      area.value = url;
+      document.body.appendChild(area);
+      area.select();
+      try {
+        document.execCommand("copy");
+        done();
+      } finally {
+        area.remove();
+      }
+    }
+    void sharePost(item.id)
+      .then((res) => setShareCount(res.shareCount))
+      .catch(() => undefined);
+  };
   useEffect(() => {
     if (!commentsExpanded) return;
     const handlePointerDown = (event: PointerEvent) => {
@@ -168,7 +203,6 @@ export const FeedPostRow = memo(function FeedPostRow({
   const botReplied = Boolean(item.assistantReply?.posted);
   const filesMeta = attachmentSummary(item.attachments);
   const visual = item.category !== "general" ? getSubjectVisual(item.category) : null;
-  const excerpt = plainExcerpt(item.body, isLeading ? 220 : 135);
   // Prefer the server truth (savedByYou) but fall back to the local saved set
   // so the Saved-posts view stays visually consistent.
   const savedNow = Boolean(saved || item.savedByYou);
@@ -276,15 +310,12 @@ export const FeedPostRow = memo(function FeedPostRow({
             </Link>
           </h2>
 
-          {excerpt ? (
-            <p
-              className={cn(
-                "text-sm leading-relaxed text-muted-foreground",
-                isLeading ? "line-clamp-2" : "line-clamp-1",
-              )}
-            >
-              {excerpt}
-            </p>
+          {/* The post appears in full — nothing is truncated in the feed */}
+          {item.body ? (
+            <MarkdownBody
+              text={item.body}
+              className="text-sm leading-relaxed text-foreground/90"
+            />
           ) : null}
 
           {item.quotedPost ? (
@@ -296,22 +327,27 @@ export const FeedPostRow = memo(function FeedPostRow({
           ) : null}
       </div>
 
-      <div className="flex flex-wrap items-center gap-1 border-t border-border bg-muted/30 px-1.5 py-1 sm:px-2">
+      <div className="border-t border-border bg-muted/30 px-2 py-2 sm:px-3">
+        {/* Three small stat boxes — the count on top, its action link below,
+            like a native app. One box per metric: like, comment, share. */}
+        <div className="grid grid-cols-3 gap-1.5">
           <button
             type="button"
             onClick={() => onLike(item)}
             aria-pressed={item.likedByYou}
             aria-label={item.likedByYou ? "Unlike post" : "Like post"}
             className={cn(
-              actionBtn,
-              "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
               item.likedByYou
-                ? "bg-primary/10 font-semibold text-primary hover:bg-primary/15"
-                : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+                ? "border-primary/40 bg-primary/10 text-primary"
+                : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
           >
-            <Heart className={cn("h-4 w-4 shrink-0", item.likedByYou && "fill-current")} aria-hidden />
-            <span>{item.likeCount}</span>
+            <span className="text-[13px] font-bold leading-none tabular-nums">{item.likeCount}</span>
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
+              <Heart className={cn("h-3.5 w-3.5", item.likedByYou && "fill-current")} aria-hidden />
+              {item.likedByYou ? "Liked" : "Like"}
+            </span>
           </button>
 
           <button
@@ -320,92 +356,46 @@ export const FeedPostRow = memo(function FeedPostRow({
             aria-expanded={commentsExpanded}
             aria-label={`${commentsExpanded ? "Hide" : "Show"} ${item.commentCount} comments`}
             className={cn(
-              actionBtn,
-              "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums hover:bg-muted/70 hover:text-foreground",
-              commentsExpanded ? "bg-primary/10 font-semibold text-primary" : "text-muted-foreground",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
+              commentsExpanded
+                ? "border-primary/40 bg-primary/10 text-primary"
+                : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
           >
-            <MessageCircle className="h-4 w-4 shrink-0" aria-hidden />
-            <span>{item.commentCount ?? 0}</span>
+            <span className="text-[13px] font-bold leading-none tabular-nums">{item.commentCount ?? 0}</span>
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
+              <MessageCircle className="h-3.5 w-3.5" aria-hidden />
+              {commentsExpanded ? "Hide" : "Comment"}
+            </span>
           </button>
 
-          {onRepost ? (
-            <>
-              <button
-                type="button"
-                onClick={() => onRepost(item)}
-                aria-pressed={item.repostedByYou ?? false}
-                aria-label={item.repostedByYou ? "Undo repost" : "Repost"}
-                className={cn(
-                  actionBtn,
-                  "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
-                  item.repostedByYou
-                    ? "bg-primary/10 font-semibold text-primary"
-                    : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
-                )}
-              >
-                <Share2 className="h-4 w-4 shrink-0" aria-hidden />
-                <span>{item.repostCount ?? 0}</span>
-              </button>
-              {onQuotePost ? (
-                <button
-                  type="button"
-                  onClick={() => onQuotePost(item)}
-                  aria-label="Quote repost"
-                  className={cn(
-                    actionBtn,
-                    "hidden min-h-11 px-2.5 text-[11px] font-medium text-muted-foreground hover:bg-muted/70 hover:text-foreground sm:inline-flex",
-                  )}
-                >
-                  Quote
-                </button>
-              ) : null}
-            </>
-          ) : null}
-
-          {/* Share: copies the public link and bumps the share count */}
           <button
             type="button"
-            onClick={() => {
-              const url = publicUrl(sharePath(item.id));
-              const done = () => {
-                setShareCopied(true);
-                window.setTimeout(() => setShareCopied(false), 2000);
-              };
-              if (navigator.clipboard?.writeText) {
-                navigator.clipboard.writeText(url).then(done, () => {});
-              } else {
-                const area = document.createElement("textarea");
-                area.value = url;
-                document.body.appendChild(area);
-                area.select();
-                try {
-                  document.execCommand("copy");
-                  done();
-                } finally {
-                  area.remove();
-                }
-              }
-              void sharePost(item.id)
-                .then((res) => setShareCount(res.shareCount))
-                .catch(() => undefined);
-            }}
+            onClick={share}
             aria-label="Copy share link"
             className={cn(
-              actionBtn,
-              "min-h-11 min-w-11 justify-center px-2.5 text-[13px] tabular-nums",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
               shareCopied
-                ? "bg-emerald-500/10 font-semibold text-emerald-600 dark:text-emerald-400"
-                : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
+                ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
+                : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
           >
-            {shareCopied ? (
-              <Check className="h-4 w-4 shrink-0" aria-hidden />
-            ) : (
-              <Link2 className="h-4 w-4 shrink-0" aria-hidden />
-            )}
-            <span>{shareCopied ? "Copied" : (shareCount ?? item.shareCount ?? 0)}</span>
+            <span className="text-[13px] font-bold leading-none tabular-nums">
+              {shareCopied ? "✓" : (shareCount ?? item.shareCount ?? 0)}
+            </span>
+            <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
+              {shareCopied ? (
+                <Check className="h-3.5 w-3.5" aria-hidden />
+              ) : (
+                <Share2 className="h-3.5 w-3.5" aria-hidden />
+              )}
+              {shareCopied ? "Copied" : "Share"}
+            </span>
           </button>
+        </div>
+
+        {/* Slim utility row — save, Veer, edit, delete */}
+        <div className="mt-1.5 flex items-center justify-end gap-1">
 
           <button
             type="button"
@@ -414,7 +404,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             aria-label={savedNow ? "Saved post" : "Save post"}
             className={cn(
               actionBtn,
-              "min-h-11 min-w-11 justify-center px-2.5 text-[13px]",
+              "min-h-9 min-w-9 justify-center gap-1 px-2 text-xs tabular-nums",
               savedNow
                 ? "bg-primary/12 font-semibold text-primary hover:bg-primary/18"
                 : "text-muted-foreground hover:bg-muted/70 hover:text-foreground",
@@ -437,7 +427,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             <Link
               href={`/ai/community/posts/${item.id}/edit`}
               aria-label="Edit post"
-              className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground")}
+              className={cn(actionBtn, "min-h-9 min-w-9 justify-center px-2 text-muted-foreground hover:bg-muted/70 hover:text-foreground")}
             >
               <Pencil className="h-4 w-4" aria-hidden />
             </Link>
@@ -447,11 +437,12 @@ export const FeedPostRow = memo(function FeedPostRow({
               type="button"
               onClick={() => onDelete(item.id)}
               aria-label="Delete post"
-              className={cn(actionBtn, "min-h-11 min-w-11 justify-center px-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
+              className={cn(actionBtn, "min-h-9 min-w-9 justify-center px-2 text-muted-foreground hover:bg-destructive/10 hover:text-destructive")}
             >
               <Trash2 className="h-4 w-4" aria-hidden />
             </button>
           ) : null}
+        </div>
       </div>
 
       {commentsExpanded ? (
@@ -467,6 +458,7 @@ export const FeedPostRow = memo(function FeedPostRow({
             replyTo={threadComments.find((comment) => comment.id === followUpBotCommentId) ?? null}
             focusTrigger={composerFocusTrigger}
             onClearReply={onClearFollowUp}
+            onRequireSignIn={() => onRequireSignIn?.("comment")}
             onSubmitComment={(body, followUp, replyToCommentId) =>
               onSubmitComment(item.id, body, followUp, replyToCommentId)
             }

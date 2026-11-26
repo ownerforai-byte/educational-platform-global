@@ -21,6 +21,7 @@ import {
 import { AttachmentList } from "@/features/community/attachment-list";
 import { QuotedPostCard } from "@/features/community/quoted-post-card";
 import { MarkdownBody } from "@/features/community/markdown-body";
+import { SignInOverlay } from "@/features/community/sign-in-overlay";
 import {
   ACCEPT,
   formatBytes,
@@ -105,6 +106,8 @@ export function PostComposer({
   const [existing, setExisting] = useState<FeedAttachment[]>(initial?.attachments ?? []);
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Guests who try to publish get the native-app sign-in overlay ("Sign in to create").
+  const [signInPromptOpen, setSignInPromptOpen] = useState(false);
   const [savedPostId, setSavedPostId] = useState<string | null>(initial?.id ?? null);
   const [draftSavedAt, setDraftSavedAt] = useState<string | null>(null);
   const [uploadDrag, setUploadDrag] = useState(false);
@@ -259,11 +262,11 @@ export function PostComposer({
   async function publish() {
     if (sessionLoading || busy) return;
     if (!user) {
-      setError(
-        mode === "edit"
-          ? "Sign in to edit posts."
-          : "Sign in with a verified account to publish.",
-      );
+      if (mode === "edit") {
+        setError("Sign in to edit posts.");
+      } else {
+        setSignInPromptOpen(true);
+      }
       return;
     }
     const input: PostInput = {
@@ -340,8 +343,9 @@ export function PostComposer({
   }
 
   return (
-    <form
-      className={cn(composerShell, "space-y-4 p-4 shadow-elev-1 sm:p-5")}
+    <>
+      <form
+        className={cn(composerShell, "space-y-4 p-4 shadow-elev-1 sm:p-5")}
       onSubmit={(event) => {
         event.preventDefault();
         void publish();
@@ -756,5 +760,13 @@ export function PostComposer({
         </button>
       </div>
     </form>
+
+      {/* Guest publish attempt → native-app sign-in overlay */}
+      <SignInOverlay
+        open={signInPromptOpen}
+        action="create"
+        onOpenChange={setSignInPromptOpen}
+      />
+    </>
   );
 }

@@ -130,10 +130,11 @@ const CommentRow = memo(function CommentRow({
   return (
     <div
       className={cn(
-        "rounded-xl border border-border/90 bg-background px-3 py-2.5 shadow-sm transition-colors duration-200",
+        // Small, tight comment box — more comments fit on screen at once.
+        "rounded-lg border border-border/80 bg-background px-2.5 py-2 transition-colors duration-200",
         "hover:border-border",
         // Threaded replies: lighter, tighter — reads as part of the parent.
-        nested && "border-border/60 bg-muted/30 px-2.5 py-2 shadow-none",
+        nested && "border-border/60 bg-muted/30 px-2 py-1.5 shadow-none",
         followUpActive && "ring-1 ring-primary/25",
         highlighted && "ring-2 ring-primary/40 border-primary/40",
         botComment && "border-primary/30 bg-primary/[0.03]",
@@ -141,7 +142,7 @@ const CommentRow = memo(function CommentRow({
           "border-emerald-500/40 bg-emerald-500/[0.04] ring-1 ring-emerald-500/20 hover:border-emerald-500/50",
       )}
     >
-      <div className="space-y-2">
+      <div className="space-y-1.5">
         {isAccepted ? (
           <p className="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 px-2.5 py-1 text-[11px] font-bold text-emerald-700 dark:text-emerald-300">
             <Award className="h-3.5 w-3.5" aria-hidden />
@@ -269,7 +270,7 @@ const CommentRow = memo(function CommentRow({
         )}
 
         {viewer && !pendingComment ? (
-          <div className="flex flex-wrap items-center gap-1 pt-0.5">
+          <div className="flex flex-wrap items-center gap-1">
             <button
               type="button"
               aria-label={`Reply to @${comment.author.username || comment.author.fullName}`}
@@ -411,7 +412,7 @@ export function CommentList({
           // thread spine instead of a far-below boxed stack.
           <ul
             className={cn(
-              "mt-1.5 space-y-1.5 border-l-2 border-border/70 pl-2.5",
+              "mt-1 space-y-1 border-l-2 border-border/70 pl-2.5",
               depth > 2 && "ml-2",
             )}
           >
@@ -423,7 +424,7 @@ export function CommentList({
   }
 
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-1.5">
       {roots.map((comment) => branch(comment, 0))}
       {botTyping ? (
         <li

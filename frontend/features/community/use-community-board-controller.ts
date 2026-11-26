@@ -39,6 +39,7 @@ import {
   writeCommunityCache,
 } from "@/features/community/community-cache";
 import { useSavedPosts } from "@/features/community/saved-posts";
+import type { SignInAction } from "@/features/community/sign-in-overlay";
 import {
   POLL_MS,
   type BoardView,
@@ -101,6 +102,13 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
   const [category, setCategory] = useState("");
   const [postKind, setPostKind] = useState<CommunityPostKind | "">("");
   const [filter, setFilter] = useState<CommunityFeedFilter>("latest");
+
+  // The sign-in overlay (owner 2026-11-27): a signed-out viewer who taps
+  // like / comment / save / share / create gets a native-app modal —
+  // "Sign in to like", "Sign in to comment", … — instead of an inline error.
+  const [signInPrompt, setSignInPrompt] = useState<SignInAction | null>(null);
+  const requestSignIn = useCallback((action: SignInAction) => setSignInPrompt(action), []);
+  const closeSignInPrompt = useCallback(() => setSignInPrompt(null), []);
 
   useEffect(() => {
     const nextCategory = searchParams.get("category");
@@ -653,7 +661,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
 
   const onToggleSave = useCallback((postId: string) => {
     if (!user) {
-      setError("Sign in to save posts.");
+      requestSignIn("save");
       return;
     }
     if (saveInFlight.current.has(postId)) return;
@@ -684,12 +692,12 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
         setError(statusOf(err) === 401 ? "Sign in to save posts." : messageOf(err));
       })
       .finally(() => saveInFlight.current.delete(postId));
-  }, [isSaved, knownPost, patchPostEverywhere, reconcileSaved, showCelebration, user]);
+  }, [isSaved, knownPost, patchPostEverywhere, reconcileSaved, requestSignIn, showCelebration, user]);
 
   const onLike = useCallback(
     (target: FeedPost) => {
       if (!user) {
-        setError("Sign in to like posts.");
+        requestSignIn("like");
         return;
       }
       if (likeInFlight.current.has(target.id)) return;
@@ -731,7 +739,7 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
           likeInFlight.current.delete(target.id);
         });
     },
-    [patchPostEverywhere, user],
+    [patchPostEverywhere, requestSignIn, user],
   );
 
   const onRepost = useCallback(
@@ -1150,6 +1158,9 @@ export function useCommunityBoardController(view: BoardView, id?: string) {
     composerFocusTrigger,
     openAndFocusComposer,
     threadPropsForPost,
+    signInPrompt,
+    requestSignIn,
+    closeSignInPrompt,
     onLike,
     onRepost,
     onQuotePost,

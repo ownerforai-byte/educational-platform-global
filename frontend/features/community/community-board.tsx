@@ -8,6 +8,7 @@ import {
 import { CommunityShell } from "@/features/community/community-shell";
 import { CommunityTimelineView } from "@/features/community/community-timeline-view";
 import { CommunityNotificationsView } from "@/features/community/community-notifications-view";
+import { SignInOverlay } from "@/features/community/sign-in-overlay";
 import {
   type BoardView,
   CommunityLoading,
@@ -35,29 +36,42 @@ export function CommunityBoard({ view, id }: { view: BoardView; id?: string }) {
 }
 
 function CommunityBoardChrome() {
-  const { view, savedView, savedCount } = useCommunityBoard();
+  const { view, savedView, savedCount, signInPrompt, closeSignInPrompt } = useCommunityBoard();
   const focus = view === "new" || view === "edit" || view === "post";
   const active = view === "mine" ? "mine" : savedView ? "saved" : "feed";
 
+  let content: React.ReactNode;
   if (focus) {
-    return (
+    content = (
       <CommunityShell variant="focus">
         <CommunityPostDetailView />
       </CommunityShell>
     );
-  }
-
-  if (view === "notifications") {
-    return (
+  } else if (view === "notifications") {
+    content = (
       <CommunityShell variant="timeline" active="feed" savedCount={savedCount}>
         <CommunityNotificationsView />
+      </CommunityShell>
+    );
+  } else {
+    content = (
+      <CommunityShell variant="timeline" active={active} savedCount={savedCount}>
+        <CommunityTimelineView />
       </CommunityShell>
     );
   }
 
   return (
-    <CommunityShell variant="timeline" active={active} savedCount={savedCount}>
-      <CommunityTimelineView />
-    </CommunityShell>
+    <>
+      {content}
+      {/* One overlay for the whole board — like / comment / save / share / create */}
+      <SignInOverlay
+        open={signInPrompt !== null}
+        action={signInPrompt ?? "like"}
+        onOpenChange={(next) => {
+          if (!next) closeSignInPrompt();
+        }}
+      />
+    </>
   );
 }

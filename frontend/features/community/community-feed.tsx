@@ -36,6 +36,7 @@ import {
   FeedEmpty,
 } from "@/features/community/community-helpers";
 import { FeedPostRow, type FeedPostRowThreadProps } from "@/features/community/feed-post-row";
+import type { SignInAction } from "@/features/community/sign-in-overlay";
 import { cn } from "@/lib/utils";
 
 const MOBILE_INLINE_CATEGORIES = 4;
@@ -71,6 +72,8 @@ export interface CommunityFeedProps {
   onDelete: (postId: string) => void;
   onAssistantReply: (item: FeedPost) => void;
   onPrefetchPost: (postId: string) => void;
+  /** Opens the sign-in overlay ("Sign in to like/comment/…") for guests. */
+  onRequireSignIn?: (action: SignInAction) => void;
 }
 
 export function CommunityFeed({
@@ -104,6 +107,7 @@ export function CommunityFeed({
   onDelete,
   onAssistantReply,
   onPrefetchPost,
+  onRequireSignIn,
 }: CommunityFeedProps) {
   // Local input state keeps search keystrokes completely isolated from feed rows.
   const [searchInput, setSearchInput] = useState(appliedQuery);
@@ -415,6 +419,7 @@ export function CommunityFeed({
               onDelete={onDelete}
               onAssistantReply={onAssistantReply}
               onPrefetch={onPrefetchPost}
+              onRequireSignIn={onRequireSignIn}
               {...threadPropsForPost(item.id)}
             />
           ))}

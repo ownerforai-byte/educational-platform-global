@@ -14,6 +14,8 @@ export interface CommentComposerProps {
   replyTo: FeedComment | null;
   focusTrigger: number;
   onClearReply: () => void;
+  /** Opens the sign-in overlay for signed-out viewers (owner 2026-11-27). */
+  onRequireSignIn?: () => void;
   onSubmitComment: (
     body: string,
     followUpToBot: boolean,
@@ -37,6 +39,7 @@ export function CommentComposer({
   replyTo,
   focusTrigger,
   onClearReply,
+  onRequireSignIn,
   onSubmitComment,
 }: CommentComposerProps) {
   const [body, setBody] = useState("");
@@ -73,7 +76,9 @@ export function CommentComposer({
     event?.preventDefault();
     if (submitting) return;
     if (!signedIn) {
-      setLocalError("Sign in to reply.");
+      // Signed-out viewers get the native-app sign-in overlay when available.
+      if (onRequireSignIn) onRequireSignIn();
+      else setLocalError("Sign in to reply.");
       return;
     }
     const clean = body.trim();
@@ -200,16 +205,26 @@ export function CommentComposer({
           ) : (
             <span />
           )}
-          <button
-            type="submit"
-            disabled={submitting || !signedIn || !body.trim()}
-            className={cn(
-              "inline-flex h-8 min-w-[4.5rem] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground",
-              "transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40",
-            )}
-          >
-            {submitting ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : "Reply"}
-          </button>
+          {!signedIn ? (
+            <button
+              type="button"
+              onClick={onRequireSignIn}
+              className="inline-flex h-8 min-w-[4.5rem] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Sign in to reply
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled={submitting || !body.trim()}
+              className={cn(
+                "inline-flex h-8 min-w-[4.5rem] items-center justify-center rounded-full bg-primary px-4 text-sm font-bold text-primary-foreground",
+                "transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40",
+              )}
+            >
+              {submitting ? <Loader2 className="h-4 w-4 animate-spin" aria-hidden /> : "Reply"}
+            </button>
+          )}
         </div>
       </div>
     </form>
