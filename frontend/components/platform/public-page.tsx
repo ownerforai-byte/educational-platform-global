@@ -112,7 +112,7 @@ export function PublicPage({ current, eyebrow, title, intro, children }: {
       <div aria-hidden="true" className="pointer-events-none absolute -top-20 left-1/2 h-72 w-[36rem] -translate-x-1/2 rounded-full bg-primary/10 blur-[110px]" />
       <div className="relative mb-10 overflow-hidden rounded-3xl border border-border/80 bg-gradient-to-br from-primary/[0.08] via-card to-card shadow-sm">
         <div aria-hidden="true" className="h-1 w-full bg-gradient-to-r from-emerald-500 via-teal-500 to-sky-500" />
-        <div className="p-6 sm:p-10">
+        <div className="p-6 motion-safe:animate-fade-in sm:p-10">
           <p className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-1.5 text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
             <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-primary" />
             {eyebrow}

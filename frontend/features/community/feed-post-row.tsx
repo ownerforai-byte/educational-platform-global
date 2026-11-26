@@ -212,7 +212,7 @@ export const FeedPostRow = memo(function FeedPostRow({
   return (
     <article
       ref={rowRef}
-      className="overflow-hidden rounded-md border border-border/90 bg-card transition-[border-color,box-shadow] duration-200 ease-out motion-safe:hover:border-border motion-safe:hover:shadow-sm"
+      className="overflow-hidden rounded-md border border-border/90 bg-card transition-[border-color,box-shadow] duration-200 ease-out motion-safe:animate-fade-in motion-safe:hover:border-border motion-safe:hover:shadow-sm"
     >
       <div className="space-y-1 px-2.5 py-2 sm:px-3">
           {/* Top metadata line: category, author, time, resource & Veer indicators */}
@@ -337,13 +337,13 @@ export const FeedPostRow = memo(function FeedPostRow({
             aria-pressed={item.likedByYou}
             aria-label={item.likedByYou ? "Unlike post" : "Like post"}
             className={cn(
-              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors active:scale-[0.97]",
               item.likedByYou
                 ? "border-primary/40 bg-primary/10 text-primary"
                 : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
-          >
-            <span className="text-[13px] font-bold leading-none tabular-nums">{item.likeCount}</span>
+            >
+            <span key={`like-${item.likeCount}`} className="text-[13px] font-bold leading-none tabular-nums motion-safe:animate-pop-in">{item.likeCount}</span>
             <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
               <Heart className={cn("h-3.5 w-3.5", item.likedByYou && "fill-current")} aria-hidden />
               {item.likedByYou ? "Liked" : "Like"}
@@ -356,13 +356,13 @@ export const FeedPostRow = memo(function FeedPostRow({
             aria-expanded={commentsExpanded}
             aria-label={`${commentsExpanded ? "Hide" : "Show"} ${item.commentCount} comments`}
             className={cn(
-              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors active:scale-[0.97]",
               commentsExpanded
                 ? "border-primary/40 bg-primary/10 text-primary"
                 : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
           >
-            <span className="text-[13px] font-bold leading-none tabular-nums">{item.commentCount ?? 0}</span>
+            <span key={`comments-${item.commentCount ?? 0}`} className="text-[13px] font-bold leading-none tabular-nums motion-safe:animate-pop-in">{item.commentCount ?? 0}</span>
             <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
               <MessageCircle className="h-3.5 w-3.5" aria-hidden />
               {commentsExpanded ? "Hide" : "Comment"}
@@ -374,13 +374,13 @@ export const FeedPostRow = memo(function FeedPostRow({
             onClick={share}
             aria-label="Copy share link"
             className={cn(
-              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors",
+              "flex min-h-14 flex-col items-center justify-center gap-1 rounded-xl border px-2 py-1.5 transition-colors active:scale-[0.97]",
               shareCopied
                 ? "border-emerald-500/40 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400"
                 : "border-border/70 bg-background text-muted-foreground hover:border-border hover:bg-muted/50 hover:text-foreground",
             )}
           >
-            <span className="text-[13px] font-bold leading-none tabular-nums">
+            <span key={`share-${shareCount ?? item.shareCount ?? 0}`} className="text-[13px] font-bold leading-none tabular-nums motion-safe:animate-pop-in">
               {shareCopied ? "✓" : (shareCount ?? item.shareCount ?? 0)}
             </span>
             <span className="inline-flex items-center gap-1 text-[11px] font-semibold">
@@ -448,7 +448,7 @@ export const FeedPostRow = memo(function FeedPostRow({
       {commentsExpanded ? (
         <section
           aria-label={`Replies on ${item.title}`}
-          className="border-t border-border/80 bg-muted/20 px-2.5 py-2.5 sm:px-3"
+          className="border-t border-border/80 bg-muted/20 px-2.5 py-2.5 motion-safe:animate-fade-in sm:px-3"
         >
           {threadError ? <p role="alert" className="px-1 pt-2 text-sm text-destructive">{threadError}</p> : null}
           <CommentComposer

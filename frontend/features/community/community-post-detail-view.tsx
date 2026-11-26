@@ -253,7 +253,7 @@ export function CommunityPostDetailView() {
                 )}
               >
                 <Heart className={cn("h-4 w-4", post.likedByYou && "fill-current")} aria-hidden />
-                <span>{post.likeCount}</span>
+                <span key={`like-${post.likeCount}`} className="tabular-nums motion-safe:animate-pop-in">{post.likeCount}</span>
               </button>
 
               <button
@@ -273,7 +273,7 @@ export function CommunityPostDetailView() {
                   className={cn("h-4 w-4", (post.savedByYou || isSaved(post.id)) && "fill-current")}
                   aria-hidden
                 />
-                <span>{post.saveCount ?? 0}</span>
+                <span key={`save-${post.saveCount ?? 0}`} className="tabular-nums motion-safe:animate-pop-in">{post.saveCount ?? 0}</span>
               </button>
 
               {onRepost ? (
