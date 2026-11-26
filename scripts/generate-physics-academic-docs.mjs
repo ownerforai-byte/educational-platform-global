@@ -49,6 +49,9 @@ const WORD_NAMESPACES =
  * document shell so every resource renders as the same A4 page.
  */
 const SHEET_HREF = "../a4-document.css";
+// The A4 page contract (tests/lib/a4-documents.test.ts) requires every sheeted
+// document to also carry the paginator — it is the sheet's renderer.
+const PAGER_HREF = "../a4-paginate.js";
 
 function esc(value) {
   return String(value)
@@ -142,7 +145,7 @@ function renderHtml(unit, dataset) {
     `<meta name="viewport" content="width=device-width, initial-scale=1">\n` +
     `<title>Physics XI Unit ${unit.unitNo}: ${esc(unit.unitName)} — Academic Companion</title>\n` +
     `<meta name="description" content="${esc(unit.summary)}">\n` +
-    `<link rel="stylesheet" href="${SHEET_HREF}">\n</head>\n<body>\n` +
+    `<link rel="stylesheet" href="${SHEET_HREF}">\n<script src="${PAGER_HREF}" defer></script></head>\n<body>\n` +
     unitBody(unit, dataset) +
     `\n</body>\n</html>\n`
   );

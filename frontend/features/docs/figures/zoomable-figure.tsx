@@ -98,7 +98,7 @@ export function ZoomableFigure({
             </button>
           </div>
           <div
-            className="max-h-[86vh] max-w-[94vw] overflow-auto rounded-2xl border border-border bg-card p-6 shadow-2xl"
+            className="max-h-[86vh] max-w-[94vw] overflow-x-auto overflow-y-auto rounded-2xl border border-border bg-card p-6 shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {Component ? (
