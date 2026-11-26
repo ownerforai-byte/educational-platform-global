@@ -11,7 +11,7 @@
     </base-config>
     <domain-config cleartextTrafficPermitted="false">
         <domain includeSubdomains="true">harindrasah.com.np</domain>
-        <pin-set expiration="2027-12-31T23:59:59.000Z">
+        <pin-set expiration="2027-12-31">
             <pin digest="SHA-256">jCMtkWobIvzZ8cAxeTIevYQ3JxxwwUpgMB7+rvmGZU4=</pin>
             <pin digest="SHA-256">C5+lpZ7TcVgd+yrJqeqOWWnOMQ2lHhmIiUk5l+Ci1Q0=</pin>
             <pin digest="SHA-256">8R7iI3S8lIuSmxWEGTvlzBmT2LDrZS7kSsJAXQx8Oyk=</pin>

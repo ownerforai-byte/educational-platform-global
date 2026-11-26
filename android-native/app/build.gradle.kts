@@ -32,13 +32,28 @@ android {
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.ravikisan.platform.compose"
+        applicationId = "com.ravikisan.platform"
         minSdk = 30
         targetSdk = 36
-        versionCode = 1
-        versionName = "0.1.0"
+        versionCode = 18
+        versionName = "2.0.0"
         buildConfigField("String", "API_BASE", "\"https://harindrasah.com.np\"")
         resourceConfigurations += listOf("en", "ne")
+    }
+
+    val keyPropsFile = rootProject.file("key.properties")
+    if (keyPropsFile.exists()) {
+        val kp = Properties().apply { keyPropsFile.inputStream().use { load(it) } }
+        signingConfigs {
+            create("release") {
+                storeFile = rootProject.file(kp.getProperty("storeFile"))
+                storePassword = kp.getProperty("storePassword")
+                keyAlias = kp.getProperty("keyAlias")
+                keyPassword = kp.getProperty("keyPassword")
+            }
+        }
+    } else {
+        logger.warn("key.properties missing — release bundle will be unsigned until configured.")
     }
 
     buildTypes {
@@ -54,6 +69,7 @@ android {
         }
         release {
             buildConfigField("String", "FPNV_TEST_TOKEN", "\"\"")
+            signingConfigs.findByName("release")?.let { signingConfig = it }
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
