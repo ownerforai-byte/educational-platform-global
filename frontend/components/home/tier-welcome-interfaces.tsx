@@ -5,11 +5,17 @@ import {
   ArrowRight,
   BookOpen,
   CheckCircle2,
+  ChevronRight,
+  Crown,
   FlaskConical,
   GraduationCap,
   Leaf,
+  ShieldCheck,
   Sparkles,
   Trophy,
+  Users,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
 import {
   PLATFORM_DISPLAY_NAME,
@@ -73,6 +79,22 @@ const TIER_CTA: Record<UserTier, string> = {
   owner: "Go to the Owner console",
 };
 
+/** The plan's emblem — one emblem per rung, on the welcome hero tile. */
+const TIER_ICONS: Record<UserTier, LucideIcon> = {
+  member: Users,
+  plus: Zap,
+  pro: Crown,
+  owner: ShieldCheck,
+};
+
+/** Third plan-at-a-glance stat, phrased per rung. */
+const TIER_STAT: Record<UserTier, { value: string; label: string }> = {
+  member: { value: "24/7", label: "Community answers" },
+  plus: { value: "11 + 12", label: "Both classes" },
+  pro: { value: "Full", label: "Every index" },
+  owner: { value: "Full", label: "Every control" },
+};
+
 /** The Go button target — the viewer's own home (guests land on the guest home). */
 function homeHrefFor(tier: AccessLevel): string {
   return tier === "guest" ? "/home" : TIER_HOME_PATHS[tier];
@@ -82,36 +104,78 @@ function TierWelcome({ tier }: { tier: UserTier }) {
   const open = applySectionOverrides(useSectionTierOverrides()).filter(
     (s) => ACCESS_RANK[s.minTier] <= ACCESS_RANK[tier],
   );
+  const TierIcon = TIER_ICONS[tier];
+  const stat = TIER_STAT[tier];
   return (
     <div className="relative flex min-h-[80vh] items-center justify-center overflow-hidden px-4 py-10">
       {/* Soft light blooms — a welcome should feel like an entrance */}
       <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[32rem] -translate-x-1/2 rounded-full bg-primary/15 blur-[110px]" />
       <div className="pointer-events-none absolute bottom-0 right-0 h-64 w-64 rounded-full bg-violet-500/15 blur-[100px]" />
 
-      <div className="relative w-full max-w-2xl space-y-6">
-        {/* Hero */}
-        <div className="rounded-3xl border-2 border-border/80 bg-gradient-to-br from-primary/[0.08] via-card to-card p-6 shadow-lg shadow-primary/5 sm:p-8">
-          <p className="text-[11px] font-bold uppercase tracking-widest text-primary">
-            Welcome · {ACCESS_LABELS[tier]} plan
-          </p>
-          <h1 className="mt-2 text-2xl font-extrabold tracking-tight sm:text-3xl">
-            {TIER_HEADLINE[tier]}
-          </h1>
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+      <div className="relative w-full max-w-2xl space-y-6 motion-safe:animate-fade-in">
+        {/* Hero — emblem tile, plan eyebrow, headline, plan-at-a-glance stats */}
+        <div className="relative overflow-hidden rounded-3xl border-2 border-border/80 bg-gradient-to-br from-primary/[0.08] via-card to-card p-6 shadow-lg shadow-primary/5 sm:p-8">
+          <div
+            className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full bg-primary/10 blur-3xl"
+            aria-hidden="true"
+          />
+          <div className="relative flex items-start gap-4">
+            <span
+              aria-hidden="true"
+              className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-primary to-primary/70 text-primary-foreground shadow-lg shadow-primary/25"
+            >
+              <TierIcon className="h-7 w-7" strokeWidth={1.8} />
+            </span>
+            <div className="min-w-0">
+              <p className="text-[11px] font-bold uppercase tracking-[0.18em] text-primary">
+                Welcome · {ACCESS_LABELS[tier]} plan
+              </p>
+              <h1 className="mt-1.5 text-2xl font-extrabold tracking-tight sm:text-3xl">
+                {TIER_HEADLINE[tier]}
+              </h1>
+            </div>
+          </div>
+          <p className="relative mt-4 text-sm leading-relaxed text-muted-foreground">
             {TIER_BLURB[tier]}
           </p>
-          <p className="mt-3 text-xs text-muted-foreground">
+          <p className="relative mt-3 text-xs text-muted-foreground">
             {ACCESS_TAGLINES[tier]} · Veer sparks{" "}
             <span className="font-semibold text-foreground">{TIER_SPARKS[tier]}</span>
           </p>
+
+          {/* Plan at a glance — three live stats */}
+          <dl className="relative mt-6 grid grid-cols-3 gap-3">
+            {[
+              { value: String(open.length), label: "Sections open" },
+              { value: TIER_SPARKS[tier], label: "Veer sparks" },
+              { value: stat.value, label: stat.label },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="flex flex-col-reverse items-center rounded-2xl border border-border/60 bg-background/70 px-2 py-3 text-center"
+              >
+                <dt className="mt-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                  {item.label}
+                </dt>
+                <dd className="text-lg font-extrabold tracking-tight text-foreground">
+                  {item.value}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
 
         {/* What this plan opens */}
-        <div className="rounded-2xl border-2 border-border/80 bg-muted/20 p-4">
-          <p className="text-xs font-semibold text-muted-foreground">
-            What&apos;s open in your plan
-          </p>
-          <div className="mt-2 flex flex-wrap gap-1.5">
+        <div className="rounded-2xl border-2 border-border/80 bg-muted/20 p-4 sm:p-5">
+          <div className="flex items-center justify-between gap-3">
+            <p className="text-xs font-semibold text-muted-foreground">
+              What&apos;s open in your plan
+            </p>
+            <span className="rounded-full bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">
+              {open.length} open
+            </span>
+          </div>
+          <div className="mt-3 flex flex-wrap gap-1.5">
             {open.slice(0, 10).map((s) => (
               <span
                 key={s.id}
@@ -134,7 +198,7 @@ function TierWelcome({ tier }: { tier: UserTier }) {
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href={homeHrefFor(tier)}
-            className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90"
+            className="group inline-flex items-center gap-2 rounded-full bg-primary px-8 py-4 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90"
           >
             {TIER_CTA[tier]}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
@@ -214,46 +278,80 @@ export function UniversalWelcome() {
           </Link>
         </div>
 
-        {/* ── What lives inside — display-only cards (no server-only imports) ── */}
-        <div className="mt-14 grid w-full max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {/* ── Proof strip — the platform at a glance ─────────────────────── */}
+        <dl className="mt-10 grid w-full max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
+          {[
+            { value: "11 & 12", label: "NEB classes" },
+            { value: "96+", label: "3D virtual labs" },
+            { value: "Veer", label: "AI tutor" },
+            { value: "NEB", label: "Official syllabus" },
+          ].map((item) => (
+            <div
+              key={item.label}
+              className="flex flex-col-reverse items-center rounded-2xl border border-border/60 bg-card/70 px-3 py-4 text-center shadow-sm backdrop-blur-sm"
+            >
+              <dt className="mt-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+                {item.label}
+              </dt>
+              <dd className="text-xl font-extrabold tracking-tight text-foreground">
+                {item.value}
+              </dd>
+            </div>
+          ))}
+        </dl>
+
+        {/* ── What lives inside — each card opens its real public page ───── */}
+        <div className="mt-6 grid w-full max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
               icon: BookOpen,
               tint: "bg-sky-500/10 text-sky-500",
               title: "Complete NEB notes",
               desc: "Class 11 & 12 in official syllabus order.",
+              href: "/what-it-has",
             },
             {
               icon: FlaskConical,
               tint: "bg-violet-500/10 text-violet-500",
               title: "96+ 3D virtual labs",
               desc: "Physics, chemistry & biology videos.",
+              href: "/features",
             },
             {
               icon: Trophy,
               tint: "bg-emerald-500/10 text-emerald-500",
               title: "Theorems & PYQs",
               desc: "Rigorous proofs and real board questions.",
+              href: "/official-sources",
             },
             {
               icon: GraduationCap,
               tint: "bg-amber-500/10 text-amber-500",
               title: "Veer, your tutor",
               desc: "Syllabus-grounded answers, step by step.",
+              href: "/how-it-works",
             },
           ].map((card) => {
             const Icon = card.icon;
             return (
-              <article
+              <Link
                 key={card.title}
-                className="rounded-2xl border border-border/60 bg-card/70 p-5 text-left shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                href={card.href}
+                className="group rounded-2xl border border-border/60 bg-card/70 p-5 text-left shadow-sm backdrop-blur-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
               >
                 <span className={`flex h-10 w-10 items-center justify-center rounded-xl ${card.tint}`}>
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <h2 className="mt-3 text-sm font-bold">{card.title}</h2>
                 <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{card.desc}</p>
-              </article>
+                <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-bold uppercase tracking-wider text-primary">
+                  Explore
+                  <ChevronRight
+                    className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
             );
           })}
         </div>
