@@ -1,0 +1,353 @@
+openapi: 3.0.3
+info:
+  title: Ravikisan Mobile API (additive)
+  version: mobile-v1
+  description: >
+    Native-Android-only surface under /api/mobile. ADDITIVE by contract:
+    nothing here may change an existing /api/* response shape (AGENTS.md,
+    Agent 2). Heavy data (syllabus, notes, feeds) is reused from existing
+    routes — see mobile-syllabus-notes.md in this folder.
+servers:
+  - url: https://harindrasah.com.np
+    description: Production (Cloud Functions)
+  - url: http://10.0.2.2:3000
+    description: Android emulator → local dev (npm run dev:backend)
+
+paths:
+  /api/mobile/home:
+    get:
+      summary: Cold-start bootstrap payload
+      description: >
+        One cheap call the native app makes on launch: which features are live
+        at this API version and which existing /api/* routes back them. No DB
+        access, so it can never take the app down.
+      responses:
+        "200":
+          description: Bootstrap envelope
+          headers:
+            X-Mobile-Api-Version:
+              schema: { type: string, example: "1" }
+            Cache-Control:
+              schema: { type: string, example: "public, max-age=300" }
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, data]
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    required: [apiVersion, features, links]
+                    properties:
+                      apiVersion: { type: string, const: mobile-v1 }
+                      features:
+                        type: object
+                        required: [syllabus, notes, practice, aiChat, community]
+                        properties:
+                          syllabus: { type: boolean }
+                          notes: { type: boolean }
+                          practice: { type: boolean }
+                          aiChat: { type: boolean }
+                          community: { type: boolean }
+                      links:
+                        type: object
+                        required: [syllabus, notes, practice, ai, community]
+                        properties:
+                          syllabus: { type: string, example: /api/classes }
+                          notes: { type: string, example: /api/r-notes }
+                          practice: { type: string, example: /api/practice }
+                          ai: { type: string, example: /api/ai }
+                          community: { type: string, example: /api/community }
+
+  /api/mobile/requirements:
+    get:
+      summary: Store-mandated app requirements (mirror of /api/v2/meta.requirements)
+      responses:
+        "200":
+          description: Requirements envelope
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, data]
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    required: [requirements]
+                    properties:
+                      requirements:
+                        type: object
+                        description: Same shape as GET /api/v2/meta → data.requirements
+                        properties:
+                          appName: { type: string }
+                          website: { type: string, format: uri }
+                          supportEmail: { type: string, format: email }
+                          clients:
+                            type: object
+                            properties:
+                              androidPackage: { type: string, example: com.ravikisan.platform }
+                              minAndroidVersionCode: { type: integer }
+
+  /api/mobile/syllabus:
+    get:
+      summary: Compact class → subject syllabus tree
+      description: >
+        First real mobile data endpoint. REUSES the website's classes/subjects
+        tables through the shared content cache (docs/api/mobile-syllabus-notes.md);
+        the only difference is the shape — one cheap call returning the whole
+        two-level tree with mobile-sized rows (id/slug/name, no descriptions).
+        Chapters/topics stay on the existing per-subject routes so the app
+        pulls a subtree only when a class is opened. Inactive rows excluded;
+        a class with no active subjects still appears with an empty array;
+        an empty curriculum is a valid 200.
+      responses:
+        "200":
+          description: Syllabus tree
+          headers:
+            X-Mobile-Api-Version:
+              schema: { type: string, example: "1" }
+            Cache-Control:
+              schema: { type: string, example: "public, max-age=60, s-maxage=300" }
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, data]
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    required: [classes]
+                    properties:
+                      classes:
+                        type: array
+                        items:
+                          type: object
+                          required: [id, slug, name, subjects]
+                          properties:
+                            id: { type: string }
+                            slug: { type: string, example: class-11 }
+                            name: { type: string, example: Class 11 }
+                            subjects:
+                              type: array
+                              items:
+                                type: object
+                                required: [id, slug, name]
+                                properties:
+                                  id: { type: string }
+                                  slug: { type: string, example: physics }
+                                  name: { type: string, example: Physics }
+        "500":
+          description: Database failure (never a silently empty tree)
+
+  /api/mobile/units:
+    get:
+      summary: Units (chapters) of one subject
+      parameters:
+        - in: query
+          name: subject
+          required: true
+          schema: { type: string }
+          description: Subject slug (from /api/mobile/syllabus)
+      responses:
+        "200":
+          description: Ordered unit list with topic counts
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, data]
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    required: [subject, units]
+                    properties:
+                      subject:
+                        type: object
+                        required: [id, slug, name]
+                        properties:
+                          id: { type: string }
+                          slug: { type: string }
+                          name: { type: string }
+                      units:
+                        type: array
+                        items:
+                          type: object
+                          required: [id, slug, title, order, topicCount]
+                          properties:
+                            id: { type: string }
+                            slug: { type: string, example: kinematics }
+                            title: { type: string, example: Kinematics }
+                            order: { type: integer }
+                            topicCount: { type: integer }
+        "400": { description: subject query parameter missing }
+        "404": { description: unknown subject }
+        "500": { description: database failure }
+
+  /api/mobile/notes:
+    get:
+      summary: Cursor-paginated r-notes catalog
+      parameters:
+        - in: query
+          name: subject
+          schema: { type: string }
+        - in: query
+          name: chapter
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, default: 20 }
+          description: Clamped to 50 server-side.
+        - in: query
+          name: cursor
+          schema: { type: string }
+          description: Opaque cursor from the previous page's nextCursor.
+      responses:
+        "200":
+          description: Cursor page of compact note rows
+          content:
+            application/json:
+              schema:
+                allOf:
+                  - type: object
+                    properties:
+                      ok: { type: boolean, const: true }
+                      data:
+                        type: object
+                        properties:
+                          items:
+                            type: array
+                            items:
+                              type: object
+                              properties:
+                                id: { type: string }
+                                subject: { type: string }
+                                chapter: { type: string }
+                                title: { type: string }
+                                noteCount: { type: integer }
+                          nextCursor: { type: [string, "null"] }
+
+  /api/mobile/practice:
+    get:
+      summary: Cursor-paginated exam catalog
+      description: >
+        Same catalog as the website /api/tests route. Tier-gated past papers
+        stay on /api/pyqs (requireAuth + requireTier("plus")) — the native
+        client calls that route directly.
+      parameters:
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, default: 20 }
+        - in: query
+          name: cursor
+          schema: { type: string }
+      responses:
+        "200":
+          description: Cursor page of exam rows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            slug: { type: string }
+                            title: { type: string }
+                            durationMin: { type: integer }
+                            questionCount: { type: integer }
+                      nextCursor: { type: [string, "null"] }
+
+  /api/mobile/community:
+    get:
+      summary: Cursor-paginated public community posts
+      description: >
+        Read-only and compact. Publishing/moderation stay on the existing
+        /api/feed routes. Keyset pagination on created_at DESC; rows carry no
+        author enrichment, emails or storage URLs.
+      parameters:
+        - in: query
+          name: category
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, default: 20 }
+        - in: query
+          name: cursor
+          schema: { type: string }
+      responses:
+        "200":
+          description: Cursor page of public posts
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id: { type: string }
+                            authorId: { type: string }
+                            title: { type: string }
+                            body: { type: string }
+                            category: { type: string }
+                            kind: { type: string }
+                            createdAt: { type: string }
+                            updatedAt: { type: string }
+                      nextCursor: { type: [string, "null"] }
+        "503":
+          description: Migration 018 not applied
+
+  /api/mobile/demo/page:
+    get:
+      summary: Reference implementation of the cursor-pagination convention
+      description: >
+        Stand-in list (95 rows) that pins the shared pagination shape every
+        /api/mobile list endpoint must copy. Clients treat `cursor` as opaque
+        and echo `nextCursor` back verbatim; `nextCursor: null` ends the list.
+      parameters:
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, maximum: 50, default: 20 }
+          description: Clamped to 50 server-side (over-asks are clamped, not rejected).
+        - in: query
+          name: cursor
+          schema: { type: string }
+          description: Opaque base64url cursor from the previous page's nextCursor.
+      responses:
+        "200":
+          description: Cursor page
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ok, data]
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    required: [items, nextCursor]
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id: { type: string }
+                      nextCursor:
+                        type: [string, "null"]
