@@ -66,7 +66,12 @@ function canonicalNotesFor(topicSlug: string): string[] {
 }
 
 describe("rich figure QA — anchors and rendering", () => {
-  it("every rich plate's keyword anchor matches a shipped canonical note block", () => {
+  it(
+    "every rich plate's keyword anchor matches a shipped canonical note block",
+    // the corpus now ships classified tables in every topic file, so this
+    // scan reads far more note blocks than before; 5s default is too tight
+    { timeout: 60_000 },
+    () => {
     for (const [slug, entry] of Object.entries(RICH_FIGURES)) {
       const notes = canonicalNotesFor(slug);
       for (const figure of entry.figures) {

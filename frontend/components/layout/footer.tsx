@@ -23,13 +23,14 @@
 "use client";
 
 import Link from "next/link";
-import { CloudDownload, Star } from "lucide-react";
+import { CloudDownload, Lock, Star } from "lucide-react";
 import { isAndroidNativeShell } from "@/lib/native-android";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import { hasLevel, ACCESS_LABELS, type AccessLevel } from "@/lib/core/access-level";
 import { NAV_SECTIONS, type NavItem, type NavSection } from "@/lib/core/navigation";
 import type { AiSparkUserLike } from "@/lib/ai/ai-spark-tiers";
 import { FooterQuote } from "@/components/layout/footer-quote";
+import { LEGAL_LINKS } from "@/lib/core/legal-links";
 import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 
 // ─── Which nav sections appear in the footer, and what heading to use ────────
@@ -167,17 +168,12 @@ function footerItems(
 
 // ─── Component ────────────────────────────────────────────────────────────────
 
-/** Legal pages — always visible to everyone, in both footer views. */
-export const LEGAL_LINKS: [string, string][] = [
-  ["Privacy",        "/legal/privacy"       ],
-  ["Terms",          "/legal/terms"         ],
-  ["Cookies",        "/legal/cookies"       ],
-  ["Purchases",      "/legal/purchases"     ],
-  ["Data safety",    "/legal/data-safety"   ],
-  ["Content rating", "/legal/content-rating"],
-  ["Attribution",    "/legal/attribution"   ],
-  ["Takedown",       "/legal/takedown"      ],
-];
+// The legal/policy link registry lives in lib/core/legal-links.ts — a server
+// component (plans-page-footer) also renders it, and importing a value from
+// this "use client" module would hand it a client-reference stub instead of
+// the array (SSR crash: "LEGAL_LINKS.map is not a function"). Re-exported
+// here so client-side consumers keep their import path.
+export { LEGAL_LINKS } from "@/lib/core/legal-links";
 
 /** The platform's Play Store listing (TWA package id in android-twa/twa-manifest.json). */
 export const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.ravikisan.platform";
@@ -226,6 +222,23 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
         )}
         <div className="space-y-3 px-4 pb-6 pt-3 text-[11px] leading-relaxed text-muted-foreground">
           <p>After signing, the account is approved by the system verification and administrative approval.</p>
+          {/* Plans & Pricing — sealed under the "Not Good" lock (owner request),
+              mirrored from the website footer's Further group. */}
+          <div className="relative">
+            <span
+              aria-hidden="true"
+              className="inline-flex min-h-8 items-center gap-1.5 text-[11px] text-muted-foreground/60 blur-[3px] select-none"
+            >
+              Plans &amp; Pricing
+            </span>
+            <div className="absolute inset-0 flex items-center">
+              <span className="inline-flex items-center gap-1 rounded-md border border-border/70 bg-background/85 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+                <Lock className="h-2.5 w-2.5" aria-hidden="true" />
+                Not Good
+              </span>
+            </div>
+            <span className="sr-only">Plans and pricing stay sealed — Not Good.</span>
+          </div>
           <nav aria-label="Legal" className="flex flex-wrap gap-x-4 gap-y-2">
             {LEGAL_LINKS.map(([label, href]) => (
               <Link
@@ -319,6 +332,38 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
             );
           })}
         </div>
+
+        {/* Plans & Pricing — sealed under the "Not Good" lock (owner request):
+            removed from the visitor home's Account access section, and here it
+            stays discoverable but sealed — blurred, aria-hidden, not focusable
+            and not clickable, exactly like the "Further" group on /plans. */}
+        <nav
+          aria-label="Footer Further"
+          className="mt-2 rounded-2xl border-2 border-border/70 bg-card/60 px-3 py-3"
+        >
+          <h2 className="text-[11px] font-semibold leading-tight sm:text-sm">Further</h2>
+          <div className="relative mt-2 sm:mt-3">
+            <ul className="flex flex-wrap gap-x-4 gap-y-2" aria-hidden="true">
+              <li>
+                <Link
+                  href="/plans"
+                  tabIndex={-1}
+                  className="inline-flex min-h-8 items-center gap-1.5 text-xs text-muted-foreground/60 blur-[3px] select-none sm:text-sm"
+                >
+                  Plans &amp; Pricing
+                </Link>
+              </li>
+            </ul>
+            {/* Not Good overlay — the section is locked. */}
+            <div className="absolute inset-0 flex items-center justify-start">
+              <span className="inline-flex items-center gap-1 rounded-md border border-border/70 bg-background/85 px-2 py-1 text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+                <Lock className="h-2.5 w-2.5" aria-hidden="true" />
+                Not Good
+              </span>
+            </div>
+            <span className="sr-only">Further — Not Good. Plans and pricing stay sealed.</span>
+          </div>
+        </nav>
 
         <FooterQuote />
 

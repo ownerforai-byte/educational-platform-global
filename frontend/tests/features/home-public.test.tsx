@@ -48,14 +48,19 @@ describe("guest home — sign in is the only action", () => {
   it("explains the approval requirement without exposing gated study routes", () => {
     render(<HomePublic />);
 
-    expect(
-      screen.getAllByText(/After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform\./).length,
-    ).toBeGreaterThan(0);
+    // Owner request: the Account access section is gone from the guest home,
+    // so the approval notice and any /plans link no longer render here — the
+    // notice still appears on the sign-in flow (guest-signin-note).
+    expect(screen.queryByText(/After signing up, your account goes through/)).toBeNull();
     expect(screen.getByRole("link", { name: /^sign in$/i })).toHaveAttribute(
       "href",
       "/welcome/join",
     );
-    expect(screen.getAllByRole("link", { name: /access (notice|works)/i }).some((link) => link.getAttribute("href") === "/plans")).toBe(true);
+    // Owner request: the Account access section (and its /plans link) is
+    // removed from the guest home — plans live only in the footer, sealed.
+    expect(screen.queryByRole("link", { name: /access (notice|works)/i })).toBeNull();
+    expect(screen.queryByRole("heading", { name: "Account access" })).toBeNull();
+    expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/plans");
     expect(screen.getAllByRole("link").map((link) => link.getAttribute("href"))).not.toContain("/notice");
   });
 

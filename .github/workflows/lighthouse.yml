@@ -38,7 +38,9 @@ jobs:
 
       - name: Start the production server
         run: |
-          npx next start -p 3000 > /tmp/next-server.log 2>&1 &
+          # `output: "standalone"` means `next start` won't work — use the
+          # standalone server wrapper (sets HOSTNAME, imports server.js).
+          PORT=3000 node scripts/start-standalone.mjs > /tmp/next-server.log 2>&1 &
           for i in $(seq 1 60); do
             if curl -sf -o /dev/null http://localhost:3000/home; then
               echo "server ready"

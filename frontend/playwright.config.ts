@@ -37,7 +37,11 @@ export default defineConfig({
     : {
         // CI serves the production build (the workflow builds first); locally
         // reuse a running `npm run dev` (port 5173) so nothing is rebuilt.
-        command: process.env.CI ? "npx next start -p 3000" : "npm run dev",
+        // `output: "standalone"` means `next start` won't work — use the
+        // standalone server wrapper that sets HOSTNAME and imports server.js.
+        command: process.env.CI
+          ? "node scripts/start-standalone.mjs"
+          : "npm run dev",
         url:
           process.env.PLAYWRIGHT_BASE_URL ??
           (process.env.CI ? "http://localhost:3000" : "http://localhost:5173"),

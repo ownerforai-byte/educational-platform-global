@@ -622,9 +622,61 @@ function buildRows(c: ConceptRecord): {
     }
   }
 
+  /** Classified tables emitted by the enhancer engine (markdown blocks in
+   *  notes): title line, header row, delimiter row, data rows. Every cell is
+   *  a verbatim slice of the record — selection and joining only. */
+  const classifiedTables = (): { title: string; header: string[]; rows: string[][] }[] => {
+    const out: { title: string; header: string[]; rows: string[][] }[] = [];
+    const cells = (line: string) =>
+      line
+        .replace(/^\s*\|/, "")
+        .replace(/\|\s*$/, "")
+        .split("|")
+        .map((s) => s.trim());
+    const delimRe = /^\|?[ :\-|]+\|?$/;
+    const pyqHeader = /\byear\b/i;
+    for (const raw of fieldList("notes")) {
+      const lines = raw.split("\n");
+      for (let i = 0; i < lines.length - 1; i++) {
+        if (!lines[i].includes("|") || !delimRe.test(lines[i + 1].trim())) continue;
+        const header = cells(lines[i]);
+        if (header.length < 2 || pyqHeader.test(lines[i])) continue;
+        const rows: string[][] = [];
+        for (let k = i + 2; k < lines.length && lines[k].includes("|"); k++) {
+          rows.push(cells(lines[k]));
+        }
+        if (rows.length === 0) continue;
+        let t = i - 1;
+        while (t >= 0 && !lines[t].trim()) t--;
+        const title =
+          t >= 0
+            ? lines[t].trim().replace(/^#{1,6}\s*/, "").replace(/\*\*/g, "").trim() || "Table"
+            : "Table";
+        out.push({ title, header, rows });
+        if (out.length >= 4) return out;
+      }
+    }
+    return out;
+  };
+  /** Rail items for classified tables: title, header, then rows — cells joined
+   *  with " | " and rows with the card's item separator. */
+  const tableItems = (n: number, per = 460): string[] => {
+    const out: string[] = [];
+    for (const t of classifiedTables()) {
+      if (out.length >= n) break;
+      const line = [t.title, t.header.join(" | "), ...t.rows.map((r) => r.join(" | "))].join("  ·  ");
+      const key = line.trim();
+      if (!key || used.has(key)) continue;
+      used.add(key);
+      out.push(clip(key, per));
+    }
+    return out;
+  };
+
   // Leftover ideas — "all ideas possible" rows, filled from what the canonical
   // nine did not consume.
   const extras: RowDraft[] = [
+    { label: "Classified table", items: tableItems(2) },
     { label: "Quick concepts", items: take("importantConcepts", 4, 320) },
     { label: "Key points", items: take("keyPoints", 4, 320) },
     { label: "Universal facts", items: take("universalFacts", 2, 340) },

@@ -1,6 +1,9 @@
 import Link from "next/link";
 import { Lock } from "lucide-react";
-import { LEGAL_LINKS } from "@/components/layout/footer";
+// LEGAL_LINKS comes from lib/core, NOT from the footer: footer.tsx is a
+// "use client" module and a server component importing a value from it gets
+// a client-reference stub, not the array (SSR crash).
+import { LEGAL_LINKS } from "@/lib/core/legal-links";
 import { platformLinks } from "@/components/platform/public-page";
 import { IndependenceDisclaimer } from "@/components/platform/independence-disclaimer";
 import { DEPLOY_VERSION } from "@/lib/deploy-version";

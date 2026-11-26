@@ -7,8 +7,9 @@ import { checkStartupEnv } from "../config/env";
  * Cloud Functions entry support (Firebase migration, Task A).
  *
  * The backend API is deployed as the gen2 HTTP function `api` (region
- * us-central1), so its public base URL already ends in `/api`:
- * `https://us-central1-rn01-af00b.cloudfunctions.net/api`. The frontend calls
+ * us-central1), so its public base URL already ends in `/api` (the Cloud
+ * Functions URL of the `api` function — see backend/src/config/env.ts for the
+ * canonical host). The frontend calls
  * `${base}/api/<path>` and `${base}/health`, i.e. the browser paths are
  * `/api/api/<path>` and `/api/health`.
  *

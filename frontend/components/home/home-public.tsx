@@ -1,9 +1,6 @@
 import Link from "next/link";
-import { BookOpen, FlaskConical, History, ShieldCheck } from "lucide-react";
-import { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
+import { BookOpen, FlaskConical, History } from "lucide-react";
 import { VisitorHomeChat } from "@/components/home/visitor-home-chat";
-
-export { ACCESS_NOTICE } from "@/features/auth/components/access-notice";
 
 const resources = [
   {
@@ -77,22 +74,6 @@ export function HomePublic() {
           </div>
         </section>
 
-        <section aria-labelledby="access-title" className="rounded-xl border-2 border-border/80 bg-muted/20 p-5 sm:p-6">
-          <h2 id="access-title" className="flex items-center gap-2 text-base font-semibold">
-            <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
-            Account access
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-foreground">{ACCESS_NOTICE}</p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-            Available materials and usage limits depend on the plan.{" "}
-            <Link
-              href="/plans"
-              className="font-medium text-primary hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-            >
-              How access works
-            </Link>
-          </p>
-        </section>
       </div>
     </div>
   );

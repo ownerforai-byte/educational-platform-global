@@ -52,6 +52,27 @@ describe("Footer account column", () => {
     expect(within(platform).queryByText(/Plans & Pricing/i)).toBeNull();
   });
 
+  it("seals Plans & Pricing under the locked 'Not Good' group (owner request)", () => {
+    render(<Footer user={null} />);
+    const further = screen.getByRole("navigation", { name: "Footer Further" });
+
+    // The plans link is sealed: blurred, aria-hidden and tabIndex={-1}, so it
+    // is never a live link role — the same treatment as the "Further" group
+    // on the plans page footer.
+    expect(within(further).queryByRole("link", { name: /Plans & Pricing/i })).toBeNull();
+    expect(further.textContent).toContain("Plans & Pricing");
+    expect(further.textContent).toContain("Not Good");
+  });
+
+  it("seals Plans & Pricing in the mobile essentials strip too", () => {
+    render(<Footer user={null} />);
+
+    // The mobile strip is aria-hidden by design, so the plans text must never
+    // be a live link role — only blurred, sealed text plus the Not Good badge.
+    expect(screen.queryByRole("link", { name: /Plans & Pricing/i })).toBeNull();
+    expect(screen.getAllByText(/Not Good/i).length).toBeGreaterThanOrEqual(2);
+  });
+
   it("adds 'What it has' under Platform as a live guest link (owner 2026-11-08)", () => {
     render(<Footer user={null} />);
     const platform = screen.getByRole("navigation", { name: "Footer Platform" });

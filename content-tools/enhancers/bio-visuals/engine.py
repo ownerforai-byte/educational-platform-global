@@ -53,7 +53,7 @@ JUNK_PREFIXES = (
     "Covers only:",
     "Out of scope here:",
 )
-JUNK_CONTAINS = ("one-line definition + one-line exam use",)
+JUNK_CONTAINS = ()  # empty: containment drops proved lossy — see is_junk note
 
 
 def md_table(title, header, rows):

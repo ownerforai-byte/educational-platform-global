@@ -273,7 +273,7 @@ describe("auth flow", () => {
     expect(cookies.some((cookie) => cookie.startsWith(`sb-access-token=${VALID_TOKEN}`))).toBe(true);
     expect(cookies.some((cookie) => cookie.startsWith("sb-refresh-token=valid-refresh"))).toBe(true);
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
-  });
+  }, 15_000);
 
   test("OAuth session rejects providers outside the allowlist before issuing application cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({

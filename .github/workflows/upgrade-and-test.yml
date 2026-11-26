@@ -66,10 +66,13 @@ jobs:
         working-directory: frontend
         run: |
           set -Eeuo pipefail
-          trap 'rc=$?; echo "::error::clean dependency install failed (line $LINENO, exit $rc)"; echo "::group::diagnostics"; node --version; npm --version; npm config get registry; echo "::endgroup::"; exit "$rc"' ERR
+          trap 'rc=$?; echo "::error::clean dependency install failed (line $LINENO, exit $rc)"; echo "::group::diagnostics"; node --version; npm --version; npm config get registry --location=global 2>/dev/null || true; echo "::endgroup::"; exit "$rc"' ERR
           echo "== npm ci (lockfile-pinned, scripts enabled) =="
           env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm ci
-          test -f node_modules/next/package.json
+          # npm ci run from a workspace member installs that member's tree
+          # hoisted into the ROOT node_modules — frontend/node_modules stays
+          # empty, so the sanity check must look one level up.
+          test -f ../node_modules/next/package.json || test -f node_modules/next/package.json
           echo "== advisory production audit =="
           npm audit --omit=dev --audit-level=high \
             || echo "::warning::npm audit reported high-severity advisories — Dependabot will open a security PR"
@@ -101,7 +104,7 @@ jobs:
           trap 'rc=$?; if [ -n "$SERVER_PID" ]; then kill "$SERVER_PID" 2>/dev/null || true; fi; if [ "$rc" -ne 0 ]; then echo "::error::production build / smoke failed (line $LINENO, exit $rc)"; echo "::group::next start log"; cat "$RUNNER_TEMP/next-start.log" 2>/dev/null || true; echo "::endgroup::"; fi; exit "$rc"' EXIT
           trap 'rc=$?; echo "::group::diagnostics"; node --version || true; npm --version || true; echo "cwd=$PWD"; test -f .next/BUILD_ID && echo "BUILD_ID=$(cat .next/BUILD_ID)" || true; echo "::endgroup::"; exit "$rc"' ERR
 
-          echo "== production build (exact Vercel command) =="
+          echo "== production build ==="
           env -u npm_config_cache_dir -u NPM_CONFIG_CACHE_DIR npm run build
           if [ ! -s .next/BUILD_ID ]; then
             echo "::error::build produced no .next/BUILD_ID"
@@ -110,7 +113,9 @@ jobs:
           echo "build OK: BUILD_ID=$(cat .next/BUILD_ID)"
 
           echo "== boot production server on port $SMOKE_PORT =="
-          npx next start -p "$SMOKE_PORT" > "$RUNNER_TEMP/next-start.log" 2>&1 &
+          # `output: "standalone"` means `next start` won't work — use the
+          # standalone server wrapper (sets HOSTNAME, imports server.js).
+          PORT="$SMOKE_PORT" node scripts/start-standalone.mjs > "$RUNNER_TEMP/next-start.log" 2>&1 &
           SERVER_PID=$!
 
           code=""
