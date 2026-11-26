@@ -959,6 +959,7 @@ Crashlytics/R8 tuning, CI job `android-native-assemble`, real theme tokens,
 | 2026-11-26 | **FINAL review (session 5)** — all worker task lists complete; program compiles + 28/28 mobile API tests; 1 unit-test defect found (search ranking). Details below. |
 | 2026-11-26 | **Session 6 — fake→real swap EXECUTED (owner-directed)**: practice+quiz, search, community now on real APIs; 110/110 unit tests, APK builds. Details below. |
 | 2026-11-26 | **Session 7 — Firebase wired (owner + Firebase agent skills)**: `google-services.json` generated (gitignored, verified), app registered with 5 SHA-256 certs, Firebase BOM 33.7.0 deps added; **build green with google-services plugin active — APK 81.9 MB**. |
+| 2026-11-26 | **Session 8 — SECURITY HARDENING (owner-directed)**: FLAG_SECURE + recents-screenshot block, R8 keep rules, **reverted dangerous `firebase-pnv` dep + BOM 35.2.0** (supply-chain + Kotlin-incompat), removed unused perf SDK; build + tests green, APK 74.6 MB. |
 
 ### 2026-11-26 — Supervisor edit review (Agent 5)
 
@@ -1174,6 +1175,28 @@ Progress baseline: foundation ~80% done (builds green, 75 unit tests, `/api/mobi
 - Conditional google-services plugin now **applies** (file present); FCM path (`FcmRegistrar`, `RnFirebaseMessagingService`) is live in the build.
 - **Verified:** `./gradlew assembleDebug` → **BUILD SUCCESSFUL (11m45s), APK 81.9 MB** (Firebase SDKs included).
 - Classification: [IMPORTANT CORE FILE] `android-native/app/build.gradle.kts`, `skills-lock.json`; [CONTENT FILE] none; `google-services.json` = ignored local secret, never committed.
+
+### 2026-11-26 — Session 8: security hardening (owner directive: "no one after installation can steal any data")
+
+**Already strong (verified, from earlier sessions — no change needed):**
+- Data at rest: `allowBackup=false`, `fullBackupContent=false`, data-extraction rules exclude **cloud backup AND device transfer** entirely; session tokens/user in EncryptedSharedPreferences (MasterKey AES256); Room cache holds only public curriculum payloads (no tokens, no PII).
+- Network: cleartext disabled globally, SPKI pin-set for `harindrasah.com.np` (expires 2027-12), system CAs only; Attestation/RedirectGuard/ResponseCap interceptors; OkHttp logging only in DEBUG.
+- Components: only `MainActivity` exported (launcher + verified app links); FCM service `exported=false`.
+- Release: R8 minify + resource shrinking already enabled.
+
+**Hardened this session:**
+1. **Screen-capture block** (`MainActivity.kt`): `FLAG_SECURE` for the whole app — screenshots, screen recording, and non-secure display output blocked; Recents switcher shows a blank card (no content thumbnail leak). Plus `setRecentsScreenshotEnabled(false)` (API 31+) so no task screenshot is cached at all. Owner kill switch: `MainActivity.ALLOW_SCREEN_CAPTURE` (trade-off: students can't screenshot their own notes while it's on).
+2. **R8 keep rules** (`proguard-rules.pro`): Retrofit/kotlinx-serialization/Room reflection kept so minified release builds actually run — prevents a future "disable minify" regression; obfuscation itself raises static-analysis cost.
+3. **Supply-chain fix (critical):** a later owner-session change added `com.google.firebase:firebase-pnv:17.0.0` — **not a published Google artifact** (phone auth lives in `firebase-auth`; the hallucinated `com.google.firebase.pnv.FirebasePhoneNumberVerification` import in `RnApp.kt` came from it and broke the build). REVERTED. Also reverted BOM 35.2.0 → 33.7.0 (its `firebase-auth 25.0.0` is Kotlin-2.4-compiled, incompatible with this project's Kotlin 2.1.0) and removed the unused `firebase-perf` SDK + plugin (telemetry attack surface with zero usage; re-add when actually wired).
+
+**Verified:** `assembleDebug` + `testDebugUnitTest` → **BUILD SUCCESSFUL, 0 test failures, APK 74.6 MB**.
+
+**Residual risks (owner awareness, no action taken):**
+- A determined attacker with root on the device can read app data — true of every app; EncryptedSharedPreferences keys are also device-bound, which is the practical ceiling on Android.
+- `firebase-auth`/`firebase-firestore` deps are declared but unused by code yet — keep only if Google Sign-In / Firestore sync is planned; otherwise remove (smaller surface).
+- Deep links (`rn://app`, https) open Home only — no parameter-driven navigation to sensitive screens; fine as-is.
+
+**Classification:** [IMPORTANT CORE FILE] `MainActivity.kt`, `proguard-rules.pro`, `RnApp.kt` (hallucinated-code removal), `app/build.gradle.kts`.
 
 ## 6. KEY DECISIONS LOG
 
