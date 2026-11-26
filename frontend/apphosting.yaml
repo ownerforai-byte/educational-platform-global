@@ -8,8 +8,14 @@ runConfig:
   maxInstances: 10
   concurrency: 80
 
-# Build/run: use package.json (`apphosting:build`, `start`). Do not set scripts.runCommand
-# here — it overrides the adapter and often runs from the wrong cwd (PORT probe fails).
+# Build/run: use package.json (`apphosting:build`, `start`). runCommand is set
+# ON PURPOSE (owner 2026-11-26 outage): with no runCommand the container fell
+# back to the ROOT package.json `start`, which starts the BACKEND workspace
+# (`node backend/dist/index.js` — a build artifact that is not committed), so
+# the container exited before listening and every rollout failed with 404s.
+# This command is cwd-independent: npm resolves the workspace and runs the
+# script with cwd = frontend/, where `.next/standalone` lives.
+runCommand: npm run start --workspace=educational-platform-frontend
 
 env:
   - variable: NEXT_PUBLIC_API_URL
