@@ -83,5 +83,5 @@ item. Content items (#9, #10) additionally require the content gates
 
 | # | Improvement | Status |
 |---|---|---|
-| 1 | Dashboard command center | 🟡 In progress (2026-11-27) |
+| 1 | Dashboard command center | ✅ Done (2026-11-27) — due-reviews card (SRS across goal subjects), practice accuracy card (real quiz history), plan rows link to subject pages, 4-stat grid |
 | 2–15 | — | ⚪ Not started |
