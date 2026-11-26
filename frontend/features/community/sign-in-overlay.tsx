@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
+import { createPortal } from "react-dom";
 import Link from "next/link";
 import {
   Bookmark,
@@ -69,10 +70,27 @@ export interface SignInOverlayProps {
 export function SignInOverlay({ open, action = "like", onOpenChange }: SignInOverlayProps) {
   const titleId = useId();
   const [mounted, setMounted] = useState(false);
+  // Enter/exit choreography: the overlay stays mounted while it animates out,
+  // then unmounts. `entered` flips one frame after mount so the CSS transition
+  // always runs (class swap, not initial paint).
+  const [render, setRender] = useState(false);
+  const [entered, setEntered] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (open) {
+      setRender(true);
+      const raf = requestAnimationFrame(() => requestAnimationFrame(() => setEntered(true)));
+      return () => cancelAnimationFrame(raf);
+    }
+    // Leaving: fade/slide out smoothly, then drop from the DOM.
+    setEntered(false);
+    const timer = window.setTimeout(() => setRender(false), 280);
+    return () => window.clearTimeout(timer);
+  }, [open]);
 
   // Escape closes; the page behind the modal does not scroll.
   useEffect(() => {
@@ -89,13 +107,16 @@ export function SignInOverlay({ open, action = "like", onOpenChange }: SignInOve
     };
   }, [open, onOpenChange]);
 
-  if (!open || !mounted) return null;
+  if (!render || !mounted) return null;
 
   const copy = COPY[action] ?? COPY.like;
   const Icon = copy.Icon;
   const close = () => onOpenChange(false);
 
-  return (
+  // Portal to document.body: ancestor transforms (app shell animations) would
+  // otherwise turn `fixed` into a containing-block-relative box and let the
+  // bottom tab bar sit above the backdrop.
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -108,10 +129,21 @@ export function SignInOverlay({ open, action = "like", onOpenChange }: SignInOve
         type="button"
         aria-label="Close sign-in prompt"
         onClick={close}
-        className="absolute inset-0 h-full w-full cursor-default bg-black/45 backdrop-blur-sm motion-safe:animate-backdrop-in"
+        className={cn(
+          "absolute inset-0 h-full w-full cursor-default bg-black/45 backdrop-blur-sm transition-opacity duration-200 ease-out motion-reduce:transition-none",
+          entered ? "opacity-100" : "opacity-0",
+        )}
       />
 
-      <div className="relative w-full max-w-sm rounded-[2rem] border border-border/80 bg-card/95 p-6 text-center shadow-2xl shadow-black/10 backdrop-blur motion-safe:animate-pop-in">
+      <div
+        className={cn(
+          "relative w-full max-w-sm rounded-[2rem] border border-border/80 bg-card/95 p-6 text-center shadow-2xl shadow-black/10 backdrop-blur",
+          "transition-all duration-[260ms] ease-out motion-reduce:transition-none",
+          entered
+            ? "translate-y-0 scale-100 opacity-100"
+            : "translate-y-3 scale-[0.97] opacity-0",
+        )}
+      >
         <button
           type="button"
           onClick={close}
@@ -155,6 +187,8 @@ export function SignInOverlay({ open, action = "like", onOpenChange }: SignInOve
         </div>
       </div>
     </div>
+    ,
+    document.body,
   );
 }
 

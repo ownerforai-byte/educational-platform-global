@@ -345,6 +345,7 @@ export function PostComposer({
   return (
     <>
       <form
+        noValidate
         className={cn(composerShell, "space-y-4 p-4 shadow-elev-1 sm:p-5")}
       onSubmit={(event) => {
         event.preventDefault();
