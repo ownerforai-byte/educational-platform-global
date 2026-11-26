@@ -3,6 +3,8 @@ import { AuthShell } from "@/features/auth/components/auth-shell";
 import { ResetPasswordForm } from "@/features/auth/components/reset-password-form";
 
 export const metadata: Metadata = {
+  // Auth pages carry session state — keep them out of search indexes.
+  robots: { index: false, follow: true },
   title: "Reset Password — Ravikisan's Platform",
   description: "Choose a new password for your Ravikisan account.",
 };

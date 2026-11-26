@@ -5,7 +5,7 @@
   "description": "NEB Class 11 & 12 study platform — notes, 3D labs, PYQ practice, and AI tutor Veer.",
   "start_url": "/home",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#f8fafc",
   "theme_color": "#3b82f6",
   "orientation": "portrait-primary",
   "lang": "en",
@@ -14,15 +14,21 @@
   "categories": ["education", "utilities"],
   "icons": [
     {
-      "src": "/profile-picture.jpg",
-      "sizes": "460x1024",
-      "type": "image/jpeg",
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/profile-picture.jpg",
-      "sizes": "460x1024",
-      "type": "image/jpeg",
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
   ],
@@ -32,28 +38,28 @@
       "short_name": "Study",
       "description": "Jump back to your Class 11/12 notes",
       "url": "/class-11-notes",
-      "icons": [{ "src": "/profile-picture.jpg", "sizes": "460x1024", "type": "image/jpeg" }]
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Practice Quiz",
       "short_name": "Quiz",
       "description": "Practice with past year questions",
       "url": "/quiz",
-      "icons": [{ "src": "/profile-picture.jpg", "sizes": "460x1024", "type": "image/jpeg" }]
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Ask Veer",
       "short_name": "Ask",
       "description": "Open the Veer AI study assistant",
       "url": "/chat",
-      "icons": [{ "src": "/profile-picture.jpg", "sizes": "460x1024", "type": "image/jpeg" }]
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Offline Study",
       "short_name": "Offline",
       "description": "Access your saved offline units",
       "url": "/downloads",
-      "icons": [{ "src": "/profile-picture.jpg", "sizes": "460x1024", "type": "image/jpeg" }]
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
     }
   ],
   "prefer_related_applications": false,

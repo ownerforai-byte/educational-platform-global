@@ -18,29 +18,46 @@ import { FocusTimer } from "@/components/owner/focus-timer";
 import { Toaster } from "sonner";
 import { StarField } from "@/components/theme/star-field";
 import {
-  SITE_FAVICON_URL,
-  SITE_ICON_SIZE,
-  SITE_PROFILE_PICTURE_URL,
+  SITE_OG_IMAGE_URL,
 } from "@/lib/site-assets";
+import { CANONICAL_SITE_URL } from "@/lib/site-url";
+
+const SITE_NAME = "Ravikisan's Platform";
+const SITE_DESCRIPTION =
+  "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.";
 
 export const metadata: Metadata = {
-  title: "Ravikisan's Platform",
-  description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
+  // metadataBase resolves every relative OG/canonical URL — without it, share
+  // previews on Messenger/WhatsApp/Twitter render broken or missing images.
+  metadataBase: new URL(CANONICAL_SITE_URL),
+  // Plain string — most pages already carry the "… | Ravikisan's Platform"
+  // suffix themselves, so no title template here (it would double it).
+  title: SITE_NAME,
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   manifest: "/manifest.json",
-  icons: {
-    icon: [
-      {
-        url: SITE_FAVICON_URL,
-        type: "image/jpeg",
-        sizes: `${SITE_ICON_SIZE.width}x${SITE_ICON_SIZE.height}`,
-      },
-    ],
-    apple: [{ url: SITE_PROFILE_PICTURE_URL, type: "image/jpeg" }],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    url: "/",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    locale: "en_US",
+    images: [{ url: SITE_OG_IMAGE_URL, width: 1200, height: 630, alt: SITE_NAME }],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_NAME,
+    description: SITE_DESCRIPTION,
+    images: [SITE_OG_IMAGE_URL],
+  },
+  // Favicon + Apple touch icon come from the file conventions
+  // (app/icon.png, app/apple-icon.png) — square PNGs, no duplication.
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "Ravikisan's Platform",
+    title: SITE_NAME,
   },
 };
 
@@ -73,8 +90,6 @@ export default async function RootLayout({
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Ravikisan's Platform" />
-    <link rel="icon" href={SITE_FAVICON_URL} type="image/jpeg" sizes={`${SITE_ICON_SIZE.width}x${SITE_ICON_SIZE.height}`} />
-    <link rel="apple-touch-icon" href={SITE_PROFILE_PICTURE_URL} />
   </head>
       <body className="min-h-screen bg-background text-foreground antialiased">
         <ThemeProvider defaultTheme="system" storageKey="neb-theme">

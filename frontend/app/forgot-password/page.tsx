@@ -3,6 +3,8 @@ import { AuthShell } from "@/features/auth/components/auth-shell";
 import { ForgotPasswordForm } from "@/features/auth/components/forgot-password-form";
 
 export const metadata: Metadata = {
+  // Auth pages carry session state — keep them out of search indexes.
+  robots: { index: false, follow: true },
   title: "Forgot Password — Ravikisan's Platform",
   description:
     "Request a link to reset the password of your Ravikisan account.",

@@ -5,6 +5,8 @@ import { CreatedAccountGate } from "@/features/auth/components/created-account-g
 import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
+  // Auth pages carry session state — keep them out of search indexes.
+  robots: { index: false, follow: true },
   title: "Welcome back — your notes are waiting",
   description: "Sign in to track progress, save bookmarks, and manage credits.",
 };
