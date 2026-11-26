@@ -41,6 +41,32 @@ export function DashboardView() {
   const days = daysUntilExam(goals);
   const nextUp = entries.find((e) => entryStatus(e) === "in_progress");
 
+  // Due SRS reviews across the viewer's goal subjects — the SM-2 scheduler
+  // already exists; the dashboard is where it becomes visible daily.
+  const [dueCounts, setDueCounts] = useState<Record<string, number | null>>({});
+  const reportDue = useCallback((key: string, n: number) => {
+    setDueCounts((current) => (current[key] === n ? current : { ...current, [key]: n }));
+  }, []);
+  const dueTotal = goals.subjects.reduce<number | null>((sum, key) => {
+    const n = dueCounts[key];
+    if (n === undefined || n === null) return sum; // still loading
+    return (sum ?? 0) + n;
+  }, null);
+  const dueKnown = goals.subjects.every((key) => typeof dueCounts[key] === "number");
+
+  // Practice accuracy from the real quiz history (no invented numbers).
+  const [quizRows, setQuizRows] = useState<QuizHistoryRow[] | null>(null);
+  useEffect(() => {
+    let cancelled = false;
+    getQuizHistory()
+      .then((r) => !cancelled && setQuizRows(r.rows))
+      .catch(() => !cancelled && setQuizRows([]));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  const overall = useMemo(() => (quizRows ? overallAccuracy(quizRows) : null), [quizRows]);
+
   return (
     <div className="container max-w-4xl py-8 space-y-6">
       <div className="flex flex-wrap items-center justify-between gap-2">
@@ -56,7 +82,7 @@ export function DashboardView() {
         </span>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
@@ -87,7 +113,36 @@ export function DashboardView() {
             </CardDescription>
           </CardHeader>
         </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Layers className="h-4 w-4" /> Reviews due
+            </CardTitle>
+            <CardDescription>
+              {!ready ? (
+                "Loading"
+              ) : goals.subjects.length === 0 ? (
+                <Link href="/onboarding" className="font-semibold text-primary hover:underline">
+                  Pick subjects to schedule reviews
+                </Link>
+              ) : !dueKnown ? (
+                "Counting…"
+              ) : (dueTotal ?? 0) === 0 ? (
+                "Nothing due — keep the streak"
+              ) : (
+                <Link href="/srs" className="font-semibold text-primary hover:underline">
+                  {dueTotal} card{(dueTotal ?? 0) === 1 ? "" : "s"} due today — review now
+                </Link>
+              )}
+            </CardDescription>
+          </CardHeader>
+        </Card>
       </div>
+
+      {/* Per-subject SRS due counters (child components keep hook order stable) */}
+      {goals.subjects.map((key) => (
+        <SubjectDueCount key={key} subjectKey={key} onCount={reportDue} />
+      ))}
 
       <Card>
         <CardHeader>
@@ -107,32 +162,72 @@ export function DashboardView() {
               </Link>
             </p>
           ) : (
-            plan.map((item) => (
-              <div key={item.subjectKey} className="flex justify-between">
-                <span>{item.subjectName}</span>
-                <span className="tabular-nums text-muted-foreground">{item.minutes} min</span>
-              </div>
-            ))
+            plan.map((item) => {
+              const [classSlug, subjectSlug] = item.subjectKey.split("/");
+              return (
+                <div key={item.subjectKey} className="flex items-center justify-between gap-2">
+                  <Link
+                    href={`/${classSlug}/${subjectSlug}`}
+                    className="font-medium text-foreground hover:text-primary hover:underline"
+                  >
+                    {item.subjectName}
+                  </Link>
+                  <span className="tabular-nums text-muted-foreground">{item.minutes} min</span>
+                </div>
+              );
+            })
           )}
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <PlayCircle className="h-4 w-4" /> Next up
-          </CardTitle>
-        </CardHeader>
-        <CardContent className="text-sm">
-          {nextUp ? (
-            <Link href={topicHref(nextUp)} className="font-semibold text-primary hover:underline">
-              Continue {nextUp.topic?.title ?? nextUp.topicSlug ?? "your last topic"}
-            </Link>
-          ) : (
-            <p className="text-muted-foreground">Open a topic and it will appear here.</p>
-          )}
-        </CardContent>
-      </Card>
+      <div className="grid gap-4 md:grid-cols-2">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <PlayCircle className="h-4 w-4" /> Next up
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="text-sm">
+            {nextUp ? (
+              <Link href={topicHref(nextUp)} className="font-semibold text-primary hover:underline">
+                Continue {nextUp.topic?.title ?? nextUp.topicSlug ?? "your last topic"}
+              </Link>
+            ) : (
+              <p className="text-muted-foreground">Open a topic and it will appear here.</p>
+            )}
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <CircleCheck className="h-4 w-4" /> Practice accuracy
+            </CardTitle>
+            <CardDescription>
+              {overall === null
+                ? "Loading"
+                : overall.answered === 0
+                  ? "No practice yet"
+                  : `${overall.answered} answers across ${overall.quizzes} quizz${overall.quizzes === 1 ? "" : "es"}`}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="text-sm">
+            {overall === null || overall.answered === 0 ? (
+              <Link href="/quiz" className="font-semibold text-primary hover:underline">
+                Start a practice quiz
+              </Link>
+            ) : (
+              <p>
+                <span className="text-2xl font-extrabold tabular-nums">{Math.round(overall.accuracy)}%</span>{" "}
+                <span className="text-muted-foreground">correct so far — </span>
+                <Link href="/analytics" className="font-semibold text-primary hover:underline">
+                  see the breakdown
+                </Link>
+              </p>
+            )}
+          </CardContent>
+        </Card>
+      </div>
 
       <WeakTopics />
 
@@ -169,4 +264,27 @@ export function DashboardView() {
       </div>
     </div>
   );
+}
+
+/**
+ * Counts this subject's due SRS cards and reports it to the dashboard.
+ * A child component (not a loop body) so hook order stays stable; reuses the
+ * exact readers the /srs screen uses — buildCards + dueQueue + readSrsStore.
+ */
+function SubjectDueCount({
+  subjectKey,
+  onCount,
+}: {
+  subjectKey: string;
+  onCount: (key: string, due: number) => void;
+}) {
+  const { bank } = useSubjectBank(subjectKey);
+  const [store, setStore] = useState<SrsStore>({});
+  useEffect(() => setStore(readSrsStore()), []);
+  useEffect(() => {
+    if (!bank) return;
+    const cards = buildCards(subjectKey, bank);
+    onCount(subjectKey, dueQueue(cards, store, isoDay(new Date())).due.length);
+  }, [bank, store, subjectKey, onCount]);
+  return null;
 }

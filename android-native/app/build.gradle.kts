@@ -35,7 +35,7 @@ android {
         applicationId = "com.ravikisan.platform"
         minSdk = 30
         targetSdk = 36
-        versionCode = 18
+        versionCode = 20
         versionName = "2.0.0"
         buildConfigField("String", "API_BASE", "\"https://harindrasah.com.np\"")
         resourceConfigurations += listOf("en", "ne")
