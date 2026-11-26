@@ -8,14 +8,17 @@ runConfig:
   maxInstances: 10
   concurrency: 80
 
-# Build/run: use package.json (`apphosting:build`, `start`). runCommand is set
-# ON PURPOSE (owner 2026-11-26 outage): with no runCommand the container fell
-# back to the ROOT package.json `start`, which starts the BACKEND workspace
+# Build/run: use package.json (`apphosting:build`, `start`). scripts.runCommand is
+# set ON PURPOSE (owner 2026-11-26 outage): with no runCommand the container
+# fell back to the ROOT package.json `start`, which starts the BACKEND workspace
 # (`node backend/dist/index.js` — a build artifact that is not committed), so
 # the container exited before listening and every rollout failed with 404s.
+# NOTE: runCommand MUST live under `scripts:` (top-level keys are ignored —
+# builds 006/007 still ran the root start with it at top level).
 # This command is cwd-independent: npm resolves the workspace and runs the
 # script with cwd = frontend/, where `.next/standalone` lives.
-runCommand: npm run start --workspace=educational-platform-frontend
+scripts:
+  runCommand: npm run start --workspace=educational-platform-frontend
 
 env:
   - variable: NEXT_PUBLIC_API_URL
