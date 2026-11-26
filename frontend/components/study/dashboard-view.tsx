@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Flame, Target, ListChecks, PlayCircle, Compass, GraduationCap } from "lucide-react";
+import { Flame, Target, ListChecks, PlayCircle, Compass, GraduationCap, Layers, CircleCheck } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { entryStatus, topicHref } from "@/lib/progress/catalog";
 import { getStreak, streakLabel } from "@/lib/streaks";
@@ -12,11 +12,21 @@ import {
   quickLinkMinTier,
   quickLinkUnlocked,
 } from "@/lib/core/navigation";
+import {
+  buildCards,
+  dueQueue,
+  isoDay,
+  readSrsStore,
+  type SrsStore,
+} from "@/lib/srs";
+import { getQuizHistory, type QuizHistoryRow } from "@/lib/api/ai-quiz-history";
+import { overallAccuracy } from "@/lib/analytics";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useStudyGoals } from "./use-study-goals";
 import { useJourney } from "./use-journey";
+import { useSubjectBank } from "./use-subject-bank";
 import { WeakTopics } from "./weak-topics";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 /** /dashboard: today hub, a presentation of the goals, streak and progress readers. */
 export function DashboardView() {
