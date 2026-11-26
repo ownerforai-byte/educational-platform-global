@@ -1,0 +1,9 @@
+{
+  "slug": "exam-a",
+  "title": "Model Exam A",
+  "durationMin": 60,
+  "questions": [
+    { "q": "1 + 1", "options": ["1", "2", "3", "4"], "answer": 1 },
+    { "q": "2 + 2", "options": ["3", "4", "5", "6"], "answer": 1 }
+  ]
+}

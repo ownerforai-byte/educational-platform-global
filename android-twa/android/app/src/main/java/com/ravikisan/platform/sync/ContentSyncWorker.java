@@ -35,13 +35,13 @@ public class ContentSyncWorker extends Worker {
     AtomicBoolean authFailed = new AtomicBoolean(false);
 
     api.refreshMe((value, error) -> {
-      if (error instanceof ApiClient.HttpException ex && (ex.status == 401 || ex.status == 403)) {
+      if (isAuthError(error)) {
         authFailed.set(true);
       }
       latch.countDown();
     });
     api.refreshFeed((value, error) -> {
-      if (error instanceof ApiClient.HttpException ex && (ex.status == 401 || ex.status == 403)) {
+      if (isAuthError(error)) {
         authFailed.set(true);
       }
       latch.countDown();
@@ -58,5 +58,14 @@ public class ContentSyncWorker extends Worker {
       return Result.success();
     }
     return latch.getCount() == 0 ? Result.success() : Result.retry();
+  }
+
+  /** Java-8-safe auth-error check (pattern matching in instanceof needs source 16+). */
+  private static boolean isAuthError(Object error) {
+    if (!(error instanceof ApiClient.HttpException)) {
+      return false;
+    }
+    ApiClient.HttpException ex = (ApiClient.HttpException) error;
+    return ex.status == 401 || ex.status == 403;
   }
 }

@@ -1,11 +1,163 @@
 # Android native migration plan — Kotlin + Jetpack Compose
 
-**Status:** Planning only (no implementation in this document)  
+**Status:** Phase 1 complete (~5–8%).  
+**👉 Agents (owner assigns 1–5):** [`android-native-AGENTS.md`](android-native-AGENTS.md) **← one document, your section only.**  
+**Done log & §7 CONTINUE:** [`android-native-STATUS.md`](android-native-STATUS.md).  
 **Target outcome:** **Build** a **complete native client** (Kotlin + Compose + APIs) while **keeping every existing product running** — website, backend, and the current Play Store app.  
 **Delivery model:** **Parallel tracks** — **create** the native app; **do not remove, replace, or gut** the legacy Android shell until an explicit, approved store promotion (see §1.1).  
 **Legacy codebase (untouched in place):** `android-twa/android` — Java + XML + `WebHostFragment` (continues to build, ship, and receive critical fixes).  
-**Native codebase (to be created):** `android-native/` (recommended) or `android-twa/android-compose/` — new Gradle app module; Kotlin + Compose only.  
+**Native codebase (exists):** `android-native/` — Kotlin + Compose (`com.ravikisan.platform.compose`).  
 **Companion systems:** `frontend/` (Next.js, 300+ routes), `backend/` (Express `/api/*`), `packages/shared` (`@rn/shared`), **Firebase** (same project as web + current APK)
+
+---
+
+## 0. Multi-agent execution — 4 workers + Supervisor (Agent 5)
+
+> **All agent instructions (who you are, paths, tasks) are in ONE file:**  
+> **[`android-native-AGENTS.md`](android-native-AGENTS.md)** — owner says *“You are Agent N”* → read **only** that section.  
+> This plan §0 is summary only; **do not** use split docs (they redirect to AGENTS.md).
+
+### 0.0 Roles (pick one)
+
+| Role | Who | Builds product code? | Waits on others? |
+|------|-----|----------------------|------------------|
+| **Worker 1** | Platform / nav / CI | Yes | **Never** — stub all routes early |
+| **Worker 2** | Backend `/api/mobile/*` | Yes | **Never** — additive only |
+| **Worker 3** | Network / Room / auth | Yes | **Never** |
+| **Worker 4** | All student UI (study + practice + AI + social) | Yes | **Never** — **local fakes only** |
+| **Supervisor 5** | Oversees 1–4 | **No feature code** | N/A — watches all |
+
+**No-wait rule (workers):** If you need another worker’s output, use **`featureLocal/fakes/`** in your package, **`@Preview`**, or **`src/test/resources/fixtures/`** under your owned tree. Log an **INTEGRATION REQUEST** in your checkpoint; **keep implementing the next task** in your backlog. **Stopping to wait is a violation** unless Supervisor says STOP.
+
+**Supervisor rule:** You **do not** implement screens, endpoints, or repos. You: read §4 + all checkpoints, update [`android-native-integration-queue.md`](android-native-integration-queue.md), write **CONTINUE** orders in STATUS **§7**, run `assembleDebug` / `test:affected` when merging guidance, resolve path disputes.
+
+### 0.1 Mandatory session report (every interval — workers + supervisor)
+
+At **start** and **end** of every session (or every **~90 minutes** on long runs), output a **Session checkpoint** in chat and append to STATUS (**Workers → §4**; **Supervisor → §4 summary + §7 directives**).
+
+```text
+═══════════════════════════════════════════════════════════════
+SESSION CHECKPOINT — android-native migration
+═══════════════════════════════════════════════════════════════
+Role:           [Worker 1|2|3|4 | Supervisor 5]
+Supervised by:  Agent 5 (Supervisor) — [N/A if you are Supervisor]
+Date / session: YYYY-MM-DD
+
+── AIM (restate — include that Supervisor guides workers) ───────
+[3–6 sentences: parallel native app; legacy untouched; my role;
+ I do / do not wait on other workers per §0.0.]
+
+── SUPERVISOR DIRECTIVE (workers only) ─────────────────────────
+• Last §7 instruction to me: [quote or "none yet — continue backlog"]
+• My integration requests pending: [none | listed]
+
+── COMPLETED THIS INTERVAL ─────────────────────────────────────
+1. [...]
+
+── VERIFIED ───────────────────────────────────────────────────
+• [gradlew / vitest commands + BUILD SUCCESSFUL / test counts]
+
+── CONTINUOUS NEXT (workers: never empty) ─────────────────────
+• Next task I start immediately: [...]
+• Backlog item after that: [...]
+
+── INTEGRATION REQUEST (if any) ─────────────────────────────────
+[Copy INTEGRATION REQUEST block for Supervisor queue]
+
+── SUPERVISOR ONLY: WORKER STATUS ─────────────────────────────
+• W1: [CONTINUE / blocked / …]
+• W2: [...]
+• W3: [...]
+• W4: [...]
+• Integration batch for W1: [...]
+
+── FILES TOUCHED ───────────────────────────────────────────────
+• path → [IMPORTANT CORE FILE] | [CONTENT FILE]
+═══════════════════════════════════════════════════════════════
+```
+
+**Workers:** `npm run classify -- <paths>`; native `assembleDebug` each session.  
+**Supervisor:** verify workers’ builds when issuing integration batches; **do not** edit worker-owned Kotlin except queue-driven **W1** nav merges you assign explicitly to Worker 1 in §7.
+
+### 0.2 Four workers — parallel, zero blocking
+
+| Worker | Field | ~% left | Start | Owns |
+|:------:|-------|---------|:-----:|------|
+| **1** | Platform, navigation, release | ~20% | **Now** | Gradle, manifest, theme, **`RnNavHost` + stub routes for ALL features day 1**, CI, README/Firebase docs |
+| **2** | Backend mobile API | ~10% | **Now** | `backend/src/api/mobile/**`, contract tests, `docs/api/mobile-*` |
+| **3** | Networking, data, auth | ~25% | **Now** | `core/**`, `data/**`, auth UI, FCM, SSE okhttp helper in `core/stream/` |
+| **4** | **Product experience (all UI)** | ~45% | **Now** | Study, search, reader, practice, quiz, AI chat, social, profile, labs decision — **each package has its own fakes** |
+
+**Worker 1 day-1 requirement:** Register **placeholder destinations** (Study, Practice, AI, Community, Profile, Auth) in `Routes` + `RnNavHost` so Worker 4 can hook real composables later **without waiting**.
+
+**Worker 4 fake rule:** Each folder `ui/screens/<feature>/local/` may contain `Fake*Repository.kt` and sample JSON — **forbidden** to import another worker’s unfinished `core` types until Supervisor marks queue item **Resolved**.
+
+Detailed paths: **[`android-native-AGENT-SPLIT.md`](android-native-AGENT-SPLIT.md)**.
+
+### 0.3 Worker 1 — Platform, navigation & release
+
+| # | Task |
+|---|------|
+| 1 | CI `android-native-assemble` |
+| 2 | Brand theme tokens |
+| 3 | **Stub routes** for every feature area (empty composables OK) |
+| 4 | Deep links + intent filters |
+| 5 | Process integration queue items (manifest permissions, Gradle deps) |
+| 6 | Firebase / Play runbook in `android-native/README.md` |
+
+### 0.4 Worker 2 — Backend & API contracts
+
+| # | Task |
+|---|------|
+| 1 | Mount `/api/mobile` |
+| 2 | Home / syllabus / note-summary contracts |
+| 3 | Pagination for feeds |
+| 4 | Vitest per route |
+| 5 | Document endpoints in `docs/api/` (Worker 4 may read; not required to wait) |
+
+### 0.5 Worker 3 — Networking, data & authentication
+
+| # | Task |
+|---|------|
+| 1 | OkHttp + Retrofit + native client headers |
+| 2 | Room + WorkManager |
+| 3 | Auth screens |
+| 4 | FCM registration |
+| 5 | Shared `core/contract/` (optional merge; Worker 4 keeps local fakes until Supervisor says swap) |
+| 6 | `core/stream/SseClient.kt` for Worker 4 AI (interface stable early) |
+
+### 0.6 Worker 4 — Product experience (all student UI)
+
+| # | Task |
+|---|------|
+| 1 | Syllabus → unit lists |
+| 2 | Note reader + math spike |
+| 3 | Search UI |
+| 4 | Offline UX (local state first) |
+| 5 | Practice + quiz |
+| 6 | Veer chat UI + SSE (use `SseClient` when ready, else fake stream) |
+| 7 | Community, profile, notifications |
+| 8 | `android-native-labs-decision.md` + labs/mindmaps |
+
+**Work continuously** down this list; skip only what is **actively** integrating per §7, not what is “waiting on Worker 3.”
+
+### 0.7 Supervisor 5 — watch, guide, integrate (no feature code)
+
+| # | Task |
+|---|------|
+| 1 | Read all worker checkpoints each session |
+| 2 | Maintain `android-native-integration-queue.md` |
+| 3 | Append STATUS **§7** with per-worker **CONTINUE** + priorities |
+| 4 | Assign Worker 1 integration batches (routes, Gradle, manifest) |
+| 5 | Flag boundary violations (wrong paths, legacy edits) |
+| 6 | Track plan §6 phase %; call for Phase 8 review when gates met |
+| 7 | **Never** idle waiting on workers — if quiet, audit backlog vs AGENT-SPLIT checklists |
+
+**Supervisor may edit:** `android-native-STATUS.md` (§4/§5/§7), `android-native-integration-queue.md`, plan/AGENT-SPLIT **wording only** for coordination (not worker Kotlin).
+
+### 0.8 Program complete
+
+Plan §6 **Phase 8** promotion — Supervisor confirms all four worker checklists + integration queue **Resolved** before owner approves production switch.
 
 ---
 
@@ -639,7 +791,7 @@ When WebView is removed, the Next.js app remains the **web product**; Android do
 |-------|-------|
 | **Path** | `docs/guides/android-native-compose-migration-plan.md` |
 | **Related** | `android-twa/NATIVE_MIGRATION.md`, `android-twa/README.md`, `android-twa/SECURITY.md`, `CORE_FILES.md` § mobile, Firebase project via `firebase/functions` |
-| **Next action** | Phase 0: sign §1.1 parallel mandate → Phase 1: **scaffold `android-native/`** + Firebase CLI sdkconfig (legacy untouched) |
+| **Next action** | **Worker 1–4** or **Supervisor 5** (plan **§0**); W1 stub routes day 1; W4 local fakes; no waiting |
 
 ---
 

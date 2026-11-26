@@ -42,3 +42,8 @@ export const communityBotDailyPost = onSchedule(
     await postCommunityBotCron("daily-public");
   },
 );
+
+export { sendChatPushNotification } from "./chat-notifications";
+export { translateChatMessage } from "./translate-message";
+// Re-export once Firebase Storage is initialized in the Firebase Console (Storage -> Get Started):
+// export { resizeProfileImage } from "./resize-image";

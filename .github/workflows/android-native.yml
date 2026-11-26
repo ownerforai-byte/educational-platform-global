@@ -1,0 +1,56 @@
+name: android-native-assemble
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'android-native/**'
+      - '.github/workflows/android-native.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  android-native-assemble:
+    name: Assemble android-native debug APK
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android-native
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # CodeRabbit (CWE-522): pull_request workflows run untrusted fork
+          # code. Never leave a write-capable token in .git/config.
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      # GitHub ubuntu runners ship an Android SDK; ANDROID_HOME is preconfigured,
+      # so no local.properties is needed (it is intentionally not committed).
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: ${{ github.ref != 'refs/heads/main' }}
+      # google-services.json is intentionally absent in CI (not committed);
+      # the build logs a warning and skips the google-services plugin.
+      - name: Assemble debug APK
+        run: ./gradlew assembleDebug --stacktrace
+      # Unit tests gate PRs (75+ JVM tests: redirect policy, SSE parser,
+      # contract wire shapes, session/sync). Non-shardable, runs after assemble
+      # reuses compiled classes.
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+      - name: Upload test report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-native-test-report
+          path: android-native/app/build/reports/tests/testDebugUnitTest/
+          if-no-files-found: ignore
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-native-debug-apk
+          path: android-native/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error

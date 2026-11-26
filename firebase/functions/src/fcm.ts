@@ -224,7 +224,12 @@ async function sendToToken(
  * - Throws only on setup errors (Admin init, `fcm_tokens` read failure) —
  *   those are the caller's to handle. A uid with no token is a logged no-op.
  */
-export async function sendApprovalPush(uid: string): Promise<ApprovalPushResult> {
+export async function sendPushToUid(
+  uid: string,
+  notification: { title: string; body: string },
+  data: Record<string, string>,
+  android?: Message["android"],
+): Promise<ApprovalPushResult> {
   const tokens = await readTokensForUid(uid);
   const result: ApprovalPushResult = {
     uid,
@@ -236,25 +241,17 @@ export async function sendApprovalPush(uid: string): Promise<ApprovalPushResult>
     results: [],
   };
   if (tokens.length === 0) {
-    logger.warn("fcm: no fcm_tokens for uid — approval push skipped", { uid });
+    logger.warn("fcm: no fcm_tokens for uid — push skipped", { uid, kind: data.kind });
     return result;
   }
-
-  const data = {
-    kind: ACCOUNT_APPROVED_PUSH.kind,
-    deepLink: ACCOUNT_APPROVED_PUSH.deepLink,
-    userId: uid,
-  };
 
   const outcomes = await Promise.all(
     tokens.map((token) =>
       sendToToken(uid, token, {
         token,
-        notification: {
-          title: ACCOUNT_APPROVED_PUSH.title,
-          body: ACCOUNT_APPROVED_PUSH.body,
-        },
+        notification,
         data,
+        ...(android ? { android } : {}),
       }),
     ),
   );
@@ -263,12 +260,28 @@ export async function sendApprovalPush(uid: string): Promise<ApprovalPushResult>
   result.successCount = outcomes.filter((o) => o.ok).length;
   result.failureCount = outcomes.length - result.successCount;
   result.removedCount = outcomes.filter((o) => o.removedToken).length;
-  logger.info("fcm: approval push done", {
+  logger.info("fcm: push done", {
     uid,
+    kind: data.kind,
     targets: outcomes.length,
     successCount: result.successCount,
     failureCount: result.failureCount,
     removedCount: result.removedCount,
   });
   return result;
+}
+
+export async function sendApprovalPush(uid: string): Promise<ApprovalPushResult> {
+  return sendPushToUid(
+    uid,
+    {
+      title: ACCOUNT_APPROVED_PUSH.title,
+      body: ACCOUNT_APPROVED_PUSH.body,
+    },
+    {
+      kind: ACCOUNT_APPROVED_PUSH.kind,
+      deepLink: ACCOUNT_APPROVED_PUSH.deepLink,
+      userId: uid,
+    },
+  );
 }

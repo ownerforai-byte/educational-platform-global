@@ -256,7 +256,7 @@ public class ApiClient {
 
     private static String readBody(InputStream stream) throws IOException {
         if (stream == null) return "";
-        try (BufferedReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8)) {
+        try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8))) {
             StringBuilder sb = new StringBuilder();
             char[] buf = new char[4096];
             int read;
