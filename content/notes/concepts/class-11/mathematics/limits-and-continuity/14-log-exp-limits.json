@@ -45,7 +45,10 @@
     "**NEB-style (5m): Evaluate lim_{x→∞} (ln(3x² + 1))/(ln(x⁴ + 2)).** — **Extract leading behaviour:** ln(3x² + 1) = ln(x²(3 + 1/x²)) = 2 ln x + ln(3 + 1/x²) → **2 ln x + ln 3** (the correction → ln 3, bounded). Similarly ln(x⁴ + 2) = **4 ln x + ln(1 + 2/x⁴)** → 4 ln x + 0. **Form the ratio:** (2 ln x + ln 3)/(4 ln x + ln(1+2/x⁴)) = [2 + ln 3/ln x]/[4 + ln(1+2/x⁴)/ln x] → (2 + 0)/(4 + 0) = **1/2** as ln x → ∞. **Shortcut via degrees:** inside logs, only the *degree* of the polynomial matters — ln(f) ~ deg(f)·ln x ⟹ the limit is 2/4 = 1/2 ✓. **Deep point:** the log's linearity on powers (ln xᵏ = k ln x) makes log-of-polynomial limits pure degree arithmetic — the coefficients and lower terms vanish because ln x → ∞ drowns every constant, the mirror image of the polynomial-at-infinity degree rule."
   ],
   "formulas": [
-    "- lim_{x→0} (1+x)^{1/x} = e; (1+kx)^{1/x} = eᵏ; (1+1/x)^x = e (x→∞)\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- bridge: lim f^g = e^{lim g·ln f}; (1+u)^v → e^{lim uv}\n- growth: ln x/x → 0; xᵏ/eˣ → 0; x^{1/x} → 1"
+    "lim_{x→0} (1+x)^{1/x} = e; (1+kx)^{1/x} = eᵏ; (1+1/x)^x = e (x→∞)",
+    "lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1",
+    "bridge: lim f^g = e^{lim g·ln f}; (1+u)^v → e^{lim uv}",
+    "growth: ln x/x → 0; xᵏ/eˣ → 0; x^{1/x} → 1"
   ],
   "keyPoints": [
     "e-limits: (1 + x)^(1/x) -> e (x -> 0); (1 + 1/x)^x -> e (x -> inf); (1 + kx)^(1/x) -> e^k; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1. 1^infinity is indeterminate; bridge theorem: lim f^g = e^(lim g ln f) since f^g = e^(g ln f); for (1 + u)^v with u -> 0, v -> inf: limit = e^(lim uv). Growth ladder: ln x << x^a << a^x << x! << x^x; consequences ln x/x -> 0, x^k/e^x -> 0, x^(1/x) -> 1. Reduction: convert to natural exp/log, steer into the three stars."

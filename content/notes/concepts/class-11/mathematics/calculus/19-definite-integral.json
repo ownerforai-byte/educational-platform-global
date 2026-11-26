@@ -38,7 +38,8 @@
     "**NEB-style (6m): Given ∫₁⁴f(x)dx = 5 and ∫₄⁶f(x)dx = −2, find ∫₆¹f(x)dx and ∫₁⁶f(x)dx, citing the properties.** — **Additivity:** ∫₁⁶f = ∫₁⁴f + ∫₄⁶f = 5 + (−2) = **3**. **Reversal:** ∫₆¹f = −∫₁⁶f = **−3**. **Consistency picture:** the signed area from 1 to 4 is +5, from 4 to 6 is −2 (the curve dips below the axis); the total 3 and its reversed −3 are the ledger's two directions. **Deep point:** signed area is the bookkeeping — additivity concatenates journeys, reversal walks them backwards; every property is a statement about walking the x-axis, which is why the pictures verify them instantly."
   ],
   "formulas": [
-    "- ∫ₐᵇf = F(b) − F(a); d/dx[∫ₐˣf(t)dt] = f(x)\n- ∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; ∫ₐᵇ = −∫ᵦₐ"
+    "∫ₐᵇf = F(b) − F(a); d/dx[∫ₐˣf(t)dt] = f(x)",
+    "∫ₐᵇ + ∫ᵦᶜ = ∫ₐᶜ; ∫ₐᵇ = −∫ᵦₐ"
   ],
   "keyPoints": [
     "Definite integral = limit of Riemann sums (chop, sample, sum, refine) - the definition; FTC Part 2 = F(b) - F(a) - the computation. FTC Part 1: d/dx of the accumulation function = f(x). Dummy variable: the t in a number-integral is renameable; a variable upper limit makes it a function. Variable limits: chain rule rides on Part 1; lower-limit variables flip the sign. Properties: linearity, additivity, reversal, constant c(b-a). Every property has a picture."

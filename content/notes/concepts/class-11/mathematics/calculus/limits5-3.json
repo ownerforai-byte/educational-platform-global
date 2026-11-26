@@ -38,7 +38,8 @@
     "**NEB-style (6m): Evaluate lim_{x→∞} (2·3ˣ + x¹⁰⁰)/(5·3ˣ − x³) and justify the rung reasoning.** — **Identify the rungs:** 3ˣ (exponential, top rung) vs x¹⁰⁰ and x³ (powers) — the exponential dominates both, despite x¹⁰⁰'s enormous degree. **Divide by 3ˣ:** (2 + x¹⁰⁰/3ˣ)/(5 − x³/3ˣ). **Ladder:** x¹⁰⁰/3ˣ → **0** and x³/3ˣ → **0** (exponential beats any fixed power). **Limit: 2/5.** **Journey note:** x¹⁰⁰ leads 3ˣ until x ≈ 210 — the limit reads the destination, not the journey. **Deep point:** the division by the *dominant* term (3ˣ, not x¹⁰⁰) is the drill's key move — dividing by the wrong leader would leave the ladder's verdict invisible; dominance, not degree, picks the divisor."
   ],
   "formulas": [
-    "- lim xᵏ/eˣ = 0; lim ln x/xᵏ = 0; lim aˣ/xᵏ = ∞ (a > 1)\n- √(x² + k) = |x|·√(1 + k/x²)"
+    "lim xᵏ/eˣ = 0; lim ln x/xᵏ = 0; lim aˣ/xᵏ = ∞ (a > 1)",
+    "√(x² + k) = |x|·√(1 + k/x²)"
   ],
   "keyPoints": [
     "Degree rules: top>bottom -> +-inf; tie -> leading ratio; top<bottom -> 0. Dominant division kills slower terms. Ladder: ln x << x^p << a^x << x^x; rungs beat coefficients. Radicals: sqrt(x^2+k) = |x|sqrt(1+k/x^2) - split at -inf. Horizontal asymptote y = L iff lim at infinity = L."

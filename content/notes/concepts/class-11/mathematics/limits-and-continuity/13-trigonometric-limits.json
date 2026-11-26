@@ -44,7 +44,9 @@
     "**NEB-style (6m): A student evaluates lim_{x→0} sin(2x°)/(3x) by writing sin(2x°) ~ 2x and gets 2/3. Diagnose the error and give the correct answer.** — **The error:** the star sin u/u → 1 holds only in **radians**. Here the argument is 2x° — measured in degrees — so sin(2x°) ~ (π/180)·(2x) = πx/90, not 2x. **Conversion:** sin(2x°) = sin(2x·π/180 radians) = sin(πx/90), and with u = πx/90 → 0, the star gives sin(πx/90) ~ πx/90. **Correct limit:** (πx/90)/(3x) = **π/270**. **Sanity check on the error's size:** the student's 2/3 vs correct π/270 ≈ 0.0116 — off by a factor of (2/3)/(π/270) = 180/π ≈ 57.3, exactly the degree-to-radian conversion factor. **Deep point:** the radian requirement is not a technicality — the sine star's content is \"the sine's slope at 0 is 1,\" and slope = 1 happens only when angle equals arc length; in degrees the slope is π/180, and every star application silently carries that factor unless the units are radians."
   ],
   "formulas": [
-    "- lim_{x→0} sin(kx)/x = k; sin(kx)/(mx) = k/m; tan(kx)/x = k\n- lim_{x→0} (1 − cos x)/x² = 1/2; (1 − cos kx)/x² = k²/2\n- 1 − cos x = 2sin²(x/2); x − sin x ~ x³/6"
+    "lim_{x→0} sin(kx)/x = k; sin(kx)/(mx) = k/m; tan(kx)/x = k",
+    "lim_{x→0} (1 − cos x)/x² = 1/2; (1 − cos kx)/x² = k²/2",
+    "1 − cos x = 2sin²(x/2); x − sin x ~ x³/6"
   ],
   "keyPoints": [
     "Core star: sin u/u -> 1 (radians). Rescalings: sin(kx)/x -> k; sin(kx)/(mx) -> k/m; tan(kx)/x -> k. Cosine family: (1 - cos x)/x^2 -> 1/2 via 1 - cos x = 2 sin^2(x/2); (1 - cos kx)/x^2 -> k^2/2. Steering: insert kx/kx factors, split via sin/cos, use compound/half-angle identities as reducers. Squeeze safety net: |sin u| <= |u|. Cubic refinements: x - sin x ~ x^3/6; sin x - x cos x ~ x^3/3. Degrees break every trig limit - convert first."

@@ -73,6 +73,10 @@
       "text": "Kelvin is NOT written as '°K' - it is simply 'K' (e.g., 300 K, not 300°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.  ·  Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states."
     },
     {
+      "label": "Classified table",
+      "text": "Thermometry — scales classified · Scale | Fixed points | Relation · Celsius | 0 and 100 | C = 5(F-32)/9 · Fahrenheit | 32 and 212 | F = 9C/5 + 32 · Kelvin | 273.15 and 373.15 | K = C + 273.15"
+    },
+    {
       "label": "Universal facts",
       "text": "The Rankine scale (°R) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale. NASA uses Rankine in some engineering calculations alongside SI."
     },
@@ -90,7 +94,7 @@
     },
     {
       "label": "More ideas",
-      "text": "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.  ·  **Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior."
+      "text": "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.  ·  **Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior.  ·  **Thermometry — scales classified** | Scale | Fixed points | Relation | |---|---|---| | Celsius | 0 and 100 | C = 5(F-32)/9 | | Fahrenheit | 32 and 212 | F = 9C/5 + 32 | | Kelvin | 273.15 and 373.15 | K = C + 273.15 |"
     }
   ]
 }

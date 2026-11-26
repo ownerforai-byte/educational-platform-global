@@ -77,6 +77,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Geostationary conditions and numbers · Requirement | Value | Why · Orbital plane | equatorial | stays over one longitude · Direction | west &#8594; east | matches Earth's spin · Period | 23 h 56 min 4 s | one sidereal day · Orbit radius | &#8776; 42,400 km | from Kepler's third law · Height above surface | &#8776; 35,800 km | r &#8722; R · Orbital speed | &#8776; 3.1 km/s | v = 2&#960;r/T  ·  Geostationary vs low-orbit satellites · Property | Geostationary | Low Earth orbit (e.g. ISS) · Height | &#8776; 35,800 km | &#8776; 400 km · Period | 24 h | &#8776; 90 min · Appears | fixed in the sky | crosses overhead every ~90 min · Uses | TV, weather, communication | ISS, imaging, GPS (~20,200 km MEO) · Signal delay | &#8776; 0.24 s round trip | a few ms"
+    },
+    {
       "label": "Quick concepts",
       "text": "**One period fixes one radius:** T² ∝ r³ means a 24-hour orbit has exactly one possible size."
     },

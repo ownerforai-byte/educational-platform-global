@@ -74,6 +74,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "EMF vs terminal voltage — classified · Quantity | Formula | When · EMF | E | Open circuit · Terminal | V = E - Ir | Current flowing · Charging | V = E + Ir | Cell being charged"
+    },
+    {
       "label": "Quick concepts",
       "text": "**The internal drop Ir is the voltage the circuit never sees.**"
     },
@@ -96,6 +100,10 @@
     {
       "label": "More ideas",
       "text": "Maximum Power Transfer: Maximum power is delivered to load when load resistance equals internal resistance ($R = r$). This is important for matching circuits but not for efficiency (efficiency is only 50% at this point).  ·  Verified PYQs: Kirchhoff + circuit (2022, 2024 — 5m each); terminal voltage (2024, 3m).  ·  Why does a battery feel warm after heavy use?"
+    },
+    {
+      "label": "More ideas",
+      "text": "**EMF vs terminal voltage — classified** | Quantity | Formula | When | |---|---|---| | EMF | E | Open circuit | | Terminal | V = E - Ir | Current flowing | | Charging | V = E + Ir | Cell being charged |"
     }
   ]
 }

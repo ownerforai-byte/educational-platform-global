@@ -70,6 +70,10 @@
       "text": "State Gauss's theorem in electrostatics and prove it for a point charge enclosed by a spherical surface (frequent 3-4 mark question in NEB Class 11 Physics)."
     },
     {
+      "label": "Classified table",
+      "text": "Flux and Gauss&#8217;s law (classified) · Quantity | Formula | Meaning · Flux (uniform) | Φ = EA cosθ | Field lines through area · Flux (general) | Φ = ∮E·dA | Closed surface integral · Gauss&#8217;s law | Φ = q_enc/ε₀ | Charge inside decides flux · No enclosed charge | Φ = 0 | Lines in = lines out  ·  Choosing a Gaussian surface · Symmetry | Surface | Yields · Point/sphere | Concentric sphere | E = kq/r² · Line/wire | Coaxial cylinder | E = λ/2πε₀r · Sheet | Pillbox | E = σ/2ε₀ · Conductor surface | Pillbox straddling | E = σ/ε₀"
+    },
+    {
       "label": "Quick concepts",
       "text": "Definition and orientation of area vector and elemental flux dΦ = E · dA.  ·  Statement, mathematical formulation, and proof of Gauss's Law.  ·  Independence of Gaussian surface shape and size from net enclosed flux.  ·  Calculation of flux through geometric polyhedra (cubes, cylinders) for various charge placements."
     },

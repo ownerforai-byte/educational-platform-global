@@ -21,7 +21,8 @@
     "**Nuclide notation:** A nuclide is written as $^{A}_{Z}\\\text{X}$, where $A$ is the mass number (protons + neutrons), $Z$ is the atomic number (protons), and $\\\text{X}$ is the element symbol. Example: $^{238}_{92}\\\text{U}$ has 92 protons and $238 - 92 = 146$ neutrons.",
     "**Mass-Energy and Binding Energy:** This topic covers the fundamental concepts of mass-energy and binding energy in the physics curriculum.",
     "Understanding mass-energy and binding energy is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to mass-energy and binding energy should be memorized and practiced regularly."
+    "Key definitions and theorems related to mass-energy and binding energy should be memorized and practiced regularly.",
+    "**Binding energy — readings classified**\n\n| Quantity | Formula | Meaning |\n|---|---|---|\n| Mass defect | dm = Zmp + Nmn - M | Missing mass |\n| Binding energy | E = dm c^2 | Energy that binds |\n| BE per nucleon | E/A | Stability measure (~8.8 MeV peak at Fe) |"
   ],
   "confusion": [
     "Misconception - Mass number $A$ is an integer count of nucleons; exact atomic mass in u is not exactly $A$. The difference is the mass defect, which is small but measurable. Mass spectrometry separates isotopes by their exact masses, not their mass numbers.",

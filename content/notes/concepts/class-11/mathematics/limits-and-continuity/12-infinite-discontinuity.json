@@ -45,7 +45,9 @@
     "**NEB-style (5m): A student applies L'Hôpital's rule to lim_{x→0⁺} 1/x and obtains lim (0)/(−1/x²) = 0. Diagnose the error completely.** — **The form check fails:** at x → 0⁺, the numerator 1 is a **nonzero constant**, the denominator x → 0 — the form is **c/0⁺ → +∞**, not 0/0 and not ∞/∞. **L'Hôpital's hypotheses:** the rule applies only to 0/0 or ∞/∞; applying it to c/0 is outside its licence, so the \"answer\" 0 is meaningless. **Correct evaluation:** numerator positive constant, denominator small positive ⟹ quotient large positive ⟹ **lim_{x→0⁺} 1/x = +∞** (blow-up; the limit does not exist as a finite value). **Deep point:** the form check is not paperwork — it is the *hypothesis test* that gates the rule; every L'Hôpital solution must open by naming the indeterminate form, and c/0 is precisely the common case where a student's shortcut manufactures a wrong finite answer from a genuine wall."
   ],
   "formulas": [
-    "- infinite at a ⟺ lim_{x→a⁻} or lim_{x→a⁺} = ±∞\n- 1/(x−a)ᵐ: m odd ⟹ split; m even ⟹ unified +∞\n- ln x → −∞ as x → 0⁺; e^{1/x}: +∞ right, 0 left"
+    "infinite at a ⟺ lim_{x→a⁻} or lim_{x→a⁺} = ±∞",
+    "1/(x−a)ᵐ: m odd ⟹ split; m even ⟹ unified +∞",
+    "ln x → −∞ as x → 0⁺; e^{1/x}: +∞ right, 0 left"
   ],
   "keyPoints": [
     "Infinite discontinuity at a: at least one one-sided limit is +inf or -inf; two-sided limit DNE; non-removable. Vertical asymptote x = a: |f| -> inf near a from at least one side. Multiplicity rule: odd-power denominator zeros split the sides (+inf/-inf, like 1/x); even-power zeros unify (both +inf, like 1/x^2). Cancel common factors first - shared zeros are holes, survivors are walls. One-sided walls: ln x -> -inf as x -> 0+. Disguised walls: e^(1/x) -> +inf right, -> 0 left. Rational asymptote factories: surviving denominator zeros."

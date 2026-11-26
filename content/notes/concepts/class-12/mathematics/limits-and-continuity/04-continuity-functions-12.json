@@ -11,7 +11,8 @@
     "**Rational functions:** Continuous everywhere except where denominator = 0.",
     "**Trigonometric functions:** sin x, cos x continuous everywhere; tan x continuous except at x = (2n+1)π/2.",
     "**Exponential and logarithmic:** eˣ continuous everywhere; ln x continuous for x>0.",
-    "**Intermediate Value Theorem:** If f is continuous on [a,b] and k is between f(a) and f(b), then there exists c∈(a,b) such that f(c)=k."
+    "**Intermediate Value Theorem:** If f is continuous on [a,b] and k is between f(a) and f(b), then there exists c∈(a,b) such that f(c)=k.",
+    "**Continuity — the checklist classified**\n\n| Condition | Failure | Named defect |\n|---|---|---|\n| f(a) exists | Domain hole | Removable |\n| Limit exists | Sides disagree | Jump |\n| Limit = f(a) | Value mismatch | Fill-in fixes |"
   ],
   "confusion": [
     "❌ Assuming all functions with a hole are continuous ✅ A function is discontinuous at a point if f(a) doesn't exist or doesn't equal the limit.",

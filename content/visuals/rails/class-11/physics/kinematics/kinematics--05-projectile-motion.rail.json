@@ -72,6 +72,10 @@
       "text": "Most-tested unit so far: five verified questions. Practise all three setups (angled, horizontal, vertical) and both derivations."
     },
     {
+      "label": "Classified table",
+      "text": "2.1 Projectile launched at angle θ with speed u (level ground) · Quantity | Formula · Horizontal component | $u_x = u\\cos\\theta$ (constant throughout) · Vertical component | $u_y = u\\sin\\theta$ (changes by g) · Time to maximum height | $t_{up} = u\\sin\\theta/g$ · **Time of flight** | $T = 2u\\sin\\theta/g$ · **Maximum height** | $H = u^2\\sin^2\\theta/2g$ · **Horizontal range** | $R = u^2\\sin2\\theta/g$ · Trajectory | parabola: $y = x\\tan\\theta -…  ·  Projectile formulas (angle θ, speed u) (classified) · Quantity | Formula | Max value · Time of flight | T = 2u sinθ/g | 2u/g at 90° · Max height | H = u²sin²θ/2g | u²/2g at 90° · Range | R = u²sin2θ/g | u²/g at 45° · Complementary angles | θ and 90°−θ | Same range"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Independence again:** the horizontal motion never knows about gravity; the vertical motion never knows about u cos θ — one clock, two independent problems."
     },

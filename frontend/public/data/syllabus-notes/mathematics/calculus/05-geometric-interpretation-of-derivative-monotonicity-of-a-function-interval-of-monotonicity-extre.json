@@ -51,7 +51,9 @@
     "**NEB-style (6m): Find the absolute maximum and minimum of f(x) = x⁴ − 4x² + 2 on [−2, 3].** — **Critical points:** f′(x) = 4x³ − 8x = **4x(x² − 2)** = 0 ⟹ x = 0, ±√2 (all interior to [−2, 3]). **Candidate list (closed-interval method):** x = −2, −√2, 0, √2, 3. **Evaluate:** f(−2) = 16 − 16 + 2 = **2**; f(−√2) = 4 − 8 + 2 = **−2**; f(0) = **2**; f(√2) = **−2**; f(3) = 81 − 36 + 2 = **47**. **Verdict:** absolute **maximum = 47 at x = 3** (an endpoint — the quartic escapes upward on the right); absolute **minimum = −2 at x = ±√2** (the double valley). **Classification check:** f′′ = 12x² − 8; f′′(±√2) = 16 > 0 ⟹ local minima ✓; f′′(0) = −8 < 0 ⟹ local max at (0, 2) — but 2 is *not* the absolute maximum (the endpoint beats it). **Deep point:** local and absolute extrema are independent titles — (0, 2) is a genuine peak of the graph yet loses the global contest to the endpoint x = 3; only the closed-interval candidate comparison ranks them."
   ],
   "formulas": [
-    "- MVT: f(b) − f(a) = f′(c)(b − a)\n- 1st-deriv test: sign change at c decides the extremum\n- 2nd-deriv test: f′(c) = 0, f′′(c) > 0 ⟹ min; < 0 ⟹ max"
+    "MVT: f(b) − f(a) = f′(c)(b − a)",
+    "1st-deriv test: sign change at c decides the extremum",
+    "2nd-deriv test: f′(c) = 0, f′′(c) > 0 ⟹ min; < 0 ⟹ max"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",

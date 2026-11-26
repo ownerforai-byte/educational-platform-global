@@ -39,7 +39,8 @@
     "**NEB-style (6m): Using first principles, prove that d/dx (sin x) = cos x, and state where each standard limit is used.** — **Quotient:** [sin(x+h) − sin x]/h. **Angle addition:** sin(x+h) = sin x cos h + cos x sin h ⟹ numerator = sin x(cos h − 1) + cos x·sin h ⟹ quotient = sin x·[(cos h − 1)/h] + cos x·[sin h/h]. **The two stars (h → 0, radians):** (cos h − 1)/h → **0**; sin h/h → **1**. **Result:** sin x·0 + cos x·1 = **cos x** ∎. **Star roles:** the first star kills the sin x term; the second delivers the cos x term — the proof is exactly two standard limits and one identity. **Deep point:** the split into two pieces was licensed by the sum law (both pieces' limits exist) — even the derivative's founding proof audits its limit laws."
   ],
   "formulas": [
-    "- (xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x\n- (tan x)′ = sec²x; (sec x)′ = sec x·tan x"
+    "(xⁿ)′ = n·xⁿ⁻¹; (sin x)′ = cos x; (cos x)′ = −sin x",
+    "(tan x)′ = sec²x; (sec x)′ = sec x·tan x"
   ],
   "keyPoints": [
     "Power rule (x^n)' = n x^(n-1) for all real n; linearity. Trig table (radians): sin->cos, cos->-sin, tan->sec^2, cot->-cosec^2, sec->sec tan, cosec->-cosec cot. Two first-principles proofs plus the quotient rule generate the whole table; co-functions carry minus signs. Radians are the derivative's native unit - slope 1 at 0."

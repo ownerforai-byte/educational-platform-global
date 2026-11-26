@@ -7,7 +7,8 @@
   "notes": [
     "**Distance of Point from Plane:** This topic covers the fundamental concepts of distance of point from plane in the mathematics curriculum.",
     "Understanding distance of point from plane is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to distance of point from plane should be memorized and practiced regularly."
+    "Key definitions and theorems related to distance of point from plane should be memorized and practiced regularly.",
+    "**Distances — formulas classified**\n\n| From...to | Formula | Note |\n|---|---|---|\n| Point to plane | ax1+by1+cz1+d over sqrt(a^2+b^2+c^2) | Absolute value |\n| Skew lines | Cross product method | 3D only |"
   ],
   "confusion": [
     "❌ Just using coordinate values in distance formula ✅ Must normalize the plane equation to Ax + By + Cz + D = 0 form first.",

@@ -70,6 +70,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Growth/decay — models classified · Model | Equation | Solution · Growth | dy = ky | y = y0 e^kt · Decay | dy = -ky | Half-life k · Newton cooling | dT = -k(T - Ts) | Approaches Ts"
+    },
+    {
       "label": "Key points",
       "text": "• Applications  ·  • Growth  ·  • Decay  ·  • Population dynamics"
     },
@@ -95,7 +99,7 @@
     },
     {
       "label": "More ideas",
-      "text": "# Applications: growth and decay, population dynamics ## 1. Introduction and motivation What the tool **Applications** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differential Equations fill pass. ## 2.…  ·  ## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+      "text": "# Applications: growth and decay, population dynamics ## 1. Introduction and motivation What the tool **Applications** is, where it is used, the chapter map and the learning outcomes (math-plan.md §3, block I). Depth is written in the Differential Equations fill pass. ## 2.…  ·  ## 3. Formula sheet Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms"
     },
     {
       "label": "More ideas",
@@ -103,7 +107,7 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg Exponential growth and decay: dN/dt = kN <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><line x1=\"80\" y1=\"200\" x2=\"580\" y2=\"200\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><path d=\"M100 190 C 250 180, 400 130, 560 50\"…"
+      "text": "```svg Exponential growth and decay: dN/dt = kN <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><line x1=\"80\" y1=\"200\" x2=\"580\" y2=\"200\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><path d=\"M100 190 C 250 180, 400 130, 560 50\"…  ·  **Growth/decay — models classified** | Model | Equation | Solution | |---|---|---| | Growth | dy = ky | y = y0 e^kt | | Decay | dy = -ky | Half-life k | | Newton cooling | dT = -k(T - Ts) | Approaches Ts |"
     }
   ]
 }

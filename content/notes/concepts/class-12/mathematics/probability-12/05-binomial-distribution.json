@@ -7,7 +7,8 @@
   "notes": [
     "**Binomial Distribution:** This topic covers the fundamental concepts of binomial distribution in the mathematics curriculum.",
     "Understanding binomial distribution is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to binomial distribution should be memorized and practiced regularly."
+    "Key definitions and theorems related to binomial distribution should be memorized and practiced regularly.",
+    "**Binomial — requirements classified**\n\n| Requirement | Meaning | Failure mode |\n|---|---|---|\n| Fixed n | Number of trials | Runs change n |\n| Two outcomes | Success/failure | Ties break it |\n| Constant p | Independent trials | Dependence breaks |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in binomial distribution.",

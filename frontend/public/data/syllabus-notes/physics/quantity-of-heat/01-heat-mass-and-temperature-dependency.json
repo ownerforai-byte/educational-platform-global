@@ -19,7 +19,8 @@
     "**Why water is special:** Water has the highest specific heat among common liquids ($4200\\text{ J/kg·K}$). This means it absorbs huge amounts of heat with minimal temperature change - why it's used as a coolant in car radiators, power plants, and why coastal climates are moderate.",
     "**Quick estimation rule:** For a 1 kg mass of water, raising temperature by 1°C requires 4200 J. So heating 2 kg by 50°C requires $H = 2 \\times 4200 \\times 50 = 420{,}000\\text{ J} = 420\\text{ kJ}$. This is roughly the energy in 100 g of sugar.",
     "**Dimensional check:** $[H] = [M][L]^2[T]^{-2}$ (energy). $[mc\\Delta\\theta] = [M] \\cdot [L]^2[T]^{-2}[\\Theta]^{-1} \\cdot [\\Theta] = [M][L]^2[T]^{-2}$. ✓ Dimensions match.",
-    "**Power and heat rate:** If heat is supplied at a constant rate (power $P$), then $H = Pt$. So $Pt = mc\\Delta\\theta$, which gives $\\Delta\\theta/t = P/(mc)$. A 1500 W kettle heats 1 kg of water at $\\Delta\\theta/t = 1500/(1 \\times 4200) = 0.357\\text{ °C/s}$."
+    "**Power and heat rate:** If heat is supplied at a constant rate (power $P$), then $H = Pt$. So $Pt = mc\\Delta\\theta$, which gives $\\Delta\\theta/t = P/(mc)$. A 1500 W kettle heats 1 kg of water at $\\Delta\\theta/t = 1500/(1 \\times 4200) = 0.357\\text{ °C/s}$.",
+    "**Heat dependence — factors classified**\n\n| Factor | Effect | Formula slot |\n|---|---|---|\n| Mass | More mass, more heat | m |\n| Material | c varies widely | Water 4200 J/kgK |\n| Temperature rise | Linear in dT | dT |"
   ],
   "confusion": [
     "❌ Heat and temperature are the same thing. ✅ Temperature is the average molecular kinetic energy (intensive). Heat is the total energy transferred (extensive). A spark at 2000°C has tiny heat content; a bathtub at 40°C has huge heat content.",

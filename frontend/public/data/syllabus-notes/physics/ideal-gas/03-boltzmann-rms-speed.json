@@ -17,7 +17,8 @@
     "Mass Dependence: v_rms ∝ 1/√M. At same T, hydrogen (M=2 g/mol) moves √(32/2) = 4 times faster than oxygen (M=32 g/mol). This explains why light gases escape planetary atmospheres more readily.",
     "Typical Values at 300 K: H₂: 1920 m/s; He: 1370 m/s; N₂: 517 m/s; O₂: 483 m/s; CO₂: 412 m/s. All supersonic yet no bulk flow due to random directions.",
     "Connection to Kinetic Energy: Total translational KE of n moles = (3/2)nRT = (3/2)NkT. Internal energy of monatomic ideal gas U = (3/2)nRT depends only on T, not V or P.",
-    "Effusion and Graham's Law: Rate of effusion ∝ v_rms ∝ 1/√M. Lighter gases effuse faster through small openings. Used in uranium enrichment (²³⁵UF₆ vs ²³⁸UF₆)."
+    "Effusion and Graham's Law: Rate of effusion ∝ v_rms ∝ 1/√M. Lighter gases effuse faster through small openings. Used in uranium enrichment (²³⁵UF₆ vs ²³⁸UF₆).",
+    "**Molecular speeds — the three averages classified**\n\n| Speed | Formula | Size order |\n|---|---|---|\n| RMS | sqrt(3kT/m) | Largest |\n| Average | sqrt(8kT/pi m) | Middle |\n| Most probable | sqrt(2kT/m) | Smallest |"
   ],
   "specificConditions": [
     "Ideal Gas Assumption: Formulas assume point particles with elastic collisions and no intermolecular forces. Real gases deviate at high P or low T.",

@@ -41,7 +41,9 @@
     "**NEB-style (3m): Show that f(x) = x³ is strictly increasing on ℝ, and deduce that it possesses an inverse function.** — **Monotonicity:** take any a < b and form b³ − a³ = (b − a)(b² + ab + a²). The first factor b − a > 0. The second: b² + ab + a² = ½[(a + b)² + a² + b²] ≥ 0, with equality only when a = b = 0 — impossible since a < b. Hence b² + ab + a² > 0, so **b³ − a³ > 0**, i.e. a < b ⟹ f(a) < f(b): f is **strictly increasing on all of ℝ**. **Deduction:** strictly monotone functions are **one-to-one** (unequal inputs give unequal outputs in the same order), and one-to-one functions are exactly those that possess inverses. Hence x³ is invertible on ℝ with inverse **x^{1/3}** — no domain restriction needed, because the cube preserves sign (contrast x², which folds ±a together and must be restricted to [0, ∞) before inversion)."
   ],
   "formulas": [
-    "- even: f(−x) = f(x); odd: f(−x) = −f(x)\n- period of f(ax + b) = T/|a| where T = period of f\n- b³ − a³ = (b − a)(b² + ab + a²)"
+    "even: f(−x) = f(x); odd: f(−x) = −f(x)",
+    "period of f(ax + b) = T/|a| where T = period of f",
+    "b³ − a³ = (b − a)(b² + ab + a²)"
   ],
   "numericals": [
     "Set up the defining equation for \"Curve sketching: odd and even functions, periodicity, sym…\", substitute simple values, and compute the result with units.",

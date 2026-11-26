@@ -10,7 +10,8 @@
     "Worked case: 2.34×1.2 equals 2.808 and rounds to 2.8, because 1.2 has two significant figures. The sum 12.11+0.3 equals 12.41 and rounds to 12.4, because 0.3 is known only to tenths.",
     "Keep guard digits through intermediate steps and round once at the end. Exact counts and defined conversion factors, such as 1 m = 100 cm, do not limit the significant figures of a result.",
     "Relative uncertainty scales with a power. If A=πr² and r is uncertain by 1%, A is uncertain by about 2%, because the power 2 doubles the relative uncertainty before the final rounding.",
-    "Significant figures show the precision you actually have. In 0.00450 the significant figures are 4, 5 and the last 0. When you multiply, the result should carry no more significant figures than the less precise factor. When you add, you line up the decimal places instead."
+    "Significant figures show the precision you actually have. In 0.00450 the significant figures are 4, 5 and the last 0. When you multiply, the result should carry no more significant figures than the less precise factor. When you add, you line up the decimal places instead.",
+    "**Significant figures — operation rules classified**\n\n| Operation | Rule | Example |\n|---|---|---|\n| Add/subtract | Match decimal places | 2.1 + 3.45 = 5.6 |\n| Multiply/divide | Match significant figures | 4.2 x 1.31 = 5.5 |\n| Exact numbers | Infinite sig figs | 2 in 2r |"
   ],
   "confusion": [
     "Do not apply the fewest-significant-figures rule to addition.",

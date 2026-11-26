@@ -10,7 +10,8 @@
     "The wave packet that represents a localised particle is a spread of wavelengths. A narrow packet, a well known position, needs a wide spread of momenta. That is the idea behind the uncertainty principle.",
     "A photon already had E = h f and p = E/c, which is the same λ = h/p. De Broglie's step was to give massive particles the relation that light already satisfied.",
     "At higher voltage the electron is faster, the wavelength is shorter, and the non-relativistic √V formula starts to fail. Exam calculations at 100 to 200 V are still in the safe range.",
-    "The particle is not smeared into a wave in the detector. Many electrons build the diffraction pattern one impact at a time. Each impact is local. The pattern is the wave."
+    "The particle is not smeared into a wave in the detector. Many electrons build the diffraction pattern one impact at a time. Each impact is local. The pattern is the wave.",
+    "**Matter waves — relations classified**\n\n| Quantity | Formula | Note |\n|---|---|---|\n| Wavelength | lambda = h/p | Applies to all matter |\n| With potential | lambda = h/sqrt(2meV) | Electron accelerated |\n| Wave vs particle | Both real | Complementarity |"
   ],
   "confusion": [
     "❌ Wavelength is proportional to energy ✅ Wavelength is inversely proportional to momentum (λ = h/p), not energy directly.",

@@ -70,6 +70,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Gauss applications — results classified · Object | Field outside | Inside · Solid sphere | kq/r^2 | E proportional r · Shell | kq/r^2 | Zero · Plane conductor | sigma/eps0 | Zero"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Match the Gaussian surface to the symmetry** — sphere for a shell, cylinder for a line, pillbox for a plane."
     },
@@ -92,6 +96,10 @@
     {
       "label": "More ideas",
       "text": "Infinite Approximation: Line charge formula $E = \\lambda/(2\\pi\\varepsilon_0 r)$ assumes infinite length — valid near middle of long wire, not near ends.  ·  Verified PYQs: shell inside/outside 2024 5m; zero field inside conductor 2024 2m.  ·  How does a car protect occupants from lightning?"
+    },
+    {
+      "label": "More ideas",
+      "text": "**Gauss applications — results classified** | Object | Field outside | Inside | |---|---|---| | Solid sphere | kq/r^2 | E proportional r | | Shell | kq/r^2 | Zero | | Plane conductor | sigma/eps0 | Zero |"
     }
   ]
 }

@@ -10,7 +10,8 @@
     "A convex lens has positive f. A real image on the far side of the lens has positive v. Use the lens formula there, not the mirror formula.",
     "Mirror magnification is −v/u, and lens magnification is v/u. A negative value means the image is inverted. The size is the absolute value times the object size. For the mirror numbers u = −30 cm and v = −15 cm, m = −v/u = −0.50, an inverted image half as tall.",
     "Power of a lens is 1/f with f in metres, in dioptres. A shorter focal length is a stronger lens. Two thin lenses in contact add their powers.",
-    "Rays are the check. A ray through the centre of a lens goes straight. A ray parallel to the axis passes through the focus. The formula and the ray diagram must agree on real or virtual."
+    "Rays are the check. A ray through the centre of a lens goes straight. A ray parallel to the axis passes through the focus. The formula and the ray diagram must agree on real or virtual.",
+    "**Mirror vs lens formulas — classified**\n\n| Device | Formula | Magnification |\n|---|---|---|\n| Mirror | 1/f = 1/v + 1/u | m = -v/u |\n| Lens | 1/f = 1/v - 1/u | m = v/u |"
   ],
   "confusion": [
     "❌ 'Convex lenses always produce real images.' ✅ They produce a *virtual* image if the object is placed *between* the lens and its focal point (e.g., in a magnifying glass).",

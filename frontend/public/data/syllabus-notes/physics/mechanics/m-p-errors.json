@@ -10,7 +10,8 @@
     "For a power law z=xⁿ, relative uncertainty is approximately |n|Δx/|x|. Thus a 1% radius error gives about 2% area error for A=πr².",
     "Worked example: L=10.0±0.1 cm and W=5.0±0.1 cm. For A=LW, fractional uncertainty≈0.1/10+0.1/5=0.03, or 3%; A=50 cm² with estimated uncertainty 1.5 cm².",
     "These are first-order rules for small uncertainties. State the method and avoid suggesting an exact result when measurements are approximate.",
-    "The mean absolute error tells how far the readings typically sit from the mean. It is not the same as the range, and it is not removed by writing more decimal places. A quoted probable error, 0.6745 times the mean absolute error, is a statistical description of a normal scatter, not a second kind of mistake."
+    "The mean absolute error tells how far the readings typically sit from the mean. It is not the same as the range, and it is not removed by writing more decimal places. A quoted probable error, 0.6745 times the mean absolute error, is a statistical description of a normal scatter, not a second kind of mistake.",
+    "**Error combination — rules classified**\n\n| Operation | Error rule | Example |\n|---|---|---|\n| Sum/difference | Absolute errors add | L + l with delta |\n| Product/quotient | Relative errors add | (delta A)/A + (delta B)/B |\n| Power | Relative error x power | V^3 gives 3x |"
   ],
   "confusion": [
     "Probable-error terminology varies by textbook; state its statistical convention.",

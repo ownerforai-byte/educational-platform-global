@@ -6,7 +6,8 @@
     "The heat leaving the body also equals −mc dθ, if the body cools without changing state. Dividing by dt gives −mc dθ/dt = K (θ − θ0).",
     "Therefore the rate of fall of temperature is dθ/dt = −(K/mc) (θ − θ0). The constant k = K/(mc) is larger when the body has a small heat capacity.",
     "The minus sign means the temperature falls when θ is above θ0. If the body is cooler than the room, the same equation makes the temperature rise.",
-    "The law is a linear approximation. It is used for excesses of a few tens of degrees, where convection and a linearised radiation loss dominate. A red-hot body needs the Stefan–Boltzmann difference of fourth powers."
+    "The law is a linear approximation. It is used for excesses of a few tens of degrees, where convection and a linearised radiation loss dominate. A red-hot body needs the Stefan–Boltzmann difference of fourth powers.",
+    "**Cooling rate — derivation logic classified**\n\n| Step | Relation | Basis |\n|---|---|---|\n| Heat loss | dQ/dt = k(T - Ts) | Newton's law |\n| Energy link | dQ = ms dT | Definition of c |\n| Result | dT/dt = k'(T - Ts) | Exponential decay |"
   ],
   "examples": [
     "Newton's law of cooling says that, when the excess temperature is not large, the rate of loss of heat is proportional to the excess of the body's temperature over the surroundings.",

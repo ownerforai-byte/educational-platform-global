@@ -10,7 +10,8 @@
     "Key concepts include impedance, reactance, and the conditions for electrical resonance.",
     "An alternating voltage can be written v = V_0 sin ωt. In a pure resistor the current is i = (V_0/R) sin ωt, so voltage and current reach their peaks together and the average power is I_rms^2 R.",
     "In a pure inductor the current lags the voltage by 90°. The opposition is the inductive reactance X_L = ωL = 2πfL, and it grows with frequency. A pure inductor stores energy in its magnetic field and returns it, so the average power over a cycle is zero.",
-    "In a pure capacitor the current leads the voltage by 90°. The capacitive reactance is X_C = 1/(ωC), and it falls as the frequency rises. The average power over a cycle is again zero because energy is stored in the electric field and then returned."
+    "In a pure capacitor the current leads the voltage by 90°. The capacitive reactance is X_C = 1/(ωC), and it falls as the frequency rises. The average power over a cycle is again zero because energy is stored in the electric field and then returned.",
+    "**AC elements — phase behaviour classified**\n\n| Element | V-I phase | Reactance |\n|---|---|---|\n| Resistor | In phase | None |\n| Inductor | I lags by 90 | XL = omega L |\n| Capacitor | I leads by 90 | XC = 1/(omega C) |"
   ],
   "confusion": [
     "❌ 'In an AC circuit, the voltage and current are always in phase' ✅ In a pure resistor, they are in phase. In an inductor, voltage leads current by 90°. In a capacitor, voltage lags current by 90°.",

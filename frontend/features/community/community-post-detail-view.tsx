@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { reportPost, sharePath, sharePost } from "@/lib/api/community-feed";
 import { isCommunityBot } from "@/lib/community-bot";
+import { publicUrl } from "@/lib/site-url";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { PostAuthorHeader } from "@/features/community/post-author-header";
 import { AttachmentList } from "@/features/community/attachment-list";
@@ -297,7 +298,7 @@ export function CommunityPostDetailView() {
               <button
                 type="button"
                 onClick={() => {
-                  const url = `${window.location.origin}${sharePath(post.id)}`;
+                  const url = publicUrl(sharePath(post.id));
                   const done = () => {
                     setShareCopied(true);
                     window.setTimeout(() => setShareCopied(false), 2000);

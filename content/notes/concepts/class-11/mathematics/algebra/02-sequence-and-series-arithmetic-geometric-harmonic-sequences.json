@@ -29,7 +29,10 @@
     "Prove AM ≥ GM for positive a, b and state the equality case."
   ],
   "formulas": [
-    "- AP: aₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d] = n/2(a + l)\n- GP: aₙ = arⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1); S∞ = a/(1−r) iff |r| < 1\n- AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b); AM·HM = GM²\n- Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²"
+    "AP: aₙ = a + (n−1)d; Sₙ = n/2[2a + (n−1)d] = n/2(a + l)",
+    "GP: aₙ = arⁿ⁻¹; Sₙ = a(rⁿ−1)/(r−1); S∞ = a/(1−r) iff |r| < 1",
+    "AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b); AM·HM = GM²",
+    "Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²"
   ],
   "summary": "Sequences impose patterns; series sum them. **AP** (constant difference): aₙ = a + (n−1)d and **Sₙ = n/2(a + l)** — Gauss's forward–backward pairing proves it in one line. **GP** (constant ratio): aₙ = arⁿ⁻¹, Sₙ = a(rⁿ−1)/(r−1), and the **sum to infinity S∞ = a/(1 − r) exists iff |r| < 1** — the fate of rⁿ is the whole story (8 − 4 + 2 − 1 + ⋯ with r = −½ sums to 16/3). **HP** hides an AP in the reciprocals. The **means order**: AM = (a+b)/2 ≥ GM = √(ab) ≥ HM = 2ab/(a+b), equality iff a = b, proved by expanding (a − b)² ≥ 0. Insertion problems reduce to counting terms and solving for d or r (4→16 with three arithmetic means: d = 3, giving 7, 10, 13). The special sums Σi = n(n+1)/2, Σi² = n(n+1)(2n+1)/6, Σi³ = [n(n+1)/2]² — the cube sum squaring the triangular number — close the toolkit.",
   "importantConcepts": [

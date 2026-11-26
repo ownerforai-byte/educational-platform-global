@@ -45,7 +45,9 @@
     "**NEB-style (6m): The function f(x) = (x³ − 8)/(x − 2) for x ≠ 2, f(2) = 11. Find the limit at 2, compare with f(2), classify any discontinuity, and give the repair.** — **Diagnose:** substitute x = 2: (8 − 8)/0 = **0/0** ⟹ transform. **Factor (difference of cubes):** x³ − 8 = (x − 2)(x² + 2x + 4) ⟹ f(x) = x² + 2x + 4 for x ≠ 2. **Limit:** substitute again: 4 + 4 + 4 = **12**. **Compare:** f(2) = 11 ≠ 12 ⟹ discontinuous at 2. **Classify:** the limit exists and the failure is only the point's value ⟹ **removable discontinuity**. **Repair:** redefine **f(2) = 12** ⟹ all three continuity parts pass. **Deep point:** the difference-of-cubes identity is the transformation tool for cubic-over-linear 0/0 forms, exactly as difference of squares serves quadratics — each power's identity exposes the shared root, and after cancellation the answer is a plain substitution."
   ],
   "formulas": [
-    "- continuous f: lim_{x→a} f(x) = f(a)\n- (√x − √a)/(x − a) = 1/(√x + √a) (x ≠ a)\n- c/0 (c ≠ 0): |f| → ∞; two-sided limit DNE if sides differ in sign"
+    "continuous f: lim_{x→a} f(x) = f(a)",
+    "(√x − √a)/(x − a) = 1/(√x + √a) (x ≠ a)",
+    "c/0 (c ≠ 0): |f| → ∞; two-sided limit DNE if sides differ in sign"
   ],
   "keyPoints": [
     "Substitute first. Three outcomes: (1) a number - f continuous at a, lim = f(a), done; (2) 0/0 - indeterminate, transform by factoring, rationalising or standard limits; (3) c/0 with c != 0 - blow-up: |f| -> inf, and the two-sided limit DNE if the sides' signs disagree (1/x at 0: +inf right, -inf left). Polynomials, |x|, sin, cos, e^x continuous everywhere - substitution always licensed. Rationalising trick: multiply by the conjugate to expose the common factor. 0/0 richness: the rates of vanishing decide, the doorway to derivatives."

@@ -10,7 +10,8 @@
     "A coil can have both at once. Its total induced emf is −L dI/dt from itself plus −M dI_other/dt from its neighbour.",
     "L and M are both in henries. M cannot exceed √(L1 L2), and it reaches that limit only when every flux line of one coil links the other.",
     "Opening a switch in a self-inductive circuit produces a large dI/dt and a spark. A mutual pair does the same in the second coil if the first current is interrupted.",
-    "The transformer, the induction coil and the coupled windings of a radio are mutual induction. The choke that opposes a change in a single circuit is self-induction."
+    "The transformer, the induction coil and the coupled windings of a radio are mutual induction. The choke that opposes a change in a single circuit is self-induction.",
+    "**Inductance — two kinds classified**\n\n| Kind | Definition | Unit |\n|---|---|---|\n| Self | Own flux per own current | henry |\n| Mutual | Flux in coil 2 from coil 1 | henry |"
   ],
   "confusion": [
     "❌ 'Self-induction only happens in a coil.' ✅ It happens whenever the current *within* a conductor changes, creating a changing magnetic flux through itself.",

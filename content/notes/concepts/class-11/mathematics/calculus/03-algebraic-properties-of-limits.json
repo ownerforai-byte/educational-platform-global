@@ -38,7 +38,8 @@
     "**NEB-style (6m): A student writes lim_{x→0} (sin x + x·sin(1/x))/x = lim sin x/x + lim sin(1/x) = 1 + (does not exist) and concludes the limit does not exist. Assess and correct.** — **The error:** the sum law requires **both** pieces' limits to exist; the second piece sin(1/x) has no limit, so the split is illegal and the \"does not exist\" conclusion does not follow — the failure of a *method* is not the failure of the limit. **Correct route:** lim sin x/x = 1 (star) and lim x·sin(1/x) = 0 (squeeze, as shown in the standard example) ⟹ the sum law **is** applicable to these two *converging* pieces: lim = 1 + 0 = **1**. **Deep point:** regroup before you split — the art of using the limit laws is choosing a decomposition in which every piece converges; the laws never fail, but careless decompositions do."
   ],
   "formulas": [
-    "- lim (f ± g) = lim f ± lim g; lim f·g = lim f · lim g\n- lim f/g = lim f / lim g (lim g ≠ 0); lim fⁿ = (lim f)ⁿ"
+    "lim (f ± g) = lim f ± lim g; lim f·g = lim f · lim g",
+    "lim f/g = lim f / lim g (lim g ≠ 0); lim fⁿ = (lim f)ⁿ"
   ],
   "keyPoints": [
     "Limit laws: sum, difference, product, quotient (denominator nonzero), constant multiple, power, root - each needs the pieces' limits to exist. Squeeze: converging rails cage the middle. Composition: continuous outer function commutes with the inner limit. The laws assemble limits from known pieces; they never license splitting into nonexistent pieces."

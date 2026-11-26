@@ -38,7 +38,8 @@
     "**NEB-style (6m): A body's position is s(t) = t³ − 6t² + 9t (metres, seconds). Find the velocity at t = 2 and interpret its sign; find when the body momentarily stops.** — **Velocity:** v(t) = s′(t) = 3t² − 12t + 9 = 3(t − 1)(t − 3). **At t = 2:** v = 3(1)(−1) = **−3 m/s** — moving in the negative direction at 3 m/s. **Stops when:** v = 0 ⟹ t = 1 and t = 3 — momentary rests. **Direction timeline:** v > 0 on (0, 1) (forward), v < 0 on (1, 3) (backward), v > 0 after 3 (forward again). **Deep point:** the derivative's sign is the physical direction — the sign table built for monotonicity is the same tool that reads a journey; position, velocity, acceleration are s, s′, s″, the geometric reading wearing a lab coat."
   ],
   "formulas": [
-    "- Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) = −(1/f′(a))(x − a)\n- f′ > 0 on (a, b) ⟹ f strictly increasing on (a, b)"
+    "Tangent: y − f(a) = f′(a)(x − a); Normal: y − f(a) = −(1/f′(a))(x − a)",
+    "f′ > 0 on (a, b) ⟹ f strictly increasing on (a, b)"
   ],
   "keyPoints": [
     "Tangent slope = f'(a) = limit of secant slopes; tangent line y - f(a) = f'(a)(x - a); normal slope -1/f'(a); vertical tangent when f' -> +-inf. Corners have two half-tangents. f' > 0 on an interval implies increasing (MVT converts local signs to global monotonicity). f' = 0 means stationary, not necessarily extreme. The derivative is a rate with units - geometry and physics are the same number."

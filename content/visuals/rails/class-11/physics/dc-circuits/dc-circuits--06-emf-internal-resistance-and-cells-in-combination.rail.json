@@ -74,6 +74,10 @@
       "text": "In series, both EMF and internal resistance add. In parallel, the equivalent EMF is the same as one cell, but the equivalent internal resistance is reduced, allowing more current.  ·  Maximum power transfer ($R = r$) occurs at 50% efficiency. For efficient power delivery, you want $R \\\\\\\\gg r$ (high efficiency, low power). For maximum power, you sacrifice efficiency."
     },
     {
+      "label": "Classified table",
+      "text": "EMF vs terminal voltage · Situation | Terminal voltage V | Comment · Open circuit (I = 0) | $V = \\mathcal{E}$ | EMF measured directly · Discharging | $V = \\mathcal{E} - Ir$ | less than EMF · Charging | $V = \\mathcal{E} + Ir$ | more than EMF · Short circuit (R = 0) | $I_{sc} = \\mathcal{E}/r$ | V = 0, dangerous current · Maximum power to load | R = r | $P_{max} = \\mathcal{E}&#178;/4r$  ·  Cells in combination (n identical cells) · Combination | EMF | Internal resistance | Best for · Series (n cells) | $n\\mathcal{E}$ | $nr$ | high-voltage needs · Parallel (n cells) | $\\mathcal{E}$ | $r/n$ | high-current needs · Mixed grid (m rows &#215; n) | $n\\mathcal{E}$ | $nr/m$ | matched to load R = nr/m"
+    },
+    {
       "label": "Universal facts",
       "text": "In a battery pack, series strings are often used to increase voltage, and parallel strings within each series group are used to increase capacity and reduce internal resistance."
     },

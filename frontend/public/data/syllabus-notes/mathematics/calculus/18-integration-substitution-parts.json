@@ -38,7 +38,8 @@
     "**NEB-style (6m): Evaluate ∫eˣ·sin x dx using cyclic parts, and verify.** — **Parts pass 1:** u = sin x, dv = eˣdx ⟹ I = eˣ sin x − ∫eˣ cos x dx. **Parts pass 2 (on the new integral):** u = cos x, dv = eˣdx ⟹ ∫eˣcos x dx = eˣcos x + ∫eˣ sin x dx = eˣcos x + I. **Substitute back:** I = eˣsin x − eˣcos x − I ⟹ **2I = eˣ(sin x − cos x)** ⟹ **I = eˣ(sin x − cos x)/2 + C**. **Verification:** d/dx[eˣ(sin−cos)/2] = eˣ(sin−cos)/2 + eˣ(cos+sin)/2 = eˣ sin x ✓. **Deep point:** the second pass returned the original integral with a sign — the self-reference became a linear equation solved for I; the ±1/2 factor that emerges is the signature of every cyclic pair (eˣ with sin or cos), and forgetting it is the classic incomplete answer."
   ],
   "formulas": [
-    "- ∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x)\n- ∫u dv = uv − ∫v du"
+    "∫f(g(x))g′(x)dx = ∫f(u)du, u = g(x)",
+    "∫u dv = uv − ∫v du"
   ],
   "keyPoints": [
     "Substitution = chain rule reversed: u = inner function, du = g'dx, the Jacobian is the price. Spot u as the composite's inner with its derivative visible (up to constant). Definite version: change the limits, never substitute back. By parts = product rule reversed: integral u dv = uv - integral v du; LIATE picks u (Log, Inverse trig, Algebraic, Trig, Exponential). Cyclic parts solve as equations. Parts trades one integral for an easier one."

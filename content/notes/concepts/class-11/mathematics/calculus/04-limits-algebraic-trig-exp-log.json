@@ -38,7 +38,8 @@
     "**NEB-style (6m): Evaluate lim_{x→0} (2^x − 1)/(√(1 + x) − 1).** — **Form:** (1 − 1)/(1 − 1) = **0/0** ✓. **Numerator (general-base star):** 2ˣ − 1 ~ x·ln 2 ⟹ (2ˣ − 1)/x → **ln 2**. **Denominator (radical star):** √(1+x) − 1 ~ x/2 ⟹ (√(1+x) − 1)/x → **1/2** (conjugate: (√(1+x) − 1)(√(1+x) + 1) = x). **Ratio:** [x ln 2]/[x/2] = **2 ln 2 = ln 4**. **Deep point:** each family contributes its own linearisation — 2ˣ has slope ln 2 at 0, √(1+x) has slope 1/2 at 0 — and the limit is the ratio of slopes; the general-base tax ln a is the exponential family's signature."
   ],
   "formulas": [
-    "- sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0, radians)\n- (eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u} → e"
+    "sin u/u → 1; tan u/u → 1; (1 − cos u)/u² → 1/2 (u → 0, radians)",
+    "(eᵘ − 1)/u → 1; ln(1+u)/u → 1; (1 + u)^{1/u} → e"
   ],
   "keyPoints": [
     "Algebraic stars: (x^n - a^n)/(x-a) -> n a^(n-1); degree rules at infinity. Trig stars (radians): sin u/u -> 1, tan u/u -> 1, (1-cos u)/u -> 0, (1-cos u)/u^2 -> 1/2. Exp/log stars: (e^u - 1)/u -> 1, ln(1+u)/u -> 1, a^u - 1 ~ u ln a, (1+u)^(1/u) -> e. Steering manufactures the star's denominator; constants carry outside. Growth ladder at infinity: ln x < x^p < a^x < x^x."

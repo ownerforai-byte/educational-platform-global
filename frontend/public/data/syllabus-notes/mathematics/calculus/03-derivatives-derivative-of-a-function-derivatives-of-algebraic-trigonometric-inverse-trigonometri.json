@@ -51,7 +51,9 @@
     "**NEB-style (6m): Differentiate y = (tan x)^{x} using logarithmic differentiation, and state where the method is mandatory.** — **Why mandatory:** both base (tan x) and exponent (x) vary — the power rule needs a constant exponent, the exponential rule a constant base; neither applies alone. **Take logs:** ln y = x·ln(tan x). **Differentiate both sides** (chain rule on the left; product rule on the right): y′/y = 1·ln(tan x) + x·[sec²x/tan x]. **Simplify the inner term:** sec²x/tan x = (1/cos²x)·(cos x/sin x) = 1/(sin x cos x) = **2/(2 sin x cos x) = 2/sin 2x = 2 cosec 2x**. **Solve:** y′ = **(tan x)ˣ[ln(tan x) + 2x·cosec 2x]**. **Deep points:** (1) the log converts the power into a product — every u^v question becomes a product-rule question after one ln; (2) the pattern y′ = y(…) is universal: the original function always multiplies back, so the answer's *shape* is predictable before the details are."
   ],
   "formulas": [
-    "- (sin⁻¹x)′ = 1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); co-forms negate\n- (eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a)\n- chain: d/dx F(u) = F′(u)·u′"
+    "(sin⁻¹x)′ = 1/√(1−x²); (tan⁻¹x)′ = 1/(1+x²); co-forms negate",
+    "(eˣ)′ = eˣ; (aˣ)′ = aˣ ln a; (ln x)′ = 1/x; (log_a x)′ = 1/(x ln a)",
+    "chain: d/dx F(u) = F′(u)·u′"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",

@@ -10,7 +10,8 @@
     "**Stefan's law.** The energy radiated per unit area per second is E = σT⁴; for a body at T losing heat to surroundings at T₀, P = σeA(T⁴ − T₀⁴), with σ = 5.67 × 10⁻⁸ W m⁻² K⁻⁴.",
     "**Wien's displacement law.** The wavelength of peak emission obeys λ_max T = b with b = 2.898 × 10⁻³ m·K — hotter bodies peak at shorter wavelengths (blue-shifted glow).",
     "**Kirchhoff's law and use.** At thermal equilibrium emissivity equals absorptivity; the balance of absorbed and re-radiated infrared explains the greenhouse effect and satellite thermal design.",
-    "A black body absorbs every wavelength that falls on it and, when warm, emits a spectrum that depends only on its temperature. The power radiated per unit area is σ T^4, with T in kelvin. Doubling the absolute temperature multiplies the radiated power by 16."
+    "A black body absorbs every wavelength that falls on it and, when warm, emits a spectrum that depends only on its temperature. The power radiated per unit area is σ T^4, with T in kelvin. Doubling the absolute temperature multiplies the radiated power by 16.",
+    "**Thermal radiation — laws classified**\n\n| Law | Statement | Use |\n|---|---|---|\n| Stefan | P = e sigma A T^4 | Total radiation |\n| Wien | Peak wavelength inversely proportional T | Colour of hot bodies |\n| Black body | Perfect absorber/emitter | Reference standard |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in radiation and black-body radiation.",

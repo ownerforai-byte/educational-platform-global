@@ -10,7 +10,8 @@
     "A p-n junction has a depletion layer. In forward bias the p-side is made positive, the barrier falls, and a large current flows. In reverse bias the barrier rises and only a tiny leakage current flows.",
     "The diode is a one-way device. A rectifier uses that one-way behaviour to turn alternating voltage into a unidirectional voltage.",
     "A bipolar transistor has two junctions, emitter, base and collector. A small base current controls a larger collector current. That is the current gain.",
-    "An LED is a diode that emits light when forward biased, as electrons and holes recombine. A solar cell is a junction that produces an emf when light creates pairs."
+    "An LED is a diode that emits light when forward biased, as electrons and holes recombine. A solar cell is a junction that produces an emf when light creates pairs.",
+    "**Semiconductor devices — classified**\n\n| Device | Function | Key behaviour |\n|---|---|---|\n| Diode | One-way valve | Forward/reverse bias |\n| Zener | Voltage reference | Breakdown stable |\n| LED | Light emission | Forward biased |"
   ],
   "confusion": [
     "❌ Assuming intrinsic semiconductors conduct well at room temperature ✅ Intrinsic semiconductors have very few free charge carriers; doping is required to significantly increase conductivity.",

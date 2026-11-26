@@ -70,6 +70,10 @@
       "text": "Derivations for line charge, plane sheet, and spherical shell using Gauss's law are core long questions (4 to 5 marks each) frequently examined in NEB Class 11 Board Exams."
     },
     {
+      "label": "Classified table",
+      "text": "Standard Gauss-law results (classified) · Source | Field | Falls as · Point charge | kq/r² | 1/r² · Infinite line, λ | λ/2πε₀r | 1/r · Infinite sheet, σ | σ/2ε₀ | Constant · Solid sphere (inside) | kqr/R³ | Linear in r · Conductor surface | σ/ε₀ | Constant  ·  Sphere field inside vs outside · Region | Non-conducting | Conducting · Inside | E ∝ r (builds up) | E = 0 · Surface | kq/R² | σ/ε₀ = kq/R² · Outside | kq/r² | kq/r² · Reason | Charge distributed | Charge on surface"
+    },
+    {
       "label": "Quick concepts",
       "text": "Symmetry analysis: cylindrical, planar, and spherical Gaussian surfaces.  ·  Derivation of line charge field E = λ / (2πε₀r).  ·  Derivation of infinite plane sheet field E = σ / (2ε₀).  ·  Derivation of spherical shell fields (inside, surface, outside) and graph of E vs r."
     },

@@ -24,7 +24,8 @@
   "animation3D": "calculus",
   "motionGraphics": "calculus",
   "formulas": [
-    "- f continuous at a ⟺ lim_{x→a}f(x) = f(a)\n- Repair: define f(a) = lim_{x→a}f(x)"
+    "f continuous at a ⟺ lim_{x→a}f(x) = f(a)",
+    "Repair: define f(a) = lim_{x→a}f(x)"
   ],
   "keyPoints": [
     "Continuity at a: lim = f(a) - three independent facts (limit exists, value exists, they match). Catalogue: removable (repairable by re-anchoring), jump (sides disagree), infinite (wall), oscillatory. Repair is possible exactly when the limit exists. Standard functions fail only at suspects: denominator zeros, domain edges, piecewise joints. Piecewise welds turn the audit into an equation for the parameter."

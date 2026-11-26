@@ -34,7 +34,8 @@
     "**NEB-style (6m): A ball is thrown vertically upward at 20 m/s (g = 10 m/s²). Find the maximum height, the time to reach it, and the total flight time — and explain the symmetry.** — **Positive direction: upward.** **At the top v = 0:** v² = u² + 2as ⟹ 0 = 400 − 20s ⟹ **h = 20 m**. **Time up:** v = u + at ⟹ 0 = 20 − 10t ⟹ **t = 2 s**. **Total flight:** by symmetry the fall from 20 m takes the same 2 s ⟹ **4 s** total; algebraically s = ut + ½at² with s = 0 (return to start): 0 = 20t − 5t² ⟹ t = 4 (the non-zero root). **Symmetry explained:** with constant g and no air resistance, the upward and downward legs traverse the same height profile with accelerations equal in magnitude — time up = time down, and the impact speed equals the launch speed (energy conservation's kinematic face). **Deep point:** the s = 0 root of the displacement equation is where the \"total flight\" answer hides — reading a quadratic's roots as physical events (launch and return) is the sign-disciplined way to see symmetry instead of assuming it."
   ],
   "formulas": [
-    "- ΣF = 0 (equilibrium); ΣF = ma (dynamics)\n- v = u + at; s = ut + ½at²; v² = u² + 2as"
+    "ΣF = 0 (equilibrium); ΣF = ma (dynamics)",
+    "v = u + at; s = ut + ½at²; v² = u² + 2as"
   ],
   "keyPoints": [
     "Statics: equilibrium, sum F = 0. Dynamics: acceleration, sum F = ma - the second law covers both, statics is the a = 0 case. Three laws: inertia (and inertial frames), F = dp/dt = ma, mutual pairs on different bodies. Kinematics: v = u + at, s = ut + at^2/2, v^2 = u^2 + 2as - choose the equation omitting the unneeded quantity. Sign discipline first: declare the positive direction, then the algebra is mechanical."

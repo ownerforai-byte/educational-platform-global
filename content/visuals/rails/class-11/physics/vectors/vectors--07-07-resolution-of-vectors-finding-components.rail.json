@@ -70,6 +70,10 @@
       "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction."
     },
     {
+      "label": "Classified table",
+      "text": "Finding components: method (classified) · Step | Action | Check · 1 | Draw the vector to scale | Correct quadrant · 2 | Drop perpendiculars on chosen axes | Right angles marked · 3 | Label A cosθ and A sinθ | Adjacent = cos · 4 | Verify: squares add to A² | Numerical check  ·  Worked patterns · Given | Components | Note · A at 30° | (0.87A, 0.5A) | Memorise ratios · A at 60° | (0.5A, 0.87A) | Swap of 30° · A at 45° | (0.71A, 0.71A) | Equal components · A along −y | (0, −A) | Signs matter"
+    },
+    {
       "label": "Quick concepts",
       "text": "Definition and significance of Resolution of Vectors — Finding Components.  ·  Component sum  ·  Resultant magnitude  ·  Quadrant from signs"
     },
@@ -111,7 +115,7 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg 30-60-90 component ratios <svg viewBox=\"0 0 640 180\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M150 130 L 450 130\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M150 130 L 150 40\" stroke=\"#374151\" stroke-width=\"2\"/><path…"
+      "text": "```svg 30-60-90 component ratios <svg viewBox=\"0 0 640 180\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"180\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M150 130 L 450 130\" stroke=\"#374151\" stroke-width=\"2\"/><path d=\"M150 130 L 150 40\" stroke=\"#374151\" stroke-width=\"2\"/><path…  ·  **Component work — exam tasks classified** | Task | Method | Trap | |---|---|---| | Find components | Resolve with cos/sin | Angle measured from which axis? | | Rebuild vector | Sum components | Signs of quadrants | | Net of many | Add component-wise | Never add magnitudes directly |"
     }
   ]
 }

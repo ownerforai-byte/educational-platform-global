@@ -37,7 +37,9 @@
     "**NEB-style (2m): For A = [[1, 2], [3, 4]], find adj A and A⁻¹, and verify AA⁻¹ = I.** — **Cofactors:** C₁₁ = +4, C₁₂ = −3, C₂₁ = −2, C₂₂ = +1 ⟹ cofactor matrix [[4, −3], [−2, 1]] ⟹ **adj A = transpose = [[4, −2], [−3, 1]]**. **Determinant:** |A| = 1·4 − 2·3 = −2 ≠ 0. **Inverse:** A⁻¹ = adj A/|A| = **(1/−2)[[4, −2], [−3, 1]] = [[−2, 1], [3/2, −1/2]]**. **Verification:** AA⁻¹ = [[1(−2) + 2(3/2), 1(1) + 2(−1/2)], [3(−2) + 4(3/2), 3(1) + 4(−1/2)]] = [[−2 + 3, 1 − 1], [−6 + 6, 3 − 2]] = [[1, 0], [0, 1]] = **I** ✓ — the adjoint identity doing its job."
   ],
   "formulas": [
-    "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
+    "domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)",
+    "AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²",
+    "Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
   ],
   "keyPoints": [
     "Companion canonicals mirror their parents. Function: domain bans (denominator, even root, log) intersected; range by inversion; inverse iff one-to-one, reflection in y = x. Sequence/series: AP a_n = a + (n-1)d, S_n = n/2(a + l); GP a_n = ar^(n-1), S_n = a(r^n - 1)/(r-1), S_inf = a/(1-r) iff |r| < 1; AM >= GM >= HM; sum i = n(n+1)/2, sum i^2 = n(n+1)(2n+1)/6, sum i^3 = [n(n+1)/2]^2. Determinants: C_ij = (-1)^(i+j) M_ij; Laplace expansion any row/column; A adj A = |A| I; A^-1 = adj A/|A|; |AB| = |A||B|."

@@ -6,7 +6,8 @@
     "The time period of a simple pendulum is assumed to depend on its length and on g, and not on the mass, when the amplitude is small. Matching dimensions then gives T proportional to the square root of l/g.",
     "The method cannot produce the 2π in that pendulum formula. Any dimensionless constant is invisible. An experiment, or a full derivation, has to supply it.",
     "The method also fails if a needed quantity is left out of the assumption, or if too many quantities are included. With more than three unknown powers and only M, L and T, the powers are not fixed uniquely.",
-    "Trigonometric, exponential and logarithmic functions accept only dimensionless inputs. Dimensional analysis will reject a formula that puts a length alone inside a sine."
+    "Trigonometric, exponential and logarithmic functions accept only dimensionless inputs. Dimensional analysis will reject a formula that puts a length alone inside a sine.",
+    "**Dimensional analysis — powers and limits classified**\n\n| Side | Items | Note |\n|---|---|---|\n| Powers (uses) | Check, convert, derive | Quick structural checks |\n| Limits (fails) | Dimensionless constants, plus-minus functions, dependence form | sin, log, 1/2, exp need experiment |"
   ],
   "examples": [
     "Dimensional analysis is used in three ways. It checks whether an equation could be right. It converts a numerical value from one unit system to another. It suggests the form of a relation when the relevant quantities are known.",

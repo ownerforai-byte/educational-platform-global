@@ -4,6 +4,7 @@ import { render, screen } from "@testing-library/react";
 import { ActivityJourney } from "@/components/lab/activity-journey";
 import { PILOT_ACTIVITIES } from "@/lib/lab-manifest";
 import { nextTopic, topicHref } from "@/lib/syllabus-neighbors";
+import { key } from "@/lib/scoped-storage";
 
 const pilot = PILOT_ACTIVITIES[0];
 
@@ -40,8 +41,9 @@ describe("ActivityJourney", () => {
 
   it("records the visit so the hub can offer continue-where-you-left-off", () => {
     render(<ActivityJourney activity={pilot} />);
+    // Visits are account-scoped (storageScope suffix), not under the raw key.
     const stored = JSON.parse(
-      window.localStorage.getItem("ravikishan:lab-progress:v1") ?? "[]",
+      window.localStorage.getItem(key("ravikishan:lab-progress:v1")) ?? "[]",
     ) as Array<{ slug: string }>;
     expect(stored.map((visit) => visit.slug)).toContain(pilot.slug);
   });

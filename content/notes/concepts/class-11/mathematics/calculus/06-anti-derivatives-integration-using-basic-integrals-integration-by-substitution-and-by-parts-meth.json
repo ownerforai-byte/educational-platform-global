@@ -54,7 +54,9 @@
     "**NEB-style (5m): Evaluate ∫(2x + 3)/(x² + 3x + 5) dx.** — **Recognise the f′/f pattern:** the denominator's derivative is d/dx(x² + 3x + 5) = **2x + 3** — exactly the numerator. **Apply the master pattern:** ∫f′(x)/f(x) dx = ln|f(x)| + C with f(x) = x² + 3x + 5 ⟹ the integral = **ln(x² + 3x + 5) + C** (absolute value unnecessary: the discriminant 9 − 20 < 0 ⟹ the quadratic is always positive). **Verification:** d/dx[ln(x²+3x+5)] = (2x+3)/(x²+3x+5) ✓. **Extension — the near-miss case:** for ∫(2x + 1)/(x² + 3x + 5)dx the numerator is *not* f′; split it: (2x+1) = (2x+3) − 2 ⟹ integral = ln(x²+3x+5) − 2∫dx/[(x+3/2)² + 11/4] = ln(x²+3x+5) − (4/√11)tan⁻¹((2x+3)/√11) + C — the f′/f recognition is always the first move; the remainder goes to the arctangent pattern."
   ],
   "formulas": [
-    "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C\n- ∫f(g)g′dx = ∫f(u)du; ∫f′/f dx = ln|f| + C\n- ∫u dv = uv − ∫v du (LIATE for u)"
+    "∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C; ∫eˣdx = eˣ + C",
+    "∫f(g)g′dx = ∫f(u)du; ∫f′/f dx = ln|f| + C",
+    "∫u dv = uv − ∫v du (LIATE for u)"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",

@@ -10,7 +10,8 @@
     "Because the test cell is on open circuit at balance, the potentiometer measures emf rather than a terminal voltage under load. A voltmeter that draws current measures a slightly smaller terminal voltage.",
     "Two cells can be compared: E1/E2 = l1/l2, since k cancels. The longer balance length belongs to the larger emf.",
     "The driving cell's emf must be larger than the test emf, otherwise no point on the wire can balance. A rheostat in the driving circuit sets k.",
-    "For internal resistance, the balance length is l1 on open circuit and l2 when a known shunt R is across the cell. Then r = R (l1 − l2)/l2."
+    "For internal resistance, the balance length is l1 on open circuit and l2 when a known shunt R is across the cell. Then r = R (l1 − l2)/l2.",
+    "**Potentiometer — advantages classified**\n\n| Feature | Reason | Use |\n|---|---|---|\n| Null method | No current drawn | True EMF read |\n| Comparative | Ratio of lengths | EMF and internal r |"
   ],
   "confusion": [
     "❌ 'A potentiometer measures current directly.' ✅ It measures *potential difference (voltage)* by finding a null point where no current flows through the galvanometer.",

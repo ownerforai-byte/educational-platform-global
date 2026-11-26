@@ -31,7 +31,8 @@
     "**NEB-style (6m): Evaluate lim_{x→∞} (x + sin x)/x, and explain why L'Hôpital's rule cannot certify it.** — **Route — split legally:** (x + sin x)/x = 1 + sin x/x → 1 + 0 = **1** (the star sin x/x → 0 at infinity by squeeze: |sin x/x| ≤ 1/x → 0). **Why L'Hôpital fails:** the derivative ratio is (1 + cos x)/1, which **oscillates in [0, 2]** — it has no limit, so the rule's hypothesis (\"lim f′/g′ exists\") fails even though the original limit exists. The rule is sufficient, not necessary. **Deep point:** the squeeze certified sin x/x → 0 where differentiation could not — the capstone's lesson is that the route table outranks any single tool, and L'Hôpital's hypotheses are checks, not formalities."
   ],
   "formulas": [
-    "- (eᵘ − 1 − u)/u² → 1/2 (second-order exponential star)\n- u − sin u ~ u³/6; tan u − u ~ u³/3"
+    "(eᵘ − 1 − u)/u² → 1/2 (second-order exponential star)",
+    "u − sin u ~ u³/6; tan u − u ~ u³/3"
   ],
   "keyPoints": [
     "Route table: substitution (continuity), 0/0 (factor/conjugate/steer/L'Hopital), c/0 (wall signs), damped oscillator (squeeze), joints (two-sided audit), infinity (degrees/ladder), power forms (log bridge). Selection is the exam skill - cheapest working route wins. Layered diagnosis: first-order cancellation exposes second-order stars, e.g. (e^u - 1 - u)/u^2 -> 1/2."

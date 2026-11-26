@@ -44,7 +44,9 @@
     "**NEB-style (2m): Show that the vectors î + ĵ, ĵ + k̂ and k̂ + î are linearly independent.** — Determinant of components: det = |1 1 0; 0 1 1; 1 0 1| = 1[(1)(1) − (1)(0)] − 1[(0)(1) − (1)(1)] + 0[(0)(0) − (1)(1)] = 1(1) − 1(−1) + 0 = **2 ≠ 0**. Non-zero determinant ⟹ **linearly independent**. Geometric reading: each pair spans a coordinate plane and the trio points out of every plane — they form a (non-orthogonal) basis of space with volume |[a b c]| = 2."
   ],
   "formulas": [
-    "- v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ\n- a, b dependent ⟺ b = λa; a, b, c dependent ⟺ [a b c] = 0\n- Independence ⟺ det(a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃) ≠ 0"
+    "v = c₁a₁ + c₂a₂ + ⋯ + cₙaₙ",
+    "a, b dependent ⟺ b = λa; a, b, c dependent ⟺ [a b c] = 0",
+    "Independence ⟺ det(a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃) ≠ 0"
   ],
   "numericals": [
     "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",

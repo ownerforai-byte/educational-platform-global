@@ -45,7 +45,9 @@
     "**NEB-style (6m): Evaluate lim_{x→1} (x² − 3x + 2)/(x² − 1) and classify the discontinuity of f(x) = that expression with f(1) defined as 1/2.** — **Form:** (1 − 3 + 2)/(1 − 1) = **0/0** ✓. **Transformation (double factoring):** x² − 3x + 2 = (x − 1)(x − 2); x² − 1 = (x − 1)(x + 1) ⟹ for x ≠ 1 the expression = (x − 2)/(x + 1). **Licence:** cancellation valid for x ≠ 1. **Value:** (1 − 2)/(1 + 1) = **−1/2**. **Classification:** the limit exists (−1/2); f(1) = 1/2 ≠ −1/2 ⟹ **removable discontinuity** at 1 — a detached dot at (1, 1/2) over the hole at (1, −1/2). **Repair:** f(1) = −1/2 makes f continuous. **Deep point:** the exercise's two halves are one computation — the limit (type B drill) and the classification (continuity drill) both flow from the same factorisation; the assigned value 1/2 is the examiner's handle on a point the algebra otherwise erases."
   ],
   "formulas": [
-    "- Type B: p(a) = 0 ⟹ p(x) = (x − a)q(x)\n- Type C: (√g(x) − √g(a))/(x − a) = 1/(√g(x) + √g(a))\n- star cross-check: lim (xⁿ − aⁿ)/(x − a) = naⁿ⁻¹"
+    "Type B: p(a) = 0 ⟹ p(x) = (x − a)q(x)",
+    "Type C: (√g(x) − √g(a))/(x − a) = 1/(√g(x) + √g(a))",
+    "star cross-check: lim (xⁿ − aⁿ)/(x − a) = naⁿ⁻¹"
   ],
   "keyPoints": [
     "Exercise 15.1 method types: A direct substitution (continuous functions); B factor-and-cancel 0/0 (factor theorem guarantees (x - a) divides the numerator); C conjugate rationalisation for radical differences; D degree comparison for infinity limits. Four-line answer rhythm: form, transformation, cancellation licence, value. Type B double factoring: numerator and denominator may both carry (x - a). Type C: (sqrt g(x) - sqrt g(a))(sqrt g(x) + sqrt g(a)) = g(x) - g(a). Cross-check with the (x^n - a^n)/(x - a) star: n a^(n-1)."

@@ -15,7 +15,8 @@
     "Fermat's Principle of Least Time: Light travels between two points along the path that takes the least time. This principle derives both the law of reflection and Snell's law of refraction.",
     "Reflection: Angle of incidence equals angle of reflection (i = r). The incident ray, reflected ray, and normal all lie in the same plane.",
     "Refraction: When light passes from one medium to another, it bends. Snell's law: n₁ sin θ₁ = n₂ sin θ₂, where n is the refractive index of the medium.",
-    "Refractive Index: n = c/v, where v is the speed of light in the medium. Absolute refractive index is relative to vacuum. Relative refractive index ⁿ₂n₁ = v₁/v₂ = n₂/n₁."
+    "Refractive Index: n = c/v, where v is the speed of light in the medium. Absolute refractive index is relative to vacuum. Relative refractive index ⁿ₂n₁ = v₁/v₂ = n₂/n₁.",
+    "**Optics branches — classified**\n\n| Branch | Model | Phenomena |\n|---|---|---|\n| Ray optics | Light as rays | Reflection, refraction |\n| Wave optics | Light as waves | Interference, diffraction |\n| Quantum | Photons | Photoelectric effect |"
   ],
   "specificConditions": [
     "Optical Principles: The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁ sin θ₁ = n₂ sin θ₂). These laws derive from Fermat's principle of least time.",
@@ -100,38 +101,58 @@
   "mcs": [
     {
       "question": "The speed of light in vacuum is approximately:",
-      "options": ["3 × 10⁶ m/s", "3 × 10⁸ m/s", "3 × 10¹⁰ m/s", "3 × 10¹² m/s"],
+      "options": [
+        "3 × 10⁶ m/s",
+        "3 × 10⁸ m/s",
+        "3 × 10¹⁰ m/s",
+        "3 × 10¹² m/s"
+      ],
       "answer": "B",
       "explanation": "c ≈ 3 × 10⁸ m/s is the speed of light in vacuum."
     },
     {
       "question": "Refractive index n = c/v means:",
-      "options": ["Higher n = faster light", "Higher n = slower light", "n has no effect on speed", "n = v/c"],
+      "options": [
+        "Higher n = faster light",
+        "Higher n = slower light",
+        "n has no effect on speed",
+        "n = v/c"
+      ],
       "answer": "B",
       "explanation": "n = c/v, so higher n means smaller v (slower light in the medium)."
     },
     {
       "question": "According to the law of reflection:",
-      "options": ["i > r", "i < r", "i = r", "i + r = 90°"],
+      "options": [
+        "i > r",
+        "i < r",
+        "i = r",
+        "i + r = 90°"
+      ],
       "answer": "C",
       "explanation": "Angle of incidence equals angle of reflection, both measured from the normal."
     },
     {
       "question": "Ray optics is valid when:",
-      "options": ["Object sizes ≪ λ", "Object sizes ≈ λ", "Object sizes ≫ λ", "Always valid"],
+      "options": [
+        "Object sizes ≪ λ",
+        "Object sizes ≈ λ",
+        "Object sizes ≫ λ",
+        "Always valid"
+      ],
       "answer": "C",
       "explanation": "Geometrical optics applies when dimensions are much larger than the wavelength."
     },
     {
       "question": "Which phenomenon requires wave optics?",
-      "options": ["Reflection", "Refraction", "Interference", "Image formation by lens"],
+      "options": [
+        "Reflection",
+        "Refraction",
+        "Interference",
+        "Image formation by lens"
+      ],
       "answer": "C",
       "explanation": "Interference is a wave phenomenon that cannot be explained by ray optics."
     }
-  ],
-  "specificConditions": [
-    "Optical Principles: The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁ sin θ₁ = n₂ sin θ₂). These laws derive from Fermat's principle of least time.",
-    "Wave Nature of Light: Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
-    "Approximations and Validity: Ray optics (geometrical optics) is valid when object sizes are much greater than wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
   ]
 }

@@ -38,7 +38,9 @@
     "**NEB-style (3m): Solve for x, 0° < x < 90°: 3sin²x − 4cos²x + 1 = 0.** — Replace cos²x = 1 − sin²x: 3sin²x − 4(1 − sin²x) + 1 = 0 ⟹ **7sin²x − 3 = 0** ⟹ sin²x = 3/7 ⟹ **sin x = √(3/7)** (positive, since 0° < x < 90°). Hence **x = sin⁻¹√(3/7) ≈ 40.9°**. The squared-equation family θ = nπ ± α collapses to the single first-quadrant value because the interval excludes every other branch — one solution, exactly as the restricted window demands."
   ],
   "formulas": [
-    "- sin θ = sin α ⟹ θ = nπ + (−1)ⁿα; cos θ = cos α ⟹ θ = 2nπ ± α; tan θ = tan α ⟹ θ = nπ + α\n- sin²θ = sin²α ⟹ θ = nπ ± α (likewise cos², tan²)\n- sin θ = 0 ⟹ θ = nπ; cos θ = 0 ⟹ θ = (2n+1)π/2; sin θ = 1 ⟹ θ = 2nπ + π/2"
+    "sin θ = sin α ⟹ θ = nπ + (−1)ⁿα; cos θ = cos α ⟹ θ = 2nπ ± α; tan θ = tan α ⟹ θ = nπ + α",
+    "sin²θ = sin²α ⟹ θ = nπ ± α (likewise cos², tan²)",
+    "sin θ = 0 ⟹ θ = nπ; cos θ = 0 ⟹ θ = (2n+1)π/2; sin θ = 1 ⟹ θ = 2nπ + π/2"
   ],
   "keyPoints": [
     "General value theorems: sin th = sin a => th = n*pi + (-1)^n a; cos th = cos a => th = 2n*pi +- a; tan th = tan a => th = n*pi + a (radians). Squared versions all give th = n*pi +- a. Standard families: sin th = 0 => n*pi; cos th = 0 => (2n+1)pi/2; sin th = 1 => 2n*pi + pi/2; cos th = 1 => 2n*pi. Method: reduce to one function of one angle, find principal value in the standard branch, attach the family, filter to the interval. Squaring can add extraneous roots - verify in the original equation."

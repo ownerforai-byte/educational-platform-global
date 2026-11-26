@@ -45,7 +45,9 @@
     "**NEB-style (6m): The function f(x) = (x² − 4x + 3)/(x − 1) for x ≠ 1. Find the limit at x = 1, sketch-reason the graph's behaviour there, and state what single value at x = 1 would make f continuous.** — **Substitute first:** (1 − 4 + 3)/(0) = 0/0 ⟹ transform. **Factor:** x² − 4x + 3 = (x − 1)(x − 3) ⟹ f(x) = x − 3 for x ≠ 1. **Limit:** lim_{x→1} f(x) = **−2**. **Graph behaviour:** f is the line y = x − 3 with a single **hole** at (1, −2) — the two branches approach that point from both sides but the point itself is missing (open dot). **Repair value:** defining **f(1) = −2** makes value = limit, satisfying all three continuity parts ⟹ f becomes continuous at 1 (the line with the dot filled in). **Deep point:** the whole analysis flows from one factoring — a 0/0 form always means a shared root, and once the shared root is divided out, the limit, the graph's shape, and the repair value all fall out of the simplified expression."
   ],
   "formulas": [
-    "- lim_{x→a} f(x) = L ⟺ lim_{x→a⁻} = lim_{x→a⁺} = L\n- (x² − a²)/(x − a) = x + a (x ≠ a) ⟹ limit 2a\n- continuity at a: f(a) = lim_{x→a} f(x) (both exist)"
+    "lim_{x→a} f(x) = L ⟺ lim_{x→a⁻} = lim_{x→a⁺} = L",
+    "(x² − a²)/(x − a) = x + a (x ≠ a) ⟹ limit 2a",
+    "continuity at a: f(a) = lim_{x→a} f(x) (both exist)"
   ],
   "keyPoints": [
     "Limit: lim_{x->a} f(x) = L means f(x) approaches L as x approaches a from either side, x != a; the value at a is irrelevant. One-sided notation x -> a+, x -> a-. Indeterminate forms 0/0, inf/inf demand transformation (factor, rationalise, standard limits); 5/0 signals blow-up, not indeterminate. Continuity at a (three-part test): f(a) exists, limit exists, and they are equal - pen never lifts. Polynomial theorem: lim P(x) at a = P(a). Hole example: (x^2-4)/(x-2) -> x + 2 -> limit 4. Limits are the atomic operation behind derivatives, integrals and asymptotes."

@@ -6,7 +6,8 @@
     "In multiplication and division, the result is quoted with as many significant figures as the least precise factor. In addition and subtraction, the result is limited by the last decimal place that all terms share.",
     "Exact counted numbers, such as 2 in the formula 2πr, are not measured data. They do not limit the significant figures. A given radius of 1.20 m does.",
     "Scientific notation makes the significant figures obvious. 1.20 × 10^3 m has three significant figures. Writing 1200 m does not, unless extra information says the zeros are significant.",
-    "Rounding is done at the end of a calculation, not after every intermediate line, so that rounding error does not pile up. The final line should still not pretend to more digits than the data allow."
+    "Rounding is done at the end of a calculation, not after every intermediate line, so that rounding error does not pile up. The final line should still not pretend to more digits than the data allow.",
+    "**Precision vs accuracy — classified**\n\n| Term | Meaning | Good instrument shows |\n|---|---|---|\n| Accuracy | Close to true value | Small systematic error |\n| Precision | Close repeat values | Small random error |\n| Sig figs | Honest digits | Match instrument resolution |"
   ],
   "examples": [
     "Accuracy describes how close a measurement is to the accepted true value. Precision describes how close repeated measurements are to each other. A set of readings can be precise and still inaccurate if the instrument has a systematic offset.",

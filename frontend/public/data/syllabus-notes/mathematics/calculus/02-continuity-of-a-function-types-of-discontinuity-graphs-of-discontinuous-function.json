@@ -55,7 +55,9 @@
     "**NEB-style (4m): State the Intermediate Value Theorem and use it to show that f(x) = x − cos x has a root between 0 and π/2.** — **Theorem:** if f is continuous on the closed interval [a, b] and u lies between f(a) and f(b), then some c ∈ (a, b) satisfies f(c) = u. **Application:** f(x) = x − cos x is continuous on [0, π/2] (difference of continuous functions — closure). **Endpoint signs:** f(0) = 0 − cos 0 = **−1 < 0**; f(π/2) = π/2 − cos(π/2) = π/2 − 0 = **π/2 > 0**. Since 0 lies between −1 and π/2, the IVT supplies **c ∈ (0, π/2) with f(c) = 0** — the equation x = cos x has a solution in (0, π/2) ∎. **Bonus depth:** f′ = 1 + sin x ≥ 1 > 0 ⟹ f is strictly increasing ⟹ the root is unique — the Dottie number ≈ 0.739, the fixed point of cosine, certified by exactly this pair of arguments."
   ],
   "formulas": [
-    "- continuity: f(a) = lim_{x→a} f(x), both existing\n- species: removable / jump / infinite / oscillatory\n- rational triage: shared zeros → holes; survivors → walls"
+    "continuity: f(a) = lim_{x→a} f(x), both existing",
+    "species: removable / jump / infinite / oscillatory",
+    "rational triage: shared zeros → holes; survivors → walls"
   ],
   "numericals": [
     "Use  lim sin x/x = 1 (x→0, rad)  — pick reasonable values, solve, and check the units.",

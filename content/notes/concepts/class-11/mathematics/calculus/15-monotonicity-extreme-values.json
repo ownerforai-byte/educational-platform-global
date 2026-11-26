@@ -38,7 +38,8 @@
     "**NEB-style (6m): A rectangle has perimeter 40 cm. Find the dimensions that maximise its area, justifying the maximum.** — **Translate:** sides x and y with 2x + 2y = 40 ⟹ y = 20 − x, 0 < x < 20. **Objective:** A(x) = x(20 − x) = 20x − x². **Critical point:** A′ = 20 − 2x = 0 ⟹ **x = 10**. **Classify:** A″ = −4 < 0 ⟹ concave down everywhere ⟹ the critical point is the **absolute maximum** (a concave-down parabola's vertex is its global top). **Answer:** x = 10, y = 10 — the **square of side 10 cm**, area 100 cm². **Context sentence:** among all rectangles with perimeter 40, the square encloses the most area. **Deep point:** the optimisation grammar — constraint eliminates a variable, the derivative finds the critical point, the second derivative (or sign change) justifies, and the answer returns to the problem's units; the justification sentence is worth as much as the computation."
   ],
   "formulas": [
-    "- f′(c) = 0, f′ changes + → − ⟹ local max; − → + ⟹ local min\n- f′(c) = 0 and f″(c) > 0 ⟹ local min"
+    "f′(c) = 0, f′ changes + → − ⟹ local max; − → + ⟹ local min",
+    "f′(c) = 0 and f″(c) > 0 ⟹ local min"
   ],
   "keyPoints": [
     "f' > 0 => increasing; f' < 0 => decreasing (MVT promotes local signs to global). Critical points: f' = 0 OR f' fails - corners and cusps are candidates too. First-derivative test: the SIGN CHANGE classifies (+ to - max, - to + min, no change terrace). Second-derivative test: f''(c) > 0 min, < 0 max, = 0 inconclusive. Absolute extrema on [a,b]: compare critical values AND endpoints (EVT guarantees existence)."

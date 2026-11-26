@@ -50,7 +50,9 @@
     "**NEB-style (3m): For what values of k does the equation x² + kx + 9 = 0 have (i) equal roots, (ii) real roots?** — **(i) Equal roots ⟺ D = 0:** D = k² − 4(1)(9) = k² − 36 = 0 ⟹ **k = ±6**. For k = 6 the repeated root is −b/2a = −3; for k = −6 it is +3 — the parabola is tangent to the x-axis in either case. **(ii) Real roots ⟺ D ≥ 0:** k² − 36 ≥ 0 ⟹ **k ≤ −6 or k ≥ 6**, i.e. |k| ≥ 6 — outside the open interval (−6, 6) the parabola meets the axis (twice for |k| > 6, once at |k| = 6), and inside it the roots retreat into a conjugate complex pair."
   ],
   "formulas": [
-    "- x = (−b ± √D)/2a; D = b² − 4ac\n- α + β = −b/a; αβ = c/a; α² + β² = (α+β)² − 2αβ; |α − β| = √D/|a|\n- reconstruction: x² − (α+β)x + αβ = 0"
+    "x = (−b ± √D)/2a; D = b² − 4ac",
+    "α + β = −b/a; αβ = c/a; α² + β² = (α+β)² − 2αβ; |α − β| = √D/|a|",
+    "reconstruction: x² − (α+β)x + αβ = 0"
   ],
   "numericals": [
     "Use  x = (−b ± √D)/(2a)  — pick reasonable values, solve, and check the units.",

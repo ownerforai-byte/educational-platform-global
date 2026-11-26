@@ -102,7 +102,8 @@
     "Full-mark continuity answers report the continuity set AND each break's type AND the repair verdict."
   ],
   "formulas": [
-    "- Continuous at a ⟺ f(a) = lim_{x→a} f(x), both existing\n- Rational f = P/Q continuous wherever Q ≠ 0"
+    "Continuous at a ⟺ f(a) = lim_{x→a} f(x), both existing",
+    "Rational f = P/Q continuous wherever Q ≠ 0"
   ],
   "practiceQuestions": [
     "**NEB-style (6m): State where f(x) = √(x − 2)/(x − 3) is continuous, with reasons.** — **Domain:** radicand x − 2 ≥ 0 ⟹ x ≥ 2; denominator x ≠ 3 ⟹ domain [2, 3) ∪ (3, ∞). **Closure:** the numerator √(x−2) is continuous on [2, ∞) (root family, one-sided at the edge 2); the denominator is continuous and nonzero on the domain ⟹ the quotient is continuous wherever defined — **on [2, 3) ∪ (3, ∞)**, with right-continuity at the edge x = 2. **Suspects:** x = 3 is an exclusion (not in the domain — no continuity claim, and a wall: numerator → 1 ≠ 0). **Deep point:** the domain's edge converts the continuity claim at 2 to one-sided automatically — interval continuity's fine print in action.",

@@ -38,7 +38,8 @@
     "**NEB-style (6m): For y = x³ − 3x, find the local extrema and the inflection point, then assemble the sketch protocol's summary.** — **f′ = 3x² − 3 = 3(x−1)(x+1):** local max at (−1, 2), local min at (1, −2) (sign changes + → − and − → +). **f″ = 6x:** zero at 0, sign changes − to + ⟹ inflection at (0, 0). **Concavity:** down on (−∞, 0), up on (0, ∞). **Assembly:** the curve rises to the summit (−1, 2), descends through the inflection (0, 0) — where the descent is steepest (slope −3) — and bottoms at (1, −2) before rising again; the inflection sits exactly midway between the extremum pair, as symmetry demands for an odd cubic. **Deep point:** the inflection's slope (−3) is the steepest point of the descent — the slope's own minimum — confirming that inflection points are extrema of f′; the sketch protocol's layers interlock because each derivative narrates the next."
   ],
   "formulas": [
-    "- f″ > 0 ⟹ concave up; f″ < 0 ⟹ concave down\n- Inflection at c ⟺ f″ changes sign at c"
+    "f″ > 0 ⟹ concave up; f″ < 0 ⟹ concave down",
+    "Inflection at c ⟺ f″ changes sign at c"
   ],
   "keyPoints": [
     "f'' > 0 => concave up (slopes increasing); f'' < 0 => concave down. Point of inflection: concavity CHANGES - f'' = 0 is only a candidate; x^4 at 0 is the counterexample. Inflection candidates include f'' failures. At an inflection, f' has its own extremum - the growth rate peaks there. Tangent at inflection crosses the curve. Sketching protocol: domain, symmetry, f' table, f'' table, asymptotes."

@@ -74,6 +74,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "R, ρ and σ — who owns which factor · Quantity | Formula | Depends on | Unit · Resistance R | $V/I$ | material + geometry | ohm (&#937;) · Resistivity ρ | $RA/L$ | material + temperature only | &#937;m · Conductivity σ | 1/ρ = neμ | carrier density &#215; mobility | S/m · Temperature effect | $\\rho = \\rho_0(1+\\alpha\\Delta T)$ | &#945; &gt; 0 metals, &lt; 0 semiconductors | &#8212;  ·  Geometry effects on a wire's resistance · Change | Effect on R | Reason · Length doubled | R doubles | R &#8746; L · Diameter doubled | R quarters | A &#8746; d&#178; · Same mass, stretched to 2L | R &#215;4 | A halves too · Same volume, drawn to 3L | R &#215;9 | A = V/L shrinks 3&#215;"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Stretching a wire to n times its length multiplies R by n²** — both l and A change."
     },

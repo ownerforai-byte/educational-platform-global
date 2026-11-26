@@ -45,7 +45,9 @@
     "**NEB-style (5m): For f(x) = (x² − 1)/(x − 1) for x ≠ 1 with f(1) = 0, a student classifies the discontinuity at 1 as a jump. Correct the classification with full working.** — **Compute the sides:** (x²−1)/(x−1) = x + 1 for x ≠ 1 ⟹ LHL = **2**, RHL = **2**. **Jump requires:** finite, *unequal* one-sided limits — here they are **equal**, so this is not a jump. **Correct classification:** the limit exists (2) but f(1) = 0 ≠ 2 ⟹ **removable discontinuity** — a detached dot at (1, 0) over the hole at (1, 2); repair by f(1) = 2. **Why the error matters:** the student skipped the one-sided computation and guessed from the picture of \"a break\"; the taxonomy's categories are decided by *computed* side values, not by the mere presence of a discontinuity. **Deep point:** removable and jump are distinguished by exactly one comparison — LHL vs RHL — which is why computing both sides is non-negotiable in every discontinuity classification."
   ],
   "formulas": [
-    "- jump at a ⟺ LHL = L, RHL = M ∈ ℝ, L ≠ M\n- jump size = M − L; Heaviside: jump 1 at 0, right-continuous\n- ⌊x⌋: LHL = n − 1, RHL = n at each integer n"
+    "jump at a ⟺ LHL = L, RHL = M ∈ ℝ, L ≠ M",
+    "jump size = M − L; Heaviside: jump 1 at 0, right-continuous",
+    "⌊x⌋: LHL = n − 1, RHL = n at each integer n"
   ],
   "keyPoints": [
     "Jump discontinuity: LHL = L and RHL = M both finite with L != M; two-sided limit DNE; non-removable - no single f(a) repairs it. Jump size = M - L. Detection: compute both one-sided limits (branch selection) and compare. Homes: piecewise functions, floor/ceiling at integers, quantised signals, Heaviside step (0 below, 1 at/above 0, jump 1, right-continuous). One-sided continuity: f(a) = RHL => right-continuous; f(a) = LHL => left-continuous. Graph: vertical gap, closed dot on the owning side."

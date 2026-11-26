@@ -54,7 +54,9 @@
     "**NEB-style (2m): Explain why a force directed along the line joining the pivot to its point of application produces no torque.** — Torque is **τ = r × F** with magnitude rF sin θ, where θ is the angle between the position vector r and the force F. If F points **along the line through the pivot**, then θ = 0° or 180° and **sin θ = 0**, so |τ| = 0 — the force's line of action passes through the pivot and its **moment arm** (perpendicular distance r sin θ) is zero. Physically: pushing a door directly at the hinge cannot rotate it, no matter how hard you push. The same theorem explains why central forces (gravity along r) give planets zero torque and conserved angular momentum."
   ],
   "formulas": [
-    "- W = F·d = Fd cos θ (J)\n- τ = r × F, |τ| = rF sin θ (N·m); L = r × p; τ_net = 0 ⟹ L conserved\n- Resultant of two forces: √(F₁² + F₂² + 2F₁F₂cos α)"
+    "W = F·d = Fd cos θ (J)",
+    "τ = r × F, |τ| = rF sin θ (N·m); L = r × p; τ_net = 0 ⟹ L conserved",
+    "Resultant of two forces: √(F₁² + F₂² + 2F₁F₂cos α)"
   ],
   "specialNotes": [],
   "examNotes": [

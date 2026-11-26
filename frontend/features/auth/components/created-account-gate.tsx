@@ -46,10 +46,6 @@ export function CreatedAccountGate({
     if (live === APPROVED_ROUTE) router.replace("/login");
   }, [live, mode, router]);
 
-  if (!isAccessApprovalRequired()) {
-    return <>{children}</>;
-  }
-
   // Visitors without a device signup token must never sit behind a live
   // account-status poll — a cold backend or 5xx on /account-status used to
   // leave login/signup on "Checking your account status" forever while email,

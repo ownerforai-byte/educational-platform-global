@@ -38,7 +38,8 @@
     "**NEB-style (6m): Find dy/dx for the curve x³ + y³ = 3xy (the folium) at the point where x = y (first quadrant).** — **Find the point:** x = y ⟹ 2x³ = 3x² ⟹ x = 3/2 ⟹ point (3/2, 3/2). **Implicit differentiation:** 3x² + 3y²·y′ = 3y + 3x·y′ ⟹ divide 3: x² + y²y′ = y + xy′ ⟹ y′(y² − x) = y − x² ⟹ y′ = (y − x²)/(y² − x). **At (3/2, 3/2):** numerator = 3/2 − 9/4 = −3/4; denominator = 9/4 − 3/2 = 3/4 ⟹ y′ = **−1**. **Geometry check:** by symmetry about y = x, the curve crosses its symmetry line perpendicularly ⟹ slope −1 ✓. **Deep point:** the implicit answer (y − x²)/(y² − x) is a slope field — it works at every non-singular point of the folium, including the loop's far side where y is a *different* function of x; that multi-valued power is exactly what solving for y first could never deliver."
   ],
   "formulas": [
-    "- dy/dx = (dy/dt)/(dx/dt); d²y/dx² = [d(dy/dx)/dt]/(dx/dt)\n- d/dx(yⁿ) = n·yⁿ⁻¹·y′"
+    "dy/dx = (dy/dt)/(dx/dt); d²y/dx² = [d(dy/dx)/dt]/(dx/dt)",
+    "d/dx(yⁿ) = n·yⁿ⁻¹·y′"
   ],
   "keyPoints": [
     "Parametric: dy/dx = (dy/dt)/(dx/dt), dx/dt != 0. Second derivative: d(dy/dx)/dt divided by dx/dt - NOT the quotient of second derivatives (the cycloid trap). Implicit: chain rule on every y-term (d/dx y^2 = 2y y'), then solve linearly for y'. The implicit answer is a slope field - a function of position (x, y)."

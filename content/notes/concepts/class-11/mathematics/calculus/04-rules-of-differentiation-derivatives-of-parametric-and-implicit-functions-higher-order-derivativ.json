@@ -56,7 +56,10 @@
     "**NEB-style (6m): If y = (sin x)^{cos x}, show that dy/dx = y(cos x·cot x − sin x·log_e(sin x)), and find dy/dx at x = π/4.** — **Logarithmic differentiation:** ln y = cos x·ln(sin x). **Differentiate** (product rule on the right; y′/y on the left): y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x) = −sin x·ln(sin x) + cos x·cot x. **Multiply by y:** dy/dx = **y(cos x·cot x − sin x·log_e(sin x))** ∎ — the required form. **At x = π/4:** sin x = cos x = 1/√2; cot x = 1; y = (1/√2)^{1/√2}. Compute the bracket: cos x·cot x = (1/√2)(1) = 1/√2; sin x·ln(sin x) = (1/√2)·ln(1/√2) = (1/√2)(−½ ln 2) = −(ln 2)/(2√2). Bracket = 1/√2 + (ln 2)/(2√2) = (2 + ln 2)/(2√2). **Answer:** dy/dx = (1/√2)^{1/√2}·(2 + ln 2)/(2√2). **Deep points:** (1) keeping y unexpanded matches the target form — substituting (sin x)^{cos x} back is optional; (2) evaluating at a point tests whether the symbolic answer is computable — the bracket is a clean closed form, confirming the differentiation."
   ],
   "formulas": [
-    "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- chain: dy/dx = (dy/du)(du/dx)\n- parametric: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = (d/dt(dy/dx))/(dx/dt)\n- log-diff: y = u^v ⟹ y′ = y(v′ ln u + vu′/u)"
+    "(fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²",
+    "chain: dy/dx = (dy/du)(du/dx)",
+    "parametric: dy/dx = (dy/dt)/(dx/dt); d²y/dx² = (d/dt(dy/dx))/(dx/dt)",
+    "log-diff: y = u^v ⟹ y′ = y(v′ ln u + vu′/u)"
   ],
   "numericals": [
     "Use  f'(x) = lim [f(x+h)−f(x)]/h  — pick reasonable values, solve, and check the units.",

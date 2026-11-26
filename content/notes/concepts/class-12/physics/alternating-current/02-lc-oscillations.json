@@ -10,7 +10,8 @@
     "This is an analogy to a mechanical simple harmonic oscillator (mass-spring system).",
     "If a charged capacitor is connected to a pure inductor, the capacitor discharges through the coil, the current builds a magnetic field, and that field then pushes charge back onto the capacitor with the opposite sign.",
     "The charge on the capacitor is of the form Q = Q_0 cos ωt when it starts from rest at maximum charge. The current is the derivative and is maximum when the charge is zero.",
-    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge."
+    "The angular frequency of this exchange is ω = 1/√(LC). The frequency in hertz is f = 1/(2π√(LC)). It does not depend on the starting charge.",
+    "**LC oscillation — energy dance classified**\n\n| Instant | Energy max | Analogy |\n|---|---|---|\n| Charge max | Magnetic zero | Displaced spring |\n| Current max | Electric zero | Mass passing origin |"
   ],
   "confusion": [
     "❌ Thinking LC circuits lose energy immediately without resistance ✅ An ideal LC circuit (zero resistance) oscillates indefinitely; only practical circuits lose energy due to resistance (damped oscillations).",

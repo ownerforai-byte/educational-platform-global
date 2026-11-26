@@ -38,7 +38,8 @@
     "**NEB-style (6m): A particle moves with velocity v(t) = 3t² − 6t (m/s) and s(0) = 2 m. Find s(t) and the times when the particle is at rest.** — **Integrate:** s(t) = ∫(3t² − 6t)dt = t³ − 3t² + C; s(0) = 2 ⟹ **C = 2** ⟹ s(t) = t³ − 3t² + 2. **At rest:** v = 3t² − 6t = 3t(t − 2) = 0 ⟹ **t = 0 and t = 2 s**. **Verification:** s′ = 3t² − 6t = v ✓. **Deep point:** the physical reading — velocity is the derivative of position, so position is the anti-derivative of velocity with the initial position as the pinning condition; the rest times are the velocity's zeros, the same critical-point machinery from monotonicity now narrating a journey."
   ],
   "formulas": [
-    "- ∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C\n- ∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C"
+    "∫xⁿdx = xⁿ⁺¹/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C",
+    "∫dx/(1+x²) = tan⁻¹x + C; ∫dx/√(1−x²) = sin⁻¹x + C"
   ],
   "keyPoints": [
     "Anti-derivative: F' = f; the indefinite integral is a FAMILY F + C (equal derivatives differ by a constant - MVT corollary). Linearity carries over. Table = derivative table reversed: x^(n+1)/(n+1) (n != -1), ln|x|, e^x, -cos, sin, sec^2, tan^-1, sin^-1. The n = -1 gap is filled by the logarithm. Verify every integral by differentiating the answer. Initial conditions pin C - the first differential equations."

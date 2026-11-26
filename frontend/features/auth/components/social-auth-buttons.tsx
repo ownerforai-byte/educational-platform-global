@@ -9,10 +9,8 @@ import { firebaseGoogleSignIn, isFirebaseAuthEnabled } from "@/lib/firebase/clie
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
 import {
-  defaultMemberHomePath,
-  isAccessApprovalRequired,
-  postAuthLandingPath,
 } from "@/lib/core/access-approval";
+import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   clearPendingSignup,
   rememberAccessOutcome,
@@ -145,15 +143,11 @@ export function SocialAuthButtons({
 
       const oauthBody = response as unknown as { code?: string; statusToken?: string };
       if (oauthBody.code === "PENDING_APPROVAL") {
-        if (isAccessApprovalRequired()) {
-          if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
-          rememberAccessOutcome("PENDING");
-          router.replace(WAITING_ROUTE);
-          redirected = true;
-          return;
-        }
-        clearPendingSignup();
-        router.replace(defaultMemberHomePath());
+        // Backend verdict is authoritative — the approval flag belongs to the
+        // waiting screen, not to the routing decision.
+        if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.replace(WAITING_ROUTE);
         redirected = true;
         return;
       }
@@ -165,20 +159,16 @@ export function SocialAuthButtons({
       setStoredToken(response.accessToken);
       writeCachedSession(response.user, response.accessToken);
       refresh();
-      router.replace(postAuthLandingPath(response.user));
+      router.replace(tierHomePathFor(response.user));
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
       const authErr = oauthError as { code?: string; statusToken?: string };
       if (authErr?.code === "PENDING_APPROVAL") {
-        if (isAccessApprovalRequired()) {
-          if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
-          rememberAccessOutcome("PENDING");
-          router.replace(WAITING_ROUTE);
-        } else {
-          clearPendingSignup();
-          router.replace(defaultMemberHomePath());
-        }
+        // Backend verdict is authoritative — see the session branch above.
+        if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.replace(WAITING_ROUTE);
         redirected = true;
         return;
       }

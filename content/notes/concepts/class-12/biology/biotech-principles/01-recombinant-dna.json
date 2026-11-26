@@ -17,7 +17,8 @@
       "The host's own DNA is protected because those same sites are methylated. The enzyme's natural job is to cut unprotected DNA, such as a phage genome. In the lab that specificity is what makes the cut reproducible.",
       "DNA ligase seals the nicks by forming phosphodiester bonds. Sticky-end joining is efficient. Blunt ends can be joined too, but much less readily. Ligase is the seal, and the restriction enzyme is the cut. They are not interchangeable.",
       "The vector is usually a plasmid: circular, extra-chromosomal bacterial DNA with its own origin of replication. A cloning vector also needs a selectable marker, such as antibiotic resistance, and a site where the foreign DNA can be inserted. pBR322 carries ampicillin and tetracycline resistance genes and is the classic teaching plasmid.",
-      "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert."
+      "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert.",
+      "**rDNA technology — steps classified**\n\n| Step | Action | Enzyme/tool |\n|---|---|---|\n| Cut | Isolate gene and vector | Restriction endonuclease |\n| Join | Insert into vector | DNA ligase |\n| Transfer | Into host cell | Transformation |\n| Select | Identify recombinants | Marker genes |"
     ]
   },
   "notes": [
@@ -26,7 +27,8 @@
     "The host's own DNA is protected because those same sites are methylated. The enzyme's natural job is to cut unprotected DNA, such as a phage genome. In the lab that specificity is what makes the cut reproducible.",
     "DNA ligase seals the nicks by forming phosphodiester bonds. Sticky-end joining is efficient. Blunt ends can be joined too, but much less readily. Ligase is the seal, and the restriction enzyme is the cut. They are not interchangeable.",
     "The vector is usually a plasmid: circular, extra-chromosomal bacterial DNA with its own origin of replication. A cloning vector also needs a selectable marker, such as antibiotic resistance, and a site where the foreign DNA can be inserted. pBR322 carries ampicillin and tetracycline resistance genes and is the classic teaching plasmid.",
-    "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert."
+    "The recombinant plasmid is taken up by a competent cell. Competence is arranged with cold calcium chloride or by electroporation. Cells that took up the plasmid are selected on the antibiotic. Cells without the plasmid die. That living colony is the clone that multiplies the insert.",
+    "**rDNA technology — steps classified**\n\n| Step | Action | Enzyme/tool |\n|---|---|---|\n| Cut | Isolate gene and vector | Restriction endonuclease |\n| Join | Insert into vector | DNA ligase |\n| Transfer | Into host cell | Transformation |\n| Select | Identify recombinants | Marker genes |"
   ],
   "confusion": [
     "Restriction enzymes do not cut at random. Each one has its own site, which is why a plasmid gives the same fragments every time.",

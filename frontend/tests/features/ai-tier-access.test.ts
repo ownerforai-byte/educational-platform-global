@@ -82,7 +82,8 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
   it("integrates all four professor engines without redirecting deep questions", () => {
     const src = read("components/layout/ai-widget.tsx");
     expect(src).toContain("streamChat");
-    expect(src).toContain("saveChatHistory");
+    // History persistence moved to recordAccountChatTurn (wraps saveChatHistory).
+    expect(src).toContain("recordAccountChatTurn");
     expect(src).toContain('"/api/ai/solve-math"');
     expect(src).toContain('"/api/ai/deep-dive"');
     expect(src).toContain("generateQuestions");
@@ -97,7 +98,13 @@ describe("Veer chat: routes stay metered, professor workspace is Plus-gated", ()
       .split("\n")
       .filter((l) => /href: "\/(ai|chat)(\/|")/.test(l));
     expect(chatLines.length).toBeGreaterThanOrEqual(6);
-    for (const line of chatLines) expect(line).not.toContain("ownerOnly");
+    // Exception (owner 2026-11-18): /ai/quad — the four-model comparison desk —
+    // is deliberately owner-only at the nav, the page and the API. Every other
+    // /ai and /chat surface stays metered, never owner-locked.
+    for (const line of chatLines) {
+      if (line.includes('"/ai/quad"')) continue;
+      expect(line).not.toContain("ownerOnly");
+    }
   });
 
   it("/ai + /chat are public (AI-spark metered), never content-spark locked", () => {

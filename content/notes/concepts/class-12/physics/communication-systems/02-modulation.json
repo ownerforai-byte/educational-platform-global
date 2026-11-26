@@ -10,7 +10,8 @@
     "The modulated wave contains the carrier and two sidebands, one at f_c + f_m and one at f_c − f_m. If the highest message frequency is f_m, the bandwidth occupied is 2 f_m.",
     "Frequency modulation keeps the amplitude constant and shifts the carrier frequency with the message. It uses a wider band than AM and is less bothered by amplitude noise.",
     "The modulation index in AM is the fractional change in amplitude. An index above 1 means overmodulation: the envelope no longer matches the message and the receiver distorts it.",
-    "Demodulation at the receiver strips the carrier and returns the message. A diode detector followed by a filter is the simple AM method taught with this page."
+    "Demodulation at the receiver strips the carrier and returns the message. A diode detector followed by a filter is the simple AM method taught with this page.",
+    "**Modulation — types classified**\n\n| Type | Varied parameter | Note |\n|---|---|---|\n| AM | Amplitude | Simple, noise-prone |\n| FM | Frequency | Noise-resistant, wider band |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in modulation.",

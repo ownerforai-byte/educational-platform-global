@@ -38,7 +38,9 @@
     "The cross product is the dot product's complement: cos th measures agreement, sin th measures perpendicular cooperation — and sin th doubles as the area ratio."
   ],
   "formulas": [
-    "- a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)\n- a ∥ b ⟺ a × b = 0; a × b = −(b × a)\n- parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²"
+    "a × b = |î ĵ k̂; a₁ a₂ a₃; b₁ b₂ b₃| = (a₂b₃−a₃b₂, a₃b₁−a₁b₃, a₁b₂−a₂b₁)",
+    "a ∥ b ⟺ a × b = 0; a × b = −(b × a)",
+    "parallelogram area |a × b|; triangle area ½|a × b|; Lagrange: |a × b|² = |a|²|b|² − (a·b)²"
   ],
   "examples": [
     "***Half a parallelogram*** — the triangle with sides a, b is exactly half the parallelogram they span: Delta = (1/2)|a x b|; forgetting the half doubles every triangle-area answer."

@@ -74,6 +74,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Potential divider relations (classified) · Quantity | Formula | Note · Output (unloaded) | V_out = V R₂/(R₁+R₂) | Ratio of resistances · Loaded output | V_out = V R₂‖R_L/(R₁+R₂‖R_L) | Drops when loaded · Rheostat use | V_out sweeps 0 → V | Slider varies ratio · Sensor use | R₂ = LDR/thermistor | Voltage senses conditions  ·  Divider applications · Application | Component chosen | What changes · Volume control | Rheostat/pot | Slider position · Light sensor | LDR | Illumination · Temperature sensor | Thermistor | Temperature · Bias supply | Fixed pair | Fixed fraction"
+    },
+    {
       "label": "Quick concepts",
       "text": "**A divider taps a fraction; a potentiometer taps any fraction continuously.**"
     },

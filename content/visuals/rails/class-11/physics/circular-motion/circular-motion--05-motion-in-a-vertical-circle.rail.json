@@ -73,6 +73,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Vertical circle — critical points classified · Point | Tension/force | Condition · Top | Minimum | v >= sqrt(gr) · Bottom | Maximum | T - mg = mv^2/r · Side | Intermediate | Radial + tangential parts"
+    },
+    {
       "label": "Quick concepts",
       "text": "**The taut-string condition:** the loop survives only if $T_{top} \\ge 0$, i.e. gravity alone can bend the path at the top."
     },
@@ -107,6 +111,10 @@
     {
       "label": "More ideas",
       "text": "Solve 2 problems where the string goes slack before reaching the top.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Mechanics | Circular motion | A stone is whirled in a vertical circle of radius 1 m.…  ·  ```svg Vertical circle — tension largest at the bottom <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><circle cx=\"320\" cy=\"140\" r=\"90\" fill=\"none\" stroke=\"#9ca3af\" stroke-width=\"1.5\"/><circle cx=\"320\" cy=\"50\" r=\"8\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**Vertical circle — critical points classified** | Point | Tension/force | Condition | |---|---|---| | Top | Minimum | v >= sqrt(gr) | | Bottom | Maximum | T - mg = mv^2/r | | Side | Intermediate | Radial + tangential parts |"
     }
   ]
 }

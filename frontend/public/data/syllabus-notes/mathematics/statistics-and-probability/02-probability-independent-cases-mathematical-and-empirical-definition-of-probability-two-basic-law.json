@@ -46,7 +46,10 @@
     "**NEB-style (3m): Machine A produces 60% of a factory's items with 2% defective rate; machine B produces 40% with 5% defective rate. An item chosen at random is found defective. Find the probability that it was produced by machine A.** — **Total probability:** P(D) = P(A)P(D|A) + P(B)P(D|B) = (0.6)(0.02) + (0.4)(0.05) = 0.012 + 0.020 = **0.032**. **Bayes' theorem:** P(A|D) = P(A)P(D|A)/P(D) = 0.012/0.032 = **3/8 = 0.375**. **Reading:** although A makes more items and has fewer defects, the evidence \"defective\" shifts the probability toward B — the posterior 0.375 is below the prior 0.6, exactly the re-weighting Bayes formalises."
   ],
   "formulas": [
-    "- P(A) = m/n; P(A′) = 1 − P(A)\n- P(A∪B) = P(A) + P(B) − P(A∩B); exclusive: P(A) + P(B)\n- P(A|B) = P(A∩B)/P(B); P(A∩B) = P(A)P(B|A)\n- Bayes: P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ)/Σⱼ P(Aⱼ)P(B|Aⱼ)"
+    "P(A) = m/n; P(A′) = 1 − P(A)",
+    "P(A∪B) = P(A) + P(B) − P(A∩B); exclusive: P(A) + P(B)",
+    "P(A|B) = P(A∩B)/P(B); P(A∩B) = P(A)P(B|A)",
+    "Bayes: P(Aᵢ|B) = P(Aᵢ)P(B|Aᵢ)/Σⱼ P(Aⱼ)P(B|Aⱼ)"
   ],
   "numericals": [
     "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",

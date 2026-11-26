@@ -77,6 +77,10 @@
       "text": "Deriving $g' = g\\left(1 - \\frac{2h}{R}\\right)$ from the binomial expansion is frequently asked.  ·  Sketch-the-graph questions (inside + outside) appear in exams."
     },
     {
+      "label": "Classified table",
+      "text": "Variation of g (classified) · Position | Formula | Effect · Altitude h | g&#8217; = g(1 − 2h/R) for h≪R | Decreases · Depth d | g&#8217; = g(1 − d/R) | Decreases linearly · Rotation (latitude) | g&#8217; = g − ω²R cos²λ | Least at equator · Centre of Earth | g = 0 | Shell theorem  ·  Comparing two locations · Case | Which g larger | Reason · Pole vs equator | Pole | Smaller radius, no spin term · Sea vs mountain | Sea | Closer to centre · Mine vs surface | Surface | Depth reduces g · Planet mass doubles, R same | g doubles | g = GM/R²"
+    },
+    {
       "label": "Quick concepts",
       "text": "Altitude: $g' = g\\left(\\frac{R}{R+h}\\right)^2$ (inverse-square fall above the surface).  ·  Depth: $g' = g\\left(1 - \\frac{d}{R}\\right)$ (linear fall inside).  ·  g is maximum at Earth's surface.  ·  Rotation and ellipticity cause small latitude variations."
     },

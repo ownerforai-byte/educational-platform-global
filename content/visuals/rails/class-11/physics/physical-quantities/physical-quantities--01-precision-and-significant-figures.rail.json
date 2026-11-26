@@ -69,6 +69,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "2. Fundamental Concepts · Term | Definition · **Physical quantity** | A property that can be measured, expressed as a number times a unit · **Fundamental (base) quantities** | Seven independent quantities: length (m), mass (kg), time (s), electric current (A), thermodynamic temperature (K), amount of substance (mol), luminous intensity (cd) · **Derived quantities** | Built from base quantities: velocity (m/s), force (kg·m/s² = N), etc.…  ·  Significant figures are the digits in a number that carry meaning — all certain digits plus one uncertain digit. · Rule | Example · All non-zero digits are significant | 247.5 → 4 s.f. · Zeros between non-zero digits are significant | 2004 → 4 s.f. · Leading zeros are **not** significant | 0.00320 → 3 s.f. (3, 2, 0) · Trailing zeros after a decimal point are significant | 2.300 → 4 s.f.…"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Every measurement carries an uncertainty:** stating 25.0 ± 0.1 cm is more honest and more examinable than 25 cm alone."
     },

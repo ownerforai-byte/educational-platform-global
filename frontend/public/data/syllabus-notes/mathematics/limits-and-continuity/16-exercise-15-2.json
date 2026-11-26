@@ -45,7 +45,10 @@
     "**NEB-style (6m): Evaluate lim_{x→0} (tan 3x − sin 3x)/x³ and verify with the identity tan x − sin x = sin x(1 − cos x)/cos x.** — **Identity reshape:** (tan 3x − sin 3x)/x³ = [sin 3x(1 − cos 3x)]/[x³ cos 3x] = [(sin 3x)/(3x)]·[(1 − cos 3x)/(3x)²]·[(3x)³/(x³)]·[1/cos 3x]. **Star values:** (sin 3x)/(3x) → **1**; (1 − cos 3x)/(3x)² → **1/2**; (3x)³/x³ = **27**; 1/cos 3x → **1** (continuity of cos at 0). **Product: 1 · 1/2 · 27 · 1 = **27/2**. **Order check:** tan 3x − sin 3x ~ 3x·(9x²/2) = 27x³/2 ⟹ over x³ ⟹ 27/2 ✓. **Deep point:** the difference of two order-1 functions (tan, sin) is an order-3 quantity — the first orders *cancel*, which is why the answer lives at x³ and why direct star-matching fails without the identity that factors out the common sin 3x; cancellation of leading orders is the general mechanism behind every higher-order drill."
   ],
   "formulas": [
-    "- sin(ax)/x → a; tan(ax)/x → a; sin(ax)/sin(bx) → a/b\n- (1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a\n- (tan ax − sin ax)/x³ → a³/2\n- split rule: lim fg = lim f · lim g when both exist"
+    "sin(ax)/x → a; tan(ax)/x → a; sin(ax)/sin(bx) → a/b",
+    "(1 − cos ax)/x² → a²/2; (e^{ax} − 1)/x → a; ln(1+ax)/x → a",
+    "(tan ax − sin ax)/x³ → a³/2",
+    "split rule: lim fg = lim f · lim g when both exist"
   ],
   "keyPoints": [
     "Exercise 15.2 reduction patterns: (1) coefficient extraction - sin(ax)/x -> a, tan(ax)/x -> a, sin(ax)/sin(bx) -> a/b; (2) half-angle - (1 - cos ax)/x^2 -> a^2/2; (3) exp/log - (e^(ax) - 1)/x -> a, ln(1+ax)/x -> a; (4) 1^inf powers via the bridge e^(lim uv). Mantra: the coefficient a survives, the argument dies. Split only when every factor's limit exists (limit product theorem). u-substitution: inner argument -> 0 licenses the star in u (composite limit theorem). Signature compound: (tan 3x - sin 3x)/x^3 -> 27/2 via three stars."

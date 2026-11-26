@@ -70,6 +70,10 @@
       "text": "Draw energy band diagrams showing E_c, E_v, E_F, E_d/E_a for each type.  ·  Calculate carrier concentrations given doping level and n_i."
     },
     {
+      "label": "Classified table",
+      "text": "Semiconductors — classified by doping · Type | Dopant | Carriers · Intrinsic | None | Electron = hole · n-type | Pentavalent (P, As) | Electrons majority · p-type | Trivalent (B, Al) | Holes majority"
+    },
+    {
       "label": "Key points",
       "text": "Intrinsic: pure semiconductor, n = p = n_i, conductivity limited by E_g.  ·  n-type: group V dopants donate electrons; n ≫ p; E_F near E_c.  ·  p-type: group III dopants create holes; p ≫ n; E_F near E_v.  ·  Mass action law np = n_i² holds always at equilibrium."
     },

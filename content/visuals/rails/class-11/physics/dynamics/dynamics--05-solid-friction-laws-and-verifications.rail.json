@@ -72,6 +72,10 @@
       "text": "Slope problems are the most common — know the tan θ vs μ_s check and the a = g(sin θ − μ_k cos θ) formula.  ·  Pulling/pushing at an angle changes the normal force — always recalculate N before finding friction."
     },
     {
+      "label": "Classified table",
+      "text": "Static vs kinetic friction · Property | Static friction | Kinetic friction · Acts when | no relative sliding | surfaces sliding · Magnitude | self-adjusting, $0 \\le f_s \\le \\mu_s N$ | nearly constant, $f_k = \\mu_k N$ · Coefficient | $\\mu_s$ (larger) | $\\mu_k$ (smaller, $\\mu_k < \\mu_s$) · Direction | opposes *impending* motion | opposes actual sliding · On an incline | slips when $\\tan\\theta > \\mu_s$ | $a = g(\\sin\\theta - \\mu_k\\cos\\theta)$  ·  Laws of friction and their limits · Law | Statement | Limit / caveat · Normal dependence | $f \\propto N$ | holds for dry surfaces; fails under lubrication · Area independence | f independent of apparent area | true only for *apparent* area; real contact area &#8746; N · Speed independence | $f_k$ roughly speed-independent | only at moderate speeds · Material pair dependence | &#956; depends on both surfaces | rubber-on-road &#8776; 1; ice-on-ice &#8776;…"
+    },
+    {
       "label": "Quick concepts",
       "text": "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.  ·  Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).  ·  μ_k < μ_s — harder to start sliding than to keep sliding.  ·  The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s."
     },

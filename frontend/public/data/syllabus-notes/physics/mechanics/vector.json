@@ -10,7 +10,8 @@
     "Worked example: a 10 N force at 30° above +x has Fx=8.66 N and Fy=5.00 N. Recovering its magnitude gives √(8.66²+5.00²)≈10 N.",
     "Add vectors by components: (3,4)+(−1,2)=(2,6), with magnitude √40≈6.32. The dot product ABcosθ is scalar; the cross product has magnitude ABsinθ and a perpendicular direction.",
     "Check a result against the diagram: the resultant should lie between the component directions, and its magnitude should not exceed the sum of component magnitudes.",
-    "Displacement, velocity, acceleration and force are vectors. Distance, speed, mass and energy are scalars. Two vectors of equal magnitude can add to anything between zero and twice one of them, depending on the angle, so the magnitude alone never fixes the resultant."
+    "Displacement, velocity, acceleration and force are vectors. Distance, speed, mass and energy are scalars. Two vectors of equal magnitude can add to anything between zero and twice one of them, depending on the angle, so the magnitude alone never fixes the resultant.",
+    "**Vectors — classified by requirement**\n\n| Class | Needs | Example |\n|---|---|---|\n| Scalar | Magnitude only | Mass, time |\n| Vector | Magnitude + direction + addition law | Displacement, force |\n| Unit vector | Magnitude 1, direction only | i-hat, j-hat |"
   ],
   "confusion": [
     "The angle in component formulas must be measured from the stated axis.",

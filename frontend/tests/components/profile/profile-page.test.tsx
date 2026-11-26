@@ -385,16 +385,20 @@ describe("ProfilePage", () => {
     expect(avatar).toHaveAttribute("loading", "eager");
     expect(avatar).toHaveAttribute("sizes");
     expect(screen.queryByText("HS")).not.toBeInTheDocument();
-    const cover = document.querySelector(
-      'img[src="/api/profile/media?path=profiles%2Fu1%2Fcover-1.webp"]',
-    );
-    expect(cover).toBeTruthy();
-    expect(cover).toHaveAttribute("loading", "eager");
-    expect(cover).toHaveAttribute("sizes");
 
     fireEvent.click(screen.getByRole("button", { name: /my profile/i }));
     expect(await screen.findAllByRole("img", { name: "Harindra Sah" })).not.toHaveLength(0);
     expect(screen.queryByText("HS")).not.toBeInTheDocument();
+    // The cover hero lives on the full record view (the Info header dropped it
+    // in 537ff9a1) — assert it there, still eager with responsive sizes.
+    await waitFor(() => {
+      const cover = document.querySelector(
+        'img[src="/api/profile/media?path=profiles%2Fu1%2Fcover-1.webp"]',
+      );
+      expect(cover).toBeTruthy();
+      expect(cover).toHaveAttribute("loading", "eager");
+      expect(cover).toHaveAttribute("sizes");
+    });
   });
 
   it("filters the activity feed with search, status chips and clear", async () => {

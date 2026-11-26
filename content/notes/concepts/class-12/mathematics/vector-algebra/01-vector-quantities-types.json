@@ -12,7 +12,8 @@
     "**Dot product:** **a**·**b** = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃. Result is scalar.",
     "**Cross product:** **a**×**b** = |a||b|sinθ · n̂. Result is vector perpendicular to both a and b.",
     "**Unit vector:** â = **a**/|**a**|. Standard unit vectors: î, ĵ, k̂ along x,y,z axes.",
-    "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes."
+    "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes.",
+    "**Vector types — classified**\n\n| Type | Definition | Example |\n|---|---|---|\n| Unit | Magnitude 1 | Direction marker |\n| Position | From origin | Coordinates |\n| Equal | Same magnitude and direction | Free vectors |"
   ],
   "confusion": [
     "❌ 'Vector magnitude can be negative' ✅ Magnitude is defined as the absolute length, so it is always ≥ 0.",

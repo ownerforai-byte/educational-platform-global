@@ -44,7 +44,10 @@
     "**NEB-style (3m): Two machines fill packets with means 500 g and 505 g and standard deviations 4 g and 6 g respectively. Which is more consistent?** — **Coefficient of variation** is the fair comparator: C.V.₁ = (4/500) × 100 = **0.8%**; C.V.₂ = (6/505) × 100 ≈ **1.19%**. The **lower C.V. indicates greater consistency**, so **machine 1 is more consistent** — its spread is smaller relative to its mean, even though its absolute σ (4 g) is being compared against a slightly different mean. The C.V. exists precisely because raw σ cannot be compared across different means."
   ],
   "formulas": [
-    "- σ² = (1/n)Σ(xᵢ − x̄)² = (1/n)Σxᵢ² − x̄²; σ = √σ²\n- C.V. = (σ/x̄) × 100%\n- Pearson skewness: (x̄ − mode)/σ or 3(x̄ − median)/σ\n- Σi² = n(n+1)(2n+1)/6; variance of first n naturals = (n²−1)/12"
+    "σ² = (1/n)Σ(xᵢ − x̄)² = (1/n)Σxᵢ² − x̄²; σ = √σ²",
+    "C.V. = (σ/x̄) × 100%",
+    "Pearson skewness: (x̄ − mode)/σ or 3(x̄ − median)/σ",
+    "Σi² = n(n+1)(2n+1)/6; variance of first n naturals = (n²−1)/12"
   ],
   "numericals": [
     "Use  ω = (μv − μr)/(μd − 1)  — pick reasonable values, solve, and check the units.",

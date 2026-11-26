@@ -73,6 +73,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "The cooling law in three forms · Form | Equation | Use · Differential | $dT/dt = -k(T - T_s)$ | statement of the law · Integrated | $T = T_s + (T_0 - T_s)e^{-kt}$ | temperature at time t · Log form | $\\ln(T - T_s) = \\ln(T_0 - T_s) - kt$ | straight line; slope = &#8722;k · Half-gap time | $t_{1/2} = \\ln 2/k$ | gap halves every fixed interval  ·  Validity and failure of the law · Condition | Law holds? | Reason · Small excess temperature (&lt; ~20&#176;C) | yes | linearises the T&#8308; radiation term · Gentle forced convection | yes | heat flow &#8746; &#916;T · Large &#916;T (red-hot object) | no | radiation &#8746; T&#8308; dominates · Changing ambient Ts | no | law assumes fixed surroundings"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Exponential decay of excess temperature** — the signature prediction of Newton's law."
     },

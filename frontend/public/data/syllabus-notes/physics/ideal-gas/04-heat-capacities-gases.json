@@ -17,7 +17,8 @@
     "Degrees of Freedom f: Each quadratic DOF contributes (1/2)R to C_v per mole. Monatomic: f = 3 (translational) → C_v = 3R/2. Diatomic: f = 5 (3 trans + 2 rot) → C_v = 5R/2. Vibrational modes add R each (kinetic + potential) but activate only at high T.",
     "Temperature Dependence: At very low T, rotational/vibrational modes freeze out (quantum effect). C_v decreases below classical prediction. At high T, vibrational modes activate, increasing C_v toward equipartition limit.",
     "Experimental Measurement: C_v measured in bomb calorimeter (fixed volume). C_p measured in flow calorimeter or derived from C_v + R. Adiabatic expansion methods (Clement-Desormes) determine γ directly.",
-    "Applications: γ determines speed of sound v = √(γRT/M), adiabatic lapse rate in atmosphere, efficiency of Carnot and Otto cycles, and shock wave properties."
+    "Applications: γ determines speed of sound v = √(γRT/M), adiabatic lapse rate in atmosphere, efficiency of Carnot and Otto cycles, and shock wave properties.",
+    "**Gas heat capacities — Cp vs Cv classified**\n\n| Quantity | Condition | Relation |\n|---|---|---|\n| Cv | Constant volume | All heat raises U |\n| Cp | Constant pressure | Heat raises U + does work |\n| Mayer | Link | Cp - Cv = R |\n| Gamma | Ratio | Cp/Cv = 5/3 (mono) |"
   ],
   "specificConditions": [
     "Ideal Gas Assumption: Mayer's relation C_p − C_v = R holds exactly only for ideal gases. Real gases show deviations at high P or low T.",

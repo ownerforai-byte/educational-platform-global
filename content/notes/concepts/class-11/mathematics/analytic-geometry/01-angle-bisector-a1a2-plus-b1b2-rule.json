@@ -32,7 +32,8 @@
     "**NEB-style (6m): Show that the two bisectors of any two intersecting lines are perpendicular, using their equations.** — **Setup:** bisectors B₊: (N₁ = N₂) and B₋: (N₁ = −N₂) where Nᵢ = (aᵢx+bᵢy+cᵢ)/√(aᵢ²+bᵢ²) are the normalised forms. **Expand:** B₊: (a₁/√d₁ − a₂/√d₂)x + (b₁/√d₁ − b₂/√d₂)y + (const) = 0; B₋: (a₁/√d₁ + a₂/√d₂)x + (b₁/√d₁ + b₂/√d₂)y + (const) = 0. **Normal vectors:** u = (a₁/√d₁ − a₂/√d₂, b₁/√d₁ − b₂/√d₂) and v = (a₁/√d₁ + a₂/√d₂, b₁/√d₁ + b₂/√d₂). **Dot product:** u·v = (a₁²/d₁ − a₂²/d₂) + (b₁²/d₁ − b₂²/d₂) = (a₁² + b₁²)/d₁ − (a₂² + b₂²)/d₂ = 1 − 1 = **0** ∎. **Deep point:** the perpendicularity is not an accident to check numerically but an identity — the normalised coefficients' squares are exactly 1, so the cross terms cancel and the dot product vanishes for *every* pair of lines; the general proof is shorter than most numerical verifications."
   ],
   "formulas": [
-    "- (a₁x+b₁y+c₁)/√(a₁²+b₁²) = ±(a₂x+b₂y+c₂)/√(a₂²+b₂²)\n- c₁, c₂ > 0 and a₁a₂ + b₁b₂ < 0 ⟹ (+) bisector is acute"
+    "(a₁x+b₁y+c₁)/√(a₁²+b₁²) = ±(a₂x+b₂y+c₂)/√(a₂²+b₂²)",
+    "c₁, c₂ > 0 and a₁a₂ + b₁b₂ < 0 ⟹ (+) bisector is acute"
   ],
   "keyPoints": [
     "Normalise: (ax+by+c)/sqrt(a^2+b^2) is the signed distance. Bisectors: normalised forms equal up to +-; the pair is always perpendicular. Convention first: make c1, c2 > 0; then a1a2 + b1b2 < 0 => (+) bisector is acute, > 0 => obtuse. Origin side: constants positive, take (+). The rule is the dot product of the normal vectors read as wedge geometry."

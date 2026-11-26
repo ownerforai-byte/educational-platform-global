@@ -6,7 +6,8 @@
     "- Internal energy U is a state function, so ΔU depends only on the initial and final states. Heat and work depend on the path taken between those states.",
     "- In a cyclic process the system returns to its start, so ΔU = 0 and Q = W: the net heat absorbed equals the net work done by the system.",
     "- An isolated system has Q = 0 and W = 0, so ΔU = 0. A machine that produces work with no energy input contradicts this law.",
-    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas."
+    "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",
+    "**First law — sign conventions classified**\n\n| Term | Positive when | Meaning |\n|---|---|---|\n| dQ | Heat added to system | Energy in |\n| dW | Work done by system | Energy out |\n| dU | Internal energy rise | Stored energy |\n| Law | dQ = dU + dW | Energy conservation |"
   ],
   "examples": [
     "The first law says the rise in internal energy equals the heat added to the system plus the work done on the system. A common school form writes ΔQ = ΔU + ΔW with ΔW the work done by the gas. The two forms agree if you keep the sign of W consistent. This note uses work done on the gas.",

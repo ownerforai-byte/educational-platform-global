@@ -74,6 +74,10 @@
       "text": "Calculate v_rms numerically: convert M to kg/mol (e.g., O₂ = 0.032 kg/mol).  ·  Compare speeds of two gases at same T using v₁/v₂ = √(M₂/M₁)."
     },
     {
+      "label": "Classified table",
+      "text": "Molecular speeds — the three averages classified · Speed | Formula | Size order · RMS | sqrt(3kT/m) | Largest · Average | sqrt(8kT/pi m) | Middle · Most probable | sqrt(2kT/m) | Smallest"
+    },
+    {
       "label": "Key points",
       "text": "k = 1.38 × 10⁻²³ J/K bridges macroscopic T and microscopic energy.  ·  v_rms = √(3RT/M): depends on T and M, not on P or V directly.  ·  At same T, all gases have same ⟨KE⟩ but different v_rms.  ·  v_rms > v_avg > v_mp always for Maxwellian distribution."
     },

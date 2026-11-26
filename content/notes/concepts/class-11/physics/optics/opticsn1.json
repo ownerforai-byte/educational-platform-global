@@ -10,7 +10,8 @@
     "When light travels from higher to lower refractive index, refraction bends away from the normal. Above the critical angle c, total internal reflection occurs: sin c=n2/n1.",
     "Example: glass n1=1.50 to air n2=1.00 gives c=sin⁻¹(1/1.50)≈41.8°. At incidence 50° there is TIR; at 30° the ray refracts into air.",
     "When an opening approaches the wavelength, diffraction spreads the wave and a ray-only model is insufficient; interference and polarisation also require wave optics.",
-    "Geometrical optics draws straight rays and ignores phase. That picture is good for lenses and mirrors whose openings are huge compared with the wavelength of light. When a slit or an obstacle is only tens or hundreds of wavelengths across, diffraction bends the energy out of the ray prediction."
+    "Geometrical optics draws straight rays and ignores phase. That picture is good for lenses and mirrors whose openings are huge compared with the wavelength of light. When a slit or an obstacle is only tens or hundreds of wavelengths across, diffraction bends the energy out of the ray prediction.",
+    "**Reflection laws — classified**\n\n| Law | Statement | Note |\n|---|---|---|\n| First | Angle i = angle r | Same plane |\n| Second | Incident, normal, reflected coplanar | Holds for all surfaces |"
   ],
   "confusion": [
     "A low-to-high index ray cannot undergo total internal reflection.",

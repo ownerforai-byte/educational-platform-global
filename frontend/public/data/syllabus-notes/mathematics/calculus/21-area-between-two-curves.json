@@ -38,7 +38,8 @@
     "**NEB-style (6m): Find the area enclosed between y² = 2x and y = x − 4 — carefully identifying all boundary pieces.** — **Intersections:** substitute x = y + 4 into y² = 2x: y² = 2y + 8 ⟹ y² − 2y − 8 = 0 ⟹ (y − 4)(y + 2) = 0 ⟹ y = 4, −2 ⟹ points (8, 4) and (2, −2). **Slicing choice:** the parabola is naturally x = y²/2 (left boundary), the line x = y + 4 (right boundary) ⟹ **dy slices**, one integral. **Order test:** at y = 0: line x = 4 > parabola x = 0 ✓. **Evaluate:** ∫₋₂⁴[(y + 4) − y²/2]dy = [y²/2 + 4y − y³/6]₋₂⁴ = (8 + 16 − 64/6) − (2 − 8 + 8/6) = (24 − 32/3) − (−6 + 4/3) = 40/3 + 14/3 = **54/3 = 18**. **Deep point:** the classic trap is integrating in dx and missing that the region's left boundary changes at the vertex — the dy choice kept one formula per boundary; when curves are given as x = g(y), the horizontal slice is the honest native habitat."
   ],
   "formulas": [
-    "- A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx\n- A = ∫[g_right(y) − g_left(y)]dy (horizontal slices)"
+    "A = ∫ₐᵇ[f_top(x) − f_bottom(x)]dx",
+    "A = ∫[g_right(y) − g_left(y)]dy (horizontal slices)"
   ],
   "keyPoints": [
     "Area between curves = integral of (top - bottom) dx, nonnegative; intersections from f = g supply the limits and any splits. Interior crossings swap top/bottom - partition and test one point per strip. The formula is |f - g| with the absolute value resolved by the order analysis. Choose the slicing axis that minimises splits (dy for x = g(y) boundaries). Verify symmetry before doubling a half."

@@ -38,7 +38,8 @@
     "**NEB-style (5m): A graph shows a curve with an open dot at (1, 3), a filled dot at (1, 5), and continuous branches meeting at the open dot. Classify and give the repair.** — **Reading the features:** branches meeting at height 3 ⟹ LHL = RHL = **3** (limit exists); filled dot at (1, 5) ⟹ f(1) = 5. **Classification:** limit exists, value differs ⟹ **removable discontinuity (mismatch)**. **Repair:** move the dot to (1, 3), i.e. redefine f(1) = 3 ⟹ continuous. **Deep point:** this is the detached-dot signature — the *approaches* are healthy and meet; only the *assignment* is away from them. The graph reading (branches vs dots) is exactly the two-question tree: sides first, value second."
   ],
   "formulas": [
-    "- Hole at (a, L): lim = L, f(a) undefined ⟹ open dot at (a, L)\n- Jump at a: branch ends at (a, LHL) and (a, RHL), LHL ≠ RHL"
+    "Hole at (a, L): lim = L, f(a) undefined ⟹ open dot at (a, L)",
+    "Jump at a: branch ends at (a, LHL) and (a, RHL), LHL ≠ RHL"
   ],
   "keyPoints": [
     "Visual vocabulary: hole = open dot on meeting branches (removable, value missing); detached dot = open dot + filled dot at different heights (removable, mismatch); jump = branch ends at different heights, dot on the owning side; wall = hugging vertical line with side arrows (odd splits, even unifies); oscillatory = infinite folding. Dots record f(a), branch endpoints record one-sided limits. Sketch skeleton first, decorate suspects last."

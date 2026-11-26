@@ -38,7 +38,8 @@
     "**NEB-style (6m): Evaluate lim_{x→3} (2x + 1)² + √(x + 6), assembling by the laws with licences named.** — **Inner piece (sum + constant multiple):** lim (2x + 1) = 7. **Power law:** 7² = **49** — the square is continuous everywhere, licence trivial. **Root piece:** lim (x + 6) = 9 ≥ 0 ✓; √t continuous at 9 ⟹ **3**. **Sum law: 49 + 3 = 52.** **One-line shortcut check:** both pieces are continuous at 3 ⟹ substitution gives (7)² + 3 = 52 ✓. **Deep point:** the long route names the licences; the shortcut is the closure theorem compressing them — both routes are the same mathematics, and the drill's value is seeing the compression as earned, not automatic."
   ],
   "formulas": [
-    "- lim f/g = lim f / lim g, provided lim g ≠ 0\n- lim f(g(x)) = f(lim g(x)) if f continuous at lim g(x)"
+    "lim f/g = lim f / lim g, provided lim g ≠ 0",
+    "lim f(g(x)) = f(lim g(x)) if f continuous at lim g(x)"
   ],
   "keyPoints": [
     "Assembly kit: sum/product/constant multiple need existing limits; quotient needs nonzero denominator; power/root need converged base (even roots: nonnegative); composition needs outer continuity at the inner limit. Polynomials: substitution = all laws at once. Stalled assembly means wrong decomposition - regroup or squeeze. Naming hypotheses is the drill."

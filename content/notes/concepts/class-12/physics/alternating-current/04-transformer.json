@@ -11,7 +11,8 @@
     "A transformer has two coils on an iron core. An alternating current in the primary changes the flux, and that changing flux induces an emf in the secondary. A steady direct current does not keep inducing a secondary emf.",
     "If leakage is ignored, the voltage ratio equals the turns ratio: V_s/V_p = N_s/N_p. More turns on the secondary means a step-up of voltage. Fewer turns means a step-down.",
     "An ideal transformer wastes no power, so V_p I_p = V_s I_s. A step-up of voltage is a step-down of current. Energy is not created.",
-    "The core is laminated so that eddy currents have short paths and less heating. A solid iron core would waste power as heat."
+    "The core is laminated so that eddy currents have short paths and less heating. A solid iron core would waste power as heat.",
+    "**Transformer — relations classified**\n\n| Quantity | Relation | Note |\n|---|---|---|\n| Voltage | Vs/Vp = Ns/Np | Turns ratio |\n| Current | Is/Ip = Np/Ns | Inverse |\n| Efficiency | Real < 100% | Eddy, hysteresis, copper losses |"
   ],
   "confusion": [
     "❌ Assuming transformer works on DC ✅ Transformer only operates on AC as it requires a *changing* magnetic flux to induce EMF (DC has constant flux).",

@@ -10,7 +10,8 @@
     "The bound charge is not free to flow in a wire. It stays on the dielectric surface. Leakage through a poor insulator is a separate, unwanted current.",
     "The energy stored is Q^2/(2C) or (1/2) C V^2. These agree, but if you insert the dielectric at fixed Q, C rises and the energy falls. The difference is the work associated with pulling the dielectric in.",
     "If you insert it at fixed V, C rises and the energy (1/2) C V^2 rises. The battery supplies that extra energy. Quoting the wrong case is a common exam error.",
-    "Above the dielectric strength the insulator breaks down and conducts. The working voltage must stay below that field times the thickness."
+    "Above the dielectric strength the insulator breaks down and conducts. The working voltage must stay below that field times the thickness.",
+    "**Dielectric — effects classified**\n\n| Quantity | With dielectric | Reason |\n|---|---|---|\n| Capacitance | Increases K-fold | Polarisation |\n| Field inside | Decreases K-fold | Induced field |\n| Energy | Can drop | Charge fixed case |"
   ],
   "confusion": [
     "❌ 'Dielectric constant is same as permittivity' ✅ Dielectric constant (relative permittivity) is a ratio (dimensionless), while permittivity has specific units (F/m).",

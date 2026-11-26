@@ -72,6 +72,10 @@
       "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction."
     },
     {
+      "label": "Classified table",
+      "text": "Impulse relations (classified) · Quantity | Formula | Unit | Meaning · Impulse | J = FΔt = Δp | N·s | Force integrated over time · Momentum | p = mv | kg·m/s | Quantity of motion · Average force | F = Δp/Δt | N | Smaller Δt → larger F · Area under F–t | Equals impulse | — | Graph reading  ·  Impulse in safety design · Design | Strategy | Physics · Airbag | Increases Δt | Same Δp, smaller F · Crumple zone | Extends stopping distance | Force spread over time · Bending knees | Longer landing time | Reduces peak force · Cricket follow-through | Longer contact | Gentler catch"
+    },
+    {
       "label": "Quick concepts",
       "text": "Definition and significance of Linear Momentum, Impulse & Conservation of Linear Momentum.  ·  Momentum  ·  Impulse  ·  Isolated system"
     },
@@ -113,7 +117,7 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg Same Δp, different Δt: force spike vs force spread <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 160 L 180 40 L 220 160 Z\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><path d=\"M340 160 C 400 60, 500 60, 560…"
+      "text": "```svg Same Δp, different Δt: force spike vs force spread <svg viewBox=\"0 0 640 200\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"200\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M140 160 L 180 40 L 220 160 Z\" fill=\"#fef2f2\" stroke=\"#991b1b\"/><path d=\"M340 160 C 400 60, 500 60, 560…  ·  **Impulse — readings classified** | Reading | Formula | Use | |---|---|---| | Definition | J = F dt (integral) | Area under F-t graph | | Momentum change | J = delta p | Link to collisions | | Soft landing | Extend contact time | Smaller peak force |"
     }
   ]
 }

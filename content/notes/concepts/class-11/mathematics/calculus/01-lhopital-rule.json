@@ -31,7 +31,9 @@
     "**NEB-style (6m): Evaluate lim_{x→∞} ((x² + 1)/(x² − 1))^{x²}.** — **Form check:** base = (x²+1)/(x²−1) = 1 + 2/(x²−1) → 1; exponent x² → ∞ ⟹ **1^∞**. **Log bridge:** the limit is e^L with L = lim x²·ln[(x²+1)/(x²−1)] = lim x²·ln(1 + 2/(x²−1)). **Steer the log:** ln(1 + u) ~ u with u = 2/(x²−1) → 0 ⟹ L = lim x²·2/(x²−1) = lim 2x²/(x²−1) = **2** (degree rule: equal degrees, leading ratio 2). **Answer: e².** **L'Hôpital cross-check on L:** write L = lim ln(1 + 2/(x²−1))/(1/x²) — a 0/0 form at infinity; differentiating separately (chain rule on top, power on bottom) and simplifying recovers 2x²/(x²−1) → 2 ✓. **Deep point:** the exponent bookkeeping lim uv is the entire battle — the base's displacement 2/(x²−1) times the exponent x² leaves the constant 2, and the growth race between displacement and exponent is precisely the 1^∞ form's meaning."
   ],
   "formulas": [
-    "- lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived limit existing)\n- x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x → 0⁺)\n- lim f^g = e^{lim g·ln f}"
+    "lim_{x→a} f/g = lim_{x→a} f′/g′ (0/0 or ∞/∞, derived limit existing)",
+    "x/eˣ → 0; ln x/x → 0; x·ln x → 0 (x → 0⁺)",
+    "lim f^g = e^{lim g·ln f}"
   ],
   "keyPoints": [
     "L'Hopital's rule: for 0/0 or inf/inf with the derived limit existing, lim f/g = lim f'/g' (ratio of separate derivatives, NOT the quotient rule). Hypotheses: genuine form, differentiability near a, g' != 0, derived limit exists; re-check the form after every pass. Proof engine: Cauchy's MVT - f/g = f'(c)/g'(c) for c between a and x. Extended forms: 0*inf => f/(1/g); inf - inf => common denominator; 1^inf, 0^0, inf^0 => e^(lim g ln f). E-ladder re-derived: x/e^x -> 0, ln x/x -> 0, x ln x -> 0. Rule is sufficient not necessary: (x + sin x)/x -> 1 but 1 + cos x has no limit."

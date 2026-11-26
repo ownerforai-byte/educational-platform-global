@@ -10,7 +10,8 @@
     "If n electrons per unit volume, each of charge e, drift at v_d through area A, the current is I = n e A v_d. A larger density, a wider wire or a faster drift means a larger current.",
     "The drift speed is e E τ / m, where τ is the average time between collisions. A stronger field or a longer free time means a faster drift. Collisions turn the ordered drift energy into heat.",
     "The signal travels along the wire at a speed set by the electromagnetic field, close to the speed of light. That is not the drift speed of the electrons. A lamp comes on at once even though each electron drifts slowly.",
-    "Current density J is I/A, and J = n e v_d. Resistivity connects J to the field by E = ρ J in an ohmic metal."
+    "Current density J is I/A, and J = n e v_d. Resistivity connects J to the field by E = ρ J in an ohmic metal.",
+    "**Current — microscopic view classified**\n\n| Quantity | Formula | Meaning |\n|---|---|---|\n| Current | I = nAev | Charge flow rate |\n| Drift velocity | v = eE tau/m | Slow but collective |\n| Mobility | v/E | Material property |"
   ],
   "confusion": [
     "❌ 'Electrons move at the speed of light in a wire.' ✅ Electrons move at a very slow *drift velocity* (mm/s); the *electric field* (the signal) travels near the speed of light.",

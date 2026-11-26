@@ -10,7 +10,8 @@
     "**Integration by substitution:** ∫f(g(x))g'(x)dx = ∫f(u)du where u=g(x).",
     "**Integration by parts:** ∫u dv = uv - ∫v du.",
     "**Definite integral:** ∫[a to b] f(x)dx = F(b)-F(a) where F'=f (Fundamental Theorem of Calculus).",
-    "**Properties:** ∫[a to b] f(x)dx = -∫[b to a] f(x)dx, ∫[a to a] f(x)dx = 0, ∫[a to b] f(x)dx = ∫[a to c] + ∫[c to b]."
+    "**Properties:** ∫[a to b] f(x)dx = -∫[b to a] f(x)dx, ∫[a to a] f(x)dx = 0, ∫[a to b] f(x)dx = ∫[a to c] + ∫[c to b].",
+    "**Trig integration — strategies classified**\n\n| Integrand | Strategy | Note |\n|---|---|---|\n| sin^m cos^n | Odd power -> substitution | Even powers need identities |\n| Product-to-sum | Convert products | Then integrate termwise |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in integration of trigonometric functions.",

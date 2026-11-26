@@ -35,7 +35,10 @@
     "Vectors add like displacements: head-to-tail bookkeeping is the triangle law, and every algebraic property of addition is a consequence of it."
   ],
   "formulas": [
-    "- |a| = √(a₁² + a₂² + a₃²); â = a/|a|; |λa| = |λ||a|\n- a + b: triangle law (head-to-tail); parallelogram diagonal from common tail\n- AB = b − a; internal division m:n: (n a + m b)/(m+n); external: (m b − n a)/(m−n); midpoint (a+b)/2\n- l² + m² + n² = 1 for direction cosines"
+    "|a| = √(a₁² + a₂² + a₃²); â = a/|a|; |λa| = |λ||a|",
+    "a + b: triangle law (head-to-tail); parallelogram diagonal from common tail",
+    "AB = b − a; internal division m:n: (n a + m b)/(m+n); external: (m b − n a)/(m−n); midpoint (a+b)/2",
+    "l² + m² + n² = 1 for direction cosines"
   ],
   "examples": [
     "***The crossed weights*** — internal division 2:3 gives (3a + 2b)/5: the ratio member multiplies the opposite endpoint, and the midpoint case m = n collapses the formula to (a+b)/2."

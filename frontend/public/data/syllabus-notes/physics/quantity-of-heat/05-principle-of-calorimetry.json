@@ -19,7 +19,8 @@
     "**Error sources:** Heat loss to surroundings (always occurs to some degree) makes $\\theta_{eq}$ slightly lower than ideal, leading to overestimation of $c$ for the cold body. Radiation, convection, and conduction through supports all contribute.",
     "**Newton's cooling correction:** To minimize heat-loss error, the experiment is often arranged so that the initial temperature excess above room temperature equals the final temperature deficit below room temperature. The gains and losses then approximately cancel.",
     "**NEB exam focus:** Method of mixtures problems are extremely common. You MUST include the calorimeter's heat capacity (or water equivalent) in your equation. Forgetting it is the most common error.",
-    "**Quick check:** After solving for $\\theta_{eq}$, verify that $\\theta_h > \\theta_{eq} > \\theta_c$. If this is violated, you made an error in sign conventions."
+    "**Quick check:** After solving for $\\theta_{eq}$, verify that $\\theta_h > \\theta_{eq} > \\theta_c$. If this is violated, you made an error in sign conventions.",
+    "**Method of mixtures — steps classified**\n\n| Step | Action | Check |\n|---|---|---|\n| Set-up | Hot into cold in calorimeter | Insulated vessel |\n| Equation | m1c1(T1-T) = m2c2(T-T2) | Include calorimeter |\n| Solve | Unknown c or T | Signs consistent |"
   ],
   "confusion": [
     "❌ Heat lost + heat gained = 0, so $m_1c_1\\Delta\\theta_1 + m_2c_2\\Delta\\theta_2 = 0$ means both Δθ are positive. ✅ Use signed convention: $\\Delta\\theta_1 = \\theta_{eq} - \\theta_h < 0$ (negative, heat lost) and $\\Delta\\theta_2 = \\theta_{eq} - \\theta_c > 0$ (positive, heat gained). The sum is zero.",

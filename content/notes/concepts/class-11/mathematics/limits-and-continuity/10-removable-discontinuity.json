@@ -45,7 +45,9 @@
     "**NEB-style (5m): A student says f(x) = (x² − 1)/(x − 1) is discontinuous at x = 1 and therefore lim_{x→1} f(x) does not exist. Assess the claim.** — **The discontinuity claim:** correct in classification — f(1) is undefined (0/0), so f is not continuous at 1. **The limit claim:** wrong — the limit and the value are independent; the limit reads the neighbourhood, which is healthy. **Compute:** (x²−1)/(x−1) = x + 1 for x ≠ 1 ⟹ lim_{x→1} f(x) = **2**. **Correct statement:** f has a **removable** discontinuity at 1 — the limit exists (2) while the value does not; defining f(1) = 2 repairs continuity. **Deep point:** the student treated \"discontinuous\" as \"limit fails,\" conflating the point with its neighbourhood — the removable/jump/infinite taxonomy exists precisely because discontinuities differ in *where* they live, and only the point-local kind leaves limits intact."
   ],
   "formulas": [
-    "- removable at a ⟺ lim_{x→a} f(x) = L ∈ ℝ and f(a) ≠ L (or undefined)\n- repair: f(a) := L\n- (x² − a²)/(x − a) → hole at (a, 2a)"
+    "removable at a ⟺ lim_{x→a} f(x) = L ∈ ℝ and f(a) ≠ L (or undefined)",
+    "repair: f(a) := L",
+    "(x² − a²)/(x − a) → hole at (a, 2a)"
   ],
   "keyPoints": [
     "Removable discontinuity: lim_{x->a} f(x) = L exists finite, but f(a) undefined (hole) or f(a) != L (mismatch). Detection: substitute, transform, compare. Repair theorem: set f(a) = L - one value fixes it. Sources: cancelled common factors ((x^2-9)/(x-3), hole at (3, 6)), piecewise mismatches. Graph: open dot at (a, L); mismatch adds a detached closed dot. Cancellation changes the domain - state the x != a licence. Triage per point: (x+2)/(x^2-4) is removable at -2 (limit -1/4) and infinite at 2."

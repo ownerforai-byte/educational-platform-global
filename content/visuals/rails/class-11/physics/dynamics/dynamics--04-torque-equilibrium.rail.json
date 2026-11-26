@@ -72,6 +72,10 @@
       "text": "The FBD is essential — draw ALL forces with their correct points of application.  ·  Choose the pivot wisely: at the point of an unknown force, that force contributes zero torque."
     },
     {
+      "label": "Classified table",
+      "text": "Rigid-body equilibrium (classified) · Condition | Statement | Use · Translational | ΣF = 0 | No acceleration of CM · Rotational | Στ = 0 about any axis | No angular acceleration · Choice of axis | Any point works | Pick point with unknown forces · Ladder problem | Wall smooth: only normal | Classic NEB setup  ·  Centre of gravity facts · Fact | Statement | Application · Definition | Point where weight effectively acts | Simplify bodies · Uniform body | At geometric centre | Rod, disc · Stability | Topples when CoG line leaves base | Vehicle design · Lower CoG | More stable | Racing cars"
+    },
+    {
       "label": "Quick concepts",
       "text": "Torque (τ = rF sin θ) is the rotational analogue of force — it causes angular acceleration.  ·  A rigid body is in equilibrium only when both ΣF = 0 and Στ = 0 — both conditions are independent.  ·  The principle of moments: in equilibrium, clockwise torques balance anticlockwise torques about any pivot.  ·  A couple produces a pure torque τ = Fd that is independent of the pivot position."
     },

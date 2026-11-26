@@ -49,7 +49,9 @@
     "**NEB-style (2m): State and prove the condition for three points A, B, C to be collinear.** — **Condition:** A, B, C are collinear ⟺ **AB × AC = 0**, i.e. (b − a) × (c − a) = 0 in position vectors. **Proof:** the points lie on one line iff the two connecting vectors **AB = b − a** and **AC = c − a** are parallel (both start at A and must run along the same line). Two vectors are parallel iff their cross product vanishes (|AB × AC| = |AB||AC| sin θ and θ = 0 or π exactly for parallel vectors). Hence collinearity of points ⟺ (b − a) × (c − a) = 0. ∎ Note the subtraction first: the *position* vectors a, b, c themselves need not be parallel — it is the connecting vectors that carry the line."
   ],
   "formulas": [
-    "- Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃\n- Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb\n- Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0"
+    "Collinear: b = λa ⟺ a × b = 0 ⟺ a₁/b₁ = a₂/b₂ = a₃/b₃",
+    "Coplanar: [a b c] = a·(b × c) = 0 ⟺ c = λa + μb",
+    "Points collinear: (b − a) × (c − a) = 0; four points coplanar: [AB AC AD] = 0"
   ],
   "numericals": [
     "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",

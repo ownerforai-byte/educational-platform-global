@@ -67,6 +67,10 @@
     {
       "label": "Hints",
       "text": "**Component form.** For a = (a₁, a₂, a₃) and b = (b₁, b₂, b₃), a · b = a₁b₁ + a₂b₂ + a₃b₃; multiply matching components and add."
+    },
+    {
+      "label": "Classified table",
+      "text": "Dot product — the classified readings · Reading | Formula | Use · Geometric | a . b = | a | | b | cos(theta) | Angle between vectors · Component | a . b = a1b1 + a2b2 + a3b3 | Fast computation · Projection | a . b-hat = length of a along b | Work done, shadow length · Orthogonality test | a . b = 0 | Perpendicularity without angles · Sign diagnostic | positive acute, negative obtuse | Quick angle sense"
     }
   ]
 }

@@ -73,6 +73,10 @@
       "text": "Most-tested: rpm→rad/s conversion plus v = ωr (2023, 2024). Expect a_c as a bonus part."
     },
     {
+      "label": "Classified table",
+      "text": "2. Fundamental Concepts · Linear (translational) | Angular (rotational) | Relation · Displacement $s$ (m) | Angular displacement $\\theta$ (rad) | $s = r\\theta$ · Velocity $v$ (m/s) | Angular velocity $\\omega$ (rad/s) | $v = r\\omega$ · Acceleration $a$ (m/s²) | Angular acceleration $\\alpha$ (rad/s²) | $a = r\\alpha$  ·  Angular kinematics vs linear kinematics (classified) · Quantity | Angular form | Linear form | Link · Displacement | θ (radian) | s (metre) | s = rθ · Velocity | ω (rad/s) | v (m/s) | v = rω · Acceleration | α (rad/s²) | a (m/s²) | a = rα · Time period | T = 2π/ω | — | ω = 2πf"
+    },
+    {
       "label": "Quick concepts",
       "text": "**One conversion unlocks every circular-motion numerical:** $\\omega = 2\\pi N/60$ turns rpm into rad/s."
     },

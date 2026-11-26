@@ -10,7 +10,8 @@
     "The current is (V/R) (1 − e^(−t/τ)) with τ = L/R. The voltages always add to V, with signs, which is the loop rule at every instant.",
     "At t = τ the current is about 63% of the final value and the inductor still holds about 37% of the battery voltage.",
     "If the battery is replaced by a short circuit, the current decays as I_0 e^(−t/τ). The inductor then drives the resistor, and both voltages fall together.",
-    "This file is the circuit view of the same law as the growth-and-decay file. The numbers here are a voltage split rather than a repeat of the earlier current."
+    "This file is the circuit view of the same law as the growth-and-decay file. The numbers here are a voltage split rather than a repeat of the earlier current.",
+    "**LR circuit — behaviour classified**\n\n| Phase | Current | Time constant |\n|---|---|---|\n| Growth | I = I0(1 - e^-t/LR) | tau = L/R |\n| Decay | I = I0 e^-t/L | Same tau |"
   ],
   "confusion": [
     "❌ 'Inductor instantly passes current.' ✅ Inductors *oppose* changes in current; at the moment of switching (t=0), current through an inductor remains zero.",

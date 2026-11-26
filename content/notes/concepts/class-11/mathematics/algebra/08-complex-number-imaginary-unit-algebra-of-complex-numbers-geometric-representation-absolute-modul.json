@@ -50,7 +50,9 @@
     "**NEB-style (2m): Solve the equation x² + x + 1 = 0 over the complex numbers.** — **Discriminant:** D = b² − 4ac = 1 − 4 = **−3 < 0** — no real roots, but ℂ supplies them. **Quadratic formula with i:** x = (−1 ± √(−3))/2 = (−1 ± i√3)/2. **Roots: x = (−1 + i√3)/2 and x = (−1 − i√3)/2** — a conjugate pair (real quadratics always have conjugate-pair roots). **Identification:** these are the primitive **cube roots of unity** ω and ω², satisfying 1 + ω + ω² = 0 and ω³ = 1 — the same pair that powers the factorisation x³ − 1 = (x − 1)(x² + x + 1)."
   ],
   "formulas": [
-    "- (x + iy)(u + iv) = (xu − yv) + i(xv + yu); z₁/z₂ = z₁z̄₂/|z₂|²\n- z·z̄ = |z|² = x² + y²; |z| = √(x² + y²); iⁿ = i^(n mod 4)\n- |z₁z₂| = |z₁||z₂|; |z₁+z₂| ≤ |z₁|+|z₂|; D < 0 ⟹ x = (−b ± i√|D|)/2a"
+    "(x + iy)(u + iv) = (xu − yv) + i(xv + yu); z₁/z₂ = z₁z̄₂/|z₂|²",
+    "z·z̄ = |z|² = x² + y²; |z| = √(x² + y²); iⁿ = i^(n mod 4)",
+    "|z₁z₂| = |z₁||z₂|; |z₁+z₂| ≤ |z₁|+|z₂|; D < 0 ⟹ x = (−b ± i√|D|)/2a"
   ],
   "numericals": [
     "Use  Y = FL/(A ΔL)  — pick reasonable values, solve, and check the units.",

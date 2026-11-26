@@ -7,7 +7,8 @@
   "notes": [
     "**Variable Separable Equations:** This topic covers the fundamental concepts of variable separable equations in the mathematics curriculum.",
     "Understanding variable separable equations is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to variable separable equations should be memorized and practiced regularly."
+    "Key definitions and theorems related to variable separable equations should be memorized and practiced regularly.",
+    "**First-order DEs — solution routes classified**\n\n| Type | Signature | Method |\n|---|---|---|\n| Variable separable | dy/dx = f(x)g(y) | Split and integrate |\n| Linear | dy/dx + Py = Q | Integrating factor |\n| Homogeneous | dy/dx = F(y/x) | Substitute y = vx |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in variable separable equations.",

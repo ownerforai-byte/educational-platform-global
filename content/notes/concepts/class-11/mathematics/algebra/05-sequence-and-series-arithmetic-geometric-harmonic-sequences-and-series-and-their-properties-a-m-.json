@@ -49,7 +49,9 @@
     "**NEB-style (3m): Sum the series S = 1 + 2x + 3x² + ⋯ + nxⁿ⁻¹ (x ≠ 1) and find its limit for |x| < 1.** — **Shift trick:** form xS = x + 2x² + ⋯ + (n−1)xⁿ⁻¹ + nxⁿ. **Subtract aligned:** S − xS = 1 + (2−1)x + (3−2)x² + ⋯ + (n−(n−1))xⁿ⁻¹ − nxⁿ = 1 + x + x² + ⋯ + xⁿ⁻¹ − nxⁿ. The coefficient arithmetic collapsed into a pure GP: **(1 − x)S = (1 − xⁿ)/(1 − x) − nxⁿ**, hence **S = (1 − xⁿ)/(1 − x)² − nxⁿ/(1 − x)**. **Limit for |x| < 1:** xⁿ → 0 and nxⁿ → 0 (exponential beats linear), so **S → 1/(1 − x)²** — the closed form; e.g. 1 + 2(½) + 3(¼) + ⋯ = 4. The shift trick is the algebraic twin of differentiating the GP sum 1/(1−x)."
   ],
   "formulas": [
-    "- Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²\n- Σₖ₌₁ⁿ (bₖ − bₖ₊₁) = b₁ − bₙ₊₁; sum to ∞: b₁ − lim bₙ\n- Σₖ₌₁ⁿ kxᵏ⁻¹ = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x) → 1/(1−x)² for |x| < 1"
+    "Σi = n(n+1)/2; Σi² = n(n+1)(2n+1)/6; Σi³ = [n(n+1)/2]²",
+    "Σₖ₌₁ⁿ (bₖ − bₖ₊₁) = b₁ − bₙ₊₁; sum to ∞: b₁ − lim bₙ",
+    "Σₖ₌₁ⁿ kxᵏ⁻¹ = (1 − xⁿ)/(1−x)² − nxⁿ/(1−x) → 1/(1−x)² for |x| < 1"
   ],
   "numericals": [
     "Use  AP: Sₙ = n/2[2a+(n−1)d]  — pick reasonable values, solve, and check the units.",

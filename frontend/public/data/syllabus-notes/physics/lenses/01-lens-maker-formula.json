@@ -10,7 +10,8 @@
     "Worked example: n=1.50, R1=+20 cm and R2=−20 cm give 1/f=0.50(1/20+1/20)=0.05 cm⁻¹, hence f=+20 cm.",
     "In a surrounding medium use relative index nrel=nlens/nmedium. As nrel approaches 1, the lens bends light less and |f| increases; a lens can change sign if the surrounding medium has a larger index.",
     "The formula assumes a thin lens and paraxial rays. Thick lenses require principal-plane treatment, and very wide ray bundles show aberrations.",
-    "The lens-maker formula builds the focal length from the glass index and the two radii. For a double-convex lens used with light travelling left to right, the first centre is to the right of its surface and the second centre is to the left, so the two contributions add."
+    "The lens-maker formula builds the focal length from the glass index and the two radii. For a double-convex lens used with light travelling left to right, the first centre is to the right of its surface and the second centre is to the left, so the two contributions add.",
+    "**Lens formulae — classified**\n\n| Formula | Statement | Use |\n|---|---|---|\n| Lens maker | 1/f = (n-1)(1/R1 - 1/R2) | Design a lens |\n| Thin lens | 1/f = 1/v - 1/u | Locate image |\n| Magnification | m = v/u | Image size |"
   ],
   "confusion": [
     "The formula assumes a thin lens and paraxial rays.",

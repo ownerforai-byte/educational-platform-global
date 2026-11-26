@@ -6,7 +6,8 @@
     "Heat Q has the dimensions of energy, [M L^2 T^-2]. Mass is [M] and a temperature interval brings in [K]. Therefore [c] = [L^2 T^-2 K^-1].",
     "Water's specific heat is about 4200 J kg^-1 K^-1, which is large. That is why a large mass of water changes temperature slowly for a given heat input.",
     "The heat capacity of a whole body is C = mc, in J/K. Specific heat is a material property. Heat capacity belongs to one particular object.",
-    "Mixing problems use heat lost equals heat gained when the container is closed to outside heat. Each term is of the form mc Δθ, with the temperature change written as a positive quantity in that bookkeeping."
+    "Mixing problems use heat lost equals heat gained when the container is closed to outside heat. Each term is of the form mc Δθ, with the temperature change written as a positive quantity in that bookkeeping.",
+    "**Specific heat — units classified**\n\n| System | Unit | Dimension |\n|---|---|---|\n| SI | J/kg K | L^2T^-2 theta^-1 |\n| CGS | cal/g C | Same dimensions |\n| Molar | J/mol K | Per mole form |"
   ],
   "examples": [
     "Specific heat capacity c is the heat needed to raise the temperature of 1 kg of a substance by 1 K. The defining relation is Q = mc Δθ, so c = Q / (m Δθ).",

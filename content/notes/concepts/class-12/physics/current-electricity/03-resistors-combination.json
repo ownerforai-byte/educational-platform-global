@@ -10,7 +10,8 @@
     "Two parallel resistors have the shortcut R = R1 R2 / (R1 + R2). It is the product over the sum, and it is not used for three resistors without grouping.",
     "A short string of series resistors can sit in parallel with another branch. Reduce the series string first, then combine the parallel pair.",
     "The voltage divider is the series case: the larger resistor takes the larger share of the voltage, in proportion to its resistance, because the current is common.",
-    "Opening a parallel branch increases the equivalent resistance and decreases the total current from the source. Adding a parallel branch does the opposite."
+    "Opening a parallel branch increases the equivalent resistance and decreases the total current from the source. Adding a parallel branch does the opposite.",
+    "**Resistor networks — classified**\n\n| Connection | Equivalent | Shares equally |\n|---|---|---|\n| Series | R sum | Current |\n| Parallel | 1/R sum | Voltage |"
   ],
   "confusion": [
     "❌ 'Adding resistors in parallel increases the total resistance.' ✅ Parallel connections *decrease* total resistance, as they provide more paths for current to flow (1/Rp = 1/R1 + 1/R2).",

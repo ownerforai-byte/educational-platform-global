@@ -49,7 +49,9 @@
     "**NEB-style (3m): Solve the system 2x + 3y = 8, x − y = −1 using Cramer's rule.** — **Coefficient determinant:** |A| = |2 3; 1 −1| = (2)(−1) − (3)(1) = −5 ≠ 0 ⟹ Cramer applies. **x-determinant** (replace column 1 with B = [8, −1]): |A₁| = |8 3; −1 −1| = (8)(−1) − (3)(−1) = −8 + 3 = −5 ⟹ **x = |A₁|/|A| = −5/−5 = 1**. **y-determinant** (replace column 2): |A₂| = |2 8; 1 −1| = (2)(−1) − (8)(1) = −10 ⟹ **y = −10/−5 = 2**. **Verification:** 2(1) + 3(2) = 8 ✓ and 1 − 2 = −1 ✓. Cramer's rule works because each unknown is the ratio of two \"volumes\": the numerator measures how far B tilts the corresponding column."
   ],
   "formulas": [
-    "- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A| = Σⱼ aᵢⱼCᵢⱼ (any row/column)\n- adj A = Cᵀ; A·adj A = |A|·I; A⁻¹ = adj A/|A|\n- |AB| = |A||B|; |kA| = kⁿ|A|; Cramer: xᵢ = |Aᵢ|/|A|"
+    "Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; |A| = Σⱼ aᵢⱼCᵢⱼ (any row/column)",
+    "adj A = Cᵀ; A·adj A = |A|·I; A⁻¹ = adj A/|A|",
+    "|AB| = |A||B|; |kA| = kⁿ|A|; Cramer: xᵢ = |Aᵢ|/|A|"
   ],
   "numericals": [
     "Use  det([[a,b],[c,d]]) = ad − bc  — pick reasonable values, solve, and check the units.",

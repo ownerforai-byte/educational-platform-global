@@ -24,7 +24,8 @@
   "animation3D": "calculus",
   "motionGraphics": "calculus",
   "formulas": [
-    "- f^g = e^{g·ln f} (the power-form bridge)\n- 0·∞ ⟹ f/g = f/(1/g) — flip the factor that simplifies"
+    "f^g = e^{g·ln f} (the power-form bridge)",
+    "0·∞ ⟹ f/g = f/(1/g) — flip the factor that simplifies"
   ],
   "keyPoints": [
     "Seven indeterminate forms: 0/0, inf/inf, 0*inf, inf-inf, 1^inf, 0^0, inf^0. Cures: 0/0 factor/conjugate/steer/L'Hopital; inf/inf degrees or dominant division; 0*inf flip a factor; inf-inf merge fractions; power forms via f^g = e^(g ln f). Forms are races between rates; orders of vanishing decide. Form checks are hypothesis tests - name the form before every technique."

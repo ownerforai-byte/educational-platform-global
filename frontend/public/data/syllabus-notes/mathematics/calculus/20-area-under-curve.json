@@ -38,7 +38,8 @@
     "**NEB-style (6m): Find the area enclosed by y = √(9 − x²) and the x-axis, and verify by geometry.** — **Recognise the shape:** y² = 9 − x² ⟹ x² + y² = 9 — the upper semicircle of radius 3. **Domain:** −3 ≤ x ≤ 3; the integrand is nonnegative throughout ⟹ no split. **Evaluate:** area = ∫₋₃³√(9−x²)dx = 2∫₀³√(9−x²)dx = 2·(π·9/4) = **9π/2** — using the quarter-circle standard twice. **Geometric verification:** semicircle area = πr²/2 = 9π/2 ✓. **Deep point:** the integrand's form √(a² − x²) is the circle's signature — recognising it converts the computation to πa²/4 per quarter; the symmetry halving (even function) and the shape recognition are two shortcuts stacking on one integral."
   ],
   "formulas": [
-    "- Geometric area = ∫ₐᵇ|f(x)|dx\n- ∫₀ᵃ√(a² − x²)dx = πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)"
+    "Geometric area = ∫ₐᵇ|f(x)|dx",
+    "∫₀ᵃ√(a² − x²)dx = πa²/4; ∫₋ₐᵃf = 2∫₀ᵃf (even), 0 (odd)"
   ],
   "keyPoints": [
     "Signed area: above the axis positive, below negative - the integral is a net. Geometric area: integral of |f| - split at the roots, integrate piecewise, add magnitudes. Displacement vs distance is the same distinction. Symmetry: even f halves the work, odd f cancels to zero on [-a, a]. Recognise standard shapes first: lines give triangles/trapezoids, sqrt(a^2 - x^2) gives quarter circles (pi a^2/4)."

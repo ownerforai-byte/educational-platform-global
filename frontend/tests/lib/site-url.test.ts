@@ -22,7 +22,8 @@ const SURFACES = [
   "lib/firebase/client-auth.ts",
   "components/study/referrals-view.tsx",
   "features/profile/public-profile-shell.tsx",
-  "features/community/community-board.tsx",
+  "features/community/community-post-detail-view.tsx",
+  "features/community/feed-post-row.tsx",
 ];
 
 afterEach(() => {

@@ -10,7 +10,8 @@
     "During melting or boiling, temperature remains constant while latent heat changes phase: Q=mL. Melting 0.10 kg of ice at 0°C requires 0.10×334000=33400 J before the resulting water is warmed.",
     "For an insulated calorimeter, energy conservation gives ΣQ=0: heat lost by hot parts equals heat gained by cold parts. Include the calorimeter and any phase changes when specified.",
     "Example: 0.20 kg water heated by 15 K with c=4200 J kg⁻¹ K⁻¹ needs Q=0.20×4200×15=12600 J.",
-    "Heat that changes temperature is m c Δθ. Heat that changes state at constant temperature is m L, with no Δθ in the formula. A melting calculation often needs both: warm the ice to 0°C, melt it, then warm the water."
+    "Heat that changes temperature is m c Δθ. Heat that changes state at constant temperature is m L, with no Δθ in the formula. A melting calculation often needs both: warm the ice to 0°C, melt it, then warm the water.",
+    "**Calorimetry — principle classified**\n\n| Rule | Statement | Use |\n|---|---|---|\n| Heat exchange | Heat lost = heat gained | Method of mixtures |\n| Assumption | No loss to surroundings | Calorimeter included |"
   ],
   "confusion": [
     "Do not use Q=mcΔT across an interval that includes melting or boiling.",

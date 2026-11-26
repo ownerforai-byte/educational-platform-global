@@ -45,7 +45,9 @@
     "**NEB-style (6m): A tank's water level V(t) in litres is V(t) = 100 − 4t for 0 ≤ t ≤ 10, V(t) = 120 − 6t for 10 < t ≤ 20. Is V continuous at t = 10, and what does the answer mean physically?** — **LHL (t → 10⁻, first piece):** 100 − 4(10) = **60**. **RHL (t → 10⁺, second piece):** 120 − 6(10) = **60**. **Existence:** LHL = RHL = 60 ⟹ lim_{t→10} V(t) = 60. **Value:** V(10) = 100 − 40 = **60** (the ≤ condition puts 10 in the first piece). **Verdict:** value = limit ⟹ **V is continuous at t = 10**. **Physical meaning:** the level passes through 60 L at the switch — the outflow *rate* changed (4 L/min → 6 L/min) but the *amount* did not jump; water cannot teleport, so continuity is the physically mandatory answer, while the rate change is a corner in the graph (the slope drops... steepens from −4 to −6). **Deep point:** continuity models conserved quantities (amount, position, temperature); rates may jump even when amounts cannot — the graph is continuous with a kink, which is exactly the pen-test-passes, derivative-fails signature."
   ],
   "formulas": [
-    "- continuity at a: f(a) = lim_{x→a} f(x), both existing\n- closure: f, g continuous ⟹ f ± g, f·g, f/g (g ≠ 0), f∘g continuous\n- rational p/q continuous on {q ≠ 0}; |x|, sin, cos, eˣ continuous on ℝ"
+    "continuity at a: f(a) = lim_{x→a} f(x), both existing",
+    "closure: f, g continuous ⟹ f ± g, f·g, f/g (g ≠ 0), f∘g continuous",
+    "rational p/q continuous on {q ≠ 0}; |x|, sin, cos, eˣ continuous on ℝ"
   ],
   "keyPoints": [
     "Pen test: continuous where the graph draws without lifting. Three-part test: f(a) exists, lim exists, f(a) = lim - each failure independently named. Continuous families: polynomials (all R), rationals (denominator != 0), roots (domain), sin/cos (all R); sums, products, quotients, compositions of continuous functions are continuous (closure theorems). Composition theorem: g continuous at a and f at g(a) => f o g continuous at a. Continuity on [a, b]: interior two-sided + endpoint one-sided - the EVT/IVT hypothesis. Squeeze can certify continuity where closure fails (x^2 sin(1/x) at 0). Continuous does not imply differentiable (|x| at 0)."

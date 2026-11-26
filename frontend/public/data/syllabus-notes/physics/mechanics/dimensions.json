@@ -10,7 +10,8 @@
     "Dimensional homogeneity requires every term added in an equation to have the same dimensions. In s=ut+(1/2)at², both ut and at² have dimension L.",
     "Worked check: in v²=u²+2as, v² and u² are L²T⁻²; as is (LT⁻²)L=L²T⁻². The equation is dimensionally possible, though this test cannot prove it is correct.",
     "Dimensional analysis can check units and infer powers in a relation, but cannot determine dimensionless constants such as 1/2 or functions involving dimensionless variables.",
-    "A dimensional check can reject an impossible equation and can suggest the powers in a relation, but it cannot find a dimensionless number such as 1/2 or 2π. An equation that survives the check may still be wrong."
+    "A dimensional check can reject an impossible equation and can suggest the powers in a relation, but it cannot find a dimensionless number such as 1/2 or 2π. An equation that survives the check may still be wrong.",
+    "**Dimensional formula — uses classified**\n\n| Use | Method | Example |\n|---|---|---|\n| Check equation | Compare dimensions both sides | F = ma passes |\n| Convert units | Ratio of dimensional factors | dyne to newton |\n| Derive relation | Balance exponents | T = 2pi sqrt(l/g) |"
   ],
   "confusion": [
     "Dimensions differ from units: length has dimension L and SI unit metre.",

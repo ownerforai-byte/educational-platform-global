@@ -37,7 +37,10 @@
     "**NEB-style (2m): Verify the BAC–CAB rule for a = î, b = ĵ, c = k̂.** — **Left side:** b × c = ĵ × k̂ = î, so a × (b × c) = î × î = **0**. **Right side:** (a·c)b − (a·b)c = (î·k̂)ĵ − (î·ĵ)k̂ = (0)ĵ − (0)k̂ = **0**. Both sides agree ✓. (A non-degenerate check: a = î, b = ĵ, c = k̂ replaced by c = î + k̂ gives left = î × (ĵ × (î + k̂)) = î × (ĵ × î + ĵ × k̂) = î × (−k̂ + î) = −(î × k̂) + 0 = ĵ; right = (î·(î+k̂))ĵ − (î·ĵ)(î+k̂) = ĵ ✓ — the identity survives.)"
   ],
   "formulas": [
-    "- [a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| = (a × b)·c\n- |[a b c]| = parallelepiped volume; tetrahedron Ⅵ... ⅙|[a b c]|\n- [a b c] = [b c a] = [c a b]; [b a c] = −[a b c]\n- a × (b × c) = (a·c)b − (a·b)c"
+    "[a b c] = a·(b × c) = |a₁ a₂ a₃; b₁ b₂ b₃; c₁ c₂ c₃| = (a × b)·c",
+    "|[a b c]| = parallelepiped volume; tetrahedron Ⅵ... ⅙|[a b c]|",
+    "[a b c] = [b c a] = [c a b]; [b a c] = −[a b c]",
+    "a × (b × c) = (a·c)b − (a·b)c"
   ],
   "keyPoints": [
     "Scalar triple product: [a b c] = a.(b x c) = determinant of components = (a x b).c. Volume theorem: |[a b c]| = parallelepiped volume; tetrahedron = (1/6)|[a b c]|. Coplanarity: [a b c] = 0. Cyclic invariance: [a b c] = [b c a] = [c a b]; any swap flips sign. Dot and cross interchangeable: a.(b x c) = (a x b).c. Vector triple product: a x (b x c) = (a.c)b - (a.b)c (BAC-CAB); (a x b) x c = (a.c)b - (b.c)a; NOT associative - bracketing changes the plane."

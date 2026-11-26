@@ -15,10 +15,9 @@ import { useAuth } from "@/providers/auth-provider";
 import { SocialAuthButtons } from "./social-auth-buttons";
 import { VerifyingStatus } from "./verifying-status";
 import {
-  defaultMemberHomePath,
   isAccessApprovalRequired,
-  postAuthLandingPath,
 } from "@/lib/core/access-approval";
+import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   APPROVAL_DISPATCH_ROUTE,
   DENIED_ROUTE,
@@ -56,24 +55,19 @@ export function LoginForm() {
     result: Awaited<ReturnType<typeof loginAction>>,
   ) => {
     if (result.code === "PENDING_APPROVAL") {
-      if (isAccessApprovalRequired()) {
-        if (result.statusToken) rememberPendingSignup(result.statusToken);
-        rememberAccessOutcome("PENDING");
-        router.push(WAITING_ROUTE);
-        return;
-      }
-      clearPendingSignup();
-      if (result.ok && result.user) {
-        refresh();
-        router.push(postAuthLandingPath(result.user));
-        return;
-      }
-      router.push(defaultMemberHomePath());
+      // The backend's verdict is authoritative — an approval queue that is
+      // switched off in this deployment's env must not turn a PENDING account
+      // into a member-home landing (or a session refresh). The waiting screen
+      // still applies the flag itself for deployments without the queue.
+      if (result.statusToken) rememberPendingSignup(result.statusToken);
+      rememberAccessOutcome("PENDING");
+      router.push(WAITING_ROUTE);
+      return;
     } else if (result.ok) {
       // Signed-in approved session owns the device — drop signup markers.
       clearPendingSignup();
       refresh();
-      router.push(postAuthLandingPath(result.user));
+      router.push(tierHomePathFor(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");
@@ -110,19 +104,10 @@ export function LoginForm() {
     try {
       const res = await loginWithFirebaseIdToken(idToken);
       if (res.code === "PENDING_APPROVAL") {
-        if (isAccessApprovalRequired()) {
-          if (res.statusToken) rememberPendingSignup(res.statusToken);
-          rememberAccessOutcome("PENDING");
-          router.push(WAITING_ROUTE);
-          return;
-        }
-        clearPendingSignup();
-        if (res.user) {
-          await refresh();
-          router.push(postAuthLandingPath(res.user));
-          return;
-        }
-        router.push(defaultMemberHomePath());
+        // Backend verdict is authoritative — see finishSession above.
+        if (res.statusToken) rememberPendingSignup(res.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.push(WAITING_ROUTE);
         return;
       }
       if (res.code === "ACCOUNT_REJECTED") {
@@ -134,21 +119,17 @@ export function LoginForm() {
       if (res.user) {
         clearPendingSignup();
         await refresh();
-        router.push(postAuthLandingPath(res.user));
+        router.push(tierHomePathFor(res.user));
         return;
       }
       setError(AUTH_INVALID_CREDENTIALS);
     } catch (err) {
       const e = err as Error & { code?: string; statusToken?: string };
       if (e.code === "PENDING_APPROVAL") {
-        if (isAccessApprovalRequired()) {
-          if (e.statusToken) rememberPendingSignup(e.statusToken);
-          rememberAccessOutcome("PENDING");
-          router.push(WAITING_ROUTE);
-        } else {
-          clearPendingSignup();
-          router.push(defaultMemberHomePath());
-        }
+        // Backend verdict is authoritative — see finishSession above.
+        if (e.statusToken) rememberPendingSignup(e.statusToken);
+        rememberAccessOutcome("PENDING");
+        router.push(WAITING_ROUTE);
       } else if (e.code === "ACCOUNT_REJECTED") {
         if (e.statusToken) rememberPendingSignup(e.statusToken);
         rememberAccessOutcome("REJECTED");

@@ -12,7 +12,8 @@
     "**Dot product:** **a**·**b** = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃. Result is scalar.",
     "**Cross product:** **a**×**b** = |a||b|sinθ · n̂. Result is vector perpendicular to both a and b.",
     "**Unit vector:** â = **a**/|**a**|. Standard unit vectors: î, ĵ, k̂ along x,y,z axes.",
-    "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes."
+    "**Direction cosines:** cosα=a₁/|a|, cosβ=a₂/|a|, cosγ=a₃/|a|, where α,β,γ are angles with axes.",
+    "**Vector algebra — laws classified**\n\n| Law | Statement | Note |\n|---|---|---|\n| Triangle | a + b head-to-tail | Two vectors |\n| Parallelogram | Diagonal of the box | Concurrent |\n| Subtraction | a - b = a + (-b) | Reverse then add |"
   ],
   "confusion": [
     "❌ 'Vector addition is simply adding components' ✅ While true for components, the *geometric* interpretation requires head-to-tail placement; you must not just add scalar magnitudes.",

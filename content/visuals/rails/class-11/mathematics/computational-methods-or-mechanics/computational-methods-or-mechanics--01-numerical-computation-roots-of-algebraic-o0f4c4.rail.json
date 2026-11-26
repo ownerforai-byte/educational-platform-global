@@ -71,6 +71,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Root finding — methods classified · Method | Idea | Speed · Bisection | Halve the sign-changing interval | Slow, sure · Newton-Raphson | x1 = x0 - f/f' | Fast, needs derivative"
+    },
+    {
       "label": "Key points",
       "text": "• Numerical computation  ·  • Roots of algebraic  ·  • Transcendental equations  ·  • Bisection"
     },
@@ -108,7 +112,7 @@
     },
     {
       "label": "More ideas",
-      "text": "## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Theorem and method sheet** | Result or method | Hypotheses | Worked example | If the condition is dropped | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |  ·  ## 5. Figures and graphs - **F1** — Numerical computation — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Numerical computation — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Numerical…"
+      "text": "## 3. Formula sheet Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms  ·  ## 5. Figures and graphs - **F1** — Numerical computation — graph or construction from the note's own equation or data (authored SVG — axes, scale and key points labelled) - **F2** — Numerical computation — second figure: construction, region or comparison (authored SVG — English labels) - **F3** — Numerical…"
     }
   ]
 }

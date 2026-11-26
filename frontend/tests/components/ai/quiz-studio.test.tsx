@@ -64,7 +64,7 @@ describe("QuizStudio configuration diversity", () => {
     render(<QuizStudio />);
     fireEvent.click(screen.getByRole("button", { name: "Physics" }));
     fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "Motion" },
+      target: { value: "Motion of a freely falling body" },
     });
     fireEvent.click(screen.getByRole("button", { name: "Easy" }));
     fireEvent.click(screen.getByRole("button", { name: /^5$/ }));
@@ -73,7 +73,7 @@ describe("QuizStudio configuration diversity", () => {
     await waitFor(() => expect(mocks.generateQuestions).toHaveBeenCalledWith({
       classSlug: "class-11-notes",
       subjectSlug: "physics",
-      topic: "Motion",
+      topic: "Motion of a freely falling body",
       difficulty: "easy",
       count: 5,
       format: "mcq",

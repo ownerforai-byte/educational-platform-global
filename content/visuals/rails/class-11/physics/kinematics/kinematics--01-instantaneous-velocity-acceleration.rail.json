@@ -72,6 +72,10 @@
       "text": "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a given time — show the derivative step explicitly.  ·  Exam Tip 2: In graph-conversion questions (given $v$–$t$, sketch $x$–$t$), track curvature: constant $v$ → straight $x$ line; linear $v$ → parabolic $x$."
     },
     {
+      "label": "Classified table",
+      "text": "Average vs instantaneous (classified) · Quantity | Definition | Graph meaning · Average velocity | Δx/Δt | Chord slope on x–t · Instantaneous velocity | dx/dt | Tangent slope on x–t · Average acceleration | Δv/Δt | Chord slope on v–t · Instantaneous acceleration | dv/dt | Tangent slope on v–t  ·  Speed vs velocity traps · Trap | Correct view | Example · Average speed ≠ | average velocity | | Speed uses path length | Round trip: speed 5, velocity 0 · Zero velocity, moving? | Only at an instant turnaround | Ball at top of throw · Negative acceleration | Means direction, not slowing | Backward speed-up"
+    },
+    {
       "label": "Quick concepts",
       "text": "Concept 1: Limit definition — instantaneous quantities are average quantities over a vanishing interval.  ·  Concept 2: Derivative chain: $x \\xrightarrow{d/dt} v \\xrightarrow{d/dt} a$; integrals run the reverse way with initial conditions.  ·  Concept 3: Graph duality — slopes give rates (v, a); areas give accumulations (x, v).  ·  Concept 4: Sign logic — direction of motion from sign of $v$; speeding up/slowing down from relative signs of $v$ and $a$."
     },

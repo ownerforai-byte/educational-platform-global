@@ -45,7 +45,9 @@
     "**NEB-style (6m): For f(x) = (e^{2x} − 1)/x for x ≠ 0, f(0) = k: find k for continuity at 0, then determine whether f is continuous everywhere.** — **Suspect:** x = 0 (the formula excludes it). **Limit (star (eᵘ−1)/u → 1, u = 2x → 0):** (e^{2x} − 1)/x = 2·(e^{2x} − 1)/(2x) → **2**. **Repair value:** continuity needs f(0) = limit ⟹ **k = 2**. **Elsewhere:** e^{2x} and x are continuous with x ≠ 0 ⟹ the quotient is continuous on ℝ \\ {0} by closure theorems. **Verdict:** with k = 2, f is continuous on **all of ℝ**. **Deep point:** this is the *defining* pattern of the exponential star — the function (e^{2x}−1)/x is a disguised difference quotient, and assigning k = 2 is exactly defining (e^{2x})′(0) = 2; continuity repairs and derivative definitions are the same act, which is why Exercise 15.3's workflow is the gateway to all of calculus."
   ],
   "formulas": [
-    "- seam test: LHL = RHL = f(a) ⟺ continuous at the junction\n- removable repair: f(a) := lim_{x→a} f(x)\n- rational: shared zeros → holes; surviving zeros → walls"
+    "seam test: LHL = RHL = f(a) ⟺ continuous at the junction",
+    "removable repair: f(a) := lim_{x→a} f(x)",
+    "rational: shared zeros → holes; surviving zeros → walls"
   ],
   "keyPoints": [
     "Exercise 15.3 workflow: (1) domain - undefined points are suspects; (2) closure continuity - polynomials, rationals off zeros, roots, trig, exp, log, compositions certify whole intervals; (3) triage suspects: compute limit(s) and f(a), classify continuous / removable / jump / infinite, state the repair. Piecewise seam: LHL from left branch, RHL from right branch, compare with f(a) - unanimous agreement = continuous; sides differ = jump; sides equal but value differs = removable mismatch. Rational triage: cancel shared zeros (holes), survivors are walls. Full report: continuity set + each break's type + repair verdict."

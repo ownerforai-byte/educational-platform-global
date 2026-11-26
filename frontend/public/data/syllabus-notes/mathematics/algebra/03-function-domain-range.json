@@ -36,7 +36,9 @@
     "Companion notes are the same theorems through a narrower door: consistent enrichment keeps every entry page exam-ready."
   ],
   "formulas": [
-    "- domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)\n- AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²\n- Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
+    "domain bans: denominator ≠ 0, radicand ≥ 0, log > 0 (intersected)",
+    "AP/GP sums as in rows 18–19; Σi³ = [n(n+1)/2]²",
+    "Cᵢⱼ = (−1)^(i+j)Mᵢⱼ; A·adj A = |A|I; A⁻¹ = adj A/|A|"
   ],
   "examples": [
     "***The denominator ban inside a root*** - 1/sqrt(4 - x^2) loses its endpoints twice: the root wants them, the denominator forbids them - intersection wins."

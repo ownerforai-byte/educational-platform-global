@@ -11,7 +11,8 @@
     "**Product rule:** (fg)' = f'g + fg'.",
     "**Quotient rule:** (f/g)' = (f'g - fg')/g².",
     "**Chain rule:** d/dx[f(g(x))] = f'(g(x))·g'(x).",
-    "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc."
+    "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc.",
+    "**Derivative applications — classified**\n\n| Application | Tool | Output |\n|---|---|---|\n| Rates of change | dy/dt | Related rates |\n| Approximation | f(x+h) ~ f(x) + f'h | Small-error estimate |\n| Monotonicity | f' sign | Increasing/decreasing ranges |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in applications of derivatives.",

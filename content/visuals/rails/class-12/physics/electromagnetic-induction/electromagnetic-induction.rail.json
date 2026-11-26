@@ -59,6 +59,10 @@
     {
       "label": "Board question",
       "text": "NEB-style: Faraday + Lenz statements with energy-conservation argument; motional-EMF derivation; self/mutual inductance definitions + solenoid L; LR growth/decay curves and time-constant numericals."
+    },
+    {
+      "label": "Classified table",
+      "text": "Faraday's laws of electromagnetic… — An emf is induced only while flux linkage is changing, and its magnitude is N times the…  ·  Lenz's law and conservation of energy — Lenz's law chooses the induced current so that it opposes the change in flux.  ·  Self-induction and self-inductance — Self-inductance L links a coil's flux to its own current, and the induced emf is −L dI/dt.  ·  Mutual induction and mutual inductance — A changing current in one coil induces an emf −M dI/dt in the other.  ·  Growing and decaying current in LR… — An LR current grows as I_0 (1 − e^(−Rt/L)) toward V/R and decays as I_0 e^(−Rt/L) toward…"
     }
   ]
 }

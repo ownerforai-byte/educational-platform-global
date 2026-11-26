@@ -6,7 +6,8 @@
     "A derived quantity is built from base quantities by multiplication or division. Speed is length over time, so its unit is m/s. Force is mass times acceleration, so the newton is kg m/s^2.",
     "A plane angle in radians is a ratio of two lengths, so it is dimensionless. That does not make the angle unimportant. It means no extra base unit is required for it in the SI list used in class.",
     "Prefixes scale a unit by a power of ten. The kilometre is 10^3 m, the millimetre is 10^-3 m, and the micrometre is 10^-6 m. Convert to base units before you multiply.",
-    "Two quantities may be added only when they have the same dimension and are expressed in the same unit. Adding 2 m to 30 cm requires converting 30 cm to 0.30 m first."
+    "Two quantities may be added only when they have the same dimension and are expressed in the same unit. Adding 2 m to 30 cm requires converting 30 cm to 0.30 m first.",
+    "**SI base quantities — the classified seven**\n\n| Quantity | Unit | Symbol |\n|---|---|---|\n| Length | metre | m |\n| Mass | kilogram | kg |\n| Time | second | s |\n| Current | ampere | A |\n| Temperature | kelvin | K |\n| Luminous intensity | candela | cd |\n| Amount of substance | mole | mol |"
   ],
   "examples": [
     "A physical quantity is a property that can be measured. The report of a measurement has a numerical value and a unit. A number without a unit is not a finished physics answer, except for a pure ratio.",

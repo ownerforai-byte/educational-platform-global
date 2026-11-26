@@ -10,7 +10,8 @@
     "A point charge Q produces E = k Q / r^2. The direction is outward if Q is positive and inward if Q is negative.",
     "Field lines start on positive charge and end on negative charge. They do not cross, because the field at a point has one direction. Closer lines mean a stronger field.",
     "The net field of several charges is the vector sum of the individual fields. On the perpendicular bisector of a dipole the fields are not along the same line, so components are required.",
-    "A uniform field, as between parallel plates, has the same vector everywhere in the central region. The force on a charge there is qE, constant in magnitude and direction."
+    "A uniform field, as between parallel plates, has the same vector everywhere in the central region. The force on a charge there is qE, constant in magnitude and direction.",
+    "**Electric field — configurations classified**\n\n| Source | Field | Falls as |\n|---|---|---|\n| Point charge | kq/r^2 | 1/r^2 |\n| Dipole | k p/r^3 (axial) | 1/r^3 |\n| Infinite sheet | sigma/(2 eps0) | Constant |"
   ],
   "confusion": [
     "❌ 'Electric field intensity is the force on a charge.' ✅ It is the *force per unit positive test charge* at a point: E = F/q₀.",

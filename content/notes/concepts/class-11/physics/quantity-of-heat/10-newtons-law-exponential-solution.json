@@ -6,7 +6,8 @@
     "Integrate from the initial temperature θ1 at t = 0 to the temperature θ at time t. The left side becomes the natural log of the ratio of the excesses.",
     "The result is ln[(θ − θ0)/(θ1 − θ0)] = −(K/mc) t. Exponentiating both sides gives θ − θ0 = (θ1 − θ0) e^(−Kt/mc).",
     "The excess temperature therefore falls exponentially. It becomes half in a fixed time that depends on mc/K, and it is never exactly zero at a finite time.",
-    "A graph of excess against time is a falling curve that flattens toward the axis. A graph of ln(excess) against time is a straight line whose slope is −K/mc."
+    "A graph of excess against time is a falling curve that flattens toward the axis. A graph of ln(excess) against time is a straight line whose slope is −K/mc.",
+    "**Cooling curve — solution classified**\n\n| Form | Equation | Graph |\n|---|---|---|\n| Exponential | T - Ts = (T0 - Ts)e^-kt | Falls to Ts asymptotically |\n| Log form | ln(T - Ts) vs t straight | Slope -k |"
   ],
   "examples": [
     "Start from −mc dθ/dt = K (θ − θ0), with K and θ0 constant. This is the rate form of Newton's law of cooling.",

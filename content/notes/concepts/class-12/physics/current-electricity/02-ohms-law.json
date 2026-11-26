@@ -10,7 +10,8 @@
     "The law is empirical for ohmic materials. A filament lamp's resistance rises as it heats, so its I–V graph curves. A semiconductor diode conducts very differently in the two directions and is non-ohmic.",
     "Resistivity ρ is the material property in R = ρL/A. Ohm's law can hold while R still changes if the piece is stretched, because L and A change.",
     "The ohm is the resistance that passes 1 A when 1 V is applied. Power in a resistor is I^2 R, or V^2/R, or V I, and that power becomes heat.",
-    "A circuit calculation uses Ohm's law on each ohmic element after the currents have been chosen. It is not a law of the battery's internal chemistry."
+    "A circuit calculation uses Ohm's law on each ohmic element after the currents have been chosen. It is not a law of the battery's internal chemistry.",
+    "**Resistance — factors classified**\n\n| Factor | Relation | Formula slot |\n|---|---|---|\n| Length | R proportional l | Longer = more |\n| Area | R inversely prop A | Thicker = less |\n| Material | rho | Resistivity |"
   ],
   "confusion": [
     "❌ 'Ohm's Law applies to all conductors.' ✅ It is valid only for *ohmic conductors* (where V is proportional to I, like metallic resistors), not for non-ohmic devices like diodes or transistors.",

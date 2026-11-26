@@ -6,7 +6,8 @@
     "The result is written as mean ± mean absolute error. The relative error is that absolute error divided by the mean. The percentage error is the relative error times 100.",
     "When quantities are multiplied or divided, relative errors add. If z = xy, then Δz/z = Δx/x + Δy/y, using the absolute values of the relative errors. For a power, z = x^n, the relative error is multiplied by n.",
     "Scientific notation writes a number as a coefficient between 1 and 10 times a power of ten. The order of magnitude is that power of ten after the coefficient is used to decide the nearest power. A coefficient of 3 or more often rounds the order upward in the rough classroom rule of 'greater than about sqrt(10)' .",
-    "A gross error is a mistake, such as misreading a scale. It is not treated by the random-error formula. The reading is rejected and taken again."
+    "A gross error is a mistake, such as misreading a scale. It is not treated by the random-error formula. The reading is rejected and taken again.",
+    "**Measurement error — vocabulary classified**\n\n| Term | Definition | Formula |\n|---|---|---|\n| Absolute error | Difference from mean | delta x |\n| Relative error | Fraction of value | delta x / x |\n| Percentage error | Relative x 100 | delta x/x x 100% |\n| Order of magnitude | Power of ten | 10^n |"
   ],
   "examples": [
     "An error is the difference between a measured value and the true value. A systematic error repeats in the same direction, as when a metre scale has a worn zero end. A random error scatters readings both ways and is reduced by averaging.",

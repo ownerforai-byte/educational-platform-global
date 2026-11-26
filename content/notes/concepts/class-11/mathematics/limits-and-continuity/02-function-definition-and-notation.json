@@ -45,7 +45,9 @@
     "**NEB-style (5m): For f(x) = x² and g(x) = 2x + 1, compute (f∘g)(x) and (g∘f)(x), and evaluate lim_{x→1} (f∘g)(x) using the composition theorem.** — **(f∘g)(x) = f(g(x)) = (2x + 1)² = 4x² + 4x + 1.** **(g∘f)(x) = g(f(x)) = 2x² + 1** — different results, confirming composition is not commutative: the machines run in the order written, inside-out. **Limit via the composition theorem:** g is a polynomial, continuous everywhere; f is a polynomial, continuous everywhere. The theorem: if g is continuous at a and f is continuous at g(a), then lim_{x→a} f(g(x)) = f(lim_{x→a} g(x)). **Apply:** lim_{x→1} g(x) = 3 (substitution), then f(3) = 9 ⟹ **lim = 9**. **Direct check:** (f∘g)(x) = 4x² + 4x + 1 at x = 1 gives 4 + 4 + 1 = 9 ✓. **Deep point:** the composition theorem is the licence to push a limit *through* a continuous machine — evaluate the inner limit first, then feed the result to the outer function; it fails exactly when the outer function is discontinuous at the inner limit, which is the seam where continuity genuinely does work."
   ],
   "formulas": [
-    "- f: A → B; range = {f(x) : x ∈ A}\n- difference quotient: [f(x + h) − f(x)]/h, h ≠ 0\n- piecewise: value = branch rule on the interval containing the input"
+    "f: A → B; range = {f(x) : x ∈ A}",
+    "difference quotient: [f(x + h) − f(x)]/h, h ≠ 0",
+    "piecewise: value = branch rule on the interval containing the input"
   ],
   "keyPoints": [
     "f: A -> B assigns exactly one image to each input; range = set of images, may be smaller than codomain. Equality of functions: same domain AND same values. Evaluation: substitute the whole input, including inside roots and piecewise branches. Difference quotient [f(x+h) - f(x)]/h: expand f(x+h) fully, factor out h, cancel (h != 0 licensed) - the derivative's seed. Natural domain: the usual bans. Piecewise: pick the branch whose interval contains the input; boundary ownership is declared by the definition."

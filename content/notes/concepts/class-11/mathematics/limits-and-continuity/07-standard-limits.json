@@ -45,7 +45,10 @@
     "**NEB-style (6m): Using standard limits, evaluate lim_{x→0} (e^{3x} − 1)/(ln(1 + 2x)).** — **Form check:** substitute x = 0: (1 − 1)/ln 1 = **0/0** — indeterminate. **Split into stars:** numerator e^{3x} − 1 ~ 3x (star: (eᵘ−1)/u → 1, u = 3x → 0); denominator ln(1 + 2x) ~ 2x (star: ln(1+u)/u → 1, u = 2x → 0). **Take the ratio:** (e^{3x} − 1)/ln(1+2x) ≈ (3x)/(2x) = **3/2** — more rigorously, write the expression as [(e^{3x}−1)/(3x)]·[2x/ln(1+2x)]·(3/2): the first bracket → 1, the second → 1, leaving **3/2**. **Deep point:** when both contestants vanish at first order, the limit is just the ratio of their first-order coefficients — the stars convert each function into its linear approximation, and the linear ratio survives. This is L'Hôpital's answer computed without differentiating: same theory, star-engine instead of derivative-engine."
   ],
   "formulas": [
-    "- lim_{x→0} sin x/x = 1; tan x/x = 1; (1 − cos x)/x² = 1/2\n- lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1\n- lim_{x→a} (xⁿ−aⁿ)/(x−a) = naⁿ⁻¹; lim_{x→0} (1+x)^{1/x} = e\n- x − sin x ~ x³/6; sin x − x cos x ~ x³/3 (small x)"
+    "lim_{x→0} sin x/x = 1; tan x/x = 1; (1 − cos x)/x² = 1/2",
+    "lim_{x→0} (eˣ−1)/x = 1; (aˣ−1)/x = ln a; ln(1+x)/x = 1",
+    "lim_{x→a} (xⁿ−aⁿ)/(x−a) = naⁿ⁻¹; lim_{x→0} (1+x)^{1/x} = e",
+    "x − sin x ~ x³/6; sin x − x cos x ~ x³/3 (small x)"
   ],
   "keyPoints": [
     "Standard limits (x in radians): sin x/x -> 1; tan x/x -> 1; (1 - cos x)/x^2 -> 1/2; (e^x - 1)/x -> 1; (a^x - 1)/x -> ln a; ln(1+x)/x -> 1; (x^n - a^n)/(x - a) -> n a^(n-1) as x -> a; (1 + x)^(1/x) -> e as x -> 0; (1 + 1/x)^x -> e as x -> inf; ((1+x)^n - 1)/x -> n. Reduction discipline: substitute u -> 0, factor, multiply by 1 to reach a standard form. Radians are mandatory for the trig star. The algebraic star is the derivative of x^n at a in disguise."

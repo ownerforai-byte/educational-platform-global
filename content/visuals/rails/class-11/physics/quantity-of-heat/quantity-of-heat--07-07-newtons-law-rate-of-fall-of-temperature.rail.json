@@ -73,6 +73,10 @@
       "text": "Definition, then formula, then substitution.  ·  A vector answer is incomplete without its direction."
     },
     {
+      "label": "Classified table",
+      "text": "Cooling rate — derivation logic classified · Step | Relation | Basis · Heat loss | dQ/dt = k(T - Ts) | Newton's law · Energy link | dQ = ms dT | Definition of c · Result | dT/dt = k'(T - Ts) | Exponential decay"
+    },
+    {
       "label": "Quick concepts",
       "text": "Definition and significance of Newton's Law of Cooling — Derivation of Rate of Fall of Temperature.  ·  Newton's law of cooling  ·  Excess temperature  ·  Rate of fall"
     },
@@ -110,7 +114,7 @@
     },
     {
       "label": "More ideas",
-      "text": "The law is a linear approximation. It is used for excesses of a few tens of degrees, where convection and a linearised radiation loss dominate. A red-hot body needs the Stefan–Boltzmann difference of fourth powers."
+      "text": "The law is a linear approximation. It is used for excesses of a few tens of degrees, where convection and a linearised radiation loss dominate. A red-hot body needs the Stefan–Boltzmann difference of fourth powers.  ·  **Cooling rate — derivation logic classified** | Step | Relation | Basis | |---|---|---| | Heat loss | dQ/dt = k(T - Ts) | Newton's law | | Energy link | dQ = ms dT | Definition of c | | Result | dT/dt = k'(T - Ts) | Exponential decay |"
     }
   ]
 }

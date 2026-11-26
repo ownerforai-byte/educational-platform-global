@@ -17,7 +17,8 @@
     "Mass Dependence: v_rms ∝ 1/√M. At same T, hydrogen (M=2 g/mol) moves √(32/2) = 4 times faster than oxygen (M=32 g/mol). This explains why light gases escape planetary atmospheres more readily.",
     "Typical Values at 300 K: H₂: 1920 m/s; He: 1370 m/s; N₂: 517 m/s; O₂: 483 m/s; CO₂: 412 m/s. All supersonic yet no bulk flow due to random directions.",
     "Connection to Kinetic Energy: Total translational KE of n moles = (3/2)nRT = (3/2)NkT. Internal energy of monatomic ideal gas U = (3/2)nRT depends only on T, not V or P.",
-    "Effusion and Graham's Law: Rate of effusion ∝ v_rms ∝ 1/√M. Lighter gases effuse faster through small openings. Used in uranium enrichment (²³⁵UF₆ vs ²³⁸UF₆)."
+    "Effusion and Graham's Law: Rate of effusion ∝ v_rms ∝ 1/√M. Lighter gases effuse faster through small openings. Used in uranium enrichment (²³⁵UF₆ vs ²³⁸UF₆).",
+    "**Molecular speeds — the three averages classified**\n\n| Speed | Formula | Size order |\n|---|---|---|\n| RMS | sqrt(3kT/m) | Largest |\n| Average | sqrt(8kT/pi m) | Middle |\n| Most probable | sqrt(2kT/m) | Smallest |"
   ],
   "specificConditions": [
     "Ideal Gas Assumption: Formulas assume point particles with elastic collisions and no intermolecular forces. Real gases deviate at high P or low T.",
@@ -104,31 +105,56 @@
   "mcs": [
     {
       "question": "Boltzmann constant k equals:",
-      "options": ["R × N_A", "R / N_A", "N_A / R", "R + N_A"],
+      "options": [
+        "R × N_A",
+        "R / N_A",
+        "N_A / R",
+        "R + N_A"
+      ],
       "answer": "B",
       "explanation": "k = R/N_A = 8.314 / (6.022×10²³) = 1.38×10⁻²³ J/K."
     },
     {
       "question": "At the same temperature, which gas has the highest rms speed?",
-      "options": ["O₂ (32 g/mol)", "N₂ (28 g/mol)", "He (4 g/mol)", "CO₂ (44 g/mol)"],
+      "options": [
+        "O₂ (32 g/mol)",
+        "N₂ (28 g/mol)",
+        "He (4 g/mol)",
+        "CO₂ (44 g/mol)"
+      ],
       "answer": "C",
       "explanation": "v_rms ∝ 1/√M; helium has smallest M, hence highest speed."
     },
     {
       "question": "If temperature quadruples, v_rms becomes:",
-      "options": ["Double", "Quadruple", "√2 times", "Unchanged"],
+      "options": [
+        "Double",
+        "Quadruple",
+        "√2 times",
+        "Unchanged"
+      ],
       "answer": "A",
       "explanation": "v_rms ∝ √T; √(4T) = 2√T, so speed doubles."
     },
     {
       "question": "The correct ordering of molecular speeds is:",
-      "options": ["v_rms < v_avg < v_mp", "v_mp < v_avg < v_rms", "v_avg < v_mp < v_rms", "All equal"],
+      "options": [
+        "v_rms < v_avg < v_mp",
+        "v_mp < v_avg < v_rms",
+        "v_avg < v_mp < v_rms",
+        "All equal"
+      ],
       "answer": "B",
       "explanation": "For Maxwell-Boltzmann: v_mp < v_avg < v_rms always."
     },
     {
       "question": "Average translational KE per molecule depends on:",
-      "options": ["Molar mass", "Pressure", "Temperature only", "Volume"],
+      "options": [
+        "Molar mass",
+        "Pressure",
+        "Temperature only",
+        "Volume"
+      ],
       "answer": "C",
       "explanation": "⟨KE⟩ = (3/2)kT — function of absolute temperature alone."
     }

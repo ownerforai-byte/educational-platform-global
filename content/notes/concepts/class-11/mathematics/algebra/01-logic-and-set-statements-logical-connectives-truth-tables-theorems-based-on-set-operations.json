@@ -91,7 +91,10 @@
   "animation3D": "algebra",
   "motionGraphics": "algebra",
   "formulas": [
-    "- p → q ≡ ¬p ∨ q; ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q\n- |A∪B| = |A| + |B| − |A∩B|; |P(A)| = 2ⁿ\n- A∪(B∩C) = (A∪B)∩(A∪C); A∪(A∩B) = A; A∪A′ = U\n- a³ + b³ + c³ − 3abc = (a+b+c)(a²+b²+c²−ab−bc−ca)"
+    "p → q ≡ ¬p ∨ q; ¬(p ∧ q) ≡ ¬p ∨ ¬q; ¬(p ∨ q) ≡ ¬p ∧ ¬q",
+    "|A∪B| = |A| + |B| − |A∩B|; |P(A)| = 2ⁿ",
+    "A∪(B∩C) = (A∪B)∩(A∪C); A∪(A∩B) = A; A∪A′ = U",
+    "a³ + b³ + c³ − 3abc = (a+b+c)(a²+b²+c²−ab−bc−ca)"
   ],
   "specialNotes": [],
   "examNotes": [

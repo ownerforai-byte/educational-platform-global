@@ -90,7 +90,9 @@
   "animation3D": "algebra",
   "motionGraphics": "algebra",
   "formulas": [
-    "- |x| = {x, x ≥ 0; −x, x < 0}; √(x²) = |x|\n- |xy| = |x||y|; |x+y| ≤ |x|+|y| (equality iff xy ≥ 0); |x−y| ≥ ||x|−|y||\n- |x| < a ⟺ −a < x < a; |x| > a ⟺ x < −a ∪ x > a; |x−a| < δ ⟺ a−δ < x < a+δ"
+    "|x| = {x, x ≥ 0; −x, x < 0}; √(x²) = |x|",
+    "|xy| = |x||y|; |x+y| ≤ |x|+|y| (equality iff xy ≥ 0); |x−y| ≥ ||x|−|y||",
+    "|x| < a ⟺ −a < x < a; |x| > a ⟺ x < −a ∪ x > a; |x−a| < δ ⟺ a−δ < x < a+δ"
   ],
   "specialNotes": [],
   "examNotes": [

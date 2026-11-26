@@ -7,7 +7,8 @@
   "notes": [
     "**Equation of a Plane:** This topic covers the fundamental concepts of equation of a plane in the mathematics curriculum.",
     "Understanding equation of a plane is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to equation of a plane should be memorized and practiced regularly."
+    "Key definitions and theorems related to equation of a plane should be memorized and practiced regularly.",
+    "**Plane equations — classified**\n\n| Form | Equation | Given data |\n|---|---|---|\n| Normal | n.r = d | Normal + point |\n| Through point | r.(r - r1) = 0 | Point + normal |\n| General | ax + by + cz = d | Coefficients = normal |"
   ],
   "confusion": [
     "❌ 'A plane equation only needs the normal vector' ✅ A plane requires *both* a normal vector (direction) *and* at least one point it passes through.",

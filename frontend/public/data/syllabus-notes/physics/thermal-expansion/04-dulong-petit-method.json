@@ -10,7 +10,8 @@
     "**Compounds (Kopp's rule).** For a compound the molecular heat capacity is the sum of the atomic contributions, letting unknown element masses be estimated from measured C.",
     "**Limitations.** The law fails at low temperatures — C falls toward zero as T³ (Debye) for metals and much faster for diamond/beryllium; quantum statistics, not classical, explains the falloff.",
     "**Exam angle.** Typical questions: state the law with its value, deduce atomic mass from specific heat, or name the solids that obey it least at low temperature.",
-    "The Dulong and Petit method measures the linear expansion of a rod between two known temperatures, often steam and ice, and finds α from ΔL / (L ΔT). The length that enters is the original length. Using the expanded length instead is a second-order mistake at these small expansions."
+    "The Dulong and Petit method measures the linear expansion of a rod between two known temperatures, often steam and ice, and finds α from ΔL / (L ΔT). The length that enters is the original length. Using the expanded length instead is a second-order mistake at these small expansions.",
+    "**Dulong-Petit — logic classified**\n\n| Step | Measurement | Purpose |\n|---|---|---|\n| Expansion | Liquid level rise in column | Apparent expansion |\n| Balance | Container expansion | Subtracted |\n| Result | Real expansion coefficient | Then c via calorimetry |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in dulong and petit method.",

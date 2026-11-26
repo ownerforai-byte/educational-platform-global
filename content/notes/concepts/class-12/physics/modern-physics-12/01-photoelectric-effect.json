@@ -10,7 +10,8 @@
     "K_max = h f − φ. Below the threshold, h f is less than φ and no electron escapes, however bright the light. Brightness is the number of photons, not the energy of each one.",
     "A brighter beam above threshold ejects more electrons, so the current rises. It does not raise the maximum kinetic energy. That energy depends on frequency.",
     "A stopping potential V_s is the retarding voltage that just cuts the current to zero. Then e V_s = K_max. Measuring V_s measures the fastest electrons.",
-    "A useful number is h c = 1240 eV nm, so a photon's energy in electronvolts is 1240 divided by the wavelength in nanometres."
+    "A useful number is h c = 1240 eV nm, so a photon's energy in electronvolts is 1240 divided by the wavelength in nanometres.",
+    "**Photoelectric — laws classified**\n\n| Observation | Photon reading | Classical failure |\n|---|---|---|\n| Instant emission | Energy packet | Wave predicts delay |\n| Threshold frequency | W = hf0 | No threshold in wave |\n| Intensity vs KE | KE independent of I | Wave predicts growth |"
   ],
   "confusion": [
     "❌ 'Higher intensity light always causes photoelectric emission' ✅ Emission only occurs if the light frequency is *above* the threshold frequency, regardless of intensity.",

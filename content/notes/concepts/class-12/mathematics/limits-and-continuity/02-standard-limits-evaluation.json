@@ -11,7 +11,8 @@
     "**Indeterminate forms:** 0/0, ∞/∞, 0·∞, ∞-∞, 0⁰, 1^∞, ∞⁰ require special techniques.",
     "**Standard limits:** lim(x→0) sin(x)/x = 1, lim(x→0) (1-cos x)/x = 0, lim(x→0) (eˣ-1)/x = 1, lim(x→0) ln(1+x)/x = 1.",
     "**Algebraic properties:** lim[f±g] = lim f ± lim g, lim[f·g] = lim f · lim g, lim[f/g] = lim f / lim g (denominator ≠ 0).",
-    "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a)."
+    "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a).",
+    "**Standard limits — arsenal classified**\n\n| Limit | Value | Use |\n|---|---|---|\n| sin x / x (x->0) | 1 | Trig limits |\n| (1 + 1/x)^x (x->inf) | e | Growth limits |\n| (e^x - 1)/x | 1 | Exponential limits |\n| (a^x - 1)/x | ln a | General base |"
   ],
   "confusion": [
     "❌ Applying limits directly when 0/0 form exists ✅ Must resolve 0/0 form using algebra, L'Hopital, or standard limits.",

@@ -55,7 +55,7 @@
     },
     {
       "label": "Derivation",
-      "text": "## 3. Formula sheet **Table 1 — Formula sheet** | Formula | Symbols | Validity condition | Where used | | --- | --- | --- | --- | Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms **Table 2 — Counts and distributions** | Case | Rule or formula | Worked example | Trap | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- |"
+      "text": "## 3. Formula sheet Complete for the topic; every row carries its validity condition (§3.1).  ·  ## 4. Methods and standard forms"
     },
     {
       "label": "Shortcut",
@@ -72,6 +72,10 @@
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Conditional probability and multiplication theorem — topic mind map\"><title>Conditional probability and multiplication theorem — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Conditional probability and multiplication th…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Conditional probability</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Multiplication theorem</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Conditional probability and multiplication theorem — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Classified table",
+      "text": "Probability relations — classified · Relation | Formula | Note · Conditional | P(A | B) = P(AB)/P(B) | B as new space · Multiplication | P(AB) = P(A)P(B | A) | Chain base"
     },
     {
       "label": "More practice",
@@ -99,7 +103,7 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg Conditional probability: shrink the sample space <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"100\" y=\"40\" width=\"300\" height=\"140\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"140\" y=\"30\"…"
+      "text": "```svg Conditional probability: shrink the sample space <svg viewBox=\"0 0 640 220\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"220\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"100\" y=\"40\" width=\"300\" height=\"140\" rx=\"10\" fill=\"#eff6ff\" stroke=\"#1d4ed8\"/><text x=\"140\" y=\"30\"…  ·  **Probability relations — classified** | Relation | Formula | Note | |---|---|---| | Conditional | P(A | B) = P(AB)/P(B) | B as new space | | Multiplication | P(AB) = P(A)P(B | A) | Chain base |"
     }
   ]
 }

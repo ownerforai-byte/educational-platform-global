@@ -37,7 +37,8 @@
     "**NEB-style (6m): Diagnose the form and evaluate lim_{x→1} (1/(x − 1) − 1/ln x).** — **Form:** both terms → ∞ (1/(x−1) blows up; 1/ln x → ∞ since ln x → 0) ⟹ **∞ − ∞**. **Merge:** = [ln x − (x − 1)]/[(x − 1)ln x]. **Form re-check:** numerator → 0 − 0 = 0; denominator → 0·0 = 0 ⟹ **0/0** ✓. **L'Hôpital:** numerator′ = 1/x − 1; denominator′ = ln x + (x−1)/x. At x = 1: (1 − 1)/(0 + 1) = **0** — still 0/0? Numerator′(1) = 0, denominator′(1) = 1 ⟹ the ratio → 0/1 = **0**. **Second pass confirms:** numerator′′ = −1/x², denominator′′ = 1/x + 1/x² ⟹ at 1: −1/2 ⟹... the first pass already resolved (0/1). **Answer: 0.** **Deep point:** the merge converted ∞ − ∞ into a working quotient, and the re-check after merging (0/0) licensed L'Hôpital — forms are properties of the *current* expression; the drill's rule is to re-diagnose after every rewrite."
   ],
   "formulas": [
-    "- 0·∞ ⟹ f·g = f/(1/g)\n- f^g = e^{g ln f}"
+    "0·∞ ⟹ f·g = f/(1/g)",
+    "f^g = e^{g ln f}"
   ],
   "keyPoints": [
     "Drill table: 0/0 -> factor/conjugate/steer/L'Hopital; inf/inf -> degrees/dominant division; 0*inf -> flip; inf-inf -> merge/conjugate; power forms -> log bridge. Diagnosis is the skill; the algebra is short. Forms are properties of the current expression, changed by legal rewriting. Cheapest cure wins; every answer carries a cross-check."

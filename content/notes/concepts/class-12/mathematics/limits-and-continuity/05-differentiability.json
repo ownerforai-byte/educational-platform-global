@@ -13,7 +13,8 @@
     "**Vertical tangent:** Point where derivative approaches infinity (not differentiable).",
     "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
     "**Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
-    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
+    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.",
+    "**Differentiability — relation classified**\n\n| Claim | Truth | Example |\n|---|---|---|\n| Differentiable => continuous | True | Always |\n| Continuous => differentiable | False | Abs value at 0 |\n| Corner | Fails one-sided slopes | kink |"
   ],
   "confusion": [
     "❌ Assuming continuous functions are always differentiable ✅ |x| at x=0 is continuous but has a corner (not differentiable).",

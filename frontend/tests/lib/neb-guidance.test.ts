@@ -88,7 +88,9 @@ describe("pyq-links — link-only rights gate", () => {
 });
 
 describe("mistakes — wrong/why/fix with real unit slugs", () => {
-  const syllabusSrc = readFileSync(join(ROOT, "frontend", "lib", "syllabus.ts"), "utf8");
+  // Canonical registry (frontend/lib/syllabus.ts is a re-export shim with no
+  // inline ids, so the id scan below must read the core file).
+  const syllabusSrc = readFileSync(join(ROOT, "frontend", "lib", "core", "syllabus.ts"), "utf8");
   const knownUnits = new Set(syllabusSrc.match(/id: "[a-z0-9-]+"/g)?.map((s) => s.slice(5, -1)) ?? []);
 
   it.each(CLASSES)("every mistake has wrong/why/fix and a syllabus unit (%s)", (cls) => {

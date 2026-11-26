@@ -270,7 +270,8 @@ export function deviceApprovalRoute(): string {
   if (!readStatusToken()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
   if (outcome === "REJECTED") return DENIED_ROUTE;
-  if (!isAccessApprovalRequired()) return defaultMemberHomePath();
+  // The stored outcome mirrors the backend's verdict — it maps to its screen
+  // whether or not this deployment's env turns the approval queue on.
   if (outcome === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }

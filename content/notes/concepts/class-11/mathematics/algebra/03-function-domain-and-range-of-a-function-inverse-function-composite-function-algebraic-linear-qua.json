@@ -47,7 +47,9 @@
     "**NEB-style (2m): Find the vertex, axis of symmetry and extreme value of f(x) = 2x² − 8x + 5.** — **Vertex x-coordinate:** h = −b/2a = −(−8)/(2·2) = **2**. **Vertex y-coordinate:** k = f(2) = 2(4) − 16 + 5 = **−3**. **Vertex (2, −3); axis of symmetry x = 2.** **Extreme value:** since a = 2 > 0 the parabola opens upward, so the vertex is the global **minimum**: the least value of f is **−3**, attained at x = 2. (Completing the square confirms: 2x² − 8x + 5 = 2(x − 2)² − 3 — the squared term is never negative and vanishes exactly at x = 2.)"
   ],
   "formulas": [
-    "- slope m = (f(b) − f(a))/(b − a); m⊥ = −1/m\n- ax² + bx + c = a(x − b/2a)² + (c − b²/4a); vertex (−b/2a, c − b²/4a)\n- rational asymptotes: deg p < deg q ⟹ y = 0; equal ⟹ y = aₚ/b_q; deg p = deg q + 1 ⟹ slant"
+    "slope m = (f(b) − f(a))/(b − a); m⊥ = −1/m",
+    "ax² + bx + c = a(x − b/2a)² + (c − b²/4a); vertex (−b/2a, c − b²/4a)",
+    "rational asymptotes: deg p < deg q ⟹ y = 0; equal ⟹ y = aₚ/b_q; deg p = deg q + 1 ⟹ slant"
   ],
   "numericals": [
     "Set up the defining equation for \"Function: domain and range of a function, inverse functio…\", substitute simple values, and compute the result with units.",

@@ -47,7 +47,8 @@
     "**Why identical conditions matter:** If one calorimeter has a larger opening or a different surface finish, $k$ will differ, and the comparison is invalid. The experiment must control for all geometric and surface factors.",
     "**Surface area effect:** A wider calorimeter cools faster (larger $A$ → larger $k$). If the two calorimeters have different shapes, even with the same material, the cooling rates won't be comparable.",
     "**NEB exam focus:** Understand that identical conditions → equal $k$. Use $\\frac{m_1 c_1}{t_1} = \\frac{m_2 c_2}{t_2}$ (with calorimeter correction) to compare specific heats. Know why equal heat loss doesn't mean equal temperature change.",
-    "**Real-world example:** A copper cup and an aluminum cup of the same size, filled with equal masses of hot water, will cool at the same RATE OF HEAT LOSS (same $k$, same excess temperature) but the aluminum cup's contents may cool faster in temperature if the cup itself absorbs more heat."
+    "**Real-world example:** A copper cup and an aluminum cup of the same size, filled with equal masses of hot water, will cool at the same RATE OF HEAT LOSS (same $k$, same excess temperature) but the aluminum cup's contents may cool faster in temperature if the cup itself absorbs more heat.",
+    "**Cooling law — variables classified**\n\n| Variable | Meaning | Behaviour |\n|---|---|---|\n| T | Body temperature | Falls exponentially |\n| Ts | Surroundings | Constant |\n| k | Cooling constant | Depends on surface and airflow |"
   ],
   "confusion": [
     "❌ Newton's law says temperature is proportional to time. ✅ It says the RATE of temperature change is proportional to the temperature difference: $\\frac{d\\theta}{dt} \\propto (\\theta - \\theta_0)$. The solution is exponential, not linear.",

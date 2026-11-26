@@ -73,6 +73,10 @@
       "text": "Deriving tan θ = v²/(rg) is the most common NEB question — know the force resolution steps.  ·  Maximum speed with friction problems are standard numerical questions."
     },
     {
+      "label": "Classified table",
+      "text": "Banked track cases (classified) · Case | Speed | Friction needed | Formula · Ideal banking | v = √(rg tanθ) | None | N cosθ = mg; N sinθ = mv²/r · Below ideal speed | v &lt; √(rg tanθ) | Friction acts up the slope | — · Above ideal speed | v &gt; √(rg tanθ) | Friction acts down the slope | — · Flat road | any | Full friction supplies mv²/r | f ≤ μmg  ·  Banking design facts · Quantity | Relation | Note · Angle for given v | tanθ = v²/rg | Design equation · Max safe speed with friction | v²max = rg(μ + tanθ)/(1 − μtanθ) | Full formula · Railway outer rail | Raised by tanθ per gauge | Practical application · Tyre wear | Reduced at ideal speed | Friction unneeded"
+    },
+    {
       "label": "Quick concepts",
       "text": "Ideal banking angle tan θ = v²/(rg) — derived from N sin θ = mv²/r and N cos θ = mg.  ·  At design speed, friction is zero — the normal force alone provides centripetal force.  ·  Maximum speed with friction: v_max = √[rg(tan θ + μ)/(1 − μ tan θ)].  ·  Railway superelevation h = w tan θ applies the same centripetal force principle."
     },

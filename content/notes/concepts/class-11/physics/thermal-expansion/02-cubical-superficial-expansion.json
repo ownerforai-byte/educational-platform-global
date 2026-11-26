@@ -10,7 +10,8 @@
     "**Derivation.** From V = L³, differentiating gives dV/V = 3 dL/L; similarly dA/A = 2 dL/L — hence β : γ = 2 : 3 relative to α.",
     "**Holes and gaps.** A hole in a heated plate expands exactly as solid material would — the hole gets bigger, not smaller; railway gaps and bimetal strips exploit this.",
     "**Numerical habit.** Convert every temperature rise to Δt, pick the right coefficient (α, β or γ), then apply Δ = initial × coefficient × Δt with consistent units.",
-    "Linear expansion α is the fractional change in length per kelvin. An area, with two lengths, expands with β = 2α. A volume, with three lengths, expands with γ = 3α, if the solid is the same in every direction. A hole in a metal plate expands as if it were filled with the same metal."
+    "Linear expansion α is the fractional change in length per kelvin. An area, with two lengths, expands with β = 2α. A volume, with three lengths, expands with γ = 3α, if the solid is the same in every direction. A hole in a metal plate expands as if it were filled with the same metal.",
+    "**Thermal expansion — three coefficients classified**\n\n| Expansion | Coefficient | Relation |\n|---|---|---|\n| Linear | alpha | Base |\n| Superficial | beta = 2 alpha | Area |\n| Cubical | gamma = 3 alpha | Volume |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in cubical and superficial expansion.",

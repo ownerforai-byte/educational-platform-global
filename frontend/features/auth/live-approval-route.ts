@@ -1,9 +1,5 @@
 import { apiFetch } from "@/lib/api-client";
 import {
-  defaultMemberHomePath,
-  isAccessApprovalRequired,
-} from "@/lib/core/access-approval";
-import {
   APPROVED_ROUTE,
   NORMAL_ROUTE,
   DENIED_ROUTE,
@@ -22,9 +18,9 @@ import {
  */
 export function routeForLiveAccess(status: AccessOutcome): string {
   if (status === "REJECTED") return DENIED_ROUTE;
-  if (!isAccessApprovalRequired()) {
-    return defaultMemberHomePath();
-  }
+  // The live status is the backend's verdict — it maps to its screen whether
+  // or not this deployment's env turns the approval queue on. The screens
+  // themselves apply the flag for deployments without the queue.
   if (status === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }
@@ -49,7 +45,8 @@ export function resolveLiveApprovalRouteFallback(): string {
   if (!readStatusToken()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
   if (outcome === "REJECTED") return DENIED_ROUTE;
-  if (!isAccessApprovalRequired()) return defaultMemberHomePath();
+  // The stored outcome mirrors the backend's verdict — map it the same way
+  // as the live route above.
   if (outcome === "ACTIVE") return APPROVED_ROUTE;
   return WAITING_ROUTE;
 }

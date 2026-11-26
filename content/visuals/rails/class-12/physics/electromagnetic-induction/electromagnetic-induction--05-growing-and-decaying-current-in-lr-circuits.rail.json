@@ -72,6 +72,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "LR circuit — phases classified · Phase | Current | Time constant · Growth | I0(1 - e^-t/tau) | tau = L/R · Decay | I0 e^-t/tau | Same tau"
+    },
+    {
       "label": "Quick concepts",
       "text": "LR growth  ·  LR decay  ·  Time constant  ·  Stored energy"
     },
@@ -117,7 +121,7 @@
     },
     {
       "label": "More ideas",
-      "text": "# Growing and decaying current in LR circuits ## 1. Introduction Physical picture of **Growing and decaying current in LR circuits** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…  ·  ## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.…  ·  ## 4. Formula and units table **Table 2 — Circuit elements and combinations** | Element or combo | Diagram ref | Equivalent value | Remark | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol…"
+      "text": "# Growing and decaying current in LR circuits ## 1. Introduction Physical picture of **Growing and decaying current in LR circuits** — what the phenomenon is, a real-world hook (Nepal where possible), the map of what follows, and the learning outcomes (physics-plan.md §3, block I).…  ·  ## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.  ·  ## 4. Formula and units table Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1)."
     }
   ]
 }

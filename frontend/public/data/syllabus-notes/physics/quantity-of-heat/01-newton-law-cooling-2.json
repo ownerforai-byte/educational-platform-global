@@ -22,7 +22,8 @@
     "**Limitation reminder:** Newton's law is an approximation. Real cooling involves radiation ($\\propto T^4 - T_0^4$), convection, and conduction simultaneously. The law is most accurate when temperature differences are moderate (20–50°C) and convection dominates.",
     "**Newton's Law of Cooling:** This topic covers the fundamental concepts of newton's law of cooling in the physics curriculum.",
     "Understanding newton's law of cooling is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to newton's law of cooling should be memorized and practiced regularly."
+    "Key definitions and theorems related to newton's law of cooling should be memorized and practiced regularly.",
+    "**Newton's law of cooling — statement parts classified**\n\n| Part | Statement | Condition |\n|---|---|---|\n| Rate | dT/dt proportional (T - Ts) | Small excess temperature |\n| Environment | Ts constant | Large surroundings |\n| Limit | Fails for large differences | Radiation dominates |"
   ],
   "confusion": [
     "❌ Newton's law of cooling tells you the exact time of death. ✅ It gives an ESTIMATE. The model ignores many factors (clothing, body size, air movement, humidity) that affect real cooling rates.",

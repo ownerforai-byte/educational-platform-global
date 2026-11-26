@@ -38,7 +38,8 @@
     "**NEB-style (6m): Differentiate y = (sin x)^{cos x} for 0 < x < π/2 using logarithmic differentiation.** — **Log bridge:** ln y = cos x·ln(sin x). **Differentiate both sides:** y′/y = (−sin x)·ln(sin x) + cos x·(cos x/sin x). **Solve:** y′ = y[sin x·(cot²x − ln(sin x))] = **(sin x)^{cos x}·[cos²x/sin x − sin x·ln(sin x)]**. **Verification at x = π/4:** sin = cos = 1/√2 ⟹ bracket = (1/2)/(1/√2) − (1/√2)·ln(1/√2) = √2/2 + (ln 2)/(2√2) > 0 ⟹ y increasing at π/4 — plausible since the base is near 1 and shrinking the exponent toward 0 raises the value. **Deep point:** the log bridge converted a variable-power into a product rule problem; the answer's shape y·(stuff) is universal for u^v — the function itself times the log-derivative, exactly as xˣ yields xˣ(1 + ln x)."
   ],
   "formulas": [
-    "- (fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²\n- y = uᵛ ⟹ y′ = y(v′ ln u + v·u′/u)"
+    "(fg)′ = f′g + fg′; (f/g)′ = (f′g − fg′)/g²",
+    "y = uᵛ ⟹ y′ = y(v′ ln u + v·u′/u)"
   ],
   "keyPoints": [
     "Product rule (fg)' = f'g + fg'; quotient rule (f'g - fg')/g^2; chain rule dy/dx = dy/du . du/dx - outer at u times inner. Log differentiation for u^v: ln y = v ln u => y' = y(v' ln u + v u'/u). Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k). Triage: sum -> term by term; product -> product rule; quotient -> quotient rule; composite -> chain; variable base and exponent -> logs first."

@@ -27,7 +27,12 @@
     "Prove cos θ + cos 3θ + ⋯ + cos(2n−1)θ = sin 2nθ/(2 sin θ)."
   ],
   "formulas": [
-    "- sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ\n- sin(A±B) = sin A cos B ± cos A sin B; cos(A±B) = cos A cos B ∓ sin A sin B\n- tan(A±B) = (tan A ± tan B)/(1 ∓ tan A tan B)\n- sin 2θ = 2 sin θ cos θ; cos 2θ = 1 − 2sin²θ = 2cos²θ − 1; tan 2θ = 2tanθ/(1 − tan²θ)\n- sin C ± sin D = 2 sin((C±D)/2) cos((C∓D)/2); cos C + cos D = 2cos((C+D)/2)cos((C−D)/2); cos C − cos D = −2sin((C+D)/2)sin((C−D)/2)\n- a sinθ + b cosθ = √(a²+b²) sin(θ + φ), tan φ = b/a"
+    "sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ",
+    "sin(A±B) = sin A cos B ± cos A sin B; cos(A±B) = cos A cos B ∓ sin A sin B",
+    "tan(A±B) = (tan A ± tan B)/(1 ∓ tan A tan B)",
+    "sin 2θ = 2 sin θ cos θ; cos 2θ = 1 − 2sin²θ = 2cos²θ − 1; tan 2θ = 2tanθ/(1 − tan²θ)",
+    "sin C ± sin D = 2 sin((C±D)/2) cos((C∓D)/2); cos C + cos D = 2cos((C+D)/2)cos((C−D)/2); cos C − cos D = −2sin((C+D)/2)sin((C−D)/2)",
+    "a sinθ + b cosθ = √(a²+b²) sin(θ + φ), tan φ = b/a"
   ],
   "summary": "Trigonometric identities are the working grammar: true for **every** admissible angle, proved by transformation, never solved. Everything descends from the **unit circle**: sin²θ + cos²θ = 1, and by division 1 + tan²θ = sec²θ, 1 + cot²θ = cosec²θ. The **addition formulas** (cos(A − B) = cos A cos B + sin A sin B from equal chords) generate **double angles** (sin 2θ = 2 sinθ cosθ; cos 2θ in three forms) and **half angles** (sin²(θ/2) = (1 − cosθ)/2, sign by quadrant of θ/2). **Transformation formulas** trade sums for products and products for sums — the tool behind NEB 2020's telescoping proof of cos θ + cos 3θ + ⋯ = sin 2nθ/(2 sin θ). Finally the **conditional identity** a sinθ + b cosθ = r sin(θ + φ), r = √(a² + b²), tan φ = b/a, compresses any sine–cosine pair into one sine of amplitude r — maximum r, minimum −r.",
   "importantConcepts": [

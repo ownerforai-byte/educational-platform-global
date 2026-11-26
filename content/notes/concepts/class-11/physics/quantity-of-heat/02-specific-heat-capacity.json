@@ -37,7 +37,8 @@
     "**Why $\\Theta$ appears in the denominator:** Specific heat is defined PER UNIT TEMPERATURE CHANGE. If $\\Delta\\theta$ doubles, $H$ doubles. The $\\Theta^{-1}$ dimension captures this inverse proportionality.",
     "**Practical importance of correct units:** In $H = mc\\Delta\\theta$, if $m$ is in kg and $c$ in J/kg·K, then $H$ is in joules. If $m$ is in g and $c$ in cal/g·°C, then $H$ is in calories. Mixing systems (e.g., kg with cal/g·°C) gives WRONG answers.",
     "**NEB exam focus:** Be able to derive $[c] = [M^0L^2T^{-2}\\Theta^{-1}]$, convert between J/kg·K and cal/g·°C, and use the correct units consistently in numerical problems.",
-    "**Dimensional homogeneity test:** Any correct formula for heat must have $[H] = [ML^2T^{-2}]$ on both sides. If a proposed formula gives different dimensions, it is immediately wrong - no calculation needed."
+    "**Dimensional homogeneity test:** Any correct formula for heat must have $[H] = [ML^2T^{-2}]$ on both sides. If a proposed formula gives different dimensions, it is immediately wrong - no calculation needed.",
+    "**Heat capacities — three sizes classified**\n\n| Quantity | Definition | Unit |\n|---|---|---|\n| Specific heat c | Per unit mass | J/kg K |\n| Molar heat C | Per mole | J/mol K |\n| Heat capacity C' | Whole body | J/K |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in specific heat capacity.",

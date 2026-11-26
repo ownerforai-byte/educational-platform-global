@@ -127,7 +127,9 @@
     "Show the insertion factors (kx/kx) in working - the steering visible is the method visible."
   ],
   "formulas": [
-    "- (xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; sin(kx)/x → k; tan(kx)/x → k\n- (1 − cos kx)/x² → k²/2; (e^{kx} − 1)/x → k; ln(1+kx)/x → k\n- (aˣ − 1)/x → ln a; (1+u)^v → e^{lim uv}; ln x/x → 0"
+    "(xⁿ − aⁿ)/(x − a) → naⁿ⁻¹; sin(kx)/x → k; tan(kx)/x → k",
+    "(1 − cos kx)/x² → k²/2; (e^{kx} − 1)/x → k; ln(1+kx)/x → k",
+    "(aˣ − 1)/x → ln a; (1+u)^v → e^{lim uv}; ln x/x → 0"
   ],
   "practiceQuestions": [
     "**NEB 2024 (verified PYQ): Evaluate lim_{x→0} (sin 3x)/x. (2m)** — **Rescaling insertion:** multiply and divide by 3: sin 3x/x = **3·[sin 3x/(3x)]**. **Star:** as x → 0, the argument 3x → 0, so by the fundamental star (radians) sin 3x/(3x) → **1**. **Result:** 3·1 = **3**. **General theorem harvested:** lim_{x→0} sin(kx)/x = k — the coefficient survives, the argument dies into the star. This is the 15.2/45 reduction grammar in its purest one-line form.",

@@ -77,6 +77,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Field strength g — how it varies · Location | Distance from centre | g value | Comment · Earth's surface | $r = R$ | &#8776; 9.8 N/kg | standard value · Height h above surface | $r = R + h$ | $g' = gR&#178;/(R+h)&#178;$ | falls as 1/r&#178; · At 2R from centre | doubled | g/4 | inverse-square check · At depth d | $r = R - d$ | $g' = g(1 - d/R)$ | linear fall, zero at centre · Earth's centre | r = 0 | 0 | shell theorem: outside layers cancel  ·  Field language NEB expects · Term | Definition | Unit · Gravitational field strength | force per unit test mass | N/kg (= m/s&#178;) · Field line | path a test mass would follow | &#8212; · Superposition | $\\vec{g}_{net} = \\sum \\vec{g}_i$ | vector sum · Point of zero field | fields from two masses cancel | between Earth and Moon, closer to Moon · Uniform field | same g everywhere | valid only over small height ranges"
+    },
+    {
       "label": "Quick concepts",
       "text": "**g is force per unit mass** — the field concept makes gravity local: evaluate GM/r² at the point."
     },

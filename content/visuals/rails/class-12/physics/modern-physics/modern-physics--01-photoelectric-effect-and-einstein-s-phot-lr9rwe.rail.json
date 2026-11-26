@@ -54,7 +54,7 @@
     },
     {
       "label": "Derivation",
-      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere. **Table 1 — Law and result sheet** | Law or result | Statement (words) | Equation + symbols | SI units | When it holds | | --- | --- | --- | --- | --- |  ·  ## 4. Formula and units table **Table 2 — Constants and values** | Constant or quantity | Value (CODATA/SI 2019) | Where used | Validity note | | --- | --- | --- | --- | **Table 3 — Summary and marks map** | Sub-topic | One-line essence | NEB pattern trend | | --- | --- | --- | Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1)."
+      "text": "## 3. Derivation block Assumptions box first; numbered steps each with the reason it follows; final boxed equation with units and validity condition (block III — the flagship). Syllabi verbs \"derive / establish / show that\" are answered here, not elsewhere.  ·  ## 4. Formula and units table Every formula of the topic with symbol meanings, SI units and condition of validity; each table is referenced from the body text (§3.1)."
     },
     {
       "label": "Shortcut",
@@ -71,6 +71,10 @@
         "svg": "<svg viewBox=\"0 0 900 640\" role=\"img\" aria-label=\"Photoelectric effect and Einstein's photoelectric equation — topic mind map\"><title>Photoelectric effect and Einstein's photoelectric equation — topic mind map</title><rect x=\"180\" y=\"24\" width=\"540\" height=\"86\" rx=\"10\" fill=\"#ede9fe\" stroke=\"#6d28d9\" stroke-width=\"3\"/><text x=\"450\" y=\"58\" text-anchor=\"middle\" font-size=\"23\" font-weight=\"bold\" fill=\"#4c1d95\">Photoelectric effect and Einstein's photoelec…</text><line x1=\"450\" y1=\"110\" x2=\"240\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"233,172 247,172 240,186\" fill=\"#7c3aed\"/><rect x=\"70\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"240\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Photoelectric effect</text><text x=\"240\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"240\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text><line x1=\"450\" y1=\"110\" x2=\"660\" y2=\"182\" stroke=\"#7c3aed\" stroke-width=\"2.5\" stroke-linecap=\"round\"/><polygon points=\"653,172 667,172 660,186\" fill=\"#7c3aed\"/><rect x=\"490\" y=\"190\" width=\"340\" height=\"140\" rx=\"10\" fill=\"#f5f3ff\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/><text x=\"660\" y=\"224\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">Einstein's photoelectric</text><text x=\"660\" y=\"252\" text-anchor=\"middle\" font-size=\"20\" font-weight=\"bold\" fill=\"#4c1d95\">equation</text><text x=\"660\" y=\"290\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Definition</text><text x=\"660\" y=\"316\" text-anchor=\"middle\" font-size=\"17\" fill=\"#5b21b6\">Exam use</text></svg>",
         "caption": "Photoelectric effect and Einstein's photoelectric equation — topic mind map of this topic's own sub-topics"
       }
+    },
+    {
+      "label": "Classified table",
+      "text": "Photoelectric — laws classified · Observation | Photon reading | Classical failure · Instant emission | Energy packet | Delay predicted · Threshold | hf0 = W | No threshold in wave · KE independent of I | One photon one electron | Wave predicts growth"
     },
     {
       "label": "More practice",
@@ -98,7 +102,7 @@
     },
     {
       "label": "More ideas",
-      "text": "```svg Photoelectric effect: photon in, electron out <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"160\" y=\"70\" width=\"60\" height=\"120\" fill=\"#a16207\"/><text x=\"190\" y=\"215\" fill=\"#a16207\">metal…"
+      "text": "```svg Photoelectric effect: photon in, electron out <svg viewBox=\"0 0 640 240\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"240\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><rect x=\"160\" y=\"70\" width=\"60\" height=\"120\" fill=\"#a16207\"/><text x=\"190\" y=\"215\" fill=\"#a16207\">metal…  ·  **Photoelectric — laws classified** | Observation | Photon reading | Classical failure | |---|---|---| | Instant emission | Energy packet | Delay predicted | | Threshold | hf0 = W | No threshold in wave | | KE independent of I | One photon one electron | Wave predicts growth |"
     }
   ]
 }

@@ -13,8 +13,8 @@ import { VerifyingStatus } from "./verifying-status";
 import {
   defaultMemberHomePath,
   isAccessApprovalRequired,
-  postAuthLandingPath,
 } from "@/lib/core/access-approval";
+import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   clearPendingSignup,
   DENIED_ROUTE,
@@ -64,7 +64,7 @@ export function SignupForm() {
     } else if (result.ok) {
       clearPendingSignup();
       refresh();
-      router.push(postAuthLandingPath(result.user));
+      router.push(tierHomePathFor(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
       if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");

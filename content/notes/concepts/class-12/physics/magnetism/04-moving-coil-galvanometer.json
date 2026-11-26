@@ -10,7 +10,8 @@
     "Current sensitivity is the deflection per unit current, N A B / k. Voltage sensitivity is the deflection per unit voltage. A large N, a large area, a strong field or a weak spring increases sensitivity.",
     "To make an ammeter, a small shunt resistor is connected in parallel so that most of the current bypasses the coil. The galvanometer then reads a large current with only a small current through the coil.",
     "To make a voltmeter, a large resistor is connected in series so that the instrument draws little current and can be placed across a component.",
-    "The coil is wound on a conducting frame, or has a separate damper, so that eddy currents stop the oscillation and the needle settles."
+    "The coil is wound on a conducting frame, or has a separate damper, so that eddy currents stop the oscillation and the needle settles.",
+    "**Galvanometer — design classified**\n\n| Feature | Purpose | Formula |\n|---|---|---|\n| Radial field | Uniform scale | theta proportional I |\n| Conversion | Ammeter: shunt | S = IgG/(I - Ig) |\n| Conversion | Voltmeter: series R | R = V/Ig - G |"
   ],
   "confusion": [
     "❌ 'A galvanometer measures current directly like an ammeter.' ✅ A galvanometer detects *small* currents; an ammeter is a galvanometer with a *shunt resistor* added in parallel to measure larger currents.",

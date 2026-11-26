@@ -11,7 +11,8 @@
     "**Product rule:** (fg)' = f'g + fg'.",
     "**Quotient rule:** (f/g)' = (f'g - fg')/g².",
     "**Chain rule:** d/dx[f(g(x))] = f'(g(x))·g'(x).",
-    "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc."
+    "**Higher order derivatives:** f''(x) = d/dx[f'(x)], f'''(x) = d/dx[f''(x)], etc.",
+    "**Derivative families — classified**\n\n| Family | Rule | Watch-out |\n|---|---|---|\n| Power | n x^(n-1) | Works for all real n |\n| Trig | sin->cos, cos->-sin | Sign flips |\n| Inverse trig | arctan 1/(1+x^2) | Domain restrictions |"
   ],
   "confusion": [
     "❌ 'd/dx(sin x) = cos x means the slope of sin at x=0 is 0.' ✅ At x = 0, sin(0) = 0, but d/dx(sin 0) = cos 0 = 1 — the tangent is steep, not flat.",

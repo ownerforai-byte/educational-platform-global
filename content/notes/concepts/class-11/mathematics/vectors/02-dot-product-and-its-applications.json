@@ -39,7 +39,9 @@
     "**NEB 2024 (verified PYQ): Find the angle between a = î + ĵ and b = ĵ + k̂. (2m)** — **Dot product:** a·b = (1)(0) + (1)(1) + (0)(1) = 1. **Magnitudes:** |a| = √(1 + 1) = √2; |b| = √(1 + 1) = √2. **Angle theorem:** cos θ = a·b/(|a||b|) = 1/(√2·√2) = 1/2. Hence **θ = 60° (π/3)** — a standard cosine match, no calculator needed."
   ],
   "formulas": [
-    "- a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a)\n- a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|)\n- scalar projection of a on b: a·b/|b|; vector projection: (a·b/|b|²)b"
+    "a·b = |a||b|cos θ = a₁b₁ + a₂b₂ + a₃b₃; |a| = √(a·a)",
+    "a ⊥ b ⟺ a·b = 0; cos θ = a·b/(|a||b|)",
+    "scalar projection of a on b: a·b/|b|; vector projection: (a·b/|b|²)b"
   ],
   "keyPoints": [
     "Dot product: a.b = |a||b| cos th = a1b1 + a2b2 + a3b3. a.a = |a|^2. Laws: commutative, distributive, scalar associative; NO cancellation. Perpendicularity theorem: a perp b (non-zero) iff a.b = 0. Angle theorem: cos th = a.b/(|a||b|). Scalar projection of a on b: a.b/|b| (signed); vector projection: (a.b/|b|^2) b. i, j, k orthonormal: self products 1, cross products 0. Sign atlas: acute positive, right zero, obtuse negative."

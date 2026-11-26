@@ -16,7 +16,8 @@
     "Convex Lens: Converging lens. Thicker at center. Forms real inverted images (except when object within focal length). Lens formula: 1/f = 1/v - 1/u.",
     "Concave Lens: Diverging lens. Thinner at center. Always forms virtual, erect, diminished images.",
     "Power of Lens: P = 1/f (f in meters), unit: diopter (D). Convex lens: P > 0. Concave lens: P < 0. Lenses in contact: P = P₁ + P₂ + ...",
-    "Spherical Aberration: Marginal rays focus at different points than paraxial rays. Minimized by using small apertures or parabolic mirrors."
+    "Spherical Aberration: Marginal rays focus at different points than paraxial rays. Minimized by using small apertures or parabolic mirrors.",
+    "**Mirrors vs lenses — classified**\n\n| Feature | Mirror | Lens |\n|---|---|---|\n| Image by | Reflection | Refraction |\n| Sign convention | Focal length of concave negative | Convex positive |\n| Uses | Vehicle mirrors | Cameras, eyes |"
   ],
   "specificConditions": [
     "Thin Lens/Mirror Approximation: The mirror equation (1/f = 1/u + 1/v) and lens formula (1/f = 1/v - 1/u) assume thin optics where thickness is negligible. For thick lenses, principal planes must be used. Sign convention (Cartesian): distances measured from pole/lens center; positive in direction of incident light for u, opposite for v/f.",
@@ -105,31 +106,56 @@
   "mcs": [
     {
       "question": "A plane mirror forms an image that is:",
-      "options": ["Real and inverted", "Virtual and erect", "Real and magnified", "Virtual and diminished"],
+      "options": [
+        "Real and inverted",
+        "Virtual and erect",
+        "Real and magnified",
+        "Virtual and diminished"
+      ],
       "answer": "B",
       "explanation": "Plane mirror forms a virtual, erect, same-sized image with lateral inversion."
     },
     {
       "question": "The mirror formula is:",
-      "options": ["1/f = 1/v - 1/u", "1/f = 1/v + 1/u", "1/f = u/v", "f = u + v"],
+      "options": [
+        "1/f = 1/v - 1/u",
+        "1/f = 1/v + 1/u",
+        "1/f = u/v",
+        "f = u + v"
+      ],
       "answer": "B",
       "explanation": "Mirror formula: 1/f = 1/v + 1/u with proper sign convention."
     },
     {
       "question": "A convex lens is also called:",
-      "options": ["Diverging lens", "Converging lens", "Plane lens", "Cylindrical lens"],
+      "options": [
+        "Diverging lens",
+        "Converging lens",
+        "Plane lens",
+        "Cylindrical lens"
+      ],
       "answer": "B",
       "explanation": "A convex lens converges light rays and is called a converging lens."
     },
     {
       "question": "Power of a lens is measured in:",
-      "options": ["Meters", "Diopters", "Watts", "Joules"],
+      "options": [
+        "Meters",
+        "Diopters",
+        "Watts",
+        "Joules"
+      ],
       "answer": "B",
       "explanation": "Power P = 1/f where f is in meters; unit is diopter (D)."
     },
     {
       "question": "Magnification m = -v/u means negative m indicates:",
-      "options": ["Erect image", "Inverted image", "Diminished image", "Magnified image"],
+      "options": [
+        "Erect image",
+        "Inverted image",
+        "Diminished image",
+        "Magnified image"
+      ],
       "answer": "B",
       "explanation": "Negative magnification indicates the image is inverted relative to the object."
     }

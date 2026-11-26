@@ -19,6 +19,7 @@ import {
 import { sharePath, sharePost, type FeedComment, type FeedPost } from "@/lib/api/community-feed";
 import { profilePath } from "@/lib/api/profile";
 import { isCommunityBot, resolveFeedAuthor } from "@/lib/community-bot";
+import { publicUrl } from "@/lib/site-url";
 import { isCreatorAuthor } from "@/lib/owner";
 import { getSubjectVisual } from "@/lib/ui/subject-visuals";
 import { BotAnswerButton } from "@/features/community/bot-answer-button";
@@ -366,7 +367,7 @@ export const FeedPostRow = memo(function FeedPostRow({
           <button
             type="button"
             onClick={() => {
-              const url = `${window.location.origin}${sharePath(item.id)}`;
+              const url = publicUrl(sharePath(item.id));
               const done = () => {
                 setShareCopied(true);
                 window.setTimeout(() => setShareCopied(false), 2000);

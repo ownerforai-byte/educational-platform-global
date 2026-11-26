@@ -45,7 +45,9 @@
     "**NEB-style (6m): For f(x) = x² for x ≥ 0 and f(x) = undefined (not part of the rule) for x < 0, a student claims lim_{x→0} f(x) = 0. Assess the claim fully.** — **What the student has:** the RHL — for x → 0⁺, x² → **0** by substitution (polynomial, continuous). **What the claim overreaches:** the student wrote a *two-sided* limit. For x < 0 the function has no values (outside its domain), so the **LHL does not exist**. **Existence theorem:** a two-sided limit requires both one-sided limits to exist and agree; with the LHL missing, **lim_{x→0} f(x) does not exist** — the correct statement is lim_{x→0⁺} f(x) = 0. **Continuity reading:** f is continuous on (0, ∞) and right-continuous at 0 (f(0) = 0 = RHL if f(0) = 0 is defined); continuity *at* 0 in the two-sided sense is not applicable on a domain edge. **Deep point:** the existence theorem has two gates — both sides must exist, then agree — and a domain edge fails the first gate; confusing \"the limit I computed\" with \"the limit\" is the exact error the two-gate structure exists to catch."
   ],
   "formulas": [
-    "- lim_{x→a⁺} f(x) = L ⟺ f(x) → L for a < x < a + δ\n- existence: lim_{x→a} f = L ⟺ LHL = RHL = L (finite)\n- 1/(x − a) as x → a⁺ ⟹ +∞"
+    "lim_{x→a⁺} f(x) = L ⟺ f(x) → L for a < x < a + δ",
+    "existence: lim_{x→a} f = L ⟺ LHL = RHL = L (finite)",
+    "1/(x − a) as x → a⁺ ⟹ +∞"
   ],
   "keyPoints": [
     "Right-hand limit lim_{x->a+} f(x) = L: f(x) -> L as x -> a through values greater than a; read the graph moving leftward toward a. Domain edges (sqrt x at 0) are one-sided by nature. Piecewise: the branch owning the right neighbourhood decides. Blow-up sign: denominator's sign for x > a (+inf or -inf). Existence theorem: two-sided limit exists iff both one-sided limits exist and are equal; an infinite one-sided limit also kills the two-sided limit."

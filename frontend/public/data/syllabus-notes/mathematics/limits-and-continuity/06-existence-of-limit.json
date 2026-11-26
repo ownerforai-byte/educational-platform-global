@@ -45,7 +45,9 @@
     "**NEB-style (5m): A student argues lim_{x→0} cos(1/x) exists because cos(1/x) is always between −1 and 1. Assess and correct.** — **The error:** boundedness is not convergence. The squeeze theorem needs the rails to **converge to a common value**; here the rails are the constants −1 and 1, which converge to *different* values (−1 ≠ 1), so the squeeze pins nothing — it only certifies boundedness. **Correct analysis:** as x → 0, 1/x → ∞ and cos(1/x) cycles through [−1, 1] infinitely fast, visiting 1, 0, −1 repeatedly with no settling trend ⟹ **lim_{x→0} cos(1/x) does not exist** (oscillatory failure at Gate 1). **Contrast:** x·cos(1/x) → 0 by squeeze, because the rails −|x| and |x| both → 0 — converging rails squeeze the middle. **Deep point:** the squeeze theorem's power is exactly the convergence of its rails; bounded oscillation inside non-converging rails proves only that the function stays in a band, and \"stays in a band\" is not \"approaches a value.\""
   ],
   "formulas": [
-    "- lim_{x→a} f = L ⟺ lim_{x→a⁻} f = lim_{x→a⁺} f = L (finite)\n- jump size = RHL − LHL; 1/x² → +∞ both sides (DNE)\n- lim_{x→∞} f(x) = L ⟺ y = L horizontal asymptote"
+    "lim_{x→a} f = L ⟺ lim_{x→a⁻} f = lim_{x→a⁺} f = L (finite)",
+    "jump size = RHL − LHL; 1/x² → +∞ both sides (DNE)",
+    "lim_{x→∞} f(x) = L ⟺ y = L horizontal asymptote"
   ],
   "keyPoints": [
     "Existence theorem: lim_{x->a} f(x) = L iff LHL = RHL = L, finite. DNE species: jump (finite unequal sides), split asymptote (opposite infinities, 1/x), unified blow-up (both +inf, 1/x^2 - still DNE), oscillation (no one-sided limits, sin(1/x) at 0). Protocol: compute LHL, RHL, compare; classify the DNE species when they disagree. Limits at infinity: lim_{x->+-inf} f(x) = L gives horizontal asymptotes - the same approach spirit at the far field."

@@ -10,7 +10,8 @@
     "Scalars have magnitude only (mass, time, energy); vectors have magnitude and direction (displacement, velocity, force). Their addition rules differ.",
     "Example: 3 m east followed by 4 m north gives path length 7 m but displacement magnitude √(3²+4²)=5 m. Distance and displacement are different quantities.",
     "Weight is gravitational force measured in newtons; mass is measured in kilograms. Near Earth W=mg, but mass does not change when the gravitational field changes.",
-    "A physical quantity needs a magnitude and a unit, unless it is a pure ratio. Saying the length is 2 is incomplete. Base quantities are measured directly. Derived quantities such as speed and force are defined from them."
+    "A physical quantity needs a magnitude and a unit, unless it is a pure ratio. Saying the length is 2 is incomplete. Base quantities are measured directly. Derived quantities such as speed and force are defined from them.",
+    "**Physical quantities — classified**\n\n| Class | Definition | Example |\n|---|---|---|\n| Fundamental | Independent, seven chosen | Mass, length, time |\n| Derived | Built from fundamentals | Velocity, force |\n| Scalar | Magnitude only | Speed, energy |\n| Vector | Magnitude + direction | Force, velocity |"
   ],
   "confusion": [
     "A negative vector component indicates direction, not negative magnitude.",

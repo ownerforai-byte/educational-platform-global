@@ -10,7 +10,8 @@
     "**Minimum deviation.** Deviation is least when the ray passes symmetrically (i₁ = i₂, r₁ = r₂ = A/2); then δ_m = 2i − A — the setting used in all prism measurements.",
     "**Prism formula.** At minimum deviation the refractive index is n = sin[(A + δ_m)/2] / sin(A/2) — how n of a glass prism is found experimentally.",
     "**Dispersion and thin prisms.** For a thin prism δ = (n − 1)A; violet deviates most and red least, and the angular dispersion is θ = δ_v − δ_r, giving the dispersive power ω = θ/δ_y.",
-    "The deviation produced by a prism is i + e − A. It is smallest when the ray passes symmetrically, and that minimum is the setting used to measure the index. The index is then the sine of half of A plus δ_m, divided by the sine of half of A."
+    "The deviation produced by a prism is i + e − A. It is smallest when the ray passes symmetrically, and that minimum is the setting used to measure the index. The index is then the sine of half of A plus δ_m, divided by the sine of half of A.",
+    "**Prism formulae — classified**\n\n| Relation | Formula | Condition |\n|---|---|---|\n| General deviation | d = i + e - A | Any passage |\n| Minimum deviation | 2i - A at d = Dm | Symmetric passage |\n| Refractive index | n = sin((A+Dm)/2)/sin(A/2) | At minimum |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in prism formula.",

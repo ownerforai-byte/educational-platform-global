@@ -73,6 +73,10 @@
       "text": "In thermodynamics, work is energy transfer across a system boundary due to macroscopic forces. The same definition $W = \\\\\\\\int F dx$ applies, but the 'system' and 'surroundings' must be clearly defined.…"
     },
     {
+      "label": "Classified table",
+      "text": "Work: sign, size and special cases · Case | Angle θ | Work | Energy bookkeeping · Force aids motion | 0° &#8804; θ &lt; 90° | positive | kinetic energy rises · Force opposes motion | 90° &lt; θ &#8804; 180° | negative | energy drained (friction, braking) · Force &#8869; displacement | θ = 90° | zero | uniform circular motion · No displacement | s = 0 | zero | holding a load still · Variable force | &#8212; | $W = &#8747;F&#8901;ds$ | area under F&#8211;s…  ·  Canonical work results worth memorising · Situation | Force law | Work done · Constant force | F constant | $W = Fs\\cos\\theta$ · Stretching a spring | $F = kx$ | $W = \\frac{1}{2}kx^2$ (triangle under graph) · Lifting at constant speed | $F = mg$ upward | $W = mgh$ (stored as PE) · Friction over distance s | $f = \\mu N$ opposing | $W = -\\mu N s$ (heat) · Circular motion (centripetal) | $F \\perp v$ always | $W = 0$"
+    },
+    {
       "label": "Study notes",
       "text": "### Deep dive: work as the area under the F–s graph For a constant force, $W = Fs\\cos\\theta$ is the whole story: the component of force *along* the displacement does the work, the perpendicular component does none.…  ·  ```svg Work = area under the F-s graph — rectangle vs spring triangle <svg viewBox=\"0 0 640 280\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"280\" fill=\"#ffffff\"/><g stroke=\"#9ca3af\" stroke-width=\"1.5\"><line x1=\"80\" y1=\"220\" x2=\"580\" y2=\"220\"/><line x1=\"80\" y1=\"220\" x2=\"80\" y2=\"60\"/></g><rect x=\"110\" y=\"110\" width=\"180\" height=\"110\"…  ·  **Sign of work:** Work is POSITIVE when $0^\\\\\\\\circ \\\\\\\\le \\ heta < 90^\\\\\\\\circ$ (force component along displacement). Work is ZERO when $\\ heta = 90^\\\\\\\\circ$ (force perpendicular to displacement, e.g., centripetal force, normal force on horizontal surface).…"
     },

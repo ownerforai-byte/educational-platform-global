@@ -38,7 +38,8 @@
     "**NEB-style (6m): Evaluate lim_{x→2} (√(x + 2) − 2)/(x² − 4).** — **Form:** (2 − 2)/0 = **0/0** ✓. **Both functions vanish at 2:** the numerator hides its root behind the radical; the denominator factors (x−2)(x+2). **Conjugate the numerator:** √(x+2) − 2 = (x − 2)/(√(x+2) + 2) ⟹ the expression = (x − 2)/[(√(x+2) + 2)(x − 2)(x + 2)] = 1/[(√(x+2) + 2)(x + 2)] for x ≠ 2. **Substitute:** 1/[(2 + 2)(4)] = **1/16**. **Deep point:** two cures in one problem — the conjugate exposed the numerator's shared root, which then cancelled against the denominator's explicit factor; composite 0/0 forms are solved by treating each hiding place in turn until one clean quotient remains."
   ],
   "formulas": [
-    "- Aⁿ − Bⁿ = (A − B)(Aⁿ⁻¹ + Aⁿ⁻²B + ⋯ + Bⁿ⁻¹)\n- √g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)]"
+    "Aⁿ − Bⁿ = (A − B)(Aⁿ⁻¹ + Aⁿ⁻²B + ⋯ + Bⁿ⁻¹)",
+    "√g(x) − √g(a) = [g(x) − g(a)]/[√g(x) + √g(a)]"
   ],
   "keyPoints": [
     "0/0 toolkit: factor theorem promises the shared root; double factoring for rational pairs; conjugate for radical differences; steering for trig ratios; coefficient ratios for matched stars; slope ratios for mixed families. Re-diagnose after every cancellation - the form may change species. Every answer cross-checks against the corresponding star."

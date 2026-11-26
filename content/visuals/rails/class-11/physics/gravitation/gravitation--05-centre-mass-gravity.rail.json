@@ -77,6 +77,10 @@
       "text": "COM calculation for two/three point masses is a standard numerical.  ·  Comparing COM and CG is a frequent short-answer question."
     },
     {
+      "label": "Classified table",
+      "text": "Centre of mass vs centre of gravity (classified) · Aspect | Centre of mass | Centre of gravity · Definition | Mass-weighted average point | Point where weight acts · Uniform field | Same point | Same point · Non-uniform field | Still defined | Shifts slightly · Calculation | Σmx/Σm | Same in uniform g  ·  COM positions to remember · Body | COM location | Note · Uniform rod | Midpoint | Symmetry · Triangle (lamina) | Centroid | Medians meet · Two-body system | Closer to heavier mass | Lever rule · Ring/hollow shell | Centre (empty space!) | COM need not be in material"
+    },
+    {
       "label": "Quick concepts",
       "text": "$COM = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$; $CG = \\text{point where total weight acts}$.  ·  COM and CG coincide in uniform g.  ·  Uniform symmetric bodies have COM at the geometric centre.  ·  The COM can lie outside the material of the body."
     },

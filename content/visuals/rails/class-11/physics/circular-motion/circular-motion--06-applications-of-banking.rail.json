@@ -73,6 +73,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Banked track — regimes classified · Speed | Friction | Formula · Ideal v | None needed | tan(theta) = v^2/rg · Below ideal | Friction up the slope | Lower bound · Above ideal | Friction down the slope | Upper bound"
+    },
+    {
       "label": "Quick concepts",
       "text": "**The 5m banking derivation:** N cos θ = mg and N sin θ = mv²/r → tan θ = v²/rg (NEB 2024)."
     },
@@ -107,6 +111,10 @@
     {
       "label": "More ideas",
       "text": "Compare flat vs banked road friction requirements for the same curve and speed.  ·  ## 4. Exam Orientation and Previous Year Questions (NEB) ### 4.1 Verified PYQs from the solved-paper bank | Year | Unit | Topic | Question | Marks | Type | |---|---|---|---|---|---| | 2080/2024 | Mechanics | Circular motion | Derive the expression for the angle of banking of a curved road, and find the banking angle…  ·  ```svg Banked track — normal's horizontal component turns the car <svg viewBox=\"0 0 640 260\" font-family=\"Segoe UI\" font-size=\"13\"><rect x=\"0\" y=\"0\" width=\"640\" height=\"260\" fill=\"#ffffff\"/><g text-anchor=\"middle\"><path d=\"M100 200 L 540 120\" stroke=\"#374151\" stroke-width=\"8\"/><rect x=\"280\" y=\"120\" width=\"60\"…"
+    },
+    {
+      "label": "More ideas",
+      "text": "**Banked track — regimes classified** | Speed | Friction | Formula | |---|---|---| | Ideal v | None needed | tan(theta) = v^2/rg | | Below ideal | Friction up the slope | Lower bound | | Above ideal | Friction down the slope | Upper bound |"
     }
   ]
 }

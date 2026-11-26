@@ -17,7 +17,8 @@
     "Degrees of Freedom f: Each quadratic DOF contributes (1/2)R to C_v per mole. Monatomic: f = 3 (translational) → C_v = 3R/2. Diatomic: f = 5 (3 trans + 2 rot) → C_v = 5R/2. Vibrational modes add R each (kinetic + potential) but activate only at high T.",
     "Temperature Dependence: At very low T, rotational/vibrational modes freeze out (quantum effect). C_v decreases below classical prediction. At high T, vibrational modes activate, increasing C_v toward equipartition limit.",
     "Experimental Measurement: C_v measured in bomb calorimeter (fixed volume). C_p measured in flow calorimeter or derived from C_v + R. Adiabatic expansion methods (Clement-Desormes) determine γ directly.",
-    "Applications: γ determines speed of sound v = √(γRT/M), adiabatic lapse rate in atmosphere, efficiency of Carnot and Otto cycles, and shock wave properties."
+    "Applications: γ determines speed of sound v = √(γRT/M), adiabatic lapse rate in atmosphere, efficiency of Carnot and Otto cycles, and shock wave properties.",
+    "**Gas heat capacities — Cp vs Cv classified**\n\n| Quantity | Condition | Relation |\n|---|---|---|\n| Cv | Constant volume | All heat raises U |\n| Cp | Constant pressure | Heat raises U + does work |\n| Mayer | Link | Cp - Cv = R |\n| Gamma | Ratio | Cp/Cv = 5/3 (mono) |"
   ],
   "specificConditions": [
     "Ideal Gas Assumption: Mayer's relation C_p − C_v = R holds exactly only for ideal gases. Real gases show deviations at high P or low T.",
@@ -104,31 +105,56 @@
   "mcs": [
     {
       "question": "For an ideal gas, C_p − C_v equals:",
-      "options": ["Zero", "R/2", "R", "2R"],
+      "options": [
+        "Zero",
+        "R/2",
+        "R",
+        "2R"
+      ],
       "answer": "C",
       "explanation": "Mayer's relation: C_p − C_v = R for one mole of ideal gas."
     },
     {
       "question": "The adiabatic index γ for a monatomic gas is:",
-      "options": ["1.0", "1.4", "1.67", "2.0"],
+      "options": [
+        "1.0",
+        "1.4",
+        "1.67",
+        "2.0"
+      ],
       "answer": "C",
       "explanation": "Monatomic: C_v = 3R/2, C_p = 5R/2 → γ = 5/3 ≈ 1.67."
     },
     {
       "question": "C_p is greater than C_v because:",
-      "options": ["Molecules move faster at constant P", "Work is done during expansion at constant P", "Internal energy is higher at constant P", "Pressure adds extra energy"],
+      "options": [
+        "Molecules move faster at constant P",
+        "Work is done during expansion at constant P",
+        "Internal energy is higher at constant P",
+        "Pressure adds extra energy"
+      ],
       "answer": "B",
       "explanation": "At constant P, part of supplied heat performs expansion work PdV."
     },
     {
       "question": "For a diatomic gas at room temperature, C_v equals:",
-      "options": ["3R/2", "5R/2", "7R/2", "3R"],
+      "options": [
+        "3R/2",
+        "5R/2",
+        "7R/2",
+        "3R"
+      ],
       "answer": "B",
       "explanation": "Diatomic at room T: 3 translational + 2 rotational DOF → C_v = 5R/2."
     },
     {
       "question": "Speed of sound in a gas depends on:",
-      "options": ["C_v only", "C_p only", "γ = C_p/C_v", "C_p + C_v"],
+      "options": [
+        "C_v only",
+        "C_p only",
+        "γ = C_p/C_v",
+        "C_p + C_v"
+      ],
       "answer": "C",
       "explanation": "v = √(γRT/M); speed of sound depends on adiabatic index γ."
     }

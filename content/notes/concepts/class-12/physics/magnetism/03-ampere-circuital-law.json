@@ -10,7 +10,8 @@
     "For a long solenoid, a rectangular path with one side inside gives B = μ0 n I, where n is the number of turns per unit length. The field outside the ideal solenoid is zero, so that side of the rectangle contributes nothing.",
     "A toroid, a solenoid bent into a ring, has B = μ0 N I /(2π r) inside the core and a very small field outside.",
     "Currents outside the path are not enclosed, so they do not appear on the right-hand side. They may still shape the field if the symmetry is poor, which is why the law is then hard to use.",
-    "The law as stated here is for steady currents in vacuum. A displacement current is the later correction for changing electric fields."
+    "The law as stated here is for steady currents in vacuum. A displacement current is the later correction for changing electric fields.",
+    "**Ampere's law — applications classified**\n\n| Source | Enclosed current | Field |\n|---|---|---|\n| Solenoid | nIl | B = mu0 n I |\n| Toroid | Same idea | Confined inside |"
   ],
   "confusion": [
     "❌ 'Ampere's law works for any current distribution.' ✅ It is most useful for *highly symmetric* situations (infinite wire, solenoid, toroid); for arbitrary shapes, Biot-Savart is needed.",

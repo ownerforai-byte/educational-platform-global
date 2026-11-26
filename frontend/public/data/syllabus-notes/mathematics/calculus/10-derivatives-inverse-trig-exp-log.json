@@ -38,7 +38,8 @@
     "**NEB-style (6m): Using the inverse-engine rule, derive (sec⁻¹x)′ = 1/(|x|√(x² − 1)) and explain the absolute value.** — **Setup:** y = sec⁻¹x ⟹ x = sec y, y ∈ [0, π] \\\\ {π/2} (the principal branch). **Engine:** (sec⁻¹)′(x) = 1/(sec)′(y) = 1/(sec y·tan y) = 1/(x·tan y). **Express tan y:** sec²y − 1 = tan²y ⟹ |tan y| = √(x² − 1) (x = sec y satisfies |x| ≥ 1). **The absolute value:** on the branch, tan y is positive for y ∈ [0, π/2) and negative for y ∈ (π/2, π] — so x·tan y = |x|·√(x²−1) in both halves (the signs of x and tan y match on the branch) ⟹ **(sec⁻¹x)′ = 1/(|x|√(x² − 1))**, valid for |x| > 1. **Deep point:** the absolute value is not decoration — it is the branch's sign bookkeeping compressed into one symbol; dropping it halves the table's correctness on the negative side."
   ],
   "formulas": [
-    "- (f⁻¹)′(f(x)) = 1/f′(x)\n- (tan⁻¹x)′ = 1/(1 + x²); (aˣ)′ = aˣ·ln a"
+    "(f⁻¹)′(f(x)) = 1/f′(x)",
+    "(tan⁻¹x)′ = 1/(1 + x²); (aˣ)′ = aˣ·ln a"
   ],
   "keyPoints": [
     "Inverse-engine rule: (f^-1)'(f(x)) = 1/f'(x), f' != 0 - derives the whole inverse trig table. Entries: sin^-1 -> 1/sqrt(1-x^2); tan^-1 -> 1/(1+x^2); sec^-1 -> 1/(|x|sqrt(x^2-1)); co-functions carry minus signs; branches supply positivity. Exp/log: (e^x)' = e^x; (a^x)' = a^x ln a; (ln x)' = 1/x; (log_a x)' = 1/(x ln a). Every inverse singularity is a horizontal tangent of the original."

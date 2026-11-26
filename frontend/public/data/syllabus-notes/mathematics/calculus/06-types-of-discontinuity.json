@@ -38,7 +38,8 @@
     "**NEB-style (6m): For f(x) = (x³ − 1)/(x² − 1) for x ≠ 1 with f(1) = k: find k for continuity and classify what happens at x = −1.** — **Factor:** x³ − 1 = (x−1)(x² + x + 1); x² − 1 = (x−1)(x+1) ⟹ f(x) = (x² + x + 1)/(x + 1) for x ≠ 1. **At x = 1:** cancelled root ⟹ limit = 3/2 ⟹ **k = 3/2** for continuity (removable otherwise). **At x = −1:** surviving denominator root; numerator at −1: 1 − 1 + 1 = 1 ≠ 0 ⟹ wall: x → −1⁺ ⟹ denominator small positive ⟹ → **+∞**; x → −1⁻ ⟹ → **−∞** ⟹ **infinite, non-removable**. **Deep point:** one factorisation served two classifications — the cancelled root asked for a value (k = 3/2), the surviving root asked for signs; the audit is always: cancel, then read what remains."
   ],
   "formulas": [
-    "- Removable: lim exists, f(a) ≠ L or undefined ⟹ repair f(a) = L\n- Jump: LHL ≠ RHL, both finite; size = |RHL − LHL|"
+    "Removable: lim exists, f(a) ≠ L or undefined ⟹ repair f(a) = L",
+    "Jump: LHL ≠ RHL, both finite; size = |RHL − LHL|"
   ],
   "keyPoints": [
     "Decision tree: sides exist and agree? No -> jump (finite unequal), infinite (blow-up, odd splits/even unifies), or oscillatory. Yes -> limit L exists; f(a) = L? Yes -> continuous; No -> removable, repair f(a) = L. Rational triage: cancelled roots are holes, surviving denominator roots are walls. Jump size |RHL - LHL| is data. Repair test: only removable breaks yield to point-value edits."

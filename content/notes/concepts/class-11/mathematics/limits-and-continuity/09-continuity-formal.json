@@ -45,7 +45,10 @@
     "**NEB-style (6m): For f(x) = x² for x ≤ 1, f(x) = ax + b for x > 1, find a and b so that f is continuous at 1, and justify via the three-part test.** — **Left side:** the first piece is a polynomial ⟹ LHL = 1² = **1**, and f(1) = 1 (≤ puts 1 in the first piece). **Right side:** RHL = lim_{x→1⁺} (ax + b) = **a + b** (polynomial ⟹ substitution). **Continuity demands:** RHL = LHL = f(1) ⟹ a + b = 1. **One equation, two unknowns:** continuity at this single joint constrains only the *sum* — e.g. a = 2, b = −1; or a = 0, b = 1 (flat right piece); or a = 3, b = −2. **Verify one choice (a = 2, b = −1):** RHL = 2 − 1 = 1 = LHL = f(1) ✓ — all three parts pass. **Deep point:** one joint imposes one equation; the family of continuous weldings is a line in (a, b)-space. Extra demands (differentiability at the joint, another joint's continuity) add equations — continuity conditions are always *linear constraints on the parameters*, which is why \"find the constants\" questions are systems of equations in disguise."
   ],
   "formulas": [
-    "- ∀ε > 0 ∃δ > 0: |x − a| < δ ⟹ |f(x) − f(a)| < ε\n- IVT: f ∈ C[a,b], u ∈ [f(a), f(b)] ⟹ ∃c: f(c) = u\n- EVT: f ∈ C[a,b] ⟹ max and min attained\n- sequential: xₙ → a ⟹ f(xₙ) → f(a)"
+    "∀ε > 0 ∃δ > 0: |x − a| < δ ⟹ |f(x) − f(a)| < ε",
+    "IVT: f ∈ C[a,b], u ∈ [f(a), f(b)] ⟹ ∃c: f(c) = u",
+    "EVT: f ∈ C[a,b] ⟹ max and min attained",
+    "sequential: xₙ → a ⟹ f(xₙ) → f(a)"
   ],
   "keyPoints": [
     "Precise continuity: for every eps > 0 there is delta > 0 with |x - a| < delta => |f(x) - f(a)| < eps. Sequential theorem: f continuous at a iff x_n -> a implies f(x_n) -> f(a); one escaping sequence disproves continuity. Closure theorems: sums, products, quotients (denominator != 0), compositions continuous. IVT: f continuous on [a, b], u between f(a) and f(b) => f(c) = u for some c in (a, b) - sign change gives roots. EVT: continuous on closed bounded [a, b] attains max and min; open intervals or discontinuities break it (x on (0,1), 1/x blow-up)."

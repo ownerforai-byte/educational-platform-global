@@ -51,7 +51,9 @@
     "**NEB-style (5m): Use the squeeze theorem to evaluate lim_{x→0} x² cos(1/x²), and explain why no algebraic method can resolve it.** — **The obstacle:** cos(1/x²) oscillates infinitely fast near 0 (its argument → ∞), so it has no limit and no standard-limit steering applies — algebra is powerless. **The bounds:** −1 ≤ cos(1/x²) ≤ 1 for every x ≠ 0; multiplying by the non-negative x²: **−x² ≤ x² cos(1/x²) ≤ x²**. **The squeeze:** both bounds → 0 as x → 0, so by the squeeze theorem the limit is **0**. **Deep conceptual point:** the squeeze theorem is the *only* property that works without an explicit formula for the limit — it replaces computation with **bounding**. The factor x² is a *damping coefficient*: wild oscillation squeezed between vanishing walls must itself vanish. The same pattern certifies continuity of x² sin(1/x) at 0 and underlies every \"bounded times vanishing\" argument in analysis."
   ],
   "formulas": [
-    "- lim(f ± g) = L ± M; lim fg = LM; lim f/g = L/M (M ≠ 0); lim cf = cL; lim fⁿ = Lⁿ\n- squeeze: g ≤ f ≤ h, lim g = lim h = L ⟹ lim f = L\n- forms: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0⁰, ∞⁰"
+    "lim(f ± g) = L ± M; lim fg = LM; lim f/g = L/M (M ≠ 0); lim cf = cL; lim fⁿ = Lⁿ",
+    "squeeze: g ≤ f ≤ h, lim g = lim h = L ⟹ lim f = L",
+    "forms: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0⁰, ∞⁰"
   ],
   "numericals": [
     "Use  lim sin x/x = 1 (x→0, rad)  — pick reasonable values, solve, and check the units.",

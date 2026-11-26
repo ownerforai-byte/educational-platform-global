@@ -74,6 +74,10 @@
       "text": "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the static resistance is $V/I$ while the dynamic resistance is the slope of the $I$-$V$ curve at that point.  ·  A diode is not simply a 'one-way valve' for current. In reverse bias, a tiny leakage current (nA to $\\\\\\mu$A range) still flows. In forward bias, the current is exponentially related to voltage, not linearly."
     },
     {
+      "label": "Classified table",
+      "text": "Ohmic vs non-ohmic devices · Device | I–V shape | R behaviour | Why · Metal wire (constant T) | straight line | constant | ions scatter, not electrons · Filament lamp | flattening curve | R rises when hot | tungsten &#945; &gt; 0 · Thermistor (NTC) | steepening curve | R falls when hot | more carriers released · Diode | asymmetric | R tiny one way, huge the other | junction barrier · Electrolyte | roughly linear at low V | near-ohmic | ion drift limited  ·  Reading an I–V graph correctly · Question | Read | Formula · Static resistance at a point | V/I from origin to point | $R = V/I$ · Dynamic resistance at a point | slope of the tangent | $r = dV/dI$ · Ohmic check | are they equal everywhere? | yes &#8594; ohmic · Slope units | V/A = &#937; | steeper = smaller R"
+    },
+    {
       "label": "Universal facts",
       "text": "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
     },

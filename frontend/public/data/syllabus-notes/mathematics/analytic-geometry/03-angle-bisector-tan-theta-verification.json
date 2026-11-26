@@ -157,7 +157,8 @@
     "State the certifying sentence explicitly: \"tan theta < 1, hence the acute bisector\" - the conclusion needs its licence."
   ],
   "formulas": [
-    "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|\n- tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector"
+    "tan θ = |(m₂ − m₁)/(1 + m₁m₂)|",
+    "tan θ < 1 ⟹ acute bisector; tan θ > 1 ⟹ obtuse bisector"
   ],
   "practice": [
     "Verify via tan θ that 6x + 6y − 1 = 0 is the acute bisector of x + 2y − 5 = 0 and 4x + 2y + 9 = 0.",

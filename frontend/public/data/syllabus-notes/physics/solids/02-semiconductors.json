@@ -17,7 +17,8 @@
     "Fermi Level Position: Intrinsic: E_F lies near mid-gap. n-type: E_F shifts toward conduction band (closer to E_c). p-type: E_F shifts toward valence band (closer to E_v). Heavy doping can push E_F into bands (degenerate semiconductor).",
     "Conductivity Control: σ = e(nμ_e + pμ_h). Doping adjusts n or p over many orders of magnitude (10¹⁰ to 10¹⁹ cm⁻³). Mobility μ decreases at high doping due to impurity scattering. Optimal doping balances carrier density and mobility.",
     "Temperature Dependence: Low T: freeze-out region (carriers not ionized). Medium T: extrinsic region (all dopants ionized, n ≈ N_d or p ≈ N_a). High T: intrinsic region (thermally generated pairs dominate over dopants). Device operation typically in extrinsic region.",
-    "Applications: p-n junctions (diodes, LEDs, solar cells), bipolar transistors (npn/pnp), MOSFETs (CMOS logic), integrated circuits. Modern electronics relies entirely on controlled doping of silicon."
+    "Applications: p-n junctions (diodes, LEDs, solar cells), bipolar transistors (npn/pnp), MOSFETs (CMOS logic), integrated circuits. Modern electronics relies entirely on controlled doping of silicon.",
+    "**Semiconductors — classified by doping**\n\n| Type | Dopant | Carriers |\n|---|---|---|\n| Intrinsic | None | Electron = hole |\n| n-type | Pentavalent (P, As) | Electrons majority |\n| p-type | Trivalent (B, Al) | Holes majority |"
   ],
   "specificConditions": [
     "Thermal Equilibrium Assumed: Mass action law np = n_i² and Fermi level definitions apply only at equilibrium. Non-equilibrium (illumination, bias) requires quasi-Fermi levels.",

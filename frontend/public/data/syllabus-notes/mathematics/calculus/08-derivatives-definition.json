@@ -38,7 +38,8 @@
     "**NEB-style (6m): Using first principles, prove that d/dx (1/x) = −1/x² for x ≠ 0.** — **Quotient:** [1/(x+h) − 1/x]/h = [x − (x + h)]/[h·x(x + h)] = **−h/[h·x(x+h)]** = −1/[x(x + h)] for h ≠ 0. **Limit:** as h → 0, x + h → x (continuity) ⟹ denominator → x·x ⟹ **f′(x) = −1/x²** ∎. **Cross-check:** the power rule at n = −1 gives −1·x⁻² ✓. **Deep point:** the h-factor emerged from combining the fractions — algebra (common denominators) is the first-principles toolkit's quietest tool; and the answer's shape (−1/x²) shows the derivative inherits the hyperbola's symmetry: odd function, even derivative."
   ],
   "formulas": [
-    "- f′(x) = lim_{h→0} [f(x+h) − f(x)]/h\n- f′(a) exists ⟺ f′₊(a) = f′₋(a)"
+    "f′(x) = lim_{h→0} [f(x+h) − f(x)]/h",
+    "f′(a) exists ⟺ f′₊(a) = f′₋(a)"
   ],
   "keyPoints": [
     "Definition: f'(x) = lim [f(x+h)-f(x)]/h - chord slopes converging to the tangent slope. One-sided derivatives must exist and agree. Differentiability implies continuity (factored difference argument); converse false (|x| corner). First principles: create the h-factor, cancel, finish with a star. Derivative = local linear approximation f(x) ~ f(a) + f'(a)(x-a)."

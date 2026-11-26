@@ -86,7 +86,8 @@
     "Close with the doubling check: full angle = 2 x half-angle, computed independently."
   ],
   "formulas": [
-    "- tan θ = |(m₂ − m₁)/(1 + m₁m₂)|; vertical lines: use inclinations α\n- tan θ(full) = 4/3 ⟹ θ ≈ 53.13° = 2 × 26.57°"
+    "tan θ = |(m₂ − m₁)/(1 + m₁m₂)|; vertical lines: use inclinations α",
+    "tan θ(full) = 4/3 ⟹ θ ≈ 53.13° = 2 × 26.57°"
   ],
   "practice": [
     "Verify via tangent that y = 4 is the obtuse bisector of 2x + y − 7 = 0 and 2x − y + 1 = 0.",

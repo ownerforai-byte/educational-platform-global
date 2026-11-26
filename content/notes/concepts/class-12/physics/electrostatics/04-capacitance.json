@@ -10,7 +10,8 @@
     "Filling the gap with a dielectric of constant K multiplies the capacitance by K, if the dielectric fills the space. The molecules of the dielectric polarise and reduce the field for a given free charge.",
     "Connecting a capacitor to a battery fixes V. The charge is then Q = C V. Disconnecting the battery fixes Q, and a later change of C changes V.",
     "Capacitors in parallel add their capacitances because they share the voltage and the charges add. Capacitors in series add the reciprocals, and the equivalent is smaller than the smallest of them.",
-    "The energy stored is (1/2) C V^2. A capacitor does not conduct steady current once it is charged. It does pass changing current in an AC circuit."
+    "The energy stored is (1/2) C V^2. A capacitor does not conduct steady current once it is charged. It does pass changing current in an AC circuit.",
+    "**Capacitors — combinations classified**\n\n| Connection | Equivalent | Charge |\n|---|---|---|\n| Parallel | C = sum Ci | Same V |\n| Series | 1/C = sum 1/Ci | Same Q |"
   ],
   "confusion": [
     "❌ 'Capacitors store charge.' ✅ They store *energy* in an electric field; the net charge is zero (q on one plate, -q on other).",

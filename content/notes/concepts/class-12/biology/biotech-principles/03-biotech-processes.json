@@ -17,7 +17,8 @@
       "The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.",
       "If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.",
       "Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.",
-      "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light."
+      "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light.",
+      "**Core processes — classified**\n\n| Process | Purpose | Key point |\n|---|---|---|\n| PCR | Amplify DNA | Denature-anneal-extend cycles |\n| Gel electrophoresis | Separate by size | Smaller runs faster |\n| Bioreactor | Scale-up culture | Growth conditions controlled |"
     ]
   },
   "notes": [
@@ -26,7 +27,8 @@
     "The tube must contain template DNA, two primers, dNTPs, Taq polymerase and magnesium ions. Miss any one and the reaction stops. Magnesium is a cofactor for the polymerase.",
     "If every molecule is copied, the count follows N = N0 × 2^n. Ten cycles give 2^10 = 1024 copies from one molecule. Twenty cycles give about a million. Thirty cycles give about a billion. Real reactions slow down once primers or dNTPs run low.",
     "Gel electrophoresis sorts the products by size. DNA is negatively charged, so it moves toward the anode in an agarose gel. Smaller fragments slip through the gel faster and travel farther. A lane of known sizes, the ladder, turns distance into a length.",
-    "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light."
+    "A linear DNA with n restriction sites gives n + 1 bands if every site is cut. A circular plasmid with n sites gives n bands. The pattern of bands is a restriction map you can read. The DNA is seen after a stain that fluoresces under ultraviolet light.",
+    "**Core processes — classified**\n\n| Process | Purpose | Key point |\n|---|---|---|\n| PCR | Amplify DNA | Denature-anneal-extend cycles |\n| Gel electrophoresis | Separate by size | Smaller runs faster |\n| Bioreactor | Scale-up culture | Growth conditions controlled |"
   ],
   "confusion": [
     "PCR does not use a helicase. Strand separation is done by heat, which is why the polymerase must be thermostable.",

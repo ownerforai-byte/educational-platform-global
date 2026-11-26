@@ -37,7 +37,8 @@
     "**NEB-style (6m): Evaluate lim_{x→−2} (x³ + 8)/(x + 2) and state what single value at x = −2 makes the extended function continuous.** — **Form:** (−8 + 8)/0 = **0/0** ⟹ shared root. **Factor (sum of cubes):** x³ + 8 = (x + 2)(x² − 2x + 4) ⟹ the expression = x² − 2x + 4 for x ≠ −2. **Value:** 4 + 4 + 4 = **12**. **Repair:** defining **f(−2) = 12** makes value = limit ⟹ continuous. **Deep point:** the sum-of-cubes identity is the transformation tool when the shared root is negative — every power's difference/sum identity exists to expose the factor (x − a) or (x + a) that the 0/0 form promises."
   ],
   "formulas": [
-    "- lim_{x→a} f(x) = L ⟺ LHL = RHL = L\n- 0 < |x − a| < δ ⟹ |f(x) − L| < ε (definition)"
+    "lim_{x→a} f(x) = L ⟺ LHL = RHL = L",
+    "0 < |x − a| < δ ⟹ |f(x) − L| < ε (definition)"
   ],
   "keyPoints": [
     "Limit definition: neighbourhood approach with 0 < |x-a| (point excluded). One-sided limits LHL/RHL; two-sided exists iff both exist and agree. Indeterminate forms 0/0, inf/inf, 0*inf, inf-inf, 1^inf, 0^0, inf^0 demand transformation. Ladder: substitute, factor/conjugate, degree comparison, standard limits, squeeze, L'Hopital. Limit is a prediction from the neighbourhood, independent of f(a)."

@@ -10,7 +10,8 @@
     "The binding energy is the energy you must supply to separate the nucleus into individual nucleons. It is not an energy the nucleus has sitting as kinetic energy.",
     "Binding energy per nucleon is the binding energy divided by the mass number A. It rises from the light nuclei, peaks near iron, and falls slowly for the heavy nuclei.",
     "Fusion of very light nuclei moves them up the curve and releases energy. Fission of a very heavy nucleus also moves the pieces up the curve and releases energy. Both are movements toward higher binding energy per nucleon.",
-    "A calculated binding energy uses the actual masses, not the integer mass number. Using A as if it were the nuclear mass in u is the usual mistake."
+    "A calculated binding energy uses the actual masses, not the integer mass number. Using A as if it were the nuclear mass in u is the usual mistake.",
+    "**Nuclear energy — quantities classified**\n\n| Quantity | Formula | Peak |\n|---|---|---|\n| Mass defect | dm = Zmp + Nmn - M | Missing mass |\n| BE | dm c^2 | Binding strength |\n| BE/nucleon | BE/A | ~8.8 MeV at iron |"
   ],
   "confusion": [
     "❌ Thinking nuclear mass equals sum of nucleons ✅ Nuclear mass is less than the sum of its constituents' masses; the difference is the mass defect, converted into binding energy (E = mc²).",

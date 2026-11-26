@@ -10,7 +10,8 @@
     "The potential difference between two points is the work per unit charge to move a test charge between them. A charge q changes its potential energy by q ΔV.",
     "Equipotential surfaces join points of equal potential. The field is perpendicular to an equipotential. No work is done moving a charge on an equipotential.",
     "In a uniform field the potential falls along the field direction. Between plates, E = V/d if V is the potential difference and d is the separation, in the uniform region.",
-    "Potential can be zero where the field is not, as at the midpoint between equal and opposite charges. The two scalars cancel, but the two field vectors point the same way."
+    "Potential can be zero where the field is not, as at the midpoint between equal and opposite charges. The two scalars cancel, but the two field vectors point the same way.",
+    "**Potential — relations classified**\n\n| Quantity | Formula | Note |\n|---|---|---|\n| Potential | V = kq/r | Scalar |\n| Potential energy | U = qV | Charge in field |\n| E from V | E = -dV/dr | Gradient |"
   ],
   "confusion": [
     "❌ 'Electric potential is the same as electric potential energy.' ✅ Potential is *energy per unit charge* (J/C); potential energy is the *total energy* (J) required to assemble charges.",

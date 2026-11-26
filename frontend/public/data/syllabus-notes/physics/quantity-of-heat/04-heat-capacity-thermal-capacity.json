@@ -20,7 +20,8 @@
     "thermal mass\" is the aggregate heat capacity of a building's materials (walls, floors, furniture). High thermal mass means the building heats and cools slowly - beneficial for passive solar design.",
     "**Comparison table:** Substance | Mass | c (J/kg·K) | C' (J/K)\nWater (1 L) | 1 kg | 4200 | 4200\nAluminum pot (0.5 kg) | 0.5 kg | 900 | 450\nIron pan (2 kg) | 2 kg | 450 | 900\nLead weight (1 kg) | 1 kg | 130 | 130",
     "**NEB exam tip:** Distinguish clearly between $c$ (specific heat, per kg) and $C'$ (heat capacity, for the whole object). Many exam questions give $C'$ directly and ask you to find $c$, or vice versa. Remember: $C' = mc$ and $c = C'/m$.",
-    "**Relationship to Newton's law of cooling:** In Newton's law, the cooling constant $K$ is often written as $K = hA/C'$, where $h$ is the surface heat transfer coefficient and $A$ is the surface area. A larger $C'$ means slower cooling."
+    "**Relationship to Newton's law of cooling:** In Newton's law, the cooling constant $K$ is often written as $K = hA/C'$, where $h$ is the surface heat transfer coefficient and $A$ is the surface area. A larger $C'$ means slower cooling.",
+    "**Thermal capacity — relations classified**\n\n| Quantity | Relation | Note |\n|---|---|---|\n| Thermal capacity | C' = mc | Whole object |\n| Water equivalent | W = mc / 4186 (kg) | Water that stores the same heat |"
   ],
   "confusion": [
     "❌ Heat capacity and specific heat are the same thing. ✅ Heat capacity ($C'$) depends on the object's mass; specific heat ($c$) is a property of the material alone. $C' = mc$ - they are related but not identical.",

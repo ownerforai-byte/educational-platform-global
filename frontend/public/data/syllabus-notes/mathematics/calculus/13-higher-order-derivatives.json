@@ -41,7 +41,8 @@
     "**NEB-style (6m): Use Leibniz's theorem to find the second derivative of y = x²·eˣ, and state the general n-th derivative.** — **Leibniz (n = 2):** (fg)″ = f″g + 2f′g′ + fg″ with f = x², g = eˣ: f′ = 2x, f″ = 2; g′ = g″ = eˣ ⟹ y″ = 2eˣ + 4x·eˣ + x²·eˣ = **eˣ(x² + 4x + 2)**. **General n:** all derivatives of eˣ are eˣ, and f⁽ᵏ⁾ of x² vanishes for k ≥ 3 ⟹ (x²eˣ)⁽ⁿ⁾ = eˣ[C(n,0)x² + C(n,1)·2x + C(n,2)·2] = **eˣ[x² + 2nx + n(n−1)]**. **Check n = 2:** eˣ[x² + 4x + 2] ✓. **Deep point:** Leibniz's binomial structure shines when one factor's derivatives die (polynomial) — the sum truncates, and the answer is a closed polynomial times the surviving factor; this is the standard engine for n-th derivatives of products."
   ],
   "formulas": [
-    "- (fg)⁽ⁿ⁾ = Σₖ C(n,k)·f⁽ⁿ⁻ᵏ⁾·g⁽ᵏ⁾\n- (sin mx)⁽ⁿ⁾ = mⁿ·sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿ·e^{mx}"
+    "(fg)⁽ⁿ⁾ = Σₖ C(n,k)·f⁽ⁿ⁻ᵏ⁾·g⁽ᵏ⁾",
+    "(sin mx)⁽ⁿ⁾ = mⁿ·sin(mx + nπ/2); (e^{mx})⁽ⁿ⁾ = mⁿ·e^{mx}"
   ],
   "keyPoints": [
     "f'' = derivative of the derivative; d2y/dx2 is ordinal notation, not arithmetic. Parametric second derivative: two-step recipe. Leibniz: (fg)^(n) = sum C(n,k) f^(n-k) g^(k) - the product rule's binomial generalisation. Patterns: (sin mx)^(n) = m^n sin(mx + n pi/2); (e^{mx})^(n) = m^n e^{mx}; (1/(x-a))^(n) = (-1)^n n!/(x-a)^(n+1). Sinusoids satisfy y'' = -m^2 y (the eigen-equation); polynomials die under repeated differentiation."

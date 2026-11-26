@@ -71,6 +71,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "Superposition — the working recipe · Step | Action | Note · 1 | draw each pair force on the target charge | arrows away from like, toward unlike · 2 | compute magnitudes $F = kq_1q_2/r&#178;$ | ignore other charges for each pair · 3 | resolve into components | axes along the geometry · 4 | add components, recombine | $F = \\sqrt{F_x&#178;+F_y&#178;}$ · 5 | check symmetry first | cancellation can shortcut the algebra  ·  Classic symmetric arrangements · Arrangement | Net force on centre charge | Reason · Equal charges at square corners, test at centre | zero | opposite pairs cancel · Two equal like charges, test at midpoint | zero | equal and opposite · Two equal unlike charges, test at midpoint | zero | equal and opposite · Equilateral triangle of equal charges | zero net on system centre | symmetry · Two like charges, test off-centre | toward the nearer charge's push |…"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Superposition is electrostatics' algebra** — every multi-charge problem reduces to two-charge laws plus vector addition."
     },

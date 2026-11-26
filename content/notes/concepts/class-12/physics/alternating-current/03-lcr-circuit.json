@@ -11,7 +11,8 @@
     "A series LCR circuit has one current through R, L and C. The resistor voltage is in phase with the current, the inductor voltage leads by 90°, and the capacitor voltage lags by 90°.",
     "The two reactance voltages are opposite, so the net reactive voltage has size I|X_L − X_C|. With the resistor voltage IR, Pythagoras gives the supply voltage V = I Z, where Z = √(R^2 + (X_L − X_C)^2).",
     "The phase angle satisfies tanφ = (X_L − X_C)/R. If X_L is larger, the current lags the supply voltage. If X_C is larger, the current leads.",
-    "At resonance X_L = X_C, Z falls to R, and the current is V/R, the largest series current for that supply. The frequency is f_0 = 1/(2π√(LC)), the same expression as the LC oscillation."
+    "At resonance X_L = X_C, Z falls to R, and the current is V/R, the largest series current for that supply. The frequency is f_0 = 1/(2π√(LC)), the same expression as the LC oscillation.",
+    "**Series LCR — regimes classified**\n\n| Condition | Circuit behaves | Impedance |\n|---|---|---|\n| XL > XC | Inductive | Z = sqrt(R^2 + (XL-XC)^2) |\n| XL < XC | Capacitive | Same formula |\n| XL = XC | Resonance | Z = R (minimum) |"
   ],
   "confusion": [
     "❌ Believing resonance occurs at all frequencies ✅ Resonance occurs only at a specific frequency (f_r = 1 / (2π√LC)) where inductive reactance equals capacitive reactance (X_L = X_C).",

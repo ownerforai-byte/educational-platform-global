@@ -10,7 +10,8 @@
     "Faraday's law says the induced emf equals the negative of the rate of change of flux linkage. A faster change means a larger emf.",
     "The flux can be changed by changing the field, by changing the area of the loop, or by rotating the loop. A generator rotates a coil so that the angle changes continuously.",
     "The minus sign is Lenz's law. The induced current makes a field that opposes the change in flux that caused it.",
-    "If the circuit is open there is still an induced emf, but no induced current. Current needs a closed path."
+    "If the circuit is open there is still an induced emf, but no induced current. Current needs a closed path.",
+    "**EM induction — laws classified**\n\n| Law | Statement | Quantifies |\n|---|---|---|\n| First | EMF needs changing flux | Existence |\n| Second | EMF = -N dphi/dt | Magnitude |"
   ],
   "confusion": [
     "❌ 'Induced EMF depends only on magnetic field strength.' ✅ It depends on the *rate of change* of magnetic flux (dΦ/dt). A strong field that doesn't change induces no EMF.",

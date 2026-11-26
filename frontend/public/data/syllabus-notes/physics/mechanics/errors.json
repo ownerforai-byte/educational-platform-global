@@ -10,7 +10,8 @@
     "If a true value is known, absolute error is |xmeasured−xtrue|; relative error is absolute error divided by the reference value; percentage error is 100 times relative error.",
     "Example: readings 10.2, 10.3 and 10.1 cm average to 10.2 cm. Compared with accepted 10.0 cm, absolute error is 0.2 cm and percentage error is 2%.",
     "Check an instrument’s zero before use, repeat readings where possible, report units and uncertainty, and avoid unsupported digits beyond the instrument resolution.",
-    "A random error scatters readings both ways and shrinks when you average more of them. A systematic error, such as a zero offset, shifts every reading the same way and survives the average. You remove it by calibrating or by changing the method, not by repeating the same faulty procedure."
+    "A random error scatters readings both ways and shrinks when you average more of them. A systematic error, such as a zero offset, shifts every reading the same way and survives the average. You remove it by calibrating or by changing the method, not by repeating the same faulty procedure.",
+    "**Errors — classified by source**\n\n| Type | Nature | Handling |\n|---|---|---|\n| Systematic | Same direction every time | Calibrate, correct |\n| Random | Both directions, unpredictable | Average many readings |\n| Gross | Blunder | Discard and repeat |"
   ],
   "confusion": [
     "A small spread does not prove accuracy.",

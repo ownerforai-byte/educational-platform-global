@@ -10,7 +10,8 @@
     "Because the force is always perpendicular to the velocity, it does no work and does not change the speed. It changes only the direction.",
     "In a uniform field, motion perpendicular to the field is a circle of radius m v /(q B). Motion with a component along the field is a helix.",
     "Combined electric and magnetic forces are the Lorentz force, qE + q v B in vector form. A velocity selector sets the two forces opposite and equal so that qE = q v B.",
-    "The tesla is the field that exerts 1 N on a charge of 1 C moving at 1 m/s perpendicular to the field."
+    "The tesla is the field that exerts 1 N on a charge of 1 C moving at 1 m/s perpendicular to the field.",
+    "**Magnetic force — rules classified**\n\n| Quantity | Formula | Direction |\n|---|---|---|\n| Charge | F = qvB sin(theta) | Fleming left hand |\n| Wire | F = BIl sin(theta) | Same rule |\n| Zero when | Parallel to B | No force |"
   ],
   "confusion": [
     "❌ 'A magnetic force can do work on a charged particle.' ✅ Magnetic force is always *perpendicular* to velocity, so it does *zero work*; it changes direction, not speed.",

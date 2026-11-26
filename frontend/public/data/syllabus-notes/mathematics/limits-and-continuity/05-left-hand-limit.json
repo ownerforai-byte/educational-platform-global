@@ -45,7 +45,9 @@
     "**NEB-style (5m): A student computes lim_{x→0⁻} sin(1/x) by substituting x = 0 and reports the limit is 0. Diagnose the error and give the correct analysis.** — **The error:** substitution at x = 0 is invalid twice over — sin(1/0) is undefined (1/0 is not a number), and more deeply, the function has **no limiting behaviour** to substitute into. **Correct analysis:** as x → 0⁻, 1/x → −∞, so sin(1/x) oscillates through every value in [−1, 1] infinitely often, faster and faster — values like sin(−100) and sin(−1000.5) land anywhere in the band with no settling trend. **Verdict:** **lim_{x→0⁻} sin(1/x) does not exist** (oscillatory failure — the sides never approach any single value). **Contrast:** multiplying by x fixes it — lim_{x→0} x·sin(1/x) = 0 by squeeze, because the amplitude x collapses even though the oscillation persists. **Deep point:** substitution is licensed only where the function is continuous (or the limit provably exists); oscillatory pathology is the third failure mode beyond 0/0 and c/0, and it defeats transformation too — only damping (amplitude collapse) or the squeeze theorem tames it."
   ],
   "formulas": [
-    "- lim_{x→a⁻} f(x) = L ⟺ f(x) → L for a − δ < x < a\n- 1/(x − a) as x → a⁻ ⟹ −∞; 1/(x − a)² ⟹ +∞ both sides\n- jump size = RHL − LHL"
+    "lim_{x→a⁻} f(x) = L ⟺ f(x) → L for a − δ < x < a",
+    "1/(x − a) as x → a⁻ ⟹ −∞; 1/(x − a)² ⟹ +∞ both sides",
+    "jump size = RHL − LHL"
   ],
   "keyPoints": [
     "Left-hand limit lim_{x->a-} f(x) = L: f(x) -> L as x -> a through values less than a; trace the graph rightward toward a. Piecewise: the branch owning the left neighbourhood decides; boundary ownership affects f(a), not the limits. Blow-up sign from the left: x - a < 0, so odd-power denominators give -inf, even powers +inf. Existence theorem: two-sided limit iff LHL = RHL = L (finite). Jump size = RHL - LHL. Taxonomy: finite disagreement = jump; infinite side = infinite discontinuity; both sides infinite opposite = split asymptote."

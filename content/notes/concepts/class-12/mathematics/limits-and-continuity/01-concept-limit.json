@@ -11,7 +11,8 @@
     "**Indeterminate forms:** 0/0, ∞/∞, 0·∞, ∞-∞, 0⁰, 1^∞, ∞⁰ require special techniques.",
     "**Standard limits:** lim(x→0) sin(x)/x = 1, lim(x→0) (1-cos x)/x = 0, lim(x→0) (eˣ-1)/x = 1, lim(x→0) ln(1+x)/x = 1.",
     "**Algebraic properties:** lim[f±g] = lim f ± lim g, lim[f·g] = lim f · lim g, lim[f/g] = lim f / lim g (denominator ≠ 0).",
-    "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a)."
+    "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a).",
+    "**Limit concept — readings classified**\n\n| Reading | Meaning | Test |\n|---|---|---|\n| Neighbourhood | Values near a (not at a) | Table of values |\n| One-sided | From left and right | Compare sides |\n| Existence | Both sides agree | Else DNE |"
   ],
   "confusion": [
     "❌ 'The limit of a function at a point is always its value at that point' ✅ The limit only concerns values *near* a, not *at* a; f(a) might not even be defined.",

@@ -28,7 +28,9 @@
     "Find the domain of √(x − 2)/(x² − 9)."
   ],
   "formulas": [
-    "- (f∘g)(x) = f(g(x)); D_{f∘g} = {x : x ∈ D_g, g(x) ∈ D_f}\n- f invertible ⟺ one-to-one; f⁻¹(f(x)) = x, f(f⁻¹(y)) = y\n- graph of f⁻¹ = reflection of f in y = x; domain/range swap"
+    "(f∘g)(x) = f(g(x)); D_{f∘g} = {x : x ∈ D_g, g(x) ∈ D_f}",
+    "f invertible ⟺ one-to-one; f⁻¹(f(x)) = x, f(f⁻¹(y)) = y",
+    "graph of f⁻¹ = reflection of f in y = x; domain/range swap"
   ],
   "summary": "A **function** assigns exactly one output to each input — the vertical-line test — with a **domain** fixed by the bans: denominator ≠ 0, even-root radicand ≥ 0, log argument > 0, combined by intersection (√(x−2)/(x²−9) lives on [2, 3) ∪ (3, ∞)). The **range** is fastest found by inversion: solve y = f(x) for x and keep feasible y. **Composition** (f∘g)(x) = f(g(x)) runs the inner machine first, with domain {x ∈ D_g : g(x) ∈ D_f}; it is associative but never commutative (2x² + 1 vs 4x² + 4x + 1). The **inverse theorem**: f⁻¹ exists ⟺ f is one-to-one (horizontal-line test; monotone ⟹ injective); construct by y = f(x) → solve → swap, verify f⁻¹(f(x)) = x, and read the graph as a **reflection in y = x** with domain and range exchanged — f(x) = (2x+3)/(x−1) inverts to (x+3)/(x−2) whose domain x ≠ 2 is f's asymptote-range. One-to-one is uniqueness backwards; everything else is bookkeeping.",
   "importantConcepts": [

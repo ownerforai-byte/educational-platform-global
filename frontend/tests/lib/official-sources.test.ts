@@ -3,9 +3,19 @@ import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { INDEPENDENCE_DISCLAIMER } from "@/components/platform/independence-disclaimer";
 import {
-  FORBIDDEN_OFFICIAL_SOURCE_URL_MARKERS,
+  OFFICIAL_GOVERNMENT_SOURCES,
   OFFICIAL_GOVERNMENT_SOURCE_URLS,
 } from "@/lib/official-government-sources";
+
+/** Verified dead or invalid-TLS hosts that must never appear in user-facing copy.
+ *  Lives here, not in the lib, so the surface scan below can include the lib itself. */
+const FORBIDDEN_OFFICIAL_SOURCE_URL_MARKERS = [
+  "www.neb.gov.np",
+  "neb.gov.com",
+  "http://neb.gov.np",
+  "http://www.neb.gov.np",
+  "https://www.neb.gov.np",
+] as const;
 
 /**
  * Google Play rejected the app under "Misleading Claims" (2026-11-11): the
@@ -56,8 +66,12 @@ describe("official sources page", () => {
   const page = read("app/official-sources/page.tsx");
 
   it("links the three official .gov.np domains over HTTPS with external target", () => {
+    // The page renders the canonical registry (single source of truth) instead
+    // of hardcoding the URLs — assert that wiring plus the registry itself.
+    expect(page).toContain("OFFICIAL_GOVERNMENT_SOURCES.map");
     for (const url of OFFICIAL_GOVERNMENT_SOURCE_URLS) {
-      expect(page).toContain(url);
+      expect(url).toMatch(/^https:\/\/[a-z.]*gov\.np\/$/);
+      expect(OFFICIAL_GOVERNMENT_SOURCES.find((s) => s.url === url)).toBeTruthy();
     }
     // Every external anchor must escape the WebView and stay safe.
     expect(page).toContain('target="_blank"');

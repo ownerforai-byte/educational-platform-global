@@ -74,6 +74,10 @@
       }
     },
     {
+      "label": "Classified table",
+      "text": "The two-part Ohm's law test · Condition | What to check | Failure example · Straight line | I &#8746; V at fixed T | filament, thermistor · Through the origin | I = 0 when V = 0 | diode (threshold), rectifier · Constant temperature | re-measure gives same line | wire that heats under test · Same R both directions | reverse the battery | diode, electrolytic cell  ·  I–V graph vocabulary · Term | Meaning | Units · Slope of I–V | conductance G = 1/R | siemens (S) · V/I at a point | static resistance | &#937; · dV/dI at a point | dynamic resistance | &#937; · Equal slopes both ways | symmetric, ohmic | &#8212;"
+    },
+    {
       "label": "Quick concepts",
       "text": "**Self-heating is the usual culprit** — current changes temperature changes resistance."
     },

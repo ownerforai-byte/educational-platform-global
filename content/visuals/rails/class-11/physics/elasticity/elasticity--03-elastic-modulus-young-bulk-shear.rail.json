@@ -72,6 +72,10 @@
       "text": "E, B, G definitions and units are certainty for short-answer questions.  ·  Young's modulus wire problems remain the most-tested numerical."
     },
     {
+      "label": "Classified table",
+      "text": "The three moduli at a glance · Modulus | Stress | Strain | Typical SI magnitude · Young's $E$ | longitudinal (F/A) | $\\Delta L/L$ | steel &#8776; 2&#215;10&#185;&#185; Pa · Bulk $B$ | volume (pressure p) | $-\\Delta V/V$ | water &#8776; 2.2&#215;10&#8313; Pa · Shear $\\eta$ | tangential (F/A) | shear angle θ | steel &#8776; 8&#215;10&#185;&#176; Pa · Poisson ratio link | lateral/longitudinal strain | &#963; = 0.2&#8211;0.3 metals | dimensionless  ·  Which modulus for which situation · Situation | Modulus used | Reason · Wire stretched by a load | Young's E | deformation along the length · Liquid compressed in a cylinder | Bulk B | volume change under pressure · Girder twisted by a couple | Shear η | shape change, volume constant · Rubber band pulled | Young's E (low) | large strain for small stress · Squashing a solid block | Bulk B | pressure from all sides"
+    },
+    {
       "label": "Quick concepts",
       "text": "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.  ·  Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.  ·  Shear modulus G = τ/θ describes change of shape under tangential stress.  ·  The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ)."
     },

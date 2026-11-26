@@ -10,7 +10,8 @@
     "If the known resistance R is in the left gap and the unknown X is in the right gap, the balance condition is X/R = l2/l1, or the swapped form if the gaps are swapped. The diagram decides which length is which.",
     "A uniform wire is essential, because the ratio of resistances is the ratio of lengths only when the resistance per centimetre is constant.",
     "End corrections add a few millimetres for the copper strips. A precise unknown repeats the measurement with the gaps swapped and averages the two values of X.",
-    "Heating the wire changes its resistance per centimetre, so the current is kept small and the balance is found with a light touch of the jockey."
+    "Heating the wire changes its resistance per centimetre, so the current is kept small and the balance is found with a light touch of the jockey.",
+    "**Bridge circuits — classified**\n\n| Circuit | Balance condition | Use |\n|---|---|---|\n| Wheatstone | P/Q = R/S | Unknown resistance |\n| Meter bridge | Same with lengths | l1/l2 = R/S |\n| Potentiometer | E1/E2 = l1/l2 | EMF comparison |"
   ],
   "confusion": [
     "❌ 'A meter bridge can measure any resistance accurately.' ✅ It is accurate only for *moderate* resistances (≈1 Ω to 1 kΩ); very high or very low resistances give poor null points.",

@@ -19,7 +19,8 @@
     "**Practical application — gemology:** Gemologists use the refractive index (measured via minimum deviation) to identify gemstones. Different gem materials have characteristic refractive indices: quartz ($n \\approx 1.54$), ruby ($n \\approx 1.76$), diamond ($n \\approx 2.42$).",
     "**Limit of the formula:** The formula assumes the prism is surrounded by air ($n_{air} \\approx 1$). If the prism is in another medium, replace $n$ with $n_{prism}/n_{medium}$. For example, in water: $n_{rel} = n_{glass}/n_{water} \\approx 1.5/1.33 = 1.13$.",
     "**NEB exam focus:** Derive the prism formula from Snell's law and the minimum deviation condition. Use it to calculate $n$, $A$, or $\\delta_{min}$ when two are known. Distinguish between the general deviation formula and the minimum deviation formula.",
-    "**Common values to remember:** For common glass ($n \\approx 1.5$) and $A = 60°$: $\\delta_{min} \\approx 37°$. For flint glass ($n \\approx 1.65$) and $A = 60°$: $\\delta_{min} \\approx 50°$."
+    "**Common values to remember:** For common glass ($n \\approx 1.5$) and $A = 60°$: $\\delta_{min} \\approx 37°$. For flint glass ($n \\approx 1.65$) and $A = 60°$: $\\delta_{min} \\approx 50°$.",
+    "**Minimum deviation — significance classified**\n\n| Aspect | Fact | Use |\n|---|---|---|\n| Occurrence | Symmetric ray path | e = i |\n| Formula | n from A and Dm | Spectrometer method |\n| Thin prism | d = (n-1)A | Small angles only |"
   ],
   "confusion": [
     "❌ The prism formula $n = \\sin\\frac{A+\\delta}{2}/\\sin\\frac{A}{2}$ works for ANY angle of incidence. ✅ This formula is ONLY valid at minimum deviation. For arbitrary incidence, you must use the general formulas: $\\delta = i + e - A$ and Snell's law at each face.",

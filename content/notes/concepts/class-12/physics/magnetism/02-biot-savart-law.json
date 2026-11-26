@@ -10,7 +10,8 @@
     "At the centre of a single circular loop the result is B = μ0 I /(2 R), along the axis. A coil of N turns multiplies this by N if the turns are together.",
     "On the axis of a loop, off centre, the field is along the axis and weaker. The perpendicular components from opposite elements cancel.",
     "μ0 / 4π is 10^−7, and μ0 is 4π × 10^−7. Using the wrong one is the usual numerical slip.",
-    "The law is the magnetic analogue of Coulomb's law for a current element. It is the starting point. Ampere's law is the shortcut when symmetry is high."
+    "The law is the magnetic analogue of Coulomb's law for a current element. It is the starting point. Ampere's law is the shortcut when symmetry is high.",
+    "**Biot-Savart — configurations classified**\n\n| Source | Field | Falls as |\n|---|---|---|\n| Element | dB = mu0 I dl sin/r^2 | Inverse square |\n| Straight wire | mu0 I/(2 pi d) | 1/d |\n| Loop centre | mu0 I/(2R) | Constant |"
   ],
   "confusion": [
     "❌ 'Biot-Savart law gives the total magnetic field directly.' ✅ It gives the *contribution* dB from a tiny element dl; the total field requires integration over the entire conductor.",

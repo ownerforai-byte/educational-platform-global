@@ -1,6 +1,6 @@
 /**
  * Government home pages cited in the independence disclaimer and on
- * `/official-sources`. Play's link checker flags `www.neb.gov.np` (bad TLS);
+ * `/official-sources`. Play's link checker flags the old www NEB host (bad TLS);
  * only the apex HTTPS URLs below are kept in user-facing disclaimer copy.
  */
 
@@ -33,15 +33,6 @@ export const OFFICIAL_GOVERNMENT_SOURCES: readonly OfficialGovernmentSource[] = 
     publishes:
       "The education policy and the ministry-level notices that the CDC curriculum and NEB exams operate under.",
   },
-] as const;
-
-/** Must never appear in disclaimer / official-sources copy (verified dead or invalid TLS). */
-export const FORBIDDEN_OFFICIAL_SOURCE_URL_MARKERS = [
-  "www.neb.gov.np",
-  "neb.gov.com",
-  "http://neb.gov.np",
-  "http://www.neb.gov.np",
-  "https://www.neb.gov.np",
 ] as const;
 
 export const OFFICIAL_GOVERNMENT_SOURCE_URLS: readonly string[] =

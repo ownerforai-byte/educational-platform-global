@@ -10,7 +10,8 @@
     "Worked example: a ray enters glass with n=1.50 from air at i=30°. sin r=sin30°/1.50=1/3, giving r≈19.5°; the ray bends toward the normal.",
     "When light goes from higher to lower index, it bends away from the normal. If incidence exceeds the critical angle, total internal reflection occurs, with sin c=n2/n1.",
     "Ray optics works when apertures and obstacles are much larger than wavelength; diffraction and interference require a wave description when dimensions approach wavelength.",
-    "Total internal reflection is the extra case beyond Snell's law. It happens only when the ray is trying to leave a slower medium and the angle of incidence exceeds the critical angle. Water against air has a larger critical angle than glass, because its index is smaller."
+    "Total internal reflection is the extra case beyond Snell's law. It happens only when the ray is trying to leave a slower medium and the angle of incidence exceeds the critical angle. Water against air has a larger critical angle than glass, because its index is smaller.",
+    "**Ray diagram rules — classified**\n\n| Ray | Behaviour | Use |\n|---|---|---|\n| Parallel ray | Goes through focus after | Locate image |\n| Focus ray | Emerges parallel | Locate image |\n| Centre ray | Undeviated | Confirms |"
   ],
   "confusion": [
     "At i=c the refracted ray travels along the boundary; TIR occurs for i>c.",

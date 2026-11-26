@@ -31,7 +31,9 @@
     "Derive (sin x)′ = cos x from first principles."
   ],
   "formulas": [
-    "- f′(x) = lim_{h→0} [f(x+h) − f(x)]/h\n- (xⁿ)′ = n·xⁿ⁻¹; (√x)′ = 1/(2√x); (1/x)′ = −1/x²\n- (sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x"
+    "f′(x) = lim_{h→0} [f(x+h) − f(x)]/h",
+    "(xⁿ)′ = n·xⁿ⁻¹; (√x)′ = 1/(2√x); (1/x)′ = −1/x²",
+    "(sin x)′ = cos x; (cos x)′ = −sin x; (tan x)′ = sec²x"
   ],
   "summary": "The **derivative** is born: f′(x) = lim_{h→0} [f(x+h) − f(x)]/h — the secant's limit, the tangent's slope, the instantaneous rate. **Differentiability implies continuity** (factor the difference; the derivative times the vanishing h), but never conversely — |x|'s corner has slopes −1 and +1. The **algebraic table** comes from first principles: (xⁿ)′ = nxⁿ⁻¹ *is* the (xⁿ−aⁿ)/(x−a) star; (√x)′ = 1/(2√x) is the conjugate; linearity makes polynomials one-line work (NEB 2024: 3x² + 4x − 5). **Fractional powers** yield to the difference-of-cubes identity: d/dx x^{1/3} = 1/(3x^{2/3}) (NEB 2021's four-marker). The **trigonometric derivatives** run on the standard limits: sin(x+h) − sin x splits via angle addition, and sin h/h → 1, (cos h−1)/h → 0 deliver (sin x)′ = cos x, (cos x)′ = −sin x, (tan x)′ = sec²x. The limits unit was the prologue; this is the play.",
   "importantConcepts": [

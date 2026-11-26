@@ -10,7 +10,8 @@
     "The channel is the path: a wire, an optical fibre, or free space. Noise, which is unwanted electrical energy, is added along the channel and is not part of the message.",
     "The receiver undoes the transmitter's work. It amplifies the weak signal and demodulates it, recovering a copy of the original message for the listener or the display.",
     "Attenuation is the weakening of the signal with distance. Amplifiers along a long channel restore the level, but they cannot perfectly remove noise that was added earlier.",
-    "Bandwidth is the range of frequencies the message or the channel occupies. A wider message, such as video, needs a wider channel than speech."
+    "Bandwidth is the range of frequencies the message or the channel occupies. A wider message, such as video, needs a wider channel than speech.",
+    "**Communication block diagram — parts classified**\n\n| Block | Role | Example |\n|---|---|---|\n| Transducer | Signal to electrical | Microphone |\n| Modulator | Load onto carrier | AM/FM |\n| Channel | Propagation | Antenna, cable |\n| Demodulator | Recover signal | Detector |"
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in elements of communication.",
