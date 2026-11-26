@@ -1,0 +1,10 @@
+import { chromium } from "playwright";
+const url = process.argv[2];
+const out = process.argv[3];
+const browser = await chromium.launch();
+const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
+await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90000 });
+await page.waitForTimeout(3000);
+await page.screenshot({ path: out, fullPage: false });
+await browser.close();
+console.log("shot saved", out);
