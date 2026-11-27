@@ -7,6 +7,8 @@ import unitsRouter from "./units.js";
 import notesRouter from "./notes.js";
 import practiceRouter from "./practice.js";
 import communityRouter from "./community.js";
+import pyqsRouter from "./pyqs.js";
+import formulasRouter from "./formulas.js";
 
 /**
  * Mobile-only, ADDITIVE API surface for the native Android client
@@ -29,6 +31,8 @@ mobileRouter.use("/units", unitsRouter);
 mobileRouter.use("/notes", notesRouter);
 mobileRouter.use("/practice", practiceRouter);
 mobileRouter.use("/community", communityRouter);
+mobileRouter.use("/pyqs", pyqsRouter);
+mobileRouter.use("/formulas", formulasRouter);
 
 /**
  * GET /api/mobile/home — one cheap bootstrap call the native app makes on
@@ -47,6 +51,8 @@ mobileRouter.get("/home", (_req, res) => {
         practice: true,
         aiChat: true,
         community: true,
+        pyqs: true,
+        formulas: true,
       },
       links: {
         syllabus: "/api/classes",
@@ -54,6 +60,8 @@ mobileRouter.get("/home", (_req, res) => {
         practice: "/api/practice",
         ai: "/api/ai",
         community: "/api/community",
+        pyqs: "/api/mobile/pyqs",
+        formulas: "/api/mobile/formulas",
       },
     },
   };

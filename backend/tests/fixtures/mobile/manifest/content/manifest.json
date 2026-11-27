@@ -1,0 +1,63 @@
+[
+  {
+    "path": "notes/concepts/class-11/physics/heat-and-temperature/01-intro.json",
+    "data": { "title": "Intro note", "notes": ["paragraph"] }
+  },
+  {
+    "path": "practice/questions/class-11/physics/heat-and-temperature/01-neb-2023.json",
+    "data": {
+      "title": "NEB 2023 — Thermodynamics",
+      "unitSlug": "heat-and-temperature",
+      "source": "ravikishan",
+      "notes": [
+        "Q1. State the first law of thermodynamics. [2]",
+        "Q2. Derive the work done by an ideal gas. [3]",
+        "Q3. Define entropy. [2]"
+      ]
+    }
+  },
+  {
+    "path": "practice/questions/class-11/physics/heat-and-temperature/02-neb-2022.json",
+    "data": {
+      "title": "NEB 2022 — Thermodynamics",
+      "unitSlug": "heat-and-temperature",
+      "source": "ravikishan",
+      "notes": ["Q1. State zeroth law. [2]", "Q2. Define heat capacity. [2]"]
+    }
+  },
+  {
+    "path": "practice/questions/class-11/physics/01-mixed-neb-2021.json",
+    "data": {
+      "title": "NEB 2021 — Mixed paper",
+      "source": "ravikishan",
+      "notes": ["Q1. Generic question. [5]"]
+    }
+  },
+  {
+    "path": "practice/questions/class-12/chemistry/atomic-structure/01-neb-2023.json",
+    "data": {
+      "title": "NEB 2023 — Atomic structure",
+      "unitSlug": "atomic-structure",
+      "source": "ravikishan",
+      "notes": ["Q1. Describe the Bohr model. [4]"]
+    }
+  },
+  {
+    "path": "formulas/class-11/physics/heat-and-temperature/01-key-equations.json",
+    "data": {
+      "title": "Key Equations — Thermodynamics",
+      "unitSlug": "heat-and-temperature",
+      "source": "ravikishan",
+      "notes": ["$$\\Delta U = Q - W$$", "$$PV = nRT$$", "$$W = P\\Delta V$$"]
+    }
+  },
+  {
+    "path": "formulas/class-11/mathematics/algebra/01-derivatives.json",
+    "data": {
+      "title": "Derivatives",
+      "unitSlug": "algebra",
+      "source": "ravikishan",
+      "notes": ["$$\\frac{d}{dx}x^n = nx^{n-1}$$", "$$\\frac{d}{dx}\\sin x = \\cos x$$"]
+    }
+  }
+]

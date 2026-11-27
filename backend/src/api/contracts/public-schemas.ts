@@ -43,6 +43,8 @@ export const mobileHomeResponseSchema = z.object({
       practice: z.boolean(),
       aiChat: z.boolean(),
       community: z.boolean(),
+      pyqs: z.boolean(),
+      formulas: z.boolean(),
     }),
     links: z.object({
       syllabus: z.string().startsWith("/"),
@@ -50,6 +52,8 @@ export const mobileHomeResponseSchema = z.object({
       practice: z.string().startsWith("/"),
       ai: z.string().startsWith("/"),
       community: z.string().startsWith("/"),
+      pyqs: z.string().startsWith("/"),
+      formulas: z.string().startsWith("/"),
     }),
   }),
 });
@@ -154,6 +158,57 @@ export const mobileCommunityPostSchema = z.object({
 export const mobileCommunityResponseSchema = z.object({
   ok: z.literal(true),
   data: cursorPageSchema(mobileCommunityPostSchema),
+});
+
+/** GET /api/mobile/pyqs — cursor-paginated PYQ catalog (plus tier, like /pyqs). */
+export const mobilePyqItemSchema = z.object({
+  id: z.string().min(1),
+  class: z.string().min(1),
+  subject: z.string().min(1),
+  unit: z.string().nullable(),
+  year: z.number().int().nullable(),
+  title: z.string().min(1),
+  questionCount: z.number().int().nonnegative(),
+});
+
+export const mobilePyqsResponseSchema = z.object({
+  ok: z.literal(true),
+  data: cursorPageSchema(mobilePyqItemSchema),
+});
+
+/** GET /api/mobile/pyqs/file — one PYQ entry's question lines. */
+export const mobilePyqFileResponseSchema = z.object({
+  ok: z.literal(true),
+  data: z.object({
+    path: z.string().min(1),
+    title: z.string(),
+    questions: z.array(z.string()),
+  }),
+});
+
+/** GET /api/mobile/formulas — cursor-paginated formula-sheet catalog (plus tier). */
+export const mobileFormulaItemSchema = z.object({
+  id: z.string().min(1),
+  class: z.string().min(1),
+  subject: z.string().min(1),
+  unit: z.string().min(1),
+  title: z.string().min(1),
+  formulaCount: z.number().int().nonnegative(),
+});
+
+export const mobileFormulasResponseSchema = z.object({
+  ok: z.literal(true),
+  data: cursorPageSchema(mobileFormulaItemSchema),
+});
+
+/** GET /api/mobile/formulas/file — one formula sheet's formula lines. */
+export const mobileFormulaFileResponseSchema = z.object({
+  ok: z.literal(true),
+  data: z.object({
+    path: z.string().min(1),
+    title: z.string(),
+    formulas: z.array(z.string()),
+  }),
 });
 
 /** GET /api/v2/meta */

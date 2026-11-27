@@ -46,6 +46,8 @@ describe("GET /api/mobile/home", () => {
           practice: true,
           aiChat: true,
           community: true,
+          pyqs: true,
+          formulas: true,
         },
         links: {
           syllabus: "/api/classes",
@@ -53,6 +55,8 @@ describe("GET /api/mobile/home", () => {
           practice: "/api/practice",
           ai: "/api/ai",
           community: "/api/community",
+          pyqs: "/api/mobile/pyqs",
+          formulas: "/api/mobile/formulas",
         },
       },
     });
