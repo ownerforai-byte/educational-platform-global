@@ -1,0 +1,615 @@
+{
+ "mcqPool": [
+  {
+   "q": "SI unit of force?",
+   "options": [
+    "joule",
+    "newton",
+    "watt",
+    "pascal"
+   ],
+   "answer": 1,
+   "why": "F = ma → kg·m/s² = newton.",
+   "exam": "NEB 2080"
+  },
+  {
+   "q": "Acceleration due to gravity on Earth?",
+   "options": [
+    "8.9 m/s²",
+    "9.8 m/s²",
+    "10.8 m/s²",
+    "6.7 m/s²"
+   ],
+   "answer": 1,
+   "why": "Standard value g ≈ 9.8 m/s²."
+  },
+  {
+   "q": "Which is a vector?",
+   "options": [
+    "speed",
+    "distance",
+    "displacement",
+    "mass"
+   ],
+   "answer": 2,
+   "why": "Displacement has magnitude and direction."
+  },
+  {
+   "q": "Work done by centripetal force in circular motion?",
+   "options": [
+    "positive",
+    "negative",
+    "zero",
+    "infinite"
+   ],
+   "answer": 2,
+   "why": "Force ⊥ displacement → W = 0."
+  },
+  {
+   "q": "Dimension of pressure?",
+   "options": [
+    "ML⁻²T⁻²",
+    "ML⁻¹T⁻²",
+    "MLT⁻²",
+    "ML²T⁻²"
+   ],
+   "answer": 1,
+   "why": "P = F/A → ML⁻¹T⁻²."
+  },
+  {
+   "q": "Escape velocity from Earth?",
+   "options": [
+    "7.9 km/s",
+    "11.2 km/s",
+    "9.8 km/s",
+    "12.5 km/s"
+   ],
+   "answer": 1,
+   "why": "vₑ = √(2gR) ≈ 11.2 km/s."
+  },
+  {
+   "q": "6-option probe",
+   "options": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+   ],
+   "answer": 5,
+   "why": "Exercises OMR letter F."
+  }
+ ],
+ "pyqBank": {
+  "pyqs": [
+   {
+    "year": 2080,
+    "title": "NEB 2080",
+    "units": [],
+    "questions": [
+     {
+      "question": "Derive the equation of motion s = ut + ½at².",
+      "marks": "3",
+      "solution": "Graphical derivation from v–t graph."
+     },
+     {
+      "question": "State and explain Newton's second law.",
+      "marks": 4,
+      "solution": "F = ma; rate of change of momentum."
+     },
+     {
+      "question": "Why does a heavy parachute fall slower?",
+      "marks": "2a",
+      "solution": "Air drag grows with speed."
+     },
+     {
+      "question": "No marks question",
+      "solution": "Marks undefined → fallback 5."
+     }
+    ]
+   },
+   {
+    "year": 2079,
+    "title": "NEB 2079",
+    "units": [],
+    "questions": [
+     {
+      "question": "Define escape velocity and derive its expression.",
+      "marks": "2.5",
+      "solution": "vₑ = √(2GM/R)."
+     },
+     {
+      "question": "Blank solution question",
+      "marks": 2
+     }
+    ]
+   }
+  ]
+ },
+ "mulberry32": {
+  "0": [
+   0.26642920868471265,
+   0.0003297457005828619,
+   0.2232720274478197,
+   0.1462021479383111,
+   0.46732782293111086,
+   0.5450490827206522,
+   0.6152513844426721,
+   0.6489853798411787
+  ],
+  "1": [
+   0.6270739405881613,
+   0.002735721180215478,
+   0.5274470399599522,
+   0.9810509674716741,
+   0.9683778982143849,
+   0.281103502959013,
+   0.6128388606011868,
+   0.7207431411370635
+  ],
+  "42": [
+   0.6011037519201636,
+   0.44829055899754167,
+   0.8524657934904099,
+   0.6697340414393693,
+   0.17481389874592423,
+   0.5265925421845168,
+   0.2732279943302274,
+   0.6247446539346129
+  ],
+  "123456789": [
+   0.2577907438389957,
+   0.9707721115555614,
+   0.7853280142880976,
+   0.20616457983851433,
+   0.30307188746519387,
+   0.7470660470426083,
+   0.7787336520850658,
+   0.2845096290111542
+  ],
+  "4294967295": [
+   0.8964226141106337,
+   0.189478256739676,
+   0.7156526781618595,
+   0.9440599093213677,
+   0.8452364315744489,
+   0.5391399988438934,
+   0.6804977387655526,
+   0.4755720964167267
+  ]
+ },
+ "assemble": [
+  {
+   "name": "default",
+   "objectiveCount": 5,
+   "writtenCount": 3,
+   "seed": 7,
+   "expected": {
+    "seed": 7,
+    "objective": [
+     {
+      "id": "o1",
+      "q": "Work done by centripetal force in circular motion?",
+      "options": [
+       "zero",
+       "infinite",
+       "positive",
+       "negative"
+      ],
+      "answer": 0,
+      "why": "Force ⊥ displacement → W = 0."
+     },
+     {
+      "id": "o2",
+      "q": "Escape velocity from Earth?",
+      "options": [
+       "11.2 km/s",
+       "12.5 km/s",
+       "7.9 km/s",
+       "9.8 km/s"
+      ],
+      "answer": 0,
+      "why": "vₑ = √(2gR) ≈ 11.2 km/s."
+     },
+     {
+      "id": "o3",
+      "q": "Acceleration due to gravity on Earth?",
+      "options": [
+       "10.8 m/s²",
+       "8.9 m/s²",
+       "9.8 m/s²",
+       "6.7 m/s²"
+      ],
+      "answer": 2,
+      "why": "Standard value g ≈ 9.8 m/s²."
+     },
+     {
+      "id": "o4",
+      "q": "Which is a vector?",
+      "options": [
+       "displacement",
+       "mass",
+       "speed",
+       "distance"
+      ],
+      "answer": 0,
+      "why": "Displacement has magnitude and direction."
+     },
+     {
+      "id": "o5",
+      "q": "Dimension of pressure?",
+      "options": [
+       "ML²T⁻²",
+       "ML⁻²T⁻²",
+       "MLT⁻²",
+       "ML⁻¹T⁻²"
+      ],
+      "answer": 3,
+      "why": "P = F/A → ML⁻¹T⁻²."
+     }
+    ],
+    "written": [
+     {
+      "id": "w1",
+      "question": "State and explain Newton's second law.",
+      "solution": "F = ma; rate of change of momentum.",
+      "marks": 4,
+      "year": 2080
+     },
+     {
+      "id": "w2",
+      "question": "Why does a heavy parachute fall slower?",
+      "solution": "Air drag grows with speed.",
+      "marks": 2,
+      "year": 2080
+     },
+     {
+      "id": "w3",
+      "question": "No marks question",
+      "solution": "Marks undefined → fallback 5.",
+      "marks": 5,
+      "year": 2080
+     }
+    ],
+    "durationMinutes": 27,
+    "totalMarks": 16
+   }
+  },
+  {
+   "name": "pool-capped",
+   "objectiveCount": 20,
+   "writtenCount": 10,
+   "seed": 1,
+   "expected": {
+    "seed": 1,
+    "objective": [
+     {
+      "id": "o1",
+      "q": "Acceleration due to gravity on Earth?",
+      "options": [
+       "9.8 m/s²",
+       "8.9 m/s²",
+       "6.7 m/s²",
+       "10.8 m/s²"
+      ],
+      "answer": 0,
+      "why": "Standard value g ≈ 9.8 m/s²."
+     },
+     {
+      "id": "o2",
+      "q": "Escape velocity from Earth?",
+      "options": [
+       "9.8 km/s",
+       "7.9 km/s",
+       "11.2 km/s",
+       "12.5 km/s"
+      ],
+      "answer": 2,
+      "why": "vₑ = √(2gR) ≈ 11.2 km/s."
+     },
+     {
+      "id": "o3",
+      "q": "6-option probe",
+      "options": [
+       "b",
+       "e",
+       "d",
+       "f",
+       "c",
+       "a"
+      ],
+      "answer": 3,
+      "why": "Exercises OMR letter F."
+     },
+     {
+      "id": "o4",
+      "q": "Work done by centripetal force in circular motion?",
+      "options": [
+       "infinite",
+       "zero",
+       "negative",
+       "positive"
+      ],
+      "answer": 1,
+      "why": "Force ⊥ displacement → W = 0."
+     },
+     {
+      "id": "o5",
+      "q": "Which is a vector?",
+      "options": [
+       "mass",
+       "displacement",
+       "speed",
+       "distance"
+      ],
+      "answer": 1,
+      "why": "Displacement has magnitude and direction."
+     },
+     {
+      "id": "o6",
+      "q": "SI unit of force?",
+      "options": [
+       "joule",
+       "watt",
+       "pascal",
+       "newton"
+      ],
+      "answer": 3,
+      "why": "F = ma → kg·m/s² = newton.",
+      "exam": "NEB 2080"
+     },
+     {
+      "id": "o7",
+      "q": "Dimension of pressure?",
+      "options": [
+       "MLT⁻²",
+       "ML²T⁻²",
+       "ML⁻²T⁻²",
+       "ML⁻¹T⁻²"
+      ],
+      "answer": 3,
+      "why": "P = F/A → ML⁻¹T⁻²."
+     }
+    ],
+    "written": [
+     {
+      "id": "w1",
+      "question": "State and explain Newton's second law.",
+      "solution": "F = ma; rate of change of momentum.",
+      "marks": 4,
+      "year": 2080
+     },
+     {
+      "id": "w2",
+      "question": "Define escape velocity and derive its expression.",
+      "solution": "vₑ = √(2GM/R).",
+      "marks": 2.5,
+      "year": 2079
+     },
+     {
+      "id": "w3",
+      "question": "Why does a heavy parachute fall slower?",
+      "solution": "Air drag grows with speed.",
+      "marks": 2,
+      "year": 2080
+     },
+     {
+      "id": "w4",
+      "question": "Derive the equation of motion s = ut + ½at².",
+      "solution": "Graphical derivation from v–t graph.",
+      "marks": 3,
+      "year": 2080
+     },
+     {
+      "id": "w5",
+      "question": "Blank solution question",
+      "marks": 2,
+      "year": 2079
+     },
+     {
+      "id": "w6",
+      "question": "No marks question",
+      "solution": "Marks undefined → fallback 5.",
+      "marks": 5,
+      "year": 2080
+     }
+    ],
+    "durationMinutes": 44,
+    "totalMarks": 25.5
+   }
+  },
+  {
+   "name": "zero-counts",
+   "objectiveCount": 0,
+   "writtenCount": 0,
+   "seed": 42,
+   "expected": {
+    "seed": 42,
+    "objective": [],
+    "written": [],
+    "durationMinutes": 0,
+    "totalMarks": 0
+   }
+  },
+  {
+   "name": "seed-zero",
+   "objectiveCount": 3,
+   "writtenCount": 2,
+   "seed": 0,
+   "expected": {
+    "seed": 0,
+    "objective": [
+     {
+      "id": "o1",
+      "q": "Work done by centripetal force in circular motion?",
+      "options": [
+       "infinite",
+       "positive",
+       "negative",
+       "zero"
+      ],
+      "answer": 3,
+      "why": "Force ⊥ displacement → W = 0."
+     },
+     {
+      "id": "o2",
+      "q": "Which is a vector?",
+      "options": [
+       "distance",
+       "mass",
+       "speed",
+       "displacement"
+      ],
+      "answer": 3,
+      "why": "Displacement has magnitude and direction."
+     },
+     {
+      "id": "o3",
+      "q": "Dimension of pressure?",
+      "options": [
+       "ML⁻²T⁻²",
+       "MLT⁻²",
+       "ML⁻¹T⁻²",
+       "ML²T⁻²"
+      ],
+      "answer": 2,
+      "why": "P = F/A → ML⁻¹T⁻²."
+     }
+    ],
+    "written": [
+     {
+      "id": "w1",
+      "question": "Blank solution question",
+      "marks": 2,
+      "year": 2079
+     },
+     {
+      "id": "w2",
+      "question": "Derive the equation of motion s = ut + ½at².",
+      "solution": "Graphical derivation from v–t graph.",
+      "marks": 3,
+      "year": 2080
+     }
+    ],
+    "durationMinutes": 13,
+    "totalMarks": 8
+   }
+  }
+ ],
+ "parseMarks": [
+  {
+   "name": "string-int",
+   "marks": "2",
+   "expected": 2
+  },
+  {
+   "name": "number",
+   "marks": 5,
+   "expected": 5
+  },
+  {
+   "name": "junk-suffix",
+   "marks": "2a",
+   "expected": 2
+  },
+  {
+   "name": "undefined",
+   "marks": null,
+   "expected": 5
+  },
+  {
+   "name": "empty",
+   "marks": "",
+   "expected": 5
+  },
+  {
+   "name": "zero",
+   "marks": "0",
+   "expected": 5
+  },
+  {
+   "name": "negative",
+   "marks": -3,
+   "expected": 5
+  },
+  {
+   "name": "decimal",
+   "marks": "3.5",
+   "expected": 3.5
+  },
+  {
+   "name": "padded",
+   "marks": "  4  ",
+   "expected": 4
+  },
+  {
+   "name": "words",
+   "marks": "abc",
+   "expected": 5
+  }
+ ],
+ "score": {
+  "answers": {
+   "o1": 0,
+   "o2": 1,
+   "o3": -1
+  },
+  "selfMarks": {
+   "w1": 14,
+   "w2": 1,
+   "w3": -3
+  },
+  "expected": {
+   "correct": 1,
+   "wrong": 1,
+   "blank": 3,
+   "objectiveMarks": 1,
+   "writtenMarks": 5,
+   "total": 6,
+   "outOf": 16,
+   "percent": 38
+  },
+  "blankAll": {
+   "answers": {},
+   "selfMarks": {},
+   "expected": {
+    "correct": 0,
+    "wrong": 0,
+    "blank": 5,
+    "objectiveMarks": 0,
+    "writtenMarks": 0,
+    "total": 0,
+    "outOf": 16,
+    "percent": 0
+   }
+  },
+  "key": [
+   {
+    "id": "o1",
+    "number": 1,
+    "letter": "A"
+   },
+   {
+    "id": "o2",
+    "number": 2,
+    "letter": "A"
+   },
+   {
+    "id": "o3",
+    "number": 3,
+    "letter": "C"
+   },
+   {
+    "id": "o4",
+    "number": 4,
+    "letter": "A"
+   },
+   {
+    "id": "o5",
+    "number": 5,
+    "letter": "D"
+   }
+  ]
+ }
+}

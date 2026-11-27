@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ravikisan</string>
+
+    <!-- Bottom navigation -->
+    <string name="nav_home">गृहपृष्ठ</string>
+    <string name="nav_learn">सिक्नुहोस्</string>
+    <string name="nav_practice">अभ्यास</string>
+    <string name="nav_veer">वीर</string>
+    <string name="nav_community">समुदाय</string>
+    <string name="nav_profile">प्रोफाइल</string>
+
+    <!-- Common actions -->
+    <string name="action_retry">पुन: प्रयास गर्नुहोस्</string>
+    <string name="action_sign_in">साइन इन गर्नुहोस्</string>
+    <string name="action_sign_up">साइन अप गर्नुहोस्</string>
+    <string name="action_log_out">लग आउट गर्नुहोस्</string>
+    <string name="action_cancel">रद्द गर्नुहोस्</string>
+    <string name="action_save">सुरक्षित गर्नुहोस्</string>
+    <string name="action_back">पछाडि</string>
+    <string name="action_close">बन्द गर्नुहोस्</string>
+    <string name="action_search">खोज्नुहोस्</string>
+    <string name="action_settings">सेटिङ</string>
+    <string name="action_notifications">सूचनाहरू</string>
+
+    <!-- States and errors -->
+    <string name="state_loading">लोड हुँदैछ…</string>
+    <string name="state_offline_cached">तपाईं अफलाइन हुनुहुन्छ। सुरक्षित गरिएको सामग्री देखाइँदैछ।</string>
+    <string name="error_generic">केही गलत भयो। कृपया फेरि प्रयास गर्नुहोस्।</string>
+    <string name="error_no_internet">इन्टरनेट जडान छैन</string>
+</resources>

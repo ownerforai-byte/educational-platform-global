@@ -1,20 +1,23 @@
 package com.ravikisan.platform.compose.ui.screens.ai.local
 
+import com.ravikisan.platform.compose.ui.screens.ai.ChatEventStream
 import com.ravikisan.platform.compose.ui.screens.ai.ChatMessage
 import com.ravikisan.platform.compose.ui.screens.ai.ChatRole
+import com.ravikisan.platform.compose.ui.screens.ai.ChatTurn
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 /**
- * Fake SSE chat stream (Agent 4 task 6) — stands in for Agent 3's SseClient
- * until the Supervisor orders the fake→real swap. Emits token chunks with a
- * small delay, exactly like the wire protocol: many small deltas that the UI
- * appends to the streaming assistant message.
+ * Fake chat transport — KEPT FOR UNIT TESTS ONLY after the fake→real swap.
+ * Production UI streams through [com.ravikisan.platform.compose.ui.screens.ai.SseChatStream]
+ * (`POST /api/ai`, SSE). Emits token chunks with a small delay, exactly like
+ * the wire protocol: many small deltas that the UI appends to the streaming
+ * assistant message.
  *
  * [chunkDelayMs] is injectable so JVM tests can set it to 0.
  */
-class FakeChatStream(private val chunkDelayMs: Long = 40) {
+class FakeChatStream(private val chunkDelayMs: Long = 40) : ChatEventStream {
 
     /** Canned, curriculum-aware replies — keyword matched, NEB-flavoured. */
     fun replyFor(prompt: String): String {
@@ -50,6 +53,10 @@ class FakeChatStream(private val chunkDelayMs: Long = 40) {
             if (index < chunks.lastIndex && chunkDelayMs > 0) delay(chunkDelayMs)
         }
     }
+
+    /** [ChatEventStream] port: replies to the last user turn. */
+    override fun stream(history: List<ChatTurn>): Flow<String> =
+        stream(history.lastOrNull { it.role == ChatRole.USER }?.text.orEmpty())
 
     companion object {
         /** Convenience: build the assistant's streaming placeholder message. */

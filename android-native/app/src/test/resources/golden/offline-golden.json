@@ -1,0 +1,230 @@
+{
+ "bank": {
+  "theory": [
+   {
+    "title": "Collisions",
+    "notes": [
+     "Momentum conserved",
+     "KE conserved only in elastic"
+    ],
+    "detail": "See derivation in reader."
+   },
+   {
+    "title": "Work–energy theorem",
+    "notes": [
+     "W = ΔKE"
+    ]
+   }
+  ],
+  "pyqs": [
+   {
+    "year": 2080,
+    "title": "NEB 2080",
+    "units": [
+     "work-energy-power",
+     "circuits"
+    ],
+    "questions": [
+     {
+      "question": "A ball drops from 5 m. Find v at impact.",
+      "marks": 2,
+      "solution": "v = √(2gh) = 10 m/s."
+     },
+     {
+      "question": "Define power.",
+      "marks": "1",
+      "solution": "Rate of doing work."
+     }
+    ]
+   },
+   {
+    "year": 2079,
+    "title": "NEB 2079",
+    "units": [
+     "work-energy-and-power"
+    ],
+    "questions": [
+     {
+      "question": "Show W = F·d for constant force.",
+      "marks": "2"
+     }
+    ]
+   }
+  ],
+  "drills": [
+   {
+    "id": "d1",
+    "question": "Does friction always oppose motion?",
+    "solution": "It opposes relative sliding.",
+    "unit": "work-energy-power",
+    "kind": "concept"
+   },
+   {
+    "id": "d2",
+    "question": "Unit of power?",
+    "solution": "watt",
+    "unit": "circuits",
+    "kind": "practical"
+   }
+  ]
+ },
+ "formulaUnit": {
+  "id": "work-energy-and-power",
+  "title": "Work, Energy and Power",
+  "unitNo": 4,
+  "isExtra": false,
+  "topics": [
+   {
+    "title": "Kinematics",
+    "formulas": [
+     "v = u + at",
+     "F = ma"
+    ]
+   },
+   {
+    "title": "Power",
+    "formulas": [
+     "P = W/t",
+     "F = ma"
+    ]
+   }
+  ],
+  "formulaCount": 3,
+  "noteCount": 2
+ },
+ "sameUnit": [
+  {
+   "a": "chemical-bonding",
+   "b": "chemical-bonding-and-shapes-of-molecules",
+   "expected": true
+  },
+  {
+   "a": "work-energy-power",
+   "b": "work-energy-and-power",
+   "expected": true
+  },
+  {
+   "a": "kinematics",
+   "b": "kinematics",
+   "expected": true
+  },
+  {
+   "a": "kinematics",
+   "b": "optics",
+   "expected": false
+  },
+  {
+   "b": "kinematics",
+   "expected": false
+  }
+ ],
+ "pack": {
+  "title": "Work, Energy and Power",
+  "theory": [
+   {
+    "title": "Collisions",
+    "notes": [
+     "Momentum conserved",
+     "KE conserved only in elastic"
+    ],
+    "detail": "See derivation in reader."
+   },
+   {
+    "title": "Work–energy theorem",
+    "notes": [
+     "W = ΔKE"
+    ]
+   }
+  ],
+  "pyqs": [
+   {
+    "year": 2080,
+    "title": "NEB 2080",
+    "questions": [
+     {
+      "question": "A ball drops from 5 m. Find v at impact.",
+      "marks": 2,
+      "solution": "v = √(2gh) = 10 m/s."
+     },
+     {
+      "question": "Define power.",
+      "marks": "1",
+      "solution": "Rate of doing work."
+     }
+    ]
+   },
+   {
+    "year": 2079,
+    "title": "NEB 2079",
+    "questions": [
+     {
+      "question": "Show W = F·d for constant force.",
+      "marks": "2"
+     }
+    ]
+   }
+  ],
+  "drills": [
+   {
+    "id": "d1",
+    "question": "Does friction always oppose motion?",
+    "solution": "It opposes relative sliding.",
+    "unit": "work-energy-power",
+    "kind": "concept"
+   }
+  ],
+  "formulas": [
+   "v = u + at",
+   "F = ma",
+   "P = W/t",
+   "F = ma"
+  ]
+ },
+ "packItemCount": 10,
+ "packToMarkdown": "# Work, Energy and Power\n\n## Concept notes\n\n### Collisions\n\n- Momentum conserved\n- KE conserved only in elastic\n\nSee derivation in reader.\n\n### Work–energy theorem\n\n- W = ΔKE\n\n## Formulas\n\n- v = u + at\n- F = ma\n- P = W/t\n- F = ma\n\n## Past questions\n\n### NEB 2080\n\n1. A ball drops from 5 m. Find v at impact. [2]\n   - Answer: v = √(2gh) = 10 m/s.\n2. Define power. [1]\n   - Answer: Rate of doing work.\n\n### NEB 2079\n\n1. Show W = F·d for constant force. [2]\n\n## Concept drills\n\n1. Does friction always oppose motion?\n   - Answer: It opposes relative sliding.\n",
+ "emptyPack": {
+  "title": "Nothing",
+  "theory": [
+   {
+    "title": "Collisions",
+    "notes": [
+     "Momentum conserved",
+     "KE conserved only in elastic"
+    ],
+    "detail": "See derivation in reader."
+   },
+   {
+    "title": "Work–energy theorem",
+    "notes": [
+     "W = ΔKE"
+    ]
+   }
+  ],
+  "pyqs": [],
+  "drills": [],
+  "formulas": []
+ },
+ "emptyPackMarkdown": "# Nothing\n\n## Concept notes\n\n### Collisions\n\n- Momentum conserved\n- KE conserved only in elastic\n\nSee derivation in reader.\n\n### Work–energy theorem\n\n- W = ΔKE\n",
+ "filenames": [
+  {
+   "name": "punctuated",
+   "title": "Physics — Unit 4: Work!!",
+   "expected": "physics-unit-4-work.md"
+  },
+  {
+   "name": "blank",
+   "title": "   ",
+   "expected": "study-pack.md"
+  },
+  {
+   "name": "long",
+   "title": "A Very Long Physics Unit Title That Keeps Going Well Past Sixty Characters Total",
+   "expected": "a-very-long-physics-unit-title-that-keeps-going-well-past-si.md"
+  },
+  {
+   "name": "dashes",
+   "title": "--leading and trailing--",
+   "expected": "leading-and-trailing.md"
+  }
+ ]
+}

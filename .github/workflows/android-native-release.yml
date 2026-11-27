@@ -1,0 +1,101 @@
+name: android-native-release
+
+# Builds a signed release App Bundle (.aab) for the Play Console.
+#
+# Required repository secrets (Settings → Secrets and variables → Actions):
+#   ANDROID_KEYSTORE_BASE64   base64 of the upload keystore (.jks), e.g.
+#                             `base64 -w0 upload-keystore.jks`
+#   ANDROID_KEYSTORE_PASSWORD keystore store password (storePassword)
+#   ANDROID_KEY_ALIAS         key alias inside the keystore (keyAlias)
+#   ANDROID_KEY_PASSWORD      key password (keyPassword)
+#
+# app/build.gradle.kts reads signing values from android-native/key.properties
+# (storeFile, storePassword, keyAlias, keyPassword). That file is generated
+# below from the secrets above and removed at the end of the job. Secrets are
+# passed via env vars and never echoed.
+
+on:
+  push:
+    tags:
+      - 'android-v*'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  android-native-release:
+    name: Build signed release AAB
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: android-native
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: gradle/actions/setup-gradle@v4
+      # Decode the upload keystore into a temp file outside the workspace.
+      - name: Decode upload keystore
+        shell: bash
+        env:
+          ANDROID_KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          set -euo pipefail
+          if [ -z "${ANDROID_KEYSTORE_BASE64:-}" ]; then
+            echo "::error::Secret ANDROID_KEYSTORE_BASE64 is not configured" >&2
+            exit 1
+          fi
+          keystore="$RUNNER_TEMP/upload-keystore.jks"
+          umask 077
+          printf '%s' "$ANDROID_KEYSTORE_BASE64" | base64 --decode > "$keystore"
+          echo "ANDROID_KEYSTORE_FILE=$keystore" >> "$GITHUB_ENV"
+      # Write key.properties in the format app/build.gradle.kts expects.
+      # Values are escaped for java.util.Properties so special characters in
+      # passwords survive parsing. The file is deleted in the cleanup step.
+      - name: Write key.properties
+        shell: bash
+        env:
+          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: |
+          set -euo pipefail
+          for name in ANDROID_KEYSTORE_PASSWORD ANDROID_KEY_ALIAS ANDROID_KEY_PASSWORD; do
+            if [ -z "${!name:-}" ]; then
+              echo "::error::Secret $name is not configured" >&2
+              exit 1
+            fi
+          done
+          umask 077
+          python3 - <<'PY' > key.properties
+          import os
+
+          def esc(value):
+              return ''.join('\\' + c if c in '\\:=#! ' else c for c in value)
+
+          print('storeFile=' + os.environ['ANDROID_KEYSTORE_FILE'])
+          print('storePassword=' + esc(os.environ['ANDROID_KEYSTORE_PASSWORD']))
+          print('keyAlias=' + esc(os.environ['ANDROID_KEY_ALIAS']))
+          print('keyPassword=' + esc(os.environ['ANDROID_KEY_PASSWORD']))
+          PY
+      - name: Run unit tests
+        run: ./gradlew testDebugUnitTest --stacktrace
+      - name: Build signed release bundle
+        run: ./gradlew bundleRelease --stacktrace
+      - name: Upload release bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-native-release-aab
+          path: android-native/app/build/outputs/bundle/release/*.aab
+          if-no-files-found: error
+      - name: Remove signing material
+        if: always()
+        shell: bash
+        run: |
+          rm -f key.properties
+          rm -f "${ANDROID_KEYSTORE_FILE:-$RUNNER_TEMP/upload-keystore.jks}"

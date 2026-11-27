@@ -54,3 +54,16 @@ jobs:
           name: android-native-debug-apk
           path: android-native/app/build/outputs/apk/debug/*.apk
           if-no-files-found: error
+      # Android Lint gates PRs. Runs after the APK upload so a lint failure
+      # never hides the built artifact. Reports are kept only on failure.
+      - name: Run lint
+        run: ./gradlew lintDebug --stacktrace
+      - name: Upload lint report on failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-native-lint-report
+          path: |
+            android-native/app/build/reports/lint-results-debug.html
+            android-native/app/build/reports/lint-results-debug.xml
+          if-no-files-found: ignore

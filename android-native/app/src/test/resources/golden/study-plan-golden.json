@@ -1,0 +1,1036 @@
+{
+ "catalog": [
+  {
+   "key": "class-11-notes/chemistry",
+   "classSlug": "class-11-notes",
+   "className": "Class 11 Notes",
+   "subjectSlug": "chemistry",
+   "subjectName": "Chemistry"
+  },
+  {
+   "key": "class-11-notes/physics",
+   "classSlug": "class-11-notes",
+   "className": "Class 11 Notes",
+   "subjectSlug": "physics",
+   "subjectName": "Physics"
+  },
+  {
+   "key": "class-12-notes/biology",
+   "classSlug": "class-12-notes",
+   "className": "Class 12 Notes",
+   "subjectSlug": "biology",
+   "subjectName": "Biology"
+  },
+  {
+   "key": "class-12-notes/mathematics",
+   "classSlug": "class-12-notes",
+   "className": "Class 12 Notes",
+   "subjectSlug": "mathematics",
+   "subjectName": "Mathematics"
+  }
+ ],
+ "normalize": [
+  {
+   "name": "junk1",
+   "input": {
+    "subjects": [
+     "class-11-notes/physics",
+     "not-a-subject",
+     "class-11-notes/physics",
+     42,
+     "class-12-notes/biology"
+    ],
+    "examDate": "2026-05-10",
+    "targetPercent": 55.4,
+    "dailyMinutes": 90.7,
+    "onboarded": "yes",
+    "preferences": {
+     "language": "ne",
+     "notifyDailyReminder": 1,
+     "reduceMotion": true,
+     "extra": "ignored"
+    }
+   },
+   "expected": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-12-notes/biology"
+    ],
+    "examDate": "2026-05-10",
+    "targetPercent": 55,
+    "dailyMinutes": 91,
+    "onboarded": false,
+    "preferences": {
+     "language": "ne",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": true,
+     "largeText": false
+    }
+   }
+  },
+  {
+   "name": "junk2",
+   "input": {
+    "subjects": "physics",
+    "examDate": "2026-13-01",
+    "targetPercent": 120,
+    "dailyMinutes": 3,
+    "preferences": {
+     "language": "fr"
+    }
+   },
+   "expected": {
+    "subjects": [],
+    "examDate": null,
+    "targetPercent": null,
+    "dailyMinutes": 60,
+    "onboarded": false,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   }
+  },
+  {
+   "name": "junk3",
+   "input": {
+    "examDate": "2026-02-30",
+    "targetPercent": -5,
+    "dailyMinutes": 721
+   },
+   "expected": {
+    "subjects": [],
+    "examDate": "2026-02-30",
+    "targetPercent": null,
+    "dailyMinutes": 60,
+    "onboarded": false,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   }
+  },
+  {
+   "name": "null",
+   "input": null,
+   "expected": {
+    "subjects": [],
+    "examDate": null,
+    "targetPercent": null,
+    "dailyMinutes": 60,
+    "onboarded": false,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   }
+  }
+ ],
+ "daysUntilExam": [
+  {
+   "name": "null-exam",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": null,
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": null
+  },
+  {
+   "name": "future",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": 3
+  },
+  {
+   "name": "same-day",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-08",
+   "expected": 0
+  },
+  {
+   "name": "past",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-11",
+   "expected": -3
+  }
+ ],
+ "seedDailyPlan": [
+  {
+   "name": "even",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "expected": [
+    {
+     "subjectKey": "class-11-notes/physics",
+     "subjectName": "Physics",
+     "minutes": 20
+    },
+    {
+     "subjectKey": "class-11-notes/chemistry",
+     "subjectName": "Chemistry",
+     "minutes": 20
+    },
+    {
+     "subjectKey": "class-12-notes/mathematics",
+     "subjectName": "Mathematics",
+     "minutes": 20
+    }
+   ]
+  },
+  {
+   "name": "floor-clamp",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 10,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "expected": [
+    {
+     "subjectKey": "class-11-notes/physics",
+     "subjectName": "Physics",
+     "minutes": 5
+    },
+    {
+     "subjectKey": "class-11-notes/chemistry",
+     "subjectName": "Chemistry",
+     "minutes": 5
+    },
+    {
+     "subjectKey": "class-12-notes/mathematics",
+     "subjectName": "Mathematics",
+     "minutes": 5
+    }
+   ]
+  },
+  {
+   "name": "empty",
+   "goals": {
+    "subjects": [],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "expected": []
+  }
+ ],
+ "weakTopics": {
+  "entries": [
+   {
+    "id": "1",
+    "topicId": "a/b/c/d",
+    "completed": true,
+    "completedAt": "2026-01-02T10:00:00Z",
+    "updatedAt": "2026-01-02",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "displacement",
+    "topic": {
+     "slug": "displacement",
+     "title": "Displacement",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "2",
+    "topicId": "a/b/c/e",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-03",
+    "status": "in_progress",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "velocity",
+    "topic": {
+     "slug": "velocity",
+     "title": "Velocity"
+    }
+   },
+   {
+    "id": "3",
+    "topicId": "a/b/c/f",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-03",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "unitSlug": "stoichiometry",
+    "topicSlug": "mole",
+    "topic": null
+   },
+   {
+    "id": "new:class-11-notes/physics/laws/force",
+    "topicId": "x",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-04",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "laws",
+    "topicSlug": "force",
+    "topic": {
+     "slug": "force",
+     "title": "Force"
+    }
+   },
+   {
+    "id": "5",
+    "topicId": "y",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-04",
+    "status": "in_progress",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "unitSlug": "calculus",
+    "topicSlug": "limits",
+    "topic": {
+     "slug": "limits",
+     "title": "Limits"
+    }
+   },
+   {
+    "id": "6",
+    "topicId": "z",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-04",
+    "status": "in_progress"
+   },
+   {
+    "id": "7",
+    "topicId": "w",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-04",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "optics",
+    "topicSlug": "",
+    "topic": {
+     "slug": "",
+     "title": ""
+    }
+   }
+  ],
+  "expected": [
+   {
+    "subjectKey": "class-11-notes/physics",
+    "title": "Velocity",
+    "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+    "status": "in_progress"
+   },
+   {
+    "subjectKey": "class-11-notes/chemistry",
+    "title": "mole",
+    "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+    "status": "in_progress"
+   },
+   {
+    "subjectKey": "class-12-notes/mathematics",
+    "title": "Limits",
+    "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+    "status": "in_progress"
+   },
+   {
+    "subjectKey": "class-11-notes/physics",
+    "title": "Force",
+    "href": "/class-11-notes/physics/chapters/laws/topics/force",
+    "status": "not_started"
+   }
+  ]
+ },
+ "weeklyPlan": [
+  {
+   "name": "exam-week",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": [
+    {
+     "date": "2026-01-05",
+     "daysToExam": 3,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Velocity",
+        "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-06",
+     "daysToExam": 2,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Force",
+        "href": "/class-11-notes/physics/chapters/laws/topics/force",
+        "status": "not_started"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-07",
+     "daysToExam": 1,
+     "revision": true,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": null
+      }
+     ]
+    },
+    {
+     "date": "2026-01-08",
+     "daysToExam": 0,
+     "revision": true,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "no-exam",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": null,
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": [
+    {
+     "date": "2026-01-05",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Velocity",
+        "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-06",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Force",
+        "href": "/class-11-notes/physics/chapters/laws/topics/force",
+        "status": "not_started"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-07",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Velocity",
+        "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-08",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Force",
+        "href": "/class-11-notes/physics/chapters/laws/topics/force",
+        "status": "not_started"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-09",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Velocity",
+        "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-10",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Force",
+        "href": "/class-11-notes/physics/chapters/laws/topics/force",
+        "status": "not_started"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    },
+    {
+     "date": "2026-01-11",
+     "daysToExam": null,
+     "revision": false,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/physics",
+        "title": "Velocity",
+        "href": "/class-11-notes/physics/chapters/kinematics/topics/velocity",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-11-notes/chemistry",
+        "title": "mole",
+        "href": "/class-11-notes/chemistry/chapters/stoichiometry/topics/mole",
+        "status": "in_progress"
+       }
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": {
+        "subjectKey": "class-12-notes/mathematics",
+        "title": "Limits",
+        "href": "/class-12-notes/mathematics/chapters/calculus/topics/limits",
+        "status": "in_progress"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "past-exam",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-02",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": []
+  },
+  {
+   "name": "exam-tomorrow",
+   "goals": {
+    "subjects": [
+     "class-11-notes/physics",
+     "class-11-notes/chemistry",
+     "class-12-notes/mathematics"
+    ],
+    "examDate": "2026-01-06",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": [
+    {
+     "date": "2026-01-05",
+     "daysToExam": 1,
+     "revision": true,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": null
+      }
+     ]
+    },
+    {
+     "date": "2026-01-06",
+     "daysToExam": 0,
+     "revision": true,
+     "blocks": [
+      {
+       "subjectKey": "class-11-notes/physics",
+       "subjectName": "Physics",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-11-notes/chemistry",
+       "subjectName": "Chemistry",
+       "minutes": 20,
+       "focus": null
+      },
+      {
+       "subjectKey": "class-12-notes/mathematics",
+       "subjectName": "Mathematics",
+       "minutes": 20,
+       "focus": null
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "no-subjects",
+   "goals": {
+    "subjects": [],
+    "examDate": "2026-01-08",
+    "targetPercent": 80,
+    "dailyMinutes": 60,
+    "onboarded": true,
+    "preferences": {
+     "language": "en",
+     "notifyDailyReminder": false,
+     "notifyStreakAlerts": false,
+     "reduceMotion": false,
+     "largeText": false
+    }
+   },
+   "today": "2026-01-05",
+   "expected": []
+  }
+ ]
+}

@@ -165,6 +165,34 @@ class FakeRnApi : RnApi {
         )
     }
 
+    // ── Home bootstrap + notifications (final wiring) ──
+
+    var mobileHomeResponse: Response<com.ravikisan.platform.compose.core.contract.MobileHomeResponse>? = null
+    var notificationsResponse: Response<com.ravikisan.platform.compose.core.contract.SocialNotificationsResponse>? = null
+    var markReadRequests = mutableListOf<com.ravikisan.platform.compose.core.contract.MarkNotificationsReadRequest>()
+
+    override suspend fun mobileHome(): Response<com.ravikisan.platform.compose.core.contract.MobileHomeResponse> {
+        return mobileHomeResponse ?: Response.success(
+            com.ravikisan.platform.compose.core.contract.MobileHomeResponse(),
+        )
+    }
+
+    override suspend fun notifications(
+        cursor: Long?,
+        unread: String?,
+    ): Response<com.ravikisan.platform.compose.core.contract.SocialNotificationsResponse> {
+        return notificationsResponse ?: Response.success(
+            com.ravikisan.platform.compose.core.contract.SocialNotificationsResponse(),
+        )
+    }
+
+    override suspend fun markNotificationsRead(
+        body: com.ravikisan.platform.compose.core.contract.MarkNotificationsReadRequest,
+    ): Response<Unit> {
+        markReadRequests += body
+        return Response.success(Unit)
+    }
+
     companion object {
         @Suppress("UNCHECKED_CAST")
         fun <T> error(code: Int, json: String): Response<T> {

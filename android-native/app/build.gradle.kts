@@ -23,6 +23,7 @@ plugins {
 val googleServicesJson = file("google-services.json")
 if (googleServicesJson.exists()) {
     apply(plugin = "com.google.gms.google-services")
+    apply(plugin = "com.google.firebase.crashlytics")
 } else {
     logger.warn("app/google-services.json missing — FCM/config disabled until generated via Firebase CLI.")
 }
@@ -35,7 +36,7 @@ android {
         applicationId = "com.ravikisan.platform"
         minSdk = 30
         targetSdk = 36
-        versionCode = 20
+        versionCode = 21
         versionName = "2.0.0"
         buildConfigField("String", "API_BASE", "\"https://harindrasah.com.np\"")
         resourceConfigurations += listOf("en", "ne")
@@ -133,6 +134,8 @@ dependencies {
     implementation("com.google.firebase:firebase-messaging")
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-firestore")
+    implementation("com.google.firebase:firebase-crashlytics")
+    implementation("com.google.firebase:firebase-analytics")
     // NOTE (Agent 5 security review): BOM 35.2.0 + firebase-pnv from a later
     // session were REVERTED. firebase-pnv is not a published Google artifact
     // (supply-chain risk); BOM 35.2.0 pulls firebase-auth 25.0.0 compiled with

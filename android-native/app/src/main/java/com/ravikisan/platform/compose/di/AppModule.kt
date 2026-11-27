@@ -13,9 +13,13 @@ import com.ravikisan.platform.compose.data.api.RnApi
 import com.ravikisan.platform.compose.data.db.AppDatabase
 import com.ravikisan.platform.compose.data.repository.CommunityRepository
 import com.ravikisan.platform.compose.data.repository.PracticeRepository
+import com.ravikisan.platform.compose.data.repository.RecentUnitsStore
 import com.ravikisan.platform.compose.data.repository.RoomStudyCache
 import com.ravikisan.platform.compose.data.repository.StudyCache
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
+import com.ravikisan.platform.compose.data.fcm.FcmRegistrar
+import com.ravikisan.platform.compose.ui.screens.ai.ChatEventStream
+import com.ravikisan.platform.compose.ui.screens.ai.SseChatStream
 import com.ravikisan.platform.compose.ui.screens.search.SearchIndexSource
 import com.ravikisan.platform.compose.ui.screens.search.SyllabusSearchIndexSource
 import com.ravikisan.platform.compose.data.session.SessionManager
@@ -131,4 +135,28 @@ object AppModule {
     @Singleton
     fun provideSseClient(client: OkHttpClient): SseClient =
         OkHttpSseClient(client, SecurityContract.API_ORIGIN)
+
+    /** Veer chat: real SSE transport over `POST /api/ai` (auth-gated). */
+    @Provides
+    @Singleton
+    fun provideChatEventStream(
+        sseClient: SseClient,
+        session: SessionStore,
+        json: Json,
+    ): ChatEventStream = SseChatStream(sseClient, session, json)
+
+    @Provides
+    @Singleton
+    fun provideFcmRegistrar(
+        @ApplicationContext context: Context,
+        api: RnApi,
+        session: SessionStore,
+    ): FcmRegistrar = FcmRegistrar(context, api, session)
+
+    @Provides
+    @Singleton
+    fun provideRecentUnitsStore(
+        @ApplicationContext context: Context,
+        json: Json,
+    ): RecentUnitsStore = RecentUnitsStore(context, json)
 }

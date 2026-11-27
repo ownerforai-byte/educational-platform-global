@@ -5,6 +5,7 @@ import androidx.lifecycle.viewModelScope
 import com.ravikisan.platform.compose.core.contract.MobileNoteItemDto
 import com.ravikisan.platform.compose.core.contract.MobileUnitDto
 import com.ravikisan.platform.compose.data.repository.NoteContentMapper
+import com.ravikisan.platform.compose.data.repository.RecentUnitsStore
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -41,6 +42,7 @@ data class StudyUnitUiState(
 @HiltViewModel
 class StudyUnitViewModel @Inject constructor(
     private val repository: SyllabusRepository,
+    private val recents: RecentUnitsStore,
 ) : ViewModel() {
 
     private val _state = MutableStateFlow(StudyUnitUiState())
@@ -82,6 +84,8 @@ class StudyUnitViewModel @Inject constructor(
                         unit = unit,
                         fromCache = unitsResult is SyllabusRepository.Result.Cached,
                     )
+                    // Device-local "continue studying" recents for Home.
+                    recents.record(routeArg, unit.title)
                 }
             }
             // 2. Notes catalog for this chapter (unit title == chapter name).

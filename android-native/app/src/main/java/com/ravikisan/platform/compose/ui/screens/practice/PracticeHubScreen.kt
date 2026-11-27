@@ -34,13 +34,14 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 
 /**
- * Practice hub skeleton (Agent 4 task 5). Hosted at the shell's `practice`
- * route — Agent 1 wires it via the Integration queue. Lists fake practice
- * sets and previews a set's questions; the scored quiz runner is the next
- * practice task.
+ * Practice hub — REAL data (`GET /api/mobile/practice` +
+ * `GET /api/practice/exams/:slug`): lists the live exam catalog with Room
+ * offline fallback, previews a set's questions inline, and launches the
+ * scored runner at `quiz/{quizId}`.
  */
 @Composable
 fun PracticeHubScreen(
+    onStartQuiz: (quizId: String) -> Unit = {},
     viewModel: PracticeViewModel = hiltViewModel(),
 ) {
     val state by viewModel.state.collectAsState()
@@ -57,6 +58,7 @@ fun PracticeHubScreen(
             questions = state.previewQuestions,
             previewLoading = state.previewLoading,
             onBack = viewModel::closeSet,
+            onStartQuiz = { onStartQuiz(selectedSet.id) },
         )
         else -> SetList(sets = state.sets, loading = state.loading, fromCache = state.fromCache, onOpenSet = viewModel::openSet)
     }
@@ -131,6 +133,7 @@ private fun SetPreview(
     questions: List<PracticeQuestion>,
     previewLoading: Boolean,
     onBack: () -> Unit,
+    onStartQuiz: () -> Unit,
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
@@ -151,6 +154,11 @@ private fun SetPreview(
                         color = MaterialTheme.colorScheme.onSurfaceVariant,
                     )
                 }
+            }
+        }
+        item {
+            Button(onClick = onStartQuiz, enabled = questions.isNotEmpty()) {
+                Text(if (previewLoading) "Loading questions…" else "Start scored attempt")
             }
         }
         items(questions, key = { it.id }) { question ->

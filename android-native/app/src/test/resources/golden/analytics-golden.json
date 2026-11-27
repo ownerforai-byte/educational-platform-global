@@ -1,0 +1,816 @@
+{
+ "accuracyBySubject": {
+  "rows": [
+   {
+    "id": "q1",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Kinematics",
+    "answered": 10,
+    "correct": 8,
+    "createdat": "2026-01-05T14:00:00Z"
+   },
+   {
+    "id": "q2",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "kinematics ",
+    "answered": 5,
+    "correct": 2,
+    "createdat": "2026-01-06T09:00:00Z"
+   },
+   {
+    "id": "q3",
+    "title": "Organic quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "topic": "Organic basics",
+    "answered": 8,
+    "correct": 8,
+    "createdat": "2026-01-08T11:00:00Z"
+   },
+   {
+    "id": "q4",
+    "title": "Calculus quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "topic": null,
+    "answered": 4,
+    "correct": 9,
+    "createdat": "2026-01-12T16:30:00Z"
+   },
+   {
+    "id": "q5",
+    "title": "Empty quiz",
+    "classSlug": null,
+    "subjectSlug": null,
+    "topic": "Misc",
+    "answered": 0,
+    "correct": 0,
+    "createdat": "2026-01-13T10:00:00Z"
+   },
+   {
+    "id": "q6",
+    "title": "Overcount quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "biology",
+    "topic": "Cells",
+    "answered": 6,
+    "correct": 9,
+    "createdat": "2026-01-14T10:00:00Z"
+   },
+   {
+    "id": "q7",
+    "title": "Old quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Optics",
+    "answered": 10,
+    "correct": 3,
+    "createdat": "2025-12-30T10:00:00Z"
+   }
+  ],
+  "expected": [
+   {
+    "key": "physics",
+    "label": "Physics",
+    "quizzes": 3,
+    "answered": 25,
+    "correct": 13,
+    "accuracy": 52
+   },
+   {
+    "key": "chemistry",
+    "label": "Chemistry",
+    "quizzes": 1,
+    "answered": 8,
+    "correct": 8,
+    "accuracy": 100
+   },
+   {
+    "key": "biology",
+    "label": "Biology",
+    "quizzes": 1,
+    "answered": 6,
+    "correct": 6,
+    "accuracy": 100
+   },
+   {
+    "key": "mathematics",
+    "label": "Mathematics",
+    "quizzes": 1,
+    "answered": 4,
+    "correct": 4,
+    "accuracy": 100
+   }
+  ]
+ },
+ "accuracyByTopic": {
+  "rows": [
+   {
+    "id": "q1",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Kinematics",
+    "answered": 10,
+    "correct": 8,
+    "createdat": "2026-01-05T14:00:00Z"
+   },
+   {
+    "id": "q2",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "kinematics ",
+    "answered": 5,
+    "correct": 2,
+    "createdat": "2026-01-06T09:00:00Z"
+   },
+   {
+    "id": "q3",
+    "title": "Organic quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "topic": "Organic basics",
+    "answered": 8,
+    "correct": 8,
+    "createdat": "2026-01-08T11:00:00Z"
+   },
+   {
+    "id": "q4",
+    "title": "Calculus quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "topic": null,
+    "answered": 4,
+    "correct": 9,
+    "createdat": "2026-01-12T16:30:00Z"
+   },
+   {
+    "id": "q5",
+    "title": "Empty quiz",
+    "classSlug": null,
+    "subjectSlug": null,
+    "topic": "Misc",
+    "answered": 0,
+    "correct": 0,
+    "createdat": "2026-01-13T10:00:00Z"
+   },
+   {
+    "id": "q6",
+    "title": "Overcount quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "biology",
+    "topic": "Cells",
+    "answered": 6,
+    "correct": 9,
+    "createdat": "2026-01-14T10:00:00Z"
+   },
+   {
+    "id": "q7",
+    "title": "Old quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Optics",
+    "answered": 10,
+    "correct": 3,
+    "createdat": "2025-12-30T10:00:00Z"
+   }
+  ],
+  "expected": [
+   {
+    "key": "optics",
+    "label": "Optics",
+    "quizzes": 1,
+    "answered": 10,
+    "correct": 3,
+    "accuracy": 30
+   },
+   {
+    "key": "kinematics",
+    "label": "Kinematics",
+    "quizzes": 2,
+    "answered": 15,
+    "correct": 10,
+    "accuracy": 67
+   },
+   {
+    "key": "organic basics",
+    "label": "Organic basics",
+    "quizzes": 1,
+    "answered": 8,
+    "correct": 8,
+    "accuracy": 100
+   },
+   {
+    "key": "cells",
+    "label": "Cells",
+    "quizzes": 1,
+    "answered": 6,
+    "correct": 6,
+    "accuracy": 100
+   }
+  ]
+ },
+ "completionByUnit": {
+  "entries": [
+   {
+    "id": "1",
+    "topicId": "t1",
+    "completed": true,
+    "completedAt": "2026-01-05T18:00:00Z",
+    "updatedAt": "2026-01-05",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "displacement",
+    "topic": {
+     "slug": "displacement",
+     "title": "Displacement",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "2",
+    "topicId": "t2",
+    "completed": true,
+    "completedAt": "2026-01-09T18:00:00Z",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "velocity",
+    "topic": {
+     "slug": "velocity",
+     "title": "Velocity",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "3",
+    "topicId": "t3",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "unitSlug": "stoichiometry",
+    "topicSlug": "mole",
+    "topic": {
+     "slug": "mole",
+     "title": "Mole",
+     "chapter": {
+      "slug": "stoichiometry",
+      "title": "Stoichiometry"
+     }
+    }
+   },
+   {
+    "id": "4",
+    "topicId": "t4",
+    "completed": true,
+    "completedAt": "not-a-date",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "optics",
+    "topicSlug": "mirror",
+    "topic": {
+     "slug": "mirror",
+     "title": "Mirror",
+     "chapter": {
+      "slug": "optics",
+      "title": "Optics"
+     }
+    }
+   },
+   {
+    "id": "5",
+    "topicId": "t5",
+    "completed": true,
+    "completedAt": "2026-01-15T08:00:00Z",
+    "updatedAt": "2026-01-15",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "unitSlug": "calculus",
+    "topicSlug": "limits",
+    "topic": null
+   }
+  ],
+  "expected": [
+   {
+    "key": "class-12-notes/mathematics/calculus",
+    "label": "Calculus",
+    "total": 1,
+    "completed": 1,
+    "percent": 100
+   },
+   {
+    "key": "class-11-notes/physics/kinematics",
+    "label": "Kinematics",
+    "total": 2,
+    "completed": 2,
+    "percent": 100
+   },
+   {
+    "key": "class-11-notes/physics/optics",
+    "label": "Optics",
+    "total": 1,
+    "completed": 1,
+    "percent": 100
+   },
+   {
+    "key": "class-11-notes/chemistry/stoichiometry",
+    "label": "Stoichiometry",
+    "total": 1,
+    "completed": 0,
+    "percent": 0
+   }
+  ]
+ },
+ "weeklyTrend": {
+  "rows": [
+   {
+    "id": "q1",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Kinematics",
+    "answered": 10,
+    "correct": 8,
+    "createdat": "2026-01-05T14:00:00Z"
+   },
+   {
+    "id": "q2",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "kinematics ",
+    "answered": 5,
+    "correct": 2,
+    "createdat": "2026-01-06T09:00:00Z"
+   },
+   {
+    "id": "q3",
+    "title": "Organic quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "topic": "Organic basics",
+    "answered": 8,
+    "correct": 8,
+    "createdat": "2026-01-08T11:00:00Z"
+   },
+   {
+    "id": "q4",
+    "title": "Calculus quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "topic": null,
+    "answered": 4,
+    "correct": 9,
+    "createdat": "2026-01-12T16:30:00Z"
+   },
+   {
+    "id": "q5",
+    "title": "Empty quiz",
+    "classSlug": null,
+    "subjectSlug": null,
+    "topic": "Misc",
+    "answered": 0,
+    "correct": 0,
+    "createdat": "2026-01-13T10:00:00Z"
+   },
+   {
+    "id": "q6",
+    "title": "Overcount quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "biology",
+    "topic": "Cells",
+    "answered": 6,
+    "correct": 9,
+    "createdat": "2026-01-14T10:00:00Z"
+   },
+   {
+    "id": "q7",
+    "title": "Old quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Optics",
+    "answered": 10,
+    "correct": 3,
+    "createdat": "2025-12-30T10:00:00Z"
+   }
+  ],
+  "entries": [
+   {
+    "id": "1",
+    "topicId": "t1",
+    "completed": true,
+    "completedAt": "2026-01-05T18:00:00Z",
+    "updatedAt": "2026-01-05",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "displacement",
+    "topic": {
+     "slug": "displacement",
+     "title": "Displacement",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "2",
+    "topicId": "t2",
+    "completed": true,
+    "completedAt": "2026-01-09T18:00:00Z",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "velocity",
+    "topic": {
+     "slug": "velocity",
+     "title": "Velocity",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "3",
+    "topicId": "t3",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "unitSlug": "stoichiometry",
+    "topicSlug": "mole",
+    "topic": {
+     "slug": "mole",
+     "title": "Mole",
+     "chapter": {
+      "slug": "stoichiometry",
+      "title": "Stoichiometry"
+     }
+    }
+   },
+   {
+    "id": "4",
+    "topicId": "t4",
+    "completed": true,
+    "completedAt": "not-a-date",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "optics",
+    "topicSlug": "mirror",
+    "topic": {
+     "slug": "mirror",
+     "title": "Mirror",
+     "chapter": {
+      "slug": "optics",
+      "title": "Optics"
+     }
+    }
+   },
+   {
+    "id": "5",
+    "topicId": "t5",
+    "completed": true,
+    "completedAt": "2026-01-15T08:00:00Z",
+    "updatedAt": "2026-01-15",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "unitSlug": "calculus",
+    "topicSlug": "limits",
+    "topic": null
+   }
+  ],
+  "expected": [
+   {
+    "week": "2025-12-29",
+    "quizzes": 1,
+    "answered": 10,
+    "accuracy": 30,
+    "topicsCompleted": 0
+   },
+   {
+    "week": "2026-01-05",
+    "quizzes": 3,
+    "answered": 23,
+    "accuracy": 78,
+    "topicsCompleted": 2
+   },
+   {
+    "week": "2026-01-12",
+    "quizzes": 2,
+    "answered": 10,
+    "accuracy": 100,
+    "topicsCompleted": 1
+   }
+  ]
+ },
+ "dailyStudyActivity": {
+  "rows": [
+   {
+    "id": "q1",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Kinematics",
+    "answered": 10,
+    "correct": 8,
+    "createdat": "2026-01-05T14:00:00Z"
+   },
+   {
+    "id": "q2",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "kinematics ",
+    "answered": 5,
+    "correct": 2,
+    "createdat": "2026-01-06T09:00:00Z"
+   },
+   {
+    "id": "q3",
+    "title": "Organic quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "topic": "Organic basics",
+    "answered": 8,
+    "correct": 8,
+    "createdat": "2026-01-08T11:00:00Z"
+   },
+   {
+    "id": "q4",
+    "title": "Calculus quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "topic": null,
+    "answered": 4,
+    "correct": 9,
+    "createdat": "2026-01-12T16:30:00Z"
+   },
+   {
+    "id": "q5",
+    "title": "Empty quiz",
+    "classSlug": null,
+    "subjectSlug": null,
+    "topic": "Misc",
+    "answered": 0,
+    "correct": 0,
+    "createdat": "2026-01-13T10:00:00Z"
+   },
+   {
+    "id": "q6",
+    "title": "Overcount quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "biology",
+    "topic": "Cells",
+    "answered": 6,
+    "correct": 9,
+    "createdat": "2026-01-14T10:00:00Z"
+   },
+   {
+    "id": "q7",
+    "title": "Old quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Optics",
+    "answered": 10,
+    "correct": 3,
+    "createdat": "2025-12-30T10:00:00Z"
+   }
+  ],
+  "entries": [
+   {
+    "id": "1",
+    "topicId": "t1",
+    "completed": true,
+    "completedAt": "2026-01-05T18:00:00Z",
+    "updatedAt": "2026-01-05",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "displacement",
+    "topic": {
+     "slug": "displacement",
+     "title": "Displacement",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "2",
+    "topicId": "t2",
+    "completed": true,
+    "completedAt": "2026-01-09T18:00:00Z",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "kinematics",
+    "topicSlug": "velocity",
+    "topic": {
+     "slug": "velocity",
+     "title": "Velocity",
+     "chapter": {
+      "slug": "kinematics",
+      "title": "Kinematics"
+     }
+    }
+   },
+   {
+    "id": "3",
+    "topicId": "t3",
+    "completed": false,
+    "completedAt": null,
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "unitSlug": "stoichiometry",
+    "topicSlug": "mole",
+    "topic": {
+     "slug": "mole",
+     "title": "Mole",
+     "chapter": {
+      "slug": "stoichiometry",
+      "title": "Stoichiometry"
+     }
+    }
+   },
+   {
+    "id": "4",
+    "topicId": "t4",
+    "completed": true,
+    "completedAt": "not-a-date",
+    "updatedAt": "2026-01-09",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "unitSlug": "optics",
+    "topicSlug": "mirror",
+    "topic": {
+     "slug": "mirror",
+     "title": "Mirror",
+     "chapter": {
+      "slug": "optics",
+      "title": "Optics"
+     }
+    }
+   },
+   {
+    "id": "5",
+    "topicId": "t5",
+    "completed": true,
+    "completedAt": "2026-01-15T08:00:00Z",
+    "updatedAt": "2026-01-15",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "unitSlug": "calculus",
+    "topicSlug": "limits",
+    "topic": null
+   }
+  ],
+  "days": 7,
+  "pinnedNow": "2026-01-15T10:30:00.000Z",
+  "expected": [
+   {
+    "day": "2026-01-09",
+    "quizzes": 0,
+    "topicsCompleted": 1,
+    "points": 10
+   },
+   {
+    "day": "2026-01-10",
+    "quizzes": 0,
+    "topicsCompleted": 0,
+    "points": 0
+   },
+   {
+    "day": "2026-01-11",
+    "quizzes": 0,
+    "topicsCompleted": 0,
+    "points": 0
+   },
+   {
+    "day": "2026-01-12",
+    "quizzes": 1,
+    "topicsCompleted": 0,
+    "points": 5
+   },
+   {
+    "day": "2026-01-13",
+    "quizzes": 0,
+    "topicsCompleted": 0,
+    "points": 0
+   },
+   {
+    "day": "2026-01-14",
+    "quizzes": 1,
+    "topicsCompleted": 0,
+    "points": 5
+   },
+   {
+    "day": "2026-01-15",
+    "quizzes": 0,
+    "topicsCompleted": 1,
+    "points": 10
+   }
+  ]
+ },
+ "overallAccuracy": {
+  "rows": [
+   {
+    "id": "q1",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Kinematics",
+    "answered": 10,
+    "correct": 8,
+    "createdat": "2026-01-05T14:00:00Z"
+   },
+   {
+    "id": "q2",
+    "title": "Kinematics quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "kinematics ",
+    "answered": 5,
+    "correct": 2,
+    "createdat": "2026-01-06T09:00:00Z"
+   },
+   {
+    "id": "q3",
+    "title": "Organic quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "chemistry",
+    "topic": "Organic basics",
+    "answered": 8,
+    "correct": 8,
+    "createdat": "2026-01-08T11:00:00Z"
+   },
+   {
+    "id": "q4",
+    "title": "Calculus quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "mathematics",
+    "topic": null,
+    "answered": 4,
+    "correct": 9,
+    "createdat": "2026-01-12T16:30:00Z"
+   },
+   {
+    "id": "q5",
+    "title": "Empty quiz",
+    "classSlug": null,
+    "subjectSlug": null,
+    "topic": "Misc",
+    "answered": 0,
+    "correct": 0,
+    "createdat": "2026-01-13T10:00:00Z"
+   },
+   {
+    "id": "q6",
+    "title": "Overcount quiz",
+    "classSlug": "class-12-notes",
+    "subjectSlug": "biology",
+    "topic": "Cells",
+    "answered": 6,
+    "correct": 9,
+    "createdat": "2026-01-14T10:00:00Z"
+   },
+   {
+    "id": "q7",
+    "title": "Old quiz",
+    "classSlug": "class-11-notes",
+    "subjectSlug": "physics",
+    "topic": "Optics",
+    "answered": 10,
+    "correct": 3,
+    "createdat": "2025-12-30T10:00:00Z"
+   }
+  ],
+  "expected": {
+   "quizzes": 6,
+   "answered": 43,
+   "accuracy": 72
+  }
+ }
+}

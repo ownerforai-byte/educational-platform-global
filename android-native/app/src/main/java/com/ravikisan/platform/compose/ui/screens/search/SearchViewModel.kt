@@ -4,10 +4,12 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
 import com.ravikisan.platform.compose.ui.screens.search.local.FakeSearchIndex
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 /**
  * Where the search index comes from. Production: [SyllabusSearchIndexSource]
@@ -28,8 +30,9 @@ class StaticSearchIndexSource(val entries: List<SearchEntry>) : SearchIndexSourc
 fun SearchEngine.asSource(): SearchIndexSource = StaticSearchIndexSource(entries)
 
 /**
- * REAL source (session 3): builds search entries from the syllabus tree served
- * by `GET /api/mobile/syllabus` (classes → subjects → units), offline-tolerant
+ * REAL source (session 3): builds search entries from the REAL curriculum —
+ * the syllabus tree served by `GET /api/mobile/syllabus` plus each subject's
+ * units from `GET /api/mobile/units?subject=<slug>` — offline-tolerant
  * through the Room cache. Unit ids use the same `<subjectSlug>:<unitSlug>`
  * route string the study screens navigate with.
  */
@@ -47,17 +50,26 @@ class SyllabusSearchIndexSource(
         return buildList {
             for (klass in classes) {
                 for (subject in klass.subjects) {
-                    add(
-                        SearchEntry(
-                            kind = ResultKind.UNIT,
-                            unitId = "${subject.slug}:@subject",
-                            className = klass.name,
-                            subjectName = subject.name,
-                            unitTitle = subject.name,
-                            matchText = subject.name,
-                            snippet = "${klass.name} · ${subject.name}",
-                        ),
-                    )
+                    val units = when (val unitsResult = repository.loadUnits(subject.slug)) {
+                        is SyllabusRepository.Result.Fresh ->
+                            (unitsResult.payload as? SyllabusRepository.Payload.Units)?.units
+                        is SyllabusRepository.Result.Cached ->
+                            (unitsResult.payload as? SyllabusRepository.Payload.Units)?.units
+                        is SyllabusRepository.Result.Unavailable -> null
+                    } ?: continue
+                    for (unit in units) {
+                        add(
+                            SearchEntry(
+                                kind = ResultKind.UNIT,
+                                unitId = "${subject.slug}:${unit.slug}",
+                                className = klass.name,
+                                subjectName = subject.name,
+                                unitTitle = unit.title,
+                                matchText = unit.title,
+                                snippet = "${klass.name} · ${subject.name} · ${unit.topicCount} topics",
+                            ),
+                        )
+                    }
                 }
             }
         }
@@ -66,11 +78,12 @@ class SyllabusSearchIndexSource(
 
 /**
  * Search state holder — REAL index (session 3). Query in, scored results out.
- * With [StaticSearchIndexSource] (tests) the engine is ready on the calling
- * thread; with [SyllabusSearchIndexSource] it loads asynchronously and
- * [indexLoading] gates the UI until it lands.
+ * Production binds [SyllabusSearchIndexSource] through Hilt; with
+ * [StaticSearchIndexSource] (tests) the engine is ready on the calling
+ * thread, otherwise [indexLoading] gates the UI until it lands.
  */
-class SearchViewModel(
+@HiltViewModel
+class SearchViewModel @Inject constructor(
     private val source: SearchIndexSource,
 ) : ViewModel() {
 

@@ -5,8 +5,11 @@ import com.ravikisan.platform.compose.core.contract.ExamDto
 import com.ravikisan.platform.compose.core.contract.FcmRegistrationRequest
 import com.ravikisan.platform.compose.core.contract.LoginRequest
 import com.ravikisan.platform.compose.core.contract.MeResponse
+import com.ravikisan.platform.compose.core.contract.MarkNotificationsReadRequest
 import com.ravikisan.platform.compose.core.contract.MobileCommunityResponse
+import com.ravikisan.platform.compose.core.contract.MobileHomeResponse
 import com.ravikisan.platform.compose.core.contract.MobileNotesResponse
+import com.ravikisan.platform.compose.core.contract.SocialNotificationsResponse
 import com.ravikisan.platform.compose.core.contract.MobilePracticeResponse
 import com.ravikisan.platform.compose.core.contract.MobileSyllabusResponse
 import com.ravikisan.platform.compose.core.contract.MobileUnitsResponse
@@ -17,6 +20,7 @@ import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PATCH
 import retrofit2.http.Path
 import retrofit2.http.Query
 
@@ -74,6 +78,21 @@ interface RnApi {
         @Query("limit") limit: Int? = null,
         @Query("cursor") cursor: String? = null,
     ): Response<MobileCommunityResponse>
+
+    /** `GET /api/mobile/home` — cold-start bootstrap: live features + backing routes. */
+    @GET("api/mobile/home")
+    suspend fun mobileHome(): Response<MobileHomeResponse>
+
+    /** `GET /api/notifications` — social notification feed (auth required). */
+    @GET("api/notifications")
+    suspend fun notifications(
+        @Query("cursor") cursor: Long? = null,
+        @Query("unread") unread: String? = null,
+    ): Response<SocialNotificationsResponse>
+
+    /** `PATCH /api/notifications/read` — mark all (or a list) as read. */
+    @PATCH("api/notifications/read")
+    suspend fun markNotificationsRead(@Body body: MarkNotificationsReadRequest): Response<Unit>
 
     @POST("api/access-requests/fcm")
     suspend fun registerFcmToken(@Body body: FcmRegistrationRequest): Response<Unit>

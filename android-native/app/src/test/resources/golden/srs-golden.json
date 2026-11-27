@@ -1,0 +1,479 @@
+{
+ "sm2": [
+  {
+   "name": "new-q5",
+   "prev": null,
+   "quality": 5,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 2.6,
+    "interval": 1,
+    "reps": 1,
+    "lapses": 0,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "new-q4",
+   "prev": null,
+   "quality": 4,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 2.5,
+    "interval": 1,
+    "reps": 1,
+    "lapses": 0,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "new-q3",
+   "prev": null,
+   "quality": 3,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 2.36,
+    "interval": 1,
+    "reps": 1,
+    "lapses": 0,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "new-q2-lapse",
+   "prev": null,
+   "quality": 2,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 2.1799999999999997,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 1,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "new-q0",
+   "prev": null,
+   "quality": 0,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 1.7000000000000002,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 1,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "floor-clamp",
+   "prev": {
+    "ease": 1.3,
+    "interval": 6,
+    "reps": 2,
+    "lapses": 1,
+    "due": "2026-01-04"
+   },
+   "quality": 0,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 1.3,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 2,
+    "due": "2026-01-06"
+   }
+  },
+  {
+   "name": "chain-step2",
+   "prev": {
+    "ease": 2.6,
+    "interval": 1,
+    "reps": 1,
+    "lapses": 0,
+    "due": "2026-01-06"
+   },
+   "quality": 5,
+   "today": "2026-01-06",
+   "expected": {
+    "ease": 2.7,
+    "interval": 6,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-12"
+   }
+  },
+  {
+   "name": "chain-step3",
+   "prev": {
+    "ease": 2.6,
+    "interval": 6,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-12"
+   },
+   "quality": 5,
+   "today": "2026-01-12",
+   "expected": {
+    "ease": 2.7,
+    "interval": 16,
+    "reps": 3,
+    "lapses": 0,
+    "due": "2026-01-28"
+   }
+  },
+  {
+   "name": "fractional-ease",
+   "prev": {
+    "ease": 2.35,
+    "interval": 8,
+    "reps": 3,
+    "lapses": 0,
+    "due": "2026-01-10"
+   },
+   "quality": 3,
+   "today": "2026-01-10",
+   "expected": {
+    "ease": 2.21,
+    "interval": 18,
+    "reps": 4,
+    "lapses": 0,
+    "due": "2026-01-28"
+   }
+  },
+  {
+   "name": "lapses-accumulate",
+   "prev": {
+    "ease": 2.1,
+    "interval": 4,
+    "reps": 2,
+    "lapses": 2,
+    "due": "2026-01-05"
+   },
+   "quality": 1,
+   "today": "2026-01-05",
+   "expected": {
+    "ease": 1.56,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 3,
+    "due": "2026-01-06"
+   }
+  }
+ ],
+ "addDays": [
+  {
+   "iso": "2026-01-31",
+   "days": 1,
+   "expected": "2026-02-01"
+  },
+  {
+   "iso": "2024-02-29",
+   "days": 1,
+   "expected": "2024-03-01"
+  },
+  {
+   "iso": "2026-02-28",
+   "days": 1,
+   "expected": "2026-03-01"
+  },
+  {
+   "iso": "2026-12-31",
+   "days": 1,
+   "expected": "2027-01-01"
+  },
+  {
+   "iso": "2026-03-01",
+   "days": -1,
+   "expected": "2026-02-28"
+  },
+  {
+   "iso": "2026-01-01",
+   "days": 30,
+   "expected": "2026-01-31"
+  }
+ ],
+ "buildCards": {
+  "subjectKey": "class-11-notes/physics",
+  "bank": {
+   "theory": [
+    {
+     "title": "Kinematic equations",
+     "notes": [
+      "v = u + at",
+      "s = ut + ½at²"
+     ],
+     "detail": "Derived from uniform acceleration."
+    },
+    {
+     "title": "  Newton's first law  ",
+     "notes": [
+      "Law of inertia"
+     ]
+    },
+    {
+     "title": "",
+     "notes": [
+      "x"
+     ]
+    },
+    {
+     "title": "Dup",
+     "notes": []
+    }
+   ],
+   "pyqs": [
+    {
+     "year": 2080,
+     "title": "NEB 2080",
+     "units": [],
+     "questions": [
+      {
+       "question": "State Ohm's law.",
+       "marks": "2",
+       "solution": "V = IR at constant temperature."
+      },
+      {
+       "question": "State Ohm's law.",
+       "marks": 2
+      },
+      {
+       "question": "Define capacitance.",
+       "solution": "Q = CV"
+      }
+     ]
+    },
+    {
+     "year": 2079,
+     "title": "NEB 2079",
+     "units": [],
+     "questions": [
+      {
+       "question": "State Ohm's law.",
+       "solution": "duplicate front across years"
+      }
+     ]
+    }
+   ],
+   "drills": [
+    {
+     "id": "d1",
+     "question": "Why does a conductor shield its interior?",
+     "solution": "E = 0 inside a conductor.",
+     "unit": "electrostatics",
+     "kind": "concept"
+    },
+    {
+     "id": "d2",
+     "question": "Why does a conductor shield its interior?",
+     "solution": "E = 0 inside a conductor.",
+     "unit": "electrostatics",
+     "kind": "practical"
+    }
+   ]
+  },
+  "expected": [
+   {
+    "id": "class-11-notes/physics:concept:16e9ub",
+    "subjectKey": "class-11-notes/physics",
+    "kind": "concept",
+    "front": "Kinematic equations",
+    "back": "v = u + at\ns = ut + ½at²\nDerived from uniform acceleration."
+   },
+   {
+    "id": "class-11-notes/physics:concept:1oel24m",
+    "subjectKey": "class-11-notes/physics",
+    "kind": "concept",
+    "front": "Newton's first law",
+    "back": "Law of inertia"
+   },
+   {
+    "id": "class-11-notes/physics:pyq:292tg6",
+    "subjectKey": "class-11-notes/physics",
+    "kind": "pyq",
+    "front": "State Ohm's law.",
+    "back": "V = IR at constant temperature."
+   },
+   {
+    "id": "class-11-notes/physics:pyq:xqyq22",
+    "subjectKey": "class-11-notes/physics",
+    "kind": "pyq",
+    "front": "Define capacitance.",
+    "back": "Q = CV"
+   },
+   {
+    "id": "class-11-notes/physics:drill:113r6tq",
+    "subjectKey": "class-11-notes/physics",
+    "kind": "drill",
+    "front": "Why does a conductor shield its interior?",
+    "back": "E = 0 inside a conductor."
+   }
+  ]
+ },
+ "store": {
+  "junk": {
+   "ok1": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-04"
+   },
+   "badEase": {
+    "ease": "high",
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-04"
+   },
+   "badDue": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-1-4"
+   },
+   "missingField": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "due": "2026-01-04"
+   },
+   "nullEntry": null,
+   "numberEntry": 5,
+   "ok2": {
+    "ease": 1.9,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 3,
+    "due": "2026-01-10"
+   }
+  },
+  "added": [
+   {
+    "id": "class-11-notes/physics:concept:16e9ub",
+    "state": {
+     "ease": 2.5,
+     "interval": 1,
+     "reps": 1,
+     "lapses": 0,
+     "due": "2026-01-05"
+    }
+   },
+   {
+    "id": "class-11-notes/physics:concept:1oel24m",
+    "state": {
+     "ease": 2.5,
+     "interval": 6,
+     "reps": 2,
+     "lapses": 0,
+     "due": "2026-01-03"
+    }
+   },
+   {
+    "id": "class-11-notes/physics:pyq:292tg6",
+    "state": {
+     "ease": 2.2,
+     "interval": 4,
+     "reps": 3,
+     "lapses": 1,
+     "due": "2026-01-20"
+    }
+   }
+  ]
+ },
+ "dueQueue": {
+  "today": "2026-01-05",
+  "newLimit": 2,
+  "expected": {
+   "due": [
+    {
+     "id": "class-11-notes/physics:concept:1oel24m",
+     "subjectKey": "class-11-notes/physics",
+     "kind": "concept",
+     "front": "Newton's first law",
+     "back": "Law of inertia"
+    },
+    {
+     "id": "class-11-notes/physics:concept:16e9ub",
+     "subjectKey": "class-11-notes/physics",
+     "kind": "concept",
+     "front": "Kinematic equations",
+     "back": "v = u + at\ns = ut + ½at²\nDerived from uniform acceleration."
+    }
+   ],
+   "fresh": [
+    {
+     "id": "class-11-notes/physics:pyq:xqyq22",
+     "subjectKey": "class-11-notes/physics",
+     "kind": "pyq",
+     "front": "Define capacitance.",
+     "back": "Q = CV"
+    },
+    {
+     "id": "class-11-notes/physics:drill:113r6tq",
+     "subjectKey": "class-11-notes/physics",
+     "kind": "drill",
+     "front": "Why does a conductor shield its interior?",
+     "back": "E = 0 inside a conductor."
+    }
+   ]
+  }
+ },
+ "normalizeStore": {
+  "input": {
+   "ok1": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-04"
+   },
+   "badEase": {
+    "ease": "high",
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-04"
+   },
+   "badDue": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-1-4"
+   },
+   "missingField": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "due": "2026-01-04"
+   },
+   "nullEntry": null,
+   "numberEntry": 5,
+   "ok2": {
+    "ease": 1.9,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 3,
+    "due": "2026-01-10"
+   }
+  },
+  "expected": {
+   "ok1": {
+    "ease": 2.5,
+    "interval": 3,
+    "reps": 2,
+    "lapses": 0,
+    "due": "2026-01-04"
+   },
+   "ok2": {
+    "ease": 1.9,
+    "interval": 1,
+    "reps": 0,
+    "lapses": 3,
+    "due": "2026-01-10"
+   }
+  }
+ }
+}

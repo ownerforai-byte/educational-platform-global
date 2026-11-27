@@ -32,9 +32,9 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.ravikisan.platform.compose.ui.components.chat.ChatBubble
 
 /**
- * Veer chat screen (Agent 4 task 6) — fake SSE until SseClient integration is
- * ordered. Hosted at the shell's `ai-tutor` route (Agent 1 wires it).
- * Auto-scrolls while streaming; Stop cancels the stream mid-reply.
+ * Veer chat screen — REAL SSE stream (`POST /api/ai`, sign-in required).
+ * Hosted at the shell's `ai-tutor` route. Auto-scrolls while streaming;
+ * Stop cancels the stream mid-reply.
  */
 @Composable
 fun VeerChatScreen(
@@ -52,7 +52,7 @@ fun VeerChatScreen(
 
     Column(Modifier.fillMaxSize()) {
         Text(
-            "Veer — AI Tutor (offline demo)",
+            "Veer — AI Tutor",
             style = MaterialTheme.typography.titleMedium,
             fontWeight = androidx.compose.ui.text.font.FontWeight.Bold,
             modifier = Modifier.padding(horizontal = 16.dp, vertical = 12.dp),

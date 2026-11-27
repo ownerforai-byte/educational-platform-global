@@ -1,12 +1,15 @@
 package com.ravikisan.platform.compose
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.view.WindowManager
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import com.ravikisan.platform.compose.navigation.PendingRoute
 import com.ravikisan.platform.compose.navigation.RnNavHost
+import com.ravikisan.platform.compose.navigation.Routes
 import com.ravikisan.platform.compose.ui.theme.RnTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,6 +46,7 @@ class MainActivity : ComponentActivity() {
             setRecentsScreenshotEnabled(false)
         }
         enableEdgeToEdge()
+        handleIntent(intent)
         setContent {
             RnTheme {
                 RnNavHost()
@@ -50,8 +54,35 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+    override fun onNewIntent(intent: Intent) {
+        super.onNewIntent(intent)
+        handleIntent(intent)
+    }
+
+    /**
+     * FCM tap-through deep links: [RnFirebaseMessagingService] puts
+     * `navigateTo` (+ `roomId` for chat messages) on the launch intent. The
+     * target route is posted to [PendingRoute]; the shell navigates once the
+     * NavHost is up. Realtime chat rooms live in the Community surface until
+     * a dedicated chat-room route lands — `roomId` is reserved for it.
+     */
+    private fun handleIntent(intent: Intent?) {
+        val navigateTo = intent?.getStringExtra(EXTRA_NAVIGATE_TO) ?: return
+        val roomId = intent.getStringExtra(EXTRA_ROOM_ID)
+        val target = when (navigateTo) {
+            "chat" -> Routes.COMMUNITY
+            "notifications" -> Routes.NOTIFICATIONS
+            else -> return
+        }
+        PendingRoute.post(target)
+    }
+
     companion object {
         /** Owner-controlled kill switch for the screenshot block. */
         const val ALLOW_SCREEN_CAPTURE: Boolean = false
+
+        /** Extra keys written by [RnFirebaseMessagingService] (keep in sync). */
+        const val EXTRA_NAVIGATE_TO: String = "navigateTo"
+        const val EXTRA_ROOM_ID: String = "roomId"
     }
 }

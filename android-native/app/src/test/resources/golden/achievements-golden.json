@@ -1,0 +1,392 @@
+{
+ "evaluate": [
+  {
+   "name": "fresh",
+   "input": {
+    "streak": 0,
+    "topicsCompleted": 0,
+    "topicsInProgress": 0,
+    "percent": 0
+   },
+   "expected": [
+    {
+     "id": "streak-3",
+     "title": "Warm Up",
+     "description": "Study 3 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "streak-7",
+     "title": "One Week Strong",
+     "description": "Study 7 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "streak-30",
+     "title": "Monthly Habit",
+     "description": "Study 30 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "first-topic",
+     "title": "First Step",
+     "description": "Complete your first topic.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "topics-10",
+     "title": "Ten Down",
+     "description": "Complete 10 topics.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "topics-50",
+     "title": "Fifty Club",
+     "description": "Complete 50 topics.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "explorer",
+     "title": "Explorer",
+     "description": "Open 5 topics you have not finished yet.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "quarter",
+     "title": "Quarter Way",
+     "description": "Finish 25% of the syllabus.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "half",
+     "title": "Halfway There",
+     "description": "Finish 50% of the syllabus.",
+     "earned": false,
+     "progress": 0
+    }
+   ]
+  },
+  {
+   "name": "early",
+   "input": {
+    "streak": 3,
+    "topicsCompleted": 2,
+    "topicsInProgress": 4,
+    "percent": 12
+   },
+   "expected": [
+    {
+     "id": "streak-3",
+     "title": "Warm Up",
+     "description": "Study 3 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "streak-7",
+     "title": "One Week Strong",
+     "description": "Study 7 days in a row.",
+     "earned": false,
+     "progress": 43
+    },
+    {
+     "id": "streak-30",
+     "title": "Monthly Habit",
+     "description": "Study 30 days in a row.",
+     "earned": false,
+     "progress": 10
+    },
+    {
+     "id": "first-topic",
+     "title": "First Step",
+     "description": "Complete your first topic.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "topics-10",
+     "title": "Ten Down",
+     "description": "Complete 10 topics.",
+     "earned": false,
+     "progress": 20
+    },
+    {
+     "id": "topics-50",
+     "title": "Fifty Club",
+     "description": "Complete 50 topics.",
+     "earned": false,
+     "progress": 4
+    },
+    {
+     "id": "explorer",
+     "title": "Explorer",
+     "description": "Open 5 topics you have not finished yet.",
+     "earned": false,
+     "progress": 80
+    },
+    {
+     "id": "quarter",
+     "title": "Quarter Way",
+     "description": "Finish 25% of the syllabus.",
+     "earned": false,
+     "progress": 48
+    },
+    {
+     "id": "half",
+     "title": "Halfway There",
+     "description": "Finish 50% of the syllabus.",
+     "earned": false,
+     "progress": 24
+    }
+   ]
+  },
+  {
+   "name": "midway",
+   "input": {
+    "streak": 9,
+    "topicsCompleted": 17,
+    "topicsInProgress": 6,
+    "percent": 44
+   },
+   "expected": [
+    {
+     "id": "streak-3",
+     "title": "Warm Up",
+     "description": "Study 3 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "streak-7",
+     "title": "One Week Strong",
+     "description": "Study 7 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "streak-30",
+     "title": "Monthly Habit",
+     "description": "Study 30 days in a row.",
+     "earned": false,
+     "progress": 30
+    },
+    {
+     "id": "first-topic",
+     "title": "First Step",
+     "description": "Complete your first topic.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "topics-10",
+     "title": "Ten Down",
+     "description": "Complete 10 topics.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "topics-50",
+     "title": "Fifty Club",
+     "description": "Complete 50 topics.",
+     "earned": false,
+     "progress": 34
+    },
+    {
+     "id": "explorer",
+     "title": "Explorer",
+     "description": "Open 5 topics you have not finished yet.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "quarter",
+     "title": "Quarter Way",
+     "description": "Finish 25% of the syllabus.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "half",
+     "title": "Halfway There",
+     "description": "Finish 50% of the syllabus.",
+     "earned": false,
+     "progress": 88
+    }
+   ]
+  },
+  {
+   "name": "strong",
+   "input": {
+    "streak": 31,
+    "topicsCompleted": 51,
+    "topicsInProgress": 9,
+    "percent": 76
+   },
+   "expected": [
+    {
+     "id": "streak-3",
+     "title": "Warm Up",
+     "description": "Study 3 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "streak-7",
+     "title": "One Week Strong",
+     "description": "Study 7 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "streak-30",
+     "title": "Monthly Habit",
+     "description": "Study 30 days in a row.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "first-topic",
+     "title": "First Step",
+     "description": "Complete your first topic.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "topics-10",
+     "title": "Ten Down",
+     "description": "Complete 10 topics.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "topics-50",
+     "title": "Fifty Club",
+     "description": "Complete 50 topics.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "explorer",
+     "title": "Explorer",
+     "description": "Open 5 topics you have not finished yet.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "quarter",
+     "title": "Quarter Way",
+     "description": "Finish 25% of the syllabus.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "half",
+     "title": "Halfway There",
+     "description": "Finish 50% of the syllabus.",
+     "earned": true,
+     "progress": 100
+    }
+   ]
+  },
+  {
+   "name": "negative-guard",
+   "input": {
+    "streak": -2,
+    "topicsCompleted": -4,
+    "topicsInProgress": 3,
+    "percent": 150
+   },
+   "expected": [
+    {
+     "id": "streak-3",
+     "title": "Warm Up",
+     "description": "Study 3 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "streak-7",
+     "title": "One Week Strong",
+     "description": "Study 7 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "streak-30",
+     "title": "Monthly Habit",
+     "description": "Study 30 days in a row.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "first-topic",
+     "title": "First Step",
+     "description": "Complete your first topic.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "topics-10",
+     "title": "Ten Down",
+     "description": "Complete 10 topics.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "topics-50",
+     "title": "Fifty Club",
+     "description": "Complete 50 topics.",
+     "earned": false,
+     "progress": 0
+    },
+    {
+     "id": "explorer",
+     "title": "Explorer",
+     "description": "Open 5 topics you have not finished yet.",
+     "earned": false,
+     "progress": 60
+    },
+    {
+     "id": "quarter",
+     "title": "Quarter Way",
+     "description": "Finish 25% of the syllabus.",
+     "earned": true,
+     "progress": 100
+    },
+    {
+     "id": "half",
+     "title": "Halfway There",
+     "description": "Finish 50% of the syllabus.",
+     "earned": true,
+     "progress": 100
+    }
+   ]
+  }
+ ],
+ "nextMilestone": {
+  "mixed": {
+   "id": "explorer",
+   "title": "Explorer",
+   "description": "Open 5 topics you have not finished yet.",
+   "earned": false,
+   "progress": 80
+  },
+  "tie": {
+   "id": "a",
+   "title": "A",
+   "description": "a",
+   "earned": false,
+   "progress": 40
+  },
+  "allEarned": null,
+  "empty": null
+ }
+}
