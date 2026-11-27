@@ -6,7 +6,7 @@ import { ACCESS_NOTICE } from "./access-notice";
 /**
  * Owner request 2026-11-08: the SECOND of the two approval-status screens.
  * A visitor who has NOT created an account but clicks "Already created an
- * account? Check your approval status" must land here — never on the
+ * account? Check your account status" must land here — never on the
  * "Your account is on its way" screen reserved for pending signups.
  *
  * Designer 2026-11-13: frame the empty-status result as an inspiring note

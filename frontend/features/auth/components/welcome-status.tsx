@@ -56,7 +56,7 @@ const STEP_INDEX: Record<StatusState, number> = {
 
 const STEPS = [
   { icon: UserCheck, label: "Account created", hint: "Your details are saved" },
-  { icon: Clock3, label: "Awaiting authorization", hint: "Please bear with us" },
+  { icon: Clock3, label: "Account under review", hint: "Thank you for your patience" },
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
@@ -199,7 +199,7 @@ export function WelcomeStatus() {
         </p>
         {fullName ? (
           <p className="mt-1 text-xs text-muted-foreground">
-            Welcome aboard, {firstName} — checking the approval status of{" "}
+            Welcome aboard, {firstName} — checking the account status of{" "}
             <span className="font-semibold text-foreground">{fullName}</span>.
           </p>
         ) : null}
@@ -207,7 +207,7 @@ export function WelcomeStatus() {
       )}
 
       {/* ── Approval pipeline stepper ──────────────────────────────── */}
-      <ol className="grid grid-cols-3 gap-2" aria-label="Approval progress">
+      <ol className="grid grid-cols-3 gap-2" aria-label="Account progress">
         {STEPS.map((s, i) => {
           const Icon = s.icon;
           // ACTIVE/REJECTED hand off above — this stepper only renders wait states.
@@ -289,9 +289,9 @@ export function WelcomeStatus() {
               </span>
             </span>
           }
-          title="Awaiting authorization"
+          title="Account under review"
           badge={<StatusPill status="PENDING" />}
-          body={`Your account is going through authorization — please wait a short while. This page re-checks on its own (checked ${checkCount}×), so keep it open and it will move you on as soon as access is granted.`}
+          body={`Thank you for creating your account. We are reviewing it now. This page re-checks on its own (checked ${checkCount}×), so keep it open and it will move you on as soon as access is granted.`}
           actions={
             <>
               <button
@@ -313,7 +313,7 @@ export function WelcomeStatus() {
       {/* ── Trust footer — kept, with its sign, below the note (owner 2026-10-17) ── */}
       <p className="flex items-center justify-center gap-1.5 text-[11px] text-muted-foreground">
         <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
-        This is an authorization check — please wait a short while.
+        We are reviewing your account. Thank you for your patience.
       </p>
     </div>
   );

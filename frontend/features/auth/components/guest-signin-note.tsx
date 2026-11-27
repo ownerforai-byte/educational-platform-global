@@ -190,7 +190,7 @@ export function GuestSignInNote({ variant = "page" }: GuestSignInNoteProps) {
               className="inline-flex h-12 items-center gap-2 rounded-2xl border border-border/70 bg-muted/30 px-5 text-sm font-semibold text-foreground transition hover:bg-muted/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               <Clock3 className="h-4 w-4 text-primary" aria-hidden="true" />
-              Check approval status
+              Check account status
             </Link>
           ) : null}
         </div>
@@ -204,7 +204,7 @@ export function GuestSignInNote({ variant = "page" }: GuestSignInNoteProps) {
             }`}
           >
             <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
-            Already created an account? Check your approval status
+            Already created an account? Check your account status
           </Link>
         ) : null}
 

@@ -74,7 +74,7 @@ describe("WelcomeStatus poll → approved screen", () => {
       expect(screen.getByTestId("account-status")).toBeInTheDocument(),
     );
     expect(screen.getByTestId("account-status").textContent).toContain(
-      "Awaiting authorization",
+      "Account under review",
     );
     expect(screen.getByTestId("account-status").textContent).toContain(
       "This page re-checks on its own",

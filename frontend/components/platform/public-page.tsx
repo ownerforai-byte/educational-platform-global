@@ -89,7 +89,7 @@ export function PublicPage({ current, eyebrow, title, intro, children }: {
           </span>
           <span>Ravikisan&apos;s Platform<span className="block text-xs font-normal text-muted-foreground">NEB Class 11 &amp; 12 · Nepal</span></span>
         </Link>
-        <Link href="/signup" className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring">Request an account</Link>
+        <Link href="/signup" className="inline-flex min-h-11 items-center rounded-full bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition hover:opacity-90 focus-visible:ring-2 focus-visible:ring-ring">Create an account</Link>
       </div>
       <nav aria-label="Platform information" className="mx-auto max-w-6xl px-4 pb-3 sm:px-6">
         <ul className="flex gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">

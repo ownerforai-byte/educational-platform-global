@@ -29,7 +29,7 @@ describe("GuestSignInNote", () => {
     });
     expect(
       screen.getByText(
-        /After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform\./,
+        /After you create an account, we review it and open your access as soon as it is ready\./,
       ),
     ).toBeInTheDocument();
   });

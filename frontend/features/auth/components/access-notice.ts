@@ -1,5 +1,5 @@
 export const ACCESS_NOTICE =
-  "After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform.";
+  "After you create an account, we review it and open your access as soon as it is ready. You can check your account status here at any time.";
 
 /** Owner wording — shown before sign-in and on the signup form. */
 export const DEVICE_SIGNUP_NOTICE =

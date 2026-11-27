@@ -64,7 +64,7 @@ export function WelcomeApprovalScreen({ waiting }: { waiting: ReactNode }) {
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="Your account is going through authorization — please wait a short while."
+      subtitle="Thank you for creating your account. We are reviewing it now, and access will open here as soon as it is ready."
     >
       <LoggedInRedirect />
       {waiting}
@@ -80,7 +80,7 @@ export function NoAccountScreen() {
   return (
     <AuthShell
       title="A note before you begin"
-      subtitle="No account is linked to this browser yet — create one, sign in, or check approval status."
+      subtitle="No account is linked to this browser yet — create one, sign in, or check account status."
     >
       <LoggedInRedirect />
       <NoAccountCard />

@@ -262,7 +262,7 @@ export function LoginForm() {
           className="flex items-center justify-center gap-1.5 pt-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-primary"
         >
           <Clock3 className="h-3.5 w-3.5" aria-hidden="true" />
-          Check approval status
+          Check account status
         </Link>
       ) : null}
     </form>

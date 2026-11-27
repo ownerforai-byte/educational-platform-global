@@ -80,7 +80,7 @@ function ApprovalPending() {
       data-testid="approval-pending"
       className="flex min-h-[50vh] items-center justify-center"
     >
-      <VerifyingStatus label="Verifying your access" />
+      <VerifyingStatus label="Checking your access" />
     </div>
   );
 }

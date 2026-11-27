@@ -110,7 +110,7 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
     return kind === "login" ? AUTH_INVALID_CREDENTIALS : "We couldn't verify your session. Try again.";
   }
   if (apiCode === "DEVICE_SIGNUP_LIMIT") {
-    return "This device already has an account. Please sign in, or wait until that account is authorized.";
+    return "This device already has an account. Please sign in to continue.";
   }
   if (apiCode === "ACCOUNT_REJECTED") {
     return "This account wasn't approved. You're welcome to create a new account, or contact us if this looks wrong.";

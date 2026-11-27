@@ -21,7 +21,7 @@ export function ApprovalDispatch() {
   return (
     <AuthShell
       title="Checking your account"
-      subtitle="Confirming live approval status with the server."
+      subtitle="Confirming your account status with the server."
     >
       <div className="flex justify-center py-4" data-testid="approval-dispatch">
         <VerifyingStatus compact label="Checking your account status" />

@@ -30,7 +30,7 @@ export function WelcomeGoButton() {
       ? "Go — create account"
       : href === "/login"
         ? "Go — sign in to your plan"
-        : "Go — check approval status";
+        : "Go — check account status";
   const pending = Boolean(
     approvalRequired &&
       liveRoute &&

@@ -71,12 +71,12 @@ describe("RequireApproval — login + owner-approval wall", () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     expect(
       screen.getAllByText(
-        "After signing up, your account goes through a short authorization check — please wait a while before you can sign in and use the platform.",
+        "After you create an account, we review it and open your access as soon as it is ready. You can check your account status here at any time.",
       ).length,
     ).toBeGreaterThan(0);
   });
 
-  it("offers sign-in and create-account but not approval status without a pending signup", async () => {
+  it("offers sign-in and create-account but not account status without a pending signup", async () => {
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     const hrefs = screen.getAllByRole("link").map((a) => a.getAttribute("href"));
     expect(hrefs).toContain("/login");
