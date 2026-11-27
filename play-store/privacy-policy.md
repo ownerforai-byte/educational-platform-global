@@ -41,7 +41,7 @@ When you sign up we collect:
 - Email address (required)
 - A password (stored only as a one-way cryptographic hash — we never see it)
 
-After signing, the account is approved by the system verification and administrative approval.
+After you create an account, we review it and open your access as soon as it is ready.
 
 ### Usage and learning information (only with an account)
 - Your study progress, completed topics, and study statistics

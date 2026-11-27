@@ -19,7 +19,7 @@ guidance.
 ## 2. Eligibility and accounts
 
 - You must be able to form a binding contract, or have parental consent.
-- After signing, the account is approved by the system verification and administrative approval.
+- After you create an account, we review it and open your access as soon as it is ready.
 - You must provide a valid email and keep your login credentials confidential.
 - You are responsible for all activity under your account.
 
