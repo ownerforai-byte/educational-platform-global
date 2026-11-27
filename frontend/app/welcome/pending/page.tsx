@@ -5,7 +5,7 @@ import { WelcomeApprovalScreen } from "@/features/auth/components/account-screen
 export const metadata: Metadata = {
   title: "Account Status — Ravikisan's Platform",
   description:
-    "Your account is going through authorization — please wait a short while.",
+    "Thank you for creating your account. We are reviewing it now, and access will open here as soon as it is ready.",
 };
 
 /**

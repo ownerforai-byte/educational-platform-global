@@ -68,7 +68,7 @@ const TIER_CARDS: TierCard[] = [
       "Read Community bot answers (guests see a sign-in gate)",
       "Ask study questions publicly on the board",
     ],
-    cta: { label: "Request an account", href: "/signup" },
+    cta: { label: "Create an account", href: "/signup" },
   },
   {
     id: "plus",
@@ -153,7 +153,7 @@ export default function PlansPage() {
           how you study.
         </p>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-foreground">
-          After signing, the account is approved by the system verification and administrative approval.
+          After you create an account, we review it and open your access as soon as it is ready.
           Questions: email{" "}
           <a className="font-semibold text-primary hover:underline" href="mailto:sahrocky81@gmail.com">
             sahrocky81@gmail.com

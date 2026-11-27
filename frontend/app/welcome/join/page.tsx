@@ -4,7 +4,7 @@ import { GuestSignInNote } from "@/features/auth/components/guest-signin-note";
 export const metadata: Metadata = {
   title: "Welcome — NEB Study Platform",
   description:
-    "Create an account, sign in, or check your approval status for NEB Class 11 & 12 study.",
+    "Create an account, sign in, or check your account status for NEB Class 11 & 12 study.",
 };
 
 /**

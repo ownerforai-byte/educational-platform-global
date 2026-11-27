@@ -67,7 +67,7 @@ describe("guest home — sign in is the only action", () => {
   it("routes guests through /welcome/join before the bare login wall", () => {
     render(<HomePublic />);
 
-    expect(screen.queryByRole("link", { name: /request an account/i })).toBeNull();
+    expect(screen.queryByRole("link", { name: /create an account/i })).toBeNull();
     expect(screen.queryByRole("link", { name: /see all plans/i })).toBeNull();
 
     const joinLinks = screen

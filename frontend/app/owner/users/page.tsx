@@ -516,7 +516,7 @@ export default function OwnerUsersPage() {
             Approvals
           </h1>
           <p className="text-sm text-muted-foreground max-w-2xl">
-            After signing, the account is approved by the system verification and administrative approval.
+            After you create an account, we review it and open your access as soon as it is ready.
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

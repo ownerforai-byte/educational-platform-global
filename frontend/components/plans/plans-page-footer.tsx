@@ -116,8 +116,8 @@ export function PlansPageFooter() {
 
       <div className="space-y-2 text-center text-[11px] leading-relaxed text-muted-foreground">
         <p>
-          After signing, the account is approved by the system verification and administrative
-          approval.
+          After you create an account, we review it and open your access as soon as it is
+          ready.
         </p>
         <p suppressHydrationWarning>
           &copy; {new Date().getFullYear()} Ravikisan&apos;s Platform · v{DEPLOY_VERSION}

@@ -64,7 +64,7 @@ export const UNLOCK_WINDOW_SECONDS = 1200;
  * Shared account-approval notice shown on gated surfaces.
  */
 export const NOTICE_COPY =
-  "After signing, the account is approved by the system verification and administrative approval.";
+  "After you create an account, we review it and open your access as soon as it is ready.";
 
 /** Internal portal entry path used by the notice's login button. */
 export const LOGIN_PATH = "/login";

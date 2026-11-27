@@ -60,7 +60,7 @@ export function HomeOwnerNotice() {
             </Link>
             <span className="inline-flex items-center gap-1.5 text-[11px] font-medium text-muted-foreground">
               <ShieldCheck className="h-3.5 w-3.5" />
-              After signing, the account is approved by the system verification and administrative approval.
+              After you create an account, we review it and open your access as soon as it is ready.
             </span>
           </div>
         </figure>

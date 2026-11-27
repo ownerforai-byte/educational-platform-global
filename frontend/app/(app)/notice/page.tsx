@@ -62,9 +62,9 @@ interface Notice {
 const NOTICES: Notice[] = [
   {
     icon: ShieldCheck,
-    title: "Account approval",
+    title: "Account access",
     body:
-      "After signing, the account is approved by the system verification and administrative approval.",
+      "After you create an account, we review it and open your access as soon as it is ready.",
   },
   {
     icon: Coins,
@@ -105,7 +105,7 @@ const NOTICES: Notice[] = [
     icon: Mail,
     title: "Corrections, requests and access",
     body:
-      "Found a mistake in a note, want a topic covered, or need help with access? After signing, the account is approved by the system verification and administrative approval. Contact details are on this page.",
+      "Found a mistake in a note, want a topic covered, or need help with access? After you create an account, we review it and open your access as soon as it is ready. Contact details are on this page.",
     href: "mailto:sahrocky81@gmail.com",
     linkLabel: "sahrocky81@gmail.com",
   },

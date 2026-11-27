@@ -264,7 +264,7 @@ export function UniversalWelcome() {
         <p className="mx-auto mt-4 max-w-xl text-center text-[15px] leading-relaxed text-muted-foreground">
           NEB Class 11 &amp; 12, taught like a beautiful notebook — complete
           notes, 3D labs, rigorous proofs, past papers and Veer, your tutor.
-          Press Go to create an account. After signing, the account is approved by the system verification and administrative approval.
+          Press Go to create an account. After you create an account, we review it and open your access as soon as it is ready.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">

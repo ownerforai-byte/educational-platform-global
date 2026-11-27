@@ -81,7 +81,7 @@ export default function OwnerOverviewPage() {
           </div>
           <h1 className="text-2xl font-bold tracking-tight mt-2">Control home</h1>
           <p className="text-sm text-muted-foreground max-w-xl">
-            After signing, the account is approved by the system verification and administrative approval.
+            After you create an account, we review it and open your access as soon as it is ready.
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>

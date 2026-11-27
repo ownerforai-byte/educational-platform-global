@@ -330,8 +330,8 @@ export const guides: Guide[] = [
 
 export const helpItems = [
   { category: "Accounts", question: "Why can I sign in but not open the study library?", answer: "Use the same sign-in account you registered with, and leave a message to this email; sahrocky81@gmail.com if you need clarification." },
-  { category: "Accounts", question: "How does access work for a new account?", answer: "After signing, the account is approved by the system verification and administrative approval. " },
-  { category: "Accounts", question: "How do I request an account?", answer: "After signing, the account is approved by the system verification and administrative approval." },
+  { category: "Accounts", question: "How does access work for a new account?", answer: "After you create an account, we review it and open your access as soon as it is ready. " },
+  { category: "Accounts", question: "How do I create an account?", answer: "After you create an account, we review it and open your access as soon as it is ready." },
   { category: "Access", question: "Why is a section greyed out?", answer: "Some sections are included only in certain plans. Check Plans in the footer and the access message on the section. Sparks and plans are separate." },
   { category: "Sparks", question: "Are AI sparks and content sparks the same?", answer: "No. AI sparks cover Veer and supported AI tools; content sparks cover supported note and past-question unlocks. The notice board describes content unlocks as one spark for a 20-minute window. Always check the current prompt and balance before confirming an unlock." },
   { category: "Sparks", question: "How many AI sparks does my account receive?", answer: "The current Plans page describes Member, Plus, and Pro daily allowances. Runtime settings can change, so use the allowance and remaining balance displayed in your account rather than an old screenshot or copied guide." },

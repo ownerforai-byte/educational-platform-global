@@ -32,7 +32,7 @@ export default function TermsOfService() {
         <h2>2. Eligibility &amp; accounts</h2>
         <ul>
           <li>You must be able to form a binding contract or have parental consent.</li>
-          <li>After signing, the account is approved by the system verification and administrative approval.</li>
+          <li>After you create an account, we review it and open your access as soon as it is ready.</li>
           <li>Provide a valid email and keep credentials confidential; you are responsible for account activity.</li>
         </ul>
       </section>

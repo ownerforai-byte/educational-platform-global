@@ -64,8 +64,8 @@ export default function PrivacyPolicy() {
         <h3>Account information</h3>
         <p>
           Full name (optional), email address (required), and a password (stored
-          only as a one-way hash). After signing, the account is approved by the
-          system verification and administrative approval.
+          only as a one-way hash). After you create an account, we review it and open
+          your access as soon as it is ready.
         </p>
         <h3>Usage &amp; learning data (with an account)</h3>
         <p>

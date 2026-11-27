@@ -16,19 +16,19 @@ export async function generateMetadata({
 
 const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string; body: string }[] }> = {
   "account-approval": {
-    title: "Account Approval",
+    title: "Account Access",
     sections: [
       {
-        heading: "How approval works",
-        body: "After signing, the account is approved by the system verification and administrative approval.",
+        heading: "How account access works",
+        body: "After you create an account, we review it and open your access as soon as it is ready.",
       },
       {
         heading: "Checking your status",
-        body: "After signing, the account is approved by the system verification and administrative approval.",
+        body: "After you create an account, we review it and open your access as soon as it is ready.",
       },
       {
         heading: "What to do while you wait",
-        body: "Guest access is available immediately — you can use the home chat box. After signing, the account is approved by the system verification and administrative approval.",
+        body: "Guest access is available immediately — you can use the home chat box. After you create an account, we review it and open your access as soon as it is ready.",
       },
     ],
   },
@@ -54,11 +54,11 @@ const HELP_ARTICLES: Record<string, { title: string; sections: { heading: string
     sections: [
       {
         heading: "How content access works",
-        body: "Guest content is free. Each plan opens a different set of sections, including AI Studio, 3D labs, mock exams, and analytics. After signing, the account is approved by the system verification and administrative approval.",
+        body: "Guest content is free. Each plan opens a different set of sections, including AI Studio, 3D labs, mock exams, and analytics. After you create an account, we review it and open your access as soon as it is ready.",
       },
       {
-        heading: "Account approval",
-        body: "After signing, the account is approved by the system verification and administrative approval.",
+        heading: "Account access",
+        body: "After you create an account, we review it and open your access as soon as it is ready.",
       },
       {
         heading: "Upgrading your tier",

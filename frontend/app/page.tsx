@@ -4,7 +4,7 @@ import { TierHomeRouter } from "@/components/home/tier-home-router";
 export const metadata: Metadata = {
   title: "Ravikisan's Platform | NEB Class 11 & 12",
   description:
-    "Curriculum-aligned study resources for NEB Class 11 and 12 students in Nepal. Request an account to access the study library.",
+    "Curriculum-aligned study resources for NEB Class 11 and 12 students in Nepal. Create an account to access the study library.",
 };
 
 /**

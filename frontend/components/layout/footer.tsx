@@ -221,7 +221,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </>
         )}
         <div className="space-y-3 px-4 pb-6 pt-3 text-[11px] leading-relaxed text-muted-foreground">
-          <p>After signing, the account is approved by the system verification and administrative approval.</p>
+          <p>After you create an account, we review it and open your access as soon as it is ready.</p>
           {/* Plans & Pricing — sealed under the "Not Good" lock (owner request),
               mirrored from the website footer's Further group. */}
           <div className="relative">
@@ -273,7 +273,7 @@ export function Footer({ user }: { user?: AiSparkUserLike | null }) {
           </Link>
           <p className="text-xs leading-relaxed text-muted-foreground sm:text-right">
             Study resources for NEB Class 11 and 12, organised around the CDC curriculum.
-            <span className="hidden lg:inline"> After signing, the account is approved by the system verification and administrative approval.</span>
+            <span className="hidden lg:inline"> After you create an account, we review it and open your access as soon as it is ready.</span>
           </p>
         </div>
 

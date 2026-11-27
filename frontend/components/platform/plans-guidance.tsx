@@ -3,7 +3,7 @@ export function PlansGuidance() {
   return <section aria-labelledby="plans-guidance" className="rounded-2xl border border-border bg-card p-6 sm:p-8">
     <h2 id="plans-guidance" className="text-xl font-bold">Before you start</h2>
     <div className="mt-5 grid gap-6 text-sm leading-7 text-muted-foreground md:grid-cols-3">
-      <div><h3 className="font-semibold text-foreground">Account approval</h3><p className="mt-2">After signing, the account is approved by the system verification and administrative approval.</p></div>
+      <div><h3 className="font-semibold text-foreground">Account access</h3><p className="mt-2">After you create an account, we review it and open your access as soon as it is ready.</p></div>
       <div><h3 className="font-semibold text-foreground">Sparks are not a plan</h3><p className="mt-2">AI sparks and content sparks serve different purposes. Read the current balance and unlock prompt before proceeding.</p></div>
       <div><h3 className="font-semibold text-foreground">Check current conditions</h3><p className="mt-2">Use the current plan and your account balance for availability. No price or automatic upgrade is promised by this explanation.</p></div>
     </div>
@@ -11,11 +11,11 @@ export function PlansGuidance() {
       {[
         [
           "How does an account get access?",
-          "After signing, the account is approved by the system verification and administrative approval.",
+          "After you create an account, we review it and open your access as soon as it is ready.",
         ],
         [
           "How do I request Plus or Pro?",
-          "After signing, the account is approved by the system verification and administrative approval.",
+          "After you create an account, we review it and open your access as soon as it is ready.",
         ],
         [
           "Does access guarantee an exam result?",
