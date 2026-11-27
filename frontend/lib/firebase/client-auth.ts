@@ -10,6 +10,7 @@ import {
   GoogleAuthProvider,
   RecaptchaVerifier,
   signOut as firebaseSignOut,
+  sendEmailVerification,
   sendPasswordResetEmail,
   confirmPasswordReset,
   onAuthStateChanged,
@@ -86,6 +87,11 @@ export async function firebaseEmailSignup(
     } catch {
       /* ignore display name update failure */
     }
+  }
+  try {
+    await sendEmailVerification(cred.user);
+  } catch {
+    // The API retries verification delivery for the unverified token.
   }
   return cred.user.getIdToken();
 }

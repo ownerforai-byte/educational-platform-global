@@ -18,6 +18,7 @@ import {
 } from "../../utils/guestQuota";
 import { signInForMoreAiSparkMessage } from "../../utils/aiSparkCopy";
 import { getClientIp } from "../../utils/clientIp";
+import { issueQuizAttempt } from "./quiz-attempt.service";
 
 const router = Router();
 
@@ -326,6 +327,8 @@ interface GenerateQuestionsResponse {
   remaining?: number;
   /** Guest pool only: the daily limit `remaining` was measured against. */
   limit?: number;
+  attemptId?: string;
+  expiresAt?: string;
 }
 
 router.post(
@@ -687,10 +690,25 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       }
 
       const guestSlot = (req as GuestGateRequest).guestSlot;
+      const attempt = user
+        ? await issueQuizAttempt({
+            userId: user.id,
+            metadata: {
+              title: `${subjectSlug} ${format} quiz`,
+              classSlug,
+              subjectSlug,
+              topic: topic ?? questions[0]?.topic,
+              difficulty,
+              format,
+            },
+            questions,
+          })
+        : null;
 
       res.json({
         questions,
         topic: topic ?? undefined,
+        ...(attempt ? { attemptId: attempt.attemptId, expiresAt: attempt.expiresAt } : {}),
         // Guests get the server-attested pool so the UI mirror can never
         // show MORE than what is actually left (refresh cannot fake it).
         ...(guestSlot

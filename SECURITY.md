@@ -57,19 +57,20 @@ specific page; we do not claim ownership of third-party source text.
 
 ## Known historical incidents
 
-### Credentials in git history (resolved)
+### Credentials in git history
 
-Two credentials were accidentally committed in unreachable editor-checkpoint
-commits and have been **rotated**:
+Two credentials were accidentally committed in editor-checkpoint commits and
+have been **rotated**:
 
 - Vercel deploy token — rotated 2026-09
 - Supabase personal access token — rotated 2026-09
 
 One legacy third-party AI-runtime access token (a provider the platform no
-longer integrates) from old scratch scripts sits in history at
-`4d73f538^`. It cannot be revoked via the API and expires 2026-12-04, or it
-can be permanently removed by rewriting history with `git filter-repo`.
-Treat it as expired/non-functional.
+longer integrates) from old scratch scripts sits in reachable public history at
+`4d73f538^`. As of 2026-11-27 its encoded expiry is 2026-12-04; provider-side
+revocation has not been verified. Treat it as compromised and revoke it at the
+provider if possible. History rewriting is a separate, destructive operation
+that requires explicit approval and coordination with every clone/fork.
 
 ### Local paths in ingest report (resolved)
 

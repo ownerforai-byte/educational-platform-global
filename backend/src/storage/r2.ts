@@ -17,6 +17,7 @@ import {
   S3,
   PutObjectCommand,
   GetObjectCommand,
+  HeadObjectCommand,
   DeleteObjectCommand,
 } from "@aws-sdk/client-s3";
 import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
@@ -59,19 +60,31 @@ function r2Client(): S3 {
 
 export type R2UploadBody = Buffer | Uint8Array | Readable;
 
-/** Short-lived PUT URL for direct browser upload (never expose secret keys). */
+/**
+ * Short-lived PUT URL for direct browser upload (never expose secret keys).
+ * When `contentLength` is supplied, both exact size and type are signed into
+ * the request so R2 rejects a body that does not match the reservation.
+ */
 export async function r2PresignedPut(
   path: string,
   contentType: string,
   expiresInSeconds = 600,
+  contentLength?: number,
 ): Promise<string | null> {
   if (!isR2StorageActive()) return null;
+  if (
+    contentLength !== undefined &&
+    (!Number.isSafeInteger(contentLength) || contentLength < 1)
+  ) {
+    throw new Error("Invalid presigned upload content length");
+  }
   const key = path.replace(/^\/+/, "");
   return getSignedUrl(
     r2Client(),
     new PutObjectCommand({
       Bucket: BUCKET_NAME,
       Key: key,
+      ...(contentLength !== undefined ? { ContentLength: contentLength } : {}),
       ContentType: contentType,
       CacheControl: "public, max-age=86400",
     }),
@@ -128,6 +141,29 @@ export function isR2ObjectMissingError(err: unknown): boolean {
   const token = `${rec.name ?? ""} ${rec.Code ?? ""} ${rec.code ?? ""}`;
   if (/\bNoSuchKey\b/i.test(token) || /\bNotFound\b/i.test(token)) return true;
   return rec.$metadata?.httpStatusCode === 404 && !/\bNoSuchBucket\b/i.test(token);
+}
+
+/** Read authoritative object metadata. Returns null when R2 is off or the key is missing. */
+export async function r2Head(
+  path: string,
+): Promise<{ contentLength: number; contentType: string } | null> {
+  if (!isR2StorageActive()) return null;
+  const key = path.replace(/^\/+/, "");
+  try {
+    const out = await r2Client().send(
+      new HeadObjectCommand({ Bucket: BUCKET_NAME, Key: key }),
+    );
+    if (!Number.isSafeInteger(out.ContentLength) || (out.ContentLength ?? 0) < 1) {
+      throw new Error("R2 object has no valid content length");
+    }
+    return {
+      contentLength: out.ContentLength as number,
+      contentType: out.ContentType || "application/octet-stream",
+    };
+  } catch (err) {
+    if (isR2ObjectMissingError(err)) return null;
+    throw err;
+  }
 }
 
 /** Read an object back. Returns null when R2 is off or the key is missing. */

@@ -1,0 +1,469 @@
+{
+ "validate": {
+  "valid": {
+   "draft": {
+    "title": "  Kinematics summary  ",
+    "body": "  v = u + at  ",
+    "quote": "  Equations of motion  ",
+    "subjectKey": "class-11-notes/physics"
+   },
+   "expected": null
+  },
+  "emptyTitle": {
+   "draft": {
+    "title": "   ",
+    "body": "x",
+    "quote": "",
+    "subjectKey": ""
+   },
+   "expected": "Give the note a title."
+  },
+  "longTitle": {
+   "draft": {
+    "title": "ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt",
+    "body": "x",
+    "quote": "",
+    "subjectKey": ""
+   },
+   "expected": "Title must be 120 characters or fewer."
+  },
+  "emptyBodyAndQuote": {
+   "draft": {
+    "title": "Title",
+    "body": "   ",
+    "quote": "",
+    "subjectKey": ""
+   },
+   "expected": "Write something in the note."
+  },
+  "longBody": {
+   "draft": {
+    "title": "Title",
+    "body": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+    "quote": "",
+    "subjectKey": ""
+   },
+   "expected": "Note must be 5000 characters or fewer."
+  },
+  "longQuote": {
+   "draft": {
+    "title": "Title",
+    "body": "x",
+    "quote": "qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq",
+    "subjectKey": ""
+   },
+   "expected": "Quoted passage must be 600 characters or fewer."
+  }
+ },
+ "addNote": {
+  "seed": [
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n2",
+    "title": "Mole concept",
+    "body": "One mole = 6.022e23 particles.",
+    "quote": "",
+    "subjectKey": "class-11-notes/chemistry",
+    "createdAt": "2026-01-03T10:00:00.000Z",
+    "updatedAt": "2026-01-05T10:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ],
+  "draft": {
+   "title": "  Kinematics summary  ",
+   "body": "  v = u + at  ",
+   "quote": "  Equations of motion  ",
+   "subjectKey": "class-11-notes/physics"
+  },
+  "id": "n9",
+  "now": "2026-02-01T09:00:00.000Z",
+  "expected": [
+   {
+    "id": "n9",
+    "title": "Kinematics summary",
+    "body": "v = u + at",
+    "quote": "Equations of motion",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-02-01T09:00:00.000Z",
+    "updatedAt": "2026-02-01T09:00:00.000Z"
+   },
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n2",
+    "title": "Mole concept",
+    "body": "One mole = 6.022e23 particles.",
+    "quote": "",
+    "subjectKey": "class-11-notes/chemistry",
+    "createdAt": "2026-01-03T10:00:00.000Z",
+    "updatedAt": "2026-01-05T10:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ]
+ },
+ "updateNote": {
+  "seed": [
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n2",
+    "title": "Mole concept",
+    "body": "One mole = 6.022e23 particles.",
+    "quote": "",
+    "subjectKey": "class-11-notes/chemistry",
+    "createdAt": "2026-01-03T10:00:00.000Z",
+    "updatedAt": "2026-01-05T10:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ],
+  "id": "n2",
+  "draft": {
+   "title": "  Kinematics summary  ",
+   "body": "  v = u + at  ",
+   "quote": "  Equations of motion  ",
+   "subjectKey": "class-11-notes/physics"
+  },
+  "now": "2026-02-02T09:00:00.000Z",
+  "expected": [
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n2",
+    "title": "Kinematics summary",
+    "body": "v = u + at",
+    "quote": "Equations of motion",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-03T10:00:00.000Z",
+    "updatedAt": "2026-02-02T09:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ]
+ },
+ "removeNote": {
+  "seed": [
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n2",
+    "title": "Mole concept",
+    "body": "One mole = 6.022e23 particles.",
+    "quote": "",
+    "subjectKey": "class-11-notes/chemistry",
+    "createdAt": "2026-01-03T10:00:00.000Z",
+    "updatedAt": "2026-01-05T10:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ],
+  "id": "n2",
+  "expected": [
+   {
+    "id": "n1",
+    "title": "Newton's second law",
+    "body": "F = ma holds in inertial frames.",
+    "quote": "The acceleration of an object...",
+    "subjectKey": "class-11-notes/physics",
+    "createdAt": "2026-01-01T10:00:00.000Z",
+    "updatedAt": "2026-01-02T10:00:00.000Z"
+   },
+   {
+    "id": "n3",
+    "title": "Integration tricks",
+    "body": "Substitution when the derivative of the inner function appears.",
+    "quote": "",
+    "subjectKey": "class-12-notes/mathematics",
+    "createdAt": "2026-01-04T10:00:00.000Z",
+    "updatedAt": "2026-01-04T10:00:00.000Z"
+   }
+  ]
+ },
+ "filterNotes": {
+  "bySubject": {
+   "seed": [
+    {
+     "id": "n1",
+     "title": "Newton's second law",
+     "body": "F = ma holds in inertial frames.",
+     "quote": "The acceleration of an object...",
+     "subjectKey": "class-11-notes/physics",
+     "createdAt": "2026-01-01T10:00:00.000Z",
+     "updatedAt": "2026-01-02T10:00:00.000Z"
+    },
+    {
+     "id": "n2",
+     "title": "Mole concept",
+     "body": "One mole = 6.022e23 particles.",
+     "quote": "",
+     "subjectKey": "class-11-notes/chemistry",
+     "createdAt": "2026-01-03T10:00:00.000Z",
+     "updatedAt": "2026-01-05T10:00:00.000Z"
+    },
+    {
+     "id": "n3",
+     "title": "Integration tricks",
+     "body": "Substitution when the derivative of the inner function appears.",
+     "quote": "",
+     "subjectKey": "class-12-notes/mathematics",
+     "createdAt": "2026-01-04T10:00:00.000Z",
+     "updatedAt": "2026-01-04T10:00:00.000Z"
+    }
+   ],
+   "query": "",
+   "subjectKey": "class-11-notes/physics",
+   "expected": [
+    {
+     "id": "n1",
+     "title": "Newton's second law",
+     "body": "F = ma holds in inertial frames.",
+     "quote": "The acceleration of an object...",
+     "subjectKey": "class-11-notes/physics",
+     "createdAt": "2026-01-01T10:00:00.000Z",
+     "updatedAt": "2026-01-02T10:00:00.000Z"
+    }
+   ]
+  },
+  "byQuery": {
+   "seed": [
+    {
+     "id": "n1",
+     "title": "Newton's second law",
+     "body": "F = ma holds in inertial frames.",
+     "quote": "The acceleration of an object...",
+     "subjectKey": "class-11-notes/physics",
+     "createdAt": "2026-01-01T10:00:00.000Z",
+     "updatedAt": "2026-01-02T10:00:00.000Z"
+    },
+    {
+     "id": "n2",
+     "title": "Mole concept",
+     "body": "One mole = 6.022e23 particles.",
+     "quote": "",
+     "subjectKey": "class-11-notes/chemistry",
+     "createdAt": "2026-01-03T10:00:00.000Z",
+     "updatedAt": "2026-01-05T10:00:00.000Z"
+    },
+    {
+     "id": "n3",
+     "title": "Integration tricks",
+     "body": "Substitution when the derivative of the inner function appears.",
+     "quote": "",
+     "subjectKey": "class-12-notes/mathematics",
+     "createdAt": "2026-01-04T10:00:00.000Z",
+     "updatedAt": "2026-01-04T10:00:00.000Z"
+    }
+   ],
+   "query": "MOLE",
+   "subjectKey": "",
+   "expected": [
+    {
+     "id": "n2",
+     "title": "Mole concept",
+     "body": "One mole = 6.022e23 particles.",
+     "quote": "",
+     "subjectKey": "class-11-notes/chemistry",
+     "createdAt": "2026-01-03T10:00:00.000Z",
+     "updatedAt": "2026-01-05T10:00:00.000Z"
+    }
+   ]
+  },
+  "byQueryBody": {
+   "seed": [
+    {
+     "id": "n1",
+     "title": "Newton's second law",
+     "body": "F = ma holds in inertial frames.",
+     "quote": "The acceleration of an object...",
+     "subjectKey": "class-11-notes/physics",
+     "createdAt": "2026-01-01T10:00:00.000Z",
+     "updatedAt": "2026-01-02T10:00:00.000Z"
+    },
+    {
+     "id": "n2",
+     "title": "Mole concept",
+     "body": "One mole = 6.022e23 particles.",
+     "quote": "",
+     "subjectKey": "class-11-notes/chemistry",
+     "createdAt": "2026-01-03T10:00:00.000Z",
+     "updatedAt": "2026-01-05T10:00:00.000Z"
+    },
+    {
+     "id": "n3",
+     "title": "Integration tricks",
+     "body": "Substitution when the derivative of the inner function appears.",
+     "quote": "",
+     "subjectKey": "class-12-notes/mathematics",
+     "createdAt": "2026-01-04T10:00:00.000Z",
+     "updatedAt": "2026-01-04T10:00:00.000Z"
+    }
+   ],
+   "query": "substitution",
+   "subjectKey": "",
+   "expected": [
+    {
+     "id": "n3",
+     "title": "Integration tricks",
+     "body": "Substitution when the derivative of the inner function appears.",
+     "quote": "",
+     "subjectKey": "class-12-notes/mathematics",
+     "createdAt": "2026-01-04T10:00:00.000Z",
+     "updatedAt": "2026-01-04T10:00:00.000Z"
+    }
+   ]
+  },
+  "noMatch": {
+   "seed": [
+    {
+     "id": "n1",
+     "title": "Newton's second law",
+     "body": "F = ma holds in inertial frames.",
+     "quote": "The acceleration of an object...",
+     "subjectKey": "class-11-notes/physics",
+     "createdAt": "2026-01-01T10:00:00.000Z",
+     "updatedAt": "2026-01-02T10:00:00.000Z"
+    },
+    {
+     "id": "n2",
+     "title": "Mole concept",
+     "body": "One mole = 6.022e23 particles.",
+     "quote": "",
+     "subjectKey": "class-11-notes/chemistry",
+     "createdAt": "2026-01-03T10:00:00.000Z",
+     "updatedAt": "2026-01-05T10:00:00.000Z"
+    },
+    {
+     "id": "n3",
+     "title": "Integration tricks",
+     "body": "Substitution when the derivative of the inner function appears.",
+     "quote": "",
+     "subjectKey": "class-12-notes/mathematics",
+     "createdAt": "2026-01-04T10:00:00.000Z",
+     "updatedAt": "2026-01-04T10:00:00.000Z"
+    }
+   ],
+   "query": "zzz",
+   "subjectKey": "",
+   "expected": []
+  }
+ },
+ "normalizeNotes": {
+  "input": [
+   {
+    "id": "ok",
+    "title": "t",
+    "body": "b",
+    "quote": "q",
+    "subjectKey": "s",
+    "createdAt": "c",
+    "updatedAt": "u"
+   },
+   {
+    "id": 42,
+    "title": "t",
+    "body": "b",
+    "quote": "q",
+    "subjectKey": "s",
+    "createdAt": "c",
+    "updatedAt": "u"
+   },
+   {
+    "title": "missing id"
+   },
+   "not-an-object",
+   null,
+   {
+    "id": "no-body",
+    "title": "t",
+    "quote": "q",
+    "subjectKey": "s",
+    "createdAt": "c",
+    "updatedAt": "u"
+   }
+  ],
+  "expected": [
+   {
+    "id": "ok",
+    "title": "t",
+    "body": "b",
+    "quote": "q",
+    "subjectKey": "s",
+    "createdAt": "c",
+    "updatedAt": "u"
+   }
+  ]
+ }
+}

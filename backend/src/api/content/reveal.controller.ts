@@ -4,50 +4,18 @@ import path from "path";
 import fs from "fs";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../../middleware/auth";
-import { tierForUser, TIER_RANK, type Tier, type TierUser } from "../../utils/sectionAccess";
+import {
+  CONTENT_KIND_SECTIONS,
+  canonicalContentIdentity,
+  contentTargetSchema,
+  tierForUser,
+  TIER_RANK,
+  type Tier,
+  type TierUser,
+} from "../../utils/sectionAccess";
 import { supabaseAdmin } from "../../db/supabase";
 
 const router = Router();
-
-// ── content-tree constants (mirrors frontend/lib/content/paths.ts) ─────────
-// Kept in sync manually: if paths.ts adds a kind, add it here too.
-
-const KIND_SECTIONS: Record<string, string> = {
-  concepts: "notes/concepts",
-  theory: "notes/theory",
-  guides: "notes/guides",
-  notes: "notes/guides",
-  lessons: "notes/lessons",
-  formula: "formulas",
-  pyqs: "practice/questions",
-  sets: "practice/problem-sets",
-  examples: "practice/examples",
-  exams: "practice/exams",
-  drills: "drills",
-  mindmap: "visuals/mindmaps",
-  rails: "visuals/rails",
-  graph: "visuals/graphs",
-  documents: "resources/documents",
-  "question-bank": "resources/question-bank",
-  exports: "resources/exports",
-  plans: "resources/plans",
-};
-
-const LEGACY_CLASS_DIRS: Record<string, string> = {
-  "class-11": "class-11",
-  "class-11-notes": "class-11",
-  "class-11e": "class-11",
-  "class-12": "class-12",
-  "class-12-notes": "class-12",
-};
-
-function normalizeClassDir(value: string): string {
-  return LEGACY_CLASS_DIRS[value] ?? value;
-}
-
-function classDirOfTrack(trackSlug: string): string {
-  return trackSlug.replace(/-notes$/, "");
-}
 
 // ── repo-root resolver ─────────────────────────────────────────────────────
 
@@ -79,16 +47,10 @@ function findContentRoot(): string {
 
 // ── request schema ─────────────────────────────────────────────────────────
 
-const VALID_KINDS = Object.keys(KIND_SECTIONS) as [string, ...string[]];
-
 const revealBodySchema = z.object({
-  kind: z.enum(VALID_KINDS as [string, ...string[]]),
-  classSlug: z.string().min(1).max(60),
-  subjectSlug: z.string().min(1).max(60),
-  unitSlug: z.string().min(1).max(60),
-  filename: z
-    .string()
-    .regex(/^[\w.-]+\.json$/, "filename must be a plain JSON filename with no path separators"),
+  ...contentTargetSchema.shape,
+  // Accepted only for request-shape compatibility with older clients. It is
+  // never authoritative: the window key is derived from the coordinates above.
   moduleKey: z.string().min(1).max(200).optional(),
 });
 
@@ -105,17 +67,15 @@ const CONTENT_MIN_TIER: Tier = "plus";
 // ── spark window check ─────────────────────────────────────────────────────
 
 /**
- * Returns true when the user has an active spark window for `moduleKey`.
- * Owner and pro tiers bypass the window check entirely.
+ * Returns true only for the exact server-derived content identity. Owner and
+ * pro tiers bypass the window check, but never the canonical path validation.
  */
 async function hasActiveSparkWindow(
   userId: string,
   userTier: Tier,
-  moduleKey: string | undefined,
+  identityKey: string,
 ): Promise<boolean> {
   if (userTier === "owner" || userTier === "pro") return true;
-
-  if (!moduleKey) return false;
 
   const nowEpoch = Math.floor(Date.now() / 1000);
 
@@ -126,12 +86,12 @@ async function hasActiveSparkWindow(
       .eq("id", userId)
       .maybeSingle();
 
-    if (!profile?.credits_unlock) return false;
+    if (!profile?.credits_unlock || typeof profile.credits_unlock !== "object") return false;
 
-    // credits_unlock is a JSONB column: { [moduleKey]: expiresAtEpoch }
+    // credits_unlock is a JSONB column: { [identityKey]: expiresAtEpoch }
     const windows = profile.credits_unlock as Record<string, unknown>;
-    const expiresAt = windows[moduleKey];
-    return typeof expiresAt === "number" && expiresAt > nowEpoch;
+    const expiresAt = windows[identityKey];
+    return typeof expiresAt === "number" && Number.isFinite(expiresAt) && expiresAt > nowEpoch;
   } catch {
     return false;
   }
@@ -164,8 +124,7 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
     return;
   }
 
-  const { kind, classSlug, subjectSlug, unitSlug, filename, moduleKey } =
-    parsed.data as RevealBody;
+  const { kind, classSlug, subjectSlug, unitSlug, filename } = parsed.data as RevealBody;
 
   // 2. belt-and-suspenders filename safety (on top of the regex)
   if (
@@ -178,9 +137,15 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
     return;
   }
 
-  // 3. reject unknown kinds (belt-and-suspenders on top of z.enum)
-  if (!(kind in KIND_SECTIONS)) {
+  // 3. reject unknown kinds and derive the canonical identity before any
+  // privilege bypass. No client moduleKey participates in this decision.
+  if (!Object.prototype.hasOwnProperty.call(CONTENT_KIND_SECTIONS, kind)) {
     res.status(400).json({ error: "Unknown content kind" });
+    return;
+  }
+  const identity = canonicalContentIdentity({ kind, classSlug, subjectSlug, unitSlug, filename });
+  if (!identity) {
+    res.status(400).json({ error: "Invalid content identity" });
     return;
   }
 
@@ -203,8 +168,8 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
     return;
   }
 
-  // 5. spark window check
-  const windowOpen = await hasActiveSparkWindow(user.id, userTier, moduleKey);
+  // 5. spark window check for the exact canonical content identity
+  const windowOpen = await hasActiveSparkWindow(user.id, userTier, identity.key);
   if (!windowOpen) {
     res.status(403).json({
       error: "No active spark window. Unlock this content first.",
@@ -213,10 +178,10 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
     return;
   }
 
-  // 6. build corpus path and read file
+  // 6. build the corpus path from the same canonical identity used for the
+  // window check, then retain the resolved-root containment defense.
   try {
-    const section = KIND_SECTIONS[kind];
-    const classDir = normalizeClassDir(classDirOfTrack(classSlug));
+    const { section, classDir } = identity;
 
     // Only alphanumeric, hyphens, underscores, dots in each slug
     const SAFE_SLUG = /^[\w.-]+$/;
@@ -232,11 +197,7 @@ router.post("/reveal", requireAuth, async (req: Request, res: Response) => {
     const contentRoot = findContentRoot();
     const filePath = path.join(
       contentRoot,
-      ...section.split("/"),
-      classDir,
-      subjectSlug,
-      unitSlug,
-      filename,
+      ...identity.relativePath.split("/"),
     );
 
     // Ensure the resolved path stays inside the content root (no escape)

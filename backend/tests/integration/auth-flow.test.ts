@@ -156,7 +156,7 @@ beforeEach(() => {
   mocked.from.mockImplementation(() => makeQueryChain({ data: [], error: null }));
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
   mocked.auth.getUser.mockResolvedValue({
-    data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" } } },
+    data: { user: { id: "oauth-user", email: "google@example.com", email_confirmed_at: "2026-01-01T00:00:00Z", user_metadata: { full_name: "Google Student" } } },
     error: null,
   });
   // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
@@ -245,7 +245,7 @@ describe("auth flow", () => {
 
   test("OAuth session validates the user, enforces owner approval and sets app cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "oauth-user", email: "google@example.com", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
+      data: { user: { id: "oauth-user", email: "google@example.com", email_confirmed_at: "2026-01-01T00:00:00Z", user_metadata: { full_name: "Google Student" }, app_metadata: { provider: "google" } } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE", credits: 7, credits_limit: 100, premium_status: false });
@@ -275,9 +275,39 @@ describe("auth flow", () => {
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
   }, 15_000);
 
+  test("OAuth session rejects an unconfirmed email identity before issuing cookies", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: {
+        user: {
+          id: "unverified-oauth-user",
+          email: "pending@example.com",
+          email_confirmed_at: null,
+          app_metadata: { provider: "google" },
+        },
+      },
+      error: null,
+    });
+    const state = "d".repeat(64);
+
+    const res = await fetch(`${baseUrl}/api/auth/oauth/session`, {
+      method: "POST",
+      headers: {
+        Origin: "http://localhost:5173",
+        Cookie: `oauth-csrf-token=${state}`,
+        "X-CSRF-Token": state,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ accessToken: VALID_TOKEN, refreshToken: "valid-refresh", state }),
+    });
+
+    expect(res.status).toBe(401);
+    expect(setCookiesOf(res).filter((cookie) => cookie.startsWith("sb-access-token="))).toEqual([]);
+    expect(mocked.from).not.toHaveBeenCalled();
+  });
+
   test("OAuth session rejects providers outside the allowlist before issuing application cookies", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "11111111-1111-4111-8111-111111111111", email: "student@example.com", app_metadata: { provider: "github" } } },
+      data: { user: { id: "11111111-1111-4111-8111-111111111111", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z", app_metadata: { provider: "github" } } },
       error: null,
     });
     const state = "e".repeat(64);
@@ -328,6 +358,7 @@ describe("auth flow", () => {
         user: {
           id: "oauth-user",
           email: "ownerforai@example.com",
+          email_confirmed_at: "2026-01-01T00:00:00Z",
           user_metadata: { full_name: "Linked Student" },
           app_metadata: { provider: "email", providers: ["email", "google"] },
           identities: [{ provider: "email" }, { provider: "google" }],
@@ -362,7 +393,7 @@ describe("auth flow", () => {
     // the gate's era signs in like any other account. Only REJECTED is denied.
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: userId, email: "google@example.com", app_metadata: { provider: "google" } } },
+      data: { user: { id: userId, email: "google@example.com", email_confirmed_at: "2026-01-01T00:00:00Z", app_metadata: { provider: "google" } } },
       error: null,
     });
     mockProfiles({ access_status: "PENDING" });
@@ -391,7 +422,7 @@ describe("auth flow", () => {
   test("login success returns 200 and sets sb-access-token session cookie", async () => {
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
-        user: { id: "user-1", email: "student@example.com" },
+        user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" },
         session: { access_token: VALID_TOKEN, expires_in: 3600 },
       },
       error: null,
@@ -421,10 +452,35 @@ describe("auth flow", () => {
     });
   });
 
+  test("login rejects an unconfirmed email even when another identity is confirmed", async () => {
+    mocked.auth.signInWithPassword.mockResolvedValue({
+      data: {
+        user: {
+          id: "unconfirmed-user",
+          email: "unconfirmed@example.com",
+          email_confirmed_at: null,
+          confirmed_at: "2026-01-01T00:00:00Z",
+        },
+        session: { access_token: "must-not-be-issued", refresh_token: "must-not-be-issued", expires_in: 3600 },
+      },
+      error: null,
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "unconfirmed@example.com", password: "password123" }),
+    });
+
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ code: "EMAIL_CONFIRMATION_REQUIRED" });
+    expect(setCookiesOf(res)).toEqual([]);
+  });
+
   test("login returns live plan with the granted Plus tier", async () => {
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
-        user: { id: "user-plus", email: "plus@example.com" },
+        user: { id: "user-plus", email: "plus@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" },
         session: { access_token: VALID_TOKEN, expires_in: 3600 },
       },
       error: null,
@@ -470,7 +526,7 @@ describe("auth flow", () => {
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
-        user: { id: userId, email: "student@example.com" },
+        user: { id: userId, email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" },
         session: { access_token: VALID_TOKEN, refresh_token: "refresh-token", expires_in: 3600 },
       },
       error: null,
@@ -508,7 +564,7 @@ describe("auth flow", () => {
     // status is an owner decision on that account and denies it like anyone.
     mocked.auth.signInWithPassword.mockResolvedValue({
       data: {
-        user: { id: "owner-1", email },
+        user: { id: "owner-1", email, email_confirmed_at: "2026-01-01T00:00:00Z" },
         session: { access_token: VALID_TOKEN, expires_in: 3600 },
       },
       error: null,
@@ -551,7 +607,7 @@ describe("auth flow", () => {
 
   test("GET /me with valid token cookie returns 200 and user object", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "plus", access_status: "ACTIVE" });
@@ -570,6 +626,24 @@ describe("auth flow", () => {
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
   });
 
+  test("an unconfirmed email token cannot access protected routes", async () => {
+    mocked.auth.getUser.mockResolvedValue({
+      data: {
+        user: { id: "unconfirmed-user", email: "pending@example.com", email_confirmed_at: null },
+      },
+      error: null,
+    });
+
+    const res = await fetch(`${probeUrl}/api/progress`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+
+    expect(res.status).toBe(401);
+    expect(await res.json()).toEqual({ error: "Unauthorized" });
+    expect(mocked.auth.getUser).toHaveBeenCalledExactlyOnceWith(VALID_TOKEN);
+    expect(mocked.from).not.toHaveBeenCalled();
+  });
+
   test("a same-day page/token refresh never regains the daily credit pool", async () => {
     // Fresh watermark (today) + a spent balance: two consecutive GET /me
     // calls — the exact page-refresh path — must return the SAME balance
@@ -577,7 +651,7 @@ describe("auth flow", () => {
     const infoSpy = vi.spyOn(console, "info");
     const today = new Date().toISOString().slice(0, 10);
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({
@@ -609,7 +683,7 @@ describe("auth flow", () => {
 
   test("protected route GET /api/progress with valid cookie passes requireAuth (not 401)", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE" });
@@ -640,7 +714,7 @@ describe("auth flow", () => {
     { name: "profile read error", profile: null, error: { message: "Profile unavailable" }, denied: false },
   ])("valid JWT with $name reads private /api/progress unless REJECTED", async ({ profile, error, denied }) => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     const chains = mockResolverReads(profile, error);
@@ -663,7 +737,7 @@ describe("auth flow", () => {
 
   test("a rejected Pro cannot read /api/progress even with a Pro plan and premium flag", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "pro@example.com" } },
+      data: { user: { id: "user-1", email: "pro@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     const chains = mockResolverReads(
@@ -686,7 +760,7 @@ describe("auth flow", () => {
     "%s fallback rejects a rejected Pro before its premium/free-feature bypass",
     async (guard) => {
       mocked.auth.getUser.mockResolvedValue({
-        data: { user: { id: "user-1", email: "pro@example.com" } },
+        data: { user: { id: "user-1", email: "pro@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
         error: null,
       });
       const chain = makeQueryChain({
@@ -718,7 +792,7 @@ describe("auth flow", () => {
     { name: "persisted owner with REJECTED status", email: "operator@example.com", profile: { role: "owner", access_status: "REJECTED" }, error: null, denied: true },
   ])("$name", async ({ email, profile, error, denied }) => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "owner-1", email } },
+      data: { user: { id: "owner-1", email, email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     const chains = mockResolverReads(profile, error);
@@ -740,7 +814,7 @@ describe("auth flow", () => {
 
   test("logout clears sb-access-token cookie and responds ok", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE" });
@@ -791,7 +865,7 @@ describe("auth flow", () => {
   });
   test("POST /refresh with valid token returns 200, refreshed cookie, and extended user", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE", credits: 40, credits_limit: 100, premium_status: false });
@@ -841,7 +915,7 @@ describe("auth flow", () => {
   test("POST /signup (confirmed) returns 200 with user, accessToken, and cookie", async () => {
     mocked.auth.signUp.mockResolvedValue({
       data: {
-        user: { id: "user-9", email: "new@example.com" },
+        user: { id: "user-9", email: "new@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" },
         session: { access_token: "fresh-token", refresh_token: "fresh-refresh", expires_in: 3600 },
       },
       error: null,
@@ -862,14 +936,12 @@ describe("auth flow", () => {
     expect(setCookiesOf(res).some((c) => c.startsWith("sb-refresh-token="))).toBe(true);
   });
 
-  test("POST /signup (needs email confirmation) returns 202 with a message", async () => {
+  test("POST /signup refuses an unconfirmed user even if the provider returns a session", async () => {
     mocked.auth.signUp.mockResolvedValue({
-      data: { user: { id: "user-9", email: "pending@example.com" }, session: null },
-      error: null,
-    });
-    mocked.auth.admin.updateUserById.mockResolvedValue({});
-    mocked.auth.signInWithPassword.mockResolvedValue({
-      data: { user: { id: "user-9", email: "pending@example.com" }, session: null },
+      data: {
+        user: { id: "user-9", email: "pending@example.com", email_confirmed_at: null },
+        session: { access_token: "must-not-be-issued", refresh_token: "must-not-be-issued", expires_in: 3600 },
+      },
       error: null,
     });
 
@@ -881,9 +953,16 @@ describe("auth flow", () => {
 
     expect(res.status).toBe(202);
     const body = await res.json();
-    expect(body.user).toBeNull();
-    expect(body.accessToken).toBeNull();
+    expect(body).toMatchObject({
+      code: "EMAIL_CONFIRMATION_REQUIRED",
+      user: null,
+      accessToken: null,
+    });
     expect(body.message).toMatch(/Check your email/i);
+    expect(mocked.auth.admin.updateUserById).not.toHaveBeenCalled();
+    expect(mocked.auth.signInWithPassword).not.toHaveBeenCalled();
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-refresh-token="))).toBe(false);
   });
 
   test("POST /signup with a weak password returns 400", async () => {
@@ -897,7 +976,7 @@ describe("auth flow", () => {
 
   test("role guard: /api/guard-admin rejects STUDENT (403) and allows ADMIN/OWNER (200)", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "s@example.com" } },
+      data: { user: { id: "user-1", email: "s@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE" });
@@ -922,7 +1001,7 @@ describe("auth flow", () => {
 
   test("role guard: /api/guard-owner rejects ADMIN (403) and allows OWNER (200)", async () => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "a@example.com" } },
+      data: { user: { id: "user-1", email: "a@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "pro", access_status: "ACTIVE" });
@@ -947,7 +1026,7 @@ describe("auth flow", () => {
     { method: "GET", path: "/api/admin/stats", body: undefined },
   ])("ACTIVE Pro is forbidden on real $method $path before downstream data/write", async ({ method, path, body }) => {
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "pro-user", email: "pro@example.com" } },
+      data: { user: { id: "pro-user", email: "pro@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     const chains = mockResolverReads(
@@ -975,7 +1054,7 @@ describe("auth flow", () => {
     // A REJECTED status is an owner decision on that account; the retired
     // approval gate kept exactly this denial, for owners too.
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "owner-1", email: "operator@example.com" } },
+      data: { user: { id: "owner-1", email: "operator@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockResolverReads({ role: "owner", access_status: "REJECTED" });
@@ -1000,7 +1079,7 @@ describe("auth flow", () => {
       error: null,
     });
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "user-1", email: "student@example.com" } },
+      data: { user: { id: "user-1", email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE", credits: 5, credits_limit: 100, premium_status: false });
@@ -1035,7 +1114,7 @@ describe("auth flow", () => {
     // legacy PENDING row signs in like any active account.
     const userId = "11111111-1111-4111-8111-111111111111";
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: userId, email: "student@example.com" } },
+      data: { user: { id: userId, email: "student@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mocked.auth.refreshSession.mockResolvedValue({
@@ -1125,7 +1204,7 @@ describe("auth flow", () => {
 
     // Authenticated: body userId is ignored, session user id is stored.
     mocked.auth.getUser.mockResolvedValue({
-      data: { user: { id: "session-user", email: "s@example.com" } },
+      data: { user: { id: "session-user", email: "s@example.com", email_confirmed_at: "2026-01-01T00:00:00Z" } },
       error: null,
     });
     mockProfiles({ role: "member", access_status: "ACTIVE" });

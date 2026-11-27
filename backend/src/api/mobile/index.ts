@@ -9,6 +9,8 @@ import practiceRouter from "./practice.js";
 import communityRouter from "./community.js";
 import pyqsRouter from "./pyqs.js";
 import formulasRouter from "./formulas.js";
+import thinSurfacesRouter from "./thin-surfaces.js";
+import knowledgeRouter from "./knowledge.js";
 
 /**
  * Mobile-only, ADDITIVE API surface for the native Android client
@@ -33,6 +35,8 @@ mobileRouter.use("/practice", practiceRouter);
 mobileRouter.use("/community", communityRouter);
 mobileRouter.use("/pyqs", pyqsRouter);
 mobileRouter.use("/formulas", formulasRouter);
+mobileRouter.use(thinSurfacesRouter);
+mobileRouter.use(knowledgeRouter);
 
 /**
  * GET /api/mobile/home — one cheap bootstrap call the native app makes on

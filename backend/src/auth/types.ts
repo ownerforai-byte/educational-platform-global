@@ -57,6 +57,7 @@ export interface SignupResponse {
   user: ExtendedSessionUser | null;
   accessToken: string | null;
   message?: string;
+  code?: string;
   /**
    * Account creation flow: present when the account was created PENDING —
    * the client stores this signed token and polls /api/auth/account-status

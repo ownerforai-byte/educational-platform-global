@@ -109,6 +109,9 @@ function resolveAuthFailureMessage(err: unknown, kind: AuthFailureKind): string 
   if (apiCode === "FIREBASE_TOKEN_REJECTED") {
     return kind === "login" ? AUTH_INVALID_CREDENTIALS : "We couldn't verify your session. Try again.";
   }
+  if (apiCode === "EMAIL_CONFIRMATION_REQUIRED") {
+    return "Confirm your email address before signing in. Check your inbox for the verification link.";
+  }
   if (apiCode === "DEVICE_SIGNUP_LIMIT") {
     return "This device already has an account. Please sign in to continue.";
   }

@@ -97,6 +97,7 @@ export async function signupAction(input: unknown): Promise<AuthActionResult> {
         user: res.user ?? null,
         message: res.message,
         statusToken: res.statusToken,
+        code: res.code,
       }
     );
   } catch (err) {

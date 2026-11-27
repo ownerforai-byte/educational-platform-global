@@ -18,9 +18,8 @@ import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
 import { useFirebaseAuth } from "../../auth/auth-mode.js";
 import {
   firebaseCreateUser,
-  firebaseCreateCustomToken,
   firebaseSendPasswordResetEmail,
-  firebaseUpdatePassword,
+  firebaseSendEmailVerificationEmail,
   isFirebaseAuthReady,
   revokeFirebaseSessions,
   firebaseSessionEmail,
@@ -375,12 +374,26 @@ router.post("/login", async (req: Request, res: Response) => {
       });
       return;
     }
-    const verified = await verifyFirebaseIdToken(idToken);
+    const verified = await verifyFirebaseIdToken(idToken, { checkRevoked: true });
     const accountEmail = verified ? firebaseSessionEmail(verified) : null;
     if (!verified || !accountEmail) {
       res.status(401).json({
         error: "Invalid email or password",
         code: "FIREBASE_TOKEN_REJECTED",
+      });
+      return;
+    }
+    if (verified.email && !verified.emailVerified) {
+      const base = (
+        process.env.FRONTEND_URL ||
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        "http://localhost:5173"
+      ).replace(/\/+$/, "");
+      await firebaseSendEmailVerificationEmail(verified.email, `${base}/login`);
+      res.status(403).json({
+        error: "Email confirmation required",
+        code: "EMAIL_CONFIRMATION_REQUIRED",
+        message: "Confirm your email address before signing in. Check your inbox for the verification link.",
       });
       return;
     }
@@ -405,6 +418,14 @@ router.post("/login", async (req: Request, res: Response) => {
 
   if (error || !data.user || !data.session) {
     res.status(401).json({ error: "Invalid email or password" });
+    return;
+  }
+  if (data.user.email && !data.user.email_confirmed_at) {
+    res.status(403).json({
+      error: "Email confirmation required",
+      code: "EMAIL_CONFIRMATION_REQUIRED",
+      message: "Confirm your email address before signing in. Check your inbox for the verification link.",
+    });
     return;
   }
 
@@ -446,6 +467,7 @@ router.post("/signup", async (req: Request, res: Response) => {
     let email: string;
     let fullName = parsed.data.fullName ?? null;
     let accessToken = idToken ?? "";
+    let needsEmailVerification = false;
 
     if (idToken) {
       if (!isFirebaseAuthReady()) {
@@ -455,7 +477,7 @@ router.post("/signup", async (req: Request, res: Response) => {
         });
         return;
       }
-      const verified = await verifyFirebaseIdToken(idToken);
+      const verified = await verifyFirebaseIdToken(idToken, { checkRevoked: true });
       const accountEmail = verified ? firebaseSessionEmail(verified) : null;
       if (!verified || !accountEmail) {
         res.status(401).json({ error: "Invalid signup session", code: "FIREBASE_TOKEN_REJECTED" });
@@ -464,6 +486,7 @@ router.post("/signup", async (req: Request, res: Response) => {
       uid = verified.uid;
       email = accountEmail;
       fullName = fullName ?? verified.displayName;
+      needsEmailVerification = Boolean(verified.email && !verified.emailVerified);
     } else if (parsed.data.email && parsed.data.password) {
       if (!isFirebaseAuthReady()) {
         res.status(503).json({
@@ -476,7 +499,6 @@ router.post("/signup", async (req: Request, res: Response) => {
         email: parsed.data.email,
         password: parsed.data.password,
         displayName: fullName,
-        emailVerified: isOwnerEmail(parsed.data.email),
       });
       if (!created) {
         res.status(400).json({ error: "Could not create account. Email may already be in use." });
@@ -484,6 +506,7 @@ router.post("/signup", async (req: Request, res: Response) => {
       }
       uid = created.uid;
       email = created.email;
+      needsEmailVerification = true;
     } else {
       res.status(400).json({ error: "Invalid signup details" });
       return;
@@ -511,6 +534,24 @@ router.post("/signup", async (req: Request, res: Response) => {
     );
     if (profileErr) console.error("[auth] signup profile tier write failed:", profileErr.message);
 
+    if (needsEmailVerification) {
+      const base = (
+        process.env.FRONTEND_URL ||
+        process.env.NEXT_PUBLIC_SITE_URL ||
+        "http://localhost:5173"
+      ).replace(/\/+$/, "");
+      const sent = await firebaseSendEmailVerificationEmail(email, `${base}/login`);
+      res.status(202).json({
+        code: "EMAIL_CONFIRMATION_REQUIRED",
+        user: null,
+        accessToken: null,
+        message: sent
+          ? "Check your email to confirm your account before logging in."
+          : "Confirm your email before signing in. If the email does not arrive, try signing in to resend it.",
+      } satisfies SignupResponse & { code: string });
+      return;
+    }
+
     const accessStatus = await readAccessStatus(uid);
     if (accessStatus === "REJECTED") {
       accessDenied(res, accessStatus, uid);
@@ -520,9 +561,6 @@ router.post("/signup", async (req: Request, res: Response) => {
     await alignNonOwnerToMemberBaseline(uid, email);
     const user = await resolveSessionUser(uid, email);
     const extended = await buildExtendedUser(user.id, user.email, user.role, fullName);
-    if (!accessToken) {
-      accessToken = (await firebaseCreateCustomToken(uid)) ?? "";
-    }
     if (!accessToken) {
       res.status(400).json({ error: "Missing idToken for signup session" });
       return;
@@ -557,6 +595,10 @@ router.post("/signup", async (req: Request, res: Response) => {
       return;
     }
 
+    if (result.user && deviceId) {
+      await bindDeviceToAccount(deviceId, result.user.id);
+    }
+
     // Enforce email-verified signup: Supabase returns `needsEmailConfirmation`
     // when the user must confirm their email before the session can be used.
     // The unconfirmed account gets no session; the client flips to the
@@ -577,13 +619,6 @@ router.post("/signup", async (req: Request, res: Response) => {
       } satisfies SignupResponse & { code: string; statusToken?: string });
       return;
     }
-
-// Bind the new account to this device before any early return, so an
-// email-confirmation signup still counts as the device's one
-// account. Best-effort — never fails the signup response.
-if (result.user && deviceId) {
-  await bindDeviceToAccount(deviceId, result.user.id);
-}
 
 // Force the live profile tier on every signup. The profiles.role column
 // must accept ladder text (member/plus/pro/owner); a leftover user_role
@@ -935,23 +970,21 @@ router.post("/forgot-password", async (req: Request, res: Response) => {
 });
 
 /**
- * POST /api/auth/reset-password — { password, code?, token? }
- * The recovery email lands on /reset-password, which forwards either the
- * PKCE `code` (query) or the implicit `access_token` (hash) here. The user
- * id behind that proof is resolved server-side and the password is set
- * through the Supabase admin API — no session is issued on this path.
+ * POST /api/auth/reset-password — { password, code }
+ * Only a purpose-bound Supabase PKCE recovery code is accepted. Ordinary
+ * access/ID tokens are session credentials, not proof of email ownership.
+ * Firebase recovery is completed by its client SDK with `oobCode`.
  */
 router.post("/reset-password", async (req: Request, res: Response) => {
-  const body = req.body as { password?: unknown; code?: unknown; token?: unknown };
+  const body = (req.body ?? {}) as { password?: unknown; code?: unknown };
   const password = typeof body.password === "string" ? body.password : "";
   const code = typeof body.code === "string" && body.code ? body.code : null;
-  const token = typeof body.token === "string" && body.token ? body.token : null;
 
   if (password.length < 8 || password.length > 72) {
     res.status(400).json({ error: "Password must be between 8 and 72 characters" });
     return;
   }
-  if (!code && !token) {
+  if (!code || code.length > 8192 || useFirebaseAuth()) {
     res
       .status(400)
       .json({ error: "This reset link is missing or malformed. Please request a new one." });
@@ -959,67 +992,20 @@ router.post("/reset-password", async (req: Request, res: Response) => {
   }
 
   try {
-    let userId: string | null = null;
-
-    if (code) {
-      const { data, error } = await supabaseAdmin.auth.exchangeCodeForSession(code);
-      if (error || !data?.user) {
-        console.warn("[auth] exchangeCodeForSession failed:", error?.message ?? "no user");
-        res
-          .status(400)
-          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
-        return;
-      }
-      userId = data.user.id;
-    } else if (token) {
-      if (useFirebaseAuth()) {
-        if (!isFirebaseAuthReady()) {
-          res.status(503).json({
-            error: "Firebase Admin is not configured on the API",
-            code: "FIREBASE_ADMIN_NOT_CONFIGURED",
-          });
-          return;
-        }
-        const verified = await verifyFirebaseIdToken(token);
-        if (!verified) {
-          console.warn("[auth] Firebase recovery token rejected");
-          res
-            .status(400)
-            .json({ error: "This reset link is invalid or has expired. Please request a new one." });
-          return;
-        }
-        userId = verified.uid;
-      } else {
-        const { data, error } = await supabaseAdmin.auth.getUser(token);
-        if (error || !data?.user) {
-          console.warn("[auth] recovery token rejected:", error?.message ?? "no user");
-          res
-            .status(400)
-            .json({ error: "This reset link is invalid or has expired. Please request a new one." });
-          return;
-        }
-        userId = data.user.id;
-      }
-    }
-
-    if (!userId) {
+    const { data, error } = await createAuthClient().auth.exchangeCodeForSession(code);
+    if (error || !data?.user) {
+      console.warn("[auth] exchangeCodeForSession failed:", error?.message ?? "no user");
       res
         .status(400)
         .json({ error: "This reset link is invalid or has expired. Please request a new one." });
       return;
     }
 
-    let passwordOk = false;
-    if (useFirebaseAuth()) {
-      passwordOk = await firebaseUpdatePassword(userId, password);
-    } else {
-      const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
-        password,
-      });
-      passwordOk = !updateError;
-    }
-    if (!passwordOk) {
-      console.error("[auth] password reset failed for user", userId);
+    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(data.user.id, {
+      password,
+    });
+    if (updateError) {
+      console.error("[auth] password reset failed for user", data.user.id);
       res.status(400).json({
         error:
           "Could not update the password. The link may have expired — please request a new one.",
@@ -1027,7 +1013,7 @@ router.post("/reset-password", async (req: Request, res: Response) => {
       return;
     }
 
-    console.info(`[auth] password reset completed for user ${userId}`);
+    console.info(`[auth] password reset completed for user ${data.user.id}`);
     res.json({ success: true });
   } catch (err: any) {
     console.error("[auth] reset-password error:", err?.message ?? err);

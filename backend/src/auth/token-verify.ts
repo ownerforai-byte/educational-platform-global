@@ -16,8 +16,10 @@ export type VerifiedTokenUser = {
  */
 export async function verifyAccessToken(token: string): Promise<VerifiedTokenUser | null> {
   if (useFirebaseAuth()) {
-    const firebaseUser = await verifyFirebaseIdToken(token);
+    const firebaseUser = await verifyFirebaseIdToken(token, { checkRevoked: true });
     if (!firebaseUser) return null;
+    if (!firebaseUser.email && !firebaseUser.phoneNumber) return null;
+    if (firebaseUser.email && !firebaseUser.emailVerified) return null;
     return {
       id: firebaseUser.uid,
       email: firebaseSessionEmail(firebaseUser),
@@ -28,6 +30,7 @@ export async function verifyAccessToken(token: string): Promise<VerifiedTokenUse
 
   const supabaseUser = await getUserByToken(token);
   if (!supabaseUser) return null;
+  if (supabaseUser.email && !supabaseUser.email_confirmed_at) return null;
 
   const providers =
     (supabaseUser.identities ?? [])

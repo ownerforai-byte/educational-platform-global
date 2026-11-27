@@ -99,4 +99,47 @@ interface RnApi {
 
     @DELETE("api/access-requests/fcm")
     suspend fun unregisterFcmToken(): Response<Unit>
+
+    // ── Wave 2: thin surfaces ───────────────────────────────────────────────
+
+    @GET("api/mobile/announcements")
+    suspend fun mobileAnnouncements(): Response<com.ravikisan.platform.compose.core.contract.AnnouncementsResponse>
+
+    @GET("api/mobile/changelog")
+    suspend fun mobileChangelog(): Response<com.ravikisan.platform.compose.core.contract.ChangelogResponse>
+
+    @GET("api/mobile/notice")
+    suspend fun mobileNotice(): Response<com.ravikisan.platform.compose.core.contract.NoticeResponse>
+
+    @GET("api/mobile/exam-countdown")
+    suspend fun mobileExamCountdown(): Response<com.ravikisan.platform.compose.core.contract.ExamCountdownResponse>
+
+    @GET("api/mobile/feedback")
+    suspend fun mobileFeedback(): Response<com.ravikisan.platform.compose.core.contract.FeedbackResponse>
+
+    @GET("api/mobile/status")
+    suspend fun mobileStatus(): Response<com.ravikisan.platform.compose.core.contract.PlatformStatusResponse>
+
+    @GET("api/mobile/referrals")
+    suspend fun mobileReferrals(): Response<com.ravikisan.platform.compose.core.contract.ReferralsResponse>
+
+    @GET("api/mobile/site-index")
+    suspend fun mobileSiteIndex(): Response<com.ravikisan.platform.compose.core.contract.SiteIndexResponse>
+
+    @GET("api/mobile/levels")
+    suspend fun mobileLevels(): Response<com.ravikisan.platform.compose.core.contract.LevelsResponse>
+
+    // ── Wave 2: knowledge / GK banks ────────────────────────────────────────
+
+    @GET("api/mobile/loksewa")
+    suspend fun mobileLoksewa(): Response<com.ravikisan.platform.compose.core.contract.KnowledgeHubResponse>
+
+    @GET("api/mobile/loksewa/{slug}")
+    suspend fun mobileLoksewaTopic(@Path("slug") slug: String): Response<com.ravikisan.platform.compose.core.contract.KnowledgeSectionResponse>
+
+    @GET("api/mobile/world-knowledge")
+    suspend fun mobileWorldKnowledge(): Response<com.ravikisan.platform.compose.core.contract.KnowledgeHubResponse>
+
+    @GET("api/mobile/world-knowledge/{slug}")
+    suspend fun mobileWorldKnowledgeTopic(@Path("slug") slug: String): Response<com.ravikisan.platform.compose.core.contract.KnowledgeSectionResponse>
 }

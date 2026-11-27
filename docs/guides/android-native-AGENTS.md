@@ -391,7 +391,8 @@ Workers **do not edit this table**. Paste requests in checkpoint; Supervisor mov
 
 | ID | From | Type | Detail | Status |
 |----|------|------|--------|--------|
-| — | — | — | *(none — all resolved; see Resolved)* | — |
+| RQ-11 | Agent 5 (§8 B0 review) | route | `RnNavHost.kt` stub loop renders `StubScreen`; plan §0.6 mandates the single `ComingToNative` component (currently dead code). W1: switch stub loop to `ComingToNative(stub.title)`, delete `navigation/StubScreen.kt`. | ✅ done (owner-directed session, see STATUS §7) |
+| RQ-12 | Agent 5 (§8 B0 review) | dto-merge | B0 task 0 straddle relocation: W3 moves `SyllabusSearchIndexSource` + `SearchIndexSource` from `ui/screens/search/SearchViewModel.kt` → `data/repository/`; W1 then updates the `AppModule` provider import. Behavior must be byte-identical. | ✅ done (owner-directed session, see STATUS §7) |
 
 ### Request template (workers copy to checkpoint)
 

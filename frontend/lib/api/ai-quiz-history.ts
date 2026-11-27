@@ -7,6 +7,7 @@ export interface QuizHistoryRow {
   subjectSlug: string | null;
   topic: string | null;
   difficulty: "easy" | "intermediate" | "hard" | null;
+  format?: import("../../types/api").QuizFormat | null;
   /** Quiz format the set was generated in (absent → `mcq`). */
   format?: import("../../types/api").QuizFormat | null;
   answered: number;
@@ -27,6 +28,7 @@ export interface QuizHistoryQuiz {
   subjectSlug: string | null;
   topic: string | null;
   difficulty: "easy" | "intermediate" | "hard" | null;
+  format?: import("../../types/api").QuizFormat | null;
   questions: import("../../types/api").GeneratedQuestion[];
   answered: number;
   correct: number;
@@ -41,6 +43,7 @@ export interface QuizHistoryQuizResponse {
   subjectSlug: string | null;
   topic: string | null;
   difficulty: "easy" | "intermediate" | "hard" | null;
+  format?: import("../../types/api").QuizFormat | null;
   questions: import("../../types/api").GeneratedQuestion[];
   answered: number;
   correct: number;
@@ -71,10 +74,12 @@ export interface SaveQuizHistoryInput {
   answered: number;
   correct: number;
   scorePct?: number;
+  attemptId?: string;
+  responses?: import("../../types/api").QuizResponse[];
 }
 
-export function saveQuizHistory(input: SaveQuizHistoryInput): Promise<{ saved: boolean; migrated: boolean }> {
-  return apiFetch<{ saved: boolean; migrated: boolean }>("/api/ai-quiz-history", {
+export function saveQuizHistory(input: SaveQuizHistoryInput): Promise<{ saved: boolean; migrated: boolean; verified?: boolean }> {
+  return apiFetch<{ saved: boolean; migrated: boolean; verified?: boolean }>("/api/ai-quiz-history", {
     method: "POST",
     body: JSON.stringify(input),
   });

@@ -36,6 +36,16 @@ import {
   QUIZ_ROWS,
   ANALYTICS_ENTRIES,
   PINNED_NOW_ISO,
+  NOTES_SEED,
+  NOTE_DRAFT_VALID,
+  NOTE_DRAFT_EMPTY_TITLE,
+  NOTE_DRAFT_LONG_TITLE,
+  NOTE_DRAFT_EMPTY_BODY_AND_QUOTE,
+  NOTE_DRAFT_LONG_BODY,
+  NOTE_DRAFT_LONG_QUOTE,
+  NOTES_JUNK,
+  COMMUNITY_QUESTIONS,
+  ASK_PROMPT_CASES,
 } from "./fixtures";
 
 /* The study-plan feature reads the subject catalog from listGoalSubjects()
@@ -286,6 +296,73 @@ const analyticsGolden = {
 
 (globalThis as { Date: unknown }).Date = RealDate;
 write("analytics-golden.json", analyticsGolden);
+
+/* ── Personal notes (Wave 1) ─────────────────────────────── */
+
+const pn = await import("@/features/personal-notes");
+
+const pnGolden = {
+  validate: {
+    valid: { draft: NOTE_DRAFT_VALID, expected: pn.validateNote(NOTE_DRAFT_VALID as never) },
+    emptyTitle: { draft: NOTE_DRAFT_EMPTY_TITLE, expected: pn.validateNote(NOTE_DRAFT_EMPTY_TITLE as never) },
+    longTitle: { draft: NOTE_DRAFT_LONG_TITLE, expected: pn.validateNote(NOTE_DRAFT_LONG_TITLE as never) },
+    emptyBodyAndQuote: { draft: NOTE_DRAFT_EMPTY_BODY_AND_QUOTE, expected: pn.validateNote(NOTE_DRAFT_EMPTY_BODY_AND_QUOTE as never) },
+    longBody: { draft: NOTE_DRAFT_LONG_BODY, expected: pn.validateNote(NOTE_DRAFT_LONG_BODY as never) },
+    longQuote: { draft: NOTE_DRAFT_LONG_QUOTE, expected: pn.validateNote(NOTE_DRAFT_LONG_QUOTE as never) },
+  },
+  addNote: {
+    seed: NOTES_SEED,
+    draft: NOTE_DRAFT_VALID,
+    id: "n9",
+    now: "2026-02-01T09:00:00.000Z",
+    expected: pn.addNote(NOTES_SEED as never, NOTE_DRAFT_VALID as never, "n9", "2026-02-01T09:00:00.000Z"),
+  },
+  updateNote: {
+    seed: NOTES_SEED,
+    id: "n2",
+    draft: NOTE_DRAFT_VALID,
+    now: "2026-02-02T09:00:00.000Z",
+    expected: pn.updateNote(NOTES_SEED as never, "n2", NOTE_DRAFT_VALID as never, "2026-02-02T09:00:00.000Z"),
+  },
+  removeNote: { seed: NOTES_SEED, id: "n2", expected: pn.removeNote(NOTES_SEED as never, "n2") },
+  filterNotes: {
+    bySubject: { seed: NOTES_SEED, query: "", subjectKey: "class-11-notes/physics", expected: pn.filterNotes(NOTES_SEED as never, "", "class-11-notes/physics") },
+    byQuery: { seed: NOTES_SEED, query: "MOLE", subjectKey: "", expected: pn.filterNotes(NOTES_SEED as never, "MOLE", "") },
+    byQueryBody: { seed: NOTES_SEED, query: "substitution", subjectKey: "", expected: pn.filterNotes(NOTES_SEED as never, "substitution", "") },
+    noMatch: { seed: NOTES_SEED, query: "zzz", subjectKey: "", expected: pn.filterNotes(NOTES_SEED as never, "zzz", "") },
+  },
+  normalizeNotes: { input: NOTES_JUNK, expected: pn.normalizeNotes(NOTES_JUNK) },
+};
+write("personal-notes-golden.json", pnGolden);
+
+/* ── Community rules (Wave 1) ────────────────────────────── */
+
+const cm = await import("@/features/community");
+
+/* listCommunitySpaces() reads the REAL catalog internally; the golden must
+ * carry those same rows so the Kotlin port (catalog injected) reproduces
+ * `expected` exactly — fixture rows would NOT match (real className is
+ * "Class 11 Notes", fixtures say "Class 11"). */
+const REAL_SPACE_CATALOG = goalMod.listGoalSubjects();
+
+const cmGolden = {
+  spaces: {
+    catalog: REAL_SPACE_CATALOG,
+    expected: cm.listCommunitySpaces(),
+  },
+  getSpace: {
+    hit: { id: "class-11-notes-physics", expected: cm.getCommunitySpace("class-11-notes-physics") ?? null },
+    miss: { id: "no-such-space", expected: cm.getCommunitySpace("no-such-space") ?? null },
+  },
+  askPrompt: ASK_PROMPT_CASES.map((c) => ({ ...c, expected: cm.buildAskPrompt(c.question, c.subjectName) })),
+  validateQuestion: {
+    short: { q: COMMUNITY_QUESTIONS.short, expected: cm.validateQuestion(COMMUNITY_QUESTIONS.short) },
+    exactly8: { q: COMMUNITY_QUESTIONS.exactly8, expected: cm.validateQuestion(COMMUNITY_QUESTIONS.exactly8) },
+    long: { q: COMMUNITY_QUESTIONS.long, expected: cm.validateQuestion(COMMUNITY_QUESTIONS.long) },
+    valid: { q: COMMUNITY_QUESTIONS.valid, expected: cm.validateQuestion(COMMUNITY_QUESTIONS.valid) },
+  },
+};
+write("community-golden.json", cmGolden);
 
 /* listGoalSubjects is read-only module state — no stubbing was needed. */
 console.log("golden generation complete →", OUT);

@@ -252,23 +252,22 @@ export async function forgotPassword(
 }
 
 /**
- * Finish a password reset. The recovery link lands on /reset-password with
- * either a PKCE `code` (query string) or an implicit `access_token` (hash);
- * the page forwards whichever it received together with the new password.
+ * Finish a password reset. The recovery link lands on /reset-password with a
+ * Supabase PKCE `code` or Firebase `oobCode`; ordinary session tokens are not
+ * accepted as recovery proof.
  */
 export async function resetPassword(data: {
   password: string;
   code?: string;
-  token?: string;
   oobCode?: string;
 }): Promise<{ success: boolean }> {
-  const oob = data.oobCode ?? data.code;
+  const oob = data.oobCode;
   if (isFirebaseAuthEnabled() && oob) {
     await firebaseClientConfirmPasswordReset(oob, data.password);
     return { success: true };
   }
   return apiFetch<{ success: boolean }>("/api/auth/reset-password", {
     method: "POST",
-    body: JSON.stringify(data),
+    body: JSON.stringify({ password: data.password, code: data.code }),
   });
 }

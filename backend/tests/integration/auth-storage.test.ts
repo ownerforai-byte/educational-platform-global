@@ -164,14 +164,17 @@ vi.mock("../../src/db/supabase", () => {
 const token = vi.hoisted(() => ({ verify: vi.fn() }));
 vi.mock("../../src/auth/firebase-admin-auth.js", () => ({
   verifyFirebaseIdToken: (...args: unknown[]) => token.verify(...args),
-  firebaseSessionEmail: (verified: { email?: string | null; phoneNumber?: string | null; uid?: string }) =>
-    verified.email?.trim() || (verified.uid ? `phone+${verified.uid}@phone.example` : null),
+  firebaseSessionEmail: (verified: { email?: string | null; phoneNumber?: string | null }) => {
+    const email = verified.email?.trim();
+    if (email) return email;
+    const digits = verified.phoneNumber?.replace(/\D/g, "");
+    return digits ? `phone+${digits}@phone.signin.harindrasah.com.np` : null;
+  },
   isFirebaseAuthReady: () => true,
   revokeFirebaseSessions: vi.fn(async () => {}),
   firebaseCreateUser: vi.fn(async () => null),
-  firebaseUpdatePassword: vi.fn(async () => true),
-  firebaseGetUserByEmail: vi.fn(async () => null),
   firebaseSendPasswordResetEmail: vi.fn(async () => true),
+  firebaseSendEmailVerificationEmail: vi.fn(async () => true),
 }));
 
 vi.mock("../../src/storage/firebase-store.js", () => ({
@@ -230,7 +233,13 @@ const NEW_UID = "uid-new-student-1";
 const OWNER_UID = "uid-owner-1";
 
 function asUser(uid: string, email: string) {
-  token.verify.mockResolvedValue({ uid, email, displayName: "Test Student" });
+  token.verify.mockResolvedValue({
+    uid,
+    email,
+    displayName: "Test Student",
+    emailVerified: true,
+    providerIds: ["password"],
+  });
 }
 
 async function signup(uid: string, email: string, cookie?: string) {

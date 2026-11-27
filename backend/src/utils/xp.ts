@@ -44,6 +44,52 @@ export interface XpInput {
   format?: XpFormat;
 }
 
+/** Server-generated verified attempts never contain more than 20 questions. */
+export const MAX_VERIFIED_QUESTIONS = 20;
+export const MAX_VERIFIED_SET_XP =
+  MAX_VERIFIED_QUESTIONS * XP_RULE.correctChoice + XP_RULE.bonus.at80;
+
+export interface VerifiedXpInput extends XpInput {
+  verificationStatus?: string | null;
+  attemptId?: string | null;
+  questionCount?: number | null;
+}
+
+/**
+ * Fail-closed XP boundary for persisted history rows. Legacy/unverified rows,
+ * malformed counts, client-style score overrides and writing rows all pay zero.
+ * The score is accepted only when it exactly matches the server-backed counts.
+ */
+export function xpForVerifiedSet(input: VerifiedXpInput): number {
+  if (input.verificationStatus !== "verified" || !input.attemptId) return 0;
+  if (input.format !== "mcq" && input.format !== "true-false" && input.format !== "fill-blank") {
+    return 0;
+  }
+
+  const questionCount = input.questionCount;
+  const answered = input.answered;
+  const correct = input.correct;
+  if (
+    typeof questionCount !== "number" ||
+    !Number.isInteger(questionCount) ||
+    questionCount < 1 ||
+    questionCount > MAX_VERIFIED_QUESTIONS ||
+    !Number.isInteger(answered) ||
+    answered !== questionCount ||
+    !Number.isInteger(correct) ||
+    correct < 0 ||
+    correct > answered ||
+    input.scorePct !== Math.round((correct / answered) * 100)
+  ) {
+    return 0;
+  }
+
+  return Math.min(
+    MAX_VERIFIED_SET_XP,
+    xpForSet({ answered, correct, scorePct: input.scorePct, format: input.format }),
+  );
+}
+
 function clampPct(value: number): number {
   return Math.max(0, Math.min(100, Math.round(value)));
 }

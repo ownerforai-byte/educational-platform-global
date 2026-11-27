@@ -31,6 +31,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.ravikisan.platform.compose.core.logic.ResultKind
+import com.ravikisan.platform.compose.core.logic.SearchResult
 
 /**
  * Search screen (Agent 4 task 3). Hosted at the shell's `search` route —

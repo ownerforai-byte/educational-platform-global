@@ -48,34 +48,23 @@ export interface SignUpResult {
 }
 
 /**
- * Register a new user.
- *
- * Auto-confirms the email via the admin API when Supabase requires
- * confirmation, so the caller can sign in immediately. Falls back to
- * "check your email" when auto-confirm is not possible.
+ * Register a new user without confirming email ownership on the server.
+ * Supabase sends the confirmation link; only a confirmed sign-in may create
+ * an application session.
  */
 export async function signUp(input: SignUpInput): Promise<SignUpResult> {
   const { email, password, fullName } = input;
-
-  // One throwaway client for the whole signup flow (sign-up → auto-confirm →
-  // sign-in) so the shared data client never adopts a user session.
-  const auth = createAuthClient().auth;
-
-  const { data, error } = await auth.signUp({
+  const { data, error } = await createAuthClient().auth.signUp({
     email,
     password,
     options: { data: { full_name: fullName ?? null } },
   });
 
   if (error) {
-    // Surface the real reason (rate limit, invalid email, weak password…)
-    // instead of a generic message — otherwise clients can't react (e.g. the
-    // 429 over_email_send_rate_limit that blocked all signups on 2026-09-24).
     throw new AuthProviderError(error.message, error.status ?? 400, error.code ?? null);
   }
 
-  // Session already returned → confirmed.
-  if (data.session && data.user) {
+  if (data.session && data.user && data.user.email_confirmed_at) {
     return {
       user: { id: data.user.id, email: data.user.email ?? email },
       session: data.session,
@@ -84,41 +73,12 @@ export async function signUp(input: SignUpInput): Promise<SignUpResult> {
     };
   }
 
-  // No session → Supabase wants email confirmation. Try to auto-confirm.
-  if (data.user) {
-    try {
-      await (auth.admin.updateUserById as (
-        id: string,
-        attrs: Record<string, unknown>,
-      ) => Promise<unknown>)(data.user.id, { email_confirm: true });
-
-      const signIn = await auth.signInWithPassword({ email, password });
-      if (signIn.data.session && signIn.data.user) {
-        return {
-          user: { id: signIn.data.user.id, email: signIn.data.user.email ?? email },
-          session: signIn.data.session,
-          needsEmailConfirmation: false,
-          error: null,
-        };
-      }
-      return {
-        user: { id: data.user.id, email },
-        session: null,
-        needsEmailConfirmation: true,
-        error: signIn.error?.message ?? null,
-      };
-    } catch {
-      // Auto-confirm unavailable → user must click the email link.
-      return {
-        user: { id: data.user.id, email },
-        session: null,
-        needsEmailConfirmation: true,
-        error: null,
-      };
-    }
-  }
-
-  return { user: null, session: null, needsEmailConfirmation: true, error: null };
+  return {
+    user: data.user ? { id: data.user.id, email: data.user.email ?? email } : null,
+    session: null,
+    needsEmailConfirmation: true,
+    error: null,
+  };
 }
 
 /** Validate an access token and return the raw Supabase user, or null. */

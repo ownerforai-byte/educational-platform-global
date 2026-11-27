@@ -2,6 +2,7 @@
  * Firebase Admin Auth — ID token verification and user administration.
  */
 import { getFirebaseAuth, type FirebaseAuthAdmin } from "../storage/firebase-admin.js";
+import { sendMail } from "../utils/mailer.js";
 
 export type FirebaseVerifiedUser = {
   uid: string;
@@ -21,9 +22,7 @@ export function firebaseSessionEmail(verified: Pick<FirebaseVerifiedUser, "email
     const digits = phone.replace(/\D/g, "");
     if (digits) return `phone+${digits}@phone.signin.harindrasah.com.np`;
   }
-  // Last resort: uid-based placeholder (should not happen for well-formed tokens).
-  const uid = verified.uid?.trim();
-  return uid ? `phone+${uid}@phone.signin.harindrasah.com.np` : null;
+  return null;
 }
 
 function auth(): FirebaseAuthAdmin | null {
@@ -110,46 +109,21 @@ export async function firebaseCreateUser(input: {
   }
 }
 
-export async function firebaseCreateCustomToken(
-  uid: string,
-  claims?: Record<string, unknown>,
-): Promise<string | null> {
-  const adminAuth = auth();
-  if (!adminAuth || typeof adminAuth.createCustomToken !== "function") return null;
-  try {
-    return await adminAuth.createCustomToken(uid, claims);
-  } catch (err) {
-    console.warn("[Auth] firebaseCreateCustomToken failed:", err instanceof Error ? err.message : err);
-    return null;
-  }
-}
-
-export async function firebaseUpdatePassword(uid: string, password: string): Promise<boolean> {
+export async function firebaseDeleteUser(uid: string): Promise<boolean> {
   const adminAuth = auth();
   if (!adminAuth) return false;
   try {
-    await adminAuth.updateUser(uid, { password });
+    await adminAuth.deleteUser(uid);
     return true;
-  } catch {
+  } catch (err) {
+    console.warn("[Auth] firebaseDeleteUser failed:", err instanceof Error ? err.message : err);
     return false;
   }
 }
 
-export async function firebaseGetUserByEmail(
-  email: string,
-): Promise<{ uid: string; email: string; displayName: string | null } | null> {
-  const adminAuth = auth();
-  if (!adminAuth) return null;
-  try {
-    const user = await adminAuth.getUserByEmail(email);
-    return {
-      uid: user.uid,
-      email: user.email ?? email,
-      displayName: user.displayName?.trim() || null,
-    };
-  } catch {
-    return null;
-  }
+function emailActionHtml(heading: string, link: string): string {
+  const safeLink = link.replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#111827;padding:24px"><h1 style="font-size:20px">${heading}</h1><p><a href="${safeLink}" style="display:inline-block;padding:12px 20px;background:#2563eb;color:#fff;border-radius:8px;text-decoration:none">Continue</a></p><p>If the button does not work, open this link directly:</p><p><a href="${safeLink}">${safeLink}</a></p></body></html>`;
 }
 
 export async function firebaseSendPasswordResetEmail(
@@ -159,10 +133,37 @@ export async function firebaseSendPasswordResetEmail(
   const adminAuth = auth();
   if (!adminAuth) return false;
   try {
-    await adminAuth.generatePasswordResetLink(email, { url: continueUrl });
-    return true;
+    const link = await adminAuth.generatePasswordResetLink(email, { url: continueUrl });
+    const result = await sendMail({
+      to: email,
+      subject: "Reset your Ravikisan password",
+      html: emailActionHtml("Reset your password", link),
+      text: `Reset your password: ${link}`,
+    });
+    return result.sent;
   } catch (err) {
     console.warn("[Auth] generatePasswordResetLink failed:", err instanceof Error ? err.message : err);
+    return false;
+  }
+}
+
+export async function firebaseSendEmailVerificationEmail(
+  email: string,
+  continueUrl: string,
+): Promise<boolean> {
+  const adminAuth = auth();
+  if (!adminAuth || typeof adminAuth.generateEmailVerificationLink !== "function") return false;
+  try {
+    const link = await adminAuth.generateEmailVerificationLink(email, { url: continueUrl });
+    const result = await sendMail({
+      to: email,
+      subject: "Confirm your Ravikisan email",
+      html: emailActionHtml("Confirm your email", link),
+      text: `Confirm your email: ${link}`,
+    });
+    return result.sent;
+  } catch (err) {
+    console.warn("[Auth] generateEmailVerificationLink failed:", err instanceof Error ? err.message : err);
     return false;
   }
 }

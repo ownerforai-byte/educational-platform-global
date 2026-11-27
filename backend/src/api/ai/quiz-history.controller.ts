@@ -3,6 +3,12 @@ import { z } from "zod";
 import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
+import {
+  claimQuizAttempt,
+  quizResponseSchema,
+  type QuizAttemptFormat,
+  type QuizQuestionSnapshot,
+} from "./quiz-attempt.service";
 
 /**
  * Per-user AI quiz history.
@@ -61,7 +67,24 @@ const insertSchema = z.object({
   answered: z.number().int().min(0).max(1000).default(0),
   correct: z.number().int().min(0).max(1000).default(0),
   scorePct: z.number().int().min(0).max(100).optional(),
+  attemptId: z.string().uuid().optional(),
+  responses: z.array(quizResponseSchema).max(40).optional(),
   _req: z.literal("quiz-history").optional(),
+}).superRefine((value, ctx) => {
+  if (value.correct > value.answered) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["correct"],
+      message: "correct cannot exceed answered",
+    });
+  }
+  if (value.attemptId && !value.responses) {
+    ctx.addIssue({
+      code: z.ZodIssueCode.custom,
+      path: ["responses"],
+      message: "responses are required for an issued attempt",
+    });
+  }
 });
 
 function isMissingTable(error: { message?: string } | null): boolean {
@@ -88,7 +111,7 @@ router.get(
     const { data, error } = await supabaseAdmin
       .from("quiz_history")
       .select(
-        "id, title, class_slug, subject_slug, topic, difficulty, answered, correct, score_pct, created_at"
+        "id, title, class_slug, subject_slug, topic, difficulty, format, answered, correct, score_pct, created_at"
       )
       .eq("user_id", user.id)
       .order("created_at", { ascending: false })
@@ -122,6 +145,7 @@ router.get(
           subjectSlug: r.subject_slug,
           topic: r.topic,
           difficulty: (r.difficulty as unknown as "easy" | "intermediate" | "hard" | null) ?? null,
+          format: (r.format as unknown as QuizAttemptFormat | null) ?? null,
           answered: answerCount,
           correct: correctCount,
           scorePct,
@@ -143,7 +167,7 @@ router.get(
 
     const { data, error } = await supabaseAdmin
       .from("quiz_history")
-      .select("id, title, class_slug, subject_slug, topic, difficulty, questions, answered, correct, score_pct, created_at")
+      .select("id, title, class_slug, subject_slug, topic, difficulty, format, questions, answered, correct, score_pct, created_at")
       .eq("user_id", user.id)
       .eq("id", id)
       .single();
@@ -177,6 +201,7 @@ router.get(
       subjectSlug: data.subject_slug,
       topic: data.topic,
       difficulty: (data.difficulty as unknown as "easy" | "intermediate" | "hard" | null) ?? null,
+      format: (data.format as unknown as QuizAttemptFormat | null) ?? null,
       questions: data.questions,
       answered: data.answered as unknown as number,
       correct: data.correct as unknown as number,
@@ -199,15 +224,30 @@ router.post(
     }
 
     const user = (req as Request & { user: { id: string } }).user;
-    const questions = parsed.data.questions;
+    const claimed = parsed.data.attemptId
+      ? await claimQuizAttempt({
+          attemptId: parsed.data.attemptId,
+          userId: user.id,
+          questions: parsed.data.questions,
+          responses: parsed.data.responses ?? [],
+        })
+      : null;
+    const questions: QuizQuestionSnapshot[] = claimed?.questions ?? parsed.data.questions;
+    const attempt = claimed?.attempt;
+    const grade = claimed?.grade;
+    const answered = grade?.answered ?? parsed.data.answered;
+    const correct = grade?.correct ?? parsed.data.correct;
+    const scorePct = grade ? grade.scorePct : parsed.data.scorePct ?? null;
+    const format =
+      attempt?.format ?? parsed.data.format ?? questions[0]?.format ?? "mcq";
 
     const row = {
       user_id: user.id,
-      title: parsed.data.title,
-      class_slug: parsed.data.classSlug,
-      subject_slug: parsed.data.subjectSlug,
-      topic: parsed.data.topic,
-      difficulty: parsed.data.difficulty,
+      title: attempt?.title ?? parsed.data.title,
+      class_slug: attempt?.class_slug ?? parsed.data.classSlug ?? null,
+      subject_slug: attempt?.subject_slug ?? parsed.data.subjectSlug ?? null,
+      topic: attempt?.topic ?? parsed.data.topic ?? null,
+      difficulty: attempt?.difficulty ?? parsed.data.difficulty ?? null,
       questions: questions.map((q) => ({
         prompt: q.prompt,
         options: q.options,
@@ -220,17 +260,24 @@ router.post(
           q.optionAnalysis && Object.keys(q.optionAnalysis).length > 0
             ? q.optionAnalysis
             : null,
-        // Writing-format fields survive round-trips so the history detail
-        // view can re-render the model answer and rubric.
-        format: q.format ?? parsed.data.format ?? "mcq",
+        format: q.format ?? format,
         ...(q.acceptedAnswers ? { acceptedAnswers: q.acceptedAnswers } : {}),
         ...(q.modelAnswer ? { modelAnswer: q.modelAnswer } : {}),
         ...(q.rubric ? { rubric: q.rubric } : {}),
         ...(q.maxScore ? { maxScore: q.maxScore } : {}),
       })),
-      answered: parsed.data.answered,
-      correct: parsed.data.correct,
-      score_pct: parsed.data.scorePct,
+      answered,
+      correct,
+      score_pct: scorePct,
+      attempt_id: attempt?.id ?? null,
+      question_count: attempt?.question_count ?? questions.length,
+      format,
+      responses: parsed.data.responses ?? null,
+      verification_status: grade?.verified ? "verified" : "unverified",
+      verification_reason: grade?.verified
+        ? null
+        : grade?.reason ?? (attempt ? "attempt-unverified" : "client-unverified"),
+      verified_at: grade?.verified ? new Date().toISOString() : null,
     };
 
     const { error: insertError } = await supabaseAdmin.from("quiz_history").insert(row);
@@ -244,7 +291,7 @@ router.post(
       return;
     }
 
-    res.json({ saved: true, migrated: true });
+    res.json({ saved: true, migrated: true, verified: grade?.verified === true });
   })
 );
 

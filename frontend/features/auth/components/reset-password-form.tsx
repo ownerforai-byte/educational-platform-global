@@ -9,13 +9,12 @@ import { resetPassword } from "@/lib/api/auth";
 import { AUTH_TRY_AGAIN, authFailureDetail, authFailureMessage } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
 
-type Proof = { code?: string; token?: string; oobCode?: string } | null;
+type Proof = { code?: string; oobCode?: string } | null;
 
 /**
- * Landing page for the Supabase recovery link. Depending on the project's
- * flow it arrives as ?code=… (PKCE) or #access_token=…&type=recovery
- * (implicit) — whichever form it takes, the proof is forwarded to the
- * backend together with the new password and never stored anywhere else.
+ * Landing page for provider recovery links. Supabase PKCE supplies `code`;
+ * Firebase supplies `oobCode`. Ordinary access/ID tokens are deliberately not
+ * accepted as password-reset proof.
  */
 export function ResetPasswordForm() {
   const [proof, setProof] = useState<Proof>(undefined as unknown as Proof);
@@ -34,9 +33,7 @@ export function ResetPasswordForm() {
     const hash = new URLSearchParams(window.location.hash.replace(/^#/, ""));
     const oobCode = search.get("oobCode") || hash.get("oobCode") || undefined;
     const code = oobCode || search.get("code") || hash.get("code") || undefined;
-    const token =
-      hash.get("access_token") || search.get("access_token") || undefined;
-    setProof(code || token ? { code, token, ...(oobCode ? { oobCode } : {}) } : null);
+    setProof(code ? { code, ...(oobCode ? { oobCode } : {}) } : null);
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {

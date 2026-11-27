@@ -8,13 +8,24 @@ import {
   isOwnerAccount,
   type AuthedRequest,
 } from "../../middleware/auth";
-import { communityAiReplyLimit, reserveCommunityAiReply } from "../../middleware/rateLimit";
+import { reserveCommunityAiReply } from "../../middleware/rateLimit";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
-import { isR2StorageActive, r2PresignedPut, r2Upload, r2Download, r2Delete } from "../../storage/r2";
+import {
+  isR2StorageActive,
+  r2PresignedPut,
+  r2Head,
+  r2Upload,
+  r2Download,
+  r2Delete,
+} from "../../storage/r2";
 import { recordSocialNotification } from "../../services/social-notification.service.js";
 import { removeSupersededObject } from "../../storage/remove-superseded";
-import { reserveStoragePath, releaseStoragePath } from "../../services/profile-storage";
+import {
+  accountStorageObject,
+  reserveStoragePath,
+  releaseStoragePath,
+} from "../../services/profile-storage";
 import { profileMediaPublicUrl } from "../../services/profile-media-url";
 import {
   COMMUNITY_BOT_ID,
@@ -239,6 +250,38 @@ function canManage(user: SessionUser, authorId: string): boolean {
   return canEditAsAuthor(user, authorId);
 }
 
+/** Zero-byte rows are unpublished presign reservations, never public files. */
+function isPublishedAttachment(row: AttachmentRow): boolean {
+  return Number.isSafeInteger(Number(row.byte_size)) && Number(row.byte_size) > 0;
+}
+
+/** Best-effort rollback for a pending direct upload that failed verification. */
+async function discardPendingAttachment(user: SessionUser, row: AttachmentRow): Promise<void> {
+  if (row.storage_path) {
+    try {
+      await r2Delete(row.storage_path);
+    } catch (err) {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "community-feed-upload-delete");
+    }
+    try {
+      await releaseStoragePath(user.id, row.storage_path);
+    } catch (err) {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "community-feed-upload-release");
+    }
+  }
+  const { error } = await supabaseAdmin
+    .from("community_feed_attachments")
+    .delete()
+    .eq("id", row.id)
+    .eq("post_id", row.post_id);
+  if (error) {
+    const errorId = newErrorId();
+    logServerError(error, errorId, "community-feed-upload-pending-delete");
+  }
+}
+
 function noStore(res: Response): void {
   res.setHeader("Cache-Control", "no-store");
 }
@@ -350,7 +393,8 @@ function canPublishCommunityBotReply(_postAuthorId: string, viewer: SessionUser 
   return Boolean(viewer);
 }
 
-async function publishBotThreadReply(opts: {
+/** Generate a deferred reply only after the caller reserves the account AI budget. */
+async function publishReservedBotThreadReply(opts: {
   postId: string;
   post: PostRow;
   question: string;
@@ -587,7 +631,7 @@ function presentPost(
   const postSaves = saves.filter((save) => save.post_id === row.id);
   const postReposts = reposts.filter((repost) => repost.post_id === row.id);
   const files = attachments
-    .filter((file) => file.post_id === row.id)
+    .filter((file) => file.post_id === row.id && isPublishedAttachment(file))
     .sort((a, b) => String(a.created_at ?? "").localeCompare(String(b.created_at ?? "")));
   const quotedPostId = quotePostIdFromBody(row.body);
   return {
@@ -1377,7 +1421,7 @@ router.get(
       return;
     }
     const row = data as AttachmentRow | null;
-    if (!row) {
+    if (!row || !isPublishedAttachment(row)) {
       bad(res, "File not found", 404);
       return;
     }
@@ -1668,7 +1712,6 @@ router.get(
 router.post(
   "/feed/:postId/ai-assistant/reply",
   requireAuth,
-  communityAiReplyLimit,
   asyncHandler(async (req, res) => {
     const user = userOf(req);
     const postId = param(req.params.postId);
@@ -1709,6 +1752,10 @@ router.post(
     }
     assistantReplyInFlight.add(postId);
     try {
+      if (!(await reserveCommunityAiReply(user.id))) {
+        bad(res, "AI budget exhausted. Try again later.", 429);
+        return;
+      }
       await ensureCommunityBotProfile();
       let body: string;
       try {
@@ -2704,22 +2751,27 @@ router.post(
       commentId: id,
     });
 
+    // Reserve before scheduling any paid generation. The human comment stays
+    // published even when the account budget is exhausted.
+    const botReplyReserved = wantBotReply ? await reserveCommunityAiReply(user.id) : false;
     noStore(res);
     if (wantBotReply) {
       res.status(201).json({
         comment: humanComment,
         botComment: null,
-        botReplyPending: true,
+        botReplyPending: botReplyReserved,
       });
-      void publishBotThreadReply({
-        postId,
-        post: found.row,
-        question: parsed.data.body,
-        parentCommentId: id,
-      }).catch((err) => {
-        const errorId = newErrorId();
-        logServerError(err, errorId, "community-feed-bot-deferred");
-      });
+      if (botReplyReserved) {
+        void publishReservedBotThreadReply({
+          postId,
+          post: found.row,
+          question: parsed.data.body,
+          parentCommentId: id,
+        }).catch((err) => {
+          const errorId = newErrorId();
+          logServerError(err, errorId, "community-feed-bot-deferred");
+        });
+      }
       return;
     }
 
@@ -2938,10 +2990,19 @@ router.post(
       typeof req.body?.filename === "string" ? sanitizeUploadFilename(req.body.filename) : null;
     const contentType =
       safeFilename && typeof req.body?.contentType === "string"
-        ? resolveUploadMime(req.body.contentType, safeFilename)
+        ? resolveUploadMime(safeFilename, req.body.contentType)
         : null;
+    const byteSize = req.body?.byteSize;
     if (!isUuid(postId) || !safeFilename || !contentType) {
       bad(res, "Invalid upload request.");
+      return;
+    }
+    if (typeof byteSize !== "number" || !Number.isSafeInteger(byteSize) || byteSize < 1) {
+      bad(res, "byteSize is required");
+      return;
+    }
+    if (byteSize > MAX_FILE_BYTES) {
+      bad(res, "Each file must be 3 MB or smaller", 413);
       return;
     }
     const found = await findPost(postId);
@@ -2961,15 +3022,23 @@ router.post(
       bad(res, "Direct upload is unavailable until R2 is configured.", 503);
       return;
     }
-    const byteSize = Number(req.body?.byteSize);
-    if (!Number.isInteger(byteSize) || byteSize < 1) {
-      bad(res, "byteSize is required");
+    const existing = await supabaseAdmin
+      .from("community_feed_attachments")
+      .select("id")
+      .eq("post_id", postId);
+    if (existing.error) {
+      if (isMissingTable(existing.error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, existing.error, "community-feed");
       return;
     }
-    if (byteSize > MAX_FILE_BYTES) {
-      bad(res, "Each file must be 3 MB or smaller", 413);
+    if ((existing.data ?? []).length >= MAX_FILES) {
+      bad(res, "A post can have at most 4 files");
       return;
     }
+
     const attachmentId = randomUUID();
     const storagePath = `community/${postId}/${attachmentId}/${safeFilename}`;
     await ensureProfile(user);
@@ -2982,18 +3051,26 @@ router.post(
       }
       return;
     }
-    const uploadUrl = await r2PresignedPut(storagePath, contentType);
+    let uploadUrl: string | null;
+    try {
+      uploadUrl = await r2PresignedPut(storagePath, contentType, 600, byteSize);
+    } catch (err) {
+      await releaseStoragePath(user.id, storagePath);
+      throw err;
+    }
     if (!uploadUrl) {
       await releaseStoragePath(user.id, storagePath);
       unavailable(res);
       return;
     }
+    // Keep the row invisible until /complete verifies the stored object. The
+    // real storage path remains on the pending row so DELETE can roll it back.
     const { error } = await supabaseAdmin.from("community_feed_attachments").insert({
       id: attachmentId,
       post_id: postId,
       filename: safeFilename,
       content_type: contentType,
-      byte_size: byteSize,
+      byte_size: 0,
       storage_path: storagePath,
       data_base64: null,
       created_at: new Date().toISOString(),
@@ -3008,7 +3085,173 @@ router.post(
       return;
     }
     noStore(res);
-    res.json({ attachmentId, uploadUrl, storagePath, contentType, expiresIn: 600 });
+    res.json({ attachmentId, uploadUrl, contentType, byteSize, expiresIn: 600 });
+  }),
+);
+
+router.post(
+  "/feed/:postId/attachments/:attachmentId/complete",
+  requireAuth,
+  asyncHandler(async (req, res) => {
+    const user = userOf(req);
+    const postId = param(req.params.postId);
+    const attachmentId = param(req.params.attachmentId);
+    if (!isUuid(postId) || !isUuid(attachmentId)) {
+      bad(res, "Attachment not found", 404);
+      return;
+    }
+    const found = await findPost(postId);
+    if ("missing" in found) {
+      unavailable(res);
+      return;
+    }
+    if ("error" in found) {
+      serverError(res, found.error, "community-feed");
+      return;
+    }
+    if (!found.row || !canManage(user, found.row.author_id)) {
+      bad(res, "You can only complete uploads on your own posts.", 403);
+      return;
+    }
+    const { data, error } = await supabaseAdmin
+      .from("community_feed_attachments")
+      .select("id, post_id, filename, content_type, byte_size, storage_path, data_base64")
+      .eq("id", attachmentId)
+      .eq("post_id", postId)
+      .maybeSingle();
+    if (error) {
+      if (isMissingTable(error)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, error, "community-feed");
+      return;
+    }
+    const row = data as AttachmentRow | null;
+    if (!row) {
+      bad(res, "Attachment not found", 404);
+      return;
+    }
+    if (isPublishedAttachment(row)) {
+      noStore(res);
+      res.json({
+        attachment: {
+          id: row.id,
+          filename: row.filename,
+          contentType: row.content_type,
+          byteSize: Number(row.byte_size),
+        },
+      });
+      return;
+    }
+
+    const expectedPath = `community/${postId}/${attachmentId}/${row.filename}`;
+    const ext = row.filename.split(".").pop()?.toLowerCase() ?? "";
+    const spec = BINARY_FILE_BY_EXTENSION[ext];
+    if (
+      !row.storage_path ||
+      row.storage_path !== expectedPath ||
+      sanitizeUploadFilename(row.filename) !== row.filename ||
+      !spec ||
+      row.content_type !== spec.mime
+    ) {
+      await discardPendingAttachment(user, row);
+      bad(res, "Invalid upload request.");
+      return;
+    }
+    const { data: reservation, error: reservationError } = await supabaseAdmin
+      .from("storage_objects")
+      .select("byte_size")
+      .eq("path", row.storage_path)
+      .maybeSingle();
+    if (reservationError || !reservation) {
+      await discardPendingAttachment(user, row);
+      if (reservationError && !isMissingTable(reservationError)) {
+        serverError(res, reservationError, "community-feed");
+      } else {
+        unavailable(res);
+      }
+      return;
+    }
+    const declaredBytes = Number(reservation.byte_size);
+    if (!Number.isSafeInteger(declaredBytes) || declaredBytes < 1 || declaredBytes > MAX_FILE_BYTES) {
+      await discardPendingAttachment(user, row);
+      bad(res, "Invalid upload reservation.", 413);
+      return;
+    }
+
+    let head: { contentLength: number; contentType: string } | null;
+    let downloaded: { buffer: Buffer; contentType: string } | null;
+    try {
+      head = await r2Head(row.storage_path);
+      if (!head) {
+        await discardPendingAttachment(user, row);
+        bad(res, "Uploaded file was not found", 404);
+        return;
+      }
+      if (head.contentLength > MAX_FILE_BYTES || head.contentLength > declaredBytes) {
+        await discardPendingAttachment(user, row);
+        bad(res, "Each file must be 3 MB or smaller and match its declared size", 413);
+        return;
+      }
+      const headType = head.contentType.split(";", 1)[0].trim().toLowerCase();
+      if (headType !== row.content_type) {
+        await discardPendingAttachment(user, row);
+        bad(res, "Stored file type does not match its declared type");
+        return;
+      }
+      downloaded = await r2Download(row.storage_path);
+      if (
+        !downloaded ||
+        downloaded.buffer.length !== head.contentLength ||
+        downloaded.contentType.split(";", 1)[0].trim().toLowerCase() !== row.content_type ||
+        !matchBinaryMagic(downloaded.buffer, spec.kind)
+      ) {
+        await discardPendingAttachment(user, row);
+        bad(res, "File contents do not match its type");
+        return;
+      }
+    } catch (err) {
+      await discardPendingAttachment(user, row);
+      serverError(res, err, "community-feed-upload-verify");
+      return;
+    }
+
+    // Reconcile the reservation to HEAD's authoritative size before making
+    // the zero-byte pending row visible to feed/profile consumers.
+    const reconciled = await accountStorageObject(user.id, row.storage_path, head.contentLength, user);
+    if (!reconciled.ok) {
+      await discardPendingAttachment(user, row);
+      if (reconciled.reason === "quota") {
+        bad(res, "Storage quota exceeded — free space on your profile or upgrade your plan.", 413);
+      } else {
+        unavailable(res);
+      }
+      return;
+    }
+    const { error: updateError } = await supabaseAdmin
+      .from("community_feed_attachments")
+      .update({ byte_size: head.contentLength })
+      .eq("id", attachmentId)
+      .eq("post_id", postId);
+    if (updateError) {
+      await discardPendingAttachment(user, row);
+      if (isMissingTable(updateError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, updateError, "community-feed");
+      return;
+    }
+    noStore(res);
+    res.json({
+      attachment: {
+        id: row.id,
+        filename: row.filename,
+        contentType: row.content_type,
+        byteSize: head.contentLength,
+      },
+    });
   }),
 );
 

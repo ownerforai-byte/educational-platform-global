@@ -138,14 +138,15 @@ function parseNavHost() {
 
   // Explicit composables: split the NavHost block on `composable(` and take
   // each chunk up to the next one. First Routes.X reference is the route;
-  // a body calling StubScreen( marks the destination a placeholder shell.
+  // a body calling StubScreen( or ComingToNative( marks the destination a
+  // placeholder shell (RQ-11: ComingToNative replaced the deleted StubScreen).
   const registered = new Map(); // routeConst -> { placeholder: boolean }
   const parts = src.split("composable(");
   for (let i = 1; i < parts.length; i++) {
     const chunk = parts[i];
     const rm = chunk.match(/Routes\.(\w+)/);
     if (!rm) continue;
-    registered.set(rm[1], { placeholder: chunk.includes("StubScreen(") });
+    registered.set(rm[1], { placeholder: chunk.includes("StubScreen(") || chunk.includes("ComingToNative(") });
   }
 
   // The stub-registration loop must exist — WebParity.stubs entries are

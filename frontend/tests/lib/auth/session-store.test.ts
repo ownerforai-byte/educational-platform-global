@@ -45,15 +45,31 @@ describe("session-store", () => {
     expect(decodeTokenExpiryMs(fakeJwt({ sub: "no-exp-claim" }))).toBeNull();
   });
 
-  it("round-trips a user and its token expiry", () => {
+  it("round-trips a user and expiry without persisting the token", () => {
     const token = fakeJwt({ exp: 1_800_000_000 });
     writeCachedSession(USER, token);
 
     const cached = readCachedSession();
     expect(cached?.user).toEqual(USER);
-    expect(cached?.accessToken).toBe(token);
+    expect(cached).not.toHaveProperty("accessToken");
     expect(cached?.expiresAt).toBe(1_800_000_000_000);
     expect(typeof cached?.savedAt).toBe("number");
+    expect(localStorage.getItem("rvk:session")).not.toContain(token);
+  });
+
+  it("purges a token from a legacy cached session", () => {
+    localStorage.setItem(
+      "rvk:session",
+      JSON.stringify({
+        user: USER,
+        accessToken: "legacy-secret-token",
+        expiresAt: 1_800_000_000_000,
+        savedAt: 1,
+      }),
+    );
+
+    expect(readCachedSession()).not.toHaveProperty("accessToken");
+    expect(localStorage.getItem("rvk:session")).not.toContain("legacy-secret-token");
   });
 
   it("ignores writes without a usable user and survives corrupt storage", () => {
@@ -95,7 +111,7 @@ describe("session-store", () => {
       expect(isTokenExpiringSoon(healthy, skew)).toBe(false);
     });
 
-    it("falls back to the cached token, and treats 'unknown' as renew-now", () => {
+    it("falls back to the cached expiry, and treats 'unknown' as renew-now", () => {
       expect(isTokenExpiringSoon(null, skew)).toBe(true);
 
       const healthy = fakeJwt({ exp: Math.floor((Date.now() + 45 * 60_000) / 1000) });

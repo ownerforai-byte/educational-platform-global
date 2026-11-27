@@ -43,6 +43,7 @@ import type {
   EvaluateAnswersResponse,
   GeneratedQuestion,
   QuizFormat,
+  QuizResponse,
 } from "@/types/api";
 
 // ── Colour palette per difficulty ────────────────────────────────────────────
@@ -442,6 +443,7 @@ function QuizScreen({
       correct: number;
       scorePct?: number;
       evaluation?: EvaluateAnswersResponse;
+      responses: QuizResponse[];
     }
   ) => void;
 }) {
@@ -552,6 +554,7 @@ function QuizScreen({
           res.results.reduce((s, r) => s + r.score, 0) /
             Math.max(1, res.results.length)
         ),
+        responses: questions.map((_, i) => ({ answer: textAnswers[i] ?? "" })),
         evaluation: res,
       });
       setShowResults(true);
@@ -816,6 +819,7 @@ function QuizScreen({
                   answered,
                   correct: score,
                   scorePct: pct,
+                  responses: questions.map((_, i) => ({ selectedIndex: selectedIndices[i] })),
                 });
                 setShowResults(true);
               } else {
@@ -999,6 +1003,7 @@ export function QuizStudio() {
   const [generating, setGenerating] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [format, setFormat] = useState<QuizFormat>("mcq");
+  const [attemptId, setAttemptId] = useState<string | undefined>();
 
   const [subjectSlug, setSubjectSlug] = useState<string>("");
   const [classSlug, setClassSlug] = useState<string>("class-11-notes");
@@ -1023,6 +1028,7 @@ export function QuizStudio() {
         format: params.format,
       });
       setQuestions(res.questions);
+      setAttemptId(res.attemptId);
       // Server-attested guest pool: mirror the REAL remainder so a cleared
       // localStorage / page refresh can never display a refilled quota.
       if (typeof res.remaining === "number") {
@@ -1058,6 +1064,7 @@ export function QuizStudio() {
 
   const handleRegenerate = () => {
     setPhase("config");
+    setAttemptId(undefined);
     setError(null);
   };
 
@@ -1067,6 +1074,7 @@ export function QuizStudio() {
     correct: number;
     scorePct?: number;
     evaluation?: EvaluateAnswersResponse;
+    responses: QuizResponse[];
   }) => {
     if (questions.length === 0) return;
     const { answered, correct, scorePct } = summary;
@@ -1081,6 +1089,8 @@ export function QuizStudio() {
       difficulty,
       format: summary.format,
       questions,
+      attemptId,
+      responses: summary.responses,
       answered,
       correct,
       scorePct,

@@ -23,10 +23,14 @@ export type FirebaseAuthAdmin = {
   ) => Promise<Record<string, unknown>>;
   revokeRefreshTokens: (uid: string) => Promise<void>;
   createUser: (props: Record<string, unknown>) => Promise<{ uid: string; email?: string }>;
+  deleteUser: (uid: string) => Promise<void>;
   updateUser: (uid: string, props: Record<string, unknown>) => Promise<void>;
   getUserByEmail: (email: string) => Promise<{ uid: string; email?: string; displayName?: string }>;
-  createCustomToken?: (uid: string, developerClaims?: object) => Promise<string>;
   generatePasswordResetLink: (
+    email: string,
+    actionCodeSettings?: { url: string },
+  ) => Promise<string>;
+  generateEmailVerificationLink?: (
     email: string,
     actionCodeSettings?: { url: string },
   ) => Promise<string>;

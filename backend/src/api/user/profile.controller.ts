@@ -11,37 +11,43 @@ import {
   updateProfileFields,
 } from "../../db/repositories/user.repository.js";
 import { listCreditTransactions } from "../../db/repositories/credit.repository.js";
-import { canUnlockModule } from "../../utils/sectionAccess";
+import {
+  canUnlockModule,
+  canonicalContentIdentity,
+  canonicalRouteModuleKey,
+  contentTargetSchema,
+} from "../../utils/sectionAccess";
 import {
   ensureDailyCredits,
   spendCredits,
+  refundCredits,
   DAILY_CREDIT_POOL,
 } from "../../services/credit.service.js";
 import { getStorageSnapshot, TIER_STORAGE_LIMITS } from "../../services/profile-storage";
 
 /**
- * Persist the spark-unlock window for `moduleKey` into `profiles.credits_unlock`
- * (a JSONB column: `{ [moduleKey]: expiresAtEpoch }`).
+ * Persist one server-derived spark-unlock identity into
+ * `profiles.credits_unlock` (`{ [identityKey]: expiresAtEpoch }`). The caller
+ * awaits this write so a successful response always has a matching window.
  */
 async function persistUnlockWindow(
   userId: string,
-  moduleKey: string | undefined,
+  identityKey: string,
   expiresAt: number,
 ): Promise<void> {
-  if (!moduleKey) return;
-  try {
-    const { data: current } = await getProfileById(userId, "credits_unlock");
-    const existing =
-      current?.credits_unlock && typeof current.credits_unlock === "object"
-        ? (current.credits_unlock as Record<string, unknown>)
-        : {};
-    await updateProfileFields(userId, {
-      credits_unlock: { ...existing, [moduleKey]: expiresAt },
-    });
-  } catch (err: unknown) {
-    const e = err as Error;
-    console.warn("[unlock] failed to persist spark window for", userId, e?.message ?? e);
-  }
+  const { data: current, error: readError } = await getProfileById(userId, "credits_unlock");
+  if (readError) throw readError;
+
+  const existing =
+    current?.credits_unlock &&
+    typeof current.credits_unlock === "object" &&
+    !Array.isArray(current.credits_unlock)
+      ? (current.credits_unlock as Record<string, unknown>)
+      : {};
+  const { error: writeError } = await updateProfileFields(userId, {
+    credits_unlock: { ...existing, [identityKey]: expiresAt },
+  });
+  if (writeError) throw writeError;
 }
 
 const router = Router();
@@ -175,7 +181,10 @@ const UNLOCK_WINDOW_SECONDS = 1200;
 
 const unlockSchema = z.object({
   category: z.enum(["lab3d", "visuals", "theory", "reference", "imagehub"]),
+  /** Legacy route-unlock shape. Content unlocks use `content` instead. */
   moduleKey: z.string().min(1).max(200).optional(),
+  /** Canonical corpus coordinates; the server derives the stored identity. */
+  content: contentTargetSchema.optional(),
 });
 
 router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) => {
@@ -187,30 +196,77 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     return;
   }
 
-  const { category, moduleKey } = parsed.data;
+  const { category, moduleKey, content } = parsed.data;
   const cost = UNLOCK_COSTS[category] ?? 0;
 
-  if (!(await canUnlockModule(user, isOwnerEmail(user.email), moduleKey))) {
-    res.status(403).json({ error: "This section is not available on your plan." });
-    return;
+  let identityKey: string;
+  if (content) {
+    const identity = canonicalContentIdentity(content);
+    if (!identity) {
+      res.status(400).json({ error: "Invalid unlock target" });
+      return;
+    }
+    // A simultaneous client moduleKey is deliberately ignored: content identity
+    // always comes from the validated coordinates above.
+    identityKey = identity.key;
+  } else {
+    const routeKey = canonicalRouteModuleKey(moduleKey);
+    if (!routeKey) {
+      res.status(400).json({ error: "Invalid unlock target" });
+      return;
+    }
+    if (!(await canUnlockModule(user, isOwnerEmail(user.email), routeKey))) {
+      res.status(403).json({ error: "This section is not available on your plan." });
+      return;
+    }
+    identityKey = routeKey;
   }
 
   const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
 
-  if (cost === 0) {
-    const { data: freeProfile } = await getProfileById(user.id, "role, credits, premium_status");
-    if (category === "imagehub" && !isOwnerEmail(user.email)) {
-      res.status(403).json({
-        error: "The Diagram Hub is reserved for owner accounts.",
-      });
+  const finishUnlock = async (credits: number, chargedCost: number): Promise<void> => {
+    try {
+      await persistUnlockWindow(user.id, identityKey, expiresAt);
+    } catch (err: unknown) {
+      console.error("Unlock: failed to persist spark window for", user.id, err);
+      if (chargedCost > 0) {
+        try {
+          await refundCredits(
+            user.id,
+            chargedCost,
+            `Refund: content unlock window failed (${identityKey})`,
+          );
+        } catch (refundErr: unknown) {
+          console.error("Unlock: refund failed for", user.id, refundErr);
+        }
+      }
+      res.status(500).json({ error: "Failed to open unlock window" });
       return;
     }
-    void persistUnlockWindow(user.id, moduleKey, expiresAt);
-    res.json({ credits: (freeProfile?.credits as number | undefined) ?? 0, expiresAt, cost: 0 });
-    return;
-  }
+    res.json({ credits, expiresAt, cost: chargedCost, moduleKey: identityKey });
+  };
 
   try {
+    if (cost === 0) {
+      const { data: freeProfile, error: profileError } = await getProfileById(
+        user.id,
+        "role, credits, premium_status",
+      );
+      if (profileError) {
+        console.error("Unlock: profile lookup failed:", profileError.message);
+        res.status(500).json({ error: "Failed to load profile" });
+        return;
+      }
+      if (category === "imagehub" && !isOwnerEmail(user.email)) {
+        res.status(403).json({
+          error: "The Diagram Hub is reserved for owner accounts.",
+        });
+        return;
+      }
+      await finishUnlock((freeProfile?.credits as number | undefined) ?? 0, 0);
+      return;
+    }
+
     const { data: profile, error: profileError } = await getProfileById(
       user.id,
       "role, credits, premium_status",
@@ -233,22 +289,19 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
         });
         return;
       }
-      void persistUnlockWindow(user.id, moduleKey, expiresAt);
-      res.json({ credits: (profile?.credits as number | undefined) ?? 0, expiresAt, cost: 0 });
+      await finishUnlock((profile?.credits as number | undefined) ?? 0, 0);
       return;
     }
 
     if (premiumStatus) {
-      void persistUnlockWindow(user.id, moduleKey, expiresAt);
-      res.json({ credits: (profile?.credits as number | undefined) ?? 0, expiresAt, cost: 0 });
+      await finishUnlock((profile?.credits as number | undefined) ?? 0, 0);
       return;
     }
 
     const ensured = await ensureDailyCredits(user.id, user.email, role, premiumStatus);
 
     if (ensured.unlimited) {
-      void persistUnlockWindow(user.id, moduleKey, expiresAt);
-      res.json({ credits: (profile?.credits as number | undefined) ?? 0, expiresAt, cost: 0 });
+      await finishUnlock((profile?.credits as number | undefined) ?? 0, 0);
       return;
     }
 
@@ -262,7 +315,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    const reason = `Content spark: unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 20-min window`;
+    const reason = `Content spark: unlocked ${category} (${identityKey}) for 20-min window`;
     const remaining = await spendCredits(user.id, cost, reason);
 
     if (remaining === null) {
@@ -271,8 +324,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    void persistUnlockWindow(user.id, moduleKey, expiresAt);
-    res.json({ credits: remaining, expiresAt, cost });
+    await finishUnlock(remaining, cost);
   } catch (err: any) {
     console.error("Unlock error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });

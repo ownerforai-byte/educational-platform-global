@@ -1,3 +1,4 @@
+import { readFileSync } from "node:fs";
 import http from "node:http";
 import type { AddressInfo } from "node:net";
 import express from "express";
@@ -246,6 +247,83 @@ afterAll(async () => {
 
 beforeEach(() => {
   h.reset();
+});
+
+describe("database security migration invariants", () => {
+  const sql = readFileSync(
+    new URL(
+      "../../src/db/migrations/036_service_role_only_social_tables.sql",
+      import.meta.url,
+    ),
+    "utf8",
+  )
+    .replace(/--.*$/gm, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+
+  const serviceRoleOnlyTables = [
+    "profile_follows",
+    "storage_objects",
+    "community_feed_reposts",
+    "social_notifications",
+    "community_feed_reports",
+    "social_blocks",
+  ];
+
+  it.each(serviceRoleOnlyTables)(
+    "enables RLS and reserves public.%s for the service role",
+    (table) => {
+      expect(sql).toContain(
+        `alter table public.${table} enable row level security;`,
+      );
+      expect(sql).toContain(
+        `revoke all on table public.${table} from anon, authenticated;`,
+      );
+      expect(sql).toContain(
+        `grant all on table public.${table} to service_role;`,
+      );
+    },
+  );
+
+  it("limits authenticated access-request updates to delivery metadata", () => {
+    expect(sql).toContain(
+      "revoke update on table public.user_access_requests from anon, authenticated;",
+    );
+    expect(sql).toContain(
+      "grant update (fcm_token, deep_link) on table public.user_access_requests to authenticated;",
+    );
+    expect(sql).not.toContain(
+      "grant update on table public.user_access_requests to authenticated;",
+    );
+    expect(sql).not.toContain(
+      "grant all on table public.user_access_requests to authenticated;",
+    );
+    expect(sql).not.toContain(
+      "revoke all on table public.user_access_requests from anon, authenticated;",
+    );
+  });
+
+  it("contains only rerunnable, non-destructive security statements", () => {
+    expect(sql).not.toMatch(/\b(?:create|drop|delete|truncate)\b/i);
+    const statements = sql
+      .split(";")
+      .map((statement) => statement.trim())
+      .filter(Boolean);
+    expect(statements).toEqual(
+      expect.arrayContaining([
+        "alter table public.profile_follows enable row level security",
+        "revoke update on table public.user_access_requests from anon, authenticated",
+        "grant update (fcm_token, deep_link) on table public.user_access_requests to authenticated",
+      ]),
+    );
+    expect(
+      statements.every((statement) =>
+        /^(?:alter table public\.[a-z_]+ enable row level security|revoke (?:all on table public\.[a-z_]+|update on table public\.user_access_requests) from anon, authenticated|grant (?:all on table public\.[a-z_]+ to service_role|update \(fcm_token, deep_link\) on table public\.user_access_requests to authenticated))$/.test(
+          statement,
+        ),
+      ),
+    ).toBe(true);
+  });
 });
 
 describe("direct editor approval gates", () => {

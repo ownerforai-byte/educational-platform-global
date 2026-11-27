@@ -1,7 +1,7 @@
 package com.ravikisan.platform.compose.ui.screens.search.local
 
-import com.ravikisan.platform.compose.ui.screens.search.ResultKind
-import com.ravikisan.platform.compose.ui.screens.search.SearchEntry
+import com.ravikisan.platform.compose.core.logic.ResultKind
+import com.ravikisan.platform.compose.core.logic.SearchEntry
 import com.ravikisan.platform.compose.ui.screens.study.local.FakeNotes
 import com.ravikisan.platform.compose.ui.screens.study.local.FakeSyllabus
 

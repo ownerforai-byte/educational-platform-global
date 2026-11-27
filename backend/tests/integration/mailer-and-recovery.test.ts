@@ -234,7 +234,7 @@ describe("Reset Password flow (POST /api/auth/reset-password)", () => {
     expect(body.error).toContain("between 8 and 72 characters");
   });
 
-  test("returns 400 when both code and token are missing", async () => {
+  test("returns 400 when the recovery code is missing", async () => {
     const res = await fetch(`${baseUrl}/api/auth/reset-password`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -288,7 +288,26 @@ describe("Reset Password flow (POST /api/auth/reset-password)", () => {
     });
   });
 
-  test("successfully resets password using recovery access token", async () => {
+  test("rejects Supabase recovery codes while Firebase auth is active", async () => {
+    const original = process.env.USE_FIREBASE_AUTH;
+    process.env.USE_FIREBASE_AUTH = "true";
+    try {
+      const res = await fetch(`${baseUrl}/api/auth/reset-password`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password: "brandNewSecurePassword2026", code: "valid-pkce-code" }),
+      });
+
+      expect(res.status).toBe(400);
+      expect(mocked.auth.exchangeCodeForSession).not.toHaveBeenCalled();
+      expect(mocked.auth.admin.updateUserById).not.toHaveBeenCalled();
+    } finally {
+      if (original === undefined) delete process.env.USE_FIREBASE_AUTH;
+      else process.env.USE_FIREBASE_AUTH = original;
+    }
+  });
+
+  test("rejects an ordinary session token as password-reset proof", async () => {
     mocked.auth.getUser.mockResolvedValueOnce({
       data: { user: { id: "user-target-2", email: "student2@example.com" } },
       error: null,
@@ -301,15 +320,13 @@ describe("Reset Password flow (POST /api/auth/reset-password)", () => {
     const res = await fetch(`${baseUrl}/api/auth/reset-password`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password: "brandNewSecurePassword2026", token: "valid-recovery-token" }),
+      body: JSON.stringify({ password: "brandNewSecurePassword2026", token: "ordinary-session-token" }),
     });
 
-    expect(res.status).toBe(200);
+    expect(res.status).toBe(400);
     const body = await res.json();
-    expect(body).toEqual({ success: true });
-    expect(mocked.auth.getUser).toHaveBeenCalledWith("valid-recovery-token");
-    expect(mocked.auth.admin.updateUserById).toHaveBeenCalledWith("user-target-2", {
-      password: "brandNewSecurePassword2026",
-    });
+    expect(body.error).toContain("missing or malformed");
+    expect(mocked.auth.getUser).not.toHaveBeenCalled();
+    expect(mocked.auth.admin.updateUserById).not.toHaveBeenCalled();
   });
 });

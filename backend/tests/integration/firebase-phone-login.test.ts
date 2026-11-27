@@ -8,6 +8,8 @@ const PHONE_E164 = "+9779812345678";
 const PHONE_SYNTH_EMAIL = `phone+9779812345678@phone.signin.harindrasah.com.np`;
 
 const verifyFirebaseIdToken = vi.fn();
+const firebaseCreateUser = vi.fn();
+const firebaseSendEmailVerificationEmail = vi.fn();
 
 vi.mock("../../src/db/supabase", () => {
   const admin = {
@@ -42,15 +44,13 @@ vi.mock("../../src/auth/firebase-admin-auth.js", () => ({
       const digits = phone.replace(/\D/g, "");
       if (digits) return `phone+${digits}@phone.signin.harindrasah.com.np`;
     }
-    const uid = verified.uid?.trim();
-    return uid ? `phone+${uid}@phone.signin.harindrasah.com.np` : null;
+    return null;
   },
   isFirebaseAuthReady: () => true,
   revokeFirebaseSessions: vi.fn(),
-  firebaseCreateUser: vi.fn(),
-  firebaseUpdatePassword: vi.fn(),
-  firebaseGetUserByEmail: vi.fn(),
+  firebaseCreateUser: (...args: unknown[]) => firebaseCreateUser(...args),
   firebaseSendPasswordResetEmail: vi.fn(),
+  firebaseSendEmailVerificationEmail: (...args: unknown[]) => firebaseSendEmailVerificationEmail(...args),
 }));
 
 vi.mock("../../src/services/auth-profile.js", () => ({
@@ -133,6 +133,7 @@ beforeEach(() => {
     emailVerified: false,
     providerIds: ["phone"],
   });
+  firebaseSendEmailVerificationEmail.mockResolvedValue(true);
 });
 
 afterEach(() => {
@@ -160,6 +161,34 @@ afterAll(async () => {
 });
 
 describe("firebase phone login", () => {
+  test("anonymous Firebase identities cannot create a login or protected session", async () => {
+    verifyFirebaseIdToken.mockResolvedValue({
+      uid: "anonymous-user",
+      email: null,
+      phoneNumber: null,
+      displayName: null,
+      emailVerified: false,
+      providerIds: ["anonymous"],
+    });
+
+    const login = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idToken: PHONE_TOKEN }),
+    });
+    expect(login.status).toBe(401);
+    expect(setCookiesOf(login).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+
+    const me = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Cookie: `sb-access-token=${PHONE_TOKEN}` },
+    });
+    expect(me.status).toBe(401);
+    expect(verifyFirebaseIdToken).toHaveBeenCalledTimes(2);
+    expect(verifyFirebaseIdToken).toHaveBeenNthCalledWith(1, PHONE_TOKEN, { checkRevoked: true });
+    expect(verifyFirebaseIdToken).toHaveBeenNthCalledWith(2, PHONE_TOKEN, { checkRevoked: true });
+    expect(mocked.from).not.toHaveBeenCalled();
+  });
+
   test("POST /login accepts idToken from phone sign-in and issues a session cookie", async () => {
     mockProfiles({ role: "member", access_status: "ACTIVE", plan: "member", premium_status: false });
 
@@ -170,7 +199,7 @@ describe("firebase phone login", () => {
     });
 
     expect(res.status).toBe(200);
-    expect(verifyFirebaseIdToken).toHaveBeenCalledWith(PHONE_TOKEN);
+    expect(verifyFirebaseIdToken).toHaveBeenCalledWith(PHONE_TOKEN, { checkRevoked: true });
     const body = await res.json();
     expect(body.user).toMatchObject({ id: PHONE_UID, email: PHONE_SYNTH_EMAIL, role: "member" });
     expect(body.accessToken).toBe(PHONE_TOKEN);
@@ -191,5 +220,103 @@ describe("firebase phone login", () => {
       code: "FIREBASE_CLIENT_AUTH",
     });
     expect(verifyFirebaseIdToken).not.toHaveBeenCalled();
+  });
+
+  test("protected routes reject an unverified Firebase email identity", async () => {
+    verifyFirebaseIdToken.mockResolvedValueOnce({
+      uid: "unverified-email-user",
+      email: "student@example.com",
+      phoneNumber: null,
+      emailVerified: false,
+      providerIds: ["password"],
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Cookie: `sb-access-token=${PHONE_TOKEN}` },
+    });
+
+    expect(res.status).toBe(401);
+    expect(verifyFirebaseIdToken).toHaveBeenCalledWith(PHONE_TOKEN, { checkRevoked: true });
+    expect(mocked.from).not.toHaveBeenCalled();
+  });
+
+  test("POST /login rejects an unverified email identity without issuing a session", async () => {
+    verifyFirebaseIdToken.mockResolvedValueOnce({
+      uid: "unverified-email-user",
+      email: "student@example.com",
+      phoneNumber: null,
+      displayName: "Email Student",
+      emailVerified: false,
+      providerIds: ["password"],
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idToken: "unverified-email-token" }),
+    });
+
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ code: "EMAIL_CONFIRMATION_REQUIRED" });
+    expect(firebaseSendEmailVerificationEmail).toHaveBeenCalledWith(
+      "student@example.com",
+      expect.stringMatching(/\/login$/),
+    );
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+  });
+
+  test("POST /signup with an unverified email token returns 202 without a session", async () => {
+    verifyFirebaseIdToken.mockResolvedValueOnce({
+      uid: "unverified-signup-user",
+      email: "newstudent@example.com",
+      phoneNumber: null,
+      displayName: null,
+      emailVerified: false,
+      providerIds: ["password"],
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ idToken: "unverified-signup-token", fullName: "New Student" }),
+    });
+
+    expect(res.status).toBe(202);
+    expect(await res.json()).toMatchObject({
+      code: "EMAIL_CONFIRMATION_REQUIRED",
+      user: null,
+      accessToken: null,
+    });
+    expect(firebaseSendEmailVerificationEmail).toHaveBeenCalledWith(
+      "newstudent@example.com",
+      expect.stringMatching(/\/login$/),
+    );
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+  });
+
+  test("server-side signup never marks a new Firebase email as verified", async () => {
+    firebaseCreateUser.mockResolvedValueOnce({
+      uid: "server-created-user",
+      email: "servercreated@example.com",
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "servercreated@example.com",
+        password: "strongPassword123",
+        fullName: "Server Created",
+      }),
+    });
+
+    expect(res.status).toBe(202);
+    expect(firebaseCreateUser).toHaveBeenCalledWith({
+      email: "servercreated@example.com",
+      password: "strongPassword123",
+      displayName: "Server Created",
+    });
+    expect(firebaseCreateUser.mock.calls[0][0]).not.toHaveProperty("emailVerified");
+    expect(setCookiesOf(res).some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
   });
 });

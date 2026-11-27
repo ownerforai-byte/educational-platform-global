@@ -90,6 +90,12 @@ describe("API machine-code mappings", () => {
     expect(authFailureMessage(err, "signup")).toContain("verify");
   });
 
+  it("maps email confirmation failures to an actionable message", () => {
+    const err = Object.assign(new Error("x"), { status: 403, code: "EMAIL_CONFIRMATION_REQUIRED" });
+    expect(authFailureMessage(err, "login")).toContain("Confirm your email");
+    expect(authFailureMessage(err, "signup")).toContain("verification link");
+  });
+
   it("maps device limit and access outcomes", () => {
     expect(
       authFailureMessage(Object.assign(new Error("x"), { code: "DEVICE_SIGNUP_LIMIT" }), "signup"),

@@ -56,13 +56,14 @@ const AI_IMAGE_MAX_REQUESTS = positiveNumber(
   process.env.AI_IMAGE_RATE_LIMIT_MAX_REQUESTS,
   12,
 );
+// Shared per-account daily budget for every paid community/curation reply.
 const COMMUNITY_AI_REPLY_MAX_REQUESTS = positiveNumber(
   process.env.COMMUNITY_AI_REPLY_MAX_REQUESTS,
   6,
 );
 const COMMUNITY_AI_REPLY_WINDOW_MS = positiveNumber(
   process.env.COMMUNITY_AI_REPLY_WINDOW_MS,
-  10 * 60 * 1000,
+  24 * 60 * 60 * 1000,
 );
 
 type Tier = "support" | "auth" | "oauth" | "password-reset" | "guest-ai" | "ai-image" | "community-ai-reply" | "default" | "default-unlimited";
@@ -171,7 +172,10 @@ export function communityAiReplyLimit(req: Request, res: Response, next: NextFun
   void applyLimit(req, res, next, "community-ai-reply", user.id);
 }
 
-/** Same budget as the Ask AI button. False when this account is over the limit. */
+/**
+ * Same budget as the Ask AI button. Paid callers fail closed on store errors:
+ * an unavailable counter must never become an unlimited provider budget.
+ */
 export async function reserveCommunityAiReply(userId: string): Promise<boolean> {
   const limit = TIERS["community-ai-reply"];
   if (!Number.isFinite(limit.max)) return true;
@@ -179,7 +183,7 @@ export async function reserveCommunityAiReply(userId: string): Promise<boolean> 
     const entry = await getRateLimitStore().hit(`community-ai-reply:${userId}`, limit.windowMs);
     return entry.count <= limit.max;
   } catch {
-    return !failClosedOnStoreError;
+    return false;
   }
 }
 

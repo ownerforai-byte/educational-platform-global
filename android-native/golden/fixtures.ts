@@ -326,3 +326,44 @@ export const ANALYTICS_ENTRIES: PlanEntryFixture[] = [
 
 /** Pinned "now" for dailyStudyActivity golden vectors (TS reads `new Date()` internally). */
 export const PINNED_NOW_ISO = "2026-01-15T10:30:00.000Z";
+
+/* ── Personal notes (Wave 1 port fixtures) ───────────────────────── */
+
+export interface NoteFixture { id: string; title: string; body: string; quote: string; subjectKey: string; createdAt: string; updatedAt: string }
+
+export const NOTES_SEED: NoteFixture[] = [
+  { id: "n1", title: "Newton's second law", body: "F = ma holds in inertial frames.", quote: "The acceleration of an object...", subjectKey: "class-11-notes/physics", createdAt: "2026-01-01T10:00:00.000Z", updatedAt: "2026-01-02T10:00:00.000Z" },
+  { id: "n2", title: "Mole concept", body: "One mole = 6.022e23 particles.", quote: "", subjectKey: "class-11-notes/chemistry", createdAt: "2026-01-03T10:00:00.000Z", updatedAt: "2026-01-05T10:00:00.000Z" },
+  { id: "n3", title: "Integration tricks", body: "Substitution when the derivative of the inner function appears.", quote: "", subjectKey: "class-12-notes/mathematics", createdAt: "2026-01-04T10:00:00.000Z", updatedAt: "2026-01-04T10:00:00.000Z" },
+];
+
+export const NOTE_DRAFT_VALID = { title: "  Kinematics summary  ", body: "  v = u + at  ", quote: "  Equations of motion  ", subjectKey: "class-11-notes/physics" };
+export const NOTE_DRAFT_EMPTY_TITLE = { title: "   ", body: "x", quote: "", subjectKey: "" };
+export const NOTE_DRAFT_LONG_TITLE = { title: "t".repeat(121), body: "x", quote: "", subjectKey: "" };
+export const NOTE_DRAFT_EMPTY_BODY_AND_QUOTE = { title: "Title", body: "   ", quote: "", subjectKey: "" };
+export const NOTE_DRAFT_LONG_BODY = { title: "Title", body: "b".repeat(5001), quote: "", subjectKey: "" };
+export const NOTE_DRAFT_LONG_QUOTE = { title: "Title", body: "x", quote: "q".repeat(601), subjectKey: "" };
+
+export const NOTES_JUNK: unknown = [
+  { id: "ok", title: "t", body: "b", quote: "q", subjectKey: "s", createdAt: "c", updatedAt: "u" },
+  { id: 42, title: "t", body: "b", quote: "q", subjectKey: "s", createdAt: "c", updatedAt: "u" },
+  { title: "missing id" },
+  "not-an-object",
+  null,
+  { id: "no-body", title: "t", quote: "q", subjectKey: "s", createdAt: "c", updatedAt: "u" },
+];
+
+/* ── Community rules (Wave 1 port fixtures) ──────────────────────── */
+
+export const COMMUNITY_QUESTIONS = {
+  short: "help me",
+  exactly8: "help me!",
+  long: "q".repeat(1001),
+  valid: "  Why does ice float on water?  ",
+};
+
+export const ASK_PROMPT_CASES = [
+  { question: "  Explain Lenz's law  ", subjectName: "Physics" },
+  { question: "  Explain Lenz's law  ", subjectName: "" },
+  { question: "Explain Lenz's law", subjectName: undefined },
+];

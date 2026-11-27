@@ -3,24 +3,13 @@
 /**
  * Persisted session ("stay signed in") store.
  *
- * The access token lives in an httpOnly cookie; this store only caches the
- * *validated user* (and optionally a JWT `exp` for silent renewal timing).
- * Without it, every reload started signed-out and waited for `GET /api/auth/me`
- * — and because that call is an `auth/*` path the api-client deliberately never
- * refreshes, an expired (1 hour) access token answered 401 and the provider
- * cleared the session even though the 30-day refresh cookie was still valid.
+ * The access and refresh tokens live in httpOnly cookies; this store only
+ * caches the last server-validated user and the access token's expiry hint.
+ * Keeping the expiry without the token lets the provider renew before a
+ * request fails without creating an XSS-exfiltratable credential copy.
  *
- * This module keeps the last server-validated user (plus expiry hint) so:
- *   • the UI renders the correct state immediately on reload (no flicker,
- *     no spurious "Sign in" button),
- *   • the provider can tell "definitely signed out" apart from "we could not
- *     reach the backend" (cold start, offline) and keep the session in the
- *     second case,
- *   • the access token's own `exp` is readable, so renewal can happen *before*
- *     a request is ever rejected.
- *
- * The cache is a *display* concern only: every real request still carries the
- * cookie/bearer token and the backend stays the only authority on access.
+ * The cache is a display/renewal concern only: every real request still
+ * carries the cookie/bearer token and the backend remains the sole authority.
  */
 import type { SessionUser } from "@/features/auth/types";
 
@@ -29,7 +18,6 @@ const SESSION_KEY = "rvk:session";
 
 export interface CachedSession {
   user: SessionUser;
-  accessToken: string | null;
   /** Epoch ms at which the access token stops being accepted (JWT `exp`). */
   expiresAt: number | null;
   /** Epoch ms this record was written. */
@@ -71,14 +59,17 @@ export function readCachedSession(): CachedSession | null {
   try {
     const raw = window.localStorage.getItem(SESSION_KEY);
     if (!raw) return null;
-    const parsed = JSON.parse(raw) as Partial<CachedSession>;
+    const parsed = JSON.parse(raw) as Partial<CachedSession> & { accessToken?: unknown };
     if (!isSessionUser(parsed.user)) return null;
-    return {
+    const cached: CachedSession = {
       user: parsed.user,
-      accessToken: typeof parsed.accessToken === "string" ? parsed.accessToken : null,
       expiresAt: typeof parsed.expiresAt === "number" ? parsed.expiresAt : null,
       savedAt: typeof parsed.savedAt === "number" ? parsed.savedAt : 0,
     };
+    if (typeof parsed.accessToken === "string") {
+      window.localStorage.setItem(SESSION_KEY, JSON.stringify(cached));
+    }
+    return cached;
   } catch {
     return null;
   }
@@ -92,11 +83,9 @@ export function writeCachedSession(
   if (typeof window === "undefined") return;
   if (!isSessionUser(user)) return;
   try {
-    const token = accessToken ?? null;
     const record: CachedSession = {
       user,
-      accessToken: token,
-      expiresAt: decodeTokenExpiryMs(token),
+      expiresAt: decodeTokenExpiryMs(accessToken),
       savedAt: Date.now(),
     };
     window.localStorage.setItem(SESSION_KEY, JSON.stringify(record));
@@ -124,8 +113,9 @@ export function isTokenExpiringSoon(
   token: string | null | undefined,
   skewMs: number,
 ): boolean {
-  const candidate = token ?? readCachedSession()?.accessToken ?? null;
-  const expiresAt = decodeTokenExpiryMs(candidate);
+  const expiresAt = token
+    ? decodeTokenExpiryMs(token)
+    : readCachedSession()?.expiresAt ?? null;
   if (expiresAt === null) return true;
   return expiresAt - Date.now() <= skewMs;
 }

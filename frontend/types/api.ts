@@ -37,6 +37,7 @@ export interface AuthSignupResponse {
   user: SessionUser | null;
   message?: string;
   accessToken?: string;
+  code?: string;
   /** Owner-approval flow: signed token for the /welcome status screen. */
   statusToken?: string;
   accessStatus?: "PENDING" | "ACTIVE" | "REJECTED";
@@ -509,6 +510,11 @@ export interface EvaluateAnswersResponse {
   summary: string;
 }
 
+export interface QuizResponse {
+  selectedIndex?: number;
+  answer?: string;
+}
+
 export interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
   topic?: string;
@@ -516,6 +522,8 @@ export interface GenerateQuestionsResponse {
   remaining?: number;
   /** Guest pool only: the daily limit the remaining was measured against. */
   limit?: number;
+  attemptId?: string;
+  expiresAt?: string;
 }
 
 /* ------------------------------------------------------------------ *

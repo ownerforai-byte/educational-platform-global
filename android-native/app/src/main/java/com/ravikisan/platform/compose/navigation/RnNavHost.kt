@@ -1,5 +1,7 @@
 package com.ravikisan.platform.compose.navigation
 
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
@@ -12,12 +14,15 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -26,6 +31,7 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
 import androidx.navigation.navDeepLink
+import com.ravikisan.platform.compose.ui.components.placeholder.ComingToNative
 import com.ravikisan.platform.compose.ui.screens.HomeScreen
 import com.ravikisan.platform.compose.ui.screens.SettingsScreen
 import com.ravikisan.platform.compose.ui.screens.ai.VeerChatScreen
@@ -40,6 +46,24 @@ import com.ravikisan.platform.compose.ui.screens.search.SearchScreen
 import com.ravikisan.platform.compose.ui.screens.social.CommunityScreen
 import com.ravikisan.platform.compose.ui.screens.study.StudyUnitScreen
 import com.ravikisan.platform.compose.ui.screens.study.SyllabusScreen
+import com.ravikisan.platform.compose.ui.screens.journal.JournalScreen
+import com.ravikisan.platform.compose.ui.screens.studyplan.GoalsScreen
+import com.ravikisan.platform.compose.ui.screens.studyplan.OnboardingScreen
+import com.ravikisan.platform.compose.ui.screens.studyplan.ScheduleScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.AnnouncementsScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.ChangelogScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.ExamCountdownScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.FeedbackScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.KnowledgeHubScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.KnowledgeTopicScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.LabDetailScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.LabHubScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.LevelsScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.NoticeScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.PeriodicTableScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.ReferralsScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.SiteIndexScreen
+import com.ravikisan.platform.compose.ui.screens.wave2.StatusScreen
 
 /**
  * Typed route names for the app shell. Every destination from the migration
@@ -177,16 +201,44 @@ object WebParity {
         "/settings" to Routes.SETTINGS,
         "/notifications" to Routes.NOTIFICATIONS,
         "/syllabus/additions" to Routes.LEARN, // plan §2: "Syllabus by Year → learn (already live)"
+        // Wave 1 — device-local goals and the matching website journal placeholder
+        "/onboarding" to Routes.ONBOARDING,
+        "/goals" to Routes.GOALS,
+        "/schedule" to Routes.SCHEDULE,
+        "/journal" to Routes.JOURNAL,
+        // Wave 2 — Labs & interactives (6)
+        "/lab" to Routes.LAB,
+        "/lab/3d" to Routes.LAB_TOPIC,
+        "/lab/bio-3d-organelles" to Routes.LAB_TOPIC,
+        "/lab/theory" to Routes.LAB_TOPIC,
+        "/ad-p-table" to Routes.AD_P_TABLE,
+        "/periodic-table" to Routes.PERIODIC_TABLE,
+        // Wave 2 — General-knowledge banks (8)
+        "/loksewa" to Routes.LOKSEWA,
+        "/loksewa/geography-of-nepal" to Routes.LOKSEWA_TOPIC,
+        "/loksewa/history" to Routes.LOKSEWA_TOPIC,
+        "/loksewa/environment" to Routes.LOKSEWA_TOPIC,
+        "/world-knowledge" to Routes.WORLD_KNOWLEDGE,
+        "/world-knowledge/general-knowledge" to Routes.WORLD_KNOWLEDGE_TOPIC,
+        "/world-knowledge/current-affairs" to Routes.WORLD_KNOWLEDGE_TOPIC,
+        "/world-knowledge/global-topics" to Routes.WORLD_KNOWLEDGE_TOPIC,
+        // Wave 2 — News & thin surfaces (9)
+        "/announcements" to Routes.ANNOUNCEMENTS,
+        "/changelog" to Routes.CHANGELOG,
+        "/notice" to Routes.NOTICE,
+        "/exam-countdown" to Routes.EXAM_COUNTDOWN,
+        "/referrals" to Routes.REFERRALS,
+        "/site-index" to Routes.SITE_INDEX,
+        "/levels" to Routes.LEVELS,
+        "/feedback" to Routes.FEEDBACK,
+        "/status" to Routes.STATUS,
     )
 
     /** Remaining website sections — honest "Coming to native" placeholders. */
     val stubs: List<Stub> = listOf(
         // P2 personal & progress
         Stub("/dashboard", Routes.DASHBOARD, "Dashboard"),
-        Stub("/onboarding", Routes.ONBOARDING, "Set Study Goals"),
-        Stub("/goals", Routes.GOALS, "Study Goals"),
         Stub("/my-notes", Routes.MY_NOTES, "My Notes"),
-        Stub("/journal", Routes.JOURNAL, "Study Journal"),
         Stub("/streaks", Routes.STREAKS, "Streaks and Badges"),
         Stub("/leaderboard", Routes.LEADERBOARD, "Leaderboard"),
         Stub("/certificates", Routes.CERTIFICATES, "Certificates"),
@@ -196,7 +248,6 @@ object WebParity {
         Stub("/achievements", Routes.ACHIEVEMENTS, "Achievements"),
         // P3 study tools
         Stub("/planner", Routes.PLANNER, "Weekly Planner"),
-        Stub("/schedule", Routes.SCHEDULE, "Study Schedule"),
         Stub("/srs", Routes.SRS, "Spaced Repetition"),
         Stub("/mock-exams", Routes.MOCK_EXAMS, "Mock Exams"),
         Stub("/analytics", Routes.ANALYTICS, "Analytics"),
@@ -236,15 +287,7 @@ object WebParity {
         Stub("/notes", Routes.NOTES_ARCHIVE, "Notes Archive"),
         Stub("/exams", Routes.EXAMS, "Exam Hub"),
         Stub("/revision", Routes.REVISION, "Quick Revision"),
-        Stub("/announcements", Routes.ANNOUNCEMENTS, "Announcements"),
-        Stub("/changelog", Routes.CHANGELOG, "What's New"),
         // Stem & reference
-        Stub("/lab", Routes.LAB, "Virtual 3D Labs"),
-        Stub("/lab/3d", Routes.LAB_TOPIC, "3D Video Hub"),
-        Stub("/lab/bio-3d-organelles", Routes.LAB_TOPIC, "Cell Organelles 3D"),
-        Stub("/lab/theory", Routes.LAB_TOPIC, "Lab Theory Hub"),
-        Stub("/ad-p-table", Routes.AD_P_TABLE, "Ad P Table"),
-        Stub("/periodic-table", Routes.PERIODIC_TABLE, "Periodic Table & CEE"),
         Stub("/formulas", Routes.FORMULAS, "Formula Sheets"),
         Stub("/theorems", Routes.THEOREMS, "Theorems & Proofs"),
         Stub("/derivations", Routes.DERIVATIONS, "Formula Derivations"),
@@ -269,7 +312,6 @@ object WebParity {
         Stub("/ai-quiz/history", Routes.AI_QUIZ_HISTORY, "Quiz History"),
         Stub("/practice/history", Routes.PRACTICE_HISTORY, "Practice History"),
         Stub("/quiz", Routes.QUIZ_BANK, "Practice Quiz Bank"),
-        Stub("/exam-countdown", Routes.EXAM_COUNTDOWN, "Exam Countdown"),
         Stub("/exams/neb", Routes.EXAM_TRACK, "NEB Board Exam"),
         Stub("/exams/cee", Routes.EXAM_TRACK, "CEE Medical Entrance"),
         Stub("/exams/ioe", Routes.EXAM_TRACK, "IOE Engineering Entrance"),
@@ -284,26 +326,12 @@ object WebParity {
         Stub("/knowledge/byakaran", Routes.KNOWLEDGE_TOPIC, "Nepali Byakaran"),
         Stub("/knowledge/analytical-geometry", Routes.KNOWLEDGE_TOPIC, "Analytical Geometry"),
         Stub("/lessons", Routes.LESSONS, "Lessons Library"),
-        Stub("/loksewa", Routes.LOKSEWA, "Loksewa GK"),
-        Stub("/loksewa/geography-of-nepal", Routes.LOKSEWA_TOPIC, "Geography of Nepal"),
-        Stub("/loksewa/history", Routes.LOKSEWA_TOPIC, "Loksewa History"),
-        Stub("/loksewa/environment", Routes.LOKSEWA_TOPIC, "Loksewa Environment"),
-        Stub("/world-knowledge", Routes.WORLD_KNOWLEDGE, "World Knowledge"),
-        Stub("/world-knowledge/general-knowledge", Routes.WORLD_KNOWLEDGE_TOPIC, "General Knowledge"),
-        Stub("/world-knowledge/current-affairs", Routes.WORLD_KNOWLEDGE_TOPIC, "Current Affairs"),
-        Stub("/world-knowledge/global-topics", Routes.WORLD_KNOWLEDGE_TOPIC, "Global Topics"),
         Stub("/pdfs", Routes.PDFS, "PDF Library"),
         // P5 account & community
         Stub("/profile/edit", Routes.PROFILE_EDIT, "Edit Profile"),
         Stub("/users", Routes.USERS, "Find Students"),
         Stub("/downloads", Routes.DOWNLOADS, "Offline Study"),
         Stub("/billing", Routes.BILLING, "Billing"),
-        Stub("/referrals", Routes.REFERRALS, "Referrals"),
-        Stub("/site-index", Routes.SITE_INDEX, "Everything Index"),
-        Stub("/levels", Routes.LEVELS, "Curriculum Levels"),
-        Stub("/feedback", Routes.FEEDBACK, "Send Feedback"),
-        Stub("/status", Routes.STATUS, "Platform Status"),
-        Stub("/notice", Routes.NOTICE, "Notice Board"),
         Stub("/credits", Routes.CREDITS, "Credits"),
     )
 
@@ -504,6 +532,141 @@ fun RnNavHost() {
                     onOpenAuth = { navController.navigate(Routes.AUTH) },
                 )
             }
+            composable(
+                route = Routes.ONBOARDING,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/onboarding" }),
+            ) {
+                OnboardingScreen(onSaved = { navController.navigate(Routes.HOME) { launchSingleTop = true } })
+            }
+            composable(
+                route = Routes.GOALS,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/goals" }),
+            ) {
+                GoalsScreen(onOpenOnboarding = { navController.navigate(Routes.ONBOARDING) })
+            }
+            composable(
+                route = Routes.SCHEDULE,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/schedule" }),
+            ) {
+                ScheduleScreen(
+                    onOpenGoals = { navController.navigate(Routes.GOALS) },
+                    onOpenPlanner = { navController.navigate(Routes.PLANNER) },
+                )
+            }
+            composable(
+                route = Routes.JOURNAL,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/journal" }),
+            ) {
+                JournalScreen(onBackToStudyDesk = { navController.navigate(Routes.HOME) { launchSingleTop = true } })
+            }
+
+            // ── Wave 2: Labs, GK banks & thin surfaces ──────────────────────
+            composable(
+                route = Routes.LAB,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/lab" }),
+            ) {
+                LabHubScreen(onOpenLab = { id -> navController.navigate("lab/$id") })
+            }
+            composable(
+                route = Routes.LAB_TOPIC,
+                arguments = listOf(navArgument("id") { type = NavType.StringType }),
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/lab/{id}" }),
+            ) { entry ->
+                LabDetailScreen(labId = entry.arguments?.getString("id").orEmpty())
+            }
+            composable(
+                route = Routes.AD_P_TABLE,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/ad-p-table" }),
+            ) { PeriodicTableScreen(isAdvanced = true) }
+            composable(
+                route = Routes.PERIODIC_TABLE,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/periodic-table" }),
+            ) { PeriodicTableScreen(isAdvanced = false) }
+
+            composable(
+                route = Routes.LOKSEWA,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/loksewa" }),
+            ) {
+                KnowledgeHubScreen(
+                    kind = "loksewa",
+                    title = "Loksewa GK",
+                    subtitle = "Prepare for Loksewa with curated materials and practice sets.",
+                    onOpenTopic = { slug -> navController.navigate("loksewa/$slug") },
+                )
+            }
+            composable(
+                route = Routes.LOKSEWA_TOPIC,
+                arguments = listOf(navArgument("topic") { type = NavType.StringType }),
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/loksewa/{topic}" }),
+            ) { entry ->
+                KnowledgeTopicScreen(
+                    kind = "loksewa",
+                    slug = entry.arguments?.getString("topic").orEmpty(),
+                )
+            }
+            composable(
+                route = Routes.WORLD_KNOWLEDGE,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/world-knowledge" }),
+            ) {
+                KnowledgeHubScreen(
+                    kind = "world-knowledge",
+                    title = "World Knowledge",
+                    subtitle = "Explore general knowledge, current affairs, and global topics.",
+                    onOpenTopic = { slug -> navController.navigate("world-knowledge/$slug") },
+                )
+            }
+            composable(
+                route = Routes.WORLD_KNOWLEDGE_TOPIC,
+                arguments = listOf(navArgument("topic") { type = NavType.StringType }),
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/world-knowledge/{topic}" }),
+            ) { entry ->
+                KnowledgeTopicScreen(
+                    kind = "world-knowledge",
+                    slug = entry.arguments?.getString("topic").orEmpty(),
+                )
+            }
+
+            composable(
+                route = Routes.ANNOUNCEMENTS,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/announcements" }),
+            ) { AnnouncementsScreen() }
+            composable(
+                route = Routes.CHANGELOG,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/changelog" }),
+            ) { ChangelogScreen() }
+            composable(
+                route = Routes.NOTICE,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/notice" }),
+            ) { NoticeScreen() }
+            composable(
+                route = Routes.EXAM_COUNTDOWN,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/exam-countdown" }),
+            ) { ExamCountdownScreen() }
+            composable(
+                route = Routes.REFERRALS,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/referrals" }),
+            ) { ReferralsScreen() }
+            composable(
+                route = Routes.SITE_INDEX,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/site-index" }),
+            ) {
+                SiteIndexScreen(onNavigatePath = { href ->
+                    val route = WebParity.live[href]
+                    if (route != null) navController.navigate(route)
+                })
+            }
+            composable(
+                route = Routes.LEVELS,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/levels" }),
+            ) { LevelsScreen() }
+            composable(
+                route = Routes.FEEDBACK,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/feedback" }),
+            ) { FeedbackScreen() }
+            composable(
+                route = Routes.STATUS,
+                deepLinks = listOf(navDeepLink { uriPattern = "${DeepLinks.WEB_ROOT}/status" }),
+            ) { StatusScreen() }
 
             // ── Parity stubs (Agent 1, parity plan B0) ──────────────────────
             // One destination per remaining website section, registered from
@@ -517,7 +680,19 @@ fun RnNavHost() {
                     route = stub.route,
                     arguments = argNames.map { name -> navArgument(name) { type = NavType.StringType } },
                 ) {
-                    StubScreen(title = stub.title)
+                    // RQ-11: the ONE plan-mandated placeholder (parity plan §0.6) —
+                    // replaces the older StubScreen (deleted); centered like the
+                    // pre-parity stubs so the honest card doesn't hug the top edge.
+                    Surface(modifier = Modifier.fillMaxSize()) {
+                        Box(
+                            modifier = Modifier
+                                .fillMaxSize()
+                                .padding(24.dp),
+                            contentAlignment = Alignment.Center,
+                        ) {
+                            ComingToNative(sectionTitle = stub.title)
+                        }
+                    }
                 }
             }
         }

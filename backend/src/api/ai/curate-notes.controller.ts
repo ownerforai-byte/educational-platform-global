@@ -1,5 +1,6 @@
 import { Router, type Request, type Response } from "express";
-import { requireAuth } from "../../middleware/auth.js";
+import { requireAuth, type AuthedRequest } from "../../middleware/auth.js";
+import { reserveCommunityAiReply } from "../../middleware/rateLimit.js";
 import { curateNotes, type CuratePlace } from "../../ai/curate-notes.js";
 
 /**
@@ -30,6 +31,16 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
   };
 
   try {
+    const user = (req as AuthedRequest).user;
+    if (!user) {
+      res.status(401).json({ error: "Unauthorized" });
+      return;
+    }
+    if (!(await reserveCommunityAiReply(user.id))) {
+      res.setHeader("Cache-Control", "no-store");
+      res.status(429).json({ error: "AI budget exhausted. Try again later." });
+      return;
+    }
     const notes = await curateNotes(place);
     res.setHeader("Cache-Control", "no-store");
     res.json(notes);

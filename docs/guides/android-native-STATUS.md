@@ -76,6 +76,23 @@ rendering and Phase 7 labs/mindmaps.
 
 ## 4. DONE — verified work log (newest first)
 
+### Agent 5 (owner-directed) — Wave 1 kickoff: PersonalNotes.kt + CommunityRules.kt ports with golden vectors
+
+**Campaign:** [`android-native-parity-waves.md`](android-native-parity-waves.md) (saved this session — three-wave split of the 117 placeholders: Wave 1 = 39 independent, Wave 2 = 23 independent, Wave 3 = 55 relateds-in-clusters, runs last). Executing **Wave 1 in order**; first order = W3 ports.
+
+**EDITS:**
+- `core/logic/PersonalNotes.kt` (+new) — port of `frontend/features/personal-notes/index.ts`: models, `validateNote` (TS messages verbatim), `addNote`/`updateNote`/`removeNote`/`filterNotes` (newest-first, case-insensitive), junk-tolerant `normalizeNotes`. Device-local storage stays platform-side (Room store is the next W3 order).
+- `core/logic/CommunityRules.kt` (+new) — port of `frontend/features/community/index.ts`: `CommunitySpace` mapping from the injected `GoalSubject` catalog (same deviation as `StudyGoals.kt`), `getCommunitySpace`, `buildAskPrompt` (TS truthiness on the subject prefix preserved), `validateQuestion` (8/1000 boundaries).
+- `golden/fixtures.ts` + `golden/generate-golden.ts` — note/community fixtures + two generator blocks; **golden catches**: real catalog `className` is "Class 11 Notes" (fixtures say "Class 11") — the community golden now embeds the REAL catalog rows so expected/catalog stay consistent; `validateQuestion` boundary is `<8` rejected (8 chars passes).
+- `app/src/test/resources/golden/{personal-notes,community}-golden.json` (+new) — outputs of the REAL TS.
+- `PersonalNotesGoldenTest.kt` (6 tests) + `CommunityRulesGoldenTest.kt` (4 tests).
+
+**VERIFIED:** `npx tsx --tsconfig android-native/golden/tsconfig.json android-native/golden/generate-golden.ts` → both goldens written; `./gradlew testDebugUnitTest` → **BUILD SUCCESSFUL, 160 tests / 0 failures** (from JUnit XML; 150 prior + 10 new).
+
+**Wave 1 remaining (next sessions, in order):** W3 — Room schema for device-local stores (notes/journal/goals/SRS state); W4 — screens for the 39 sections (device-local 8, mock-exams bind, class hubs 28, notes/revision readers); W1 — stub→live promotions + deep links per batch.
+
+**Classification:** [IMPORTANT CORE FILE] `core/logic/PersonalNotes.kt`, `core/logic/CommunityRules.kt`, `golden/fixtures.ts`, `golden/generate-golden.ts`, both golden JSONs, both test files; [CONTENT FILE] none.
+
 ### Agent 3 — Parity session 1: algorithm ports (SRS, mock exam, achievements, offline packs, goals+planner, analytics) with TS golden vectors
 
 ```
@@ -1184,6 +1201,8 @@ Crashlytics/R8 tuning, CI job `android-native-assemble`, real theme tokens,
 | 2026-11-26 | **Session 6 — fake→real swap EXECUTED (owner-directed)**: practice+quiz, search, community now on real APIs; 110/110 unit tests, APK builds. Details below. |
 | 2026-11-26 | **Session 7 — Firebase wired (owner + Firebase agent skills)**: `google-services.json` generated (gitignored, verified), app registered with 5 SHA-256 certs, Firebase BOM 33.7.0 deps added; **build green with google-services plugin active — APK 81.9 MB**. |
 | 2026-11-26 | **Session 8 — SECURITY HARDENING (owner-directed)**: FLAG_SECURE + recents-screenshot block, R8 keep rules, **reverted dangerous `firebase-pnv` dep + BOM 35.2.0** (supply-chain + Kotlin-incompat), removed unused perf SDK; build + tests green, APK 74.6 MB. |
+| 2026-11-26 | **Parity-campaign B0 verification (Agent 5)** — parity script contract + CI wiring verified, ledger honest (11 live / 117 placeholder / 0 not-started), 3/3 spot-checks on the real chain; **2 findings**: `ComingToNative` dead code (stubs render old `StubScreen`), B0 task-0 straddle relocation not done (`SyllabusSearchIndexSource` still in W4's tree). B0 = Done with carry-overs RQ-11/RQ-12. Details below. |
+| 2026-11-26 | **Parity carry-overs EXECUTED (owner-directed)** — RQ-12 straddle relocation done (search engine → `core/logic/`, index sources → `data/repository/`, 6 files rewired, behavior byte-identical) + RQ-11 done (`ComingToNative` now renders in all 117 stubs, `StubScreen.kt` deleted, parity-script detection extended); **compile + 150/150 tests + assembleDebug (78 MB APK) + parity check all green**. Details in §7. |
 
 ### 2026-11-26 — Supervisor edit review (Agent 5)
 
@@ -1247,6 +1266,26 @@ Crashlytics/R8 tuning, CI job `android-native-assemble`, real theme tokens,
 
 **Cross-cutting:** RQ-1, RQ-2 resolved and verified by build. Queue updated in AGENTS.md (RQ-3 open). No ownership violations found this session — every changed file sits in its owner's column.
 **§7 CONTINUE issued below.**
+
+### 2026-11-26 — Parity-campaign B0 verification review (Agent 5)
+
+**Scope:** no new worker session since session 8; this review verifies the parity plan's **B0 exit gate** and runs the §0.7 duty-4 spot-check. Method: opened every file named below in full; ran `node scripts/ci/native-parity-check.mjs` myself.
+
+**Parity script (W1) — OK.** Contract matches plan Appendix A exactly (LIVE/PLACEHOLDER/MISSING/EXCEPTION, exception-table markers in plan §1, ownerOnly cross-check, exit 1 on MISSING). Wired into `npm run check` via `scripts/ci/scoped-check.mjs:215`. Ledger output is script-generated and honest: **155 sections / 128 parity-relevant / 27 exceptions / 11 native-live / 117 placeholder / 0 not-started**. Stub registry (`WebParity.stubs`) covers every remaining section with typed routes + argument-parsing composables — B0 task 2 done.
+
+**Spot-checks (3 random live sections) — all pass on the real chain:**
+- `/search` — `SyllabusSearchIndexSource` builds from the real syllabus repository, Fresh/Cached/Unavailable honored. **But see finding 2.**
+- `/practice` — `PracticeRepository` real endpoint, offline contract honored end-to-end in `PracticeViewModel`.
+- `/notifications` — real `GET /api/notifications` + `PATCH /api/notifications/read`, auth-gated with `needsAuth` state, cursor-paginated. **Correction:** the session-6 §4 note calling notifications a "local list" is stale — the code is on the real chain (a later session swapped it); the §4 block stays as written per append-only rule, this entry is the correction of record.
+
+**Findings (must fix before B1 screens land on top):**
+1. **`ComingToNative` is dead code (W1/W4 duplication).** `ui/components/placeholder/ComingToNative.kt` exists per plan §0.6 but **nothing calls it** — the stub loop (`RnNavHost.kt:520`) renders the older `navigation/StubScreen.kt` instead. Two placeholder components with different copy ("Coming to native" vs "Coming in an upcoming phase"). Plan §0.6 says built once, used by all stubs. → W1 fix, filed as RQ-11.
+2. **B0 task 0 (straddle relocation) NOT done.** `SyllabusSearchIndexSource` still lives inside `ui/screens/search/SearchViewModel.kt:39` — Worker 4's tree — while `di/AppModule.kt` (W1's file) provides it. This is exactly the UI/data straddle §0.5 task 0 ordered relocated to `data/repository/`. → W3 fix + W1 provider-import update, filed as RQ-12.
+3. Documentation-only: stale session-6 notifications note (corrected above; no code action).
+
+**Build/tests:** not re-run this session — no Kotlin/TS code changed since session 8's verified green (`assembleDebug` + 0 test failures); the only executable check relevant to B0 (parity script) was run by me and is green.
+
+**Verdict: B0 = Done with two carry-over fixes (RQ-11, RQ-12) ordered below, required before any B1 stub→real promotion.** Classification of files read: all [IMPORTANT CORE FILE] (`RnNavHost.kt`, `StubScreen.kt`, `ComingToNative.kt`, `SearchViewModel.kt`, `AppModule.kt`, `PracticeViewModel.kt`, `NotificationsViewModel.kt`, `native-parity-check.mjs`, `scoped-check.mjs`); no [CONTENT FILE] touched.
 
 ## 7. SUPERVISOR LOG (Agent 5 only — CONTINUE orders — after §8 review)
 
@@ -1421,6 +1460,42 @@ Progress baseline: foundation ~80% done (builds green, 75 unit tests, `/api/mobi
 - Deep links (`rn://app`, https) open Home only — no parameter-driven navigation to sensitive screens; fine as-is.
 
 **Classification:** [IMPORTANT CORE FILE] `MainActivity.kt`, `proguard-rules.pro`, `RnApp.kt` (hallucinated-code removal), `app/build.gradle.kts`.
+
+### 2026-11-26 — Parity campaign CONTINUE #1: B0 close-out, then B1 kickoff (issued from §8 B0 verification review)
+
+**B0 verdict: Done, with two carry-over fixes that gate all B1 promotions.** Ledger baseline for the campaign is script-generated: **11 native-live / 117 placeholder / 0 not-started** (128 parity-relevant + 27 exceptions = 155 website sections). Placeholder count must only ever go **down** from here.
+
+**Priority order (do these in one session each, in this order):**
+
+1. **W3 — B0 task 0, straddle relocation (RQ-12, do first):** move `SyllabusSearchIndexSource` (and the `SearchIndexSource` interface it implements) out of `ui/screens/search/SearchViewModel.kt` into `data/repository/` (or `core/`), per parity plan §0.5 task 0. Keep behavior byte-identical — this is a move, not a rewrite; `SearchViewModel` keeps consuming it via constructor injection. Update the existing `SyllabusSearchIndexSourceTest` import path. File the completion in your checkpoint; W1 picks up the `AppModule` import update from the queue.
+2. **W1 — RQ-11 + RQ-12 wiring batch:** (a) make the stub loop in `RnNavHost.kt` render `ComingToNative(stub.title)` instead of `StubScreen`, then delete `navigation/StubScreen.kt` (one placeholder component, per plan §0.6 — keep `ComingToNative`, it is the plan-mandated one); (b) update the `AppModule` provider import after W3's relocation. Run `node scripts/ci/native-parity-check.mjs` + `./gradlew testDebugUnitTest` after both; paste real output in your checkpoint.
+3. **W2 — B1 start (P1 content endpoints):** audit existing `/api/*` first (per §0.4), then PYQ list/detail + formula sheets + announcements + changelog — the four cheapest P1 families. Publish schema doc + `docs/api/mobile-*.md` **before** W3 binds; vitest per route.
+4. **W3 — B1 start (after relocation):** repositories + Room schema for the four W2 families above, against W2's published doc only.
+5. **W4 — B1 start (after RQ-11 lands):** promote the cheapest P1 stubs first — announcements, changelog — using the real `ComingToNative` replacement flow; KaTeX/math spike in the notes reader this batch (plan §7 risk: spike early in B1, not B3).
+
+**Standing reminders:** parity = match the website, never redesign (§0.7 duty 5); no shared-file direct edits — `AppModule.kt`/`RnNavHost.kt` changes go through the queue to W1; every checkpoint carries the PARITY LEDGER block with script-generated numbers only.
+
+### 2026-11-26 — Parity carry-overs EXECUTED (owner-directed — Supervisor wrote code with explicit owner authorization, overriding the Agent 5 no-code rule for this session only; same precedent as session 6)
+
+**RQ-12 — straddle relocation (parity plan §0.5 task 0), behavior byte-identical:**
+- `core/logic/SearchModels.kt` (+new, moved): `ResultKind`, `SearchResult`, `SearchEntry`, `SearchEngine` — the pure scoring engine now lives beside the other algorithm ports; UI and data both depend downward on core, no UI↔data straddle.
+- `data/repository/SearchIndexSource.kt` (+new, moved): `SearchIndexSource`, `StaticSearchIndexSource`, `SearchEngine.asSource()`, `SyllabusSearchIndexSource` — data-source classes out of Worker 4's UI tree.
+- Deleted: `ui/screens/search/SearchModels.kt`. Rewired imports only (no logic change): `SearchViewModel.kt` (now UI-only), `SearchScreen.kt`, `local/FakeSearchIndex.kt`, `SearchEngineTest.kt`, `SearchViewModelTest.kt`, `di/AppModule.kt` (provider imports).
+
+**RQ-11 — one placeholder component (parity plan §0.6):**
+- `RnNavHost.kt` stub loop now renders `ComingToNative(stub.title)` centered in a full-size `Surface` (same layout shape as the old stub); `navigation/StubScreen.kt` DELETED (was the duplicate with different copy).
+- `scripts/ci/native-parity-check.mjs`: placeholder-body detection extended to `ComingToNative(` alongside the legacy `StubScreen(` string, so the defensive LIVE-demotion check stays meaningful. PLACEHOLDER classification itself comes from the `WebParity.stubs` map and was never body-dependent — verified by reading the parser before the swap.
+
+**Verified (real runs, serialized after one Kotlin-daemon loss + `--stop` retry):**
+- `./gradlew compileDebugKotlin testDebugUnitTest` → **BUILD SUCCESSFUL, 150 tests / 0 failures** (from JUnit XML, not task output).
+- `./gradlew assembleDebug` → **BUILD SUCCESSFUL, app-debug.apk 78.0 MB**.
+- `node scripts/ci/native-parity-check.mjs` → **OK exit 0**; ledger unchanged at **11 live / 117 placeholder / 0 not-started** (correct — this batch promotes no sections, it only cleans the boundary).
+
+**Also recorded this session:** request-ID collision fixed — the B0 carry-overs are **RQ-11/RQ-12** (RQ-7..RQ-10 were already taken by worker checkpoints: RQ-7 = coroutines-test dep, RQ-9/RQ-10 = W3's port handoffs); queue rows renumbered accordingly.
+
+**Open on Agent 5's desk (not this session's scope):** full §8 code review of the four parity-session-1 worker checkpoints (W1 B0 script, W2 pyqs/formulas endpoints, W3 six algorithm ports + golden vectors, W4 PYQs screens + ComingToNative) — W1 reported W4's `PyqsViewModel.kt` failing `compileDebugKotlin` mid-flight while W4 claimed 120/120 green; the tree now compiles (verified above), so the flag was stale-in-flight, but the file-by-file review is still owed before B1 sign-off.
+
+**Classification:** [IMPORTANT CORE FILE] `core/logic/SearchModels.kt` (+new), `data/repository/SearchIndexSource.kt` (+new), `ui/screens/search/SearchModels.kt` (deleted), `SearchViewModel.kt`, `SearchScreen.kt`, `local/FakeSearchIndex.kt`, `SearchEngineTest.kt`, `SearchViewModelTest.kt`, `di/AppModule.kt`, `navigation/RnNavHost.kt`, `navigation/StubScreen.kt` (deleted), `scripts/ci/native-parity-check.mjs`. No [CONTENT FILE] touched.
 
 ## 6. KEY DECISIONS LOG
 

@@ -42,7 +42,7 @@ class FakeSessionStore : SessionStore {
 /**
  * Scriptable [RnApi] fake — records requests, replays queued [Response]s or throws.
  */
-class FakeRnApi : RnApi {
+open class FakeRnApi : RnApi {
 
     val loginBodies = mutableListOf<LoginRequest>()
     val signupBodies = mutableListOf<SignupRequest>()
@@ -192,6 +192,46 @@ class FakeRnApi : RnApi {
         markReadRequests += body
         return Response.success(Unit)
     }
+
+    // ── Wave 2 stubs ──
+    override suspend fun mobileAnnouncements() =
+        Response.success(com.ravikisan.platform.compose.core.contract.AnnouncementsResponse(true, com.ravikisan.platform.compose.core.contract.AnnouncementsData(emptyList())))
+
+    override suspend fun mobileChangelog() =
+        Response.success(com.ravikisan.platform.compose.core.contract.ChangelogResponse(true, com.ravikisan.platform.compose.core.contract.ChangelogData(emptyList())))
+
+    override suspend fun mobileNotice() =
+        Response.success(com.ravikisan.platform.compose.core.contract.NoticeResponse(true, com.ravikisan.platform.compose.core.contract.NoticeData(emptyList())))
+
+    override suspend fun mobileExamCountdown() =
+        Response.success(com.ravikisan.platform.compose.core.contract.ExamCountdownResponse(true, com.ravikisan.platform.compose.core.contract.ExamCountdownData(emptyList())))
+
+    override suspend fun mobileFeedback() =
+        Response.success(com.ravikisan.platform.compose.core.contract.FeedbackResponse(true, com.ravikisan.platform.compose.core.contract.FeedbackData(emptyList(), "https://harindrasah.com.np/contact")))
+
+    override suspend fun mobileStatus() =
+        Response.success(com.ravikisan.platform.compose.core.contract.PlatformStatusResponse(true, com.ravikisan.platform.compose.core.contract.PlatformStatusData("ok", "", null, com.ravikisan.platform.compose.core.contract.PlatformStatusService("operational", "operational", "operational"))))
+
+    override suspend fun mobileReferrals() =
+        Response.success(com.ravikisan.platform.compose.core.contract.ReferralsResponse(true, com.ravikisan.platform.compose.core.contract.ReferralsData("Referrals", "", true, "")))
+
+    override suspend fun mobileSiteIndex() =
+        Response.success(com.ravikisan.platform.compose.core.contract.SiteIndexResponse(true, com.ravikisan.platform.compose.core.contract.SiteIndexData(emptyList())))
+
+    override suspend fun mobileLevels() =
+        Response.success(com.ravikisan.platform.compose.core.contract.LevelsResponse(true, com.ravikisan.platform.compose.core.contract.LevelsData(emptyList())))
+
+    override suspend fun mobileLoksewa() =
+        Response.success(com.ravikisan.platform.compose.core.contract.KnowledgeHubResponse(true, com.ravikisan.platform.compose.core.contract.KnowledgeHubData(emptyList())))
+
+    override suspend fun mobileLoksewaTopic(slug: String) =
+        error<com.ravikisan.platform.compose.core.contract.KnowledgeSectionResponse>(404, "{}")
+
+    override suspend fun mobileWorldKnowledge() =
+        Response.success(com.ravikisan.platform.compose.core.contract.KnowledgeHubResponse(true, com.ravikisan.platform.compose.core.contract.KnowledgeHubData(emptyList())))
+
+    override suspend fun mobileWorldKnowledgeTopic(slug: String) =
+        error<com.ravikisan.platform.compose.core.contract.KnowledgeSectionResponse>(404, "{}")
 
     companion object {
         @Suppress("UNCHECKED_CAST")

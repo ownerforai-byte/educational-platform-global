@@ -3,7 +3,7 @@ import { supabaseAdmin } from "../../db/supabase";
 import { requireAuth } from "../../middleware/auth";
 import { asyncHandler } from "../../middleware/asyncHandler";
 import { serverError } from "../../middleware/error-handler";
-import { XP_RULE, xpForSet } from "../../utils/xp";
+import { XP_RULE, xpForVerifiedSet } from "../../utils/xp";
 
 /**
  * ── Leaderboard ─────────────────────────────────────────────────────────────
@@ -17,22 +17,23 @@ import { XP_RULE, xpForSet } from "../../utils/xp";
  * Names are masked here, on the server, because a browser-side mask is not a
  * mask at all. Students without a profile name appear as "Student".
  *
- * The aggregation reads the set-level counts and the set format only. The
- * `questions` jsonb (the whole quiz payload) is deliberately not fetched; the
- * one field needed from it — the set format — is selected as a JSON path and
- * there is a fallback select without it, so an older PostgREST degrades to
- * "treat every set as choice" instead of failing the page.
+ * The aggregation reads only server-verification metadata and bounded counts.
+ * Legacy, client-generated and AI-graded writing rows are filtered out in SQL
+ * and checked again by `xpForVerifiedSet`; missing integrity columns fail closed.
  */
 
 const router = Router();
 
 /** One scored set, as far as XP is concerned. */
-interface HistoryRow {
+export interface HistoryRow {
   user_id: string;
   answered: number | null;
   correct: number | null;
   score_pct: number | null;
   format?: string | null;
+  verification_status?: string | null;
+  attempt_id?: string | null;
+  question_count?: number | null;
 }
 
 interface Aggregate {
@@ -141,17 +142,23 @@ export function rankEntries<T extends { xp: number }>(entries: T[]): Array<T & {
   });
 }
 
-function aggregate(rows: HistoryRow[]): Aggregate[] {
+export function aggregate(rows: readonly HistoryRow[]): Aggregate[] {
   const byUser = new Map<string, Aggregate>();
   for (const row of rows) {
     if (!row.user_id) continue;
-    const answered = Math.max(0, Math.floor(row.answered ?? 0));
-    const correct = Math.max(0, Math.min(answered, Math.floor(row.correct ?? 0)));
-    const scorePct =
-      typeof row.score_pct === "number" && Number.isFinite(row.score_pct) ? row.score_pct : null;
-
-    const xp = xpForSet({ answered, correct, scorePct, format: (row.format as never) ?? null });
-    if (answered === 0) continue;
+    const answered = row.answered;
+    const correct = row.correct;
+    const scorePct = row.score_pct;
+    const xp = xpForVerifiedSet({
+      answered: typeof answered === "number" ? answered : Number.NaN,
+      correct: typeof correct === "number" ? correct : Number.NaN,
+      scorePct: typeof scorePct === "number" ? scorePct : null,
+      format: (row.format as never) ?? null,
+      verificationStatus: row.verification_status,
+      attemptId: row.attempt_id,
+      questionCount: row.question_count,
+    });
+    if (xp <= 0) continue;
 
     const current = byUser.get(row.user_id) ?? {
       userId: row.user_id,
@@ -161,8 +168,8 @@ function aggregate(rows: HistoryRow[]): Aggregate[] {
       sets: 0,
     };
     current.xp += xp;
-    current.answered += answered;
-    current.correct += correct;
+    current.answered += answered as number;
+    current.correct += correct as number;
     current.sets += 1;
     byUser.set(row.user_id, current);
   }
@@ -180,15 +187,17 @@ router.get(
     const range = parseRange(req.query.range);
     const cutoff = rangeCutoff(range);
 
-    // Preferred select: counts + the set format pulled out of the question
-    // payload by JSON path, aliased to `format`.
+    // Verification is filtered in SQL and re-checked in aggregate(). There is
+    // deliberately no legacy fallback that could count unverified history.
     let rows: HistoryRow[] = [];
     let migrated = true;
-    let formatKnown = true;
 
     const primaryQuery = supabaseAdmin
       .from("quiz_history")
-      .select("user_id, answered, correct, score_pct, format:questions->0->>format")
+      .select(
+        "user_id, answered, correct, score_pct, format, verification_status, attempt_id, question_count",
+      )
+      .eq("verification_status", "verified")
       .limit(MAX_SETS);
     const primary = await (cutoff ? primaryQuery.gte("created_at", cutoff) : primaryQuery);
 
@@ -196,23 +205,8 @@ router.get(
       if (isMissingTable(primary.error)) {
         migrated = false;
       } else {
-        // JSON-path select unsupported / rejected — retry with plain columns.
-        formatKnown = false;
-        const fallbackQuery = supabaseAdmin
-          .from("quiz_history")
-          .select("user_id, answered, correct, score_pct")
-          .limit(MAX_SETS);
-        const fallback = await (cutoff ? fallbackQuery.gte("created_at", cutoff) : fallbackQuery);
-        if (fallback.error) {
-          if (isMissingTable(fallback.error)) {
-            migrated = false;
-          } else {
-            serverError(res, fallback.error, "leaderboard");
-            return;
-          }
-        } else {
-          rows = (fallback.data ?? []) as unknown as HistoryRow[];
-        }
+        serverError(res, primary.error, "leaderboard");
+        return;
       }
     } else {
       rows = (primary.data ?? []) as unknown as HistoryRow[];
@@ -230,7 +224,7 @@ router.get(
         range,
         cohort: { students: 0, medianXp: 0, medianAccuracy: 0, yourXpPercentile: null },
         migrated: false,
-        formatKnown,
+        formatKnown: false,
       });
       return;
     }
@@ -301,7 +295,7 @@ router.get(
       range,
       cohort: cohortSummary(ranked, user.id),
       migrated: true,
-      formatKnown,
+      formatKnown: true,
     });
   }),
 );
@@ -316,6 +310,9 @@ interface HistoryPointRow {
   correct: number | null;
   score_pct: number | null;
   format?: string | null;
+  verification_status?: string | null;
+  attempt_id?: string | null;
+  question_count?: number | null;
   created_at: string;
 }
 
@@ -338,8 +335,11 @@ router.get(
 
     const primaryQuery = supabaseAdmin
       .from("quiz_history")
-      .select("answered, correct, score_pct, format:questions->0->>format, created_at")
+      .select(
+        "answered, correct, score_pct, format, verification_status, attempt_id, question_count, created_at",
+      )
       .eq("user_id", user.id)
+      .eq("verification_status", "verified")
       .order("created_at", { ascending: true })
       .limit(MAX_SETS);
     const primary = await primaryQuery;
@@ -348,23 +348,8 @@ router.get(
       if (isMissingTable(primary.error)) {
         migrated = false;
       } else {
-        const fallbackQuery = supabaseAdmin
-          .from("quiz_history")
-          .select("answered, correct, score_pct, created_at")
-          .eq("user_id", user.id)
-          .order("created_at", { ascending: true })
-          .limit(MAX_SETS);
-        const fallback = await fallbackQuery;
-        if (fallback.error) {
-          if (isMissingTable(fallback.error)) {
-            migrated = false;
-          } else {
-            serverError(res, fallback.error, "xp-history");
-            return;
-          }
-        } else {
-          rows = (fallback.data ?? []) as unknown as HistoryPointRow[];
-        }
+        serverError(res, primary.error, "xp-history");
+        return;
       }
     } else {
       rows = (primary.data ?? []) as unknown as HistoryPointRow[];
@@ -379,17 +364,23 @@ router.get(
 
     const byDate = new Map<string, XpPoint>();
     for (const row of rows) {
-      const answered = Math.max(0, Math.floor(row.answered ?? 0));
-      const correct = Math.max(0, Math.min(answered, Math.floor(row.correct ?? 0)));
-      const scorePct =
-        typeof row.score_pct === "number" && Number.isFinite(row.score_pct) ? row.score_pct : null;
-      const xp = xpForSet({ answered, correct, scorePct, format: (row.format as never) ?? null });
+      const answered = row.answered;
+      const correct = row.correct;
+      const xp = xpForVerifiedSet({
+        answered: typeof answered === "number" ? answered : Number.NaN,
+        correct: typeof correct === "number" ? correct : Number.NaN,
+        scorePct: typeof row.score_pct === "number" ? row.score_pct : null,
+        format: (row.format as never) ?? null,
+        verificationStatus: row.verification_status,
+        attemptId: row.attempt_id,
+        questionCount: row.question_count,
+      });
       const date = (row.created_at ?? "").slice(0, 10);
-      if (!date || answered === 0) continue;
+      if (!date || xp <= 0) continue;
       const point = byDate.get(date) ?? { date, xp: 0, sets: 0, answered: 0 };
       point.xp += xp;
       point.sets += 1;
-      point.answered += answered;
+      point.answered += answered as number;
       byDate.set(date, point);
     }
 

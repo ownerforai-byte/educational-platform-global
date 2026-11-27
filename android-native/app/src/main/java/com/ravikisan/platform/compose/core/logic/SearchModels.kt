@@ -1,12 +1,16 @@
-package com.ravikisan.platform.compose.ui.screens.search
+package com.ravikisan.platform.compose.core.logic
 
 /**
- * Search domain model + pure scoring engine (Agent 4 task 3).
+ * Search domain model + pure scoring engine.
  *
- * The engine is plain Kotlin with no Android or core/ dependency so it is
- * unit-testable on the JVM and swappable when the Supervisor orders the
- * fake→real swap (Agent 3's API layer). Results always carry the unitId so
- * the shell can navigate to `study/{unitId}`.
+ * Relocated from `ui/screens/search/SearchModels.kt` (parity plan §0.5 task 0 /
+ * RQ-12): the engine and its models are pure Kotlin with no Android or data-layer
+ * dependency, so they live in `core/logic/` beside the other algorithm ports and
+ * both the UI (Worker 4) and the data layer (Worker 3) can depend on them without
+ * a UI↔data straddle. Behavior is byte-identical to the pre-move file — this was
+ * a move, not a rewrite.
+ *
+ * Results always carry the unitId so the shell can navigate to `study/{unitId}`.
  */
 enum class ResultKind { UNIT, TOPIC, NOTE }
 

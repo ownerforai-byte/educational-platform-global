@@ -15,6 +15,8 @@ import { cancelOpenAccessRequests } from "../../services/access-requests";
 import { updateProfileFields } from "../../db/repositories/user.repository.js";
 import { assignedBadgeIdsSchema, PROFILE_EXTRAS_BADGE_KEY } from "../../badges/assigned-badges.js";
 import { compactProfileExtras } from "../../services/profile-storage.js";
+import { useFirebaseAuth } from "../../auth/auth-mode.js";
+import { firebaseDeleteUser, revokeFirebaseSessions } from "../../auth/firebase-admin-auth.js";
 
 /**
  * Owner-only router — mounted at /api/owner.
@@ -1179,8 +1181,8 @@ router.get("/users/:id/chats", requireAuth, async (req: Request, res: Response) 
 
 /**
  * DELETE /api/owner/users/:id
- * Permanently remove a user from Supabase Auth and delete their profile row.
- * Owners cannot delete themselves.
+ * Revoke the active identity provider's sessions and permanently delete its
+ * auth user and profile. Owners cannot delete themselves.
  */
 router.delete("/users/:id", requireAuth, async (req: Request<{ id: string }>, res: Response) => {
   const owner = ownerGate(req, res);
@@ -1195,11 +1197,20 @@ router.delete("/users/:id", requireAuth, async (req: Request<{ id: string }>, re
     const targetEmail = await resolveTargetEmail(req.params.id);
     if (refuseRootOwnerEmailTarget(res, targetEmail)) return;
 
-    const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(req.params.id);
-    if (authError) {
-      console.error("[owner] auth delete failed:", authError.message);
-      res.status(500).json({ error: "Failed to delete user account" });
-      return;
+    if (useFirebaseAuth()) {
+      await revokeFirebaseSessions(req.params.id);
+      if (!(await firebaseDeleteUser(req.params.id))) {
+        console.error("[owner] Firebase auth delete failed");
+        res.status(500).json({ error: "Failed to delete user account" });
+        return;
+      }
+    } else {
+      const { error: authError } = await supabaseAdmin.auth.admin.deleteUser(req.params.id);
+      if (authError) {
+        console.error("[owner] auth delete failed:", authError.message);
+        res.status(500).json({ error: "Failed to delete user account" });
+        return;
+      }
     }
 
     const { error: profileError } = await supabaseAdmin

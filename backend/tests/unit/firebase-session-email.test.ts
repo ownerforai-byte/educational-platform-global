@@ -18,9 +18,7 @@ describe("firebaseSessionEmail", () => {
     ).toBe("phone+9779812345678@phone.signin.harindrasah.com.np");
   });
 
-  it("falls back to uid when no email or phone", () => {
-    expect(firebaseSessionEmail({ uid: "abc123", email: null, phoneNumber: null })).toBe(
-      "phone+abc123@phone.signin.harindrasah.com.np",
-    );
+  it("returns null when no email or phone identity is present", () => {
+    expect(firebaseSessionEmail({ uid: "abc123", email: null, phoneNumber: null })).toBeNull();
   });
 });

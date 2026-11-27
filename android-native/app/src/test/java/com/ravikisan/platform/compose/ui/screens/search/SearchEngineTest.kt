@@ -1,5 +1,7 @@
 package com.ravikisan.platform.compose.ui.screens.search
 
+import com.ravikisan.platform.compose.core.logic.ResultKind
+import com.ravikisan.platform.compose.core.logic.SearchEngine
 import com.ravikisan.platform.compose.ui.screens.search.local.FakeSearchIndex
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertTrue
