@@ -76,6 +76,228 @@ rendering and Phase 7 labs/mindmaps.
 
 ## 4. DONE — verified work log (newest first)
 
+### Agent 3 — Parity session 1: algorithm ports (SRS, mock exam, achievements, offline packs, goals+planner, analytics) with TS golden vectors
+
+```
+═══════════════════════════════════════════════════════════════
+CHECKPOINT — Agent 3 (parity campaign session 1, §0.5 tasks 1–8 partial)
+═══════════════════════════════════════════════════════════════
+I am Agent 3. Guided by Reviewer Agent 5.
+
+── PARITY LEDGER ───────────────────────────────────────────────
+• Website sections total:   pending W1's parity script (B0 not landed yet)
+• Native-live:              12 (migration closeout baseline)
+• Placeholder:              0 registered (B0 = W1/W4)
+• My batch contribution:    +6 algorithm ports (B3 groundwork, started early
+  per the no-wait rule — §0.5 tasks 1,2,3,4,5,7-goals,8)
+
+── EDITS (Reviewer reads these files) ──────────────────────────
+
+Kotlin ports (core/logic/, all pure, rule-for-rule from frontend/features/*):
+  core/logic/Bank.kt           | +66 | shared pyq-bank/formula-sheet models
+  core/logic/Srs.kt            | +166| sm2, addDays, buildCards (djb2-base36
+      hash port), dueQueue, normalizeStore (junk-tolerant, mirrors TS guards)
+  core/logic/MockExam.kt       | +205| mulberry32 (BIT-EXACT: Int-wrap ==
+      JS >>>0/imul; one real bug caught mid-port — TS does `t ^= t + imul(...)`,
+      addition BEFORE xor), Fisher-Yates shuffle, parseMarks (parseFloat prefix
+      semantics + the `n > 0` gate), assembleMock, scoreMock, answerKey
+  core/logic/Achievements.kt   | +70 | 9 rules, evaluateAchievements, nextMilestone
+  core/logic/OfflinePack.kt    | +120| UNIT_SLUG_ALIASES resolver (8 aliases),
+      buildUnitPack, packItemCount, packFilename slugify, packToMarkdown
+  core/logic/StudyGoals.kt     | +160| normalizeGoals (catalog INJECTED — the
+      web reads static SYLLABUS; native passes the loaded catalog),
+      daysUntilExam (V8 day-rollover semantics — see FINDINGS), seedDailyPlan
+  core/logic/ProgressModels.kt | +63 | ProgressEntryLite/QuizRowLite + entryStatus port
+  core/logic/StudyPlan.kt      | +115| weakTopicsFromJourney, buildWeeklyPlan
+  core/logic/Analytics.kt      | +230| accuracyBySubject/Topic, completionByUnit,
+      weeklyTrend (Monday-anchored UTC weeks), dailyStudyActivity, overallAccuracy
+
+Golden-vector infrastructure (executes the REAL TS):
+  golden/fixtures.ts           | +330| deterministic fixtures (NEB-flavored)
+  golden/generate-golden.ts    | +250| tsx runner — imports frontend/features/*
+      through a local tsconfig paths mapping, writes JSON to test resources
+  golden/tsconfig.json         | +9  | @/* → ../../frontend/* for the runner
+  app/src/test/resources/golden/*.json | 6 files | srs, mock-exam, achievements,
+      offline, study-plan, analytics — outputs of the REAL website code
+
+Tests (JVM, JUnit4, no new deps):
+  app/src/test/.../core/logic/Golden.kt              | +150| loader + mappers
+  .../SrsGoldenTest.kt          | 5 tests | sm2 transitions (incl. ease floor,
+      fractional ease, lapse chains), calendar rollovers, deck build/dedupe,
+      due queue, junk-store normalization
+  .../MockExamGoldenTest.kt     | 5 tests | mulberry32 bit-exact for 5 seeds
+      (incl. 4294967295 → uint32 bit pattern), 4 assembled papers, parseMarks
+      (10 cases), scorer (clamps/blanks/blank-all), answer key
+  .../AchievementsGoldenTest.kt | 4 tests | all inputs, tie-break order, null cases
+  .../OfflinePackGoldenTest.kt  | 4 tests | alias resolver, pack slice + exact
+      Markdown bytes, empty pack, filename slugify
+  .../StudyPlanGoldenTest.kt    | 5 tests | normalizeGoals junk coercion,
+      daysUntilExam, seedDailyPlan, weak-topic ordering, 5 weekly plans
+  .../AnalyticsGoldenTest.kt    | 6 tests | subject/topic buckets + order,
+      unit completion, weekly trend, day series (pinned now), overall accuracy
+
+── FINDINGS (parity-relevant, for Agent 5's audit) ─────────────
+1. V8 Date.parse ACCEPTS day-rollover: "2026-02-30" parses (→ Mar 2), while
+   month 00/13 and day 00/32 are NaN. The TS isIsoDate gate therefore admits
+   rolled-over dates; the Kotlin port replicates this (month 1-12, day 1-31,
+   rollover arithmetic in daysUntilExam) instead of strict LocalDate.parse.
+2. The plan/goals TS reads LOCAL date components — golden inputs are now
+   constructed at LOCAL NOON so vectors are TZ-stable; the Kotlin functions
+   take an explicit `today: LocalDate` (documented deviation: web defaults to
+   `new Date()`; native ViewModels pass the device date).
+3. The goals subject catalog is injected (web reads static SYLLABUS) — same
+   rules, no hidden global; Worker 4's VMs supply the cached catalog.
+4. dailyStudyActivity/weeklyTrend parse Z-instants, date-only strings (UTC,
+   matching JS), and offsets; bare no-offset datetimes parse as UTC (web uses
+   device-TZ there — the platform API always sends Z, so no behavioral gap).
+
+VERIFIED (real builds, serialized per the standing env rule):
+• ./gradlew testDebugUnitTest → BUILD SUCCESSFUL — 149 tests, 0 failures
+  (29 new golden tests across 6 suites; all pre-existing suites still green).
+• ./gradlew assembleDebug → BUILD SUCCESSFUL (app-debug.apk, 71.7 MB).
+
+INTEGRATION REQUESTS:
+  RQ-9 (→ W4, B3 screens): the six ports are ready for ViewModel binding —
+      Srs.kt (review UI), MockExam.kt (OMR runner), StudyPlan.kt+StudyGoals.kt
+      (planner/onboarding), Analytics.kt (charts), Achievements.kt (streaks),
+      OfflinePack.kt (downloads). Pure + golden-tested; inject LocalDate.now()
+      and the goal catalog at the VM layer.
+  RQ-10 (→ W2): the ports consume SubjectPyqBank/BankPyqYear shapes — when
+      pinning the PYQ/formula mobile contracts, keep `marks` as the RAW
+      string|number (the app stringifies at the boundary; never pre-parse).
+  RQ-7 (still open, → W1): kotlinx-coroutines-test for VM state tests.
+
+CONTINUE NEXT (my backlog order):
+• core/logic/CommunityRules.kt (frontend/features/community — space mapping +
+  question validation; largest remaining port)
+• core/logic/PersonalNotes.kt + device-local store seam (Room/DataStore)
+• Repositories for W2's endpoint families as contracts land (parity §0.5 #9)
+═══════════════════════════════════════════════════════════════
+```
+### Agent 2 — Parity session 1 (B1 slice): PYQs + formula-sheet mobile contracts, plus-gate enforced (parity plan §0.4 #1–2, #4 report)
+
+```
+═══════════════════════════════════════════════════════════════
+CHECKPOINT — Agent 2 (parity plan, session 1)
+═══════════════════════════════════════════════════════════════
+I am Agent 2 (parity plan §0.4 — backend mobile API expansion). Guided by Supervisor Agent 5.
+
+── PARITY LEDGER (workers: update every session) ────────────────
+• Website sections total:        per scripts/ci/native-parity-check.mjs (Agent 1 owns the script-generated count)
+• Native-live:                   12 (pre-campaign)   Placeholder: per Agent 1's B0 registry   Not started: parity-map rows not yet stubbed
+• My batch contribution this session: +2 data contracts landed (pyqs, formulas) — data-layer side of 2 P1 rows; they count native-live only after W4 screens + W1 route promotion per §1's four conditions
+
+── EDITS (required — Supervisor reads these files) ─────────────
+backend/src/api/mobile/manifest.ts | +90 -0 | NEW — shared reader for the website's generated content manifest (frontend/public/data/content/manifest.json) via resolveDataPath + contentCache: entry coords parser (classDir/subject/unit/file), NEB year extractor, path-safety validator for the file detail endpoints; degrades to an honest empty catalog if the generated manifest is absent
+backend/src/api/mobile/pyqs.ts | +130 -0 | NEW — GET /api/mobile/pyqs?class=&subject=&year= (cursor-paginated compact rows: id/class/subject/unit/year/title/questionCount) + GET /api/mobile/pyqs/file?path= (one entry's question lines). REUSE: same manifest entries the website's PYQ bank (frontend/features/pyqs/pyq-bank.ts) consumes — no new corpus
+backend/src/api/mobile/formulas.ts | +124 -0 | NEW — GET /api/mobile/formulas?class=&subject=&unit= + GET /api/mobile/formulas/file?path= (formula lines per sheet). REUSE: same manifest formulas/** entries the website's formula sheets build from
+backend/src/api/mobile/index.ts | +10 -1 | mount /pyqs + /formulas; /home bootstrap advertises features.pyqs/formulas + links (feature-detect without hardcoding)
+backend/src/api/contracts/public-schemas.ts | +64 -1 | ADDITIVE schemas: mobilePyqItem/PyqsResponse/PyqFileResponse, mobileFormulaItem/FormulasResponse/FormulaFileResponse; mobileHomeResponseSchema features+links extended (additive keys)
+backend/tests/fixtures/mobile/manifest/content/manifest.json | +66 -0 | NEW fixture manifest (PYQs incl. a unit-less paper-level file, formulas, one notes/ entry to prove filtering) + 2 detail files
+backend/tests/integration/mobile-pyqs.test.ts | +176 -0 | NEW — 7 tests: coordinate derivation, unit-less entry, class/subject/year filters, cursor walk (no item twice), file detail, BAD_PATH rejection incl. traversal, missing-file error path
+backend/tests/integration/mobile-formulas.test.ts | +156 -0 | NEW — 6 tests: catalog isolation from other sections, filters, cursor walk, file detail, BAD_PATH rejection
+backend/tests/integration/mobile-home.test.ts | +6 -0 | expected bootstrap payload extended with pyqs/formulas (additive contract change, pinned)
+docs/api/mobile-pyqs-formulas.md | +150 -0 | NEW — contract page: tier gate, both list+file endpoints, pagination convention, artifact map
+docs/api/mobile-openapi.yaml | +173 -0 | /pyqs, /pyqs/file, /formulas, /formulas/file documented (params, envelopes, 401/403/400)
+
+COMPLETED (behavior, not log fluff):
+1. AUDIT FIRST (per §0.4 preamble): inventoried backend/src/api + content corpus before writing anything. Existing mobile surface (syllabus/units/notes/practice/community read) covers more of P1 than assumed; PYQ quiz bank already tier-gated on /api/practice/pyqs. What was actually missing and is now landed: corpus PYQ catalog + formula-sheet catalog.
+2. RQ-P2 ANSWERED (Agent 4's flag): the website gates /pyqs at minLevel "plus" (frontend/lib/core/navigation.ts:225; /formulas, /practical, /legend likewise). Both new mobile routes sit behind requireAuth + requireTier("plus") — the same pair /api/practice/pyqs uses. Gate is enforced in MY layer, so W3/W4 need no re-implementation; parity does not widen access.
+3. MINDMAP FEASIBILITY REPORT (§0.4 #4 → Agent 5): NOT needed as a new payload build. The shared manifest already carries 780 visuals/mindmaps/** entries with the FULL tree inline (data.root with id/label/children). Client-side build from manifest is therefore trivially feasible; recommended next W2 slice is a thin GET /api/mobile/mindmaps?class=&subject= catalog + file endpoint (same pattern as this session), NOT a tree builder port. The 27 MB whole-manifest static fetch is too heavy for mobile — use the filtered endpoint.
+4. Tier-gated responses send Cache-Control: private, no-store (auth-gated content is never publicly CDN-cached, matching /api/practice/pyqs's rule).
+
+VERIFIED (real runs, not claims):
+• npx vitest run on all 9 mobile test files → 40/40 passed (incl. the 13 new ones), EXIT=0.
+• npx tsc --noEmit → clean, EXIT=0.
+• Not verified this session: npm run check (scoped) and the full backend suite — left for Agent 5's batch review per §0.7 #2.
+
+CONTINUE NEXT:
+• Practicals + concept legends catalogs (same manifest/file pattern; /practical and /legend are also minLevel "plus") — P1 slice 2.
+• Mindmaps catalog endpoint (see report above) — P3 prep, cheap now that the trees are pre-built.
+• Announcements + changelog sources still unlocated — need a source-of-truth pointer from Agent 5 or W1 before contracting.
+
+INTEGRATION REQUESTS:
+• RQ-B1-W3 (→ Agent 3): bind PyqsViewModel/FormulasViewModel against docs/api/mobile-pyqs-formulas.md — envelope { ok, data }, cursor pagination, 401/403 semantics; the plus gate is server-side, the client only surfaces the paywall state.
+• RQ-B1-W4 (→ Agent 4): FakePyqBank can stay until W3 swaps; the real catalog rows carry year/unit/questionCount — same fields your models mirror.
+═══════════════════════════════════════════════════════════════
+```
+
+Classification: 12 files changed, all **[IMPORTANT CORE FILE]** (mobile API routes, contracts, tests, fixtures, docs; no content payloads read or modified beyond the pre-existing generated manifest fixture pattern).
+
+### Agent 4 — Parity campaign B0+P1 slice: "Coming to native" placeholder component + PYQs hub & subject screens (parity plan §0.6, W4)
+
+```
+═══════════════════════════════════════════════════════════════
+CHECKPOINT — Agent 4 (parity plan, session 1)
+═══════════════════════════════════════════════════════════════
+I am Agent 4 (parity plan §0.6 — all student UI). Guided by Supervisor Agent 5.
+
+── PARITY LEDGER (workers: update every session) ────────────────
+• Website sections total:        [parity script not yet built — W1 B0 task 1; ledger counts below are manual, flagged for Agent 5 to reconcile once the script lands]
+• Native-live:                   12 (pre-campaign routes)   Placeholder: 0 registered (no parity stub routes exist yet)   Not started: ~28 remaining parity-map rows
+• My batch contribution this session: +1 feature flow built on fakes (PYQs hub + subject), NOT yet native-live (needs W1 route + W2 endpoint per §1's four conditions)
+
+── EDITS (required — Supervisor reads these files) ─────────────
+android-native/.../ui/components/placeholder/ComingToNative.kt | +72 -0 | NEW — B0 W4 deliverable: the ONE honest "Coming to native" placeholder (title + honest copy + light/dark @Previews), built once for W1 to render in every parity stub route
+android-native/.../ui/screens/pyqs/PyqModels.kt | +57 -0 | NEW — domain models mirrored field-for-field from frontend/features/pyqs/pyq-bank.ts (PyqYear/TheoryBlock/ConceptDrill/SubjectPyqBank + hub summary)
+android-native/.../ui/screens/pyqs/local/FakePyqBank.kt | +137 -0 | NEW — PyqBankSource seam + local fake (2 subjects, year buckets newest-first, solutions, drills) so screens ship before W2's endpoints (no-wait rule)
+android-native/.../ui/screens/pyqs/PyqsViewModel.kt | +85 -0 | NEW — synchronous JVM-testable VM (same pattern as search/practice pre-swap); honest empty state for unknown subjects; NO invented tier gate (see RQ-P2)
+android-native/.../ui/screens/pyqs/PyqsHubScreen.kt | +105 -0 | NEW — /pyqs hub counterpart: subject cards with year range/question/unit counts, tap → onOpenSubject(classSlug, subjectSlug)
+android-native/.../ui/screens/pyqs/PyqSubjectScreen.kt | +233 -0 | NEW — subject-bank counterpart of class-11-notes/[subject]/theory: theory blocks → year buckets (newest first) → expandable Show/Hide-solution questions (web behaviour mirrored) → concept drills
+app/src/test/.../pyqs/FakePyqBankTest.kt | +66 -0 | NEW — 5 tests: hub/bank count consistency, newest-first ordering, question well-formedness, unknown-subject → null, drill kinds
+app/src/test/.../pyqs/PyqsViewModelTest.kt | +63 -0 | NEW — 5 VM tests: hub init, openSubject load, honest empty state, same-subject no-reload, closeSubject reset
+
+GIT: android-native/ still untracked.
+
+COMPLETED (behavior, not log fluff):
+1. B0 W4 share DONE: the shared "Coming to native" component exists; W1 can render it in the parity stub routes the moment they are registered (RQ-P1 below).
+2. P1 slice 1 built: PYQs hub + subject viewer match the website's flow exactly (hub card counts computed the same way; year buckets newest-first; expandable solutions; drills section).
+3. Models mirror the TS types 1:1 so W2's contract can pin them without reshaping my UI.
+
+VERIFIED (real builds):
+• ./gradlew testDebugUnitTest → BUILD SUCCESSFUL, 120 tests / 0 failures (110 prior + my 10). Verified from JUnit XML, not task output.
+• ./gradlew assembleDebug → BUILD SUCCESSFUL, app-debug.apk 75.1 MB.
+• Environment: hit the documented concurrent-build corruption twice (kspDebugKotlin untracked-state error; clean blocked by open handles from 2 idle java daemons). Resolved with gradlew --stop + clean fused into the same invocation — serialization recommendation to Supervisor stands.
+
+INTEGRATION REQUESTS:
+• RQ-P1 (→ Agent 1, route): register parity stub routes per plan §0.2 and render ComingToNative in each; when wiring my PYQ screens use: pyqs → PyqsHubScreen(onOpenSubject) and pyq/{classSlug}/{subjectSlug} → PyqSubjectScreen(classSlug, subjectSlug, onBack). NOTE: pyqs/** is a new feature folder — parity plan §0.2 grants W4 all of ui/screens/**; the older AGENTS.md path list predates the parity campaign.
+• RQ-P2 (→ Agent 2/5, contract + gate): the website gates /pyqs at minLevel "plus" (frontend/lib/core/navigation.ts:225). The mobile PYQ contract must carry/respect the same gate — enforcement belongs in the data layer (W3 parity task 11), not my UI. Flagging now so parity doesn't silently widen access.
+• RQ-P3 (re-file of RQ-7, → Agent 1, test-dep): kotlinx-coroutines-test still absent; I deliberately avoided it this session (synchronous VM) rather than wait.
+
+CONTINUE NEXT:
+• P1 slice 2 on fakes: exam hub + announcements + changelog (cheap catalog surfaces), then formula sheets/practicals/legends once W2's contract docs exist.
+• KaTeX/math rendering in readers — still queued behind device test per earlier order; PYQ solutions will need it (solutions contain math).
+═══════════════════════════════════════════════════════════════
+```
+
+Classification: 8 files changed, all **[IMPORTANT CORE FILE]** (feature UI, fakes, tests; no content payloads).
+### Agent 1 — Parity session 1 (B0): parity script + full stub registry + CI wiring — ledger baseline honest
+
+**Campaign:** [`android-native-parity-plan.md`](android-native-parity-plan.md) — Worker 1, batch **B0 (parity infra)**.
+
+**EDITS:**
+1. **`scripts/ci/native-parity-check.mjs` (NEW)** — the Appendix-A parity gate. Parses `frontend/lib/core/navigation.ts` (NAV_SECTIONS = website sections, single-line-item line scanner) and `RnNavHost.kt` (Routes constants, `WebParity` registry, explicit composables, StubScreen detection). Per-section status LIVE | PLACEHOLDER | MISSING | EXCEPTION; prints the script-generated PARITY LEDGER; **exit 1 on any MISSING section or broken registry** (double-mapped href, dead stub loop, unknown route constant, orphan exception). Site-index deep pages documented as content payloads reached *through* section routes (header note) — nav registry is the section source of truth per plan §2.
+2. **`RnNavHost.kt`** — added 76 parity route constants + the parseable **`WebParity`** registry (11 live mappings, 117 stubs incl. pattern routes `class-hub/{slug}`, `class-hub/{slug}/theory`, `lab/{id}`, `knowledge/{topic}`, `exam/{track}`, …, 1 documented exception `/mind-studio`) + the `WebParity.stubs.forEach` registration loop that wires every stub destination with auto-derived nav args. Stub promotion protocol (W4 screen → move entry to `live` + explicit composable → W1 deep links) written at the loop.
+3. **`scripts/ci/scoped-check.mjs`** — new `nativeParity` area: runs the parity gate when `android-native/**`, `frontend/lib/core/navigation.ts` or `site-index.ts` change; always in `--all`.
+
+**VERIFIED:**
+- `node scripts/ci/native-parity-check.mjs` → **OK, exit 0** (caught 24 unmapped subject-hub pages on first run — fixed by registering them; the gate demonstrably bites).
+- `compileDebugKotlin` → **BLOCKED by Worker 4's in-flight untracked PYQ batch** (`PyqsViewModel.kt`: 4 unresolved-ref errors — `PyqBankSource`, `subjects`, `bank`). **Zero compiler diagnostics in `navigation/RnNavHost.kt`** (all `e:` lines are in the W4 file). No-wait rule: W4 files untouched; request below.
+
+**INTEGRATION REQUEST — Agent 5 → Worker 4:**
+Need: compile-fix
+Detail: untracked `ui/screens/pyqs/PyqsViewModel.kt` fails `compileDebugKotlin` (unresolved `PyqBankSource`/`subjects`/`bank`, type mismatch L67) — blocks every worker's build verification. W2's `backend/src/api/mobile/pyqs.ts` + tests are also untracked; contract doc needed before W3 binds.
+Files ready: `android-native/app/src/main/java/com/ravikisan/platform/compose/ui/screens/pyqs/*`
+
+**PARITY LEDGER (script-generated):**
+```text
+• Website sections total:        155  (parity-relevant 128, exceptions 27)
+• Native-live:                   11   Placeholder: 117   Not started: 0
+• My batch contribution this session: +117 stub routes registered (B0 complete for W1)
+```
+
+**Next (B0 remainder → B1):** W4 ships the shared "Coming to native" placeholder component → I swap `StubScreen` bodies for it; then per-batch promotions + deep links for new routes; `versionCode` bump + `bundleRelease` at B1 exit.
+
 ### Agent 3 — Session 5 (closeout): study fake→real swap COMPLETE — SyllabusScreen + StudyUnitScreen on the real chain
 
 ```

@@ -230,6 +230,171 @@ paths:
                                 noteCount: { type: integer }
                           nextCursor: { type: [string, "null"] }
 
+  /api/mobile/pyqs:
+    get:
+      summary: Cursor-paginated PYQ catalog (plus tier)
+      description: >
+        Past Year Questions bank from the shared content manifest
+        (practice/questions/**) — the same entries the website's PYQ browser
+        aggregates. Gated requireAuth + requireTier("plus"), mirroring the
+        website's /pyqs minLevel. See docs/api/mobile-pyqs-formulas.md.
+      parameters:
+        - in: query
+          name: class
+          schema: { type: string, enum: [class-11, class-12] }
+        - in: query
+          name: subject
+          schema: { type: string }
+        - in: query
+          name: year
+          schema: { type: integer }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, default: 20 }
+          description: Clamped to 50 server-side.
+        - in: query
+          name: cursor
+          schema: { type: string }
+          description: Opaque cursor from the previous page's nextCursor.
+      responses:
+        "200":
+          description: Cursor page of PYQ rows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id: { type: string }
+                            class: { type: string }
+                            subject: { type: string }
+                            unit: { type: [string, "null"] }
+                            year: { type: [integer, "null"] }
+                            title: { type: string }
+                            questionCount: { type: integer }
+                      nextCursor: { type: [string, "null"] }
+        "401": { description: Not signed in }
+        "403": { description: Below plus tier }
+
+  /api/mobile/pyqs/file:
+    get:
+      summary: One PYQ entry's question lines (plus tier)
+      parameters:
+        - in: query
+          name: path
+          required: true
+          schema: { type: string }
+          description: Must start with practice/questions/, end .json, no traversal.
+      responses:
+        "200":
+          description: Question lines for the native PYQ viewer
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      path: { type: string }
+                      title: { type: string }
+                      questions:
+                        type: array
+                        items: { type: string }
+        "400": { description: BAD_PATH — path outside the PYQ section }
+        "401": { description: Not signed in }
+        "403": { description: Below plus tier }
+
+  /api/mobile/formulas:
+    get:
+      summary: Cursor-paginated formula-sheet catalog (plus tier)
+      description: >
+        Formula sheets from the shared content manifest (formulas/**), one per
+        syllabus unit, as on the website's /formulas section. Gated
+        requireAuth + requireTier("plus"), mirroring the website's minLevel.
+      parameters:
+        - in: query
+          name: class
+          schema: { type: string, enum: [class-11, class-12] }
+        - in: query
+          name: subject
+          schema: { type: string }
+        - in: query
+          name: unit
+          schema: { type: string }
+        - in: query
+          name: limit
+          schema: { type: integer, minimum: 1, default: 20 }
+          description: Clamped to 50 server-side.
+        - in: query
+          name: cursor
+          schema: { type: string }
+      responses:
+        "200":
+          description: Cursor page of formula-sheet rows
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      items:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            id: { type: string }
+                            class: { type: string }
+                            subject: { type: string }
+                            unit: { type: string }
+                            title: { type: string }
+                            formulaCount: { type: integer }
+                      nextCursor: { type: [string, "null"] }
+        "401": { description: Not signed in }
+        "403": { description: Below plus tier }
+
+  /api/mobile/formulas/file:
+    get:
+      summary: One formula sheet's formula lines (plus tier)
+      parameters:
+        - in: query
+          name: path
+          required: true
+          schema: { type: string }
+          description: Must start with formulas/, end .json, no traversal.
+      responses:
+        "200":
+          description: Formula lines for the native formula reader
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  ok: { type: boolean, const: true }
+                  data:
+                    type: object
+                    properties:
+                      path: { type: string }
+                      title: { type: string }
+                      formulas:
+                        type: array
+                        items: { type: string }
+        "400": { description: BAD_PATH — path outside the formulas section }
+        "401": { description: Not signed in }
+        "403": { description: Below plus tier }
+
   /api/mobile/practice:
     get:
       summary: Cursor-paginated exam catalog
