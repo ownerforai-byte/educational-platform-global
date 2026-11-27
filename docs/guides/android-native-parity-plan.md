@@ -150,44 +150,176 @@ A website section counts as **native-live** only when ALL of these hold:
 
 Explicitly **out of parity scope** (documented exceptions, owner-approved): owner/admin consoles, blog authoring, and marketing/legal edge pages — these stay web-only (Custom Tabs if ever needed), matching the migration plan §5 P4.
 
+The table below is authoritative: `native-parity-check` treats only these paths (plus `ownerOnly` nav items, which must also be listed) as exceptions, and every `exception(...)` in `RnNavHost.kt` must be listed here.
+
+<!-- parity-exceptions:start -->
+| Web path | Category | Reason |
+|---|---|---|
+| `/mind-studio` | diagram-tool | Owner-tier Diagram Studio stays web-only; reason needed: owner decision |
+| `/ai/quad` | owner-only | Owner-only four-model comparison desk (navigation.ts, 2026-11-18) |
+| `/about` | about-info | Company/product information page |
+| `/what-it-has` | marketing | Feature overview page |
+| `/features` | marketing | Feature marketing page |
+| `/how-it-works` | marketing | How-it-works marketing page |
+| `/blog` | blog | Blog posts |
+| `/neb-updates` | about-info | Guide to verifying NEB/CDC exam notices |
+| `/official-sources` | about-info | Government source list and independence disclaimer |
+| `/contact` | support | Contact page |
+| `/help` | support | Help center |
+| `/sitemap-page` | support | Public directory of indexed pages |
+| `/legal/privacy` | legal | Privacy policy |
+| `/legal/terms` | legal | Terms of service |
+| `/legal/cookies` | legal | Cookie policy |
+| `/legal/purchases` | legal | policy decision pending (see review item 8) |
+| `/legal/data-safety` | legal | Data safety disclosure |
+| `/legal/content-rating` | legal | Content rating disclosure |
+| `/legal/attribution` | legal | Content attribution |
+| `/legal/takedown` | legal | Takedown requests |
+| `/school` | marketing | Landing page for schools |
+| `/teachers` | marketing | Landing page for teachers |
+| `/parents` | marketing | Landing page for parents |
+| `/plans` | pricing | policy decision pending (see review item 8) |
+| `/owner` | owner-only | Owner console |
+| `/owner/users` | owner-only | Owner user management |
+| `/controller` | owner-only | Owner controller |
+<!-- parity-exceptions:end -->
+
 ---
 
 ## 2. Route parity map (remaining work)
 
 Source of truth for the left column: `frontend/lib/core/navigation.ts` + `site-index.ts`. Workers keep this table updated in their checkpoints; Agent 5 reconciles it against the parity script.
 
-| Web section | Native route (proposed) | Data source | Owner | Batch |
+| Web path | Section | Native route | Status | Batch |
 |---|---|---|---|---|
-| Dashboard | `dashboard` | progress endpoints + local state | W4 | P2 |
-| Onboarding / Study Goals | `onboarding`, `goals` | device-local (`StudyGoals.kt`) | W3+W4 | P2 |
-| Weekly Planner | `planner` | `StudyPlan.kt` (local) | W3+W4 | P3 |
-| Spaced Repetition | `srs` | `Srs.kt` (local) + pyq-bank cards | W3+W4 | P3 |
-| Mock Exams | `mock-exams`, `mock-exam/{id}` | `MockExam.kt` + PYQ endpoints | W3+W4 | P3 |
-| Analytics | `analytics` | `Analytics.kt` + progress endpoints | W3+W4 | P3 |
-| Streaks & Badges | `streaks` | `Achievements.kt` (derived, nothing stored) | W3+W4 | P2 |
-| Community posting/replies | `community` (write paths) | social write endpoints | W2+W4 | P5 |
-| Ask Veer (`/ask`) | `ai-tutor` (already live) | — | — | done |
-| My Notes | `my-notes` | `PersonalNotes.kt` (device-local) | W3+W4 | P2 |
-| Downloads / Offline packs | `downloads` | `OfflinePack.kt` | W3+W4 | P5 |
-| Billing | `billing` | credits endpoints | W2+W4 | P5 |
-| Referrals | `referrals` | existing referral data (or documented placeholder per website) | W4 | P5 |
-| Site Index | `site-index` | parity registry itself | W1+W4 | P5 |
-| Curriculum Levels | `levels` | levels endpoints | W2+W4 | P5 |
-| Exam Hub | `exams` | practice + PYQ endpoints | W2+W4 | P1 |
-| Quick Revision | `revision` | content endpoints | W2+W4 | P1 |
-| Certificates | `certificates` | certificates endpoints | W2+W4 | P2 |
-| Announcements | `announcements` | announcements endpoints | W2+W4 | P1 |
-| Feedback | `feedback` | feedback endpoint | W2+W4 | P5 |
-| Changelog | `changelog` | changelog data | W2+W4 | P1 |
-| Platform Status | `status` | `/api/v2/health` | W2+W4 | P5 |
-| PYQs | `pyqs`, `pyq/{id}` | PYQ endpoints | W2+W4 | P1 |
-| Practical Manuals | `practical` | practical endpoints | W2+W4 | P1 |
-| Concept Legends | `legend` | legend endpoints | W2+W4 | P1 |
-| Notes Archive | `notes` | notes catalog endpoints | W2+W4 | P1 |
-| Class hubs (11/12, per subject) | `class-hub/{slug}` | syllabus + notes endpoints | W4 | P1 |
-| Syllabus by Year | `learn` (already live; additions view) | syllabus endpoints | W4 | P1 |
-| Mindmaps | `mindmap/{scope}` | mindmap payloads or `MindmapBuilder.kt` | W2/W3+W4 | P3 |
-| 3D / interactive Labs | `lab/{id}` | per-lab native rebuild | W4 | P4 |
+| `/home` | Home | `home` | LIVE | done |
+| `/community` | Community — posting/replies: social write endpoints (W2+W4) | `community` | LIVE | P5 (write paths) |
+| `/ask` | Ask Veer | `ai-tutor` | LIVE | done |
+| `/syllabus/additions` | Syllabus by Year — additions view; syllabus endpoints (W4) | `learn` | LIVE | P1 |
+| `/search` | Search | `search` | LIVE | done |
+| `/chat` | Chat | `ai-tutor` | LIVE | done |
+| `/practice` | Practice | `practice` | LIVE | done |
+| `/ai/community` | AI Community | `community` | LIVE | P5 (write paths) |
+| `/profile` | Profile | `profile` | LIVE | done |
+| `/settings` | Settings | `settings` | LIVE | done |
+| `/notifications` | Notifications | `notifications` | LIVE | done |
+| `/dashboard` | Dashboard — progress endpoints + local state (W4) | `dashboard` | PLACEHOLDER | P2 |
+| `/onboarding` | Onboarding / Study Goals — device-local `StudyGoals.kt` (W3+W4) | `onboarding` | PLACEHOLDER | P2 |
+| `/planner` | Weekly Planner — `StudyPlan.kt` (local) (W3+W4) | `planner` | PLACEHOLDER | P3 |
+| `/srs` | Spaced Repetition — `Srs.kt` (local) + pyq-bank cards (W3+W4) | `srs` | PLACEHOLDER | P3 |
+| `/mock-exams` | Mock Exams — `MockExam.kt` + PYQ endpoints (W3+W4) | `mock-exams`, `mock-exam/{id}` | PLACEHOLDER | P3 |
+| `/analytics` | Analytics — `Analytics.kt` + progress endpoints (W3+W4) | `analytics` | PLACEHOLDER | P3 |
+| `/streaks` | Streaks & Badges — `Achievements.kt` (derived, nothing stored) (W3+W4) | `streaks` | PLACEHOLDER | P2 |
+| `/my-notes` | My Notes — `PersonalNotes.kt` (device-local) (W3+W4) | `my-notes` | PLACEHOLDER | P2 |
+| `/downloads` | Downloads / Offline packs — `OfflinePack.kt` (W3+W4) | `downloads` | PLACEHOLDER | P5 |
+| `/billing` | Billing — credits endpoints (W2+W4) | `billing` | PLACEHOLDER | P5 |
+| `/referrals` | Referrals — existing referral data (or documented placeholder per website) (W4) | `referrals` | PLACEHOLDER | P5 |
+| `/site-index` | Site Index — parity registry itself (W1+W4) | `site-index` | PLACEHOLDER | P5 |
+| `/levels` | Curriculum Levels — levels endpoints (W2+W4) | `levels` | PLACEHOLDER | P5 |
+| `/exams` | Exam Hub — practice + PYQ endpoints (W2+W4) | `exams` | PLACEHOLDER | P1 |
+| `/revision` | Quick Revision — content endpoints (W2+W4) | `revision` | PLACEHOLDER | P1 |
+| `/leaderboard` | Leaderboard | `leaderboard` | PLACEHOLDER | P2 |
+| `/goals` | Study Goals — device-local `StudyGoals.kt` (W3+W4) | `goals` | PLACEHOLDER | P2 |
+| `/schedule` | Study Schedule | `schedule` | PLACEHOLDER | P3 |
+| `/certificates` | Certificates — certificates endpoints (W2+W4) | `certificates` | PLACEHOLDER | P2 |
+| `/announcements` | Announcements — announcements endpoints (W2+W4) | `announcements` | PLACEHOLDER | P1 |
+| `/feedback` | Feedback — feedback endpoint (W2+W4) | `feedback` | PLACEHOLDER | P5 |
+| `/changelog` | Changelog (What's New) — changelog data (W2+W4) | `changelog` | PLACEHOLDER | P1 |
+| `/status` | Platform Status — `/api/v2/health` (W2+W4) | `status` | PLACEHOLDER | P5 |
+| `/class-11-notes` | Class Hub (Class 11) — syllabus + notes endpoints (W4) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes` | Class Hub (Class 12) — syllabus + notes endpoints (W4) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/subjects` | Subjects | `subjects` | PLACEHOLDER | P1 |
+| `/pyqs` | Past Year Questions — PYQ endpoints (W2+W4) | `pyqs`, `pyq/{id}` | PLACEHOLDER | P1 |
+| `/syllabus` | Official Syllabus | `syllabus` | PLACEHOLDER | P1 |
+| `/practical` | Practical Manuals — practical endpoints (W2+W4) | `practical` | PLACEHOLDER | P1 |
+| `/legend` | Concept Legends — legend endpoints (W2+W4) | `legend` | PLACEHOLDER | P1 |
+| `/notes` | Notes Archive — notes catalog endpoints (W2+W4) | `notes` | PLACEHOLDER | P1 |
+| `/journal` | Study Journal | `journal` | PLACEHOLDER | P2 |
+| `/class-11-notes/physics` | Physics (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/physics/theory` | Physics Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-11-notes/chemistry` | Chemistry (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/chemistry/theory` | Chemistry Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-11-notes/biology` | Biology (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/biology/theory` | Biology Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-11-notes/mathematics` | Mathematics (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/mathematics/theory` | Mathematics Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-11-notes/english` | English (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/english/theory` | English Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-11-notes/nepali` | Nepali (Class 11) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-11-notes/nepali/theory` | Nepali Theory (11) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/physics` | Physics (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/physics/theory` | Physics Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/chemistry` | Chemistry (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/chemistry/theory` | Chemistry Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/biology` | Biology (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/biology/theory` | Biology Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/mathematics` | Mathematics (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/mathematics/theory` | Mathematics Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/english` | English (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/english/theory` | English Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/class-12-notes/nepali` | Nepali (Class 12) | `class-hub/{slug}` | PLACEHOLDER | P1 |
+| `/class-12-notes/nepali/theory` | Nepali Theory (12) | `class-hub/{slug}/theory` | PLACEHOLDER | P1 |
+| `/lab` | Virtual 3D Labs — per-lab native rebuild (W4) | `lab` | PLACEHOLDER | P4 |
+| `/lab/3d` | 3D Video Hub | `lab/{id}` | PLACEHOLDER | P4 |
+| `/lab/bio-3d-organelles` | Cell Organelles 3D | `lab/{id}` | PLACEHOLDER | P4 |
+| `/lab/theory` | Lab Theory Hub | `lab/{id}` | PLACEHOLDER | P4 |
+| `/ad-p-table` | Ad P Table | `ad-p-table` | PLACEHOLDER | unassigned (owner decision) |
+| `/periodic-table` | Periodic Table & CEE | `periodic-table` | PLACEHOLDER | unassigned (owner decision) |
+| `/formulas` | Formula Sheets | `formulas` | PLACEHOLDER | P1 |
+| `/theorems` | Theorems & Proofs | `theorems` | PLACEHOLDER | P1 |
+| `/derivations` | Formula Derivations | `derivations` | PLACEHOLDER | P1 |
+| `/graphs` | Science Graph Bank | `graphs` | PLACEHOLDER | unassigned (owner decision) |
+| `/mindmap` | Visual Mindmaps — mindmap payloads or `MindmapBuilder.kt` (W2/W3+W4) | `mindmap/{scope}` | PLACEHOLDER | P3 |
+| `/science-graph-bank` | Graph Bank (Legacy) | `science-graph-bank` | PLACEHOLDER | unassigned (owner decision) |
+| `/resources/physics-xi` | Physics XI Academic | `resources/{slug}` | PLACEHOLDER | unassigned (owner decision) |
+| `/resources/mathematics-xi` | Mathematics XI Solutions | `resources/{slug}` | PLACEHOLDER | unassigned (owner decision) |
+| `/chat/nepali` | Nepali Assistant | `chat/{mode}` | PLACEHOLDER | unassigned (owner decision) |
+| `/chat/grammar` | Grammar Console | `chat/{mode}` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai` | AI Tools | `ai` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/math` | Veer Math Solver | `ai/math` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/deep-dive` | Deep Concept Studio | `ai/deep-dive` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/diagrams` | Diagram Hub | `ai/diagrams` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/tutor` | Veer Tutor Console | `ai/tutor` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/search` | Veer Curriculum Search | `ai/search` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/workspace` | AI Workspace | `ai/workspace` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/subjects` | Subject Classrooms | `ai/subjects` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai/history` | AI History | `ai/history` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai-quiz` | Adaptive Veer Quiz | `ai-quiz` | PLACEHOLDER | unassigned (owner decision) |
+| `/ai-quiz/history` | Quiz History | `ai-quiz/history` | PLACEHOLDER | unassigned (owner decision) |
+| `/practice/history` | Practice History | `practice/history` | PLACEHOLDER | unassigned (owner decision) |
+| `/quiz` | Practice Quiz Bank | `quiz-bank` | PLACEHOLDER | unassigned (owner decision) |
+| `/exam-countdown` | Exam Countdown | `exam-countdown` | PLACEHOLDER | P1 |
+| `/exams/neb` | NEB Board Exam — exam tracks (W2+W4) | `exam/{track}` | PLACEHOLDER | P1 |
+| `/exams/cee` | CEE Medical Entrance — exam tracks (W2+W4) | `exam/{track}` | PLACEHOLDER | P1 |
+| `/exams/ioe` | IOE Engineering Entrance — exam tracks (W2+W4) | `exam/{track}` | PLACEHOLDER | P1 |
+| `/knowledge` | Knowledge Hub | `knowledge` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/pro` | Pro Knowledge Hub | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/numerical-physics` | Numerical Physics | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/numerical-chemistry` | Numerical Chemistry | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/biology-diagrams` | Biology Diagrams | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/grammar` | English Grammar Hub | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/writing` | English Writing Hub | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/byakaran` | Nepali Byakaran | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/knowledge/analytical-geometry` | Analytical Geometry | `knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/lessons` | Lessons Library | `lessons` | PLACEHOLDER | unassigned (owner decision) |
+| `/loksewa` | Loksewa GK | `loksewa` | PLACEHOLDER | unassigned (owner decision) |
+| `/loksewa/geography-of-nepal` | Geography of Nepal | `loksewa/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/loksewa/history` | Loksewa History | `loksewa/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/loksewa/environment` | Loksewa Environment | `loksewa/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/world-knowledge` | World Knowledge | `world-knowledge` | PLACEHOLDER | unassigned (owner decision) |
+| `/world-knowledge/general-knowledge` | General Knowledge | `world-knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/world-knowledge/current-affairs` | Current Affairs | `world-knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/world-knowledge/global-topics` | Global Topics | `world-knowledge/{topic}` | PLACEHOLDER | unassigned (owner decision) |
+| `/resources` | Resource Vault | `resources` | PLACEHOLDER | unassigned (owner decision) |
+| `/pdfs` | PDF Library | `pdfs` | PLACEHOLDER | unassigned (owner decision) |
+| `/profile/edit` | Edit Profile | `profile/edit` | PLACEHOLDER | unassigned (owner decision) |
+| `/users` | Find Students — social read (community) | `users` | PLACEHOLDER | P5 |
+| `/progress` | My Progress | `progress` | PLACEHOLDER | P2 |
+| `/bookmarks` | Saved Bookmarks | `bookmarks` | PLACEHOLDER | P2 |
+| `/report-card` | Report Card | `report-card` | PLACEHOLDER | P2 |
+| `/credits` | Credits | `credits` | PLACEHOLDER | P5 |
+| `/achievements` | Achievements | `achievements` | PLACEHOLDER | P2 |
+| `/notice` | Notice Board | `notice` | PLACEHOLDER | P1 |
 
 ---
 
@@ -268,11 +400,16 @@ Once parity is reached, this rule governs ALL future feature work:
 ## Appendix A — Parity check script contract (`scripts/ci/native-parity-check.mjs`)
 
 ```
-Input:  frontend/lib/core/navigation.ts (NAV_SECTIONS entries)
-        android-native/.../navigation/RnNavHost.kt (Routes + composables)
-        docs/guides/android-native-parity-plan.md (documented web-only exceptions)
+Input:  frontend/lib/core/navigation.ts (NAV_SECTIONS entries; ownerOnly items and items of an ownerOnly section)
+        android-native/.../navigation/RnNavHost.kt (Routes + composables + WebParity.exceptions)
+        docs/guides/android-native-parity-plan.md §1 exception table (rows between the parity-exceptions markers)
+Exception rule: a website href is EXCEPTION iff it has a §1 table row or is ownerOnly.
+        Every ownerOnly href must have a row; every WebParity.exceptions entry must have a row;
+        every row must be a navigation.ts href with a known category (owner-only, blog, marketing,
+        legal, support, pricing, about-info, diagram-tool). A table row is authoritative — no section-wide exemptions.
+        A page without a row is not an exception: it must be LIVE or PLACEHOLDER, otherwise MISSING.
 Output: per-section status: LIVE | PLACEHOLDER | MISSING | EXCEPTION
-        counts summary; exit 1 if any MISSING (unregistered website section)
+        counts summary; exit 1 if any MISSING (unregistered website section) or the exception rules fail
         exit 0 otherwise (PLACEHOLDER is allowed mid-campaign, tracked)
 Wire-in: `npm run check` (scoped) — owned by Worker 1
 ```

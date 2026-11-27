@@ -9,13 +9,23 @@
  *   Input:  frontend/lib/core/navigation.ts   (NAV_SECTIONS — the website sections)
  *           android-native/.../navigation/RnNavHost.kt
  *             (Routes constants + WebParity registry + explicit composables)
- *           docs/guides/android-native-parity-plan.md §1 (documented exceptions)
+ *           docs/guides/android-native-parity-plan.md §1 exception table
  *   Output: per-section status LIVE | PLACEHOLDER | MISSING | EXCEPTION
  *           counts summary + PARITY LEDGER block
- *   Exit 1  if any website section is MISSING (unregistered) or the registry
- *           is structurally broken; exit 0 otherwise (PLACEHOLDER is allowed
- *           mid-campaign and is tracked — that count must never increase
- *           except by adding new website sections).
+ *   Exception rule (plan §1 exception table is authoritative):
+ *     - A website href is EXCEPTION iff it has a row in the §1 table between
+ *       the <!-- parity-exceptions:start/end --> markers, or it is ownerOnly
+ *       (the item's own flag, or an item of an ownerOnly nav section).
+ *     - Every ownerOnly href must have a table row.
+ *     - Every WebParity.exceptions entry in RnNavHost.kt must have a table row.
+ *     - Every table row must be a navigation.ts href with a known category.
+ *     - No section-wide exemptions: a page without a row is not an exception,
+ *       so it must be LIVE or PLACEHOLDER (a new page with neither is MISSING).
+ *   Exit 1  if any website section is MISSING (unregistered), the registry
+ *           is structurally broken, or the exception rules above fail;
+ *           exit 0 otherwise (PLACEHOLDER is allowed mid-campaign and is
+ *           tracked — that count must never increase except by adding new
+ *           website sections).
  *
  * Site-index note: frontend/lib/core/site-index.ts registers deep content
  * pages (topic/unit payloads) that are reached THROUGH section routes
@@ -39,10 +49,12 @@ const NAVHOST_KT = path.join(
   "com", "ravikisan", "platform", "compose", "navigation", "RnNavHost.kt",
 );
 
-// Parity plan §1 documented exceptions, encoded as section ids: the whole
-// "public" section is marketing/legal/info edge pages and the "owner" section
-// is the owner console — both stay web-only (Custom Tabs if ever needed).
-const EXCEPTION_SECTIONS = new Set(["public", "owner"]);
+const PLAN_MD = path.join(ROOT, "docs", "guides", "android-native-parity-plan.md");
+
+// Allowed categories for the parity plan §1 exception table.
+const EXCEPTION_CATEGORIES = new Set([
+  "owner-only", "blog", "marketing", "legal", "support", "pricing", "about-info", "diagram-tool",
+]);
 
 const errors = [];
 const warnings = [];
@@ -89,7 +101,7 @@ function parseNavigationTs() {
     sections.push(section);
     for (const item of items) {
       if (seen.has(item.href)) continue;
-      seen.set(item.href, { section, ownerOnly: item.ownerOnly });
+      seen.set(item.href, { section, ownerOnly: item.ownerOnly || sectionOwnerOnly.has(section) });
     }
   }
   return { sections: [...new Set(sections)], hrefs: seen };
@@ -143,24 +155,48 @@ function parseNavHost() {
   return { routes, live, stubs, exceptions, registered, stubLoopWired };
 }
 
+// ── 2b. Parse the parity plan §1 exception table ────────────────────────────
+// Rows look like: | `/path` | category | reason |  (header and separator rows are skipped).
+function parsePlanExceptions() {
+  const src = readFileSync(PLAN_MD, "utf8");
+  const start = src.indexOf("<!-- parity-exceptions:start -->");
+  const end = src.indexOf("<!-- parity-exceptions:end -->");
+  const table = new Map(); // href -> { category, reason }
+  if (start < 0 || end < start) {
+    fail("parity plan §1: exception table markers <!-- parity-exceptions:start --> / :end --> are missing");
+    return table;
+  }
+  for (const line of src.slice(start, end).split("\n")) {
+    const m = line.match(/^\|\s*`([^`]+)`\s*\|(.*)$/);
+    if (!m) continue;
+    const [category = "", reason = ""] = m[2].split("|").map((c) => c.trim());
+    if (table.has(m[1])) fail(`parity plan §1: exception table lists "${m[1]}" twice`);
+    if (!EXCEPTION_CATEGORIES.has(category)) fail(`parity plan §1: "${m[1]}" has unknown category "${category}"`);
+    if (!reason) fail(`parity plan §1: "${m[1]}" has no reason`);
+    table.set(m[1], { category, reason });
+  }
+  return table;
+}
+
 // ── 3. Resolve per-section status ───────────────────────────────────────────
 const { sections, hrefs } = parseNavigationTs();
 const nav = parseNavHost();
+const planExceptions = parsePlanExceptions();
 
 if (!existsSync(SITE_INDEX_TS)) fail("frontend/lib/core/site-index.ts is missing (parity plan §2 source of truth)");
 if (!nav.stubLoopWired) fail("RnNavHost.kt: the WebParity.stubs.forEach registration loop is missing — stub entries are dead map data");
 
 const rows = [];
 for (const [href, meta] of hrefs) {
-  const sectionException =
-    EXCEPTION_SECTIONS.has(meta.section) || meta.ownerOnly || nav.exceptions.has(href);
+  const planEntry = planExceptions.get(href);
 
   let status = "MISSING";
   let detail = "";
-  if (sectionException) {
+  if (planEntry || meta.ownerOnly) {
     status = "EXCEPTION";
-    detail = nav.exceptions.has(href) && !EXCEPTION_SECTIONS.has(meta.section) && !meta.ownerOnly
-      ? "documented in WebParity.exceptions" : "plan §1 documented web-only";
+    if (meta.ownerOnly && !planEntry) fail(`"${href}" is owner-only (navigation.ts) but has no row in the parity plan §1 exception table`);
+    if (!planEntry) detail = "owner-only (navigation.ts)";
+    else detail = nav.exceptions.has(href) ? "documented in WebParity.exceptions" : "plan §1 documented web-only";
   } else if (nav.live.has(href) && nav.stubs.has(href)) {
     fail(`"${href}" is mapped in BOTH WebParity.live and WebParity.stubs`);
   } else if (nav.live.has(href)) {
@@ -185,6 +221,11 @@ for (const [href, meta] of hrefs) {
 // Registry hygiene: exceptions pointing at pages that are not in the nav.
 for (const href of nav.exceptions) {
   if (!hrefs.has(href)) warn(`WebParity.exception("${href}") is not a navigation.ts href`);
+  if (!planExceptions.has(href)) fail(`RnNavHost.kt WebParity.exceptions "${href}" has no row in the parity plan §1 exception table`);
+}
+// The §1 table is authoritative: every row must name a real website href.
+for (const href of planExceptions.keys()) {
+  if (!hrefs.has(href)) fail(`parity plan §1 exception table lists "${href}", which is not a navigation.ts href`);
 }
 // Native-only surfaces are allowed only as documented app-platform exceptions
 // (plan §8.3) — list them so Agent 5 can audit, do not fail on them.

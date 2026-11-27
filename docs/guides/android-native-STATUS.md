@@ -1160,6 +1160,8 @@ Crashlytics/R8 tuning, CI job `android-native-assemble`, real theme tokens,
 
 ## 5. NEXT ACTIONS (exact resume point)
 
+**Ledger reconciliation — native-live count:** `node scripts/ci/native-parity-check.mjs` (exit 0) verifies **11** native-live: /home, /community, /ask, /chat, /ai/community, /search, /practice, /profile, /settings, /notifications, /syllabus/additions. The "12" in §4 (Agent 3 line ~89 "migration closeout baseline", Agent 2 ~187, Agent 4 ~237) was a hand count made before the parity script existed; those lines stay as written. The difference is **unknown**, not a regression: `git show 3d6240a7` and `9218e4a2` show every one of the 11 mapped routes still composable with no route constant removed (the extra is most likely a native-only route such as AUTH/AUTH_LOGIN/AUTH_SIGNUP/STUDY_UNIT/QUIZ counted by hand). Going forward, the parity script output is the single source for the native-live baseline.
+
 1. ~~Finish Phase 1~~ → ✅ DONE, both builds verified (see §4).
 2. Phase 0 items that cost nothing: write the screen inventory sign-off doc
    (plan §5 P0–P4) and the WebView allowlist (default: empty) into
