@@ -66,12 +66,16 @@ function changedFiles() {
 
 function areasFor(files) {
   if (files === null)
-    return ["content", "frontend", "backend", "contentScopes", "mindmap", "visuals", "labManifest"];
+    return ["content", "frontend", "backend", "contentScopes", "mindmap", "visuals", "labManifest", "nativeParity"];
   const a = new Set();
   for (const f of files) {
     if (f.startsWith("content/")) a.add("content");
     else if (f.startsWith("frontend/")) a.add("frontend");
     else if (f.startsWith("backend/")) a.add("backend");
+    // Parity gate (parity plan §0.3 task 1): native code, or the web nav
+    // registry the parity ledger is built from, changed → re-check parity.
+    else if (f.startsWith("android-native/")) a.add("nativeParity");
+    else if (f === "frontend/lib/core/navigation.ts" || f === "frontend/lib/core/site-index.ts") a.add("nativeParity");
   }
   // The gates always run when note content or mindmap data is in play.
   if (a.has("content")) a.add("contentScopes");
@@ -203,11 +207,22 @@ const runners = {
       return v.status ?? 1;
     },
   },
+  // Native parity: every website section must have a native route (live or
+  // stub). Fails on any MISSING section or a broken WebParity registry.
+  nativeParity: {
+    label: "native parity check (web sections ↔ native routes)",
+    run() {
+      const r = spawnSync(process.execPath, ["scripts/ci/native-parity-check.mjs"], {
+        stdio: "inherit",
+      });
+      return r.status ?? 1;
+    },
+  },
 };
 
 const areas = areasFor(changedFiles());
 if (areas.length === 0) {
-  console.log("No changes detected in content/, frontend/ or backend/ — nothing to check.");
+  console.log("No changes detected in content/, frontend/, backend/ or android-native/ — nothing to check.");
   process.exit(0);
 }
 
