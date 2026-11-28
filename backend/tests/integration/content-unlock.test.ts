@@ -20,7 +20,7 @@ const state = vi.hoisted(() => ({
   spendCredits: vi.fn(),
   ensureDailyCredits: vi.fn(),
   refundCredits: vi.fn(),
-  updateProfileFields: vi.fn(),
+  mergeUnlockWindow: vi.fn(),
 }));
 
 vi.mock("../../src/middleware/auth", () => ({
@@ -37,7 +37,8 @@ vi.mock("../../src/api/platform/support.controller", () => ({
 
 vi.mock("../../src/db/repositories/user.repository", () => ({
   getProfileById: vi.fn(async () => ({ data: state.profile, error: null })),
-  updateProfileFields: (...args: unknown[]) => state.updateProfileFields(...args),
+  mergeUnlockWindow: (...args: unknown[]) => state.mergeUnlockWindow(...args),
+  updateProfileFields: vi.fn(),
   findPendingPremiumRequest: vi.fn(async () => ({ data: null, error: null })),
   insertPremiumRequest: vi.fn(),
   listPremiumRequests: vi.fn(async () => ({ data: [], error: null })),
@@ -90,10 +91,12 @@ beforeEach(() => {
     unlimited: false,
   });
   state.refundCredits.mockReset().mockResolvedValue(0);
-  state.updateProfileFields.mockReset().mockImplementation(async (_id: string, fields: Record<string, unknown>) => {
-    state.profile.credits_unlock = fields.credits_unlock as Record<string, number>;
-    return { error: null };
-  });
+  state.mergeUnlockWindow.mockReset().mockImplementation(
+    async (_id: string, identityKey: string, expiresAt: number) => {
+      state.profile.credits_unlock = { ...state.profile.credits_unlock, [identityKey]: expiresAt };
+      return { error: null };
+    },
+  );
 });
 
 const content = {
@@ -137,7 +140,7 @@ describe("content unlock pricing", () => {
     expect(response.status).toBe(402);
     expect(body).toMatchObject({ required: 1, current: 0 });
     expect(state.spendCredits).not.toHaveBeenCalled();
-    expect(state.updateProfileFields).not.toHaveBeenCalled();
+    expect(state.mergeUnlockWindow).not.toHaveBeenCalled();
     expect(state.profile.credits_unlock).toEqual({});
   });
 
@@ -151,5 +154,32 @@ describe("content unlock pricing", () => {
     expect(body.cost).toBe(0);
     expect(state.ensureDailyCredits).not.toHaveBeenCalled();
     expect(state.spendCredits).not.toHaveBeenCalled();
+  });
+
+  it("preserves both windows when different content unlocks complete concurrently", async () => {
+    state.profile.credits = 2;
+    state.ensureDailyCredits.mockResolvedValue({ credits: 2, resetDone: false, unlimited: false });
+
+    const [first, second] = await Promise.all([
+      unlock({ category: "theory", content }),
+      unlock({ category: "theory", content: { ...content, filename: "velocity.json" } }),
+    ]);
+
+    expect(first.response.status).toBe(200);
+    expect(second.response.status).toBe(200);
+    expect(Object.keys(state.profile.credits_unlock)).toHaveLength(2);
+    expect(state.mergeUnlockWindow).toHaveBeenCalledTimes(2);
+  });
+
+  it("refunds a paid unlock when the atomic window write fails", async () => {
+    state.profile.credits = 1;
+    state.ensureDailyCredits.mockResolvedValue({ credits: 1, resetDone: false, unlimited: false });
+    state.mergeUnlockWindow.mockResolvedValue({ error: { message: "database unavailable" } });
+
+    const { response } = await unlock({ category: "theory", content });
+
+    expect(response.status).toBe(500);
+    expect(state.refundCredits).toHaveBeenCalledWith(state.user.id, 1, expect.stringContaining("Refund"));
+    expect(state.profile.credits_unlock).toEqual({});
   });
 });

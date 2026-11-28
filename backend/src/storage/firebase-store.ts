@@ -84,6 +84,32 @@ export async function updateProfileDoc(
   }
 }
 
+export async function mergeProfileUnlockWindow(
+  userId: string,
+  identityKey: string,
+  expiresAt: number,
+): Promise<{ error: { message: string } | null }> {
+  const db = getFirestore();
+  if (!db) return { error: null };
+  try {
+    const ref = db.collection(PROFILES_COLLECTION).doc(userId);
+    await db.runTransaction(async (transaction) => {
+      const snapshot = await transaction.get(ref);
+      if (!snapshot.exists) return;
+      const current = snapshot.data()?.credits_unlock;
+      const windows =
+        current && typeof current === "object" && !Array.isArray(current)
+          ? { ...(current as Record<string, unknown>) }
+          : {};
+      windows[identityKey] = expiresAt;
+      transaction.set(ref, { credits_unlock: windows }, { merge: true });
+    });
+    return { error: null };
+  } catch (err) {
+    return { error: { message: err instanceof Error ? err.message : "unlock window update failed" } };
+  }
+}
+
 /** Remove push target when the user signs out on a device (native app). */
 export async function deleteFcmTokenDoc(userId: string): Promise<void> {
   const db = getFirestore();

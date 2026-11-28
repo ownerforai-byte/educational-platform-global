@@ -8,6 +8,7 @@ import {
   getProfileById,
   insertPremiumRequest,
   listPremiumRequests,
+  mergeUnlockWindow,
   updateProfileFields,
 } from "../../db/repositories/user.repository.js";
 import { listCreditTransactions } from "../../db/repositories/credit.repository.js";
@@ -36,19 +37,8 @@ async function persistUnlockWindow(
   identityKey: string,
   expiresAt: number,
 ): Promise<void> {
-  const { data: current, error: readError } = await getProfileById(userId, "credits_unlock");
-  if (readError) throw readError;
-
-  const existing =
-    current?.credits_unlock &&
-    typeof current.credits_unlock === "object" &&
-    !Array.isArray(current.credits_unlock)
-      ? (current.credits_unlock as Record<string, unknown>)
-      : {};
-  const { error: writeError } = await updateProfileFields(userId, {
-    credits_unlock: { ...existing, [identityKey]: expiresAt },
-  });
-  if (writeError) throw writeError;
+  const { error } = await mergeUnlockWindow(userId, identityKey, expiresAt);
+  if (error) throw error;
 }
 
 const router = Router();

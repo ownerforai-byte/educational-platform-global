@@ -195,6 +195,22 @@ const memory = vi.hoisted(() => {
     from(table: string) {
       return new Query(table);
     },
+    rpc: async (name: string, args: { p_mode: string; p_owner_id: string; p_path: string }) => {
+      if (name !== "adjust_storage_object") {
+        return { data: null, error: { code: "PGRST202", message: "Could not find the function" } };
+      }
+      if (args.p_mode !== "release") return { data: { ok: true }, error: null };
+      const index = tables.storage_objects.findIndex((row) =>
+        row.path === args.p_path && (row.owner_id ?? row.user_id) === args.p_owner_id,
+      );
+      if (index < 0) return { data: { ok: true, reason: "not_found" }, error: null };
+      const [row] = tables.storage_objects.splice(index, 1);
+      const profile = tables.profiles.find((item) => item.id === args.p_owner_id);
+      if (profile) {
+        profile.storage_used_bytes = Math.max(0, Number(profile.storage_used_bytes ?? 0) - Number(row.byte_size ?? 0));
+      }
+      return { data: { ok: true }, error: null };
+    },
     auth: {
       async getUser(token?: string) {
         if (token !== "member-token") {

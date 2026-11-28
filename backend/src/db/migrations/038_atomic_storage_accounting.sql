@@ -26,9 +26,10 @@ declare
   v_delta bigint;
   v_projected bigint;
   v_refs integer;
+  v_target_found boolean;
   v_now timestamptz := pg_catalog.clock_timestamp();
 begin
-  if pg_catalog.current_user is distinct from 'service_role' then
+  if current_user is distinct from 'service_role' then
     raise exception insufficient_privilege using message = 'service_role required';
   end if;
   if p_mode not in ('reserve', 'account', 'release', 'replace', 'promote') then
@@ -58,7 +59,8 @@ begin
   select * into v_existing
   from public.storage_objects
   where path = p_path and owner_id = p_owner_id;
-  if not found then
+  v_target_found := found;
+  if not v_target_found then
     select * into v_existing
     from public.storage_objects
     where path = p_path;
@@ -68,7 +70,7 @@ begin
   end if;
 
   if p_mode = 'release' then
-    if not found then
+    if not v_target_found then
       return pg_catalog.jsonb_build_object('ok', true, 'reason', 'not_found', 'used_bytes', v_used, 'ref_count', 0);
     end if;
     v_refs := greatest(1, coalesce(v_existing.ref_count, 1));
@@ -98,13 +100,13 @@ begin
     if not found then
       return pg_catalog.jsonb_build_object('ok', false, 'reason', 'missing_source');
     end if;
-    if found then
-      return pg_catalog.jsonb_build_object('ok', false, 'reason', 'target_exists');
-    end if;
     if p_path = p_old_path then
       return pg_catalog.jsonb_build_object('ok', false, 'reason', 'invalid_path');
     end if;
-    v_delta := p_byte_size - v_prior;
+    if v_target_found then
+      return pg_catalog.jsonb_build_object('ok', false, 'reason', 'target_exists');
+    end if;
+    v_delta := p_byte_size - coalesce(v_old.byte_size, 0);
     if v_used + v_delta > v_limit then
       return pg_catalog.jsonb_build_object('ok', false, 'reason', 'quota', 'used_bytes', v_used, 'ref_count', v_old.ref_count);
     end if;
@@ -129,7 +131,7 @@ begin
       end if;
       v_old_bytes := 0;
     else
-      v_old_bytes := coalesce(v_old.byte_size, 0);
+      v_old_bytes := case when coalesce(v_old.ref_count, 1) <= 1 then coalesce(v_old.byte_size, 0) else 0 end;
     end if;
   end if;
 
@@ -137,12 +139,12 @@ begin
     p_mode := 'account';
   end if;
 
-  if found and p_mode = 'reserve' then
+  if v_target_found and p_mode = 'reserve' then
     if coalesce(v_existing.ref_count, 1) >= 2147483647 then
       return pg_catalog.jsonb_build_object('ok', false, 'reason', 'ref_overflow');
     end if;
     v_refs := coalesce(v_existing.ref_count, 1) + 1;
-  elsif found then
+  elsif v_target_found then
     v_refs := greatest(1, coalesce(v_existing.ref_count, 1));
   else
     v_refs := 1;
@@ -154,7 +156,7 @@ begin
     return pg_catalog.jsonb_build_object('ok', false, 'reason', 'quota', 'used_bytes', v_used, 'ref_count', v_refs);
   end if;
 
-  if found then
+  if v_target_found then
     update public.storage_objects
     set byte_size = p_byte_size, ref_count = v_refs, updated_at = v_now
     where path = p_path and owner_id = p_owner_id;

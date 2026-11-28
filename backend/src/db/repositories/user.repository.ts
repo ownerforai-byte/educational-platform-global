@@ -18,6 +18,7 @@ import {
   readProfileDoc,
   upsertProfileDoc,
   updateProfileDoc,
+  mergeProfileUnlockWindow,
 } from "../../storage/firebase-store.js";
 import { normalizeRole } from "../../auth/types.js";
 
@@ -115,6 +116,28 @@ async function writePartitioned(
         : getAdminClient().from("profiles").update(payload).eq("id", userId);
     const { error } = await query;
     if (error) return { error };
+  }
+  return { error: null };
+}
+
+export async function mergeUnlockWindow(
+  userId: string,
+  identityKey: string,
+  expiresAt: number,
+): Promise<{ error: { message: string } | null }> {
+  const { data, error } = await getAdminClient().rpc("add_content_unlock_window", {
+    p_user_id: userId,
+    p_identity_key: identityKey,
+    p_expires_at: expiresAt,
+  });
+  if (error) return { error };
+  if (!data?.ok) {
+    return { error: { message: data?.reason === "missing_profile" ? "Profile not found" : "Unlock window update failed" } };
+  }
+
+  const mirror = await mergeProfileUnlockWindow(userId, identityKey, expiresAt);
+  if (mirror.error) {
+    console.warn("[user.repository] Firestore unlock-window mirror failed:", mirror.error.message);
   }
   return { error: null };
 }

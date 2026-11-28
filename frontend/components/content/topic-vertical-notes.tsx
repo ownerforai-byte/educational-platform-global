@@ -467,6 +467,8 @@ async function fetchTopicNoteBody(params: {
   try {
     return await revealTopicNote<RichTopicConcept>(params, controller.signal);
   } finally {
+    clearTimeout(timer);
+  }
 }
 
 /** Upper bound for one gated note body; past this the caller uses its fallback. */

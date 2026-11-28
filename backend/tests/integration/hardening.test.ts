@@ -19,6 +19,7 @@ const h = vi.hoisted(() => {
   /** Free-tier binaries go to R2 — tests toggle this instead of Supabase buckets. */
   const r2Active = { value: true };
   const r2Upload = vi.fn();
+  const storageAdjust = vi.fn();
   /** Legacy bucket metadata kept for older assertions that no longer drive uploads. */
   const bucketInfo: { value: { id: string; public: boolean } | null } = {
     value: { id: "resources", public: true },
@@ -84,6 +85,12 @@ const h = vi.hoisted(() => {
       getUser: (...args: any[]) => getUser(...args),
     },
     from: (table: string) => makeBuilder(table),
+    rpc: async (name: string, args: unknown) => {
+      if (name !== "adjust_storage_object") {
+        return { data: null, error: { code: "PGRST202", message: "Could not find the function" } };
+      }
+      return { data: await storageAdjust(args), error: null };
+    },
     storage: {
       from: (bucket: string) => {
         storageFrom(bucket);
@@ -109,6 +116,7 @@ const h = vi.hoisted(() => {
     storageUpload.mockReset();
     storageGetPublicUrl.mockReset();
     r2Upload.mockReset();
+    storageAdjust.mockReset().mockResolvedValue({ ok: true });
     r2Active.value = true;
     getUser.mockResolvedValue({ data: { user: { id: "user-1" } }, error: null });
     storageUpload.mockResolvedValue({ data: { path: "uploaded/x" }, error: null });
@@ -145,6 +153,7 @@ const h = vi.hoisted(() => {
     bucketInfo,
     r2Active,
     r2Upload,
+    storageAdjust,
   };
 });
 
@@ -1166,6 +1175,26 @@ describe("POST /api/storage/upload", () => {
     expect(res.body.tier).toBe(3);
     expect(h.r2Upload).toHaveBeenCalled();
     expect(h.storageUpload).not.toHaveBeenCalled();
+  });
+
+  it("rejects an upload when the atomic quota reservation is denied", async () => {
+    const { request } = await mountedStorage();
+    h.storageAdjust.mockResolvedValueOnce({ ok: false, reason: "quota" });
+
+    const res = await request("POST", "/api/storage/upload", {
+      path: "folder/img.png",
+      contentType: "image/png",
+      dataBase64: VALID_PNG_B64,
+    });
+
+    expect(res.status).toBe(413);
+    expect(res.body.error).toMatch(/quota/i);
+    expect(h.r2Upload).not.toHaveBeenCalled();
+    expect(h.storageAdjust).toHaveBeenCalledWith(expect.objectContaining({
+      p_mode: "reserve",
+      p_owner_id: "user-1",
+      p_path: "accounts/user-1/folder/img.png",
+    }));
   });
 
   it("requires TEACHER/ADMIN/OWNER role", async () => {

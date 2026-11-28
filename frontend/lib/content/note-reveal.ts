@@ -1,7 +1,7 @@
 import { unlockContent, type ContentUnlockTarget } from "@/lib/api/credits";
 import type { ContentKind } from "@/lib/content/paths";
 
-const unlockInFlight = new Map<string, Promise<unknown>>();
+const unlockInFlight = new Map<string, Promise<void>>();
 
 function unlockCategory(kind: ContentKind): "theory" | "visuals" {
   return kind === "mindmap" || kind === "rails" || kind === "graph" ? "visuals" : "theory";
@@ -12,9 +12,11 @@ async function unlockOnce(target: ContentUnlockTarget): Promise<void> {
   const existing = unlockInFlight.get(key);
   if (existing) return existing;
 
-  const pending = unlockContent(unlockCategory(target.kind), undefined, target).finally(() => {
-    unlockInFlight.delete(key);
-  });
+  const pending = unlockContent(unlockCategory(target.kind), undefined, target)
+    .then(() => undefined)
+    .finally(() => {
+      unlockInFlight.delete(key);
+    });
   unlockInFlight.set(key, pending);
   return pending;
 }

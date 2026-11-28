@@ -122,7 +122,7 @@ const h = vi.hoisted(() => {
     store.profiles.set(id, { id, access_status: "PENDING", role: "member" });
     return {
       data: {
-        user: { id, email },
+        user: { id, email, email_confirmed_at: "2026-01-01T00:00:00.000Z" },
         session: { access_token: `tok-${id}`, refresh_token: "refresh", expires_in: 3600 },
       },
       error: null,

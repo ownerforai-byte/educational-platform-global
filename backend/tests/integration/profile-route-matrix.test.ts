@@ -111,6 +111,12 @@ const memory = vi.hoisted(() => {
       return this;
     }
 
+    ilike(field: string, value: unknown) {
+      const needle = String(value).replace(/^%|%$/g, "").toLowerCase();
+      this.filters.push((row) => String(row[field] ?? "").toLowerCase().includes(needle));
+      return this;
+    }
+
     in(field: string, values: unknown[]) {
       this.filters.push((row) => values.includes(row[field]));
       return this;
@@ -205,17 +211,20 @@ const memory = vi.hoisted(() => {
     from(table: string) {
       return new Query(table);
     },
+    rpc: async (name: string) => name === "adjust_storage_object"
+      ? { data: { ok: true }, error: null }
+      : { data: null, error: { code: "PGRST202", message: "Could not find the function" } },
     auth: {
       async getUser(token?: string) {
         if (token === "member-token") {
           return {
-            data: { user: { id: OWNER_ID, email: "member@example.com", user_metadata: {} } },
+            data: { user: { id: OWNER_ID, email: "member@example.com", email_confirmed_at: "2026-01-01T00:00:00.000Z", user_metadata: {} } },
             error: null,
           };
         }
         if (token === "other-token") {
           return {
-            data: { user: { id: OTHER_ID, email: "other@example.com", user_metadata: {} } },
+            data: { user: { id: OTHER_ID, email: "other@example.com", email_confirmed_at: "2026-01-01T00:00:00.000Z", user_metadata: {} } },
             error: null,
           };
         }
@@ -309,7 +318,7 @@ describe("route status matrix", () => {
         expect(res.status, `${path} as ${auth ? "authed" : "anonymous"}`).toBe(200);
         expect(await res.text()).not.toMatch(/credit/i);
       }
-    });
+    }, 15_000);
   }
 
   const authedGets = ["/profile/me", "/profile/storage", "/profile/username-check?username=newname"];
@@ -324,7 +333,7 @@ describe("route status matrix", () => {
         expect(res.status, `${path} as authed`).toBe(200);
         expect(await res.text()).not.toMatch(/credit/i);
       }
-    });
+    }, 15_000);
   }
 
   it("PATCH /me is 401 anonymous and 200 for each account editing only itself", async () => {

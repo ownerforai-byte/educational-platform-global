@@ -22,7 +22,7 @@ import {
 import { recordSocialNotification } from "../../services/social-notification.service.js";
 import { removeSupersededObject } from "../../storage/remove-superseded";
 import {
-  accountStorageObject,
+  promoteStoragePath,
   reserveStoragePath,
   releaseStoragePath,
 } from "../../services/profile-storage";
@@ -255,17 +255,31 @@ function isPublishedAttachment(row: AttachmentRow): boolean {
   return Number.isSafeInteger(Number(row.byte_size)) && Number(row.byte_size) > 0;
 }
 
+/** Browser-writable staging key; published objects never use a presigned URL. */
+function pendingAttachmentPath(postId: string, attachmentId: string, filename: string): string {
+  return `community/.pending/${postId}/${attachmentId}/${filename}`;
+}
+
+function publishedAttachmentPath(postId: string, attachmentId: string, filename: string): string {
+  return `community/${postId}/${attachmentId}/${filename}`;
+}
+
 /** Best-effort rollback for a pending direct upload that failed verification. */
-async function discardPendingAttachment(user: SessionUser, row: AttachmentRow): Promise<void> {
-  if (row.storage_path) {
+async function discardPendingAttachment(
+  user: SessionUser,
+  row: AttachmentRow,
+  uploadedFinalPath?: string,
+): Promise<void> {
+  const paths = new Set([row.storage_path, uploadedFinalPath].filter((path): path is string => Boolean(path)));
+  for (const path of paths) {
     try {
-      await r2Delete(row.storage_path);
+      await r2Delete(path);
     } catch (err) {
       const errorId = newErrorId();
       logServerError(err, errorId, "community-feed-upload-delete");
     }
     try {
-      await releaseStoragePath(user.id, row.storage_path);
+      await releaseStoragePath(user.id, path);
     } catch (err) {
       const errorId = newErrorId();
       logServerError(err, errorId, "community-feed-upload-release");
@@ -3040,7 +3054,7 @@ router.post(
     }
 
     const attachmentId = randomUUID();
-    const storagePath = `community/${postId}/${attachmentId}/${safeFilename}`;
+    const storagePath = pendingAttachmentPath(postId, attachmentId, safeFilename);
     await ensureProfile(user);
     const reserved = await reserveStoragePath(user.id, storagePath, byteSize, user);
     if (!reserved.ok) {
@@ -3053,7 +3067,7 @@ router.post(
     }
     let uploadUrl: string | null;
     try {
-      uploadUrl = await r2PresignedPut(storagePath, contentType, 600, byteSize);
+      uploadUrl = await r2PresignedPut(storagePath, contentType, 300, byteSize);
     } catch (err) {
       await releaseStoragePath(user.id, storagePath);
       throw err;
@@ -3063,8 +3077,8 @@ router.post(
       unavailable(res);
       return;
     }
-    // Keep the row invisible until /complete verifies the stored object. The
-    // real storage path remains on the pending row so DELETE can roll it back.
+    // Keep the staging row invisible until /complete verifies and copies the
+    // bytes to a final key that was never presigned for browser writes.
     const { error } = await supabaseAdmin.from("community_feed_attachments").insert({
       id: attachmentId,
       post_id: postId,
@@ -3085,7 +3099,7 @@ router.post(
       return;
     }
     noStore(res);
-    res.json({ attachmentId, uploadUrl, contentType, byteSize, expiresIn: 600 });
+    res.json({ attachmentId, uploadUrl, contentType, byteSize, expiresIn: 300 });
   }),
 );
 
@@ -3133,6 +3147,11 @@ router.post(
       return;
     }
     if (isPublishedAttachment(row)) {
+      if (row.storage_path !== publishedAttachmentPath(postId, attachmentId, row.filename)) {
+        await discardPendingAttachment(user, row);
+        bad(res, "Invalid upload request.");
+        return;
+      }
       noStore(res);
       res.json({
         attachment: {
@@ -3144,13 +3163,18 @@ router.post(
       });
       return;
     }
+    if (Number(row.byte_size) < 0) {
+      bad(res, "Upload completion is already in progress.", 409);
+      return;
+    }
 
-    const expectedPath = `community/${postId}/${attachmentId}/${row.filename}`;
+    const pendingPath = pendingAttachmentPath(postId, attachmentId, row.filename);
+    const finalPath = publishedAttachmentPath(postId, attachmentId, row.filename);
     const ext = row.filename.split(".").pop()?.toLowerCase() ?? "";
     const spec = BINARY_FILE_BY_EXTENSION[ext];
     if (
       !row.storage_path ||
-      row.storage_path !== expectedPath ||
+      row.storage_path !== pendingPath ||
       sanitizeUploadFilename(row.filename) !== row.filename ||
       !spec ||
       row.content_type !== spec.mime
@@ -3159,6 +3183,29 @@ router.post(
       bad(res, "Invalid upload request.");
       return;
     }
+
+    const { data: claimed, error: claimError } = await supabaseAdmin
+      .from("community_feed_attachments")
+      .update({ byte_size: -1 })
+      .eq("id", attachmentId)
+      .eq("post_id", postId)
+      .eq("byte_size", 0)
+      .select("id")
+      .maybeSingle();
+    if (claimError) {
+      await discardPendingAttachment(user, row);
+      if (isMissingTable(claimError)) {
+        unavailable(res);
+        return;
+      }
+      serverError(res, claimError, "community-feed");
+      return;
+    }
+    if (!claimed) {
+      bad(res, "Upload completion is already in progress.", 409);
+      return;
+    }
+
     const { data: reservation, error: reservationError } = await supabaseAdmin
       .from("storage_objects")
       .select("byte_size")
@@ -3189,7 +3236,7 @@ router.post(
         bad(res, "Uploaded file was not found", 404);
         return;
       }
-      if (head.contentLength > MAX_FILE_BYTES || head.contentLength > declaredBytes) {
+      if (head.contentLength !== declaredBytes || head.contentLength > MAX_FILE_BYTES) {
         await discardPendingAttachment(user, row);
         bad(res, "Each file must be 3 MB or smaller and match its declared size", 413);
         return;
@@ -3203,7 +3250,7 @@ router.post(
       downloaded = await r2Download(row.storage_path);
       if (
         !downloaded ||
-        downloaded.buffer.length !== head.contentLength ||
+        downloaded.buffer.length !== declaredBytes ||
         downloaded.contentType.split(";", 1)[0].trim().toLowerCase() !== row.content_type ||
         !matchBinaryMagic(downloaded.buffer, spec.kind)
       ) {
@@ -3217,39 +3264,55 @@ router.post(
       return;
     }
 
-    // Reconcile the reservation to HEAD's authoritative size before making
-    // the zero-byte pending row visible to feed/profile consumers.
-    const reconciled = await accountStorageObject(user.id, row.storage_path, head.contentLength, user);
-    if (!reconciled.ok) {
-      await discardPendingAttachment(user, row);
-      if (reconciled.reason === "quota") {
-        bad(res, "Storage quota exceeded — free space on your profile or upgrade your plan.", 413);
-      } else {
-        unavailable(res);
-      }
-      return;
-    }
-    const { error: updateError } = await supabaseAdmin
-      .from("community_feed_attachments")
-      .update({ byte_size: head.contentLength })
-      .eq("id", attachmentId)
-      .eq("post_id", postId);
-    if (updateError) {
-      await discardPendingAttachment(user, row);
-      if (isMissingTable(updateError)) {
-        unavailable(res);
+    try {
+      await r2Upload(finalPath, downloaded.buffer, row.content_type, {
+        cacheControl: "public, max-age=31536000, immutable",
+        contentLength: declaredBytes,
+      });
+      const promoted = await promoteStoragePath(user.id, row.storage_path, finalPath, declaredBytes, user);
+      if (!promoted.ok) {
+        await discardPendingAttachment(user, row, finalPath);
+        if (promoted.reason === "quota") {
+          bad(res, "Storage quota exceeded — free space on your profile or upgrade your plan.", 413);
+        } else {
+          unavailable(res);
+        }
         return;
       }
-      serverError(res, updateError, "community-feed");
+      const { error: updateError } = await supabaseAdmin
+        .from("community_feed_attachments")
+        .update({ byte_size: declaredBytes, storage_path: finalPath })
+        .eq("id", attachmentId)
+        .eq("post_id", postId)
+        .eq("byte_size", -1);
+      if (updateError) {
+        await discardPendingAttachment(user, row, finalPath);
+        if (isMissingTable(updateError)) {
+          unavailable(res);
+          return;
+        }
+        serverError(res, updateError, "community-feed");
+        return;
+      }
+      try {
+        await r2Delete(row.storage_path);
+      } catch (err) {
+        const errorId = newErrorId();
+        logServerError(err, errorId, "community-feed-upload-pending-delete");
+      }
+    } catch (err) {
+      await discardPendingAttachment(user, row, finalPath);
+      serverError(res, err, "community-feed-upload-publish");
       return;
     }
+
     noStore(res);
     res.json({
       attachment: {
         id: row.id,
         filename: row.filename,
         contentType: row.content_type,
-        byteSize: head.contentLength,
+        byteSize: declaredBytes,
       },
     });
   }),

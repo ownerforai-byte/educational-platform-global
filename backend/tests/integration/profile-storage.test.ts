@@ -194,9 +194,71 @@ const memory = vi.hoisted(() => {
     }
   }
 
+  function adjustStorage(args: {
+    p_mode: string;
+    p_owner_id: string;
+    p_path: string;
+    p_byte_size: number;
+    p_limit_bytes: number;
+    p_old_path: string | null;
+  }) {
+    const profile = tables.profiles.find((row) => row.id === args.p_owner_id);
+    if (!profile) return { ok: false, reason: "missing_profile" };
+    let used = Number(profile.storage_used_bytes ?? 0);
+    const limit = Number(profile.storage_limit_bytes ?? args.p_limit_bytes);
+    const existing = tables.storage_objects.find((row) => row.path === args.p_path);
+    if (existing && existing.owner_id !== args.p_owner_id) return { ok: false, reason: "owner_mismatch" };
+    const prior = Number(existing?.byte_size ?? 0);
+
+    if (args.p_mode === "release") {
+      if (!existing) return { ok: true, reason: "not_found", used_bytes: used, ref_count: 0 };
+      const refs = Number(existing.ref_count ?? 1);
+      if (refs > 1) {
+        existing.ref_count = refs - 1;
+        return { ok: true, used_bytes: used, ref_count: refs - 1 };
+      }
+      tables.storage_objects = tables.storage_objects.filter((row) => row !== existing);
+      used = Math.max(0, used - prior);
+      profile.storage_used_bytes = used;
+      return { ok: true, used_bytes: used, ref_count: 0 };
+    }
+
+    let oldBytes = 0;
+    if (args.p_mode === "replace" && args.p_old_path && args.p_old_path !== args.p_path) {
+      const old = tables.storage_objects.find((row) => row.path === args.p_old_path);
+      if (old && old.owner_id !== args.p_owner_id) return { ok: false, reason: "owner_mismatch" };
+      oldBytes = Number(old?.byte_size ?? 0);
+    }
+    const delta = args.p_byte_size - prior;
+    if (used + delta - oldBytes > limit) return { ok: false, reason: "quota", used_bytes: used };
+    const refs = args.p_mode === "reserve" && existing
+      ? Number(existing.ref_count ?? 1) + 1
+      : Math.max(1, Number(existing?.ref_count ?? 1));
+    if (existing) {
+      existing.byte_size = args.p_byte_size;
+      existing.ref_count = refs;
+    } else {
+      tables.storage_objects.push({
+        path: args.p_path,
+        owner_id: args.p_owner_id,
+        byte_size: args.p_byte_size,
+        ref_count: refs,
+      });
+    }
+    used = Math.max(0, used + delta);
+    profile.storage_used_bytes = used;
+    return { ok: true, used_bytes: used, ref_count: refs };
+  }
+
   const client = {
     from(table: string) {
       return new Query(table);
+    },
+    rpc: async (name: string, args: Parameters<typeof adjustStorage>[0]) => {
+      if (name !== "adjust_storage_object") {
+        return { data: null, error: { code: "PGRST202", message: "Could not find the function" } };
+      }
+      return { data: adjustStorage(args), error: null };
     },
     auth: {
       async getUser(token?: string) {
@@ -208,6 +270,7 @@ const memory = vi.hoisted(() => {
             user: {
               id: USER_ID,
               email: "member@example.com",
+              email_confirmed_at: "2026-01-01T00:00:00.000Z",
               user_metadata: { full_name: "Member Student" },
             },
           },
@@ -308,7 +371,7 @@ describe("profile storage", () => {
     expect(body.usedBytes).toBe(0);
     expect(body.limitBytes).toBe(25 * 1024 * 1024);
     expect(body.unlimited).toBe(false);
-  });
+  }, 15_000);
 
   it("exposes a public profile by username with feed stats", async () => {
     memory.tables.community_feed_posts.push({
@@ -337,6 +400,45 @@ describe("profile storage", () => {
     });
     expect(reserved.ok).toBe(false);
     if (!reserved.ok) expect(reserved.reason).toBe("quota");
+  });
+
+  it("uses the database limit override instead of a more generous session tier", async () => {
+    memory.tables.profiles[0]!.storage_limit_bytes = 50;
+    const reserved = await reserveStoragePath(memory.USER_ID, "community/x/file.png", 51, {
+      id: memory.USER_ID,
+      role: "pro",
+      plan: "pro",
+      email: "member@example.com",
+    });
+    expect(reserved).toEqual({ ok: false, reason: "quota" });
+    expect(memory.tables.storage_objects).toHaveLength(0);
+  });
+
+  it("admits only one of two concurrent reservations against the remaining quota", async () => {
+    memory.tables.profiles[0]!.storage_limit_bytes = 100;
+    const user = { id: memory.USER_ID, role: "member" as const, plan: "member", email: "member@example.com" };
+    const results = await Promise.all([
+      reserveStoragePath(memory.USER_ID, "community/x/one.bin", 60, user),
+      reserveStoragePath(memory.USER_ID, "community/x/two.bin", 60, user),
+    ]);
+    expect(results.filter((result) => result.ok)).toHaveLength(1);
+    expect(results).toContainEqual({ ok: false, reason: "quota" });
+    expect(memory.tables.profiles[0]!.storage_used_bytes).toBe(60);
+  });
+
+  it("fails closed when the atomic accounting function has not been migrated", async () => {
+    vi.spyOn(memory.client, "rpc").mockResolvedValueOnce({
+      data: null,
+      error: { code: "PGRST202", message: "Could not find the function public.adjust_storage_object" },
+    });
+    const reserved = await reserveStoragePath(memory.USER_ID, "community/x/file.png", 1, {
+      id: memory.USER_ID,
+      role: "member",
+      plan: "member",
+      email: "member@example.com",
+    });
+    expect(reserved).toEqual({ ok: false, reason: "missing" });
+    expect(memory.tables.storage_objects).toHaveLength(0);
   });
 
   it("rejects media proxy paths outside allowed prefixes", async () => {

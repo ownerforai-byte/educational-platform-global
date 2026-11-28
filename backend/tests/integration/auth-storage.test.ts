@@ -197,6 +197,7 @@ vi.mock("../../src/storage/firebase-store.js", () => ({
   upsertAccessSession: async () => {},
 }));
 
+const originalUseFirebaseAuth = process.env.USE_FIREBASE_AUTH;
 process.env.USE_FIREBASE_AUTH = "true";
 process.env.SUPABASE_SERVICE_ROLE_KEY = "test-auth-storage-signing-key";
 
@@ -216,7 +217,11 @@ beforeAll(async () => {
   base = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
 });
 
-afterAll(() => new Promise<void>((resolve, reject) => server.close((err) => (err ? reject(err) : resolve()))));
+afterAll(async () => {
+  await new Promise<void>((resolve, reject) => server.close((err) => (err ? reject(err) : resolve())));
+  if (originalUseFirebaseAuth === undefined) delete process.env.USE_FIREBASE_AUTH;
+  else process.env.USE_FIREBASE_AUTH = originalUseFirebaseAuth;
+});
 
 beforeEach(() => {
   stubAccessApprovalRequired();

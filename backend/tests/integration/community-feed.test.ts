@@ -49,6 +49,7 @@ const memory = vi.hoisted(() => {
       },
     ];
     tables.community_feed_ai_replies = [];
+    tables.storage_objects = [];
   }
 
   class Query {
@@ -219,9 +220,84 @@ const memory = vi.hoisted(() => {
     }
   }
 
+  function adjustStorage(args: {
+    p_mode: string;
+    p_owner_id: string;
+    p_path: string;
+    p_byte_size: number;
+    p_limit_bytes: number;
+    p_old_path: string | null;
+  }) {
+    const profile = tables.profiles.find((row) => row.id === args.p_owner_id);
+    if (!profile) return { ok: false, reason: "missing_profile" };
+    let used = Number(profile.storage_used_bytes ?? 0);
+    const limit = Number(profile.storage_limit_bytes ?? args.p_limit_bytes);
+    const existing = tables.storage_objects.find((row) => row.path === args.p_path);
+    if (existing && existing.owner_id !== args.p_owner_id) return { ok: false, reason: "owner_mismatch" };
+    const prior = Number(existing?.byte_size ?? 0);
+
+    if (args.p_mode === "release") {
+      if (!existing) return { ok: true, reason: "not_found", used_bytes: used, ref_count: 0 };
+      const refs = Number(existing.ref_count ?? 1);
+      if (refs > 1) {
+        existing.ref_count = refs - 1;
+        return { ok: true, used_bytes: used, ref_count: refs - 1 };
+      }
+      tables.storage_objects = tables.storage_objects.filter((row) => row !== existing);
+      used = Math.max(0, used - prior);
+      profile.storage_used_bytes = used;
+      return { ok: true, used_bytes: used, ref_count: 0 };
+    }
+
+    if (args.p_mode === "promote") {
+      const source = tables.storage_objects.find((row) => row.path === args.p_old_path && row.owner_id === args.p_owner_id);
+      if (!source) return { ok: false, reason: "missing_source" };
+      if (existing) return { ok: false, reason: "target_exists" };
+      const delta = args.p_byte_size - Number(source.byte_size ?? 0);
+      if (used + delta > limit) return { ok: false, reason: "quota", used_bytes: used };
+      source.path = args.p_path;
+      source.byte_size = args.p_byte_size;
+      used = Math.max(0, used + delta);
+      profile.storage_used_bytes = used;
+      return { ok: true, used_bytes: used, ref_count: Number(source.ref_count ?? 1) };
+    }
+
+    let oldBytes = 0;
+    if (args.p_mode === "replace" && args.p_old_path && args.p_old_path !== args.p_path) {
+      const old = tables.storage_objects.find((row) => row.path === args.p_old_path);
+      if (old && old.owner_id !== args.p_owner_id) return { ok: false, reason: "owner_mismatch" };
+      oldBytes = Number(old?.byte_size ?? 0);
+    }
+    const delta = args.p_byte_size - prior;
+    if (used + delta - oldBytes > limit) return { ok: false, reason: "quota", used_bytes: used };
+    const refs = args.p_mode === "reserve" && existing
+      ? Number(existing.ref_count ?? 1) + 1
+      : Math.max(1, Number(existing?.ref_count ?? 1));
+    if (existing) {
+      existing.byte_size = args.p_byte_size;
+      existing.ref_count = refs;
+    } else {
+      tables.storage_objects.push({
+        path: args.p_path,
+        owner_id: args.p_owner_id,
+        byte_size: args.p_byte_size,
+        ref_count: refs,
+      });
+    }
+    used = Math.max(0, used + delta);
+    profile.storage_used_bytes = used;
+    return { ok: true, used_bytes: used, ref_count: refs };
+  }
+
   const client = {
     from(table: string) {
       return new Query(table);
+    },
+    rpc: async (name: string, args: Parameters<typeof adjustStorage>[0]) => {
+      if (name !== "adjust_storage_object") {
+        return { data: null, error: { code: "PGRST202", message: "Could not find the function" } };
+      }
+      return { data: adjustStorage(args), error: null };
     },
     auth: {
       async getUser(token?: string) {
@@ -403,6 +479,10 @@ async function presignUpload(postId: string, byteSize = png.length) {
 }
 
 function uploadPath(postId: string, attachmentId: string): string {
+  return `community/.pending/${postId}/${attachmentId}/diagram.png`;
+}
+
+function publishedPath(postId: string, attachmentId: string): string {
   return `community/${postId}/${attachmentId}/diagram.png`;
 }
 
@@ -541,18 +621,18 @@ describe("community feed", () => {
     expect(missing.status).toBe(404);
   }, 15_000);
 
-  it("keeps direct uploads hidden until verified and reconciles authoritative bytes", async () => {
+  it("publishes verified uploads under an immutable final key that the presign URL cannot modify", async () => {
     r2.active = true;
     const postId = await createPost();
-    const declaredBytes = png.length + 8;
-    const upload = await presignUpload(postId, declaredBytes);
+    const upload = await presignUpload(postId);
     const path = uploadPath(postId, upload.attachmentId);
+    const finalPath = publishedPath(postId, upload.attachmentId);
 
-    expect(upload).toMatchObject({ contentType: "image/png", byteSize: declaredBytes, expiresIn: 600 });
-    expect(r2.presign).toHaveBeenCalledWith(path, "image/png", 600, declaredBytes);
+    expect(upload).toMatchObject({ contentType: "image/png", byteSize: png.length, expiresIn: 300 });
+    expect(r2.presign).toHaveBeenCalledWith(path, "image/png", 300, png.length);
     expect(memory.tables.community_feed_attachments[0].byte_size).toBe(0);
-    expect(memory.tables.storage_objects[0].byte_size).toBe(declaredBytes);
-    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(declaredBytes);
+    expect(memory.tables.storage_objects[0].byte_size).toBe(png.length);
+    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(png.length);
 
     const hiddenFile = await fetch(`${base}/feed/attachments/${upload.attachmentId}/file`);
     expect(hiddenFile.status).toBe(404);
@@ -570,14 +650,66 @@ describe("community feed", () => {
     expect(await completed.json()).toEqual({
       attachment: { id: upload.attachmentId, filename: "diagram.png", contentType: "image/png", byteSize: png.length },
     });
-    expect(memory.tables.community_feed_attachments[0].byte_size).toBe(png.length);
-    expect(memory.tables.storage_objects[0].byte_size).toBe(png.length);
+    expect(r2.upload).toHaveBeenCalledWith(finalPath, png, "image/png", {
+      cacheControl: "public, max-age=31536000, immutable",
+      contentLength: png.length,
+    });
+    expect(memory.tables.community_feed_attachments[0]).toMatchObject({ byte_size: png.length, storage_path: finalPath });
+    expect(memory.tables.storage_objects).toEqual([
+      expect.objectContaining({ path: finalPath, byte_size: png.length }),
+    ]);
     expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(png.length);
-    expect((await fetch(`${base}/feed/attachments/${upload.attachmentId}/file`)).status).toBe(200);
+    expect(r2.objects.has(path)).toBe(false);
+
+    r2.objects.set(path, { buffer: Buffer.from("replayed pending write"), contentType: "image/png" });
+    const file = await fetch(`${base}/feed/attachments/${upload.attachmentId}/file`);
+    expect(file.status).toBe(200);
+    expect(Buffer.from(await file.arrayBuffer()).equals(png)).toBe(true);
+    expect(r2.objects.get(finalPath)?.buffer.equals(png)).toBe(true);
+  });
+
+  it("rejects a stored object whose size differs from the signed reservation", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const upload = await presignUpload(postId, png.length + 1);
+    const path = uploadPath(postId, upload.attachmentId);
+    r2.objects.set(path, { buffer: png, contentType: "image/png" });
+
+    const completed = await fetch(`${base}/feed/${postId}/attachments/${upload.attachmentId}/complete`, {
+      method: "POST",
+      headers: memberHeaders(),
+    });
+
+    expect(completed.status).toBe(413);
+    expect(r2.upload).not.toHaveBeenCalled();
+    expect(memory.tables.community_feed_attachments).toEqual([]);
+    expect(memory.tables.storage_objects).toEqual([]);
+  });
+
+  it("rolls back both staging and final objects when the server-side copy fails", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const upload = await presignUpload(postId);
+    const path = uploadPath(postId, upload.attachmentId);
+    const finalPath = publishedPath(postId, upload.attachmentId);
+    r2.objects.set(path, { buffer: png, contentType: "image/png" });
+    r2.upload.mockRejectedValueOnce(new Error("copy failed"));
+
+    const completed = await fetch(`${base}/feed/${postId}/attachments/${upload.attachmentId}/complete`, {
+      method: "POST",
+      headers: memberHeaders(),
+    });
+
+    expect(completed.status).toBe(500);
+    expect(r2.remove).toHaveBeenCalledWith(path);
+    expect(r2.remove).toHaveBeenCalledWith(finalPath);
+    expect(r2.objects.size).toBe(0);
+    expect(memory.tables.community_feed_attachments).toEqual([]);
+    expect(memory.tables.storage_objects).toEqual([]);
   });
 
   it.each([
-    { name: "invalid magic bytes", buffer: Buffer.from("not a png"), contentType: "image/png", status: 400 },
+    { name: "invalid magic bytes", buffer: Buffer.alloc(png.length, 0x61), contentType: "image/png", status: 400 },
     { name: "an oversized object", buffer: Buffer.concat([png, Buffer.alloc(16)]), contentType: "image/png", status: 413 },
     { name: "a mismatched content type", buffer: png, contentType: "image/jpeg", status: 400 },
   ])("rolls back a pending upload with $name", async ({ buffer, contentType, status }) => {

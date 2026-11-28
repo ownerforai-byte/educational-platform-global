@@ -61,12 +61,20 @@ type AdminNamespace = {
   messaging?: (app?: AdminApp) => unknown;
 };
 
+type FirebaseDocRef = {
+  set: (data: object, opts?: { merge?: boolean }) => Promise<void>;
+  get: () => Promise<{ exists: boolean; data: () => Record<string, unknown> | undefined }>;
+};
+
+type FirebaseTransaction = {
+  get: (ref: FirebaseDocRef) => ReturnType<FirebaseDocRef["get"]>;
+  set: (ref: FirebaseDocRef, data: object, opts?: { merge?: boolean }) => void;
+};
+
 type FirebaseFirestore = {
+  runTransaction: <T>(update: (transaction: FirebaseTransaction) => Promise<T>) => Promise<T>;
   collection: (name: string) => {
-    doc: (id: string) => {
-      set: (data: object, opts?: { merge?: boolean }) => Promise<void>;
-      get: () => Promise<{ exists: boolean; data: () => Record<string, unknown> | undefined }>;
-    };
+    doc: (id: string) => FirebaseDocRef;
     add: (data: object) => Promise<{ id: string }>;
   };
 };

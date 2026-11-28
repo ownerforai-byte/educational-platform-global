@@ -7,6 +7,7 @@
  * that is still referenced.
  */
 import { supabaseAdmin } from "../db/supabase";
+import { adjustStorageObject, type StorageAccountingResult } from "../db/repositories/storage.repository";
 import { normalizeRole, type SessionUser } from "../auth/types";
 import { isOwnerEmail } from "../middleware/auth";
 
@@ -112,59 +113,31 @@ export async function getStorageSnapshot(
   };
 }
 
+type StorageMutationResult = { ok: true } | { ok: false; reason: "quota" | "missing" };
+
+function normalizeAccountingResult(result: StorageAccountingResult): StorageMutationResult {
+  if (result.ok) return { ok: true };
+  if (result.reason === "quota") return { ok: false, reason: "quota" };
+  if (result.reason === "missing" || result.reason === "missing_profile") {
+    return { ok: false, reason: "missing" };
+  }
+  throw new Error(`Storage accounting failed: ${result.reason ?? "unknown"}`);
+}
+
 export async function reserveStoragePath(
   ownerId: string,
   path: string,
   byteSize: number,
   user: Pick<SessionUser, "role" | "plan" | "email">,
-): Promise<{ ok: true } | { ok: false; reason: "quota" | "missing" }> {
-  if (byteSize < 0) return { ok: false, reason: "quota" };
-
-  const snap = await getStorageSnapshot(ownerId, user);
-  if ("missing" in snap) return { ok: false, reason: "missing" };
-
-  const { data: existing, error: exErr } = await supabaseAdmin
-    .from("storage_objects")
-    .select("path, byte_size, ref_count")
-    .eq("path", path)
-    .maybeSingle();
-
-  if (exErr && isMissingTable(exErr)) return { ok: false, reason: "missing" };
-  if (exErr) throw exErr;
-
-  const priorBytes = existing ? Number(existing.byte_size ?? 0) : 0;
-  const delta = existing ? Math.max(0, byteSize - priorBytes) : byteSize;
-
-  if (!snap.unlimited && snap.usedBytes + delta > snap.limitBytes) {
-    return { ok: false, reason: "quota" };
-  }
-
-  const now = new Date().toISOString();
-  if (existing) {
-    const ref = Number(existing.ref_count ?? 1) + 1;
-    const byteDelta = byteSize - priorBytes;
-    const { error: upErr } = await supabaseAdmin
-      .from("storage_objects")
-      .update({ byte_size: byteSize, ref_count: ref, updated_at: now })
-      .eq("path", path);
-    if (upErr) throw upErr;
-    if (byteDelta !== 0) {
-      await bumpProfileUsed(ownerId, byteDelta);
-    }
-    return { ok: true };
-  }
-
-  const { error: insErr } = await supabaseAdmin.from("storage_objects").insert({
+): Promise<StorageMutationResult> {
+  if (!Number.isSafeInteger(byteSize) || byteSize < 0) return { ok: false, reason: "quota" };
+  return normalizeAccountingResult(await adjustStorageObject({
+    mode: "reserve",
+    ownerId,
     path,
-    owner_id: ownerId,
-    byte_size: byteSize,
-    ref_count: 1,
-    created_at: now,
-    updated_at: now,
-  });
-  if (insErr) throw insErr;
-  await bumpProfileUsed(ownerId, byteSize);
-  return { ok: true };
+    byteSize,
+    limitBytes: defaultLimitBytes(user),
+  }));
 }
 
 /**
@@ -176,88 +149,31 @@ export async function accountStorageObject(
   path: string,
   byteSize: number,
   user: Pick<SessionUser, "role" | "plan" | "email">,
-): Promise<{ ok: true } | { ok: false; reason: "quota" | "missing" }> {
-  if (byteSize < 0) return { ok: false, reason: "quota" };
-
-  const snap = await getStorageSnapshot(ownerId, user);
-  if ("missing" in snap) return { ok: false, reason: "missing" };
-
-  const { data: existing, error: exErr } = await supabaseAdmin
-    .from("storage_objects")
-    .select("path, byte_size")
-    .eq("path", path)
-    .maybeSingle();
-
-  if (exErr && isMissingTable(exErr)) return { ok: false, reason: "missing" };
-  if (exErr) throw exErr;
-
-  const prior = existing ? Number(existing.byte_size ?? 0) : 0;
-  const delta = byteSize - prior;
-  if (delta > 0 && !snap.unlimited && snap.usedBytes + delta > snap.limitBytes) {
-    return { ok: false, reason: "quota" };
-  }
-
-  const now = new Date().toISOString();
-  if (existing) {
-    const { error } = await supabaseAdmin
-      .from("storage_objects")
-      .update({ byte_size: byteSize, updated_at: now })
-      .eq("path", path);
-    if (error) throw error;
-  } else {
-    const { error } = await supabaseAdmin.from("storage_objects").insert({
-      path,
-      owner_id: ownerId,
-      byte_size: byteSize,
-      ref_count: 1,
-      created_at: now,
-      updated_at: now,
-    });
-    if (error && isMissingTable(error)) return { ok: false, reason: "missing" };
-    if (error) throw error;
-  }
-  if (delta !== 0) await bumpProfileUsed(ownerId, delta);
-  return { ok: true };
+): Promise<StorageMutationResult> {
+  if (!Number.isSafeInteger(byteSize) || byteSize < 0) return { ok: false, reason: "quota" };
+  return normalizeAccountingResult(await adjustStorageObject({
+    mode: "account",
+    ownerId,
+    path,
+    byteSize,
+    limitBytes: defaultLimitBytes(user),
+  }));
 }
 
 export async function releaseStoragePath(
   ownerId: string,
   path: string,
 ): Promise<void> {
-  const { data: row, error } = await supabaseAdmin
-    .from("storage_objects")
-    .select("path, byte_size, ref_count")
-    .eq("path", path)
-    .maybeSingle();
-  if (error) {
-    if (isMissingTable(error)) return;
-    throw error;
+  const result = await adjustStorageObject({
+    mode: "release",
+    ownerId,
+    path,
+    byteSize: 0,
+    limitBytes: Number.MAX_SAFE_INTEGER,
+  });
+  if (!result.ok && result.reason !== "missing" && result.reason !== "missing_profile") {
+    throw new Error(`Storage accounting failed: ${result.reason ?? "unknown"}`);
   }
-  if (!row) return;
-
-  const refs = Number(row.ref_count ?? 1);
-  if (refs > 1) {
-    await supabaseAdmin
-      .from("storage_objects")
-      .update({ ref_count: refs - 1, updated_at: new Date().toISOString() })
-      .eq("path", path);
-    return;
-  }
-
-  const bytes = Number(row.byte_size ?? 0);
-  await supabaseAdmin.from("storage_objects").delete().eq("path", path);
-  await bumpProfileUsed(ownerId, -bytes);
-}
-
-async function bumpProfileUsed(userId: string, delta: number): Promise<void> {
-  if (delta === 0) return;
-  const { data } = await supabaseAdmin
-    .from("profiles")
-    .select("storage_used_bytes")
-    .eq("id", userId)
-    .maybeSingle();
-  const next = Math.max(0, Number(data?.storage_used_bytes ?? 0) + delta);
-  await supabaseAdmin.from("profiles").update({ storage_used_bytes: next }).eq("id", userId);
 }
 
 export async function replaceReservedPath(
@@ -266,100 +182,36 @@ export async function replaceReservedPath(
   newPath: string,
   newBytes: number,
   user: Pick<SessionUser, "role" | "plan" | "email">,
-): Promise<{ ok: true } | { ok: false; reason: "quota" | "missing" }> {
-  if (oldPath === newPath) {
-    const snap = await getStorageSnapshot(ownerId, user);
-    if ("missing" in snap) return { ok: false, reason: "missing" };
-    const { data: row, error } = await supabaseAdmin
-      .from("storage_objects")
-      .select("byte_size")
-      .eq("path", oldPath)
-      .maybeSingle();
-    if (error && isMissingTable(error)) return { ok: false, reason: "missing" };
-    if (error) throw error;
-    const prior = Number(row?.byte_size ?? 0);
-    const delta = newBytes - prior;
-    if (!snap.unlimited && snap.usedBytes + delta > snap.limitBytes) {
-      return { ok: false, reason: "quota" };
-    }
-    await supabaseAdmin
-      .from("storage_objects")
-      .update({ byte_size: newBytes, updated_at: new Date().toISOString() })
-      .eq("path", oldPath);
-    await bumpProfileUsed(ownerId, delta);
-    return { ok: true };
-  }
-
-  // Keep the old key counted until the caller finishes the swap, but check
-  // quota against the *net* delta so a same-size replace is not rejected.
-  const snap = await getStorageSnapshot(ownerId, user);
-  if ("missing" in snap) return { ok: false, reason: "missing" };
-
-  let oldBytes = 0;
-  if (oldPath) {
-    const { data: oldRow, error: oldErr } = await supabaseAdmin
-      .from("storage_objects")
-      .select("byte_size")
-      .eq("path", oldPath)
-      .maybeSingle();
-    if (oldErr && isMissingTable(oldErr)) return { ok: false, reason: "missing" };
-    if (oldErr) throw oldErr;
-    oldBytes = Number(oldRow?.byte_size ?? 0);
-  }
-
-  const netDelta = newBytes - oldBytes;
-  if (!snap.unlimited && snap.usedBytes + netDelta > snap.limitBytes) {
-    return { ok: false, reason: "quota" };
-  }
-
-  const reserved = await reserveStoragePathIgnoringQuota(ownerId, newPath, newBytes);
-  if (!reserved.ok) return reserved;
-  return { ok: true };
+): Promise<StorageMutationResult> {
+  if (!Number.isSafeInteger(newBytes) || newBytes < 0) return { ok: false, reason: "quota" };
+  return normalizeAccountingResult(await adjustStorageObject({
+    mode: "replace",
+    ownerId,
+    path: newPath,
+    byteSize: newBytes,
+    limitBytes: defaultLimitBytes(user),
+    oldPath: oldPath || null,
+  }));
 }
 
-/**
- * Insert / bump a storage_objects row without a second quota check. Callers
- * must have already verified the net delta against the snapshot.
- */
-async function reserveStoragePathIgnoringQuota(
+export async function promoteStoragePath(
   ownerId: string,
-  path: string,
+  pendingPath: string,
+  finalPath: string,
   byteSize: number,
-): Promise<{ ok: true } | { ok: false; reason: "missing" }> {
-  const { data: existing, error: exErr } = await supabaseAdmin
-    .from("storage_objects")
-    .select("path, byte_size, ref_count")
-    .eq("path", path)
-    .maybeSingle();
-
-  if (exErr && isMissingTable(exErr)) return { ok: false, reason: "missing" };
-  if (exErr) throw exErr;
-
-  const now = new Date().toISOString();
-  if (existing) {
-    const ref = Number(existing.ref_count ?? 1) + 1;
-    const priorBytes = Number(existing.byte_size ?? 0);
-    const byteDelta = byteSize - priorBytes;
-    const { error: upErr } = await supabaseAdmin
-      .from("storage_objects")
-      .update({ byte_size: byteSize, ref_count: ref, updated_at: now })
-      .eq("path", path);
-    if (upErr) throw upErr;
-    if (byteDelta !== 0) await bumpProfileUsed(ownerId, byteDelta);
-    return { ok: true };
+  user: Pick<SessionUser, "role" | "plan" | "email">,
+): Promise<StorageMutationResult> {
+  if (!Number.isSafeInteger(byteSize) || byteSize < 0 || !pendingPath || !finalPath) {
+    return { ok: false, reason: "quota" };
   }
-
-  const { error: insErr } = await supabaseAdmin.from("storage_objects").insert({
-    path,
-    owner_id: ownerId,
-    byte_size: byteSize,
-    ref_count: 1,
-    created_at: now,
-    updated_at: now,
-  });
-  if (insErr) throw insErr;
-  await bumpProfileUsed(ownerId, byteSize);
-  return { ok: true };
+  return normalizeAccountingResult(await adjustStorageObject({
+    mode: "promote",
+    ownerId,
+    path: finalPath,
+    byteSize,
+    limitBytes: defaultLimitBytes(user),
+    oldPath: pendingPath,
+  }));
 }
 
 export interface AbandonedProfileObject {
