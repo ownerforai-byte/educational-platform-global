@@ -6,7 +6,7 @@ import {
   APPROVED_ROUTE,
   DENIED_ROUTE,
   WAITING_ROUTE,
-  readStatusToken,
+  hasPendingSignup,
 } from "../pending-signup-identity";
 import { useLiveApprovalRoute } from "../use-live-approval-route";
 import { VerifyingStatus } from "./verifying-status";
@@ -50,9 +50,9 @@ export function CreatedAccountGate({
   // account-status poll — a cold backend or 5xx on /account-status used to
   // leave login/signup on "Checking your account status" forever while email,
   // Google, and password flows stayed unreachable.
-  const hasSignupToken = Boolean(readStatusToken());
+  const hasSignupMarker = hasPendingSignup();
 
-  if (!hasSignupToken) {
+  if (!hasSignupMarker) {
     return <>{children}</>;
   }
 

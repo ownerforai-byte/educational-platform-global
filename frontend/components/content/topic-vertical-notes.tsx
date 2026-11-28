@@ -49,6 +49,7 @@ import { getLabVisualNode } from "@/lib/lab-visual-loaders";
 import { getActivityForTopic } from "@/lib/lab-manifest";
 import { noteMatchQuality, noteMatchesTopic, pickCanonicalNoteEntry } from "@/lib/note-topic-match";
 import { resolveUnitSlug } from "@/lib/syllabus-notes-manifest";
+import { revealTopicNote } from "@/lib/content/note-reveal";
 import { ActivityJourney } from "@/components/lab/activity-journey";
 
 const SchematicDiagramLazy = dynamic(
@@ -450,8 +451,7 @@ function filenameFromContentPath(relPath: string): string | undefined {
 
 /**
  * Fetch one paid note body from the spark-gated server endpoint.
- * The `moduleKey` passed here is the same key the credits/unlock endpoint
- * wrote to `profiles.credits_unlock` — the backend verifies the window.
+ * The backend derives the unlock-window identity from these content coordinates.
  */
 async function fetchTopicNoteBody(params: {
   kind: ContentKind;
@@ -459,29 +459,14 @@ async function fetchTopicNoteBody(params: {
   subjectSlug: string;
   unitSlug: string;
   filename: string;
-  moduleKey?: string;
 }): Promise<RichTopicConcept> {
   // The proxy has no timeout and the backend can stall on its auth lookups; an
   // unbounded await left the topic workspace on the loading spinner forever.
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), NOTE_REVEAL_TIMEOUT_MS);
-  let res: Response;
   try {
-    res = await fetch("/api/content/reveal", {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(params),
-      signal: controller.signal,
-    });
+    return await revealTopicNote<RichTopicConcept>(params, controller.signal);
   } finally {
-    clearTimeout(timer);
-  }
-  if (!res.ok) {
-    const err = (await res.json().catch(() => ({}))) as { error?: string };
-    throw new Error(err.error ?? `content/reveal returned ${res.status}`);
-  }
-  return res.json() as Promise<RichTopicConcept>;
 }
 
 /** Upper bound for one gated note body; past this the caller uses its fallback. */
@@ -540,9 +525,6 @@ export function TopicVerticalNotes({
           subjectSlug,
           unitSlug: unitId,
           filename: meta.filename,
-          // moduleKey matches the key stored in credits_unlock by
-          // the /api/user/credits/unlock endpoint.
-          moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${meta.filename}`,
         });
       } catch {
         try {
@@ -605,7 +587,6 @@ export function TopicVerticalNotes({
                 subjectSlug: parsed.subjectSlug ?? subjectSlug,
                 unitSlug: unitId,
                 filename,
-                moduleKey: `note:${classSlug}/${subjectSlug}/${unitId}/${filename}`,
               });
             } catch {
               body = null;

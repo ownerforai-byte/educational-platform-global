@@ -351,7 +351,9 @@ describe("login reflects the stored approval state", () => {
     expect(res.status).toBe(403);
     const body = (await res.json()) as { code?: string; statusToken?: string };
     expect(body.code).toBe("ACCOUNT_REJECTED");
-    expect(typeof body.statusToken).toBe("string");
+    expect(body).not.toHaveProperty("statusToken");
+    const statusCookie = res.headers.getSetCookie().find((cookie) => cookie.startsWith("neb-signup-status="));
+    expect(statusCookie?.toLowerCase()).toContain("httponly");
   });
 
   it("reads approval from Supabase even when the Firestore mirror is down", async () => {

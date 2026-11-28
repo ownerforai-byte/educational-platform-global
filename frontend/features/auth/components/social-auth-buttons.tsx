@@ -8,8 +8,6 @@ import { publicUrl } from "@/lib/site-url";
 import { firebaseGoogleSignIn, isFirebaseAuthEnabled } from "@/lib/firebase/client-auth";
 import { writeCachedSession } from "@/lib/auth/session-store";
 import { useAuth } from "@/providers/auth-provider";
-import {
-} from "@/lib/core/access-approval";
 import { tierHomePathFor } from "@/lib/core/access-level";
 import {
   clearPendingSignup,
@@ -141,12 +139,11 @@ export function SocialAuthButtons({
       });
       sessionStorage.removeItem("neb_oauth_csrf");
 
-      const oauthBody = response as unknown as { code?: string; statusToken?: string };
+      const oauthBody = response as unknown as { code?: string };
       if (oauthBody.code === "PENDING_APPROVAL") {
         // Backend verdict is authoritative — the approval flag belongs to the
         // waiting screen, not to the routing decision.
-        if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
-        rememberAccessOutcome("PENDING");
+        rememberPendingSignup();
         router.replace(WAITING_ROUTE);
         redirected = true;
         return;
@@ -163,17 +160,15 @@ export function SocialAuthButtons({
       redirected = true;
     } catch (oauthError) {
       sessionStorage.removeItem("neb_oauth_csrf");
-      const authErr = oauthError as { code?: string; statusToken?: string };
+      const authErr = oauthError as { code?: string };
       if (authErr?.code === "PENDING_APPROVAL") {
         // Backend verdict is authoritative — see the session branch above.
-        if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
-        rememberAccessOutcome("PENDING");
+        rememberPendingSignup();
         router.replace(WAITING_ROUTE);
         redirected = true;
         return;
       }
       if (authErr?.code === "ACCOUNT_REJECTED") {
-        if (authErr.statusToken) rememberPendingSignup(authErr.statusToken);
         rememberAccessOutcome("REJECTED");
         router.replace(DENIED_ROUTE);
         redirected = true;

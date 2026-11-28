@@ -14,6 +14,7 @@ interface Row {
 }
 
 const state = {
+  classes: [] as Row[],
   subjects: [] as Row[],
   chapters: [] as Row[],
   topics: [] as Row[],
@@ -44,7 +45,13 @@ vi.mock("../../src/db/supabase", () => {
           return reject(new Error("supabase down (simulated)"));
         }
         const source =
-          table === "subjects" ? state.subjects : table === "chapters" ? state.chapters : state.topics;
+          table === "classes"
+            ? state.classes
+            : table === "subjects"
+              ? state.subjects
+              : table === "chapters"
+                ? state.chapters
+                : state.topics;
         const rows = source.filter((row) => filters.every((f) => f(row)));
         const sorted = [...rows].sort((a, b) =>
           ascending ? Number(a.order) - Number(b.order) : Number(b.order) - Number(a.order),
@@ -88,9 +95,15 @@ afterAll(async () => {
 
 beforeEach(() => {
   state.fail = false;
+  // Class rows mirror the production shape: the class dir slug is what the
+  // manifest uses ("class-11"), the website track slug is "class-11-notes".
+  state.classes = [
+    { id: "cls-11", slug: "class-11", name: "Class 11 Science", is_active: true, order: 1 },
+    { id: "cls-12", slug: "class-12", name: "Class 12 Science", is_active: true, order: 2 },
+  ];
   state.subjects = [
-    { id: "sub-11-phy", slug: "physics", name: "Physics", is_active: true },
-    { id: "sub-11-bio", slug: "biology", name: "Biology", is_active: true },
+    { id: "sub-11-phy", class_id: "cls-11", slug: "physics", name: "Physics", is_active: true },
+    { id: "sub-11-bio", class_id: "cls-11", slug: "biology", name: "Biology", is_active: true },
   ];
   state.chapters = [
     { id: "chap-gravitation", subject_id: "sub-11-phy", slug: "gravitation", title: "Gravitation", is_active: true, order: 3 },
@@ -144,5 +157,76 @@ describe("GET /api/mobile/units", () => {
     state.fail = true;
     const res = await fetch(`${baseUrl}/api/mobile/units?subject=physics`);
     expect(res.status).toBe(500);
+  });
+
+  // ── Wave 1 batch B: optional class scope for shared subject slugs ──────
+  // mathematics / english / nepali exist in BOTH class tracks; without the
+  // class param the drill-down cannot tell class-11 from class-12.
+
+  test("class scope resolves a shared subject slug within the requested class", async () => {
+    state.subjects = [
+      { id: "sub-11-math", class_id: "cls-11", slug: "mathematics", name: "Mathematics", is_active: true },
+      { id: "sub-12-math", class_id: "cls-12", slug: "mathematics", name: "Mathematics", is_active: true },
+    ];
+    state.chapters = [
+      { id: "chap-11-sets", subject_id: "sub-11-math", slug: "sets", title: "Sets and Numbers", is_active: true, order: 1 },
+      { id: "chap-12-cont", subject_id: "sub-12-math", slug: "continuity", title: "Continuity", is_active: true, order: 1 },
+    ];
+
+    const c11 = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics&class=class-11`);
+    expect(c11.status).toBe(200);
+    const body11 = (await c11.json()) as UnitsBody;
+    expect(body11.data.subject.id).toBe("sub-11-math");
+    expect(body11.data.units.map((u) => u.slug)).toEqual(["sets"]);
+
+    const c12 = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics&class=class-12`);
+    expect(c12.status).toBe(200);
+    const body12 = (await c12.json()) as UnitsBody;
+    expect(body12.data.subject.id).toBe("sub-12-math");
+    expect(body12.data.units.map((u) => u.slug)).toEqual(["continuity"]);
+  });
+
+  test("class scope accepts the website track slug (class-11-notes)", async () => {
+    state.subjects = [
+      { id: "sub-11-math", class_id: "cls-11", slug: "mathematics", name: "Mathematics", is_active: true },
+      { id: "sub-12-math", class_id: "cls-12", slug: "mathematics", name: "Mathematics", is_active: true },
+    ];
+    state.chapters = [
+      { id: "chap-11-sets", subject_id: "sub-11-math", slug: "sets", title: "Sets and Numbers", is_active: true, order: 1 },
+    ];
+    const res = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics&class=class-11-notes`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as UnitsBody;
+    expect(body.data.subject.id).toBe("sub-11-math");
+  });
+
+  test("unknown class is a 404 with its own message", async () => {
+    const res = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics&class=class-99`);
+    expect(res.status).toBe(404);
+    const body = (await res.json()) as { error?: string };
+    expect(body.error).toBe("Class not found");
+  });
+
+  test("class scope returns 404 when the subject is not offered in that class", async () => {
+    state.subjects = [
+      { id: "sub-12-math", class_id: "cls-12", slug: "mathematics", name: "Mathematics", is_active: true },
+    ];
+    const res = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics&class=class-11`);
+    expect(res.status).toBe(404);
+    const body = (await res.json()) as { error?: string };
+    expect(body.error).toBe("Subject not found");
+  });
+
+  test("omitting the class param keeps the legacy slug-only behaviour", async () => {
+    // Both class rows exist for the slug; the legacy path still returns the
+    // first active match instead of failing, so existing callers keep working.
+    state.subjects = [
+      { id: "sub-11-math", class_id: "cls-11", slug: "mathematics", name: "Mathematics", is_active: true },
+      { id: "sub-12-math", class_id: "cls-12", slug: "mathematics", name: "Mathematics", is_active: true },
+    ];
+    const res = await fetch(`${baseUrl}/api/mobile/units?subject=mathematics`);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as UnitsBody;
+    expect(body.data.subject.id).toBe("sub-11-math");
   });
 });

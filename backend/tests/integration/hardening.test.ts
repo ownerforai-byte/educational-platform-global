@@ -379,6 +379,39 @@ describe("direct editor approval gates", () => {
 // ───────────────────────────────────────────────────────────────────────────
 // resources.ts
 // ───────────────────────────────────────────────────────────────────────────
+describe("GET /api/resources/:id/linked publication checks", () => {
+  it("does not expose references when the parent is unpublished or missing", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.enqueue("resources", { data: [null], error: null });
+
+    const response = await request("GET", "/api/resources/private/linked", undefined, "");
+
+    expect(response.status).toBe(404);
+    expect(h.opsFor("resource_references")).toEqual([]);
+  });
+
+  it("returns only published referenced resources", async () => {
+    const { request } = await mount(resourcesRouter, "/api/resources");
+    h.enqueue("resources", { data: [{ id: "parent" }], error: null });
+    h.enqueue("resource_references", {
+      data: [
+        { id: "public-ref", referenced: { id: "public", is_published: true } },
+        { id: "draft-ref", referenced: { id: "draft", is_published: false } },
+        { id: "missing-ref", referenced: null },
+        { id: "legacy-ref", referenced: { id: "legacy" } },
+      ],
+      error: null,
+    });
+
+    const response = await request("GET", "/api/resources/parent/linked", undefined, "");
+
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual([
+      { id: "public-ref", referenced: { id: "public", is_published: true } },
+    ]);
+  });
+});
+
 describe("PATCH /api/resources/:id allowlist", () => {
   // The PATCH handler enforces ownership before updating: it fetches the
   // existing row (first "resources" queue item) and confirms the caller may

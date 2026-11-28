@@ -1,6 +1,8 @@
 package com.ravikisan.platform.compose.ui.screens.downloads.local
 
 import com.ravikisan.platform.compose.data.repository.PersonalStoreRepository
+import com.ravikisan.platform.compose.data.session.AccountScope
+import com.ravikisan.platform.compose.data.session.scopedNamespace
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -27,30 +29,46 @@ data class StoredPack(
  * `Record<packId, StoredPack>` JSON the TS writes; nothing here is authored.
  *
  * Like the website: NO file downloads — packs stay inside the app and are
- * readable with no connection at all. Production binding is
- * [PersonalPacksStore] over the parent's encrypted [PersonalStoreRepository].
+ * readable with no connection at all. The record is account-scoped like the
+ * website (`neb-offline-packs:v1:u:<id>`); a write is rejected when the
+ * account changed since the read, and legacy unscoped records are NOT
+ * migrated (website policy). Production binding is [PersonalPacksStore] over
+ * the parent's encrypted [PersonalStoreRepository].
  */
 interface PacksStore {
     /** Raw `Record<packId, StoredPack>` JSON, or null when none saved. */
     suspend fun readRaw(): String?
 
-    /** Persist raw JSON; null clears. Returns false when storage refused. */
+    /** Persist raw JSON; null clears. Returns false when storage refused
+     * or the account changed since [readRaw]. */
     suspend fun writeRaw(raw: String?): Boolean
 }
 
 class PersonalPacksStore @Inject constructor(
     private val personal: PersonalStoreRepository,
+    private val scope: AccountScope,
 ) : PacksStore {
 
-    override suspend fun readRaw(): String? = personal.read(NAMESPACE)
+    /** Scope the packs were last read under. */
+    private var loadedScope: String? = null
+
+    override suspend fun readRaw(): String? {
+        val current = scope.current()
+        loadedScope = current
+        return personal.read(scopedNamespace(NAMESPACE, current))
+    }
 
     override suspend fun writeRaw(raw: String?): Boolean = try {
-        if (raw == null) {
-            personal.delete(NAMESPACE)
+        val current = scope.current()
+        if (loadedScope != null && loadedScope != current) {
+            false
+        } else if (raw == null) {
+            personal.delete(scopedNamespace(NAMESPACE, current))
+            true
         } else {
-            personal.write(NAMESPACE, raw)
+            personal.write(scopedNamespace(NAMESPACE, current), raw)
+            true
         }
-        true
     } catch (_: Exception) {
         false
     }
@@ -81,6 +99,8 @@ object PacksStoreModule {
 
     @Provides
     @Singleton
-    fun providePacksStore(personal: PersonalStoreRepository): PacksStore =
-        PersonalPacksStore(personal)
+    fun providePacksStore(
+        personal: PersonalStoreRepository,
+        scope: AccountScope,
+    ): PacksStore = PersonalPacksStore(personal, scope)
 }

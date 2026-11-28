@@ -56,7 +56,6 @@ export async function login(
 
 export type FirebaseIdTokenLoginResult = AuthLoginResponse & {
   code?: string;
-  statusToken?: string;
 };
 
 /** Exchange a Firebase ID token (phone, Google redirect, etc.) for an app session. */
@@ -72,7 +71,6 @@ export async function loginWithFirebaseIdToken(idToken: string): Promise<Firebas
 
 export type FirebaseIdTokenSignupResult = AuthSignupResponse & {
   code?: string;
-  statusToken?: string;
 };
 
 /** Register after phone (or other Firebase) verification — uses existing idToken + profile name. */

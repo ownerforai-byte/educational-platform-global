@@ -8,9 +8,8 @@ import {
 } from "./live-approval-route";
 import {
   NORMAL_ROUTE,
-  WAITING_ROUTE,
+  hasPendingSignup,
   readAccessOutcome,
-  readStatusToken,
 } from "./pending-signup-identity";
 
 /**
@@ -24,8 +23,7 @@ const LIVE_ROUTE_FAIL_OPEN_ATTEMPTS = 4;
 
 function initialRoute(): string | null {
   if (typeof window === "undefined") return null;
-  const token = readStatusToken();
-  if (!token) return NORMAL_ROUTE;
+  if (!hasPendingSignup()) return NORMAL_ROUTE;
   return null;
 }
 

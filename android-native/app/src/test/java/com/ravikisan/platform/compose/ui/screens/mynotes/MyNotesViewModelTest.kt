@@ -111,6 +111,27 @@ class MyNotesViewModelTest {
     }
 
     @Test
+    fun `account-changed rejection reloads and reports the unsaved note`() {
+        val store = FakeNotesStore().apply {
+            raw = """[{"id":"n-1","title":"Kept","body":"b","quote":"","subjectKey":"","createdAt":"2026-03-10T10:00:00Z","updatedAt":"2026-03-10T10:00:00Z"}]"""
+        }
+        val vm = vm(store)
+        vm.onDraftChanged(NoteDraft(title = "New note", body = "Not yet saved."))
+        store.rejectNextWith = com.ravikisan.platform.compose.ui.screens.mynotes.local.RejectionReason.ACCOUNT_CHANGED
+        assertTrue(vm.saveDraft("2026-03-10T10:05:00Z", 2_000))
+        // Rejected: the note is NOT in state; the pre-change library was
+        // reloaded from storage (website commit() contract).
+        assertEquals(1, vm.state.value.notes.size)
+        assertEquals("Kept", vm.state.value.notes.first().title)
+        assertEquals(
+            "Your account changed. Your notes were reloaded and this change was not saved.",
+            vm.state.value.error,
+        )
+        assertTrue(store.raw!!.contains("Kept"))
+        assertFalse(store.raw!!.contains("Not yet saved."))
+    }
+
+    @Test
     fun `stored JSON round-trips through the website shape`() {
         val notes = listOf(
             PersonalNote(

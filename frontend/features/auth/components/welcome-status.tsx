@@ -18,13 +18,12 @@ import {
   NORMAL_ROUTE,
   DENIED_ROUTE,
   clearPendingSignup,
-  readStatusToken,
+  hasPendingSignup,
   rememberAccessOutcome,
-  rememberPendingSignup,
 } from "../pending-signup-identity";
 
 /**
- * WAITING screen body — polls live access for this device's status token.
+ * WAITING screen body — polls live access using the HttpOnly status cookie.
  *
  *   PENDING  → stay here until owner console approval
  *   ACTIVE   → remember outcome + open /welcome/approved
@@ -60,32 +59,7 @@ const STEPS = [
   { icon: BadgeCheck, label: "Access granted", hint: "Sign in and start learning" },
 ];
 
-/**
- * Seed the status token from `?status_token=...` when the Google OAuth
- * callback hands a PENDING account straight here. Persist it to localStorage
- * so the polling works on reload, then clear the query string so a manual
- * refresh doesn't reseed an expired token.
- */
-function useUrlStatusToken() {
-  useEffect(() => {
-    // Read the status token the Google callback hands over (?status_token=...).
-    // Done from window.location (not useSearchParams) so the /welcome page
-    // stays prerender-safe — no Suspense boundary required.
-    const url = new URL(window.location.href);
-    const fromUrl =
-      url.searchParams.get("status_token") ||
-      url.searchParams.get("token") ||
-      url.searchParams.get("statusToken");
-    if (!fromUrl) return;
-    // Persist to all three hardcoded mirrors before dropping the query string.
-    rememberPendingSignup(fromUrl);
-    // Drop the query string so a manual refresh doesn't reseed an old token.
-    window.history.replaceState(null, "", window.location.pathname);
-  }, []);
-}
-
 export function WelcomeStatus() {
-  useUrlStatusToken();
   const [state, setState] = useState<StatusState>("loading");
   const [fullName, setFullName] = useState<string | null>(null);
   /** Live tally — bumps only on "Check now" (profiles.status_check_count). */
@@ -93,25 +67,23 @@ export function WelcomeStatus() {
   const timerRef = useRef<number | null>(null);
 
   const check = useCallback(async (opts?: { bump?: boolean }) => {
-    // Recover from localStorage / sessionStorage / the hardcoded cookie, so a
-    // refresh or a cleared store cannot lose the "account created" identity.
-    const token = readStatusToken();
-    if (!token) {
+    if (!hasPendingSignup()) {
       clearPendingSignup();
       setState("missing");
       return;
     }
 
     const bump = opts?.bump === true;
-    const qs = new URLSearchParams({ token });
-    if (bump) qs.set("bump", "1");
 
     try {
       const res = await apiFetch<{
         accessStatus: "PENDING" | "ACTIVE" | "REJECTED";
         fullName?: string | null;
         checkCount?: number;
-      }>(`/api/auth/account-status?${qs.toString()}`);
+      }>("/api/auth/account-status", {
+        method: "POST",
+        body: JSON.stringify({ bump }),
+      });
       setFullName(res.fullName ?? null);
       if (typeof res.checkCount === "number" && Number.isFinite(res.checkCount)) {
         setCheckCount(res.checkCount);

@@ -57,6 +57,28 @@ export const CONTENT_KIND_SECTIONS = {
 
 export type ContentKind = keyof typeof CONTENT_KIND_SECTIONS;
 
+/** Actual notes/content cost one spark; visual study aids remain free. */
+export const CONTENT_UNLOCK_COSTS: Record<ContentKind, number> = {
+  concepts: 1,
+  theory: 1,
+  guides: 1,
+  notes: 1,
+  lessons: 1,
+  formula: 1,
+  pyqs: 1,
+  sets: 1,
+  examples: 1,
+  exams: 1,
+  drills: 1,
+  mindmap: 0,
+  rails: 0,
+  graph: 0,
+  documents: 1,
+  "question-bank": 1,
+  exports: 1,
+  plans: 1,
+};
+
 const LEGACY_CLASS_DIRS: Record<string, string> = {
   "class-11": "class-11",
   "class-11-notes": "class-11",

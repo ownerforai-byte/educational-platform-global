@@ -59,8 +59,7 @@ export function LoginForm() {
       // switched off in this deployment's env must not turn a PENDING account
       // into a member-home landing (or a session refresh). The waiting screen
       // still applies the flag itself for deployments without the queue.
-      if (result.statusToken) rememberPendingSignup(result.statusToken);
-      rememberAccessOutcome("PENDING");
+      rememberPendingSignup();
       router.push(WAITING_ROUTE);
       return;
     } else if (result.ok) {
@@ -69,7 +68,6 @@ export function LoginForm() {
       refresh();
       router.push(tierHomePathFor(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
-      if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");
       router.replace(DENIED_ROUTE);
     } else {
@@ -105,13 +103,11 @@ export function LoginForm() {
       const res = await loginWithFirebaseIdToken(idToken);
       if (res.code === "PENDING_APPROVAL") {
         // Backend verdict is authoritative — see finishSession above.
-        if (res.statusToken) rememberPendingSignup(res.statusToken);
-        rememberAccessOutcome("PENDING");
+        rememberPendingSignup();
         router.push(WAITING_ROUTE);
         return;
       }
       if (res.code === "ACCOUNT_REJECTED") {
-        if (res.statusToken) rememberPendingSignup(res.statusToken);
         rememberAccessOutcome("REJECTED");
         router.replace(DENIED_ROUTE);
         return;
@@ -124,14 +120,12 @@ export function LoginForm() {
       }
       setError(AUTH_INVALID_CREDENTIALS);
     } catch (err) {
-      const e = err as Error & { code?: string; statusToken?: string };
+      const e = err as Error & { code?: string };
       if (e.code === "PENDING_APPROVAL") {
         // Backend verdict is authoritative — see finishSession above.
-        if (e.statusToken) rememberPendingSignup(e.statusToken);
-        rememberAccessOutcome("PENDING");
+        rememberPendingSignup();
         router.push(WAITING_ROUTE);
       } else if (e.code === "ACCOUNT_REJECTED") {
-        if (e.statusToken) rememberPendingSignup(e.statusToken);
         rememberAccessOutcome("REJECTED");
         router.replace(DENIED_ROUTE);
       } else {

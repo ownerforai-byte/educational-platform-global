@@ -10,6 +10,7 @@ import com.ravikisan.platform.compose.core.logic.dueQueue
 import com.ravikisan.platform.compose.core.logic.isoDay
 import com.ravikisan.platform.compose.core.logic.sm2
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
+import com.ravikisan.platform.compose.ui.screens.srs.local.MobileSrsBank
 import com.ravikisan.platform.compose.ui.screens.srs.local.SrsCardSource
 import com.ravikisan.platform.compose.ui.screens.srs.local.SrsReviewStore
 import com.ravikisan.platform.compose.ui.screens.studyplan.decodeGoals
@@ -53,7 +54,7 @@ class SrsViewModel @Inject constructor(
     private val store: SrsReviewStore,
     private val goalsStore: GoalsStore,
     private val syllabus: SyllabusRepository,
-    private val cardSource: SrsCardSource,
+    @MobileSrsBank private val cardSource: SrsCardSource,
 ) : ViewModel() {
 
     internal var scope: CoroutineScope = viewModelScope

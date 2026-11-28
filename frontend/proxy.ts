@@ -93,45 +93,8 @@ function isRateLimited(key: string, max: number) {
   return entry.count > max;
 }
 
-/**
- * Pages Next prerenders at build time (`x-nextjs-prerender: 1`).
- *
- * A per-request nonce can only be stamped into HTML rendered per request, so a
- * prerendered page would ship its inline bootstrap scripts without one — and a
- * nonce-bearing CSP blocks exactly those, leaving the page dead (no hydration,
- * no offline takeover). These routes render a fixed registry entry with no user
- * input, so they get a nonce-free policy that permits their own inline scripts
- * instead of a non-functional nonce.
- */
-const PRERENDERED_ERROR_PATHS = new Set([
-  "/400",
-  "/401",
-  "/403",
-  "/404",
-  "/408",
-  "/429",
-  "/500",
-  "/502",
-  "/503",
-  "/504",
-  "/network",
-  "/offline",
-]);
-
-function buildContentSecurityPolicy(nonce: string | null) {
-  // With a nonce: inline scripts must carry it (CSP3 ignores 'unsafe-inline'
-  // whenever a nonce is present). Without one (prerendered pages, see above):
-  // the page's own inline bootstrap is allowed by 'unsafe-inline'.
-  // Only first-party scripts are allowed: the platform no longer loads ANY
-  // third-party browser AI runtime (removed 2026-11-12).
-  // `strict-dynamic` lets nonce-bearing scripts load their children without
-  // enumerating every host; without a nonce (prerender) keep unsafe-inline.
-  // reCAPTCHA (phone auth) loads from gstatic / google / recaptcha; allow it on
-  // the nonce-free (prerendered) path and as a safety net. With a nonce,
-  // 'strict-dynamic' lets the Firebase SDK chain-load reCAPTCHA.
-  const scriptSrc = nonce
-    ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
-    : "script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.recaptcha.net https://www.google.com";
+function buildContentSecurityPolicy(nonce: string) {
+  const scriptSrc = `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`;
 
   const apiOrigin = process.env.NEXT_PUBLIC_API_URL || "https://us-central1-rn01-af00b.cloudfunctions.net";
   const firebaseAuthDomain = process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN?.trim().replace(/\/+$/, "");
@@ -297,9 +260,14 @@ export function proxy(request: NextRequest) {
       setSecurityHeaders(denied, "default-src 'none'; frame-ancestors 'none';");
       return denied;
     }
-    // Static, non-user-specific page: no nonce needed, no per-IP page budget.
-    const crawlerPolicy = buildContentSecurityPolicy(null);
-    const crawlerResponse = NextResponse.next();
+    // Crawlers do not execute scripts, but their responses still use the same
+    // nonce policy so a client-controlled User-Agent cannot weaken CSP.
+    const nonce = randomBytes(16).toString("base64");
+    const crawlerPolicy = buildContentSecurityPolicy(nonce);
+    const requestHeaders = new Headers(request.headers);
+    requestHeaders.set("Content-Security-Policy", crawlerPolicy);
+    requestHeaders.set("x-nonce", nonce);
+    const crawlerResponse = NextResponse.next({ request: { headers: requestHeaders } });
     setSecurityHeaders(crawlerResponse, crawlerPolicy);
     crawlerResponse.headers.set("x-robots-tag", "index, follow");
     return crawlerResponse;
@@ -318,13 +286,11 @@ export function proxy(request: NextRequest) {
     return NextResponse.next();
   }
 
-  const nonce = PRERENDERED_ERROR_PATHS.has(request.nextUrl.pathname)
-    ? null
-    : randomBytes(16).toString("base64");
+  const nonce = randomBytes(16).toString("base64");
   const contentSecurityPolicy = buildContentSecurityPolicy(nonce);
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set("Content-Security-Policy", contentSecurityPolicy);
-  if (nonce) requestHeaders.set("x-nonce", nonce);
+  requestHeaders.set("x-nonce", nonce);
 
   const response = NextResponse.next({ request: { headers: requestHeaders } });
   setSecurityHeaders(response, contentSecurityPolicy);

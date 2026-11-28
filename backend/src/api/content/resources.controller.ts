@@ -179,6 +179,17 @@ router.get("/:id/linked", async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
 
+    const { data: parent, error: parentError } = await supabaseAdmin
+      .from("resources")
+      .select("id")
+      .eq("id", id)
+      .eq("is_published", true)
+      .maybeSingle();
+    if (parentError || !parent) {
+      res.status(404).json({ error: "Not found" });
+      return;
+    }
+
     const { data, error } = await supabaseAdmin
       .from("resource_references")
       .select("id, reference_type, attribution, referenced:referenced_id(*)")
@@ -190,7 +201,10 @@ router.get("/:id/linked", async (req: Request, res: Response) => {
       return;
     }
 
-    res.json(data ?? []);
+    res.json((data ?? []).filter((row) => {
+      const referenced = row.referenced as { is_published?: boolean } | null;
+      return referenced?.is_published === true;
+    }));
   } catch (err: any) {
     console.error("linked resources lookup failed:", err);
     serverError(res, err);

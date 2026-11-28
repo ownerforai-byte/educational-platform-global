@@ -1,11 +1,51 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
+import type { Request, Response } from "express";
+import { isProductionEnv } from "../config/env";
+
+export const STATUS_COOKIE = "neb-signup-status";
+export const STATUS_MARKER_COOKIE = "neb_signup_session";
+export const STATUS_MARKER_VALUE = "neb-pending-signup-v1";
+const STATUS_COOKIE_MAX_AGE_SEC = 7 * 24 * 60 * 60;
+
+function statusCookieOptions() {
+  return {
+    httpOnly: true,
+    sameSite: "lax" as const,
+    secure: isProductionEnv(),
+    path: "/",
+  };
+}
+
+export function setStatusCookie(res: Response, token: string): void {
+  res.cookie(STATUS_COOKIE, token, {
+    ...statusCookieOptions(),
+    maxAge: STATUS_COOKIE_MAX_AGE_SEC * 1000,
+  });
+  res.cookie(STATUS_MARKER_COOKIE, STATUS_MARKER_VALUE, {
+    ...statusCookieOptions(),
+    httpOnly: false,
+    maxAge: STATUS_COOKIE_MAX_AGE_SEC * 1000,
+  });
+}
+
+export function clearStatusCookie(res: Response): void {
+  res.clearCookie(STATUS_COOKIE, statusCookieOptions());
+  res.clearCookie(STATUS_MARKER_COOKIE, statusCookieOptions());
+}
+
+export function readStatusTokenFromRequest(req: Request): string | null {
+  const header = req.get("x-status-token");
+  if (header) return header;
+  const cookie = req.cookies?.[STATUS_COOKIE];
+  return typeof cookie === "string" ? cookie : null;
+}
 
 /**
  * Signed, expiring status token (owner-approval signup flow, 2026-09-26).
  *
  * After signup the account is PENDING and gets NO session. The user is
- * handed this token instead so their status screen can poll
- * GET /api/auth/account-status without being logged in — and WITHOUT an
+ * handed this token in an HttpOnly cookie instead so their status screen can
+ * poll POST /api/auth/account-status without being logged in — and WITHOUT an
  * endpoint that leaks "is this email registered?" to anyone who asks
  * (possession of a valid token is required).
  *

@@ -51,21 +51,22 @@ beforeEach(() => {
 describe("WelcomeStatus poll → approved screen", () => {
   it("sends an approved account to sign-in when the poll returns ACTIVE", async () => {
     stubLocation();
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE", fullName: "Ada Lovelace" });
 
     render(<WelcomeStatus />);
 
     await waitFor(() => expect(locationReplace).toHaveBeenCalledWith("/login"));
     expect(apiFetch).toHaveBeenCalledWith(
-      expect.stringContaining("/api/auth/account-status?"),
+      "/api/auth/account-status",
+      expect.objectContaining({ method: "POST" }),
     );
     expect(readAccessOutcome()).toBe("ACTIVE");
   });
 
   it("stays on the waiting screen while the account is PENDING", async () => {
     stubLocation();
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING", fullName: "Ada" });
 
     render(<WelcomeStatus />);
@@ -80,14 +81,15 @@ describe("WelcomeStatus poll → approved screen", () => {
       "This page re-checks on its own",
     );
     expect(apiFetch).toHaveBeenCalledWith(
-      expect.stringContaining("token=signed-status-token"),
+      "/api/auth/account-status",
+      expect.objectContaining({ method: "POST", body: JSON.stringify({ bump: false }) }),
     );
     expect(locationReplace).not.toHaveBeenCalled();
   });
 
   it("routes REJECTED to the denied screen", async () => {
     stubLocation();
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
 
     render(<WelcomeStatus />);
@@ -99,7 +101,7 @@ describe("WelcomeStatus poll → approved screen", () => {
 
   it("clears a dead signup token and leaves for the no-account screen", async () => {
     stubLocation();
-    rememberPendingSignup("dead-token");
+    rememberPendingSignup();
     apiFetch.mockRejectedValue(Object.assign(new Error("gone"), { status: 404 }));
 
     render(<WelcomeStatus />);
@@ -111,7 +113,7 @@ describe("WelcomeStatus poll → approved screen", () => {
 
   it("recovers after a transient failure and still sends ACTIVE to sign-in", async () => {
     stubLocation();
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockRejectedValueOnce(Object.assign(new Error("blip"), { status: 503 }));
     apiFetch.mockResolvedValueOnce({ accessStatus: "ACTIVE" });
 

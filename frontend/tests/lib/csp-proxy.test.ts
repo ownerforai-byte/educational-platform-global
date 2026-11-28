@@ -1,38 +1,58 @@
+import { NextRequest } from "next/server";
 import { describe, expect, it } from "vitest";
+import { proxy } from "@/proxy";
 
-/**
- * Proxy CSP shape is built in `frontend/proxy.ts`. We assert the exported
- * policy builder indirectly by re-implementing the same contract the plan
- * requires (nonce + strict-dynamic + FCM connect-src). The live proxy module
- * depends on NextRequest; this unit test locks the string contract.
- */
-function buildPolicy(nonce: string | null, apiOrigin: string, supabaseOrigin: string) {
-  const scriptSrc = nonce
-    ? `script-src 'self' 'nonce-${nonce}' 'strict-dynamic'`
-    : "script-src 'self' 'unsafe-inline'";
-  return [
-    "default-src 'self'",
-    scriptSrc,
-    `connect-src 'self' ${apiOrigin} ${supabaseOrigin} https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://fcm.googleapis.com https://firebaseinstallations.googleapis.com https://firebase.googleapis.com wss: ws:`,
-    "object-src 'none'",
-    "base-uri 'self'",
-  ].join("; ");
+const ORIGIN = "https://harindrasah.com.np";
+
+function scriptSource(response: Response): string {
+  const csp = response.headers.get("content-security-policy") ?? "";
+  return csp.split(";").find((directive) => directive.trim().startsWith("script-src")) ?? "";
 }
 
-describe("CSP nonce policy shape (T20)", () => {
-  it("includes nonce, strict-dynamic, Firebase Auth/FCM hosts, and object-src none", () => {
-    const csp = buildPolicy("abc123", "https://us-central1-rn01-af00b.cloudfunctions.net", "https://xyz.supabase.co");
-    expect(csp).toContain("script-src 'self' 'nonce-abc123' 'strict-dynamic'");
-    expect(csp).toContain("https://identitytoolkit.googleapis.com");
-    expect(csp).toContain("https://securetoken.googleapis.com");
-    expect(csp).toContain("https://fcm.googleapis.com");
-    expect(csp).toContain("object-src 'none'");
-    expect(csp).not.toContain("unsafe-inline");
+describe("CSP nonce coverage", () => {
+  it.each([
+    "/400",
+    "/401",
+    "/403",
+    "/404",
+    "/408",
+    "/429",
+    "/500",
+    "/502",
+    "/503",
+    "/504",
+    "/network",
+    "/offline",
+  ])("uses a nonce instead of unsafe-inline on %s", (path) => {
+    const response = proxy(new NextRequest(`${ORIGIN}${path}`));
+    const scriptSrc = scriptSource(response);
+    const nonce = scriptSrc.match(/'nonce-([^']+)'/)?.[1];
+
+    expect(nonce).toBeTruthy();
+    expect(scriptSrc).toContain("'strict-dynamic'");
+    expect(scriptSrc).not.toContain("'unsafe-inline'");
+    expect(response.headers.get("x-middleware-request-x-nonce")).toBe(nonce);
+    expect(response.headers.get("x-middleware-request-content-security-policy")).toBe(
+      response.headers.get("content-security-policy"),
+    );
   });
 
-  it("allows unsafe-inline only when nonce is absent (prerender)", () => {
-    const csp = buildPolicy(null, "https://us-central1-rn01-af00b.cloudfunctions.net", "https://xyz.supabase.co");
-    expect(csp).toContain("script-src 'self' 'unsafe-inline'");
-    expect(csp).not.toContain("strict-dynamic");
+  it("does not weaken CSP when a crawler supplies its User-Agent", () => {
+    const response = proxy(new NextRequest(`${ORIGIN}/home`, {
+      headers: { "user-agent": "Mozilla/5.0 (compatible; GPTBot/1.2)" },
+    }));
+    const scriptSrc = scriptSource(response);
+
+    expect(scriptSrc).toContain("'nonce-");
+    expect(scriptSrc).toContain("'strict-dynamic'");
+    expect(scriptSrc).not.toContain("'unsafe-inline'");
+    expect(response.headers.get("x-middleware-request-x-nonce")).toBeTruthy();
+  });
+
+  it("issues a fresh nonce for every document response", () => {
+    const first = proxy(new NextRequest(`${ORIGIN}/404`));
+    const second = proxy(new NextRequest(`${ORIGIN}/404`));
+
+    expect(scriptSource(first)).not.toBe(scriptSource(second));
   });
 });

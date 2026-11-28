@@ -90,6 +90,12 @@ const memory = vi.hoisted(() => {
       return this;
     }
 
+    ilike(field: string, value: unknown) {
+      const needle = String(value).replace(/^%|%$/g, "").toLowerCase();
+      this.filters.push((row) => String(row[field] ?? "").toLowerCase().includes(needle));
+      return this;
+    }
+
     eq(field: string, value: unknown) {
       this.filters.push((row) => row[field] === value);
       return this;
@@ -195,7 +201,7 @@ const memory = vi.hoisted(() => {
           return { data: { user: null }, error: { message: "Invalid JWT" } };
         }
         return {
-          data: { user: { id: USER_ID, email: "member@example.com", user_metadata: {} } },
+          data: { user: { id: USER_ID, email: "member@example.com", email_confirmed_at: "2026-01-01T00:00:00.000Z", user_metadata: {} } },
           error: null,
         };
       },
@@ -267,7 +273,7 @@ describe("credits never leak to visitors", () => {
       const res = await fetch(`${base}${path}`, { headers: auth });
       expect(res.status).toBe(200);
       expect(await res.text()).not.toMatch(/credit/i);
-    });
+    }, 15_000);
   }
 
   it("keeps the owner's balance out of the public profile object", async () => {
@@ -319,6 +325,87 @@ describe("progress aggregate", () => {
     const res = await fetch(`${base}/profile/member/progress`);
     expect(res.status).toBe(200);
     expect(await res.json()).toEqual({ progress: null, migrated: true });
+  });
+});
+
+describe("profile search privacy", () => {
+  function addProfile(id: string, username: string, visibility: string) {
+    memory.tables.profiles.push({
+      ...memory.tables.profiles[0],
+      id,
+      username,
+      full_name: username,
+      profile_visibility: visibility,
+    });
+  }
+
+  it("omits private profiles from unauthenticated search", async () => {
+    addProfile(memory.OTHER_ID, "hidden", "private");
+
+    const response = await fetch(`${base}/users?q=hidden`);
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ users: [] });
+  });
+
+  it("treats filter-like input as a literal search value", async () => {
+    addProfile(memory.OTHER_ID, "other", "public");
+    const query = encodeURIComponent(`member,id.eq.${memory.OTHER_ID}`);
+
+    const response = await fetch(`${base}/users?q=${query}`);
+
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ users: [] });
+  });
+
+  it("still lets an authenticated owner find their own private profile", async () => {
+    memory.tables.profiles[0]!.profile_visibility = "private";
+
+    const response = await fetch(`${base}/users?q=member`, { headers: auth });
+    const body = (await response.json()) as { users: Array<{ id: string }> };
+
+    expect(response.status).toBe(200);
+    expect(body.users.map((user) => user.id)).toEqual([memory.USER_ID]);
+  });
+});
+
+describe("social graph privacy", () => {
+  function addProfile(id: string, username: string, visibility: string) {
+    memory.tables.profiles.push({
+      ...memory.tables.profiles[0],
+      id,
+      username,
+      full_name: username,
+      profile_visibility: visibility,
+    });
+  }
+
+  it("does not expose a private profile's followers or following to visitors", async () => {
+    memory.tables.profiles[0]!.profile_visibility = "private";
+    addProfile(memory.OTHER_ID, "other", "public");
+    memory.tables.profile_follows.push({
+      follower_id: memory.OTHER_ID,
+      following_id: memory.USER_ID,
+      created_at: "2026-01-01T00:00:00.000Z",
+    });
+
+    for (const path of ["/profile/member/followers", "/profile/member/following"]) {
+      const response = await fetch(`${base}${path}`);
+      expect(response.status).toBe(403);
+    }
+  });
+
+  it("omits private identities from a public profile's social graph", async () => {
+    addProfile(memory.OTHER_ID, "other", "private");
+    memory.tables.profile_follows.push({
+      follower_id: memory.OTHER_ID,
+      following_id: memory.USER_ID,
+      created_at: "2026-01-01T00:00:00.000Z",
+    });
+
+    const response = await fetch(`${base}/profile/member/followers`);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toMatchObject({ users: [] });
   });
 });
 

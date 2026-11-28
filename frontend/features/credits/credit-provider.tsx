@@ -226,7 +226,7 @@ export function CreditProvider({ children }: { children: ReactNode }) {
       try {
         const res = await unlockContent(category, key);
         // Server returns the canonical expiration (epoch + 1200).
-        unlockModuleAt(key, res.expiresAt);
+        unlockModuleAt(res.moduleKey ?? key, res.expiresAt);
         refresh(); // re-sync the session balance
         return true;
       } catch (err) {

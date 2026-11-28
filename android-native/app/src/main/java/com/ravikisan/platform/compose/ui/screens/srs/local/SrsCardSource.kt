@@ -5,16 +5,33 @@ import com.ravikisan.platform.compose.core.logic.BankPyqQuestion
 import com.ravikisan.platform.compose.core.logic.BankPyqYear
 import com.ravikisan.platform.compose.core.logic.BankTheoryBlock
 import com.ravikisan.platform.compose.core.logic.SubjectPyqBank
+import com.ravikisan.platform.compose.data.repository.MobileBankRepository
+import dagger.Binds
+import dagger.Module
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
+import javax.inject.Inject
+import javax.inject.Qualifier
+import javax.inject.Singleton
 
 /**
  * Card-source seam for SRS — the native counterpart of the website's
  * `useSubjectBank()` hook (`GET /api/content/subject-bank`, member-gated).
  *
- * NO-WAIT: the subject-bank endpoint family has no mobile route in `RnApi`
- * yet (Wave 1 note: SRS binds to the pyq-bank, Worker 2/3). Production binds
- * [PendingBindingCardSource], which reports no bank — the screen then shows
- * the website's exact empty state ("No concept notes or past questions are
- * indexed for this subject yet") instead of inventing cards.
+ * The web bank comes from the generated content manifest; on mobile the same
+ * data is served by the landed `GET /api/mobile/pyqs` (+ `/file`) endpoints
+ * (auth-gated plus tier, like the website's /pyqs). Production binds
+ * [MobilePyqCardSource] through `MobileBankRepository`, which builds a real
+ * `SubjectPyqBank` from the PYQ catalog + per-file question lines.
+ *
+ * Honest scope note: the mobile endpoint exposes PYQ question lines only —
+ * the website bank additionally carries authored theory blocks and concept
+ * drills, which have no mobile endpoint yet. A mobile deck therefore holds
+ * `pyq` cards only for the same subject (smaller, never invented).
+ *
+ * [PendingBindingCardSource] remains bound UNQUALIFIED in the parent-owned
+ * `di/AppModule.kt`; the qualified [provideMobileSrsCardSource] binding is
+ * the one the screen consumes, so no shared-file edit was needed.
  * [FakeCardSource] feeds ViewModel tests with a small fixture bank.
  */
 interface SrsCardSource {
@@ -22,7 +39,30 @@ interface SrsCardSource {
     suspend fun bank(subjectKey: String): SubjectPyqBank?
 }
 
-/** Production stand-in until the subject-bank repository lands (honest empty). */
+/** Real card source over the landed mobile PYQ endpoints (plus-tier gated). */
+class MobilePyqCardSource @Inject constructor(
+    private val repository: MobileBankRepository,
+) : SrsCardSource {
+    override suspend fun bank(subjectKey: String): SubjectPyqBank? =
+        repository.subjectPyqBank(subjectKey)
+}
+
+/** Qualifier separating the real Wave 1 binding from the parent's stub. */
+@Qualifier
+@Retention(AnnotationRetention.BINARY)
+annotation class MobileSrsBank
+
+@Module
+@InstallIn(SingletonComponent::class)
+abstract class MobileSrsCardSourceModule {
+
+    @Binds
+    @Singleton
+    @MobileSrsBank
+    abstract fun bindMobileSrsCardSource(impl: MobilePyqCardSource): SrsCardSource
+}
+
+/** Legacy parent-bound stand-in (kept compiling; no longer consumed). */
 class PendingBindingCardSource : SrsCardSource {
     override suspend fun bank(subjectKey: String): SubjectPyqBank? = null
 }

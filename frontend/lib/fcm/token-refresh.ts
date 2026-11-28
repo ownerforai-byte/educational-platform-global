@@ -1,6 +1,5 @@
 "use client";
 
-import { readStatusToken } from "@/features/auth/pending-signup-identity";
 import { isFcmConfigured } from "./config";
 import { syncFcmToken, type FcmSyncResult } from "./register-token";
 
@@ -49,7 +48,7 @@ export function startFcmTokenRefresh(opts: FcmTokenRefreshOptions = {}): () => v
     if (!force && now - lastRunAt < MIN_SYNC_GAP_MS) return;
     lastRunAt = now;
     void syncFcmToken({
-      statusToken: opts.statusToken ?? readStatusToken(),
+      statusToken: opts.statusToken,
       deepLink: resolveDeepLink(),
     })
       .then((result) => {

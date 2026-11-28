@@ -14,7 +14,6 @@ export type AuthActionResult =
       ok: true;
       user?: SessionUser | null;
       message?: string;
-      statusToken?: string;
       /**
        * Machine-readable outcome code. The HTTP status is NOT authoritative:
        * `code: "PENDING_APPROVAL"` arrives as HTTP 200 from the login/signup
@@ -36,8 +35,6 @@ export type AuthActionResult =
        * with HTTP 403. Route on this value, not on the HTTP status.
        */
       code?: string;
-      /** Signed token that opens the /welcome pending-status screen. */
-      statusToken?: string;
     };
 
 /**
@@ -51,15 +48,16 @@ export type AuthActionResult =
  * here preserve that contract:
  *  - RESOLVED body (HTTP 200 create paths): handled below.
  *  - THROWN error (non-2xx, e.g. the 403 session-gate): `apiFetch` copies the
- *    body's `code`/`statusToken` onto the thrown Error, and `loginAction`/
- *    `signupAction`'s catch blocks surface them on the returned result — so
- *    callers can route on `result.code` regardless of `ok`.
+ *    body's `code` onto the thrown Error, and `loginAction`/`signupAction`'s
+ *    catch blocks surface it on the returned result — so callers can route on
+ *    `result.code` regardless of `ok`. The signed status credential remains in
+ *    the backend's HttpOnly cookie throughout.
  */
 function pendingApprovalResult(res: unknown): AuthActionResult | null {
   if (!isAccessApprovalRequired()) return null;
-  const body = res as { code?: string; statusToken?: string } | null;
+  const body = res as { code?: string } | null;
   if (!body || body.code !== "PENDING_APPROVAL") return null;
-  return { ok: true, code: "PENDING_APPROVAL", statusToken: body.statusToken };
+  return { ok: true, code: "PENDING_APPROVAL" };
 }
 
 export async function loginAction(input: unknown): Promise<AuthActionResult> {
@@ -73,12 +71,11 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
     return pendingApprovalResult(res) ?? { ok: true, user: res.user ?? null };
   } catch (err) {
     if (err instanceof FirebaseMfaRequiredError) throw err;
-    const e = err as Error & { code?: string; statusToken?: string };
+    const e = err as Error & { code?: string };
     return {
       ok: false,
       error: authFailureMessage(err, "login"),
       code: e.code,
-      statusToken: e.statusToken,
     };
   }
 }
@@ -96,17 +93,15 @@ export async function signupAction(input: unknown): Promise<AuthActionResult> {
         ok: true,
         user: res.user ?? null,
         message: res.message,
-        statusToken: res.statusToken,
         code: res.code,
       }
     );
   } catch (err) {
-    const e = err as Error & { code?: string; statusToken?: string };
+    const e = err as Error & { code?: string };
     return {
       ok: false,
       error: authFailureMessage(err, "signup"),
       code: e.code,
-      statusToken: e.statusToken,
     };
   }
 }

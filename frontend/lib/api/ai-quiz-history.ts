@@ -7,7 +7,6 @@ export interface QuizHistoryRow {
   subjectSlug: string | null;
   topic: string | null;
   difficulty: "easy" | "intermediate" | "hard" | null;
-  format?: import("../../types/api").QuizFormat | null;
   /** Quiz format the set was generated in (absent → `mcq`). */
   format?: import("../../types/api").QuizFormat | null;
   answered: number;

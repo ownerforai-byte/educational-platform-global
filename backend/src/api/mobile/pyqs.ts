@@ -106,10 +106,25 @@ router.get("/file", requireAuth, requireTier("plus"), async (req: Request, res: 
       return;
     }
     const raw = await readFile(resolveDataPath(...segments), "utf-8");
-    const parsed = JSON.parse(raw) as { title?: unknown; notes?: unknown };
-    const questions = Array.isArray(parsed.notes)
-      ? parsed.notes.filter((n): n is string => typeof n === "string")
-      : [];
+    // Real PYQ files carry a structured `questions` array ({ question, marks,
+    // solution }) — the same exam bank the website's pyq-bank reads from
+    // content/_index.json. The generated manifest additionally mirrors those
+    // lines as plain `notes`. Read the structured questions first and fall
+    // back to the legacy notes lines so both file generations work.
+    const parsed = JSON.parse(raw) as { title?: unknown; notes?: unknown; questions?: unknown };
+    const questions = Array.isArray(parsed.questions)
+      ? parsed.questions
+          .map((q) =>
+            q && typeof q === "object" && typeof (q as { question?: unknown }).question === "string"
+              ? (q as { question: string }).question
+              : typeof q === "string"
+                ? q
+                : "",
+          )
+          .filter((line) => line.trim().length > 0)
+      : Array.isArray(parsed.notes)
+        ? parsed.notes.filter((n): n is string => typeof n === "string")
+        : [];
     res.setHeader("Cache-Control", "private, no-store");
     const body = {
       ok: true as const,

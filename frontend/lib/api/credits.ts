@@ -71,12 +71,21 @@ export async function getUserTransactions(): Promise<CreditTransaction[]> {
   return apiFetch<CreditTransaction[]>("/api/user/credits/transactions");
 }
 
+export interface ContentUnlockTarget {
+  kind: "concepts" | "theory" | "guides" | "notes" | "lessons" | "formula" | "pyqs" | "sets" | "examples" | "exams" | "drills" | "mindmap" | "rails" | "graph" | "documents" | "question-bank" | "exports" | "plans";
+  classSlug: string;
+  subjectSlug: string;
+  unitSlug: string;
+  filename: string;
+}
+
 export interface UnlockResponse {
   credits: number;
   /** Unix epoch seconds — expiration = now + 1200. */
   expiresAt: number;
   /** Coins actually charged (0 for the owner rung). */
   cost: number;
+  moduleKey?: string;
 }
 
 /**
@@ -87,10 +96,11 @@ export interface UnlockResponse {
 export async function unlockContent(
   category: "lab3d" | "visuals" | "theory" | "reference" | "imagehub",
   moduleKey?: string,
+  content?: ContentUnlockTarget,
 ): Promise<UnlockResponse> {
   return apiFetch<UnlockResponse>("/api/user/credits/unlock", {
     method: "POST",
-    body: JSON.stringify({ category, moduleKey }),
+    body: JSON.stringify({ category, moduleKey, content }),
   });
 }
 

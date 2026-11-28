@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Leaf } from "lucide-react";
 import { PLATFORM_DISPLAY_NAME } from "@/lib/core/platform-brand";
 
-/** Static error routes render outside the app shell — light brand chrome only. */
 export default function ErrorsLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen flex-col bg-background">

@@ -54,7 +54,6 @@ const VALID_BODY = {
   subjectSlug: "physics",
   unitSlug: "kinematics",
   filename: "01-motion.json",
-  moduleKey: "note:class-11-notes/physics/kinematics/01-motion.json",
 };
 
 // ─── helper: POST /api/content/reveal ────────────────────────────────────────
@@ -107,6 +106,9 @@ describe("POST /api/content/reveal — auth chain", () => {
     expect(res.status).toBe(200);
     const body = await res.json();
     expect(body).toMatchObject({ notes: expect.any(Array) });
+    const sent = JSON.parse(String(fetchMock.mock.calls[0][1]?.body));
+    expect(sent).toEqual(VALID_BODY);
+    expect(sent).not.toHaveProperty("moduleKey");
   });
 
   it("returns 200 for owner email (bypasses spark window check)", async () => {

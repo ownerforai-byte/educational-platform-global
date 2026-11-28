@@ -4,10 +4,12 @@ import com.ravikisan.platform.compose.core.logic.BankPyqQuestion
 import com.ravikisan.platform.compose.core.logic.BankPyqYear
 import com.ravikisan.platform.compose.core.logic.EntranceQuestion
 import com.ravikisan.platform.compose.core.logic.SubjectPyqBank
+import com.ravikisan.platform.compose.data.repository.MobileBankRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Inject
 import javax.inject.Singleton
 
 /**
@@ -16,12 +18,18 @@ import javax.inject.Singleton
  * by subject+unit) and the subject PYQ bank (`useSubjectBank()` →
  * `GET /api/content/subject-bank`).
  *
- * Both live behind compile-time TS imports on the web. No mobile route exposes
- * them yet (`/api/mobile/pyqs` + `?file` is the pending W2 contract), so
- * production binds [PendingBindingMockExamSource]: the assembler (`assembleMock`,
- * golden-tested) still runs, and the screen shows the website's exact
- * "no entrance MCQs or past questions" card until the binding lands.
- * [FakeMockExamSource] feeds the ViewModel tests.
+ * The written section is REAL: the landed `GET /api/mobile/pyqs` (+ `/file`)
+ * endpoints serve the same manifest PYQs the website bank reads, so
+ * [MobileMockExamSource] feeds them to the golden `assembleMock`.
+ *
+ * HONEST REMAINING GAP (unresolvable with existing APIs): the website's
+ * entrance MCQ bank is hand-authored TypeScript compiled into the web bundle
+ * (frontend/lib/entrance-questions files). No backend or mobile endpoint
+ * exposes it, and porting the authored questions is a content task outside
+ * this wave — so [entrancePool] stays empty and a native paper carries the
+ * written section only. The screen renders this honestly ("0 MCQs and N
+ * written questions") and the subject's ComingSoon card appears exactly when
+ * the website's would (no entrance MCQs AND no PYQs).
  */
 interface MockExamSource {
     /** Entrance MCQs for `classSlug/subjectSlug`, deduped by question text. */
@@ -31,7 +39,18 @@ interface MockExamSource {
     suspend fun pyqBank(subjectKey: String): SubjectPyqBank?
 }
 
-/** Production stand-in until the PYQ/entrance routes land (honest empty paper). */
+/** Real written-section source; entrance pool waits for a mobile API. */
+class MobileMockExamSource @Inject constructor(
+    private val repository: MobileBankRepository,
+) : MockExamSource {
+
+    override suspend fun entrancePool(subjectKey: String): List<EntranceQuestion> = emptyList()
+
+    override suspend fun pyqBank(subjectKey: String): SubjectPyqBank? =
+        repository.subjectPyqBank(subjectKey)
+}
+
+/** Honest-empty stand-in (kept for ViewModel tests and parity fixtures). */
 class PendingBindingMockExamSource : MockExamSource {
     override suspend fun entrancePool(subjectKey: String): List<EntranceQuestion> = emptyList()
 
@@ -95,5 +114,6 @@ object MockExamSourceModule {
 
     @Provides
     @Singleton
-    fun provideMockExamSource(): MockExamSource = PendingBindingMockExamSource()
+    fun provideMockExamSource(repository: MobileBankRepository): MockExamSource =
+        MobileMockExamSource(repository)
 }

@@ -196,7 +196,6 @@ describe("Social login", () => {
     sessionStorage.setItem("neb_oauth_csrf", state);
     const pendingError = Object.assign(new Error("Account pending approval"), {
       code: "PENDING_APPROVAL",
-      statusToken: "signed-status-token",
     });
     mocks.apiFetch.mockRejectedValueOnce(pendingError);
 
@@ -205,24 +204,26 @@ describe("Social login", () => {
     await waitFor(() =>
       expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"),
     );
-    expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
+    expect(localStorage.getItem("neb_signup_status_token")).toBeNull();
+    expect(document.cookie).toContain("neb_signup_session=neb-pending-signup-v1");
     expect(mocks.signOut).not.toHaveBeenCalled();
     expect(mocks.setStoredToken).not.toHaveBeenCalled();
   });
 
   it("routes a brand-new Google account (200 + PENDING_APPROVAL body) to the waiting screen", async () => {
     // The OAuth exchange answers a new PENDING account with HTTP 200 and
-    // { code: "PENDING_APPROVAL", statusToken } and NO app session — the
-    // callback must treat that as the waiting-screen handoff, not an error.
+    // { code: "PENDING_APPROVAL" } and NO app session — the callback treats
+    // that as the waiting-screen handoff, not an error.
     mocks.firebaseMode = true;
     const state = "d".repeat(64);
     sessionStorage.setItem("neb_oauth_csrf", state);
-    mocks.apiFetch.mockResolvedValueOnce({ code: "PENDING_APPROVAL", statusToken: "signed-status-token" });
+    mocks.apiFetch.mockResolvedValueOnce({ code: "PENDING_APPROVAL" });
 
     render(<AuthCallbackPage />);
 
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"));
-    expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
+    expect(localStorage.getItem("neb_signup_status_token")).toBeNull();
+    expect(document.cookie).toContain("neb_signup_session=neb-pending-signup-v1");
     expect(localStorage.getItem("neb_signup_access_outcome")).toBe("PENDING");
     expect(mocks.setStoredToken).not.toHaveBeenCalled();
   });
@@ -231,7 +232,6 @@ describe("Social login", () => {
     mocks.loginAction.mockResolvedValue({
       ok: true,
       code: "PENDING_APPROVAL",
-      statusToken: "signed-status-token",
     });
     render(<LoginForm />);
     fireEvent.change(screen.getByLabelText("Email Address"), {
@@ -243,7 +243,8 @@ describe("Social login", () => {
     fireEvent.click(screen.getByRole("button", { name: /sign in/i }));
 
     await waitFor(() => expect(mocks.push).toHaveBeenCalledWith("/welcome/pending"));
-    expect(localStorage.getItem("neb_signup_status_token")).toBe("signed-status-token");
+    expect(localStorage.getItem("neb_signup_status_token")).toBeNull();
+    expect(document.cookie).toContain("neb_signup_session=neb-pending-signup-v1");
     expect(mocks.refresh).not.toHaveBeenCalled();
   });
 
@@ -252,10 +253,7 @@ describe("Social login", () => {
     mocks.firebaseGoogleSignIn.mockResolvedValueOnce("firebase-id-token");
     mocks.apiFetch
       .mockResolvedValueOnce({ csrfToken: "b".repeat(64) })
-      .mockResolvedValueOnce({
-        code: "PENDING_APPROVAL",
-        statusToken: "pending-status-token-from-google-signup",
-      });
+      .mockResolvedValueOnce({ code: "PENDING_APPROVAL" });
 
     render(<SocialAuthButtons mode="signup" />);
     const signupBtn = screen.getByRole("button", { name: /sign up with google/i });
@@ -264,7 +262,8 @@ describe("Social login", () => {
     fireEvent.click(signupBtn);
 
     await waitFor(() => expect(mocks.replace).toHaveBeenCalledWith("/welcome/pending"));
-    expect(localStorage.getItem("neb_signup_status_token")).toBe("pending-status-token-from-google-signup");
+    expect(localStorage.getItem("neb_signup_status_token")).toBeNull();
+    expect(document.cookie).toContain("neb_signup_session=neb-pending-signup-v1");
     expect(localStorage.getItem("neb_signup_access_outcome")).toBe("PENDING");
   });
 });

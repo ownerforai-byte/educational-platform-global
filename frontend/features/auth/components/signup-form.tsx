@@ -20,7 +20,6 @@ import {
   DENIED_ROUTE,
   WAITING_ROUTE,
   rememberAccessOutcome,
-  rememberPendingSignup,
 } from "../pending-signup-identity";
 import { AUTH_TRY_AGAIN } from "../public-messages";
 import { useAuthFormError } from "../use-auth-form-error";
@@ -53,11 +52,7 @@ export function SignupForm() {
     const result = await signupAction({ fullName, email, password });
     setLoading(false);
 
-    if (
-      isAccessApprovalRequired() &&
-      (result.code === "PENDING_APPROVAL" || (result.ok && result.statusToken && !result.user))
-    ) {
-      if (result.statusToken) rememberPendingSignup(result.statusToken);
+    if (isAccessApprovalRequired() && result.code === "PENDING_APPROVAL") {
       router.push(WAITING_ROUTE);
     } else if (result.ok && result.message && !result.user) {
       setMessage(result.message);
@@ -66,7 +61,6 @@ export function SignupForm() {
       refresh();
       router.push(tierHomePathFor(result.user));
     } else if (result.code === "ACCOUNT_REJECTED") {
-      if (result.statusToken) rememberPendingSignup(result.statusToken);
       rememberAccessOutcome("REJECTED");
       router.replace(DENIED_ROUTE);
     } else {

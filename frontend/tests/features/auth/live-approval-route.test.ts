@@ -42,25 +42,25 @@ describe("resolveLiveApprovalRoute", () => {
   });
 
   it("WAITING when live status is PENDING", async () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING", fullName: "Ada" });
     await expect(resolveLiveApprovalRoute()).resolves.toBe(WAITING_ROUTE);
   });
 
   it("APPROVED when live status is ACTIVE", async () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
     await expect(resolveLiveApprovalRoute()).resolves.toBe(APPROVED_ROUTE);
   });
 
   it("DENIED when live status is REJECTED", async () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
     await expect(resolveLiveApprovalRoute()).resolves.toBe(DENIED_ROUTE);
   });
 
   it("clears identity and returns NORMAL when the account is gone", async () => {
-    rememberPendingSignup("dead-token");
+    rememberPendingSignup();
     const err = Object.assign(new Error("gone"), { status: 404 });
     apiFetch.mockRejectedValue(err);
     await expect(resolveLiveApprovalRoute()).resolves.toBe(NORMAL_ROUTE);
@@ -72,7 +72,7 @@ describe("resolveLiveApprovalRoute", () => {
   });
 
   it("fallback keeps token holders on the waiting screen", () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     expect(resolveLiveApprovalRouteFallback()).toBe(WAITING_ROUTE);
   });
 });

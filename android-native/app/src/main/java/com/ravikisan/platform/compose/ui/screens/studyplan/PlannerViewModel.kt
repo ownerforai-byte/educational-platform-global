@@ -10,6 +10,7 @@ import com.ravikisan.platform.compose.core.logic.weakTopicsFromJourney
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
 import com.ravikisan.platform.compose.ui.screens.studyplan.local.GoalsStore
 import com.ravikisan.platform.compose.ui.screens.studyplan.local.JourneySource
+import com.ravikisan.platform.compose.ui.screens.studyplan.local.MobileJourney
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.time.LocalDate
 import kotlinx.coroutines.CoroutineScope
@@ -50,7 +51,7 @@ data class PlannerUiState(
 class PlannerViewModel @Inject constructor(
     private val store: GoalsStore,
     private val syllabus: SyllabusRepository,
-    private val journey: JourneySource,
+    @MobileJourney private val journey: JourneySource,
 ) : ViewModel() {
 
     internal var scope: CoroutineScope = viewModelScope

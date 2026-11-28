@@ -10,7 +10,7 @@ import {
 } from "@/lib/notifications";
 import {
   APPROVED_ROUTE,
-  readStatusToken,
+  hasPendingSignup,
   rememberAccessOutcome,
 } from "@/features/auth/pending-signup-identity";
 import { useAuth } from "@/providers/auth-provider";
@@ -77,21 +77,19 @@ export function FcmNotificationListener() {
     if (!isFcmConfigured() || isLoading) return;
     if (isAndroidNativeShell()) return;
 
-    const statusToken = readStatusToken();
-    const shouldRegister = Boolean(user) || Boolean(statusToken);
+    const pendingSignup = hasPendingSignup();
+    const shouldRegister = Boolean(user) || pendingSignup;
     if (!shouldRegister) return;
 
     // Prompts for permission (when needed) and stores the token for this
     // user. `registerFcmToken` never throws — failures surface as results.
     void registerFcmToken({
-      statusToken,
       deepLink: normalizeDeepLink(window.location.pathname),
     }).then((result) => logFcmResult("register", result));
 
     // Token-rotation guard: re-checks `getToken` on focus / visibility /
     // interval and re-registers only when the token (or deep link) changed.
     return startFcmTokenRefresh({
-      statusToken,
       deepLink: () => normalizeDeepLink(window.location.pathname),
     });
   }, [user, isLoading]);
@@ -101,9 +99,8 @@ export function FcmNotificationListener() {
   useEffect(() => {
     if (!isFcmConfigured() || isLoading) return;
     if (isAndroidNativeShell()) return;
-    const statusToken = readStatusToken();
-    if (!user && !statusToken) return;
-    void syncFcmToken({ statusToken, deepLink: normalizeDeepLink(pathname) }).then((result) =>
+    if (!user && !hasPendingSignup()) return;
+    void syncFcmToken({ deepLink: normalizeDeepLink(pathname) }).then((result) =>
       logFcmResult("sync", result),
     );
   }, [user, isLoading, pathname]);

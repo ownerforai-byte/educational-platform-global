@@ -6,8 +6,8 @@ import {
   WAITING_ROUTE,
   type AccessOutcome,
   clearPendingSignup,
+  hasPendingSignup,
   readAccessOutcome,
-  readStatusToken,
   rememberAccessOutcome,
 } from "./pending-signup-identity";
 
@@ -42,7 +42,7 @@ export function routeForLiveAccess(status: AccessOutcome): string {
  * Token present → waiting screen (signup still in flight); otherwise normal.
  */
 export function resolveLiveApprovalRouteFallback(): string {
-  if (!readStatusToken()) return NORMAL_ROUTE;
+  if (!hasPendingSignup()) return NORMAL_ROUTE;
   const outcome = readAccessOutcome();
   if (outcome === "REJECTED") return DENIED_ROUTE;
   // The stored outcome mirrors the backend's verdict — map it the same way
@@ -52,8 +52,7 @@ export function resolveLiveApprovalRouteFallback(): string {
 }
 
 export async function resolveLiveApprovalRoute(): Promise<string> {
-  const token = readStatusToken();
-  if (!token) {
+  if (!hasPendingSignup()) {
     // Outcome cookies left after deleted accounts must not open approved/pending.
     if (readAccessOutcome()) clearPendingSignup();
     return NORMAL_ROUTE;
@@ -63,7 +62,10 @@ export async function resolveLiveApprovalRoute(): Promise<string> {
     const res = await apiFetch<{
       accessStatus: AccessOutcome;
       fullName?: string | null;
-    }>(`/api/auth/account-status?token=${encodeURIComponent(token)}`);
+    }>("/api/auth/account-status", {
+      method: "POST",
+      body: JSON.stringify({}),
+    });
     rememberAccessOutcome(res.accessStatus);
     return routeForLiveAccess(res.accessStatus);
   } catch (err) {

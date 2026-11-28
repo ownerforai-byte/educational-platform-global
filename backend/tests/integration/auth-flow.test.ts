@@ -32,7 +32,7 @@ import { supabaseAdmin } from "../../src/db/supabase";
 import { resetRateLimits } from "../../src/middleware/rateLimit";
 import { requireAuth, requireRole, requireAdmin } from "../../src/middleware/auth";
 import { requireCredit, requirePremium } from "../../src/middleware/creditCheck";
-import { verifyStatusToken } from "../../src/utils/statusToken";
+import { STATUS_COOKIE, verifyStatusToken } from "../../src/utils/statusToken";
 
 const mocked = supabaseAdmin as unknown as {
   auth: {
@@ -539,14 +539,19 @@ describe("auth flow", () => {
     });
     expect(res.headers.get("cache-control")).toBe("private, no-store");
     if (name === "rejected") {
-      // REJECTED stays a hard deny (403 + signed statusToken, never a session).
+      // REJECTED stays a hard deny; its status credential is HttpOnly-only.
       expect(res.status).toBe(403);
       const body = await res.json();
       expect(body.code).toBe("ACCOUNT_REJECTED");
-      expect(verifyStatusToken(body.statusToken)).toBe(userId);
+      expect(body).not.toHaveProperty("statusToken");
       expect(body).not.toHaveProperty("accessToken");
       expect(body).not.toHaveProperty("user");
-      expect(setCookiesOf(res)).toEqual([]);
+      const cookies = setCookiesOf(res);
+      const statusCookie = cookies.find((cookie) => cookie.startsWith(`${STATUS_COOKIE}=`));
+      expect(statusCookie?.toLowerCase()).toContain("httponly");
+      const statusToken = decodeURIComponent(statusCookie!.split(";")[0].slice(STATUS_COOKIE.length + 1));
+      expect(verifyStatusToken(statusToken)).toBe(userId);
+      expect(cookies.some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
       return;
     }
     expect(res.status).toBe(200);
@@ -577,7 +582,9 @@ describe("auth flow", () => {
     });
     if (profile && profile.access_status === "REJECTED") {
       expect(res.status).toBe(403);
-      expect(setCookiesOf(res)).toEqual([]);
+      const cookies = setCookiesOf(res);
+      expect(cookies.some((cookie) => cookie.startsWith("sb-access-token="))).toBe(false);
+      expect(cookies.some((cookie) => cookie.startsWith(`${STATUS_COOKIE}=`))).toBe(true);
       return;
     }
     expect(res.status).toBe(200);
@@ -1133,10 +1140,15 @@ describe("auth flow", () => {
       expect(res.status).toBe(403);
       const payload = await res.json();
       expect(payload.code).toBe("ACCOUNT_REJECTED");
-      expect(verifyStatusToken(payload.statusToken)).toBe(userId);
+      expect(payload).not.toHaveProperty("statusToken");
       expect(payload).not.toHaveProperty("accessToken");
       expect(payload).not.toHaveProperty("user");
-      const cleared = setCookiesOf(res).find((value) => value.startsWith("sb-access-token="));
+      const cookies = setCookiesOf(res);
+      const statusCookie = cookies.find((cookie) => cookie.startsWith(`${STATUS_COOKIE}=`));
+      expect(statusCookie?.toLowerCase()).toContain("httponly");
+      const statusToken = decodeURIComponent(statusCookie!.split(";")[0].slice(STATUS_COOKIE.length + 1));
+      expect(verifyStatusToken(statusToken)).toBe(userId);
+      const cleared = cookies.find((value) => value.startsWith("sb-access-token="));
       expect(cleared).toMatch(/expires=thu, 01 jan 1970/i);
       expect(setCookiesOf(res).some((value) => value.startsWith("sb-refresh-token=new-refresh"))).toBe(false);
       // The denial never touches the access-request clock — that bot is part

@@ -157,6 +157,29 @@ describe("GET /api/mobile/pyqs/file", () => {
     expect(body.data.questions[0]).toContain("first law");
   });
 
+  test("reads structured questions from real-style PYQ files (production shape)", async () => {
+    // Production files carry `questions: [{ question, marks, solution }]`
+    // instead of the legacy `notes` lines the fixture manifest mirrors —
+    // regression guard: the endpoint must return the question text, drop
+    // blank/malformed rows, and never 500 on them.
+    const res = await fetch(
+      `${baseUrl}/api/mobile/pyqs/file?path=${encodeURIComponent(
+        "practice/questions/class-11/physics/kinematics/04-neb-2024.json",
+      )}`,
+    );
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as {
+      ok: boolean;
+      data: { path: string; title: string; questions: string[] };
+    };
+    expect(body.ok).toBe(true);
+    expect(body.data.title).toBe("NEB 2024 — Kinematics");
+    expect(body.data.questions).toEqual([
+      "Define displacement and state how it differs from distance.",
+      "A ball is thrown vertically up. Sketch its velocity–time graph.",
+    ]);
+  });
+
   test("rejects paths outside the PYQ section or with traversal", async () => {
     for (const bad of [
       "formulas/class-11/physics/heat-and-temperature/01-key-equations.json",

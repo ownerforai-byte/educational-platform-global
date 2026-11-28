@@ -1,6 +1,11 @@
 import { createHash, randomUUID } from "node:crypto";
 import { z } from "zod";
-import { supabaseAdmin } from "../../db/supabase";
+import {
+  consumeQuizAttempt,
+  findQuizAttempt,
+  insertQuizAttempt,
+  type QuizAttemptRow,
+} from "../../db/repositories/quiz-attempt.repository.js";
 import { AppError } from "../../middleware/error-handler";
 import { MAX_VERIFIED_QUESTIONS } from "../../utils/xp";
 
@@ -63,22 +68,6 @@ export interface QuizAttemptMetadata {
   topic?: string;
   difficulty?: "easy" | "intermediate" | "hard";
   format: QuizAttemptFormat;
-}
-
-interface QuizAttemptRow {
-  id: string;
-  user_id: string;
-  title: string;
-  class_slug: string | null;
-  subject_slug: string | null;
-  topic: string | null;
-  difficulty: "easy" | "intermediate" | "hard" | null;
-  format: QuizAttemptFormat;
-  question_count: number;
-  content_hash: string;
-  questions: unknown;
-  expires_at: string;
-  consumed_at: string | null;
 }
 
 export interface ClaimedQuizAttempt {
@@ -166,7 +155,7 @@ export async function issueQuizAttempt(input: {
     consumed_at: null,
   };
 
-  const { error } = await supabaseAdmin.from("quiz_attempts").insert(row);
+  const { error } = await insertQuizAttempt(row);
   if (error) {
     // PostgREST details can contain the stored payload; never echo or log them.
     throw new AppError("Verified quiz attempts are temporarily unavailable", 503, "ATTEMPT_UNAVAILABLE");
@@ -247,11 +236,7 @@ export async function claimQuizAttempt(input: {
   questions: readonly QuizQuestionSnapshot[];
   responses: readonly QuizResponse[];
 }): Promise<ClaimedQuizAttempt> {
-  const { data, error } = await supabaseAdmin
-    .from("quiz_attempts")
-    .select("*")
-    .eq("id", input.attemptId)
-    .maybeSingle();
+  const { data, error } = await findQuizAttempt(input.attemptId);
 
   if (error) {
     throw new AppError("Quiz attempt is unavailable", 503, "ATTEMPT_UNAVAILABLE");
@@ -260,7 +245,7 @@ export async function claimQuizAttempt(input: {
     throw new AppError("Quiz attempt not found", 404, "ATTEMPT_NOT_FOUND");
   }
 
-  const attempt = data as QuizAttemptRow;
+  const attempt = data;
   if (attempt.user_id !== input.userId) {
     throw new AppError("Quiz attempt belongs to another user", 403, "ATTEMPT_FOREIGN");
   }
@@ -280,13 +265,7 @@ export async function claimQuizAttempt(input: {
   const questions = parseAttemptQuestions(attempt.questions);
   const grade = gradeQuizAttempt(questions, attempt.format, input.responses);
   const consumedAt = new Date().toISOString();
-  const claimed = await supabaseAdmin
-    .from("quiz_attempts")
-    .update({ consumed_at: consumedAt })
-    .eq("id", attempt.id)
-    .eq("user_id", input.userId)
-    .eq("consumed_at", null)
-    .select("id");
+  const claimed = await consumeQuizAttempt(attempt.id, input.userId, consumedAt);
 
   if (claimed.error) {
     throw new AppError("Quiz attempt is unavailable", 503, "ATTEMPT_UNAVAILABLE");

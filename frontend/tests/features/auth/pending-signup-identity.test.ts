@@ -8,7 +8,6 @@ import {
   PENDING_SIGNUP_ID,
   DENIED_ROUTE,
   REJECTED_ROUTE,
-  STATUS_TOKEN_KEY,
   WAITING_APPROVAL_ROUTE,
   WAITING_ROUTE,
   approvalStatusHref,
@@ -16,20 +15,22 @@ import {
   deviceApprovalRoute,
   hasPendingSignup,
   readAccessOutcome,
-  readStatusToken,
   rememberAccessOutcome,
   rememberPendingSignup,
 } from "@/features/auth/pending-signup-identity";
 
-describe("signup status-token storage + sync route hint", () => {
+const LEGACY_TOKEN_KEY = "neb_signup_status_token";
+
+describe("signup marker + sync route hint", () => {
   beforeEach(() => {
     clearPendingSignup();
+    window.localStorage.clear();
+    window.sessionStorage.clear();
   });
 
-  it("keeps the four page routes and identity keys", () => {
+  it("keeps the four page routes and non-secret identity keys", () => {
     expect(PENDING_SIGNUP_ID).toBe("neb-pending-signup-v1");
     expect(PENDING_SIGNUP_COOKIE).toBe("neb_signup_session");
-    expect(STATUS_TOKEN_KEY).toBe("neb_signup_status_token");
     expect(ACCESS_OUTCOME_KEY).toBe("neb_signup_access_outcome");
     expect(NORMAL_ROUTE).toBe("/welcome/no-account");
     expect(WAITING_ROUTE).toBe("/welcome/pending");
@@ -40,45 +41,60 @@ describe("signup status-token storage + sync route hint", () => {
     expect(WAITING_APPROVAL_ROUTE).toBe(WAITING_ROUTE);
   });
 
-  it("NORMAL — no token means no-account (outcome alone cannot invent a screen)", () => {
+  it("NORMAL — no marker means no-account (outcome alone cannot invent a screen)", () => {
     rememberAccessOutcome("ACTIVE");
     expect(hasPendingSignup()).toBe(false);
-    expect(readStatusToken()).toBeNull();
     expect(deviceApprovalRoute()).toBe(NORMAL_ROUTE);
     expect(approvalStatusHref()).toBe(NORMAL_ROUTE);
   });
 
-  it("WAITING hint — token with PENDING outcome", () => {
-    rememberPendingSignup("signed-token-123");
+  it("WAITING hint — marker with PENDING outcome", () => {
+    rememberPendingSignup();
     expect(hasPendingSignup()).toBe(true);
     expect(readAccessOutcome()).toBe("PENDING");
     expect(deviceApprovalRoute()).toBe(WAITING_ROUTE);
   });
 
-  it("APPROVED hint — ACTIVE outcome with token", () => {
-    rememberPendingSignup("approved-token");
+  it("APPROVED hint — ACTIVE outcome with marker", () => {
+    rememberPendingSignup();
     rememberAccessOutcome("ACTIVE");
     expect(deviceApprovalRoute()).toBe(APPROVED_ROUTE);
   });
 
-  it("DENIED hint — REJECTED outcome with token opens denied route", () => {
-    rememberPendingSignup("denied-token");
+  it("DENIED hint — REJECTED outcome with marker opens denied route", () => {
+    rememberPendingSignup();
     rememberAccessOutcome("REJECTED");
     expect(deviceApprovalRoute()).toBe(DENIED_ROUTE);
   });
 
-  it("survives cleared localStorage via cookie mirrors", () => {
-    rememberPendingSignup("survives-refresh");
-    rememberAccessOutcome("PENDING");
+  it("survives cleared localStorage via the non-secret cookie marker", () => {
+    rememberPendingSignup();
     window.localStorage.clear();
     expect(hasPendingSignup()).toBe(true);
-    expect(readStatusToken()).toBe("survives-refresh");
     expect(readAccessOutcome()).toBe("PENDING");
     expect(deviceApprovalRoute()).toBe(WAITING_ROUTE);
   });
 
-  it("clears every mirror", () => {
-    rememberPendingSignup("temporary");
+  it("never stores a signed credential and purges legacy token mirrors", () => {
+    window.localStorage.setItem(LEGACY_TOKEN_KEY, "legacy-secret");
+    window.sessionStorage.setItem(LEGACY_TOKEN_KEY, "legacy-secret");
+    rememberPendingSignup();
+    expect(window.localStorage.getItem(LEGACY_TOKEN_KEY)).toBeNull();
+    expect(window.sessionStorage.getItem(LEGACY_TOKEN_KEY)).toBeNull();
+    expect(document.cookie).not.toContain("legacy-secret");
+    expect(document.cookie).toContain(`${PENDING_SIGNUP_COOKIE}=${PENDING_SIGNUP_ID}`);
+  });
+
+  it("purges a legacy signed marker cookie without accepting it as a route hint", () => {
+    document.cookie = `${PENDING_SIGNUP_COOKIE}=${PENDING_SIGNUP_ID}:legacy-secret; Path=/; SameSite=Lax`;
+
+    expect(hasPendingSignup()).toBe(false);
+    expect(document.cookie).not.toContain(`${PENDING_SIGNUP_COOKIE}=`);
+    expect(document.cookie).not.toContain("legacy-secret");
+  });
+
+  it("clears every non-secret hint", () => {
+    rememberPendingSignup();
     rememberAccessOutcome("ACTIVE");
     clearPendingSignup();
     expect(hasPendingSignup()).toBe(false);

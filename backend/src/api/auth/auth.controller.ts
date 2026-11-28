@@ -14,7 +14,13 @@ import {
   bindDeviceToAccount,
   checkDeviceSignupLimit,
 } from "../../utils/deviceSignup";
-import { createStatusToken, verifyStatusToken } from "../../utils/statusToken";
+import {
+  clearStatusCookie,
+  createStatusToken,
+  readStatusTokenFromRequest,
+  setStatusCookie,
+  verifyStatusToken,
+} from "../../utils/statusToken";
 import { useFirebaseAuth } from "../../auth/auth-mode.js";
 import {
   firebaseCreateUser,
@@ -73,6 +79,7 @@ function setSessionCookie(res: Response, token: string, expiresInSec?: number): 
       ? expiresInSec
       : 3600;
   res.cookie(SESSION_COOKIE, token, { ...cookieOptions(), maxAge: maxAge * 1000 });
+  clearStatusCookie(res);
 }
 
 /** The refresh token lives 30 days so users stay signed in past the 1h access token. */
@@ -157,16 +164,16 @@ async function readAccessStatus(userId: string): Promise<AccessStatus> {
 
 /**
  * 403 for a REJECTED account (or a non-ACTIVE session on /me|/refresh) —
- * never issues or renews cookies. Carries a signed `statusToken` so the
- * client can bounce the user straight to the /welcome status screen instead
- * of stranding them on the login form with an error they cannot act on.
+ * never issues or renews session cookies. The signed status credential is
+ * issued only as an HttpOnly cookie for the denied-account screen.
  */
-function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
+function accessDenied(res: Response, _status: AccessStatus, userId?: string): void {
+  res.setHeader("Cache-Control", "private, no-store");
+  if (userId) setStatusCookie(res, createStatusToken(userId));
   res.status(403).json({
     error: "Account denied",
     code: "ACCOUNT_REJECTED",
     message: "This account was denied. You can create a new account, or leave a message to sahrocky81@gmail.com.",
-    statusToken: userId ? createStatusToken(userId) : undefined,
   });
 }
 
@@ -616,7 +623,7 @@ router.post("/signup", async (req: Request, res: Response) => {
         user: null,
         accessToken: null,
         message: "Check your email to confirm your account before logging in.",
-      } satisfies SignupResponse & { code: string; statusToken?: string });
+      } satisfies SignupResponse & { code: string });
       return;
     }
 
@@ -825,28 +832,24 @@ router.post("/logout", async (req: Request, res: Response) => {
 });
 
 /**
- * GET /api/auth/account-status?token=<statusToken>&bump=1
- * Poll endpoint for the post-signup status screen — works WITHOUT a session
- * (the signup response carries the signed token) and cannot be used to probe
- * whether an arbitrary email is registered (a valid token is required).
- * `status_check_count` increments ONLY when bump=1 ("Check now"); timed polls
- * read the live tally without changing it.
- * 200 → { accessStatus, fullName, checkCount }
- * 401 → invalid/expired token
- * 404 → token valid but account row missing
+ * POST /api/auth/account-status
+ * Poll endpoint for the post-signup status screen — works WITHOUT a session.
+ * The signed credential is read only from the HttpOnly cookie (or the native
+ * x-status-token header), never from a URL. `bump` increments the visible tally.
  */
-router.get("/account-status", async (req: Request, res: Response) => {
-  const token = typeof req.query.token === "string" ? req.query.token : null;
-  const userId = verifyStatusToken(token);
+router.post("/account-status", async (req: Request, res: Response) => {
+  res.setHeader("Cache-Control", "private, no-store");
+  const parsed = z.object({ bump: z.boolean().optional() }).safeParse(req.body ?? {});
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid status request" });
+    return;
+  }
+  const userId = verifyStatusToken(readStatusTokenFromRequest(req));
   if (!userId) {
+    clearStatusCookie(res);
     res.status(401).json({ error: "Invalid or expired status token" });
     return;
   }
-
-  const bump =
-    req.query.bump === "1" ||
-    req.query.bump === "true" ||
-    req.query.bump === "yes";
 
   const { data: profile } = await getProfileById(
     userId,
@@ -854,6 +857,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
   );
 
   if (!profile) {
+    clearStatusCookie(res);
     res.status(404).json({ error: "Account not found" });
     return;
   }
@@ -863,7 +867,7 @@ router.get("/account-status", async (req: Request, res: Response) => {
       ? (profile.status_check_count as number)
       : 0;
   let checkCount = prev;
-  if (bump) {
+  if (parsed.data.bump) {
     checkCount = prev + 1;
     const { error: bumpErr } = await updateProfileFields(userId, {
       status_check_count: checkCount,
@@ -874,10 +878,6 @@ router.get("/account-status", async (req: Request, res: Response) => {
     }
   }
 
-  const email =
-    typeof profile.email === "string" && profile.email.trim()
-      ? profile.email.trim()
-      : undefined;
   const accessStatus = await readAccessStatus(userId);
   res.json({
     accessStatus,

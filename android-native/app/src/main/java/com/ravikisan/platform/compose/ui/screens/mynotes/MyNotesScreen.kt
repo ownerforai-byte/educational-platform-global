@@ -19,7 +19,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
-import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -144,12 +143,13 @@ fun MyNotesScreen(
 
         Spacer(Modifier.height(12.dp))
 
-        // Search + subject filter
+        // Search + subject filter (the website's “Filter by subject” select)
         Row(
             Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 16.dp),
             verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(6.dp),
         ) {
             OutlinedTextField(
                 value = state.query,
@@ -158,11 +158,10 @@ fun MyNotesScreen(
                 placeholder = { Text("Search notes") },
                 singleLine = true,
             )
-            Spacer(Modifier.padding(horizontal = 6.dp))
-            FilterChip(
-                selected = state.subjectFilter.isEmpty(),
-                onClick = { viewModel.onSubjectFilterChanged("") },
-                label = { Text("All subjects") },
+            SubjectFilter(
+                catalog = state.catalog,
+                selected = state.subjectFilter,
+                onSelect = viewModel::onSubjectFilterChanged,
             )
         }
 
@@ -192,6 +191,40 @@ fun MyNotesScreen(
                         onDelete = { viewModel.deleteNote(note.id) },
                     )
                 }
+            }
+        }
+    }
+}
+
+/** Website “Filter by subject” select: “All subjects” plus every catalog subject. */
+@Composable
+private fun SubjectFilter(
+    catalog: List<GoalSubject>,
+    selected: String,
+    onSelect: (String) -> Unit,
+) {
+    var expanded by remember { mutableStateOf(false) }
+    val label = if (selected.isEmpty()) {
+        "All subjects"
+    } else {
+        catalog.firstOrNull { it.key == selected }
+            ?.let { it.subjectName } ?: selected
+    }
+    Column {
+        OutlinedButton(onClick = { expanded = true }) { Text(label, maxLines = 1, overflow = TextOverflow.Ellipsis) }
+        DropdownMenu(expanded = expanded, onDismissRequest = { expanded = false }) {
+            DropdownMenuItem(text = { Text("All subjects") }, onClick = {
+                onSelect("")
+                expanded = false
+            })
+            catalog.forEach { subject ->
+                DropdownMenuItem(
+                    text = { Text("${subject.subjectName} (${subject.className})", maxLines = 1, overflow = TextOverflow.Ellipsis) },
+                    onClick = {
+                        onSelect(subject.key)
+                        expanded = false
+                    },
+                )
             }
         }
     }

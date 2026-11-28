@@ -231,6 +231,7 @@ const memory = vi.hoisted(() => {
               user: {
                 id: OTHER_ID,
                 email: "other@example.com",
+                email_confirmed_at: "2026-01-01T00:00:00.000Z",
                 user_metadata: { full_name: "Other Student" },
               },
             },
@@ -243,6 +244,7 @@ const memory = vi.hoisted(() => {
               user: {
                 id: OWNER_ID,
                 email: "sahrocky81@gmail.com",
+                email_confirmed_at: "2026-01-01T00:00:00.000Z",
                 user_metadata: { full_name: "Platform Owner" },
               },
             },
@@ -257,6 +259,7 @@ const memory = vi.hoisted(() => {
             user: {
               id: USER_ID,
               email: "member@example.com",
+              email_confirmed_at: "2026-01-01T00:00:00.000Z",
               user_metadata: { full_name: "Member Student" },
             },
           },
@@ -303,6 +306,13 @@ const r2 = vi.hoisted(() => {
       objects.set(key, { buffer, contentType: String(contentType) });
       return { url: `https://r2.test/${key}` };
     }),
+    presign: vi.fn(async (path: unknown, contentType: unknown, _expires: unknown, byteSize: unknown) =>
+      `https://r2.test/${String(path)}?size=${String(byteSize)}&type=${String(contentType)}`,
+    ),
+    head: vi.fn(async (path: unknown) => {
+      const object = objects.get(String(path));
+      return object ? { contentLength: object.buffer.length, contentType: object.contentType } : null;
+    }),
     download: vi.fn(async (path: unknown) => objects.get(String(path)) ?? null),
     remove: vi.fn(async (path: unknown) => {
       objects.delete(String(path));
@@ -312,6 +322,8 @@ const r2 = vi.hoisted(() => {
 
 vi.mock("../../src/storage/r2", () => ({
   isR2StorageActive: () => r2.active,
+  r2PresignedPut: (...args: unknown[]) => r2.presign(...args),
+  r2Head: (...args: unknown[]) => r2.head(...args),
   r2Upload: (...args: unknown[]) => r2.upload(...args),
   r2Download: (...args: unknown[]) => r2.download(...args),
   r2Delete: (...args: unknown[]) => r2.remove(...args),
@@ -341,6 +353,8 @@ beforeEach(() => {
   r2.active = false;
   r2.objects.clear();
   r2.upload.mockClear();
+  r2.presign.mockClear();
+  r2.head.mockClear();
   r2.download.mockClear();
   r2.remove.mockClear();
 });
@@ -355,6 +369,41 @@ function memberHeaders(json = false): HeadersInit {
     Authorization: "Bearer member-token",
     ...(json ? { "Content-Type": "application/json" } : {}),
   };
+}
+
+async function createPost(headers: HeadersInit = memberHeaders(true)): Promise<string> {
+  const response = await fetch(`${base}/feed`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      title: "Direct upload test",
+      body: "Verify the attachment before publishing it.",
+      category: "physics",
+    }),
+  });
+  expect(response.status).toBe(201);
+  const body = await response.json() as { post: { id: string } };
+  return body.post.id;
+}
+
+async function presignUpload(postId: string, byteSize = png.length) {
+  const response = await fetch(`${base}/feed/${postId}/attachments/presign`, {
+    method: "POST",
+    headers: memberHeaders(true),
+    body: JSON.stringify({ filename: "diagram.png", contentType: "image/png", byteSize }),
+  });
+  expect(response.status).toBe(200);
+  return await response.json() as {
+    attachmentId: string;
+    uploadUrl: string;
+    contentType: string;
+    byteSize: number;
+    expiresIn: number;
+  };
+}
+
+function uploadPath(postId: string, attachmentId: string): string {
+  return `community/${postId}/${attachmentId}/diagram.png`;
 }
 
 async function waitForComments(
@@ -490,6 +539,125 @@ describe("community feed", () => {
 
     const missing = await fetch(`${base}/feed/${postId}`);
     expect(missing.status).toBe(404);
+  }, 15_000);
+
+  it("keeps direct uploads hidden until verified and reconciles authoritative bytes", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const declaredBytes = png.length + 8;
+    const upload = await presignUpload(postId, declaredBytes);
+    const path = uploadPath(postId, upload.attachmentId);
+
+    expect(upload).toMatchObject({ contentType: "image/png", byteSize: declaredBytes, expiresIn: 600 });
+    expect(r2.presign).toHaveBeenCalledWith(path, "image/png", 600, declaredBytes);
+    expect(memory.tables.community_feed_attachments[0].byte_size).toBe(0);
+    expect(memory.tables.storage_objects[0].byte_size).toBe(declaredBytes);
+    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(declaredBytes);
+
+    const hiddenFile = await fetch(`${base}/feed/attachments/${upload.attachmentId}/file`);
+    expect(hiddenFile.status).toBe(404);
+    const hiddenDetail = await fetch(`${base}/feed/${postId}`);
+    const hiddenBody = await hiddenDetail.json() as { post: { attachments: unknown[] } };
+    expect(hiddenBody.post.attachments).toEqual([]);
+
+    r2.objects.set(path, { buffer: png, contentType: "image/png" });
+    const completed = await fetch(`${base}/feed/${postId}/attachments/${upload.attachmentId}/complete`, {
+      method: "POST",
+      headers: memberHeaders(),
+    });
+
+    expect(completed.status).toBe(200);
+    expect(await completed.json()).toEqual({
+      attachment: { id: upload.attachmentId, filename: "diagram.png", contentType: "image/png", byteSize: png.length },
+    });
+    expect(memory.tables.community_feed_attachments[0].byte_size).toBe(png.length);
+    expect(memory.tables.storage_objects[0].byte_size).toBe(png.length);
+    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(png.length);
+    expect((await fetch(`${base}/feed/attachments/${upload.attachmentId}/file`)).status).toBe(200);
+  });
+
+  it.each([
+    { name: "invalid magic bytes", buffer: Buffer.from("not a png"), contentType: "image/png", status: 400 },
+    { name: "an oversized object", buffer: Buffer.concat([png, Buffer.alloc(16)]), contentType: "image/png", status: 413 },
+    { name: "a mismatched content type", buffer: png, contentType: "image/jpeg", status: 400 },
+  ])("rolls back a pending upload with $name", async ({ buffer, contentType, status }) => {
+    r2.active = true;
+    const postId = await createPost();
+    const upload = await presignUpload(postId);
+    const path = uploadPath(postId, upload.attachmentId);
+    r2.objects.set(path, { buffer, contentType });
+
+    const completed = await fetch(`${base}/feed/${postId}/attachments/${upload.attachmentId}/complete`, {
+      method: "POST",
+      headers: memberHeaders(),
+    });
+
+    expect(completed.status).toBe(status);
+    expect(r2.remove).toHaveBeenCalledWith(path);
+    expect(r2.objects.has(path)).toBe(false);
+    expect(memory.tables.community_feed_attachments).toEqual([]);
+    expect(memory.tables.storage_objects).toEqual([]);
+    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(0);
+  });
+
+  it("does not let another member complete or discard an upload", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const upload = await presignUpload(postId);
+    const path = uploadPath(postId, upload.attachmentId);
+    r2.objects.set(path, { buffer: png, contentType: "image/png" });
+
+    const response = await fetch(`${base}/feed/${postId}/attachments/${upload.attachmentId}/complete`, {
+      method: "POST",
+      headers: { Authorization: "Bearer other-token" },
+    });
+
+    expect(response.status).toBe(403);
+    expect(r2.remove).not.toHaveBeenCalled();
+    expect(memory.tables.community_feed_attachments).toHaveLength(1);
+    expect(memory.tables.storage_objects).toHaveLength(1);
+  });
+
+  it("releases the reservation when a pending attachment is deleted", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const upload = await presignUpload(postId);
+    const path = uploadPath(postId, upload.attachmentId);
+
+    const response = await fetch(`${base}/feed/attachments/${upload.attachmentId}`, {
+      method: "DELETE",
+      headers: memberHeaders(),
+    });
+
+    expect(response.status).toBe(200);
+    expect(r2.remove).toHaveBeenCalledWith(path);
+    expect(memory.tables.community_feed_attachments).toEqual([]);
+    expect(memory.tables.storage_objects).toEqual([]);
+    expect(memory.tables.profiles.find((row) => row.id === USER_ID)?.storage_used_bytes).toBe(0);
+  });
+
+  it("rejects invalid or unauthorized presign requests before reserving storage", async () => {
+    r2.active = true;
+    const postId = await createPost();
+    const cases = [
+      { body: { filename: "diagram.png", contentType: "image/png", byteSize: 0 }, status: 400, token: "member-token" },
+      { body: { filename: "diagram.png", contentType: "image/png", byteSize: 3 * 1024 * 1024 + 1 }, status: 413, token: "member-token" },
+      { body: { filename: "diagram.png", contentType: "application/pdf", byteSize: png.length }, status: 400, token: "member-token" },
+      { body: { filename: "diagram.png", contentType: "image/png", byteSize: png.length }, status: 403, token: "other-token" },
+    ];
+
+    for (const item of cases) {
+      const response = await fetch(`${base}/feed/${postId}/attachments/presign`, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${item.token}`, "Content-Type": "application/json" },
+        body: JSON.stringify(item.body),
+      });
+      expect(response.status).toBe(item.status);
+    }
+
+    expect(r2.presign).not.toHaveBeenCalled();
+    expect(memory.tables.community_feed_attachments).toEqual([]);
+    expect(memory.tables.storage_objects ?? []).toEqual([]);
   });
 
   it("lets any signed-in member publish one community assistant reply (Ask AI)", async () => {

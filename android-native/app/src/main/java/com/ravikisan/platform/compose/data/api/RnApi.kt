@@ -19,6 +19,7 @@ import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
+import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.PATCH
 import retrofit2.http.Path
@@ -43,6 +44,23 @@ interface RnApi {
     /** `GET /api/mobile/units?subject=<slug>` — one subject's units in NEB order. */
     @GET("api/mobile/units")
     suspend fun mobileUnits(@Query("subject") subjectSlug: String): Response<MobileUnitsResponse>
+
+    /**
+     * `GET /api/mobile/units?subject=<slug>&class=<classSlug>` — class-scoped
+     * variant of [mobileUnits] for subject slugs that exist in BOTH class
+     * tracks (mathematics, english, nepali). The backend scopes the subject
+     * row by class (additive Wave 1 batch B fix, response shape unchanged);
+     * it accepts either `class-11` (class dir) or `class-11-notes` (track
+     * slug). Default body keeps the shared JVM `Fakes.kt` compiling without
+     * an edit; production goes through the Retrofit proxy.
+     */
+    @GET("api/mobile/units")
+    suspend fun mobileUnitsScoped(
+        @Query("subject") subjectSlug: String,
+        @Query("class") classSlug: String,
+    ): Response<MobileUnitsResponse> {
+        throw UnsupportedOperationException("Retrofit proxy must implement mobileUnitsScoped")
+    }
 
     /**
      * `GET /api/mobile/notes` — cursor-paginated r-notes catalog, filterable by
@@ -142,4 +160,67 @@ interface RnApi {
 
     @GET("api/mobile/world-knowledge/{slug}")
     suspend fun mobileWorldKnowledgeTopic(@Path("slug") slug: String): Response<com.ravikisan.platform.compose.core.contract.KnowledgeSectionResponse>
+
+    // ── Wave 1 bank seams (SRS cards, offline packs, mock written section) ──
+    //
+    // Auth-gated endpoint families (`requireAuth` + `requireTier("plus")` on
+    // the backend, mirroring the website's /pyqs and /formulas gates). The
+    // shared OkHttp stack has NO auth interceptor yet (owned by the parent),
+    // so these methods take the Bearer header explicitly; callers read the
+    // session token from `SessionStore`.
+    //
+    // Default bodies exist only so the shared JVM test `Fakes.kt` (which
+    // predates this wave) keeps compiling without an edit; production always
+    // goes through the Retrofit proxy, which never sees these bodies.
+
+    /** `GET /api/mobile/pyqs?class=&subject=&limit=&cursor=` — PYQ catalog rows. */
+    @GET("api/mobile/pyqs")
+    suspend fun mobilePyqs(
+        @Query("class") classDir: String? = null,
+        @Query("subject") subject: String? = null,
+        @Query("limit") limit: Int? = null,
+        @Query("cursor") cursor: String? = null,
+        @Header("Authorization") authorization: String? = null,
+    ): Response<com.ravikisan.platform.compose.core.contract.MobilePyqsResponse> {
+        throw UnsupportedOperationException("Fake must override mobilePyqs")
+    }
+
+    /** `GET /api/mobile/pyqs/file?path=` — one PYQ file's question lines. */
+    @GET("api/mobile/pyqs/file")
+    suspend fun mobilePyqFile(
+        @Query("path") path: String,
+        @Header("Authorization") authorization: String? = null,
+    ): Response<com.ravikisan.platform.compose.core.contract.MobilePyqFileResponse> {
+        throw UnsupportedOperationException("Fake must override mobilePyqFile")
+    }
+
+    /** `GET /api/mobile/formulas?class=&subject=&unit=` — formula-sheet catalog rows. */
+    @GET("api/mobile/formulas")
+    suspend fun mobileFormulas(
+        @Query("class") classDir: String? = null,
+        @Query("subject") subject: String? = null,
+        @Query("unit") unit: String? = null,
+        @Query("limit") limit: Int? = null,
+        @Query("cursor") cursor: String? = null,
+        @Header("Authorization") authorization: String? = null,
+    ): Response<com.ravikisan.platform.compose.core.contract.MobileFormulasResponse> {
+        throw UnsupportedOperationException("Fake must override mobileFormulas")
+    }
+
+    /** `GET /api/mobile/formulas/file?path=` — one formula sheet's lines. */
+    @GET("api/mobile/formulas/file")
+    suspend fun mobileFormulaFile(
+        @Query("path") path: String,
+        @Header("Authorization") authorization: String? = null,
+    ): Response<com.ravikisan.platform.compose.core.contract.MobileFormulaFileResponse> {
+        throw UnsupportedOperationException("Fake must override mobileFormulaFile")
+    }
+
+    /** `GET /api/progress` — the signed-in student's journey rows (auth-gated). */
+    @GET("api/progress")
+    suspend fun progress(
+        @Header("Authorization") authorization: String? = null,
+    ): Response<com.ravikisan.platform.compose.core.contract.JourneyRowsResponse> {
+        throw UnsupportedOperationException("Fake must override progress")
+    }
 }

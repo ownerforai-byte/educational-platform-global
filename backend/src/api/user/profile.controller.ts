@@ -15,6 +15,7 @@ import {
   canUnlockModule,
   canonicalContentIdentity,
   canonicalRouteModuleKey,
+  CONTENT_UNLOCK_COSTS,
   contentTargetSchema,
 } from "../../utils/sectionAccess";
 import {
@@ -197,7 +198,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
   }
 
   const { category, moduleKey, content } = parsed.data;
-  const cost = UNLOCK_COSTS[category] ?? 0;
+  const cost = content ? CONTENT_UNLOCK_COSTS[content.kind] : UNLOCK_COSTS[category];
 
   let identityKey: string;
   if (content) {
@@ -223,6 +224,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
   }
 
   const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
+  const ownerOnly = !content && category === "imagehub";
 
   const finishUnlock = async (credits: number, chargedCost: number): Promise<void> => {
     try {
@@ -257,7 +259,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
         res.status(500).json({ error: "Failed to load profile" });
         return;
       }
-      if (category === "imagehub" && !isOwnerEmail(user.email)) {
+      if (ownerOnly && !isOwnerEmail(user.email)) {
         res.status(403).json({
           error: "The Diagram Hub is reserved for owner accounts.",
         });
@@ -282,7 +284,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     const premiumStatus = (profile?.premium_status as boolean | undefined) ?? false;
     const owner = isOwnerEmail(user.email);
 
-    if (category === "imagehub") {
+    if (ownerOnly) {
       if (!owner) {
         res.status(403).json({
           error: "The Diagram Hub is reserved for owner accounts.",
@@ -315,7 +317,7 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
       return;
     }
 
-    const reason = `Content spark: unlocked ${category} (${identityKey}) for 20-min window`;
+    const reason = `Content spark: unlocked ${content?.kind ?? category} (${identityKey}) for 20-min window`;
     const remaining = await spendCredits(user.id, cost, reason);
 
     if (remaining === null) {

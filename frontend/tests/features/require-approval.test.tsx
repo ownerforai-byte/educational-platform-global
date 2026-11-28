@@ -88,7 +88,7 @@ describe("RequireApproval — login + owner-approval wall", () => {
   });
 
   it("shows the approval-status link after signup on this device", async () => {
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     render(<RequireApproval>{CONTENT}</RequireApproval>);
     await waitFor(() => {
       expect(screen.getByTestId("approval-status-link").getAttribute("href")).toBe(

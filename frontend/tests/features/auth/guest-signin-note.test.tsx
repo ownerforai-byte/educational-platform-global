@@ -35,7 +35,7 @@ describe("GuestSignInNote", () => {
   });
 
   it("shows approval CTAs after signup stored a status token on this device", async () => {
-    rememberPendingSignup("vitest-status-token");
+    rememberPendingSignup();
     render(<GuestSignInNote variant="page" />);
     await waitFor(() => {
       expect(screen.getByTestId("guest-note-approval")).toHaveAttribute("href", "/welcome");

@@ -38,8 +38,12 @@ const BACKEND_FETCH_RETRY_MS = [400, 1_200] as const;
  * request open indefinitely.
  */
 async function fetchBackend(targetUrl: string, init: RequestInit): Promise<Response> {
+  const method = (init.method ?? "GET").toUpperCase();
+  const attempts = method === "GET" || method === "HEAD" || method === "OPTIONS"
+    ? BACKEND_FETCH_ATTEMPTS
+    : 1;
   let lastError: unknown;
-  for (let attempt = 0; attempt < BACKEND_FETCH_ATTEMPTS; attempt += 1) {
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
     try {
       return await fetch(targetUrl, {
         ...init,

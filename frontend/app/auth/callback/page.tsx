@@ -98,16 +98,11 @@ function AuthCallbackContent() {
 
         // The app's backend validates the access token and sets its own
 
-        // A brand-new Google account is PENDING (bot auto-approves in ~5 min).
-        // The backend answers 200 + { code: "PENDING_APPROVAL", statusToken }
-        // with NO accessToken — that is not a failure, it's the waiting-screen
-        // handoff. The login form handles this in pendingApprovalResult; the
-        // OAuth path must too or every new Google sign-in dies on the generic
-        // "did not issue a session" error below.
-        const oauthBody = response as unknown as { code?: string; statusToken?: string };
+        // A brand-new Google account can be PENDING. The backend sets the
+        // HttpOnly status cookie and returns the waiting-screen code.
+        const oauthBody = response as unknown as { code?: string };
         if (oauthBody.code === "PENDING_APPROVAL") {
-          if (oauthBody.statusToken) rememberPendingSignup(oauthBody.statusToken);
-          rememberAccessOutcome("PENDING");
+          rememberPendingSignup();
           router.replace(WAITING_ROUTE);
           return;
         }
@@ -126,15 +121,13 @@ function AuthCallbackContent() {
           setError(mfaMessage);
           return;
         }
-        const authError = callbackError as Error & { code?: string; statusToken?: string };
-        if (authError.code === "PENDING_APPROVAL" && authError.statusToken) {
-          rememberPendingSignup(authError.statusToken);
-          rememberAccessOutcome("PENDING");
+        const authError = callbackError as Error & { code?: string };
+        if (authError.code === "PENDING_APPROVAL") {
+          rememberPendingSignup();
           router.replace(WAITING_ROUTE);
           return;
         }
         if (authError.code === "ACCOUNT_REJECTED") {
-          if (authError.statusToken) rememberPendingSignup(authError.statusToken);
           rememberAccessOutcome("REJECTED");
           router.replace(DENIED_ROUTE);
           return;

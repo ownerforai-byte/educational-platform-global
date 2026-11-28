@@ -10,6 +10,7 @@ import com.ravikisan.platform.compose.core.logic.buildUnitPack
 import com.ravikisan.platform.compose.core.logic.packItemCount
 import com.ravikisan.platform.compose.core.logic.packToMarkdown
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
+import com.ravikisan.platform.compose.ui.screens.downloads.local.MobilePacks
 import com.ravikisan.platform.compose.ui.screens.downloads.local.PacksStore
 import com.ravikisan.platform.compose.ui.screens.downloads.local.StoredPack
 import com.ravikisan.platform.compose.ui.screens.downloads.local.UnitPackSource
@@ -68,7 +69,7 @@ class DownloadsViewModel @Inject constructor(
     private val goalsStore: GoalsStore,
     private val packsStore: PacksStore,
     private val syllabus: SyllabusRepository,
-    private val packSource: UnitPackSource,
+    @MobilePacks private val packSource: UnitPackSource,
 ) : ViewModel() {
 
     internal var scope: CoroutineScope = viewModelScope
@@ -172,7 +173,7 @@ class DownloadsViewModel @Inject constructor(
         scope.launch {
             val bank = runCatching { packSource.bank(subjectKey) }.getOrNull()
             val formulaUnit: FormulaSheetUnit? = runCatching {
-                packSource.formulaUnit(subjectSlug, unitSlug)
+                packSource.formulaUnit(subjectKey, unitSlug)
             }.getOrNull()
             val pack = if (bank == null) null else buildUnitPack(title, unitSlug, bank, formulaUnit)
             val count = pack?.let(::packItemCount) ?: 0

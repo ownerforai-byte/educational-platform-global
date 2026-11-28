@@ -37,7 +37,7 @@ import {
 } from "lucide-react";
 import { useAuth } from "@/providers/auth-provider";
 import { isOwnerUser } from "@/lib/owner";
-import { TOKEN_MATRIX, type ContentCategory } from "./constants";
+import { TOKEN_MATRIX, creditModuleKey, type ContentCategory } from "./constants";
 import { useCredit } from "./credit-provider";
 
 interface PortalLink {
@@ -239,7 +239,7 @@ export function DirectoryCard() {
       return;
     }
 
-    const moduleKey = href;
+    const moduleKey = creditModuleKey(href);
     if (isUnlocked(moduleKey)) {
       window.location.assign(href);
       return;

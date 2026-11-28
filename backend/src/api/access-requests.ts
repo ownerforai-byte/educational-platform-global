@@ -1,6 +1,6 @@
 import { Router, type Request, type Response } from "express";
 import { z } from "zod";
-import { verifyStatusToken } from "../utils/statusToken";
+import { readStatusTokenFromRequest, verifyStatusToken } from "../utils/statusToken";
 import {
   getUserFromRequest,
   requireAuth,
@@ -27,7 +27,8 @@ async function resolveUserId(
 ): Promise<string | null> {
   const sessionUser = await getUserFromRequest(req);
   if (sessionUser?.id) return sessionUser.id;
-  if (statusToken) return verifyStatusToken(statusToken);
+  const token = statusToken || readStatusTokenFromRequest(req);
+  if (token) return verifyStatusToken(token);
   return null;
 }
 

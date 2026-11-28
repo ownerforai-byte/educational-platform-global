@@ -34,7 +34,7 @@ describe("CreatedAccountGate", () => {
   });
 
   it("keeps login reachable while account status is loading", () => {
-    rememberPendingSignup("device-token");
+    rememberPendingSignup();
     apiFetch.mockImplementation(() => new Promise(() => {}));
     render(
       <CreatedAccountGate mode="login">
@@ -46,7 +46,7 @@ describe("CreatedAccountGate", () => {
   });
 
   it("redirects pending signups away from login once status is known", async () => {
-    rememberPendingSignup("device-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
     render(
       <CreatedAccountGate mode="login">
@@ -57,7 +57,7 @@ describe("CreatedAccountGate", () => {
   });
 
   it("redirects approved signups away from Create Account to sign in", async () => {
-    rememberPendingSignup("device-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
     render(
       <CreatedAccountGate mode="signup">
@@ -69,7 +69,7 @@ describe("CreatedAccountGate", () => {
   });
 
   it("redirects pending signups away from Create Account to the waiting screen", async () => {
-    rememberPendingSignup("device-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
     render(
       <CreatedAccountGate mode="signup">

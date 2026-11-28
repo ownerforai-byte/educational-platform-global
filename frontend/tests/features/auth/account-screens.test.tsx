@@ -57,7 +57,7 @@ describe("live approval screens", () => {
   });
 
   it("WAITING — only a live PENDING signup sees the waiting shell", async () => {
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING", fullName: "Ada" });
     render(<WelcomeApprovalScreen waiting={WAITING_BODY} />);
     await waitFor(() => {
@@ -76,7 +76,7 @@ describe("live approval screens", () => {
   });
 
   it("APPROVED — live ACTIVE opens the approved screen", async () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "ACTIVE" });
     render(<ApprovedScreen />);
     await waitFor(() => {
@@ -86,7 +86,7 @@ describe("live approval screens", () => {
   });
 
   it("DENIED — live REJECTED opens the denied screen", async () => {
-    rememberPendingSignup("tok");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "REJECTED" });
     render(<DeniedScreen />);
     await waitFor(() => {
@@ -96,7 +96,7 @@ describe("live approval screens", () => {
   });
 
   it("sends a live PENDING signup away from the no-account page", async () => {
-    rememberPendingSignup("signed-status-token");
+    rememberPendingSignup();
     apiFetch.mockResolvedValue({ accessStatus: "PENDING" });
     render(<NoAccountScreen />);
     await waitFor(() => {
@@ -106,7 +106,7 @@ describe("live approval screens", () => {
   });
 
   it("stale token for a deleted account is cleared to no-account", async () => {
-    rememberPendingSignup("dead-token");
+    rememberPendingSignup();
     apiFetch.mockRejectedValue(Object.assign(new Error("gone"), { status: 404 }));
     render(<WelcomeApprovalScreen waiting={WAITING_BODY} />);
     await waitFor(() => {

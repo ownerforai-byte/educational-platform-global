@@ -12,6 +12,8 @@ import com.ravikisan.platform.compose.core.logic.updateNote
 import com.ravikisan.platform.compose.core.logic.validateNote
 import com.ravikisan.platform.compose.data.repository.SyllabusRepository
 import com.ravikisan.platform.compose.ui.screens.mynotes.local.NotesStore
+import com.ravikisan.platform.compose.ui.screens.mynotes.local.RejectionReason
+import com.ravikisan.platform.compose.ui.screens.mynotes.local.WriteOutcome
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -141,8 +143,25 @@ class MyNotesViewModel @Inject constructor(
             error = null,
         )
         scope.launch {
-            if (!store.writeRaw(encodeNotes(next))) {
-                _state.value = _state.value.copy(error = "Couldn't save — device storage refused the write.")
+            when (store.writeRaw(encodeNotes(next))) {
+                WriteOutcome.STORED -> Unit
+                WriteOutcome.REJECTED -> {
+                    // The website reloads from storage and reports the change
+                    // was not saved; the account-changed path is the same
+                    // guard (`writeNotes(loadedScope)` contract).
+                    val accountChanged = store.lastRejection == RejectionReason.ACCOUNT_CHANGED
+                    val reloaded = decodeNotes(store.readRaw())
+                    _state.value = _state.value.copy(
+                        notes = reloaded,
+                        editingId = null,
+                        draft = com.ravikisan.platform.compose.core.logic.EMPTY_DRAFT,
+                        error = if (accountChanged) {
+                            "Your account changed. Your notes were reloaded and this change was not saved."
+                        } else {
+                            "Couldn't save — device storage refused the write."
+                        },
+                    )
+                }
             }
         }
         return true
@@ -152,7 +171,20 @@ class MyNotesViewModel @Inject constructor(
         val next = removeNote(_state.value.notes, id)
         _state.value = _state.value.copy(notes = next)
         scope.launch {
-            store.writeRaw(encodeNotes(next))
+            when (store.writeRaw(encodeNotes(next))) {
+                WriteOutcome.STORED -> Unit
+                WriteOutcome.REJECTED -> {
+                    val reloaded = decodeNotes(store.readRaw())
+                    _state.value = _state.value.copy(
+                        notes = reloaded,
+                        error = if (store.lastRejection == RejectionReason.ACCOUNT_CHANGED) {
+                            "Your account changed. Your notes were reloaded and this change was not saved."
+                        } else {
+                            "Couldn't delete — device storage refused the write."
+                        },
+                    )
+                }
+            }
         }
     }
 

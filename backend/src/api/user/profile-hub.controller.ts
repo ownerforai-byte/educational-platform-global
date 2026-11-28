@@ -754,26 +754,40 @@ router.delete(
 
 async function userSearch(req: Request, res: Response): Promise<void> {
   const q = (param(req.query.q) || param(req.query.search) || "").trim().toLowerCase();
-    if (q.length < 2) {
-      bad(res, "Enter at least 2 characters to search");
+  if (q.length < 2) {
+    bad(res, "Enter at least 2 characters to search");
+    return;
+  }
+  if (q.length > 80) {
+    bad(res, "Search query is too long");
+    return;
+  }
+  const viewer = await getUserFromRequest(req);
+  const columns = "id, full_name, username, avatar_path, plan, role, profile_visibility";
+  const pattern = `%${q}%`;
+  const [byUsername, byFullName] = await Promise.all([
+    supabaseAdmin.from("profiles").select(columns).ilike("username", pattern).limit(40),
+    supabaseAdmin.from("profiles").select(columns).ilike("full_name", pattern).limit(40),
+  ]);
+  const error = byUsername.error ?? byFullName.error;
+  if (error) {
+    if (isMissingTable(error)) {
+      unavailable(res);
       return;
     }
-    const { data, error } = await supabaseAdmin
-      .from("profiles")
-      .select("id, full_name, username, avatar_path, plan, role")
-      .or(`username.ilike.%${q}%,full_name.ilike.%${q}%`)
-      .limit(20);
-    if (error) {
-      if (isMissingTable(error)) {
-        unavailable(res);
-        return;
-      }
-      serverError(res, error, "profile-hub");
-      return;
-    }
-    noStore(res);
-    res.json({
-      users: (data ?? []).map((row) => ({
+    serverError(res, error, "profile-hub");
+    return;
+  }
+  const matches = new Map<string, ProfileRow>();
+  for (const row of [...(byUsername.data ?? []), ...(byFullName.data ?? [])]) {
+    matches.set(row.id as string, row as unknown as ProfileRow);
+  }
+  noStore(res);
+  res.json({
+    users: [...matches.values()]
+      .filter((row) => canViewProfile(row, viewer))
+      .slice(0, 20)
+      .map((row) => ({
         id: row.id as string,
         fullName: (row.full_name as string | null)?.trim() || "Student",
         username: row.username as string | null,
@@ -781,7 +795,7 @@ async function userSearch(req: Request, res: Response): Promise<void> {
         plan: row.plan ?? null,
         role: row.role ?? null,
       })),
-    });
+  });
 }
 
 router.get("/", asyncHandler(userSearch));
@@ -1054,6 +1068,10 @@ router.get(
       bad(res, "Profile not found", 404);
       return;
     }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
     const { data, error } = await supabaseAdmin
       .from("profile_follows")
       .select("follower_id, created_at")
@@ -1076,13 +1094,16 @@ router.get(
         : (
             await supabaseAdmin
               .from("profiles")
-              .select("id, full_name, username, avatar_path")
+              .select("id, full_name, username, avatar_path, profile_visibility")
               .in("id", ids)
           ).data ?? [];
-    const followSet = await viewerFollowsTargets(viewer?.id ?? null, profiles.map((p) => p.id as string));
+    const visibleProfiles = profiles.filter((profile) =>
+      canViewProfile(profile as unknown as ProfileRow, viewer),
+    );
+    const followSet = await viewerFollowsTargets(viewer?.id ?? null, visibleProfiles.map((p) => p.id as string));
     noStore(res);
     res.json({
-      users: profiles.map((p) => ({
+      users: visibleProfiles.map((p) => ({
         id: p.id,
         fullName: (p.full_name as string | null)?.trim() || "Student",
         username: p.username,
@@ -1108,6 +1129,10 @@ router.get(
       bad(res, "Profile not found", 404);
       return;
     }
+    if (!canViewProfile(resolved, viewer)) {
+      bad(res, "This profile is private", 403);
+      return;
+    }
     const { data, error } = await supabaseAdmin
       .from("profile_follows")
       .select("following_id, created_at")
@@ -1130,13 +1155,16 @@ router.get(
         : (
             await supabaseAdmin
               .from("profiles")
-              .select("id, full_name, username, avatar_path")
+              .select("id, full_name, username, avatar_path, profile_visibility")
               .in("id", ids)
           ).data ?? [];
-    const followSet = await viewerFollowsTargets(viewer?.id ?? null, profiles.map((p) => p.id as string));
+    const visibleProfiles = profiles.filter((profile) =>
+      canViewProfile(profile as unknown as ProfileRow, viewer),
+    );
+    const followSet = await viewerFollowsTargets(viewer?.id ?? null, visibleProfiles.map((p) => p.id as string));
     noStore(res);
     res.json({
-      users: profiles.map((p) => ({
+      users: visibleProfiles.map((p) => ({
         id: p.id,
         fullName: (p.full_name as string | null)?.trim() || "Student",
         username: p.username,

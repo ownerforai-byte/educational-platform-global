@@ -1,7 +1,7 @@
 "use client";
 
 import { apiFetch } from "@/lib/api-client";
-import { readStatusToken } from "@/features/auth/pending-signup-identity";
+import { hasPendingSignup } from "@/features/auth/pending-signup-identity";
 import { getPublicEnv } from "@/lib/env";
 import {
   isFirebaseWebConfigured,
@@ -58,7 +58,7 @@ export type FcmPermissionState =
 export type FcmRegistrationCache = {
   token: string;
   deepLink: string | null;
-  statusToken: string | null;
+  pending: boolean;
   requestId?: string;
   status?: string;
   registeredAt: number;
@@ -73,10 +73,18 @@ export function readFcmRegistrationCache(): FcmRegistrationCache | null {
     if (!raw) return null;
     const parsed = JSON.parse(raw) as Partial<FcmRegistrationCache> | null;
     if (!parsed || typeof parsed.token !== "string" || !parsed.token) return null;
+    if ("statusToken" in parsed) {
+      try {
+        window.localStorage.removeItem(CACHE_KEY);
+      } catch {
+        /* ignore */
+      }
+      return null;
+    }
     return {
       token: parsed.token,
       deepLink: typeof parsed.deepLink === "string" ? parsed.deepLink : null,
-      statusToken: typeof parsed.statusToken === "string" ? parsed.statusToken : null,
+      pending: parsed.pending === true,
       requestId: typeof parsed.requestId === "string" ? parsed.requestId : undefined,
       status: typeof parsed.status === "string" ? parsed.status : undefined,
       registeredAt: typeof parsed.registeredAt === "number" ? parsed.registeredAt : 0,
@@ -293,7 +301,8 @@ async function doPersistRegistration(
   input: PersistInput,
   force: boolean,
 ): Promise<PersistOutcome> {
-  const statusToken = input.statusToken ?? readStatusToken();
+  const statusToken = input.statusToken ?? null;
+  const pending = Boolean(statusToken) || hasPendingSignup();
   const deepLink = input.deepLink ?? null;
   const cached = readFcmRegistrationCache();
   if (
@@ -301,7 +310,7 @@ async function doPersistRegistration(
     cached &&
     cached.token === input.token &&
     cached.deepLink === deepLink &&
-    cached.statusToken === (statusToken ?? null)
+    cached.pending === pending
   ) {
     return { ok: true, changed: false, requestId: cached.requestId, status: cached.status };
   }
@@ -322,7 +331,7 @@ async function doPersistRegistration(
     writeFcmRegistrationCache({
       token: input.token,
       deepLink,
-      statusToken: statusToken ?? null,
+      pending,
       requestId: res?.requestId,
       status: res?.status,
       registeredAt: Date.now(),

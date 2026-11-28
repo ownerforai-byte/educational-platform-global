@@ -38,8 +38,6 @@ export interface AuthSignupResponse {
   message?: string;
   accessToken?: string;
   code?: string;
-  /** Owner-approval flow: signed token for the /welcome status screen. */
-  statusToken?: string;
   accessStatus?: "PENDING" | "ACTIVE" | "REJECTED";
 }
 
