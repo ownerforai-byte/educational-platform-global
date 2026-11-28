@@ -44,7 +44,11 @@ class SyllabusRepository(
     /** The one payload kind a call returned. */
     sealed class Payload {
         data class SyllabusTree(val classes: List<MobileClassDto>) : Payload()
-        data class Units(val subjectSlug: String, val units: List<MobileUnitDto>) : Payload()
+        data class Units(
+            val subjectSlug: String,
+            val units: List<MobileUnitDto>,
+            val classSlug: String? = null,
+        ) : Payload()
         data class NoteCatalog(
             val items: List<MobileNoteItemDto>,
             val nextCursor: String?,
@@ -74,37 +78,45 @@ class SyllabusRepository(
 
     // ── Units (per subject) ────────────────────────────────────────────────
 
-    suspend fun loadUnits(subjectSlug: String): Result = fetchAndCache(
-        cacheKey = "mobile-units:v1:$subjectSlug",
-        fetch = { api.mobileUnits(subjectSlug) },
-        extract = { response ->
-            response.data?.units?.takeIf { response.data.subject != null }?.let {
-                Payload.Units(response.data.subject!!.slug, it)
-            }
-        },
-        encode = { payload ->
-            json.encodeToString(
-                MobileUnitsResponse.serializer(),
-                MobileUnitsResponse(
-                    ok = true,
-                    data = MobileUnitsData(
-                        subject = com.ravikisan.platform.compose.core.contract.MobileSubjectRefDto(
-                            id = payload.subjectSlug,
-                            slug = payload.subjectSlug,
-                            name = payload.subjectSlug,
+    suspend fun loadUnits(subjectSlug: String, classSlug: String? = null): Result {
+        val normalizedClass = classSlug?.trim()?.takeIf { it.isNotEmpty() }
+        val cacheKey = normalizedClass?.let { "mobile-units:v1:c:$it:$subjectSlug" }
+            ?: "mobile-units:v1:$subjectSlug"
+        return fetchAndCache(
+            cacheKey = cacheKey,
+            fetch = {
+                if (normalizedClass == null) api.mobileUnits(subjectSlug)
+                else api.mobileUnitsScoped(subjectSlug, normalizedClass)
+            },
+            extract = { response ->
+                response.data?.units?.takeIf { response.data.subject != null }?.let {
+                    Payload.Units(response.data.subject!!.slug, it, normalizedClass)
+                }
+            },
+            encode = { payload ->
+                json.encodeToString(
+                    MobileUnitsResponse.serializer(),
+                    MobileUnitsResponse(
+                        ok = true,
+                        data = MobileUnitsData(
+                            subject = com.ravikisan.platform.compose.core.contract.MobileSubjectRefDto(
+                                id = payload.subjectSlug,
+                                slug = payload.subjectSlug,
+                                name = payload.subjectSlug,
+                            ),
+                            units = payload.units,
                         ),
-                        units = payload.units,
                     ),
-                ),
-            )
-        },
-        decodeCache = { raw ->
-            json.decodeFromString<MobileUnitsResponse>(raw).data?.let {
-                Payload.Units(it.subject?.slug ?: "", it.units)
-            }
-        },
-        notFoundMessage = "Subject not found",
-    )
+                )
+            },
+            decodeCache = { raw ->
+                json.decodeFromString<MobileUnitsResponse>(raw).data?.let {
+                    Payload.Units(it.subject?.slug ?: "", it.units, normalizedClass)
+                }
+            },
+            notFoundMessage = if (normalizedClass == null) "Subject not found" else "Class or subject not found",
+        )
+    }
 
     // ── Notes catalog (cursor-paginated; first page cached) ───────────────
 
@@ -213,9 +225,14 @@ class SyllabusRepository(
         cacheKey == SYLLABUS_CACHE_KEY ->
             json.decodeFromString<MobileSyllabusResponse>(raw).data?.classes
                 ?.let { Payload.SyllabusTree(it) }
-        cacheKey.startsWith("mobile-units:v1:") ->
+        cacheKey.startsWith("mobile-units:v1:") -> {
+            val classSlug = cacheKey
+                .removePrefix("mobile-units:v1:c:")
+                .takeIf { cacheKey.startsWith("mobile-units:v1:c:") }
+                ?.substringBefore(':')
             json.decodeFromString<MobileUnitsResponse>(raw).data
-                ?.let { Payload.Units(it.subject?.slug ?: "", it.units) }
+                ?.let { Payload.Units(it.subject?.slug ?: "", it.units, classSlug) }
+        }
         cacheKey.startsWith("mobile-notes:v1:") ->
             json.decodeFromString<MobileNotesResponse>(raw).data
                 ?.let { Payload.NoteCatalog(it.items, it.nextCursor, cacheKey) }

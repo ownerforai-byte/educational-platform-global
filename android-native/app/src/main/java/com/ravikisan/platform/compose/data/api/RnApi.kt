@@ -12,6 +12,7 @@ import com.ravikisan.platform.compose.core.contract.MobileNotesResponse
 import com.ravikisan.platform.compose.core.contract.SocialNotificationsResponse
 import com.ravikisan.platform.compose.core.contract.MobilePracticeResponse
 import com.ravikisan.platform.compose.core.contract.MobileSyllabusResponse
+import com.ravikisan.platform.compose.core.contract.RavikishanContentFile
 import com.ravikisan.platform.compose.core.contract.MobileUnitsResponse
 import com.ravikisan.platform.compose.core.contract.RNoteResponse
 import com.ravikisan.platform.compose.core.contract.SignupRequest
@@ -73,6 +74,25 @@ interface RnApi {
         @Query("limit") limit: Int? = null,
         @Query("cursor") cursor: String? = null,
     ): Response<MobileNotesResponse>
+
+    /**
+     * `GET /api/ravikishan-notes?path=<key>` — the WEBSITE's classified content
+     * API (`backend/src/api/content/ravikishan-notes.controller.ts`; the site
+     * itself calls it from `frontend/lib/api/content.ts`), reused read-only for
+     * the Wave 1 class-12 science theory surface's solution-bearing PYQ banks:
+     * `path=practice/questions/class-12/<subject>/<unit>/NN-neb-YYYY.json`
+     * returns the full bank with `questions[].solution`, which the mobile
+     * `/api/mobile/pyqs/file` endpoint drops. Body is the raw content file
+     * (see [RavikishanContentFile]); unknown paths are 404s. Default body keeps
+     * the shared JVM `Fakes.kt` compiling without an edit; production goes
+     * through the Retrofit proxy.
+     */
+    @GET("api/ravikishan-notes")
+    suspend fun ravikishanContent(
+        @Query("path") path: String,
+    ): Response<RavikishanContentFile> {
+        throw UnsupportedOperationException("Fake must override ravikishanContent")
+    }
 
     /** `GET /api/r-notes/:id` — full note content (HTML blocks, `<h1>` = section). */
     @GET("api/r-notes/{id}")

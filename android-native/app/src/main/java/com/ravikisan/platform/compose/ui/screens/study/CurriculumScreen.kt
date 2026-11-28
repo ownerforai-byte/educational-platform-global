@@ -101,7 +101,7 @@ fun CurriculumScreen(
     LaunchedEffect(Unit) { viewModel.loadTree() }
     LaunchedEffect(selectedSubjectSlug) {
         selectedSubjectSlug?.let { subject ->
-            viewModel.loadUnits(subject)
+            viewModel.loadUnits(subject, selectedClassSlug)
             if (entry.surface == CurriculumSurface.THEORY) viewModel.loadNotes(subject)
         }
     }
@@ -224,7 +224,7 @@ fun CurriculumScreen(
                 if (state.unitsLoading && state.notes.isNotEmpty()) item { LoadingMessage("Loading unit links…") }
             } else {
                 if (state.unitsLoading) item { LoadingMessage("Loading syllabus units…") }
-                else if (state.error != null) item { ErrorMessage(state.error!!, { viewModel.loadUnits(subject.slug) }) }
+                else if (state.error != null) item { ErrorMessage(state.error!!, { viewModel.loadUnits(subject.slug, selectedClassSlug) }) }
                 else {
                     if (state.unitsFromCache) item { OfflineMessage() }
                     if (state.units.isEmpty()) item {
@@ -234,7 +234,7 @@ fun CurriculumScreen(
                         CurriculumCard(
                             "Unit ${unit.order} · ${unit.title}",
                             "${unit.topicCount} curriculum topics",
-                        ) { onOpenUnit("${subject.slug}:${unit.slug}") }
+                        ) { onOpenUnit("${selectedClassSlug}:${subject.slug}:${unit.slug}") }
                     }
                 }
             }

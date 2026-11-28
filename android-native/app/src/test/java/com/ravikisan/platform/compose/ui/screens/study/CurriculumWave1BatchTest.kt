@@ -164,8 +164,9 @@ class CurriculumWave1BatchTest {
     /**
      * REMAINING BLOCKER (do not promote the theory variants as full parity):
      * the website theory page renders authored theory blocks
-     * (content/notes/theory/{class}/{subject}/*.json — class-11 mathematics
-     * has 5, english 2, nepali 2) with MathMarkdown notes plus detail. No
+     * (content/notes/theory/{class}/{subject} JSON banks — class-11
+     * mathematics has 5, english 2, nepali 2) with MathMarkdown notes plus
+     * detail. No
      * /api/mobile endpoint exposes those payloads, and the notes catalog
      * contract (`/api/mobile/notes`, r-notes manifest) carries chapter-level
      * catalog rows only — no class field, no theory-block fields. Until the

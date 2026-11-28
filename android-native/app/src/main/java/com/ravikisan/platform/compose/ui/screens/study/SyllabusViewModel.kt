@@ -68,11 +68,11 @@ class SyllabusViewModel @Inject constructor(
     }
 
     /** Load the units of one subject (drill-down level 3). */
-    fun loadUnits(subjectSlug: String) {
+    fun loadUnits(subjectSlug: String, classSlug: String? = null) {
         if (_state.value.unitsLoading) return
         _state.value = _state.value.copy(unitsLoading = true, error = null, units = emptyList())
         scope.launch {
-            when (val result = repository.loadUnits(subjectSlug)) {
+            when (val result = repository.loadUnits(subjectSlug, classSlug)) {
                 is SyllabusRepository.Result.Fresh -> {
                     val units = result.payload as SyllabusRepository.Payload.Units
                     _state.value = _state.value.copy(unitsLoading = false, units = units.units, unitsFromCache = false)
